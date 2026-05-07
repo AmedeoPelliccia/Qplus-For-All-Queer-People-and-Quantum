@@ -43,7 +43,69 @@ Defines the **operational layer** on top of the qubit formalism established in `
   - **Measurement** — projective measurement in the computational basis ($Z$-basis); rotation of basis to enable $X$- and $Y$-basis measurement; **weak / generalised (POVM) measurement** as a generalisation that returns less-than-full collapse and is foundational for feedback-driven protocols and quantum sensing.
 - Out of scope: implementation-level pulse shaping (`02_`), gate-error characterisation (`04_`), error-correcting code construction (`05_`).
 
-## 3. Footprint
+## 3. Diagram — A Qubit in a Quantum Circuit
+
+### 3.1 Canonical example: Bell-state preparation and measurement
+
+The smallest non-trivial quantum circuit involving more than one qubit is the **Bell-state preparation circuit**. It takes two qubits initialised in $|0\rangle$, applies a Hadamard gate to the first qubit and a CNOT with the first as control and the second as target, then measures both. The output state before measurement is the entangled Bell state $|\Phi^+\rangle = (|00\rangle + |11\rangle)/\sqrt{2}$, and the measurement outcomes are perfectly correlated: either both qubits read `0` or both read `1`, each with probability $1/2$.
+
+Drawn in the standard quantum-circuit notation (time flows left → right; horizontal lines are qubit wires; double lines are classical wires carrying measurement results):
+
+```
+            ┌───┐                      ┌─┐
+   q_0 : ───┤ H ├──────■───────────────┤M├═══════ c_0
+            └───┘      │               └╥┘
+                     ┌─┴─┐              ║   ┌─┐
+   q_1 : ────────────┤ X ├──────────────╫───┤M├══ c_1
+                     └───┘              ║   └╥┘
+                                        ║    ║
+                  prepare      entangle  measure   classical
+                  |0⟩, |0⟩    H ⊗ I,     in Z      register
+                              CNOT       basis     (correlated
+                                                    bits)
+```
+
+Reading the circuit:
+
+| Stage | Operation | State after stage |
+|---|---|---|
+| Init | both qubits prepared in $\lvert 0\rangle$ | $\lvert 00\rangle$ |
+| 1 | $H$ on $q_0$ (single-qubit gate, §2) | $\tfrac{1}{\sqrt{2}}(\lvert 0\rangle + \lvert 1\rangle) \otimes \lvert 0\rangle$ |
+| 2 | $\mathrm{CNOT}$ with control $q_0$, target $q_1$ (two-qubit gate, §2) | $\lvert \Phi^+\rangle = \tfrac{1}{\sqrt{2}}(\lvert 00\rangle + \lvert 11\rangle)$ |
+| 3 | projective $Z$-measurement on each qubit (§2) | $\lvert 00\rangle$ with $p = \tfrac{1}{2}$, or $\lvert 11\rangle$ with $p = \tfrac{1}{2}$ |
+
+This three-stage pattern — **prepare → evolve under unitary gates → measure** — is the universal template into which every gate-based quantum algorithm in `040_quantum-algorithms/` decomposes.
+
+### 3.2 Per-qubit lifecycle (Mermaid)
+
+The same lifecycle, expressed for a single qubit traversing the circuit, follows the canonical *prepare → unitary evolution → projective measurement → classical bit* pipeline:
+
+```mermaid
+flowchart LR
+    A["Initial state<br/>|0⟩"] --> B["Single-qubit gates<br/>X, Y, Z, H, S, T, Rx/Ry/Rz"]
+    B --> C{"Two-qubit<br/>interaction?"}
+    C -- "yes" --> D["Two-qubit gates<br/>CNOT, CZ, iSWAP<br/>(may produce entanglement,<br/>e.g. Bell states)"]
+    C -- "no" --> E["Continue as<br/>product state"]
+    D --> F["Projective measurement<br/>(Z-basis by default;<br/>rotate basis for X / Y)"]
+    E --> F
+    F --> G["Classical bit<br/>0 or 1"]
+    F -. "alternative" .-> H["Weak / POVM measurement<br/>(partial information,<br/>used in feedback &<br/>sensing — see 04_)"]
+```
+
+### 3.3 Notation legend
+
+| Symbol | Meaning |
+|---|---|
+| `q_i` | $i$-th qubit wire (single line) |
+| `c_i` | $i$-th classical bit wire (double line) |
+| `┤ H ├` | Hadamard gate on the wire it sits on |
+| `■` over a wire, `┤ X ├` below, joined by `│` | CNOT — control is the filled square, target is the boxed $X$ |
+| `┤M├` | Projective measurement (Z-basis unless otherwise indicated) |
+| `═══` | Classical wire (carries a measured bit) |
+
+This notation — used by Qiskit, Cirq, and the wider literature — is the convention adopted across QCSAA `030_circuits/` and downstream.
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -64,7 +126,7 @@ Defines the **operational layer** on top of the qubit formalism established in `
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
