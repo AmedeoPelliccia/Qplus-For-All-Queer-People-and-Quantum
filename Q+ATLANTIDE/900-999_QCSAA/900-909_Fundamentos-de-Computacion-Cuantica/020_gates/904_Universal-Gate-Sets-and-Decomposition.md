@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-04-UNIVERSAL-GATE-SETS-AND-DECOMPOSITION
-title: "QCSAA 900-909 · 00.020.04 — Universal Gate Sets and Decomposition"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-904-UNIVERSAL-GATE-SETS-AND-DECOMPOSITION
+title: "QCSAA 900-909 · 00.020.904 — Universal Gate Sets and Decomposition"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,7 +15,7 @@ subject: "00"
 subject_title: "General Information"
 subsection: "020"
 subsection_title: "gates"
-subsubject: "04"
+subsubject: "904"
 subsubject_title: "Universal Gate Sets and Decomposition"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,7 +25,7 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 020 · Subsubject 04 — Universal Gate Sets and Decomposition
+# QCSAA 900-909 · Section 00 · Subsection 020 · Subsubject 904 — Universal Gate Sets and Decomposition
 
 ## 1. Purpose
 
@@ -48,13 +48,13 @@ Defines what **universality** means for a quantum gate set, lists the canonical 
     2. **Approximation** of each single-qubit gate to precision $\varepsilon$ via Solovay–Kitaev or modern direct synthesis (Ross–Selinger for the Clifford+T set, with near-optimal $T$-counts).
     3. **Optimisation** within $\mathcal{G}$ (commutation, cancellation, peephole rewriting).
   - **Trade-offs.** Gate count, $T$-count specifically (the cost-driver in fault-tolerant compilation), and ancilla usage are independent axes; reducing one typically increases another. The trade-off **between gate count and parallelisation / circuit depth** is **not** addressed here — see §3.
-- Out of scope: physical realization of any gate in $\mathcal{G}$ on a given modality (`05_`); the construction of complete circuits from compiled gate sequences, including depth, scheduling, and mid-circuit measurement (`030_circuits/`).
+- Out of scope: physical realization of any gate in $\mathcal{G}$ on a given modality (`905_`); the construction of complete circuits from compiled gate sequences, including depth, scheduling, and mid-circuit measurement (`030_circuits/`).
 
 ## 3. Boundary Against `030_circuits/` (Binding Reminder)
 
-This subsubject is the slot where gate counts naturally invite circuit-level reasoning, and contributors will be tempted to add material such as "circuit depth as a function of $T$-count" or "parallelisation of decomposed CNOT chains". **Such material does not belong here.** The chapter boundary stated in the parent [`00_Overview.md`](./00_Overview.md) §2 applies in full at this slot:
+This subsubject is the slot where gate counts naturally invite circuit-level reasoning, and contributors will be tempted to add material such as "circuit depth as a function of $T$-count" or "parallelisation of decomposed CNOT chains". **Such material does not belong here.** The chapter boundary stated in the parent [`900_Overview.md`](./900_Overview.md) §2 applies in full at this slot:
 
-| Belongs in `020_gates/04_` (this file) | Belongs in `030_circuits/` |
+| Belongs in `020_gates/904_` (this file) | Belongs in `030_circuits/` |
 |---|---|
 | What "universal" means for a gate set | What "universal" means for a quantum circuit family |
 | Solovay–Kitaev gate-count overhead per single-qubit gate | Total circuit gate count and circuit depth as algorithm-level resources |
@@ -73,7 +73,7 @@ Most introductory material treats "universal gate set" as a checkbox: once the p
 | **Magic-state distillation** to produce each $T$ at the target logical error rate | additional protocol-dependent factor (typically $\sim 10$–$10^2$ raw magic states per distilled $T$, multiple rounds) | Out of scope here — see `010_Qubits/05_` for the encoding side and downstream chapters for the distillation protocols. |
 | **Physical-to-logical qubit ratio** of the chosen code at the target error rate | $\sim 10^3$ to $10^6$ physical qubits per logical qubit | From [`../010_Qubits/05_Logical-Qubits-Encoding-and-Error-Correction.md`](../010_Qubits/05_Logical-Qubits-Encoding-and-Error-Correction.md) §2 (range determined by code family, threshold margin, and target logical error rate). |
 
-The product of these factors is what the popular press summarises as "billions of physical qubits". The role of this subsubject in the chain is the **second row** — the Solovay–Kitaev expansion — and that row alone is responsible for the multiplier of $10^2$–$10^3$ on every algorithmic operation. Reducing this multiplier (better synthesis algorithms, alternative non-Clifford primitives, code-aware compilation) is therefore one of the most direct levers the program has on the headline number, **and is the right kind of work to plan against `020_gates/04_`** rather than against the encoding chapter or the algorithm chapter.
+The product of these factors is what the popular press summarises as "billions of physical qubits". The role of this subsubject in the chain is the **second row** — the Solovay–Kitaev expansion — and that row alone is responsible for the multiplier of $10^2$–$10^3$ on every algorithmic operation. Reducing this multiplier (better synthesis algorithms, alternative non-Clifford primitives, code-aware compilation) is therefore one of the most direct levers the program has on the headline number, **and is the right kind of work to plan against `020_gates/904_`** rather than against the encoding chapter or the algorithm chapter.
 
 ## 5. Diagram — Compilation Pipeline and Cost Compounding
 
@@ -106,14 +106,14 @@ flowchart LR
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
 | Subsection | `020` — gates |
-| Subsubject | `04` — Universal Gate Sets and Decomposition |
+| Subsubject | `904` — Universal Gate Sets and Decomposition |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
 | Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/020_gates/` |
-| Document | `04_Universal-Gate-Sets-and-Decomposition.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`00_Overview.md`](./00_Overview.md) |
+| Document | `904_Universal-Gate-Sets-and-Decomposition.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`900_Overview.md`](./900_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

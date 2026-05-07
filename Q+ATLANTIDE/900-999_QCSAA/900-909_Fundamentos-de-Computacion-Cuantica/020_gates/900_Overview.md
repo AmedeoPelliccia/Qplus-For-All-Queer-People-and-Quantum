@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-00-OVERVIEW
-title: "QCSAA 900-909 · 00.020.00 — gates"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-900-OVERVIEW
+title: "QCSAA 900-909 · 00.020.900 — gates"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,7 +15,7 @@ subject: "00"
 subject_title: "General Information"
 subsection: "020"
 subsection_title: "gates"
-subsubject: "00"
+subsubject: "900"
 subsubject_title: "Overview"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -37,21 +37,21 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.020.00 slice and li
 
 - Covers the *gates* slice of the parent code range `900-909`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `01`–`05`, indexed in [`README.md`](./README.md).
+- Subsequent subsubjects (`901`–`909`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `901`–`905`, indexed in [`README.md`](./README.md). File names use the **canonical Q+ATLANTIDE Subsubject scheme `9NN_*.md`** (per §2.2 of the QCSAA README), so any `9NN_*.md` file is globally locatable in the controlled `900-909` namespace without inspecting the full path.
 - **Position in the 900-909 dependency graph.** Gates are the **operations on the substrate** defined by [`../010_Qubits/`](../010_Qubits/): where `010_` defines the two-level quantum system, its Hilbert space, and its physical implementations, `020_` defines the unitary operations that act on those systems. Gates are therefore the **immediate prerequisite for [`../030_circuits/`](../030_circuits/)** (composition of gates into algorithms) and an upstream dependency for [`../040_quantum-algorithms/`](../040_quantum-algorithms/) and [`../050_foundations/`](../050_foundations/).
 - **Pedagogical sequence followed in this chapter** (deliberately parallel to `010_Qubits/`): **definition → categories → composition → universality → physical realization**. The slot semantics are predictable across foundational chapters so that, once a reader has navigated `010_`, every subsequent foundational chapter is faster.
-- **Boundary against `030_circuits/` (binding for contributors).** This chapter covers the **unitary operation as such** — its mathematical definition, its decomposition into a universal set, its physical realization on a given modality, its fidelity. The chapter [`../030_circuits/`](../030_circuits/) covers what happens **when gates are composed into computational sequences** — circuit depth, parallelization, measurement timing, mid-circuit measurement, classical control flow, and resource estimation at the algorithm level. Material naturally suggested by gate counts (e.g. "circuit depth as a function of T-count") belongs in `030_`, not in `020_`. This rule is restated in `04_` because that is the slot where the temptation to drift across the boundary is strongest.
+- **Boundary against `030_circuits/` (binding for contributors).** This chapter covers the **unitary operation as such** — its mathematical definition, its decomposition into a universal set, its physical realization on a given modality, its fidelity. The chapter [`../030_circuits/`](../030_circuits/) covers what happens **when gates are composed into computational sequences** — circuit depth, parallelization, measurement timing, mid-circuit measurement, classical control flow, and resource estimation at the algorithm level. Material naturally suggested by gate counts (e.g. "circuit depth as a function of T-count") belongs in `030_`, not in `020_`. This rule is restated in `904_` because that is the slot where the temptation to drift across the boundary is strongest.
 
 ## 3. Subsubject Inventory
 
-| NN | Title | Document |
+| 9NN | Title | Document |
 |---:|---|---|
-| 00 | Overview (this file) | [`00_Overview.md`](./00_Overview.md) |
-| 01 | Gate Definition and Unitary Formalism | [`01_Gate-Definition-and-Unitary-Formalism.md`](./01_Gate-Definition-and-Unitary-Formalism.md) |
-| 02 | Single-Qubit Gates | [`02_Single-Qubit-Gates.md`](./02_Single-Qubit-Gates.md) |
-| 03 | Multi-Qubit Gates and Entangling Operations | [`03_Multi-Qubit-Gates-and-Entangling-Operations.md`](./03_Multi-Qubit-Gates-and-Entangling-Operations.md) |
-| 04 | Universal Gate Sets and Decomposition | [`04_Universal-Gate-Sets-and-Decomposition.md`](./04_Universal-Gate-Sets-and-Decomposition.md) |
-| 05 | Gate Implementation, Calibration and Error Characterization | [`05_Gate-Implementation-Calibration-and-Error-Characterization.md`](./05_Gate-Implementation-Calibration-and-Error-Characterization.md) |
+| 900 | Overview (this file) | [`900_Overview.md`](./900_Overview.md) |
+| 901 | Gate Definition and Unitary Formalism | [`901_Gate-Definition-and-Unitary-Formalism.md`](./901_Gate-Definition-and-Unitary-Formalism.md) |
+| 902 | Single-Qubit Gates | [`902_Single-Qubit-Gates.md`](./902_Single-Qubit-Gates.md) |
+| 903 | Multi-Qubit Gates and Entangling Operations | [`903_Multi-Qubit-Gates-and-Entangling-Operations.md`](./903_Multi-Qubit-Gates-and-Entangling-Operations.md) |
+| 904 | Universal Gate Sets and Decomposition | [`904_Universal-Gate-Sets-and-Decomposition.md`](./904_Universal-Gate-Sets-and-Decomposition.md) |
+| 905 | Gate Implementation, Calibration and Error Characterization | [`905_Gate-Implementation-Calibration-and-Error-Characterization.md`](./905_Gate-Implementation-Calibration-and-Error-Characterization.md) |
 
 ## 4. Footprint
 
@@ -63,13 +63,13 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.020.00 slice and li
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
 | Subsection | `020` — gates |
-| Subsubject | `00` — Overview |
+| Subsubject | `900` — Overview |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
 | Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/020_gates/` |
-| Document | `00_Overview.md` (this file) |
+| Document | `900_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

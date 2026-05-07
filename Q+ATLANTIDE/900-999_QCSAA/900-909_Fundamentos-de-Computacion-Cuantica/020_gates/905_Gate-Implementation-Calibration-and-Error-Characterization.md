@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-05-GATE-IMPLEMENTATION-CALIBRATION-AND-ERROR-CHARACTERIZATION
-title: "QCSAA 900-909 · 00.020.05 — Gate Implementation, Calibration and Error Characterization"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-905-GATE-IMPLEMENTATION-CALIBRATION-AND-ERROR-CHARACTERIZATION
+title: "QCSAA 900-909 · 00.020.905 — Gate Implementation, Calibration and Error Characterization"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,7 +15,7 @@ subject: "00"
 subject_title: "General Information"
 subsection: "020"
 subsection_title: "gates"
-subsubject: "05"
+subsubject: "905"
 subsubject_title: "Gate Implementation, Calibration and Error Characterization"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,11 +25,11 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 020 · Subsubject 05 — Gate Implementation, Calibration and Error Characterization
+# QCSAA 900-909 · Section 00 · Subsection 020 · Subsubject 905 — Gate Implementation, Calibration and Error Characterization
 
 ## 1. Purpose
 
-Records how the abstract gates of `01_`–`04_` are **physically realised** on each modality from [`../010_Qubits/02_Physical-Qubit-Implementations.md`](../010_Qubits/02_Physical-Qubit-Implementations.md), how they are **calibrated** to a target unitary, and how their **errors are characterised** (gate fidelity vs. operation fidelity, randomized benchmarking specific to gates, coherent vs. incoherent error decomposition). This subsubject also carries the **per-modality reality check** that the program's TRL claims have to land against: the (gate type) × (gate time) × (current fidelity) × (achievable fidelity) table in §3 is binding for any aerospace-integration argument that depends on gate-level performance.
+Records how the abstract gates of `901_`–`904_` are **physically realised** on each modality from [`../010_Qubits/02_Physical-Qubit-Implementations.md`](../010_Qubits/02_Physical-Qubit-Implementations.md), how they are **calibrated** to a target unitary, and how their **errors are characterised** (gate fidelity vs. operation fidelity, randomized benchmarking specific to gates, coherent vs. incoherent error decomposition). This subsubject also carries the **per-modality reality check** that the program's TRL claims have to land against: the (gate type) × (gate time) × (current fidelity) × (achievable fidelity) table in §3 is binding for any aerospace-integration argument that depends on gate-level performance.
 
 ## 2. Scope
 
@@ -46,7 +46,7 @@ Records how the abstract gates of `01_`–`04_` are **physically realised** on e
   - **Calibration loops.** Iterative tuning of pulse parameters (amplitude, frequency, duration, DRAG coefficient) against measured outcomes; canonical sequences include Rabi, Ramsey, AllXY, error amplification, and randomized benchmarking driven optimisation.
   - **Gate fidelity vs. operation fidelity.**
     - **Gate fidelity** $F(U_{\text{ideal}}, \mathcal{E}_{\text{actual}})$ — closeness of the implemented quantum operation to the ideal unitary, averaged or worst-case over input states.
-    - **Operation fidelity** — the same quantity in context, with measurement and reset errors included; this is what the algorithm sees and what the resource estimates of `04_` consume.
+    - **Operation fidelity** — the same quantity in context, with measurement and reset errors included; this is what the algorithm sees and what the resource estimates of `904_` consume.
     - These two numbers diverge whenever measurement/reset is non-negligible, and the divergence is what makes "99.9 % gate fidelity" not a sufficient claim by itself for aerospace-integration arguments.
   - **Randomized benchmarking specific to gates.** Standard RB measures average error per Clifford; **interleaved RB** isolates the error of a specific gate; **direct fidelity estimation** and **gate-set tomography** (GST) provide finer-grained characterisation when the noise structure matters.
   - **Coherent vs. incoherent gate errors.**
@@ -112,14 +112,14 @@ flowchart LR
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
 | Subsection | `020` — gates |
-| Subsubject | `05` — Gate Implementation, Calibration and Error Characterization |
+| Subsubject | `905` — Gate Implementation, Calibration and Error Characterization |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
 | Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/020_gates/` |
-| Document | `05_Gate-Implementation-Calibration-and-Error-Characterization.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`00_Overview.md`](./00_Overview.md) |
+| Document | `905_Gate-Implementation-Calibration-and-Error-Characterization.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`900_Overview.md`](./900_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
