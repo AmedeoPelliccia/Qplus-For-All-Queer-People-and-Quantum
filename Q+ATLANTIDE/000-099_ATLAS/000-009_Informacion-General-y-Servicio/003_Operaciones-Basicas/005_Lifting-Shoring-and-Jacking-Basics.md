@@ -31,7 +31,7 @@ language: en
 
 Introduces the **structural support operations** used to raise, stabilise, or level an aircraft during maintenance: **jacking** (raising the aircraft on hydraulic jacks), **shoring** (structural support during repair or when the primary structure is compromised), and **leveling** (establishing a horizontal reference plane). This subsubject establishes shared vocabulary and conceptual boundaries.
 
-> **Scope boundary:** This file is **introductory orientation** (Level 1). The step-by-step jacking, shoring, and leveling procedures — including jack positioning diagrams, load limits, jacking sequences, and safety checks — are in [`../../010-019_Manejo-en-Tierra-Servicio/016_Lifting-Shoring-Jacking-Procedures/`](../../010-019_Manejo-en-Tierra-Servicio/016_Lifting-Shoring-Jacking-Procedures/). Equivalent conventional ATA reference: ATA chapter 7.
+> **Scope boundary:** This file is **introductory orientation** (Level 1). The step-by-step jacking, shoring, and leveling procedures — including jack positioning diagrams, load limits, jacking sequences, and safety checks — are in [`../../010-019_Manejo-en-Tierra-Servicio/016_Lifting-Shoring-Jacking-Procedures/`](../../010-019_Manejo-en-Tierra-Servicio/016_Lifting-Shoring-Jacking-Procedures/). Equivalent conventional ATA reference: ATA chapters 7 and 8.
 
 ## 2. Scope
 
