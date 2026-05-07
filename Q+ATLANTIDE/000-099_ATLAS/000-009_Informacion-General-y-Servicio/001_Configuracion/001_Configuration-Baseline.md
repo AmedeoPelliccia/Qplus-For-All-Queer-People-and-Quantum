@@ -103,9 +103,55 @@ The digital thread in `300-399_DTCEC/` provides the traceability links that conn
 3. CSDB publication is triggered; effectivity filters applied (see `002_Effectivity-and-Applicability.md`).
 4. Baseline audit package assembled and stored in evidence archive.
 5. Downstream subsystem Code ranges notified via digital thread update.
-6. Baseline identifier published to `000_Identificacion/003_Configuration-Identification.md`.
+6. Baseline identifier published and cross-referenced in [`000_Identificacion/README.md`](../000_Identificacion/README.md) (subsection index for identification).
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart LR
+    G1["Gate 1<br/>Requirements Freeze"]:::gate
+    G2["Gate 2<br/>Architecture Freeze"]:::gate
+    G3["Gate 3<br/>PDR Freeze"]:::gate
+    G4["Gate 4<br/>CDR Freeze"]:::gate
+    G5["Gate 5<br/>TC / EIS"]:::gate
+
+    FBL["Functional Baseline<br/>(FBL)"]:::bl
+    ABL["Allocated Baseline<br/>(ABL)"]:::bl
+    DEVBL["Development<br/>Baseline"]:::intbl
+    MFGBL["Manufacturing<br/>Baseline"]:::intbl
+    PBL["Product Baseline<br/>(PBL)"]:::bl
+
+    G1 --> FBL --> G2 --> ABL --> G3 --> DEVBL --> G4 --> MFGBL --> G5 --> PBL
+
+    subgraph AGG["Top-Level Aggregation via Digital Thread"]
+        direction TB
+        S1["020-029 Core Systems"]:::sub
+        S2["040-049 Avionics"]:::sub
+        S3["050-059 Structures"]:::sub
+        S4["070-079 Propulsion"]:::sub
+        S5["080-089 Alt. Propulsion"]:::sub
+    end
+
+    S1 & S2 & S3 & S4 & S5 -->|"digital thread"| PBL
+
+    PLM["PLM<br/>(baseline trees)"]:::ext
+    CSDB["CSDB<br/>(publications)"]:::ext
+    DT["Digital Twin<br/>(300-399_DTCEC)"]:::ext
+
+    FBL -.-> PLM
+    ABL -.-> CSDB
+    PBL -.-> DT
+
+    classDef gate fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef bl fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef intbl fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef sub fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show the lifecycle gate → baseline progression; dotted arrows show baseline type → system synchronisation. Subsystem baselines aggregate into the top-level PBL via the digital thread.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -127,7 +173,7 @@ The digital thread in `300-399_DTCEC/` provides the traceability links that conn
 | Cross-ref: effectivity | [`002_Effectivity-and-Applicability.md`](./002_Effectivity-and-Applicability.md) |
 | Cross-ref: digital twin | `Q+ATLANTIDE/300-399_DTCEC/` |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

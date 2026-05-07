@@ -111,7 +111,49 @@ AMPEL360 shall support both modes. The authoritative effectivity data source is 
 
 The ACT, PCT and CCT defined in this document are the **single authoritative source** for applicability across all AMPEL360 CSDB publications. Downstream Code ranges (`020-029`, `040-049`, `050-059`, `070-079`, `080-089`) shall reference this document and shall not define independent applicability schemas. If a downstream range requires additional properties, a change request shall be submitted to Q-DATAGOV to extend the ACT here.
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart TB
+    PLM["PLM<br/>(source of PCT)"]:::ext
+    DT["Digital Twin<br/>(300-399_DTCEC)"]:::ext
+
+    subgraph TABLES["S1000D Applicability Tables"]
+        direction TB
+        ACT["ACT — Applicability Cross-Reference Table<br/>9 properties: product · variant · msn<br/>modStatus · operator · environment<br/>lutState · lcPhase · optAxis"]:::act
+        PCT["PCT — Product Cross-Reference Table<br/>MSN range → variant + modStatus + optAxis"]:::pct
+        CCT["CCT — Conditions Cross-Reference Table<br/>compound AND / OR / NOT expressions"]:::cct
+    end
+
+    PLM -->|"export at each baseline release"| PCT
+    ACT --> CCT
+    PCT --> CCT
+
+    DM["CSDB Data Modules<br/>(with applicability annotations)"]:::dm
+    CCT --> DM
+
+    PUBTIME["Publication-Time Resolution<br/>PCT snapshot → aircraft-specific publication"]:::res
+    OPTIME["Operation-Time Resolution<br/>Digital Twin live state → IETP runtime filter"]:::res
+
+    DM --> PUBTIME
+    DM --> OPTIME
+    DT -->|"lcPhase + modStatus"| OPTIME
+
+    DOWNSTREAM["Downstream Code Ranges<br/>020-029 · 040-049 · 050-059<br/>070-079 · 080-089"]:::down
+    CCT -.->|"single authoritative source<br/>(no local reinvention)"| DOWNSTREAM
+
+    classDef act fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef pct fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef cct fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef dm fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef res fill:#d5f5e3,stroke:#1e8449,color:#0b3d1e
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+    classDef down fill:#f0f0f0,stroke:#888,color:#222,stroke-dasharray:3 3
+```
+
+*Solid arrows show data flow; dotted arrows show governance authority. The CCT is the single authoritative filter applied to all CSDB data modules; downstream Code ranges must not define independent applicability schemas.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -133,7 +175,7 @@ The ACT, PCT and CCT defined in this document are the **single authoritative sou
 | Cross-ref: modification status | [`003_Modification-Status.md`](./003_Modification-Status.md) |
 | Cross-ref: digital twin | `Q+ATLANTIDE/300-399_DTCEC/` |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

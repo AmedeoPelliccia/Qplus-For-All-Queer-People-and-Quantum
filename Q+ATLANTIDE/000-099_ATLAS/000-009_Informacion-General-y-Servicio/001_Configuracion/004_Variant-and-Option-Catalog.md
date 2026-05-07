@@ -109,7 +109,55 @@ Common items shared across variants are maintained in a **shared component libra
 
 Modifications to common library items require CCB approval from all variant programmes using the item. Procedure defined in `005_Configuration-Control-and-Change-Management.md` §2.5.
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart TB
+    LIB["Shared Component Library<br/>(common items — linked, not duplicated)"]:::lib
+
+    subgraph CIVIL["Civil Production"]
+        direction LR
+        Q100["BWB-Q100<br/>Q100 · 180–220 pax"]:::prod
+        Q250["BWB-Q250<br/>Q250 · 280–320 pax"]:::prod
+    end
+
+    subgraph DEV["Development"]
+        direction LR
+        BWBe["BWB-e<br/>Hybrid-Electric"]:::dev
+        MRTT["Q300-MRTT<br/>Military Tanker Transport"]:::mil
+    end
+
+    subgraph DEMO["Concept / Demonstrators"]
+        direction LR
+        CITY["City<br/>Urban Air Mobility"]:::concept
+        SC["SkyCleaner<br/>Atmospheric Remediation"]:::demo
+        H2["BWB-H2<br/>Hydrogen Demonstrator"]:::demo
+    end
+
+    Q100 --- LIB
+    Q250 --- LIB
+    BWBe --- LIB
+    MRTT --- LIB
+    CITY --- LIB
+    SC --- LIB
+    H2 --- LIB
+
+    AD001["AD-001: Separate configuration trees per variant<br/>Common items referenced via shared library"]:::decision
+
+    LIB -.- AD001
+
+    classDef lib fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef prod fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef dev fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef mil fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef concept fill:#d5f5e3,stroke:#1e8449,color:#0b3d1e
+    classDef demo fill:#fdebd0,stroke:#b9770e,color:#5a3b00
+    classDef decision fill:#fff4dd,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Each variant has its own independent configuration tree (Decision AD-001). Common items connect to the shared library (solid lines) — they are linked, never duplicated. The library change procedure requires TL-CCB approval from all affected variant programmes.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -131,7 +179,7 @@ Modifications to common library items require CCB approval from all variant prog
 | Cross-ref: CCB | [`005_Configuration-Control-and-Change-Management.md`](./005_Configuration-Control-and-Change-Management.md) |
 | Architectural decision | AD-001 — Separate variant trees (recorded in §2.3) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

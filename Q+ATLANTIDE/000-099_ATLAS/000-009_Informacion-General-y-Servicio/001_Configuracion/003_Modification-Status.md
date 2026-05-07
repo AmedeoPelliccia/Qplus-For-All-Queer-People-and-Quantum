@@ -103,7 +103,46 @@ The full configuration lifecycle of an individual aircraft is captured across fo
 
 Discrepancies between these states shall be recorded as open deviations in PLM and tracked until resolved or accepted by the competent authority.
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> DRAFT : Change identified
+    DRAFT --> REVIEW : Impact assessment initiated
+    REVIEW --> CCB_APPROVED : Class I — TL-CCB approval
+    REVIEW --> RELEASED : Class II — Subsystem CCB release
+    CCB_APPROVED --> RELEASED : ECO released to production
+    RELEASED --> EMBODIED : First aircraft embodiment
+    EMBODIED --> FLEET_COMPLETE : All affected MSNs embodied
+    FLEET_COMPLETE --> CLOSED : Close-out verified
+    REVIEW --> [*] : Rejected by CCB
+```
+
+```mermaid
+flowchart LR
+    ADESIGNED["As-Designed<br/>(PLM engineering release)"]:::state
+    ABUILT["As-Built<br/>(PLM manufacturing record)"]:::state
+    ADELIVERED["As-Delivered<br/>(delivery documentation)"]:::state
+    AMAINTAINED["As-Maintained<br/>(Digital Twin + operator records)"]:::state
+
+    ADESIGNED -->|"manufacturing<br/>deviations / concessions"| ABUILT
+    ABUILT -->|"pre-delivery mods<br/>+ customer options"| ADELIVERED
+    ADELIVERED -->|"SBs · repairs<br/>operator mods"| AMAINTAINED
+
+    DEV["Open Deviation<br/>(tracked in PLM)"]:::dev
+
+    ADESIGNED -.->|"discrepancy"| DEV
+    ABUILT -.->|"discrepancy"| DEV
+    ADELIVERED -.->|"discrepancy"| DEV
+
+    classDef state fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef dev fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Top diagram: ECO lifecycle state machine. Bottom diagram: aircraft configuration states across its lifecycle; dotted arrows indicate discrepancy-tracking deviations recorded in PLM.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -124,7 +163,7 @@ Discrepancies between these states shall be recorded as open deviations in PLM a
 | Cross-ref: change control | [`005_Configuration-Control-and-Change-Management.md`](./005_Configuration-Control-and-Change-Management.md) |
 | Cross-ref: digital twin | `Q+ATLANTIDE/300-399_DTCEC/` |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

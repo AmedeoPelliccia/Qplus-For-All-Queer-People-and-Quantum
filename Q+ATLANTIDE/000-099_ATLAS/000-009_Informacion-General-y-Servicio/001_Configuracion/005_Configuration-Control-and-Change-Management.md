@@ -59,41 +59,37 @@ Class determination shall be documented in the impact assessment (§2.3) before 
 
 ### 2.3 Impact Assessment Workflow
 
-```
-1. CHANGE INITIATION
-   ├── Initiator submits Change Request (CR) in PLM
-   ├── CR fields: title, description, source (Q-Division / operator / regulator),
-   │             affected Code range(s), preliminary class estimate
-   └── CR assigned to Engineering Review Group (ERG)
+```mermaid
+flowchart TB
+    CR["Change Request (CR)<br/>submitted in PLM"]:::step
+    ERG["Engineering Review Group<br/>impact analysis across FBL · ABL<br/>weight/CG · cert. basis · effectivity<br/>common library cross-variant impact"]:::step
+    CLASS{{"Class I or II?"}}:::decision
 
-2. ENGINEERING REVIEW
-   ├── ERG performs impact analysis across:
-   │   ├── Functional Baseline (requirements impact)
-   │   ├── Allocated Baseline (subsystem allocation impact)
-   │   ├── Weight / CG / performance (aerodynamics impact)
-   │   ├── Certification basis (airworthiness impact)
-   │   ├── Effectivity / applicability rules (fleet impact)
-   │   └── Common component library (cross-variant impact)
-   ├── ERG classifies change (Class I / II)
-   └── ERG produces Impact Assessment Report (IAR)
+    TLCCB["TL-CCB Review<br/>quorum: Q-DATAGOV + Q-Division + ORB-PMO"]:::ccb
+    SSCCB["Subsystem CCB<br/>Review"]:::step
 
-3. CCB REVIEW
-   ├── Class I → TL-CCB (quorum: Q-DATAGOV + affected Q-Division + ORB-PMO)
-   ├── Class II → Subsystem CCB (escalation path to TL-CCB if impact discovered)
-   ├── CCB decision: APPROVE / REJECT / DEFER / REQUEST-MORE-INFO
-   └── CCB resolution recorded with sequential resolution number
+    DEC{{"Decision"}}:::decision
+    REJECT(["Rejected / Deferred"]):::terminal
 
-4. IMPLEMENTATION
-   ├── ECO created in PLM (see 003_Modification-Status.md §2.4)
-   ├── Drawings, specifications, PLM updated
-   ├── CSDB updated; effectivity filters revised if applicable
-   ├── Digital twin configuration state updated (300-399_DTCEC/)
-   └── Evidence package updated
+    ECO["ECO Created in PLM"]:::step
+    IMPL["Update: Drawings · PLM<br/>CSDB · Digital Twin<br/>Evidence Package"]:::step
+    CLOSE["Close-Out: MSA update<br/>FCA / PCA · CR / ECO closed"]:::step
 
-5. CLOSE-OUT
-   ├── Verify embodiment on affected aircraft (MSA update)
-   ├── FCA / PCA conducted (§2.4)
-   └── CR / ECO closed in PLM
+    CR --> ERG
+    ERG --> CLASS
+    CLASS -->|"Class I"| TLCCB
+    CLASS -->|"Class II"| SSCCB
+    TLCCB --> DEC
+    SSCCB --> DEC
+    DEC -->|"Approved"| ECO
+    DEC -->|"Rejected / Deferred"| REJECT
+    ECO --> IMPL
+    IMPL --> CLOSE
+
+    classDef step fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef ccb fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef decision fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef terminal fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
 ```
 
 ### 2.4 Functional Configuration Audit (FCA) and Physical Configuration Audit (PCA)
@@ -145,7 +141,30 @@ Synchronisation procedure:
 4. Discrepancy detection: automated delta report generated between PLM as-built record and digital twin as-maintained state. Discrepancies raised as open items in PLM.
 5. Evidence package updated with synchronisation audit trail.
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart LR
+    PLM["PLM<br/>(design config truth<br/>baseline trees · ECO · MSA)"]:::sys
+    CSDB["CSDB<br/>(publications truth<br/>effectivity filters · DMs)"]:::sys
+    DT["Digital Twin<br/>300-399_DTCEC<br/>(as-maintained truth<br/>per MSN)"]:::sys
+
+    PLM -->|"ECO release triggers<br/>PCT + ACT export"| CSDB
+    CSDB -->|"publication output<br/>checked vs PLM MSA"| PLM
+    PLM -->|"embodiment record /<br/>factory data"| DT
+    DT -->|"operator SB compliance<br/>maintenance events"| PLM
+
+    DELTA["Automated Delta Report<br/>(PLM as-built vs DT as-maintained)<br/>open items raised in PLM"]:::alert
+
+    PLM & DT -.-> DELTA
+
+    classDef sys fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef alert fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Top diagram: CCB impact assessment workflow (§2.3). Bottom diagram: PLM / CSDB / Digital Twin synchronisation model (§2.6). The three systems form a closed loop; discrepancies surface as open items in PLM.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -168,7 +187,7 @@ Synchronisation procedure:
 | Cross-ref: variant catalog | [`004_Variant-and-Option-Catalog.md`](./004_Variant-and-Option-Catalog.md) |
 | Cross-ref: digital twin | `Q+ATLANTIDE/300-399_DTCEC/` |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 
