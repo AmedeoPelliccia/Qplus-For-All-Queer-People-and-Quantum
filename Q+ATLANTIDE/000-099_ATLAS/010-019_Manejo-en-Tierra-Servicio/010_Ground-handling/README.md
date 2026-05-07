@@ -57,7 +57,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `010-019` |
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `010` — Ground Handling |
-| Subsubject namespace | `00`–`05` (6 populated) |
+| Subsubject namespace | `00`–`05` (6 subsubjects: 00–05 active) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
