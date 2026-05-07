@@ -28,7 +28,7 @@ Declares the **acyclic dependency graph** of the `900-909` foundational range of
 ## 2. Scope
 
 - Covers the section-level reading order for the foundational QCSAA range `900-909` only. Subsection-level indices live in each subsection's own `README.md`.
-- Inherits Q-Division authority and ORB support from the parent row in [`README.md` §3](./README.md)[^archtable].
+- Inherits Q-Division authority and ORB support from the parent row in [`README.md` §3](../README.md#3-architecture-table)[^archtable].
 
 ## 3. Dependency Graph and Reading Order
 
