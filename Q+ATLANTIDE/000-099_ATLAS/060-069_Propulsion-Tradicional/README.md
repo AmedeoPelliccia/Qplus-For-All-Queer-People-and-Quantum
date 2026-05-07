@@ -50,7 +50,61 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `068` | Engine Indicating | [`068_Engine-Indicating/`](./068_Engine-Indicating/) | active |
 | `069` | Exhaust, Oil and Starting | [`069_Exhaust-Oil-and-Starting/`](./069_Exhaust-Oil-and-Starting/) | active |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    PARENT["ATLAS-1000<br/>(`000–099` master range)"]:::parent
+    SEC["Section 06 · 060-069<br/>Propulsión Tradicional"]:::sec
+    PARENT --> SEC
+
+    subgraph SUBS["Subsections"]
+        direction LR
+        SUB_060["060 — Standard Practices — Propeller/Rotor (ATA 60)"]:::sub
+        SUB_061["061 — Propellers & Propulsors (ATA 61)"]:::sub
+        SUB_062["062 — Power Plant (ATA 71)"]:::sub
+        SUB_063["063 — Engine — Turbine (ATA 72)"]:::sub
+        SUB_064["064 — Engine Fuel & Control (ATA 73)"]:::sub
+        SUB_065["065 — Ignition (ATA 74)"]:::sub
+        SUB_066["066 — Air Compressor (ATA 75)"]:::sub
+        SUB_067["067 — Engine Controls (ATA 76)"]:::sub
+        SUB_068["068 — Engine Indicating (ATA 77)"]:::sub
+        SUB_069["069 — Exhaust, Oil & Starting (ATA 78–80)"]:::sub
+    end
+    SEC --> SUBS
+
+    QPRIM["Q-GREENTECH<br/>(primary Q-Division)"]:::qdiv
+    QSUPP["Q-MECHANICS, Q-AIR, Q-INDUSTRY<br/>(support Q-Divisions)"]:::qdiv
+    ORB["ORB-PMO, ORB-FIN<br/>(ORB support)"]:::orb
+
+    SEC --> QPRIM
+    SEC -.-> QSUPP
+    SEC -.-> ORB
+
+    SUBS --> SUB_060
+    SUBS --> SUB_061
+    SUBS --> SUB_062
+    SUBS --> SUB_063
+    SUBS --> SUB_064
+    SUBS --> SUB_065
+    SUBS --> SUB_066
+    SUBS --> SUB_067
+    SUBS --> SUB_068
+    SUBS --> SUB_069
+    EXT_S07["§07 · Hybrid-Electric (070-079)"]:::ext
+    SUB_062 -. "hybrid integration" .- EXT_S07
+
+    classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -72,7 +126,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections under this section inherit `architecture_code = ATLAS`, `primary_q_division = Q-GREENTECH` and `governance_class = baseline` from this section header. Templates declared in this section must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
 
-## 5. References & Citations
+## 6. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 

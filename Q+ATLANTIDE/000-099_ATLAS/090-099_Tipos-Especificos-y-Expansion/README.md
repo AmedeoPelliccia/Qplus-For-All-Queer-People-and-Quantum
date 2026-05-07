@@ -50,7 +50,61 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `098` | Cross-Type Common Architectures | [`098_Cross-Type-Common-Architectures/`](./098_Cross-Type-Common-Architectures/) | active |
 | `099` | Type Identification and Designator Registry | [`099_Type-Identification-and-Designator-Registry/`](./099_Type-Identification-and-Designator-Registry/) | active |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    PARENT["ATLAS-1000<br/>(`000–099` master range)"]:::parent
+    SEC["Section 09 · 090-099<br/>Tipos Específicos & Expansión"]:::sec
+    PARENT --> SEC
+
+    subgraph SUBS["Subsections"]
+        direction LR
+        SUB_090["090 — AMPEL360e Tube-and-Wing Family"]:::sub
+        SUB_091["091 — AMPEL360 BWB Q100-Q250"]:::sub
+        SUB_092["092 — AMPEL360 BWB H₂ Demonstrator"]:::sub
+        SUB_093["093 — AMPEL360 Q300 MRTT Tanker/Transport"]:::sub
+        SUB_094["094 — AMPEL360 City eVTOL — UAM"]:::sub
+        SUB_095["095 — AMPEL360 Sky-Cleaner — Environmental"]:::sub
+        SUB_096["096 — Type-Specific Variant Catalog"]:::sub
+        SUB_097["097 — Expansion — Reserved Future Programs"]:::sub
+        SUB_098["098 — Cross-Type Common Architectures"]:::sub
+        SUB_099["099 — Type Identification & Designator Registry"]:::sub
+    end
+    SEC --> SUBS
+
+    QPRIM["Q-HORIZON<br/>(primary Q-Division)"]:::qdiv
+    QSUPP["Q-AIR, Q-STRUCTURES, Q-GREENTECH<br/>(support Q-Divisions)"]:::qdiv
+    ORB["ORB-PMO, ORB-MKTG<br/>(ORB support)"]:::orb
+
+    SEC --> QPRIM
+    SEC -.-> QSUPP
+    SEC -.-> ORB
+
+    SUBS --> SUB_090
+    SUBS --> SUB_091
+    SUBS --> SUB_092
+    SUBS --> SUB_093
+    SUBS --> SUB_094
+    SUBS --> SUB_095
+    SUBS --> SUB_096
+    SUBS --> SUB_097
+    SUBS --> SUB_098
+    SUBS --> SUB_099
+    EXT_S07["§07 · H₂ Storage/Distribution"]:::ext
+    SUB_092 -. "H₂ demonstrator" .- EXT_S07
+
+    classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -72,7 +126,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections under this section inherit `architecture_code = ATLAS`, `primary_q_division = Q-HORIZON` and `governance_class = baseline` from this section header. Templates declared in this section must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
 
-## 5. References & Citations
+## 6. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 

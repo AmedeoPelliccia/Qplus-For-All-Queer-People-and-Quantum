@@ -46,7 +46,55 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `014` | Parking | [`014_Parking/`](./014_Parking/) | active |
 | `015` | Ground Support Equipment | [`015_GSE/`](./015_GSE/) | active |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    PARENT["ATLAS-1000<br/>(`000–099` master range)"]:::parent
+    SEC["Section 01 · 010-019<br/>Manejo en Tierra & Servicio"]:::sec
+    PARENT --> SEC
+
+    subgraph SUBS["Subsections"]
+        direction LR
+        SUB_010["010 — Ground Handling"]:::sub
+        SUB_011["011 — Servicing"]:::sub
+        SUB_012["012 — Acceso"]:::sub
+        SUB_013["013 — Remolque"]:::sub
+        SUB_014["014 — Parking"]:::sub
+        SUB_015["015 — GSE"]:::sub
+    end
+    SEC --> SUBS
+
+    QPRIM["Q-GROUND<br/>(primary Q-Division)"]:::qdiv
+    QSUPP["Q-MECHANICS, Q-INDUSTRY<br/>(support Q-Divisions)"]:::qdiv
+    ORB["ORB-PMO, ORB-FIN<br/>(ORB support)"]:::orb
+
+    SEC --> QPRIM
+    SEC -.-> QSUPP
+    SEC -.-> ORB
+
+    SUBS --> SUB_010
+    SUBS --> SUB_011
+    SUBS --> SUB_012
+    SUBS --> SUB_013
+    SUBS --> SUB_014
+    SUBS --> SUB_015
+    EXT_S00["§00 · Operaciones Básicas (003)"]:::ext
+    SUB_011 -. "fluids/gases" .- EXT_S00
+    EXT_S03["§03 · Landing Gear (031)"]:::ext
+    SUB_013 -. "tow / taxi loads" .- EXT_S03
+
+    classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -68,7 +116,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections under this section inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from this section header. Templates declared in this section must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
 
-## 5. References & Citations
+## 6. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 

@@ -50,7 +50,62 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `088` | Beyond-2040 Concepts (Reserved) | [`088_Beyond-2040-Concepts-Reserved/`](./088_Beyond-2040-Concepts-Reserved/) | active |
 | `089` | Propulsion AI Optimization Hooks | [`089_Propulsion-AI-Optimization-Hooks/`](./089_Propulsion-AI-Optimization-Hooks/) | active |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    PARENT["ATLAS-1000<br/>(`000–099` master range)"]:::parent
+    SEC["Section 08 · 080-089<br/>Propulsión Alternativa & Cuántica"]:::sec
+    PARENT --> SEC
+
+    subgraph SUBS["Subsections"]
+        direction LR
+        SUB_080["080 — Quantum Sensing for Propulsion"]:::sub
+        SUB_081["081 — Quantum-Optimized Combustion Models"]:::sub
+        SUB_082["082 — Plasma & Ionic Propulsion Concepts"]:::sub
+        SUB_083["083 — Solar-Electric Auxiliary"]:::sub
+        SUB_084["084 — Hybrid Architectures — Beyond Gen-2"]:::sub
+        SUB_085["085 — Distributed Electric Propulsion Architecture"]:::sub
+        SUB_086["086 — Boundary Layer Ingestion Propulsion"]:::sub
+        SUB_087["087 — Open Rotor & Counter-Rotating"]:::sub
+        SUB_088["088 — Beyond-2040 Concepts (Reserved)"]:::sub
+        SUB_089["089 — Propulsion AI Optimization Hooks"]:::sub
+    end
+    SEC --> SUBS
+
+    QPRIM["Q-GREENTECH<br/>(primary Q-Division)"]:::qdiv
+    QSUPP["Q-HORIZON, Q-HPC, Q-STRUCTURES<br/>(support Q-Divisions)"]:::qdiv
+    ORB["ORB-PMO, ORB-LEG, ORB-FIN<br/>(ORB support)"]:::orb
+
+    SEC --> QPRIM
+    SEC -.-> QSUPP
+    SEC -.-> ORB
+
+    SUBS --> SUB_080
+    SUBS --> SUB_081
+    SUBS --> SUB_082
+    SUBS --> SUB_083
+    SUBS --> SUB_084
+    SUBS --> SUB_085
+    SUBS --> SUB_086
+    SUBS --> SUB_087
+    SUBS --> SUB_088
+    SUBS --> SUB_089
+    EXT_QCSAA["QCSAA 900-999<br/>(Quantum register)"]:::ext
+    SUB_080 -. "QCSAA 940-949" .- EXT_QCSAA
+    SUB_089 -. "QCSAA 910-919" .- EXT_QCSAA
+
+    classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -72,7 +127,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections under this section inherit `architecture_code = ATLAS`, `primary_q_division = Q-GREENTECH` and `governance_class = baseline` from this section header. Templates declared in this section must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
 
-## 5. References & Citations
+## 6. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 

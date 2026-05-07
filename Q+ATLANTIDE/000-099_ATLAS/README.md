@@ -77,7 +77,83 @@ Sub-ranges within this band, sourced from the Q+ATLANTIDE controlled baseline[^b
 | 080–089 | 08 | Propulsión Alternativa & Cuántica | 00 | General Information | LH₂, fuel cells, HVDC, superconductores, Q-sensing | Q-GREENTECH | Q-HORIZON, Q-HPC, Q-STRUCTURES | ORB-PMO, ORB-LEG, ORB-FIN |
 | 090–099 | 09 | Tipos Específicos & Expansión | 00 | General Information | Variantes BWB/WTW, demostradores, clases especiales de aeronaves | Q-HORIZON | Q-AIR, Q-STRUCTURES, Q-GREENTECH | ORB-PMO, ORB-MKTG |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    BASELINE["Q+ATLANTIDE baseline<br/>(controlled `000-999` taxonomy)"]:::baseline
+    ATLAS["ATLAS-1000 register<br/>master range `000–099`"]:::register
+    BASELINE --> ATLAS
+
+    subgraph SECTIONS["ATLAS sections (10 sub-ranges)"]
+        direction LR
+        S00["00 · 000-009<br/>Información General y Servicio"]:::sec
+        S01["01 · 010-019<br/>Manejo en Tierra & Servicio"]:::sec
+        S02["02 · 020-029<br/>Sistemas Core de Aeronave"]:::sec
+        S03["03 · 030-039<br/>Protección & Sist. Mecánicos"]:::sec
+        S04["04 · 040-049<br/>Aviónica, Información & APU"]:::sec
+        S05["05 · 050-059<br/>Estructuras Primarias e Interfaces"]:::sec
+        S06["06 · 060-069<br/>Propulsión Tradicional"]:::sec
+        S07["07 · 070-079<br/>Propulsión Eco-Tech & Híbrido-Eléctrica"]:::sec
+        S08["08 · 080-089<br/>Propulsión Alternativa & Cuántica"]:::sec
+        S09["09 · 090-099<br/>Tipos Específicos & Expansión"]:::sec
+    end
+    ATLAS --> SECTIONS
+
+    subgraph QDIV["Q-Divisions — technical authority (rule N-002)"]
+        direction LR
+        QAIR[Q-AIR]:::qdiv
+        QDATA[Q-DATAGOV]:::qdiv
+        QGND[Q-GROUND]:::qdiv
+        QMECH[Q-MECHANICS]:::qdiv
+        QSTR[Q-STRUCTURES]:::qdiv
+        QGT[Q-GREENTECH]:::qdiv
+        QHOR[Q-HORIZON]:::qdiv
+    end
+
+    subgraph ORB["ORB-Functions — enterprise support (rule N-002)"]
+        direction LR
+        OPMO[ORB-PMO]:::orb
+        OFIN[ORB-FIN]:::orb
+        OLEG[ORB-LEG]:::orb
+        OMKTG[ORB-MKTG]:::orb
+        OCSR[ORB-CSR]:::orb
+    end
+
+    %% Primary Q-Division ownership per section
+    S00 --> QDATA
+    S01 --> QGND
+    S02 --> QAIR
+    S03 --> QMECH
+    S04 --> QDATA
+    S05 --> QSTR
+    S06 --> QGT
+    S07 --> QGT
+    S08 --> QGT
+    S09 --> QHOR
+
+    %% ORB enterprise support (every section is PMO-supported)
+    SECTIONS -.-> ORB
+
+    %% Notable cross-section interfaces (rule N-005, structural & energy)
+    S05 -. "structural interfaces<br/>(rule N-005)" .- S02
+    S05 -. structural .- S06
+    S05 -. structural .- S07
+    S05 -. structural .- S09
+    S02 -. "ATA 28 ↔ LH₂" .- S07
+    S07 -. "H₂ / fuel cell" .- S08
+    S04 -. "AI/ML hooks" .- S08
+
+    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff,stroke-width:2px
+    classDef register fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+```
+
+*Solid arrows denote primary Q-Division ownership (rule N-002); dotted arrows denote notable cross-section technical interfaces (e.g. structural interfaces from §05 per rule N-005, fuel/energy continuity from ATA 28 to H₂ storage in §07–§08, and AI/ML hooks from §04 to §08).*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -98,7 +174,7 @@ Sub-ranges within this band, sourced from the Q+ATLANTIDE controlled baseline[^b
 
 Governed by [`organization/Q+ATLANTIDE.md`](../../organization/Q+ATLANTIDE.md)[^baseline]. Templates declared in this band must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
 
-## 5. References & Citations
+## 6. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.

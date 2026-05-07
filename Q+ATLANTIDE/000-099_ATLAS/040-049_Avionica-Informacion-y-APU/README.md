@@ -47,7 +47,55 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `045` | AI/ML Models Onboard | [`045_AI-ML-Models-Onboard/`](./045_AI-ML-Models-Onboard/) | active |
 | `046` | Synthetic Data Validation | [`046_Synthetic-Data-Validation/`](./046_Synthetic-Data-Validation/) | active |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    PARENT["ATLAS-1000<br/>(`000–099` master range)"]:::parent
+    SEC["Section 04 · 040-049<br/>Aviónica, Información & APU"]:::sec
+    PARENT --> SEC
+
+    subgraph SUBS["Subsections"]
+        direction LR
+        SUB_040["040 — Integrated Modular Avionics (ATA 42)"]:::sub
+        SUB_041["041 — Central Maintenance System (ATA 45)"]:::sub
+        SUB_042["042 — Information Systems (ATA 46)"]:::sub
+        SUB_043["043 — Airborne Auxiliary Power (ATA 49)"]:::sub
+        SUB_044["044 — Cargo & Accessory Compartments (ATA 50)"]:::sub
+        SUB_045["045 — AI/ML Models Onboard (ATA 95)"]:::sub
+        SUB_046["046 — Synthetic Data Validation (ATA 97)"]:::sub
+    end
+    SEC --> SUBS
+
+    QPRIM["Q-DATAGOV<br/>(primary Q-Division)"]:::qdiv
+    QSUPP["Q-AIR, Q-SPACE, Q-HPC<br/>(support Q-Divisions)"]:::qdiv
+    ORB["ORB-PMO, ORB-LEG<br/>(ORB support)"]:::orb
+
+    SEC --> QPRIM
+    SEC -.-> QSUPP
+    SEC -.-> ORB
+
+    SUBS --> SUB_040
+    SUBS --> SUB_041
+    SUBS --> SUB_042
+    SUBS --> SUB_043
+    SUBS --> SUB_044
+    SUBS --> SUB_045
+    SUBS --> SUB_046
+    EXT_S08["§08 · Propulsion AI Hooks (089)"]:::ext
+    SUB_045 -. "AI/ML hooks" .- EXT_S08
+
+    classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -69,7 +117,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections under this section inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from this section header. Templates declared in this section must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
 
-## 5. References & Citations
+## 6. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 

@@ -50,7 +50,63 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `028` | Hydraulic Power | [`028_Hydraulic-Power/`](./028_Hydraulic-Power/) | active |
 | `029` | Indicating, Recording and Cabin Systems | [`029_Indicating-Recording-and-Cabin-Systems/`](./029_Indicating-Recording-and-Cabin-Systems/) | active |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    PARENT["ATLAS-1000<br/>(`000–099` master range)"]:::parent
+    SEC["Section 02 · 020-029<br/>Sistemas Core de Aeronave"]:::sec
+    PARENT --> SEC
+
+    subgraph SUBS["Subsections"]
+        direction LR
+        SUB_020["020 — Air Cond. & Press. (ATA 21)"]:::sub
+        SUB_021["021 — Auto Flight (ATA 22)"]:::sub
+        SUB_022["022 — Communications (ATA 23)"]:::sub
+        SUB_023["023 — Electrical Power (ATA 24)"]:::sub
+        SUB_024["024 — Equipment & Furnishings (ATA 25)"]:::sub
+        SUB_025["025 — Fire Protection (ATA 26)"]:::sub
+        SUB_026["026 — Flight Controls (ATA 27)"]:::sub
+        SUB_027["027 — Fuel & Energy Storage (ATA 28)"]:::sub
+        SUB_028["028 — Hydraulic Power (ATA 29)"]:::sub
+        SUB_029["029 — Indicating/Recording/Cabin (ATA 31, 44)"]:::sub
+    end
+    SEC --> SUBS
+
+    QPRIM["Q-AIR<br/>(primary Q-Division)"]:::qdiv
+    QSUPP["Q-MECHANICS, Q-DATAGOV, Q-GREENTECH<br/>(support Q-Divisions)"]:::qdiv
+    ORB["ORB-PMO, ORB-LEG<br/>(ORB support)"]:::orb
+
+    SEC --> QPRIM
+    SEC -.-> QSUPP
+    SEC -.-> ORB
+
+    SUBS --> SUB_020
+    SUBS --> SUB_021
+    SUBS --> SUB_022
+    SUBS --> SUB_023
+    SUBS --> SUB_024
+    SUBS --> SUB_025
+    SUBS --> SUB_026
+    SUBS --> SUB_027
+    SUBS --> SUB_028
+    SUBS --> SUB_029
+    EXT_S07["§07 · H₂ Storage (076)"]:::ext
+    SUB_027 -. "ATA 28 ↔ LH₂" .- EXT_S07
+    EXT_S04["§04 · IMA (040)"]:::ext
+    SUB_021 -. "avionics bus" .- EXT_S04
+
+    classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -72,7 +128,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections under this section inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from this section header. Templates declared in this section must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
 
-## 5. References & Citations
+## 6. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 

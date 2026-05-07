@@ -44,7 +44,47 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `002` | Documentación General | [`002_Documentacion-General/`](./002_Documentacion-General/) | active |
 | `003` | Operaciones Básicas | [`003_Operaciones-Basicas/`](./003_Operaciones-Basicas/) | active |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    PARENT["ATLAS-1000<br/>(`000–099` master range)"]:::parent
+    SEC["Section 00 · 000-009<br/>Información General y Servicio"]:::sec
+    PARENT --> SEC
+
+    subgraph SUBS["Subsections"]
+        direction LR
+        SUB_000["000 — Identificación"]:::sub
+        SUB_001["001 — Configuración"]:::sub
+        SUB_002["002 — Documentación General"]:::sub
+        SUB_003["003 — Operaciones Básicas"]:::sub
+    end
+    SEC --> SUBS
+
+    QPRIM["Q-DATAGOV<br/>(primary Q-Division)"]:::qdiv
+    QSUPP["Q-GROUND, Q-AIR<br/>(support Q-Divisions)"]:::qdiv
+    ORB["ORB-PMO, ORB-LEG<br/>(ORB support)"]:::orb
+
+    SEC --> QPRIM
+    SEC -.-> QSUPP
+    SEC -.-> ORB
+
+    SUBS --> SUB_000
+    SUBS --> SUB_001
+    SUBS --> SUB_002
+    SUBS --> SUB_003
+
+    classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -66,7 +106,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections under this section inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from this section header. Templates declared in this section must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
 
-## 5. References & Citations
+## 6. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 
