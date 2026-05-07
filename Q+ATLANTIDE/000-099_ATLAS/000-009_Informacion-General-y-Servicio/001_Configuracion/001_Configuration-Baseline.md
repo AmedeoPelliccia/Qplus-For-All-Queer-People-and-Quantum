@@ -98,7 +98,7 @@ The digital thread in `300-399_DTCEC/` provides the traceability links that conn
 
 ### 2.5 Freeze and Release Procedure
 
-1. CCB authorises baseline freeze (resolution logged in `005_CCB-procedures`).
+1. CCB authorises baseline freeze (resolution logged in `005_Configuration-Control-and-Change-Management.md`).
 2. PLM baseline is tagged and set to `FROZEN` status — no further changes without Class I change order.
 3. CSDB publication is triggered; effectivity filters applied (see `002_Effectivity-and-Applicability.md`).
 4. Baseline audit package assembled and stored in evidence archive.
