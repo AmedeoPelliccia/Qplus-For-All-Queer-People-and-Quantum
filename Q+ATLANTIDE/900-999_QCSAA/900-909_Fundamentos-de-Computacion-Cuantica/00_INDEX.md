@@ -37,7 +37,7 @@ flowchart LR
     A["900_Qubits/<br/><i>atomic unit</i>"] --> B["020_gates/<br/><i>unitary operations<br/>on qubits</i>"]
     B --> C["030_circuits/<br/><i>composition of gates<br/>into programs</i>"]
     C --> D["040_quantum-algorithms/<br/><i>problem-specific<br/>constructions</i>"]
-    D --> E["050_foundations/<br/><i>computability,<br/>complexity, models</i>"]
+    D --> E["904_foundations/<br/><i>state, dynamics, measurement,<br/>information limits, complexity,<br/>assurance</i>"]
 ```
 
 Read in the order shown. Every chapter to the right relies on definitions from the chapters to its left and **shall not redefine** them; back-references into a specific subsubject of an upstream chapter are required.
@@ -50,7 +50,7 @@ Read in the order shown. Every chapter to the right relies on definitions from t
 | 2 | `020` | Gates | [`020_gates/README.md`](./020_gates/README.md) | Unitary operations on qubits |
 | 3 | `030` | Circuits | [`030_circuits/900_Overview.md`](./030_circuits/900_Overview.md) | Composition of gates into programs |
 | 4 | `040` | Quantum Algorithms | [`040_quantum-algorithms/00_Overview.md`](./040_quantum-algorithms/00_Overview.md) | Problem-specific constructions |
-| 5 | `050` | Foundations | [`050_foundations/00_Overview.md`](./050_foundations/00_Overview.md) | Computability, complexity, models |
+| 5 | `904` | Foundations | [`904_foundations/000_Overview.md`](./904_foundations/000_Overview.md) | State space, dynamics, measurement, information limits, complexity, assurance |
 
 ## 5. Authoring Convention (Register-Wide)
 

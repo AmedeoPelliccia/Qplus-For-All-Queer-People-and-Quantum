@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-050-00-OVERVIEW
-title: "QCSAA 900-909 · 00.050.00 — foundations"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-904-000-OVERVIEW
+title: "QCSAA 900-909 · 00.904.000 — Foundations"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "050"
-subsection_title: "foundations"
-subsubject: "00"
+subsection: "904"
+subsection_title: "Foundations"
+subsubject: "000"
 subsubject_title: "Overview"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,19 +25,26 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 050 — foundations
+# QCSAA 900-909 · Section 00 · Subsection 904 — Foundations
 
 ## 1. Purpose
 
-Overview entry-point for the *foundations* subsection within the `900-909` code range (Section `00` — *Fundamentos de Computación Cuántica*) of the **QCSAA** architecture band (*Quantum Computing & Sentient Agency Architecture*, master range `900–999`).
+Overview entry-point for the *Foundations* subsection within the `900-909` code range (Section `00` — *Fundamentos de Computación Cuántica*) of the **QCSAA** architecture band (*Quantum Computing & Sentient Agency Architecture*, master range `900–999`).
 
-This subsubject (`00 Overview`) introduces the QCSAA 900-909.050.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
+This subsubject (`000 Overview`) introduces the QCSAA 900-909.904.000 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4. It declares the **closing chapter** of the foundational range: where `900_Qubits → 020_gates → 030_circuits → 040_quantum-algorithms` build up the operational stack, this subsection consolidates the **mathematical, physical and epistemic foundations** that make those constructions intelligible and bound the legitimate claims that may be made about them.
 
 ## 2. Scope
 
-- Covers the *foundations* slice of the parent code range `900-909`.
+- Covers the *Foundations* slice of the parent code range `900-909`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
+- Subsequent subsubjects (`001`–`009`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `001`–`007`, indexed in [`README.md`](./README.md).
+- The subsection is structurally **downstream** of the rest of `900-909` and **upstream** of every applied chapter in `910-979`. Downstream chapters that need to make information-theoretic, complexity-theoretic or assurance claims back-reference the specific subsubjects defined here:
+  - State and resources: §`001`–`002`.
+  - Dynamics and observation: §`003`–`004`.
+  - Information limits: §`005`.
+  - Computational power: §`006`.
+  - Assurance and interpretation: §`007`.
+- Out of scope (covered upstream): qubit definitions and physical implementations ([`../900_Qubits/`](../900_Qubits/)), unitary operations as gates ([`../020_gates/`](../020_gates/)), circuit composition ([`../030_circuits/`](../030_circuits/)), and problem-specific algorithms ([`../040_quantum-algorithms/`](../040_quantum-algorithms/)).
 
 ## 3. Footprint
 
@@ -48,14 +55,14 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.050.00 slice and li
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `050` — foundations |
-| Subsubject | `00` — Overview |
+| Subsection | `904` — Foundations |
+| Subsubject | `000` — Overview |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/050_foundations/` |
-| Document | `00_Overview.md` (this file) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/904_foundations/` |
+| Document | `000_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
@@ -89,4 +96,3 @@ The following ATA-family and industry standards apply to this subsection in addi
 - ETSI GR QSC 001 — Quantum-Safe Cryptography (QSC); Quantum-safe algorithmic framework[^etsiqsc001]
 - S1000D Issue 6.0 — International specification for technical publications[^s1000d]
 - AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
-

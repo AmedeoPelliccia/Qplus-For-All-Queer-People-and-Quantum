@@ -77,7 +77,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 The qubit model defined in this subsection is consumed by:
 
-- **Within `900-909`** — `020_gates/`, `030_circuits/`, `040_quantum-algorithms/`, `050_foundations/` (acyclic dependency graph: qubits → gates → circuits → algorithms → foundations/applications).
+- **Within `900-909`** — `020_gates/`, `030_circuits/`, `040_quantum-algorithms/`, `904_foundations/` (acyclic dependency graph: qubits → gates → circuits → algorithms → foundations/applications).
 - **Within QCSAA `900-999`** — `910-919` Quantum Machine Learning & Quantum AI, `920-929` Quantum Networks & Communications, `930-939` Quantum Cybersecurity, `940-949` Quantum Sensing & Metrology (back-references qubit *susceptibility*: the same decoherence that hurts computation aids measurement), `950-959` Quantum Simulation, `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
 - **Cross-band** — CYB `880-889` Post-Quantum Cryptography depends on the *computational* assumptions about what qubits can or cannot do (PQC defends against quantum computers; the cross-band reference into `900_Qubits/` is structural, not optional).
 
