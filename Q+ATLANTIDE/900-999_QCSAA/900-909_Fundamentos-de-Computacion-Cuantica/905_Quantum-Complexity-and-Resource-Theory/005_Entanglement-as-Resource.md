@@ -44,7 +44,7 @@ Applies the resource-theory framework (`004_`) to **quantum entanglement**, char
   - **Bound entanglement** — entangled states with E_D = 0; cannot be distilled into Bell pairs but may still enable certain quantum protocols (e.g. secret-key agreement); paradigmatic examples: Horodecki 3×3 bound entangled state.
   - **Operational protocols** — quantum teleportation consumes 1 ebit + 2 classical bits to transmit 1 qubit; superdense coding uses 1 ebit to transmit 2 classical bits; both protocols are optimal (Holevo bound / teleportation capacity theorem).
   - **Multipartite entanglement** — GHZ states, W states, graph states; LOCC classification beyond bipartite is vastly more complex; entanglement measures generalise to multipartite settings with distinct inequivalent entanglement classes.
-- Out of scope: abstract resource-theory axioms (`004_`), magic (non-stabilizer) resource (`006_`), qubit mathematical formalism (`900_`).
+- Out of scope: abstract resource-theory axioms (`004_`), magic (non-stabiliser) resource (`006_`), qubit mathematical formalism (`900_`).
 
 ## 3. Diagram — Entanglement Resource Ladder
 
