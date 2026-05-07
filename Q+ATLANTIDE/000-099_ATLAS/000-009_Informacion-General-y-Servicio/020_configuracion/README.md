@@ -27,38 +27,38 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *configuración* (`020`) within ATLAS `000-009` — *Información General y Servicio*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that extend it with the canonical configuration baseline, effectivity, modification status, variant catalog and change-control semantics, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
+Subsection-level index for *configuración* (`020`) within ATLAS `000-009` — *Información General y Servicio*. Aggregates the `000 Overview` and the detailed subsubjects (`001`–`005`) that extend it with the canonical configuration baseline, effectivity, modification status, variant catalog and change-control semantics, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `00`–`99` of subsection `020` *configuración*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the full subsubject namespace `000`–`099` of subsection `020` *configuración*; subsubjects `001`–`005` are populated in this baseline release, the remaining `006`–`099` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`01`–`05`) into the *configuración* slice of ATLAS `000-009`.
+The diagram below shows how this subsection's `000 Overview` aggregates the populated subsubjects (`001`–`005`) into the *configuración* slice of ATLAS `000-009`.
 
 ```mermaid
 flowchart LR
     R[(Subsection 020\nconfiguración)]
-    OV[00 Overview] --> R
-    R --> N01[01 — Configuration Baseline]
-    R --> N02[02 — Effectivity & Applicability]
-    R --> N03[03 — Modification Status]
-    R --> N04[04 — Variant & Option Catalog]
-    R --> N05[05 — Configuration Control & CM]
+    OV[000 Overview] --> R
+    R --> N01[001 — Configuration Baseline]
+    R --> N02[002 — Effectivity & Applicability]
+    R --> N03[003 — Modification Status]
+    R --> N04[004 — Variant & Option Catalog]
+    R --> N05[005 — Configuration Control & CM]
 ```
 
 ## 4. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`00_Overview.md`](./00_Overview.md) | active |
-| 01 | Configuration Baseline | [`01_Configuration-Baseline.md`](./01_Configuration-Baseline.md) | active |
-| 02 | Effectivity and Applicability | [`02_Effectivity-and-Applicability.md`](./02_Effectivity-and-Applicability.md) | active |
-| 03 | Modification Status | [`03_Modification-Status.md`](./03_Modification-Status.md) | active |
-| 04 | Variant and Option Catalog | [`04_Variant-and-Option-Catalog.md`](./04_Variant-and-Option-Catalog.md) | active |
-| 05 | Configuration Control and Change Management | [`05_Configuration-Control-and-Change-Management.md`](./05_Configuration-Control-and-Change-Management.md) | active |
+| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 001 | Configuration Baseline | [`001_Configuration-Baseline.md`](./001_Configuration-Baseline.md) | active |
+| 002 | Effectivity and Applicability | [`002_Effectivity-and-Applicability.md`](./002_Effectivity-and-Applicability.md) | active |
+| 003 | Modification Status | [`003_Modification-Status.md`](./003_Modification-Status.md) | active |
+| 004 | Variant and Option Catalog | [`004_Variant-and-Option-Catalog.md`](./004_Variant-and-Option-Catalog.md) | active |
+| 005 | Configuration Control and Change Management | [`005_Configuration-Control-and-Change-Management.md`](./005_Configuration-Control-and-Change-Management.md) | active |
 
 ## 5. Footprint
 
@@ -70,7 +70,7 @@ flowchart LR
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `020` — configuración |
-| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
+| Subsubject namespace | `000`–`099` (`000` + `001`–`005` populated) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
@@ -82,7 +82,7 @@ flowchart LR
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from the parent ATLAS band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from the parent ATLAS band; extensions added under `006`–`099` shall preserve those header fields and reuse the footnote set declared below.
 
 ## 6. References & Citations
 

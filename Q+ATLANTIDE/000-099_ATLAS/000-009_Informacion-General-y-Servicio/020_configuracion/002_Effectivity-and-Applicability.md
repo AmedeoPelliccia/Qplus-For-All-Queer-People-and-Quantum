@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-02-EFFECTIVITY-AND-APPLICABILITY
-title: "ATLAS 000-009 · 00.020.02 — Effectivity and Applicability"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-002-EFFECTIVITY-AND-APPLICABILITY
+title: "ATLAS 000-009 · 00.020.002 — Effectivity and Applicability"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,7 +15,7 @@ subject: "00"
 subject_title: "General Information"
 subsection: "020"
 subsection_title: "configuración"
-subsubject: "02"
+subsubject: "002"
 subsubject_title: "Effectivity and Applicability"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
@@ -25,7 +25,7 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 02 — Effectivity and Applicability
+# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 002 — Effectivity and Applicability
 
 ## 1. Purpose
 
@@ -62,14 +62,14 @@ flowchart LR
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `020` — configuración |
-| Subsubject | `02` — Effectivity and Applicability |
+| Subsubject | `002` — Effectivity and Applicability |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
-| Document | `02_Effectivity-and-Applicability.md` (this file) |
-| Parent subsection | [`00_Overview.md`](./00_Overview.md) |
+| Document | `002_Effectivity-and-Applicability.md` (this file) |
+| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-05-CONFIGURATION-CONTROL-AND-CHANGE-MANAGEMENT
-title: "ATLAS 000-009 · 00.020.05 — Configuration Control and Change Management"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-003-MODIFICATION-STATUS
+title: "ATLAS 000-009 · 00.020.003 — Modification Status"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,8 +15,8 @@ subject: "00"
 subject_title: "General Information"
 subsection: "020"
 subsection_title: "configuración"
-subsubject: "05"
-subsubject_title: "Configuration Control and Change Management"
+subsubject: "003"
+subsubject_title: "Modification Status"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,32 +25,35 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 05 — Configuration Control and Change Management
+# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 003 — Modification Status
 
 ## 1. Purpose
 
-Defines the **configuration control and change-management** workflow under ATLAS `000-009.020` *configuración*: how Engineering Change Requests (ECR), Engineering Change Orders (ECO), Configuration Control Board (CCB) decisions and impact analyses move proposed changes through approval, embodiment and publication. The workflow is the governance backbone of the Q+ATLANTIDE controlled baseline[^baseline] and aligns with AS9100D[^as9100d] and S1000D update cycles[^s1000d].
+Defines the **modification status** semantics under ATLAS `000-009.020` *configuración*: the registry of Service Bulletins (SB), Modifications (Mod), Airworthiness Directives (AD) and embodied changes that move an airframe from one configuration baseline to the next. Status values are exposed as the S1000D `modStatus` applicability property[^s1000d] and traced to ATA iSpec 2200 records[^ata2200], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
 
 ## 2. Scope
 
-- Covers the *Configuration Control and Change Management* subsubject (`05`) of subsection `020` *configuración*.
+- Covers the *Modification Status* subsubject (`03`) of subsection `020` *configuración*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Process classes in scope: **ECR / ECO**, **CCB approval**, **impact analysis** (safety, certification, supply, IETP), **embodiment tracking**, **revision release**.
-- Enforces ATA iSpec 2200 revision controls[^ata2200], S1000D Issue 6.0 update procedures[^s1000d] and AS9100D change-management requirements[^as9100d].
+- Object classes in scope: **Service Bulletins (SB)**, **Modifications (Mod)**, **Airworthiness Directives (AD)**, **embodiment records**, **status transitions** (planned → embodied → not-applicable).
+- Surfaces values for the S1000D `modStatus` applicability property and the ATA iSpec 2200 modification register[^ata2200][^s1000d]; quality controls per AS9100D[^as9100d].
 
 ## 3. Diagram
 
-The diagram below shows the change-management workflow from request through CCB approval, embodiment and publication of the resulting revision.
+The diagram below shows the state machine an SB / Mod / AD record traverses on a given airframe, from declaration through embodiment or formal exclusion.
 
 ```mermaid
-flowchart LR
-    ECR[ECR\nChange Request] --> IA[Impact Analysis\nsafety / cert / supply / IETP]
-    IA --> CCB{{CCB review}}
-    CCB -->|reject| REJ[Closed - rejected]
-    CCB -->|approve| ECO[ECO issued]
-    ECO --> EMB[Embodiment tracking]
-    EMB --> REV[Revision release]
-    REV --> PUB[Publication update]
+stateDiagram-v2
+    [*] --> Planned
+    Planned --> InWork: kit released
+    InWork --> Embodied: workpack closed
+    Planned --> NotApplicable: applicability eval = false
+    InWork --> Cancelled: SB withdrawn
+    Embodied --> Superseded: replacement SB
+    Embodied --> [*]
+    NotApplicable --> [*]
+    Cancelled --> [*]
+    Superseded --> [*]
 ```
 
 ## 4. Footprint
@@ -63,14 +66,14 @@ flowchart LR
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `020` — configuración |
-| Subsubject | `05` — Configuration Control and Change Management |
+| Subsubject | `003` — Modification Status |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
-| Document | `05_Configuration-Control-and-Change-Management.md` (this file) |
-| Parent subsection | [`00_Overview.md`](./00_Overview.md) |
+| Document | `003_Modification-Status.md` (this file) |
+| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

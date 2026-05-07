@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-03-MODIFICATION-STATUS
-title: "ATLAS 000-009 · 00.020.03 — Modification Status"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-001-CONFIGURATION-BASELINE
+title: "ATLAS 000-009 · 00.020.001 — Configuration Baseline"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,8 +15,8 @@ subject: "00"
 subject_title: "General Information"
 subsection: "020"
 subsection_title: "configuración"
-subsubject: "03"
-subsubject_title: "Modification Status"
+subsubject: "001"
+subsubject_title: "Configuration Baseline"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,35 +25,34 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 03 — Modification Status
+# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 001 — Configuration Baseline
 
 ## 1. Purpose
 
-Defines the **modification status** semantics under ATLAS `000-009.020` *configuración*: the registry of Service Bulletins (SB), Modifications (Mod), Airworthiness Directives (AD) and embodied changes that move an airframe from one configuration baseline to the next. Status values are exposed as the S1000D `modStatus` applicability property[^s1000d] and traced to ATA iSpec 2200 records[^ata2200], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
+Defines the **configuration baseline** for an airframe instance under ATLAS `000-009.020` *configuración*: the named, versioned reference state (build standard, software/hardware part numbers, BOM hash) against which all subsequent modifications are measured. The baseline is the anchor for downstream effectivity evaluation and is published as S1000D applicability conditions on the ATA iSpec 2200 / Spec 100 information set[^ata2200][^ataspec100][^s1000d], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
 
 ## 2. Scope
 
-- Covers the *Modification Status* subsubject (`03`) of subsection `020` *configuración*.
+- Covers the *Configuration Baseline* subsubject (`01`) of subsection `020` *configuración* within section `00` *Información General y Servicio*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Object classes in scope: **Service Bulletins (SB)**, **Modifications (Mod)**, **Airworthiness Directives (AD)**, **embodiment records**, **status transitions** (planned → embodied → not-applicable).
-- Surfaces values for the S1000D `modStatus` applicability property and the ATA iSpec 2200 modification register[^ata2200][^s1000d]; quality controls per AS9100D[^as9100d].
+- Artefact classes in scope: **Build Standard ID**, **As-Designed / As-Built / As-Maintained BOM**, **baseline hash**, **baseline version label**, baseline-to-baseline delta records.
+- Baselines are surfaced as S1000D `applic` properties (e.g. `product`, `variant`, `modStatus`) on the ATA iSpec 2200 information set[^ata2200][^s1000d] and quality-controlled per AS9100D[^as9100d].
 
 ## 3. Diagram
 
-The diagram below shows the state machine an SB / Mod / AD record traverses on a given airframe, from declaration through embodiment or formal exclusion.
+The diagram below shows how the named **Build Standard** is composed from the BOM, software/hardware part numbers and a content hash to produce a versioned **Configuration Baseline** that anchors downstream applicability evaluation.
 
 ```mermaid
-stateDiagram-v2
-    [*] --> Planned
-    Planned --> InWork: kit released
-    InWork --> Embodied: workpack closed
-    Planned --> NotApplicable: applicability eval = false
-    InWork --> Cancelled: SB withdrawn
-    Embodied --> Superseded: replacement SB
-    Embodied --> [*]
-    NotApplicable --> [*]
-    Cancelled --> [*]
-    Superseded --> [*]
+flowchart LR
+    BS[Build Standard ID] --> BOM[As-Designed BOM]
+    BS --> SW[SW / FW Part Numbers]
+    BS --> HW[HW Part Numbers]
+    BOM --> H{{Content Hash}}
+    SW --> H
+    HW --> H
+    H --> BL[(Configuration Baseline\nname + version)]
+    BL --> APP[S1000D applic\nproduct / variant / modStatus]
+    BL --> DLT[Baseline-to-Baseline Delta]
 ```
 
 ## 4. Footprint
@@ -66,14 +65,14 @@ stateDiagram-v2
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `020` — configuración |
-| Subsubject | `03` — Modification Status |
+| Subsubject | `001` — Configuration Baseline |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
-| Document | `03_Modification-Status.md` (this file) |
-| Parent subsection | [`00_Overview.md`](./00_Overview.md) |
+| Document | `001_Configuration-Baseline.md` (this file) |
+| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

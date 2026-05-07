@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-04-VARIANT-AND-OPTION-CATALOG
-title: "ATLAS 000-009 · 00.020.04 — Variant and Option Catalog"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-000-OVERVIEW
+title: "ATLAS 000-009 · 00.020.000 — configuración"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,8 +15,8 @@ subject: "00"
 subject_title: "General Information"
 subsection: "020"
 subsection_title: "configuración"
-subsubject: "04"
-subsubject_title: "Variant and Option Catalog"
+subsubject: "000"
+subsubject_title: "Overview"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,48 +25,21 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 04 — Variant and Option Catalog
+# ATLAS 000-009 · Section 00 · Subsection 020 — configuración
 
 ## 1. Purpose
 
-Defines the **variant and option catalog** under ATLAS `000-009.020` *configuración*: the controlled enumeration of marketing variants, customer options and selectable features that may be combined to produce a valid airframe configuration. Variants and options drive the `variant` applicability property in S1000D[^s1000d] and seed the IPC/AMM filtering rules of the ATA iSpec 2200 information set[^ata2200], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
+Overview entry-point for the *configuración* subsection within the `000-009` code range (Section `00` — *Información General y Servicio*) of the **ATLAS** architecture band (*Aircraft Top-Level Architecture System*, master range `000–099`).
+
+This subsubject (`000 Overview`) introduces the ATLAS 000-009.020.000 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
 ## 2. Scope
 
-- Covers the *Variant and Option Catalog* subsubject (`04`) of subsection `020` *configuración*.
+- Covers the *configuración* slice of the parent code range `000-009`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Object classes in scope: **variant codes**, **customer option codes**, **option groups**, **compatibility / exclusion rules**, **default vs. selectable** options.
-- Mapped to S1000D `variant` applicability values and to ATA iSpec 2200 / Spec 100 catalog conventions[^ata2200][^ataspec100][^s1000d]; quality controls per AS9100D[^as9100d].
+- Subsequent subsubjects (`001`–`099`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
 
-## 3. Diagram
-
-The diagram below shows the catalog model: a **Variant** groups **Options** belonging to **Option Groups**, with explicit compatibility / exclusion rules and default vs. selectable flags.
-
-```mermaid
-classDiagram
-    class Variant {
-        +code
-        +name
-    }
-    class OptionGroup {
-        +code
-        +cardinality
-    }
-    class Option {
-        +code
-        +default: bool
-        +selectable: bool
-    }
-    class Rule {
-        +type: requires|excludes
-    }
-    Variant "1" o-- "*" OptionGroup
-    OptionGroup "1" o-- "*" Option
-    Option "1" -- "*" Rule
-    Rule "*" -- "1" Option : target
-```
-
-## 4. Footprint
+## 3. Footprint
 
 | Metric | Value |
 |---|---|
@@ -76,18 +49,17 @@ classDiagram
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `020` — configuración |
-| Subsubject | `04` — Variant and Option Catalog |
+| Subsubject | `000` — Overview |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
-| Document | `04_Variant-and-Option-Catalog.md` (this file) |
-| Parent subsection | [`00_Overview.md`](./00_Overview.md) |
+| Document | `000_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 5. References & Citations
+## 4. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
@@ -108,9 +80,10 @@ classDiagram
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
+The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]
 - S1000D Issue 6.0 — International specification for technical publications[^s1000d]
 - AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
+
