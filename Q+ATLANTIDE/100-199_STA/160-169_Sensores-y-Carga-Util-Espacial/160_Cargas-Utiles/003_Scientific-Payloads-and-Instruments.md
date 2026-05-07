@@ -37,7 +37,7 @@ Defines requirements and design constraints for scientific payloads and instrume
 - **Instrument suite categories** — astrophysics (X-ray/UV/optical/IR telescopes), heliophysics (magnetometers, energetic particle detectors, solar wind analysers), planetary (mass spectrometers, radar altimeters, descent imagers), and in-situ geophysics (seismometers, gravimeters); each category carries specific environmental tolerance and cleanliness requirements.
 - **Detector technologies** — charge-coupled devices (CCD), CMOS active pixel sensors, bolometric detector arrays, scintillator/photomultiplier assemblies, and solid-state particle detectors; selection criteria include quantum efficiency, dark current, radiation tolerance, and operating temperature range.
 - **Calibration evidence requirements** — pre-launch calibration shall produce a traceable calibration database with uncertainties quantified per BIPM JCGM 100:2008 (GUM); in-orbit calibration shall be demonstrated via onboard calibration sources, star-tracker cross-calibration, or celestial standard observations.
-- **Pointing knowledge and stability requirements** — absolute pointing error (APE), absolute pointing stability (APS), and relative pointing error (RPE) shall be allocated per instrument line-of-sight accuracy budget and verified against ECSS-E-ST-10-03C testing requirements.
+- **Pointing knowledge and stability requirements** — absolute pointing error (APE), absolute pointing stability (APS), and relative pointing error (RPE) shall be allocated per instrument line-of-sight accuracy budget and verified against ECSS-E-ST-10-03C testing requirements; pointing budget shall cover mechanical alignment, AOCS residual error, and thermal distortion contributions.
 - **Data volume and compression** — science data rates and onboard storage requirements shall be declared in the mission data budget; lossless and lossy compression schemes shall be evaluated for compliance with science data quality objectives.
 
 ## 3. Diagram — Scientific Payload Design Flow
@@ -45,7 +45,7 @@ Defines requirements and design constraints for scientific payloads and instrume
 ```mermaid
 flowchart TD
     A["Science Objectives\n(Mission Analysis)"]:::first
-    A --> B["Instrument Requirements\n(APE · APE · RPE · Data Rate)"]
+    A --> B["Instrument Requirements\n(APE · APS · RPE · Data Rate)"]
     B --> C["Detector Technology Selection\n(CCD · CMOS · Bolometer · Particle)"]
     C --> D["Pre-Launch Calibration\n(GUM-traceable Uncertainty)"]
     D --> E["In-Orbit Calibration\n(Onboard Source · Celestial Calibrators)"]
