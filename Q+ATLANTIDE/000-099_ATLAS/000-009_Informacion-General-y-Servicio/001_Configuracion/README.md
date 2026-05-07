@@ -31,7 +31,7 @@ Subsection-level index for *Configuración* (`001`) within ATLAS `000-009` — *
 
 *ATLAS describes the aircraft as an integrated system at the top level; this Subject controls how that integrated state evolves over time.*
 
-Boundary: `000_Identificacion/003_Configuration-Identification.md` defines the **identifier** of configuration (label, code, namespace); `001_Configuracion/` defines the **configuration itself** (content, control, change). This separation is intrinsic to ATLAS as a Schema, not an implementation detail.
+Boundary: `000_Identificacion/README.md` defines the **identifier** side of configuration (label, code, namespace) at the current index level; `001_Configuracion/` defines the **configuration itself** (content, control, change). This separation is intrinsic to ATLAS as a Schema, not an implementation detail.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
