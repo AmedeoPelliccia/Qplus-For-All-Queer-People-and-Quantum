@@ -143,7 +143,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 [^ata12]: **ATA Chapter 12 — Servicing** — Industry chapter governing routine servicing; adjacency reference for the upstream-side GSE that delivers the flows.
 
-[^h2ns]: **`ATA_IN_H2_GSE_AND_SUPPLY_CHAIN/`** — Infrastructure namespace at `OPT-INS_FRAMEWORK/I-INFRASTRUCTURES/ATA_IN_H2_GSE_AND_SUPPLY_CHAIN/` carrying the H₂-specific GSE and supply-chain overlays (LH₂ fuel trucks, H₂ couplings/hoses, vapour-recovery and inerting equipment, H₂ supply-chain traceability, H₂ calibration tokens).
+[^h2ns]: **`ATA_IN_H2_GSE_AND_SUPPLY_CHAIN/`** — External infrastructure namespace defined in the separate `OPT-INS_FRAMEWORK` overlay (`I-INFRASTRUCTURES/ATA_IN_H2_GSE_AND_SUPPLY_CHAIN/`). That overlay is not included in this repository checkout; this note is informational only and refers to the H₂-specific GSE and supply-chain overlays (LH₂ fuel trucks, H₂ couplings/hoses, vapour-recovery and inerting equipment, H₂ supply-chain traceability, H₂ calibration tokens).
 
 [^ata2200]: **ATA iSpec 2200 — Information Standards for Aviation Maintenance** — Industry standard for digital aircraft maintenance information; governs chapter / section / subject numbering inherited by ATLAS `000-099`.
 
