@@ -69,7 +69,7 @@ action_levels:
                "convective_gust_front_warning == true"]
     actions:  ["L3_full_mooring", "relocate_to_hangar_or_leeward_stand"]
 anticipation_rule:
-  description: "Act at the earliest cell where ANY axis crosses its trigger. Down-grading the action level requires forecast revision documented in the event log."
+  description: "Act at the earliest cell where ANY axis crosses its trigger. Downgrading the action level requires forecast revision documented in the event log."
   asymmetry: "Cost of unwarranted action << cost of belated action; therefore the matrix is biased toward earlier action."
 record_propagation:
   field: event_classification    # consumed by ./05_; mandatory in any moored-and-released event
