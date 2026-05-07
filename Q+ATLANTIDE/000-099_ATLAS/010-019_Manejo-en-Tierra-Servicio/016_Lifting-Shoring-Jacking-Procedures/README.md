@@ -37,21 +37,21 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `000`–`099` of subsection `016` *Lifting, Shoring and Jacking Procedures*.
+- Reserves the subsubject namespace `00`–`99` of subsection `016` *Lifting, Shoring and Jacking Procedures*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`000`–`099`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 - Anticipated subsubjects include (reserved, not yet populated):
-  - `000_Overview.md` — procedures overview, jack-point map, safety prerequisites
-  - `001_Jack-Point-Locations.md` — approved jack points by variant
-  - `002_Jacking-Sequence-and-Safety.md` — step-level jacking sequence, safety collar usage
-  - `003_Shoring-Procedures.md` — approved shoring rigs and structural support configurations
-  - `004_Leveling-and-Aircraft-Weighing.md` — datum, leveling procedure, weighing procedure
+  - `00_Overview.md` — procedures overview, jack-point map, safety prerequisites
+  - `01_Jack-Point-Locations.md` — approved jack points by variant
+  - `02_Jacking-Sequence-and-Safety.md` — step-level jacking sequence, safety collar usage
+  - `03_Shoring-Procedures.md` — approved shoring rigs and structural support configurations
+  - `04_Leveling-and-Aircraft-Weighing.md` — datum, leveling procedure, weighing procedure
 
 ## 3. Subsubject Index
 
-| 00N | Title | Document | Status |
+| NN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | _to be populated_ | reserved |
+| 00 | Overview | _to be populated_ | reserved |
 
 ## 4. Footprint
 
@@ -62,7 +62,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `010-019` |
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `016` — Lifting, Shoring and Jacking Procedures |
-| Subsubject namespace | `000`–`099` (reserved) |
+| Subsubject namespace | `00`–`99` (reserved) |
 | Conventional ATA ref | ATA chapters 7 (Lifting and Shoring), 8 (Leveling and Weighing) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
@@ -77,7 +77,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 5. Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `000`–`099` shall preserve those header fields, follow the canonical `00N_*.md` naming scheme, and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
 
 ## 6. References & Citations
 
