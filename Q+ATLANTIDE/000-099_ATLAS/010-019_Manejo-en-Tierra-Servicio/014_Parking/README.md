@@ -18,8 +18,8 @@ primary_q_division: Q-GROUND
 support_q_divisions: [Q-MECHANICS, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
 governance_class: baseline
-version: 1.0.0
-status: reserved
+version: 1.1.0
+status: active
 language: en
 ---
 
@@ -33,15 +33,20 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `014` *Parking*.
+- Populates subsubjects `000`–`005` of subsection `014` *Parking*; reserves `006`–`099` for future extension.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Each subsubject provides **Level 2 — Procedure** content; introductory orientation (Level 1) for parking and mooring is in [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/).
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| 00N | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 001 | Scope and Parking Boundaries | [`001_Scope-and-Parking-Boundaries.md`](./001_Scope-and-Parking-Boundaries.md) | active |
+| 002 | Parking Configurations and Stand Types | [`002_Parking-Configurations-and-Stand-Types.md`](./002_Parking-Configurations-and-Stand-Types.md) | active |
+| 003 | Mooring, Tie-Down and Wind Protection | [`003_Mooring-Tie-Down-and-Wind-Protection.md`](./003_Mooring-Tie-Down-and-Wind-Protection.md) | active |
+| 004 | Short-Term Parking and Turnaround Configurations | [`004_Short-Term-Parking-and-Turnaround-Configurations.md`](./004_Short-Term-Parking-and-Turnaround-Configurations.md) | active |
+| 005 | Parking Records, Inspections and Return to Service | [`005_Parking-Records-Inspections-and-Return-to-Service.md`](./005_Parking-Records-Inspections-and-Return-to-Service.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +57,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `010-019` |
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `014` — Parking |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`005` populated; `006`–`099` reserved |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
@@ -65,7 +70,14 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `006`–`099` shall preserve those header fields and reuse the footnote set declared here.
+
+## Change Log
+
+| Version | Date | Author | Notes |
+|---|---|---|---|
+| 1.0.0 | 2026-05-07 | Q-GROUND | Initial reserve — subsection index only, all subsubjects `to be populated`. |
+| 1.1.0 | 2026-05-07 | Q-GROUND | Baseline release — `000_Overview.md` + subsubjects `001`–`005` populated; subsubject index updated; namespace updated to reflect populated range. |
 
 ## 5. References & Citations
 
