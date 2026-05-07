@@ -29,7 +29,7 @@ language: en
 
 ## 1. Purpose
 
-Records how the abstract gates of `901_`–`904_` are **physically realised** on each modality from [`../010_Qubits/02_Physical-Qubit-Implementations.md`](../010_Qubits/02_Physical-Qubit-Implementations.md), how they are **calibrated** to a target unitary, and how their **errors are characterised** (gate fidelity vs. operation fidelity, randomized benchmarking specific to gates, coherent vs. incoherent error decomposition). This subsubject also carries the **per-modality reality check** that the program's TRL claims have to land against: the (gate type) × (gate time) × (current fidelity) × (achievable fidelity) table in §3 is binding for any aerospace-integration argument that depends on gate-level performance.
+Records how the abstract gates of `901_`–`904_` are **physically realised** on each modality from [`../010_Qubits/902_Physical-Qubit-Implementations.md`](../010_Qubits/902_Physical-Qubit-Implementations.md), how they are **calibrated** to a target unitary, and how their **errors are characterised** (gate fidelity vs. operation fidelity, randomized benchmarking specific to gates, coherent vs. incoherent error decomposition). This subsubject also carries the **per-modality reality check** that the program's TRL claims have to land against: the (gate type) × (gate time) × (current fidelity) × (achievable fidelity) table in §3 is binding for any aerospace-integration argument that depends on gate-level performance.
 
 ## 2. Scope
 
@@ -51,12 +51,12 @@ Records how the abstract gates of `901_`–`904_` are **physically realised** on
   - **Randomized benchmarking specific to gates.** Standard RB measures average error per Clifford; **interleaved RB** isolates the error of a specific gate; **direct fidelity estimation** and **gate-set tomography** (GST) provide finer-grained characterisation when the noise structure matters.
   - **Coherent vs. incoherent gate errors.**
     - **Coherent** errors (over- or under-rotation, mis-tuned phase, axis tilt) are unitary mis-implementations of the target gate; they **add in amplitude** and can be partially absorbed by recompilation.
-    - **Incoherent** errors (decoherence-during-gate, leakage, spontaneous emission) are non-unitary; they **add in probability** and are bounded by the qubit's intrinsic $T_1, T_2$ relative to gate time (see [`../010_Qubits/04_Decoherence-Noise-and-Fidelity.md`](../010_Qubits/04_Decoherence-Noise-and-Fidelity.md)).
-- Out of scope: the qubit-level decoherence model itself (already in `010_Qubits/04_`); logical-qubit-level error correction (`010_Qubits/05_`); algorithm-level resource estimation including circuit depth and scheduling (`030_circuits/`, `040_quantum-algorithms/`).
+    - **Incoherent** errors (decoherence-during-gate, leakage, spontaneous emission) are non-unitary; they **add in probability** and are bounded by the qubit's intrinsic $T_1, T_2$ relative to gate time (see [`../010_Qubits/904_Decoherence-Noise-and-Fidelity.md`](../010_Qubits/904_Decoherence-Noise-and-Fidelity.md)).
+- Out of scope: the qubit-level decoherence model itself (already in `010_Qubits/904_`); logical-qubit-level error correction (`010_Qubits/905_`); algorithm-level resource estimation including circuit depth and scheduling (`030_circuits/`, `040_quantum-algorithms/`).
 
 ## 3. Per-Modality Gate Performance Matrix
 
-The matrix below records, **per modality and per gate type**, the four numbers that any aerospace-integration argument depending on gate-level performance must cite explicitly: typical gate time, current state-of-the-art fidelity, achievable fidelity by an indicative target year, and the dominant error mechanism. This mirrors the per-modality posture matrix in [`../010_Qubits/02_Physical-Qubit-Implementations.md`](../010_Qubits/02_Physical-Qubit-Implementations.md) §3 — and, like that matrix, **resists averaging across modalities**: a CNOT on a superconducting transmon and a CNOT on a trapped ion are not the same operation engineering-wise, and the program shall not allow them to be reported as if they were.
+The matrix below records, **per modality and per gate type**, the four numbers that any aerospace-integration argument depending on gate-level performance must cite explicitly: typical gate time, current state-of-the-art fidelity, achievable fidelity by an indicative target year, and the dominant error mechanism. This mirrors the per-modality posture matrix in [`../010_Qubits/902_Physical-Qubit-Implementations.md`](../010_Qubits/902_Physical-Qubit-Implementations.md) §3 — and, like that matrix, **resists averaging across modalities**: a CNOT on a superconducting transmon and a CNOT on a trapped ion are not the same operation engineering-wise, and the program shall not allow them to be reported as if they were.
 
 | Modality | Gate type | Gate time (typ.) | Current fidelity (SOTA, indicative) | Achievable fidelity by ~2030 (program target, indicative) | Dominant error mechanism |
 |---|---|---|---|---|---|
@@ -82,7 +82,7 @@ The matrix below records, **per modality and per gate type**, the four numbers t
 
 ## 4. Diagram — Calibration Loop and Error Decomposition
 
-The diagram on the left is the **calibration loop** of §2: a closed-loop tuning process that drives the implemented operation $\mathcal{E}_{\text{actual}}$ towards the ideal $U_{\text{ideal}}$. The diagram on the right is the **error decomposition** that contributors to `010_Qubits/05_` rely on when assigning residual error budgets between coherent (recompilable) and incoherent (decoherence-bounded) sources.
+The diagram on the left is the **calibration loop** of §2: a closed-loop tuning process that drives the implemented operation $\mathcal{E}_{\text{actual}}$ towards the ideal $U_{\text{ideal}}$. The diagram on the right is the **error decomposition** that contributors to `010_Qubits/905_` rely on when assigning residual error budgets between coherent (recompilable) and incoherent (decoherence-bounded) sources.
 
 ```mermaid
 flowchart LR
@@ -98,7 +98,7 @@ flowchart LR
         E0["Total gate error"] --> EC["Coherent<br/>(over/under-rotation,<br/>phase, axis tilt)"]
         E0 --> EI["Incoherent<br/>(T_1, T_2 during gate;<br/>leakage; scattering)"]
         EC -. "absorbable by<br/>recompilation" .-> L2
-        EI -. "bounded by<br/>010_/04_" .-> Hard["Hardware<br/>improvement"]
+        EI -. "bounded by<br/>010_/904_" .-> Hard["Hardware<br/>improvement"]
     end
 ```
 

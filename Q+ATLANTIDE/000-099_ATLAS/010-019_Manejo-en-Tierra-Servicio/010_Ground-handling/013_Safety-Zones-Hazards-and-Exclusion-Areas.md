@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-010-019-01-010-README
-title: "ATLAS 010-019 · 01.010 — Ground handling (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-010-019-01-010-013-SAFETY-ZONES-HAZARDS-AND-EXCLUSION-AREAS
+title: "ATLAS 010-019 · 01.010.013 — Safety Zones, Hazards and Exclusion Areas"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,6 +15,8 @@ subject: "00"
 subject_title: "General Information"
 subsection: "010"
 subsection_title: "Ground handling"
+subsubject: "013"
+subsubject_title: "Safety Zones, Hazards and Exclusion Areas"
 primary_q_division: Q-GROUND
 support_q_divisions: [Q-MECHANICS, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
@@ -23,44 +25,36 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 010-019 · Section 01 · Subsection 010 — Ground handling
+# ATLAS 010-019 · Section 01 · Subsection 010 · Subsubject 013 — Safety Zones, Hazards and Exclusion Areas
 
 ## 1. Purpose
 
-Subsection-level index for *Ground handling* (`010`) within ATLAS `010-019` — *Manejo en Tierra & Servicio*. Aggregates the `010 Overview` and the detailed subsubjects (`011`–`015`) that extend it with the canonical scope and definitions, role assignments, safety zoning, GSE interfaces and documentation/traceability semantics, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
+Defines the **safety zoning model** used while the airframe is on the stand under ATLAS `010-019.010` *Ground handling*: the named hazard sources (engine intake/exhaust, propeller arc, APU exhaust, fuel-vent, antenna RF, energised servicing panels), the geometric **danger areas** they project, and the **exclusion areas** that personnel and GSE must clear before each phase. Zoning data are anchored to the configuration baseline of subsection `020 configuración` and surfaced as S1000D applicability conditions on the ATA iSpec 2200 / Spec 100 information set[^ata2200][^ataspec100][^s1000d], in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and audited per AS9100D[^as9100d].
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `010`–`019` of subsection `010` *Ground handling*; subsubjects `011`–`015` are populated in this baseline release, the remaining `016`–`019` slots remain available for future extension per the Overview's authorisation[^archtable].
-- Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
+- Covers the *Safety Zones, Hazards and Exclusion Areas* subsubject (`013`) of subsection `010` *Ground handling* within section `01` *Manejo en Tierra & Servicio*.
+- Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable]; Q-GROUND owns the zoning model, with Q-MECHANICS consulted on energy-source classification.
+- Hazard classes in scope: **propulsion hazards** (intake suction, exhaust efflux, propeller/rotor arc), **fluid hazards** (fuel-vent, fuel-spill containment, hydraulic blowdown), **electrical & RF hazards** (energised servicing panels, antenna radiation, lightning bonding), **mechanical hazards** (moving control surfaces, deploying gear/doors), **environmental hazards** (jet-blast, FOD, ice/snow shedding).
+- Artefact classes in scope: **Hazard register**, **Danger-area polygon** (per hazard, per phase), **Exclusion-area polygon** (personnel, GSE, vehicle), **Zone-state log** (armed / cleared / breached).
+- Out of scope: hazard modelling for towing/pushback (subsection `040`) and parking sweep (subsection `050`); cross-references only.
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *Ground handling* slice of ATLAS `010-019`.
+The diagram below shows how a **hazard source** projects a **danger area** that, combined with the active handling phase, produces the **exclusion area** enforced for personnel and GSE during ground handling.
 
 ```mermaid
 flowchart LR
-    R[(Subsection 010\nGround handling)]
-    OV[010 Overview] --> R
-    R --> N01[011 — Scope & Definitions]
-    R --> N02[012 — Roles, Authorizations & Responsibilities]
-    R --> N03[013 — Safety Zones, Hazards & Exclusion Areas]
-    R --> N04[014 — Ground Support Equipment Interfaces]
-    R --> N05[015 — Documentation, Logs & Traceability]
+    HS[Hazard Source\nintake · exhaust · RF · fuel-vent] --> DA[Danger Area Polygon]
+    PH[Handling Phase\narrival · service · departure] --> EX[Exclusion Area]
+    DA --> EX
+    EX --> PERS[Personnel Clearance]
+    EX --> GSE[GSE / Vehicle Clearance]
+    EX --> ZS[Zone-State Log\narmed · cleared · breached]
+    HR[(Hazard Register)] --> HS
 ```
 
-## 4. Subsubject Index
-
-| 01N | Title | Document | Status |
-|---:|---|---|---|
-| 010 | Overview | [`010_Overview.md`](./010_Overview.md) | active |
-| 011 | Scope and Definitions | [`011_Scope-and-Definitions.md`](./011_Scope-and-Definitions.md) | active |
-| 012 | Roles, Authorizations and Responsibilities | [`012_Roles-Authorizations-and-Responsibilities.md`](./012_Roles-Authorizations-and-Responsibilities.md) | active |
-| 013 | Safety Zones, Hazards and Exclusion Areas | [`013_Safety-Zones-Hazards-and-Exclusion-Areas.md`](./013_Safety-Zones-Hazards-and-Exclusion-Areas.md) | active |
-| 014 | Ground Support Equipment Interfaces | [`014_Ground-Support-Equipment-Interfaces.md`](./014_Ground-Support-Equipment-Interfaces.md) | active |
-| 015 | Documentation, Logs and Traceability | [`015_Documentation-Logs-and-Traceability.md`](./015_Documentation-Logs-and-Traceability.md) | active |
-
-## 5. Footprint
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -70,21 +64,18 @@ flowchart LR
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subject | `00` — General Information |
 | Subsection | `010` — Ground handling |
-| Subsubject namespace | `010`–`019` (`010` + `011`–`015` populated; canonical `01N_*.md` scheme) |
+| Subsubject | `013` — Safety Zones, Hazards and Exclusion Areas |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/010-019_Manejo-en-Tierra-Servicio/010_Ground-handling/` |
-| Document | `README.md` (this file) |
+| Document | `013_Safety-Zones-Hazards-and-Exclusion-Areas.md` (this file) |
+| Parent subsection | [`010_Overview.md`](./010_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## Governance
-
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS band; extensions added under `016`–`019` shall preserve those header fields, follow the canonical `01N_*.md` naming scheme, and reuse the footnote set declared below.
-
-## 6. References & Citations
+## 5. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
@@ -105,7 +96,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
+The following ATA-family and industry standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]

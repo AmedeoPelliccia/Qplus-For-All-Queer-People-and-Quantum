@@ -27,27 +27,27 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *Qubits* (`010`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that introduce the qubit as the atomic unit of quantum computation, define its mathematical formalism, catalogue physical implementations, describe operations and measurement, characterise decoherence and noise, and bridge to fault-tolerant logical-qubit encodings — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
+Subsection-level index for *Qubits* (`010`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `900 Overview` and the detailed subsubjects (`901`–`905`) that introduce the qubit as the atomic unit of quantum computation, define its mathematical formalism, catalogue physical implementations, describe operations and measurement, characterise decoherence and noise, and bridge to fault-tolerant logical-qubit encodings — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
 
 This subsection is the **foundational chapter** of the QCSAA band: every other chapter in `900-999` (gates, circuits, algorithms, QML, sensing, robotics, sentient agency) presupposes the qubit model defined here. It is therefore *upstream* of the rest of the register, rather than a peer in a horizontal partition (the structural pattern used by the ATLAS bands).
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `00`–`99` of subsection `010` *Qubits*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the full subsubject namespace `900`–`909` of subsection `010` *Qubits*; subsubjects `901`–`905` are populated in this baseline release, the remaining `906`–`909` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Pedagogical sequence followed: **definition → implementation → operation → degradation → mitigation**, the canonical structure for a quantum-computing primer.
 - Acts as the cross-band reference anchor for sensing (`940-949`) and post-quantum cryptography (`880-889`, in CYB), both of which depend on qubit-level concepts but exploit them in qualitatively different ways (susceptibility vs. computational assumptions) — see §6.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| 9NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`00_Overview.md`](./00_Overview.md) | active |
-| 01 | Qubit Definition and Mathematical Formalism | [`01_Qubit-Definition-and-Mathematical-Formalism.md`](./01_Qubit-Definition-and-Mathematical-Formalism.md) | active |
-| 02 | Physical Qubit Implementations | [`02_Physical-Qubit-Implementations.md`](./02_Physical-Qubit-Implementations.md) | active |
-| 03 | Qubit States, Operations and Measurement | [`03_Qubit-States-Operations-and-Measurement.md`](./03_Qubit-States-Operations-and-Measurement.md) | active |
-| 04 | Decoherence, Noise and Fidelity | [`04_Decoherence-Noise-and-Fidelity.md`](./04_Decoherence-Noise-and-Fidelity.md) | active |
-| 05 | Logical Qubits, Encoding and Error Correction | [`05_Logical-Qubits-Encoding-and-Error-Correction.md`](./05_Logical-Qubits-Encoding-and-Error-Correction.md) | active |
+| 900 | Overview | [`900_Overview.md`](./900_Overview.md) | active |
+| 901 | Qubit Definition and Mathematical Formalism | [`901_Qubit-Definition-and-Mathematical-Formalism.md`](./901_Qubit-Definition-and-Mathematical-Formalism.md) | active |
+| 902 | Physical Qubit Implementations | [`902_Physical-Qubit-Implementations.md`](./902_Physical-Qubit-Implementations.md) | active |
+| 903 | Qubit States, Operations and Measurement | [`903_Qubit-States-Operations-and-Measurement.md`](./903_Qubit-States-Operations-and-Measurement.md) | active |
+| 904 | Decoherence, Noise and Fidelity | [`904_Decoherence-Noise-and-Fidelity.md`](./904_Decoherence-Noise-and-Fidelity.md) | active |
+| 905 | Logical Qubits, Encoding and Error Correction | [`905_Logical-Qubits-Encoding-and-Error-Correction.md`](./905_Logical-Qubits-Encoding-and-Error-Correction.md) | active |
 
 ## 4. Footprint
 
@@ -59,7 +59,7 @@ This subsection is the **foundational chapter** of the QCSAA band: every other c
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
 | Subsection | `010` — Qubits |
-| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
+| Subsubject namespace | `900`–`909` (`900` + `901`–`905` populated; canonical `9NN_*.md` scheme) |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
@@ -71,7 +71,7 @@ This subsection is the **foundational chapter** of the QCSAA band: every other c
 
 ## 5. Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = QCSAA`, `primary_q_division = Q-HORIZON` and `governance_class = restricted` from the parent QCSAA band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = QCSAA`, `primary_q_division = Q-HORIZON` and `governance_class = restricted` from the parent QCSAA band; extensions added under `906`–`909` shall preserve those header fields, follow the canonical `9NN_*.md` naming scheme, and reuse the footnote set declared below.
 
 ## 6. Downstream and Cross-Band Dependencies
 
@@ -87,7 +87,7 @@ Downstream chapters shall back-reference the specific subsubjects of this subsec
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `00_Overview.md` plus subsubjects `01`–`05`. Subsection index established. |
+| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `900_Overview.md` plus subsubjects `901`–`905`, using the canonical Q+ATLANTIDE Subsubject scheme `9NN_*.md` (per §2.2 of the QCSAA README). Subsection index established. |
 
 ## 8. References & Citations
 

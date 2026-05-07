@@ -77,7 +77,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 ## 6. Upstream, Downstream and Cross-Band Dependencies
 
-- **Upstream (within `900-909`)** — [`../010_Qubits/`](../010_Qubits/). Every gate in this chapter acts on the Hilbert space defined in `010_Qubits/01_`; every per-modality fidelity and gate-time number in `905_` is bounded by the $T_1, T_2$ characterisation in `010_Qubits/04_`; every reference to overhead in `904_` compounds with the physical-to-logical ratio in `010_Qubits/05_`.
+- **Upstream (within `900-909`)** — [`../010_Qubits/`](../010_Qubits/). Every gate in this chapter acts on the Hilbert space defined in `010_Qubits/901_`; every per-modality fidelity and gate-time number in `905_` is bounded by the $T_1, T_2$ characterisation in `010_Qubits/904_`; every reference to overhead in `904_` compounds with the physical-to-logical ratio in `010_Qubits/905_`.
 - **Downstream (within `900-909`)** — [`../030_circuits/`](../030_circuits/), [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../050_foundations/`](../050_foundations/). The chapter boundary against `030_circuits/` is stated explicitly in `900_Overview.md` §2 and `904_` §3.
 - **Within QCSAA `900-999`** — `910-919` Quantum Machine Learning & Quantum AI (variational circuits depend on the entangling-gate family of `903_`), `920-929` Quantum Networks & Communications (entanglement distribution depends on the Bell/EPR preparation of `903_`), `930-939` Quantum Cybersecurity, `950-959` Quantum Simulation, `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
 - **Cross-band** — CYB `880-889` Post-Quantum Cryptography back-references the universality and overhead arguments of `904_` to size the threat model.

@@ -27,22 +27,22 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *parking* (`050`) within ATLAS `010-019` — *Manejo en Tierra & Servicio*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that extend it with the canonical scope/boundary clauses (parking vs. mooring vs. storage vs. layover; turnaround vs. overnight vs. extended), the parking-stand classification matrix (including the **negative-space** enumeration of ICAO stand classes the AMPEL360-BWB-Q100 does *not* fit and the **H₂ exclusion zone** around the LH₂ bay), the mooring and wind-protection regime (with the machine-checkable **`forecast_confidence × forecast_severity × time_to_event` decision matrix** at the top of `03_`), the short-term/turnaround physical configuration (chocks, brakes, gear pin status, APU/GPU power state, doors and access points, ACU hookup), and the records and return-to-service interface keyed by `event_classification:` for bidirectional propagation into `LC11_MAINTENANCE/`. Conforms to the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d]. Maps to **ATA 10 — Parking, Mooring, Storage and Return to Service**[^ata10] as the primary canonical chapter, with adjacency to **ATA 12 — Servicing**[^ata12] for servicing-while-parked and **ATA 32 — Landing Gear**[^ata32] for the gear-side parked-state hardware. *The token `050` is an internal sequential index inside the `010-019` range and is **not** a pointer to ATA Chapter 50 — see [`./00_Overview.md` §1](./00_Overview.md#1-purpose).*
+Subsection-level index for *parking* (`050`) within ATLAS `010-019` — *Manejo en Tierra & Servicio*. Aggregates the `010 Overview` and the detailed subsubjects (`011`–`015`) that extend it with the canonical scope/boundary clauses (parking vs. mooring vs. storage vs. layover; turnaround vs. overnight vs. extended), the parking-stand classification matrix (including the **negative-space** enumeration of ICAO stand classes the AMPEL360-BWB-Q100 does *not* fit and the **H₂ exclusion zone** around the LH₂ bay), the mooring and wind-protection regime (with the machine-checkable **`forecast_confidence × forecast_severity × time_to_event` decision matrix** at the top of `013_`), the short-term/turnaround physical configuration (chocks, brakes, gear pin status, APU/GPU power state, doors and access points, ACU hookup), and the records and return-to-service interface keyed by `event_classification:` for bidirectional propagation into `LC11_MAINTENANCE/`. Conforms to the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d]. Maps to **ATA 10 — Parking, Mooring, Storage and Return to Service**[^ata10] as the primary canonical chapter, with adjacency to **ATA 12 — Servicing**[^ata12] for servicing-while-parked and **ATA 32 — Landing Gear**[^ata32] for the gear-side parked-state hardware. *The token `050` is an internal sequential index inside the `010-019` range and is **not** a pointer to ATA Chapter 50 — see [`./010_Overview.md` §1](./010_Overview.md#1-purpose).*
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `00`–`99` of subsection `050` *parking*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the full subsubject namespace `010`–`019` of subsection `050` *parking*; subsubjects `011`–`015` are populated in this baseline release, the remaining `016`–`019` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - **Boundary triangulation with subsections `010`, `020`, `030` and `040`.** Restated for navigation:
-  - **Ground handling** (`010`) = aircraft *positioning*, *safety perimeter*, GSE *physical placement*. See [`../010_Ground-handling/00_Overview.md`](../010_Ground-handling/00_Overview.md).
-  - **Servicing** (`020`) = active *flow through coupling interfaces*. See [`../020_servicing/00_Overview.md`](../020_servicing/00_Overview.md).
+  - **Ground handling** (`010`) = aircraft *positioning*, *safety perimeter*, GSE *physical placement*. See [`../010_Ground-handling/010_Overview.md`](../010_Ground-handling/010_Overview.md).
+  - **Servicing** (`020`) = active *flow through coupling interfaces*. See [`../020_servicing/010_Overview.md`](../020_servicing/010_Overview.md).
   - **Access** (`030`) = *opening the aircraft envelope* to enable presence. See [`../030_acceso/README.md`](../030_acceso/README.md).
   - **Remolque** (`040`) = *controlled translation* of the aircraft on the ground under *external* motive power. See [`../040_remolque/README.md`](../040_remolque/README.md).
   - **Parking** (`050`, this) = the *resting state* of the aircraft on the ground between operations.
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`01`–`05`) into the *parking* slice of ATLAS `010-019`, and how the wind-event and configuration chains close onto the maintenance program.
+The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *parking* slice of ATLAS `010-019`, and how the wind-event and configuration chains close onto the maintenance program.
 
 ```mermaid
 flowchart LR
@@ -73,14 +73,14 @@ flowchart LR
 
 ## 4. Subsubject Index
 
-| NN | Title | Document | Status |
+| 01N | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`00_Overview.md`](./00_Overview.md) | active |
-| 01 | Scope and Parking Boundaries | [`01_Scope-and-Parking-Boundaries.md`](./01_Scope-and-Parking-Boundaries.md) | active |
-| 02 | Parking Configurations and Stand Types | [`02_Parking-Configurations-and-Stand-Types.md`](./02_Parking-Configurations-and-Stand-Types.md) | active |
-| 03 | Mooring, Tie-Down and Wind Protection | [`03_Mooring-Tie-Down-and-Wind-Protection.md`](./03_Mooring-Tie-Down-and-Wind-Protection.md) | active |
-| 04 | Short-Term Parking and Turnaround Configurations | [`04_Short-Term-Parking-and-Turnaround-Configurations.md`](./04_Short-Term-Parking-and-Turnaround-Configurations.md) | active |
-| 05 | Parking Records, Inspections and Return to Service | [`05_Parking-Records-Inspections-and-Return-to-Service.md`](./05_Parking-Records-Inspections-and-Return-to-Service.md) | active |
+| 010 | Overview | [`010_Overview.md`](./010_Overview.md) | active |
+| 011 | Scope and Parking Boundaries | [`011_Scope-and-Parking-Boundaries.md`](./011_Scope-and-Parking-Boundaries.md) | active |
+| 012 | Parking Configurations and Stand Types | [`012_Parking-Configurations-and-Stand-Types.md`](./012_Parking-Configurations-and-Stand-Types.md) | active |
+| 013 | Mooring, Tie-Down and Wind Protection | [`013_Mooring-Tie-Down-and-Wind-Protection.md`](./013_Mooring-Tie-Down-and-Wind-Protection.md) | active |
+| 014 | Short-Term Parking and Turnaround Configurations | [`014_Short-Term-Parking-and-Turnaround-Configurations.md`](./014_Short-Term-Parking-and-Turnaround-Configurations.md) | active |
+| 015 | Parking Records, Inspections and Return to Service | [`015_Parking-Records-Inspections-and-Return-to-Service.md`](./015_Parking-Records-Inspections-and-Return-to-Service.md) | active |
 
 ## 5. Sibling Subsections (010-019 range)
 
@@ -91,7 +91,7 @@ flowchart LR
 | `030` | acceso | [`../030_acceso/README.md`](../030_acceso/README.md) |
 | `040` | remolque | [`../040_remolque/README.md`](../040_remolque/README.md) |
 | `050` | parking (this) | [`./README.md`](./README.md) |
-| `060` | GSE | [`../060_GSE/00_Overview.md`](../060_GSE/00_Overview.md) |
+| `060` | GSE | [`../060_GSE/010_Overview.md`](../060_GSE/010_Overview.md) |
 
 ## 6. Footprint
 
@@ -103,7 +103,7 @@ flowchart LR
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subject | `00` — General Information |
 | Subsection | `050` — parking |
-| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
+| Subsubject namespace | `010`–`019` (`010` + `011`–`015` populated; canonical `01N_*.md` scheme) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
@@ -115,13 +115,13 @@ flowchart LR
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below. Cross-subsection references with `010_Ground-handling/`, `020_servicing/`, `030_acceso/` and `040_remolque/` shall preserve the *positioning vs. flow vs. envelope-opening vs. controlled-translation vs. resting-state* partition stated in [`./00_Overview.md` §2](./00_Overview.md#2-scope) and in the sibling Overviews. Subsubject `03` declares a top-level YAML decision matrix indexed by `forecast_confidence × forecast_severity × time_to_event` that is **machine-checked** by digital-twin tooling — extensions must not silently weaken those thresholds. Subsubject `05` records carry a top-level `event_classification:` field whose value (`nominal` / `inspection_trigger` / `mandatory_inspection` / `damage_event`) governs the bidirectional propagation rule into `AMPEL360-AIR-T/LC11_MAINTENANCE/`; this field is the canonical hand-off and shall not be omitted. The `04_` ↔ `01_` boundary (classification rule vs. operational state) is restated symmetrically in both files and shall not be collapsed by future edits.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS band; extensions added under `016`–`019` shall preserve those header fields, follow the canonical `01N_*.md` naming scheme, and reuse the footnote set declared below. Cross-subsection references with `010_Ground-handling/`, `020_servicing/`, `030_acceso/` and `040_remolque/` shall preserve the *positioning vs. flow vs. envelope-opening vs. controlled-translation vs. resting-state* partition stated in [`./010_Overview.md` §2](./010_Overview.md#2-scope) and in the sibling Overviews. Subsubject `013` declares a top-level YAML decision matrix indexed by `forecast_confidence × forecast_severity × time_to_event` that is **machine-checked** by digital-twin tooling — extensions must not silently weaken those thresholds. Subsubject `015` records carry a top-level `event_classification:` field whose value (`nominal` / `inspection_trigger` / `mandatory_inspection` / `damage_event`) governs the bidirectional propagation rule into `AMPEL360-AIR-T/LC11_MAINTENANCE/`; this field is the canonical hand-off and shall not be omitted. The `014_` ↔ `011_` boundary (classification rule vs. operational state) is restated symmetrically in both files and shall not be collapsed by future edits.
 
 ## 7. Change Log
 
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-GROUND | Initial population of subsection `050 parking`: README + Overview enrichment (diagram, ATA 10 / 12 / 32 cross-refs, numbering note disambiguating against ATA 50, triangulation with `010`/`020`/`030`/`040`) + subsubjects `01`–`05`, including the BWB-stand negative-space enumeration in `02_`, the wind-action decision-matrix YAML invariant block in `03_`, the `04_` ↔ `01_` boundary restated in both files, and the `event_classification:` propagation field in `05_`. |
+| 1.0.0 | 2026-05-07 | Q-GROUND | Initial population of subsection `050 parking`: README + Overview enrichment (diagram, ATA 10 / 12 / 32 cross-refs, numbering note disambiguating against ATA 50, triangulation with `010`/`020`/`030`/`040`) + subsubjects `011`–`015`, including the BWB-stand negative-space enumeration in `012_`, the wind-action decision-matrix YAML invariant block in `013_`, the `014_` ↔ `011_` boundary restated in both files, and the `event_classification:` propagation field in `015_`. |
 
 ## 8. References & Citations
 
