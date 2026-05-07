@@ -125,9 +125,9 @@ STE violations are classified:
 - **Blocking**: Non-approved word, prohibited syntactic construction. DM cannot be published.
 - **Warning**: Style recommendation. DM can be published with documented exception reviewed by Q-DATAGOV.
 
-### 2.5 Programme-level multilingüalism declaration
+### 2.5 Programme-level multilingualism declaration
 
-The Q+ programme affirms its multilingüal identity at the programme-governance layer while strictly separating it from the operational-safety layer:
+The Q+ programme affirms its multilingual identity at the programme-governance layer while strictly separating it from the operational-safety layer:
 
 | Layer | Language policy |
 |---|---|
