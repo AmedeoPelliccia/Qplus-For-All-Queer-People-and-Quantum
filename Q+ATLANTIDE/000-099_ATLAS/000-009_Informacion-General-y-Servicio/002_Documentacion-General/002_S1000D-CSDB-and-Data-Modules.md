@@ -89,7 +89,7 @@ DMC-{modelIdentCode}-{systemDiffCode}-{systemCode}-{subSystemCode}{subSubSystemC
 | Field | Programme value / rule |
 |---|---|
 | `modelIdentCode` | `QPLUS` (5 characters, uppercase) |
-| `systemDiffCode` | A–Z per configuration variant (see `001_Configuracion/002_`) |
+| `systemDiffCode` | A–Z per configuration variant (see `001_Configuracion/README.md`) |
 | `systemCode` | 3-digit; maps to ATLAS Code range tens (`020`, `040`, `060`, …) |
 | `subSystemCode` | 2-character; maps to Subject within Code range |
 | `subSubSystemCode` | 2-character; maps to subsubject |
