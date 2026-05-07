@@ -87,6 +87,7 @@ This flag is what allows the evidence chain to filter, query, and join GSE recor
 - `ownership:` — `operator-owned` / `airport-owned` / `leased` / `shared-pool` per [`./01`](./01_Scope-and-GSE-Boundaries.md).
 - `operator_of_use:` — the operator under whose airside permit the unit was operating at the moment of the record (critical for shared-pool units, where the unit may belong to one party and the operator-of-use to another).
 - `event_timestamp:` — ISO 8601 timestamp of the event being recorded.
+- `event_classification:` — mandatory for any event that touched an aircraft, triggered an inspection, or is propagated into `LC11_MAINTENANCE`; optional for purely administrative records that do not drive maintenance routing.
 - `aircraft_link:` — when the record describes an event that touched an aircraft (servicing, refuel, towing, etc.), the aircraft tail / MSN, the flight leg, and the coupling cycle id, so that a join from the aircraft side can pick it up.
 - `calibration_tokens:` — the calibration tokens from §2.2 in effect at the time of the event (snapshot, not pointer, so that retrospective queries return the truth at the time).
 - `fuel_lot:` — for `GSE-FT-*` / `GSE-FH-*`, the fuel lot from which fuel was drawn (so that a fuel-quality investigation can scope the affected aircraft set).
