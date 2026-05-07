@@ -53,7 +53,7 @@ Basis encoding is the simplest and most noise-resilient of the classical-to-quan
 ## 3. Diagram — Basis Encoding Circuit
 
 ```mermaid
-flowchart LR
+flowchart TD
     B["Binary string  b = b₁b₂…bₙ<br/>(e.g., b = 1 0 1 1)"]
     ZERO["Initial register  |0ⁿ⟩<br/>(all qubits initialised to |0⟩)"]
     X1["X gate on qubit 1<br/>(b₁ = 1 → apply X)"]
