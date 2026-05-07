@@ -7,7 +7,7 @@ parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
 parent_architecture_doc: ../../README.md
 parent_section_doc: ../README.md
 architecture_code: ATLAS
-architecture_name: "Aircraft Top-Level Architecture System"
+architecture_name: "Aircraft Top Level Architecture Schema/System"
 master_range: "000–099"
 code_range: "050-059"
 section: "05"
@@ -47,7 +47,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | Metric | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top-Level Architecture System |
+| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
 | Master range | `000–099` |
 | Code range | `050-059` |
 | Section | `05` — Estructuras Primarias e Interfaces de Programa / Q-Division |

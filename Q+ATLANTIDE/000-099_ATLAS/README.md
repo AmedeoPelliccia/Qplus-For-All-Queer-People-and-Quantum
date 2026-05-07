@@ -1,11 +1,23 @@
 ---
 document_id: QATL-ATLAS1000-ATLAS-README
-title: "000–099 ATLAS — Aircraft Top-Level Architecture System"
+title: "000–099 ATLAS — Aircraft Top Level Architecture Schema/System"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../organization/Q+ATLANTIDE.md
 architecture_code: ATLAS
-architecture_name: "Aircraft Top-Level Architecture System"
+architecture_name: "Aircraft Top Level Architecture Schema/System"
+architecture_term:
+  controlled_term: true
+  expansion: "Aircraft Top Level Architecture Schema/System"
+  domain: "Q+ATLANTIDE / Q+ATLANTIDE1000"
+  master_range: "000-099"
+  meaning: >
+    Controlled architecture layer for aircraft top-level classification,
+    identification, system mapping, technical documentation alignment,
+    and lifecycle-governed aerospace configuration structure.
+  usage_note:
+    Schema: "Use when referring to taxonomy, data model, classification, or repository structure."
+    System: "Use when referring to operational architecture, governance, interfaces, and lifecycle control."
 master_range: "000–099"
 subrange_count: 10
 governance_class: baseline
@@ -17,7 +29,7 @@ status: active
 language: en
 ---
 
-# 000–099 ATLAS — Aircraft Top-Level Architecture System
+# 000–099 ATLAS — Aircraft Top Level Architecture Schema/System
 
 ## 1. Purpose
 
@@ -29,7 +41,7 @@ This folder is part of the **ATLAS-1000** register, a subpart of the controlled 
 
 | Term / Acronym | Expansion | Meaning in this band |
 |---|---|---|
-| ATLAS | Aircraft Top-Level Architecture System | Aircraft architecture band `000-099`. |
+| ATLAS | Aircraft Top Level Architecture **Schema/System** (controlled term) | Aircraft architecture band `000-099`. *Schema* — taxonomy, data model, classification, or repository structure; *System* — operational architecture, governance, interfaces, and lifecycle control. |
 | APU | Auxiliary Power Unit | Onboard auxiliary power generator. |
 | BWB | Blended Wing Body | Aircraft configuration family. |
 | CMS | Central Maintenance System | Onboard maintenance computing function. |
