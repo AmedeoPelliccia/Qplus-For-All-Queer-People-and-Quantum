@@ -59,7 +59,7 @@ The catalog is structured by **functional class**, not by manufacturer. Each fun
 | GSE-CT-* | Catering truck (high-lift) | Galley servicing | ICAO baseline (per door height) |
 | GSE-WT-* | Potable-water cart | Replenish potable water | ICAO baseline (per coupling) |
 | GSE-LT-* | Lavatory-service cart | Empty/replenish lavatory tanks | ICAO baseline (per coupling) |
-| GSE-AS-AX | Aircraft access stand / maintenance platform | Crew/maintainer access at altitude | ICAO baseline (per access point) |
+| GSE-AX-* | Aircraft access stand / maintenance platform | Crew/maintainer access at altitude | ICAO baseline (per access point) |
 | GSE-N2-* | Nitrogen / inerting cart | N₂ purge / inerting | ICAO baseline; **extended duty cycle for H₂ ops** |
 | GSE-FF-* | Fuel-fluid recovery / spill-response unit | Spill containment, including H₂ vapour-recovery | **AMPEL360-specific extension for H₂** |
 | GSE-CN-* | Cones / safety perimeter markers | Define safety perimeter | ICAO baseline (universal) |
