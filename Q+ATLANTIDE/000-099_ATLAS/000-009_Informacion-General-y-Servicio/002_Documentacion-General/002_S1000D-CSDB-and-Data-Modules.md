@@ -72,7 +72,7 @@ The programme CSDB is the central repository for all source Data Modules. It is 
 | CSDB type | XML-based, S1000D Issue 6.0 compliant |
 | DM storage | One XML file per Data Module; keyed by DMC |
 | ICN storage | Binary assets (graphics, multimedia) referenced by ICN |
-| BREX storage | `BREX-DM` at root of CSDB; programme BREX declared in §2.4 |
+| BREX storage | `BREX-DM` at root of CSDB; programme BREX declared in §2.5 |
 | PM storage | Publication Module XML files assembled from DMs |
 | Version control | Git-based; every DM commit must update `issueNumber` and `inWork` attributes |
 | Access control | Q-DATAGOV authority; read access per operator subscription level |
