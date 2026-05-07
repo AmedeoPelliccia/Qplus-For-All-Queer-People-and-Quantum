@@ -14,9 +14,13 @@ section: "01"
 section_title: "Estructuras y Materiales Espaciales"
 subsection: "111"
 subsection_title: "Materiales Espaciales"
-primary_q_division: Q-STRUCTURES
-support_q_divisions: [Q-SPACE, Q-HORIZON, Q-INDUSTRY]
+primary_q_division: Q-SPACE
+support_q_divisions: [Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
+linked_nodes:
+  - "110_Estructuras-Orbitales"
+  - "112_Proteccion-Termica-y-Radiacion"
+safety_boundary: "space-materials critical; requires explicit qualification testing, material allowables, contamination control, radiation/thermal-cycle evidence and lifecycle traceability"
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -29,19 +33,30 @@ language: en
 
 Subsection-level index for *Materiales Espaciales* (`111`) within STA `110-119` — *Estructuras y Materiales Espaciales*.
 
-This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
+This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. It is designated **space-materials critical**: all subsubjects require explicit qualification testing, material allowables, contamination control, radiation/thermal-cycle evidence, and lifecycle traceability.
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `111` *Space Materials*.
+- Populates the subsubject namespace `000`–`010` of subsection `111` *Space Materials*; subsubjects `011`–`099` remain reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- Linked nodes: `110_Estructuras-Orbitales`, `112_Proteccion-Termica-y-Radiacion`.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
+| 001 | Space Materials Controlled Definition | [`001_Space-Materials-Controlled-Definition.md`](001_Space-Materials-Controlled-Definition.md) | active |
+| 002 | Material Families and Selection Criteria | [`002_Material-Families-and-Selection-Criteria.md`](002_Material-Families-and-Selection-Criteria.md) | active |
+| 003 | Metals, Alloys and Superalloys | [`003_Metals-Alloys-and-Superalloys.md`](003_Metals-Alloys-and-Superalloys.md) | active |
+| 004 | Composites, Ceramics and Hybrid Materials | [`004_Composites-Ceramics-and-Hybrid-Materials.md`](004_Composites-Ceramics-and-Hybrid-Materials.md) | active |
+| 005 | Polymers, Elastomers and Sealants | [`005_Polymers-Elastomers-and-Sealants.md`](005_Polymers-Elastomers-and-Sealants.md) | active |
+| 006 | Outgassing, Vacuum and Contamination Control | [`006_Outgassing-Vacuum-and-Contamination-Control.md`](006_Outgassing-Vacuum-and-Contamination-Control.md) | active |
+| 007 | Radiation, Thermal Cycling and Atomic Oxygen Effects | [`007_Radiation-Thermal-Cycling-and-Atomic-Oxygen-Effects.md`](007_Radiation-Thermal-Cycling-and-Atomic-Oxygen-Effects.md) | active |
+| 008 | Qualification Testing and Material Allowables | [`008_Qualification-Testing-and-Material-Allowables.md`](008_Qualification-Testing-and-Material-Allowables.md) | active |
+| 009 | ECSS / NASA Materials Standards Mapping | [`009_ECSS-NASA-Materials-Standards-Mapping.md`](009_ECSS-NASA-Materials-Standards-Mapping.md) | active |
+| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 011–099 | *(reserved)* | — | reserved |
 
 ## 4. Footprint
 
@@ -52,11 +67,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `110-119` |
 | Section | `01` — Estructuras y Materiales Espaciales |
 | Subsection | `111` — Materiales Espaciales |
-| Subsubject namespace | `00`–`99` (reserved) |
-| Primary Q-Division | Q-STRUCTURES[^qdiv] |
-| Support Q-Divisions | Q-SPACE, Q-HORIZON, Q-INDUSTRY |
+| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Primary Q-Division | Q-SPACE[^qdiv] |
+| Support Q-Divisions | Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
 | Governance class | `baseline`[^gov] |
+| Safety boundary | space-materials critical |
 | Folder path | `Q+ATLANTIDE/100-199_STA/110-119_Estructuras-y-Materiales-Espaciales/111_Materiales-Espaciales/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
@@ -65,7 +81,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-STRUCTURES` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE`, `support_q_divisions = [Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY]`, and `governance_class = baseline` from the parent STA section. Extensions added under `011`–`099` shall preserve those header fields, declare the `safety_boundary`, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
