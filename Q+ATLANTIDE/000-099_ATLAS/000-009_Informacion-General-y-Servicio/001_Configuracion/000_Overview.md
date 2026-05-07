@@ -44,12 +44,12 @@ Subsection `001_Configuración` is the **content and control layer** for aircraf
 
 | Subject | Role |
 |---|---|
-| `000_Identificacion/003_Configuration-Identification.md` | Defines the **identifier** of configuration: label, code, namespace, part-number scheme. |
+| `000_Identificacion/README.md` | Defines the **identifier** of configuration at subject level: label, code, namespace, part-number scheme. |
 | `001_Configuracion/` *(this Subject)* | Defines the **configuration itself**: content, baseline, effectivity, modification status, variant catalogue, and change control. |
 
-This boundary shall be declared symmetrically: the word-for-word rule, repeated in both `000_Identificacion/000_Overview.md` and this document, is:
+This boundary shall be declared consistently across the adjacent subjects. In the current repository, the corresponding identification reference is `000_Identificacion/README.md`, and the governing rule is:
 
-> *`000_Identificacion/003_` defines the **identifier** of configuration (label, code, namespace); `001_Configuracion/` defines the **configuration itself** (content, control, change).*
+> *`000_Identificacion/README.md` defines the **identifier** of configuration (label, code, namespace); `001_Configuracion/` defines the **configuration itself** (content, control, change).*
 
 The ATLAS Schema makes this separation more explicit than ATA-100: because ATLAS is a Schema, the distinction between "what names a thing" (Identificación) and "what the thing is" (Configuración) is intrinsic to the schema, not an implementation detail.
 
