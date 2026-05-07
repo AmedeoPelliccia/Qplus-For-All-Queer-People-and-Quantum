@@ -39,7 +39,7 @@ This subsubject (`000 Overview`) introduces the QCSAA 900-909.900.000 slice and 
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Subsequent subsubjects (`001`–`009`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `001`–`005`, indexed in [`README.md`](./README.md).
 - The qubit, defined here, is the **atomic unit of quantum computation** and the upstream dependency of every other chapter in QCSAA. Downstream subsections and bands that build on it include:
-  - Within `900-909`: [`../020_gates/`](../020_gates/), [`../030_circuits/`](../030_circuits/), [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../050_foundations/`](../050_foundations/).
+  - Within `900-909`: [`../020_gates/`](../020_gates/), [`../030_circuits/`](../030_circuits/), [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../904_foundations/`](../904_foundations/).
   - Within QCSAA `900-999`: `910-919` Quantum Machine Learning & Quantum AI, `920-929` Quantum Networks & Communications, `930-939` Quantum Cybersecurity, `940-949` Quantum Sensing & Metrology, `950-959` Quantum Simulation, `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
   - Cross-band: CYB `880-889` Post-Quantum Cryptography (defends against quantum computers; depends on the qubit model defined here, even though it is not part of QCSAA).
 
