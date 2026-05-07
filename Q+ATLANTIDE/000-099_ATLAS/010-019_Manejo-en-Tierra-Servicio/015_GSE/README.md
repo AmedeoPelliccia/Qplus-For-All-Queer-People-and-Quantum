@@ -19,7 +19,7 @@ support_q_divisions: [Q-MECHANICS, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,26 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `015` *Ground Support Equipment*.
+- Covers the subsubject namespace `000`–`005` of subsection `015` *Ground Support Equipment*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Subsubjects `000`–`005` are populated in this baseline release:
+  - `000_Overview.md` — subsection scope, boundary rules, position in ATLAS, content map
+  - `001_Scope-and-GSE-Boundaries.md` — taxonomy boundary definitions; what is/is not GSE within ATLAS
+  - `002_GSE-Catalog-and-Compatibility-Matrix.md` — authorised GSE list per AMPEL360 variant with compatibility ratings
+  - `003_Powered-and-Non-Powered-GSE.md` — classification of GSE by power source; operational requirements per class
+  - `004_GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md` — physical and electrical interfaces between GSE and aircraft
+  - `005_GSE-Maintenance-Calibration-and-Records.md` — maintenance intervals, calibration schedules, and traceability records
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 001 | Scope and GSE Boundaries | [`001_Scope-and-GSE-Boundaries.md`](./001_Scope-and-GSE-Boundaries.md) | active |
+| 002 | GSE Catalog and Compatibility Matrix | [`002_GSE-Catalog-and-Compatibility-Matrix.md`](./002_GSE-Catalog-and-Compatibility-Matrix.md) | active |
+| 003 | Powered and Non-Powered GSE | [`003_Powered-and-Non-Powered-GSE.md`](./003_Powered-and-Non-Powered-GSE.md) | active |
+| 004 | GSE Interfaces, Couplings and Aircraft-Side Connections | [`004_GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md`](./004_GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md) | active |
+| 005 | GSE Maintenance, Calibration and Records | [`005_GSE-Maintenance-Calibration-and-Records.md`](./005_GSE-Maintenance-Calibration-and-Records.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +63,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `010-019` |
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `015` — Ground Support Equipment |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`005` (active) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
@@ -65,7 +76,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `000`–`099` shall preserve those header fields and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
