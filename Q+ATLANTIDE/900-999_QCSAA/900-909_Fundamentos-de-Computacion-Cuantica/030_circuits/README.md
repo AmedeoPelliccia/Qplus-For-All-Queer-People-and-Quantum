@@ -27,7 +27,7 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *circuits* (`030`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that introduce the **quantum circuit** as the directed, measured, classically-controlled composition of unitary gates over a qubit register; formalise its structural resource metrics (depth, width, parallelism); document measurement, mid-circuit measurement and classical feed-forward; describe the optimisation/compilation/transpilation pipeline that maps a logical circuit to a hardware ISA; and record the noise-resilient circuit patterns appropriate to NISQ-era execution — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
+Subsection-level index for *circuits* (`030`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `900 Overview` and the detailed subsubjects (`901`–`905`) that introduce the **quantum circuit** as the directed, measured, classically-controlled composition of unitary gates over a qubit register; formalise its structural resource metrics (depth, width, parallelism); document measurement, mid-circuit measurement and classical feed-forward; describe the optimisation/compilation/transpilation pipeline that maps a logical circuit to a hardware ISA; and record the noise-resilient circuit patterns appropriate to NISQ-era execution — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
 
 This subsection is the **third foundational chapter** of the QCSAA band and the **synthesis** of [`../010_Qubits/`](../010_Qubits/) and [`../020_gates/`](../020_gates/): where qubits define the substrate and gates define the operations, circuits define the **computational artefacts** that downstream ranges actually consume. It is the **immediate prerequisite** for [`../040_quantum-algorithms/`](../040_quantum-algorithms/) and an upstream dependency for `910-919` (QML), `940-949` (sensing) and `950-959` (simulation), all of which operate on circuits — not on gates or qubits in isolation.
 
@@ -35,22 +35,22 @@ The chapter is organised in the same five-file structure as [`../010_Qubits/`](.
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `00`–`99` of subsection `030` *circuits*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the full subsubject namespace `900`–`999` of subsection `030` *circuits*; subsubjects `901`–`905` are populated in this baseline release, the remaining `906`–`999` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Pedagogical sequence followed: **definition → properties → operations → engineering → practice**, mirroring [`../010_Qubits/`](../010_Qubits/) and [`../020_gates/`](../020_gates/).
-- **Boundary against [`../020_gates/`](../020_gates/)** (binding for contributors). `020_` covers the **single unitary operation** — its definition, its decomposition into a universal set, its physical realisation and per-gate fidelity. This chapter covers what happens **when those operations are composed into circuits**: depth, parallelism, measurement timing, mid-circuit measurement, classical control flow, and the engineering pipeline that emits hardware-executable instructions. The rule is restated in `00_Overview.md` §2 and re-bindingly in `01_` §2.
-- **Boundary against [`../040_quantum-algorithms/`](../040_quantum-algorithms/)** (binding for contributors). This chapter covers the circuit as a **structural and operational artefact** — its cost, its execution semantics, its compilation. It does **not** cover what specific algorithms (Grover, Shor, QAOA, VQE, HHL) compute — that is the proper subject of `040_`. Material that asks "what does this circuit *compute*" goes to `040_`; material that asks "what does this circuit *cost* and *how* is it executed" stays here. The rule is restated in `00_Overview.md` §2 and in `04_` §2 because that is the slot where the temptation to drift into algorithm-specific arguments is strongest.
+- **Boundary against [`../020_gates/`](../020_gates/)** (binding for contributors). `020_` covers the **single unitary operation** — its definition, its decomposition into a universal set, its physical realisation and per-gate fidelity. This chapter covers what happens **when those operations are composed into circuits**: depth, parallelism, measurement timing, mid-circuit measurement, classical control flow, and the engineering pipeline that emits hardware-executable instructions. The rule is restated in `900_Overview.md` §2 and re-bindingly in `901_` §2.
+- **Boundary against [`../040_quantum-algorithms/`](../040_quantum-algorithms/)** (binding for contributors). This chapter covers the circuit as a **structural and operational artefact** — its cost, its execution semantics, its compilation. It does **not** cover what specific algorithms (Grover, Shor, QAOA, VQE, HHL) compute — that is the proper subject of `040_`. Material that asks "what does this circuit *compute*" goes to `040_`; material that asks "what does this circuit *cost* and *how* is it executed" stays here. The rule is restated in `900_Overview.md` §2 and in `904_` §2 because that is the slot where the temptation to drift into algorithm-specific arguments is strongest.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`00_Overview.md`](./00_Overview.md) | active |
-| 01 | Circuit Definition and Composition | [`01_Circuit-Definition-and-Composition.md`](./01_Circuit-Definition-and-Composition.md) | active |
-| 02 | Circuit Depth, Width and Parallelism | [`02_Circuit-Depth-Width-and-Parallelism.md`](./02_Circuit-Depth-Width-and-Parallelism.md) | active |
-| 03 | Measurement, Mid-Circuit and Classical Control | [`03_Measurement-Mid-Circuit-and-Classical-Control.md`](./03_Measurement-Mid-Circuit-and-Classical-Control.md) | active |
-| 04 | Circuit Optimization, Compilation and Transpilation | [`04_Circuit-Optimization-Compilation-and-Transpilation.md`](./04_Circuit-Optimization-Compilation-and-Transpilation.md) | active |
-| 05 | Noise-Resilient Circuit Patterns and NISQ Practice | [`05_Noise-Resilient-Circuit-Patterns-and-NISQ-Practice.md`](./05_Noise-Resilient-Circuit-Patterns-and-NISQ-Practice.md) | active |
+| 900 | Overview | [`900_Overview.md`](./900_Overview.md) | active |
+| 901 | Circuit Definition and Composition | [`901_Circuit-Definition-and-Composition.md`](./901_Circuit-Definition-and-Composition.md) | active |
+| 902 | Circuit Depth, Width and Parallelism | [`902_Circuit-Depth-Width-and-Parallelism.md`](./902_Circuit-Depth-Width-and-Parallelism.md) | active |
+| 903 | Measurement, Mid-Circuit and Classical Control | [`903_Measurement-Mid-Circuit-and-Classical-Control.md`](./903_Measurement-Mid-Circuit-and-Classical-Control.md) | active |
+| 904 | Circuit Optimization, Compilation and Transpilation | [`904_Circuit-Optimization-Compilation-and-Transpilation.md`](./904_Circuit-Optimization-Compilation-and-Transpilation.md) | active |
+| 905 | Noise-Resilient Circuit Patterns and NISQ Practice | [`905_Noise-Resilient-Circuit-Patterns-and-NISQ-Practice.md`](./905_Noise-Resilient-Circuit-Patterns-and-NISQ-Practice.md) | active |
 
 ## 4. Footprint
 
@@ -62,7 +62,7 @@ The chapter is organised in the same five-file structure as [`../010_Qubits/`](.
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
 | Subsection | `030` — circuits |
-| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
+| Subsubject namespace | `900`–`999` (`900` + `901`–`905` populated) |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
@@ -74,14 +74,14 @@ The chapter is organised in the same five-file structure as [`../010_Qubits/`](.
 
 ## 5. Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = QCSAA`, `primary_q_division = Q-HORIZON` and `governance_class = restricted` from the parent QCSAA band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = QCSAA`, `primary_q_division = Q-HORIZON` and `governance_class = restricted` from the parent QCSAA band; extensions added under `906`–`999` shall preserve those header fields and reuse the footnote set declared below.
 
 ## 6. Upstream, Downstream and Cross-Band Dependencies
 
-- **Upstream (within `900-909`)** — [`../010_Qubits/`](../010_Qubits/) and [`../020_gates/`](../020_gates/). Every circuit in this chapter operates on the Hilbert space defined in `010_Qubits/01_` and is composed of the unitary operations defined in `020_gates/01_`–`04_`; every circuit-depth and noise-budget argument in `02_` and `05_` is bounded by the per-gate times and fidelities of [`../020_gates/05_Gate-Implementation-Calibration-and-Error-Characterization.md`](../020_gates/05_Gate-Implementation-Calibration-and-Error-Characterization.md) and the $T_1, T_2$ values of [`../010_Qubits/04_Decoherence-Noise-and-Fidelity.md`](../010_Qubits/04_Decoherence-Noise-and-Fidelity.md).
-- **Downstream (within `900-909`)** — [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../050_foundations/`](../050_foundations/). The chapter boundary against `040_quantum-algorithms/` is stated explicitly in `00_Overview.md` §2 and re-bindingly in `04_` §2.
-- **Within QCSAA `900-999`** — `910-919` Quantum Machine Learning & Quantum AI (parameterised / variational circuits depend on the depth, width and ansatz patterns of `02_` and `05_`), `920-929` Quantum Networks & Communications (entanglement-distribution protocols are circuits with classical communication, depending on `03_`), `930-939` Quantum Cybersecurity, `940-949` Quantum Sensing (sensing protocols are measurement circuits, depending on `03_`), `950-959` Quantum Simulation (Hamiltonian-evolution circuits depend on Trotter-step depth analysis from `02_` and `04_`), `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
-- **Cross-band** — CYB `880-889` Post-Quantum Cryptography back-references the resource estimates produced by the depth/width analysis of `02_` and the compilation pipeline of `04_` to size the threat model.
+- **Upstream (within `900-909`)** — [`../010_Qubits/`](../010_Qubits/) and [`../020_gates/`](../020_gates/). Every circuit in this chapter operates on the Hilbert space defined in `010_Qubits/01_` and is composed of the unitary operations defined in `020_gates/01_`–`020_gates/04_`; every circuit-depth and noise-budget argument in `902_` and `905_` is bounded by the per-gate times and fidelities of [`../020_gates/05_Gate-Implementation-Calibration-and-Error-Characterization.md`](../020_gates/05_Gate-Implementation-Calibration-and-Error-Characterization.md) and the $T_1, T_2$ values of [`../010_Qubits/04_Decoherence-Noise-and-Fidelity.md`](../010_Qubits/04_Decoherence-Noise-and-Fidelity.md).
+- **Downstream (within `900-909`)** — [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../050_foundations/`](../050_foundations/). The chapter boundary against `040_quantum-algorithms/` is stated explicitly in `900_Overview.md` §2 and re-bindingly in `904_` §2.
+- **Within QCSAA `900-999`** — `910-919` Quantum Machine Learning & Quantum AI (parameterised / variational circuits depend on the depth, width and ansatz patterns of `902_` and `905_`), `920-929` Quantum Networks & Communications (entanglement-distribution protocols are circuits with classical communication, depending on `903_`), `930-939` Quantum Cybersecurity, `940-949` Quantum Sensing (sensing protocols are measurement circuits, depending on `903_`), `950-959` Quantum Simulation (Hamiltonian-evolution circuits depend on Trotter-step depth analysis from `902_` and `904_`), `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
+- **Cross-band** — CYB `880-889` Post-Quantum Cryptography back-references the resource estimates produced by the depth/width analysis of `902_` and the compilation pipeline of `904_` to size the threat model.
 
 Downstream chapters shall back-reference the specific subsubjects of this subsection rather than re-introduce the underlying circuit concepts.
 
@@ -89,7 +89,7 @@ Downstream chapters shall back-reference the specific subsubjects of this subsec
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `00_Overview.md` plus subsubjects `01`–`05`. Subsection index established; chapter parallel to `010_Qubits/` and `020_gates/` (definition → properties → operations → engineering → practice). |
+| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `900_Overview.md` plus subsubjects `901`–`905`. Subsection index established; chapter parallel to `010_Qubits/` and `020_gates/` (definition → properties → operations → engineering → practice). |
 
 ## 8. References & Citations
 

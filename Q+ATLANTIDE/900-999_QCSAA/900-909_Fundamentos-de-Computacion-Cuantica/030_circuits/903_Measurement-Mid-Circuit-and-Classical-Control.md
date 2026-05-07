@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-030-03-MEASUREMENT-MID-CIRCUIT-AND-CLASSICAL-CONTROL
-title: "QCSAA 900-909 · 00.030.03 — Measurement, Mid-Circuit and Classical Control"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-030-903-MEASUREMENT-MID-CIRCUIT-AND-CLASSICAL-CONTROL
+title: "QCSAA 900-909 · 00.030.903 — Measurement, Mid-Circuit and Classical Control"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,7 +15,7 @@ subject: "00"
 subject_title: "General Information"
 subsection: "030"
 subsection_title: "circuits"
-subsubject: "03"
+subsubject: "903"
 subsubject_title: "Measurement, Mid-Circuit and Classical Control"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,15 +25,15 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 030 · Subsubject 03 — Measurement, Mid-Circuit and Classical Control
+# QCSAA 900-909 · Section 00 · Subsection 030 · Subsubject 903 — Measurement, Mid-Circuit and Classical Control
 
 ## 1. Purpose
 
-Defines the **non-unitary primitives** of a quantum circuit — terminal measurement in the computational basis, projective measurement in arbitrary bases, mid-circuit measurement, qubit reset, classical registers, and classical feed-forward (control flow conditioned on measurement outcomes) — and establishes the boundary at which the circuit-as-unitary view of `01_` breaks down. This subsubject is also the prerequisite for every quantum-error-correction syndrome cycle, every dynamic-circuit pattern, and every NISQ measurement-based mitigation pattern referenced by `05_`.
+Defines the **non-unitary primitives** of a quantum circuit — terminal measurement in the computational basis, projective measurement in arbitrary bases, mid-circuit measurement, qubit reset, classical registers, and classical feed-forward (control flow conditioned on measurement outcomes) — and establishes the boundary at which the circuit-as-unitary view of `901_` breaks down. This subsubject is also the prerequisite for every quantum-error-correction syndrome cycle, every dynamic-circuit pattern, and every NISQ measurement-based mitigation pattern referenced by `905_`.
 
 ## 2. Scope
 
-- Covers the *Measurement, Mid-Circuit and Classical Control* subsubject (`03`) of subsection `030` *circuits* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Measurement, Mid-Circuit and Classical Control* subsubject (`903`) of subsection `030` *circuits* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **Terminal measurement.** The standard end-of-circuit projective measurement in the computational basis $\{|0\rangle, |1\rangle\}$, returning a classical bitstring sampled with probability $|\langle x | \psi_{\text{final}} \rangle|^2$. This is the only place where the circuit's unitary evolution is collapsed to a classical outcome under the measurement postulate (Born rule); see [`../010_Qubits/03_Qubit-States-Operations-and-Measurement.md`](../010_Qubits/03_Qubit-States-Operations-and-Measurement.md).
@@ -42,9 +42,9 @@ Defines the **non-unitary primitives** of a quantum circuit — terminal measure
   - **Reset.** The classically-conditioned re-initialisation of a qubit to $|0\rangle$ after a mid-circuit measurement — usually a measurement followed by an $X$ gate conditioned on the measured `1`. Reset enables qubit reuse, which trades depth for width and is often the only way to keep a circuit within the available physical-qubit budget.
   - **Classical registers.** A circuit operates over **two** registers: a quantum register (the qubits) and a classical register (the bits that hold measurement outcomes). The classical register has a fixed bit-width per measurement and is the medium for all in-circuit classical computation.
   - **Classical feed-forward / classical control.** Subsequent gates may be **conditioned** on classical-register values: `if c == 1 then apply X to qubit q`. The combination of MCM + reset + feed-forward is the **dynamic-circuit** primitive set; it is what turns a static unitary circuit into a measurement-and-control program. The end-to-end latency of measurement → classical decision → conditioned gate must remain short relative to $T_2$ for the conditioned operation to be coherent on the still-quantum qubits.
-  - **Deferred-measurement principle.** Any circuit using MCM and feed-forward can in principle be rewritten — at the cost of additional qubits — as a measurement-free unitary circuit followed by terminal measurements (replace each classical-controlled gate with the corresponding quantum-controlled gate, defer all measurements to the end). This is the bridge between the dynamic-circuit picture of this subsubject and the unitary picture of `01_`. The principle is not a free lunch: deferred-measurement rewrites can blow up width, which is precisely why dynamic circuits exist on hardware.
-  - **The non-unitarity boundary.** Every primitive in this subsubject is **non-unitary** at the level of the qubit register (measurement collapses superposition; reset re-initialises; feed-forward inserts a classically-controlled choice). The circuit-as-unitary view of `01_` applies only to the measurement-free segments **between** these primitives.
-- Out of scope: the underlying single-qubit measurement physics, POVMs, and readout-error model (already in [`../010_Qubits/03_`](../010_Qubits/03_Qubit-States-Operations-and-Measurement.md) and [`../010_Qubits/04_`](../010_Qubits/04_Decoherence-Noise-and-Fidelity.md)); the unitary gate catalogue (`../020_gates/`); compilation of dynamic circuits to a hardware ISA (`04_`); and noise-resilient mitigation patterns that *use* MCM and feed-forward (`05_`).
+  - **Deferred-measurement principle.** Any circuit using MCM and feed-forward can in principle be rewritten — at the cost of additional qubits — as a measurement-free unitary circuit followed by terminal measurements (replace each classical-controlled gate with the corresponding quantum-controlled gate, defer all measurements to the end). This is the bridge between the dynamic-circuit picture of this subsubject and the unitary picture of `901_`. The principle is not a free lunch: deferred-measurement rewrites can blow up width, which is precisely why dynamic circuits exist on hardware.
+  - **The non-unitarity boundary.** Every primitive in this subsubject is **non-unitary** at the level of the qubit register (measurement collapses superposition; reset re-initialises; feed-forward inserts a classically-controlled choice). The circuit-as-unitary view of `901_` applies only to the measurement-free segments **between** these primitives.
+- Out of scope: the underlying single-qubit measurement physics, POVMs, and readout-error model (already in [`../010_Qubits/03_`](../010_Qubits/03_Qubit-States-Operations-and-Measurement.md) and [`../010_Qubits/04_`](../010_Qubits/04_Decoherence-Noise-and-Fidelity.md)); the unitary gate catalogue (`../020_gates/`); compilation of dynamic circuits to a hardware ISA (`904_`); and noise-resilient mitigation patterns that *use* MCM and feed-forward (`905_`).
 
 ## 3. Diagram — Dynamic Circuit Primitives
 
@@ -52,7 +52,7 @@ The diagram shows the four primitives of a dynamic circuit and their data depend
 
 ```mermaid
 flowchart LR
-    Q["Quantum register<br/>(010_/01_)"] --> U["Unitary segment<br/>(01_, 02_)"]
+    Q["Quantum register<br/>(010_/01_)"] --> U["Unitary segment<br/>(901_, 902_)"]
     U --> M["Mid-circuit<br/>measurement (MCM)"]
     M -- "outcome bit" --> CR["Classical register"]
     M --> R["Reset<br/>(re-init to |0⟩)"]
@@ -73,14 +73,14 @@ flowchart LR
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
 | Subsection | `030` — circuits |
-| Subsubject | `03` — Measurement, Mid-Circuit and Classical Control |
+| Subsubject | `903` — Measurement, Mid-Circuit and Classical Control |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
 | Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/030_circuits/` |
-| Document | `03_Measurement-Mid-Circuit-and-Classical-Control.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`00_Overview.md`](./00_Overview.md) |
+| Document | `903_Measurement-Mid-Circuit-and-Classical-Control.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`900_Overview.md`](./900_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
