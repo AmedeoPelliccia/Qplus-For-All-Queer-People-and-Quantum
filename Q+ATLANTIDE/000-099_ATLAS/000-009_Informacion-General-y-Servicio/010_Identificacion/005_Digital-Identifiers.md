@@ -37,6 +37,9 @@ Defines the **digital-identifier surface** that connects ATLAS hardware identifi
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Identifier classes in scope: **DPP / UTDS hashes** (content-addressed integrity proofs), **DID** (W3C-style decentralised identifier for the airframe), **DMC root** (S1000D `<dmIdent>` `modelIdentCode` for this airframe family) and **S1000D enterprise code** instance.
 - Cryptographic and quality-management governance flow from Q+ATLANTIDE and AS9100D[^as9100d]; transport and CSDB packaging follow S1000D Issue 6.0[^s1000d].
+- **Co-equality of physical and digital identifiers (canonical declaration).** In Q+ATLANTIDE, the digital identifiers defined here and the physical identifiers defined in [`./004_Serialization-and-Marking.md`](./004_Serialization-and-Marking.md) are **co-equal**: neither is derivative of the other, both are required, and both are auditable.
+- Both physical and digital identifier sets shall be kept in sync across the lifecycle (manufacture, entry into service, modification, retirement); a desynchronisation between the two sets is a controlled non-conformance under the Q+ATLANTIDE baseline[^baseline].
+- This co-equality is the property that distinguishes Q+ATLANTIDE from a conventional ATA-100-style register — where identification stops at the dataplate — by ensuring every aircraft, configuration and lifecycle event has digital identifiers that anchor evidence chains, ledger entries and DPP traceability.
 
 ## 3. Footprint
 

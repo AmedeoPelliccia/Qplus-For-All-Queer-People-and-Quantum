@@ -37,6 +37,7 @@ This subsubject (`00 Overview`) introduces the ATLAS 000-009.020.00 slice and li
 
 - Covers the *configuración* slice of the parent code range `000-009`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
+- **Boundary rule (canonical, symmetric with [`../010_Identificacion/000_Overview.md`](../010_Identificacion/000_Overview.md))** — [`../010_Identificacion/003_Configuration-Identification.md`](../010_Identificacion/003_Configuration-Identification.md) defines the configuration **identifier** (a label, a code, a baseline reference); this Subsection ([`../020_configuracion/`](../020_configuracion/)) defines the **configuration itself** (what it contains, how it changes, who controls it). Identifier authoring lives in [`../010_Identificacion/003_Configuration-Identification.md`](../010_Identificacion/003_Configuration-Identification.md); configuration authoring lives here in [`../020_configuracion/`](../020_configuracion/).
 - Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
 
 ## 3. Footprint

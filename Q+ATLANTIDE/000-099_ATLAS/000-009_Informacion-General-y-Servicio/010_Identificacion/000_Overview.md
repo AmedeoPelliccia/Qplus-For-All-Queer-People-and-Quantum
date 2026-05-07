@@ -36,7 +36,10 @@ This subsubject (`00 Overview`) introduces the ATLAS 000-009.010.00 slice and li
 ## 2. Scope
 
 - Covers the *Identificación* slice of the parent code range `000-009`.
+- *Identificación* is the **first Subsection** of `000-009` and the **foundational identity layer** that every subsequent ATLAS Subsection depends on: every downstream data module, configuration record, marking entry and digital-thread anchor resolves back to identifiers defined here.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
+- Sibling-Subject cross-references within `000-009` *Información General y Servicio*: [`../020_configuracion/`](../020_configuracion/) (configuration management), [`../030_documentacion-general/`](../030_documentacion-general/) (general documentation), [`../040_operaciones-basicas/`](../040_operaciones-basicas/) (basic operations).
+- **Boundary rule (canonical, repeated symmetrically in [`../020_configuracion/00_Overview.md`](../020_configuracion/00_Overview.md))** — [`./003_Configuration-Identification.md`](./003_Configuration-Identification.md) defines the configuration **identifier** (a label, a code, a baseline reference); [`../020_configuracion/`](../020_configuracion/) defines the **configuration itself** (what it contains, how it changes, who controls it). Identifier authoring lives in [`./003_Configuration-Identification.md`](./003_Configuration-Identification.md); configuration authoring lives in [`../020_configuracion/`](../020_configuracion/).
 - Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
 
 ## 3. Footprint

@@ -37,6 +37,9 @@ Specifies the **physical-marking and serialization layer** that materialises ATL
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Marking classes in scope: **part marking** (per ATA iSpec 2200[^ata2200]), **dataplate** content and placement, **UID** (manufacturer-assigned), and **IUID** (Item Unique Identifier, machine-readable).
 - ATA Spec 100[^ataspec100] legacy marking conventions are retained as informative cross-references for type-certified equivalents.
+- **Safety-critical-component serialization (H₂ system) — required at the aircraft-level identification layer.** For AMPEL360 with LH₂ tanks and fuel-cell stacks, serialization extends beyond a metadata concern into safety-critical territory: tank lots, valve serials, cryogenic seal batches, weld-joint records and fuel-cell stack serials shall be traceable to the individual airframe in a way that supports targeted inspection if a fleet-wide H₂ issue emerges.
+- Serial records for **ATA 28** (hydrogen storage) and **ATA 85** (fuel-cell systems) components shall be visible at this aircraft-level identification layer, not buried in component-only records.
+- Authoritative content for these systems lives under [`../../../400-499_EPTA/460-469_Propulsion-de-Hidrogeno-y-Celdas-de-Combustible/`](../../../400-499_EPTA/460-469_Propulsion-de-Hidrogeno-y-Celdas-de-Combustible/); this subsubject owns the requirement that those serials are exposed at aircraft level.
 
 ## 3. Footprint
 

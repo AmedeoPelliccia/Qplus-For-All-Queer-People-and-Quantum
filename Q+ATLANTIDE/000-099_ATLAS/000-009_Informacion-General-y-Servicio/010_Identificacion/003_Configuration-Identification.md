@@ -37,6 +37,7 @@ Defines the **configuration-baseline identifiers** that allow every ATLAS data m
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Identifier classes in scope: **configuration baseline ID**, **mod status / SB / AD compliance vector**, **effectivity expression** (S1000D `applic` semantics), and **as-built ↔ as-maintained delta marker**.
 - The S1000D `modStatus` applicability attribute is the canonical encoding of the mod-status field defined here[^s1000d].
+- **Boundary against [`../020_configuracion/`](../020_configuracion/)** — this subsubject defines *what a configuration identifier is* (the label, the baseline reference, the effectivity code, the mod-status vector). [`../020_configuracion/`](../020_configuracion/) defines *what the configuration itself is* (its content, its change-control workflow, its variant catalog, its baseline-update procedure). Identifier authoring stays here; configuration content authoring stays in `020_`. The same rule is restated in [`./000_Overview.md`](./000_Overview.md) and in [`../020_configuracion/00_Overview.md`](../020_configuracion/00_Overview.md).
 
 ## 3. Footprint
 
