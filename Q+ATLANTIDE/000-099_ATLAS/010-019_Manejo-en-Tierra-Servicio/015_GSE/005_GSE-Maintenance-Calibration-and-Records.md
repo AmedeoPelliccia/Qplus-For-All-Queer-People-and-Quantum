@@ -144,44 +144,70 @@ Each GSE asset catalogued in `002_` is registered in the ATLAS-1000 register wit
 
 ```mermaid
 flowchart TD
-    ACQ["GSE Acquired<br/>(enter GSE catalog, assign GSE-ID)"]:::start
-    ACQ --> T1["T1 Pre-operation check<br/>(before each deployment)"]:::tier1
-    T1 -- Pass --> DEP["Deploy to aircraft"]:::action
-    T1 -- Fail --> UNSV["UNSERVICEABLE<br/>(red tag)"]:::fail
+    ACQ["GSE Acquired<br>enter GSE catalog, assign GSE-ID"]:::start
+    T1["T1 Pre-operation check<br>before each deployment"]:::tier1
+    DEP["Deploy to aircraft"]:::action
+    UNSV["UNSERVICEABLE<br>red tag"]:::fail
 
-    DEP --> USE["In-service use"]:::action
-    USE --> T2_DUE{"T2 interval due?"}
-    T2_DUE -- No --> T1
-    T2_DUE -- Yes --> T2["T2 Periodic inspection<br/>(qualified technician)"]:::tier2
-    T2 -- Pass --> CAL_DUE{"Calibration due?"}
-    T2 -- Fail --> UNSV
+    USE["In-service use"]:::action
+    T2_DUE{"T2 interval due?"}
+    T2["T2 Periodic inspection<br>qualified technician"]:::tier2
+    CAL_DUE{"Calibration due?"}
 
-    CAL_DUE -- No --> T3_DUE{"T3 interval due?"}
-    CAL_DUE -- Yes --> CAL["Calibration<br/>(accredited lab)"]:::cal
-    CAL -- In-tolerance --> T3_DUE
-    CAL -- Out-of-tolerance --> OOT["Out-of-tolerance<br/>concession assessment"]:::fail
+    CAL["Calibration<br>accredited lab"]:::cal
+    OOT["Out-of-tolerance<br>concession assessment"]:::fail
+    T3_DUE{"T3 interval due?"}
+    T3["T3 Overhaul<br>AMO / OEM facility"]:::tier3
+    DISP["Dispose<br>remove from catalog"]:::terminal
+
+    MWO["Maintenance Work Order"]:::action
+    REP["Repair"]:::action
+    REINSP["Re-inspection"]:::tier2
+    GREEN["Serviceable green tag<br>Update record"]:::action
+
+    ACQ --> T1
+
+    T1 -->|Pass| DEP
+    T1 -->|Fail| UNSV
+
+    DEP --> USE
+    USE --> T2_DUE
+
+    T2_DUE -->|No| T1
+    T2_DUE -->|Yes| T2
+
+    T2 -->|Pass| CAL_DUE
+    T2 -->|Fail| UNSV
+
+    CAL_DUE -->|No| T3_DUE
+    CAL_DUE -->|Yes| CAL
+
+    CAL -->|In tolerance| T3_DUE
+    CAL -->|Out of tolerance| OOT
     OOT --> UNSV
 
-    T3_DUE -- No --> T1
-    T3_DUE -- Yes --> T3["T3 Overhaul<br/>(AMO / OEM facility)"]:::tier3
-    T3 -- Pass --> T1
-    T3 -- Beyond repair --> DISP["Dispose<br/>(remove from catalog)"]:::end
+    T3_DUE -->|No| T1
+    T3_DUE -->|Yes| T3
 
-    UNSV --> MWO["Maintenance Work Order"]:::action
-    MWO --> REP["Repair"]:::action
-    REP --> REINSP["Re-inspection"]:::tier2
-    REINSP -- Pass --> GREEN["Serviceable (green tag)<br/>Update record"]:::action
+    T3 -->|Pass| T1
+    T3 -->|Beyond repair| DISP
+
+    UNSV --> MWO
+    MWO --> REP
+    REP --> REINSP
+
+    REINSP -->|Pass| GREEN
     GREEN --> T1
-    REINSP -- Fail → beyond repair --> DISP
+    REINSP -->|Fail beyond repair| DISP
 
-    classDef start fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef tier1 fill:#d6eaf8,stroke:#2c82c9,color:#0b1d4a
-    classDef tier2 fill:#d5f5e3,stroke:#1e8449,color:#0b3d20
-    classDef tier3 fill:#fdebd0,stroke:#b9770e,color:#5a3b00
-    classDef cal fill:#e8daef,stroke:#6c3483,color:#2c0763
-    classDef action fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
-    classDef fail fill:#fadbd8,stroke:#c0392b,color:#7b241c
-    classDef end fill:#808b96,stroke:#424949,color:#fff
+    classDef start fill:#1f3a93,stroke:#0b1d4a,color:#fff;
+    classDef tier1 fill:#d6eaf8,stroke:#2c82c9,color:#0b1d4a;
+    classDef tier2 fill:#d5f5e3,stroke:#1e8449,color:#0b3d20;
+    classDef tier3 fill:#fdebd0,stroke:#b9770e,color:#5a3b00;
+    classDef cal fill:#e8daef,stroke:#6c3483,color:#2c0763;
+    classDef action fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a;
+    classDef fail fill:#fadbd8,stroke:#c0392b,color:#7b241c;
+    classDef terminal fill:#808b96,stroke:#424949,color:#fff;
 ```
 
 ## 4. Footprint
