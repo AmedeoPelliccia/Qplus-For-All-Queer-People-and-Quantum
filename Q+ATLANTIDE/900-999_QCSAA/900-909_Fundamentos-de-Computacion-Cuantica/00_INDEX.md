@@ -34,7 +34,7 @@ Declares the **acyclic dependency graph** of the `900-909` foundational range of
 
 ```mermaid
 flowchart LR
-    A["010_Qubits/<br/><i>atomic unit</i>"] --> B["020_gates/<br/><i>unitary operations<br/>on qubits</i>"]
+    A["900_Qubits/<br/><i>atomic unit</i>"] --> B["020_gates/<br/><i>unitary operations<br/>on qubits</i>"]
     B --> C["030_circuits/<br/><i>composition of gates<br/>into programs</i>"]
     C --> D["040_quantum-algorithms/<br/><i>problem-specific<br/>constructions</i>"]
     D --> E["050_foundations/<br/><i>computability,<br/>complexity, models</i>"]
@@ -46,7 +46,7 @@ Read in the order shown. Every chapter to the right relies on definitions from t
 
 | Order | Subsection | Title | Index | Role |
 |---:|---|---|---|---|
-| 1 | `010` | Qubits | [`010_Qubits/README.md`](./010_Qubits/README.md) | Atomic unit; upstream of everything else in QCSAA |
+| 1 | `900` | Qubits | [`900_Qubits/README.md`](./900_Qubits/README.md) | Atomic unit; upstream of everything else in QCSAA |
 | 2 | `020` | Gates | [`020_gates/README.md`](./020_gates/README.md) | Unitary operations on qubits |
 | 3 | `030` | Circuits | [`030_circuits/900_Overview.md`](./030_circuits/900_Overview.md) | Composition of gates into programs |
 | 4 | `040` | Quantum Algorithms | [`040_quantum-algorithms/00_Overview.md`](./040_quantum-algorithms/00_Overview.md) | Problem-specific constructions |

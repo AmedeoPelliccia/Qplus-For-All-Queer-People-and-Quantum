@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-010-905-LOGICAL-QUBITS-ENCODING-AND-ERROR-CORRECTION
-title: "QCSAA 900-909 · 00.010.905 — Logical Qubits, Encoding and Error Correction"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-900-005-LOGICAL-QUBITS-ENCODING-AND-ERROR-CORRECTION
+title: "QCSAA 900-909 · 00.900.005 — Logical Qubits, Encoding and Error Correction"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "900"
 subsection_title: "Qubits"
-subsubject: "905"
+subsubject: "005"
 subsubject_title: "Logical Qubits, Encoding and Error Correction"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,7 +25,7 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 010 · Subsubject 905 — Logical Qubits, Encoding and Error Correction
+# QCSAA 900-909 · Section 00 · Subsection 900 · Subsubject 005 — Logical Qubits, Encoding and Error Correction
 
 ## 1. Purpose
 
@@ -33,7 +33,7 @@ Defines the **logical qubit** as a noise-protected encoding of multiple physical
 
 ## 2. Scope
 
-- Covers the *Logical Qubits, Encoding and Error Correction* subsubject (`905`) of subsection `010` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Logical Qubits, Encoding and Error Correction* subsubject (`005`) of subsection `900` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **Physical-vs-logical distinction** — physical qubits are the device-level objects of `902_`; a logical qubit is an encoded subspace of $n$ physical qubits with active syndrome extraction and correction.
@@ -90,15 +90,15 @@ flowchart TB
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `010` — Qubits |
-| Subsubject | `905` — Logical Qubits, Encoding and Error Correction |
+| Subsection | `900` — Qubits |
+| Subsubject | `005` — Logical Qubits, Encoding and Error Correction |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/010_Qubits/` |
-| Document | `905_Logical-Qubits-Encoding-and-Error-Correction.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`900_Overview.md`](./900_Overview.md) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/900_Qubits/` |
+| Document | `005_Logical-Qubits-Encoding-and-Error-Correction.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

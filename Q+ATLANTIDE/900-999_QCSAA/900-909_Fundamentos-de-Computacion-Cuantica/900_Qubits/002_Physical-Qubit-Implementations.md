@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-010-902-PHYSICAL-QUBIT-IMPLEMENTATIONS
-title: "QCSAA 900-909 · 00.010.902 — Physical Qubit Implementations"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-900-002-PHYSICAL-QUBIT-IMPLEMENTATIONS
+title: "QCSAA 900-909 · 00.900.002 — Physical Qubit Implementations"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "900"
 subsection_title: "Qubits"
-subsubject: "902"
+subsubject: "002"
 subsubject_title: "Physical Qubit Implementations"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,7 +25,7 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 010 · Subsubject 902 — Physical Qubit Implementations
+# QCSAA 900-909 · Section 00 · Subsection 900 · Subsubject 002 — Physical Qubit Implementations
 
 ## 1. Purpose
 
@@ -33,7 +33,7 @@ Catalogues the **physical implementation families** that realise the abstract qu
 
 ## 2. Scope
 
-- Covers the *Physical Qubit Implementations* subsubject (`902`) of subsection `010` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Physical Qubit Implementations* subsubject (`002`) of subsection `900` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Implementation families in scope:
   - **Superconducting** — transmon, fluxonium (and related charge/flux qubits).
@@ -96,15 +96,15 @@ flowchart TB
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `010` — Qubits |
-| Subsubject | `902` — Physical Qubit Implementations |
+| Subsection | `900` — Qubits |
+| Subsubject | `002` — Physical Qubit Implementations |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/010_Qubits/` |
-| Document | `902_Physical-Qubit-Implementations.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`900_Overview.md`](./900_Overview.md) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/900_Qubits/` |
+| Document | `002_Physical-Qubit-Implementations.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

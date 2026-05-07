@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-010-900-OVERVIEW
-title: "QCSAA 900-909 · 00.010.900 — Qubits"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-900-000-OVERVIEW
+title: "QCSAA 900-909 · 00.900.000 — Qubits"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "900"
 subsection_title: "Qubits"
-subsubject: "900"
+subsubject: "000"
 subsubject_title: "Overview"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,13 +25,13 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 010 — Qubits
+# QCSAA 900-909 · Section 00 · Subsection 900 — Qubits
 
 ## 1. Purpose
 
 Overview entry-point for the *Qubits* subsection within the `900-909` code range (Section `00` — *Fundamentos de Computación Cuántica*) of the **QCSAA** architecture band (*Quantum Computing & Sentient Agency Architecture*, master range `900–999`).
 
-This subsubject (`900 Overview`) introduces the QCSAA 900-909.010.900 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
+This subsubject (`900 Overview`) introduces the QCSAA 900-909.900.000 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
 ## 2. Scope
 
@@ -52,14 +52,14 @@ This subsubject (`900 Overview`) introduces the QCSAA 900-909.010.900 slice and 
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `010` — Qubits |
-| Subsubject | `900` — Overview |
+| Subsection | `900` — Qubits |
+| Subsubject | `000` — Overview |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/010_Qubits/` |
-| Document | `900_Overview.md` (this file) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/900_Qubits/` |
+| Document | `000_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
