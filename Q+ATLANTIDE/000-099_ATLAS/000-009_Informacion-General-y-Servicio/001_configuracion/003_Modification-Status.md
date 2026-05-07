@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-README
-title: "ATLAS 000-009 · 00.020 — configuración (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-001-003-MODIFICATION-STATUS
+title: "ATLAS 000-009 · 00.001.003 — Modification Status"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,8 +13,10 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "020"
+subsection: "001"
 subsection_title: "configuración"
+subsubject: "003"
+subsubject_title: "Modification Status"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,44 +25,38 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 — configuración
+# ATLAS 000-009 · Section 00 · Subsection 001 · Subsubject 003 — Modification Status
 
 ## 1. Purpose
 
-Subsection-level index for *configuración* (`020`) within ATLAS `000-009` — *Información General y Servicio*. Aggregates the `000 Overview` and the detailed subsubjects (`001`–`005`) that extend it with the canonical configuration baseline, effectivity, modification status, variant catalog and change-control semantics, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
+Defines the **modification status** semantics under ATLAS `000-009.001` *configuración*: the registry of Service Bulletins (SB), Modifications (Mod), Airworthiness Directives (AD) and embodied changes that move an airframe from one configuration baseline to the next. Status values are exposed as the S1000D `modStatus` applicability property[^s1000d] and traced to ATA iSpec 2200 records[^ata2200], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `000`–`099` of subsection `020` *configuración*; subsubjects `001`–`005` are populated in this baseline release, the remaining `006`–`099` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the *Modification Status* subsubject (`03`) of subsection `001` *configuración*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
+- Object classes in scope: **Service Bulletins (SB)**, **Modifications (Mod)**, **Airworthiness Directives (AD)**, **embodiment records**, **status transitions** (planned → embodied → not-applicable).
+- Surfaces values for the S1000D `modStatus` applicability property and the ATA iSpec 2200 modification register[^ata2200][^s1000d]; quality controls per AS9100D[^as9100d].
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `000 Overview` aggregates the populated subsubjects (`001`–`005`) into the *configuración* slice of ATLAS `000-009`.
+The diagram below shows the state machine an SB / Mod / AD record traverses on a given airframe, from declaration through embodiment or formal exclusion.
 
 ```mermaid
-flowchart LR
-    R[(Subsection 020\nconfiguración)]
-    OV[000 Overview] --> R
-    R --> N01[001 — Configuration Baseline]
-    R --> N02[002 — Effectivity & Applicability]
-    R --> N03[003 — Modification Status]
-    R --> N04[004 — Variant & Option Catalog]
-    R --> N05[005 — Configuration Control & CM]
+stateDiagram-v2
+    [*] --> Planned
+    Planned --> InWork: kit released
+    InWork --> Embodied: workpack closed
+    Planned --> NotApplicable: applicability eval = false
+    InWork --> Cancelled: SB withdrawn
+    Embodied --> Superseded: replacement SB
+    Embodied --> [*]
+    NotApplicable --> [*]
+    Cancelled --> [*]
+    Superseded --> [*]
 ```
 
-## 4. Subsubject Index
-
-| NN | Title | Document | Status |
-|---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 001 | Configuration Baseline | [`001_Configuration-Baseline.md`](./001_Configuration-Baseline.md) | active |
-| 002 | Effectivity and Applicability | [`002_Effectivity-and-Applicability.md`](./002_Effectivity-and-Applicability.md) | active |
-| 003 | Modification Status | [`003_Modification-Status.md`](./003_Modification-Status.md) | active |
-| 004 | Variant and Option Catalog | [`004_Variant-and-Option-Catalog.md`](./004_Variant-and-Option-Catalog.md) | active |
-| 005 | Configuration Control and Change Management | [`005_Configuration-Control-and-Change-Management.md`](./005_Configuration-Control-and-Change-Management.md) | active |
-
-## 5. Footprint
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -69,22 +65,19 @@ flowchart LR
 | Code range | `000-009` |
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
-| Subsection | `020` — configuración |
-| Subsubject namespace | `000`–`099` (`000` + `001`–`005` populated) |
+| Subsection | `001` — configuración |
+| Subsubject | `003` — Modification Status |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
-| Document | `README.md` (this file) |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/001_configuracion/` |
+| Document | `003_Modification-Status.md` (this file) |
+| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## Governance
-
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from the parent ATLAS band; extensions added under `006`–`099` shall preserve those header fields and reuse the footnote set declared below.
-
-## 6. References & Citations
+## 5. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
@@ -105,7 +98,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
+The following ATA-family and industry standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]

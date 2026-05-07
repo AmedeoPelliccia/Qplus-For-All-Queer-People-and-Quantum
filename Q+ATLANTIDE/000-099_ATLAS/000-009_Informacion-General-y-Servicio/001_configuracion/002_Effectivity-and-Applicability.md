@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-003-MODIFICATION-STATUS
-title: "ATLAS 000-009 · 00.020.003 — Modification Status"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-001-002-EFFECTIVITY-AND-APPLICABILITY
+title: "ATLAS 000-009 · 00.001.002 — Effectivity and Applicability"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,10 +13,10 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "020"
+subsection: "001"
 subsection_title: "configuración"
-subsubject: "003"
-subsubject_title: "Modification Status"
+subsubject: "002"
+subsubject_title: "Effectivity and Applicability"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,35 +25,31 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 003 — Modification Status
+# ATLAS 000-009 · Section 00 · Subsection 001 · Subsubject 002 — Effectivity and Applicability
 
 ## 1. Purpose
 
-Defines the **modification status** semantics under ATLAS `000-009.020` *configuración*: the registry of Service Bulletins (SB), Modifications (Mod), Airworthiness Directives (AD) and embodied changes that move an airframe from one configuration baseline to the next. Status values are exposed as the S1000D `modStatus` applicability property[^s1000d] and traced to ATA iSpec 2200 records[^ata2200], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
+Defines the **effectivity and applicability** model for ATLAS `000-009.001` *configuración*: how a data module, modification or service action is bound to the airframe population it applies to (by MSN range, block, modification status, operator, environment and lifecycle phase). Applicability is expressed via S1000D ACT/PCT/CCT tables[^s1000d] and is the runtime gate used by IETP and EXPORT pipelines, in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
 
 ## 2. Scope
 
-- Covers the *Modification Status* subsubject (`03`) of subsection `020` *configuración*.
+- Covers the *Effectivity and Applicability* subsubject (`02`) of subsection `001` *configuración*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Object classes in scope: **Service Bulletins (SB)**, **Modifications (Mod)**, **Airworthiness Directives (AD)**, **embodiment records**, **status transitions** (planned → embodied → not-applicable).
-- Surfaces values for the S1000D `modStatus` applicability property and the ATA iSpec 2200 modification register[^ata2200][^s1000d]; quality controls per AS9100D[^as9100d].
+- Object classes in scope: **MSN ranges**, **block points**, **applicability expressions** (AND/OR/NOT), **ACT/PCT/CCT tables**, IETP/EXPORT filter rules.
+- Aligned with the ATA iSpec 2200 / Spec 100 information set[^ata2200][^ataspec100], S1000D Issue 6.0 applicability model[^s1000d] and AS9100D quality controls[^as9100d].
 
 ## 3. Diagram
 
-The diagram below shows the state machine an SB / Mod / AD record traverses on a given airframe, from declaration through embodiment or formal exclusion.
+The diagram below shows how a Data Module's applicability expression is evaluated against an airframe instance's attribute values to gate IETP rendering and EXPORT package assembly.
 
 ```mermaid
-stateDiagram-v2
-    [*] --> Planned
-    Planned --> InWork: kit released
-    InWork --> Embodied: workpack closed
-    Planned --> NotApplicable: applicability eval = false
-    InWork --> Cancelled: SB withdrawn
-    Embodied --> Superseded: replacement SB
-    Embodied --> [*]
-    NotApplicable --> [*]
-    Cancelled --> [*]
-    Superseded --> [*]
+flowchart LR
+    DM[Data Module + applic expr] --> EVAL{{Evaluate AND/OR/NOT}}
+    AF[Airframe attributes\nMSN / block / modStatus / operator / env / lcPhase] --> EVAL
+    ACT[ACT / PCT / CCT tables] --> EVAL
+    EVAL -->|true| RENDER[IETP render]
+    EVAL -->|true| EXPORT[EXPORT package]
+    EVAL -->|false| DROP[Filtered out]
 ```
 
 ## 4. Footprint
@@ -65,14 +61,14 @@ stateDiagram-v2
 | Code range | `000-009` |
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
-| Subsection | `020` — configuración |
-| Subsubject | `003` — Modification Status |
+| Subsection | `001` — configuración |
+| Subsubject | `002` — Effectivity and Applicability |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
-| Document | `003_Modification-Status.md` (this file) |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/001_configuracion/` |
+| Document | `002_Effectivity-and-Applicability.md` (this file) |
 | Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |

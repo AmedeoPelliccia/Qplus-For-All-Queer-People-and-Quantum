@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-004-VARIANT-AND-OPTION-CATALOG
-title: "ATLAS 000-009 · 00.020.004 — Variant and Option Catalog"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-001-004-VARIANT-AND-OPTION-CATALOG
+title: "ATLAS 000-009 · 00.001.004 — Variant and Option Catalog"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,7 +13,7 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "020"
+subsection: "001"
 subsection_title: "configuración"
 subsubject: "004"
 subsubject_title: "Variant and Option Catalog"
@@ -25,15 +25,15 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 004 — Variant and Option Catalog
+# ATLAS 000-009 · Section 00 · Subsection 001 · Subsubject 004 — Variant and Option Catalog
 
 ## 1. Purpose
 
-Defines the **variant and option catalog** under ATLAS `000-009.020` *configuración*: the controlled enumeration of marketing variants, customer options and selectable features that may be combined to produce a valid airframe configuration. Variants and options drive the `variant` applicability property in S1000D[^s1000d] and seed the IPC/AMM filtering rules of the ATA iSpec 2200 information set[^ata2200], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
+Defines the **variant and option catalog** under ATLAS `000-009.001` *configuración*: the controlled enumeration of marketing variants, customer options and selectable features that may be combined to produce a valid airframe configuration. Variants and options drive the `variant` applicability property in S1000D[^s1000d] and seed the IPC/AMM filtering rules of the ATA iSpec 2200 information set[^ata2200], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
 
 ## 2. Scope
 
-- Covers the *Variant and Option Catalog* subsubject (`04`) of subsection `020` *configuración*.
+- Covers the *Variant and Option Catalog* subsubject (`04`) of subsection `001` *configuración*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Object classes in scope: **variant codes**, **customer option codes**, **option groups**, **compatibility / exclusion rules**, **default vs. selectable** options.
 - Mapped to S1000D `variant` applicability values and to ATA iSpec 2200 / Spec 100 catalog conventions[^ata2200][^ataspec100][^s1000d]; quality controls per AS9100D[^as9100d].
@@ -75,13 +75,13 @@ classDiagram
 | Code range | `000-009` |
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
-| Subsection | `020` — configuración |
+| Subsection | `001` — configuración |
 | Subsubject | `004` — Variant and Option Catalog |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/001_configuracion/` |
 | Document | `004_Variant-and-Option-Catalog.md` (this file) |
 | Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

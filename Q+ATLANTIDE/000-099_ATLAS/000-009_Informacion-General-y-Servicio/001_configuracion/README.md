@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-005-CONFIGURATION-CONTROL-AND-CHANGE-MANAGEMENT
-title: "ATLAS 000-009 · 00.020.005 — Configuration Control and Change Management"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-001-README
+title: "ATLAS 000-009 · 00.001 — configuración (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,10 +13,8 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "020"
+subsection: "001"
 subsection_title: "configuración"
-subsubject: "005"
-subsubject_title: "Configuration Control and Change Management"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,35 +23,44 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 005 — Configuration Control and Change Management
+# ATLAS 000-009 · Section 00 · Subsection 001 — configuración
 
 ## 1. Purpose
 
-Defines the **configuration control and change-management** workflow under ATLAS `000-009.020` *configuración*: how Engineering Change Requests (ECR), Engineering Change Orders (ECO), Configuration Control Board (CCB) decisions and impact analyses move proposed changes through approval, embodiment and publication. The workflow is the governance backbone of the Q+ATLANTIDE controlled baseline[^baseline] and aligns with AS9100D[^as9100d] and S1000D update cycles[^s1000d].
+Subsection-level index for *configuración* (`001`) within ATLAS `000-009` — *Información General y Servicio*. Aggregates the `000 Overview` and the detailed subsubjects (`001`–`005`) that extend it with the canonical configuration baseline, effectivity, modification status, variant catalog and change-control semantics, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
 
 ## 2. Scope
 
-- Covers the *Configuration Control and Change Management* subsubject (`05`) of subsection `020` *configuración*.
+- Covers the full subsubject namespace `000`–`099` of subsection `001` *configuración*; subsubjects `001`–`005` are populated in this baseline release, the remaining `006`–`099` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Process classes in scope: **ECR / ECO**, **CCB approval**, **impact analysis** (safety, certification, supply, IETP), **embodiment tracking**, **revision release**.
-- Enforces ATA iSpec 2200 revision controls[^ata2200], S1000D Issue 6.0 update procedures[^s1000d] and AS9100D change-management requirements[^as9100d].
 
 ## 3. Diagram
 
-The diagram below shows the change-management workflow from request through CCB approval, embodiment and publication of the resulting revision.
+The diagram below shows how this subsection's `000 Overview` aggregates the populated subsubjects (`001`–`005`) into the *configuración* slice of ATLAS `000-009`.
 
 ```mermaid
 flowchart LR
-    ECR[ECR\nChange Request] --> IA[Impact Analysis\nsafety / cert / supply / IETP]
-    IA --> CCB{{CCB review}}
-    CCB -->|reject| REJ[Closed - rejected]
-    CCB -->|approve| ECO[ECO issued]
-    ECO --> EMB[Embodiment tracking]
-    EMB --> REV[Revision release]
-    REV --> PUB[Publication update]
+    R[(Subsection 001\nconfiguración)]
+    OV[000 Overview] --> R
+    R --> N01[001 — Configuration Baseline]
+    R --> N02[002 — Effectivity & Applicability]
+    R --> N03[003 — Modification Status]
+    R --> N04[004 — Variant & Option Catalog]
+    R --> N05[005 — Configuration Control & CM]
 ```
 
-## 4. Footprint
+## 4. Subsubject Index
+
+| NN | Title | Document | Status |
+|---:|---|---|---|
+| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 001 | Configuration Baseline | [`001_Configuration-Baseline.md`](./001_Configuration-Baseline.md) | active |
+| 002 | Effectivity and Applicability | [`002_Effectivity-and-Applicability.md`](./002_Effectivity-and-Applicability.md) | active |
+| 003 | Modification Status | [`003_Modification-Status.md`](./003_Modification-Status.md) | active |
+| 004 | Variant and Option Catalog | [`004_Variant-and-Option-Catalog.md`](./004_Variant-and-Option-Catalog.md) | active |
+| 005 | Configuration Control and Change Management | [`005_Configuration-Control-and-Change-Management.md`](./005_Configuration-Control-and-Change-Management.md) | active |
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -62,19 +69,22 @@ flowchart LR
 | Code range | `000-009` |
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
-| Subsection | `020` — configuración |
-| Subsubject | `005` — Configuration Control and Change Management |
+| Subsection | `001` — configuración |
+| Subsubject namespace | `000`–`099` (`000` + `001`–`005` populated) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
-| Document | `005_Configuration-Control-and-Change-Management.md` (this file) |
-| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/001_configuracion/` |
+| Document | `README.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 5. References & Citations
+## Governance
+
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from the parent ATLAS band; extensions added under `006`–`099` shall preserve those header fields and reuse the footnote set declared below.
+
+## 6. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
@@ -95,7 +105,7 @@ flowchart LR
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
+The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]

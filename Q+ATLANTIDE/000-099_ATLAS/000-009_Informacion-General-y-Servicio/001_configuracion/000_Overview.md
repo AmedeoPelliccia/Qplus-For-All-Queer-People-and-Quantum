@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-020-001-CONFIGURATION-BASELINE
-title: "ATLAS 000-009 · 00.020.001 — Configuration Baseline"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-001-000-OVERVIEW
+title: "ATLAS 000-009 · 00.001.000 — configuración"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,10 +13,10 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "020"
+subsection: "001"
 subsection_title: "configuración"
-subsubject: "001"
-subsubject_title: "Configuration Baseline"
+subsubject: "000"
+subsubject_title: "Overview"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,37 +25,21 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 020 · Subsubject 001 — Configuration Baseline
+# ATLAS 000-009 · Section 00 · Subsection 001 — configuración
 
 ## 1. Purpose
 
-Defines the **configuration baseline** for an airframe instance under ATLAS `000-009.020` *configuración*: the named, versioned reference state (build standard, software/hardware part numbers, BOM hash) against which all subsequent modifications are measured. The baseline is the anchor for downstream effectivity evaluation and is published as S1000D applicability conditions on the ATA iSpec 2200 / Spec 100 information set[^ata2200][^ataspec100][^s1000d], in conformance with the controlled Q+ATLANTIDE baseline[^baseline].
+Overview entry-point for the *configuración* subsection within the `000-009` code range (Section `00` — *Información General y Servicio*) of the **ATLAS** architecture band (*Aircraft Top-Level Architecture System*, master range `000–099`).
+
+This subsubject (`000 Overview`) introduces the ATLAS 000-009.001.000 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
 ## 2. Scope
 
-- Covers the *Configuration Baseline* subsubject (`01`) of subsection `020` *configuración* within section `00` *Información General y Servicio*.
+- Covers the *configuración* slice of the parent code range `000-009`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Artefact classes in scope: **Build Standard ID**, **As-Designed / As-Built / As-Maintained BOM**, **baseline hash**, **baseline version label**, baseline-to-baseline delta records.
-- Baselines are surfaced as S1000D `applic` properties (e.g. `product`, `variant`, `modStatus`) on the ATA iSpec 2200 information set[^ata2200][^s1000d] and quality-controlled per AS9100D[^as9100d].
+- Subsequent subsubjects (`001`–`099`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
 
-## 3. Diagram
-
-The diagram below shows how the named **Build Standard** is composed from the BOM, software/hardware part numbers and a content hash to produce a versioned **Configuration Baseline** that anchors downstream applicability evaluation.
-
-```mermaid
-flowchart LR
-    BS[Build Standard ID] --> BOM[As-Designed BOM]
-    BS --> SW[SW / FW Part Numbers]
-    BS --> HW[HW Part Numbers]
-    BOM --> H{{Content Hash}}
-    SW --> H
-    HW --> H
-    H --> BL[(Configuration Baseline\nname + version)]
-    BL --> APP[S1000D applic\nproduct / variant / modStatus]
-    BL --> DLT[Baseline-to-Baseline Delta]
-```
-
-## 4. Footprint
+## 3. Footprint
 
 | Metric | Value |
 |---|---|
@@ -64,19 +48,18 @@ flowchart LR
 | Code range | `000-009` |
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
-| Subsection | `020` — configuración |
-| Subsubject | `001` — Configuration Baseline |
+| Subsection | `001` — configuración |
+| Subsubject | `000` — Overview |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/020_configuracion/` |
-| Document | `001_Configuration-Baseline.md` (this file) |
-| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/001_configuracion/` |
+| Document | `000_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 5. References & Citations
+## 4. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
@@ -97,9 +80,10 @@ flowchart LR
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
+The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]
 - S1000D Issue 6.0 — International specification for technical publications[^s1000d]
 - AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
+
