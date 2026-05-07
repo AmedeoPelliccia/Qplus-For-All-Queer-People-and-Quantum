@@ -19,7 +19,7 @@ support_q_divisions: [Q-MECHANICS, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -35,13 +35,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 - Reserves the subsubject namespace `00`–`99` of subsection `010` *Ground Handling*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- The Overview and detailed subsubjects (`00`–`05`) are indexed in §3 above per the parent section's authorisation.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | Scope and Definitions | [`001_Scope-and-Definitions.md`](./001_Scope-and-Definitions.md) | active |
+| 02 | Roles, Authorizations and Responsibilities | [`002_Roles-Authorizations-and-Responsibilities.md`](./002_Roles-Authorizations-and-Responsibilities.md) | active |
+| 03 | Safety Zones, Hazards and Exclusion Areas | [`003_Safety-Zones-Hazards-and-Exclusion-Areas.md`](./003_Safety-Zones-Hazards-and-Exclusion-Areas.md) | active |
+| 04 | Ground Support Equipment Interfaces | [`004_Ground-Support-Equipment-Interfaces.md`](./004_Ground-Support-Equipment-Interfaces.md) | active |
+| 05 | Documentation, Logs and Traceability | [`005_Documentation-Logs-and-Traceability.md`](./005_Documentation-Logs-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +57,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `010-019` |
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `010` — Ground Handling |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`05` (6 subsubjects: 00–05 active) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
