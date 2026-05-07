@@ -71,7 +71,7 @@ The following rule is **binding** for all contributors and must be understood be
 > |---|---|---|
 > | **Level 1 — Orientation** | `000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/` | *What* the operation is, *why* it exists, key concepts and vocabulary. A new mechanic reading these files understands *what* ground handling, towing, servicing, and lifting are. |
 > | **Level 2 — Procedure** | `010-019_Manejo-en-Tierra-Servicio/` and its six (+one) subsections | *How* each operation is executed: step sequences, safety checks, tooling requirements, limits, sign-offs. |
-> | **Level 3 — Publication** | Published manuals (AMM, GMM, etc.) | The materializatio of Levels 1 and 2 in approved, distributable form. |
+> | **Level 3 — Publication** | Published manuals (AMM, GMM, etc.) | The materialization of Levels 1 and 2 in approved, distributable form. |
 >
 > **Three levels, three roles. Content shall not be duplicated across levels.** If a step-by-step procedure appears in `003_`, it belongs in `010-019_`. If `010-019_` lacks a conceptual definition, the definition shall be added to `003_`, not duplicated in the procedure.
 
