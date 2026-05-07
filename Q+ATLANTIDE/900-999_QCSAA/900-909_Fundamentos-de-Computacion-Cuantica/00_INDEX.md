@@ -48,7 +48,7 @@ Read in the order shown. Every chapter to the right relies on definitions from t
 |---:|---|---|---|---|
 | 1 | `010` | Qubits | [`010_Qubits/README.md`](./010_Qubits/README.md) | Atomic unit; upstream of everything else in QCSAA |
 | 2 | `020` | Gates | [`020_gates/README.md`](./020_gates/README.md) | Unitary operations on qubits |
-| 3 | `030` | Circuits | [`030_circuits/00_Overview.md`](./030_circuits/00_Overview.md) | Composition of gates into programs |
+| 3 | `030` | Circuits | [`030_circuits/900_Overview.md`](./030_circuits/900_Overview.md) | Composition of gates into programs |
 | 4 | `040` | Quantum Algorithms | [`040_quantum-algorithms/00_Overview.md`](./040_quantum-algorithms/00_Overview.md) | Problem-specific constructions |
 | 5 | `050` | Foundations | [`050_foundations/00_Overview.md`](./050_foundations/00_Overview.md) | Computability, complexity, models |
 
