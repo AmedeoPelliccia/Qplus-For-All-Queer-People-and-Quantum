@@ -73,7 +73,7 @@ Change after gate freeze requires a Class I change order (see `005_Configuration
 
 Every baseline establishment event shall produce an auditable record containing:
 
-- Baseline identifier (see `000_Identificacion/003_Configuration-Identification.md` for naming convention)
+- Baseline identifier (see `000_Identificacion/README.md` for naming convention)
 - Gate reference and date
 - Authorising CCB resolution number
 - PLM baseline snapshot reference (version hash or tag)
