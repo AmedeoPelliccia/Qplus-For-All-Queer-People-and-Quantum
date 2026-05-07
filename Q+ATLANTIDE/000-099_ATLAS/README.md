@@ -76,7 +76,8 @@ Sub-ranges within this band, sourced from the Q+ATLANTIDE controlled baseline[^b
 | Restricted band | No |
 | Primary Q-Divisions | Q-AIR, Q-DATAGOV, Q-GREENTECH, Q-GROUND, Q-HORIZON, Q-MECHANICS, Q-STRUCTURES |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/` |
-| Documents | `README.md` (this file) |
+| Documents | `README.md` (this file) + 10 section `README.md` indexes (one per `0X0-0X9` sub-range) |
+| Subsections | 86 populated under the 10 section indexes |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../organization/Q+ATLANTIDE.md) |
 | Register subpart | ATLAS-1000 |
 | Structural-interface rule | Sub-range `050–059` shall use the title fragment *Estructuras Primarias e Interfaces de Programa / Q-Division* (rule N-005[^n005]). |
