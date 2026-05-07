@@ -14,13 +14,25 @@ section: "02"
 section_title: "Propulsión Espacial Tradicional y Avanzada"
 subsection: "123"
 subsection_title: "Propulsión Avanzada"
-primary_q_division: Q-GREENTECH
-support_q_divisions: [Q-SPACE, Q-HORIZON, Q-HPC]
+primary_q_division: Q-SPACE
+support_q_divisions: [Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HPC, ORB-LEG]
 orb_function_support: [ORB-PMO, ORB-LEG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "103_Seguridad-de-Mision"
+  - "112_Proteccion-Termica-y-Radiacion"
+  - "120_Propulsion-Quimica"
+  - "121_Propulsion-Electrica"
+  - "122_Propulsion-Nuclear-Conceptual"
+  - "130_Energia-Solar"
+  - "133_Distribucion-Electrica"
+safety_boundary: "research and concept-screening only unless separately matured, verified, lawfully authorized, and governed through explicit mission-safety, energy, thermal, structural and regulatory assurance gates"
+claim_discipline: "extraordinary propulsion claims shall include engineering model, independent verification, and explicit TRL statement; no claims of proven performance for concepts below TRL 3"
 governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+no_aaa_rule: true
 ---
 
 # STA 120-129 · Section 02 · Subsection 123 — Propulsión Avanzada
@@ -29,19 +41,30 @@ language: en
 
 Subsection-level index for *Propulsión Avanzada* (`123`) within STA `120-129` — *Propulsión Espacial Tradicional y Avanzada*.
 
-This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
+This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. It is designated **research and concept-screening only**: content here is limited to matured, verified, and lawfully authorized concepts governed through explicit mission-safety, energy, thermal, structural, and regulatory assurance gates.
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `123` *Advanced Propulsion*.
+- Populates the subsubject namespace `000`–`010` of subsection `123` *Advanced Propulsion*; subsubjects `011`–`099` remain reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- Linked nodes: `100_Arquitectura-General-Espacial`, `103_Seguridad-de-Mision`, `112_Proteccion-Termica-y-Radiacion`, `120_Propulsion-Quimica`, `121_Propulsion-Electrica`, `122_Propulsion-Nuclear-Conceptual`, `130_Energia-Solar`, `133_Distribucion-Electrica`.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
+| 001 | Advanced Propulsion Controlled Definition | [`001_Advanced-Propulsion-Controlled-Definition.md`](001_Advanced-Propulsion-Controlled-Definition.md) | active |
+| 002 | High-Isp Propulsion Concepts | [`002_High-Isp-Propulsion-Concepts.md`](002_High-Isp-Propulsion-Concepts.md) | active |
+| 003 | Solar Sail and Light-Sail Propulsion | [`003_Solar-Sail-and-Light-Sail-Propulsion.md`](003_Solar-Sail-and-Light-Sail-Propulsion.md) | active |
+| 004 | Electric Sail and Plasma Sail Concepts | [`004_Electric-Sail-and-Plasma-Sail-Concepts.md`](004_Electric-Sail-and-Plasma-Sail-Concepts.md) | active |
+| 005 | Beam-Driven Propulsion Concepts | [`005_Beam-Driven-Propulsion-Concepts.md`](005_Beam-Driven-Propulsion-Concepts.md) | active |
+| 006 | Fusion Propulsion Conceptual Boundaries | [`006_Fusion-Propulsion-Conceptual-Boundaries.md`](006_Fusion-Propulsion-Conceptual-Boundaries.md) | active |
+| 007 | Field-Effect and Exotic Propulsion Claim Discipline | [`007_Field-Effect-and-Exotic-Propulsion-Claim-Discipline.md`](007_Field-Effect-and-Exotic-Propulsion-Claim-Discipline.md) | active |
+| 008 | Mission Use-Cases and Technology Readiness Screening | [`008_Mission-Use-Cases-and-Technology-Readiness-Screening.md`](008_Mission-Use-Cases-and-Technology-Readiness-Screening.md) | active |
+| 009 | Energy, Thermal and Structural Interface Boundaries | [`009_Energy-Thermal-and-Structural-Interface-Boundaries.md`](009_Energy-Thermal-and-Structural-Interface-Boundaries.md) | active |
+| 010 | Assurance Evidence and Non-Operational Boundaries | [`010_Assurance-Evidence-and-Non-Operational-Boundaries.md`](010_Assurance-Evidence-and-Non-Operational-Boundaries.md) | active |
+| 011–099 | *(reserved)* | — | reserved |
 
 ## 4. Footprint
 
@@ -52,11 +75,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `120-129` |
 | Section | `02` — Propulsión Espacial Tradicional y Avanzada |
 | Subsection | `123` — Propulsión Avanzada |
-| Subsubject namespace | `00`–`99` (reserved) |
-| Primary Q-Division | Q-GREENTECH[^qdiv] |
-| Support Q-Divisions | Q-SPACE, Q-HORIZON, Q-HPC |
+| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Primary Q-Division | Q-SPACE[^qdiv] |
+| Support Q-Divisions | Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HPC, ORB-LEG |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
+| Safety boundary | research and concept-screening only |
 | Folder path | `Q+ATLANTIDE/100-199_STA/120-129_Propulsion-Espacial-Tradicional-y-Avanzada/123_Propulsion-Avanzada/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
@@ -65,7 +89,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-GREENTECH` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE`, `support_q_divisions = [Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HPC, ORB-LEG]`, and `governance_class = baseline` from the parent STA section. Extensions added under `011`–`099` shall preserve those header fields, declare the `safety_boundary` and `claim_discipline`, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
