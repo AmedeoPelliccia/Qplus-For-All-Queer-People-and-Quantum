@@ -37,9 +37,23 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.020.00 slice and li
 
 - Covers the *gates* slice of the parent code range `900-909`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
+- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `01`–`05`, indexed in [`README.md`](./README.md).
+- **Position in the 900-909 dependency graph.** Gates are the **operations on the substrate** defined by [`../010_Qubits/`](../010_Qubits/): where `010_` defines the two-level quantum system, its Hilbert space, and its physical implementations, `020_` defines the unitary operations that act on those systems. Gates are therefore the **immediate prerequisite for [`../030_circuits/`](../030_circuits/)** (composition of gates into algorithms) and an upstream dependency for [`../040_quantum-algorithms/`](../040_quantum-algorithms/) and [`../050_foundations/`](../050_foundations/).
+- **Pedagogical sequence followed in this chapter** (deliberately parallel to `010_Qubits/`): **definition → categories → composition → universality → physical realization**. The slot semantics are predictable across foundational chapters so that, once a reader has navigated `010_`, every subsequent foundational chapter is faster.
+- **Boundary against `030_circuits/` (binding for contributors).** This chapter covers the **unitary operation as such** — its mathematical definition, its decomposition into a universal set, its physical realization on a given modality, its fidelity. The chapter [`../030_circuits/`](../030_circuits/) covers what happens **when gates are composed into computational sequences** — circuit depth, parallelization, measurement timing, mid-circuit measurement, classical control flow, and resource estimation at the algorithm level. Material naturally suggested by gate counts (e.g. "circuit depth as a function of T-count") belongs in `030_`, not in `020_`. This rule is restated in `04_` because that is the slot where the temptation to drift across the boundary is strongest.
 
-## 3. Footprint
+## 3. Subsubject Inventory
+
+| NN | Title | Document |
+|---:|---|---|
+| 00 | Overview (this file) | [`00_Overview.md`](./00_Overview.md) |
+| 01 | Gate Definition and Unitary Formalism | [`01_Gate-Definition-and-Unitary-Formalism.md`](./01_Gate-Definition-and-Unitary-Formalism.md) |
+| 02 | Single-Qubit Gates | [`02_Single-Qubit-Gates.md`](./02_Single-Qubit-Gates.md) |
+| 03 | Multi-Qubit Gates and Entangling Operations | [`03_Multi-Qubit-Gates-and-Entangling-Operations.md`](./03_Multi-Qubit-Gates-and-Entangling-Operations.md) |
+| 04 | Universal Gate Sets and Decomposition | [`04_Universal-Gate-Sets-and-Decomposition.md`](./04_Universal-Gate-Sets-and-Decomposition.md) |
+| 05 | Gate Implementation, Calibration and Error Characterization | [`05_Gate-Implementation-Calibration-and-Error-Characterization.md`](./05_Gate-Implementation-Calibration-and-Error-Characterization.md) |
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -59,7 +73,7 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.020.00 slice and li
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
