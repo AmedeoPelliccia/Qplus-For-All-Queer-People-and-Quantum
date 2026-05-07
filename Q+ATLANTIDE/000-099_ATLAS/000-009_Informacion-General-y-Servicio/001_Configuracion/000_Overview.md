@@ -148,7 +148,7 @@ flowchart TB
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/001_Configuracion/` |
 | Document | `000_Overview.md` (this file) |
 | Parent subsection | [`README.md`](./README.md) |
-| Boundary declaration | [`../000_Identificacion/000_Overview.md`](../000_Identificacion/README.md) |
+| Boundary declaration | [`../000_Identificacion/README.md`](../000_Identificacion/README.md) |
 | Digital twin cross-ref | `Q+ATLANTIDE/300-399_DTCEC/` |
 | Type registry cross-ref | `Q+ATLANTIDE/000-099_ATLAS/090-099_Tipos-Especificos-y-Expansion/099_Type-Identification-and-Designator-Registry/` |
 
