@@ -31,7 +31,7 @@ language: en
 
 Overview entry-point for the *circuits* subsection within the `900-909` code range (Section `00` — *Fundamentos de Computación Cuántica*) of the **QCSAA** architecture band (*Quantum Computing & Sentient Agency Architecture*, master range `900–999`).
 
-This subsubject (`900 Overview`) introduces the QCSAA 900-909.030.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
+This subsubject (`900 Overview`) introduces the QCSAA 900-909.030.900 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
 ## 2. Scope
 
