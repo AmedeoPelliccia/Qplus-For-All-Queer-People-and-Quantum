@@ -56,11 +56,12 @@ flowchart LR
     N04["04 — Interfaces, Couplings &amp; Aircraft-Side Connections"]
     N05["05 — Maintenance, Calibration &amp; Records"]
 
-    USES["010 / 020 / 030 / 040 / 050<br/>(use GSE — supporting context)"]
-    H2NS["ATA_IN_H2_GSE_AND_SUPPLY_CHAIN<br/>(H₂ overlay)"]
-    DPP["AEROSPACEMODEL / DPP / SSOT<br/>(record_class: GSE_evidence)"]
+    USES["010 / 020 / 030 / 040 / 050<br/>use GSE — supporting context"]
+    H2NS["ATA_IN_H2_GSE_AND_SUPPLY_CHAIN<br/>H₂ overlay"]
+    DPP["AEROSPACEMODEL / DPP / SSOT<br/>record_class: GSE_evidence"]
 
     OV --> R
+
     R --> N01
     R --> N02
     R --> N03
@@ -70,7 +71,7 @@ flowchart LR
     USES -.->|inversion| OV
     N01 -.->|definitional rule| N02
     N02 -.->|H₂ entries| H2NS
-    N03 -.->|H₂ classes (gate BWB-Q100)| H2NS
+    N03 -.->|H₂ classes / BWB-Q100 gate| H2NS
     N04 -.->|H₂ couplings| H2NS
     N05 -.->|first-class evidence| DPP
 ```
