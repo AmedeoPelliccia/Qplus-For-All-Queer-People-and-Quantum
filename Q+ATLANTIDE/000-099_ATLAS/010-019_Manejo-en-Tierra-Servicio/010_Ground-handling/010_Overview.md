@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-010-019-01-010-README
-title: "ATLAS 010-019 · 01.010 — Ground handling (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-010-019-01-010-010-OVERVIEW
+title: "ATLAS 010-019 · 01.010.010 — Ground handling"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,6 +15,8 @@ subject: "00"
 subject_title: "General Information"
 subsection: "010"
 subsection_title: "Ground handling"
+subsubject: "010"
+subsubject_title: "Overview"
 primary_q_division: Q-GROUND
 support_q_divisions: [Q-MECHANICS, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
@@ -27,40 +29,18 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *Ground handling* (`010`) within ATLAS `010-019` — *Manejo en Tierra & Servicio*. Aggregates the `010 Overview` and the detailed subsubjects (`011`–`015`) that extend it with the canonical scope and definitions, role assignments, safety zoning, GSE interfaces and documentation/traceability semantics, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
+Overview entry-point for the *Ground handling* subsection within the `010-019` code range (Section `01` — *Manejo en Tierra & Servicio*) of the **ATLAS** architecture band (*Aircraft Top-Level Architecture System*, master range `000–099`).
+
+This subsubject (`010 Overview`) introduces the ATLAS 010-019.010.010 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `010`–`019` of subsection `010` *Ground handling*; subsubjects `011`–`015` are populated in this baseline release, the remaining `016`–`019` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the *Ground handling* slice of the parent code range `010-019`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
+- **Boundary with subsection `020` *servicing*.** GSE interfaces are jointly addressed: this subsection's [`014_Ground-Support-Equipment-Interfaces.md`](./014_Ground-Support-Equipment-Interfaces.md) covers the *positioning and physical presence* of GSE (where it parks, how it connects mechanically, exclusion-zone footprint), whereas [`../020_servicing/014_Servicing-Points-Couplings-and-Interfaces.md`](../020_servicing/014_Servicing-Points-Couplings-and-Interfaces.md) covers the *functional servicing* through those interfaces (what flows, at what rate, under what protocol). For H₂, exposure is treated here via *exclusion zones* and under `020` via *active replenishment*.
+- Subsequent subsubjects (`011`–`019`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
 
-## 3. Diagram
-
-The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *Ground handling* slice of ATLAS `010-019`.
-
-```mermaid
-flowchart LR
-    R[(Subsection 010\nGround handling)]
-    OV[010 Overview] --> R
-    R --> N01[011 — Scope & Definitions]
-    R --> N02[012 — Roles, Authorizations & Responsibilities]
-    R --> N03[013 — Safety Zones, Hazards & Exclusion Areas]
-    R --> N04[014 — Ground Support Equipment Interfaces]
-    R --> N05[015 — Documentation, Logs & Traceability]
-```
-
-## 4. Subsubject Index
-
-| 01N | Title | Document | Status |
-|---:|---|---|---|
-| 010 | Overview | [`010_Overview.md`](./010_Overview.md) | active |
-| 011 | Scope and Definitions | [`011_Scope-and-Definitions.md`](./011_Scope-and-Definitions.md) | active |
-| 012 | Roles, Authorizations and Responsibilities | [`012_Roles-Authorizations-and-Responsibilities.md`](./012_Roles-Authorizations-and-Responsibilities.md) | active |
-| 013 | Safety Zones, Hazards and Exclusion Areas | [`013_Safety-Zones-Hazards-and-Exclusion-Areas.md`](./013_Safety-Zones-Hazards-and-Exclusion-Areas.md) | active |
-| 014 | Ground Support Equipment Interfaces | [`014_Ground-Support-Equipment-Interfaces.md`](./014_Ground-Support-Equipment-Interfaces.md) | active |
-| 015 | Documentation, Logs and Traceability | [`015_Documentation-Logs-and-Traceability.md`](./015_Documentation-Logs-and-Traceability.md) | active |
-
-## 5. Footprint
+## 3. Footprint
 
 | Metric | Value |
 |---|---|
@@ -70,21 +50,17 @@ flowchart LR
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subject | `00` — General Information |
 | Subsection | `010` — Ground handling |
-| Subsubject namespace | `010`–`019` (`010` + `011`–`015` populated; canonical `01N_*.md` scheme) |
+| Subsubject | `010` — Overview |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/010-019_Manejo-en-Tierra-Servicio/010_Ground-handling/` |
-| Document | `README.md` (this file) |
+| Document | `010_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## Governance
-
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS band; extensions added under `016`–`019` shall preserve those header fields, follow the canonical `01N_*.md` naming scheme, and reuse the footnote set declared below.
-
-## 6. References & Citations
+## 4. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
@@ -111,3 +87,4 @@ The following ATA-family and industry standards apply to this subsection in addi
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]
 - S1000D Issue 6.0 — International specification for technical publications[^s1000d]
 - AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
+

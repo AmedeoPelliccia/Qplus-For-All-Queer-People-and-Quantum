@@ -27,7 +27,7 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *gates* (`020`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that introduce the **quantum gate** as a unitary operator on the qubit Hilbert space, catalogue single- and multi-qubit gate families, formalise universality and decomposition, and document per-modality physical implementation, calibration, and error characterisation — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
+Subsection-level index for *gates* (`020`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `900 Overview` and the detailed subsubjects (`901`–`905`) that introduce the **quantum gate** as a unitary operator on the qubit Hilbert space, catalogue single- and multi-qubit gate families, formalise universality and decomposition, and document per-modality physical implementation, calibration, and error characterisation — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
 
 This subsection is the **second foundational chapter** of the QCSAA band and the **direct downstream consumer** of [`../010_Qubits/`](../010_Qubits/): where qubits define the substrate, gates define the operations on that substrate. It is the **immediate prerequisite** for [`../030_circuits/`](../030_circuits/), which composes gates into algorithms.
 
@@ -35,21 +35,21 @@ The chapter is organised in the same five-file structure as [`../010_Qubits/`](.
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `00`–`99` of subsection `020` *gates*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the full subsubject namespace `900`–`909` of subsection `020` *gates* under the canonical Q+ATLANTIDE Subsubject scheme `9NN_*.md` (per §2.2 of the QCSAA README); subsubjects `901`–`905` are populated in this baseline release, the remaining `906`–`909` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Pedagogical sequence followed: **definition → categories → composition → universality → physical realization**, mirroring [`../010_Qubits/`](../010_Qubits/).
-- **Boundary against [`../030_circuits/`](../030_circuits/)** (binding for contributors). This chapter covers the **unitary operation as such** — its mathematical definition, its decomposition into a universal set, its physical realization on a given modality, its fidelity. The next chapter covers what happens **when gates are composed into algorithms** — depth, parallelisation, measurement timing, mid-circuit measurement, classical control flow. The rule is restated in `00_Overview.md` §2 and re-binding-ly in `04_` §3.
+- **Boundary against [`../030_circuits/`](../030_circuits/)** (binding for contributors). This chapter covers the **unitary operation as such** — its mathematical definition, its decomposition into a universal set, its physical realization on a given modality, its fidelity. The next chapter covers what happens **when gates are composed into algorithms** — depth, parallelisation, measurement timing, mid-circuit measurement, classical control flow. The rule is restated in `900_Overview.md` §2 and re-binding-ly in `904_` §3.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| 9NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`00_Overview.md`](./00_Overview.md) | active |
-| 01 | Gate Definition and Unitary Formalism | [`01_Gate-Definition-and-Unitary-Formalism.md`](./01_Gate-Definition-and-Unitary-Formalism.md) | active |
-| 02 | Single-Qubit Gates | [`02_Single-Qubit-Gates.md`](./02_Single-Qubit-Gates.md) | active |
-| 03 | Multi-Qubit Gates and Entangling Operations | [`03_Multi-Qubit-Gates-and-Entangling-Operations.md`](./03_Multi-Qubit-Gates-and-Entangling-Operations.md) | active |
-| 04 | Universal Gate Sets and Decomposition | [`04_Universal-Gate-Sets-and-Decomposition.md`](./04_Universal-Gate-Sets-and-Decomposition.md) | active |
-| 05 | Gate Implementation, Calibration and Error Characterization | [`05_Gate-Implementation-Calibration-and-Error-Characterization.md`](./05_Gate-Implementation-Calibration-and-Error-Characterization.md) | active |
+| 900 | Overview | [`900_Overview.md`](./900_Overview.md) | active |
+| 901 | Gate Definition and Unitary Formalism | [`901_Gate-Definition-and-Unitary-Formalism.md`](./901_Gate-Definition-and-Unitary-Formalism.md) | active |
+| 902 | Single-Qubit Gates | [`902_Single-Qubit-Gates.md`](./902_Single-Qubit-Gates.md) | active |
+| 903 | Multi-Qubit Gates and Entangling Operations | [`903_Multi-Qubit-Gates-and-Entangling-Operations.md`](./903_Multi-Qubit-Gates-and-Entangling-Operations.md) | active |
+| 904 | Universal Gate Sets and Decomposition | [`904_Universal-Gate-Sets-and-Decomposition.md`](./904_Universal-Gate-Sets-and-Decomposition.md) | active |
+| 905 | Gate Implementation, Calibration and Error Characterization | [`905_Gate-Implementation-Calibration-and-Error-Characterization.md`](./905_Gate-Implementation-Calibration-and-Error-Characterization.md) | active |
 
 ## 4. Footprint
 
@@ -61,7 +61,7 @@ The chapter is organised in the same five-file structure as [`../010_Qubits/`](.
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
 | Subsection | `020` — gates |
-| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
+| Subsubject namespace | `900`–`909` (`900` + `901`–`905` populated; canonical `9NN_*.md` scheme) |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
@@ -73,14 +73,14 @@ The chapter is organised in the same five-file structure as [`../010_Qubits/`](.
 
 ## 5. Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = QCSAA`, `primary_q_division = Q-HORIZON` and `governance_class = restricted` from the parent QCSAA band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = QCSAA`, `primary_q_division = Q-HORIZON` and `governance_class = restricted` from the parent QCSAA band; extensions added under `906`–`909` shall preserve those header fields, follow the canonical `9NN_*.md` naming scheme, and reuse the footnote set declared below.
 
 ## 6. Upstream, Downstream and Cross-Band Dependencies
 
-- **Upstream (within `900-909`)** — [`../010_Qubits/`](../010_Qubits/). Every gate in this chapter acts on the Hilbert space defined in `010_Qubits/01_`; every per-modality fidelity and gate-time number in `05_` is bounded by the $T_1, T_2$ characterisation in `010_Qubits/04_`; every reference to overhead in `04_` compounds with the physical-to-logical ratio in `010_Qubits/05_`.
-- **Downstream (within `900-909`)** — [`../030_circuits/`](../030_circuits/), [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../050_foundations/`](../050_foundations/). The chapter boundary against `030_circuits/` is stated explicitly in `00_Overview.md` §2 and `04_` §3.
-- **Within QCSAA `900-999`** — `910-919` Quantum Machine Learning & Quantum AI (variational circuits depend on the entangling-gate family of `03_`), `920-929` Quantum Networks & Communications (entanglement distribution depends on the Bell/EPR preparation of `03_`), `930-939` Quantum Cybersecurity, `950-959` Quantum Simulation, `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
-- **Cross-band** — CYB `880-889` Post-Quantum Cryptography back-references the universality and overhead arguments of `04_` to size the threat model.
+- **Upstream (within `900-909`)** — [`../010_Qubits/`](../010_Qubits/). Every gate in this chapter acts on the Hilbert space defined in `010_Qubits/901_`; every per-modality fidelity and gate-time number in `905_` is bounded by the $T_1, T_2$ characterisation in `010_Qubits/904_`; every reference to overhead in `904_` compounds with the physical-to-logical ratio in `010_Qubits/905_`.
+- **Downstream (within `900-909`)** — [`../030_circuits/`](../030_circuits/), [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../050_foundations/`](../050_foundations/). The chapter boundary against `030_circuits/` is stated explicitly in `900_Overview.md` §2 and `904_` §3.
+- **Within QCSAA `900-999`** — `910-919` Quantum Machine Learning & Quantum AI (variational circuits depend on the entangling-gate family of `903_`), `920-929` Quantum Networks & Communications (entanglement distribution depends on the Bell/EPR preparation of `903_`), `930-939` Quantum Cybersecurity, `950-959` Quantum Simulation, `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
+- **Cross-band** — CYB `880-889` Post-Quantum Cryptography back-references the universality and overhead arguments of `904_` to size the threat model.
 
 Downstream chapters shall back-reference the specific subsubjects of this subsection rather than re-introduce the underlying gate concepts.
 
@@ -88,7 +88,7 @@ Downstream chapters shall back-reference the specific subsubjects of this subsec
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `00_Overview.md` plus subsubjects `01`–`05`. Subsection index established; chapter parallel to `010_Qubits/` (definition → categories → composition → universality → physical realization). |
+| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `900_Overview.md` plus subsubjects `901`–`905`, using the canonical Q+ATLANTIDE Subsubject scheme `9NN_*.md` (per §2.2 of the QCSAA README); chapter parallel to `010_Qubits/` (definition → categories → composition → universality → physical realization). |
 
 ## 8. References & Citations
 

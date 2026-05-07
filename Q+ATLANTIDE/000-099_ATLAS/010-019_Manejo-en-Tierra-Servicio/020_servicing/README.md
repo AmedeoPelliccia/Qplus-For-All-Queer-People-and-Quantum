@@ -27,39 +27,39 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *servicing* (`020`) within ATLAS `010-019` — *Manejo en Tierra & Servicio*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that extend it with the canonical scope/boundary clauses, replenishment regimes (fluids/gases/energy, including LH₂/N₂ for AMPEL360), scheduled/unscheduled servicing logic, servicing-point/coupling/interface specifications and the records & traceability semantics, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d]. Maps cleanly to **ATA 12 — Servicing**[^ata12] with infrastructure overlay to `OPT-INS_FRAMEWORK/I-INFRASTRUCTURES/ATA_12-SERVICING_INFRA/`; the H₂ overlay for couplings/hoses is consumed (read-only) from `OPT-INS_FRAMEWORK/I-INFRASTRUCTURES/ATA_IN_H2_GSE_AND_SUPPLY_CHAIN/IN-50-h2-gse-couplings-hoses-interfaces/`.
+Subsection-level index for *servicing* (`020`) within ATLAS `010-019` — *Manejo en Tierra & Servicio*. Aggregates the `010 Overview` and the detailed subsubjects (`011`–`015`) that extend it with the canonical scope/boundary clauses, replenishment regimes (fluids/gases/energy, including LH₂/N₂ for AMPEL360), scheduled/unscheduled servicing logic, servicing-point/coupling/interface specifications and the records & traceability semantics, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d]. Maps cleanly to **ATA 12 — Servicing**[^ata12] with infrastructure overlay to `OPT-INS_FRAMEWORK/I-INFRASTRUCTURES/ATA_12-SERVICING_INFRA/`; the H₂ overlay for couplings/hoses is consumed (read-only) from `OPT-INS_FRAMEWORK/I-INFRASTRUCTURES/ATA_IN_H2_GSE_AND_SUPPLY_CHAIN/IN-50-h2-gse-couplings-hoses-interfaces/`.
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `00`–`99` of subsection `020` *servicing*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the full subsubject namespace `010`–`019` of subsection `020` *servicing*; subsubjects `011`–`015` are populated in this baseline release, the remaining `016`–`019` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- **Boundary with subsection `010` *Ground handling*.** Restated for navigation: [`../010_Ground-handling/04_Ground-Support-Equipment-Interfaces.md`](../010_Ground-handling/04_Ground-Support-Equipment-Interfaces.md) defines the *physical/positioning* GSE surface; [`./04_Servicing-Points-Couplings-and-Interfaces.md`](./04_Servicing-Points-Couplings-and-Interfaces.md) defines the *functional* servicing surface (what flows, at what rate, under what protocol).
+- **Boundary with subsection `010` *Ground handling*.** Restated for navigation: [`../010_Ground-handling/014_Ground-Support-Equipment-Interfaces.md`](../010_Ground-handling/014_Ground-Support-Equipment-Interfaces.md) defines the *physical/positioning* GSE surface; [`./014_Servicing-Points-Couplings-and-Interfaces.md`](./014_Servicing-Points-Couplings-and-Interfaces.md) defines the *functional* servicing surface (what flows, at what rate, under what protocol).
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`01`–`05`) into the *servicing* slice of ATLAS `010-019`.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *servicing* slice of ATLAS `010-019`.
 
 ```mermaid
 flowchart LR
     R[(Subsection 020\nservicing)]
-    OV[00 Overview] --> R
-    R --> N01[01 — Scope & Servicing Boundaries]
-    R --> N02[02 — Replenishment: Fluids, Gases & Energy]
-    R --> N03[03 — Scheduled & Unscheduled Servicing]
-    R --> N04[04 — Servicing Points, Couplings & Interfaces]
-    R --> N05[05 — Servicing Records & Traceability]
+    OV[010 Overview] --> R
+    R --> N01[011 — Scope & Servicing Boundaries]
+    R --> N02[012 — Replenishment: Fluids, Gases & Energy]
+    R --> N03[013 — Scheduled & Unscheduled Servicing]
+    R --> N04[014 — Servicing Points, Couplings & Interfaces]
+    R --> N05[015 — Servicing Records & Traceability]
 ```
 
 ## 4. Subsubject Index
 
-| NN | Title | Document | Status |
+| 01N | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`00_Overview.md`](./00_Overview.md) | active |
-| 01 | Scope and Servicing Boundaries | [`01_Scope-and-Servicing-Boundaries.md`](./01_Scope-and-Servicing-Boundaries.md) | active |
-| 02 | Replenishment: Fluids, Gases and Energy | [`02_Replenishment-Fluids-Gases-and-Energy.md`](./02_Replenishment-Fluids-Gases-and-Energy.md) | active |
-| 03 | Scheduled and Unscheduled Servicing | [`03_Scheduled-and-Unscheduled-Servicing.md`](./03_Scheduled-and-Unscheduled-Servicing.md) | active |
-| 04 | Servicing Points, Couplings and Interfaces | [`04_Servicing-Points-Couplings-and-Interfaces.md`](./04_Servicing-Points-Couplings-and-Interfaces.md) | active |
-| 05 | Servicing Records and Traceability | [`05_Servicing-Records-and-Traceability.md`](./05_Servicing-Records-and-Traceability.md) | active |
+| 010 | Overview | [`010_Overview.md`](./010_Overview.md) | active |
+| 011 | Scope and Servicing Boundaries | [`011_Scope-and-Servicing-Boundaries.md`](./011_Scope-and-Servicing-Boundaries.md) | active |
+| 012 | Replenishment: Fluids, Gases and Energy | [`012_Replenishment-Fluids-Gases-and-Energy.md`](./012_Replenishment-Fluids-Gases-and-Energy.md) | active |
+| 013 | Scheduled and Unscheduled Servicing | [`013_Scheduled-and-Unscheduled-Servicing.md`](./013_Scheduled-and-Unscheduled-Servicing.md) | active |
+| 014 | Servicing Points, Couplings and Interfaces | [`014_Servicing-Points-Couplings-and-Interfaces.md`](./014_Servicing-Points-Couplings-and-Interfaces.md) | active |
+| 015 | Servicing Records and Traceability | [`015_Servicing-Records-and-Traceability.md`](./015_Servicing-Records-and-Traceability.md) | active |
 
 ## 5. Sibling Subsections (010-019 range)
 
@@ -67,10 +67,10 @@ flowchart LR
 |---|---|---|
 | `010` | Ground handling | [`../010_Ground-handling/README.md`](../010_Ground-handling/README.md) |
 | `020` | servicing (this) | [`./README.md`](./README.md) |
-| `030` | acceso | [`../030_acceso/00_Overview.md`](../030_acceso/00_Overview.md) |
+| `030` | acceso | [`../030_acceso/010_Overview.md`](../030_acceso/010_Overview.md) |
 | `040` | remolque | [`../040_remolque/README.md`](../040_remolque/README.md) |
-| `050` | parking | [`../050_parking/00_Overview.md`](../050_parking/00_Overview.md) |
-| `060` | GSE | [`../060_GSE/00_Overview.md`](../060_GSE/00_Overview.md) |
+| `050` | parking | [`../050_parking/010_Overview.md`](../050_parking/010_Overview.md) |
+| `060` | GSE | [`../060_GSE/010_Overview.md`](../060_GSE/010_Overview.md) |
 
 ## 6. Footprint
 
@@ -82,7 +82,7 @@ flowchart LR
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subject | `00` — General Information |
 | Subsection | `020` — servicing |
-| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
+| Subsubject namespace | `010`–`019` (`010` + `011`–`015` populated; canonical `01N_*.md` scheme) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
@@ -94,13 +94,13 @@ flowchart LR
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below. Cross-subsection references with `010_Ground-handling/` shall preserve the *functional vs. physical* GSE-interface split stated in [`./00_Overview.md` §2](./00_Overview.md#2-scope) and in [`../010_Ground-handling/00_Overview.md` §2](../010_Ground-handling/00_Overview.md#2-scope). Subsubject `03` consumes the maintenance-program baseline at `LC11_MAINTENANCE/maintenance-program-baseline` (machine-readable via the document's front-matter `consumes` field) and shall not redefine it.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS band; extensions added under `016`–`019` shall preserve those header fields, follow the canonical `01N_*.md` naming scheme, and reuse the footnote set declared below. Cross-subsection references with `010_Ground-handling/` shall preserve the *functional vs. physical* GSE-interface split stated in [`./010_Overview.md` §2](./010_Overview.md#2-scope) and in [`../010_Ground-handling/010_Overview.md` §2](../010_Ground-handling/010_Overview.md#2-scope). Subsubject `013` consumes the maintenance-program baseline at `LC11_MAINTENANCE/maintenance-program-baseline` (machine-readable via the document's front-matter `consumes` field) and shall not redefine it.
 
 ## 7. Change Log
 
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0.0 | 2026-05-06 | Q-GROUND | Initial population of subsection `020 servicing`: README + Overview enrichment (diagram, ATA cross-refs, GSE boundary clause) + subsubjects `01`–`05`. |
+| 1.0.0 | 2026-05-06 | Q-GROUND | Initial population of subsection `020 servicing`: README + Overview enrichment (diagram, ATA cross-refs, GSE boundary clause) + subsubjects `011`–`015`. |
 
 ## 8. References & Citations
 

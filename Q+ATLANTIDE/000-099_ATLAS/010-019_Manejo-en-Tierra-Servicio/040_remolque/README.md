@@ -27,21 +27,21 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *remolque* (`040`) within ATLAS `010-019` — *Manejo en Tierra & Servicio*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that extend it with the canonical scope/boundary clauses, the towing equipment and tug-compatibility matrix (with the explicit AMPEL360 BWB **towbarless** flag), the procedural baseline for pushback and maneuvering, the numerical limits and steering interlocks (including the machine-checkable **bypass-pin** invariant block), and the towing-event record taxonomy keyed by `event_classification:` for bidirectional propagation into `LC11_MAINTENANCE/`. Conforms to the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d]. Maps to **ATA 09 — Towing and Taxiing**[^ata09], **ATA 32 — Landing Gear (32-50 Steering)**[^ata32] and **ATA 07 — Lifting and Shoring**[^ata07]; *taxiing under aircraft engine power is **not** in this subsection* and is governed by flight-operations procedures.
+Subsection-level index for *remolque* (`040`) within ATLAS `010-019` — *Manejo en Tierra & Servicio*. Aggregates the `010 Overview` and the detailed subsubjects (`011`–`015`) that extend it with the canonical scope/boundary clauses, the towing equipment and tug-compatibility matrix (with the explicit AMPEL360 BWB **towbarless** flag), the procedural baseline for pushback and maneuvering, the numerical limits and steering interlocks (including the machine-checkable **bypass-pin** invariant block), and the towing-event record taxonomy keyed by `event_classification:` for bidirectional propagation into `LC11_MAINTENANCE/`. Conforms to the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d]. Maps to **ATA 09 — Towing and Taxiing**[^ata09], **ATA 32 — Landing Gear (32-50 Steering)**[^ata32] and **ATA 07 — Lifting and Shoring**[^ata07]; *taxiing under aircraft engine power is **not** in this subsection* and is governed by flight-operations procedures.
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `00`–`99` of subsection `040` *remolque*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the full subsubject namespace `010`–`019` of subsection `040` *remolque*; subsubjects `011`–`015` are populated in this baseline release, the remaining `016`–`019` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - **Boundary triangulation with subsections `010`, `020` and `030`.** Restated for navigation:
-  - **Ground handling** (`010`) = aircraft *positioning*, *safety perimeter*, GSE *physical placement*. See [`../010_Ground-handling/00_Overview.md`](../010_Ground-handling/00_Overview.md).
-  - **Servicing** (`020`) = active *flow through coupling interfaces*. See [`../020_servicing/00_Overview.md`](../020_servicing/00_Overview.md).
+  - **Ground handling** (`010`) = aircraft *positioning*, *safety perimeter*, GSE *physical placement*. See [`../010_Ground-handling/010_Overview.md`](../010_Ground-handling/010_Overview.md).
+  - **Servicing** (`020`) = active *flow through coupling interfaces*. See [`../020_servicing/010_Overview.md`](../020_servicing/010_Overview.md).
   - **Access** (`030`) = *opening the aircraft envelope* to enable presence. See [`../030_acceso/README.md`](../030_acceso/README.md).
   - **Remolque** (`040`, this) = *controlled translation* of the aircraft on the ground under *external* motive power.
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`01`–`05`) into the *remolque* slice of ATLAS `010-019` and how the limits/records chain closes onto the maintenance program.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *remolque* slice of ATLAS `010-019` and how the limits/records chain closes onto the maintenance program.
 
 ```mermaid
 flowchart LR
@@ -71,14 +71,14 @@ flowchart LR
 
 ## 4. Subsubject Index
 
-| NN | Title | Document | Status |
+| 01N | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`00_Overview.md`](./00_Overview.md) | active |
-| 01 | Scope and Towing Boundaries | [`01_Scope-and-Towing-Boundaries.md`](./01_Scope-and-Towing-Boundaries.md) | active |
-| 02 | Towing Equipment and Tug Compatibility | [`02_Towing-Equipment-and-Tug-Compatibility.md`](./02_Towing-Equipment-and-Tug-Compatibility.md) | active |
-| 03 | Towing Procedures: Pushback and Maneuvering | [`03_Towing-Procedures-Pushback-and-Maneuvering.md`](./03_Towing-Procedures-Pushback-and-Maneuvering.md) | active |
-| 04 | Towing Limits, Loads and Steering Constraints | [`04_Towing-Limits-Loads-and-Steering-Constraints.md`](./04_Towing-Limits-Loads-and-Steering-Constraints.md) | active |
-| 05 | Towing Records, Incidents and Traceability | [`05_Towing-Records-Incidents-and-Traceability.md`](./05_Towing-Records-Incidents-and-Traceability.md) | active |
+| 010 | Overview | [`010_Overview.md`](./010_Overview.md) | active |
+| 011 | Scope and Towing Boundaries | [`011_Scope-and-Towing-Boundaries.md`](./011_Scope-and-Towing-Boundaries.md) | active |
+| 012 | Towing Equipment and Tug Compatibility | [`012_Towing-Equipment-and-Tug-Compatibility.md`](./012_Towing-Equipment-and-Tug-Compatibility.md) | active |
+| 013 | Towing Procedures: Pushback and Maneuvering | [`013_Towing-Procedures-Pushback-and-Maneuvering.md`](./013_Towing-Procedures-Pushback-and-Maneuvering.md) | active |
+| 014 | Towing Limits, Loads and Steering Constraints | [`014_Towing-Limits-Loads-and-Steering-Constraints.md`](./014_Towing-Limits-Loads-and-Steering-Constraints.md) | active |
+| 015 | Towing Records, Incidents and Traceability | [`015_Towing-Records-Incidents-and-Traceability.md`](./015_Towing-Records-Incidents-and-Traceability.md) | active |
 
 ## 5. Sibling Subsections (010-019 range)
 
@@ -88,8 +88,8 @@ flowchart LR
 | `020` | servicing | [`../020_servicing/README.md`](../020_servicing/README.md) |
 | `030` | acceso | [`../030_acceso/README.md`](../030_acceso/README.md) |
 | `040` | remolque (this) | [`./README.md`](./README.md) |
-| `050` | parking | [`../050_parking/00_Overview.md`](../050_parking/00_Overview.md) |
-| `060` | GSE | [`../060_GSE/00_Overview.md`](../060_GSE/00_Overview.md) |
+| `050` | parking | [`../050_parking/010_Overview.md`](../050_parking/010_Overview.md) |
+| `060` | GSE | [`../060_GSE/010_Overview.md`](../060_GSE/010_Overview.md) |
 
 ## 6. Footprint
 
@@ -101,7 +101,7 @@ flowchart LR
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subject | `00` — General Information |
 | Subsection | `040` — remolque |
-| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
+| Subsubject namespace | `010`–`019` (`010` + `011`–`015` populated; canonical `01N_*.md` scheme) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
@@ -113,13 +113,13 @@ flowchart LR
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below. Cross-subsection references with `010_Ground-handling/`, `020_servicing/` and `030_acceso/` shall preserve the *positioning vs. flow vs. envelope-opening vs. controlled-translation* partition stated in [`./00_Overview.md` §2](./00_Overview.md#2-scope) and in the sibling Overviews. Subsubject `04` declares a top-level YAML `interlocks:` and `limit_categories:` invariant block that is **machine-checked** by digital-twin tooling — extensions must not silently weaken those invariants. Subsubject `05` records carry a top-level `event_classification:` field whose value (`nominal` / `inspection_trigger` / `mandatory_inspection` / `damage_event`) governs the bidirectional propagation rule into `AMPEL360-AIR-T/LC11_MAINTENANCE/`; this field is the canonical hand-off and shall not be omitted.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS band; extensions added under `016`–`019` shall preserve those header fields, follow the canonical `01N_*.md` naming scheme, and reuse the footnote set declared below. Cross-subsection references with `010_Ground-handling/`, `020_servicing/` and `030_acceso/` shall preserve the *positioning vs. flow vs. envelope-opening vs. controlled-translation* partition stated in [`./010_Overview.md` §2](./010_Overview.md#2-scope) and in the sibling Overviews. Subsubject `014` declares a top-level YAML `interlocks:` and `limit_categories:` invariant block that is **machine-checked** by digital-twin tooling — extensions must not silently weaken those invariants. Subsubject `015` records carry a top-level `event_classification:` field whose value (`nominal` / `inspection_trigger` / `mandatory_inspection` / `damage_event`) governs the bidirectional propagation rule into `AMPEL360-AIR-T/LC11_MAINTENANCE/`; this field is the canonical hand-off and shall not be omitted.
 
 ## 7. Change Log
 
 | Version | Date | Author | Change |
 |---|---|---|---|
-| 1.0.0 | 2026-05-06 | Q-GROUND | Initial population of subsection `040 remolque`: README + Overview enrichment (diagram, ATA 09 / 32-50 / 07 cross-refs, taxiing-out-of-scope clause, triangulation with `010`/`020`/`030`) + subsubjects `01`–`05`, including the bypass-pin YAML invariant block in `04_` and the `event_classification:` propagation field in `05_`. |
+| 1.0.0 | 2026-05-06 | Q-GROUND | Initial population of subsection `040 remolque`: README + Overview enrichment (diagram, ATA 09 / 32-50 / 07 cross-refs, taxiing-out-of-scope clause, triangulation with `010`/`020`/`030`) + subsubjects `011`–`015`, including the bypass-pin YAML invariant block in `014_` and the `event_classification:` propagation field in `015_`. |
 
 ## 8. References & Citations
 
