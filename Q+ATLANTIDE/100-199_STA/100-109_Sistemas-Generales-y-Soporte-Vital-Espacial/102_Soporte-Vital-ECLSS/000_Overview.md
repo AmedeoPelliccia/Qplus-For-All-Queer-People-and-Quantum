@@ -50,7 +50,7 @@ This subsubject (`000 Overview`) introduces the STA 100-109.102 slice and links 
   - **ECLSS Sensors, Automation and Fault Detection** (`009`) — sensor network, automation logic, and FDIR interfaces.
   - **Standards Traceability and Assurance Boundaries** (`010`) — cross-map to ECSS/NASA/ISO and product-assurance evidence requirements.
 
-## 4. Footprint
+## 3. Footprint
 
 | Metric | Value |
 |---|---|

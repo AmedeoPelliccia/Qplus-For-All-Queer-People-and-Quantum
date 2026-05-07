@@ -48,9 +48,9 @@ Defines the **abort, escape and contingency operational modes** for STA missions
 ```mermaid
 flowchart TD
     DETECT["Hazard Detected<br/>(Cat-I or Cat-II)"]
-    DETECT --> PHASEMission Phase?
+    DETECT --> PHASE{"Mission Phase?"}
     PHASE -->|"Launch ≤ T+300 s"| LAS["Launch Abort System<br/>(LAS activation ≤300 ms)"]
-    PHASE -->|"Ascent / Orbit"| ONORBITEgress available?
+    PHASE -->|"Ascent / Orbit"| ONORBIT{"Egress available?"}
     PHASE -->|"Cruise / Interplanetary"| SAFE["Safe Haven<br/>(006)"]
     ONORBIT -->|"Yes"| EGRESS["On-orbit Emergency Egress<br/>(undock · re-entry)"]
     ONORBIT -->|"No"| SAFE

@@ -50,7 +50,7 @@ This subsubject (`000 Overview`) introduces the STA 100-109.103 slice and links 
   - **ECSS / NASA / CCSDS Safety Standards Mapping** (`009`) — safety standards cross-reference for all `103` subsubjects.
   - **Traceability, Evidence and Lifecycle Governance** (`010`) — safety case, evidence package, and lifecycle change-authority rules.
 
-## 4. Footprint
+## 3. Footprint
 
 | Metric | Value |
 |---|---|
