@@ -14,9 +14,16 @@ section: "01"
 section_title: "Estructuras y Materiales Espaciales"
 subsection: "112"
 subsection_title: "Protección Térmica y Radiación"
-primary_q_division: Q-STRUCTURES
-support_q_divisions: [Q-SPACE, Q-HORIZON, Q-INDUSTRY]
+primary_q_division: Q-SPACE
+support_q_divisions: [Q-STRUCTURES, Q-GREENTECH, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
+linked_nodes:
+  - "110_Estructuras-Orbitales"
+  - "111_Materiales-Espaciales"
+  - "101_Habitabilidad"
+  - "102_Soporte-Vital-ECLSS"
+  - "103_Seguridad-de-Mision"
+safety_boundary: "thermal and radiation protection critical; requires explicit environmental assumptions, shielding verification, degradation evidence, crew/electronics exposure limits, material qualification and lifecycle traceability"
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -29,19 +36,30 @@ language: en
 
 Subsection-level index for *Protección Térmica y Radiación* (`112`) within STA `110-119` — *Estructuras y Materiales Espaciales*.
 
-This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
+This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. It is designated **thermal and radiation protection critical**: all subsubjects require explicit environmental assumptions, shielding verification, degradation evidence, crew/electronics exposure limits, material qualification, and lifecycle traceability.
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `112` *Thermal and Radiation Protection*.
+- Populates the subsubject namespace `000`–`010` of subsection `112` *Thermal and Radiation Protection*; subsubjects `011`–`099` remain reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- Linked nodes: `110_Estructuras-Orbitales`, `111_Materiales-Espaciales`, `101_Habitabilidad`, `102_Soporte-Vital-ECLSS`, `103_Seguridad-de-Mision`.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
+| 001 | Thermal and Radiation Protection Controlled Definition | [`001_Thermal-and-Radiation-Protection-Controlled-Definition.md`](001_Thermal-and-Radiation-Protection-Controlled-Definition.md) | active |
+| 002 | Thermal Control Boundaries and Protection Functions | [`002_Thermal-Control-Boundaries-and-Protection-Functions.md`](002_Thermal-Control-Boundaries-and-Protection-Functions.md) | active |
+| 003 | Passive Thermal Protection Materials and Coatings | [`003_Passive-Thermal-Protection-Materials-and-Coatings.md`](003_Passive-Thermal-Protection-Materials-and-Coatings.md) | active |
+| 004 | Active Thermal Control Interfaces | [`004_Active-Thermal-Control-Interfaces.md`](004_Active-Thermal-Control-Interfaces.md) | active |
+| 005 | Radiation Environment and Exposure Regimes | [`005_Radiation-Environment-and-Exposure-Regimes.md`](005_Radiation-Environment-and-Exposure-Regimes.md) | active |
+| 006 | Radiation Shielding Materials and Architectures | [`006_Radiation-Shielding-Materials-and-Architectures.md`](006_Radiation-Shielding-Materials-and-Architectures.md) | active |
+| 007 | Electronics, Payload and Crew Protection Zones | [`007_Electronics-Payload-and-Crew-Protection-Zones.md`](007_Electronics-Payload-and-Crew-Protection-Zones.md) | active |
+| 008 | Thermal Cycling, Degradation and Lifetime Effects | [`008_Thermal-Cycling-Degradation-and-Lifetime-Effects.md`](008_Thermal-Cycling-Degradation-and-Lifetime-Effects.md) | active |
+| 009 | ECSS / NASA Thermal and Radiation Standards Mapping | [`009_ECSS-NASA-Thermal-and-Radiation-Standards-Mapping.md`](009_ECSS-NASA-Thermal-and-Radiation-Standards-Mapping.md) | active |
+| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 011–099 | *(reserved)* | — | reserved |
 
 ## 4. Footprint
 
@@ -52,11 +70,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `110-119` |
 | Section | `01` — Estructuras y Materiales Espaciales |
 | Subsection | `112` — Protección Térmica y Radiación |
-| Subsubject namespace | `00`–`99` (reserved) |
-| Primary Q-Division | Q-STRUCTURES[^qdiv] |
-| Support Q-Divisions | Q-SPACE, Q-HORIZON, Q-INDUSTRY |
+| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Primary Q-Division | Q-SPACE[^qdiv] |
+| Support Q-Divisions | Q-STRUCTURES, Q-GREENTECH, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
 | Governance class | `baseline`[^gov] |
+| Safety boundary | thermal and radiation protection critical |
 | Folder path | `Q+ATLANTIDE/100-199_STA/110-119_Estructuras-y-Materiales-Espaciales/112_Proteccion-Termica-y-Radiacion/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
@@ -65,7 +84,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-STRUCTURES` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE`, `support_q_divisions = [Q-STRUCTURES, Q-GREENTECH, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY]`, and `governance_class = baseline` from the parent STA section. Extensions added under `011`–`099` shall preserve those header fields, declare the `safety_boundary`, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 

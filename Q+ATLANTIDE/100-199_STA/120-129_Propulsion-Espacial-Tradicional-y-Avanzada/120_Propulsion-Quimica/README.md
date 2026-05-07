@@ -14,9 +14,17 @@ section: "02"
 section_title: "Propulsión Espacial Tradicional y Avanzada"
 subsection: "120"
 subsection_title: "Propulsión Química"
-primary_q_division: Q-GREENTECH
-support_q_divisions: [Q-SPACE, Q-HORIZON, Q-HPC]
+primary_q_division: Q-SPACE
+support_q_divisions: [Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-LEG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "110_Estructuras-Orbitales"
+  - "111_Materiales-Espaciales"
+  - "112_Proteccion-Termica-y-Radiacion"
+  - "121_Propulsion-Electrica"
+  - "123_Propulsion-Avanzada"
+safety_boundary: "propulsion-critical; requires explicit hazard analysis, propellant compatibility, pressure-system assurance, ignition/start-stop logic, test evidence, handling procedures and lifecycle traceability"
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -29,19 +37,30 @@ language: en
 
 Subsection-level index for *Propulsión Química* (`120`) within STA `120-129` — *Propulsión Espacial Tradicional y Avanzada*.
 
-This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
+This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. It is designated **propulsion-critical**: all subsubjects require explicit hazard analysis, propellant compatibility documentation, pressure-system assurance, ignition/start-stop logic verification, test evidence, and lifecycle traceability.
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `120` *Chemical Propulsion*.
+- Populates the subsubject namespace `000`–`010` of subsection `120` *Chemical Propulsion*; subsubjects `011`–`099` remain reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- Linked nodes: `100_Arquitectura-General-Espacial`, `110_Estructuras-Orbitales`, `111_Materiales-Espaciales`, `112_Proteccion-Termica-y-Radiacion`, `121_Propulsion-Electrica`, `123_Propulsion-Avanzada`.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
+| 001 | Chemical Propulsion Controlled Definition | [`001_Chemical-Propulsion-Controlled-Definition.md`](001_Chemical-Propulsion-Controlled-Definition.md) | active |
+| 002 | Propellant Families and Selection Criteria | [`002_Propellant-Families-and-Selection-Criteria.md`](002_Propellant-Families-and-Selection-Criteria.md) | active |
+| 003 | Liquid Propulsion Systems | [`003_Liquid-Propulsion-Systems.md`](003_Liquid-Propulsion-Systems.md) | active |
+| 004 | Solid Propulsion Systems | [`004_Solid-Propulsion-Systems.md`](004_Solid-Propulsion-Systems.md) | active |
+| 005 | Hybrid Propulsion Systems | [`005_Hybrid-Propulsion-Systems.md`](005_Hybrid-Propulsion-Systems.md) | active |
+| 006 | Combustion Chambers, Nozzles and Thrust Generation | [`006_Combustion-Chambers-Nozzles-and-Thrust-Generation.md`](006_Combustion-Chambers-Nozzles-and-Thrust-Generation.md) | active |
+| 007 | Feed Systems, Tanks, Valves and Pressurization | [`007_Feed-Systems-Tanks-Valves-and-Pressurization.md`](007_Feed-Systems-Tanks-Valves-and-Pressurization.md) | active |
+| 008 | Ignition, Start-Stop and Throttle Boundaries | [`008_Ignition-Start-Stop-and-Throttle-Boundaries.md`](008_Ignition-Start-Stop-and-Throttle-Boundaries.md) | active |
+| 009 | Performance Metrics: Isp, Thrust and Mass Fraction | [`009_Performance-Metrics-Isp-Thrust-and-Mass-Fraction.md`](009_Performance-Metrics-Isp-Thrust-and-Mass-Fraction.md) | active |
+| 010 | Safety, Hazards, Testing and Assurance Boundaries | [`010_Safety-Hazards-Testing-and-Assurance-Boundaries.md`](010_Safety-Hazards-Testing-and-Assurance-Boundaries.md) | active |
+| 011–099 | *(reserved)* | — | reserved |
 
 ## 4. Footprint
 
@@ -52,11 +71,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `120-129` |
 | Section | `02` — Propulsión Espacial Tradicional y Avanzada |
 | Subsection | `120` — Propulsión Química |
-| Subsubject namespace | `00`–`99` (reserved) |
-| Primary Q-Division | Q-GREENTECH[^qdiv] |
-| Support Q-Divisions | Q-SPACE, Q-HORIZON, Q-HPC |
+| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Primary Q-Division | Q-SPACE[^qdiv] |
+| Support Q-Divisions | Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
+| Safety boundary | propulsion-critical |
 | Folder path | `Q+ATLANTIDE/100-199_STA/120-129_Propulsion-Espacial-Tradicional-y-Avanzada/120_Propulsion-Quimica/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
@@ -65,7 +85,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-GREENTECH` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE`, `support_q_divisions = [Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY]`, and `governance_class = baseline` from the parent STA section. Extensions added under `011`–`099` shall preserve those header fields, declare the `safety_boundary`, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
