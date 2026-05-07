@@ -60,7 +60,34 @@ The matrix below mirrors the structural pattern of the GSE compatibility matrix 
 
 > **Interpretation.** Numbers above are order-of-magnitude indicative values for the published state of the art; specific devices vary. The right-hand *Posture* column, not the parameter columns, is the one that matters for program planning: it is what prevents the register from over-promising. Aerospace deployments in the strategic horizon shall preferentially target **operational** and **near-term roadmap** modalities; **research horizon** modalities are tracked but not relied upon for committed deliverables.
 
-## 4. Footprint
+## 4. Diagram — Modality Landscape by Engineering Posture
+
+The diagram below groups the implementation families of §3 by the *Posture* column rather than by physics, mirroring the way the program plans against them.
+
+```mermaid
+flowchart TB
+    Q["Abstract qubit<br/>(ℂ², 01_)"] --> Op
+    Q --> Near
+    Q --> Res
+    subgraph Op["Operational with current systems"]
+        SC["Superconducting<br/>(transmon, fluxonium)"]
+        TI["Trapped ion<br/>(hyperfine / optical)"]
+    end
+    subgraph Near["Operational with near-term roadmap"]
+        NA["Neutral atom<br/>(Rydberg arrays)"]
+        SS["Spin — semiconductor<br/>(Si/SiGe, donors)"]
+        NV["Spin — NV centres<br/>(sensing-led)"]
+    end
+    subgraph Res["Research horizon"]
+        PH["Photonic<br/>(dual-rail / CV)"]
+        TO["Topological<br/>(Majorana / anyonic)"]
+    end
+    Op --> Plan["Committed aerospace<br/>deliverables"]
+    Near --> Plan
+    Res -. "tracked,<br/>not relied upon" .-> Plan
+```
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -81,7 +108,7 @@ The matrix below mirrors the structural pattern of the GSE compatibility matrix 
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 5. References & Citations
+## 6. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.

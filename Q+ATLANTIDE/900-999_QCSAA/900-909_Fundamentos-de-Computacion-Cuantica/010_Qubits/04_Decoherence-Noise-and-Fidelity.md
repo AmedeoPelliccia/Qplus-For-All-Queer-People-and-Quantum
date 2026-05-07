@@ -49,7 +49,32 @@ Characterises the **degradation modes** that distinguish real qubits from the id
   - **Cross-band relevance** — back-referenced from `940-949` Quantum Sensing & Metrology, which exploits the *same* susceptibility ($T_2$, $T_2^*$, environmental coupling) as a signal rather than a defect.
 - Out of scope: code-level mitigation (`05_`); circuit-level error-mitigation techniques (covered downstream in `030_circuits/` and `040_quantum-algorithms/`).
 
-## 3. Footprint
+## 3. Diagram — From Environmental Coupling to Reported Fidelity
+
+The pipeline below shows how a physical noise source becomes (a) a coherence-time figure of merit for the qubit, (b) a CPTP channel acting on the state, and (c) a benchmarked fidelity for a gate or readout. The same susceptibility, viewed from the opposite direction, becomes a sensing signal in `940-949`.
+
+```mermaid
+flowchart LR
+    Env["Environmental coupling<br/>(thermal bath, charge / flux noise,<br/>laser intensity, spontaneous emission, ...)"] --> Mech
+    subgraph Mech["Decoherence mechanisms"]
+        R["Energy relaxation<br/>|1⟩ → |0⟩"]
+        D["Pure dephasing<br/>(loss of phase coherence)"]
+        I["Inhomogeneous<br/>frequency drift"]
+    end
+    R --> T1["T₁"]
+    D --> T2["T₂  (T₂ ≤ 2T₁)"]
+    I --> T2s["T₂*"]
+    Mech --> Ch["CPTP channel ε(ρ)<br/>amplitude damping,<br/>phase damping,<br/>depolarising,<br/>Pauli channels"]
+    Ch --> Char["Characterisation"]
+    subgraph Char
+        RB["Randomised<br/>Benchmarking"]
+        QPT["Quantum Process<br/>Tomography / GST"]
+    end
+    Char --> F["Reported figures of merit:<br/>1Q gate fidelity, 2Q gate fidelity,<br/>readout (assignment) fidelity"]
+    Mech -. "same susceptibility,<br/>read as signal" .-> S["Cross-band: 940-949<br/>Quantum Sensing & Metrology"]
+```
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -70,7 +95,7 @@ Characterises the **degradation modes** that distinguish real qubits from the id
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.

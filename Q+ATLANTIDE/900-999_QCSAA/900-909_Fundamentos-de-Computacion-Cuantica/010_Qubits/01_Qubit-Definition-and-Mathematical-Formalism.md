@@ -44,7 +44,23 @@ Defines the **qubit** — the atomic unit of quantum computation — as a two-le
   - **Multi-qubit composition** via tensor product $\mathcal{H}_n = (\mathbb{C}^2)^{\otimes n}$, dimension $2^n$, and the distinction between *separable* and *entangled* states (entanglement detail in `03_`).
 - Out of scope: physical implementations (`02_`), gate-level operations and measurement (`03_`), noise (`04_`), and error correction (`05_`).
 
-## 3. Footprint
+## 3. Diagram — Qubit Formalism Hierarchy
+
+The mathematical objects introduced in §2 form a strict containment hierarchy: pure states are a subset of mixed (density-matrix) states, and single-qubit states extend to multi-qubit states by tensor product. The Bloch representation is a geometric chart of the same objects, not a separate ontology.
+
+```mermaid
+flowchart TD
+    A["Two-level<br/>quantum system"] --> B["Hilbert space<br/>ℋ = ℂ²<br/>basis {|0⟩, |1⟩}"]
+    B --> C["Pure state vector<br/>|ψ⟩ = α|0⟩ + β|1⟩<br/>|α|² + |β|² = 1"]
+    C --> D["Bloch sphere<br/>(θ, φ) ∈ S²<br/>geometric chart of pure states"]
+    C --> E["Density matrix<br/>ρ = Σᵢ pᵢ |ψᵢ⟩⟨ψᵢ|<br/>Tr(ρ) = 1, ρ ⪰ 0"]
+    E --> F["Bloch ball<br/>interior = mixed states<br/>surface = pure states"]
+    C --> G["Multi-qubit composition<br/>ℋₙ = (ℂ²)⊗ⁿ<br/>dim = 2ⁿ"]
+    G --> H["Separable<br/>|ψ⟩ = |ψ_A⟩ ⊗ |ψ_B⟩"]
+    G --> I["Entangled<br/>(detail in 03_)"]
+```
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -65,7 +81,7 @@ Defines the **qubit** — the atomic unit of quantum computation — as a two-le
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.

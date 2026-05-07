@@ -28,15 +28,16 @@ Declares the **acyclic dependency graph** of the `900-909` foundational range of
 ## 2. Scope
 
 - Covers the section-level reading order for the foundational QCSAA range `900-909` only. Subsection-level indices live in each subsection's own `README.md`.
-- Inherits Q-Division authority and ORB support from the parent row in [`README.md` §3](../README.md#3-architecture-table)[^archtable].
+- Inherits Q-Division authority and ORB support from the parent row in [`../README.md` §3](../README.md#3-architecture-table)[^archtable].
 
 ## 3. Dependency Graph and Reading Order
 
-```
- 010_Qubits/  ─►  020_gates/  ─►  030_circuits/  ─►  040_quantum-algorithms/  ─►  050_foundations/
-   (atomic     (unitary           (composition           (problem-specific          (computability,
-    unit)       operations         of gates              constructions)              complexity, models)
-                on qubits)         into programs)
+```mermaid
+flowchart LR
+    A["010_Qubits/<br/><i>atomic unit</i>"] --> B["020_gates/<br/><i>unitary operations<br/>on qubits</i>"]
+    B --> C["030_circuits/<br/><i>composition of gates<br/>into programs</i>"]
+    C --> D["040_quantum-algorithms/<br/><i>problem-specific<br/>constructions</i>"]
+    D --> E["050_foundations/<br/><i>computability,<br/>complexity, models</i>"]
 ```
 
 Read in the order shown. Every chapter to the right relies on definitions from the chapters to its left and **shall not redefine** them; back-references into a specific subsubject of an upstream chapter are required.

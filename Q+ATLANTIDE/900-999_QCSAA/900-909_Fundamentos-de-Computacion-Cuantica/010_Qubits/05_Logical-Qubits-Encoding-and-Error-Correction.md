@@ -60,7 +60,28 @@ Logical qubits with active error correction *can*, in principle, be made to beha
 
 The restriction shall be **lifted only when** logical-qubit fidelity reaches the level at which a quantum subsystem can present, to a certifying authority, a bounded-failure model equivalent to that of a deterministic classical subsystem. Until that point, QCSAA remains in non-safety-critical paths.
 
-## 4. Footprint
+## 4. Diagram — Encoding Pipeline and Certification Decision
+
+The first half shows the **physical → logical** encoding pipeline (stabilizer measurement → syndrome → correction). The second half is the **certification decision tree** of §3, expressed as a flowchart so that contributors authoring downstream QCSAA functions can see at a glance which path they fall into.
+
+```mermaid
+flowchart TB
+    subgraph Encoding["Physical-to-logical encoding (per logical qubit)"]
+        direction LR
+        P["n physical qubits<br/>(02_)"] --> Code["Stabilizer code<br/>(surface / color /<br/>concatenated)"]
+        Code --> Synd["Syndrome<br/>extraction"]
+        Synd --> Corr["Decoder &<br/>correction"]
+        Corr --> L["1 logical qubit<br/>(below code threshold ⇒<br/>arbitrarily long computation<br/>at polylog overhead)"]
+    end
+    L --> Use{"Aerospace<br/>function class?"}
+    Use -- "Safety-critical<br/>(DAL A/B)" --> F1["FORBIDDEN in-the-loop<br/>→ classical post-processing only"]
+    Use -- "Mission-essential<br/>(DAL C/D)" --> F2["FORBIDDEN unless<br/>certified classical envelope<br/>monitor bounds residual error"]
+    Use -- "Non-safety-critical<br/>(optimisation, planning,<br/>sensing post-processing)" --> P1["PERMITTED<br/>(QCSAA scope today)"]
+    F1 -. "lifted only when logical-qubit<br/>fidelity supports a bounded-<br/>failure model" .-> P1
+    F2 -. ".." .-> P1
+```
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -81,7 +102,7 @@ The restriction shall be **lifted only when** logical-qubit fidelity reaches the
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 5. References & Citations
+## 6. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
