@@ -34,7 +34,7 @@ language: en
 
 Defines the **language policy** for all technical publications produced by the Q+ programme: Simplified Technical English (ASD-STE100) as the authoritative language for safety-critical procedures, the localization and translation policy for operational jurisdictions, quality control for translations, and the **authority hierarchy** that resolves any discrepancy between the English source and translated versions.
 
-This document explicitly declares the tension between the programme's multilingüal doctrinal identity and the operational necessity of a single authoritative technical language — and resolves it unambiguously in favour of flight safety.
+This document explicitly declares the tension between the programme's multilingual doctrinal identity and the operational necessity of a single authoritative technical language — and resolves it unambiguously in favour of flight safety.
 
 This document links to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
