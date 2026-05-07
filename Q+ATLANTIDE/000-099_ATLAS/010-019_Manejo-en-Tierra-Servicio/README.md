@@ -45,6 +45,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `013` | Remolque | [`013_Remolque/`](./013_Remolque/) | active |
 | `014` | Parking | [`014_Parking/`](./014_Parking/) | active |
 | `015` | Ground Support Equipment | [`015_GSE/`](./015_GSE/) | active |
+| `016` | Lifting, Shoring and Jacking Procedures | [`016_Lifting-Shoring-Jacking-Procedures/`](./016_Lifting-Shoring-Jacking-Procedures/) | reserved |
 
 ## 4. Interfaces Diagram
 
@@ -62,6 +63,7 @@ flowchart TB
         SUB_013["013 — Remolque"]:::sub
         SUB_014["014 — Parking"]:::sub
         SUB_015["015 — GSE"]:::sub
+        SUB_016["016 — Lifting-Shoring-Jacking"]:::sub
     end
     SEC --> SUBS
 
@@ -79,10 +81,12 @@ flowchart TB
     SUBS --> SUB_013
     SUBS --> SUB_014
     SUBS --> SUB_015
-    EXT_S00["§00 · Operaciones Básicas (003)"]:::ext
+    SUBS --> SUB_016
+    EXT_S00["§00 · Operaciones Básicas (003)<br/>005_Lifting intro"]:::ext
     SUB_011 -. "fluids/gases" .- EXT_S00
     EXT_S03["§03 · Landing Gear (031)"]:::ext
     SUB_013 -. "tow / taxi loads" .- EXT_S03
+    SUB_016 -. "intro" .- EXT_S00
 
     classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
     classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
@@ -102,7 +106,7 @@ flowchart TB
 | Master range | `000–099` |
 | Code range | `010-019` |
 | Section | `01` — Manejo en Tierra & Servicio |
-| Subsections | 6 populated |
+| Subsections | 7 populated |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
