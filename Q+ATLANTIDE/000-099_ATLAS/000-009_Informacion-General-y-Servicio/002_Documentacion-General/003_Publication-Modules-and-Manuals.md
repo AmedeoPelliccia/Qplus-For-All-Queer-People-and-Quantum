@@ -82,7 +82,7 @@ Assembly rules:
 
 Applicability filtering determines which DMs appear in a delivered manual for a specific aircraft configuration. The programme uses S1000D `<applic>` v3 (Issue 6.0).
 
-Effectivity data source: `001_Configuracion/002_` (Configuration Effectivity subsubject)[^sub001config]. The PM applicability declarations must reference the same `applicPropertyIdent` values declared in that document. There is a single source of truth for effectivity definitions; PMs consume it — they do not define it independently.
+Effectivity data source: `../001_Configuracion/README.md` (Configuration subsubject README)[^sub001config]. The PM applicability declarations must reference the same `applicPropertyIdent` values declared in that document. There is a single source of truth for effectivity definitions; PMs consume it — they do not define it independently.
 
 Filter dimensions used in this programme:
 
