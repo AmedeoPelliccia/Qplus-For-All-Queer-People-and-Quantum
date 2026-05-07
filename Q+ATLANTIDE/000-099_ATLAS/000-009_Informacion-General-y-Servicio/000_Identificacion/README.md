@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-010-01-AIRCRAFT-IDENTIFICATION
-title: "ATLAS 000-009 · 00.010.01 — Aircraft Identification"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-000-README
+title: "ATLAS 000-009 · 00.010 — Identificación (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,10 +13,8 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "000"
 subsection_title: "Identificación"
-subsubject: "01"
-subsubject_title: "Aircraft Identification"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,20 +23,29 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 010 · Subsubject 01 — Aircraft Identification
+# ATLAS 000-009 · Section 00 · Subsection 000 — Identificación
 
 ## 1. Purpose
 
-Defines the **aircraft-level identifiers** used across the ATLAS `000-009.010` *Identificación* slice: civil registration mark, manufacturer serial number (MSN), ICAO 24-bit address and ICAO type designator. These identifiers are the primary keys that bind every downstream data module (DM) under the ATLAS architecture to a specific airframe instance, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
+Subsection-level index for *Identificación* (`010`) within ATLAS `000-009` — *Información General y Servicio*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that extend it with the canonical aircraft, manufacturer, configuration, marking and digital-identifier semantics required by the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
 
 ## 2. Scope
 
-- Covers the *Aircraft Identification* subsubject (`01`) of subsection `010` *Identificación* within section `00` *Información General y Servicio*.
+- Covers the full subsubject namespace `00`–`99` of subsection `000` *Identificación*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Identifier classes in scope: **Registration mark** (national CAA), **MSN** (manufacturer serial number), **ICAO 24-bit address** (Mode S transponder), **ICAO type designator** (e.g. for filed flight plans).
-- Identifiers are exposed as ATA iSpec 2200[^ata2200] and ATA Spec 100[^ataspec100] header attributes and as S1000D `<dmIdent>` / `<dmAddress>` instance metadata[^s1000d].
 
-## 3. Footprint
+## 3. Subsubject Index
+
+| NN | Title | Document | Status |
+|---:|---|---|---|
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | Aircraft Identification | [`001_Aircraft-Identification.md`](./001_Aircraft-Identification.md) | active |
+| 02 | Manufacturer Designation | [`002_Manufacturer-Designation.md`](./002_Manufacturer-Designation.md) | active |
+| 03 | Configuration Identification | [`003_Configuration-Identification.md`](./003_Configuration-Identification.md) | active |
+| 04 | Serialization and Marking | [`004_Serialization-and-Marking.md`](./004_Serialization-and-Marking.md) | active |
+| 05 | Digital Identifiers | [`005_Digital-Identifiers.md`](./005_Digital-Identifiers.md) | active |
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -48,18 +55,21 @@ Defines the **aircraft-level identifiers** used across the ATLAS `000-009.010` *
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `010` — Identificación |
-| Subsubject | `01` — Aircraft Identification |
+| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/010_Identificacion/` |
-| Document | `001_Aircraft-Identification.md` (this file) |
-| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/000_Identificacion/` |
+| Document | `README.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## Governance
+
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from the parent ATLAS band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below.
+
+## 5. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
@@ -80,7 +90,7 @@ Defines the **aircraft-level identifiers** used across the ATLAS `000-009.010` *
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
+The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]

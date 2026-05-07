@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-010-02-MANUFACTURER-DESIGNATION
-title: "ATLAS 000-009 · 00.010.02 — Manufacturer Designation"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-000-00-OVERVIEW
+title: "ATLAS 000-009 · 00.000.00 — Identificación"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,10 +13,10 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "000"
 subsection_title: "Identificación"
-subsubject: "02"
-subsubject_title: "Manufacturer Designation"
+subsubject: "00"
+subsubject_title: "Overview"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,18 +25,22 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 010 · Subsubject 02 — Manufacturer Designation
+# ATLAS 000-009 · Section 00 · Subsection 000 — Identificación
 
 ## 1. Purpose
 
-Captures the **manufacturer-side designation set** that complements the operator-facing aircraft identifiers of subsubject `01`: Type Certificate (TC) holder, Supplemental Type Certificate (STC) holders, manufacturer model code and variant/sub-variant designators. These attributes anchor every ATLAS data module to a certified design baseline under the controlled Q+ATLANTIDE baseline[^baseline] and the ATA iSpec 2200[^ata2200] / S1000D Issue 6.0[^s1000d] enterprise codes.
+Overview entry-point for the *Identificación* subsection within the `000-009` code range (Section `00` — *Información General y Servicio*) of the **ATLAS** architecture band (*Aircraft Top-Level Architecture System*, master range `000–099`).
+
+This subsubject (`00 Overview`) introduces the ATLAS 000-009.010.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
 ## 2. Scope
 
-- Covers the *Manufacturer Designation* subsubject (`02`) of subsection `010` *Identificación* within section `00` *Información General y Servicio*.
+- Covers the *Identificación* slice of the parent code range `000-009`.
+- *Identificación* is the **first Subsection** of `000-009` and the **foundational identity layer** that every subsequent ATLAS Subsection depends on: every downstream data module, configuration record, marking entry and digital-thread anchor resolves back to identifiers defined here.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Designators in scope: **TC holder**, **STC holders**, **manufacturer model code**, **variant / sub-variant**, and **S1000D enterprise code** (CAGE-derived) used in `<dmIdent>` populations[^s1000d].
-- Excluded: airframe-instance identifiers (covered by subsubject `01`) and configuration-baseline IDs (covered by subsubject `03`).
+- Sibling-Subject cross-references within `000-009` *Información General y Servicio*: [`../020_configuracion/`](../020_configuracion/) (configuration management), [`../030_documentacion-general/`](../030_documentacion-general/) (general documentation), [`../040_operaciones-basicas/`](../040_operaciones-basicas/) (basic operations).
+- **Boundary rule (canonical, repeated symmetrically in [`../020_configuracion/00_Overview.md`](../020_configuracion/00_Overview.md))** — [`./003_Configuration-Identification.md`](./003_Configuration-Identification.md) defines the configuration **identifier** (a label, a code, a baseline reference); [`../020_configuracion/`](../020_configuracion/) defines the **configuration itself** (what it contains, how it changes, who controls it). Identifier authoring lives in [`./003_Configuration-Identification.md`](./003_Configuration-Identification.md); configuration authoring lives in [`../020_configuracion/`](../020_configuracion/).
+- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
 
 ## 3. Footprint
 
@@ -48,14 +52,13 @@ Captures the **manufacturer-side designation set** that complements the operator
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `010` — Identificación |
-| Subsubject | `02` — Manufacturer Designation |
+| Subsubject | `00` — Overview |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/010_Identificacion/` |
-| Document | `002_Manufacturer-Designation.md` (this file) |
-| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/000_Identificacion/` |
+| Document | `000_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
@@ -80,9 +83,10 @@ Captures the **manufacturer-side designation set** that complements the operator
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
+The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]
 - S1000D Issue 6.0 — International specification for technical publications[^s1000d]
 - AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
+

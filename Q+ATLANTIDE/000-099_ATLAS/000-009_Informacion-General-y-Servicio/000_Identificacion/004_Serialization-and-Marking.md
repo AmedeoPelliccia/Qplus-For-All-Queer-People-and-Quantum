@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-010-04-SERIALIZATION-AND-MARKING
-title: "ATLAS 000-009 · 00.010.04 — Serialization and Marking"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-000-04-SERIALIZATION-AND-MARKING
+title: "ATLAS 000-009 · 00.000.04 — Serialization and Marking"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,7 +13,7 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "000"
 subsection_title: "Identificación"
 subsubject: "04"
 subsubject_title: "Serialization and Marking"
@@ -25,7 +25,7 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 010 · Subsubject 04 — Serialization and Marking
+# ATLAS 000-009 · Section 00 · Subsection 000 · Subsubject 04 — Serialization and Marking
 
 ## 1. Purpose
 
@@ -33,7 +33,7 @@ Specifies the **physical-marking and serialization layer** that materialises ATL
 
 ## 2. Scope
 
-- Covers the *Serialization and Marking* subsubject (`04`) of subsection `010` *Identificación* within section `00` *Información General y Servicio*.
+- Covers the *Serialization and Marking* subsubject (`04`) of subsection `000` *Identificación* within section `00` *Información General y Servicio*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Marking classes in scope: **part marking** (per ATA iSpec 2200[^ata2200]), **dataplate** content and placement, **UID** (manufacturer-assigned), and **IUID** (Item Unique Identifier, machine-readable).
 - ATA Spec 100[^ataspec100] legacy marking conventions are retained as informative cross-references for type-certified equivalents.
@@ -56,7 +56,7 @@ Specifies the **physical-marking and serialization layer** that materialises ATL
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/010_Identificacion/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/000_Identificacion/` |
 | Document | `004_Serialization-and-Marking.md` (this file) |
 | Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

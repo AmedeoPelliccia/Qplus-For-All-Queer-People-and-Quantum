@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-010-03-CONFIGURATION-IDENTIFICATION
-title: "ATLAS 000-009 · 00.010.03 — Configuration Identification"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-000-01-AIRCRAFT-IDENTIFICATION
+title: "ATLAS 000-009 · 00.000.01 — Aircraft Identification"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,10 +13,10 @@ section: "00"
 section_title: "Información General y Servicio"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "000"
 subsection_title: "Identificación"
-subsubject: "03"
-subsubject_title: "Configuration Identification"
+subsubject: "01"
+subsubject_title: "Aircraft Identification"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,19 +25,18 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 010 · Subsubject 03 — Configuration Identification
+# ATLAS 000-009 · Section 00 · Subsection 000 · Subsubject 01 — Aircraft Identification
 
 ## 1. Purpose
 
-Defines the **configuration-baseline identifiers** that allow every ATLAS data module to be filtered against a specific airframe configuration: configuration baseline ID, modification (mod) status, service-bulletin (SB) and airworthiness-directive (AD) compliance state, and effectivity expressions resolved by S1000D applicability[^s1000d]. These identifiers are the bridge between the static type-design designators of subsubject `02` and the as-built / as-maintained record of an individual airframe.
+Defines the **aircraft-level identifiers** used across the ATLAS `000-009.010` *Identificación* slice: civil registration mark, manufacturer serial number (MSN), ICAO 24-bit address and ICAO type designator. These identifiers are the primary keys that bind every downstream data module (DM) under the ATLAS architecture to a specific airframe instance, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
 
 ## 2. Scope
 
-- Covers the *Configuration Identification* subsubject (`03`) of subsection `010` *Identificación* within section `00` *Información General y Servicio*.
+- Covers the *Aircraft Identification* subsubject (`01`) of subsection `000` *Identificación* within section `00` *Información General y Servicio*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Identifier classes in scope: **configuration baseline ID**, **mod status / SB / AD compliance vector**, **effectivity expression** (S1000D `applic` semantics), and **as-built ↔ as-maintained delta marker**.
-- The S1000D `modStatus` applicability attribute is the canonical encoding of the mod-status field defined here[^s1000d].
-- **Boundary against [`../020_configuracion/`](../020_configuracion/)** — this subsubject defines *what a configuration identifier is* (the label, the baseline reference, the effectivity code, the mod-status vector). [`../020_configuracion/`](../020_configuracion/) defines *what the configuration itself is* (its content, its change-control workflow, its variant catalog, its baseline-update procedure). Identifier authoring stays here; configuration content authoring stays in `020_`. The same rule is restated in [`./000_Overview.md`](./000_Overview.md) and in [`../020_configuracion/00_Overview.md`](../020_configuracion/00_Overview.md).
+- Identifier classes in scope: **Registration mark** (national CAA), **MSN** (manufacturer serial number), **ICAO 24-bit address** (Mode S transponder), **ICAO type designator** (e.g. for filed flight plans).
+- Identifiers are exposed as ATA iSpec 2200[^ata2200] and ATA Spec 100[^ataspec100] header attributes and as S1000D `<dmIdent>` / `<dmAddress>` instance metadata[^s1000d].
 
 ## 3. Footprint
 
@@ -49,13 +48,13 @@ Defines the **configuration-baseline identifiers** that allow every ATLAS data m
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `010` — Identificación |
-| Subsubject | `03` — Configuration Identification |
+| Subsubject | `01` — Aircraft Identification |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/010_Identificacion/` |
-| Document | `003_Configuration-Identification.md` (this file) |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/000_Identificacion/` |
+| Document | `001_Aircraft-Identification.md` (this file) |
 | Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
