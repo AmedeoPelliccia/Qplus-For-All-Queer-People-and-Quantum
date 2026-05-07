@@ -55,19 +55,19 @@ action_levels:
   L1_control_locks:              # control-surface gust locks engaged
     triggers: ["forecast_severity >= moderate AND time_to_event <= medium",
                "forecast_severity >= strong AND time_to_event <= long"]
-    actions:  ["L0", "control_surface_gust_locks_engaged"]
+    actions:  ["L0_baseline", "control_surface_gust_locks_engaged"]
   L2_partial_tie_down:           # nose tie + main-gear ties; covers on probes
     triggers: ["forecast_severity >= strong AND time_to_event <= medium",
                "forecast_severity == moderate AND forecast_confidence == high AND time_to_event <= short"]
-    actions:  ["L1", "nose_tie_down_engaged", "main_gear_tie_down_engaged", "probe_covers_installed"]
+    actions:  ["L1_control_locks", "nose_tie_down_engaged", "main_gear_tie_down_engaged", "probe_covers_installed"]
   L3_full_mooring:               # wing ties + nose tie + main-gear ties
     triggers: ["forecast_severity == severe AND time_to_event <= medium",
                "forecast_severity >= strong AND forecast_confidence == high AND time_to_event <= short"]
-    actions:  ["L2", "wing_tie_down_engaged"]
+    actions:  ["L2_partial_tie_down", "wing_tie_down_engaged"]
   L4_relocate_or_hangar:         # relocate to hangar or to leeward stand
     triggers: ["forecast_severity == severe AND forecast_confidence >= medium AND time_to_event <= short",
                "convective_gust_front_warning == true"]
-    actions:  ["L3", "relocate_to_hangar_or_leeward_stand"]
+    actions:  ["L3_full_mooring", "relocate_to_hangar_or_leeward_stand"]
 anticipation_rule:
   description: "Act at the earliest cell where ANY axis crosses its trigger. Down-grading the action level requires forecast revision documented in the event log."
   asymmetry: "Cost of unwarranted action << cost of belated action; therefore the matrix is biased toward earlier action."
