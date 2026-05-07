@@ -87,4 +87,4 @@ flowchart TD
 
 - ECSS-E-ST-70C — Ground Systems and Operations[^ecssest70c]
 - ECSS-M-ST-70C — Mission Operations[^ecssm70c]
-- NASA-HDBK-8719.4 — Contingency Planning[^nasanpb87194]
+- NASA-HDBK-8719.4 — Contingency Planning[^nasanhb87194]
