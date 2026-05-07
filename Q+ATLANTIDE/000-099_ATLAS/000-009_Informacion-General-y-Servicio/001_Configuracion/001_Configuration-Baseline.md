@@ -122,7 +122,7 @@ The digital thread in `300-399_DTCEC/` provides the traceability links that conn
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/001_Configuracion/` |
 | Document | `001_Configuration-Baseline.md` (this file) |
 | Parent subsection | [`README.md`](./README.md) |
-| Cross-ref: baseline identifier | `../000_Identificacion/003_Configuration-Identification.md` |
+| Cross-ref: baseline identifier | Configuration Identification document (path pending correction) |
 | Cross-ref: change control | [`005_Configuration-Control-and-Change-Management.md`](./005_Configuration-Control-and-Change-Management.md) |
 | Cross-ref: effectivity | [`002_Effectivity-and-Applicability.md`](./002_Effectivity-and-Applicability.md) |
 | Cross-ref: digital twin | `Q+ATLANTIDE/300-399_DTCEC/` |
