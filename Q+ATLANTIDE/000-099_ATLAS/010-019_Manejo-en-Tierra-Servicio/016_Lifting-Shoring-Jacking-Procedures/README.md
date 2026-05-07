@@ -18,8 +18,8 @@ primary_q_division: Q-GROUND
 support_q_divisions: [Q-MECHANICS, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
 governance_class: baseline
-version: 1.0.0
-status: reserved
+version: 1.1.0
+status: active
 language: en
 ---
 
@@ -37,21 +37,28 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `016` *Lifting, Shoring and Jacking Procedures*.
+- Populates subsubjects `000`–`006` of subsection `016` *Lifting, Shoring and Jacking Procedures*; reserves `007`–`099` for future extension.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
-- Anticipated subsubjects include (reserved, not yet populated):
-  - `00_Overview.md` — procedures overview, jack-point map, safety prerequisites
-  - `01_Jack-Point-Locations.md` — approved jack points by variant
-  - `02_Jacking-Sequence-and-Safety.md` — step-level jacking sequence, safety collar usage
-  - `03_Shoring-Procedures.md` — approved shoring rigs and structural support configurations
-  - `04_Leveling-and-Aircraft-Weighing.md` — datum, leveling procedure, weighing procedure
+- Subsubjects populated in this baseline release:
+  - `000_Overview.md` — procedures overview, jack-point map summary, safety prerequisites
+  - `001_Scope-and-Lifting-Shoring-Jacking-Boundaries.md` — applicability, variant sensitivities, boundary rules
+  - `002_Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md` — approved jack points by variant, structural fittings, load limits
+  - `003_Jacking-Procedures-and-Sequencing.md` — step-level jacking sequence, safety-collar usage, emergency lower
+  - `004_Shoring-and-Structural-Support-Procedures.md` — shoring rigs, placement, load-path analysis
+  - `005_Leveling-Weighing-and-Reference-Datum-Procedures.md` — datum, leveling procedure, weighing procedure, CG calculation
+  - `006_Lifting-Shoring-Jacking-Records-and-Traceability.md` — sign-off forms, ATLASREC entries, audit trail requirements
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 001 | Scope and Lifting, Shoring & Jacking Boundaries | [`001_Scope-and-Lifting-Shoring-Jacking-Boundaries.md`](./001_Scope-and-Lifting-Shoring-Jacking-Boundaries.md) | active |
+| 002 | Jack Points, Load Limits and Aircraft-Side Interfaces | [`002_Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md`](./002_Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md) | active |
+| 003 | Jacking Procedures and Sequencing | [`003_Jacking-Procedures-and-Sequencing.md`](./003_Jacking-Procedures-and-Sequencing.md) | active |
+| 004 | Shoring and Structural Support Procedures | [`004_Shoring-and-Structural-Support-Procedures.md`](./004_Shoring-and-Structural-Support-Procedures.md) | active |
+| 005 | Leveling, Weighing and Reference Datum Procedures | [`005_Leveling-Weighing-and-Reference-Datum-Procedures.md`](./005_Leveling-Weighing-and-Reference-Datum-Procedures.md) | active |
+| 006 | Lifting, Shoring and Jacking Records and Traceability | [`006_Lifting-Shoring-Jacking-Records-and-Traceability.md`](./006_Lifting-Shoring-Jacking-Records-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -62,7 +69,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `010-019` |
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `016` — Lifting, Shoring and Jacking Procedures |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`006` populated; `007`–`099` reserved |
 | Conventional ATA ref | ATA chapters 7 (Lifting and Shoring), 8 (Leveling and Weighing) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
@@ -77,9 +84,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 5. Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `007`–`099` shall preserve those header fields and reuse the footnote set declared here.
 
-## 6. References & Citations
+## 6. Change Log
+
+| Version | Date | Author | Notes |
+|---|---|---|---|
+| 1.0.0 | 2026-05-07 | Q-GROUND | Initial reserve — subsection index only; all subsubjects `to be populated`. |
+| 1.1.0 | 2026-05-07 | Q-GROUND | Baseline release — `000_Overview.md` + subsubjects `001`–`006` populated; subsubject index updated; Scope section revised to reflect populated content. |
+
+## 7. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 
