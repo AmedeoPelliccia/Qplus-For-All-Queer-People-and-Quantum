@@ -31,7 +31,7 @@ language: en
 
 Overview entry-point for the *remolque* subsection within the `010-019` code range (Section `01` — *Manejo en Tierra & Servicio*) of the **ATLAS** architecture band (*Aircraft Top-Level Architecture System*, master range `000–099`).
 
-This subsubject (`00 Overview`) introduces the ATLAS 010-019.040.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §5. *Remolque* (towing) is the **controlled translation of the aircraft on the ground under external motive power** — pushback away from the gate, repositioning to/from the hangar, towing between maintenance bays. It is operationally and dimensionally distinct from *taxiing* (which is *self-powered* under engine thrust and is therefore **not** in this chapter).
+This subsubject (`010 Overview`) introduces the ATLAS 010-019.040.010 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §5. *Remolque* (towing) is the **controlled translation of the aircraft on the ground under external motive power** — pushback away from the gate, repositioning to/from the hangar, towing between maintenance bays. It is operationally and dimensionally distinct from *taxiing* (which is *self-powered* under engine thrust and is therefore **not** in this chapter).
 
 ## 2. Scope
 
@@ -55,7 +55,7 @@ This subsubject (`00 Overview`) introduces the ATLAS 010-019.040.00 slice and li
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *remolque* slice of ATLAS `010-019`, and how the `013_` ↔ `014_` ↔ `015_` chain closes onto the maintenance program.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *remolque* slice of ATLAS `010-019`, and how the `013_` ↔ `014_` ↔ `015_` chain closes onto the maintenance program.
 
 ```mermaid
 flowchart LR

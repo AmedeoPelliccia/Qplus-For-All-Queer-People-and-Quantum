@@ -33,7 +33,7 @@ Defines the **quantum gate** as a unitary operator on the Hilbert space of one o
 
 ## 2. Scope
 
-- Covers the *Gate Definition and Unitary Formalism* subsubject (`01`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Gate Definition and Unitary Formalism* subsubject (`901`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **Gate as unitary operator.** A quantum gate on $n$ qubits is a unitary operator $U: \mathcal{H}_n \to \mathcal{H}_n$ acting on the $2^n$-dimensional Hilbert space defined in [`../010_Qubits/901_Qubit-Definition-and-Mathematical-Formalism.md`](../010_Qubits/901_Qubit-Definition-and-Mathematical-Formalism.md).

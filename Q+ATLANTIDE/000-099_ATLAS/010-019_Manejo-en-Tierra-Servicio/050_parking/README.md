@@ -42,7 +42,7 @@ Subsection-level index for *parking* (`050`) within ATLAS `010-019` — *Manejo 
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *parking* slice of ATLAS `010-019`, and how the wind-event and configuration chains close onto the maintenance program.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *parking* slice of ATLAS `010-019`, and how the wind-event and configuration chains close onto the maintenance program.
 
 ```mermaid
 flowchart LR

@@ -40,7 +40,7 @@ Subsection-level index for *acceso* (`030`) within ATLAS `010-019` — *Manejo e
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *acceso* slice of ATLAS `010-019`.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *acceso* slice of ATLAS `010-019`.
 
 ```mermaid
 flowchart LR

@@ -33,7 +33,7 @@ Catalogues the **multi-qubit gates** that act on two or more qubits simultaneous
 
 ## 2. Scope
 
-- Covers the *Multi-Qubit Gates and Entangling Operations* subsubject (`03`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Multi-Qubit Gates and Entangling Operations* subsubject (`903`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **Two-qubit controlled gates.**

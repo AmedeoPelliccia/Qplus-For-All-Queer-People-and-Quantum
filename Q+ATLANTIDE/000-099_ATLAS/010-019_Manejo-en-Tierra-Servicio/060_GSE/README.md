@@ -43,7 +43,7 @@ Subsection-level index for *GSE* (Ground Support Equipment, `060`) within ATLAS 
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *GSE* slice of ATLAS `010-019`, the inversion against the five prior subsections, and the `012_` / `014_` H₂ declarations and the `015_` first-class evidence hand-off.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *GSE* slice of ATLAS `010-019`, the inversion against the five prior subsections, and the `012_` / `014_` H₂ declarations and the `015_` first-class evidence hand-off.
 
 ```mermaid
 flowchart LR

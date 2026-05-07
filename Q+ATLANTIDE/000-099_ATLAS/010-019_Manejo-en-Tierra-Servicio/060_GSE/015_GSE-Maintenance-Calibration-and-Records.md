@@ -40,7 +40,7 @@ This subsubject defines **the GSE-side lifecycle and the records contract**. The
 
 ### 2.1 Scheduled maintenance regime
 
-Each GSE class in the catalog (`012_`) carries a maintenance schedule keyed on the manufacturer's service manual, the operator's CMMS rules, and any AMPEL360-specific overlay (notably for the H₂ classes). The regime is structured as:
+Each GSE class in the catalog ([`012_GSE-Catalog-and-Compatibility-Matrix.md`](./012_GSE-Catalog-and-Compatibility-Matrix.md)) carries a maintenance schedule keyed on the manufacturer's service manual, the operator's CMMS rules, and any AMPEL360-specific overlay (notably for the H₂ classes). The regime is structured as:
 
 - **Pre-use check** — performed before the unit is brought into service for a shift; documented as a check-list against the unit serial; non-conformity prevents release into service.
 - **Daily / weekly inspection** — performed by GSE technicians on a calendar cadence; documented as an inspection record against the unit serial.

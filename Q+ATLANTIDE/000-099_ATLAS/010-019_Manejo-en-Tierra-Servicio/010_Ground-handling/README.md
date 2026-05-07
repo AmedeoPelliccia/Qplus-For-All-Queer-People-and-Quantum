@@ -36,7 +36,7 @@ Subsection-level index for *Ground handling* (`010`) within ATLAS `010-019` — 
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *Ground handling* slice of ATLAS `010-019`.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *Ground handling* slice of ATLAS `010-019`.
 
 ```mermaid
 flowchart LR

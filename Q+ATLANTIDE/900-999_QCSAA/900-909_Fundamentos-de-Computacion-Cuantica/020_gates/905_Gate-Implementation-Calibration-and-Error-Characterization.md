@@ -33,7 +33,7 @@ Records how the abstract gates of `901_`–`904_` are **physically realised** on
 
 ## 2. Scope
 
-- Covers the *Gate Implementation, Calibration and Error Characterization* subsubject (`05`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Gate Implementation, Calibration and Error Characterization* subsubject (`905`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **Per-modality physical realisation of gates.**

@@ -33,7 +33,7 @@ Catalogues the **single-qubit unitary gates** that act on one qubit at a time, f
 
 ## 2. Scope
 
-- Covers the *Single-Qubit Gates* subsubject (`02`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Single-Qubit Gates* subsubject (`902`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Gate families in scope:
   - **Identity and global phase** — $I$ acts as the no-op; an overall global phase $e^{i\gamma}$ on a state vector is **physically unobservable**, so single-qubit gates are conventionally specified up to global phase (i.e. as elements of PSU(2) when global phase is irrelevant). Relative phases between branches of a superposition, by contrast, **are** observable.

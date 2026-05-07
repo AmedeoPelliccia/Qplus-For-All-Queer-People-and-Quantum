@@ -31,7 +31,7 @@ language: en
 
 Overview entry-point for the *parking* subsection within the `010-019` code range (Section `01` — *Manejo en Tierra & Servicio*) of the **ATLAS** architecture band (*Aircraft Top-Level Architecture System*, master range `000–099`).
 
-This subsubject (`00 Overview`) introduces the ATLAS 010-019.050.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §5. *Parking* is the **stationary state of the aircraft on the ground** — the resting state between operations, distinct from positioning, servicing, envelope opening, and controlled translation. It maps canonically to **ATA 10 — Parking, Mooring, Storage and Return to Service**[^ata10], with adjacency to **ATA 12 — Servicing**[^ata12] for servicing performed while the aircraft is parked, and to **ATA 32 — Landing Gear**[^ata32] for the gear-side configuration (chocks, brakes, gear pins) that defines a parked aircraft.
+This subsubject (`010 Overview`) introduces the ATLAS 010-019.050.010 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §5. *Parking* is the **stationary state of the aircraft on the ground** — the resting state between operations, distinct from positioning, servicing, envelope opening, and controlled translation. It maps canonically to **ATA 10 — Parking, Mooring, Storage and Return to Service**[^ata10], with adjacency to **ATA 12 — Servicing**[^ata12] for servicing performed while the aircraft is parked, and to **ATA 32 — Landing Gear**[^ata32] for the gear-side configuration (chocks, brakes, gear pins) that defines a parked aircraft.
 
 > **Numbering note.** The parent code-range is `010–019`, and `050_parking/` is the **fifth lead subdirectory** of that range (after `010_`, `020_`, `030_`, `040_`). The `050` token is therefore an **internal sequential index inside the `010-019` range**, not an ATA-50 chapter pointer. The same convention applies to `060_GSE/`. If a future global decision retires this convention in favour of denser increments (e.g. `011_/012_/013_/014_/015_`), it shall be applied to the entire `010–019` range, not just to this subsection.
 
@@ -58,7 +58,7 @@ This subsubject (`00 Overview`) introduces the ATLAS 010-019.050.00 slice and li
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *parking* slice of ATLAS `010-019`, and how the `013_` ↔ `014_` ↔ `015_` chain closes onto the maintenance program.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *parking* slice of ATLAS `010-019`, and how the `013_` ↔ `014_` ↔ `015_` chain closes onto the maintenance program.
 
 ```mermaid
 flowchart LR

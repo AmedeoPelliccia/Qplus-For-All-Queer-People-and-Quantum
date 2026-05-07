@@ -33,7 +33,7 @@ Defines what **universality** means for a quantum gate set, lists the canonical 
 
 ## 2. Scope
 
-- Covers the *Universal Gate Sets and Decomposition* subsubject (`04`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Universal Gate Sets and Decomposition* subsubject (`904`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **Definition of universality.** A finite gate set $\mathcal{G}$ is **universal for quantum computation** iff, for every unitary $U$ on any number of qubits and every $\varepsilon > 0$, there exists a finite sequence of gates from $\mathcal{G}$ whose composition $U_{\mathcal{G}}$ satisfies $\|U - U_{\mathcal{G}}\| < \varepsilon$ in the operator norm. Universality is **approximation, not exact synthesis** — the discrete set $\mathcal{G}$ generates a dense subgroup of $\mathrm{SU}(2^n)$ but cannot reach every unitary exactly in finitely many steps.

@@ -41,7 +41,7 @@ Subsection-level index for *remolque* (`040`) within ATLAS `010-019` — *Manejo
 
 ## 3. Diagram
 
-The diagram below shows how this subsection's `00 Overview` aggregates the populated subsubjects (`011`–`015`) into the *remolque* slice of ATLAS `010-019` and how the limits/records chain closes onto the maintenance program.
+The diagram below shows how this subsection's `010 Overview` aggregates the populated subsubjects (`011`–`015`) into the *remolque* slice of ATLAS `010-019` and how the limits/records chain closes onto the maintenance program.
 
 ```mermaid
 flowchart LR

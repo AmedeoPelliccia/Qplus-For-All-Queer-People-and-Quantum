@@ -27,7 +27,7 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *gates* (`020`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that introduce the **quantum gate** as a unitary operator on the qubit Hilbert space, catalogue single- and multi-qubit gate families, formalise universality and decomposition, and document per-modality physical implementation, calibration, and error characterisation — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
+Subsection-level index for *gates* (`020`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `900 Overview` and the detailed subsubjects (`901`–`905`) that introduce the **quantum gate** as a unitary operator on the qubit Hilbert space, catalogue single- and multi-qubit gate families, formalise universality and decomposition, and document per-modality physical implementation, calibration, and error characterisation — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
 
 This subsection is the **second foundational chapter** of the QCSAA band and the **direct downstream consumer** of [`../010_Qubits/`](../010_Qubits/): where qubits define the substrate, gates define the operations on that substrate. It is the **immediate prerequisite** for [`../030_circuits/`](../030_circuits/), which composes gates into algorithms.
 
