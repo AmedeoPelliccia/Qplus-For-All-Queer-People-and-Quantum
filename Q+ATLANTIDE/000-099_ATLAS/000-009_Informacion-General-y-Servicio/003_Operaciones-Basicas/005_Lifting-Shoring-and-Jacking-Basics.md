@@ -126,7 +126,7 @@ flowchart TD
 | Subsection | `003` — Operaciones Básicas |
 | Subsubject | `005` — Lifting, Shoring and Jacking Basics |
 | Scope level | Introductory orientation (Level 1); procedural detail in `010-019_/016_Lifting-Shoring-Jacking-Procedures/` |
-| Conventional ATA reference | ATA chapter 7 — Lifting and Shoring |
+| Conventional ATA reference | ATA chapters 7 and 8 — Lifting, Shoring, and Leveling/Weighing |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
