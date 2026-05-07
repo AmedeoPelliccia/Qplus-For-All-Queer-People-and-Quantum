@@ -1,6 +1,10 @@
 ---
 document_id: QATL-ATLAS-1000-ATLAS-010-019-01-012-README
 title: "ATLAS 010-019 · 01.012 — Acceso (Subsection Index)"
+change_log:
+  - version: 1.1.0
+    date: "2026-05-07"
+    description: "Populated subsubject index 000–005; status updated to active."
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -18,8 +22,8 @@ primary_q_division: Q-GROUND
 support_q_divisions: [Q-MECHANICS, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
 governance_class: baseline
-version: 1.0.0
-status: reserved
+version: 1.1.0
+status: active
 language: en
 ---
 
@@ -35,13 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 - Reserves the subsubject namespace `00`–`99` of subsection `012` *Acceso*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- The populated subsubject set in this baseline is `000`–`005`, indexed in §3 above.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | Scope and Access Boundaries | [`001_Scope-and-Access-Boundaries.md`](./001_Scope-and-Access-Boundaries.md) | active |
+| 02 | Access Doors, Hatches and Panels | [`002_Access-Doors-Hatches-and-Panels.md`](./002_Access-Doors-Hatches-and-Panels.md) | active |
+| 03 | Access Equipment — Stands, Platforms and Ladders | [`003_Access-Equipment-Stands-Platforms-and-Ladders.md`](./003_Access-Equipment-Stands-Platforms-and-Ladders.md) | active |
+| 04 | Cabin, Cargo and Compartment Access | [`004_Cabin-Cargo-and-Compartment-Access.md`](./004_Cabin-Cargo-and-Compartment-Access.md) | active |
+| 05 | Access Control, Authorizations and Records | [`005_Access-Control-Authorizations-and-Records.md`](./005_Access-Control-Authorizations-and-Records.md) | active |
 
 ## 4. Footprint
 
@@ -77,4 +86,21 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 [^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
 
+[^ata2200]: **ATA iSpec 2200 — Information Standards for Aviation Maintenance** — Governs document structure and data-module scope for all ATLAS maintenance artefacts.
+
+[^ataspec100]: **ATA Spec 100 — Manufacturers Technical Data** — Baseline standard for aircraft maintenance document conventions.
+
+[^s1000d]: **S1000D Issue 6.0 — International specification for technical publications** — Common Source DataBase (CSDB) and Data Module Code (DMC) specification used for all Q+ATLANTIDE artefacts.
+
+[^as9100d]: **AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations** — Quality-management baseline for all Q+ATLANTIDE deliverables.
+
 [^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../organization/Q+ATLANTIDE.md#4-notes).
+
+### Applicable industry standards
+
+The following standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
+
+- ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
+- ATA Spec 100 — Manufacturers Technical Data[^ataspec100]
+- S1000D Issue 6.0 — International specification for technical publications[^s1000d]
+- AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
