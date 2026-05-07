@@ -47,7 +47,7 @@ Defines the **physical configuration** the AMPEL360 aircraft must be in for the 
 - **Gear ground-lock pins.**
   - **Turnaround (≤ ~6 h)** — gear ground-lock pins are **not normally installed** because the aircraft is about to operate again and the cost of accidentally departing with pins in is significantly greater than the marginal safety gain over the short window. The decision is recorded.
   - **Overnight (~6–24 h)** — gear ground-lock pins **are normally installed** and recorded; their installation and the matching removal-before-pushback are mandatory checklist items in [`./05`](./05_Parking-Records-Inspections-and-Return-to-Service.md). Departure with pins still installed is a hard `damage_event` precursor.
-  - **Extended (> ~24 h)** — gear pins installed; release-to-service ([`./05` §3](./05_Parking-Records-Inspections-and-Return-to-Service.md)) verifies removal cross-check.
+  - **Extended (> ~24 h)** — gear pins installed; release-to-service ([`./05` §2](./05_Parking-Records-Inspections-and-Return-to-Service.md)) verifies removal cross-check.
 - **APU vs. GPU power state.**
   - **Turnaround** — APU **or** GPU, per operator policy and station availability. APU permits autonomy; GPU is preferred where fuel and noise constraints apply.
   - **Overnight** — GPU **strongly preferred** over APU for fuel-burn and noise reasons; APU shut down once GPU is on the bus.
