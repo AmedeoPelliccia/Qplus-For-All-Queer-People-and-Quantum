@@ -14,9 +14,16 @@ section: "00"
 section_title: "Sistemas Generales y Soporte Vital Espacial"
 subsection: "102"
 subsection_title: "Soporte Vital ECLSS"
+acronym:
+  ECLSS: "Environmental Control and Life Support System"
 primary_q_division: Q-SPACE
-support_q_divisions: [Q-DATAGOV, Q-HORIZON]
+support_q_divisions: [Q-DATAGOV, Q-HORIZON, Q-HPC, Q-GREENTECH]
 orb_function_support: [ORB-PMO, ORB-LEG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "101_Habitabilidad"
+  - "103_Seguridad-de-Mision"
+safety_boundary: "life-support critical; requires explicit assurance, redundancy, fault detection, contingency modes and mission-risk governance"
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -33,15 +40,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `102` *Life Support ECLSS*.
+- Covers the subsubject namespace `00`–`10` (11 active) of subsection `102` *Environmental Control and Life Support System (ECLSS)*; `11`–`99` reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- This subsection is designated **life-support critical**; all subsubjects require explicit assurance, redundancy, fault detection, contingency modes, and mission-risk governance.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | ECLSS Controlled Definition | [`001_ECLSS-Controlled-Definition.md`](./001_ECLSS-Controlled-Definition.md) | active |
+| 02 | Atmosphere Generation and Revitalization | [`002_Atmosphere-Generation-and-Revitalization.md`](./002_Atmosphere-Generation-and-Revitalization.md) | active |
+| 03 | Oxygen Supply and CO₂ Removal | [`003_Oxygen-Supply-and-CO2-Removal.md`](./003_Oxygen-Supply-and-CO2-Removal.md) | active |
+| 04 | Pressure Control and Cabin Atmosphere Monitoring | [`004_Pressure-Control-and-Cabin-Atmosphere-Monitoring.md`](./004_Pressure-Control-and-Cabin-Atmosphere-Monitoring.md) | active |
+| 05 | Thermal, Humidity and Condensate Control | [`005_Thermal-Humidity-and-Condensate-Control.md`](./005_Thermal-Humidity-and-Condensate-Control.md) | active |
+| 06 | Water Recovery and Management | [`006_Water-Recovery-and-Management.md`](./006_Water-Recovery-and-Management.md) | active |
+| 07 | Waste Management and Containment | [`007_Waste-Management-and-Containment.md`](./007_Waste-Management-and-Containment.md) | active |
+| 08 | Emergency Life Support and Contingency Modes | [`008_Emergency-Life-Support-and-Contingency-Modes.md`](./008_Emergency-Life-Support-and-Contingency-Modes.md) | active |
+| 09 | ECLSS Sensors, Automation and Fault Detection | [`009_ECLSS-Sensors-Automation-and-Fault-Detection.md`](./009_ECLSS-Sensors-Automation-and-Fault-Detection.md) | active |
+| 10 | Standards Traceability and Assurance Boundaries | [`010_Standards-Traceability-and-Assurance-Boundaries.md`](./010_Standards-Traceability-and-Assurance-Boundaries.md) | active |
 
 ## 4. Footprint
 
@@ -52,9 +69,9 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `100-109` |
 | Section | `00` — Sistemas Generales y Soporte Vital Espacial |
 | Subsection | `102` — Soporte Vital ECLSS |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
-| Support Q-Divisions | Q-DATAGOV, Q-HORIZON |
+| Support Q-Divisions | Q-DATAGOV, Q-HORIZON, Q-HPC, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/100-199_STA/100-109_Sistemas-Generales-y-Soporte-Vital-Espacial/102_Soporte-Vital-ECLSS/` |
@@ -65,7 +82,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. This subsection is designated **life-support critical**; all subsubjects require explicit assurance, redundancy, fault detection, contingency modes and mission-risk governance. Extensions added under `11`–`99` shall preserve those header fields, carry the `safety_boundary` declaration, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 

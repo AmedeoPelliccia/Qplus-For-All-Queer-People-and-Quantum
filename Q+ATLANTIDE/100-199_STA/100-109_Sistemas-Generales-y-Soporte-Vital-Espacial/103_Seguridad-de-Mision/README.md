@@ -15,8 +15,13 @@ section_title: "Sistemas Generales y Soporte Vital Espacial"
 subsection: "103"
 subsection_title: "Seguridad de Misión"
 primary_q_division: Q-SPACE
-support_q_divisions: [Q-DATAGOV, Q-HORIZON]
+support_q_divisions: [Q-DATAGOV, Q-HORIZON, Q-HPC, Q-GREENTECH, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "101_Habitabilidad"
+  - "102_Soporte-Vital-ECLSS"
+safety_boundary: "mission-safety critical; requires explicit hazard analysis, FDIR logic, contingency procedures, mission assurance gates and lifecycle traceability"
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -33,15 +38,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `103` *Mission Safety*.
+- Covers the subsubject namespace `00`–`10` (11 active) of subsection `103` *Mission Safety*; `11`–`99` reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- This subsection is designated **mission-safety critical**; all subsubjects require explicit hazard analysis, FDIR logic, contingency procedures, mission assurance gates and lifecycle traceability.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | Mission Safety Controlled Definition | [`001_Mission-Safety-Controlled-Definition.md`](./001_Mission-Safety-Controlled-Definition.md) | active |
+| 02 | Mission Hazard Identification and Risk Classification | [`002_Mission-Hazard-Identification-and-Risk-Classification.md`](./002_Mission-Hazard-Identification-and-Risk-Classification.md) | active |
+| 03 | Crew Safety and Survivability Boundaries | [`003_Crew-Safety-and-Survivability-Boundaries.md`](./003_Crew-Safety-and-Survivability-Boundaries.md) | active |
+| 04 | Fault Detection, Isolation and Recovery (FDIR) | [`004_Fault-Detection-Isolation-and-Recovery-FDIR.md`](./004_Fault-Detection-Isolation-and-Recovery-FDIR.md) | active |
+| 05 | Abort, Escape and Contingency Modes | [`005_Abort-Escape-and-Contingency-Modes.md`](./005_Abort-Escape-and-Contingency-Modes.md) | active |
+| 06 | Safe Haven and Emergency Operations | [`006_Safe-Haven-and-Emergency-Operations.md`](./006_Safe-Haven-and-Emergency-Operations.md) | active |
+| 07 | Redundancy, Fail-Operational and Fail-Safe Architecture | [`007_Redundancy-Fail-Operational-and-Fail-Safe-Architecture.md`](./007_Redundancy-Fail-Operational-and-Fail-Safe-Architecture.md) | active |
+| 08 | Mission Assurance Reviews and Gate Criteria | [`008_Mission-Assurance-Reviews-and-Gate-Criteria.md`](./008_Mission-Assurance-Reviews-and-Gate-Criteria.md) | active |
+| 09 | ECSS / NASA / CCSDS Safety Standards Mapping | [`009_ECSS-NASA-CCSDS-Safety-Standards-Mapping.md`](./009_ECSS-NASA-CCSDS-Safety-Standards-Mapping.md) | active |
+| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -52,9 +67,9 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `100-109` |
 | Section | `00` — Sistemas Generales y Soporte Vital Espacial |
 | Subsection | `103` — Seguridad de Misión |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
-| Support Q-Divisions | Q-DATAGOV, Q-HORIZON |
+| Support Q-Divisions | Q-DATAGOV, Q-HORIZON, Q-HPC, Q-GREENTECH, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/100-199_STA/100-109_Sistemas-Generales-y-Soporte-Vital-Espacial/103_Seguridad-de-Mision/` |
@@ -65,7 +80,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. This subsection is designated **mission-safety critical**; all subsubjects require explicit hazard analysis, FDIR logic, contingency procedures, mission assurance gates and lifecycle traceability. Extensions added under `11`–`99` shall preserve those header fields, carry the `safety_boundary` declaration, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
