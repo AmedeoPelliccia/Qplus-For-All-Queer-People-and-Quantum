@@ -125,7 +125,46 @@ A delivered manual is always traceable to a specific CSDB PM version, issue numb
 
 > **Rule**: The PM is always the authoritative source. If there is any discrepancy between the PM/DM content in the CSDB and a printed or distributed manual, the CSDB content governs.
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart LR
+    DM["CSDB<br/>Data Modules"]:::csdb
+    PM["Publication Module<br/>(PM XML)"]:::pm
+    FILTER["Applicability Filter<br/>(variant / MSN / modStatus)"]:::filter
+    STYLE["Stylesheet<br/>(XSL-FO / HTML5)"]:::proc
+    ISSUE["Issue Number<br/>+ Distribution Header"]:::proc
+
+    subgraph OUT["Delivered Formats"]
+        PDF["PDF<br/>(print)"]:::out
+        IETM["IETM<br/>(S4L / S5 viewer)"]:::out
+        HTML["Operator-portal<br/>HTML"]:::out
+    end
+
+    DM --> PM
+    PM --> FILTER
+    FILTER --> STYLE
+    STYLE --> ISSUE
+    ISSUE --> OUT
+
+    EFFDATA["001_Configuracion/002_<br/>(effectivity source)"]:::ext
+    EFFDATA -. "applic declarations" .- FILTER
+
+    TRACE["Traceability<br/>Manual → PM version → DM set<br/>→ BREX → Issue N"]:::note
+    OUT -. "traced to" .- TRACE
+
+    classDef csdb fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef pm fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef filter fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef proc fill:#e8f8e8,stroke:#27ae60,color:#1a5c3a
+    classDef out fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+    classDef note fill:#f5f5f5,stroke:#aaa,color:#444
+```
+
+*Solid arrows show the publication pipeline from CSDB source through the delivered manual; dotted arrows show the effectivity data dependency and the traceability chain back to the CSDB snapshot.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -146,7 +185,7 @@ A delivered manual is always traceable to a specific CSDB PM version, issue numb
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

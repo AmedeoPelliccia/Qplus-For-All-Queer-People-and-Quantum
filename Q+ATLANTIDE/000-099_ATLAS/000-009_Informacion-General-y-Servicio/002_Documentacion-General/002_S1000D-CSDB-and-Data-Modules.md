@@ -150,7 +150,48 @@ The CIR provides reusable content objects referenced across multiple DMs. The pr
 
 CIR DMs are maintained by Q-DATAGOV. Changes to CIR content propagate automatically to all referencing DMs on next CSDB publication cycle.
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart TB
+    subgraph CSDB["CSDB — Common Source DataBase (S1000D Issue 6.0)"]
+        direction TB
+        BREX["BREX DM<br/>(programme business rules)"]:::brex
+        DM["Data Modules<br/>(DMC-keyed XML)"]:::dm
+        ICN["ICN Assets<br/>(graphics / multimedia)"]:::icn
+        PM["Publication Modules<br/>(PM XML)"]:::pm
+        subgraph CIR["Common Information Repository (CIR)"]
+            direction LR
+            WARN["Warnings"]:::cir
+            CAUT["Cautions"]:::cir
+            PROC["Common Procedures"]:::cir
+            FIN["FIN"]:::cir
+        end
+    end
+
+    BREX -. "validates" .- DM
+    DM -- "referenced by" --> PM
+    ICN -- "associated with" --> DM
+    CIR -- "reusable content in" --> DM
+
+    APPLIC["Effectivity / applic<br/>(001_Configuracion/002_)"]:::ext
+    APPLIC -. "variant declarations" .- DM
+
+    OUT["Delivered Manuals<br/>(PDF / IETM / Portal)"]:::out
+    PM --> OUT
+
+    classDef brex fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef dm fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef icn fill:#e8f8e8,stroke:#27ae60,color:#1a5c3a
+    classDef pm fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef cir fill:#fde8e8,stroke:#c0392b,color:#7b1a1a
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+    classDef out fill:#1f3a93,stroke:#0b1d4a,color:#fff
+```
+
+*Solid arrows show data flow and containment; dotted arrows show external dependencies (effectivity source and BREX validation). The CSDB is the single authoritative source; delivered manuals are derived outputs.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -172,7 +213,7 @@ CIR DMs are maintained by Q-DATAGOV. Changes to CIR content propagate automatica
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

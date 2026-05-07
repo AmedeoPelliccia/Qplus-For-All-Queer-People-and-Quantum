@@ -49,7 +49,47 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | 004 | Revision, Issue and Distribution Control | [`004_Revision-Issue-and-Distribution-Control.md`](./004_Revision-Issue-and-Distribution-Control.md) | active |
 | 005 | Language, Localization and STE | [`005_Language-Localization-and-STE.md`](./005_Language-Localization-and-STE.md) | active |
 
-## 4. Footprint
+## 4. Interfaces Diagram
+
+```mermaid
+flowchart TB
+    SEC["Section 00 · 000-009<br/>Información General y Servicio"]:::sec
+    SUB["Subsection 002<br/>Documentación General"]:::sub
+    SEC --> SUB
+
+    subgraph SUBS["Subsubjects"]
+        direction LR
+        S000["000 — Overview"]:::sss
+        S001["001 — Publication Set<br/>& Manual Map"]:::sss
+        S002["002 — S1000D CSDB<br/>& Data Modules"]:::sss
+        S003["003 — Publication Modules<br/>& Manuals"]:::sss
+        S004["004 — Revision, Issue<br/>& Distribution Control"]:::sss
+        S005["005 — Language,<br/>Localization & STE"]:::sss
+    end
+    SUB --> SUBS
+
+    QPRIM["Q-DATAGOV<br/>(primary Q-Division)"]:::qdiv
+    QSUPP["Q-GROUND, Q-AIR<br/>(support Q-Divisions)"]:::qdiv
+    ORB["ORB-PMO, ORB-LEG<br/>(ORB support)"]:::orb
+
+    SUB --> QPRIM
+    SUB -.-> QSUPP
+    SUB -.-> ORB
+
+    CSDB["CSDB<br/>(content lives in each<br/>Code range)"]:::ext
+    SUB -. "defines structure;<br/>content in CSDB" .- CSDB
+
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef sss fill:#d5eaff,stroke:#2c82c9,color:#0b1d4a
+    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show parent→subsection→subsubject ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and the CSDB boundary.*
+
+## 5. Footprint
 
 | Metric | Value |
 |---|---|
@@ -88,7 +128,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 |---|---|---|
 | 1.0.0 | 2026-05-07 | Initial population of subsubjects 000–005; status promoted to active |
 
-## 5. References & Citations
+## 6. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

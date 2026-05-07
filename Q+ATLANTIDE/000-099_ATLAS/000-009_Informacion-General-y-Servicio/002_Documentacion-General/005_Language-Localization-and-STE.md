@@ -139,7 +139,52 @@ The Q+ programme affirms its multilingüal identity at the programme-governance 
 
 This separation is the canonical resolution of the programme's doctrinal tension. It is not a compromise — it is the correct application of each standard to its proper domain.
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart TB
+    STE["STE English<br/>(ASD-STE100)<br/>AUTHORITATIVE"]:::auth
+
+    subgraph PROCS["Safety-critical procedures"]
+        direction LR
+        MAINT["AMM / CMM / SRM<br/>(maintenance)"]:::proc
+        FLIGHT["AFM / FCOM<br/>(flight operations)"]:::proc
+        SB["Service Bulletin<br/>instructions"]:::proc
+    end
+
+    STE --> PROCS
+
+    subgraph TRANS["Translations — contextual reference only"]
+        direction LR
+        ES["Español (ES)"]:::trans
+        IT["Italiano (IT)"]:::trans
+        FR["Français (FR)"]:::trans
+        DE["Deutsch (DE)"]:::trans
+    end
+
+    STE -. "derived from<br/>(reference only — not authoritative)" .- TRANS
+
+    RULE["Discrepancy rule:<br/>STE English governs<br/>without exception"]:::rule
+    STE --> RULE
+
+    subgraph GOVSCOPE["Programme multilingualism scope<br/>(bilingual ES/EN — does NOT affect safety-critical procedures)"]
+        direction LR
+        GOVDOC["Governance &amp; architecture docs"]:::gov
+        ORG["Organisational communications"]:::gov
+    end
+
+    RULE -. "does not apply to" .- GOVSCOPE
+
+    classDef auth fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef proc fill:#27ae60,stroke:#1a5c3a,color:#fff
+    classDef trans fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef rule fill:#c0392b,stroke:#7b1a1a,color:#fff
+    classDef gov fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+```
+
+*Solid arrows show the authority chain: STE English is authoritative for all safety-critical procedures. Translations are derived contextual references. The rule that English governs in case of discrepancy is absolute. The programme's multilingual identity applies to governance and organisational communications — not to safety-critical technical procedures.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -162,7 +207,7 @@ This separation is the canonical resolution of the programme's doctrinal tension
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

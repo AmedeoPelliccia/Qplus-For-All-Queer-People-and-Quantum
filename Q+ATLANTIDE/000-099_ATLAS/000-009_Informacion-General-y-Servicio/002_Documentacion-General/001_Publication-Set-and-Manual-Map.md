@@ -86,7 +86,82 @@ This table is the **canonical mapping** between each technical manual and the AT
 3. **CMM separation**: LRU/SRU component procedures that require a dedicated CMM volume shall be declared as CMM-scope in the originating Subject's subsubject, and shall not appear as standalone tasks in the AMM (AMM references CMM instead).
 4. **Regulatory vs. operator manuals**: AFM is regulatory (type-certificate holder controls); FCOM is operator-advisory. Any discrepancy between AFM and FCOM must be resolved in favour of AFM.
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart LR
+    subgraph ATLAS["ATLAS Code ranges (source)"]
+        direction TB
+        A["000-009 · General Info"]:::cr
+        B["010-019 · Ground Handling"]:::cr
+        C["020-029 · Core Systems"]:::cr
+        D["030-039 · Protection & Mech."]:::cr
+        E["040-049 · Avionics & APU"]:::cr
+        F["050-059 · Structures"]:::cr
+        G["060-079 · Propulsion"]:::cr
+    end
+
+    subgraph MAINT["Maintenance"]
+        AMM["AMM"]:::pub
+        SRM["SRM"]:::pub
+        CMM["CMM"]:::pub
+        NDT["NDT Manual"]:::pub
+        MPD["MPD"]:::pub
+    end
+
+    subgraph PARTS["Parts & Wiring"]
+        IPC["IPC"]:::pub
+        WDM["WDM"]:::pub
+    end
+
+    subgraph FAULT["Fault Isolation"]
+        TSM["TSM / FIM"]:::pub
+    end
+
+    subgraph FLIGHT["Flight Operations"]
+        AFM["AFM 🔴"]:::reg
+        FCOM["FCOM"]:::pub
+        MMEL["MMEL/MEL 🔴"]:::reg
+    end
+
+    subgraph MOD["Modifications & Limits"]
+        SB["Service Bulletins"]:::pub
+        AWL["AWL 🔴"]:::reg
+    end
+
+    C --> AMM
+    D --> AMM
+    E --> AMM
+    G --> AMM
+    A --> AMM
+    F --> SRM
+    F --> NDT
+    C --> CMM
+    E --> CMM
+    G --> CMM
+    A --> IPC
+    C --> IPC
+    F --> IPC
+    C --> WDM
+    E --> WDM
+    C --> TSM
+    E --> TSM
+    A --> AFM
+    G --> AFM
+    A --> FCOM
+    C --> FCOM
+    C --> MMEL
+    F --> AWL
+    G --> AWL
+
+    classDef cr fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef pub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef reg fill:#fde8e8,stroke:#c0392b,color:#7b1a1a
+```
+
+*🔴 denotes regulatory manuals (AFM, MMEL, AWL) subject to EASA/FAA approval before distribution. Solid arrows show ATLAS Code range → manual publication contribution.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -107,7 +182,7 @@ This table is the **canonical mapping** between each technical manual and the AT
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

@@ -139,7 +139,56 @@ Configuration baseline freeze events — defined in `001_Configuracion/001_Confi
 
 Alignment rule: the Issue N of a manual issued at a baseline freeze event shall explicitly declare the configuration baseline version it was compiled against (e.g. `AMM Issue 3 — compiled against Configuration Baseline CB-003 (EIS)` in the manual title page and in the CSDB PM `reasonForUpdate` field).
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart TB
+    CBF["Config Baseline<br/>Freeze Event<br/>(001_Configuracion/001_)"]:::trigger
+
+    subgraph CHANGE["Change Control"]
+        ECO["Engineering<br/>Change Order (ECO)"]:::step
+        DM["CSDB DM Update<br/>(changeType + reasonForUpdate)"]:::step
+        PM["PM Rebuild"]:::step
+        ISSUE["Issue N"]:::step
+    end
+
+    CBF --> ECO
+    ECO --> DM
+    DM --> PM
+    PM --> ISSUE
+
+    subgraph REVTYPE["Revision type"]
+        direction LR
+        FR["Full Revision (FR)<br/>(new Issue N)"]:::fr
+        TR["Temporary Revision (TR)<br/>(priority; urgent safety)"]:::tr
+        TN["Technical Newsletter (TN)<br/>(advisory; no Issue change)"]:::tn
+    end
+
+    ISSUE --> FR
+    ISSUE --> TR
+    ISSUE --> TN
+
+    subgraph DIST["Distribution"]
+        direction LR
+        OPS["Operator Portal<br/>(subscription-based)"]:::dist
+        REG["Regulatory<br/>(EASA / FAA)"]:::dist_reg
+    end
+
+    FR --> DIST
+    TR --> DIST
+
+    classDef trigger fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef step fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef fr fill:#27ae60,stroke:#1a5c3a,color:#fff
+    classDef tr fill:#e67e22,stroke:#a04000,color:#fff
+    classDef tn fill:#95a5a6,stroke:#5d6d7e,color:#fff
+    classDef dist fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
+    classDef dist_reg fill:#fde8e8,stroke:#c0392b,color:#7b1a1a
+```
+
+*The traceability chain runs from a configuration baseline freeze event through the ECO register, CSDB DM updates, PM rebuild, and issue numbering to distribution. FR creates a new Issue N; TR distributes urgently outside the FR cycle; TN is advisory only.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -160,7 +209,7 @@ Alignment rule: the Issue N of a manual issued at a baseline freeze event shall 
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
 

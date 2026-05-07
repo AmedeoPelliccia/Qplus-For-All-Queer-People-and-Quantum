@@ -61,7 +61,51 @@ Each Code range (`020-029`, `040-049`, `060-069`, …) produces its own Data Mod
 - Aircraft identification, registration, and digital identifiers: governed by `000_Identificacion/` (sibling Subject).
 - Operational procedures: governed by `003_Operaciones-Basicas/` (sibling Subject).
 
-## 3. Footprint
+## 3. Diagram
+
+```mermaid
+flowchart TB
+    ATLAS["ATLAS-1000<br/>000–099 master range"]:::parent
+    CR["Code range 000-009<br/>Información General y Servicio"]:::sec
+    ATLAS --> CR
+
+    subgraph SIBLINGS["Subjects · 000-009"]
+        direction LR
+        S000["000 — Identificación"]:::sibling
+        S001["001 — Configuración"]:::sibling
+        S002["002 — Documentación General<br/>(this Subject)"]:::active
+        S003["003 — Operaciones Básicas"]:::sibling
+    end
+    CR --> SIBLINGS
+
+    subgraph DOCS["Subsubjects"]
+        direction TB
+        D001["001 — Publication Set<br/>& Manual Map"]:::doc
+        D002["002 — S1000D CSDB<br/>& Data Modules"]:::doc
+        D003["003 — Publication Modules<br/>& Manuals"]:::doc
+        D004["004 — Revision & Distribution<br/>Control"]:::doc
+        D005["005 — Language,<br/>Localization & STE"]:::doc
+    end
+    S002 --> DOCS
+
+    CSDB["CSDB<br/>(content per Code range)"]:::ext
+    S002 -. "defines structure;<br/>content in CSDB" .- CSDB
+
+    S001 -. "effectivity / applic data" .- S002
+    S000 -. "identifiers for DMC / ICN" .- S002
+    S003 -. "procedure DMs assembled<br/>under these rules" .- S002
+
+    classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
+    classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
+    classDef active fill:#27ae60,stroke:#1a5c3a,color:#fff
+    classDef sibling fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
+    classDef doc fill:#d5eaff,stroke:#2c82c9,color:#0b1d4a
+    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
+```
+
+*Solid arrows show ownership hierarchy; dotted arrows show cross-subject data dependencies and the CSDB boundary rule.*
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -82,7 +126,7 @@ Each Code range (`020-029`, `040-049`, `060-069`, …) produces its own Data Mod
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 
