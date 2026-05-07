@@ -81,7 +81,7 @@ Towing speed limits protect the nose gear, towbar, and ground personnel. General
 | Configuration | Duration | Key features |
 |---|---|---|
 | **Turnaround parking** | Minutes to hours (normal between-flight interval) | Chocks, GPU connected, servicing in progress |
-| **Overnight/scheduled parking** | Hours to days | Chocks, pitot covers, engine blanks optional, CFMI shutdown procedure per variant |
+| **Overnight/scheduled parking** | Hours to days | Chocks, pitot covers, engine blanks optional, applicable engine/APU shutdown procedure per variant |
 | **Extended parking** | Days to weeks | Full mooring rig, gust locks, preservation may begin — see `003_Mooring-Storage-and-Return-to-Service.md` |
 | **Maintenance bay** | Variable | Aircraft positioned for specific maintenance access; jacking may be required — see `005_Lifting-Shoring-and-Jacking-Basics.md` |
 
