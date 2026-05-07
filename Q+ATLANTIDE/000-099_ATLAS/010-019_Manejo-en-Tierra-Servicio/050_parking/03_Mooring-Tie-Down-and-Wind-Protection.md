@@ -48,6 +48,11 @@ forecast_axes:
     - short                      # 1–6 h
     - medium                     # 6–24 h
     - long                       # > 24 h
+forecast_flags:                  # declared boolean signals usable in triggers (in addition to forecast_axes)
+  convective_gust_front_warning: # operator-weather-service categorical alert for an imminent convective gust front
+    type: boolean
+    default: false
+    source: "operator weather-service categorical alert (e.g. SIGMET / aerodrome warning)"
 action_levels:
   L0_baseline:                   # no additional mooring beyond turnaround config
     triggers: ["forecast_severity == calm OR (forecast_confidence == low AND forecast_severity <= moderate AND time_to_event >= medium)"]
