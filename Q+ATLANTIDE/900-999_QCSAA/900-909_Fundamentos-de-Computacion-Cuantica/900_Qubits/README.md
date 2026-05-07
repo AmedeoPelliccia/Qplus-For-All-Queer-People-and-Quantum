@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-010-README
-title: "QCSAA 900-909 · 00.010 — Qubits (Subsection Index)"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-900-README
+title: "QCSAA 900-909 · 00.900 — Qubits (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,7 +13,7 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "900"
 subsection_title: "Qubits"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -23,17 +23,17 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 010 — Qubits
+# QCSAA 900-909 · Section 00 · Subsection 900 — Qubits
 
 ## 1. Purpose
 
-Subsection-level index for *Qubits* (`010`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `00 Overview` and the detailed subsubjects (`01`–`05`) that introduce the qubit as the atomic unit of quantum computation, define its mathematical formalism, catalogue physical implementations, describe operations and measurement, characterise decoherence and noise, and bridge to fault-tolerant logical-qubit encodings — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
+Subsection-level index for *Qubits* (`900`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `00 Overview` and the detailed subsubjects (`001`–`005`) that introduce the qubit as the atomic unit of quantum computation, define its mathematical formalism, catalogue physical implementations, describe operations and measurement, characterise decoherence and noise, and bridge to fault-tolerant logical-qubit encodings — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
 
 This subsection is the **foundational chapter** of the QCSAA band: every other chapter in `900-999` (gates, circuits, algorithms, QML, sensing, robotics, sentient agency) presupposes the qubit model defined here. It is therefore *upstream* of the rest of the register, rather than a peer in a horizontal partition (the structural pattern used by the ATLAS bands).
 
 ## 2. Scope
 
-- Covers the full subsubject namespace `00`–`99` of subsection `010` *Qubits*; subsubjects `01`–`05` are populated in this baseline release, the remaining `06`–`99` slots remain available for future extension per the Overview's authorisation[^archtable].
+- Covers the full subsubject namespace `000`–`099` of subsection `900` *Qubits*; subsubjects `001`–`005` are populated in this baseline release, the remaining `006`–`099` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Pedagogical sequence followed: **definition → implementation → operation → degradation → mitigation**, the canonical structure for a quantum-computing primer.
 - Acts as the cross-band reference anchor for sensing (`940-949`) and post-quantum cryptography (`880-889`, in CYB), both of which depend on qubit-level concepts but exploit them in qualitatively different ways (susceptibility vs. computational assumptions) — see §6.
@@ -42,12 +42,12 @@ This subsection is the **foundational chapter** of the QCSAA band: every other c
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`00_Overview.md`](./00_Overview.md) | active |
-| 01 | Qubit Definition and Mathematical Formalism | [`01_Qubit-Definition-and-Mathematical-Formalism.md`](./01_Qubit-Definition-and-Mathematical-Formalism.md) | active |
-| 02 | Physical Qubit Implementations | [`02_Physical-Qubit-Implementations.md`](./02_Physical-Qubit-Implementations.md) | active |
-| 03 | Qubit States, Operations and Measurement | [`03_Qubit-States-Operations-and-Measurement.md`](./03_Qubit-States-Operations-and-Measurement.md) | active |
-| 04 | Decoherence, Noise and Fidelity | [`04_Decoherence-Noise-and-Fidelity.md`](./04_Decoherence-Noise-and-Fidelity.md) | active |
-| 05 | Logical Qubits, Encoding and Error Correction | [`05_Logical-Qubits-Encoding-and-Error-Correction.md`](./05_Logical-Qubits-Encoding-and-Error-Correction.md) | active |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | Qubit Definition and Mathematical Formalism | [`001_Qubit-Definition-and-Mathematical-Formalism.md`](./001_Qubit-Definition-and-Mathematical-Formalism.md) | active |
+| 02 | Physical Qubit Implementations | [`002_Physical-Qubit-Implementations.md`](./002_Physical-Qubit-Implementations.md) | active |
+| 03 | Qubit States, Operations and Measurement | [`003_Qubit-States-Operations-and-Measurement.md`](./003_Qubit-States-Operations-and-Measurement.md) | active |
+| 04 | Decoherence, Noise and Fidelity | [`004_Decoherence-Noise-and-Fidelity.md`](./004_Decoherence-Noise-and-Fidelity.md) | active |
+| 05 | Logical Qubits, Encoding and Error Correction | [`005_Logical-Qubits-Encoding-and-Error-Correction.md`](./005_Logical-Qubits-Encoding-and-Error-Correction.md) | active |
 
 ## 4. Footprint
 
@@ -58,28 +58,28 @@ This subsection is the **foundational chapter** of the QCSAA band: every other c
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `010` — Qubits |
-| Subsubject namespace | `00`–`99` (`00` + `01`–`05` populated) |
+| Subsection | `900` — Qubits |
+| Subsubject namespace | `000`–`099` (`000` + `001`–`005` populated) |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/010_Qubits/` |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/900_Qubits/` |
 | Document | `README.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
 ## 5. Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = QCSAA`, `primary_q_division = Q-HORIZON` and `governance_class = restricted` from the parent QCSAA band; extensions added under `06`–`99` shall preserve those header fields and reuse the footnote set declared below.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = QCSAA`, `primary_q_division = Q-HORIZON` and `governance_class = restricted` from the parent QCSAA band; extensions added under `006`–`099` shall preserve those header fields and reuse the footnote set declared below.
 
 ## 6. Downstream and Cross-Band Dependencies
 
 The qubit model defined in this subsection is consumed by:
 
-- **Within `900-909`** — `020_gates/`, `030_circuits/`, `040_quantum-algorithms/`, `050_foundations/` (acyclic dependency graph: qubits → gates → circuits → algorithms → foundations/applications).
+- **Within `900-909`** — `901_gates/`, `902_circuits/`, `903_quantum-algorithms/`, `904_foundations/` (acyclic dependency graph: qubits → gates → circuits → algorithms → foundations/applications).
 - **Within QCSAA `900-999`** — `910-919` Quantum Machine Learning & Quantum AI, `920-929` Quantum Networks & Communications, `930-939` Quantum Cybersecurity, `940-949` Quantum Sensing & Metrology (back-references qubit *susceptibility*: the same decoherence that hurts computation aids measurement), `950-959` Quantum Simulation, `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
-- **Cross-band** — CYB `880-889` Post-Quantum Cryptography depends on the *computational* assumptions about what qubits can or cannot do (PQC defends against quantum computers; the cross-band reference into `010_Qubits/` is structural, not optional).
+- **Cross-band** — CYB `880-889` Post-Quantum Cryptography depends on the *computational* assumptions about what qubits can or cannot do (PQC defends against quantum computers; the cross-band reference into `900_Qubits/` is structural, not optional).
 
 Downstream chapters shall back-reference the specific subsubjects of this subsection rather than re-introduce the underlying concepts.
 
@@ -87,7 +87,7 @@ Downstream chapters shall back-reference the specific subsubjects of this subsec
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `00_Overview.md` plus subsubjects `01`–`05`. Subsection index established. |
+| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `000_Overview.md` plus subsubjects `001`–`005`. Subsection index established. |
 
 ## 8. References & Citations
 

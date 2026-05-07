@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-04-UNIVERSAL-GATE-SETS-AND-DECOMPOSITION
-title: "QCSAA 900-909 · 00.020.04 — Universal Gate Sets and Decomposition"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-901-004-UNIVERSAL-GATE-SETS-AND-DECOMPOSITION
+title: "QCSAA 900-909 · 00.901.004 — Universal Gate Sets and Decomposition"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "020"
+subsection: "901"
 subsection_title: "gates"
-subsubject: "04"
+subsubject: "004"
 subsubject_title: "Universal Gate Sets and Decomposition"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,15 +25,15 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 020 · Subsubject 04 — Universal Gate Sets and Decomposition
+# QCSAA 900-909 · Section 00 · Subsection 901 · Subsubject 004 — Universal Gate Sets and Decomposition
 
 ## 1. Purpose
 
-Defines what **universality** means for a quantum gate set, lists the canonical universal sets used across the program, states the **Solovay–Kitaev theorem** as the bridge from "any unitary in principle" to "this many gates in practice", and **derives the headline fault-tolerant overhead numbers honestly** so that the program does not silently inherit them from the popular press. This subsubject is also the slot where contributors are most tempted to drift across the boundary into `030_circuits/`; §3 restates that boundary explicitly.
+Defines what **universality** means for a quantum gate set, lists the canonical universal sets used across the program, states the **Solovay–Kitaev theorem** as the bridge from "any unitary in principle" to "this many gates in practice", and **derives the headline fault-tolerant overhead numbers honestly** so that the program does not silently inherit them from the popular press. This subsubject is also the slot where contributors are most tempted to drift across the boundary into `902_circuits/`; §3 restates that boundary explicitly.
 
 ## 2. Scope
 
-- Covers the *Universal Gate Sets and Decomposition* subsubject (`04`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Universal Gate Sets and Decomposition* subsubject (`004`) of subsection `901` *gates* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **Definition of universality.** A finite gate set $\mathcal{G}$ is **universal for quantum computation** iff, for every unitary $U$ on any number of qubits and every $\varepsilon > 0$, there exists a finite sequence of gates from $\mathcal{G}$ whose composition $U_{\mathcal{G}}$ satisfies $\|U - U_{\mathcal{G}}\| < \varepsilon$ in the operator norm. Universality is **approximation, not exact synthesis** — the discrete set $\mathcal{G}$ generates a dense subgroup of $\mathrm{SU}(2^n)$ but cannot reach every unitary exactly in finitely many steps.
@@ -48,13 +48,13 @@ Defines what **universality** means for a quantum gate set, lists the canonical 
     2. **Approximation** of each single-qubit gate to precision $\varepsilon$ via Solovay–Kitaev or modern direct synthesis (Ross–Selinger for the Clifford+T set, with near-optimal $T$-counts).
     3. **Optimisation** within $\mathcal{G}$ (commutation, cancellation, peephole rewriting).
   - **Trade-offs.** Gate count, $T$-count specifically (the cost-driver in fault-tolerant compilation), and ancilla usage are independent axes; reducing one typically increases another. The trade-off **between gate count and parallelisation / circuit depth** is **not** addressed here — see §3.
-- Out of scope: physical realization of any gate in $\mathcal{G}$ on a given modality (`05_`); the construction of complete circuits from compiled gate sequences, including depth, scheduling, and mid-circuit measurement (`030_circuits/`).
+- Out of scope: physical realization of any gate in $\mathcal{G}$ on a given modality (`005_`); the construction of complete circuits from compiled gate sequences, including depth, scheduling, and mid-circuit measurement (`902_circuits/`).
 
-## 3. Boundary Against `030_circuits/` (Binding Reminder)
+## 3. Boundary Against `902_circuits/` (Binding Reminder)
 
-This subsubject is the slot where gate counts naturally invite circuit-level reasoning, and contributors will be tempted to add material such as "circuit depth as a function of $T$-count" or "parallelisation of decomposed CNOT chains". **Such material does not belong here.** The chapter boundary stated in the parent [`00_Overview.md`](./00_Overview.md) §2 applies in full at this slot:
+This subsubject is the slot where gate counts naturally invite circuit-level reasoning, and contributors will be tempted to add material such as "circuit depth as a function of $T$-count" or "parallelisation of decomposed CNOT chains". **Such material does not belong here.** The chapter boundary stated in the parent [`000_Overview.md`](./000_Overview.md) §2 applies in full at this slot:
 
-| Belongs in `020_gates/04_` (this file) | Belongs in `030_circuits/` |
+| Belongs in `901_gates/004_` (this file) | Belongs in `902_circuits/` |
 |---|---|
 | What "universal" means for a gate set | What "universal" means for a quantum circuit family |
 | Solovay–Kitaev gate-count overhead per single-qubit gate | Total circuit gate count and circuit depth as algorithm-level resources |
@@ -64,16 +64,16 @@ This subsubject is the slot where gate counts naturally invite circuit-level rea
 
 ## 4. Honest Derivation of the Fault-Tolerant Overhead Headline
 
-Most introductory material treats "universal gate set" as a checkbox: once the program has $\{H, T, \text{CNOT}\}$, universality is declared and the discussion stops. This subsubject **does not stop there**, because the Solovay–Kitaev overhead and its compounding with the physical-to-logical overhead from [`../010_Qubits/05_Logical-Qubits-Encoding-and-Error-Correction.md`](../010_Qubits/05_Logical-Qubits-Encoding-and-Error-Correction.md) is what actually produces the headline numbers ("billions of physical qubits to factor RSA-2048") that the popular press reports. The program shall derive those numbers here, not cite them from elsewhere.
+Most introductory material treats "universal gate set" as a checkbox: once the program has $\{H, T, \text{CNOT}\}$, universality is declared and the discussion stops. This subsubject **does not stop there**, because the Solovay–Kitaev overhead and its compounding with the physical-to-logical overhead from [`../900_Qubits/005_Logical-Qubits-Encoding-and-Error-Correction.md`](../900_Qubits/005_Logical-Qubits-Encoding-and-Error-Correction.md) is what actually produces the headline numbers ("billions of physical qubits to factor RSA-2048") that the popular press reports. The program shall derive those numbers here, not cite them from elsewhere.
 
 | Stage | Multiplier | Derivation |
 |---|---|---|
 | **Logical algorithm operation** (e.g. one logical $T$ in Shor's algorithm) | $\times 1$ | Reference unit. |
 | **Solovay–Kitaev / Ross–Selinger expansion** of an arbitrary single-qubit rotation to precision $\varepsilon \sim 10^{-15}$ (a representative target for fault-tolerant computations of cryptographic interest) | $\sim 10^2$ to $10^3$ physical $T$-gates per logical rotation, depending on synthesis algorithm and the specific $c$ in $O(\log^c(1/\varepsilon))$ | Direct application of the Solovay–Kitaev bound at $\varepsilon \sim 10^{-15}$. The constant $c$ is improved by Ross–Selinger and successors but does not vanish. |
-| **Magic-state distillation** to produce each $T$ at the target logical error rate | additional protocol-dependent factor (typically $\sim 10$–$10^2$ raw magic states per distilled $T$, multiple rounds) | Out of scope here — see `010_Qubits/05_` for the encoding side and downstream chapters for the distillation protocols. |
-| **Physical-to-logical qubit ratio** of the chosen code at the target error rate | $\sim 10^3$ to $10^6$ physical qubits per logical qubit | From [`../010_Qubits/05_Logical-Qubits-Encoding-and-Error-Correction.md`](../010_Qubits/05_Logical-Qubits-Encoding-and-Error-Correction.md) §2 (range determined by code family, threshold margin, and target logical error rate). |
+| **Magic-state distillation** to produce each $T$ at the target logical error rate | additional protocol-dependent factor (typically $\sim 10$–$10^2$ raw magic states per distilled $T$, multiple rounds) | Out of scope here — see `900_Qubits/005_` for the encoding side and downstream chapters for the distillation protocols. |
+| **Physical-to-logical qubit ratio** of the chosen code at the target error rate | $\sim 10^3$ to $10^6$ physical qubits per logical qubit | From [`../900_Qubits/005_Logical-Qubits-Encoding-and-Error-Correction.md`](../900_Qubits/005_Logical-Qubits-Encoding-and-Error-Correction.md) §2 (range determined by code family, threshold margin, and target logical error rate). |
 
-The product of these factors is what the popular press summarises as "billions of physical qubits". The role of this subsubject in the chain is the **second row** — the Solovay–Kitaev expansion — and that row alone is responsible for the multiplier of $10^2$–$10^3$ on every algorithmic operation. Reducing this multiplier (better synthesis algorithms, alternative non-Clifford primitives, code-aware compilation) is therefore one of the most direct levers the program has on the headline number, **and is the right kind of work to plan against `020_gates/04_`** rather than against the encoding chapter or the algorithm chapter.
+The product of these factors is what the popular press summarises as "billions of physical qubits". The role of this subsubject in the chain is the **second row** — the Solovay–Kitaev expansion — and that row alone is responsible for the multiplier of $10^2$–$10^3$ on every algorithmic operation. Reducing this multiplier (better synthesis algorithms, alternative non-Clifford primitives, code-aware compilation) is therefore one of the most direct levers the program has on the headline number, **and is the right kind of work to plan against `901_gates/004_`** rather than against the encoding chapter or the algorithm chapter.
 
 ## 5. Diagram — Compilation Pipeline and Cost Compounding
 
@@ -90,7 +90,7 @@ flowchart LR
     subgraph Cost["Cost compounding (per logical operation)"]
         C1["1 logical operation"] --> C2["× 10² to 10³<br/>(SK at ε ~ 10⁻¹⁵)"]
         C2 --> C3["× magic-state<br/>distillation factor"]
-        C3 --> C4["× 10³ to 10⁶<br/>(physical : logical, 010_/05_)"]
+        C3 --> C4["× 10³ to 10⁶<br/>(physical : logical, 900_/005_)"]
         C4 --> C5["Headline number<br/>(physical T-gate count<br/>× physical-qubit count)"]
     end
     A5 -. "feeds" .-> C2
@@ -105,15 +105,15 @@ flowchart LR
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `020` — gates |
-| Subsubject | `04` — Universal Gate Sets and Decomposition |
+| Subsection | `901` — gates |
+| Subsubject | `004` — Universal Gate Sets and Decomposition |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/020_gates/` |
-| Document | `04_Universal-Gate-Sets-and-Decomposition.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`00_Overview.md`](./00_Overview.md) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/901_gates/` |
+| Document | `004_Universal-Gate-Sets-and-Decomposition.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

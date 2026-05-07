@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-00-OVERVIEW
-title: "QCSAA 900-909 · 00.020.00 — gates"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-901-000-OVERVIEW
+title: "QCSAA 900-909 · 00.901.000 — gates"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "020"
+subsection: "901"
 subsection_title: "gates"
-subsubject: "00"
+subsubject: "000"
 subsubject_title: "Overview"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,7 +25,7 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 020 — gates
+# QCSAA 900-909 · Section 00 · Subsection 901 — gates
 
 ## 1. Purpose
 
@@ -37,21 +37,21 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.020.00 slice and li
 
 - Covers the *gates* slice of the parent code range `900-909`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `01`–`05`, indexed in [`README.md`](./README.md).
-- **Position in the 900-909 dependency graph.** Gates are the **operations on the substrate** defined by [`../010_Qubits/`](../010_Qubits/): where `010_` defines the two-level quantum system, its Hilbert space, and its physical implementations, `020_` defines the unitary operations that act on those systems. Gates are therefore the **immediate prerequisite for [`../030_circuits/`](../030_circuits/)** (composition of gates into algorithms) and an upstream dependency for [`../040_quantum-algorithms/`](../040_quantum-algorithms/) and [`../050_foundations/`](../050_foundations/).
-- **Pedagogical sequence followed in this chapter** (deliberately parallel to `010_Qubits/`): **definition → categories → composition → universality → physical realization**. The slot semantics are predictable across foundational chapters so that, once a reader has navigated `010_`, every subsequent foundational chapter is faster.
-- **Boundary against `030_circuits/` (binding for contributors).** This chapter covers the **unitary operation as such** — its mathematical definition, its decomposition into a universal set, its physical realization on a given modality, its fidelity. The chapter [`../030_circuits/`](../030_circuits/) covers what happens **when gates are composed into computational sequences** — circuit depth, parallelization, measurement timing, mid-circuit measurement, classical control flow, and resource estimation at the algorithm level. Material naturally suggested by gate counts (e.g. "circuit depth as a function of T-count") belongs in `030_`, not in `020_`. This rule is restated in `04_` because that is the slot where the temptation to drift across the boundary is strongest.
+- Subsequent subsubjects (`001`–`099`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `001`–`005`, indexed in [`README.md`](./README.md).
+- **Position in the 900-909 dependency graph.** Gates are the **operations on the substrate** defined by [`../900_Qubits/`](../900_Qubits/): where `010_` defines the two-level quantum system, its Hilbert space, and its physical implementations, `020_` defines the unitary operations that act on those systems. Gates are therefore the **immediate prerequisite for [`../902_circuits/`](../902_circuits/)** (composition of gates into algorithms) and an upstream dependency for [`../903_quantum-algorithms/`](../903_quantum-algorithms/) and [`../904_foundations/`](../904_foundations/).
+- **Pedagogical sequence followed in this chapter** (deliberately parallel to `900_Qubits/`): **definition → categories → composition → universality → physical realization**. The slot semantics are predictable across foundational chapters so that, once a reader has navigated `010_`, every subsequent foundational chapter is faster.
+- **Boundary against `902_circuits/` (binding for contributors).** This chapter covers the **unitary operation as such** — its mathematical definition, its decomposition into a universal set, its physical realization on a given modality, its fidelity. The chapter [`../902_circuits/`](../902_circuits/) covers what happens **when gates are composed into computational sequences** — circuit depth, parallelization, measurement timing, mid-circuit measurement, classical control flow, and resource estimation at the algorithm level. Material naturally suggested by gate counts (e.g. "circuit depth as a function of T-count") belongs in `030_`, not in `020_`. This rule is restated in `004_` because that is the slot where the temptation to drift across the boundary is strongest.
 
 ## 3. Subsubject Inventory
 
 | NN | Title | Document |
 |---:|---|---|
-| 00 | Overview (this file) | [`00_Overview.md`](./00_Overview.md) |
-| 01 | Gate Definition and Unitary Formalism | [`01_Gate-Definition-and-Unitary-Formalism.md`](./01_Gate-Definition-and-Unitary-Formalism.md) |
-| 02 | Single-Qubit Gates | [`02_Single-Qubit-Gates.md`](./02_Single-Qubit-Gates.md) |
-| 03 | Multi-Qubit Gates and Entangling Operations | [`03_Multi-Qubit-Gates-and-Entangling-Operations.md`](./03_Multi-Qubit-Gates-and-Entangling-Operations.md) |
-| 04 | Universal Gate Sets and Decomposition | [`04_Universal-Gate-Sets-and-Decomposition.md`](./04_Universal-Gate-Sets-and-Decomposition.md) |
-| 05 | Gate Implementation, Calibration and Error Characterization | [`05_Gate-Implementation-Calibration-and-Error-Characterization.md`](./05_Gate-Implementation-Calibration-and-Error-Characterization.md) |
+| 00 | Overview (this file) | [`000_Overview.md`](./000_Overview.md) |
+| 01 | Gate Definition and Unitary Formalism | [`001_Gate-Definition-and-Unitary-Formalism.md`](./001_Gate-Definition-and-Unitary-Formalism.md) |
+| 02 | Single-Qubit Gates | [`002_Single-Qubit-Gates.md`](./002_Single-Qubit-Gates.md) |
+| 03 | Multi-Qubit Gates and Entangling Operations | [`003_Multi-Qubit-Gates-and-Entangling-Operations.md`](./003_Multi-Qubit-Gates-and-Entangling-Operations.md) |
+| 04 | Universal Gate Sets and Decomposition | [`004_Universal-Gate-Sets-and-Decomposition.md`](./004_Universal-Gate-Sets-and-Decomposition.md) |
+| 05 | Gate Implementation, Calibration and Error Characterization | [`005_Gate-Implementation-Calibration-and-Error-Characterization.md`](./005_Gate-Implementation-Calibration-and-Error-Characterization.md) |
 
 ## 4. Footprint
 
@@ -62,14 +62,14 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.020.00 slice and li
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `020` — gates |
-| Subsubject | `00` — Overview |
+| Subsection | `901` — gates |
+| Subsubject | `000` — Overview |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/020_gates/` |
-| Document | `00_Overview.md` (this file) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/901_gates/` |
+| Document | `000_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

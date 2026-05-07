@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-020-02-SINGLE-QUBIT-GATES
-title: "QCSAA 900-909 · 00.020.02 — Single-Qubit Gates"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-901-002-SINGLE-QUBIT-GATES
+title: "QCSAA 900-909 · 00.901.002 — Single-Qubit Gates"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "020"
+subsection: "901"
 subsection_title: "gates"
-subsubject: "02"
+subsubject: "002"
 subsubject_title: "Single-Qubit Gates"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,24 +25,24 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 020 · Subsubject 02 — Single-Qubit Gates
+# QCSAA 900-909 · Section 00 · Subsection 901 · Subsubject 002 — Single-Qubit Gates
 
 ## 1. Purpose
 
-Catalogues the **single-qubit unitary gates** that act on one qubit at a time, fixes their canonical matrix forms and Bloch-sphere geometric meanings, and states the Euler decomposition that lets any single-qubit unitary be reconstructed from a small parameterised set. This subsubject is the SU(2) layer of the chapter; multi-qubit (entangling) gates are deferred to `03_`.
+Catalogues the **single-qubit unitary gates** that act on one qubit at a time, fixes their canonical matrix forms and Bloch-sphere geometric meanings, and states the Euler decomposition that lets any single-qubit unitary be reconstructed from a small parameterised set. This subsubject is the SU(2) layer of the chapter; multi-qubit (entangling) gates are deferred to `003_`.
 
 ## 2. Scope
 
-- Covers the *Single-Qubit Gates* subsubject (`02`) of subsection `020` *gates* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Single-Qubit Gates* subsubject (`002`) of subsection `901` *gates* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Gate families in scope:
   - **Identity and global phase** — $I$ acts as the no-op; an overall global phase $e^{i\gamma}$ on a state vector is **physically unobservable**, so single-qubit gates are conventionally specified up to global phase (i.e. as elements of PSU(2) when global phase is irrelevant). Relative phases between branches of a superposition, by contrast, **are** observable.
   - **Pauli gates X, Y, Z** — bit flip, bit-and-phase flip, and phase flip respectively. Geometric meaning on the Bloch sphere: $\pi$-rotations about the $\hat{x}$, $\hat{y}$, $\hat{z}$ axes (up to global phase).
   - **Hadamard H** — basis change between the computational basis $\{|0\rangle, |1\rangle\}$ and the Hadamard basis $\{|+\rangle, |-\rangle\}$; the canonical generator of single-qubit superposition. Geometrically a $\pi$-rotation about the $\hat{x}+\hat{z}$ axis.
-  - **Phase gates S and T** — diagonal gates inducing relative phases of $\pi/2$ (S, the "phase gate") and $\pi/4$ (T, the "$\pi/8$ gate"). $T$ is the canonical **non-Clifford** single-qubit gate and is the principal cost driver in fault-tolerant compilation (see `04_`).
+  - **Phase gates S and T** — diagonal gates inducing relative phases of $\pi/2$ (S, the "phase gate") and $\pi/4$ (T, the "$\pi/8$ gate"). $T$ is the canonical **non-Clifford** single-qubit gate and is the principal cost driver in fault-tolerant compilation (see `004_`).
   - **Rotation gates** $R_x(\theta) = e^{-i\theta X/2}$, $R_y(\theta) = e^{-i\theta Y/2}$, $R_z(\theta) = e^{-i\theta Z/2}$ — continuous one-parameter rotations about the Bloch axes; native primitives on most hardware modalities.
   - **Arbitrary single-qubit unitaries via Euler decomposition.** Any $U \in \mathrm{SU}(2)$ can be written, up to global phase, as $U = R_z(\alpha) R_y(\beta) R_z(\gamma)$ for some $(\alpha, \beta, \gamma)$, or equivalently in the $ZXZ$ convention. Three real parameters specify the gate, matching the dimension of SU(2).
-- Out of scope: multi-qubit entangling gates and their decompositions (`03_`); the discrete-set approximation problem and Solovay–Kitaev (`04_`); pulse-level realization, calibration, and fidelity (`05_`).
+- Out of scope: multi-qubit entangling gates and their decompositions (`003_`); the discrete-set approximation problem and Solovay–Kitaev (`004_`); pulse-level realization, calibration, and fidelity (`005_`).
 
 ## 3. Diagram — Single-Qubit Gate Taxonomy on the Bloch Sphere
 
@@ -71,15 +71,15 @@ flowchart TD
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `020` — gates |
-| Subsubject | `02` — Single-Qubit Gates |
+| Subsection | `901` — gates |
+| Subsubject | `002` — Single-Qubit Gates |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/020_gates/` |
-| Document | `02_Single-Qubit-Gates.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`00_Overview.md`](./00_Overview.md) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/901_gates/` |
+| Document | `002_Single-Qubit-Gates.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

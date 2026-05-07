@@ -34,10 +34,10 @@ Declares the **acyclic dependency graph** of the `900-909` foundational range of
 
 ```mermaid
 flowchart LR
-    A["010_Qubits/<br/><i>atomic unit</i>"] --> B["020_gates/<br/><i>unitary operations<br/>on qubits</i>"]
-    B --> C["030_circuits/<br/><i>composition of gates<br/>into programs</i>"]
-    C --> D["040_quantum-algorithms/<br/><i>problem-specific<br/>constructions</i>"]
-    D --> E["050_foundations/<br/><i>computability,<br/>complexity, models</i>"]
+    A["900_Qubits/<br/><i>atomic unit</i>"] --> B["901_gates/<br/><i>unitary operations<br/>on qubits</i>"]
+    B --> C["902_circuits/<br/><i>composition of gates<br/>into programs</i>"]
+    C --> D["903_quantum-algorithms/<br/><i>problem-specific<br/>constructions</i>"]
+    D --> E["904_foundations/<br/><i>computability,<br/>complexity, models</i>"]
 ```
 
 Read in the order shown. Every chapter to the right relies on definitions from the chapters to its left and **shall not redefine** them; back-references into a specific subsubject of an upstream chapter are required.
@@ -46,11 +46,11 @@ Read in the order shown. Every chapter to the right relies on definitions from t
 
 | Order | Subsection | Title | Index | Role |
 |---:|---|---|---|---|
-| 1 | `010` | Qubits | [`010_Qubits/README.md`](./010_Qubits/README.md) | Atomic unit; upstream of everything else in QCSAA |
-| 2 | `020` | Gates | [`020_gates/README.md`](./020_gates/README.md) | Unitary operations on qubits |
-| 3 | `030` | Circuits | [`030_circuits/00_Overview.md`](./030_circuits/00_Overview.md) | Composition of gates into programs |
-| 4 | `040` | Quantum Algorithms | [`040_quantum-algorithms/00_Overview.md`](./040_quantum-algorithms/00_Overview.md) | Problem-specific constructions |
-| 5 | `050` | Foundations | [`050_foundations/00_Overview.md`](./050_foundations/00_Overview.md) | Computability, complexity, models |
+| 1 | `900` | Qubits | [`900_Qubits/README.md`](./900_Qubits/README.md) | Atomic unit; upstream of everything else in QCSAA |
+| 2 | `901` | Gates | [`901_gates/README.md`](./901_gates/README.md) | Unitary operations on qubits |
+| 3 | `902` | Circuits | [`902_circuits/000_Overview.md`](./902_circuits/000_Overview.md) | Composition of gates into programs |
+| 4 | `903` | Quantum Algorithms | [`903_quantum-algorithms/000_Overview.md`](./903_quantum-algorithms/000_Overview.md) | Problem-specific constructions |
+| 5 | `904` | Foundations | [`904_foundations/000_Overview.md`](./904_foundations/000_Overview.md) | Computability, complexity, models |
 
 ## 5. Authoring Convention (Register-Wide)
 
@@ -73,7 +73,7 @@ This dependency-graph pattern is **register-wide for QCSAA** and is intentionall
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
 | Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/` |
-| Document | `00_INDEX.md` (this file) |
+| Document | `000_INDEX.md` (this file) |
 | Parent architecture | [`../README.md`](../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md) |
 

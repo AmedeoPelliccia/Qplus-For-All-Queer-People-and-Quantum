@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-040-00-OVERVIEW
-title: "QCSAA 900-909 · 00.040.00 — quantum algorithms"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-902-000-OVERVIEW
+title: "QCSAA 900-909 · 00.902.000 — circuits"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "040"
-subsection_title: "quantum algorithms"
-subsubject: "00"
+subsection: "902"
+subsection_title: "circuits"
+subsubject: "000"
 subsubject_title: "Overview"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,19 +25,19 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 040 — quantum algorithms
+# QCSAA 900-909 · Section 00 · Subsection 902 — circuits
 
 ## 1. Purpose
 
-Overview entry-point for the *quantum algorithms* subsection within the `900-909` code range (Section `00` — *Fundamentos de Computación Cuántica*) of the **QCSAA** architecture band (*Quantum Computing & Sentient Agency Architecture*, master range `900–999`).
+Overview entry-point for the *circuits* subsection within the `900-909` code range (Section `00` — *Fundamentos de Computación Cuántica*) of the **QCSAA** architecture band (*Quantum Computing & Sentient Agency Architecture*, master range `900–999`).
 
-This subsubject (`00 Overview`) introduces the QCSAA 900-909.040.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
+This subsubject (`00 Overview`) introduces the QCSAA 900-909.030.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
 ## 2. Scope
 
-- Covers the *quantum algorithms* slice of the parent code range `900-909`.
+- Covers the *circuits* slice of the parent code range `900-909`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
+- Subsequent subsubjects (`001`–`099`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
 
 ## 3. Footprint
 
@@ -48,14 +48,14 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.040.00 slice and li
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `040` — quantum algorithms |
-| Subsubject | `00` — Overview |
+| Subsection | `902` — circuits |
+| Subsubject | `000` — Overview |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/040_quantum-algorithms/` |
-| Document | `00_Overview.md` (this file) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/902_circuits/` |
+| Document | `000_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
