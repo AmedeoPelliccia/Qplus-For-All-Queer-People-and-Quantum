@@ -355,6 +355,20 @@ programme interfaces / Q+ATLAS1000
 
 # 3. Q+ATLANTIDE programme 
 
+| Segment | Expansion          | Meaning                                                             |
+| ------- | ------------------ | ------------------------------------------------------------------- |
+| **Q+**  | **Quantum Plus**   | Capa cuántica, avanzada, transversal y extensible                   |
+| **A**   | **Aerospace**      | Dominio aeroespacial base                                           |
+| **T**   | **Top**            | Nivel superior de clasificación                                     |
+| **L**   | **Level**          | Arquitectura top-level / master range                               |
+| **A**   | **Architectures**  | Bandas arquitectónicas controladas                                  |
+| **N**   | **Novel**          | Tecnologías nuevas, disruptivas o emergentes                        |
+| **T**   | **Technologies**   | Sistemas, subsistemas, materiales, energía, digital, ciber, quantum |
+| **I**   | **Identification** | Identificación técnica, trazabilidad, codificación                  |
+| **D**   | **Data**           | Datos estructurados, metadata, evidencia, CSDB/PLM                  |
+| **E**   | **Ecosystem**      | Ecosistema completo de clasificación y gobernanza                   |
+
+
 ## 3.1 Master Architecture Table
 
 | Master range | Architecture code | Architecture name | Primary focus |
