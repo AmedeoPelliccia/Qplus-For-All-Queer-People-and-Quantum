@@ -20,6 +20,8 @@ support_q_divisions: [Q-HPC, Q-DATAGOV]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: restricted
 restricted_rule: N-006
+evidence_package_id: PENDING
+access_control_profile: QATL-ACP-QCSAA-RESTRICTED
 version: 1.0.0
 status: active
 language: en

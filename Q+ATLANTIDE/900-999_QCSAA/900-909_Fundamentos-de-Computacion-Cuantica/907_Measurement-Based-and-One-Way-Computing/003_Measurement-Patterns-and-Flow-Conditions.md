@@ -20,6 +20,8 @@ support_q_divisions: [Q-HPC, Q-DATAGOV]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: restricted
 restricted_rule: N-006
+evidence_package_id: PENDING
+access_control_profile: QATL-ACP-QCSAA-RESTRICTED
 version: 1.0.0
 status: active
 language: en
@@ -40,7 +42,7 @@ Develops the **measurement calculus** — the formal language for specifying, co
   - **Measurement commands** — the atomic commands of the measurement calculus: N (preparation of |+⟩), E_{ab} (entanglement via CZ), M^α_a (measurement of qubit a in the XY-plane at angle α), and byproduct corrections X^s_a and Z^s_a.
   - **Signal functions and dependency** — a signal function s_a : {0,1}^V → {0,1} mapping prior measurement outcomes to the correction applied at qubit a; encoded as a linear function over GF(2) to maintain Pauli-frame update efficiency.
   - **Standardisation and rewriting rules** — rewriting rules of the measurement calculus that allow any pattern to be standardised (preparation → entanglement → measurement → correction) without changing the implemented unitary; proof that any pattern can be brought to standard form.
-  - **Flow condition (Danos-Kashefi)** — a function f : O^c → I^c on non-output to non-input vertices that assigns a correction target for each measured qubit; together with a partial order ≺ on V, it must satisfy: (i) a ≁ f(a), (ii) a ~ b only if b ≺ a (or b = f(a)), (iii) correction respects the order. Flow guarantees determinism in the XY-plane measurement basis.
+  - **Flow condition (Danos-Kashefi)** — a function f : O^c → I^c on non-output to non-input vertices that assigns a correction target for each measured qubit; together with a strict partial order ≺ on V, it must satisfy for all a ∈ O^c: (i) a ~ f(a) (a is adjacent to its correction target), (ii) a ≺ f(a) (a is measured before its correction target), (iii) for any b ~ a with b ≠ f(a), f(a) ≺ b (the correction target precedes all other neighbours of a in the order). Flow guarantees determinism in the XY-plane measurement basis.
   - **Causal flow** — a refinement of flow that admits a total order (causal order) consistent with all dependencies; enables efficient classical simulation of the correction track and tight depth analysis.
   - **Generalised flow (gflow)** — the strictly weaker condition extending determinism to YZ- and XZ-plane measurements and to graph states that admit no standard flow; a gflow is a pair (g, ≺) where g maps each measured qubit to a set of correction qubits (g : O^c → 2^{I^c}) satisfying the odd-neighbourhood condition in the Z₂ geometry of the graph; gflow is necessary and sufficient for determinism in the one-way model with arbitrary Pauli-plane measurements[^browne_flow].
   - **Algorithmic verification** — polynomial-time algorithms (O(|V|^3)) for deciding the existence of flow/gflow and constructing them when they exist; the Mhalla-Perdrix algorithm for gflow[^mhalla_perdrix].

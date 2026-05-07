@@ -20,6 +20,8 @@ support_q_divisions: [Q-HPC, Q-DATAGOV]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: restricted
 restricted_rule: N-006
+evidence_package_id: PENDING
+access_control_profile: QATL-ACP-QCSAA-RESTRICTED
 version: 1.0.0
 status: active
 language: en
@@ -40,7 +42,7 @@ Establishes the **formal equivalence between the one-way quantum computation mod
   - **Two-qubit gates via entanglement** — CNOT and CZ gates constructed by measuring a 4-qubit cluster pattern; equivalence between cluster-state wiring and two-qubit gate application; the role of the CZ gate in linking cluster sites.
   - **Circuit-to-MBQC translation** — systematic translation of a depth-d, n-qubit Clifford+T circuit into a measurement pattern on a cluster of O(nd) qubits; gate-by-gate pattern concatenation; wiring patterns for identity propagation.
   - **Universality theorem** — formal proof that the 2-D cluster state is a universal resource: any polynomial-time quantum computation can be performed by adaptive measurements on a polynomially-sized region of the infinite 2-D cluster[^raussendorf_briegel].
-  - **MBQC-to-circuit translation** — given an MBQC pattern with flow, construction of an equivalent unitary circuit; the Josza circuit extraction algorithm; complexity overhead of byproduct correction removal.
+  - **MBQC-to-circuit translation** — given an MBQC pattern with flow, construction of an equivalent unitary circuit; the Jozsa circuit extraction algorithm; complexity overhead of byproduct correction removal.
   - **Depth-complexity trade-offs** — parallelisation of Clifford subcircuits to O(1) measurement depth; T-gate depth lower bounds in the MBQC model; comparison with circuit T-depth; implications for fault-tolerant resource estimation.
   - **Resource overhead analysis** — qubit count and measurement count as functions of circuit gate count and depth; comparison with the circuit model's ancilla costs.
   - **Clifford and non-Clifford separation** — Clifford gates correspond to Pauli-plane measurements and can be parallelised; non-Clifford (T-gate, arbitrary rotation) measurements introduce classical adaptivity and set the depth lower bound.
