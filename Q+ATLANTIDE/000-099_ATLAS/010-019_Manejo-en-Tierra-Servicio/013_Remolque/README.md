@@ -18,8 +18,8 @@ primary_q_division: Q-GROUND
 support_q_divisions: [Q-MECHANICS, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN]
 governance_class: baseline
-version: 1.0.0
-status: reserved
+version: 1.1.0
+status: active
 language: en
 ---
 
@@ -27,21 +27,34 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *Remolque* (`013`) within ATLAS `010-019` — *Manejo en Tierra & Servicio* — Towing and taxi-out operations (was 040_).
+Subsection-level index for *Remolque* (`013`) within ATLAS `010-019` — *Manejo en Tierra & Servicio* — Towing and pushback operations for AMPEL360 aircraft variants on the apron and maintenance areas. This subsection provides the **operational procedure layer** (Level 2) for towing; the introductory orientation is at [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md).
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
+> **Conventional ATA reference:** ATA chapter 9 (Towing and Taxiing). The ATLAS `013_` slot is the programmatic equivalent within the `010-019` Code range.
+
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `013` *Remolque*.
+- Aggregates the subsubject namespace `000`–`005` of subsection `013` *Remolque*, plus reserves `006`–`099` for future extension.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Anticipated subsubjects (all populated in this release):
+  - `000_Overview.md` — subsection map, scope boundaries, Mermaid diagram
+  - `001_Scope-and-Towing-Boundaries.md` — operation scope, aircraft applicability, exclusions
+  - `002_Towing-Equipment-and-Tug-Compatibility.md` — towbar / TBL tug specs, bypass pin, GSE qualification
+  - `003_Towing-Procedures-Pushback-and-Maneuvering.md` — step-level pushback and repositioning sequences
+  - `004_Towing-Limits-Loads-and-Steering-Constraints.md` — speed, steering angle, load, and gradient limits
+  - `005_Towing-Records-Incidents-and-Traceability.md` — logbook entries, incident categories, traceability
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| 00N | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 001 | Scope and Towing Boundaries | [`001_Scope-and-Towing-Boundaries.md`](./001_Scope-and-Towing-Boundaries.md) | active |
+| 002 | Towing Equipment and Tug Compatibility | [`002_Towing-Equipment-and-Tug-Compatibility.md`](./002_Towing-Equipment-and-Tug-Compatibility.md) | active |
+| 003 | Towing Procedures — Pushback and Maneuvering | [`003_Towing-Procedures-Pushback-and-Maneuvering.md`](./003_Towing-Procedures-Pushback-and-Maneuvering.md) | active |
+| 004 | Towing Limits, Loads and Steering Constraints | [`004_Towing-Limits-Loads-and-Steering-Constraints.md`](./004_Towing-Limits-Loads-and-Steering-Constraints.md) | active |
+| 005 | Towing Records, Incidents and Traceability | [`005_Towing-Records-Incidents-and-Traceability.md`](./005_Towing-Records-Incidents-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,29 +65,53 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `010-019` |
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `013` — Remolque |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`005` populated; `006`–`099` reserved |
+| Conventional ATA ref | ATA chapter 9 (Towing and Taxiing) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/010-019_Manejo-en-Tierra-Servicio/013_Remolque/` |
 | Document | `README.md` (this file) |
+| Orientation layer | [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## Governance
+## 5. Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GROUND` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `006`–`099` shall preserve those header fields, follow the canonical `00N_*.md` naming scheme, and reuse the footnote set declared here.
 
-## 5. References & Citations
+## 6. Change Log
 
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
+| Version | Date | Author | Notes |
+|---|---|---|---|
+| 1.0.0 | 2026-05-07 | Q-GROUND | Initial reserve — subsection index only, all subsubjects `to be populated`. |
+| 1.1.0 | 2026-05-07 | Q-GROUND | Baseline release — `000_Overview.md` + subsubjects `001`–`005` populated; ATA chapter 9 reference registered; orientation-layer pointer added. |
 
-[^archtable]: **§3 — Architecture Table (parent)** — [`../../README.md` §3](../../README.md#3-architecture-table).
+## 7. References & Citations
 
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../organization/Q-Divisions/).
+[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
+
+[^archtable]: **§3 — Architecture Table (parent)** — [`../../README.md` §3](../../README.md#3-architecture-table). Source of authority for primary/support Q-Divisions and ORB support of this section.
+
+[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
 
 [^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
 
 [^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../organization/Q+ATLANTIDE.md#4-notes).
+
+[^ata2200]: **ATA iSpec 2200** — Information standards for aviation maintenance documentation. ATA chapter 9 (Towing and Taxiing) is the conventional chapter reference for this subsection's scope.
+
+[^ataspec100]: **ATA Spec 100** — Manufacturers' Technical Data standard.
+
+[^s1000d]: **S1000D Issue 6.0** — International specification for technical publications.
+
+[^as9100d]: **AS9100D** — Quality Management Systems — Aviation, Space and Defense Organizations.
+
+### Applicable industry standards
+
+- ATA iSpec 2200 — Information standards for aviation maintenance (ATA chapter 9)[^ata2200]
+- ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]
+- S1000D Issue 6.0 — International specification for technical publications[^s1000d]
+- AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
