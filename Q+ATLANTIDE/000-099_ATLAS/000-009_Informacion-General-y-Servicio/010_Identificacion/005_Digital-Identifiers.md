@@ -54,8 +54,8 @@ Defines the **digital-identifier surface** that connects ATLAS hardware identifi
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/010_Identificacion/` |
-| Document | `05_Digital-Identifiers.md` (this file) |
-| Parent subsection | [`00_Overview.md`](./00_Overview.md) |
+| Document | `005_Digital-Identifiers.md` (this file) |
+| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

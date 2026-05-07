@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-010-01-AIRCRAFT-IDENTIFICATION
-title: "ATLAS 000-009 · 00.010.01 — Aircraft Identification"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-010-00-OVERVIEW
+title: "ATLAS 000-009 · 00.010.00 — Identificación"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,8 +15,8 @@ subject: "00"
 subject_title: "General Information"
 subsection: "010"
 subsection_title: "Identificación"
-subsubject: "01"
-subsubject_title: "Aircraft Identification"
+subsubject: "00"
+subsubject_title: "Overview"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,18 +25,19 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 010 · Subsubject 01 — Aircraft Identification
+# ATLAS 000-009 · Section 00 · Subsection 010 — Identificación
 
 ## 1. Purpose
 
-Defines the **aircraft-level identifiers** used across the ATLAS `000-009.010` *Identificación* slice: civil registration mark, manufacturer serial number (MSN), ICAO 24-bit address and ICAO type designator. These identifiers are the primary keys that bind every downstream data module (DM) under the ATLAS architecture to a specific airframe instance, in conformance with the controlled Q+ATLANTIDE baseline[^baseline] and S1000D Issue 6.0[^s1000d].
+Overview entry-point for the *Identificación* subsection within the `000-009` code range (Section `00` — *Información General y Servicio*) of the **ATLAS** architecture band (*Aircraft Top-Level Architecture System*, master range `000–099`).
+
+This subsubject (`00 Overview`) introduces the ATLAS 000-009.010.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
 
 ## 2. Scope
 
-- Covers the *Aircraft Identification* subsubject (`01`) of subsection `010` *Identificación* within section `00` *Información General y Servicio*.
+- Covers the *Identificación* slice of the parent code range `000-009`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Identifier classes in scope: **Registration mark** (national CAA), **MSN** (manufacturer serial number), **ICAO 24-bit address** (Mode S transponder), **ICAO type designator** (e.g. for filed flight plans).
-- Identifiers are exposed as ATA iSpec 2200[^ata2200] and ATA Spec 100[^ataspec100] header attributes and as S1000D `<dmIdent>` / `<dmAddress>` instance metadata[^s1000d].
+- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
 
 ## 3. Footprint
 
@@ -48,14 +49,13 @@ Defines the **aircraft-level identifiers** used across the ATLAS `000-009.010` *
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `010` — Identificación |
-| Subsubject | `01` — Aircraft Identification |
+| Subsubject | `00` — Overview |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/010_Identificacion/` |
-| Document | `01_Aircraft-Identification.md` (this file) |
-| Parent subsection | [`00_Overview.md`](./00_Overview.md) |
+| Document | `000_Overview.md` (this file) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
@@ -80,9 +80,10 @@ Defines the **aircraft-level identifiers** used across the ATLAS `000-009.010` *
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
+The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - ATA iSpec 2200 — Information Standards for Aviation Maintenance[^ata2200]
 - ATA Spec 100 — Manufacturers' Technical Data[^ataspec100]
 - S1000D Issue 6.0 — International specification for technical publications[^s1000d]
 - AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
+

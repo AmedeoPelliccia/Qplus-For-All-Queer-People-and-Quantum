@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-010-04-SERIALIZATION-AND-MARKING
-title: "ATLAS 000-009 · 00.010.04 — Serialization and Marking"
+document_id: QATL-ATLAS-1000-ATLAS-000-009-00-010-03-CONFIGURATION-IDENTIFICATION
+title: "ATLAS 000-009 · 00.010.03 — Configuration Identification"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,8 +15,8 @@ subject: "00"
 subject_title: "General Information"
 subsection: "010"
 subsection_title: "Identificación"
-subsubject: "04"
-subsubject_title: "Serialization and Marking"
+subsubject: "03"
+subsubject_title: "Configuration Identification"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,18 +25,18 @@ version: 1.0.0
 status: active
 language: en
 ---
-# ATLAS 000-009 · Section 00 · Subsection 010 · Subsubject 04 — Serialization and Marking
+# ATLAS 000-009 · Section 00 · Subsection 010 · Subsubject 03 — Configuration Identification
 
 ## 1. Purpose
 
-Specifies the **physical-marking and serialization layer** that materialises ATLAS identifiers on hardware: part marking, dataplate content, Unique Identifier (UID) and Item Unique Identifier (IUID) schemes. These markings are the on-airframe ground-truth used by Q-GROUND and Q-AIR support to reconcile a tail with its certified design baseline (subsubject `02`) and configuration record (subsubject `03`) under the controlled Q+ATLANTIDE baseline[^baseline].
+Defines the **configuration-baseline identifiers** that allow every ATLAS data module to be filtered against a specific airframe configuration: configuration baseline ID, modification (mod) status, service-bulletin (SB) and airworthiness-directive (AD) compliance state, and effectivity expressions resolved by S1000D applicability[^s1000d]. These identifiers are the bridge between the static type-design designators of subsubject `02` and the as-built / as-maintained record of an individual airframe.
 
 ## 2. Scope
 
-- Covers the *Serialization and Marking* subsubject (`04`) of subsection `010` *Identificación* within section `00` *Información General y Servicio*.
+- Covers the *Configuration Identification* subsubject (`03`) of subsection `010` *Identificación* within section `00` *Información General y Servicio*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Marking classes in scope: **part marking** (per ATA iSpec 2200[^ata2200]), **dataplate** content and placement, **UID** (manufacturer-assigned), and **IUID** (Item Unique Identifier, machine-readable).
-- ATA Spec 100[^ataspec100] legacy marking conventions are retained as informative cross-references for type-certified equivalents.
+- Identifier classes in scope: **configuration baseline ID**, **mod status / SB / AD compliance vector**, **effectivity expression** (S1000D `applic` semantics), and **as-built ↔ as-maintained delta marker**.
+- The S1000D `modStatus` applicability attribute is the canonical encoding of the mod-status field defined here[^s1000d].
 
 ## 3. Footprint
 
@@ -48,14 +48,14 @@ Specifies the **physical-marking and serialization layer** that materialises ATL
 | Section | `00` — Información General y Servicio |
 | Subject | `00` — General Information |
 | Subsection | `010` — Identificación |
-| Subsubject | `04` — Serialization and Marking |
+| Subsubject | `03` — Configuration Identification |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/000-009_Informacion-General-y-Servicio/010_Identificacion/` |
-| Document | `04_Serialization-and-Marking.md` (this file) |
-| Parent subsection | [`00_Overview.md`](./00_Overview.md) |
+| Document | `003_Configuration-Identification.md` (this file) |
+| Parent subsection | [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
