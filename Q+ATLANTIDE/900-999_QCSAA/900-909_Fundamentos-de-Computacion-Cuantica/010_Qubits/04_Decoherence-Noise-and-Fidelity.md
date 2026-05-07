@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-010-00-OVERVIEW
-title: "QCSAA 900-909 · 00.010.00 — Qubits"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-010-04-DECOHERENCE-NOISE-AND-FIDELITY
+title: "QCSAA 900-909 · 00.010.04 — Decoherence, Noise and Fidelity"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -15,8 +15,8 @@ subject: "00"
 subject_title: "General Information"
 subsection: "010"
 subsection_title: "Qubits"
-subsubject: "00"
-subsubject_title: "Overview"
+subsubject: "04"
+subsubject_title: "Decoherence, Noise and Fidelity"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -25,23 +25,29 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 010 — Qubits
+# QCSAA 900-909 · Section 00 · Subsection 010 · Subsubject 04 — Decoherence, Noise and Fidelity
 
 ## 1. Purpose
 
-Overview entry-point for the *Qubits* subsection within the `900-909` code range (Section `00` — *Fundamentos de Computación Cuántica*) of the **QCSAA** architecture band (*Quantum Computing & Sentient Agency Architecture*, master range `900–999`).
-
-This subsubject (`00 Overview`) introduces the QCSAA 900-909.010.00 slice and links it to the controlled Q+ATLANTIDE baseline[^baseline] and to the applicable industry standards listed in §4.
+Characterises the **degradation modes** that distinguish real qubits from the idealised model of `01_`–`03_`: relaxation, dephasing, gate error, readout error, and the noise channels that summarise them. Defines the standard figures of merit ($T_1$, $T_2$, $T_2^*$, gate fidelity, readout fidelity) and the canonical experimental protocols (randomised benchmarking, quantum process tomography) used to estimate them. This subsubject is also where the bridge into `940-949` Quantum Sensing & Metrology becomes visible: the same susceptibility that limits computation enables measurement.
 
 ## 2. Scope
 
-- Covers the *Qubits* slice of the parent code range `900-909`.
+- Covers the *Decoherence, Noise and Fidelity* subsubject (`04`) of subsection `010` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `01`–`05`, indexed in [`README.md`](./README.md).
-- The qubit, defined here, is the **atomic unit of quantum computation** and the upstream dependency of every other chapter in QCSAA. Downstream subsections and bands that build on it include:
-  - Within `900-909`: [`../020_gates/`](../020_gates/), [`../030_circuits/`](../030_circuits/), [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../050_foundations/`](../050_foundations/).
-  - Within QCSAA `900-999`: `910-919` Quantum Machine Learning & Quantum AI, `920-929` Quantum Networks & Communications, `930-939` Quantum Cybersecurity, `940-949` Quantum Sensing & Metrology, `950-959` Quantum Simulation, `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
-  - Cross-band: CYB `880-889` Post-Quantum Cryptography (defends against quantum computers; depends on the qubit model defined here, even though it is not part of QCSAA).
+- Concepts in scope:
+  - **Coherence-time figures of merit** —
+    - $T_1$ (energy relaxation, $|1\rangle \to |0\rangle$ via the environment).
+    - $T_2$ (transverse / phase coherence; $T_2 \le 2 T_1$).
+    - $T_2^{*}$ (inhomogeneous dephasing, including quasi-static frequency uncertainty).
+  - **Gate fidelity** — average fidelity between an implemented operation and its ideal unitary; standard reporting via 1- and 2-qubit benchmarking.
+  - **Readout fidelity** — assignment fidelity for measurement; symmetric (avg.) and asymmetric (per-state) reporting.
+  - **Noise channels (CPTP maps)** — depolarising, amplitude damping, phase damping, Pauli channels; Kraus and process-matrix representations.
+  - **Characterisation protocols** —
+    - **Randomised benchmarking (RB)** and its variants (interleaved RB, simultaneous RB, cycle benchmarking) for scalable error-rate estimation.
+    - **Quantum process tomography (QPT)** for full reconstruction of the channel; gate-set tomography (GST) as the self-consistent extension.
+  - **Cross-band relevance** — back-referenced from `940-949` Quantum Sensing & Metrology, which exploits the *same* susceptibility ($T_2$, $T_2^*$, environmental coupling) as a signal rather than a defect.
+- Out of scope: code-level mitigation (`05_`); circuit-level error-mitigation techniques (covered downstream in `030_circuits/` and `040_quantum-algorithms/`).
 
 ## 3. Footprint
 
@@ -53,13 +59,14 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.010.00 slice and li
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
 | Subsection | `010` — Qubits |
-| Subsubject | `00` — Overview |
+| Subsubject | `04` — Decoherence, Noise and Fidelity |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
 | Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/010_Qubits/` |
-| Document | `00_Overview.md` (this file) |
+| Document | `04_Decoherence-Noise-and-Fidelity.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`00_Overview.md`](./00_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
@@ -76,21 +83,14 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.010.00 slice and li
 
 [^ieeep7130]: **IEEE P7130 — Standard for Quantum Computing Definitions** — Vocabulary baseline for the quantum computing scope of QCSAA `900-999`.
 
-[^nistir8413]: **NIST IR 8413 — Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process** — Post-quantum cryptography reference for QCSAA security-bridging items.
-
-[^etsiqsc001]: **ETSI GR QSC 001 — Quantum-Safe Cryptography (QSC); Quantum-safe algorithmic framework** — ETSI quantum-safe cryptography framework applied across QCSAA.
-
 [^s1000d]: **S1000D Issue 6.0 — International specification for technical publications** — Common Source DataBase (CSDB) and Data Module Code (DMC) specification used for all Q+ATLANTIDE artefacts.
 
 [^as9100d]: **AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations** — Quality-management baseline for all Q+ATLANTIDE deliverables.
 
 ### Applicable industry standards
 
-The following ATA-family and industry standards apply to this subsection in addition to the cross-cutting Q+ATLANTIDE governance:
+The following standards apply to this subsubject in addition to the cross-cutting Q+ATLANTIDE governance:
 
 - IEEE P7130 — Standard for Quantum Computing Definitions[^ieeep7130]
-- NIST IR 8413 — Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process[^nistir8413]
-- ETSI GR QSC 001 — Quantum-Safe Cryptography (QSC); Quantum-safe algorithmic framework[^etsiqsc001]
 - S1000D Issue 6.0 — International specification for technical publications[^s1000d]
 - AS9100D — Quality Management Systems — Aviation, Space and Defense Organizations[^as9100d]
-
