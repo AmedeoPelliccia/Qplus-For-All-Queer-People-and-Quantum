@@ -29,7 +29,7 @@ language: en
 
 ## 1. Purpose
 
-Defines the **operational layer** on top of the qubit formalism established in `901_`: state preparation, the canonical single- and two-qubit gates, the entangled states they produce (Bell states), and the measurement model. The objects defined here — gates and measurements — are the primitives consumed by `020_gates/`, `030_circuits/` and `040_quantum-algorithms/` downstream.
+Defines the **operational layer** on top of the qubit formalism established in `901_`: state preparation, the canonical single- and two-qubit gates, the entangled states they produce (Bell states), and the measurement model. The objects defined here — gates and measurements — are the primitives consumed by `901_gates/`, `030_circuits/` and `040_quantum-algorithms/` downstream.
 
 ## 2. Scope
 
