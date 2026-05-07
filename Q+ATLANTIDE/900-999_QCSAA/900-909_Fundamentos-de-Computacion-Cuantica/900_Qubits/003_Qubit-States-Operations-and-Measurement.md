@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-010-903-QUBIT-STATES-OPERATIONS-AND-MEASUREMENT
-title: "QCSAA 900-909 · 00.010.903 — Qubit States, Operations and Measurement"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-900-003-QUBIT-STATES-OPERATIONS-AND-MEASUREMENT
+title: "QCSAA 900-909 · 00.900.003 — Qubit States, Operations and Measurement"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "900"
 subsection_title: "Qubits"
-subsubject: "903"
+subsubject: "003"
 subsubject_title: "Qubit States, Operations and Measurement"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,15 +25,15 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 010 · Subsubject 903 — Qubit States, Operations and Measurement
+# QCSAA 900-909 · Section 00 · Subsection 900 · Subsubject 003 — Qubit States, Operations and Measurement
 
 ## 1. Purpose
 
-Defines the **operational layer** on top of the qubit formalism established in `901_`: state preparation, the canonical single- and two-qubit gates, the entangled states they produce (Bell states), and the measurement model. The objects defined here — gates and measurements — are the primitives consumed by `020_gates/`, `030_circuits/` and `040_quantum-algorithms/` downstream.
+Defines the **operational layer** on top of the qubit formalism established in `001_`: state preparation, the canonical single- and two-qubit gates, the entangled states they produce (Bell states), and the measurement model. The objects defined here — gates and measurements — are the primitives consumed by `020_gates/`, `030_circuits/` and `040_quantum-algorithms/` downstream.
 
 ## 2. Scope
 
-- Covers the *Qubit States, Operations and Measurement* subsubject (`903`) of subsection `010` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Qubit States, Operations and Measurement* subsubject (`003`) of subsection `900` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **State preparation** — initialisation into a known reference state (commonly $|0\rangle$); reset protocols (passive thermal, active feedback).
@@ -41,7 +41,7 @@ Defines the **operational layer** on top of the qubit formalism established in `
   - **Two-qubit gates** — controlled-NOT (CNOT), controlled-Z (CZ), iSWAP; equivalence classes under local unitaries.
   - **Entanglement** — the four Bell states $|\Phi^\pm\rangle$, $|\Psi^\pm\rangle$ as the canonical maximally entangled basis on two qubits; entanglement as a non-classical resource for downstream algorithms.
   - **Measurement** — projective measurement in the computational basis ($Z$-basis); rotation of basis to enable $X$- and $Y$-basis measurement; **weak / generalised (POVM) measurement** as a generalisation that returns less-than-full collapse and is foundational for feedback-driven protocols and quantum sensing.
-- Out of scope: implementation-level pulse shaping (`902_`), gate-error characterisation (`904_`), error-correcting code construction (`905_`).
+- Out of scope: implementation-level pulse shaping (`002_`), gate-error characterisation (`004_`), error-correcting code construction (`005_`).
 
 ## 3. Diagram — A Qubit in a Quantum Circuit
 
@@ -114,15 +114,15 @@ This notation — used by Qiskit, Cirq, and the wider literature — is the conv
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `010` — Qubits |
-| Subsubject | `903` — Qubit States, Operations and Measurement |
+| Subsection | `900` — Qubits |
+| Subsubject | `003` — Qubit States, Operations and Measurement |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/010_Qubits/` |
-| Document | `903_Qubit-States-Operations-and-Measurement.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`900_Overview.md`](./900_Overview.md) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/900_Qubits/` |
+| Document | `003_Qubit-States-Operations-and-Measurement.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

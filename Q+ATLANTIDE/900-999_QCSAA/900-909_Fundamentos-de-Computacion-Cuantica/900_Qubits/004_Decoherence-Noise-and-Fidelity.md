@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-QCSAA-900-909-00-010-904-DECOHERENCE-NOISE-AND-FIDELITY
-title: "QCSAA 900-909 · 00.010.904 — Decoherence, Noise and Fidelity"
+document_id: QATL-ATLAS-1000-QCSAA-900-909-00-900-004-DECOHERENCE-NOISE-AND-FIDELITY
+title: "QCSAA 900-909 · 00.900.004 — Decoherence, Noise and Fidelity"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,9 +13,9 @@ section: "00"
 section_title: "Fundamentos de Computación Cuántica"
 subject: "00"
 subject_title: "General Information"
-subsection: "010"
+subsection: "900"
 subsection_title: "Qubits"
-subsubject: "904"
+subsubject: "004"
 subsubject_title: "Decoherence, Noise and Fidelity"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-HPC, Q-DATAGOV]
@@ -25,15 +25,15 @@ version: 1.0.0
 status: active
 language: en
 ---
-# QCSAA 900-909 · Section 00 · Subsection 010 · Subsubject 904 — Decoherence, Noise and Fidelity
+# QCSAA 900-909 · Section 00 · Subsection 900 · Subsubject 004 — Decoherence, Noise and Fidelity
 
 ## 1. Purpose
 
-Characterises the **degradation modes** that distinguish real qubits from the idealised model of `901_`–`903_`: relaxation, dephasing, gate error, readout error, and the noise channels that summarise them. Defines the standard figures of merit ($T_1$, $T_2$, $T_2^*$, gate fidelity, readout fidelity) and the canonical experimental protocols (randomised benchmarking, quantum process tomography) used to estimate them. This subsubject is also where the bridge into `940-949` Quantum Sensing & Metrology becomes visible: the same susceptibility that limits computation enables measurement.
+Characterises the **degradation modes** that distinguish real qubits from the idealised model of `001_`–`003_`: relaxation, dephasing, gate error, readout error, and the noise channels that summarise them. Defines the standard figures of merit ($T_1$, $T_2$, $T_2^*$, gate fidelity, readout fidelity) and the canonical experimental protocols (randomised benchmarking, quantum process tomography) used to estimate them. This subsubject is also where the bridge into `940-949` Quantum Sensing & Metrology becomes visible: the same susceptibility that limits computation enables measurement.
 
 ## 2. Scope
 
-- Covers the *Decoherence, Noise and Fidelity* subsubject (`904`) of subsection `010` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
+- Covers the *Decoherence, Noise and Fidelity* subsubject (`004`) of subsection `900` *Qubits* within section `00` *Fundamentos de Computación Cuántica*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
 - Concepts in scope:
   - **Coherence-time figures of merit** —
@@ -47,7 +47,7 @@ Characterises the **degradation modes** that distinguish real qubits from the id
     - **Randomised benchmarking (RB)** and its variants (interleaved RB, simultaneous RB, cycle benchmarking) for scalable error-rate estimation.
     - **Quantum process tomography (QPT)** for full reconstruction of the channel; gate-set tomography (GST) as the self-consistent extension.
   - **Cross-band relevance** — back-referenced from `940-949` Quantum Sensing & Metrology, which exploits the *same* susceptibility ($T_2$, $T_2^*$, environmental coupling) as a signal rather than a defect.
-- Out of scope: code-level mitigation (`905_`); circuit-level error-mitigation techniques (covered downstream in `030_circuits/` and `040_quantum-algorithms/`).
+- Out of scope: code-level mitigation (`005_`); circuit-level error-mitigation techniques (covered downstream in `030_circuits/` and `040_quantum-algorithms/`).
 
 ## 3. Diagram — From Environmental Coupling to Reported Fidelity
 
@@ -83,15 +83,15 @@ flowchart LR
 | Code range | `900-909` |
 | Section | `00` — Fundamentos de Computación Cuántica |
 | Subject | `00` — General Information |
-| Subsection | `010` — Qubits |
-| Subsubject | `904` — Decoherence, Noise and Fidelity |
+| Subsection | `900` — Qubits |
+| Subsubject | `004` — Decoherence, Noise and Fidelity |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `restricted`[^gov] |
-| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/010_Qubits/` |
-| Document | `904_Decoherence-Noise-and-Fidelity.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) · [`900_Overview.md`](./900_Overview.md) |
+| Folder path | `Q+ATLANTIDE/900-999_QCSAA/900-909_Fundamentos-de-Computacion-Cuantica/900_Qubits/` |
+| Document | `004_Decoherence-Noise-and-Fidelity.md` (this file) |
+| Parent subsection | [`README.md`](./README.md) · [`000_Overview.md`](./000_Overview.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 

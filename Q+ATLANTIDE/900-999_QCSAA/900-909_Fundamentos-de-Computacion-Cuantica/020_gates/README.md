@@ -29,15 +29,15 @@ language: en
 
 Subsection-level index for *gates* (`020`) within QCSAA `900-909` — *Fundamentos de Computación Cuántica*. Aggregates the `900 Overview` and the detailed subsubjects (`901`–`905`) that introduce the **quantum gate** as a unitary operator on the qubit Hilbert space, catalogue single- and multi-qubit gate families, formalise universality and decomposition, and document per-modality physical implementation, calibration, and error characterisation — under the controlled Q+ATLANTIDE baseline[^baseline] and the IEEE quantum-computing vocabulary[^ieeep7130].
 
-This subsection is the **second foundational chapter** of the QCSAA band and the **direct downstream consumer** of [`../010_Qubits/`](../010_Qubits/): where qubits define the substrate, gates define the operations on that substrate. It is the **immediate prerequisite** for [`../030_circuits/`](../030_circuits/), which composes gates into algorithms.
+This subsection is the **second foundational chapter** of the QCSAA band and the **direct downstream consumer** of [`../900_Qubits/`](../900_Qubits/): where qubits define the substrate, gates define the operations on that substrate. It is the **immediate prerequisite** for [`../030_circuits/`](../030_circuits/), which composes gates into algorithms.
 
-The chapter is organised in the same five-file structure as [`../010_Qubits/`](../010_Qubits/) — **definition → categories → composition → universality → physical realization** — deliberately. The parallelism is not aesthetic; it is pedagogical: once readers have learned the slot semantics of one foundational chapter, every subsequent foundational chapter in `900-909` is faster to navigate.
+The chapter is organised in the same five-file structure as [`../900_Qubits/`](../900_Qubits/) — **definition → categories → composition → universality → physical realization** — deliberately. The parallelism is not aesthetic; it is pedagogical: once readers have learned the slot semantics of one foundational chapter, every subsequent foundational chapter in `900-909` is faster to navigate.
 
 ## 2. Scope
 
 - Covers the full subsubject namespace `900`–`909` of subsection `020` *gates* under the canonical Q+ATLANTIDE Subsubject scheme `9NN_*.md` (per §2.2 of the QCSAA README); subsubjects `901`–`905` are populated in this baseline release, the remaining `906`–`909` slots remain available for future extension per the Overview's authorisation[^archtable].
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Pedagogical sequence followed: **definition → categories → composition → universality → physical realization**, mirroring [`../010_Qubits/`](../010_Qubits/).
+- Pedagogical sequence followed: **definition → categories → composition → universality → physical realization**, mirroring [`../900_Qubits/`](../900_Qubits/).
 - **Boundary against [`../030_circuits/`](../030_circuits/)** (binding for contributors). This chapter covers the **unitary operation as such** — its mathematical definition, its decomposition into a universal set, its physical realization on a given modality, its fidelity. The next chapter covers what happens **when gates are composed into algorithms** — depth, parallelisation, measurement timing, mid-circuit measurement, classical control flow. The rule is restated in `900_Overview.md` §2 and re-binding-ly in `904_` §3.
 
 ## 3. Subsubject Index
@@ -77,7 +77,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 ## 6. Upstream, Downstream and Cross-Band Dependencies
 
-- **Upstream (within `900-909`)** — [`../010_Qubits/`](../010_Qubits/). Every gate in this chapter acts on the Hilbert space defined in `010_Qubits/901_`; every per-modality fidelity and gate-time number in `905_` is bounded by the $T_1, T_2$ characterisation in `010_Qubits/904_`; every reference to overhead in `904_` compounds with the physical-to-logical ratio in `010_Qubits/905_`.
+- **Upstream (within `900-909`)** — [`../900_Qubits/`](../900_Qubits/). Every gate in this chapter acts on the Hilbert space defined in `900_Qubits/001_`; every per-modality fidelity and gate-time number in `905_` is bounded by the $T_1, T_2$ characterisation in `900_Qubits/004_`; every reference to overhead in `904_` compounds with the physical-to-logical ratio in `900_Qubits/005_`.
 - **Downstream (within `900-909`)** — [`../030_circuits/`](../030_circuits/), [`../040_quantum-algorithms/`](../040_quantum-algorithms/), [`../050_foundations/`](../050_foundations/). The chapter boundary against `030_circuits/` is stated explicitly in `900_Overview.md` §2 and `904_` §3.
 - **Within QCSAA `900-999`** — `910-919` Quantum Machine Learning & Quantum AI (variational circuits depend on the entangling-gate family of `903_`), `920-929` Quantum Networks & Communications (entanglement distribution depends on the Bell/EPR preparation of `903_`), `930-939` Quantum Cybersecurity, `950-959` Quantum Simulation, `960-969` Quantum Robotics, `970-979` Sentient Quantum Agency.
 - **Cross-band** — CYB `880-889` Post-Quantum Cryptography back-references the universality and overhead arguments of `904_` to size the threat model.
@@ -88,7 +88,7 @@ Downstream chapters shall back-reference the specific subsubjects of this subsec
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `900_Overview.md` plus subsubjects `901`–`905`, using the canonical Q+ATLANTIDE Subsubject scheme `9NN_*.md` (per §2.2 of the QCSAA README); chapter parallel to `010_Qubits/` (definition → categories → composition → universality → physical realization). |
+| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `900_Overview.md` plus subsubjects `901`–`905`, using the canonical Q+ATLANTIDE Subsubject scheme `9NN_*.md` (per §2.2 of the QCSAA README); chapter parallel to `900_Qubits/` (definition → categories → composition → universality → physical realization). |
 
 ## 8. References & Citations
 
