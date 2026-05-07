@@ -355,18 +355,18 @@ programme interfaces / Q+ATLAS1000
 
 # 3. Q+ATLANTIDE programme 
 
-| Segment | Expansion          | Meaning                                                             |
-| ------- | ------------------ | ------------------------------------------------------------------- |
-| **Q+**  | **Quantum Plus**   | Capa cuántica, avanzada, transversal y extensible                   |
-| **A**   | **Aerospace**      | Dominio aeroespacial base                                           |
-| **T**   | **Top**            | Nivel superior de clasificación                                     |
-| **L**   | **Level**          | Arquitectura top-level / master range                               |
-| **A**   | **Architectures**  | Bandas arquitectónicas controladas                                  |
-| **N**   | **Novel**          | Tecnologías nuevas, disruptivas o emergentes                        |
-| **T**   | **Technologies**   | Sistemas, subsistemas, materiales, energía, digital, ciber, quantum |
-| **I**   | **Identification** | Identificación técnica, trazabilidad, codificación                  |
-| **D**   | **Data**           | Datos estructurados, metadata, evidencia, CSDB/PLM                  |
-| **E**   | **Ecosystem**      | Ecosistema completo de clasificación y gobernanza                   |
+| Segment | Expansion          | Meaning                                                                          |
+| ------- | ------------------ | -------------------------------------------------------------------------------- |
+| **Q+**  | **Quantum Plus**   | Quantum, advanced, transversal, and extensible layer                             |
+| **A**   | **Aerospace**      | Core aerospace domain                                                            |
+| **T**   | **Top**            | Highest level of classification                                                  |
+| **L**   | **Level**          | Top-level architecture / master range                                            |
+| **A**   | **Architectures**  | Controlled architecture bands                                                    |
+| **N**   | **Novel**          | New, disruptive, or emerging technologies                                        |
+| **T**   | **Technologies**   | Systems, subsystems, materials, energy, digital, cyber, and quantum technologies |
+| **I**   | **Identification** | Technical identification, traceability, and coding                               |
+| **D**   | **Data**           | Structured data, metadata, evidence, CSDB / PLM                                  |
+| **E**   | **Ecosystem**      | Complete classification and governance ecosystem                                 |
 
 
 ## 3.1 Master Architecture Table
