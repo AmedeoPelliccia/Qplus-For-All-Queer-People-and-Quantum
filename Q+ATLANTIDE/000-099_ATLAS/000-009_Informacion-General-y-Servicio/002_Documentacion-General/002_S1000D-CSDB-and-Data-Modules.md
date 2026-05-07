@@ -121,7 +121,7 @@ The programme BREX DM (`DMC-QPLUS-A-00-00-0000-00A-022A-A_EN`) declares all proj
 | Rule ID | Rule description |
 |---|---|
 | BREX-001 | Every DM must have a `techName` element matching the ATLAS Subject title |
-| BREX-002 | `applic` elements must reference variants declared in `001_Configuracion/002_` |
+| BREX-002 | `applic` elements must reference variants declared in the programme configuration/effectivity definition maintained in the CSDB |
 | BREX-003 | ICN references must resolve to assets registered in the CSDB ICN index |
 | BREX-004 | Warning and Caution elements must reference the applicable CIR (§2.7) |
 | BREX-005 | STE compliance check: DMs in English must pass ASD-STE100 validation |
