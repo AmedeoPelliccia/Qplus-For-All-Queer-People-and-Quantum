@@ -37,9 +37,24 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.030.00 slice and li
 
 - Covers the *circuits* slice of the parent code range `900-909`.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable].
-- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d].
+- Subsequent subsubjects (`01`–`99`) under this subsection extend this Overview with detailed data modules per S1000D[^s1000d]; the populated set in this baseline is `01`–`05`, indexed in [`README.md`](./README.md).
+- **Position in the 900-909 dependency graph.** Circuits are the **synthesis** of the two preceding chapters: where [`../010_Qubits/`](../010_Qubits/) defines the substrate (the two-level quantum system, its Hilbert space, its physical implementations) and [`../020_gates/`](../020_gates/) defines the unitary operations on that substrate, `030_` defines the **computational artefacts that actually do work** by composing those operations into ordered, measured, classically-controlled sequences. Circuits are therefore the unit on which every downstream range of QCSAA operates: [`../040_quantum-algorithms/`](../040_quantum-algorithms/) consumes circuits as the realisation of an algorithm, `910-919` (Quantum Machine Learning & Quantum AI) consumes parameterised circuits as the model class, `940-949` (Quantum Sensing) consumes circuits as the measurement protocol, and `950-959` (Quantum Simulation) consumes circuits as the encoded Hamiltonian-evolution sequence.
+- **Pedagogical sequence followed in this chapter** (deliberately parallel to [`../010_Qubits/`](../010_Qubits/) and [`../020_gates/`](../020_gates/)): **definition → properties → operations → engineering → practice**. The five-file slot semantics are stable across the three foundational chapters of `900-909` so that, once a reader has navigated one foundational chapter, the next two are predictable. The parallelism is not aesthetic; it is the contract that makes the foundational range navigable.
+- **Boundary against `020_gates/` (binding for contributors).** Material that concerns a single unitary operation in isolation — its definition, its decomposition into a universal set, its physical realisation and calibration on a given modality, its per-gate fidelity — belongs in [`../020_gates/`](../020_gates/). Material that concerns **what happens when gates are composed** — circuit depth, parallelisation across the qubit register, measurement timing and mid-circuit measurement, classical feed-forward, optimisation/compilation/transpilation across an ISA, noise-resilient circuit patterns — belongs here in `030_`. The dividing line is restated in `01_` §2 and is binding.
+- **Boundary against `040_quantum-algorithms/` (binding for contributors).** This chapter covers the **circuit as a computational artefact**: its structural properties (depth, width), its operational primitives (measurement, mid-circuit measurement, classical control), its engineering pipeline (optimisation, compilation, transpilation), and its operational regime (NISQ-era patterns, noise resilience). It does **not** cover specific algorithms (Grover, Shor, QAOA, VQE, HHL): those are realised *as* circuits but their algorithmic content — oracle structure, query complexity, ansatz semantics — is the proper subject of `040_`. Material that asks "what does this circuit *compute*" goes to `040_`; material that asks "what does this circuit *cost* and *how* is it executed" stays here.
 
-## 3. Footprint
+## 3. Subsubject Inventory
+
+| NN | Title | Document |
+|---:|---|---|
+| 00 | Overview (this file) | [`00_Overview.md`](./00_Overview.md) |
+| 01 | Circuit Definition and Composition | [`01_Circuit-Definition-and-Composition.md`](./01_Circuit-Definition-and-Composition.md) |
+| 02 | Circuit Depth, Width and Parallelism | [`02_Circuit-Depth-Width-and-Parallelism.md`](./02_Circuit-Depth-Width-and-Parallelism.md) |
+| 03 | Measurement, Mid-Circuit and Classical Control | [`03_Measurement-Mid-Circuit-and-Classical-Control.md`](./03_Measurement-Mid-Circuit-and-Classical-Control.md) |
+| 04 | Circuit Optimization, Compilation and Transpilation | [`04_Circuit-Optimization-Compilation-and-Transpilation.md`](./04_Circuit-Optimization-Compilation-and-Transpilation.md) |
+| 05 | Noise-Resilient Circuit Patterns and NISQ Practice | [`05_Noise-Resilient-Circuit-Patterns-and-NISQ-Practice.md`](./05_Noise-Resilient-Circuit-Patterns-and-NISQ-Practice.md) |
+
+## 4. Footprint
 
 | Metric | Value |
 |---|---|
@@ -59,7 +74,7 @@ This subsubject (`00 Overview`) introduces the QCSAA 900-909.030.00 slice and li
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## 4. References & Citations
+## 5. References & Citations
 
 
 [^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
