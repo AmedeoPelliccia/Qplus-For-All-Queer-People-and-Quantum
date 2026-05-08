@@ -1,8 +1,8 @@
 ---
 document_id: IDEALE-ESG-A-AEROSPACE-I-INFRASTRUCTURES-00-02-INFRASTRUCTURE-CLASSIFICATION-RULES
 title: "00-02-Infrastructure-Classification-Rules — Infrastructure Classification Rules"
-canonical_path: "IDEALE-ESG.panpara.eu/A-Aerospace/I-Infrastructures/00-General/00-02-Infrastructure-Classification-Rules.md"
-parent_path: "IDEALE-ESG.panpara.eu/A-Aerospace/I-Infrastructures/00-General/"
+canonical_path: "IDEALE-ESG/A-Aerospace/I-Infrastructures/00-General/00-02-Infrastructure-Classification-Rules.md"
+parent_path: "IDEALE-ESG/A-Aerospace/I-Infrastructures/00-General/"
 parent_document: "README.md"
 
 domain: "A-Aerospace"
