@@ -14,13 +14,16 @@ section: "09"
 section_title: "Sistemas Avanzados, Conceptos y Futuro Espacial"
 subsection: "191"
 subsection_title: "Hábitats Avanzados"
-primary_q_division: Q-HORIZON
-support_q_divisions: [Q-SPACE, Q-HPC, Q-GREENTECH]
-orb_function_support: [ORB-PMO, ORB-MKTG]
+primary_q_division: Q-SPACE
+support_q_divisions: [Q-HORIZON, Q-DATAGOV, Q-HPC, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY]
+orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+safety_boundary: "advanced-habitat critical; requires explicit habitability requirements, closed-loop ECLSS assumptions, radiation sheltering, crew-health controls, emergency safe-haven logic, modular-interface validation, resource integration and lifecycle traceability"
+claim_discipline: "advanced habitat concepts require declared mission context, human-rating assumptions, environmental boundary conditions, technology-readiness screening, verification evidence and independent safety review before architectural admission"
+no_aaa_rule: true
 ---
 
 # STA 190-199 · Section 09 · Subsection 191 — Hábitats Avanzados
@@ -31,19 +34,31 @@ Subsection-level index for *Hábitats Avanzados* (`191`) within STA `190-199` �
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
+> **Safety boundary:** advanced-habitat critical — all subsubject entries require explicit habitability requirements, closed-loop ECLSS assumptions, radiation sheltering, crew-health controls, emergency safe-haven logic, modular-interface validation, resource integration and lifecycle traceability.
+
 ## 2. Scope
 
 - Reserves the subsubject namespace `00`–`99` of subsection `191` *Advanced Habitats*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- Governs the controlled baseline for advanced habitat taxonomy, ECLSS, radiation protection, human factors, structural/thermal/power interfaces, surface/orbital/interplanetary boundaries, standards mapping and lifecycle governance.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | Advanced Habitats Controlled Definition | [`001_Advanced-Habitats-Controlled-Definition.md`](./001_Advanced-Habitats-Controlled-Definition.md) | active |
+| 02 | Habitat Classes and Mission Roles | [`002_Habitat-Classes-and-Mission-Roles.md`](./002_Habitat-Classes-and-Mission-Roles.md) | active |
+| 03 | Modular Habitat Architecture and Expansion Logic | [`003_Modular-Habitat-Architecture-and-Expansion-Logic.md`](./003_Modular-Habitat-Architecture-and-Expansion-Logic.md) | active |
+| 04 | Closed-Loop ECLSS and Regenerative Life Support | [`004_Closed-Loop-ECLSS-and-Regenerative-Life-Support.md`](./004_Closed-Loop-ECLSS-and-Regenerative-Life-Support.md) | active |
+| 05 | Radiation Protection, Safe Haven and Shielding Concepts | [`005_Radiation-Protection-Safe-Haven-and-Shielding-Concepts.md`](./005_Radiation-Protection-Safe-Haven-and-Shielding-Concepts.md) | active |
+| 06 | Human Factors, Crew Health and Long-Duration Habitability | [`006_Human-Factors-Crew-Health-and-Long-Duration-Habitability.md`](./006_Human-Factors-Crew-Health-and-Long-Duration-Habitability.md) | active |
+| 07 | Structure, Thermal, Power and Resource Interfaces | [`007_Structure-Thermal-Power-and-Resource-Interfaces.md`](./007_Structure-Thermal-Power-and-Resource-Interfaces.md) | active |
+| 08 | Surface, Orbital and Interplanetary Habitat Boundaries | [`008_Surface-Orbital-and-Interplanetary-Habitat-Boundaries.md`](./008_Surface-Orbital-and-Interplanetary-Habitat-Boundaries.md) | active |
+| 09 | ECSS, NASA Habitat and Human Spaceflight Standards Mapping | [`009_ECSS-NASA-Habitat-and-Human-Spaceflight-Standards-Mapping.md`](./009_ECSS-NASA-Habitat-and-Human-Spaceflight-Standards-Mapping.md) | active |
+| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
-## 4. Footprint
+## 4. Footprint & Governance
 
 | Metric | Value |
 |---|---|
@@ -52,10 +67,10 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `190-199` |
 | Section | `09` — Sistemas Avanzados, Conceptos y Futuro Espacial |
 | Subsection | `191` — Hábitats Avanzados |
-| Subsubject namespace | `00`–`99` (reserved) |
-| Primary Q-Division | Q-HORIZON[^qdiv] |
-| Support Q-Divisions | Q-SPACE, Q-HPC, Q-GREENTECH |
-| ORB support | ORB-PMO, ORB-MKTG |
+| Subsubject namespace | `00`–`99` (active: 000–010) |
+| Primary Q-Division | Q-SPACE[^qdiv] |
+| Support Q-Divisions | Q-HORIZON, Q-DATAGOV, Q-HPC, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY |
+| ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/100-199_STA/190-199_Sistemas-Avanzados-Conceptos-y-Futuro-Espacial/191_Habitats-Avanzados/` |
 | Document | `README.md` (this file) |
@@ -63,9 +78,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
 
-## Governance
-
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-HORIZON` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
@@ -73,8 +86,17 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 [^archtable]: **§3 — Architecture Table (parent)** — [`../../README.md` §3](../../README.md#3-architecture-table).
 
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../organization/Q-Divisions/).
+[^qdiv]: **Q-Division authority** — Q-SPACE is the primary authority for all advanced habitat standards within Q+ATLANTIDE; Q-HORIZON, Q-DATAGOV, Q-HPC, Q-GREENTECH, Q-STRUCTURES, and Q-INDUSTRY provide supporting governance. See [`organization/Q-Divisions/`](../../../../organization/Q-Divisions/).
 
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
+[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline, subject to formal change control under ORB-PMO and ORB-LEG review gates.
 
 [^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../organization/Q+ATLANTIDE.md#4-notes).
+
+### Applicable industry standards
+
+- NASA-STD-3001 Vol.1 — NASA Space Flight Human-System Standard: Crew Health (NASA, 2015)
+- NASA-STD-3001 Vol.2 — NASA Space Flight Human-System Standard: Human Factors, Habitability and Environmental Health (NASA, 2011)
+- NASA/SP-2010-3407 — Human Integration Design Handbook (HIDH) (NASA, 2010)
+- ECSS-E-ST-34C — Space engineering: Environmental control and life support (ESA, 2008)
+- ECSS-Q-ST-70C — Space product assurance: Materials, mechanical parts and processes (ESA, 2014)
+- ECSS-E-ST-10-03C — Space engineering: Testing (ESA, 2012)
