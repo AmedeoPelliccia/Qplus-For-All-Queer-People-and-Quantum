@@ -86,10 +86,10 @@ This subsection is designated **cis-lunar logistics critical**. All subsubjects 
 
 ### Applicable Industry Standards
 
-| Standard | Issuing Body | Scope | Applicability to STA-181 |
-|---|---|---|---|
-| ECSS-E-ST-60C | ESA/ECSS | GNC — Guidance Navigation and Control | Transfer orbit design and rendezvous |
-| CCSDS 910.11-B-1 | CCSDS | Rendezvous and Proximity Operations | Gateway/depot proximity |
-| Artemis Accords (2020) | NASA et al. | Cis-lunar operations framework | Operational framework |
-| NASA SP-2016-6105 Rev2 | NASA | Systems Engineering Handbook | Logistics architecture design |
-| ECSS-E-ST-35C | ESA/ECSS | Space engineering — Propulsion | Propellant management |
+| Standard | Issuing Body | Edition | Scope | Applicability to STA-181 |
+|---|---|---|---|---|
+| ECSS-E-ST-60C | ESA/ECSS | 2013 | GNC — Guidance Navigation and Control | Transfer orbit design and rendezvous |
+| CCSDS 910.11-B-1 | CCSDS | 2012 | Rendezvous and Proximity Operations | Gateway/depot proximity |
+| Artemis Accords | NASA et al. | 2020 | Cis-lunar operations framework | Operational framework |
+| NASA SP-2016-6105 Rev2 | NASA | 2016 | Systems Engineering Handbook | Logistics architecture design |
+| ECSS-E-ST-35C | ESA/ECSS | 2011 | Space engineering — Propulsion | Propellant management |
