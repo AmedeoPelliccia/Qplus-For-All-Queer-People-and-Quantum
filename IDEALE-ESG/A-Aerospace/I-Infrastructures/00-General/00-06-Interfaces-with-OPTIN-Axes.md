@@ -44,7 +44,9 @@ tags:
   - Programs
   - Technologies
   - Neural-Networks
+  - Q-Divisions
   - Interface-Governance
+  - Mermaid
 ---
 
 # 00-06-Interfaces-with-OPTIN-Axes — Interfaces with OPTIN Axes
@@ -78,6 +80,10 @@ Every infrastructure asset, facility, system, environment, or digital platform m
 | `T-Technologies` | Which technologies, systems, equipment, materials, energy systems, or digital tools the infrastructure enables. |
 | `I-Infrastructures` | The infrastructure asset, facility, digital platform, industrial environment, or operational support environment itself. |
 | `N-Neural-Networks` | Which AI, neural-network, inference, optimization, predictive-maintenance, or digital-twin models interact with the infrastructure. |
+
+The canonical location of infrastructure content remains under `I-Infrastructures`.
+
+Cross-axis relationships shall be handled through controlled interfaces, not duplicate canonical records.
 
 ---
 
@@ -155,6 +161,63 @@ cross_axis_interface_model:
     neural_networks:
       axis: "N-Neural-Networks"
       relation: ""
+```
+
+## 3.1 OPT-IN Cross-Axis Interface Overview
+
+```mermaid
+flowchart LR
+    O["O-Organizations<br/>Owners · Operators · Authorities · Suppliers"]
+    P["P-Programs<br/>Programmes · Missions · Campaigns · Baselines"]
+    T["T-Technologies<br/>Systems · Equipment · Energy · Digital Tools"]
+    I["I-Infrastructures<br/>Facilities · Assets · Digital Platforms · Operational Environments"]
+    N["N-Neural-Networks<br/>Inference · Prediction · Optimization · Monitoring"]
+
+    O -->|"ownership / authority / responsibility"| I
+    P -->|"programme need / lifecycle demand"| I
+    T -->|"technology dependency / enabled capability"| I
+    N -->|"AI interaction / model inference / optimization"| I
+
+    I -->|"asset environment / operational support / evidence context"| O
+    I -->|"infrastructure readiness / programme support"| P
+    I -->|"test bed / installation / integration environment"| T
+    I -->|"data source / monitored asset / inference target"| N
+```
+
+## 3.2 Cross-Axis Interface Control Flow
+
+```mermaid
+flowchart TD
+    START["Infrastructure Node Identified"]
+    CLASSIFY["Classify under I-Infrastructures"]
+    CHECK_O["Check O-Organizations Interface"]
+    CHECK_P["Check P-Programs Interface"]
+    CHECK_T["Check T-Technologies Interface"]
+    CHECK_N["Check N-Neural-Networks Interface"]
+    ICD["Create or Update Interface Control Document"]
+    TRACE["Create Cross-Axis Traceability Record"]
+    EVIDENCE["Attach Evidence Footprint"]
+    REVIEW["Q-Division Review"]
+    BASELINE["Approve Interface Baseline"]
+    CHANGE["Change-Control Monitoring"]
+
+    START --> CLASSIFY
+    CLASSIFY --> CHECK_O
+    CLASSIFY --> CHECK_P
+    CLASSIFY --> CHECK_T
+    CLASSIFY --> CHECK_N
+
+    CHECK_O --> ICD
+    CHECK_P --> ICD
+    CHECK_T --> ICD
+    CHECK_N --> ICD
+
+    ICD --> TRACE
+    TRACE --> EVIDENCE
+    EVIDENCE --> REVIEW
+    REVIEW --> BASELINE
+    BASELINE --> CHANGE
+    CHANGE -->|"interface change detected"| ICD
 ```
 
 ---
@@ -562,6 +625,40 @@ It does not replace `Q-SCIRES`.
 
 It acts as an interface-control and routing layer between future-facing research intake and accountable Q-Division ownership.
 
+## 10.4 Q-Division Interface Routing Diagram
+
+```mermaid
+flowchart LR
+    HUESCORT["Q-HUESCORT-SCIRES-OPEN<br/>Interface Control Layer"]
+    HORIZON["Q-HORIZON<br/>Future Concepts · Horizon Positioning"]
+    SCIRES["Q-SCIRES<br/>Evidence Feasibility · Validation"]
+    OPEN["OPEN Frameworks<br/>Incoming Research Contexts"]
+    DATAGOV["Q-DATAGOV<br/>Traceability · Provenance · CSDB Readiness"]
+
+    AIR["Q-AIR"]
+    SPACE["Q-SPACE"]
+    GREENTECH["Q-GREENTECH"]
+    INDUSTRY["Q-INDUSTRY"]
+    GROUND["Q-GROUND"]
+    STRUCTURES["Q-STRUCTURES"]
+    MECHANICS["Q-MECHANICS"]
+    HPC["Q-HPC"]
+
+    HORIZON -->|"calling-order positioning"| HUESCORT
+    SCIRES -->|"testability / validation / evidence feasibility"| HUESCORT
+    OPEN -->|"research intake / open-framework inputs"| HUESCORT
+    HUESCORT -->|"provenance / naming / publication readiness"| DATAGOV
+
+    HUESCORT -->|"airport / vertiport concepts"| AIR
+    HUESCORT -->|"spaceport / launcher concepts"| SPACE
+    HUESCORT -->|"hydrogen / energy concepts"| GREENTECH
+    HUESCORT -->|"FAL / production concepts"| INDUSTRY
+    HUESCORT -->|"MRO / ground support concepts"| GROUND
+    HUESCORT -->|"structures / materials concepts"| STRUCTURES
+    HUESCORT -->|"tooling / mechanical concepts"| MECHANICS
+    HUESCORT -->|"simulation / AI / semantic scanning"| HPC
+```
+
 ---
 
 # 11. Interface Control Document Pattern
@@ -621,6 +718,13 @@ interface_control_document:
   interface_constraints:
     - constraint_id: ""
       statement: ""
+  applicability:
+    applicability_class: ""
+    applicability_basis: ""
+  effectivity:
+    effectivity_type:
+      - ""
+    effectivity_basis: ""
   evidence:
     - evidence_id: ""
       evidence_type: ""
@@ -629,6 +733,43 @@ interface_control_document:
     change_authority: ""
     review_required: true
     approval_required: true
+```
+
+## 11.3 Interface Control Document Architecture
+
+```mermaid
+flowchart TB
+    ICD["Interface Control Document"]
+
+    SRC["Source Node<br/>I-Infrastructures"]
+    AXES["Connected OPT-IN Axes"]
+    QDIV["Q-Division Ownership"]
+    REQ["Interface Requirements"]
+    CON["Interface Constraints"]
+    APP["Applicability"]
+    EFF["Effectivity"]
+    EVD["Evidence"]
+    CHG["Change Control"]
+
+    AXES_O["O-Organizations"]
+    AXES_P["P-Programs"]
+    AXES_T["T-Technologies"]
+    AXES_N["N-Neural-Networks"]
+
+    ICD --> SRC
+    ICD --> AXES
+    ICD --> QDIV
+    ICD --> REQ
+    ICD --> CON
+    ICD --> APP
+    ICD --> EFF
+    ICD --> EVD
+    ICD --> CHG
+
+    AXES --> AXES_O
+    AXES --> AXES_P
+    AXES --> AXES_T
+    AXES --> AXES_N
 ```
 
 ---
@@ -686,6 +827,36 @@ cross_axis_traceability:
       evidence: []
 ```
 
+## 12.3 Cross-Axis Traceability Diagram
+
+```mermaid
+flowchart LR
+    I_NODE["I-Infrastructures Node<br/>Source Document"]
+    ORG["O-Organizations<br/>Owner · Operator · Authority"]
+    PROG["P-Programs<br/>Programme · Mission · Campaign"]
+    TECH["T-Technologies<br/>System · Equipment · Tool"]
+    NN["N-Neural-Networks<br/>Model · Inference · Optimization"]
+
+    APP["Applicability Record"]
+    EFF["Effectivity Record"]
+    EVD["Evidence Record"]
+    BASE["Interface Baseline"]
+    CHANGE["Change Record"]
+
+    I_NODE -->|"ownership-interface"| ORG
+    I_NODE -->|"programme-interface"| PROG
+    I_NODE -->|"technology-interface"| TECH
+    I_NODE -->|"neural-interface"| NN
+
+    I_NODE --> APP
+    I_NODE --> EFF
+    I_NODE --> EVD
+    APP --> BASE
+    EFF --> BASE
+    EVD --> BASE
+    BASE --> CHANGE
+```
+
 ---
 
 # 13. Interface RACI Matrix
@@ -729,6 +900,7 @@ Legend:
 | `NEURAL-INTERFACE` | Applies where AI, ML, neural-network, inference, or digital-twin logic is involved. |
 | `SAFETY-CRITICAL-INTERFACE` | Applies where safety impact or hazard control is present. |
 | `SECURITY-CRITICAL-INTERFACE` | Applies where access, physical security, or cyber-physical security is present. |
+| `RESEARCH-INTAKE-INTERFACE` | Applies where Horizon, SCIRES, OPEN-framework, or low-TRL research intake is involved. |
 
 ## 14.2 Applicability Record
 
@@ -887,6 +1059,40 @@ example_interface:
     - "Q-HPC"
 ```
 
+## 16.4 Horizon / SCIRES / OPEN Research Intake Interface
+
+```yaml
+example_interface:
+  infrastructure_asset: "Future Vertiport Energy Infrastructure Concept"
+  primary_section: "02-Vertiports"
+  secondary_sections:
+    - "07-Hydrogen-and-Energy-Infrastructure"
+    - "08-Digital-Operational-Infrastructure"
+  interfaces:
+    O-Organizations:
+      - "Q-Divisions Council"
+      - "research partner"
+      - "funding programme stakeholder"
+    P-Programs:
+      - "Horizon Europe calling-order positioning stream"
+    T-Technologies:
+      - "charging interface"
+      - "hydrogen interface"
+      - "resilient energy routing"
+    N-Neural-Networks:
+      - "energy-demand prediction"
+      - "passenger-flow optimization"
+      - "safety monitoring"
+  q_division_owner: "Q-HUESCORT-SCIRES-OPEN"
+  embedded_units:
+    - "Q-HORIZON"
+    - "Q-SCIRES"
+  supporting_q_divisions:
+    - "Q-DATAGOV"
+    - "Q-AIR"
+    - "Q-GREENTECH"
+```
+
 ---
 
 # 17. Interface Change Control
@@ -936,6 +1142,48 @@ interface_change_record:
   decision_date: ""
 ```
 
+## 17.3 Interface Change-Control Diagram
+
+```mermaid
+flowchart TD
+    CHANGE_DETECTED["Interface Change Detected"]
+    IMPACT["Impact Assessment"]
+    SAFETY{"Safety Impact?"}
+    SECURITY{"Security Impact?"}
+    DIGITAL{"Digital / Data Impact?"}
+    NEURAL{"Neural-Network Impact?"}
+    REG{"Regulatory / Certification Impact?"}
+
+    REVIEW_QDIV["Q-Division Review"]
+    REVIEW_DATAGOV["Q-DATAGOV Traceability Review"]
+    REVIEW_SCIRES["Q-SCIRES Evidence Feasibility Review"]
+    APPROVAL["Approval Decision"]
+    UPDATE["Update ICD and Evidence Records"]
+    BASELINE["Release Updated Interface Baseline"]
+    ARCHIVE["Archive Superseded Interface Baseline"]
+
+    CHANGE_DETECTED --> IMPACT
+    IMPACT --> SAFETY
+    IMPACT --> SECURITY
+    IMPACT --> DIGITAL
+    IMPACT --> NEURAL
+    IMPACT --> REG
+
+    SAFETY --> REVIEW_QDIV
+    SECURITY --> REVIEW_QDIV
+    DIGITAL --> REVIEW_DATAGOV
+    NEURAL --> REVIEW_SCIRES
+    REG --> REVIEW_SCIRES
+
+    REVIEW_QDIV --> APPROVAL
+    REVIEW_DATAGOV --> APPROVAL
+    REVIEW_SCIRES --> APPROVAL
+
+    APPROVAL --> UPDATE
+    UPDATE --> BASELINE
+    BASELINE --> ARCHIVE
+```
+
 ---
 
 # 18. Footprints
@@ -955,8 +1203,10 @@ semantic_footprint:
       - technology interfaces
       - neural-network interfaces
       - Q-Division routing
+      - Q-HUESCORT-SCIRES-OPEN interface role
       - ICD pattern
       - interface change control
+      - Mermaid interface diagrams
     excludes:
       - full engineering interface design
       - detailed contractual responsibility assignment
@@ -990,8 +1240,10 @@ lifecycle_footprint:
     - interface records provided
     - ICD template provided
     - Q-Division interface matrix provided
+    - Q-HUESCORT-SCIRES-OPEN interface role defined
     - traceability model provided
     - change-control model provided
+    - Mermaid diagrams included
 ```
 
 ## Compliance Footprint
@@ -1038,6 +1290,7 @@ evidence_footprint:
     - ICD template
     - traceability model
     - change-control record
+    - Mermaid diagrams
 ```
 
 ---
@@ -1166,9 +1419,11 @@ This document is acceptable when:
 - interface records are provided;
 - ICD pattern is included;
 - Q-Division interface routing is defined;
+- `Q-HUESCORT-SCIRES-OPEN` is defined as an interface-control layer;
 - traceability model is provided;
 - applicability and effectivity are addressed;
 - change-control logic is included;
+- Mermaid diagrams are included;
 - child documents can reuse the interface model without reinterpretation.
 
 ---
@@ -1178,4 +1433,6 @@ This document is acceptable when:
 `00-06-Interfaces-with-OPTIN-Axes` defines how `I-Infrastructures` connects to the other OPT-IN axes.
 
 It establishes controlled interfaces to organizations, programmes, technologies, and neural-network systems, ensuring that infrastructure assets are governed through ownership, programme relevance, technology dependency, data traceability, AI interaction, lifecycle evidence, and Q-Division accountability.
+
+It also defines the role of `Q-HUESCORT-SCIRES-OPEN` as the Horizon / SCIRES / OPEN interface-control layer for research intake, evidence feasibility, resilient-touch routing, and downstream Q-Division handoff.
 ````
