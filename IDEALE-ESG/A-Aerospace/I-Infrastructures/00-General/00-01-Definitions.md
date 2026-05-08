@@ -1,8 +1,8 @@
 ---
 document_id: IDEALE-ESG-A-AEROSPACE-I-INFRASTRUCTURES-00-01-DEFINITIONS
 title: "00-01-Definitions — Definitions"
-canonical_path: "IDEALE-ESG.panpara.eu/A-Aerospace/I-Infrastructures/00-General/00-01-Definitions.md"
-parent_path: "IDEALE-ESG.panpara.eu/A-Aerospace/I-Infrastructures/00-General/"
+canonical_path: "IDEALE-ESG/A-Aerospace/I-Infrastructures/00-General/00-01-Definitions.md"
+parent_path: "IDEALE-ESG/A-Aerospace/I-Infrastructures/00-General/"
 parent_document: "README.md"
 
 domain: "A-Aerospace"
