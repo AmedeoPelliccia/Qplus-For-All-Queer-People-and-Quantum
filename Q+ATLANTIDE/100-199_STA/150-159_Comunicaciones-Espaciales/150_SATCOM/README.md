@@ -41,7 +41,17 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | SATCOM Controlled Definition | [`001_SATCOM-Controlled-Definition.md`](./001_SATCOM-Controlled-Definition.md) | active |
+| 02 | Satellite Communication Architecture | [`002_Satellite-Communication-Architecture.md`](./002_Satellite-Communication-Architecture.md) | active |
+| 03 | Link Budget, Frequency Bands and Modulation | [`003_Link-Budget-Frequency-Bands-and-Modulation.md`](./003_Link-Budget-Frequency-Bands-and-Modulation.md) | active |
+| 04 | Antennas, Terminals and RF Interfaces | [`004_Antennas-Terminals-and-RF-Interfaces.md`](./004_Antennas-Terminals-and-RF-Interfaces.md) | active |
+| 05 | Telecommand, Telemetry and Payload Data Links | [`005_Telecommand-Telemetry-and-Payload-Data-Links.md`](./005_Telecommand-Telemetry-and-Payload-Data-Links.md) | active |
+| 06 | Ground Station and Network Interfaces | [`006_Ground-Station-and-Network-Interfaces.md`](./006_Ground-Station-and-Network-Interfaces.md) | active |
+| 07 | Encryption, Authentication and COMSEC Boundaries | [`007_Encryption-Authentication-and-COMSEC-Boundaries.md`](./007_Encryption-Authentication-and-COMSEC-Boundaries.md) | active |
+| 08 | Interference, Spectrum and Regulatory Constraints | [`008_Interference-Spectrum-and-Regulatory-Constraints.md`](./008_Interference-Spectrum-and-Regulatory-Constraints.md) | active |
+| 09 | ECSS, CCSDS, ITU and NASA Standards Mapping | [`009_ECSS-CCSDS-ITU-and-NASA-Standards-Mapping.md`](./009_ECSS-CCSDS-ITU-and-NASA-Standards-Mapping.md) | active |
+| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
