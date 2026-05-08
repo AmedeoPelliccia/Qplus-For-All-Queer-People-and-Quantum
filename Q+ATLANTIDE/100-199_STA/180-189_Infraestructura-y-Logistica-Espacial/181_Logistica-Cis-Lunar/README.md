@@ -15,8 +15,28 @@ section_title: "Infraestructura y Logística Espacial"
 subsection: "181"
 subsection_title: "Logística Cis-Lunar"
 primary_q_division: Q-SPACE
-support_q_divisions: [Q-INDUSTRY, Q-GROUND, Q-HORIZON]
-orb_function_support: [ORB-PMO, ORB-FIN]
+support_q_divisions: [Q-DATAGOV, Q-HPC, Q-HORIZON, Q-GREENTECH, Q-INDUSTRY]
+orb_function_support: [ORB-PMO, ORB-LEG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "103_Seguridad-de-Mision"
+  - "120_Propulsion-Quimica"
+  - "121_Propulsion-Electrica"
+  - "123_Propulsion-Avanzada"
+  - "130_Energia-Solar"
+  - "131_Baterias-y-Almacenamiento"
+  - "133_Distribucion-Electrica"
+  - "140_GNC-Guiado-Navegacion-y-Control"
+  - "143_Control-de-Mision"
+  - "150_SATCOM"
+  - "152_Redes-Espaciales"
+  - "153_Comunicacion-Intersatelite"
+  - "170_Servicing-Orbital"
+  - "180_Bases-Orbitales"
+  - "182_Transporte-Espacial"
+  - "183_Recursos-Espaciales"
+safety_boundary: "cis-lunar logistics critical; requires explicit transfer-architecture control, depot-node governance, cargo and consumables traceability, rendezvous schedule assurance, contingency logistics, traffic coordination and lifecycle evidence"
+no_aaa_rule: true
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -33,15 +53,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `181` *Cis-Lunar Logistics*.
+- Covers the subsubject namespace `00`–`10` (11 active) of subsection `181` *Cis-Lunar Logistics*; `11`–`99` reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- This subsection is designated **cis-lunar logistics critical**; all subsubjects require explicit transfer-architecture control, depot-node governance, cargo and consumables traceability, rendezvous schedule assurance, contingency logistics, traffic coordination and lifecycle evidence.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | Cis-Lunar Logistics Controlled Definition | [`001_Cis-Lunar-Logistics-Controlled-Definition.md`](./001_Cis-Lunar-Logistics-Controlled-Definition.md) | active |
+| 02 | Cis-Lunar Logistics Domain and Mission Roles | [`002_Cis-Lunar-Logistics-Domain-and-Mission-Roles.md`](./002_Cis-Lunar-Logistics-Domain-and-Mission-Roles.md) | active |
+| 03 | Earth-Orbit to Lunar-Orbit Transfer Architecture | [`003_Earth-Orbit-Lunar-Orbit-Transfer-Architecture.md`](./003_Earth-Orbit-Lunar-Orbit-Transfer-Architecture.md) | active |
+| 04 | Cargo Transport, Staging and Depot Nodes | [`004_Cargo-Transport-Staging-and-Depot-Nodes.md`](./004_Cargo-Transport-Staging-and-Depot-Nodes.md) | active |
+| 05 | Propellant, Water, Power and Consumables Logistics | [`005_Propellant-Water-Power-and-Consumables-Logistics.md`](./005_Propellant-Water-Power-and-Consumables-Logistics.md) | active |
+| 06 | Lunar Surface, Orbit and Gateway Interfaces | [`006_Lunar-Surface-Orbit-and-Gateway-Interfaces.md`](./006_Lunar-Surface-Orbit-and-Gateway-Interfaces.md) | active |
+| 07 | Traffic Coordination, Rendezvous and Schedule Control | [`007_Traffic-Coordination-Rendezvous-and-Schedule-Control.md`](./007_Traffic-Coordination-Rendezvous-and-Schedule-Control.md) | active |
+| 08 | Supply Chain Resilience and Contingency Operations | [`008_Supply-Chain-Resilience-and-Contingency-Operations.md`](./008_Supply-Chain-Resilience-and-Contingency-Operations.md) | active |
+| 09 | ECSS / NASA / CCSDS Cis-Lunar Standards Mapping | [`009_ECSS-NASA-CCSDS-Cis-Lunar-Standards-Mapping.md`](./009_ECSS-NASA-CCSDS-Cis-Lunar-Standards-Mapping.md) | active |
+| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -52,10 +82,10 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `180-189` |
 | Section | `08` — Infraestructura y Logística Espacial |
 | Subsection | `181` — Logística Cis-Lunar |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
-| Support Q-Divisions | Q-INDUSTRY, Q-GROUND, Q-HORIZON |
-| ORB support | ORB-PMO, ORB-FIN |
+| Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-GREENTECH, Q-INDUSTRY |
+| ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/100-199_STA/180-189_Infraestructura-y-Logistica-Espacial/181_Logistica-Cis-Lunar/` |
 | Document | `README.md` (this file) |
@@ -65,15 +95,15 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. This subsection is designated **cis-lunar logistics critical**; all subsubjects require explicit transfer-architecture control, depot-node governance, cargo and consumables traceability, rendezvous schedule assurance, contingency logistics, traffic coordination and lifecycle evidence. The `no_aaa_rule` applies: the identifier "AAA" must not be used for any safety-critical element. Extensions added under `11`–`99` shall preserve those header fields, carry the `safety_boundary` declaration, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
+[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 
-[^archtable]: **§3 — Architecture Table (parent)** — [`../../README.md` §3](../../README.md#3-architecture-table).
+[^archtable]: **STA §3 Architecture Table** — [`../../README.md` §3](../../README.md#3-architecture-table). Authoritative source for the `180-189` row.
 
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../organization/Q-Divisions/).
+[^qdiv]: **Q-Division authority** — Q-Divisions provide technical authority over an architecture row (Q+ATLANTIDE Note N-002). See [`organization/Q+ATLANTIDE.md` §4](../../../../organization/Q+ATLANTIDE.md#4-notes).
 
 [^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
 
