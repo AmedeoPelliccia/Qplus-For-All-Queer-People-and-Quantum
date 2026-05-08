@@ -351,6 +351,368 @@ START
 END
 ```
 
+## 3.1 Classification Logic Overview
+
+```mermaid
+flowchart TD
+    START["Asset / Facility / System Identified"]
+    SCOPE{"Belongs to A-Aerospace<br/>and supports infrastructure?"}
+    OUT["Out of I-Infrastructures Scope"]
+    GENERAL{"General taxonomy governance?"}
+    PHYSICAL_DIGITAL{"Physical or digital infrastructure?"}
+    PRIMARY["Determine Primary Lifecycle Function"]
+    OVERRIDE{"Override condition present?"}
+    SAFETY["09-Safety-Security-and-Access-Control"]
+    ENERGY["07-Hydrogen-and-Energy-Infrastructure"]
+    DIGITAL["08-Digital-Operational-Infrastructure"]
+    FUNCTION["Assign Functional Section"]
+    SECONDARY{"Multiple valid contexts?"}
+    SECONDARY_ASSIGN["Declare Secondary Classifications"]
+    CANONICAL["Assign Canonical Path"]
+    EVIDENCE["Attach Classification Evidence"]
+    TRACE["Create Traceability Record"]
+    BASELINE["Classification Ready for Review"]
+
+    START --> SCOPE
+    SCOPE -->|"NO"| OUT
+    SCOPE -->|"YES"| GENERAL
+    GENERAL -->|"YES"| FUNCTION
+    GENERAL -->|"NO"| PHYSICAL_DIGITAL
+    PHYSICAL_DIGITAL --> PRIMARY
+    PRIMARY --> OVERRIDE
+
+    OVERRIDE -->|"Safety / security dominant"| SAFETY
+    OVERRIDE -->|"Energy / hydrogen dominant"| ENERGY
+    OVERRIDE -->|"Digital traceability dominant"| DIGITAL
+    OVERRIDE -->|"No override"| FUNCTION
+
+    SAFETY --> SECONDARY
+    ENERGY --> SECONDARY
+    DIGITAL --> SECONDARY
+    FUNCTION --> SECONDARY
+
+    SECONDARY -->|"YES"| SECONDARY_ASSIGN
+    SECONDARY -->|"NO"| CANONICAL
+    SECONDARY_ASSIGN --> CANONICAL
+    CANONICAL --> EVIDENCE
+    EVIDENCE --> TRACE
+    TRACE --> BASELINE
+```
+
+---
+
+## 3.2 Classification Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Author as Author / Classifier
+    participant Taxonomy as I-Infrastructures Taxonomy
+    participant Rules as Classification Rules
+    participant QDIV as Responsible Q-Division
+    participant Evidence as Evidence Register
+    participant DATAGOV as Q-DATAGOV
+
+    Author->>Taxonomy: Submit asset / facility / system for classification
+    Taxonomy->>Rules: Apply scope and primary-function rules
+    Rules->>Rules: Check physical, digital, safety, energy, and lifecycle criteria
+    Rules->>QDIV: Propose primary section and secondary sections
+    QDIV->>Rules: Review classification basis
+    Rules->>Evidence: Request supporting evidence
+    Evidence-->>Rules: Return evidence IDs and status
+    Rules->>DATAGOV: Submit classification record for traceability control
+    DATAGOV->>DATAGOV: Validate canonical path, parent path, citation keys, and evidence footprint
+    DATAGOV-->>Author: Classification accepted, rejected, or returned for correction
+```
+
+---
+
+## 3.3 Rule Priority Logic
+
+```mermaid
+flowchart TD
+    START["Start Classification"]
+    R001["RULE-I-INFRA-CLS-001<br/>Primary Function Rule"]
+    R010{"Dominant safety / security / access-control function?"}
+    R011{"Dominant energy / hydrogen / cryogenic function?"}
+    R012{"Dominant digital / data / evidence function?"}
+    R006["RULE-I-INFRA-CLS-006<br/>Apply Document Code Rule"]
+    R008{"Multiple valid contexts?"}
+    R009["RULE-I-INFRA-CLS-009<br/>No Duplication Rule"]
+    R007["RULE-I-INFRA-CLS-007<br/>Attach Evidence"]
+    END["Controlled Classification Record"]
+
+    START --> R001
+    R001 --> R010
+
+    R010 -->|"YES"| S09["Assign Primary: 09-Safety-Security-and-Access-Control"]
+    R010 -->|"NO"| R011
+
+    R011 -->|"YES"| S07["Assign Primary: 07-Hydrogen-and-Energy-Infrastructure"]
+    R011 -->|"NO"| R012
+
+    R012 -->|"YES"| S08["Assign Primary: 08-Digital-Operational-Infrastructure"]
+    R012 -->|"NO"| FUNC["Assign by Functional Criteria"]
+
+    S09 --> R008
+    S07 --> R008
+    S08 --> R008
+    FUNC --> R008
+
+    R008 -->|"YES"| R009
+    R008 -->|"NO"| R006
+    R009 --> R006
+    R006 --> R007
+    R007 --> END
+```
+
+---
+
+## 3.4 Override Decision Logic
+
+```mermaid
+flowchart LR
+    ASSET["Infrastructure Asset"]
+    SAFETY{"Safety / security<br/>dominant?"}
+    ENERGY{"Energy / hydrogen<br/>dominant?"}
+    DIGITAL{"Digital / evidence<br/>dominant?"}
+    SECTION09["09-Safety-Security-and-Access-Control"]
+    SECTION07["07-Hydrogen-and-Energy-Infrastructure"]
+    SECTION08["08-Digital-Operational-Infrastructure"]
+    FUNCTIONAL["Functional Section Assignment"]
+
+    ASSET --> SAFETY
+    SAFETY -->|"YES"| SECTION09
+    SAFETY -->|"NO"| ENERGY
+    ENERGY -->|"YES"| SECTION07
+    ENERGY -->|"NO"| DIGITAL
+    DIGITAL -->|"YES"| SECTION08
+    DIGITAL -->|"NO"| FUNCTIONAL
+```
+
+---
+
+## 3.5 Primary and Secondary Classification Logic
+
+```mermaid
+flowchart TD
+    ASSET["Asset Candidate"]
+    PRIMARY["Select Primary Classification<br/>by dominant lifecycle function"]
+    CANONICAL["Primary Classification Defines<br/>Canonical Document Location"]
+    MULTI{"Does asset support<br/>other infrastructure contexts?"}
+    SECONDARY["Declare Secondary Classifications"]
+    CROSSLINK["Create Cross-References"]
+    NODUP["Do Not Duplicate Canonical Record"]
+    TRACE["Attach Traceability and Evidence"]
+
+    ASSET --> PRIMARY
+    PRIMARY --> CANONICAL
+    CANONICAL --> MULTI
+    MULTI -->|"YES"| SECONDARY
+    SECONDARY --> CROSSLINK
+    CROSSLINK --> NODUP
+    NODUP --> TRACE
+    MULTI -->|"NO"| TRACE
+```
+
+---
+
+## 3.6 No-Duplication Logic
+
+```mermaid
+flowchart TD
+    START["Asset Appears in Multiple Sections"]
+    SAME{"Same physical / digital asset?"}
+    DUPLICATE["Do Not Create Duplicate Canonical Records"]
+    PRIMARY["Assign One Primary Classification"]
+    SECONDARY["Declare Secondary Classification Links"]
+    LINK["Use Cross-References"]
+    TRACE["Preserve Traceability"]
+    ACCEPT["Classification Accepted"]
+
+    START --> SAME
+    SAME -->|"YES"| DUPLICATE
+    SAME -->|"NO"| PRIMARY
+    DUPLICATE --> PRIMARY
+    PRIMARY --> SECONDARY
+    SECONDARY --> LINK
+    LINK --> TRACE
+    TRACE --> ACCEPT
+```
+
+---
+
+## 3.7 Evidence and Traceability Logic
+
+```mermaid
+flowchart TD
+    CLASS["Classification Decision"]
+    RULE["Classification Rule ID"]
+    BASIS["Classification Basis"]
+    PATH["Canonical Path"]
+    EVD["Evidence Item"]
+    FOOTPRINT["Evidence Footprint"]
+    TRACE["Traceability Record"]
+    REVIEW["Review / Approval"]
+    BASELINE["Controlled Baseline"]
+
+    CLASS --> RULE
+    CLASS --> BASIS
+    CLASS --> PATH
+    CLASS --> EVD
+    EVD --> FOOTPRINT
+    FOOTPRINT --> TRACE
+    TRACE --> REVIEW
+    REVIEW --> BASELINE
+```
+
+---
+
+## 3.8 Classification State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> CandidateIdentified
+    CandidateIdentified --> ScopeChecked
+    ScopeChecked --> OutOfScope: not aerospace infrastructure
+    ScopeChecked --> FunctionAssessed: in scope
+
+    FunctionAssessed --> OverrideChecked
+    OverrideChecked --> SafetyClassified: safety/security dominant
+    OverrideChecked --> EnergyClassified: energy/hydrogen dominant
+    OverrideChecked --> DigitalClassified: digital/evidence dominant
+    OverrideChecked --> FunctionallyClassified: no override
+
+    SafetyClassified --> SecondaryChecked
+    EnergyClassified --> SecondaryChecked
+    DigitalClassified --> SecondaryChecked
+    FunctionallyClassified --> SecondaryChecked
+
+    SecondaryChecked --> EvidenceAttached
+    EvidenceAttached --> TraceabilityCreated
+    TraceabilityCreated --> ReviewReady
+    ReviewReady --> ApprovedClassification
+    ReviewReady --> ReturnedForCorrection
+    ReturnedForCorrection --> FunctionAssessed
+    ApprovedClassification --> [*]
+    OutOfScope --> [*]
+```
+
+---
+
+## 3.9 Boolean Rule Representation
+
+```yaml
+classification_logic:
+  scope_gate:
+    in_scope: "asset.domain == 'A-Aerospace' and asset.supports_infrastructure == true"
+    out_of_scope: "asset.domain != 'A-Aerospace' or asset.supports_infrastructure == false"
+
+  primary_classification:
+    rule: "primary_section = dominant_lifecycle_function(asset)"
+
+  override_priority:
+    - priority: 1
+      condition: "asset.primary_function in ['safety', 'security', 'access_control', 'emergency_response', 'hazard_zoning']"
+      result: "09-Safety-Security-and-Access-Control"
+
+    - priority: 2
+      condition: "asset.primary_function in ['hydrogen_storage', 'energy_transfer', 'refuelling', 'charging', 'cryogenic_control']"
+      result: "07-Hydrogen-and-Energy-Infrastructure"
+
+    - priority: 3
+      condition: "asset.primary_function in ['data_governance', 'configuration_control', 'evidence_management', 'digital_twin', 'CSDB', 'PLM', 'IETP']"
+      result: "08-Digital-Operational-Infrastructure"
+
+    - priority: 4
+      condition: "no_override_condition_detected"
+      result: "functional_section_assignment"
+
+  duplication_control:
+    canonical_record_count: 1
+    secondary_classifications_allowed: true
+    duplicate_canonical_records_allowed: false
+
+  evidence_required:
+    minimum:
+      - asset_name
+      - asset_type
+      - primary_function
+      - classification_basis
+      - canonical_path
+      - lifecycle_role
+      - traceability_footprint
+      - evidence_footprint
+```
+
+---
+
+## 3.10 Pseudocode Representation
+
+```text
+function classify_infrastructure_asset(asset):
+
+    if asset.domain != "A-Aerospace":
+        return OUT_OF_SCOPE
+
+    if asset.supports_infrastructure == false:
+        return OUT_OF_SCOPE
+
+    if asset.supports_general_taxonomy_governance:
+        primary_section = "00-General"
+
+    else if asset.primary_function in SAFETY_SECURITY_ACCESS_CONTROL:
+        primary_section = "09-Safety-Security-and-Access-Control"
+
+    else if asset.primary_function in ENERGY_HYDROGEN_CRYOGENIC:
+        primary_section = "07-Hydrogen-and-Energy-Infrastructure"
+
+    else if asset.primary_function in DIGITAL_DATA_EVIDENCE:
+        primary_section = "08-Digital-Operational-Infrastructure"
+
+    else:
+        primary_section = determine_by_lifecycle_function(asset)
+
+    secondary_sections = identify_secondary_contexts(asset, primary_section)
+
+    canonical_path = build_canonical_path(primary_section, asset)
+
+    evidence = collect_classification_evidence(asset)
+
+    traceability = create_traceability_record(
+        asset,
+        primary_section,
+        secondary_sections,
+        canonical_path,
+        evidence
+    )
+
+    return classification_record(
+        primary_section,
+        secondary_sections,
+        canonical_path,
+        evidence,
+        traceability
+    )
+```
+
+---
+
+## 3.11 Decision Table Representation
+
+| Condition | Primary Result | Secondary Result |
+|---|---|---|
+| Asset supports general taxonomy governance | `00-General` | None unless cross-axis governance applies. |
+| Asset supports aircraft landing, taxiing, parking, servicing, passenger/cargo flow | `01-Airports` | `07` if energy; `09` if safety/security; `08` if digital. |
+| Asset supports VTOL/eVTOL/AAM/UAM operations | `02-Vertiports` | `07` if charging/energy; `09` if safety/security; `08` if digital. |
+| Asset supports launch, reentry, launcher integration, payload processing | `03-Spaceports-and-Launchers` | `09` if range safety; `08` if mission data; `06` if test/certification. |
+| Asset supports inspection, maintenance, repair, overhaul | `04-Maintenance-Hangars` | `09` if safety zone; `08` if maintenance data; `05` if production interface. |
+| Asset supports assembly, major joins, production flow, FAL | `05-Assemblies-and-FAL` | `08` if digital production system; `06` if verification station; `09` if restricted area. |
+| Asset supports verification, qualification, test, certification evidence | `06-Test-and-Certification-Infrastructure` | `08` if evidence repository; `09` if safety-critical test zone. |
+| Asset primarily stores, transfers, converts, delivers, meters, or controls energy | `07-Hydrogen-and-Energy-Infrastructure` | Physical host section as secondary. |
+| Asset primarily manages CSDB, PLM, IETP, digital twin, data, ledger, or evidence | `08-Digital-Operational-Infrastructure` | Physical/operational section as secondary. |
+| Asset primarily provides safety, security, access control, emergency response, hazard zoning | `09-Safety-Security-and-Access-Control` | Physical host section as secondary. |
+
 ---
 
 # 4. Primary and Secondary Classification
