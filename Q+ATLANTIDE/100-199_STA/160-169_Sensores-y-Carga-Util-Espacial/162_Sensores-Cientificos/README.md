@@ -15,8 +15,19 @@ section_title: "Sensores y Carga Útil Espacial"
 subsection: "162"
 subsection_title: "Sensores Científicos"
 primary_q_division: Q-SPACE
-support_q_divisions: [Q-HORIZON, Q-HPC, Q-DATAGOV]
+support_q_divisions: [Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-MKTG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "103_Seguridad-de-Mision"
+  - "141_Avionica-Espacial"
+  - "142_Software-de-Vuelo"
+  - "143_Control-de-Mision"
+  - "160_Cargas-Utiles"
+  - "161_Instrumentacion"
+  - "163_Observacion"
+safety_boundary: "mission-science critical; requires explicit measurement objectives, calibration baseline, metrology traceability, uncertainty quantification, data-quality validation, environmental qualification and lifecycle evidence"
+no_aaa_rule: true
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -29,19 +40,30 @@ language: en
 
 Subsection-level index for *Sensores Científicos* (`162`) within STA `160-169` — *Sensores y Carga Útil Espacial*.
 
-This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
+This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. It is designated **mission-science critical**: all subsubjects require explicit measurement objectives, calibration baseline, metrology traceability, uncertainty quantification, data-quality validation, environmental qualification, and lifecycle evidence.
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `162` *Scientific Sensors*.
+- Populates the subsubject namespace `000`–`010` of subsection `162` *Sensores Científicos / Scientific Sensors*; subsubjects `011`–`099` remain reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- Linked nodes: `100_Arquitectura-General-Espacial`, `103_Seguridad-de-Mision`, `141_Avionica-Espacial`, `142_Software-de-Vuelo`, `143_Control-de-Mision`, `160_Cargas-Utiles`, `161_Instrumentacion`, `163_Observacion`.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
+| 001 | Scientific Sensors Controlled Definition | [`001_Scientific-Sensors-Controlled-Definition.md`](001_Scientific-Sensors-Controlled-Definition.md) | active |
+| 002 | Sensor Classes and Scientific Measurement Objectives | [`002_Sensor-Classes-and-Scientific-Measurement-Objectives.md`](002_Sensor-Classes-and-Scientific-Measurement-Objectives.md) | active |
+| 003 | Optical, Infrared and Ultraviolet Sensors | [`003_Optical-Infrared-and-Ultraviolet-Sensors.md`](003_Optical-Infrared-and-Ultraviolet-Sensors.md) | active |
+| 004 | Radar, Radiofrequency and Microwave Sensors | [`004_Radar-Radiofrequency-and-Microwave-Sensors.md`](004_Radar-Radiofrequency-and-Microwave-Sensors.md) | active |
+| 005 | Particle, Field and Plasma Sensors | [`005_Particle-Field-and-Plasma-Sensors.md`](005_Particle-Field-and-Plasma-Sensors.md) | active |
+| 006 | Spectrometers, Imagers and Radiometers | [`006_Spectrometers-Imagers-and-Radiometers.md`](006_Spectrometers-Imagers-and-Radiometers.md) | active |
+| 007 | Calibration, Metrology and Reference Standards | [`007_Calibration-Metrology-and-Reference-Standards.md`](007_Calibration-Metrology-and-Reference-Standards.md) | active |
+| 008 | Data Quality, Uncertainty and Validation | [`008_Data-Quality-Uncertainty-and-Validation.md`](008_Data-Quality-Uncertainty-and-Validation.md) | active |
+| 009 | ECSS-NASA-CCSDS Scientific Sensor Standards Mapping | [`009_ECSS-NASA-CCSDS-Scientific-Sensor-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-Scientific-Sensor-Standards-Mapping.md) | active |
+| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 011–099 | *(reserved)* | — | reserved |
 
 ## 4. Footprint
 
@@ -52,11 +74,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `160-169` |
 | Section | `06` — Sensores y Carga Útil Espacial |
 | Subsection | `162` — Sensores Científicos |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
-| Support Q-Divisions | Q-HORIZON, Q-HPC, Q-DATAGOV |
+| Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-MKTG |
 | Governance class | `baseline`[^gov] |
+| Safety boundary | mission-science critical |
 | Folder path | `Q+ATLANTIDE/100-199_STA/160-169_Sensores-y-Carga-Util-Espacial/162_Sensores-Cientificos/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
@@ -65,7 +88,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE`, `support_q_divisions = [Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY]`, and `governance_class = baseline` from the parent STA section. Extensions added under `011`–`099` shall preserve those header fields, declare the `safety_boundary`, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
