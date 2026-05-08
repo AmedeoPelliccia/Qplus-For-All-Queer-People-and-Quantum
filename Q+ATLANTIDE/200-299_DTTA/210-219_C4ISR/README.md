@@ -52,7 +52,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `213` | Fusion de Datos y Common Operational Picture | [`./213_Fusion-de-Datos-y-Common-Operational-Picture/`](./213_Fusion-de-Datos-y-Common-Operational-Picture/) | reserved |
 | `214` | Sistemas de Comunicacion Segura | [`./214_Sistemas-de-Comunicacion-Segura/`](./214_Sistemas-de-Comunicacion-Segura/) | reserved |
 | `215` | Sensores ISR y Cadenas de Observacion | [`./215_Sensores-ISR-y-Cadenas-de-Observacion/`](./215_Sensores-ISR-y-Cadenas-de-Observacion/) | reserved |
-| `216` | Interoperabilidad C4ISR y Estadandares | [`./216_Interoperabilidad-C4ISR-y-Estadandares/`](./216_Interoperabilidad-C4ISR-y-Estadandares/) | reserved |
+| `216` | Interoperabilidad C4ISR y Estandares | [`./216_Interoperabilidad-C4ISR-y-Estandares/`](./216_Interoperabilidad-C4ISR-y-Estandares/) | reserved |
 | `217` | Resiliencia C4ISR y Continuidad Operacional | [`./217_Resiliencia-C4ISR-y-Continuidad-Operacional/`](./217_Resiliencia-C4ISR-y-Continuidad-Operacional/) | reserved |
 | `218` | Evidencia Trazabilidad y Gobernanza C4ISR | [`./218_Evidencia-Trazabilidad-y-Gobernanza-C4ISR/`](./218_Evidencia-Trazabilidad-y-Gobernanza-C4ISR/) | reserved |
 | `219` | Limites de Uso Privacidad y Supervision Humana | [`./219_Limites-de-Uso-Privacidad-y-Supervision-Humana/`](./219_Limites-de-Uso-Privacidad-y-Supervision-Humana/) | reserved |
@@ -73,7 +73,7 @@ flowchart TB
         SUB_213["213 — Fusion de Datos y Common Operational Picture"]:::sub
         SUB_214["214 — Sistemas de Comunicacion Segura"]:::sub
         SUB_215["215 — Sensores ISR y Cadenas de Observacion"]:::sub
-        SUB_216["216 — Interoperabilidad C4ISR y Estadandares"]:::sub
+        SUB_216["216 — Interoperabilidad C4ISR y Estandares"]:::sub
         SUB_217["217 — Resiliencia C4ISR y Continuidad Operacional"]:::sub
         SUB_218["218 — Evidencia Trazabilidad y Gobernanza C4ISR"]:::sub
         SUB_219["219 — Limites de Uso Privacidad y Supervision Humana"]:::sub
