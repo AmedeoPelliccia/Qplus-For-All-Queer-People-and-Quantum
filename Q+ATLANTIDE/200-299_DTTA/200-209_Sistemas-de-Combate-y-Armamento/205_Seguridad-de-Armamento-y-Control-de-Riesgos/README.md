@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-205-README
-title: "DTTA 200-209 · Section 00 · Subsection 205 — Seguridad de Armamento y Control de Riesgos"
+title: "DTTA 200-209 · 00.205 — Seguridad de Armamento y Control de Riesgos (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -45,15 +45,15 @@ Subsection `205` covers abstract governance representations of armament safety a
 | Subsubject | Title | Document |
 |---|---|---|
 | `000` | Overview | [`000_Overview.md`](./000_Overview.md) |
-| `001` | Armament Safety Non-Operational Definition | [`001_Armament-Safety-Non-Operational-Definition.md`](./001_Armament-Safety-Non-Operational-Definition.md) |
-| `002` | Armament Hazard Classification and Taxonomy | [`002_Armament-Hazard-Classification-and-Taxonomy.md`](./002_Armament-Hazard-Classification-and-Taxonomy.md) |
-| `003` | Risk Governance Framework and Risk Classification | [`003_Risk-Governance-Framework-and-Risk-Classification.md`](./003_Risk-Governance-Framework-and-Risk-Classification.md) |
-| `004` | Safety Case Governance and Evidence Requirements | [`004_Safety-Case-Governance-and-Evidence-Requirements.md`](./004_Safety-Case-Governance-and-Evidence-Requirements.md) |
-| `005` | Human-Factors and Personnel Safety Governance | [`005_Human-Factors-and-Personnel-Safety-Governance.md`](./005_Human-Factors-and-Personnel-Safety-Governance.md) |
-| `006` | Functional Safety and Safety Integrity Governance | [`006_Functional-Safety-and-Safety-Integrity-Governance.md`](./006_Functional-Safety-and-Safety-Integrity-Governance.md) |
-| `007` | Test and Evaluation Safety Governance | [`007_Test-and-Evaluation-Safety-Governance.md`](./007_Test-and-Evaluation-Safety-Governance.md) |
-| `008` | Interoperability and Interface Safety Governance | [`008_Interoperability-and-Interface-Safety-Governance.md`](./008_Interoperability-and-Interface-Safety-Governance.md) |
-| `009` | Legal, Ethical and Regulatory Safety Constraints | [`009_Legal-Ethical-and-Regulatory-Safety-Constraints.md`](./009_Legal-Ethical-and-Regulatory-Safety-Constraints.md) |
+| `001` | Armament Safety and Risk Controlled Definition | [`001_Armament-Safety-and-Risk-Controlled-Definition.md`](./001_Armament-Safety-and-Risk-Controlled-Definition.md) |
+| `002` | Hazard Identification and Risk Classification | [`002_Hazard-Identification-and-Risk-Classification.md`](./002_Hazard-Identification-and-Risk-Classification.md) |
+| `003` | Safe Custody, Storage and Access Control | [`003_Safe-Custody-Storage-and-Access-Control.md`](./003_Safe-Custody-Storage-and-Access-Control.md) |
+| `004` | Safety Interlocks, Inhibits and Safe-State Logic | [`004_Safety-Interlocks-Inhibits-and-Safe-State-Logic.md`](./004_Safety-Interlocks-Inhibits-and-Safe-State-Logic.md) |
+| `005` | Human Authority, Authorization and Two-Person Control | [`005_Human-Authority-Authorization-and-Two-Person-Control.md`](./005_Human-Authority-Authorization-and-Two-Person-Control.md) |
+| `006` | Incident Prevention, Reporting and Escalation | [`006_Incident-Prevention-Reporting-and-Escalation.md`](./006_Incident-Prevention-Reporting-and-Escalation.md) |
+| `007` | Inspection, Audit and Compliance Records | [`007_Inspection-Audit-and-Compliance-Records.md`](./007_Inspection-Audit-and-Compliance-Records.md) |
+| `008` | Emergency Response, Containment and Recovery Boundaries | [`008_Emergency-Response-Containment-and-Recovery-Boundaries.md`](./008_Emergency-Response-Containment-and-Recovery-Boundaries.md) |
+| `009` | Legal, Ethical and Export Control Constraints | [`009_Legal-Ethical-and-Export-Control-Constraints.md`](./009_Legal-Ethical-and-Export-Control-Constraints.md) |
 | `010` | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) |
 
 ## 4. Footprint

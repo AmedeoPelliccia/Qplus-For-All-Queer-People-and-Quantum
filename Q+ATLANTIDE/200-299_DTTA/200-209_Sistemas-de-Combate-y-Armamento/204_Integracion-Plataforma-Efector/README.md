@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-204-README
-title: "DTTA 200-209 · Section 00 · Subsection 204 — Integración Plataforma-Efector"
+title: "DTTA 200-209 · 00.204 — Integración Plataforma-Efector (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -43,15 +43,15 @@ Subsection `204` covers abstract governance representations of platform-effector
 | Subsubject | Title | Document |
 |---|---|---|
 | `000` | Overview | [`000_Overview.md`](./000_Overview.md) |
-| `001` | Platform-Effector Integration Non-Operational Definition | [`001_Platform-Effector-Integration-Non-Operational-Definition.md`](./001_Platform-Effector-Integration-Non-Operational-Definition.md) |
-| `002` | Platform Classification and Taxonomy | [`002_Platform-Classification-and-Taxonomy.md`](./002_Platform-Classification-and-Taxonomy.md) |
-| `003` | Effector Classification and Interface Taxonomy | [`003_Effector-Classification-and-Interface-Taxonomy.md`](./003_Effector-Classification-and-Interface-Taxonomy.md) |
-| `004` | Integration Interface Governance and Standards | [`004_Integration-Interface-Governance-and-Standards.md`](./004_Integration-Interface-Governance-and-Standards.md) |
-| `005` | Qualification and Certification Governance | [`005_Qualification-and-Certification-Governance.md`](./005_Qualification-and-Certification-Governance.md) |
-| `006` | Configuration Management and Baseline Governance | [`006_Configuration-Management-and-Baseline-Governance.md`](./006_Configuration-Management-and-Baseline-Governance.md) |
-| `007` | Safety and Liability Governance | [`007_Safety-and-Liability-Governance.md`](./007_Safety-and-Liability-Governance.md) |
-| `008` | Export Control and Supply-Chain Governance | [`008_Export-Control-and-Supply-Chain-Governance.md`](./008_Export-Control-and-Supply-Chain-Governance.md) |
-| `009` | Legal and Regulatory Constraints | [`009_Legal-and-Regulatory-Constraints.md`](./009_Legal-and-Regulatory-Constraints.md) |
+| `001` | Platform-Effector Integration Controlled Definition | [`001_Platform-Effector-Integration-Controlled-Definition.md`](./001_Platform-Effector-Integration-Controlled-Definition.md) |
+| `002` | Platform-Effector Interface Taxonomy | [`002_Platform-Effector-Interface-Taxonomy.md`](./002_Platform-Effector-Interface-Taxonomy.md) |
+| `003` | Mechanical, Electrical and Data Interface Boundaries | [`003_Mechanical-Electrical-and-Data-Interface-Boundaries.md`](./003_Mechanical-Electrical-and-Data-Interface-Boundaries.md) |
+| `004` | Command Authority and Authorization Interface | [`004_Command-Authority-and-Authorization-Interface.md`](./004_Command-Authority-and-Authorization-Interface.md) |
+| `005` | Safety Interlocks, Inhibits and Safe-State Logic | [`005_Safety-Interlocks-Inhibits-and-Safe-State-Logic.md`](./005_Safety-Interlocks-Inhibits-and-Safe-State-Logic.md) |
+| `006` | Compatibility, Configuration and Effectivity Control | [`006_Compatibility-Configuration-and-Effectivity-Control.md`](./006_Compatibility-Configuration-and-Effectivity-Control.md) |
+| `007` | Test, Simulation and Non-Operational Integration Modes | [`007_Test-Simulation-and-Non-Operational-Integration-Modes.md`](./007_Test-Simulation-and-Non-Operational-Integration-Modes.md) |
+| `008` | Interoperability, NATO/EU and Standards Mapping | [`008_Interoperability-NATO-EU-and-Standards-Mapping.md`](./008_Interoperability-NATO-EU-and-Standards-Mapping.md) |
+| `009` | Export Control, Legal and Ethical Boundaries | [`009_Export-Control-Legal-and-Ethical-Boundaries.md`](./009_Export-Control-Legal-and-Ethical-Boundaries.md) |
 | `010` | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) |
 
 ## 4. Footprint
