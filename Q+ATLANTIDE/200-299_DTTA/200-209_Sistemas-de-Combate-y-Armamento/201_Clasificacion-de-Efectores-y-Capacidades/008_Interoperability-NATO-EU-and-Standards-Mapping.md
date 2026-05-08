@@ -25,10 +25,10 @@ language: en
 document_id: QATL-ATLAS1000-DTTA-200-209-00-201-008-INTEROPERABILITY-NATO-EU-AND-STANDARDS-MAPPING
 subsubject: "008"
 subsubject_title: "Interoperability, NATO, EU and Standards Mapping"
-title: "DTTA 201 · 008 — Interoperability, NATO, EU and Standards Mapping"
+title: "DTTA 200-209 · 00.201.008 — Interoperability, NATO, EU and Standards Mapping"
 ---
 
-# DTTA 201 · 008 — Interoperability, NATO, EU and Standards Mapping
+# DTTA 200-209 · 00.201.008 — Interoperability, NATO, EU and Standards Mapping
 
 ## §1 Purpose
 

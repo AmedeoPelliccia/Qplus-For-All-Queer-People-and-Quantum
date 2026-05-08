@@ -25,10 +25,10 @@ language: en
 document_id: QATL-ATLAS1000-DTTA-200-209-00-201-006-HUMAN-CONTROL-RULES-OF-USE-AND-AUTHORIZATION-GATES
 subsubject: "006"
 subsubject_title: "Human Control, Rules-of-Use and Authorization Gates"
-title: "DTTA 201 · 006 — Human Control, Rules-of-Use and Authorization Gates"
+title: "DTTA 200-209 · 00.201.006 — Human Control, Rules-of-Use and Authorization Gates"
 ---
 
-# DTTA 201 · 006 — Human Control, Rules-of-Use and Authorization Gates
+# DTTA 200-209 · 00.201.006 — Human Control, Rules-of-Use and Authorization Gates
 
 ## §1 Purpose
 

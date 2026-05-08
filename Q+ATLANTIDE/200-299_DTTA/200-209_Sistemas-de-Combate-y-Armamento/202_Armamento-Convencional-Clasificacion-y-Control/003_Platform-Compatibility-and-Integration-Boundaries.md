@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-202-003-PLATFORM-COMPATIBILITY-AND-INTEGRATION-BOUNDARIES
-title: "DTTA 202 · 003 — Platform Compatibility and Integration Boundaries"
+title: "DTTA 200-209 · 00.202.003 — Platform Compatibility and Integration Boundaries"
 subsubject: "003"
 subsubject_title: "Platform Compatibility and Integration Boundaries"
 register: ATLAS-1000
@@ -28,7 +28,7 @@ status: active
 language: en
 ---
 
-# DTTA 202 · Subsubject 003 — Platform Compatibility and Integration Boundaries
+# DTTA 200-209 · 00.202.003 — Platform Compatibility and Integration Boundaries
 
 ## §1 Purpose
 

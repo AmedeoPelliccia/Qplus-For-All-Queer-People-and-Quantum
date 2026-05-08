@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-202-006-AUTHORIZATION-RULES-OF-USE-AND-HUMAN-CONTROL
-title: "DTTA 202 · 006 — Authorization, Rules-of-Use and Human Control"
+title: "DTTA 200-209 · 00.202.006 — Authorization, Rules-of-Use and Human Control"
 subsubject: "006"
 subsubject_title: "Authorization, Rules-of-Use and Human Control"
 register: ATLAS-1000
@@ -28,7 +28,7 @@ status: active
 language: en
 ---
 
-# DTTA 202 · Subsubject 006 — Authorization, Rules-of-Use and Human Control
+# DTTA 200-209 · 00.202.006 — Authorization, Rules-of-Use and Human Control
 
 ## §1 Purpose
 

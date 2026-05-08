@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-202-002-CONVENTIONAL-ARMAMENT-CLASSES-NON-OPERATIONAL-TAXONOMY
-title: "DTTA 202 · 002 — Conventional Armament Classes, Non-Operational Taxonomy"
+title: "DTTA 200-209 · 00.202.002 — Conventional Armament Classes, Non-Operational Taxonomy"
 subsubject: "002"
 subsubject_title: "Conventional Armament Classes, Non-Operational Taxonomy"
 register: ATLAS-1000
@@ -28,7 +28,7 @@ status: active
 language: en
 ---
 
-# DTTA 202 · Subsubject 002 — Conventional Armament Classes, Non-Operational Taxonomy
+# DTTA 200-209 · 00.202.002 — Conventional Armament Classes, Non-Operational Taxonomy
 
 ## §1 Purpose
 

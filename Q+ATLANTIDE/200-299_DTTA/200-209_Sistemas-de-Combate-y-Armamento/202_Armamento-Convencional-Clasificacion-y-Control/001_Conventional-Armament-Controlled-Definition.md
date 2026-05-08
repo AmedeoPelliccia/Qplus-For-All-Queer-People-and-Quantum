@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-202-001-CONVENTIONAL-ARMAMENT-CONTROLLED-DEFINITION
-title: "DTTA 202 · 001 — Conventional Armament Controlled Definition"
+title: "DTTA 200-209 · 00.202.001 — Conventional Armament Controlled Definition"
 subsubject: "001"
 subsubject_title: "Conventional Armament Controlled Definition"
 register: ATLAS-1000
@@ -28,7 +28,7 @@ status: active
 language: en
 ---
 
-# DTTA 202 · Subsubject 001 — Conventional Armament Controlled Definition
+# DTTA 200-209 · 00.202.001 — Conventional Armament Controlled Definition
 
 ## §1 Purpose
 

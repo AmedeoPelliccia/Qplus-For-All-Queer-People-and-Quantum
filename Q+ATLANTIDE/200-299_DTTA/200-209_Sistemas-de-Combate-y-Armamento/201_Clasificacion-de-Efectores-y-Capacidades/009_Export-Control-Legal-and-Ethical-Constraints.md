@@ -25,10 +25,10 @@ language: en
 document_id: QATL-ATLAS1000-DTTA-200-209-00-201-009-EXPORT-CONTROL-LEGAL-AND-ETHICAL-CONSTRAINTS
 subsubject: "009"
 subsubject_title: "Export Control, Legal and Ethical Constraints"
-title: "DTTA 201 · 009 — Export Control, Legal and Ethical Constraints"
+title: "DTTA 200-209 · 00.201.009 — Export Control, Legal and Ethical Constraints"
 ---
 
-# DTTA 201 · 009 — Export Control, Legal and Ethical Constraints
+# DTTA 200-209 · 00.201.009 — Export Control, Legal and Ethical Constraints
 
 ## §1 Purpose
 

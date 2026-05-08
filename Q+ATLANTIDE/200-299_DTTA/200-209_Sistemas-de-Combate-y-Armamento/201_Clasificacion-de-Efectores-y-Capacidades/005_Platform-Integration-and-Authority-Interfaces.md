@@ -25,10 +25,10 @@ language: en
 document_id: QATL-ATLAS1000-DTTA-200-209-00-201-005-PLATFORM-INTEGRATION-AND-AUTHORITY-INTERFACES
 subsubject: "005"
 subsubject_title: "Platform Integration and Authority Interfaces"
-title: "DTTA 201 · 005 — Platform Integration and Authority Interfaces"
+title: "DTTA 200-209 · 00.201.005 — Platform Integration and Authority Interfaces"
 ---
 
-# DTTA 201 · 005 — Platform Integration and Authority Interfaces
+# DTTA 200-209 · 00.201.005 — Platform Integration and Authority Interfaces
 
 ## §1 Purpose
 

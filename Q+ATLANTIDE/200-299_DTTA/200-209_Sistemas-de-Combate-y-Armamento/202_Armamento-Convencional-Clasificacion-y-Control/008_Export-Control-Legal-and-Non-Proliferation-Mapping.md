@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-202-008-EXPORT-CONTROL-LEGAL-AND-NON-PROLIFERATION-MAPPING
-title: "DTTA 202 · 008 — Export Control, Legal and Non-Proliferation Mapping"
+title: "DTTA 200-209 · 00.202.008 — Export Control, Legal and Non-Proliferation Mapping"
 subsubject: "008"
 subsubject_title: "Export Control, Legal and Non-Proliferation Mapping"
 register: ATLAS-1000
@@ -28,7 +28,7 @@ status: active
 language: en
 ---
 
-# DTTA 202 · Subsubject 008 — Export Control, Legal and Non-Proliferation Mapping
+# DTTA 200-209 · 00.202.008 — Export Control, Legal and Non-Proliferation Mapping
 
 ## §1 Purpose
 

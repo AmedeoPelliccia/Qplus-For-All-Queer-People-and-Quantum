@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-202-005-INVENTORY-ACCOUNTABILITY-AND-CHAIN-OF-CUSTODY
-title: "DTTA 202 · 005 — Inventory Accountability and Chain of Custody"
+title: "DTTA 200-209 · 00.202.005 — Inventory Accountability and Chain of Custody"
 subsubject: "005"
 subsubject_title: "Inventory Accountability and Chain of Custody"
 register: ATLAS-1000
@@ -28,7 +28,7 @@ status: active
 language: en
 ---
 
-# DTTA 202 · Subsubject 005 — Inventory Accountability and Chain of Custody
+# DTTA 200-209 · 00.202.005 — Inventory Accountability and Chain of Custody
 
 ## §1 Purpose
 

@@ -25,10 +25,10 @@ language: en
 document_id: QATL-ATLAS1000-DTTA-200-209-00-201-001-EFFECTORS-AND-CAPABILITIES-CONTROLLED-DEFINITION
 subsubject: "001"
 subsubject_title: "Effectors and Capabilities Controlled Definition"
-title: "DTTA 201 · 001 — Effectors and Capabilities Controlled Definition"
+title: "DTTA 200-209 · 00.201.001 — Effectors and Capabilities Controlled Definition"
 ---
 
-# DTTA 201 · 001 — Effectors and Capabilities Controlled Definition
+# DTTA 200-209 · 00.201.001 — Effectors and Capabilities Controlled Definition
 
 ## §1 Purpose
 

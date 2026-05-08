@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS1000-DTTA-200-209-00-202-007-RISK-CLASSIFICATION-AND-HAZARD-PREVENTION
-title: "DTTA 202 · 007 — Risk Classification and Hazard Prevention"
+title: "DTTA 200-209 · 00.202.007 — Risk Classification and Hazard Prevention"
 subsubject: "007"
 subsubject_title: "Risk Classification and Hazard Prevention"
 register: ATLAS-1000
@@ -28,7 +28,7 @@ status: active
 language: en
 ---
 
-# DTTA 202 · Subsubject 007 — Risk Classification and Hazard Prevention
+# DTTA 200-209 · 00.202.007 — Risk Classification and Hazard Prevention
 
 ## §1 Purpose
 
