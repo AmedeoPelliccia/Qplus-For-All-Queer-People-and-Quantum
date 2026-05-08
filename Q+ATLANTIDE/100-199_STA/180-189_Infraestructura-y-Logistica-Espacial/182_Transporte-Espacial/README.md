@@ -15,8 +15,27 @@ section_title: "Infraestructura y Logística Espacial"
 subsection: "182"
 subsection_title: "Transporte Espacial"
 primary_q_division: Q-SPACE
-support_q_divisions: [Q-INDUSTRY, Q-GROUND, Q-HORIZON]
-orb_function_support: [ORB-PMO, ORB-FIN]
+support_q_divisions: [Q-DATAGOV, Q-HPC, Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY]
+orb_function_support: [ORB-PMO, ORB-LEG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "103_Seguridad-de-Mision"
+  - "120_Propulsion-Quimica"
+  - "121_Propulsion-Electrica"
+  - "123_Propulsion-Avanzada"
+  - "130_Energia-Solar"
+  - "131_Baterias-y-Almacenamiento"
+  - "133_Distribucion-Electrica"
+  - "140_GNC-Guiado-Navegacion-y-Control"
+  - "143_Control-de-Mision"
+  - "150_SATCOM"
+  - "152_Redes-Espaciales"
+  - "170_Servicing-Orbital"
+  - "180_Bases-Orbitales"
+  - "181_Logistica-Cis-Lunar"
+  - "183_Recursos-Espaciales"
+safety_boundary: "space-transport critical; requires explicit trajectory assurance, propulsion/power/thermal constraints, docking and transfer-interface validation, cargo/crew boundary control, rendezvous governance, traffic coordination and lifecycle traceability"
+no_aaa_rule: true
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -33,15 +52,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `182` *Space Transport*.
+- Covers the subsubject namespace `00`–`10` (11 active) of subsection `182` *Space Transport*; `11`–`99` reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- This subsection is designated **space-transport critical**; all subsubjects require explicit trajectory assurance, propulsion/power/thermal constraints, docking and transfer-interface validation, cargo/crew boundary control, rendezvous governance, traffic coordination and lifecycle traceability.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
+| 01 | Space Transport Controlled Definition | [`001_Space-Transport-Controlled-Definition.md`](./001_Space-Transport-Controlled-Definition.md) | active |
+| 02 | Space Transport Classes and Mission Roles | [`002_Space-Transport-Classes-and-Mission-Roles.md`](./002_Space-Transport-Classes-and-Mission-Roles.md) | active |
+| 03 | Launch-to-Orbit Transport Interfaces | [`003_Launch-to-Orbit-Transport-Interfaces.md`](./003_Launch-to-Orbit-Transport-Interfaces.md) | active |
+| 04 | Orbital Transfer and In-Space Transport | [`004_Orbital-Transfer-and-In-Space-Transport.md`](./004_Orbital-Transfer-and-In-Space-Transport.md) | active |
+| 05 | Cargo, Crew and Service Transport Boundaries | [`005_Cargo-Crew-and-Service-Transport-Boundaries.md`](./005_Cargo-Crew-and-Service-Transport-Boundaries.md) | active |
+| 06 | Docking, Berthing and Transfer Interfaces | [`006_Docking-Berthing-and-Transfer-Interfaces.md`](./006_Docking-Berthing-and-Transfer-Interfaces.md) | active |
+| 07 | Propulsion, Power and Thermal Transport Constraints | [`007_Propulsion-Power-and-Thermal-Transport-Constraints.md`](./007_Propulsion-Power-and-Thermal-Transport-Constraints.md) | active |
+| 08 | Trajectory Operations, Rendezvous and Traffic Control | [`008_Trajectory-Operations-Rendezvous-and-Traffic-Control.md`](./008_Trajectory-Operations-Rendezvous-and-Traffic-Control.md) | active |
+| 09 | ECSS / NASA / CCSDS Space Transport Standards Mapping | [`009_ECSS-NASA-CCSDS-Space-Transport-Standards-Mapping.md`](./009_ECSS-NASA-CCSDS-Space-Transport-Standards-Mapping.md) | active |
+| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -52,10 +81,10 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `180-189` |
 | Section | `08` — Infraestructura y Logística Espacial |
 | Subsection | `182` — Transporte Espacial |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
-| Support Q-Divisions | Q-INDUSTRY, Q-GROUND, Q-HORIZON |
-| ORB support | ORB-PMO, ORB-FIN |
+| Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY |
+| ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/100-199_STA/180-189_Infraestructura-y-Logistica-Espacial/182_Transporte-Espacial/` |
 | Document | `README.md` (this file) |
@@ -65,15 +94,15 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. This subsection is designated **space-transport critical**; all subsubjects require explicit trajectory assurance, propulsion/power/thermal constraints, docking and transfer-interface validation, cargo/crew boundary control, rendezvous governance, traffic coordination and lifecycle traceability. The `no_aaa_rule` applies: the identifier "AAA" must not be used for any safety-critical element. Extensions added under `11`–`99` shall preserve those header fields, carry the `safety_boundary` declaration, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md).
+[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
 
-[^archtable]: **§3 — Architecture Table (parent)** — [`../../README.md` §3](../../README.md#3-architecture-table).
+[^archtable]: **STA §3 Architecture Table** — [`../../README.md` §3](../../README.md#3-architecture-table). Authoritative source for the `180-189` row.
 
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../organization/Q-Divisions/).
+[^qdiv]: **Q-Division authority** — Q-Divisions provide technical authority over an architecture row (Q+ATLANTIDE Note N-002). See [`organization/Q+ATLANTIDE.md` §4](../../../../organization/Q+ATLANTIDE.md#4-notes).
 
 [^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
 
