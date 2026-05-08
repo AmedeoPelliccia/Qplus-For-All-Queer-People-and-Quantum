@@ -55,7 +55,7 @@ root_folders:
     definition: "Repository-wide metadata, glossaries, and governance configuration."
   - name: "Q+ATLANTIDE"
     definition: "Master classification system and knowledge architecture (Bands 000–899+)."
-  - name: "IDEALE-ESG.panpara.eu"
+  - name: "IDEALE-ESG"
     definition: "IDEALE-ESG framework domain tree (Aerospace, Defence, Energy, Economics, Environments, Governance, Information, Logistics, Social)."
   - name: "organization"
     definition: "Organizational structure: Q-Divisions, ORBs, programmes."

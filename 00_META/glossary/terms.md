@@ -34,7 +34,7 @@ All terms appearing in folder names, status codes, and field values must be defi
 
 | Term | Definition |
 |------|------------|
-| IDEALE-ESG | The ESG framework organising domains into Infrastructures (I), Defence (D), Energy (E), Information (I), Aerospace (A), Logistics (L), Economics (E2), Environments (E3), plus Governance (G) and Social (S) sub-domains. Canonical root: `IDEALE-ESG.panpara.eu/`. |
+| IDEALE-ESG | The ESG framework organising domains into Infrastructures (I), Defence (D), Energy (E), Information (I), Aerospace (A), Logistics (L), Economics (E2), Environments (E3), plus Governance (G) and Social (S) sub-domains. Canonical root: `IDEALE-ESG/`. |
 | LUTNDR | Libro Unico delle Tecnologie: the centralized technology registry tracking in-use (USO), new-design (NPR), disused (DIS) and rearranged (RIC) states. |
 | Q+ATLANTIDE | The master classification system and knowledge architecture of the repository. Organized into numbered Bands (000–099 ATLAS, 100–199 STA, 300–399 DTCEC, 500–599 AMTA, 600–699 OGATA, 800–899 CYB, etc.). |
 | Q+ATLANTIDE1000 | The overarching architecture of Q+ATLANTIDE; the root of the canonical hierarchy (Band → Code range → Section → Subject → Subsection → Subsubject). |
