@@ -1,8 +1,8 @@
 ---
 document_id: IDEALE-ESG-A-AEROSPACE-I-INFRASTRUCTURES-00-00-SCOPE-PURPOSE
 title: "00-00-Scope-and-Purpose — Scope and Purpose"
-canonical_path: "IDEALE-ESG.panpara.eu/A-Aerospace/I-Infrastructures/00-General/00-00-Scope-and-Purpose.md"
-parent_path: "IDEALE-ESG.panpara.eu/A-Aerospace/I-Infrastructures/00-General/"
+canonical_path: "IDEALE-ESG/A-Aerospace/I-Infrastructures/00-General/00-00-Scope-and-Purpose.md"
+parent_path: "IDEALE-ESG/A-Aerospace/I-Infrastructures/00-General/"
 parent_document: "README.md"
 
 domain: "A-Aerospace"
