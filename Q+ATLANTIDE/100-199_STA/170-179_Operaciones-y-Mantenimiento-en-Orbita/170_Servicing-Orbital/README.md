@@ -15,8 +15,22 @@ section_title: "Operaciones y Mantenimiento en Órbita"
 subsection: "170"
 subsection_title: "Servicing Orbital"
 primary_q_division: Q-SPACE
-support_q_divisions: [Q-GROUND, Q-HORIZON, Q-MECHANICS]
-orb_function_support: [ORB-PMO, ORB-LEG]
+support_q_divisions: [Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY]
+orb_function_support: [ORB-LEG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "103_Seguridad-de-Mision"
+  - "110_Estructuras-Orbitales"
+  - "140_GNC-Guiado-Navegacion-y-Control"
+  - "141_Avionica-Espacial"
+  - "142_Software-de-Vuelo"
+  - "143_Control-de-Mision"
+  - "144_Autonomia"
+  - "171_Inspeccion-en-Orbita"
+  - "172_Reparacion-en-Orbita"
+  - "173_Ensamblaje-en-Orbita"
+safety_boundary: "on-orbit servicing critical; requires explicit proximity-operations governance, capture/docking interface control, robotics safety boundaries, fault containment, mission authorization, servicing records and lifecycle traceability"
+no_aaa_rule: true
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -29,19 +43,30 @@ language: en
 
 Subsection-level index for *Servicing Orbital* (`170`) within STA `170-179` — *Operaciones y Mantenimiento en Órbita*.
 
-This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
+This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. It is designated **on-orbit servicing critical**: all subsubjects require explicit proximity-operations governance, capture/docking interface control, robotics safety boundaries, fault containment, mission authorization, servicing records, and lifecycle traceability.
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `170` *Orbital Servicing*.
+- Populates the subsubject namespace `000`–`010` of subsection `170` *On-Orbit Servicing*; subsubjects `011`–`099` remain reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- Linked nodes: `100_Arquitectura-General-Espacial`, `103_Seguridad-de-Mision`, `110_Estructuras-Orbitales`, `140_GNC-Guiado-Navegacion-y-Control`, `141_Avionica-Espacial`, `142_Software-de-Vuelo`, `143_Control-de-Mision`, `144_Autonomia`, `171_Inspeccion-en-Orbita`, `172_Reparacion-en-Orbita`, `173_Ensamblaje-en-Orbita`.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
+| 001 | On-Orbit Servicing Controlled Definition | [`001_On-Orbit-Servicing-Controlled-Definition.md`](001_On-Orbit-Servicing-Controlled-Definition.md) | active |
+| 002 | Servicing Mission Classes and Objectives | [`002_Servicing-Mission-Classes-and-Objectives.md`](002_Servicing-Mission-Classes-and-Objectives.md) | active |
+| 003 | Rendezvous, Proximity and Servicing Boundaries | [`003_Rendezvous-Proximity-and-Servicing-Boundaries.md`](003_Rendezvous-Proximity-and-Servicing-Boundaries.md) | active |
+| 004 | Docking, Berthing and Capture Interfaces | [`004_Docking-Berthing-and-Capture-Interfaces.md`](004_Docking-Berthing-and-Capture-Interfaces.md) | active |
+| 005 | Robotic Servicing and Manipulation Functions | [`005_Robotic-Servicing-and-Manipulation-Functions.md`](005_Robotic-Servicing-and-Manipulation-Functions.md) | active |
+| 006 | Refueling, Recharging and Consumables Replenishment | [`006_Refueling-Recharging-and-Consumables-Replenishment.md`](006_Refueling-Recharging-and-Consumables-Replenishment.md) | active |
+| 007 | Modular Replacement and Line-Replaceable Orbital Units | [`007_Modular-Replacement-and-Line-Replaceable-Orbital-Units.md`](007_Modular-Replacement-and-Line-Replaceable-Orbital-Units.md) | active |
+| 008 | Servicing Safety Zones and Fault Containment | [`008_Servicing-Safety-Zones-and-Fault-Containment.md`](008_Servicing-Safety-Zones-and-Fault-Containment.md) | active |
+| 009 | ECSS-NASA-CCSDS On-Orbit Servicing Standards Mapping | [`009_ECSS-NASA-CCSDS-On-Orbit-Servicing-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-On-Orbit-Servicing-Standards-Mapping.md) | active |
+| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 011–099 | *(reserved)* | — | reserved |
 
 ## 4. Footprint
 
@@ -52,11 +77,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `170-179` |
 | Section | `07` — Operaciones y Mantenimiento en Órbita |
 | Subsection | `170` — Servicing Orbital |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
-| Support Q-Divisions | Q-GROUND, Q-HORIZON, Q-MECHANICS |
-| ORB support | ORB-PMO, ORB-LEG |
+| Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY |
+| ORB support | ORB-LEG |
 | Governance class | `baseline`[^gov] |
+| Safety boundary | on-orbit servicing critical |
 | Folder path | `Q+ATLANTIDE/100-199_STA/170-179_Operaciones-y-Mantenimiento-en-Orbita/170_Servicing-Orbital/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
@@ -65,7 +91,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE`, `support_q_divisions = [Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY]`, and `governance_class = baseline` from the parent STA section. Extensions added under `011`–`099` shall preserve those header fields, declare the `safety_boundary`, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 

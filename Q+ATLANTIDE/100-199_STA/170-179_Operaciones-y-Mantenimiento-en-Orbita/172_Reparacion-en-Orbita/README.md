@@ -15,8 +15,24 @@ section_title: "Operaciones y Mantenimiento en Órbita"
 subsection: "172"
 subsection_title: "Reparación en Órbita"
 primary_q_division: Q-SPACE
-support_q_divisions: [Q-GROUND, Q-HORIZON, Q-MECHANICS]
-orb_function_support: [ORB-PMO, ORB-LEG]
+support_q_divisions: [Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY, Q-GREENTECH]
+orb_function_support: [ORB-LEG]
+linked_nodes:
+  - "100_Arquitectura-General-Espacial"
+  - "103_Seguridad-de-Mision"
+  - "110_Estructuras-Orbitales"
+  - "111_Materiales-Espaciales"
+  - "112_Proteccion-Termica-y-Radiacion"
+  - "140_GNC-Guiado-Navegacion-y-Control"
+  - "141_Avionica-Espacial"
+  - "142_Software-de-Vuelo"
+  - "143_Control-de-Mision"
+  - "144_Autonomia"
+  - "170_Servicing-Orbital"
+  - "171_Inspeccion-en-Orbita"
+  - "173_Ensamblaje-en-Orbita"
+safety_boundary: "on-orbit repair critical; requires explicit repair admissibility criteria, damage-assessment evidence, robotics safety boundaries, modular-replacement control, abort modes, post-repair verification and lifecycle traceability"
+no_aaa_rule: true
 governance_class: baseline
 version: 1.0.0
 status: active
@@ -29,19 +45,30 @@ language: en
 
 Subsection-level index for *Reparación en Órbita* (`172`) within STA `170-179` — *Operaciones y Mantenimiento en Órbita*.
 
-This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
+This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. It is designated **on-orbit repair critical**: all subsubjects require explicit repair admissibility criteria, damage-assessment evidence, robotics safety boundaries, modular-replacement control, abort modes, post-repair verification, and lifecycle traceability.
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `172` *On-Orbit Repair*.
+- Populates the subsubject namespace `000`–`010` of subsection `172` *On-Orbit Repair*; subsubjects `011`–`099` remain reserved.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- Subsubjects `00`–`99` are reserved for future baseline extensions per the parent section's authorisation.
+- Linked nodes: `100_Arquitectura-General-Espacial`, `103_Seguridad-de-Mision`, `110_Estructuras-Orbitales`, `111_Materiales-Espaciales`, `112_Proteccion-Termica-y-Radiacion`, `140_GNC-Guiado-Navegacion-y-Control`, `141_Avionica-Espacial`, `142_Software-de-Vuelo`, `143_Control-de-Mision`, `144_Autonomia`, `170_Servicing-Orbital`, `171_Inspeccion-en-Orbita`, `173_Ensamblaje-en-Orbita`.
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
+| 001 | On-Orbit Repair Controlled Definition | [`001_On-Orbit-Repair-Controlled-Definition.md`](001_On-Orbit-Repair-Controlled-Definition.md) | active |
+| 002 | Repair Mission Classes and Objectives | [`002_Repair-Mission-Classes-and-Objectives.md`](002_Repair-Mission-Classes-and-Objectives.md) | active |
+| 003 | Damage Assessment and Repair Admissibility | [`003_Damage-Assessment-and-Repair-Admissibility.md`](003_Damage-Assessment-and-Repair-Admissibility.md) | active |
+| 004 | Robotic Repair and Manipulation Functions | [`004_Robotic-Repair-and-Manipulation-Functions.md`](004_Robotic-Repair-and-Manipulation-Functions.md) | active |
+| 005 | Modular Replacement and Orbital LRU Exchange | [`005_Modular-Replacement-and-Orbital-LRU-Exchange.md`](005_Modular-Replacement-and-Orbital-LRU-Exchange.md) | active |
+| 006 | Structural Patch, Bonding and Sealing Concepts | [`006_Structural-Patch-Bonding-and-Sealing-Concepts.md`](006_Structural-Patch-Bonding-and-Sealing-Concepts.md) | active |
+| 007 | Electrical, Avionics and Payload Repair Interfaces | [`007_Electrical-Avionics-and-Payload-Repair-Interfaces.md`](007_Electrical-Avionics-and-Payload-Repair-Interfaces.md) | active |
+| 008 | Repair Safety Zones, Fault Containment and Abort Modes | [`008_Repair-Safety-Zones-Fault-Containment-and-Abort-Modes.md`](008_Repair-Safety-Zones-Fault-Containment-and-Abort-Modes.md) | active |
+| 009 | ECSS-NASA-CCSDS On-Orbit Repair Standards Mapping | [`009_ECSS-NASA-CCSDS-On-Orbit-Repair-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-On-Orbit-Repair-Standards-Mapping.md) | active |
+| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 011–099 | *(reserved)* | — | reserved |
 
 ## 4. Footprint
 
@@ -52,11 +79,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `170-179` |
 | Section | `07` — Operaciones y Mantenimiento en Órbita |
 | Subsection | `172` — Reparación en Órbita |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
-| Support Q-Divisions | Q-GROUND, Q-HORIZON, Q-MECHANICS |
-| ORB support | ORB-PMO, ORB-LEG |
+| Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY, Q-GREENTECH |
+| ORB support | ORB-LEG |
 | Governance class | `baseline`[^gov] |
+| Safety boundary | on-orbit repair critical |
 | Folder path | `Q+ATLANTIDE/100-199_STA/170-179_Operaciones-y-Mantenimiento-en-Orbita/172_Reparacion-en-Orbita/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
@@ -65,7 +93,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE` and `governance_class = baseline` from the parent STA section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = STA`, `primary_q_division = Q-SPACE`, `support_q_divisions = [Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY, Q-GREENTECH]`, and `governance_class = baseline` from the parent STA section. Extensions added under `011`–`099` shall preserve those header fields, declare the `safety_boundary`, and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
