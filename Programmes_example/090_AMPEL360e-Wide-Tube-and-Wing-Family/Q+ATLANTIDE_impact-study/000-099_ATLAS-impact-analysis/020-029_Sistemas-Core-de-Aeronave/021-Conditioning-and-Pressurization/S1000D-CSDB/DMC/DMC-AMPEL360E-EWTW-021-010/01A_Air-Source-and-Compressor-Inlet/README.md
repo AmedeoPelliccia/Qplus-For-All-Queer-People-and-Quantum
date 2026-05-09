@@ -19,6 +19,14 @@ created: 2026-05-09
 
 # DMC Group: DMC-AMPEL360E-EWTW-021-010-01A
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/92d2da83-b5b4-48f7-9fa6-8d9c963ba9f3" />
+
+***Figure 1 — Air Source and Compressor Inlet detail view, showing the inlet assembly, ram-air path, protection screen, anti-ice interface, flow-control elements, sensor probes, and downstream ACM interface.***
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/8721f963-a003-4396-9283-45a209c63899" />
+
+***Figure 2 — DMC-AMPEL360E-EWTW-021-010-01A Air Source and Compressor Inlet. Detail view extracted from the 021-010 / 00A Compression Subsystem illustration, with the inlet assembly highlighted in green for component-location identification.***
+
 **System:** 021 — Conditioning and Pressurization  
 **Sub-system:** 021-010 — Compression Subsystem  
 **Component:** Air Source and Compressor Inlet  
