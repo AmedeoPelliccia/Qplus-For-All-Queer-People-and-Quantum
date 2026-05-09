@@ -39,19 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Inter-Satellite Communication Controlled Definition | [`001_Inter-Satellite-Communication-Controlled-Definition.md`](./001_Inter-Satellite-Communication-Controlled-Definition.md) | active |
-| 02 | ISL Architecture and Link Topology | [`002_ISL-Architecture-and-Link-Topology.md`](./002_ISL-Architecture-and-Link-Topology.md) | active |
-| 03 | RF, Optical and Hybrid ISL Classes | [`003_RF-Optical-and-Hybrid-ISL-Classes.md`](./003_RF-Optical-and-Hybrid-ISL-Classes.md) | active |
-| 04 | Crosslink Pointing, Acquisition and Tracking | [`004_Crosslink-Pointing-Acquisition-and-Tracking.md`](./004_Crosslink-Pointing-Acquisition-and-Tracking.md) | active |
-| 05 | Routing, Relay and Mesh Network Patterns | [`005_Routing-Relay-and-Mesh-Network-Patterns.md`](./005_Routing-Relay-and-Mesh-Network-Patterns.md) | active |
-| 06 | Time Synchronization and Constellation Coordination | [`006_Time-Synchronization-and-Constellation-Coordination.md`](./006_Time-Synchronization-and-Constellation-Coordination.md) | active |
-| 07 | Link Budget, Latency and Data-Rate Classes | [`007_Link-Budget-Latency-and-Data-Rate-Classes.md`](./007_Link-Budget-Latency-and-Data-Rate-Classes.md) | active |
-| 08 | Security, Authentication and Resilience Boundaries | [`008_Security-Authentication-and-Resilience-Boundaries.md`](./008_Security-Authentication-and-Resilience-Boundaries.md) | active |
-| 09 | CCSDS, ECSS, ITU and NASA Standards Mapping | [`009_CCSDS-ECSS-ITU-and-NASA-Standards-Mapping.md`](./009_CCSDS-ECSS-ITU-and-NASA-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`153-000-General.md`](./153-000-General.md) | active |
+| 010 | Inter Satellite Communication Controlled Definition | [`153-010-Inter-Satellite-Communication-Controlled-Definition.md`](./153-010-Inter-Satellite-Communication-Controlled-Definition.md) | active |
+| 020 | ISL Architecture and Link Topology | [`153-020-ISL-Architecture-and-Link-Topology.md`](./153-020-ISL-Architecture-and-Link-Topology.md) | active |
+| 030 | RF Optical and Hybrid ISL Classes | [`153-030-RF-Optical-and-Hybrid-ISL-Classes.md`](./153-030-RF-Optical-and-Hybrid-ISL-Classes.md) | active |
+| 040 | Crosslink Pointing Acquisition and Tracking | [`153-040-Crosslink-Pointing-Acquisition-and-Tracking.md`](./153-040-Crosslink-Pointing-Acquisition-and-Tracking.md) | active |
+| 050 | Routing Relay and Mesh Network Patterns | [`153-050-Routing-Relay-and-Mesh-Network-Patterns.md`](./153-050-Routing-Relay-and-Mesh-Network-Patterns.md) | active |
+| 060 | Time Synchronization and Constellation Coordination | [`153-060-Time-Synchronization-and-Constellation-Coordination.md`](./153-060-Time-Synchronization-and-Constellation-Coordination.md) | active |
+| 070 | Link Budget Latency and Data Rate Classes | [`153-070-Link-Budget-Latency-and-Data-Rate-Classes.md`](./153-070-Link-Budget-Latency-and-Data-Rate-Classes.md) | active |
+| 080 | Security Authentication and Resilience Boundaries | [`153-080-Security-Authentication-and-Resilience-Boundaries.md`](./153-080-Security-Authentication-and-Resilience-Boundaries.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`153-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./153-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -62,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `150-159` |
 | Section | `05` — Comunicaciones Espaciales |
 | Subsection | `153` — Comunicación Intersatélite |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |

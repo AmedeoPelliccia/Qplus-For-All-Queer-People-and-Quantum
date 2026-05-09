@@ -54,18 +54,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Observation Controlled Definition | [`001_Observation-Controlled-Definition.md`](001_Observation-Controlled-Definition.md) | active |
-| 002 | Observation Mission Classes and Objectives | [`002_Observation-Mission-Classes-and-Objectives.md`](002_Observation-Mission-Classes-and-Objectives.md) | active |
-| 003 | Earth Observation and Remote Sensing | [`003_Earth-Observation-and-Remote-Sensing.md`](003_Earth-Observation-and-Remote-Sensing.md) | active |
-| 004 | Space Observation and Astronomical Sensing | [`004_Space-Observation-and-Astronomical-Sensing.md`](004_Space-Observation-and-Astronomical-Sensing.md) | active |
-| 005 | Spectral, Spatial, Temporal and Radiometric Resolution | [`005_Spectral-Spatial-Temporal-and-Radiometric-Resolution.md`](005_Spectral-Spatial-Temporal-and-Radiometric-Resolution.md) | active |
-| 006 | Imaging Modes, Swath, Coverage and Revisit Time | [`006_Imaging-Modes-Swath-Coverage-and-Revisit-Time.md`](006_Imaging-Modes-Swath-Coverage-and-Revisit-Time.md) | active |
-| 007 | Data Products, Levels and Processing Chains | [`007_Data-Products-Levels-and-Processing-Chains.md`](007_Data-Products-Levels-and-Processing-Chains.md) | active |
-| 008 | Calibration, Validation and Uncertainty Control | [`008_Calibration-Validation-and-Uncertainty-Control.md`](008_Calibration-Validation-and-Uncertainty-Control.md) | active |
-| 009 | ECSS-NASA-CCSDS Observation Standards Mapping | [`009_ECSS-NASA-CCSDS-Observation-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-Observation-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`163-000-General.md`](./163-000-General.md) | active |
+| 010 | Observation Controlled Definition | [`163-010-Observation-Controlled-Definition.md`](./163-010-Observation-Controlled-Definition.md) | active |
+| 020 | Observation Mission Classes and Objectives | [`163-020-Observation-Mission-Classes-and-Objectives.md`](./163-020-Observation-Mission-Classes-and-Objectives.md) | active |
+| 030 | Earth Observation and Remote Sensing | [`163-030-Earth-Observation-and-Remote-Sensing.md`](./163-030-Earth-Observation-and-Remote-Sensing.md) | active |
+| 040 | Space Observation and Astronomical Sensing | [`163-040-Space-Observation-and-Astronomical-Sensing.md`](./163-040-Space-Observation-and-Astronomical-Sensing.md) | active |
+| 050 | Spectral Spatial Temporal and Radiometric Resolution | [`163-050-Spectral-Spatial-Temporal-and-Radiometric-Resolution.md`](./163-050-Spectral-Spatial-Temporal-and-Radiometric-Resolution.md) | active |
+| 060 | Imaging Modes Swath Coverage and Revisit Time | [`163-060-Imaging-Modes-Swath-Coverage-and-Revisit-Time.md`](./163-060-Imaging-Modes-Swath-Coverage-and-Revisit-Time.md) | active |
+| 070 | Data Products Levels and Processing Chains | [`163-070-Data-Products-Levels-and-Processing-Chains.md`](./163-070-Data-Products-Levels-and-Processing-Chains.md) | active |
+| 080 | Calibration Validation and Uncertainty Control | [`163-080-Calibration-Validation-and-Uncertainty-Control.md`](./163-080-Calibration-Validation-and-Uncertainty-Control.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`163-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./163-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -76,7 +74,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `160-169` |
 | Section | `06` — Sensores y Carga Útil Espacial |
 | Subsection | `163` — Observación |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-MKTG |

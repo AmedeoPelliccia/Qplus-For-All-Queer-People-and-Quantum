@@ -59,19 +59,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Cis-Lunar Logistics Controlled Definition | [`001_Cis-Lunar-Logistics-Controlled-Definition.md`](./001_Cis-Lunar-Logistics-Controlled-Definition.md) | active |
-| 02 | Cis-Lunar Logistics Domain and Mission Roles | [`002_Cis-Lunar-Logistics-Domain-and-Mission-Roles.md`](./002_Cis-Lunar-Logistics-Domain-and-Mission-Roles.md) | active |
-| 03 | Earth-Orbit to Lunar-Orbit Transfer Architecture | [`003_Earth-Orbit-Lunar-Orbit-Transfer-Architecture.md`](./003_Earth-Orbit-Lunar-Orbit-Transfer-Architecture.md) | active |
-| 04 | Cargo Transport, Staging and Depot Nodes | [`004_Cargo-Transport-Staging-and-Depot-Nodes.md`](./004_Cargo-Transport-Staging-and-Depot-Nodes.md) | active |
-| 05 | Propellant, Water, Power and Consumables Logistics | [`005_Propellant-Water-Power-and-Consumables-Logistics.md`](./005_Propellant-Water-Power-and-Consumables-Logistics.md) | active |
-| 06 | Lunar Surface, Orbit and Gateway Interfaces | [`006_Lunar-Surface-Orbit-and-Gateway-Interfaces.md`](./006_Lunar-Surface-Orbit-and-Gateway-Interfaces.md) | active |
-| 07 | Traffic Coordination, Rendezvous and Schedule Control | [`007_Traffic-Coordination-Rendezvous-and-Schedule-Control.md`](./007_Traffic-Coordination-Rendezvous-and-Schedule-Control.md) | active |
-| 08 | Supply Chain Resilience and Contingency Operations | [`008_Supply-Chain-Resilience-and-Contingency-Operations.md`](./008_Supply-Chain-Resilience-and-Contingency-Operations.md) | active |
-| 09 | ECSS / NASA / CCSDS Cis-Lunar Standards Mapping | [`009_ECSS-NASA-CCSDS-Cis-Lunar-Standards-Mapping.md`](./009_ECSS-NASA-CCSDS-Cis-Lunar-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`181-000-General.md`](./181-000-General.md) | active |
+| 010 | Cis Lunar Logistics Controlled Definition | [`181-010-Cis-Lunar-Logistics-Controlled-Definition.md`](./181-010-Cis-Lunar-Logistics-Controlled-Definition.md) | active |
+| 020 | Cis Lunar Logistics Domain and Mission Roles | [`181-020-Cis-Lunar-Logistics-Domain-and-Mission-Roles.md`](./181-020-Cis-Lunar-Logistics-Domain-and-Mission-Roles.md) | active |
+| 030 | Earth Orbit Lunar Orbit Transfer Architecture | [`181-030-Earth-Orbit-Lunar-Orbit-Transfer-Architecture.md`](./181-030-Earth-Orbit-Lunar-Orbit-Transfer-Architecture.md) | active |
+| 040 | Cargo Transport Staging and Depot Nodes | [`181-040-Cargo-Transport-Staging-and-Depot-Nodes.md`](./181-040-Cargo-Transport-Staging-and-Depot-Nodes.md) | active |
+| 050 | Propellant Water Power and Consumables Logistics | [`181-050-Propellant-Water-Power-and-Consumables-Logistics.md`](./181-050-Propellant-Water-Power-and-Consumables-Logistics.md) | active |
+| 060 | Lunar Surface Orbit and Gateway Interfaces | [`181-060-Lunar-Surface-Orbit-and-Gateway-Interfaces.md`](./181-060-Lunar-Surface-Orbit-and-Gateway-Interfaces.md) | active |
+| 070 | Traffic Coordination Rendezvous and Schedule Control | [`181-070-Traffic-Coordination-Rendezvous-and-Schedule-Control.md`](./181-070-Traffic-Coordination-Rendezvous-and-Schedule-Control.md) | active |
+| 080 | Supply Chain Resilience and Contingency Operations | [`181-080-Supply-Chain-Resilience-and-Contingency-Operations.md`](./181-080-Supply-Chain-Resilience-and-Contingency-Operations.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`181-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./181-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -82,7 +81,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `180-189` |
 | Section | `08` — Infraestructura y Logística Espacial |
 | Subsection | `181` — Logística Cis-Lunar |
-| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

@@ -38,18 +38,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Habitability Controlled Definition | [`001_Habitability-Controlled-Definition.md`](./001_Habitability-Controlled-Definition.md) | active |
-| 02 | Crew and Passenger Habitable Volume | [`002_Crew-and-Passenger-Habitable-Volume.md`](./002_Crew-and-Passenger-Habitable-Volume.md) | active |
-| 03 | Environmental Comfort and Human Factors | [`003_Environmental-Comfort-and-Human-Factors.md`](./003_Environmental-Comfort-and-Human-Factors.md) | active |
-| 04 | Radiation Shelter and Protected Zones | [`004_Radiation-Shelter-and-Protected-Zones.md`](./004_Radiation-Shelter-and-Protected-Zones.md) | active |
-| 05 | Food, Water, Hygiene and Waste Interfaces | [`005_Food-Water-Hygiene-and-Waste-Interfaces.md`](./005_Food-Water-Hygiene-and-Waste-Interfaces.md) | active |
-| 06 | Sleep, Work and Private Volume Allocation | [`006_Sleep-Work-and-Private-Volume-Allocation.md`](./006_Sleep-Work-and-Private-Volume-Allocation.md) | active |
-| 07 | Emergency Habitability and Safe Haven | [`007_Emergency-Habitability-and-Safe-Haven.md`](./007_Emergency-Habitability-and-Safe-Haven.md) | active |
-| 08 | ECLSS Interfaces and Constraints | [`008_ECLSS-Interfaces-and-Constraints.md`](./008_ECLSS-Interfaces-and-Constraints.md) | active |
-| 09 | Standards Traceability and Assurance Boundaries | [`009_Standards-Traceability-and-Assurance-Boundaries.md`](./009_Standards-Traceability-and-Assurance-Boundaries.md) | active |
+| 000 | General | [`101-000-General.md`](./101-000-General.md) | active |
+| 010 | Habitability Controlled Definition | [`101-010-Habitability-Controlled-Definition.md`](./101-010-Habitability-Controlled-Definition.md) | active |
+| 020 | Crew and Passenger Habitable Volume | [`101-020-Crew-and-Passenger-Habitable-Volume.md`](./101-020-Crew-and-Passenger-Habitable-Volume.md) | active |
+| 030 | Environmental Comfort and Human Factors | [`101-030-Environmental-Comfort-and-Human-Factors.md`](./101-030-Environmental-Comfort-and-Human-Factors.md) | active |
+| 040 | Radiation Shelter and Protected Zones | [`101-040-Radiation-Shelter-and-Protected-Zones.md`](./101-040-Radiation-Shelter-and-Protected-Zones.md) | active |
+| 050 | Food Water Hygiene and Waste Interfaces | [`101-050-Food-Water-Hygiene-and-Waste-Interfaces.md`](./101-050-Food-Water-Hygiene-and-Waste-Interfaces.md) | active |
+| 060 | Sleep Work and Private Volume Allocation | [`101-060-Sleep-Work-and-Private-Volume-Allocation.md`](./101-060-Sleep-Work-and-Private-Volume-Allocation.md) | active |
+| 070 | Emergency Habitability and Safe Haven | [`101-070-Emergency-Habitability-and-Safe-Haven.md`](./101-070-Emergency-Habitability-and-Safe-Haven.md) | active |
+| 080 | ECLSS Interfaces and Constraints | [`101-080-ECLSS-Interfaces-and-Constraints.md`](./101-080-ECLSS-Interfaces-and-Constraints.md) | active |
+| 090 | Standards Traceability and Assurance Boundaries | [`101-090-Standards-Traceability-and-Assurance-Boundaries.md`](./101-090-Standards-Traceability-and-Assurance-Boundaries.md) | active |
 
 ## 4. Footprint
 
@@ -60,7 +60,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `100-109` |
 | Section | `00` — Sistemas Generales y Soporte Vital Espacial |
 | Subsection | `101` — Habitabilidad |
-| Subsubject namespace | `00`–`09` (10 active); `10`–`99` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HORIZON, Q-HPC, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |

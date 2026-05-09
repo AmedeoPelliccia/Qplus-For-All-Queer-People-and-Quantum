@@ -52,18 +52,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Mission Control Controlled Definition | [`001_Mission-Control-Controlled-Definition.md`](001_Mission-Control-Controlled-Definition.md) | active |
-| 002 | Ground Segment and Control Centre Architecture | [`002_Ground-Segment-and-Control-Centre-Architecture.md`](002_Ground-Segment-and-Control-Centre-Architecture.md) | active |
-| 003 | Command Planning, Validation and Uplink Control | [`003_Command-Planning-Validation-and-Uplink-Control.md`](003_Command-Planning-Validation-and-Uplink-Control.md) | active |
-| 004 | Telemetry Reception, Monitoring and Trending | [`004_Telemetry-Reception-Monitoring-and-Trending.md`](004_Telemetry-Reception-Monitoring-and-Trending.md) | active |
-| 005 | Operations Procedures, Timelines and Flight Rules | [`005_Operations-Procedures-Timelines-and-Flight-Rules.md`](005_Operations-Procedures-Timelines-and-Flight-Rules.md) | active |
-| 006 | Anomaly Response, Escalation and Contingency Control | [`006_Anomaly-Response-Escalation-and-Contingency-Control.md`](006_Anomaly-Response-Escalation-and-Contingency-Control.md) | active |
-| 007 | Mission Operations Roles, Authority and Handover | [`007_Mission-Operations-Roles-Authority-and-Handover.md`](007_Mission-Operations-Roles-Authority-and-Handover.md) | active |
-| 008 | Simulation, Rehearsal and Operational Readiness Testing | [`008_Simulation-Rehearsal-and-Operational-Readiness-Testing.md`](008_Simulation-Rehearsal-and-Operational-Readiness-Testing.md) | active |
-| 009 | ECSS-NASA-CCSDS Mission Control Standards Mapping | [`009_ECSS-NASA-CCSDS-Mission-Control-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-Mission-Control-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`143-000-General.md`](./143-000-General.md) | active |
+| 010 | Mission Control Controlled Definition | [`143-010-Mission-Control-Controlled-Definition.md`](./143-010-Mission-Control-Controlled-Definition.md) | active |
+| 020 | Ground Segment and Control Centre Architecture | [`143-020-Ground-Segment-and-Control-Centre-Architecture.md`](./143-020-Ground-Segment-and-Control-Centre-Architecture.md) | active |
+| 030 | Command Planning Validation and Uplink Control | [`143-030-Command-Planning-Validation-and-Uplink-Control.md`](./143-030-Command-Planning-Validation-and-Uplink-Control.md) | active |
+| 040 | Telemetry Reception Monitoring and Trending | [`143-040-Telemetry-Reception-Monitoring-and-Trending.md`](./143-040-Telemetry-Reception-Monitoring-and-Trending.md) | active |
+| 050 | Operations Procedures Timelines and Flight Rules | [`143-050-Operations-Procedures-Timelines-and-Flight-Rules.md`](./143-050-Operations-Procedures-Timelines-and-Flight-Rules.md) | active |
+| 060 | Anomaly Response Escalation and Contingency Control | [`143-060-Anomaly-Response-Escalation-and-Contingency-Control.md`](./143-060-Anomaly-Response-Escalation-and-Contingency-Control.md) | active |
+| 070 | Mission Operations Roles Authority and Handover | [`143-070-Mission-Operations-Roles-Authority-and-Handover.md`](./143-070-Mission-Operations-Roles-Authority-and-Handover.md) | active |
+| 080 | Simulation Rehearsal and Operational Readiness Testing | [`143-080-Simulation-Rehearsal-and-Operational-Readiness-Testing.md`](./143-080-Simulation-Rehearsal-and-Operational-Readiness-Testing.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`143-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./143-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -74,7 +72,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `140-149` |
 | Section | `04` — Aviónica y Control de Misión Espacial |
 | Subsection | `143` — Control de Misión |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |

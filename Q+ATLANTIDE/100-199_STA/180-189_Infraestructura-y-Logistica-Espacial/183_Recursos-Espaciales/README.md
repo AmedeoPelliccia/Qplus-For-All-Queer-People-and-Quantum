@@ -56,19 +56,11 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Space Resources Controlled Definition | [`001_Space-Resources-Controlled-Definition.md`](./001_Space-Resources-Controlled-Definition.md) | active |
-| 02 | Resource Classes and Mission Roles | [`002_Resource-Classes-and-Mission-Roles.md`](./002_Resource-Classes-and-Mission-Roles.md) | active |
-| 03 | In-Situ Resource Utilization (ISRU) | [`003_In-Situ-Resource-Utilization-ISRU.md`](./003_In-Situ-Resource-Utilization-ISRU.md) | active |
-| 04 | Water Ice, Volatiles and Consumables | [`004_Water-Ice-Volatiles-and-Consumables.md`](./004_Water-Ice-Volatiles-and-Consumables.md) | active |
-| 05 | Regolith, Metals and Construction Feedstocks | [`005_Regolith-Metals-and-Construction-Feedstocks.md`](./005_Regolith-Metals-and-Construction-Feedstocks.md) | active |
-| 06 | Energy Resources and Surface Power Interfaces | [`006_Energy-Resources-and-Surface-Power-Interfaces.md`](./006_Energy-Resources-and-Surface-Power-Interfaces.md) | active |
-| 07 | Extraction, Processing, Storage and Transfer Boundaries | [`007_Extraction-Processing-Storage-and-Transfer-Boundaries.md`](./007_Extraction-Processing-Storage-and-Transfer-Boundaries.md) | active |
-| 08 | Sustainability, Planetary Protection and Legal Constraints | [`008_Sustainability-Planetary-Protection-and-Legal-Constraints.md`](./008_Sustainability-Planetary-Protection-and-Legal-Constraints.md) | active |
-| 09 | ECSS / NASA / CCSDS / UNOOSA and Artemis Accords Mapping | [`009_ECSS-NASA-CCSDS-UNOOSA-and-Artemis-Accords-Mapping.md`](./009_ECSS-NASA-CCSDS-UNOOSA-and-Artemis-Accords-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`183-000-General.md`](./183-000-General.md) | active |
+| 010 | Space Resources Controlled Definition | [`183-010-Space-Resources-Controlled-Definition.md`](./183-010-Space-Resources-Controlled-Definition.md) | active |
+| 020 | Resource Classes and Mission Roles | [`183-020-Resource-Classes-and-Mission-Roles.md`](./183-020-Resource-Classes-and-Mission-Roles.md) | active |
 
 ## 4. Footprint
 
@@ -79,7 +71,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `180-189` |
 | Section | `08` — Infraestructura y Logística Espacial |
 | Subsection | `183` — Recursos Espaciales |
-| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

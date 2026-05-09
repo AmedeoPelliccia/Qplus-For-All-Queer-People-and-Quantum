@@ -48,18 +48,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Thermal and Radiation Protection Controlled Definition | [`001_Thermal-and-Radiation-Protection-Controlled-Definition.md`](001_Thermal-and-Radiation-Protection-Controlled-Definition.md) | active |
-| 002 | Thermal Control Boundaries and Protection Functions | [`002_Thermal-Control-Boundaries-and-Protection-Functions.md`](002_Thermal-Control-Boundaries-and-Protection-Functions.md) | active |
-| 003 | Passive Thermal Protection Materials and Coatings | [`003_Passive-Thermal-Protection-Materials-and-Coatings.md`](003_Passive-Thermal-Protection-Materials-and-Coatings.md) | active |
-| 004 | Active Thermal Control Interfaces | [`004_Active-Thermal-Control-Interfaces.md`](004_Active-Thermal-Control-Interfaces.md) | active |
-| 005 | Radiation Environment and Exposure Regimes | [`005_Radiation-Environment-and-Exposure-Regimes.md`](005_Radiation-Environment-and-Exposure-Regimes.md) | active |
-| 006 | Radiation Shielding Materials and Architectures | [`006_Radiation-Shielding-Materials-and-Architectures.md`](006_Radiation-Shielding-Materials-and-Architectures.md) | active |
-| 007 | Electronics, Payload and Crew Protection Zones | [`007_Electronics-Payload-and-Crew-Protection-Zones.md`](007_Electronics-Payload-and-Crew-Protection-Zones.md) | active |
-| 008 | Thermal Cycling, Degradation and Lifetime Effects | [`008_Thermal-Cycling-Degradation-and-Lifetime-Effects.md`](008_Thermal-Cycling-Degradation-and-Lifetime-Effects.md) | active |
-| 009 | ECSS / NASA Thermal and Radiation Standards Mapping | [`009_ECSS-NASA-Thermal-and-Radiation-Standards-Mapping.md`](009_ECSS-NASA-Thermal-and-Radiation-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`112-000-General.md`](./112-000-General.md) | active |
+| 010 | Thermal and Radiation Protection Controlled Definition | [`112-010-Thermal-and-Radiation-Protection-Controlled-Definition.md`](./112-010-Thermal-and-Radiation-Protection-Controlled-Definition.md) | active |
+| 020 | Thermal Control Boundaries and Protection Functions | [`112-020-Thermal-Control-Boundaries-and-Protection-Functions.md`](./112-020-Thermal-Control-Boundaries-and-Protection-Functions.md) | active |
+| 030 | Passive Thermal Protection Materials and Coatings | [`112-030-Passive-Thermal-Protection-Materials-and-Coatings.md`](./112-030-Passive-Thermal-Protection-Materials-and-Coatings.md) | active |
+| 040 | Active Thermal Control Interfaces | [`112-040-Active-Thermal-Control-Interfaces.md`](./112-040-Active-Thermal-Control-Interfaces.md) | active |
+| 050 | Radiation Environment and Exposure Regimes | [`112-050-Radiation-Environment-and-Exposure-Regimes.md`](./112-050-Radiation-Environment-and-Exposure-Regimes.md) | active |
+| 060 | Radiation Shielding Materials and Architectures | [`112-060-Radiation-Shielding-Materials-and-Architectures.md`](./112-060-Radiation-Shielding-Materials-and-Architectures.md) | active |
+| 070 | Electronics Payload and Crew Protection Zones | [`112-070-Electronics-Payload-and-Crew-Protection-Zones.md`](./112-070-Electronics-Payload-and-Crew-Protection-Zones.md) | active |
+| 080 | Thermal Cycling Degradation and Lifetime Effects | [`112-080-Thermal-Cycling-Degradation-and-Lifetime-Effects.md`](./112-080-Thermal-Cycling-Degradation-and-Lifetime-Effects.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`112-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./112-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -70,7 +68,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `110-119` |
 | Section | `01` — Estructuras y Materiales Espaciales |
 | Subsection | `112` — Protección Térmica y Radiación |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-STRUCTURES, Q-GREENTECH, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |

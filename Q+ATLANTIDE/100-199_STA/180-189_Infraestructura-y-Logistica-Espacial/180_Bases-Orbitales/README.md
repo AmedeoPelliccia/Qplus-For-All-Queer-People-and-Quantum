@@ -58,19 +58,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Orbital Bases Controlled Definition | [`001_Orbital-Bases-Controlled-Definition.md`](./001_Orbital-Bases-Controlled-Definition.md) | active |
-| 02 | Orbital Base Classes and Mission Roles | [`002_Orbital-Base-Classes-and-Mission-Roles.md`](./002_Orbital-Base-Classes-and-Mission-Roles.md) | active |
-| 03 | Habitable and Uncrewed Base Architecture | [`003_Habitable-and-Uncrewed-Base-Architecture.md`](./003_Habitable-and-Uncrewed-Base-Architecture.md) | active |
-| 04 | Docking, Berthing and Traffic Interfaces | [`004_Docking-Berthing-and-Traffic-Interfaces.md`](./004_Docking-Berthing-and-Traffic-Interfaces.md) | active |
-| 05 | Power, Thermal, ECLSS and Resource Interfaces | [`005_Power-Thermal-ECLSS-and-Resource-Interfaces.md`](./005_Power-Thermal-ECLSS-and-Resource-Interfaces.md) | active |
-| 06 | Logistics, Storage, Cargo and Inventory Control | [`006_Logistics-Storage-Cargo-and-Inventory-Control.md`](./006_Logistics-Storage-Cargo-and-Inventory-Control.md) | active |
-| 07 | Maintenance, Servicing and Assembly Support | [`007_Maintenance-Servicing-and-Assembly-Support.md`](./007_Maintenance-Servicing-and-Assembly-Support.md) | active |
-| 08 | Safety Zones, Emergency Modes and Survivability | [`008_Safety-Zones-Emergency-Modes-and-Survivability.md`](./008_Safety-Zones-Emergency-Modes-and-Survivability.md) | active |
-| 09 | ECSS / NASA / CCSDS Orbital Infrastructure Standards Mapping | [`009_ECSS-NASA-CCSDS-Orbital-Infrastructure-Standards-Mapping.md`](./009_ECSS-NASA-CCSDS-Orbital-Infrastructure-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`180-000-General.md`](./180-000-General.md) | active |
+| 010 | Orbital Bases Controlled Definition | [`180-010-Orbital-Bases-Controlled-Definition.md`](./180-010-Orbital-Bases-Controlled-Definition.md) | active |
+| 020 | Orbital Base Classes and Mission Roles | [`180-020-Orbital-Base-Classes-and-Mission-Roles.md`](./180-020-Orbital-Base-Classes-and-Mission-Roles.md) | active |
+| 030 | Habitable and Uncrewed Base Architecture | [`180-030-Habitable-and-Uncrewed-Base-Architecture.md`](./180-030-Habitable-and-Uncrewed-Base-Architecture.md) | active |
+| 040 | Docking Berthing and Traffic Interfaces | [`180-040-Docking-Berthing-and-Traffic-Interfaces.md`](./180-040-Docking-Berthing-and-Traffic-Interfaces.md) | active |
+| 050 | Power Thermal ECLSS and Resource Interfaces | [`180-050-Power-Thermal-ECLSS-and-Resource-Interfaces.md`](./180-050-Power-Thermal-ECLSS-and-Resource-Interfaces.md) | active |
+| 060 | Logistics Storage Cargo and Inventory Control | [`180-060-Logistics-Storage-Cargo-and-Inventory-Control.md`](./180-060-Logistics-Storage-Cargo-and-Inventory-Control.md) | active |
+| 070 | Maintenance Servicing and Assembly Support | [`180-070-Maintenance-Servicing-and-Assembly-Support.md`](./180-070-Maintenance-Servicing-and-Assembly-Support.md) | active |
+| 080 | Safety Zones Emergency Modes and Survivability | [`180-080-Safety-Zones-Emergency-Modes-and-Survivability.md`](./180-080-Safety-Zones-Emergency-Modes-and-Survivability.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`180-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./180-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -81,7 +80,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `180-189` |
 | Section | `08` — Infraestructura y Logística Espacial |
 | Subsection | `180` — Bases Orbitales |
-| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

@@ -50,18 +50,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Electric Propulsion Controlled Definition | [`001_Electric-Propulsion-Controlled-Definition.md`](001_Electric-Propulsion-Controlled-Definition.md) | active |
-| 002 | Electric Propulsion Families and Selection Criteria | [`002_Electric-Propulsion-Families-and-Selection-Criteria.md`](002_Electric-Propulsion-Families-and-Selection-Criteria.md) | active |
-| 003 | Electrothermal Propulsion | [`003_Electrothermal-Propulsion.md`](003_Electrothermal-Propulsion.md) | active |
-| 004 | Electrostatic Propulsion: Ion and Hall Effect | [`004_Electrostatic-Propulsion-Ion-and-Hall-Effect.md`](004_Electrostatic-Propulsion-Ion-and-Hall-Effect.md) | active |
-| 005 | Electromagnetic Propulsion: MPDT and Pulsed Plasma | [`005_Electromagnetic-Propulsion-MPDT-and-Pulsed-Plasma.md`](005_Electromagnetic-Propulsion-MPDT-and-Pulsed-Plasma.md) | active |
-| 006 | Power Processing Units and Electrical Interfaces | [`006_Power-Processing-Units-and-Electrical-Interfaces.md`](006_Power-Processing-Units-and-Electrical-Interfaces.md) | active |
-| 007 | Propellant Feed, Storage and Compatibility | [`007_Propellant-Feed-Storage-and-Compatibility.md`](007_Propellant-Feed-Storage-and-Compatibility.md) | active |
-| 008 | Thrust, Isp, Efficiency and Duty-Cycle Metrics | [`008_Thrust-Isp-Efficiency-and-Duty-Cycle-Metrics.md`](008_Thrust-Isp-Efficiency-and-Duty-Cycle-Metrics.md) | active |
-| 009 | Thermal, EMC and Plume Interaction Boundaries | [`009_Thermal-EMC-and-Plume-Interaction-Boundaries.md`](009_Thermal-EMC-and-Plume-Interaction-Boundaries.md) | active |
-| 010 | Testing, Qualification and Assurance Boundaries | [`010_Testing-Qualification-and-Assurance-Boundaries.md`](010_Testing-Qualification-and-Assurance-Boundaries.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`121-000-General.md`](./121-000-General.md) | active |
+| 010 | Electric Propulsion Controlled Definition | [`121-010-Electric-Propulsion-Controlled-Definition.md`](./121-010-Electric-Propulsion-Controlled-Definition.md) | active |
+| 020 | Electric Propulsion Families and Selection Criteria | [`121-020-Electric-Propulsion-Families-and-Selection-Criteria.md`](./121-020-Electric-Propulsion-Families-and-Selection-Criteria.md) | active |
+| 030 | Electrothermal Propulsion | [`121-030-Electrothermal-Propulsion.md`](./121-030-Electrothermal-Propulsion.md) | active |
+| 040 | Electrostatic Propulsion Ion and Hall Effect | [`121-040-Electrostatic-Propulsion-Ion-and-Hall-Effect.md`](./121-040-Electrostatic-Propulsion-Ion-and-Hall-Effect.md) | active |
+| 050 | Electromagnetic Propulsion MPDT and Pulsed Plasma | [`121-050-Electromagnetic-Propulsion-MPDT-and-Pulsed-Plasma.md`](./121-050-Electromagnetic-Propulsion-MPDT-and-Pulsed-Plasma.md) | active |
+| 060 | Power Processing Units and Electrical Interfaces | [`121-060-Power-Processing-Units-and-Electrical-Interfaces.md`](./121-060-Power-Processing-Units-and-Electrical-Interfaces.md) | active |
+| 070 | Propellant Feed Storage and Compatibility | [`121-070-Propellant-Feed-Storage-and-Compatibility.md`](./121-070-Propellant-Feed-Storage-and-Compatibility.md) | active |
+| 080 | Thrust Isp Efficiency and Duty Cycle Metrics | [`121-080-Thrust-Isp-Efficiency-and-Duty-Cycle-Metrics.md`](./121-080-Thrust-Isp-Efficiency-and-Duty-Cycle-Metrics.md) | active |
+| 090 | Testing Qualification and Assurance Boundaries | [`121-090-Testing-Qualification-and-Assurance-Boundaries.md`](./121-090-Testing-Qualification-and-Assurance-Boundaries.md) | active |
 
 ## 4. Footprint
 
@@ -72,7 +70,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `120-129` |
 | Section | `02` — Propulsión Espacial Tradicional y Avanzada |
 | Subsection | `121` — Propulsión Eléctrica |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-GREENTECH, Q-HPC, Q-DATAGOV, Q-HORIZON, Q-INDUSTRY, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG |
