@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-038-README
-title: "ATLAS 030-039 · 03.038 — Inert Gas Generation (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-030-039-03-037-README
+title: "ATLAS 030-039 · 03.037 — Vacuum (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -12,8 +12,8 @@ master_range: "000–099"
 code_range: "030-039"
 section: "03"
 section_title: "Protección & Sistemas Mecánicos"
-subsection: "038"
-subsection_title: "Inert Gas Generation"
+subsection: "037"
+subsection_title: "Vacuum"
 primary_q_division: Q-MECHANICS
 support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 038 — Inert Gas Generation
+# ATLAS 030-039 · Section 03 · Subsection 037 — Vacuum
 
 ## 1. Purpose
 
-Subsection-level index for *Inert Gas Generation* (`038`) within ATLAS `030-039` — *Protección & Sistemas Mecánicos* — ATA 47.
+Subsection-level index for *Vacuum* (`037`) within ATLAS `030-039` — *Protección & Sistemas Mecánicos* — ATA 37.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `038` *Inert Gas Generation*.
+- Reserves the subsubject namespace `00`–`99` of subsection `037` *Vacuum*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `030-039` |
 | Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `038` — Inert Gas Generation |
+| Subsection | `037` — Vacuum |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-MECHANICS[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/038_Inert-Gas-Generation/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/037_Vacuum/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

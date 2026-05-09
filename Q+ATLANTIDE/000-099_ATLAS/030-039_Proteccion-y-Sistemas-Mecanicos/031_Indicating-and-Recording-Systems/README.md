@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-032-README
-title: "ATLAS 030-039 · 03.032 — Lights (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-030-039-03-031-README
+title: "ATLAS 030-039 · 03.031 — Indicating and Recording Systems (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -12,8 +12,8 @@ master_range: "000–099"
 code_range: "030-039"
 section: "03"
 section_title: "Protección & Sistemas Mecánicos"
-subsection: "032"
-subsection_title: "Lights"
+subsection: "031"
+subsection_title: "Indicating and Recording Systems"
 primary_q_division: Q-MECHANICS
 support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 032 — Lights
+# ATLAS 030-039 · Section 03 · Subsection 031 — Indicating and Recording Systems
 
 ## 1. Purpose
 
-Subsection-level index for *Lights* (`032`) within ATLAS `030-039` — *Protección & Sistemas Mecánicos* — ATA 33.
+Subsection-level index for *Indicating and Recording Systems* (`031`) within ATLAS `030-039` — *Protección & Sistemas Mecánicos* — ATA 31.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `032` *Lights*.
+- Reserves the subsubject namespace `00`–`99` of subsection `031` *Indicating and Recording Systems*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `030-039` |
 | Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `032` — Lights |
+| Subsection | `031` — Indicating and Recording Systems |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-MECHANICS[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/032_Lights/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/031_Indicating-and-Recording-Systems/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

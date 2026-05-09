@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-035-README
-title: "ATLAS 030-039 · 03.035 — Pneumatic (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-030-039-03-039-README
+title: "ATLAS 030-039 · 03.039 — Electrical-Electronic Panels and Multipurpose Components (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -12,8 +12,8 @@ master_range: "000–099"
 code_range: "030-039"
 section: "03"
 section_title: "Protección & Sistemas Mecánicos"
-subsection: "035"
-subsection_title: "Pneumatic"
+subsection: "039"
+subsection_title: "Electrical-Electronic Panels and Multipurpose Components"
 primary_q_division: Q-MECHANICS
 support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 035 — Pneumatic
+# ATLAS 030-039 · Section 03 · Subsection 039 — Electrical-Electronic Panels and Multipurpose Components
 
 ## 1. Purpose
 
-Subsection-level index for *Pneumatic* (`035`) within ATLAS `030-039` — *Protección & Sistemas Mecánicos* — ATA 36.
+Subsection-level index for *Electrical-Electronic Panels and Multipurpose Components* (`039`) within ATLAS `030-039` — *Protección & Sistemas Mecánicos* — ATA 39.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `035` *Pneumatic*.
+- Reserves the subsubject namespace `00`–`99` of subsection `039` *Electrical-Electronic Panels and Multipurpose Components*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `030-039` |
 | Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `035` — Pneumatic |
+| Subsection | `039` — Electrical-Electronic Panels and Multipurpose Components |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-MECHANICS[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/035_Pneumatic/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/039_Electrical-Electronic-Panels-and-Multipurpose-Components/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
