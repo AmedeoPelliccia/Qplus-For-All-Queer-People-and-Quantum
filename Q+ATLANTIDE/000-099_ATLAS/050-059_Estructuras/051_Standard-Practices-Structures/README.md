@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-050-059-05-055-README
-title: "ATLAS 050-059 · 05.055 — Windows (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-050-059-05-051-README
+title: "ATLAS 050-059 · 05.051 — Standard Practices — Structures (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -11,9 +11,9 @@ architecture_name: "Aircraft Top Level Architecture Schema/System"
 master_range: "000–099"
 code_range: "050-059"
 section: "05"
-section_title: "Estructuras Primarias e Interfaces de Programa / Q-Division"
-subsection: "055"
-subsection_title: "Windows"
+section_title: "Estructuras"
+subsection: "051"
+subsection_title: "Standard Practices — Structures"
 primary_q_division: Q-STRUCTURES
 support_q_divisions: [Q-AIR, Q-INDUSTRY, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 050-059 · Section 05 · Subsection 055 — Windows
+# ATLAS 050-059 · Section 05 · Subsection 051 — Standard Practices — Structures
 
 ## 1. Purpose
 
-Subsection-level index for *Windows* (`055`) within ATLAS `050-059` — *Estructuras Primarias e Interfaces de Programa / Q-Division* — ATA 56.
+Subsection-level index for *Standard Practices — Structures* (`050`) within ATLAS `050-059` — *Estructuras Primarias e Interfaces de Programa / Q-Division* — ATA 51.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `055` *Windows*.
+- Reserves the subsubject namespace `00`–`99` of subsection `051` *Standard Practices — Structures*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -50,14 +50,14 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
 | Master range | `000–099` |
 | Code range | `050-059` |
-| Section | `05` — Estructuras Primarias e Interfaces de Programa / Q-Division |
-| Subsection | `055` — Windows |
+| Section | `05` — Estructuras |
+| Subsection | `051` — Standard Practices — Structures |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-STRUCTURES[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-INDUSTRY, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras-Primarias-e-Interfaces-de-Programa-Q-Division/055_Windows/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras/051_Standard-Practices-Structures/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

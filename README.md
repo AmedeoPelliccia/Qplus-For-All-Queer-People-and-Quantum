@@ -393,7 +393,7 @@ programme interfaces / Q+ATLAS1000
 | [ATLAS](Q+ATLANTIDE/000-099_ATLAS/) | `000–099` | [`020–029`](Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/) | `02` | Sistemas Core de Aeronave | `00` | General Information |
 | [ATLAS](Q+ATLANTIDE/000-099_ATLAS/) | `000–099` | [`030–039`](Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-Sistemas-Mecanicos/) | `03` | Protección & Sistemas Mecánicos | `00` | General Information |
 | [ATLAS](Q+ATLANTIDE/000-099_ATLAS/) | `000–099` | [`040–049`](Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-APU/) | `04` | Aviónica, Información & APU | `00` | General Information |
-| [ATLAS](Q+ATLANTIDE/000-099_ATLAS/) | `000–099` | [`050–059`](Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras-Primarias-e-Interfaces-de-Programa-Q-Division/) | `05` | Estructuras Primarias e Interfaces de Programa / Q-Division | `00` | General Information |
+| [ATLAS](Q+ATLANTIDE/000-099_ATLAS/) | `000–099` | [`050–059`](Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras/) | `05` | Estructuras | `00` | General Information |
 | [ATLAS](Q+ATLANTIDE/000-099_ATLAS/) | `000–099` | [`060–069`](Q+ATLANTIDE/000-099_ATLAS/060-069_Propulsion-Tradicional/) | `06` | Propulsión Tradicional | `00` | General Information |
 | [ATLAS](Q+ATLANTIDE/000-099_ATLAS/) | `000–099` | [`070–079`](Q+ATLANTIDE/000-099_ATLAS/070-079_Propulsion-Eco-Tech-e-Hibrido-Electrica/) | `07` | Propulsión Eco-Tech e Híbrido-Eléctrica | `00` | General Information |
 | [ATLAS](Q+ATLANTIDE/000-099_ATLAS/) | `000–099` | [`080–089`](Q+ATLANTIDE/000-099_ATLAS/080-089_Propulsion-Alternativa-Cuantica/) | `08` | Propulsión Alternativa & Cuántica | `00` | General Information |

@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-050-059-05-057-README
-title: "ATLAS 050-059 · 05.057 — Q-Division Structural Interfaces (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-050-059-05-059-README
+title: "ATLAS 050-059 · 05.059 — Reserved or Programme-Controlled (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -11,9 +11,9 @@ architecture_name: "Aircraft Top Level Architecture Schema/System"
 master_range: "000–099"
 code_range: "050-059"
 section: "05"
-section_title: "Estructuras Primarias e Interfaces de Programa / Q-Division"
-subsection: "057"
-subsection_title: "Q-Division Structural Interfaces"
+section_title: "Estructuras"
+subsection: "059"
+subsection_title: "Reserved or Programme-Controlled"
 primary_q_division: Q-STRUCTURES
 support_q_divisions: [Q-AIR, Q-INDUSTRY, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-LEG]
@@ -23,19 +23,19 @@ status: reserved
 language: en
 ---
 
-# ATLAS 050-059 · Section 05 · Subsection 057 — Q-Division Structural Interfaces
+# ATLAS 050-059 · Section 05 · Subsection 059 — Reserved or Programme-Controlled
 
 ## 1. Purpose
 
-Subsection-level index for *Q-Division Structural Interfaces* (`057`) within ATLAS `050-059` — *Estructuras Primarias e Interfaces de Programa / Q-Division* — Q-STRUCTURES interface layer.
+Subsection-level index for *Reserved or Programme-Controlled* (`059`) within ATLAS `050-059` — *Estructuras*.
 
-This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
+This subsection is reserved for future programme-controlled use. It is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `057` *Q-Division Structural Interfaces*.
+- Reserves the subsubject namespace `00`–`99` of subsection `059` *Reserved or Programme-Controlled*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Content will be assigned by programme authority in subsequent baseline releases.
 
 ## 3. Subsubject Index
 
@@ -50,14 +50,14 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
 | Master range | `000–099` |
 | Code range | `050-059` |
-| Section | `05` — Estructuras Primarias e Interfaces de Programa / Q-Division |
-| Subsection | `057` — Q-Division Structural Interfaces |
+| Section | `05` — Estructuras |
+| Subsection | `059` — Reserved or Programme-Controlled |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-STRUCTURES[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-INDUSTRY, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras-Primarias-e-Interfaces-de-Programa-Q-Division/057_Q-Division-Structural-Interfaces/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras/059_Reserved-or-Programme-Controlled/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
@@ -65,7 +65,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-STRUCTURES` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. This subsection is reserved. No subsubjects shall be populated without a programme-authority change request approved by Q-STRUCTURES.
 
 ## 5. References & Citations
 

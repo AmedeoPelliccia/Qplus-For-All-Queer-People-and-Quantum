@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-050-059-05-058-README
-title: "ATLAS 050-059 · 05.058 — Programme Cross-Interfaces (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-050-059-05-056-README
+title: "ATLAS 050-059 · 05.056 — Windows (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -11,9 +11,9 @@ architecture_name: "Aircraft Top Level Architecture Schema/System"
 master_range: "000–099"
 code_range: "050-059"
 section: "05"
-section_title: "Estructuras Primarias e Interfaces de Programa / Q-Division"
-subsection: "058"
-subsection_title: "Programme Cross-Interfaces"
+section_title: "Estructuras"
+subsection: "056"
+subsection_title: "Windows"
 primary_q_division: Q-STRUCTURES
 support_q_divisions: [Q-AIR, Q-INDUSTRY, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 050-059 · Section 05 · Subsection 058 — Programme Cross-Interfaces
+# ATLAS 050-059 · Section 05 · Subsection 056 — Windows
 
 ## 1. Purpose
 
-Subsection-level index for *Programme Cross-Interfaces* (`058`) within ATLAS `050-059` — *Estructuras Primarias e Interfaces de Programa / Q-Division* — Cross-Q-Division coordination.
+Subsection-level index for *Windows* (`056`) within ATLAS `050-059` — *Estructuras* — ATA 56.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `058` *Programme Cross-Interfaces*.
+- Reserves the subsubject namespace `00`–`99` of subsection `056` *Windows*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -50,14 +50,14 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
 | Master range | `000–099` |
 | Code range | `050-059` |
-| Section | `05` — Estructuras Primarias e Interfaces de Programa / Q-Division |
-| Subsection | `058` — Programme Cross-Interfaces |
+| Section | `05` — Estructuras |
+| Subsection | `056` — Windows |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-STRUCTURES[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-INDUSTRY, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras-Primarias-e-Interfaces-de-Programa-Q-Division/058_Programme-Cross-Interfaces/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras/056_Windows/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
