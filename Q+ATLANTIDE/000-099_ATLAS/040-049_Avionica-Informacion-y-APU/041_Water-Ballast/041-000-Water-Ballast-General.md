@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 (Citations) and §20 (References) with identifiers marked TBD pending publication indexing. Parent context: [ATLAS 040-049 Water Ballast README](../README.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 (Citations) and §20 (References) with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> pending publication indexing. Parent context: [ATLAS 040-049 Water Ballast README](../README.md).
 
 ---
 
@@ -350,13 +350,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-000-01 | CG computation accuracy ±0.5% MAC | Analysis + ground test | BCC output within ±0.5% MAC of reference | TBD |
-| VV-000-02 | Transfer rate ≥ 20 kg/min per channel | Ground test | Measured rate ≥ 20 kg/min at nominal conditions | TBD |
-| VV-000-03 | Fail-safe isolation on BCC loss | Fault injection test | MOBVs closed within 200 ms of BCC watchdog trigger | TBD |
-| VV-000-04 | DO-160G environmental qualification | Lab test per DO-160G | Pass all applicable categories | TBD |
-| VV-000-05 | FMEA probability < 1×10⁻⁷ per FH | Analysis (ARP4761A) | Quantitative FTA result < 1×10⁻⁷ | TBD |
-| VV-000-06 | BITE fault detection coverage ≥ 99% | Analysis + test | BITE detects ≥ 99% of defined fault list | TBD |
-| VV-000-07 | CS-25 §25.1583 AFM supplement | Compliance review | AFM supplement accepted by authority | TBD |
+| VV-000-01 | CG computation accuracy ±0.5% MAC | Analysis + ground test | BCC output within ±0.5% MAC of reference | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-000-02 | Transfer rate ≥ 20 kg/min per channel | Ground test | Measured rate ≥ 20 kg/min at nominal conditions | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-000-03 | Fail-safe isolation on BCC loss | Fault injection test | MOBVs closed within 200 ms of BCC watchdog trigger | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-000-04 | DO-160G environmental qualification | Lab test per DO-160G | Pass all applicable categories | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-000-05 | FMEA probability < 1×10⁻⁷ per FH | Analysis (ARP4761A) | Quantitative FTA result < 1×10⁻⁷ | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-000-06 | BITE fault detection coverage ≥ 99% | Analysis + test | BITE detects ≥ 99% of defined fault list | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-000-07 | CS-25 §25.1583 AFM supplement | Compliance review | AFM supplement accepted by authority | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -383,14 +383,14 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 — Certification Specifications for Large Aeroplanes | Regulatory basis; §25.1583 operating limitations, §25.143 handling qualities | TBD |
-| <a id="ref-far25"></a>FAR-25 | FAA FAR Part 25 — Airworthiness Standards: Transport Category Airplanes | US regulatory mirror to CS-25 for FAA validation | TBD |
-| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment | Environmental qualification of WB components | TBD |
-| <a id="ref-arp4754b"></a>ARP4754B | SAE ARP4754B — Guidelines for Development of Civil Aircraft and Systems | System DAL assignment and development process | TBD |
-| <a id="ref-arp4761a"></a>ARP4761A | SAE ARP4761A — Guidelines and Methods for the Safety Assessment Process | FMEA and FTA methodology | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB data module coding and publication structure | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | AMM/FIM/IPD structure and ATA chapter coding | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Certification basis and approved AFM limitations | TBD |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 — Certification Specifications for Large Aeroplanes | Regulatory basis; §25.1583 operating limitations, §25.143 handling qualities | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-far25"></a>FAR-25 | FAA FAR Part 25 — Airworthiness Standards: Transport Category Airplanes | US regulatory mirror to CS-25 for FAA validation | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment | Environmental qualification of WB components | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arp4754b"></a>ARP4754B | SAE ARP4754B — Guidelines for Development of Civil Aircraft and Systems | System DAL assignment and development process | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arp4761a"></a>ARP4761A | SAE ARP4761A — Guidelines and Methods for the Safety Assessment Process | FMEA and FTA methodology | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB data module coding and publication structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | AMM/FIM/IPD structure and ATA chapter coding | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Certification basis and approved AFM limitations | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -398,8 +398,8 @@ Verification Evidence"]
 
 | Ref | Document | Identifier | Revision | Status | Link |
 |-----|---------|-----------|---------|--------|------|
-| R-001 | AMPEL360E System Architecture Document | AMPEL360E-SAD-001 | Rev A | Active | TBD |
-| R-002 | Water Ballast System Requirements Specification | AMPEL360E-SRS-041-001 | Rev A | Active | TBD |
+| R-001 | AMPEL360E System Architecture Document | AMPEL360E-SAD-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-002 | Water Ballast System Requirements Specification | AMPEL360E-SRS-041-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | R-003 | Q+ATLANTIDE ATLAS Framework README | QATL-ATLAS-README | Rev 1.0 | Active | [README](../README.md) |
 
 ---
@@ -408,9 +408,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-000-01 | Final CG authority limits (±3.5% MAC) subject to handling qualities flight test confirmation | Q-AIR | Open | TBD |
-| OI-000-02 | TCDS AFM supplement format and content pending EASA pre-submission review | Q-DATAGOV | Open | TBD |
-| OI-000-03 | DO-160G test laboratory selection and schedule for BCC environmental qualification | Q-MECHANICS | Open | TBD |
+| OI-000-01 | Final CG authority limits (±3.5% MAC) subject to handling qualities flight test confirmation | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-000-02 | TCDS AFM supplement format and content pending EASA pre-submission review | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-000-03 | DO-160G test laboratory selection and schedule for BCC environmental qualification | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -418,4 +418,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

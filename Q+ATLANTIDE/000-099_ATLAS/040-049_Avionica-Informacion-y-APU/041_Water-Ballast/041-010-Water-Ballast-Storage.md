@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 (Citations) and §20 (References) with identifiers marked TBD pending publication indexing. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 (Citations) and §20 (References) with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> pending publication indexing. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -346,13 +346,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-010-01 | Burst pressure ≥ 4× MAWP (0.35 bar) | Hydraulic burst test | No rupture at 1.4 bar | TBD |
-| VV-010-02 | Emergency landing load (9g fwd) | Static structural test | No bracket or attachment failure | TBD |
-| VV-010-03 | DO-160G §4 temperature/altitude | Lab test | Pass all temperature/altitude categories | TBD |
-| VV-010-04 | Slosh frequency < 0.05 Hz | CFD analysis + scaled model test | First sloshing mode < 0.05 Hz | TBD |
-| VV-010-05 | Material compatibility (HDPE-XL / water) | Immersion test per ISO 175 | No measurable degradation after 1 000 h at 70 °C | TBD |
-| VV-010-06 | Vent filter water ingress rejection | Spray test per DO-160G §10 | No water ingress through vent at max spray rate | TBD |
-| VV-010-07 | Tank mass (empty) ≤ 50 kg | Weighing | Measured mass ≤ 50 kg including all fittings | TBD |
+| VV-010-01 | Burst pressure ≥ 4× MAWP (0.35 bar) | Hydraulic burst test | No rupture at 1.4 bar | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-02 | Emergency landing load (9g fwd) | Static structural test | No bracket or attachment failure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-03 | DO-160G §4 temperature/altitude | Lab test | Pass all temperature/altitude categories | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-04 | Slosh frequency < 0.05 Hz | CFD analysis + scaled model test | First sloshing mode < 0.05 Hz | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-05 | Material compatibility (HDPE-XL / water) | Immersion test per ISO 175 | No measurable degradation after 1 000 h at 70 °C | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-06 | Vent filter water ingress rejection | Spray test per DO-160G §10 | No water ingress through vent at max spray rate | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-07 | Tank mass (empty) ≤ 50 kg | Weighing | Measured mass ≤ 50 kg including all fittings | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -378,13 +378,13 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 — Certification Specifications for Large Aeroplanes | §25.561, §25.571, §25.863 | TBD |
-| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G — Environmental Conditions and Test Procedures | §4, §6, §8 environmental qualification | TBD |
-| <a id="ref-nsf61"></a>NSF/ANSI 61 | NSF International/ANSI Standard 61 — Drinking Water System Components | Material safety for water contact | TBD |
-| <a id="ref-iso175"></a>ISO 175 | ISO 175:2010 — Plastics; Methods of Test for Effects of Immersion in Liquid | HDPE-XL material compatibility test | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Structural load certification basis | TBD |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 — Certification Specifications for Large Aeroplanes | §25.561, §25.571, §25.863 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G — Environmental Conditions and Test Procedures | §4, §6, §8 environmental qualification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-nsf61"></a>NSF/ANSI 61 | NSF International/ANSI Standard 61 — Drinking Water System Components | Material safety for water contact | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-iso175"></a>ISO 175 | ISO 175:2010 — Plastics; Methods of Test for Effects of Immersion in Liquid | HDPE-XL material compatibility test | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Structural load certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -393,8 +393,8 @@ Verification Evidence"]
 | Ref | Document | Identifier | Revision | Status | Link |
 |-----|---------|-----------|---------|--------|------|
 | R-001 | Water Ballast General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
-| R-002 | AMPEL360E Structural Design Manual | AMPEL360E-SDM-001 | Rev A | Active | TBD |
-| R-003 | WB Tank Material Trade Study | AMPEL360E-TS-041-001 | Rev A | Active | TBD |
+| R-002 | AMPEL360E Structural Design Manual | AMPEL360E-SDM-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-003 | WB Tank Material Trade Study | AMPEL360E-TS-041-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -402,9 +402,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-010-01 | Bladder tank alternative not fully traded; HDPE-XL baseline pending final weight budget confirmation | Q-MECHANICS | Open | TBD |
-| OI-010-02 | DO-160G humidity category selection for ABT location (potential condensation zone) | Q-MECHANICS | Open | TBD |
-| OI-010-03 | Biocide treatment protocol to be aligned with EASA potable water guidance (AMC 25.1419) | Q-GREENTECH | Open | TBD |
+| OI-010-01 | Bladder tank alternative not fully traded; HDPE-XL baseline pending final weight budget confirmation | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-010-02 | DO-160G humidity category selection for ABT location (potential condensation zone) | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-010-03 | Biocide treatment protocol to be aligned with EASA potable water guidance (AMC 25.1419) | Q-GREENTECH | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -412,4 +412,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

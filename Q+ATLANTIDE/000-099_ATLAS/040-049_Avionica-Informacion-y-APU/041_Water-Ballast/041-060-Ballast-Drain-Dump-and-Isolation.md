@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -357,13 +357,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-060-01 | Dump rate ≥ 100 kg/min (both tanks) | Ground flow test | Measured rate ≥ 100 kg/min at FS nominal | TBD |
-| VV-060-02 | Droplet size < 500 µm | Spray characterisation test | Sauter mean diameter < 500 µm | TBD |
-| VV-060-03 | Altitude interlock prevents dump below FL100 | Fault injection test | MODV cannot open below FL100 signal | TBD |
-| VV-060-04 | Fail-safe isolation within 200 ms of BCC loss | Fault injection | All MOBVs closed within 200 ms | TBD |
-| VV-060-05 | Leak isolation within 5 s of DP threshold | System test | Affected MOBV closes within 5 s | TBD |
-| VV-060-06 | Maintenance drain rate ≥ 40 L/min | Ground test | Measured drain rate ≥ 40 L/min | TBD |
-| VV-060-07 | MODV MTBF > 10 000 cycles | Reliability analysis + accelerated life test | Computed MTBF > 10 000 cycles | TBD |
+| VV-060-01 | Dump rate ≥ 100 kg/min (both tanks) | Ground flow test | Measured rate ≥ 100 kg/min at FS nominal | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-02 | Droplet size < 500 µm | Spray characterisation test | Sauter mean diameter < 500 µm | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-03 | Altitude interlock prevents dump below FL100 | Fault injection test | MODV cannot open below FL100 signal | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-04 | Fail-safe isolation within 200 ms of BCC loss | Fault injection | All MOBVs closed within 200 ms | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-05 | Leak isolation within 5 s of DP threshold | System test | Affected MOBV closes within 5 s | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-06 | Maintenance drain rate ≥ 40 L/min | Ground test | Measured drain rate ≥ 40 L/min | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-07 | MODV MTBF > 10 000 cycles | Reliability analysis + accelerated life test | Computed MTBF > 10 000 cycles | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -388,13 +388,13 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 §25.1309 | Failure effects and dump system design | TBD |
-| <a id="ref-icao-a16"></a>ICAO-A16 | ICAO Annex 16 Environmental Protection, Volume I | Dump altitude and droplet size requirements | TBD |
-| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G §8 | Humidity qualification for dump/drain hardware | TBD |
-| <a id="ref-easa-cm"></a>EASA-CM | EASA CM-21.A-002 — Water Ballast Environmental Impact | Environmental compliance guidance | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | TBD |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 §25.1309 | Failure effects and dump system design | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-icao-a16"></a>ICAO-A16 | ICAO Annex 16 Environmental Protection, Volume I | Dump altitude and droplet size requirements | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G §8 | Humidity qualification for dump/drain hardware | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-easa-cm"></a>EASA-CM | EASA CM-21.A-002 — Water Ballast Environmental Impact | Environmental compliance guidance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -412,9 +412,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-060-01 | Dump nozzle droplet size < 500 µm to be validated by spray test; supplier to provide certified data | Q-MECHANICS | Open | TBD |
-| OI-060-02 | ICAO approved dump zone list for route network to be added to AFM supplement | Q-DATAGOV | Open | TBD |
-| OI-060-03 | ACARS dump report format to be agreed with ACARS service provider | Q-DATAGOV | Open | TBD |
+| OI-060-01 | Dump nozzle droplet size < 500 µm to be validated by spray test; supplier to provide certified data | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-060-02 | ICAO approved dump zone list for route network to be added to AFM supplement | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-060-03 | ACARS dump report format to be agreed with ACARS service provider | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -422,4 +422,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 (Citations) and §20 (References) with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 (Citations) and §20 (References) with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -348,13 +348,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-030-01 | Pump rated flow 30 L/min at 1.0 bar | Bench flow test | Measured ≥ 30 L/min at 1.0 bar ΔP | TBD |
-| VV-030-02 | MOBV travel time ≤ 5 s full stroke | Functional test | Measured travel time ≤ 5 s at 28 VDC nominal | TBD |
-| VV-030-03 | PRV set pressure 1.8 ± 0.05 bar | Bench test | Opens at 1.75–1.85 bar | TBD |
-| VV-030-04 | DO-160G §8 humidity (Cat A) | Lab test | No degradation after 24 h at 95% RH, 50 °C | TBD |
-| VV-030-05 | DO-160G §14 icing (Cat B) | Lab test | Functional after icing test per Cat B profile | TBD |
-| VV-030-06 | MOBV fail-closed on power loss | Fault injection | MOBV closes within 2 s of 28 VDC removal | TBD |
-| VV-030-07 | PTC element: no overheating > 85 °C at 60 °C ambient | Lab test | Surface temperature ≤ 85 °C at 60 °C ambient | TBD |
+| VV-030-01 | Pump rated flow 30 L/min at 1.0 bar | Bench flow test | Measured ≥ 30 L/min at 1.0 bar ΔP | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-02 | MOBV travel time ≤ 5 s full stroke | Functional test | Measured travel time ≤ 5 s at 28 VDC nominal | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-03 | PRV set pressure 1.8 ± 0.05 bar | Bench test | Opens at 1.75–1.85 bar | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-04 | DO-160G §8 humidity (Cat A) | Lab test | No degradation after 24 h at 95% RH, 50 °C | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-05 | DO-160G §14 icing (Cat B) | Lab test | Functional after icing test per Cat B profile | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-06 | MOBV fail-closed on power loss | Fault injection | MOBV closes within 2 s of 28 VDC removal | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-07 | PTC element: no overheating > 85 °C at 60 °C ambient | Lab test | Surface temperature ≤ 85 °C at 60 °C ambient | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -379,12 +379,12 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | §25.1309 failure analysis, §25.869 wiring | TBD |
-| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G §8, §14 | Humidity and icing qualification | TBD |
-| <a id="ref-mil-prf-8564"></a>MIL-PRF-8564 | MIL-PRF-8564 — Hose Assemblies, Rubber, Hydraulic | PTFE-lined hose specification | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | TBD |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | §25.1309 failure analysis, §25.869 wiring | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G §8, §14 | Humidity and icing qualification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-mil-prf-8564"></a>MIL-PRF-8564 | MIL-PRF-8564 — Hose Assemblies, Rubber, Hydraulic | PTFE-lined hose specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -394,7 +394,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Distribution (041-020) | QATL-ATLAS-041-020 | Rev 1.0 | Active | [041-020](./041-020-Water-Ballast-Distribution-and-Transfer.md) |
-| R-003 | AMPEL360E Equipment List | AMPEL360E-EL-041 | Rev A | Active | TBD |
+| R-003 | AMPEL360E Equipment List | AMPEL360E-EL-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -402,9 +402,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-030-01 | TPA vendor selection pending; three suppliers under evaluation | Q-MECHANICS | Open | TBD |
-| OI-030-02 | Motor controller location in EE bay to be confirmed with thermal management team | Q-AIR | Open | TBD |
-| OI-030-03 | PTC tape adhesive compatibility with keel bay insulation material to be verified | Q-GREENTECH | Open | TBD |
+| OI-030-01 | TPA vendor selection pending; three suppliers under evaluation | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-030-02 | Motor controller location in EE bay to be confirmed with thermal management team | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-030-03 | PTC tape adhesive compatibility with keel bay insulation material to be verified | Q-GREENTECH | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -412,4 +412,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

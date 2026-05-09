@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -351,13 +351,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-090-01 | All 60 DMRL DMs present in CSDB | DMRL completeness check | Zero open DMRL items at CDR | TBD |
-| VV-090-02 | All DMs pass BREX validation | CSDB automated validation | Zero BREX errors in CSDB | TBD |
-| VV-090-03 | CS-25 traceability matrix 100% complete | Manual audit | All CS-25 paragraphs mapped to DMC | TBD |
-| VV-090-04 | AMT publication deliverable per ARINC 767 | Format compliance check | Publication loads on AMT without error | TBD |
-| VV-090-05 | DMC uniqueness: no duplicate DMCs | CSDB database check | Zero duplicate DMCs in CSDB | TBD |
-| VV-090-06 | Applicability CRT covers all 3 variants | CRT completeness audit | All variant codes assigned to applicable DMs | TBD |
-| VV-090-07 | AFM supplement approved before EIS | Certification milestone review | EASA approval letter received | TBD |
+| VV-090-01 | All 60 DMRL DMs present in CSDB | DMRL completeness check | Zero open DMRL items at CDR | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-090-02 | All DMs pass BREX validation | CSDB automated validation | Zero BREX errors in CSDB | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-090-03 | CS-25 traceability matrix 100% complete | Manual audit | All CS-25 paragraphs mapped to DMC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-090-04 | AMT publication deliverable per ARINC 767 | Format compliance check | Publication loads on AMT without error | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-090-05 | DMC uniqueness: no duplicate DMCs | CSDB database check | Zero duplicate DMCs in CSDB | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-090-06 | Applicability CRT covers all 3 variants | CRT completeness audit | All variant codes assigned to applicable DMs | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-090-07 | AFM supplement approved before EIS | Certification milestone review | EASA approval letter received | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -383,13 +383,13 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB data module coding and publication structure | TBD |
-| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | Regulatory basis for traceability matrix | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | AMM/FIM/IPD structure and ATA chapter coding | TBD |
-| <a id="ref-arinc767"></a>ARINC 767 | ARINC 767 — Electronic Documentation Standard | AMT electronic publication delivery | TBD |
-| <a id="ref-easa-amc21a101"></a>EASA-AMC21A | EASA AMC 21A.101 — Certification Specifications Compliance Documentation | CS-25 traceability matrix requirement | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Certification basis | TBD |
-| <a id="ref-brex"></a>AMPEL360E-BREX | AMPEL360E Business Rules Exchange Document (AMPEL360E-BREX-001) | Project BREX constraints | TBD |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB data module coding and publication structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | Regulatory basis for traceability matrix | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | AMM/FIM/IPD structure and ATA chapter coding | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arinc767"></a>ARINC 767 | ARINC 767 — Electronic Documentation Standard | AMT electronic publication delivery | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-easa-amc21a101"></a>EASA-AMC21A | EASA AMC 21A.101 — Certification Specifications Compliance Documentation | CS-25 traceability matrix requirement | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-brex"></a>AMPEL360E-BREX | AMPEL360E Business Rules Exchange Document (AMPEL360E-BREX-001) | Project BREX constraints | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -399,7 +399,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | Q+ATLANTIDE ATLAS README | QATL-ATLAS-README | Rev 1.0 | Active | [README](../README.md) |
-| R-003 | AMPEL360E BREX Document | AMPEL360E-BREX-001 | Rev A | Active | TBD |
+| R-003 | AMPEL360E BREX Document | AMPEL360E-BREX-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -407,9 +407,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-090-01 | BREX document (AMPEL360E-BREX-001) not yet formally issued; draft under Q-DATAGOV review | Q-DATAGOV | Open | TBD |
-| OI-090-02 | CRT variant codes for HGW and LRC variants not yet defined; pending aircraft variant freeze | Q-AIR | Open | TBD |
-| OI-090-03 | AFM supplement format approval process with EASA to be initiated at CDR | Q-DATAGOV | Open | TBD |
+| OI-090-01 | BREX document (AMPEL360E-BREX-001) not yet formally issued; draft under Q-DATAGOV review | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-090-02 | CRT variant codes for HGW and LRC variants not yet defined; pending aircraft variant freeze | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-090-03 | AFM supplement format approval process with EASA to be initiated at CDR | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -417,4 +417,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

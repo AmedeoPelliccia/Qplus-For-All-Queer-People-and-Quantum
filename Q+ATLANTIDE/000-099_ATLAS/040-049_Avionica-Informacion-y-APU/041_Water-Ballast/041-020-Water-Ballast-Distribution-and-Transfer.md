@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 (Citations) and §20 (References) with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 (Citations) and §20 (References) with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -330,13 +330,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-020-01 | Transfer rate ≥ 25 kg/min at worst-case head | Ground test | Measured ≥ 25 kg/min at 10° pitch equivalent | TBD |
-| VV-020-02 | Pressure drop ≤ 0.3 bar at 30 L/min | Analysis + bench test | Measured ΔP ≤ 0.3 bar | TBD |
-| VV-020-03 | Header hydrostatic at 2.25 bar (4× MAWP) | Hydrostatic test | No leakage or permanent deformation | TBD |
-| VV-020-04 | Water hammer pressure transient < 0.3 bar above steady-state | Analysis | Calculated transient < 0.3 bar for 3 s closure | TBD |
-| VV-020-05 | Routing separation from fuel lines ≥ 100 mm | Installation inspection | Measured clearance ≥ 100 mm at all points | TBD |
-| VV-020-06 | Freeze protection effectiveness at −40 °C | Environmental test | Line surface temperature ≥ 0 °C within 30 min | TBD |
-| VV-020-07 | Flow meter accuracy ±0.5% | Bench calibration | Error ≤ 0.5% against reference standard | TBD |
+| VV-020-01 | Transfer rate ≥ 25 kg/min at worst-case head | Ground test | Measured ≥ 25 kg/min at 10° pitch equivalent | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-02 | Pressure drop ≤ 0.3 bar at 30 L/min | Analysis + bench test | Measured ΔP ≤ 0.3 bar | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-03 | Header hydrostatic at 2.25 bar (4× MAWP) | Hydrostatic test | No leakage or permanent deformation | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-04 | Water hammer pressure transient < 0.3 bar above steady-state | Analysis | Calculated transient < 0.3 bar for 3 s closure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-05 | Routing separation from fuel lines ≥ 100 mm | Installation inspection | Measured clearance ≥ 100 mm at all points | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-06 | Freeze protection effectiveness at −40 °C | Environmental test | Line surface temperature ≥ 0 °C within 30 min | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-07 | Flow meter accuracy ±0.5% | Bench calibration | Error ≤ 0.5% against reference standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -361,13 +361,13 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | §25.1183 lines and fittings | TBD |
-| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G §8 | Humidity qualification for line assemblies | TBD |
-| <a id="ref-asme-b31"></a>ASME B31.1 | ASME B31.1 Power Piping | Line wall thickness sizing methodology | TBD |
-| <a id="ref-asme-b165"></a>ASME B16.5 | ASME B16.5 Pipe Flanges | Flange class and seating standards | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB module coding | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | TBD |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | §25.1183 lines and fittings | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G §8 | Humidity qualification for line assemblies | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-asme-b31"></a>ASME B31.1 | ASME B31.1 Power Piping | Line wall thickness sizing methodology | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-asme-b165"></a>ASME B16.5 | ASME B16.5 Pipe Flanges | Flange class and seating standards | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB module coding | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -385,9 +385,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-020-01 | Coriolis meter installation envelope in keel bay may conflict with structural frames; routing survey required | Q-MECHANICS | Open | TBD |
-| OI-020-02 | Water hammer analysis to be completed once pump closure time confirmed with vendor | Q-AIR | Open | TBD |
-| OI-020-03 | Dump line belly port location to be finalised with airframe structural team | Q-MECHANICS | Open | TBD |
+| OI-020-01 | Coriolis meter installation envelope in keel bay may conflict with structural frames; routing survey required | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-020-02 | Water hammer analysis to be completed once pump closure time confirmed with vendor | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-020-03 | Dump line belly port location to be finalised with airframe structural team | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -395,4 +395,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

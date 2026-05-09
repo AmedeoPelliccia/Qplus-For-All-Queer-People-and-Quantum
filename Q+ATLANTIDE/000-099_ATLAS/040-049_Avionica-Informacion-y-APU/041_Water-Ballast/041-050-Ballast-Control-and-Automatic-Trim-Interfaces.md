@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -338,13 +338,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-050-01 | PI trim law CG error < 0.5% MAC in steady state | HIL simulation | Steady-state error < 0.5% MAC | TBD |
-| VV-050-02 | Authority limit enforcement (3.5% MAC) | Functional test | BCC output saturates at 3.5% MAC demand | TBD |
-| VV-050-03 | Manual override activates within 1 s of WBCP press | Functional test | Transfer starts within 1 s | TBD |
-| VV-050-04 | BCC fail-safe isolation within 200 ms of watchdog | Fault injection | MOBVs closed within 200 ms | TBD |
-| VV-050-05 | DO-178C DAL B objectives met | Software audit | All DO-178C Table A-7 objectives satisfied | TBD |
-| VV-050-06 | AFDX latency ≤ 50 ms end-to-end | Network analysis + test | Measured latency ≤ 50 ms | TBD |
-| VV-050-07 | FTA: hazardous CG loss probability < 1×10⁻⁷ / FH | Safety analysis | Computed probability < 1×10⁻⁷ / FH | TBD |
+| VV-050-01 | PI trim law CG error < 0.5% MAC in steady state | HIL simulation | Steady-state error < 0.5% MAC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-02 | Authority limit enforcement (3.5% MAC) | Functional test | BCC output saturates at 3.5% MAC demand | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-03 | Manual override activates within 1 s of WBCP press | Functional test | Transfer starts within 1 s | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-04 | BCC fail-safe isolation within 200 ms of watchdog | Fault injection | MOBVs closed within 200 ms | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-05 | DO-178C DAL B objectives met | Software audit | All DO-178C Table A-7 objectives satisfied | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-06 | AFDX latency ≤ 50 ms end-to-end | Network analysis + test | Measured latency ≤ 50 ms | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-07 | FTA: hazardous CG loss probability < 1×10⁻⁷ / FH | Safety analysis | Computed probability < 1×10⁻⁷ / FH | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -369,13 +369,13 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 §25.1309 | Equipment failure effects | TBD |
-| <a id="ref-do178c"></a>DO-178C | RTCA DO-178C | DAL B software development | TBD |
-| <a id="ref-do254"></a>DO-254 | RTCA DO-254 | DAL C hardware development | TBD |
-| <a id="ref-arinc653"></a>ARINC 653-1 | ARINC 653-1 — Avionics Application SW Standard Interface | BCC partitioning standard | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | TBD |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 §25.1309 | Equipment failure effects | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do178c"></a>DO-178C | RTCA DO-178C | DAL B software development | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do254"></a>DO-254 | RTCA DO-254 | DAL C hardware development | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arinc653"></a>ARINC 653-1 | ARINC 653-1 — Avionics Application SW Standard Interface | BCC partitioning standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -385,7 +385,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Quantity Indication (041-040) | QATL-ATLAS-041-040 | Rev 1.0 | Active | [041-040](./041-040-Ballast-Quantity-Indication-and-Mass-Properties.md) |
-| R-003 | BCC Software Requirements Spec | AMPEL360E-SRS-041-SW-050 | Rev A | Active | TBD |
+| R-003 | BCC Software Requirements Spec | AMPEL360E-SRS-041-SW-050 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -393,9 +393,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-050-01 | Gain schedule Kp/Ki values pending handling qualities flight test data | Q-AIR | Open | TBD |
-| OI-050-02 | ARINC 653 hypervisor supplier selection pending IMA platform decision | Q-DATAGOV | Open | TBD |
-| OI-050-03 | AFDX VL-041 bandwidth allocation to be agreed with network architect | Q-DATAGOV | Open | TBD |
+| OI-050-01 | Gain schedule Kp/Ki values pending handling qualities flight test data | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-050-02 | ARINC 653 hypervisor supplier selection pending IMA platform decision | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-050-03 | AFDX VL-041 bandwidth allocation to be agreed with network architect | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -403,4 +403,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -340,13 +340,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-070-01 | Fill rate ≥ 80 L/min at 3 bar supply | Ground flow test | Measured ≥ 80 L/min | TBD |
-| VV-070-02 | Auto shut-off at 95% tank level | Functional test | Fill valve closes within 5 s of 95% signal | TBD |
-| VV-070-03 | Turbidity inhibit at > 5 NTU | Sensor test with known turbidity standard | Fill halted; alert displayed on WBSP | TBD |
-| VV-070-04 | STANAG dry-break: zero spillage on disconnect | Coupling test | 0 mL per disconnect at 3 bar | TBD |
-| VV-070-05 | BLE pairing requires authenticated credentials | Security test | Unauthenticated devices cannot pair | TBD |
-| VV-070-06 | Full fill of both tanks in ≤ 10 min | Ground test | Elapsed time ≤ 10 min for 800 L | TBD |
-| VV-070-07 | Servicing event logged to ACMS on next power-up | Functional test | Log entry present in ACMS after fill + flight | TBD |
+| VV-070-01 | Fill rate ≥ 80 L/min at 3 bar supply | Ground flow test | Measured ≥ 80 L/min | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-070-02 | Auto shut-off at 95% tank level | Functional test | Fill valve closes within 5 s of 95% signal | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-070-03 | Turbidity inhibit at > 5 NTU | Sensor test with known turbidity standard | Fill halted; alert displayed on WBSP | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-070-04 | STANAG dry-break: zero spillage on disconnect | Coupling test | 0 mL per disconnect at 3 bar | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-070-05 | BLE pairing requires authenticated credentials | Security test | Unauthenticated devices cannot pair | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-070-06 | Full fill of both tanks in ≤ 10 min | Ground test | Elapsed time ≤ 10 min for 800 L | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-070-07 | Servicing event logged to ACMS on next power-up | Functional test | Log entry present in ACMS after fill + flight | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -371,13 +371,13 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-nsf61"></a>NSF/ANSI 61 | NSF/ANSI Standard 61 — Drinking Water System Components | Wetted materials safety | TBD |
-| <a id="ref-stanag3558"></a>STANAG 3558 | NATO STANAG 3558 — Dry-Break Coupling | Fill port coupling standard | TBD |
-| <a id="ref-ahm810"></a>AHM 810 | IATA AHM 810 — Standard Ground Handling Agreement | Ground service interface | TBD |
-| <a id="ref-arinc827"></a>ARINC 827 | ARINC 827 — Wireless Avionics Intra-Communications (WAIC) | BLE security guidance | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | TBD |
+| <a id="ref-nsf61"></a>NSF/ANSI 61 | NSF/ANSI Standard 61 — Drinking Water System Components | Wetted materials safety | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-stanag3558"></a>STANAG 3558 | NATO STANAG 3558 — Dry-Break Coupling | Fill port coupling standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ahm810"></a>AHM 810 | IATA AHM 810 — Standard Ground Handling Agreement | Ground service interface | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arinc827"></a>ARINC 827 | ARINC 827 — Wireless Avionics Intra-Communications (WAIC) | BLE security guidance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -387,7 +387,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Distribution (041-020) | QATL-ATLAS-041-020 | Rev 1.0 | Active | [041-020](./041-020-Water-Ballast-Distribution-and-Transfer.md) |
-| R-003 | AMPEL360E Ground Servicing Manual | AMPEL360E-GSM-041 | Rev A | Active | TBD |
+| R-003 | AMPEL360E Ground Servicing Manual | AMPEL360E-GSM-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -395,9 +395,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-070-01 | STANAG 3558 coupling colour-code (blue) to be confirmed as non-conflicting with airport water supply hose standards | Q-MECHANICS | Open | TBD |
-| OI-070-02 | PDU app specification and airline customisation policy to be agreed with launch customer | Q-DATAGOV | Open | TBD |
-| OI-070-03 | Biocide injection port design pending approval from EASA re: NSF/ANSI 61 compliance impact | Q-GREENTECH | Open | TBD |
+| OI-070-01 | STANAG 3558 coupling colour-code (blue) to be confirmed as non-conflicting with airport water supply hose standards | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-070-02 | PDU app specification and airline customisation policy to be agreed with launch customer | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-070-03 | Biocide injection port design pending approval from EASA re: NSF/ANSI 61 compliance impact | Q-GREENTECH | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -405,4 +405,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

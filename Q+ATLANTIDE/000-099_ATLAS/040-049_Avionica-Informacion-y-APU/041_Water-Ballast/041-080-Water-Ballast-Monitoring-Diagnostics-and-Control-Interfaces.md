@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -347,13 +347,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-080-01 | BITE fault detection coverage ≥ 99% | Fault injection test (87 faults) | ≥ 87 of 87 faults detected (99% = 87/87) | TBD |
-| VV-080-02 | LRU isolation rate ≥ 95% | Fault injection test | ≥ 95% of detected faults isolated to single LRU | TBD |
-| VV-080-03 | False alarm rate < 1 per 1 000 FH | In-service monitoring (EIS) | Fleet average < 1 FA per 1 000 FH at 12 months | TBD |
-| VV-080-04 | CMC message format per ARINC 780 | Format compliance check | All fields conform to ARINC 780 specification | TBD |
-| VV-080-05 | Leak detection threshold sensitivity | Lab test (controlled leak 5 L/min) | DP alert triggers within 30 s at 5 L/min | TBD |
-| VV-080-06 | PHM pump efficiency prediction accuracy | Bench test (accelerated wear) | Efficiency trend tracks measured η within ±5% | TBD |
-| VV-080-07 | DO-178C DAL C objectives met | Software audit | All Table A-5 objectives satisfied | TBD |
+| VV-080-01 | BITE fault detection coverage ≥ 99% | Fault injection test (87 faults) | ≥ 87 of 87 faults detected (99% = 87/87) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-080-02 | LRU isolation rate ≥ 95% | Fault injection test | ≥ 95% of detected faults isolated to single LRU | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-080-03 | False alarm rate < 1 per 1 000 FH | In-service monitoring (EIS) | Fleet average < 1 FA per 1 000 FH at 12 months | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-080-04 | CMC message format per ARINC 780 | Format compliance check | All fields conform to ARINC 780 specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-080-05 | Leak detection threshold sensitivity | Lab test (controlled leak 5 L/min) | DP alert triggers within 30 s at 5 L/min | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-080-06 | PHM pump efficiency prediction accuracy | Bench test (accelerated wear) | Efficiency trend tracks measured η within ±5% | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-080-07 | DO-178C DAL C objectives met | Software audit | All Table A-5 objectives satisfied | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -379,13 +379,13 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-arinc767"></a>ARINC 767 | ARINC 767 — Electronic Documentation Standard | AMT interface protocol | TBD |
-| <a id="ref-arinc780"></a>ARINC 780 | ARINC 780 — On-Board Maintenance System | CMC fault message format | TBD |
-| <a id="ref-do178c"></a>DO-178C | RTCA DO-178C | DAL C BITE software development | TBD |
-| <a id="ref-arinc724b"></a>ARINC 724B | ARINC 724B — Aircraft Communications Addressing and Reporting System | ACARS downlink | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | TBD |
+| <a id="ref-arinc767"></a>ARINC 767 | ARINC 767 — Electronic Documentation Standard | AMT interface protocol | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arinc780"></a>ARINC 780 | ARINC 780 — On-Board Maintenance System | CMC fault message format | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do178c"></a>DO-178C | RTCA DO-178C | DAL C BITE software development | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arinc724b"></a>ARINC 724B | ARINC 724B — Aircraft Communications Addressing and Reporting System | ACARS downlink | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -395,7 +395,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Control (041-050) | QATL-ATLAS-041-050 | Rev 1.0 | Active | [041-050](./041-050-Ballast-Control-and-Automatic-Trim-Interfaces.md) |
-| R-003 | WB Fault Taxonomy | AMPEL360E-FT-041 | Rev A | Active | TBD |
+| R-003 | WB Fault Taxonomy | AMPEL360E-FT-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -403,9 +403,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-080-01 | WB Fault Taxonomy (87 faults) to be finalised; draft under review by Q-AIR and Q-MECHANICS | Q-DATAGOV | Open | TBD |
-| OI-080-02 | PHM life-limit for MOBV (50 000 cycles) to be validated by accelerated life test | Q-MECHANICS | Open | TBD |
-| OI-080-03 | ACMS health data block format to be agreed with ACMS supplier | Q-DATAGOV | Open | TBD |
+| OI-080-01 | WB Fault Taxonomy (87 faults) to be finalised; draft under review by Q-AIR and Q-MECHANICS | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-080-02 | PHM life-limit for MOBV (50 000 cycles) to be validated by accelerated life test | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-080-03 | ACMS health data block format to be agreed with ACMS supplier | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -413,4 +413,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

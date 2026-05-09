@@ -32,7 +32,7 @@ language: en
 
 ## 0. Hyperlink Policy
 
-All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
 
 ---
 
@@ -351,13 +351,13 @@ Verification Evidence"]
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-040-01 | CLS accuracy ±0.2% FS | Bench calibration vs. reference volume | Error ≤ ±0.2% FS at all points | TBD |
-| VV-040-02 | ULS accuracy ±1 mm | Bench test with reference gauge | Error ≤ ±1 mm at 10 points | TBD |
-| VV-040-03 | WBMS fused mass accuracy ±0.5% FS | System-level test with reference masses | Combined error ≤ ±0.5% FS | TBD |
-| VV-040-04 | Kalman filter convergence time < 30 s | Software test | Filter converges within 30 s of sensor restore | TBD |
-| VV-040-05 | Sensor fault detection (≥ 99% coverage) | Fault injection test | All injected sensor faults detected within 5 s | TBD |
-| VV-040-06 | DO-160G §7 operational shock | Lab test | CLS probe functional after 6g shock | TBD |
-| VV-040-07 | DAL B software compliance | DO-178C audit + MC/DC coverage | 100% MC/DC, all objectives met | TBD |
+| VV-040-01 | CLS accuracy ±0.2% FS | Bench calibration vs. reference volume | Error ≤ ±0.2% FS at all points | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-02 | ULS accuracy ±1 mm | Bench test with reference gauge | Error ≤ ±1 mm at 10 points | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-03 | WBMS fused mass accuracy ±0.5% FS | System-level test with reference masses | Combined error ≤ ±0.5% FS | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-04 | Kalman filter convergence time < 30 s | Software test | Filter converges within 30 s of sensor restore | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-05 | Sensor fault detection (≥ 99% coverage) | Fault injection test | All injected sensor faults detected within 5 s | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-06 | DO-160G §7 operational shock | Lab test | CLS probe functional after 6g shock | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-07 | DAL B software compliance | DO-178C audit + MC/DC coverage | 100% MC/DC, all objectives met | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -382,13 +382,13 @@ Verification Evidence"]
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | §25.1309 equipment systems | TBD |
-| <a id="ref-do178c"></a>DO-178C | RTCA DO-178C — Software Considerations in Airborne Systems and Equipment Certification | WBMS software development at DAL B | TBD |
-| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G §7, §8 | Shock and humidity qualification | TBD |
-| <a id="ref-arp4754b"></a>ARP4754B | SAE ARP4754B | DAL assignment | TBD |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | TBD |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | §25.1309 equipment systems | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do178c"></a>DO-178C | RTCA DO-178C — Software Considerations in Airborne Systems and Equipment Certification | WBMS software development at DAL B | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do160g"></a>DO-160G | RTCA DO-160G §7, §8 | Shock and humidity qualification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arp4754b"></a>ARP4754B | SAE ARP4754B | DAL assignment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -398,7 +398,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Control (041-050) | QATL-ATLAS-041-050 | Rev 1.0 | Active | [041-050](./041-050-Ballast-Control-and-Automatic-Trim-Interfaces.md) |
-| R-003 | WBMS Software Requirements Spec | AMPEL360E-SRS-041-SW-040 | Rev A | Active | TBD |
+| R-003 | WBMS Software Requirements Spec | AMPEL360E-SRS-041-SW-040 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -406,9 +406,9 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-040-01 | Load cell structural qualification (shunt path) to be agreed with structural team | Q-MECHANICS | Open | TBD |
-| OI-040-02 | Kalman filter convergence time spec (30 s) to be confirmed acceptable by FCMC team | Q-AIR | Open | TBD |
-| OI-040-03 | ULS performance in partially filled tank with foam/aeration to be validated by test | Q-MECHANICS | Open | TBD |
+| OI-040-01 | Load cell structural qualification (shunt path) to be agreed with structural team | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-040-02 | Kalman filter convergence time spec (30 s) to be confirmed acceptable by FCMC team | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-040-03 | ULS performance in partially filled tank with foam/aeration to be validated by test | Q-MECHANICS | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -416,4 +416,4 @@ Verification Evidence"]
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
