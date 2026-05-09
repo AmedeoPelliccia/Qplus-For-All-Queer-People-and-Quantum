@@ -14,12 +14,12 @@ section: "02"
 section_title: "Sistemas Core de Aeronave"
 subsection: "023"
 subsection_title: "Communications"
-primary_q_division: Q-AIR
-support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH]
+primary_q_division: Q-DATAGOV
+support_q_divisions: [Q-AIR, Q-HPC, Q-GROUND, Q-MECHANICS, Q-SPACE]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `023` *Communications*.
+- Populates the ATA SNS-aligned section namespace `023-000`–`023-090` of subsection `023` *Communications* (ATA 23) — speech communications, data communications, passenger address, interphone, audio integration, static discharge, cabin monitoring, SATCOM/ACARS/CPDLC datalink, and S1000D traceability.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Sections `023-000` through `023-060` map directly to ATA 23-00-00 through 23-60-00. Sections `023-070` through `023-090` are programme-controlled extensions.
+- Section naming pattern: `023-XXX-Title.md` where `XXX` is the three-digit local section code aligned to the ATA SNS (e.g., `023-010` → ATA `23-10-00`).
 
-## 3. Subsubject Index
+## 3. Section Index
 
-| NN | Title | Document | Status |
-|---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| Section | ATA SNS | Title | Document | Status |
+|---:|---|---|---|---|
+| 023-000 | 23-00-00 | General | [`023-000-General.md`](./023-000-General.md) | active |
+| 023-010 | 23-10-00 | Speech Communications | [`023-010-Speech-Communications.md`](./023-010-Speech-Communications.md) | active |
+| 023-020 | 23-20-00 | Data Communications and Automatic Calling | [`023-020-Data-Communications-and-Automatic-Calling.md`](./023-020-Data-Communications-and-Automatic-Calling.md) | active |
+| 023-030 | 23-30-00 | Passenger Address and Cabin Communications | [`023-030-Passenger-Address-and-Cabin-Communications.md`](./023-030-Passenger-Address-and-Cabin-Communications.md) | active |
+| 023-040 | 23-40-00 | Interphone and Crew Communications | [`023-040-Interphone-and-Crew-Communications.md`](./023-040-Interphone-and-Crew-Communications.md) | active |
+| 023-050 | 23-50-00 | Audio Integrating System | [`023-050-Audio-Integrating-System.md`](./023-050-Audio-Integrating-System.md) | active |
+| 023-060 | 23-60-00 | Static Discharging and EMI Interfaces | [`023-060-Static-Discharging-and-EMI-Interfaces.md`](./023-060-Static-Discharging-and-EMI-Interfaces.md) | active |
+| 023-070 | 23-70-00 | Audio-Video and Cabin Monitoring Interfaces | [`023-070-Audio-Video-and-Cabin-Monitoring-Interfaces.md`](./023-070-Audio-Video-and-Cabin-Monitoring-Interfaces.md) | programme-controlled-extension |
+| 023-080 | 23-80-00 | SATCOM, ACARS, CPDLC and Datalink Interfaces | [`023-080-SATCOM-ACARS-CPDLC-and-Datalink-Interfaces.md`](./023-080-SATCOM-ACARS-CPDLC-and-Datalink-Interfaces.md) | programme-controlled-datalink-extension |
+| 023-090 | 23-90-00 | S1000D CSDB Mapping and Traceability | [`023-090-S1000D-CSDB-Mapping-and-Traceability.md`](./023-090-S1000D-CSDB-Mapping-and-Traceability.md) | programme-controlled-publication-and-traceability-extension |
 
 ## 4. Footprint
 
@@ -52,9 +62,9 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `020-029` |
 | Section | `02` — Sistemas Core de Aeronave |
 | Subsection | `023` — Communications |
-| Subsubject namespace | `00`–`99` (reserved) |
-| Primary Q-Division | Q-AIR[^qdiv] |
-| Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH |
+| Subsubject namespace | `023-000`–`023-090` (10 sections active) |
+| Primary Q-Division | Q-DATAGOV[^qdiv] |
+| Support Q-Divisions | Q-AIR, Q-HPC, Q-GROUND, Q-MECHANICS, Q-SPACE |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/023_Communications/` |
@@ -65,7 +75,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All sections under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `023-000`–`023-090` shall preserve those header fields and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
