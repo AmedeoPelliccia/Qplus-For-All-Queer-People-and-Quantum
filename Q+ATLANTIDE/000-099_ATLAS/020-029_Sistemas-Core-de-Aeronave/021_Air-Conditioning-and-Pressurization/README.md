@@ -19,7 +19,7 @@ support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `021` *Air Conditioning and Pressurization*.
+- Populates the ATA SNS-aligned section namespace `021-000`–`021-090` of subsection `021` *Air Conditioning and Pressurization* (ATA 21) — the Environmental Control System (ECS) functions for the aircraft.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Sections `021-000` through `021-070` map directly to ATA 21-00-00 through 21-70-00. Sections `021-080` and `021-090` are programme-controlled extensions covering ECS monitoring/diagnostics and S1000D/CSDB traceability respectively.
+- Section naming pattern: `021-XXX-Title.md` where `XXX` is the three-digit local section code aligned to the ATA SNS (e.g., `021-010` → ATA `21-10-00`).
 
-## 3. Subsubject Index
+## 3. Section Index
 
-| NN | Title | Document | Status |
-|---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| Section | ATA SNS | Title | Document | Status |
+|---:|---|---|---|---|
+| 021-000 | 21-00-00 | General | [`021-000-General.md`](./021-000-General.md) | active |
+| 021-010 | 21-10-00 | Compression | [`021-010-Compression.md`](./021-010-Compression.md) | active |
+| 021-020 | 21-20-00 | Distribution | [`021-020-Distribution.md`](./021-020-Distribution.md) | active |
+| 021-030 | 21-30-00 | Pressurization Control | [`021-030-Pressurization-Control.md`](./021-030-Pressurization-Control.md) | active |
+| 021-040 | 21-40-00 | Heating | [`021-040-Heating.md`](./021-040-Heating.md) | active |
+| 021-050 | 21-50-00 | Cooling | [`021-050-Cooling.md`](./021-050-Cooling.md) | active |
+| 021-060 | 21-60-00 | Temperature Control | [`021-060-Temperature-Control.md`](./021-060-Temperature-Control.md) | active |
+| 021-070 | 21-70-00 | Moisture and Air Contaminant Control | [`021-070-Moisture-and-Air-Contaminant-Control.md`](./021-070-Moisture-and-Air-Contaminant-Control.md) | active |
+| 021-080 | 21-80-00 | ECS Monitoring, Diagnostics and Control Interfaces | [`021-080-ECS-Monitoring-Diagnostics-and-Control-Interfaces.md`](./021-080-ECS-Monitoring-Diagnostics-and-Control-Interfaces.md) | programme-controlled-extension |
+| 021-090 | 21-90-00 | S1000D CSDB Mapping and Traceability | [`021-090-S1000D-CSDB-Mapping-and-Traceability.md`](./021-090-S1000D-CSDB-Mapping-and-Traceability.md) | programme-controlled-publication-and-traceability-extension |
 
 ## 4. Footprint
 
@@ -52,7 +62,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `020-029` |
 | Section | `02` — Sistemas Core de Aeronave |
 | Subsection | `021` — Air Conditioning and Pressurization |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `021-000`–`021-090` (10 sections: 021-000–021-090 active) |
 | Primary Q-Division | Q-AIR[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-LEG |
@@ -65,7 +75,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All sections under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `021-000`–`021-090` shall preserve those header fields and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
