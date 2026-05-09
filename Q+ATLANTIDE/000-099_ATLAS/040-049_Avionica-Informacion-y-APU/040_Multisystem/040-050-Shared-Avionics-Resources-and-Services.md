@@ -335,11 +335,11 @@ graph LR
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-050-01 | PCM output voltage tolerance | Bench test | ±5% under all load conditions | TBD |
-| VV-050-02 | Fan failure detection | Fault injection | Detected within 5 s | TBD |
-| VV-050-03 | DO-160G temperature qualification | Environmental lab | Pass per DO-160G Section 4 | TBD |
-| VV-050-04 | Timing jitter | Bench measurement | < 50 ns at module input | TBD |
-| VV-050-05 | BITE bus aggregation | Integration test | All module status correctly aggregated | TBD |
+| VV-050-01 | PCM output voltage tolerance | Bench test | ±5% under all load conditions | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-02 | Fan failure detection | Fault injection | Detected within 5 s | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-03 | DO-160G temperature qualification | Environmental lab | Pass per DO-160G Section 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-04 | Timing jitter | Bench measurement | < 50 ns at module input | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-050-05 | BITE bus aggregation | Integration test | All module status correctly aggregated | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -366,12 +366,12 @@ graph LR
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-do-160g"></a>DO-160G | RTCA DO-160G — Environmental Conditions and Test Procedures | Environmental qualification | TBD |
-| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C | Software assurance | TBD |
-| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 | Hardware assurance | TBD |
+| <a id="ref-do-160g"></a>DO-160G | RTCA DO-160G — Environmental Conditions and Test Procedures | Environmental qualification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C | Software assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 | Hardware assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-gov"></a>GOV | Q+ATLANTIDE Governance Framework | Document governance | [Q+ATLANTIDE.md](../../../../organization/Q+ATLANTIDE.md) |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 | ATA chapter alignment | TBD |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 | ATA chapter alignment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -382,7 +382,7 @@ graph LR
 | REF-050-01 | Multisystem General | QATL-ATLAS-1000-ATLAS-040-049-04-040-000 | 1.0.0 | Active | [040-000](./040-000-Multisystem-General.md) |
 | REF-050-02 | IMA Platform | QATL-ATLAS-1000-ATLAS-040-049-04-040-010 | 1.0.0 | Active | [040-010](./040-010-Integrated-Modular-Avionics-IMA.md) |
 | REF-050-03 | Time Synchronisation | QATL-ATLAS-1000-ATLAS-040-049-04-040-060 | 1.0.0 | Active | [040-060](./040-060-Time-Synchronization-and-Data-Integrity.md) |
-| REF-050-04 | RTCA DO-160G | DO-160G | G | Normative | TBD |
+| REF-050-04 | RTCA DO-160G | DO-160G | G | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -390,9 +390,9 @@ graph LR
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-050-01 | Liquid vs forced-air cooling trade study pending | Q-AIR | Open | TBD |
-| OI-050-02 | BITE bus bandwidth adequacy analysis for extended module count | Q-HPC | Open | TBD |
-| OI-050-03 | DO-160G qualification test plan to be developed | Q-DATAGOV | Open | TBD |
+| OI-050-01 | Liquid vs forced-air cooling trade study pending | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-050-02 | BITE bus bandwidth adequacy analysis for extended module count | Q-HPC | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-050-03 | DO-160G qualification test plan to be developed | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -400,4 +400,4 @@ graph LR
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

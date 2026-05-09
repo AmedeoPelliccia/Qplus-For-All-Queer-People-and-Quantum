@@ -343,11 +343,11 @@ Fault logs are stored in non-volatile memory and are retrievable via [ARINC 615A
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-010-01 | Partition temporal isolation | WCET analysis + bench test | No partition exceeds allocated time window | TBD |
-| VV-010-02 | Partition spatial isolation | MMU boundary test | No cross-partition memory access | TBD |
-| VV-010-03 | HM fault detection | Fault injection test | All injected faults detected within 100 ms | TBD |
-| VV-010-04 | Power cycling | Bench test | Clean restart within 60 s; no data corruption | TBD |
-| VV-010-05 | Environmental compliance | DO-160G lab test | Pass all applicable sections | TBD |
+| VV-010-01 | Partition temporal isolation | WCET analysis + bench test | No partition exceeds allocated time window | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-02 | Partition spatial isolation | MMU boundary test | No cross-partition memory access | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-03 | HM fault detection | Fault injection test | All injected faults detected within 100 ms | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-04 | Power cycling | Bench test | Clean restart within 60 s; no data corruption | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-010-05 | Environmental compliance | DO-160G lab test | Pass all applicable sections | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -374,14 +374,14 @@ Fault logs are stored in non-volatile memory and are retrievable via [ARINC 615A
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-do-297"></a>DO-297 | RTCA DO-297 — Integrated Modular Avionics Development Guidance and Certification Considerations | IMA platform certification | TBD |
-| <a id="ref-arinc-653"></a>ARINC 653 | ARINC 653 Part 1 Rev 4 — Avionics Application Software Standard Interface | APEX API and partitioning | TBD |
-| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C — Software Considerations in Airborne Systems and Equipment Certification | Software DAL | TBD |
-| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 — Design Assurance Guidance for Airborne Electronic Hardware | Hardware DAL | TBD |
-| <a id="ref-arp4761"></a>SAE ARP4761 | SAE ARP4761 — Guidelines for Conducting the Safety Assessment Process | Safety assessment | TBD |
+| <a id="ref-do-297"></a>DO-297 | RTCA DO-297 — Integrated Modular Avionics Development Guidance and Certification Considerations | IMA platform certification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arinc-653"></a>ARINC 653 | ARINC 653 Part 1 Rev 4 — Avionics Application Software Standard Interface | APEX API and partitioning | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C — Software Considerations in Airborne Systems and Equipment Certification | Software DAL | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 — Design Assurance Guidance for Airborne Electronic Hardware | Hardware DAL | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arp4761"></a>SAE ARP4761 | SAE ARP4761 — Guidelines for Conducting the Safety Assessment Process | Safety assessment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-gov"></a>GOV | Q+ATLANTIDE Governance Framework | Document governance | [Q+ATLANTIDE.md](../../../../organization/Q+ATLANTIDE.md) |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | ATA chapter alignment | TBD |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | ATA chapter alignment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -392,9 +392,9 @@ Fault logs are stored in non-volatile memory and are retrievable via [ARINC 615A
 | REF-010-01 | Multisystem General | QATL-ATLAS-1000-ATLAS-040-049-04-040-000 | 1.0.0 | Active | [040-000](./040-000-Multisystem-General.md) |
 | REF-010-02 | Core Processing Platforms | QATL-ATLAS-1000-ATLAS-040-049-04-040-020 | 1.0.0 | Active | [040-020](./040-020-Core-Processing-and-Computing-Platforms.md) |
 | REF-010-03 | Avionics Networks | QATL-ATLAS-1000-ATLAS-040-049-04-040-030 | 1.0.0 | Active | [040-030](./040-030-Avionics-Networks-and-Data-Buses.md) |
-| REF-010-04 | RTCA DO-297 | DO-297 | Current | Normative | TBD |
-| REF-010-05 | ARINC 653 Part 1 | ARINC 653-1 | Rev 4 | Normative | TBD |
-| REF-010-06 | RTCA DO-178C | DO-178C | Current | Normative | TBD |
+| REF-010-04 | RTCA DO-297 | DO-297 | Current | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-010-05 | ARINC 653 Part 1 | ARINC 653-1 | Rev 4 | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-010-06 | RTCA DO-178C | DO-178C | Current | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -402,9 +402,9 @@ Fault logs are stored in non-volatile memory and are retrievable via [ARINC 615A
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-010-01 | GPPM processor family selection (PowerPC vs ARMv8A) pending hardware trade study | Q-HPC | Open | TBD |
-| OI-010-02 | WCET analysis methodology to be agreed with EASA during Phase 1 review | Q-AIR | Open | TBD |
-| OI-010-03 | DO-297 supplement for quantum-enhanced processing modules under development | Q-DATAGOV | Open | TBD |
+| OI-010-01 | GPPM processor family selection (PowerPC vs ARMv8A) pending hardware trade study | Q-HPC | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-010-02 | WCET analysis methodology to be agreed with EASA during Phase 1 review | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-010-03 | DO-297 supplement for quantum-enhanced processing modules under development | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -412,4 +412,4 @@ Fault logs are stored in non-volatile memory and are retrievable via [ARINC 615A
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

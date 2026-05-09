@@ -327,11 +327,11 @@ graph LR
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-020-01 | ECC single-bit correction | Fault injection | Corrected without partition reset | TBD |
-| VV-020-02 | PUBIT duration | Lab test | BITE complete within 30 s | TBD |
-| VV-020-03 | Dual-duplex failover | Fault injection | Automatic failover within 50 ms | TBD |
-| VV-020-04 | DO-160G vibration | Environmental test lab | No degradation per test plan | TBD |
-| VV-020-05 | DO-254 DAL A evidence | Review + analysis | All objectives satisfied | TBD |
+| VV-020-01 | ECC single-bit correction | Fault injection | Corrected without partition reset | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-02 | PUBIT duration | Lab test | BITE complete within 30 s | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-03 | Dual-duplex failover | Fault injection | Automatic failover within 50 ms | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-04 | DO-160G vibration | Environmental test lab | No degradation per test plan | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-020-05 | DO-254 DAL A evidence | Review + analysis | All objectives satisfied | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -358,12 +358,12 @@ graph LR
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 — Design Assurance Guidance for Airborne Electronic Hardware | Hardware assurance | TBD |
-| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C — Software Considerations in Airborne Systems and Equipment Certification | Software DAL | TBD |
-| <a id="ref-do-160g"></a>DO-160G | RTCA DO-160G — Environmental Conditions and Test Procedures | Environmental qualification | TBD |
+| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 — Design Assurance Guidance for Airborne Electronic Hardware | Hardware assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C — Software Considerations in Airborne Systems and Equipment Certification | Software DAL | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-160g"></a>DO-160G | RTCA DO-160G — Environmental Conditions and Test Procedures | Environmental qualification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-gov"></a>GOV | Q+ATLANTIDE Governance Framework | Document governance | [Q+ATLANTIDE.md](../../../../organization/Q+ATLANTIDE.md) |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | ATA chapter alignment | TBD |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | ATA chapter alignment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -373,8 +373,8 @@ graph LR
 |-----|---------|-----------|---------|--------|------|
 | REF-020-01 | Multisystem General | QATL-ATLAS-1000-ATLAS-040-049-04-040-000 | 1.0.0 | Active | [040-000](./040-000-Multisystem-General.md) |
 | REF-020-02 | IMA Platform | QATL-ATLAS-1000-ATLAS-040-049-04-040-010 | 1.0.0 | Active | [040-010](./040-010-Integrated-Modular-Avionics-IMA.md) |
-| REF-020-03 | RTCA DO-254 | DO-254 | Current | Normative | TBD |
-| REF-020-04 | RTCA DO-160G | DO-160G | G | Normative | TBD |
+| REF-020-03 | RTCA DO-254 | DO-254 | Current | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-020-04 | RTCA DO-160G | DO-160G | G | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -382,9 +382,9 @@ graph LR
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-020-01 | Final processor family selection (PowerPC vs ARMv8A vs LEON4FT) pending trade study completion | Q-HPC | Open | TBD |
-| OI-020-02 | ECC DRAM qualification for extended temperature range (-55°C to +85°C) under review | Q-AIR | Open | TBD |
-| OI-020-03 | DO-254 evidence package template to be established by Q-DATAGOV | Q-DATAGOV | Open | TBD |
+| OI-020-01 | Final processor family selection (PowerPC vs ARMv8A vs LEON4FT) pending trade study completion | Q-HPC | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-020-02 | ECC DRAM qualification for extended temperature range (-55°C to +85°C) under review | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-020-03 | DO-254 evidence package template to be established by Q-DATAGOV | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -392,4 +392,4 @@ graph LR
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

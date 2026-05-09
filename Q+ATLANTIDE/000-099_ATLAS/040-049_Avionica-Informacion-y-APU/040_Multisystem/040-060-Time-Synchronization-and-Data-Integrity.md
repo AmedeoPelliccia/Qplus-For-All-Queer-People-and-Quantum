@@ -330,11 +330,11 @@ graph LR
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-060-01 | PTP slave accuracy | Lab measurement (vs GPS reference) | < 1 µs offset under normal conditions | TBD |
-| VV-060-02 | OCXO holdover | Lab test — GPS signal removed for 1 hr | < 1 µs drift after 1 hr | TBD |
-| VV-060-03 | BMCA failover | Fault injection — primary GDGM removed | Secondary GDGM assumes master within 3 s | TBD |
-| VV-060-04 | Jitter monitoring alert | Induced sync jitter > 1 µs | Alert to CMC within 5 sync intervals | TBD |
-| VV-060-05 | DO-178C DAL A PTP servo | Design review + structural coverage | All objectives satisfied | TBD |
+| VV-060-01 | PTP slave accuracy | Lab measurement (vs GPS reference) | < 1 µs offset under normal conditions | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-02 | OCXO holdover | Lab test — GPS signal removed for 1 hr | < 1 µs drift after 1 hr | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-03 | BMCA failover | Fault injection — primary GDGM removed | Secondary GDGM assumes master within 3 s | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-04 | Jitter monitoring alert | Induced sync jitter > 1 µs | Alert to CMC within 5 sync intervals | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-060-05 | DO-178C DAL A PTP servo | Design review + structural coverage | All objectives satisfied | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -361,12 +361,12 @@ graph LR
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-ieee1588"></a>IEEE 1588 | IEEE 1588-2019 — Precision Clock Synchronization Protocol for Networked Measurement and Control Systems | PTP standard | TBD |
-| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C | Software assurance | TBD |
-| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 | Hardware assurance | TBD |
+| <a id="ref-ieee1588"></a>IEEE 1588 | IEEE 1588-2019 — Precision Clock Synchronization Protocol for Networked Measurement and Control Systems | PTP standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C | Software assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 | Hardware assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-gov"></a>GOV | Q+ATLANTIDE Governance Framework | Document governance | [Q+ATLANTIDE.md](../../../../organization/Q+ATLANTIDE.md) |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 | ATA chapter alignment | TBD |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 | ATA chapter alignment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -377,7 +377,7 @@ graph LR
 | REF-060-01 | Multisystem General | QATL-ATLAS-1000-ATLAS-040-049-04-040-000 | 1.0.0 | Active | [040-000](./040-000-Multisystem-General.md) |
 | REF-060-02 | Shared Resources | QATL-ATLAS-1000-ATLAS-040-049-04-040-050 | 1.0.0 | Active | [040-050](./040-050-Shared-Avionics-Resources-and-Services.md) |
 | REF-060-03 | Avionics Networks | QATL-ATLAS-1000-ATLAS-040-049-04-040-030 | 1.0.0 | Active | [040-030](./040-030-Avionics-Networks-and-Data-Buses.md) |
-| REF-060-04 | IEEE 1588-2019 | IEEE 1588 | 2019 | Normative | TBD |
+| REF-060-04 | IEEE 1588-2019 | IEEE 1588 | 2019 | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -385,9 +385,9 @@ graph LR
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-060-01 | IEEE 1588 profile definition (transport-specific, domain number) to be agreed | Q-DATAGOV | Open | TBD |
-| OI-060-02 | GPS spoofing detection requirement pending Q-SPACE study | Q-SPACE | Open | TBD |
-| OI-060-03 | OCXO holdover specification (1 µs/hr vs 10 µs/hr) to be agreed with certification authority | Q-AIR | Open | TBD |
+| OI-060-01 | IEEE 1588 profile definition (transport-specific, domain number) to be agreed | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-060-02 | GPS spoofing detection requirement pending Q-SPACE study | Q-SPACE | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-060-03 | OCXO holdover specification (1 µs/hr vs 10 µs/hr) to be agreed with certification authority | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -395,4 +395,4 @@ graph LR
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

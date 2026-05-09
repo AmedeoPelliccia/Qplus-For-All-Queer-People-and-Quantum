@@ -324,11 +324,11 @@ graph LR
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-040-01 | All interfaces covered by ICD | Inspection of ICD registry | 100% interface coverage | TBD |
-| VV-040-02 | ICD compliance at bench | Integration test per ITDB test plan | All VLs, buses, and signals verified | TBD |
-| VV-040-03 | Dependency matrix completeness | Review against system architecture | All cross-system dependencies captured | TBD |
-| VV-040-04 | ARP4754A §5 objectives | Process audit | All objectives satisfied | TBD |
-| VV-040-05 | Evidence traceability | ITDB to requirement mapping | 100% requirement coverage | TBD |
+| VV-040-01 | All interfaces covered by ICD | Inspection of ICD registry | 100% interface coverage | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-02 | ICD compliance at bench | Integration test per ITDB test plan | All VLs, buses, and signals verified | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-03 | Dependency matrix completeness | Review against system architecture | All cross-system dependencies captured | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-04 | ARP4754A §5 objectives | Process audit | All objectives satisfied | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-040-05 | Evidence traceability | ITDB to requirement mapping | 100% requirement coverage | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -355,13 +355,13 @@ graph LR
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-arp4754a"></a>ARP4754A | SAE ARP4754A — Guidelines for Development of Civil Aircraft and Systems | System integration process | TBD |
-| <a id="ref-ed79a"></a>ED-79A | EUROCAE ED-79A — Guidelines for Development of Civil Aircraft and Systems | European equivalent to ARP4754A | TBD |
-| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C | Software assurance | TBD |
-| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 | Hardware assurance | TBD |
+| <a id="ref-arp4754a"></a>ARP4754A | SAE ARP4754A — Guidelines for Development of Civil Aircraft and Systems | System integration process | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ed79a"></a>ED-79A | EUROCAE ED-79A — Guidelines for Development of Civil Aircraft and Systems | European equivalent to ARP4754A | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C | Software assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 | Hardware assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-gov"></a>GOV | Q+ATLANTIDE Governance Framework | Document governance | [Q+ATLANTIDE.md](../../../../organization/Q+ATLANTIDE.md) |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 | ATA chapter alignment | TBD |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 | ATA chapter alignment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -371,8 +371,8 @@ graph LR
 |-----|---------|-----------|---------|--------|------|
 | REF-040-01 | Multisystem General | QATL-ATLAS-1000-ATLAS-040-049-04-040-000 | 1.0.0 | Active | [040-000](./040-000-Multisystem-General.md) |
 | REF-040-02 | IMA Platform | QATL-ATLAS-1000-ATLAS-040-049-04-040-010 | 1.0.0 | Active | [040-010](./040-010-Integrated-Modular-Avionics-IMA.md) |
-| REF-040-03 | SAE ARP4754A | ARP4754A | A | Normative | TBD |
-| REF-040-04 | EUROCAE ED-79A | ED-79A | A | Normative | TBD |
+| REF-040-03 | SAE ARP4754A | ARP4754A | A | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-040-04 | EUROCAE ED-79A | ED-79A | A | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -380,9 +380,9 @@ graph LR
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-040-01 | ITDB tool selection and qualification pending | Q-DATAGOV | Open | TBD |
-| OI-040-02 | ICD template to be standardised across all system owners | Q-DATAGOV | Open | TBD |
-| OI-040-03 | Iron bird rig schedule and facility to be confirmed | ORB-PMO | Open | TBD |
+| OI-040-01 | ITDB tool selection and qualification pending | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-040-02 | ICD template to be standardised across all system owners | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-040-03 | Iron bird rig schedule and facility to be confirmed | ORB-PMO | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -390,4 +390,4 @@ graph LR
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

@@ -326,44 +326,44 @@ Maintenance procedures shall remain provisional until validated against the appl
 
 | Footprint Item | Description | Status |
 |---|---|---|
-| Installation zone | Avionics bay (forward / main equipment centre) | TBD |
-| Access panels | Dedicated avionics bay access doors | TBD |
-| Mounting provisions | ARINC 600 rack / cabinet provisions | TBD |
-| Clearance envelope | Per LRU removal envelope | TBD |
-| Cooling / ventilation | Forced-air cooling via avionics bay ventilation | TBD |
+| Installation zone | Avionics bay (forward / main equipment centre) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Access panels | Dedicated avionics bay access doors | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Mounting provisions | ARINC 600 rack / cabinet provisions | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Clearance envelope | Per LRU removal envelope | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Cooling / ventilation | Forced-air cooling via avionics bay ventilation | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Drainage / leak path | N/A (electronic equipment) | N/A |
 
 ### 15.2 Electrical / Data Footprint
 
 | Footprint Item | Description | Status |
 |---|---|---|
-| Power supply | 28 VDC and 115 VAC from primary electrical buses | TBD |
-| Protection | SSPCs / circuit breakers per electrical load analysis | TBD |
-| Data buses | AFDX (ARINC 664), ARINC 429, discrete signals | TBD |
-| Connectors | ARINC 600 Series I / MIL-C-38999 | TBD |
-| Bonding / grounding | Avionics bay structural bonding per DO-160G Section 16 | TBD |
-| EMC / EMI controls | Shielding, segregation, filtering per DO-160G | TBD |
+| Power supply | 28 VDC and 115 VAC from primary electrical buses | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Protection | SSPCs / circuit breakers per electrical load analysis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Data buses | AFDX (ARINC 664), ARINC 429, discrete signals | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Connectors | ARINC 600 Series I / MIL-C-38999 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Bonding / grounding | Avionics bay structural bonding per DO-160G Section 16 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| EMC / EMI controls | Shielding, segregation, filtering per DO-160G | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ### 15.3 Maintenance Footprint
 
 | Footprint Item | Description | Status |
 |---|---|---|
-| Access level | Line / Base | TBD |
-| Replaceable unit | LRU (cabinet level) / LRM (module level) | TBD |
-| Removal time | TBD | TBD |
-| Required tools | Standard avionics tools; ESD precautions | TBD |
-| Required GSE | Avionics test set; data loader | TBD |
-| Return-to-service check | BITE / operational check per applicable CMM | TBD |
+| Access level | Line / Base | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Replaceable unit | LRU (cabinet level) / LRM (module level) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Removal time | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Required tools | Standard avionics tools; ESD precautions | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Required GSE | Avionics test set; data loader | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Return-to-service check | BITE / operational check per applicable CMM | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ### 15.4 Data Footprint
 
 | Footprint Item | Description | Status |
 |---|---|---|
-| Configuration records | Part number, serial number, software load, effectivity | TBD |
-| Evidence records | Test, inspection, compliance, review records | TBD |
-| CSDB records | DMCs, ICNs, BREX, applicability | TBD |
-| Maintenance data | Fault history, BITE, removal / installation records | TBD |
-| Cybersecurity records | Access, load authorisation, integrity checks | TBD |
+| Configuration records | Part number, serial number, software load, effectivity | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Evidence records | Test, inspection, compliance, review records | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CSDB records | DMCs, ICNs, BREX, applicability | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Maintenance data | Fault history, BITE, removal / installation records | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Cybersecurity records | Access, load authorisation, integrity checks | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -381,7 +381,7 @@ Considerations include:
 - Environmental qualification per [DO-160G](#ref-do-160g);
 - Electromagnetic compatibility.
 
-Final safety classification shall remain **TBD** until reviewed against the applicable FHA, PSSA, SSA, and certification basis.
+Final safety classification shall remain **<img src="https://img.shields.io/badge/TBD-red" alt="TBD">** until reviewed against the applicable FHA, PSSA, SSA, and certification basis.
 
 ---
 
@@ -423,11 +423,11 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Ref | Citation | Use | Link |
 |---|---|---|---|
-| [CIT-001](#cit-001) | <a id="cit-001"></a>`ATA iSpec 2200, Edition 2022, Chapter 4.` | SNS logic and chapter numbering | TBD |
-| [CIT-002](#cit-002) | <a id="cit-002"></a>`RTCA DO-297, Integrated Modular Avionics (IMA) Development Guidance and Certification Considerations, 2005.` | IMA architecture and certification | TBD |
-| [CIT-003](#cit-003) | <a id="cit-003"></a>`ARINC 653, Avionics Application Software Standard Interface, Part 1–4.` | Partitioning and APEX interface | TBD |
-| [CIT-004](#cit-004) | <a id="cit-004"></a>`RTCA DO-178C, Software Considerations in Airborne Systems, 2011.` | Software assurance levels | TBD |
-| [CIT-005](#cit-005) | <a id="cit-005"></a>`RTCA DO-254, Design Assurance Guidance for Airborne Electronic Hardware, 2000.` | Hardware assurance levels | TBD |
+| [CIT-001](#cit-001) | <a id="cit-001"></a>`ATA iSpec 2200, Edition 2022, Chapter 4.` | SNS logic and chapter numbering | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [CIT-002](#cit-002) | <a id="cit-002"></a>`RTCA DO-297, Integrated Modular Avionics (IMA) Development Guidance and Certification Considerations, 2005.` | IMA architecture and certification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [CIT-003](#cit-003) | <a id="cit-003"></a>`ARINC 653, Avionics Application Software Standard Interface, Part 1–4.` | Partitioning and APEX interface | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [CIT-004](#cit-004) | <a id="cit-004"></a>`RTCA DO-178C, Software Considerations in Airborne Systems, 2011.` | Software assurance levels | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [CIT-005](#cit-005) | <a id="cit-005"></a>`RTCA DO-254, Design Assurance Guidance for Airborne Electronic Hardware, 2000.` | Hardware assurance levels | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -435,18 +435,18 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Ref | Document | Identifier | Revision | Status | Link |
 |---|---|---:|---:|---|---|
-| [REF-001](#ref-001) | <a id="ref-001"></a>Q+ATLANTIDE baseline | `QATL-ATLAS-000-099` | TBD | Draft | [Open](../../../../organization/Q+ATLANTIDE.md) |
-| [REF-ATA-ISPEC-2200](#ref-ata-ispec-2200) | <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | `ATA-ISPEC-2200` | TBD | External standard | TBD |
-| [REF-ARINC-653](#ref-arinc-653) | <a id="ref-arinc-653"></a>ARINC 653 | `ARINC-653` | TBD | External standard | TBD |
-| [REF-ARINC-664](#ref-arinc-664) | <a id="ref-arinc-664"></a>ARINC 664 / AFDX | `ARINC-664` | TBD | External standard | TBD |
-| [REF-ARINC-429](#ref-arinc-429) | <a id="ref-arinc-429"></a>ARINC 429 | `ARINC-429` | TBD | External standard | TBD |
-| [REF-DO-178C](#ref-do-178c) | <a id="ref-do-178c"></a>RTCA DO-178C | `DO-178C` | TBD | External standard | TBD |
-| [REF-DO-254](#ref-do-254) | <a id="ref-do-254"></a>RTCA DO-254 | `DO-254` | TBD | External standard | TBD |
-| [REF-DO-297](#ref-do-297) | <a id="ref-do-297"></a>RTCA DO-297 | `DO-297` | TBD | External standard | TBD |
-| [REF-DO-160G](#ref-do-160g) | <a id="ref-do-160g"></a>RTCA DO-160G | `DO-160G` | TBD | External standard | TBD |
-| [REF-MIL-STD-1553](#ref-mil-std-1553) | <a id="ref-mil-std-1553"></a>MIL-STD-1553 | `MIL-STD-1553` | TBD | External standard | TBD |
-| [REF-S1000D](#ref-s1000d) | <a id="ref-s1000d"></a>S1000D | `S1000D-ISS5` | TBD | External standard | [https://s1000d.org/](https://s1000d.org/) |
-| [REF-GOV](#ref-gov) | <a id="ref-gov"></a>Governance class — baseline | `QATL-GOV-BASELINE` | TBD | Controlled | [organization/Q+ATLANTIDE.md](../../../../organization/Q+ATLANTIDE.md) |
+| [REF-001](#ref-001) | <a id="ref-001"></a>Q+ATLANTIDE baseline | `QATL-ATLAS-000-099` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | Draft | [Open](../../../../organization/Q+ATLANTIDE.md) |
+| [REF-ATA-ISPEC-2200](#ref-ata-ispec-2200) | <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | `ATA-ISPEC-2200` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-ARINC-653](#ref-arinc-653) | <a id="ref-arinc-653"></a>ARINC 653 | `ARINC-653` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-ARINC-664](#ref-arinc-664) | <a id="ref-arinc-664"></a>ARINC 664 / AFDX | `ARINC-664` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-ARINC-429](#ref-arinc-429) | <a id="ref-arinc-429"></a>ARINC 429 | `ARINC-429` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-DO-178C](#ref-do-178c) | <a id="ref-do-178c"></a>RTCA DO-178C | `DO-178C` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-DO-254](#ref-do-254) | <a id="ref-do-254"></a>RTCA DO-254 | `DO-254` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-DO-297](#ref-do-297) | <a id="ref-do-297"></a>RTCA DO-297 | `DO-297` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-DO-160G](#ref-do-160g) | <a id="ref-do-160g"></a>RTCA DO-160G | `DO-160G` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-MIL-STD-1553](#ref-mil-std-1553) | <a id="ref-mil-std-1553"></a>MIL-STD-1553 | `MIL-STD-1553` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [REF-S1000D](#ref-s1000d) | <a id="ref-s1000d"></a>S1000D | `S1000D-ISS5` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | External standard | [https://s1000d.org/](https://s1000d.org/) |
+| [REF-GOV](#ref-gov) | <a id="ref-gov"></a>Governance class — baseline | `QATL-GOV-BASELINE` | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | Controlled | [organization/Q+ATLANTIDE.md](../../../../organization/Q+ATLANTIDE.md) |
 
 ---
 

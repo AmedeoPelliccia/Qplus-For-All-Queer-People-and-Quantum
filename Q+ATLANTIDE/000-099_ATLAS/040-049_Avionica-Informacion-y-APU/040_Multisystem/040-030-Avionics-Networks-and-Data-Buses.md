@@ -325,11 +325,11 @@ graph LR
 
 | V&V ID | Requirement | Method | Success Criteria | Status |
 |--------|-------------|--------|-----------------|--------|
-| VV-030-01 | VL maximum latency | Network simulation + bench test | Worst-case latency within budget | TBD |
-| VV-030-02 | VL traffic shaping | Bench test — overload injection | No VL exceeds BAG period | TBD |
-| VV-030-03 | Network A/B independence | Physical inspection + test | No shared single-point failure | TBD |
-| VV-030-04 | Redundancy manager selection | Fault injection | Correct network selected within 1 frame | TBD |
-| VV-030-05 | NDF load and activation | Integration test | All VLs active post-load | TBD |
+| VV-030-01 | VL maximum latency | Network simulation + bench test | Worst-case latency within budget | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-02 | VL traffic shaping | Bench test — overload injection | No VL exceeds BAG period | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-03 | Network A/B independence | Physical inspection + test | No shared single-point failure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-04 | Redundancy manager selection | Fault injection | Correct network selected within 1 frame | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-030-05 | NDF load and activation | Integration test | All VLs active post-load | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -356,14 +356,14 @@ graph LR
 
 | Ref | Citation | Use | Link |
 |-----|---------|-----|------|
-| <a id="ref-arinc-664"></a>ARINC 664 | ARINC 664 Part 7 — Aircraft Data Network, Avionics Full Duplex Switched Ethernet | AFDX network standard | TBD |
-| <a id="ref-arinc-429"></a>ARINC 429 | ARINC 429 — Mark 33 Digital Information Transfer System | Legacy bus standard | TBD |
-| <a id="ref-1553"></a>MIL-STD-1553B | MIL-STD-1553B — Aircraft Internal Time Division Command/Response Multiplex Data Bus | Military bus standard | TBD |
-| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C | Software assurance | TBD |
-| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 | Hardware assurance | TBD |
+| <a id="ref-arinc-664"></a>ARINC 664 | ARINC 664 Part 7 — Aircraft Data Network, Avionics Full Duplex Switched Ethernet | AFDX network standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-arinc-429"></a>ARINC 429 | ARINC 429 — Mark 33 Digital Information Transfer System | Legacy bus standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-1553"></a>MIL-STD-1553B | MIL-STD-1553B — Aircraft Internal Time Division Command/Response Multiplex Data Bus | Military bus standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-178c"></a>DO-178C | RTCA DO-178C | Software assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-do-254"></a>DO-254 | RTCA DO-254 | Hardware assurance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-gov"></a>GOV | Q+ATLANTIDE Governance Framework | Document governance | [Q+ATLANTIDE.md](../../../../organization/Q+ATLANTIDE.md) |
-| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
-| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 | ATA chapter alignment | TBD |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-ata-ispec-2200"></a>ATA iSpec 2200 | ATA iSpec 2200 | ATA chapter alignment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -373,9 +373,9 @@ graph LR
 |-----|---------|-----------|---------|--------|------|
 | REF-030-01 | Multisystem General | QATL-ATLAS-1000-ATLAS-040-049-04-040-000 | 1.0.0 | Active | [040-000](./040-000-Multisystem-General.md) |
 | REF-030-02 | IMA Platform | QATL-ATLAS-1000-ATLAS-040-049-04-040-010 | 1.0.0 | Active | [040-010](./040-010-Integrated-Modular-Avionics-IMA.md) |
-| REF-030-03 | ARINC 664 Part 7 | ARINC 664-7 | Current | Normative | TBD |
-| REF-030-04 | ARINC 429 | ARINC 429 | Current | Normative | TBD |
-| REF-030-05 | MIL-STD-1553B | MIL-STD-1553B | Current | Normative | TBD |
+| REF-030-03 | ARINC 664 Part 7 | ARINC 664-7 | Current | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-030-04 | ARINC 429 | ARINC 429 | Current | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-030-05 | MIL-STD-1553B | MIL-STD-1553B | Current | Normative | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -383,9 +383,9 @@ graph LR
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-030-01 | AFDX switch vendor selection pending procurement | Q-AIR | Open | TBD |
-| OI-030-02 | VL latency budget analysis for FCS critical VLs to be completed | Q-DATAGOV | Open | TBD |
-| OI-030-03 | MIL-STD-1553B usage to be confirmed for non-military variant | Q-AIR | Open | TBD |
+| OI-030-01 | AFDX switch vendor selection pending procurement | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-030-02 | VL latency budget analysis for FCS critical VLs to be completed | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-030-03 | MIL-STD-1553B usage to be confirmed for non-military variant | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -393,4 +393,4 @@ graph LR
 
 | Version | Date | Author | Change | Link |
 |---------|------|--------|--------|------|
-| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
