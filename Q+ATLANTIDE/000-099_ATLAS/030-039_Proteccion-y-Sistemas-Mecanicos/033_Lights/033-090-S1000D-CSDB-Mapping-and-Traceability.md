@@ -87,7 +87,7 @@ keywords:
   - "publication hierarchy"
   - "traceability"
   - "info code"
-  - "S1000D Issue 5"
+  - "S1000D Issue 5.0"
 ---
 
 # 033-090 — S1000D CSDB Mapping and Traceability
