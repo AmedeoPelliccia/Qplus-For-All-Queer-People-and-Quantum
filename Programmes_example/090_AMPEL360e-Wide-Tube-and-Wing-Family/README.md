@@ -27,21 +27,22 @@ Programmes_example/
     ├── README.md  ← this file
     ├── IDEALE-ESG_impact-study/
     │   └── README.md
-    ├── Q+ATLANTIDE_impact-study/        ← impact analysis layer
-    │   ├── README.md
-    │   └── 000-099_ATLAS-impact-analysis/
-    │       └── README.md
-    └── S1000D-CSDB/                     ← technical publication layer
+    └── Q+ATLANTIDE_impact-study/        ← impact analysis layer
         ├── README.md
-        ├── BREX/
-        │   └── README.md
-        ├── SNS/
-        │   └── ATLAS-020_Air-Conditioning-and-Pressurization/
-        │       └── README.md
-        └── DMC/
-            └── ATLAS-020_Air-Conditioning-and-Pressurization/
-                ├── README.md
-                └── DMC-AMPEL360E-EWTW-020-{NNN}-00A-040A-D_*.xml  (10 DMs)
+        └── 000-099_ATLAS-impact-analysis/
+            ├── README.md
+            └── 020-029_Sistemas-Core-de-Aeronave/
+                └── 020_Air-Conditioning-and-Pressurization/
+                    ├── README.md
+                    └── S1000D-CSDB/     ← technical publication layer
+                        ├── README.md
+                        ├── BREX/
+                        │   └── README.md
+                        ├── SNS/
+                        │   └── README.md
+                        └── DMC/
+                            ├── README.md
+                            └── DMC-AMPEL360E-EWTW-020-{NNN}-00A-040A-D_*.xml  (10 DMs)
 ```
 
 ### Production Layer Separation
@@ -49,7 +50,7 @@ Programmes_example/
 | Layer | Role | Location |
 |---|---|---|
 | Q+ATLANTIDE impact study | Impact analysis, architecture effect, ESG, Q-Division ownership | `Q+ATLANTIDE_impact-study/` |
-| S1000D CSDB | Authoritative descriptive data modules (system descriptions) | `S1000D-CSDB/` |
+| S1000D CSDB | Authoritative descriptive data modules (system descriptions) | `Q+ATLANTIDE_impact-study/.../020_Air-Conditioning-and-Pressurization/S1000D-CSDB/` |
 
 System descriptions are **Descriptive Data Modules** in the S1000D CSDB — not `Impact.md` files.
 
