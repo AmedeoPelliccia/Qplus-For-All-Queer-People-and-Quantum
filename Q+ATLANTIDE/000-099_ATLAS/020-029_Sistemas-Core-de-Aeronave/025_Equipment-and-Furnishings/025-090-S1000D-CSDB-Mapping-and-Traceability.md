@@ -64,7 +64,7 @@ Provide the complete S1000D CSDB Data Module Code (DMC) mapping for all sections
 
 **DMC schema note:** `DMC-QATL-A-{ATA-chapter}-{subsystem}-{subject}-{unit}-{DM-code}-{variant}-{applicability}` — schema instance codes are illustrative; final codes require CSDB configuration authority sign-off.
 
-## 3. Traceability Architecture
+## 4. Traceability Architecture
 
 ```mermaid
 graph TD
