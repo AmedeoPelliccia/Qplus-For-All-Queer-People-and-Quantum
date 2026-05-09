@@ -53,13 +53,13 @@ cross_axis_dependencies:
 
 ## 3. Compound Risk Register
 
-> **Status:** Draft — to be populated following individual axis assessments.
+> **Status:** ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) — ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange).
 
 | Risk ID | Primary Axis | Secondary Axis | Compound Risk Description | Combined Impact Score |
 |---|---|---|---|:---:|
-| CX-001 | A | E | TBD | TBD |
-| CX-002 | E | L | TBD | TBD |
-| CX-003 | I | G | TBD | TBD |
+| CX-001 | A | E | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |
+| CX-002 | E | L | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |
+| CX-003 | I | G | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |
 
 ## 4. Mitigation Priorities
 

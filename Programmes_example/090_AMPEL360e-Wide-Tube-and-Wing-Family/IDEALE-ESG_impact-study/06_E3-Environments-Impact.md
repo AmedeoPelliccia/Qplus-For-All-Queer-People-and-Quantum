@@ -35,27 +35,27 @@ Assessment covers lifecycle emissions, LCA, noise, materials circularity, and ai
 
 ## 3. Impact Assessment
 
-> **Status:** Draft — to be populated following structured axis review.
+> **Status:** ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) — ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange).
 
 ### 3.1 Impact Areas
 
-_To be completed. Identify specific environments impact areas for eWTW._
+![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) Identify specific environments impact areas for eWTW.
 
 ### 3.2 Positive Impacts
 
-_To be completed. List positive programme impacts under Axis E3._
+![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) List positive programme impacts under Axis E3.
 
 ### 3.3 Negative Impacts and Risks
 
-_To be completed. List negative impacts and risks under Axis E3._
+![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) List negative impacts and risks under Axis E3.
 
 ### 3.4 Mitigations
 
-_To be completed. List mitigations for each identified risk._
+![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) List mitigations for each identified risk.
 
 ## 4. Evidence Requirements
 
-_To be completed. List evidence required for this axis to support lifecycle gate closure._
+![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) List evidence required for this axis to support lifecycle gate closure.
 
 ## 5. Impact Summary
 

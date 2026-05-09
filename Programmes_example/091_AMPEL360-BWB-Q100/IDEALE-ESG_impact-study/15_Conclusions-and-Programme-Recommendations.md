@@ -20,19 +20,19 @@ Summarises the findings of the IDEALE-ESG Impact Study for the **AMPEL360 BWB Q1
 
 ## 2. Consolidated Impact Summary
 
-> **Status:** Draft — to be completed after all axis assessments are finalised.
+> **Status:** ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) — ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange).
 
 | Axis | Name | Impact Score | Status |
 |---|---|:---:|---|
-| A | Aerospace | TBD | draft |
-| D | Defense | TBD | draft |
-| E | Energy | TBD | draft |
-| E2 | Economics | TBD | draft |
-| E3 | Environments | TBD | draft |
-| G | Governance | TBD | draft |
-| I | Information | TBD | draft |
-| L | Logistics | TBD | draft |
-| S | Social | TBD | draft |
+| A | Aerospace | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
+| D | Defense | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
+| E | Energy | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
+| E2 | Economics | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
+| E3 | Environments | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
+| G | Governance | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
+| I | Information | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
+| L | Logistics | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
+| S | Social | ![TBD](https://img.shields.io/badge/TBD-red) | draft |
 
 ## 3. Key Findings
 

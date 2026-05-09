@@ -79,8 +79,8 @@ dpp_interface:
 
 | Gate | Evidence Package | Required Axes | Status |
 |---|---|---|---|
-| Gate 1 — Concept | Concept Evidence Package | A, E, G | TBD |
-| Gate 2 — Preliminary Design | PD Evidence Package | A, E, E3, G, I | TBD |
-| Gate 3 — Detailed Design | DD Evidence Package | A, E, E2, E3, G, I, L | TBD |
-| Gate 4 — Certification Basis | Cert Evidence Package | A, E, G, S | TBD |
-| Gate 5 — Entry Into Service | EIS Evidence Package | All axes | TBD |
+| Gate 1 — Concept | Concept Evidence Package | A, E, G | ![TBD](https://img.shields.io/badge/TBD-red) |
+| Gate 2 — Preliminary Design | PD Evidence Package | A, E, E3, G, I | ![TBD](https://img.shields.io/badge/TBD-red) |
+| Gate 3 — Detailed Design | DD Evidence Package | A, E, E2, E3, G, I, L | ![TBD](https://img.shields.io/badge/TBD-red) |
+| Gate 4 — Certification Basis | Cert Evidence Package | A, E, G, S | ![TBD](https://img.shields.io/badge/TBD-red) |
+| Gate 5 — Entry Into Service | EIS Evidence Package | All axes | ![TBD](https://img.shields.io/badge/TBD-red) |

@@ -59,8 +59,8 @@ safety_assessment:
 
 ## 5. Lifecycle Gate — Blocking Issues
 
-> **Status:** Draft — to be populated after axis assessments identify any impact score ≥ 4.
+> **Status:** ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) — ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange).
 
 | Gate | Blocking Axis | Issue Description | Mitigation Required |
 |---|---|---|---|
-| TBD | TBD | TBD | TBD |
+| ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |

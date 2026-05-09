@@ -20,24 +20,24 @@ Consolidated risk, opportunity and mitigation register across all IDEALE-ESG axe
 
 ## 2. Risk Register
 
-> **Status:** Draft — to be populated following axis-level assessments.
+> **Status:** ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) — ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange).
 
 | Risk ID | Axis | Risk Title | Likelihood | Impact | Score | Mitigation | Owner |
 |---|---|---|:---:|:---:|:---:|---|---|
-| R-001 | A | TBD | TBD | TBD | TBD | TBD | TBD |
-| R-002 | E | TBD | TBD | TBD | TBD | TBD | TBD |
-| R-003 | G | TBD | TBD | TBD | TBD | TBD | TBD |
+| R-001 | A | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |
+| R-002 | E | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |
+| R-003 | G | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |
 
 ## 3. Opportunity Register
 
 | Opp ID | Axis | Opportunity Title | Probability | Value | Score | Activation | Owner |
 |---|---|---|:---:|:---:|:---:|---|---|
-| O-001 | A | TBD | TBD | TBD | TBD | TBD | TBD |
-| O-002 | E | TBD | TBD | TBD | TBD | TBD | TBD |
+| O-001 | A | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |
+| O-002 | E | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) |
 
 ## 4. Mitigation Actions
 
 | Action ID | Risk ID | Action | Timeline | Responsible | Status |
 |---|---|---|---|---|---|
-| M-001 | R-001 | TBD | TBD | TBD | open |
-| M-002 | R-002 | TBD | TBD | TBD | open |
+| M-001 | R-001 | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | open |
+| M-002 | R-002 | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | ![TBD](https://img.shields.io/badge/TBD-red) | open |
