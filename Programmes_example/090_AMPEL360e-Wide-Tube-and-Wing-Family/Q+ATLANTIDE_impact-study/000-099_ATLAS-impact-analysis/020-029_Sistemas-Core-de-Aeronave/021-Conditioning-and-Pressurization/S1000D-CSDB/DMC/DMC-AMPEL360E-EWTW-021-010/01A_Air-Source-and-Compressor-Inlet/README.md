@@ -1,4 +1,3 @@
-**to be reviewed by system expert**
 ---
 document_id: DMC-AMPEL360E-EWTW-021-010-01A-GROUP-README
 title: "DMC Group — DMC-AMPEL360E-EWTW-021-010-01A"
@@ -47,3 +46,4 @@ created: 2026-05-09
 ---
 
 > Programme-controlled scaffold. Content subject to BREX/SNS/DMRL freeze by programme CCB before controlled release.
+> **to be reviewed by system expert**
