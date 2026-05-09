@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Ice and Rain Protection General | [030-000-Ice-and-Rain-Protection-General.md](./030-000-Ice-and-Rain-Protection-General.md) | active |
+| 10 | Wing Ice Protection | [030-010-Wing-Ice-Protection.md](./030-010-Wing-Ice-Protection.md) | active |
+| 20 | Engine and Inlet Ice Protection | [030-020-Engine-and-Inlet-Ice-Protection.md](./030-020-Engine-and-Inlet-Ice-Protection.md) | active |
+| 30 | Air Data and Sensor Ice Protection | [030-030-Air-Data-and-Sensor-Ice-Protection.md](./030-030-Air-Data-and-Sensor-Ice-Protection.md) | active |
+| 40 | Windshield and Window Ice/Rain Protection | [030-040-Windshield-and-Window-Ice-Rain-Protection.md](./030-040-Windshield-and-Window-Ice-Rain-Protection.md) | active |
+| 50 | Probe, Drain and Service Point Ice Protection | [030-050-Probe-Drain-and-Service-Point-Ice-Protection.md](./030-050-Probe-Drain-and-Service-Point-Ice-Protection.md) | active |
+| 60 | Rain Removal and Water Runoff Management | [030-060-Rain-Removal-and-Water-Runoff-Management.md](./030-060-Rain-Removal-and-Water-Runoff-Management.md) | active |
+| 70 | Ice Detection and Protection Control | [030-070-Ice-Detection-and-Protection-Control.md](./030-070-Ice-Detection-and-Protection-Control.md) | active |
+| 80 | Ice and Rain Monitoring, Diagnostics, and Control Interfaces | [030-080-Ice-and-Rain-Monitoring-Diagnostics-and-Control-Interfaces.md](./030-080-Ice-and-Rain-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [030-090-S1000D-CSDB-Mapping-and-Traceability.md](./030-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `030-039` |
 | Section | `03` — Protección & Sistemas Mecánicos |
 | Subsection | `030` — Ice and Rain Protection |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (populated: 00, 10, 20, 30, 40, 50, 60, 70, 80, 90) |
 | Primary Q-Division | Q-MECHANICS[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG |
