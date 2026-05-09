@@ -156,3 +156,46 @@ flowchart TB
 | [^qdiv] | [`organization/Q-Divisions/`](../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
 | [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
 | [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
+
+---
+
+## Glossary
+
+### Common Terms & Acronyms
+
+| Term / Acronym | Expansion | Definition |
+|---|---|---|
+| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
+| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
+| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
+| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
+| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
+| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
+| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
+| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
+| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
+| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
+| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
+| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
+| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
+| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
+| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
+| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
+| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
+| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
+| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
+| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
+| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+
+### Domain-Specific Terms — ATA 37 Vacuum
+
+| Term / Acronym | Expansion | Definition |
+|---|---|---|
+| **ADI** | Attitude Director Indicator | Gyroscopic instrument displaying aircraft pitch and bank attitude; vacuum-driven on legacy aircraft. |
+| **AI** | Artificial Horizon / Attitude Indicator | Gyroscopic instrument presenting pitch and bank attitude; vacuum-powered on older designs. |
+| **DG** | Directional Gyro | Vacuum-driven heading reference gyroscope; predecessor to remote-sensing HSI. |
+| **HSI** | Horizontal Situation Indicator | Compass rose display combining heading reference with course deviation indication; vacuum-driven on legacy systems. |
+| **in Hg** | Inches of Mercury | Non-SI pressure unit (1 in Hg ≈ 33.86 hPa) historically used to specify vacuum system suction requirements. |
+| **TCAS** | Traffic Collision Avoidance System | See ATA 34 glossary; noted here because vacuum-driven ADI/AI failure can affect pilot spatial orientation in TCAS RA scenarios. |
+| **VSI** | Vertical Speed Indicator | Instrument displaying rate of climb or descent; vacuum-operated on older unpressurised piston aircraft. |
+| **WAI** | Wing Anti-Ice | Thermal or bleed-air anti-icing system; vacuum system may provide suction for associated static ports when bleed is off. |
