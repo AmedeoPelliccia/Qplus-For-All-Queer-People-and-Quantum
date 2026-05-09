@@ -52,7 +52,16 @@ Programmes_example/
                     ├── 020-060-Temperature-Control-Impact.md
                     ├── 020-070-Moisture-and-Air-Contaminant-Control-Impact.md
                     ├── 020-080-ECS-Monitoring-Diagnostics-and-Control-Interfaces-Impact.md
-                    └── 020-090-S1000D-CSDB-Mapping-and-Traceability-Impact.md
+                    ├── 020-090-S1000D-CSDB-Mapping-and-Traceability-Impact.md
+                    └── S1000D-CSDB/                      ← S1000D publication layer
+                        ├── README.md
+                        ├── BREX/
+                        │   └── README.md
+                        ├── SNS/
+                        │   └── README.md
+                        └── DMC/
+                            ├── README.md
+                            └── DMC-AMPEL360E-EWTW-020-{NNN}-00A-040A-D_*.xml
 ````
 
 ---

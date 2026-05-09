@@ -92,7 +92,7 @@
         <para>
           <randomList>
             <listItem><para><emphasis emphasisType="em01">Q+ATLANTIDE / ATLAS impact study layer</emphasis>: programme impact analysis, architecture-band effect, risk / opportunity / ESG / lifecycle impact, Q-Division and ORB ownership. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/020_Air-Conditioning-and-Pressurization/</verbatimText></para></listItem>
-            <listItem><para><emphasis emphasisType="em01">S1000D CSDB publication layer</emphasis>: authoritative technical publication content in the form of standalone descriptive data modules, each retrieved by DMC from the CSDB. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/S1000D-CSDB/DMC/ATLAS-020_Air-Conditioning-and-Pressurization/</verbatimText></para></listItem>
+            <listItem><para><emphasis emphasisType="em01">S1000D CSDB publication layer</emphasis>: authoritative technical publication content in the form of standalone descriptive data modules, each retrieved by DMC from the CSDB. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/020_Air-Conditioning-and-Pressurization/S1000D-CSDB/DMC/</verbatimText></para></listItem>
           </randomList>
         </para>
       </levelledPara>

@@ -5,7 +5,7 @@ programme: "AMPEL360e Wide Tube-and-Wing Family"
 programme_code: "090"
 short_code: "eWTW"
 framework: "S1000D"
-csdb_root: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/S1000D-CSDB/"
+csdb_root: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/020_Air-Conditioning-and-Pressurization/S1000D-CSDB/"
 status: "draft / programme-controlled-placeholder"
 classification: "open-technical-programme-study"
 owner: "Amedeo Pelliccia / Q+"
@@ -37,18 +37,20 @@ Programmes_example/
 └── 090_AMPEL360e-Wide-Tube-and-Wing-Family/
     ├── README.md
     ├── IDEALE-ESG_impact-study/
-    ├── Q+ATLANTIDE_impact-study/         ← impact analysis layer
-    └── S1000D-CSDB/                      ← this directory (publication layer)
-        ├── README.md
-        ├── BREX/
-        │   └── README.md
-        ├── SNS/
-        │   └── ATLAS-020_Air-Conditioning-and-Pressurization/
-        │       └── README.md
-        └── DMC/
-            └── ATLAS-020_Air-Conditioning-and-Pressurization/
-                ├── README.md
-                └── DMC-AMPEL360E-EWTW-020-{NNN}-00A-040A-D_*.xml
+    └── Q+ATLANTIDE_impact-study/
+        └── 000-099_ATLAS-impact-analysis/
+            └── 020-029_Sistemas-Core-de-Aeronave/
+                └── 020_Air-Conditioning-and-Pressurization/
+                    ├── README.md                         ← impact analysis layer
+                    └── S1000D-CSDB/                      ← this directory (publication layer)
+                        ├── README.md
+                        ├── BREX/
+                        │   └── README.md
+                        ├── SNS/
+                        │   └── README.md
+                        └── DMC/
+                            ├── README.md
+                            └── DMC-AMPEL360E-EWTW-020-{NNN}-00A-040A-D_*.xml
 ```
 
 ---
@@ -110,7 +112,7 @@ responsibility_split:
 
 ## 6. Current ATLAS-020 Implementation
 
-The first CSDB node implemented is **ATLAS 020 — Air Conditioning and Pressurization** (ATA 21 alignment), consisting of 10 descriptive data modules. See `DMC/ATLAS-020_Air-Conditioning-and-Pressurization/README.md` for the full DMRL-style register.
+The first CSDB node implemented is **ATLAS 020 — Air Conditioning and Pressurization** (ATA 21 alignment), consisting of 10 descriptive data modules. See `DMC/README.md` for the full DMRL-style register.
 
 ---
 
