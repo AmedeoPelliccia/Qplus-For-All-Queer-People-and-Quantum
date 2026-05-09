@@ -1,170 +1,448 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-031-030-RECORDING-SYSTEMS
-title: "ATLAS 030-039 · 03.031.030 — Recording Systems"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "031"
-subsection_title: "Indicating and Recording Systems"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-031-030"
+title: "031-030 — Recording Systems"
+short_title: "Recording Systems"
 subsubject: "030"
 subsubject_title: "Recording Systems"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "031-030-Recording-Systems.md"
+sns_reference: "031-30"
+dmc_prefix: "DMC-AMPEL360E-EWTW-031-30"
+programme: "AMPEL360e Wide Tube-and-Wing Family"
+programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+short_code: "eWTW"
+register: "Q+ATLANTIDE"
+register_link: "../../../../../Q+ATLANTIDE/"
+architecture_band: "000-099_ATLAS"
+architecture_band_link: "../../../"
+architecture_band_title: "New Commercial Aircraft Architectures"
+code_range: "030-039_Proteccion-y-Sistemas-Mecanicos"
+code_range_link: "../../"
+code_range_title: "Protección & Sistemas Mecánicos"
+node_code: "031"
+node_title: "Indicating and Recording Systems"
+node_link: "./"
+parent_path: "Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/031_Indicating-and-Recording-Systems/"
+parent_path_link: "./"
+ata_reference: "ATA 31"
+ata_reference_link: "#20-references"
+s1000d_applicability: "S1000D-CSDB-compatible"
+s1000d_link: "https://s1000d.org/"
+domain: "A-Aerospace"
+domain_link: "../../../../../IDEALE-ESG/A-Aerospace/"
+primary_q_division: "Q-MECHANICS"
+primary_q_division_link: "../../../../../Q-Divisions/Q-MECHANICS/"
+support_q_divisions:
+  - name: "Q-AIR"
+    link: "../../../../../Q-Divisions/Q-AIR/"
+  - name: "Q-DATAGOV"
+    link: "../../../../../Q-Divisions/Q-DATAGOV/"
+orb_functions:
+  - name: "ORB-PMO"
+    link: "../../../../../ORB-Functions/ORB-PMO/"
+  - name: "ORB-LEG"
+    link: "../../../../../ORB-Functions/ORB-LEG/"
+classification: "open-technical-scaffold"
+status: "programme-controlled-scaffold"
+revision: "0.1.0"
+created: "2026-05-09"
+updated: "2026-05-09"
+authoring_mode: "deterministic-technical-publication"
+review_status: "to-be-reviewed-by-system-expert"
+lifecycle_phase:
+  - code: "LC02"
+    title: "Requirements Definition"
+    link: "../../../../../Governance/Lifecycle/LC02-Requirements-Definition.md"
+  - code: "LC03"
+    title: "Architecture Definition"
+    link: "../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md"
+  - code: "LC05"
+    title: "Detailed Design"
+    link: "../../../../../Governance/Lifecycle/LC05-Detailed-Design.md"
+  - code: "LC06"
+    title: "Verification Planning"
+    link: "../../../../../Governance/Lifecycle/LC06-Verification-Planning.md"
+  - code: "LC10"
+    title: "Certification / Approval"
+    link: "../../../../../Governance/Lifecycle/LC10-Certification-Approval.md"
+  - code: "LC11"
+    title: "Operation"
+    link: "../../../../../Governance/Lifecycle/LC11-Operation.md"
+  - code: "LC12"
+    title: "Maintenance / Support"
+    link: "../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md"
+traceability:
+  atlas_node: "031_Indicating-and-Recording-Systems"
+  atlas_node_link: "./"
+  parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
+  parent_branch_link: "../../"
+  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  csdb_path: "TBD"
+  csdb_path_link: "TBD"
+  evidence_status: "draft"
+  brex_status: "not-yet-validated"
+  brex_link: "TBD"
+  dmrl_status: "not-yet-frozen"
+  dmrl_link: "TBD"
+keywords:
+  - "Q+ATLANTIDE"
+  - "ATLAS"
+  - "AMPEL360e"
+  - "S1000D"
+  - "CSDB"
+  - "ATA 31"
+  - "Indicating and Recording"
+  - "FDR"
+  - "CVR"
+  - "CVFDR"
+  - "QAR"
+  - "DFDR"
+  - "crash-survivable"
+  - "ICAO Annex 6"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 031 · 030 — Recording Systems
+# 031-030 — Recording Systems
+### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+---
 
-Defines Flight Data Recorder (FDR), Cockpit Voice Recorder (CVR), and Airborne Image Recorder (AIR) installation and integration, in compliance with EUROCAE ED-112A, ICAO Annex 6, and applicable TSO/ETSO.
+## §0 Hyperlink Policy
 
-## 2. Scope
+All internal links use relative paths from the current directory. External regulatory and standards references use anchor links defined in [§20 References](#20-references). Links marked **TBD** indicate targets not yet allocated. Programme-level links traverse five directory levels (`../../../../../`). No absolute URLs are used for internal navigation.
 
-- FDR — parameter list, sampling rates, data bus interfaces (ARINC 717/767).
-- CVR — microphone placement, channel assignment, audio mixing.
-- AIR (where fitted) — image sensor field-of-view, retention, and data link.
-- Crash-survivability specifications (fire, impact, immersion) per ED-112A.
-- Not in scope: QAR (Quick Access Recorder) ground-support infrastructure.
+---
 
-## 3. Footprint
+## §1 Purpose
 
-| Metric | Value |
+This document describes the Recording Systems for the AMPEL360e eWTW aircraft, covering the Combined Flight Data Recorder / Cockpit Voice Recorder (CVFDR), the Quick Access Recorder (QAR), and associated recording infrastructure. The recording suite constitutes a mandatory safety-critical installation required by ICAO Annex 6, CS-25.1457 (CVR), and CS-25.1459 (FDR), and provides the primary means of accident investigation data.
+
+The eWTW baseline configuration uses a single combined CVFDR unit, which integrates both the FDR and CVR functions in one crash-survivable LRU. This approach reduces system weight, installation footprint, and connector count while providing full compliance with both recorder requirements from a single aft-fuselage-mounted unit. The CVFDR is qualified to EUROCAE ED-112A (Minimum Operational Performance Specification for Crash Protected Airborne Recorder Systems), which defines survivability requirements including crash impact (3400 g), fire (1100°C, 60 min), seawater immersion (6000 m, 30 days), and static crush (22.25 kN).
+
+In addition to the crash-survivable CVFDR, a solid-state Quick Access Recorder (QAR) is installed in the avionics bay. The QAR receives the same ARINC 717 data stream as the CVFDR but is not crash-survivable. Its primary purpose is to provide the airline with easy access to flight data for flight operations quality assurance (FOQA), trend monitoring, and operational analysis without requiring physical removal of the CVFDR. QAR data is accessed via ARINC 615A or wireless AGDL ground interface.
+
+A critical eWTW-specific consideration is the extension of the mandatory FDR parameter set (CS-25.1459 Appendix M, minimum 88 parameters) to include electric propulsion parameters not present in conventional aircraft FDR datasets. These include battery State of Charge, motor torque and speed, inverter operating state, and thermal management system temperatures. The complete supplementary parameter list is not yet defined (see Open Issues) and requires coordination with ATA 71 (Propulsion) and ATA 80 (Starting).
+
+---
+
+## §2 Applicability
+
+| Attribute | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `031` — Indicating and Recording Systems |
-| Subsubject | `030` — Recording Systems |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/031_Indicating-and-Recording-Systems/` |
-| Document | `031-030-Recording-Systems.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| ATA Chapter / Subsubject | 31-30 — Recording Systems |
+| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
+| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
+| S1000D SNS | 031-30 |
+| DMC Prefix | DMC-AMPEL360E-EWTW-031-30 |
+| ICAO Applicability | Annex 6 Part I (international commercial air transport) |
+| Effectivity | All MSN from MSN 001 |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System / Function Overview
 
-## 4. Interfaces Diagram
+The CVFDR is mounted in the aft fuselage pressure zone, specifically positioned to maximise survivability in post-crash scenarios. The aft fuselage location is chosen because accident statistics show it is the most commonly intact structure in survivable impact accidents. The recorder is attached via quick-release mounting (to allow post-accident retrieval) and is equipped with an Underwater Locator Beacon (ULB) that activates automatically upon water immersion. The ULB emits an acoustic pulse at 37.5 kHz detectable at depths up to 6000 m for a minimum of 30 days.
+
+The FDR function within the CVFDR records a minimum of 25 hours of flight data at the input word rate from the DFDAU (ARINC 717 bus). The parameter set includes all mandatory parameters per CS-25.1459 Appendix M, plus supplementary parameters as defined by the programme (including electric propulsion parameters — list TBD). Data is stored in a solid-state non-volatile memory module within the crash-protected memory unit (CSMU). The CVR function records four channels of cockpit audio — captain's boom microphone, first officer's boom microphone, observer boom microphone (if applicable), and area microphone — for a minimum of 2 hours on a continuous loop.
+
+The QAR is located in the avionics bay for easy ground access. It receives the ARINC 717 data stream from the DFDAU (a separate feed from the CVFDR feed to ensure independence) and stores data at full fidelity for the duration of each flight. Data capacity is typically sufficient for 2000+ flight hours before requiring download. The QAR data is downloaded by ground maintenance or operations staff via the ARINC 615A interface panel or a wireless AGDL link, without requiring access to the CVFDR.
+
+---
+
+## §4 Scope
+
+### 4.1 Included
+- CVFDR LRU: combined crash-survivable FDR + CVR, aft fuselage mounted, ARINC 717 input, 4-channel audio input
+- Crash-Survivable Memory Unit (CSMU) within CVFDR
+- Underwater Locator Beacon (ULB) attached to CVFDR
+- QAR LRU: solid-state, avionics bay mounted, ARINC 717 input
+- Cockpit area microphone (mounted in cockpit ceiling or overhead panel)
+- Crew boom microphone interfaces (from ATA 23 audio system)
+- ARINC 717 wiring from DFDAU to CVFDR and to QAR
+- Independent power supply wiring for CVFDR
+- ARINC 615A ground interface for QAR download
+
+### 4.2 Excluded
+- DFDAU/DAU — covered under 031-040
+- Boom microphones and audio panel — covered under ATA 23 (Communications)
+- ACMS — covered under 031-070
+- Recorder monitoring via CMC — covered under 031-080
+- Electric propulsion sensors providing data to DFDAU — covered under ATA 71/80
+
+---
+
+## §5 Architecture Description
+
+- **CVFDR — combined unit**: single LRU combining FDR (ARINC 717 input) and CVR (4-channel audio input); eliminates separate FDR and CVR installations
+- **ED-112A crash survivability**: CSMU withstands impact shock (3400 g), penetration (226 kg from 3 m), static crush (22.25 kN), high temperature (1100°C/60 min), low temperature fire (260°C/10 h), seawater immersion (6000 m/30 days), fresh water immersion
+- **ULB integrated**: 37.5 kHz ULB mounted on CVFDR exterior; water-activated; 30-day minimum battery life; 6000 m depth rating
+- **Bulk erase inhibit**: CVR bulk erase function disabled in flight; available on ground only with engines off (dual-crew action per AMM)
+- **QAR — separate, non-crash-survivable**: solid-state recorder in avionics bay; ARINC 717 input parallel to CVFDR; accessible via ARINC 615A or wireless AGDL
+- **Independent CVFDR power**: CVFDR powered from dedicated independent bus and hot battery bus, maintaining recording during electrical failures; independent of avionics main bus
+- **Pre-takeoff test**: CVFDR performs automatic ground self-test on power-up; status reported via CMC; crew advisory if recorder fails
+
+---
+
+## §6 Functional Breakdown
+
+| Function ID | Function Title | Description | Applicable Component |
+|---|---|---|---|
+| F-001 | Flight Parameter Recording (FDR) | Records ARINC 717 data stream (88+ parameters, 25 hours) in CSMU | CVFDR — FDR function |
+| F-002 | Cockpit Audio Recording (CVR) | Records 4-channel cockpit audio on 2-hour continuous loop in CSMU | CVFDR — CVR function |
+| F-003 | Crash-Survivable Memory Management | Manages non-volatile CSMU storage, record continuity, power-off retention | CVFDR CSMU |
+| F-004 | QAR High-Speed Data Recording | Records full ARINC 717 data stream (25+ hours per QAR capacity) | QAR |
+| F-005 | Underwater Locator Beacon (ULB) Activation | ULB activates automatically on water immersion; 37.5 kHz acoustic signal | ULB on CVFDR |
+| F-006 | Recorder Independent Power Supply | CVFDR powered from independent hot battery bus; maintains recording during avionics bus failures | CVFDR power input |
+| F-007 | Bulk Erase Inhibit Logic | Prevents CVR bulk erase in flight; permits on ground with engines off via dual crew/maintenance action | CVFDR control logic |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    DFDAU[031-040 DFDAU] -->|ARINC 717 — 1024 or 2048 wps| CVFDR[031-030 CVFDR — aft fuselage]
+    DFDAU -->|ARINC 717 — separate feed| QAR[031-030 QAR — avionics bay]
+    AUDIO_BUS[ATA 23 Audio Bus — 4 channels] -->|Audio| CVFDR
+    AREA_MIC[Cockpit Area Microphone] -->|Analog audio| CVFDR
+    HOT_BUS[Hot Battery Bus — ATA 24] -->|Independent power| CVFDR
+    CVFDR -->|BITE status| CMC[031-080 CMC]
+    CVFDR --- ULB[Underwater Locator Beacon]
+    QAR -->|ARINC 615A / Wi-Fi| GND_INTERFACE[Ground Data Download Interface]
+    CVFDR -->|ARINC 615A| GND_INTERFACE
+    GND_INTERFACE -->|Airline FOQA / Investigation| GND[Ground Operations]
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["031 — Indicating and Recording Sys…<br/>(ATA 31)"]:::subsection
-    THIS["031-030<br/>Recording Systems"]:::document
-
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
-
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    A717_IN[ARINC 717 Input — from DFDAU] --> FDR_FUNC[FDR Function — Parameter Decode]
+    AUDIO_CH1[Captain Boom Mic] --> CVR_FUNC[CVR Function — 4-Ch Audio]
+    AUDIO_CH2[FO Boom Mic] --> CVR_FUNC
+    AUDIO_CH3[Observer / OBS Mic] --> CVR_FUNC
+    AUDIO_CH4[Area Microphone] --> CVR_FUNC
+    FDR_FUNC --> CSMU[Crash-Survivable Memory Unit]
+    CVR_FUNC --> CSMU
+    CSMU --> MEMORY_MGT[Memory Management — Loop Overwrite Control]
+    BITE_MON[BITE Monitor] --> FDR_FUNC
+    BITE_MON --> CVR_FUNC
+    BITE_MON --> CSMU
+    BITE_MON --> POWER_MON[Power Monitor]
+    BITE_MON -->|Fault status| CMC_IF[CMC ARINC 429 Interface]
+    POWER_IN[Independent Power Input] --> POWER_MGT[Power Management]
+    POWER_MGT --> FDR_FUNC
+    POWER_MGT --> CVR_FUNC
+    ERASE_CTRL[Bulk Erase Control — Ground Only] --> CVR_FUNC
+    ULB_IF[ULB Water Sensor Interface] --> ULB_DRV[ULB Driver Circuit]
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    LC02[LC02 Requirements Definition] --> LC03[LC03 Architecture Definition]
+    LC03 --> LC05[LC05 Detailed Design]
+    LC05 --> LC06[LC06 Verification Planning]
+    LC06 --> LC10[LC10 Certification / Approval]
+    LC10 --> LC11[LC11 Operation]
+    LC11 --> LC12[LC12 Maintenance / Support]
+    LC12 --> LC13[LC13 Disposal / Decommission]
+    LC02 -->|CS-25.1457 and .1459 requirements| REQ[FDR/CVR System Requirements]
+    LC03 -->|CVFDR vs separate FDR+CVR decision| ARCH[Recorder Architecture]
+    LC05 -->|CVFDR and QAR supplier design packages| DESIGN[Recorder Design]
+    LC06 -->|CS-25.1457/.1459 compliance test plan| VPLAN[Verification Plans]
+    LC10 -->|ED-112A qualification evidence, EASA TC| TC[Type Certificate Data]
+    LC11 -->|Crew procedures: pre-flight recorder check| OPS[FCOM Procedures]
+    LC12 -->|AMM 31-30: ULB battery, QAR download| MAINT[Maintenance Data]
+```
 
-| Term / Acronym | Expansion | Definition |
+---
+
+## §10 Interfaces
+
+| Interface ID | System / Chapter | Interface Type | Data / Signal | Direction | Status |
+|---|---|---|---|---|---|
+| IF-031-030-001 | 031-040 DFDAU | ARINC 717 | Flight parameter data to CVFDR | DFDAU → CVFDR | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-030-002 | 031-040 DFDAU | ARINC 717 | Flight parameter data to QAR (separate feed) | DFDAU → QAR | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-030-003 | ATA 23 Audio | Analog audio / 4-wire | 4-channel cockpit audio to CVR | ATA23 → CVFDR | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-030-004 | ATA 24 Hot Battery Bus | 28VDC | Independent power to CVFDR | ATA24 → CVFDR | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-030-005 | 031-080 CMC | ARINC 429 | BITE status from CVFDR and QAR | CVFDR/QAR → CMC | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-030-006 | ATA 45 Ground Interface | ARINC 615A | QAR data download; CVFDR status readout | Ground → QAR/CVFDR | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-030-007 | 031-070 ACMS | ARINC 717 | ACMS may share ARINC 717 stream from DFDAU | DFDAU → ACMS | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §11 Operating Modes
+
+| Mode ID | Mode Name | Description | Entry Condition | Exit Condition |
+|---|---|---|---|---|
+| OM-001 | Normal Recording | FDR and CVR both recording; CVFDR self-test OK | Aircraft powered; CVFDR serviceability confirmed | Any failure or intentional stop |
+| OM-002 | Pre-Takeoff BITE Test | CVFDR performs 5-minute ground power-up self-test; status reported to CMC and crew | Aircraft on ground, power applied | Test complete (pass/fail) |
+| OM-003 | CVR Bulk Erase | Crew or maintenance erases CVR audio; requires aircraft on ground, engines off, dual action | Ground only, maintenance procedure | Erase complete |
+| OM-004 | ULB Active | ULB transmits 37.5 kHz acoustic signal following water immersion activation | Water immersion sensor triggered | Battery exhausted (30+ days) |
+| OM-005 | QAR Download | QAR data downloaded to ground terminal via ARINC 615A or wireless; CVFDR continues recording | Aircraft on ground, ground interface connected | Download complete |
+| OM-006 | Recorder Failure | CVFDR or QAR BITE failure; ECAM caution generated; MEL action required | BITE fault detected | LRU replaced; post-maintenance test |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+The CVFDR performs continuous self-monitoring of FDR data integrity (ARINC 717 word synchronisation, parity), CVR audio signal level (all 4 channels), CSMU health, power supply integrity, and ULB battery status. Fault status is reported to the CMC via ARINC 429 within 5 seconds of detection. A CVFDR failure generates an ECAM caution alerting the crew that the recorder is unserviceable; the aircraft is then subject to MEL dispatch restrictions (typically limited to 2 flight days before mandatory repair, per approved MEL).
+
+The QAR performs similar self-monitoring and reports to the CMC. QAR faults do not generate an ECAM caution (the QAR is not a mandatory safety-critical system) but are reported as maintenance messages accessible via the CMC ground maintenance interface.
+
+Ground maintenance staff perform a post-installation functional test per AMM 31-30 after any recorder replacement. The test verifies data recording on the FDR (by playing back a short test sequence from the DFDAU in ground test mode) and audio recording on the CVR (by monitoring area microphone and crew interphone during the test).
+
+---
+
+## §13 Maintenance Concept
+
+The CVFDR is an LRU replaced at base maintenance (the aft fuselage mounting location requires specific access equipment). On-aircraft maintenance is limited to CVFDR connector inspection, mounting check, and ULB battery replacement. ULB battery replacement interval is per manufacturer specification (typically 6 years or upon expiration of the battery date code). QAR is accessible in the avionics bay for LRU replacement at line maintenance. QAR data download is performed without LRU removal via the ground interface panel.
+
+A mandatory periodic test of the complete recording chain (DFDAU to CVFDR and QAR) is required per the AMM at an interval to be defined by the MRB (Maintenance Review Board) process. This test verifies parameter accuracy by comparing DFDAU output with known reference values and confirming CVFDR records the expected values. The CVR audio channel check is performed as part of the pre-flight check procedure in the FCOM.
+
+---
+
+## §14 S1000D / CSDB Mapping
+
+### 14.1 SNS to DMC Mapping
+
+| SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
+|---|---|---|---|---|
+| 031-30 | Recording Systems | DMC-AMPEL360E-EWTW-031-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30-01 | CVFDR LRU | DMC-AMPEL360E-EWTW-031-30-01 | 040, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30-02 | QAR LRU | DMC-AMPEL360E-EWTW-031-30-02 | 040, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30-03 | ULB | DMC-AMPEL360E-EWTW-031-30-03 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30-04 | Cockpit Area Microphone | DMC-AMPEL360E-EWTW-031-30-04 | 040, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+### 14.2 Information Code Definitions (031-30)
+
+| Info Code | Description | Notes |
 |---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+| 040 | System description — CVFDR/QAR architecture, regulatory basis | AMM/FCOM |
+| 300 | Operation — pre-flight recorder check, CVR erase procedure | QRH/FCOM |
+| 400 | Maintenance — ULB battery replacement, QAR download, recorder test | AMM |
+| 520 | Troubleshooting — recorder BITE fault isolation | FRM/TSM |
+| 720 | Removal and installation — CVFDR R&R, QAR R&R, area mic | AMM |
+| 941 | Illustrated Parts Data | IPC |
 
-### Domain-Specific Terms — ATA 31 Indicating and Recording Systems
+---
 
-| Term / Acronym | Expansion | Definition |
+## §15 Footprints
+
+### 15.1 Physical Footprint
+- CVFDR: aft fuselage, zone 318 (TBD); quick-release mount; ULB attached exterior; access via aft fuselage panel
+- QAR: avionics bay, standard ARINC 600 rack, 3 MCU (TBD); accessible without special equipment
+- Cockpit area microphone: overhead panel or cockpit ceiling, within 0.5 m of crew positions
+
+### 15.2 Electrical / Data Footprint
+- CVFDR power: 28VDC from dedicated hot battery bus; independent of main avionics bus; total power consumption TBD (typical 25–35 W)
+- CVFDR data: ARINC 717 (1024 or 2048 wps from DFDAU); 4-channel audio input; ARINC 429 BITE output to CMC
+- QAR data: ARINC 717 input (parallel feed from DFDAU); ARINC 615A or wireless AGDL output for download
+- Total wiring harness: TBD per aircraft routing study (aft routing from avionics bay to CVFDR location)
+
+### 15.3 Maintenance Footprint
+- CVFDR access: aft fuselage access panel, base maintenance level; requires panel removal tooling
+- QAR access: avionics bay, line maintenance accessible
+- ULB battery replacement: CVFDR removal required; CMM procedure; interval per manufacturer (target 6 years)
+- Functional test period: TBD per MRB; expected 24 months or 3000 flight hours
+
+### 15.4 Data Footprint
+- CVFDR FDR storage: minimum 25 hours at 1024 wps; solid-state CSMU; data survives power interruption
+- CVFDR CVR storage: minimum 2 hours on continuous overwrite loop; 4-channel audio
+- QAR storage: solid-state; minimum 2000 flight hours capacity (TBD per supplier)
+
+---
+
+## §16 Safety and Certification Considerations
+
+| Requirement | Source | Description | Compliance Approach | Status |
+|---|---|---|---|---|
+| CS-25.1457 | EASA CS-25 | CVR: 2-hour minimum, 4-channel audio, crash-survivable | CVFDR qualified to ED-112A; 4-ch audio verified | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1459 | EASA CS-25 | FDR: 25-hour minimum, 88+ parameters, crash-survivable, independent power | CVFDR with CSMU and hot battery bus; parameter list per CS-25 App M | <img src="https://img.shields.io/badge/TBD-red"> |
+| EUROCAE ED-112A | EUROCAE | Crash-survivable recorder MOPS | CVFDR supplier qualification evidence per ED-112A | <img src="https://img.shields.io/badge/TBD-red"> |
+| ICAO Annex 6 | ICAO | FDR and CVR required for commercial operations | Compliance by installation of CS-25.1457/.1459 compliant CVFDR | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1459(a)(4) | EASA CS-25 | FDR failure indication to crew (ECAM caution) | CVFDR BITE fault generates ECAM caution via CMC and FWC | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §17 Verification and Validation
+
+| V&V ID | Requirement | Method | Success Criterion | Status |
+|---|---|---|---|---|
+| VV-031-030-001 | CS-25.1459 — FDR 25-hour retention | Analysis + Ground Test | FDR records 25 hours at 1024 wps; CSMU verified; data readable post-test | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-030-002 | CS-25.1457 — CVR 2-hour retention, 4-channel | Ground Test | CVR records 2 hours of 4-channel audio; all channels verified with known test audio | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-030-003 | CS-25.1459 — independent power supply | Analysis + Ground Test | CVFDR records correctly with all main avionics buses de-energised | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-030-004 | ED-112A crash survivability | Supplier qualification test | CVFDR CSMU qualification test report per ED-112A | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-030-005 | ULB function | Ground Test | ULB activates on water immersion simulation; 37.5 kHz signal detected | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-030-006 | CS-25.1459 — 88+ parameter minimum | Analysis | Parameter list verified against CS-25 Appendix M checklist | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §18 Glossary
+
+| Term | Acronym | Definition |
 |---|---|---|
-| **ACARS** | Aircraft Communications Addressing and Reporting System | Digital datalink for air/ground communications; feeds data to ACMS. |
-| **ACMS** | Aircraft Condition Monitoring System | Onboard system that acquires, processes, and stores flight parameter data for trend monitoring and predictive maintenance. |
-| **CVR** | Cockpit Voice Recorder | Crash-survivable recorder capturing flight-deck audio (crew, ATC, ambient); mandatory under ICAO Annex 6. |
-| **DAR** | Digital ACMS Recorder / Digital AIDS Recorder | Solid-state high-speed recording unit collecting FDR-class parameters at high sample rates. |
-| **EIS** | Engine Indicating System | Integrated display suite presenting engine parameters (N1, N2, EGT, FF, oil) on the flight deck. |
-| **EFIS** | Electronic Flight Instrument System | Cathode-ray-tube or LCD-based flight instrument suite comprising PFD and ND; replaces electromechanical instruments. |
-| **EICAS** | Engine Indication and Crew Alerting System | Boeing-type integrated display providing engine parameters and system alerts on the flight deck centre panel. |
-| **ECAM** | Electronic Centralised Aircraft Monitor | Airbus-type monitoring and display system providing systems synoptic pages, engine data, and crew warnings. |
-| **FDR** | Flight Data Recorder | Crash-survivable recorder that stores flight parameters (position, attitude, control inputs) for accident investigation. |
-| **FWC** | Flight Warning Computer | Core processor for ECAM/EICAS that evaluates sensor inputs and generates crew alert messages. |
-| **GPWS** | Ground Proximity Warning System | Advisory system alerting crew to terrain proximity; legacy precursor to TAWS (Mode 1–5 envelope protection). |
-| **ICAO** | International Civil Aviation Organisation | UN specialised agency establishing international standards and recommended practices for civil aviation. |
-| **MCP** | Mode Control Panel | Glareshield-mounted panel on which pilots select autoflight modes, target speed, altitude, and heading. |
-| **ND** | Navigation Display | Crew display unit showing horizontal situation, flight plan route, terrain, weather, and traffic overlays. |
-| **PFD** | Primary Flight Display | Crew display unit consolidating attitude, airspeed, altitude, vertical speed, and ILS deviation data. |
-| **QAR** | Quick Access Recorder | Removable solid-state flight data recorder providing easy, rapid access to FDR-class data for airline maintenance analysis. |
-| **WEU** | Warning Electronic Unit | Hardware unit generating discrete audio/visual warnings (Master Warning, Master Caution, chimes) based on FWC output. |
+| Flight Data Recorder | FDR | Crash-survivable device recording aircraft flight parameters for accident investigation |
+| Cockpit Voice Recorder | CVR | Crash-survivable device recording cockpit audio for accident investigation |
+| Combined CVFDR | CVFDR | Single LRU integrating both FDR and CVR functions in one crash-survivable unit |
+| Digital Flight Data Recorder | DFDR | Alternative designation for a solid-state FDR (as opposed to magnetic tape DFDR) |
+| Quick Access Recorder | QAR | Non-crash-survivable recorder providing easy access to flight data for operational monitoring |
+| ARINC 717 | — | Standard serial digital bus used to transmit flight data from DFDAU to FDR (Harvard biphase, 1024 or 2048 wps) |
+| ARINC 767 | — | Alternative/enhanced FDR data standard (may apply for future eWTW FDR if very high parameter counts required) |
+| Crash-Survivable Memory Unit | CSMU | The internal protected memory module within the CVFDR that must survive crash conditions |
+| Underwater Locator Beacon | ULB | Acoustic pinger activated by water immersion, emitting 37.5 kHz signal for post-crash location |
+| Bulk Erase | — | Function to erase all CVR audio content; restricted to ground, engines off; cannot be performed in flight |
+| Digital Flight Data Acquisition Unit | DFDAU | Unit that acquires and formats aircraft parameter data for the FDR |
+| FOQA | — | Flight Operations Quality Assurance — airline programme for safety and efficiency monitoring using QAR data |
+
+---
+
+## §19 Citations
+
+| Citation ID | Source | Title / Description | Relevance |
+|---|---|---|---|
+| CIT-031-030-001 | EASA | CS-25 §1457 — Cockpit Voice Recorders | Primary CVR regulatory requirement |
+| CIT-031-030-002 | EASA | CS-25 §1459 — Flight Data Recorders | Primary FDR regulatory requirement |
+| CIT-031-030-003 | EUROCAE | ED-112A — MOPS for Crash Protected Airborne Recorder Systems | CVFDR qualification standard |
+| CIT-031-030-004 | ICAO | Annex 6 — Operation of Aircraft | Operational FDR/CVR requirement |
+| CIT-031-030-005 | ARINC | ARINC 717 — Flight Data Recorder System | FDR data bus standard |
+
+---
+
+## §20 References
+
+| Ref ID | Document | Title | Version | Link |
+|---|---|---|---|---|
+| REF-031-030-001 | EASA CS-25 | Certification Specifications — §1457 CVR, §1459 FDR, Appendix M | Amdt 27 | [CS-25](https://www.easa.europa.eu/) |
+| REF-031-030-002 | EUROCAE ED-112A | MOPS for Crash Protected Airborne Recorder Systems | 2013 | [ED-112A](https://eurocae.net/) |
+| REF-031-030-003 | ICAO Annex 6 | Operation of Aircraft — Part I | 12th Ed | [ICAO](https://www.icao.int/) |
+| REF-031-030-004 | ARINC 717 | Flight Data Recorder System | 2003 | [ARINC 717](https://aviation-ia.com/) |
+| REF-031-030-005 | 031-040 | Data Acquisition and Concentration | 0.1.0 | [031-040](./031-040-Data-Acquisition-and-Concentration.md) |
+
+---
+
+## §21 Open Issues
+
+| Issue ID | Description | Owner | Priority | Target Date | Status |
+|---|---|---|---|---|---|
+| OI-031-030-001 | CVFDR vs separate CVR+FDR final configuration decision pending mass/SWaP trade-off | Avionics Architect | High | LC03 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-030-002 | QAR ground interface standard — ARINC 615A vs wireless AGDL vs USB not decided | Systems Engineer | Medium | LC03 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-030-003 | ULB battery replacement interval — pending supplier data; target 6 years | Avionics Engineer | Low | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-030-004 | Electric propulsion supplementary FDR parameter list not yet defined — requires ATA 71/80 coordination | Systems Engineer | High | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-030-005 | ARINC 717 word rate (1024 vs 2048 wps) — depends on final parameter count; pending parameter list | Systems Engineer | Medium | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description of Change |
+|---|---|---|---|
+| 0.1.0 | 2026-05-09 | ATLAS Scaffold Generator | Initial scaffold creation — all sections populated; marked DRAFT |
+
+<img src="https://img.shields.io/badge/DRAFT-yellow"> This document is a programme-controlled scaffold. All content is subject to review by the responsible system expert before formal issue.

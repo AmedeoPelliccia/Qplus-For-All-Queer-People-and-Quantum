@@ -1,169 +1,440 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-031-070-AUTOMATIC-DATA-REPORTING-AND-AIRCRAFT-CONDITION-MONITORING
-title: "ATLAS 030-039 · 03.031.070 — Automatic Data Reporting and Aircraft Condition Monitoring"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "031"
-subsection_title: "Indicating and Recording Systems"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-031-070"
+title: "031-070 — Automatic Data Reporting and Aircraft Condition Monitoring"
+short_title: "ACMS and ACARS"
 subsubject: "070"
 subsubject_title: "Automatic Data Reporting and Aircraft Condition Monitoring"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "031-070-Automatic-Data-Reporting-and-Aircraft-Condition-Monitoring.md"
+sns_reference: "031-70"
+dmc_prefix: "DMC-AMPEL360E-EWTW-031-70"
+programme: "AMPEL360e Wide Tube-and-Wing Family"
+programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+short_code: "eWTW"
+register: "Q+ATLANTIDE"
+register_link: "../../../../../Q+ATLANTIDE/"
+architecture_band: "000-099_ATLAS"
+architecture_band_link: "../../../"
+architecture_band_title: "New Commercial Aircraft Architectures"
+code_range: "030-039_Proteccion-y-Sistemas-Mecanicos"
+code_range_link: "../../"
+code_range_title: "Protección & Sistemas Mecánicos"
+node_code: "031"
+node_title: "Indicating and Recording Systems"
+node_link: "./"
+parent_path: "Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/031_Indicating-and-Recording-Systems/"
+parent_path_link: "./"
+ata_reference: "ATA 31"
+ata_reference_link: "#20-references"
+s1000d_applicability: "S1000D-CSDB-compatible"
+s1000d_link: "https://s1000d.org/"
+domain: "A-Aerospace"
+domain_link: "../../../../../IDEALE-ESG/A-Aerospace/"
+primary_q_division: "Q-MECHANICS"
+primary_q_division_link: "../../../../../Q-Divisions/Q-MECHANICS/"
+support_q_divisions:
+  - name: "Q-AIR"
+    link: "../../../../../Q-Divisions/Q-AIR/"
+  - name: "Q-DATAGOV"
+    link: "../../../../../Q-Divisions/Q-DATAGOV/"
+orb_functions:
+  - name: "ORB-PMO"
+    link: "../../../../../ORB-Functions/ORB-PMO/"
+  - name: "ORB-LEG"
+    link: "../../../../../ORB-Functions/ORB-LEG/"
+classification: "open-technical-scaffold"
+status: "programme-controlled-scaffold"
+revision: "0.1.0"
+created: "2026-05-09"
+updated: "2026-05-09"
+authoring_mode: "deterministic-technical-publication"
+review_status: "to-be-reviewed-by-system-expert"
+lifecycle_phase:
+  - code: "LC02"
+    title: "Requirements Definition"
+    link: "../../../../../Governance/Lifecycle/LC02-Requirements-Definition.md"
+  - code: "LC03"
+    title: "Architecture Definition"
+    link: "../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md"
+  - code: "LC05"
+    title: "Detailed Design"
+    link: "../../../../../Governance/Lifecycle/LC05-Detailed-Design.md"
+  - code: "LC06"
+    title: "Verification Planning"
+    link: "../../../../../Governance/Lifecycle/LC06-Verification-Planning.md"
+  - code: "LC10"
+    title: "Certification / Approval"
+    link: "../../../../../Governance/Lifecycle/LC10-Certification-Approval.md"
+  - code: "LC11"
+    title: "Operation"
+    link: "../../../../../Governance/Lifecycle/LC11-Operation.md"
+  - code: "LC12"
+    title: "Maintenance / Support"
+    link: "../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md"
+traceability:
+  atlas_node: "031_Indicating-and-Recording-Systems"
+  atlas_node_link: "./"
+  parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
+  parent_branch_link: "../../"
+  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  csdb_path: "TBD"
+  csdb_path_link: "TBD"
+  evidence_status: "draft"
+  brex_status: "not-yet-validated"
+  brex_link: "TBD"
+  dmrl_status: "not-yet-frozen"
+  dmrl_link: "TBD"
+keywords:
+  - "Q+ATLANTIDE"
+  - "ATLAS"
+  - "AMPEL360e"
+  - "S1000D"
+  - "CSDB"
+  - "ATA 31"
+  - "Indicating and Recording"
+  - "ACMS"
+  - "ACARS"
+  - "ARINC 620"
+  - "ARINC 745A"
+  - "condition monitoring"
+  - "datalink"
+  - "SATCOM"
+  - "trend monitoring"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 031 · 070 — Automatic Data Reporting and Aircraft Condition Monitoring
+# 031-070 — Automatic Data Reporting and Aircraft Condition Monitoring
+### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+---
 
-Documents ACARS-based automatic reporting (ADS-C, OOOI), Aircraft Condition Monitoring System (ACMS), and engine/airframe health-trend monitoring transmitted in flight or post-flight.
+## §0 Hyperlink Policy
 
-## 2. Scope
+All internal links use relative paths from the current directory. External regulatory and standards references use anchor links defined in [§20 References](#20-references). Links marked **TBD** indicate targets not yet allocated. Programme-level links traverse five directory levels (`../../../../../`). No absolute URLs are used for internal navigation.
 
-- ACMS parameter selection, exceedance detection, and report triggering.
-- ACARS data-link integration and ground-server uplink/downlink protocol.
-- ADS-C automatic dependent surveillance contract reporting (FANS-1/A, CPDLC).
-- Not in scope: on-board maintenance system (ATA 45) or ground-based analytics.
+---
 
-## 3. Footprint
+## §1 Purpose
 
-| Metric | Value |
+This document describes the Aircraft Condition Monitoring System (ACMS) and its associated automatic data reporting functions, including ACARS (Aircraft Communication Addressing and Reporting System) datalink, for the AMPEL360e eWTW aircraft. The ACMS provides airlines with a sophisticated tool for monitoring aircraft health, detecting parameter exceedances, performing trend analysis, and generating automatic pre-notification of maintenance requirements — all without requiring physical access to the aircraft between flights.
+
+The eWTW ACMS is implemented as a software function (IMA-hosted or standalone LRU — TBD per LC03 trade) that acquires data from the DFDAU ARINC 717 stream and supplementary ARINC 429 / AFDX data buses. It stores acquired data in solid-state memory and generates periodic and event-triggered reports in ARINC 620 message format for transmission via the ACARS datalink. The ACARS datalink is provided by the aircraft's VHF data radio (ATA 23) or, when out of VHF range, by the SATCOM link.
+
+A defining feature of the eWTW ACMS is its extension to cover electric propulsion condition monitoring. Conventional ACMS systems focus on gas turbine engine parameters (EGT trend, vibration, oil consumption). The eWTW ACMS must address: battery State of Charge and degradation trend, battery thermal performance (charge/discharge efficiency vs temperature), motor winding temperature trend, inverter efficiency degradation, and regenerative braking energy recovery performance. These novel parameters require purpose-developed ACMS algorithms and exceedance thresholds in close coordination with ATA 71 (Propulsion) engineering.
+
+The ACMS also provides the data foundation for the airline's Flight Operations Quality Assurance (FOQA) programme. In-flight exceedance detection (hard landing, over-speed, over-G, battery over-temperature) triggers automatic ACARS reports to the airline operations centre, enabling rapid maintenance assessment and dispatch decisions without waiting for QAR data download.
+
+---
+
+## §2 Applicability
+
+| Attribute | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `031` — Indicating and Recording Systems |
-| Subsubject | `070` — Automatic Data Reporting and Aircraft Condition Monitoring |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/031_Indicating-and-Recording-Systems/` |
-| Document | `031-070-Automatic-Data-Reporting-and-Aircraft-Condition-Monitoring.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| ATA Chapter / Subsubject | 31-70 — Automatic Data Reporting and Aircraft Condition Monitoring |
+| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
+| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
+| S1000D SNS | 031-70 |
+| DMC Prefix | DMC-AMPEL360E-EWTW-031-70 |
+| Effectivity | All MSN from MSN 001 |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System / Function Overview
 
-## 4. Interfaces Diagram
+The ACMS continuously monitors a defined set of aircraft parameters at sampling rates appropriate for trend analysis and exceedance detection. The parameter set for ACMS is typically broader and at higher sample rates than the mandatory FDR parameter set: while the FDR records 1024–2048 words per second on a continuous loop, the ACMS may selectively record specific parameters at higher rates (e.g., 4–8 samples per second for battery current and voltage) during critical flight phases. Data is stored in a large solid-state storage module and is managed by the ACMS software with configurable storage policies.
+
+ACARS datalink integration allows the ACMS to transmit short structured reports in near-real-time during flight. These reports — formatted per ARINC 620 — include: periodic position/engine health reports (sent every 15–30 minutes), exceedance reports (transmitted within seconds of threshold crossing), end-of-flight reports (transmitted at engine shutdown or parking), and maintenance pre-notification messages (alerting ground maintenance to observed faults before aircraft arrival). The ACARS reports are received by the airline's ground maintenance system, which feeds into the maintenance planning and aircraft monitoring infrastructure.
+
+For the eWTW, the ACMS datalink via VHF and SATCOM enables the airline to monitor battery degradation over the fleet, optimise charging profiles, detect early motor controller anomalies, and manage warranty claims against propulsion system suppliers. This predictive maintenance capability is essential for managing the high capital cost of the battery and propulsion system.
+
+---
+
+## §4 Scope
+
+### 4.1 Included
+- ACMS software function (IMA-hosted or standalone LRU — TBD): data acquisition, processing, storage, and report generation
+- ACMS parameter set management (supplementary to FDR mandatory set)
+- Electric propulsion condition monitoring algorithms (battery, motor, inverter)
+- ACARS report generation (ARINC 620 format): periodic, exceedance, end-of-flight, maintenance pre-notification
+- ACARS datalink interface (to ATA 23 VHF data radio and to SATCOM)
+- Exceedance detection and threshold management
+- Post-flight bulk data download interface (to QAR or AGDL)
+- ACMS BITE self-monitoring
+
+### 4.2 Excluded
+- VHF ACARS radio hardware — covered under ATA 23 (Communications)
+- SATCOM hardware — covered under ATA 23
+- DFDAU/DAU (provides ARINC 717 data to ACMS) — covered under 031-040
+- QAR (receives parallel ARINC 717 for bulk access) — covered under 031-030
+- CMC (receives ACMS fault data) — covered under 031-080
+- Electric propulsion sensors — covered under ATA 71/80
+
+---
+
+## §5 Architecture Description
+
+- **ACMS software function**: IMA-hosted (preferred for LRU reduction) or standalone LRU; acquires from FDR ARINC 717 stream plus supplementary ARINC 429/AFDX data buses
+- **Supplementary data buses**: ACMS acquires propulsion-specific data (battery, motor, inverter) via dedicated AFDX or ARINC 429 interfaces beyond the standard DFDAU output
+- **Large solid-state storage**: ACMS data store significantly larger than QAR (target: 2000+ flight hours of ACMS-selected parameters); managed by circular buffer and report archive
+- **ARINC 620 report format**: standard industry format for ACARS messages; programme-specific message templates (AOC report types) to be defined
+- **ACARS datalink**: primary — VHF Data Link (VDL Mode 2 or HFDL — TBD); secondary — SATCOM broadband; switching logic automatic based on signal availability
+- **Exceedance detection**: real-time parameter comparison against threshold tables stored in ACMS NVM; thresholds configurable by airline via approved software update
+- **Ground download**: ACMS data downloadable via wireless AGDL link or ARINC 615A at gate without LRU removal
+- **Cybersecurity**: ACARS message integrity and datalink authentication per EUROCAE ED-201 / RTCA DO-326A
+
+---
+
+## §6 Functional Breakdown
+
+| Function ID | Function Title | Description | Applicable Component |
+|---|---|---|---|
+| F-001 | Flight Parameter Acquisition for ACMS | Acquires data from FDR ARINC 717 stream and supplementary buses; higher rate for selected parameters | ACMS data acquisition |
+| F-002 | Electric Propulsion Trend Monitoring | Battery degradation, motor winding temperature trend, inverter efficiency, regenerative braking performance | ACMS propulsion monitoring |
+| F-003 | In-Flight ACARS Report Generation | Generates periodic and event-triggered ARINC 620 reports for transmission via ACARS datalink | ACMS report generator |
+| F-004 | Ground Datalink Transmission | Transmits ACMS reports via VHF ACARS (primary) or SATCOM (secondary) | ACMS datalink interface |
+| F-005 | Exceedance Detection and Automatic Reporting | Monitors parameters against threshold table; triggers ACARS report on exceedance within 30 seconds | ACMS exceedance monitor |
+| F-006 | Post-Flight Bulk Data Download | Provides full ACMS dataset to ground system via AGDL or ARINC 615A after flight | ACMS download function |
+| F-007 | Predictive Maintenance Data Processing | Analyses trend data; generates maintenance pre-notification ACARS reports | ACMS analytics function |
+| F-008 | ACMS BITE Monitoring | Monitors ACMS function health; reports to CMC; generates maintenance message on ACMS failure | ACMS BITE |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    DAU[031-040 DAU / DFDAU] -->|ARINC 717 stream| ACMS[031-070 ACMS]
+    PROPULSION[ATA 71 — Propulsion Controllers] -->|AFDX / A429 — battery, motor, inverter| ACMS
+    ACMS -->|ARINC 620 messages| ACARS_IF[ACARS Interface]
+    ACARS_IF -->|VHF Data Link| VHF[ATA 23 VHF Radio]
+    ACARS_IF -->|SATCOM| SAT[ATA 23 SATCOM]
+    VHF -->|ACARS| GND_AOC[Ground — Airline Operations / Maintenance]
+    SAT -->|ACARS| GND_AOC
+    ACMS -->|Maintenance pre-notification| CMC[031-080 CMC]
+    ACMS -->|Bulk data| AGDL[Wireless Ground Link / ARINC 615A]
+    AGDL -->|At gate| GND_MAINT[Ground Maintenance System]
+    QAR[031-030 QAR] -.->|Parallel ARINC 717 — cross-reference| ACMS
+    IMA[ATA 46 IMA] -.->|Optional hosting| ACMS
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["031 — Indicating and Recording Sys…<br/>(ATA 31)"]:::subsection
-    THIS["031-070<br/>Automatic Data Reporting and A…"]:::document
-
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
-
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    A717_IN[ARINC 717 Input from DAU] --> PARAM_ACQ[Parameter Acquisition and Buffering]
+    SUPP_IN[Supplementary AFDX / A429 Inputs — Propulsion] --> PARAM_ACQ
+    PARAM_ACQ --> TREND_PROC[Trend Analysis Processor]
+    PARAM_ACQ --> EXCEED_MON[Exceedance Monitor — Threshold Table]
+    TREND_PROC --> ANALYTICS[Predictive Maintenance Analytics]
+    EXCEED_MON --> RPT_GEN[ACARS Report Generator — ARINC 620]
+    ANALYTICS --> RPT_GEN
+    RPT_GEN --> ACARS_TX[ACARS Datalink Transmitter]
+    ACARS_TX -->|VHF / SATCOM selection| DATALINK[Datalink Interface — ATA 23]
+    PARAM_ACQ --> SS_STORAGE[Solid-State Storage — 2000+ hrs]
+    SS_STORAGE --> BULK_DL[Bulk Download Interface — AGDL / ARINC 615A]
+    BITE_MON[BITE Monitor] --> ACMS_STATUS[ACMS Status to CMC]
+    THRESHOLD_NVM[Threshold Table — NVM] --> EXCEED_MON
+    SW_LOAD[Software / Config Load] --> THRESHOLD_NVM
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    LC02[LC02 Requirements Definition] --> LC03[LC03 Architecture Definition]
+    LC03 --> LC05[LC05 Detailed Design]
+    LC05 --> LC06[LC06 Verification Planning]
+    LC06 --> LC10[LC10 Certification / Approval]
+    LC10 --> LC11[LC11 Operation]
+    LC11 --> LC12[LC12 Maintenance / Support]
+    LC12 --> LC13[LC13 Disposal / Decommission]
+    LC02 -->|Airline ACMS / FOQA requirements| REQ[ACMS Operational Requirements]
+    LC03 -->|IMA-hosted vs standalone, VHF vs SATCOM| ARCH[ACMS Architecture Trade]
+    LC05 -->|ACMS parameter set, exceedance thresholds| DESIGN[ACMS Design Package]
+    LC06 -->|Exceedance test, datalink test plan| VPLAN[Verification Plans]
+    LC10 -->|DO-326A cyber assessment, EASA review| TC[TC Data — 031-70]
+    LC11 -->|Airline ACMS configuration, FOQA programme| OPS[Operations Data]
+    LC12 -->|AMM 31-70: ACMS software load, ground DL| MAINT[Maintenance Data]
+```
 
-| Term / Acronym | Expansion | Definition |
+---
+
+## §10 Interfaces
+
+| Interface ID | System / Chapter | Interface Type | Data / Signal | Direction | Status |
+|---|---|---|---|---|---|
+| IF-031-070-001 | 031-040 DAU/DFDAU | ARINC 717 | FDR data stream input to ACMS | DAU → ACMS | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-070-002 | ATA 71 Propulsion | AFDX / ARINC 429 | Battery SoC, motor torque, inverter temp, efficiency | ATA71 → ACMS | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-070-003 | ATA 23 VHF Radio | ARINC 631 / VDL | ACARS message transmission (VHF primary) | ACMS → ATA23 | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-070-004 | ATA 23 SATCOM | SATCOM bus | ACARS message transmission (SATCOM backup) | ACMS → ATA23 | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-070-005 | 031-030 QAR | ARINC 717 | Cross-reference — QAR records same data stream | Parallel — no direct interface | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-070-006 | 031-080 CMC | AFDX / ARINC 429 | ACMS fault data and maintenance pre-notification | ACMS → CMC | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-070-007 | ATA 45 / ATA 46 Ground Interface | AGDL / ARINC 615A | Bulk ACMS data download at gate | Ground → ACMS (download) | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-070-008 | ATA 46 IMA | AFDX / IMA partition | IMA hosting of ACMS software function (if applicable) | IMA ↔ ACMS | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §11 Operating Modes
+
+| Mode ID | Mode Name | Description | Entry Condition | Exit Condition |
+|---|---|---|---|---|
+| OM-001 | In-Flight Monitoring | Continuous parameter acquisition and trend analysis; ACARS datalink active | Aircraft airborne | Landing (parking) |
+| OM-002 | Exceedance Reporting | Triggered by threshold exceedance; ACARS report generated and transmitted within 30 s | Threshold exceedance detected | Report acknowledged or new event |
+| OM-003 | Ground Download | Auto-triggered on parking; bulk data transmitted via AGDL; no crew action required | WOW + parking brake set | Download complete |
+| OM-004 | Manual Report Request | Crew or maintenance requests specific ACMS report via CMC or ACMS terminal | Maintenance access active | Report generated and transmitted |
+| OM-005 | Inhibited | ACMS data recording continues but datalink transmission inhibited (ferry flight, test flight) | Crew selects inhibit | Inhibit removed |
+| OM-006 | ACMS Failure | ACMS BITE fault detected; CMC maintenance message generated; ACARS not available | ACMS software failure or hardware fault | ACMS software reload or LRU replacement |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+The ACMS function performs continuous self-monitoring of its data acquisition inputs (ARINC 717 frame synchronisation, ARINC 429 label freshness), storage health, and datalink status. A failure of the ACMS function is reported to the CMC via ARINC 429 or AFDX. An ACMS failure generates a maintenance message accessible via the CMC ground interface; it does not generate an ECAM crew alert since the ACMS is not a mandatory safety-critical system.
+
+Datalink health monitoring: the ACMS monitors the ACARS datalink status (VHF and SATCOM) and automatically switches between VHF and SATCOM based on signal quality and availability. Loss of both datalinks is reported as a maintenance message; no crew alert. Ground download health: the AGDL or ARINC 615A download interface is monitored by the CMC; a failed download attempt is reported to the ground maintenance system.
+
+---
+
+## §13 Maintenance Concept
+
+If the ACMS is IMA-hosted, software updates (including exceedance threshold changes) are applied via ARINC 615A under CMC control. Threshold changes require airline authorisation and an approved software change process. If standalone, the ACMS LRU is replaced at line maintenance in the avionics bay; no post-replacement calibration required; threshold configuration loaded automatically from NVM or ARINC 615A on power-up.
+
+Routine maintenance includes periodic ACMS data quality check (comparing ACMS recorded values against DFDAU reference) and ACARS datalink functional test. Interval TBD per MRB. ACMS data is purged from storage per the airline's data management policy; the ACMS NVM circular buffer automatically overwrites oldest data when full.
+
+---
+
+## §14 S1000D / CSDB Mapping
+
+### 14.1 SNS to DMC Mapping
+
+| SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
+|---|---|---|---|---|
+| 031-70 | Automatic Data Reporting and ACMS | DMC-AMPEL360E-EWTW-031-70 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-70-01 | ACMS Software Function | DMC-AMPEL360E-EWTW-031-70-01 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-70-02 | ACARS Datalink Interface | DMC-AMPEL360E-EWTW-031-70-02 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-70-03 | Electric Propulsion ACMS Monitoring | DMC-AMPEL360E-EWTW-031-70-03 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+### 14.2 Information Code Definitions (031-70)
+
+| Info Code | Description | Notes |
 |---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+| 040 | System description — ACMS architecture, report types, propulsion monitoring | AMM/FCOM basis |
+| 300 | Operation — manual report request, inhibit procedure, datalink management | FCOM |
+| 400 | Maintenance — ACMS software load, ground download, datalink test | AMM |
+| 520 | Troubleshooting — ACMS failure, datalink fault, exceedance false positive | FRM |
 
-### Domain-Specific Terms — ATA 31 Indicating and Recording Systems
+---
 
-| Term / Acronym | Expansion | Definition |
+## §15 Footprints
+
+### 15.1 Physical Footprint
+- ACMS: IMA-hosted — no dedicated LRU; or standalone — avionics bay, ARINC 600 rack, 3–4 MCU (TBD)
+- Solid-state storage: integrated within ACMS LRU or IMA platform
+
+### 15.2 Electrical / Data Footprint
+- ACMS power: 28VDC from avionics bus (typical 10–20 W for standalone)
+- Data inputs: ARINC 717 (from DAU); AFDX (propulsion data); ARINC 429 (legacy sources)
+- Data outputs: ARINC 620 messages via ACARS (VHF/SATCOM); bulk data via AGDL / ARINC 615A; fault data via ARINC 429 to CMC
+
+### 15.3 Maintenance Footprint
+- Software load: ARINC 615A; CMC-controlled; includes threshold table update
+- Ground download: AGDL at gate (automatic, no crew/maintenance action); ARINC 615A as backup
+- Standalone LRU R&R: line maintenance; no calibration required
+
+### 15.4 Data Footprint
+- ACMS storage: solid-state, minimum 2000 flight hours of ACMS-selected parameters; circular overwrite
+- ACARS report archive: last 100 transmitted reports stored in ACMS NVM
+- Exceedance event log: minimum 500 exceedance events with parameter values, timestamp, flight phase
+
+---
+
+## §16 Safety and Certification Considerations
+
+| Requirement | Source | Description | Compliance Approach | Status |
+|---|---|---|---|---|
+| CS-25.1301 | EASA CS-25 | ACMS must perform its intended function without adversely affecting aircraft systems | ACMS is a monitoring-only function; no command authority over aircraft systems | <img src="https://img.shields.io/badge/TBD-red"> |
+| EUROCAE ED-201 | EUROCAE | Avionics Cybersecurity Process Standard | ACARS datalink security assessment per DO-326A; authentication of maintenance reports | <img src="https://img.shields.io/badge/TBD-red"> |
+| ARINC 620 | ARINC | ACARS message format integrity | ACMS report generation validated against ARINC 620 message format | <img src="https://img.shields.io/badge/TBD-red"> |
+| DAL (ACMS) | ARP 4754A | ACMS failure — ACMS not safety-critical; expected DAL D or E | DAL assessment to be confirmed in SSA | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §17 Verification and Validation
+
+| V&V ID | Requirement | Method | Success Criterion | Status |
+|---|---|---|---|---|
+| VV-031-070-001 | ACMS exceedance detection | Ground Test (simulated exceedance) | Exceedance correctly detected; ACARS report generated within 30 seconds of threshold crossing | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-070-002 | ACARS report format | Analysis + Ground Test | ACARS reports verified as ARINC 620 compliant by airline ground system | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-070-003 | Datalink VHF / SATCOM switching | Ground Test | Automatic switching from VHF to SATCOM on VHF signal loss verified | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-070-004 | Electric propulsion parameter acquisition | Ground Test | Battery SoC, motor torque, inverter temp correctly acquired by ACMS and reported | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-070-005 | Bulk data download | Ground Test | Complete ACMS dataset downloadable via AGDL in < 10 minutes (TBD) at gate | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §18 Glossary
+
+| Term | Acronym | Definition |
 |---|---|---|
-| **ACARS** | Aircraft Communications Addressing and Reporting System | Digital datalink for air/ground communications; feeds data to ACMS. |
-| **ACMS** | Aircraft Condition Monitoring System | Onboard system that acquires, processes, and stores flight parameter data for trend monitoring and predictive maintenance. |
-| **CVR** | Cockpit Voice Recorder | Crash-survivable recorder capturing flight-deck audio (crew, ATC, ambient); mandatory under ICAO Annex 6. |
-| **DAR** | Digital ACMS Recorder / Digital AIDS Recorder | Solid-state high-speed recording unit collecting FDR-class parameters at high sample rates. |
-| **EIS** | Engine Indicating System | Integrated display suite presenting engine parameters (N1, N2, EGT, FF, oil) on the flight deck. |
-| **EFIS** | Electronic Flight Instrument System | Cathode-ray-tube or LCD-based flight instrument suite comprising PFD and ND; replaces electromechanical instruments. |
-| **EICAS** | Engine Indication and Crew Alerting System | Boeing-type integrated display providing engine parameters and system alerts on the flight deck centre panel. |
-| **ECAM** | Electronic Centralised Aircraft Monitor | Airbus-type monitoring and display system providing systems synoptic pages, engine data, and crew warnings. |
-| **FDR** | Flight Data Recorder | Crash-survivable recorder that stores flight parameters (position, attitude, control inputs) for accident investigation. |
-| **FWC** | Flight Warning Computer | Core processor for ECAM/EICAS that evaluates sensor inputs and generates crew alert messages. |
-| **GPWS** | Ground Proximity Warning System | Advisory system alerting crew to terrain proximity; legacy precursor to TAWS (Mode 1–5 envelope protection). |
-| **ICAO** | International Civil Aviation Organisation | UN specialised agency establishing international standards and recommended practices for civil aviation. |
-| **MCP** | Mode Control Panel | Glareshield-mounted panel on which pilots select autoflight modes, target speed, altitude, and heading. |
-| **ND** | Navigation Display | Crew display unit showing horizontal situation, flight plan route, terrain, weather, and traffic overlays. |
-| **PFD** | Primary Flight Display | Crew display unit consolidating attitude, airspeed, altitude, vertical speed, and ILS deviation data. |
-| **QAR** | Quick Access Recorder | Removable solid-state flight data recorder providing easy, rapid access to FDR-class data for airline maintenance analysis. |
-| **WEU** | Warning Electronic Unit | Hardware unit generating discrete audio/visual warnings (Master Warning, Master Caution, chimes) based on FWC output. |
+| Aircraft Condition Monitoring System | ACMS | System that monitors aircraft and propulsion parameters, detects exceedances, and generates maintenance reports |
+| Aircraft Communication Addressing and Reporting System | ACARS | Datalink system for transmitting short structured messages between aircraft and ground stations |
+| ARINC 620 | — | Standard format for ACARS data messages used in AOC (Airline Operational Control) communications |
+| ARINC 631 | — | Standard for VHF Digital Link (VDL) — used for ACARS VHF datalink |
+| ARINC 745A | — | Standard for ACMS data management and report formats |
+| SATCOM | — | Satellite Communication — provides ACARS datalink when out of VHF range |
+| VHF Datalink | VDL | VHF-based digital communication channel for ACARS transmission |
+| Exceedance | — | Condition where a monitored parameter exceeds a defined threshold, triggering an automatic report |
+| Trend Monitoring | — | Analysis of parameter evolution over time to detect degradation before failure occurs |
+| Airline Operational Control | AOC | Airline department responsible for flight operations; primary recipient of ACMS ACARS reports |
+| Predictive Maintenance | — | Maintenance strategy that uses condition monitoring data to predict and prevent failures before they occur |
+| Datalink | — | Digital communication link between the aircraft and ground stations via radio or satellite |
+| Real-Time Reporting | — | Transmission of ACMS reports during flight, enabling ground decisions before aircraft landing |
+
+---
+
+## §19 Citations
+
+| Citation ID | Source | Title / Description | Relevance |
+|---|---|---|---|
+| CIT-031-070-001 | ARINC | ARINC 620 — Data Link Ground System Standard (DLGSS) | ACARS report format standard |
+| CIT-031-070-002 | ARINC | ARINC 745A — ACMS requirements | ACMS data management standard |
+| CIT-031-070-003 | EUROCAE | ED-201 — Avionics Cybersecurity Process Standard | ACARS datalink security |
+| CIT-031-070-004 | RTCA | DO-326A — Airworthiness Security Process Specification | Datalink cybersecurity compliance |
+| CIT-031-070-005 | EASA | CS-25 §1301 — Function and installation | ACMS general compliance |
+
+---
+
+## §20 References
+
+| Ref ID | Document | Title | Version | Link |
+|---|---|---|---|---|
+| REF-031-070-001 | ARINC 620 | Data Link Ground System Standard | 2005 | [ARINC 620](https://aviation-ia.com/) |
+| REF-031-070-002 | ARINC 745A | Aircraft Condition Monitoring Function | 2003 | [ARINC 745A](https://aviation-ia.com/) |
+| REF-031-070-003 | EUROCAE ED-201 | Avionics Cybersecurity Process Standard | 2018 | [ED-201](https://eurocae.net/) |
+| REF-031-070-004 | RTCA DO-326A | Airworthiness Security Process Specification | 2014 | [DO-326A](https://www.rtca.org/) |
+| REF-031-070-005 | 031-040 | Data Acquisition and Concentration | 0.1.0 | [031-040](./031-040-Data-Acquisition-and-Concentration.md) |
+
+---
+
+## §21 Open Issues
+
+| Issue ID | Description | Owner | Priority | Target Date | Status |
+|---|---|---|---|---|---|
+| OI-031-070-001 | ACMS as IMA-hosted function vs standalone LRU — architecture trade not completed | Systems Architect | High | LC03 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-070-002 | VHF vs SATCOM as primary ACARS datalink — requirements from airline customers not yet received | Sales / Operations | Medium | LC03 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-070-003 | Electric propulsion ACMS parameter set and exceedance thresholds — not yet defined | Propulsion Systems Eng | High | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-070-004 | ACRS report format (ARINC 620 message types) — airline-specific requirements not yet collected | Customer Support | Medium | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-070-005 | Cybersecurity assessment of ACARS datalink — DO-326A assessment not yet initiated | Security Engineer | High | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description of Change |
+|---|---|---|---|
+| 0.1.0 | 2026-05-09 | ATLAS Scaffold Generator | Initial scaffold creation — all sections populated; marked DRAFT |
+
+<img src="https://img.shields.io/badge/DRAFT-yellow"> This document is a programme-controlled scaffold. All content is subject to review by the responsible system expert before formal issue.

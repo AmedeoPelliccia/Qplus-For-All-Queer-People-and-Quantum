@@ -1,169 +1,440 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-031-020-INDEPENDENT-AND-STANDBY-INDICATING-SYSTEMS
-title: "ATLAS 030-039 · 03.031.020 — Independent and Standby Indicating Systems"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "031"
-subsection_title: "Indicating and Recording Systems"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-031-020"
+title: "031-020 — Independent and Standby Indicating Systems"
+short_title: "Standby Instruments"
 subsubject: "020"
 subsubject_title: "Independent and Standby Indicating Systems"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "031-020-Independent-and-Standby-Indicating-Systems.md"
+sns_reference: "031-20"
+dmc_prefix: "DMC-AMPEL360E-EWTW-031-20"
+programme: "AMPEL360e Wide Tube-and-Wing Family"
+programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+short_code: "eWTW"
+register: "Q+ATLANTIDE"
+register_link: "../../../../../Q+ATLANTIDE/"
+architecture_band: "000-099_ATLAS"
+architecture_band_link: "../../../"
+architecture_band_title: "New Commercial Aircraft Architectures"
+code_range: "030-039_Proteccion-y-Sistemas-Mecanicos"
+code_range_link: "../../"
+code_range_title: "Protección & Sistemas Mecánicos"
+node_code: "031"
+node_title: "Indicating and Recording Systems"
+node_link: "./"
+parent_path: "Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/031_Indicating-and-Recording-Systems/"
+parent_path_link: "./"
+ata_reference: "ATA 31"
+ata_reference_link: "#20-references"
+s1000d_applicability: "S1000D-CSDB-compatible"
+s1000d_link: "https://s1000d.org/"
+domain: "A-Aerospace"
+domain_link: "../../../../../IDEALE-ESG/A-Aerospace/"
+primary_q_division: "Q-MECHANICS"
+primary_q_division_link: "../../../../../Q-Divisions/Q-MECHANICS/"
+support_q_divisions:
+  - name: "Q-AIR"
+    link: "../../../../../Q-Divisions/Q-AIR/"
+  - name: "Q-DATAGOV"
+    link: "../../../../../Q-Divisions/Q-DATAGOV/"
+orb_functions:
+  - name: "ORB-PMO"
+    link: "../../../../../ORB-Functions/ORB-PMO/"
+  - name: "ORB-LEG"
+    link: "../../../../../ORB-Functions/ORB-LEG/"
+classification: "open-technical-scaffold"
+status: "programme-controlled-scaffold"
+revision: "0.1.0"
+created: "2026-05-09"
+updated: "2026-05-09"
+authoring_mode: "deterministic-technical-publication"
+review_status: "to-be-reviewed-by-system-expert"
+lifecycle_phase:
+  - code: "LC02"
+    title: "Requirements Definition"
+    link: "../../../../../Governance/Lifecycle/LC02-Requirements-Definition.md"
+  - code: "LC03"
+    title: "Architecture Definition"
+    link: "../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md"
+  - code: "LC05"
+    title: "Detailed Design"
+    link: "../../../../../Governance/Lifecycle/LC05-Detailed-Design.md"
+  - code: "LC06"
+    title: "Verification Planning"
+    link: "../../../../../Governance/Lifecycle/LC06-Verification-Planning.md"
+  - code: "LC10"
+    title: "Certification / Approval"
+    link: "../../../../../Governance/Lifecycle/LC10-Certification-Approval.md"
+  - code: "LC11"
+    title: "Operation"
+    link: "../../../../../Governance/Lifecycle/LC11-Operation.md"
+  - code: "LC12"
+    title: "Maintenance / Support"
+    link: "../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md"
+traceability:
+  atlas_node: "031_Indicating-and-Recording-Systems"
+  atlas_node_link: "./"
+  parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
+  parent_branch_link: "../../"
+  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  csdb_path: "TBD"
+  csdb_path_link: "TBD"
+  evidence_status: "draft"
+  brex_status: "not-yet-validated"
+  brex_link: "TBD"
+  dmrl_status: "not-yet-frozen"
+  dmrl_link: "TBD"
+keywords:
+  - "Q+ATLANTIDE"
+  - "ATLAS"
+  - "AMPEL360e"
+  - "S1000D"
+  - "CSDB"
+  - "ATA 31"
+  - "Indicating and Recording"
+  - "ISI"
+  - "ISIS"
+  - "standby instruments"
+  - "standby airspeed"
+  - "standby altimeter"
+  - "standby compass"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 031 · 020 — Independent and Standby Indicating Systems
+# 031-020 — Independent and Standby Indicating Systems
+### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+---
 
-Documents standby altimeter, airspeed indicator, and attitude indicator units that operate independently from the primary avionics and electrical buses.
+## §0 Hyperlink Policy
 
-## 2. Scope
+All internal links use relative paths from the current directory. External regulatory and standards references use anchor links defined in [§20 References](#20-references). Links marked **TBD** indicate targets not yet allocated. Programme-level links traverse five directory levels (`../../../../../`). No absolute URLs are used for internal navigation.
 
-- Standby mechanical and electronic flight instruments (EADI/EASI).
-- Independent pitot-static sources feeding standby instruments.
-- Battery or dedicated power supply architecture for standby instruments.
-- Not in scope: primary ADIRU units (ATA 34) or main bus power distribution (ATA 24).
+---
 
-## 3. Footprint
+## §1 Purpose
 
-| Metric | Value |
+This document describes the Independent and Standby Indicating Systems for the AMPEL360e eWTW aircraft. The core of this subsubject is the Integrated Standby Instrument (ISI), also referred to as the Integrated Standby Instrument System (ISIS), which provides standby attitude, airspeed, and altitude independent of the main avionics bus and display system. The ISI is a regulatory mandatory item per CS-25.1307(a), which requires that standby instruments be installed and powered independently of the main avionics power bus.
+
+The eWTW ISI is a self-contained electronic LRU mounted on the glareshield centre position, directly accessible to both pilots. It incorporates an independent Attitude and Heading Reference System (AHRS), independent air data sensing (connected to dedicated standby pitot and static probes), a colour LCD display, and an internal rechargeable battery providing a minimum of 30 minutes operation in the event of total aircraft electrical failure. The ISI operates continuously in parallel with the main PFDs and cross-checks its attitude data against the main ADIRU to detect potential discrepancies.
+
+Additionally, this subsubject covers the standby magnetic compass and, if fitted, a standby radio altimeter display. The standby compass is a mandatory regulatory item (CS-25.1303(b)(1)) and is mounted in the upper windshield frame area. The standby compass must be readable from the normal seated crew position without reference to the ISI or main instruments.
+
+The independence of all standby instruments from the main avionics systems is a fundamental safety requirement. The ISI must not share pitot/static lines, power buses, or computing resources with the main ADIRU, ADC, or IMA platform. Compliance with this independence requirement is verified by analysis and ground test during the certification campaign per AMC 25.1307.
+
+---
+
+## §2 Applicability
+
+| Attribute | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `031` — Indicating and Recording Systems |
-| Subsubject | `020` — Independent and Standby Indicating Systems |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/031_Indicating-and-Recording-Systems/` |
-| Document | `031-020-Independent-and-Standby-Indicating-Systems.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| ATA Chapter / Subsubject | 31-20 — Independent and Standby Indicating Systems |
+| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
+| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
+| S1000D SNS | 031-20 |
+| DMC Prefix | DMC-AMPEL360E-EWTW-031-20 |
+| Effectivity | All MSN from MSN 001 |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System / Function Overview
 
-## 4. Interfaces Diagram
+The ISI provides the last-resort flight reference for the crew in the event that all main display units and their driving computers fail. It is the only display that is powered independently of the main avionics network and can operate on battery power alone. The ISI contains its own AHRS (solid-state MEMS gyros and accelerometers), air data computer function (barometric altimeter and airspeed computation from standby pitot/static), and internal LCD display.
+
+The standby compass is a purely passive magnetic instrument, providing heading reference without any electrical power. It is subject to compass swing calibration during aircraft build and after any maintenance that may affect the magnetic environment in its vicinity. Deviation card must be posted adjacent to the compass per regulatory requirements.
+
+A standby radio altimeter display (if required by eWTW operational requirements) would be driven by a dedicated radio altimeter receiver separate from the main radio altimeter systems. The need for a dedicated standby radio altimeter display versus relying on the ISI (which does not incorporate a radio altimeter function) is subject to the safety assessment and operational requirements definition currently in progress (see Open Issues).
+
+---
+
+## §4 Scope
+
+### 4.1 Included
+- ISI LRU: self-contained AHRS, air data, LCD display, internal battery
+- Standby pitot probe (dedicated, separate from main ADC probes)
+- Standby static ports (dedicated, separate from main ADC static system)
+- Standby magnetic compass (wet or dry type — TBD)
+- Standby radio altimeter display (if fitted — TBD)
+- ISI internal battery and charger circuit
+- ISI mounting tray and glareshield interface
+
+### 4.2 Excluded
+- Main ADIRU and ADC — covered under ATA 34
+- Main pitot and static system — covered under ATA 34
+- Main PFD display units — covered under 031-010
+- DMC — covered under 031-060
+- Radio altimeter transceivers (main system) — covered under ATA 34
+
+---
+
+## §5 Architecture Description
+
+- **ISI self-containment**: All flight reference functions (AHRS, ADC, display) integrated in one LRU — no dependence on any external computer
+- **Independent pitot/static**: Dedicated standby pitot probe and static ports with separate routing to ISI; no cross-connection with main ADC probes
+- **Independent power**: ISI powered from 28VDC essential battery bus and internal rechargeable battery (minimum 30 min operation)
+- **Battery monitoring**: ISI reports battery charge state to CMC; low battery generates a maintenance advisory
+- **Continuous cross-check**: ISI attitude and air data cross-checked against main ADIRU outputs; disagreement triggers crew advisory via FWC
+- **Standby compass**: Magnetically compensated wet compass or flux-gate type (TBD); mounted upper windshield frame; deviation card posted
+- **ISI display format**: Fixed format (not configurable) — ADI, ASI, altimeter on single LCD panel; crew cannot reformat or select alternative pages
+
+---
+
+## §6 Functional Breakdown
+
+| Function ID | Function Title | Description | Applicable System |
+|---|---|---|---|
+| F-001 | Standby Attitude (Pitch and Roll) | AHRS-based attitude indication on ISI LCD, independent of main ADIRU | ISI AHRS function |
+| F-002 | Standby Airspeed | Air data computation from standby pitot; displayed on ISI LCD | ISI ADC function |
+| F-003 | Standby Altitude | Barometric altitude from standby static; baroset knob on ISI | ISI ADC function |
+| F-004 | Standby Compass / Heading | Magnetic heading from wet compass or flux-gate compass mounted in windshield frame | Standby compass LRU |
+| F-005 | Standby Radio Altitude | Radio altimeter height below ~2500 ft AGL (if standby RA display fitted) | Standby RA display (TBD) |
+| F-006 | Independent Power Supply Management | ISI internal battery charge management; monitoring and reporting to CMC | ISI battery subsystem |
+| F-007 | ISI BITE and Self-Test | Continuous internal monitoring; crew-initiated ground self-test; BITE fault to CMC | ISI BITE function |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    ISI_LRU[031-020 ISI LRU] --> GLARESHIELD[Glareshield Centre Panel]
+    STDBY_PITOT[Standby Pitot Probe] -->|Pitot pressure| ISI_LRU
+    STDBY_STATIC[Standby Static Ports] -->|Static pressure| ISI_LRU
+    BAT_BUS[28VDC Essential Battery Bus] -->|Primary power| ISI_LRU
+    ISI_INT_BAT[ISI Internal Battery] -->|Emergency power| ISI_LRU
+    ISI_LRU -->|BITE status| CMC[031-080 CMC]
+    ISI_LRU -.->|Cross-check disagreement| FWC[031-050 FWC]
+    COMPASS[Standby Compass] --> WINDSHIELD_FRAME[Upper Windshield Frame]
+    ATA24[ATA 24 — Essential Bus] -->|28VDC| BAT_BUS
+    ISI_LRU -.->|Independent of| ADIRU[ATA 34 — Main ADIRU]
+    ISI_LRU -.->|Independent of| IMA[IMA Platform]
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["031 — Indicating and Recording Sys…<br/>(ATA 31)"]:::subsection
-    THIS["031-020<br/>Independent and Standby Indica…"]:::document
-
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
-
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    PITOT_PORT[Standby Pitot Input] --> ADC_FUNC[ISI Air Data Function]
+    STATIC_PORT[Standby Static Input] --> ADC_FUNC
+    ADC_FUNC --> ASI_DISP[Airspeed Display]
+    ADC_FUNC --> ALT_DISP[Altitude Display]
+    GYRO[MEMS Gyros + Accelerometers] --> AHRS_FUNC[ISI AHRS Function]
+    AHRS_FUNC --> ATT_DISP[Attitude Display ADI]
+    BARO_SET[Barosetting Knob] --> ADC_FUNC
+    POWER_MGMT[Power Management] --> INT_BAT[Internal Battery]
+    POWER_MGMT --> MAIN_POWER[Main 28VDC Input]
+    BITE[BITE Monitor] --> ADC_FUNC
+    BITE --> AHRS_FUNC
+    BITE --> INT_BAT
+    BITE -->|Fault status| CMC_IF[CMC Interface — A429]
+    LCD[ISI LCD Display] --> ASI_DISP
+    LCD --> ALT_DISP
+    LCD --> ATT_DISP
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    LC02[LC02 Requirements Definition] --> LC03[LC03 Architecture Definition]
+    LC03 --> LC05[LC05 Detailed Design]
+    LC05 --> LC06[LC06 Verification Planning]
+    LC06 --> LC10[LC10 Certification / Approval]
+    LC10 --> LC11[LC11 Operation]
+    LC11 --> LC12[LC12 Maintenance / Support]
+    LC12 --> LC13[LC13 Disposal / Decommission]
+    LC02 -->|CS-25.1307 independence requirements| REQ[ISI System Requirements]
+    LC03 -->|ISI supplier selection, pitot routing| ARCH[Standby Architecture]
+    LC05 -->|ISI LRU design, pitot/static routing| DESIGN[ISI Design Package]
+    LC06 -->|Independence test plan, battery test| VPLAN[Verification Plans]
+    LC10 -->|Independence demonstration, EASA approval| TC[TC Data — 031-20]
+    LC11 -->|QRH standby instrument procedures| OPS[QRH Procedures]
+    LC12 -->|AMM 31-20: ISI battery test interval| MAINT[Maintenance Data]
+```
 
-| Term / Acronym | Expansion | Definition |
+---
+
+## §10 Interfaces
+
+| Interface ID | System / Chapter | Interface Type | Data / Signal | Direction | Status |
+|---|---|---|---|---|---|
+| IF-031-020-001 | ATA 24 Essential Battery Bus | 28VDC | Primary electrical power to ISI | ATA24 → ISI | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-020-002 | ATA 34 Standby Pitot | Pneumatic | Standby pitot total pressure | Standby pitot → ISI | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-020-003 | ATA 34 Standby Static | Pneumatic | Standby static pressure | Standby static → ISI | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-020-004 | 031-080 CMC | ARINC 429 | BITE fault data from ISI | ISI → CMC | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-020-005 | 031-050 FWC | AFDX / Discrete | ISI disagree advisory trigger | ISI → FWC | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-031-020-006 | 031-010 (physical) | Mechanical | ISI mounting on glareshield centre position | Physical interface | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §11 Operating Modes
+
+| Mode ID | Mode Name | Description | Entry Condition | Exit Condition |
+|---|---|---|---|---|
+| OM-001 | Active (Normal) | ISI operating on main bus power; cross-checking against main ADIRU | Aircraft powered, all buses healthy | Power loss or ISI failure |
+| OM-002 | Alert (Disagree) | ISI attitude or air data disagrees with main PFD; advisory displayed on ISI LCD | ISI vs ADIRU disagreement > threshold | Disagreement resolved |
+| OM-003 | Standby (Primary Reference) | Main PFDs failed; ISI is primary flight reference for crew; remains on main bus power | All main PFDs failed | Main PFDs restored |
+| OM-004 | Battery-Powered | ISI operating on internal battery only; total aircraft electrical failure | Main bus power loss | Main bus power restored |
+| OM-005 | Ground Test | Crew-initiated ISI self-test; all functions verified; BITE results displayed | Ground only + maintenance access | Test complete / pass / fail |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+The ISI performs continuous internal BITE monitoring covering the AHRS function (gyro drift, accelerometer health), air data function (pitot/static pressure transducer health), LCD display health, and internal battery charge state. Fault status is reported to the CMC via ARINC 429 at regular intervals. A failed AHRS or ADC function is displayed as a red cross over the affected parameter on the ISI LCD display, providing immediate crew awareness.
+
+Battery charge monitoring: the ISI reports battery state of charge to the CMC. A battery charge below the serviceable threshold (TBD — typically 80% of rated capacity for 30-min reserve) generates a maintenance advisory, schedulable for the next ground check. Battery replacement interval is defined in the AMM (TBD — typically 2 years or per manufacturer specification).
+
+A crew-initiated ground self-test is available from the cockpit (procedure in AMM 31-20). The self-test exercises all ISI internal functions including a brief battery power-only test (30-second duration), and reports pass/fail via the CMC and an ISI-local display indication.
+
+---
+
+## §13 Maintenance Concept
+
+The ISI is an LRU replaced at line maintenance. No calibration of the AHRS or ADC is required after replacement — the ISI contains all calibration data internally. Battery replacement is performed by removing the ISI LRU and following the CMM (Component Maintenance Manual) battery replacement procedure (TBD). Post-installation, a mandatory ground self-test per AMM is required to confirm ISI serviceability before return to service.
+
+The standby pitot probe and static ports require periodic cleaning and check for obstruction per AMM. The probe heating element (if fitted on standby pitot) is checked during the periodic pitot heat functional test. Standby compass swing is performed after any maintenance that alters the magnetic environment within 1 m of the compass; a deviation table is updated and posted adjacent to the compass per AMM procedure.
+
+---
+
+## §14 S1000D / CSDB Mapping
+
+### 14.1 SNS to DMC Mapping
+
+| SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
+|---|---|---|---|---|
+| 031-20 | Independent and Standby Indicating Systems | DMC-AMPEL360E-EWTW-031-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-20-01 | ISI LRU | DMC-AMPEL360E-EWTW-031-20-01 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-20-02 | Standby Compass | DMC-AMPEL360E-EWTW-031-20-02 | 040, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-20-03 | Standby Pitot and Static | DMC-AMPEL360E-EWTW-031-20-03 | 040, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+### 14.2 Information Code Definitions (031-20)
+
+| Info Code | Description | Notes |
 |---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+| 040 | System description — ISI architecture, independence rationale | AMM/FCOM basis |
+| 300 | Operation — standby instrument use procedures, battery-powered flight | QRH/FCOM |
+| 400 | Maintenance — ISI ground test, battery check, compass swing | AMM tasks |
+| 520 | Troubleshooting — ISI disagree fault, BITE codes | FRM/TSM |
+| 720 | Removal and installation — ISI LRU R&R, standby pitot probe | AMM |
 
-### Domain-Specific Terms — ATA 31 Indicating and Recording Systems
+---
 
-| Term / Acronym | Expansion | Definition |
+## §15 Footprints
+
+### 15.1 Physical Footprint
+- ISI: Single LRU, glareshield centre position; approximately 4×4 inch bezel (TBD per supplier); mounted between captain and FO positions
+- Standby pitot probe: port or starboard fuselage nose area (separate from main probes), zone TBD
+- Standby static ports: fuselage positions separate from main static system, zone TBD
+- Standby compass: upper centre windshield frame, accessible to both pilots
+
+### 15.2 Electrical / Data Footprint
+- Power: 28VDC from essential battery bus (normal); internal battery (emergency, 30 min min)
+- Data: ARINC 429 output to CMC (BITE); discrete output to FWC (disagree signal); pneumatic interface to standby pitot/static
+- Battery: internal sealed rechargeable battery (lithium-ion or NiMH — TBD per supplier)
+
+### 15.3 Maintenance Footprint
+- ISI LRU: tool-free replacement (TBD per supplier; typically bayonet mount); no post-installation calibration
+- Battery: replaced per CMM; interval per AMM (TBD — target 2 years or 80% capacity threshold)
+- Standby pitot: cleaned per AMM interval; probe heat check per functional test schedule
+- Compass swing: performed after magnetic-affecting maintenance; deviation card posted
+
+### 15.4 Data Footprint
+- ISI non-volatile BITE log: last 50 fault events stored internally; downloaded via CMC
+- Battery charge state: transmitted to CMC at power-up and on request
+- Compass swing deviation data: posted deviation table (physical card) + stored in aircraft maintenance record
+
+---
+
+## §16 Safety and Certification Considerations
+
+| Requirement | Source | Description | Compliance Approach | Status |
+|---|---|---|---|---|
+| CS-25.1307(a) | EASA CS-25 | Standby instruments mandatory; independent of main avionics bus | ISI on independent battery bus + internal battery; separate pitot/static | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1303(b)(1) | EASA CS-25 | Magnetic compass mandatory | Standby wet or flux-gate compass fitted; deviation card posted | <img src="https://img.shields.io/badge/TBD-red"> |
+| AMC 25.1307 | EASA AMC | ISI independence from main avionics power bus | Analysis + ground test demonstrating ISI operation with all main buses de-powered | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1309 | EASA CS-25 | Equipment failure condition analysis — standby instrument failure | FHA for ISI failure — expected minor failure condition (main PFDs available) | <img src="https://img.shields.io/badge/TBD-red"> |
+| EUROCAE ED-14G | EUROCAE | Environmental qualification of ISI LRU | ISI qualified to ED-14G applicable categories (temperature, vibration, humidity) | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §17 Verification and Validation
+
+| V&V ID | Requirement | Method | Success Criterion | Status |
+|---|---|---|---|---|
+| VV-031-020-001 | CS-25.1307 — standby instrument independence | Analysis + Ground Test | ISI operates correctly on internal battery with ALL main avionics buses de-energised | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-020-002 | CS-25.1307 — standby pitot/static independence | Analysis | Standby pitot/static lines confirmed not cross-connected to main ADC probes | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-020-003 | CS-25.1303 — standby compass visibility | Cockpit mock-up | Compass readable from both crew seated positions without excessive head movement | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-020-004 | ISI battery — 30-minute reserve | Ground Test | ISI operates on internal battery for 30 minutes minimum under worst-case temperature | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-020-005 | ISI accuracy — attitude | Ground Test + Flight Test | ISI attitude within ±2° of reference during steady flight (or per supplier MOPS) | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-020-006 | ISI accuracy — airspeed and altitude | Ground Test (pitot-static rig) | ISI airspeed within ±5 kt and altitude within ±50 ft of reference (per MOPS) | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §18 Glossary
+
+| Term | Acronym | Definition |
 |---|---|---|
-| **ACARS** | Aircraft Communications Addressing and Reporting System | Digital datalink for air/ground communications; feeds data to ACMS. |
-| **ACMS** | Aircraft Condition Monitoring System | Onboard system that acquires, processes, and stores flight parameter data for trend monitoring and predictive maintenance. |
-| **CVR** | Cockpit Voice Recorder | Crash-survivable recorder capturing flight-deck audio (crew, ATC, ambient); mandatory under ICAO Annex 6. |
-| **DAR** | Digital ACMS Recorder / Digital AIDS Recorder | Solid-state high-speed recording unit collecting FDR-class parameters at high sample rates. |
-| **EIS** | Engine Indicating System | Integrated display suite presenting engine parameters (N1, N2, EGT, FF, oil) on the flight deck. |
-| **EFIS** | Electronic Flight Instrument System | Cathode-ray-tube or LCD-based flight instrument suite comprising PFD and ND; replaces electromechanical instruments. |
-| **EICAS** | Engine Indication and Crew Alerting System | Boeing-type integrated display providing engine parameters and system alerts on the flight deck centre panel. |
-| **ECAM** | Electronic Centralised Aircraft Monitor | Airbus-type monitoring and display system providing systems synoptic pages, engine data, and crew warnings. |
-| **FDR** | Flight Data Recorder | Crash-survivable recorder that stores flight parameters (position, attitude, control inputs) for accident investigation. |
-| **FWC** | Flight Warning Computer | Core processor for ECAM/EICAS that evaluates sensor inputs and generates crew alert messages. |
-| **GPWS** | Ground Proximity Warning System | Advisory system alerting crew to terrain proximity; legacy precursor to TAWS (Mode 1–5 envelope protection). |
-| **ICAO** | International Civil Aviation Organisation | UN specialised agency establishing international standards and recommended practices for civil aviation. |
-| **MCP** | Mode Control Panel | Glareshield-mounted panel on which pilots select autoflight modes, target speed, altitude, and heading. |
-| **ND** | Navigation Display | Crew display unit showing horizontal situation, flight plan route, terrain, weather, and traffic overlays. |
-| **PFD** | Primary Flight Display | Crew display unit consolidating attitude, airspeed, altitude, vertical speed, and ILS deviation data. |
-| **QAR** | Quick Access Recorder | Removable solid-state flight data recorder providing easy, rapid access to FDR-class data for airline maintenance analysis. |
-| **WEU** | Warning Electronic Unit | Hardware unit generating discrete audio/visual warnings (Master Warning, Master Caution, chimes) based on FWC output. |
+| Integrated Standby Instrument | ISI | Self-contained LRU providing standby attitude, airspeed, and altitude, independent of main avionics |
+| Integrated Standby Instrument System | ISIS | Alternative designation for ISI used by some manufacturers |
+| Attitude and Heading Reference System | AHRS | System providing aircraft attitude (pitch/roll) and heading using inertial sensors |
+| Standby Airspeed | — | Airspeed indication derived from dedicated standby pitot probe, independent of main ADC |
+| Standby Altimeter | — | Barometric altitude derived from dedicated standby static ports, independent of main ADC |
+| Barometric Setting | Baroset | Altimeter datum reference pressure set by the crew (QNH or STD) |
+| Pitot-Static System | — | System of probes and tubing providing total and static pressure for air data computation |
+| Standby Compass | — | Magnetic compass (wet or flux-gate type) providing heading reference without electrical power dependency |
+| Radio Altimeter | RA | Radar-based system measuring true height above ground; standby RA display may be fitted if required |
+| Independent Power Supply | — | Electrical supply not shared with main avionics; includes internal battery as last-resort power source |
+| Disagree Alert | — | Alert generated when ISI data differs from main ADIRU data beyond a defined threshold |
+| Compass Swing | — | Calibration procedure to determine and correct magnetic compass deviation errors |
+| Deviation Card | — | Table posted adjacent to compass showing residual deviation errors after compass swing |
+
+---
+
+## §19 Citations
+
+| Citation ID | Source | Title / Description | Relevance |
+|---|---|---|---|
+| CIT-031-020-001 | EASA | CS-25 §1307(a) — Miscellaneous Equipment (standby instruments) | Primary regulatory requirement |
+| CIT-031-020-002 | EASA | AMC 25.1307 — Acceptable Means of Compliance for standby instruments | ISI independence design guidance |
+| CIT-031-020-003 | EASA | CS-25 §1303(b)(1) — Magnetic Compass | Standby compass requirement |
+| CIT-031-020-004 | EUROCAE | ED-14G (DO-160G) — Environmental Qualification | ISI LRU environmental qualification |
+| CIT-031-020-005 | EUROCAE | ED-12C (DO-178C) — Software Considerations | ISI AHRS and ADC software assurance |
+
+---
+
+## §20 References
+
+| Ref ID | Document | Title | Version | Link |
+|---|---|---|---|---|
+| REF-031-020-001 | EASA CS-25 | Certification Specifications for Large Aeroplanes — §1307 | Amdt 27 | [CS-25](https://www.easa.europa.eu/) |
+| REF-031-020-002 | EASA AMC 25.1307 | AMC to CS-25 §1307 — Standby Instruments | Current | [EASA AMC](https://www.easa.europa.eu/) |
+| REF-031-020-003 | EUROCAE ED-14G | Environmental Conditions and Test Procedures for Airborne Equipment | 2012 | [ED-14G](https://eurocae.net/) |
+| REF-031-020-004 | EUROCAE ED-12C | Software Considerations in Airborne Systems | 2011 | [ED-12C](https://eurocae.net/) |
+| REF-031-020-005 | 031-000 | Indicating and Recording Systems — General | 0.1.0 | [031-000](./031-000-Indicating-and-Recording-General.md) |
+
+---
+
+## §21 Open Issues
+
+| Issue ID | Description | Owner | Priority | Target Date | Status |
+|---|---|---|---|---|---|
+| OI-031-020-001 | ISI supplier selection not yet started | Procurement | High | LC03 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-020-002 | Standby compass type — wet compass vs flux-gate not decided | Avionics Architect | Medium | LC03 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-020-003 | Standby radio altitude display — requirement TBD; pending operational requirements review | Systems Engineer | Medium | LC02 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-020-004 | ISI disagree alert threshold values not yet defined | Systems Safety | Medium | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-020-005 | Battery capacity and replacement interval not yet defined (depends on ISI supplier) | Avionics Engineer | Low | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description of Change |
+|---|---|---|---|
+| 0.1.0 | 2026-05-09 | ATLAS Scaffold Generator | Initial scaffold creation — all sections populated; marked DRAFT |
+
+<img src="https://img.shields.io/badge/DRAFT-yellow"> This document is a programme-controlled scaffold. All content is subject to review by the responsible system expert before formal issue.
