@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================
      S1000D Descriptive Data Module
-     DMC: DMC-AMPEL360E-EWTW-020-070-00A-040A-D
+     DMC: DMC-AMPEL360E-EWTW-021-070-00A-040A-D
      Title: Moisture and Air Contaminant Control — System Description
      Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
-     ATLAS Node: 020-070 / ATA 21-70-00
+     ATLAS Node: 021-070 / ATA 21-70-00
      Status: draft / programme-controlled-placeholder
      Issue: 001-00 | Date: 2026-05-09
      ============================================================ -->
@@ -15,7 +15,7 @@
       <dmIdent>
         <dmCode modelIdentCode="AMPEL360E"
                 systemDiffCode="EWTW"
-                systemCode="020"
+                systemCode="021"
                 subSystemCode="0"
                 subSubSystemCode="70"
                 assyCode="00A"
@@ -78,12 +78,12 @@
   <content>
     <description>
 
-      <levelledPara id="desc-020-070-001">
+      <levelledPara id="desc-021-070-001">
         <title>General</title>
-        <para>This data module describes the <emphasis emphasisType="em01">Moisture and Air Contaminant Control System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 020-070 and ATA 21-70. This subsystem manages cabin air humidity, prevents condensation accumulation in structure and equipment areas, and removes biological and chemical contaminants from recirculated cabin air.</para>
+        <para>This data module describes the <emphasis emphasisType="em01">Moisture and Air Contaminant Control System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 021-070 and ATA 21-70. This subsystem manages cabin air humidity, prevents condensation accumulation in structure and equipment areas, and removes biological and chemical contaminants from recirculated cabin air.</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-070-002">
+      <levelledPara id="desc-021-070-002">
         <title>Water Separation and Humidity Control</title>
         <para>Water separators are installed in the ECS pack outlets to remove liquid water from the conditioned air supply before it enters the distribution system. The ECS does not actively humidify the cabin air in the baseline architecture; cabin humidity is a result of pack outlet conditions and passenger moisture generation.</para>
         <para>Moisture management functions include:</para>
@@ -97,7 +97,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-070-003">
+      <levelledPara id="desc-021-070-003">
         <title>Air Filtration and Contaminant Control</title>
         <para>Recirculated cabin air passes through HEPA (High Efficiency Particulate Air) filters before re-entering the distribution system. The HEPA filtration system removes particulates, micro-organisms and certain airborne contaminants. Filter maintenance intervals are defined in the Aircraft Maintenance Manual.</para>
         <para>The air contaminant control system also includes:</para>
@@ -110,9 +110,9 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-070-004">
+      <levelledPara id="desc-021-070-004">
         <title>eWTW Air Quality Monitoring Integration</title>
-        <para>The eWTW aircraft integrates air quality sensors with the ECS monitoring and diagnostics system (see DMC-AMPEL360E-EWTW-020-080-00A-040A-D). Sensor data can be logged and trended via the aircraft health monitoring system to support predictive maintenance of filtration elements.</para>
+        <para>The eWTW aircraft integrates air quality sensors with the ECS monitoring and diagnostics system (see DMC-AMPEL360E-EWTW-021-080-00A-040A-D). Sensor data can be logged and trended via the aircraft health monitoring system to support predictive maintenance of filtration elements.</para>
       </levelledPara>
 
     </description>

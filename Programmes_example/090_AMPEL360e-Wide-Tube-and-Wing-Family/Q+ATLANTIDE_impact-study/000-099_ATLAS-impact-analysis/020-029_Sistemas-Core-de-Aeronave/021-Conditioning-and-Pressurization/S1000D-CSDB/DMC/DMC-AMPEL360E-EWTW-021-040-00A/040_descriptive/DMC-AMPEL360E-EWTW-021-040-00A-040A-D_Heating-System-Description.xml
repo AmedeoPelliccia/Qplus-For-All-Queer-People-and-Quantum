@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================
      S1000D Descriptive Data Module
-     DMC: DMC-AMPEL360E-EWTW-020-050-00A-040A-D
-     Title: Cooling — System Description
+     DMC: DMC-AMPEL360E-EWTW-021-040-00A-040A-D
+     Title: Heating — System Description
      Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
-     ATLAS Node: 020-050 / ATA 21-50-00
+     ATLAS Node: 021-040 / ATA 21-40-00
      Status: draft / programme-controlled-placeholder
      Issue: 001-00 | Date: 2026-05-09
      ============================================================ -->
@@ -15,9 +15,9 @@
       <dmIdent>
         <dmCode modelIdentCode="AMPEL360E"
                 systemDiffCode="EWTW"
-                systemCode="020"
+                systemCode="021"
                 subSystemCode="0"
-                subSubSystemCode="50"
+                subSubSystemCode="40"
                 assyCode="00A"
                 disassyCode="00"
                 disassyCodeVariant="A"
@@ -30,7 +30,7 @@
       <dmAddressItems>
         <issueDate year="2026" month="05" day="09"/>
         <dmTitle>
-          <techName>Cooling System</techName>
+          <techName>Heating System</techName>
           <infoName>System Description</infoName>
         </dmTitle>
       </dmAddressItems>
@@ -78,41 +78,40 @@
   <content>
     <description>
 
-      <levelledPara id="desc-020-050-001">
+      <levelledPara id="desc-021-040-001">
         <title>General</title>
-        <para>This data module describes the <emphasis emphasisType="em01">Cooling System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 020-050 and ATA 21-50. The cooling system removes heat from cabin air, avionics equipment and the hybrid-electric propulsion thermal management system, maintaining temperatures within operating limits across all flight phases.</para>
+        <para>This data module describes the <emphasis emphasisType="em01">Heating System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 021-040 and ATA 21-40. The heating system provides supplemental heating to cabin zones, flight deck, cargo compartments and critical equipment areas during cold-soak ground operations, cold-weather flight and altitude operations.</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-050-002">
-        <title>Cooling Architecture</title>
-        <para>The eWTW cooling system uses a combination of ram-air heat exchangers and the ECS pack refrigeration cycle to reject heat from conditioned air before it enters the cabin. The hybrid-electric architecture introduces additional heat loads from the power electronics and motor controllers that are integrated into the cooling design.</para>
-        <para>Key cooling paths include:</para>
+      <levelledPara id="desc-021-040-002">
+        <title>Heating Architecture</title>
+        <para>The eWTW heating function is integrated into the ECS air conditioning packs and zone temperature control system. Primary heating is provided by the hot trim air supply from the compression subsystem. Supplemental electric heating elements may be used in selected zones for the hybrid-electric variants.</para>
+        <para>Heating loads are managed across:</para>
         <para>
           <randomList>
-            <listItem><para>Primary heat exchangers (ram-air cooled, pack primary and secondary).</para></listItem>
-            <listItem><para>Pack turbine expansion cooling cycle.</para></listItem>
-            <listItem><para>Avionics cooling fans and liquid cooling loops.</para></listItem>
-            <listItem><para>Power electronics cooling (hybrid-electric variants): liquid cooling circuit rejecting heat to ram air or fuel heat sink.</para></listItem>
+            <listItem><para>Cabin and passenger zone heating via hot trim air injection.</para></listItem>
+            <listItem><para>Flight deck heating and windshield anti-icing interface.</para></listItem>
+            <listItem><para>Lower deck and cargo zone heating for cargo protection.</para></listItem>
+            <listItem><para>Equipment bay heating to maintain avionics operating temperature range during cold-soak.</para></listItem>
           </randomList>
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-050-003">
-        <title>Hybrid-Electric Heat Rejection</title>
-        <para>The eWTW hybrid-electric propulsion system generates significant waste heat from power electronics (inverters, converters, motor controllers) and the electric machines. This heat must be rejected using dedicated cooling circuits that interface with the ECS. The thermal management architecture is shared between the ECS and the hybrid-electric propulsion system and is coordinated by the aircraft energy management controller.</para>
+      <levelledPara id="desc-021-040-003">
+        <title>eWTW Thermal Interface</title>
+        <para>The hybrid-electric propulsion system of the eWTW generates waste heat that is partially recovered and redirected to supplement cabin heating during certain operating conditions. This thermal coupling is managed by the aircraft energy management controller and coordinated with the ECS temperature control system (see DMC-AMPEL360E-EWTW-021-060-00A-040A-D).</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-050-004">
+      <levelledPara id="desc-021-040-004">
         <title>Key Components</title>
-        <para>Major components of the cooling subsystem include:</para>
+        <para>Major components of the heating subsystem include:</para>
         <para>
           <randomList>
-            <listItem><para>Primary and secondary heat exchangers.</para></listItem>
-            <listItem><para>Ram-air inlet and exhaust scoops.</para></listItem>
-            <listItem><para>Pack expansion turbines.</para></listItem>
-            <listItem><para>Water separators and moisture management units.</para></listItem>
-            <listItem><para>Avionics cooling fans and ducts.</para></listItem>
-            <listItem><para>Liquid cooling pumps and heat exchangers (hybrid-electric variants).</para></listItem>
+            <listItem><para>Hot trim air ducting and valves.</para></listItem>
+            <listItem><para>Zone heating control valves.</para></listItem>
+            <listItem><para>Supplemental electric heating elements (hybrid-electric variants).</para></listItem>
+            <listItem><para>Cargo compartment heating ducts and control valves.</para></listItem>
+            <listItem><para>Temperature sensors for closed-loop heating control.</para></listItem>
           </randomList>
         </para>
       </levelledPara>

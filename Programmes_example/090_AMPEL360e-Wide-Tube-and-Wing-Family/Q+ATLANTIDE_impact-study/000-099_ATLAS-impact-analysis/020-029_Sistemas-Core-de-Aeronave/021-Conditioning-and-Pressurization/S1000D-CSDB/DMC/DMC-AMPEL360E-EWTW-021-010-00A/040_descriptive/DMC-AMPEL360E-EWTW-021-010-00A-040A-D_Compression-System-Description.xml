@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================
      S1000D Descriptive Data Module
-     DMC: DMC-AMPEL360E-EWTW-020-010-00A-040A-D
+     DMC: DMC-AMPEL360E-EWTW-021-010-00A-040A-D
      Title: Compression — System Description
      Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
-     ATLAS Node: 020-010 / ATA 21-10-00
+     ATLAS Node: 021-010 / ATA 21-10-00
      Status: draft / programme-controlled-placeholder
      Issue: 001-00 | Date: 2026-05-09
      ============================================================ -->
@@ -15,7 +15,7 @@
       <dmIdent>
         <dmCode modelIdentCode="AMPEL360E"
                 systemDiffCode="EWTW"
-                systemCode="020"
+                systemCode="021"
                 subSystemCode="0"
                 subSubSystemCode="10"
                 assyCode="00A"
@@ -78,12 +78,12 @@
   <content>
     <description>
 
-      <levelledPara id="desc-020-010-001">
+      <levelledPara id="desc-021-010-001">
         <title>General</title>
-        <para>This data module describes the <emphasis emphasisType="em01">Compression System</emphasis> of the AMPEL360e eWTW Environmental Control System (ECS), aligned to ATLAS node 020-010 and ATA 21-10. The compression system is the air supply source for the ECS, providing pressurized conditioned bleed air or electrically compressed air to the air conditioning packs.</para>
+        <para>This data module describes the <emphasis emphasisType="em01">Compression System</emphasis> of the AMPEL360e eWTW Environmental Control System (ECS), aligned to ATLAS node 021-010 and ATA 21-10. The compression system is the air supply source for the ECS, providing pressurized conditioned bleed air or electrically compressed air to the air conditioning packs.</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-010-002">
+      <levelledPara id="desc-021-010-002">
         <title>Compression Architecture</title>
         <para>The eWTW compression subsystem architecture supports the following air supply modes depending on the variant configuration:</para>
         <para>
@@ -95,7 +95,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-010-003">
+      <levelledPara id="desc-021-010-003">
         <title>Key Components</title>
         <para>Major components of the compression subsystem include:</para>
         <para>
@@ -110,7 +110,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-010-004">
+      <levelledPara id="desc-021-010-004">
         <title>eWTW Hybrid-Electric Interface</title>
         <para>In hybrid-electric operating modes, the electrical system supplies power to the electric compressor packs. This creates a load coupling between the ECS and the power management system that must be managed by the aircraft energy management controller. The ECS compression demands are communicated to the power management system to enable dynamic load balancing.</para>
       </levelledPara>

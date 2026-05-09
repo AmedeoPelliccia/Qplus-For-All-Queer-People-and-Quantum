@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================
      S1000D Descriptive Data Module
-     DMC: DMC-AMPEL360E-EWTW-020-080-00A-040A-D
+     DMC: DMC-AMPEL360E-EWTW-021-080-00A-040A-D
      Title: ECS Monitoring, Diagnostics and Control Interfaces — Description
      Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
-     ATLAS Node: 020-080 / ATA 21-80-00
+     ATLAS Node: 021-080 / ATA 21-80-00
      Status: programme-controlled-extension
      Issue: 001-00 | Date: 2026-05-09
      Note: This section (020-080/ATA 21-80) is a programme-controlled
@@ -17,7 +17,7 @@
       <dmIdent>
         <dmCode modelIdentCode="AMPEL360E"
                 systemDiffCode="EWTW"
-                systemCode="020"
+                systemCode="021"
                 subSystemCode="0"
                 subSubSystemCode="80"
                 assyCode="00A"
@@ -80,12 +80,12 @@
   <content>
     <description>
 
-      <levelledPara id="desc-020-080-001">
+      <levelledPara id="desc-021-080-001">
         <title>General</title>
-        <para>This data module describes the <emphasis emphasisType="em01">ECS Monitoring, Diagnostics and Control Interfaces</emphasis> of the AMPEL360e eWTW aircraft, aligned to ATLAS node 020-080 and programme-extended ATA section 21-80. This is a programme-controlled extension that consolidates the health monitoring, fault detection, prognostics and crew/maintenance interface functions of the ECS into a single descriptive data module.</para>
+        <para>This data module describes the <emphasis emphasisType="em01">ECS Monitoring, Diagnostics and Control Interfaces</emphasis> of the AMPEL360e eWTW aircraft, aligned to ATLAS node 021-080 and programme-extended ATA section 21-80. This is a programme-controlled extension that consolidates the health monitoring, fault detection, prognostics and crew/maintenance interface functions of the ECS into a single descriptive data module.</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-080-002">
+      <levelledPara id="desc-021-080-002">
         <title>ECS Health Monitoring Architecture</title>
         <para>The eWTW ECS monitoring system is integrated with the aircraft Central Maintenance System (CMS) and the Prognostics and Health Management (PHM) system. The monitoring architecture covers:</para>
         <para>
@@ -99,7 +99,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-080-003">
+      <levelledPara id="desc-021-080-003">
         <title>Crew Interface</title>
         <para>The ECS presents system status and crew alerting through the following crew interface elements:</para>
         <para>
@@ -111,7 +111,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-080-004">
+      <levelledPara id="desc-021-080-004">
         <title>Maintenance Interface</title>
         <para>The ECS maintenance interface provides:</para>
         <para>
@@ -124,9 +124,9 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-080-005">
+      <levelledPara id="desc-021-080-005">
         <title>Digital Thread and PHM Integration</title>
-        <para>ECS health monitoring data is part of the eWTW digital thread. Sensor data, fault records and prognostic indicators are fed to the aircraft PHM system and can be transmitted to the ground via ACARS or equivalent datalink for real-time monitoring and predictive maintenance scheduling. This integration supports the CSDB traceability framework described in DMC-AMPEL360E-EWTW-020-090-00A-040A-D.</para>
+        <para>ECS health monitoring data is part of the eWTW digital thread. Sensor data, fault records and prognostic indicators are fed to the aircraft PHM system and can be transmitted to the ground via ACARS or equivalent datalink for real-time monitoring and predictive maintenance scheduling. This integration supports the CSDB traceability framework described in DMC-AMPEL360E-EWTW-021-090-00A-040A-D.</para>
       </levelledPara>
 
     </description>

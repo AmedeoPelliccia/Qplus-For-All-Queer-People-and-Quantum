@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================
      S1000D Descriptive Data Module
-     DMC: DMC-AMPEL360E-EWTW-020-020-00A-040A-D
+     DMC: DMC-AMPEL360E-EWTW-021-020-00A-040A-D
      Title: Distribution — System Description
      Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
-     ATLAS Node: 020-020 / ATA 21-20-00
+     ATLAS Node: 021-020 / ATA 21-20-00
      Status: draft / programme-controlled-placeholder
      Issue: 001-00 | Date: 2026-05-09
      ============================================================ -->
@@ -15,7 +15,7 @@
       <dmIdent>
         <dmCode modelIdentCode="AMPEL360E"
                 systemDiffCode="EWTW"
-                systemCode="020"
+                systemCode="021"
                 subSystemCode="0"
                 subSubSystemCode="20"
                 assyCode="00A"
@@ -78,12 +78,12 @@
   <content>
     <description>
 
-      <levelledPara id="desc-020-020-001">
+      <levelledPara id="desc-021-020-001">
         <title>General</title>
-        <para>This data module describes the <emphasis emphasisType="em01">Distribution System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 020-020 and ATA 21-20. The distribution system routes conditioned air from the air conditioning packs to the cabin, cockpit, galley areas and equipment bays.</para>
+        <para>This data module describes the <emphasis emphasisType="em01">Distribution System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 021-020 and ATA 21-20. The distribution system routes conditioned air from the air conditioning packs to the cabin, cockpit, galley areas and equipment bays.</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-020-002">
+      <levelledPara id="desc-021-020-002">
         <title>Distribution Architecture</title>
         <para>The eWTW distribution system uses a zoned architecture to control airflow independently in different areas of the aircraft:</para>
         <para>
@@ -97,7 +97,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-020-003">
+      <levelledPara id="desc-021-020-003">
         <title>Key Components</title>
         <para>Major components of the distribution subsystem include:</para>
         <para>
@@ -112,9 +112,9 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-020-004">
+      <levelledPara id="desc-021-020-004">
         <title>Recirculation and Air Quality</title>
-        <para>The eWTW ECS uses a mixed fresh-air and recirculated-air strategy. Recirculated air passes through HEPA filters before re-entering the cabin. The fresh-air fraction is maintained at or above the minimum required by cabin air quality standards. Air quality monitoring sensors are integrated with the ECS monitoring system (see DMC-AMPEL360E-EWTW-020-080-00A-040A-D).</para>
+        <para>The eWTW ECS uses a mixed fresh-air and recirculated-air strategy. Recirculated air passes through HEPA filters before re-entering the cabin. The fresh-air fraction is maintained at or above the minimum required by cabin air quality standards. Air quality monitoring sensors are integrated with the ECS monitoring system (see DMC-AMPEL360E-EWTW-021-080-00A-040A-D).</para>
       </levelledPara>
 
     </description>

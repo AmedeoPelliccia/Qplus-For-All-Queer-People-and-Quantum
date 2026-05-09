@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================
      S1000D Descriptive Data Module
-     DMC: DMC-AMPEL360E-EWTW-020-090-00A-040A-D
+     DMC: DMC-AMPEL360E-EWTW-021-090-00A-040A-D
      Title: S1000D / CSDB Mapping and Traceability — Description
      Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
-     ATLAS Node: 020-090 / ATA 21-90-00
+     ATLAS Node: 021-090 / ATA 21-90-00
      Status: programme-controlled-publication-and-traceability-extension
      Issue: 001-00 | Date: 2026-05-09
      Note: This section is a programme-controlled publication and
@@ -18,7 +18,7 @@
       <dmIdent>
         <dmCode modelIdentCode="AMPEL360E"
                 systemDiffCode="EWTW"
-                systemCode="020"
+                systemCode="021"
                 subSystemCode="0"
                 subSubSystemCode="90"
                 assyCode="00A"
@@ -81,42 +81,42 @@
   <content>
     <description>
 
-      <levelledPara id="desc-020-090-001">
+      <levelledPara id="desc-021-090-001">
         <title>General</title>
-        <para>This data module describes the <emphasis emphasisType="em01">S1000D / CSDB Mapping and Traceability</emphasis> framework for the ATLAS 020 — Air Conditioning and Pressurization system of the AMPEL360e eWTW aircraft. It defines how the Q+ATLANTIDE architecture classification maps to S1000D data module codes, SNS structure and CSDB retrieval keys, and documents the responsibility split between the impact analysis layer (Q+ATLANTIDE) and the publication layer (S1000D CSDB).</para>
+        <para>This data module describes the <emphasis emphasisType="em01">S1000D / CSDB Mapping and Traceability</emphasis> framework for the ATLAS 021 — Air Conditioning and Pressurization system of the AMPEL360e eWTW aircraft. It defines how the Q+ATLANTIDE architecture classification maps to S1000D data module codes, SNS structure and CSDB retrieval keys, and documents the responsibility split between the impact analysis layer (Q+ATLANTIDE) and the publication layer (S1000D CSDB).</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-090-002">
+      <levelledPara id="desc-021-090-002">
         <title>Layer Responsibility Split</title>
         <para>The eWTW programme uses two complementary layers for system documentation:</para>
         <para>
           <randomList>
-            <listItem><para><emphasis emphasisType="em01">Q+ATLANTIDE / ATLAS impact study layer</emphasis>: programme impact analysis, architecture-band effect, risk / opportunity / ESG / lifecycle impact, Q-Division and ORB ownership. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/020_Air-Conditioning-and-Pressurization/</verbatimText></para></listItem>
-            <listItem><para><emphasis emphasisType="em01">S1000D CSDB publication layer</emphasis>: authoritative technical publication content in the form of standalone descriptive data modules, each retrieved by DMC from the CSDB. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/020_Air-Conditioning-and-Pressurization/S1000D-CSDB/DMC/</verbatimText></para></listItem>
+            <listItem><para><emphasis emphasisType="em01">Q+ATLANTIDE / ATLAS impact study layer</emphasis>: programme impact analysis, architecture-band effect, risk / opportunity / ESG / lifecycle impact, Q-Division and ORB ownership. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/021-Conditioning-and-Pressurization/</verbatimText></para></listItem>
+            <listItem><para><emphasis emphasisType="em01">S1000D CSDB publication layer</emphasis>: authoritative technical publication content in the form of standalone descriptive data modules, each retrieved by DMC from the CSDB. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/021-Conditioning-and-Pressurization/S1000D-CSDB/DMC/</verbatimText></para></listItem>
           </randomList>
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-090-003">
+      <levelledPara id="desc-021-090-003">
         <title>ATLAS to DMC Mapping Table</title>
         <para>The following table maps ATLAS node sections to S1000D Data Module Codes and ATA SNS reference:</para>
         <para>
           <randomList>
-            <listItem><para>020-000 (ATA 21-00-00) → DMC-AMPEL360E-EWTW-020-000-00A-040A-D: Air Conditioning and Pressurization — System Description</para></listItem>
-            <listItem><para>020-010 (ATA 21-10-00) → DMC-AMPEL360E-EWTW-020-010-00A-040A-D: Compression — System Description</para></listItem>
-            <listItem><para>020-020 (ATA 21-20-00) → DMC-AMPEL360E-EWTW-020-020-00A-040A-D: Distribution — System Description</para></listItem>
-            <listItem><para>020-030 (ATA 21-30-00) → DMC-AMPEL360E-EWTW-020-030-00A-040A-D: Pressurization Control — System Description</para></listItem>
-            <listItem><para>020-040 (ATA 21-40-00) → DMC-AMPEL360E-EWTW-020-040-00A-040A-D: Heating — System Description</para></listItem>
-            <listItem><para>020-050 (ATA 21-50-00) → DMC-AMPEL360E-EWTW-020-050-00A-040A-D: Cooling — System Description</para></listItem>
-            <listItem><para>020-060 (ATA 21-60-00) → DMC-AMPEL360E-EWTW-020-060-00A-040A-D: Temperature Control — System Description</para></listItem>
-            <listItem><para>020-070 (ATA 21-70-00) → DMC-AMPEL360E-EWTW-020-070-00A-040A-D: Moisture and Air Contaminant Control — System Description</para></listItem>
-            <listItem><para>020-080 (ATA 21-80-00) → DMC-AMPEL360E-EWTW-020-080-00A-040A-D: ECS Monitoring, Diagnostics and Control Interfaces — Description [programme-controlled-extension]</para></listItem>
-            <listItem><para>020-090 (ATA 21-90-00) → DMC-AMPEL360E-EWTW-020-090-00A-040A-D: S1000D / CSDB Mapping and Traceability — Description [programme-controlled-publication-and-traceability-extension]</para></listItem>
+            <listItem><para>020-000 (ATA 21-00-00) → DMC-AMPEL360E-EWTW-021-000-00A-040A-D: Air Conditioning and Pressurization — System Description</para></listItem>
+            <listItem><para>020-010 (ATA 21-10-00) → DMC-AMPEL360E-EWTW-021-010-00A-040A-D: Compression — System Description</para></listItem>
+            <listItem><para>020-020 (ATA 21-20-00) → DMC-AMPEL360E-EWTW-021-020-00A-040A-D: Distribution — System Description</para></listItem>
+            <listItem><para>020-030 (ATA 21-30-00) → DMC-AMPEL360E-EWTW-021-030-00A-040A-D: Pressurization Control — System Description</para></listItem>
+            <listItem><para>020-040 (ATA 21-40-00) → DMC-AMPEL360E-EWTW-021-040-00A-040A-D: Heating — System Description</para></listItem>
+            <listItem><para>020-050 (ATA 21-50-00) → DMC-AMPEL360E-EWTW-021-050-00A-040A-D: Cooling — System Description</para></listItem>
+            <listItem><para>020-060 (ATA 21-60-00) → DMC-AMPEL360E-EWTW-021-060-00A-040A-D: Temperature Control — System Description</para></listItem>
+            <listItem><para>020-070 (ATA 21-70-00) → DMC-AMPEL360E-EWTW-021-070-00A-040A-D: Moisture and Air Contaminant Control — System Description</para></listItem>
+            <listItem><para>020-080 (ATA 21-80-00) → DMC-AMPEL360E-EWTW-021-080-00A-040A-D: ECS Monitoring, Diagnostics and Control Interfaces — Description [programme-controlled-extension]</para></listItem>
+            <listItem><para>020-090 (ATA 21-90-00) → DMC-AMPEL360E-EWTW-021-090-00A-040A-D: S1000D / CSDB Mapping and Traceability — Description [programme-controlled-publication-and-traceability-extension]</para></listItem>
           </randomList>
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-090-004">
+      <levelledPara id="desc-021-090-004">
         <title>CSDB Source Classification</title>
         <para>The source classification for this CSDB node is:</para>
         <para>
@@ -128,7 +128,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-090-005">
+      <levelledPara id="desc-021-090-005">
         <title>Traceability and Digital Thread</title>
         <para>Each data module in this CSDB node is traceable to the corresponding Q+ATLANTIDE impact analysis file via the ATLAS section code (020-000 through 020-090). The digital thread connects requirements (Q+ATLANTIDE impact study) through architecture (ATLAS classification) to technical publication (S1000D CSDB) and onwards to maintenance evidence and lifecycle records.</para>
         <para>Traceability is maintained via:</para>

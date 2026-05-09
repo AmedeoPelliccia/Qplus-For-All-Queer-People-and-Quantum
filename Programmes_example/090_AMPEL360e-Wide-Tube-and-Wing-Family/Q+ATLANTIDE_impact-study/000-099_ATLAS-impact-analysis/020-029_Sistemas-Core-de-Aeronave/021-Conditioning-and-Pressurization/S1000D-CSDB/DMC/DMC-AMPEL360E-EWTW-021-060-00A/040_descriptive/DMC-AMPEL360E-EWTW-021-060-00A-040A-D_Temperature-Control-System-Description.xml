@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================
      S1000D Descriptive Data Module
-     DMC: DMC-AMPEL360E-EWTW-020-040-00A-040A-D
-     Title: Heating — System Description
+     DMC: DMC-AMPEL360E-EWTW-021-060-00A-040A-D
+     Title: Temperature Control — System Description
      Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
-     ATLAS Node: 020-040 / ATA 21-40-00
+     ATLAS Node: 021-060 / ATA 21-60-00
      Status: draft / programme-controlled-placeholder
      Issue: 001-00 | Date: 2026-05-09
      ============================================================ -->
@@ -15,9 +15,9 @@
       <dmIdent>
         <dmCode modelIdentCode="AMPEL360E"
                 systemDiffCode="EWTW"
-                systemCode="020"
+                systemCode="021"
                 subSystemCode="0"
-                subSubSystemCode="40"
+                subSubSystemCode="60"
                 assyCode="00A"
                 disassyCode="00"
                 disassyCodeVariant="A"
@@ -30,7 +30,7 @@
       <dmAddressItems>
         <issueDate year="2026" month="05" day="09"/>
         <dmTitle>
-          <techName>Heating System</techName>
+          <techName>Temperature Control System</techName>
           <infoName>System Description</infoName>
         </dmTitle>
       </dmAddressItems>
@@ -78,42 +78,40 @@
   <content>
     <description>
 
-      <levelledPara id="desc-020-040-001">
+      <levelledPara id="desc-021-060-001">
         <title>General</title>
-        <para>This data module describes the <emphasis emphasisType="em01">Heating System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 020-040 and ATA 21-40. The heating system provides supplemental heating to cabin zones, flight deck, cargo compartments and critical equipment areas during cold-soak ground operations, cold-weather flight and altitude operations.</para>
+        <para>This data module describes the <emphasis emphasisType="em01">Temperature Control System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 021-060 and ATA 21-60. The temperature control system maintains the temperature in each cabin zone, the cockpit and equipment bays within defined comfort and operational limits, using closed-loop control of trim air valves, pack output and supplemental heating elements.</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-040-002">
-        <title>Heating Architecture</title>
-        <para>The eWTW heating function is integrated into the ECS air conditioning packs and zone temperature control system. Primary heating is provided by the hot trim air supply from the compression subsystem. Supplemental electric heating elements may be used in selected zones for the hybrid-electric variants.</para>
-        <para>Heating loads are managed across:</para>
+      <levelledPara id="desc-021-060-002">
+        <title>Temperature Control Architecture</title>
+        <para>The temperature control system uses a multi-zone control architecture with independent temperature targets for each zone:</para>
         <para>
           <randomList>
-            <listItem><para>Cabin and passenger zone heating via hot trim air injection.</para></listItem>
-            <listItem><para>Flight deck heating and windshield anti-icing interface.</para></listItem>
-            <listItem><para>Lower deck and cargo zone heating for cargo protection.</para></listItem>
-            <listItem><para>Equipment bay heating to maintain avionics operating temperature range during cold-soak.</para></listItem>
+            <listItem><para>Zone Temperature Controllers (ZTC) — one per temperature zone, with redundant sensors.</para></listItem>
+            <listItem><para>Pack discharge temperature control — adjusts pack output temperature as a function of zone demand.</para></listItem>
+            <listItem><para>Trim air valves — add hot trim air to individual zone ducts to trim temperature upward from pack base temperature.</para></listItem>
+            <listItem><para>Flight deck temperature control — independent circuit with pilot and co-pilot selector inputs.</para></listItem>
           </randomList>
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-040-003">
-        <title>eWTW Thermal Interface</title>
-        <para>The hybrid-electric propulsion system of the eWTW generates waste heat that is partially recovered and redirected to supplement cabin heating during certain operating conditions. This thermal coupling is managed by the aircraft energy management controller and coordinated with the ECS temperature control system (see DMC-AMPEL360E-EWTW-020-060-00A-040A-D).</para>
-      </levelledPara>
-
-      <levelledPara id="desc-020-040-004">
-        <title>Key Components</title>
-        <para>Major components of the heating subsystem include:</para>
+      <levelledPara id="desc-021-060-003">
+        <title>Sensors and Inputs</title>
+        <para>The temperature control system uses the following sensor types:</para>
         <para>
           <randomList>
-            <listItem><para>Hot trim air ducting and valves.</para></listItem>
-            <listItem><para>Zone heating control valves.</para></listItem>
-            <listItem><para>Supplemental electric heating elements (hybrid-electric variants).</para></listItem>
-            <listItem><para>Cargo compartment heating ducts and control valves.</para></listItem>
-            <listItem><para>Temperature sensors for closed-loop heating control.</para></listItem>
+            <listItem><para>Cabin air temperature sensors (supply and return air, dual redundant per zone).</para></listItem>
+            <listItem><para>Duct temperature sensors (for overheat protection).</para></listItem>
+            <listItem><para>Pack discharge temperature sensors.</para></listItem>
+            <listItem><para>Crew-set temperature targets (cabin management panel and flight deck selectors).</para></listItem>
           </randomList>
         </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-060-004">
+        <title>Duct Overheat Protection</title>
+        <para>The temperature control system includes duct overheat detection and protection. If duct temperature exceeds a defined threshold, the system automatically reduces hot trim air supply and generates a crew advisory. Persistent overheat causes automatic closure of the affected trim air valve and generation of a maintenance message.</para>
       </levelledPara>
 
     </description>

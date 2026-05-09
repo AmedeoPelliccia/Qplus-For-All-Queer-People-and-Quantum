@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================
      S1000D Descriptive Data Module
-     DMC: DMC-AMPEL360E-EWTW-020-030-00A-040A-D
+     DMC: DMC-AMPEL360E-EWTW-021-030-00A-040A-D
      Title: Pressurization Control — System Description
      Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
-     ATLAS Node: 020-030 / ATA 21-30-00
+     ATLAS Node: 021-030 / ATA 21-30-00
      Status: draft / programme-controlled-placeholder
      Issue: 001-00 | Date: 2026-05-09
      ============================================================ -->
@@ -15,7 +15,7 @@
       <dmIdent>
         <dmCode modelIdentCode="AMPEL360E"
                 systemDiffCode="EWTW"
-                systemCode="020"
+                systemCode="021"
                 subSystemCode="0"
                 subSubSystemCode="30"
                 assyCode="00A"
@@ -78,12 +78,12 @@
   <content>
     <description>
 
-      <levelledPara id="desc-020-030-001">
+      <levelledPara id="desc-021-030-001">
         <title>General</title>
-        <para>This data module describes the <emphasis emphasisType="em01">Pressurization Control System</emphasis> of the AMPEL360e eWTW aircraft, aligned to ATLAS node 020-030 and ATA 21-30. The pressurization control system maintains safe cabin pressure throughout all phases of flight by regulating outflow, managing safety relief and controlling cabin altitude rate of change.</para>
+        <para>This data module describes the <emphasis emphasisType="em01">Pressurization Control System</emphasis> of the AMPEL360e eWTW aircraft, aligned to ATLAS node 021-030 and ATA 21-30. The pressurization control system maintains safe cabin pressure throughout all phases of flight by regulating outflow, managing safety relief and controlling cabin altitude rate of change.</para>
       </levelledPara>
 
-      <levelledPara id="desc-020-030-002">
+      <levelledPara id="desc-021-030-002">
         <title>Pressurization Control Architecture</title>
         <para>The pressurization control system uses an automatic closed-loop control architecture with manual override capability:</para>
         <para>
@@ -97,7 +97,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-030-003">
+      <levelledPara id="desc-021-030-003">
         <title>Control Logic</title>
         <para>The pressurization control law schedules cabin altitude as a function of aircraft altitude, maintaining the cabin altitude below the maximum certified limit throughout the flight envelope. The control law also limits the rate of cabin altitude change to passenger comfort limits during climb and descent.</para>
         <para>The controller receives inputs from:</para>
@@ -111,7 +111,7 @@
         </para>
       </levelledPara>
 
-      <levelledPara id="desc-020-030-004">
+      <levelledPara id="desc-021-030-004">
         <title>Safety and Airworthiness Boundary</title>
         <para>Pressurization control is a safety-critical function. Loss of pressurization control can result in a hazardous cabin environment. The system is designed to applicable airworthiness standards. Failure condition classifications are determined by the system safety assessment and are subject to certification authority review. This data module is descriptive and does not constitute safety evidence or airworthiness approval.</para>
       </levelledPara>
