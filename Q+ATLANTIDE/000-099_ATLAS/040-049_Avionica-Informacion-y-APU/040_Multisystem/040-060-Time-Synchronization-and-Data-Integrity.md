@@ -42,7 +42,7 @@ This document covers:
 - **Time Distribution Network (TDN)**: the mechanisms by which the primary time reference is distributed to all IMA partitions, LRUs, and data recorders across the AFDX network[^ref1];
 - **IEEE 1588 / Precision Time Protocol (PTP) adaptation** for avionics: grandmaster clock selection, transparent clock switches, and accuracy budgets;
 - **ARINC 653 time epoch management**: partition-level time API, relationship between wall-clock time and ARINC 653 scheduling time, and health monitoring of time source validity;
-- **Data integrity mechanisms**: CRC validation on AFINC 429 and AFDX frames, sequence number management, freshness monitoring, and stale-data rejection policies;
+- **Data integrity mechanisms**: CRC validation on ARINC 429 and AFDX frames, sequence number management, freshness monitoring, and stale-data rejection policies;
 - **Fault-tolerant time synchronisation**: redundant time masters, Byzantine fault containment, and switchover latency requirements;
 - **Data age monitoring**: maximum allowable data age (MADA) definitions per data parameter type and the actions triggered when data age limits are exceeded;
 - **Flight Data Recorder (FDR) time correlation**: ensuring that FDR time stamps are traceable to GPS UTC within ±1 second per applicable regulations[^ref2].
