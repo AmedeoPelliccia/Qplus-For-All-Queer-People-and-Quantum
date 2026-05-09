@@ -15,11 +15,11 @@ section_title: "Sistemas Core de Aeronave"
 subsection: "022"
 subsection_title: "Auto Flight"
 primary_q_division: Q-AIR
-support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH]
+support_q_divisions: [Q-DATAGOV, Q-HPC, Q-MECHANICS, Q-GROUND, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `022` *Auto Flight*.
+- Populates the ATA SNS-aligned section namespace `022-000`–`022-090` of subsection `022` *Auto Flight* (ATA 22) — autopilot, speed/attitude correction, auto-throttle, system monitoring, load alleviation, flight director, FMS interfaces, diagnostics, and S1000D traceability.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Sections `022-000` through `022-050` map directly to ATA 22-00-00 through 22-50-00. Sections `022-060` through `022-090` are programme-controlled extensions.
+- Section naming pattern: `022-XXX-Title.md` where `XXX` is the three-digit local section code aligned to the ATA SNS (e.g., `022-010` → ATA `22-10-00`).
 
-## 3. Subsubject Index
+## 3. Section Index
 
-| NN | Title | Document | Status |
-|---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| Section | ATA SNS | Title | Document | Status |
+|---:|---|---|---|---|
+| 022-000 | 22-00-00 | General | [`022-000-General.md`](./022-000-General.md) | active |
+| 022-010 | 22-10-00 | Autopilot | [`022-010-Autopilot.md`](./022-010-Autopilot.md) | active |
+| 022-020 | 22-20-00 | Speed-Attitude Correction | [`022-020-Speed-Attitude-Correction.md`](./022-020-Speed-Attitude-Correction.md) | active |
+| 022-030 | 22-30-00 | Auto-Throttle / Auto-Thrust | [`022-030-Auto-Throttle-Auto-Thrust.md`](./022-030-Auto-Throttle-Auto-Thrust.md) | active |
+| 022-040 | 22-40-00 | System Monitoring | [`022-040-System-Monitoring.md`](./022-040-System-Monitoring.md) | active |
+| 022-050 | 22-50-00 | Aerodynamic Load Alleviation | [`022-050-Aerodynamic-Load-Alleviation.md`](./022-050-Aerodynamic-Load-Alleviation.md) | active |
+| 022-060 | 22-60-00 | Flight Director and Guidance Modes | [`022-060-Flight-Director-and-Guidance-Modes.md`](./022-060-Flight-Director-and-Guidance-Modes.md) | programme-controlled-extension |
+| 022-070 | 22-70-00 | FMS Auto-Flight Interfaces | [`022-070-FMS-Auto-Flight-Interfaces.md`](./022-070-FMS-Auto-Flight-Interfaces.md) | programme-controlled-interface-extension |
+| 022-080 | 22-80-00 | Auto-Flight Monitoring, Diagnostics and Control Interfaces | [`022-080-Auto-Flight-Monitoring-Diagnostics-and-Control-Interfaces.md`](./022-080-Auto-Flight-Monitoring-Diagnostics-and-Control-Interfaces.md) | programme-controlled-diagnostics-extension |
+| 022-090 | 22-90-00 | S1000D CSDB Mapping and Traceability | [`022-090-S1000D-CSDB-Mapping-and-Traceability.md`](./022-090-S1000D-CSDB-Mapping-and-Traceability.md) | programme-controlled-publication-and-traceability-extension |
 
 ## 4. Footprint
 
@@ -52,9 +62,9 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `020-029` |
 | Section | `02` — Sistemas Core de Aeronave |
 | Subsection | `022` — Auto Flight |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `022-000`–`022-090` (10 sections active) |
 | Primary Q-Division | Q-AIR[^qdiv] |
-| Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH |
+| Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-MECHANICS, Q-GROUND, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/022_Auto-Flight/` |
@@ -65,7 +75,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All sections under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `022-000`–`022-090` shall preserve those header fields and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
