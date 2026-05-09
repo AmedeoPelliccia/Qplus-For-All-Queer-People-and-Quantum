@@ -14,12 +14,13 @@ section: "02"
 section_title: "Sistemas Core de Aeronave"
 subsection: "025"
 subsection_title: "Equipment and Furnishings"
+ata_alignment: "ATA 25 — Equipment / Furnishings"
 primary_q_division: Q-AIR
-support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH]
+support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH, Q-GROUND, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +34,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `025` *Equipment and Furnishings*.
+- Populates the ATA SNS-aligned section namespace `025-000`–`025-090` of subsection `025` *Equipment and Furnishings* (ATA 25) — flight compartment, passenger compartment, buffet/galley, lavatories, cargo compartments, emergency equipment, accessory compartments, cabin equipment monitoring, and S1000D traceability.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Sections `025-000` through `025-070` map directly to ATA 25-00-00 through 25-70-00. Sections `025-080` and `025-090` are programme-controlled extensions.
+- Section naming pattern: `025-XXX-Title.md` where `XXX` is the three-digit local section code aligned to the ATA SNS (e.g., `025-010` → ATA `25-10-00`).
 
-## 3. Subsubject Index
+## 3. Section Index
 
-| NN | Title | Document | Status |
-|---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| Section | ATA SNS | Title | Document | Status |
+|---:|---|---|---|---|
+| 025-000 | 25-00-00 | General | [`025-000-General.md`](./025-000-General.md) | active |
+| 025-010 | 25-10-00 | Flight Compartment | [`025-010-Flight-Compartment.md`](./025-010-Flight-Compartment.md) | active |
+| 025-020 | 25-20-00 | Passenger Compartment | [`025-020-Passenger-Compartment.md`](./025-020-Passenger-Compartment.md) | active |
+| 025-030 | 25-30-00 | Buffet, Galley and Service Equipment | [`025-030-Buffet-Galley-and-Service-Equipment.md`](./025-030-Buffet-Galley-and-Service-Equipment.md) | active |
+| 025-040 | 25-40-00 | Lavatories | [`025-040-Lavatories.md`](./025-040-Lavatories.md) | active |
+| 025-050 | 25-50-00 | Cargo Compartments | [`025-050-Cargo-Compartments.md`](./025-050-Cargo-Compartments.md) | active |
+| 025-060 | 25-60-00 | Emergency Equipment | [`025-060-Emergency-Equipment.md`](./025-060-Emergency-Equipment.md) | active |
+| 025-070 | 25-70-00 | Accessory Compartments and Furnishing Interfaces | [`025-070-Accessory-Compartments-and-Furnishing-Interfaces.md`](./025-070-Accessory-Compartments-and-Furnishing-Interfaces.md) | active |
+| 025-080 | 25-80-00 | Cabin Equipment Monitoring, Diagnostics and Control Interfaces | [`025-080-Cabin-Equipment-Monitoring-Diagnostics-and-Control-Interfaces.md`](./025-080-Cabin-Equipment-Monitoring-Diagnostics-and-Control-Interfaces.md) | programme-controlled-extension |
+| 025-090 | 25-90-00 | S1000D CSDB Mapping and Traceability | [`025-090-S1000D-CSDB-Mapping-and-Traceability.md`](./025-090-S1000D-CSDB-Mapping-and-Traceability.md) | programme-controlled-publication-and-traceability-extension |
 
 ## 4. Footprint
 
@@ -52,9 +63,9 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `020-029` |
 | Section | `02` — Sistemas Core de Aeronave |
 | Subsection | `025` — Equipment and Furnishings |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `025-000`–`025-090` (10 sections active) |
 | Primary Q-Division | Q-AIR[^qdiv] |
-| Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH |
+| Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH, Q-GROUND, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/025_Equipment-and-Furnishings/` |
@@ -65,7 +76,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All sections under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `025-000`–`025-090` shall preserve those header fields and reuse the footnote set declared here.
 
 ## 5. References & Citations
 
