@@ -1,162 +1,442 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-032-020-NOSE-LANDING-GEAR
-title: "ATLAS 030-039 · 03.032.020 — Nose Landing Gear"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "032"
-subsection_title: "Landing Gear"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-032-020"
+title: "032-020 — Nose Landing Gear"
+short_title: "NLG Assembly"
 subsubject: "020"
 subsubject_title: "Nose Landing Gear"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "032-020-Nose-Landing-Gear.md"
+sns_reference: "032-20"
+dmc_prefix: "DMC-AMPEL360E-EWTW-032-20"
+programme: "AMPEL360e Wide Tube-and-Wing Family"
+programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+short_code: "eWTW"
+register: "Q+ATLANTIDE"
+register_link: "../../../../../Q+ATLANTIDE/"
+architecture_band: "000-099_ATLAS"
+architecture_band_link: "../../../"
+architecture_band_title: "New Commercial Aircraft Architectures"
+code_range: "030-039_Proteccion-y-Sistemas-Mecanicos"
+code_range_link: "../../"
+code_range_title: "Protección & Sistemas Mecánicos"
+node_code: "032"
+node_title: "Landing Gear"
+node_link: "./"
+parent_path: "Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/032_Landing-Gear/"
+parent_path_link: "./"
+ata_reference: "ATA 32"
+ata_reference_link: "#20-references"
+s1000d_applicability: "S1000D-CSDB-compatible"
+s1000d_link: "https://s1000d.org/"
+domain: "A-Aerospace"
+domain_link: "../../../../../IDEALE-ESG/A-Aerospace/"
+primary_q_division: "Q-MECHANICS"
+primary_q_division_link: "../../../../../Q-Divisions/Q-MECHANICS/"
+support_q_divisions:
+  - name: "Q-STRUCTURES"
+    link: "../../../../../Q-Divisions/Q-STRUCTURES/"
+  - name: "Q-AIR"
+    link: "../../../../../Q-Divisions/Q-AIR/"
+orb_functions:
+  - name: "ORB-PMO"
+    link: "../../../../../ORB-Functions/ORB-PMO/"
+  - name: "ORB-LEG"
+    link: "../../../../../ORB-Functions/ORB-LEG/"
+classification: "open-technical-scaffold"
+status: "programme-controlled-scaffold"
+revision: "0.1.0"
+created: "2026-05-09"
+updated: "2026-05-09"
+authoring_mode: "deterministic-technical-publication"
+review_status: "to-be-reviewed-by-system-expert"
+lifecycle_phase:
+  - code: "LC02"
+    title: "Requirements Definition"
+    link: "../../../../../Governance/Lifecycle/LC02-Requirements-Definition.md"
+  - code: "LC03"
+    title: "Architecture Definition"
+    link: "../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md"
+  - code: "LC05"
+    title: "Detailed Design"
+    link: "../../../../../Governance/Lifecycle/LC05-Detailed-Design.md"
+  - code: "LC06"
+    title: "Verification Planning"
+    link: "../../../../../Governance/Lifecycle/LC06-Verification-Planning.md"
+  - code: "LC10"
+    title: "Certification / Approval"
+    link: "../../../../../Governance/Lifecycle/LC10-Certification-Approval.md"
+  - code: "LC11"
+    title: "Operation"
+    link: "../../../../../Governance/Lifecycle/LC11-Operation.md"
+  - code: "LC12"
+    title: "Maintenance / Support"
+    link: "../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md"
+traceability:
+  atlas_node: "032_Landing-Gear"
+  atlas_node_link: "./"
+  parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
+  parent_branch_link: "../../"
+  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  csdb_path: "TBD"
+  csdb_path_link: "TBD"
+  evidence_status: "draft"
+  brex_status: "not-yet-validated"
+  brex_link: "TBD"
+  dmrl_status: "not-yet-frozen"
+  dmrl_link: "TBD"
+keywords:
+  - "Q+ATLANTIDE"
+  - "ATLAS"
+  - "AMPEL360e"
+  - "ATA 32"
+  - "Nose Landing Gear"
+  - "NLG"
+  - "nose wheel steering"
+  - "EMA"
+  - "shimmy damper"
+  - "torque links"
+  - "centering cam"
+  - "WoW"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 032 · 020 — Nose Landing Gear
+# 032-020 — Nose Landing Gear
+### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+---
 
-Documents the nose gear shock strut, side-stays, retraction/extension mechanism, shimmy damping, and structural attachment to the forward fuselage.
+## §0 Hyperlink Policy
 
-## 2. Scope
+All internal links use relative paths. External regulatory references use anchors in [§20 References](#20-references). Links marked **TBD** indicate targets not yet allocated. Programme-level links use five directory levels (`../../../../../`). No absolute URLs are used for internal navigation.
 
-- Nose strut design: oleo-pneumatic stroke, castoring limits, and axle.
-- Retraction direction (forward/aft) and stowage envelope.
-- Shimmy damper design and replacement criteria.
-- Nose-gear door sequencing and clearance envelopes.
-- Not in scope: nose-wheel steering servo (subsubject 050).
+---
 
-## 3. Footprint
+## §1 Purpose
 
-| Metric | Value |
+This document describes the Nose Landing Gear (NLG) assembly of the AMPEL360e eWTW. The NLG is a single assembly located in the forward fuselage bay. It carries twin steerable wheels, retracts forward and upward into the nose bay via an Electromechanical Actuator (EMA), provides nose-wheel steering via an electric motor actuator, and incorporates an oleo-pneumatic shock absorber to absorb nose-wheel landing loads.
+
+The NLG is the sole directional control device on the ground during low-speed taxiing, supplemented by differential braking via the BSCU. The steering function is covered in detail by [032-050 Steering](./032-050-Steering.md); this document covers the NLG mechanical assembly and structural elements. The NLG carries a lower percentage of the total aircraft weight than the MLG (typically 8–12% of total), but is subject to significant yaw loads during steering and lateral loads on asymmetric braking.
+
+---
+
+## §2 Applicability
+
+| Attribute | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `032` — Landing Gear |
-| Subsubject | `020` — Nose Landing Gear |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/032_Landing-Gear/` |
-| Document | `032-020-Nose-Landing-Gear.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| ATA Subsubject | 032-020 — Nose Landing Gear |
+| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
+| NLG Configuration | Single assembly; twin wheels; steerable via electric actuator |
+| Gear Retraction | Forward and upward into forward fuselage nose bay |
+| Steering Range | ±70° (tiller, normal); ±5° (rudder pedal limited authority) |
+| Certification Basis | CS-25 (EASA), FAR Part 25 |
+| SNS Reference | 032-20 |
+| Effectivity | From MSN 001 |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System / Function Overview
 
-## 4. Interfaces Diagram
+The NLG assembly consists of: (1) a main gear leg (metallic alloy forging, material TBD); (2) an oleo-pneumatic shock absorber; (3) a twin-wheel axle with two nose wheels in side-by-side configuration; (4) torque links connecting inner and outer shock absorber cylinders to prevent rotation while allowing axial travel; (5) a centering cam mechanism that aligns the nose wheel to the centreline on gear retraction; (6) a nose-wheel steering (NWS) electric actuator integral to the upper gear leg; (7) an EMA for gear retraction/extension acting on the gear trunnion; (8) gear bay doors (two doors — forward and aft, or single bifold door — configuration TBD); (9) uplock and downlock passive mechanical devices; (10) WoW proximity switches (primary and redundant); and (11) TPIS transmitters on each nose wheel.
+
+Shimmy suppression on the NLG is provided by the torque link stiffness and the NWS actuator motor impedance when powered. An active electric shimmy damper is under evaluation as an option (TBD). The centering cam ensures the nose wheels are aligned before gear retraction to prevent contact with the bay structure.
+
+The NLG attaches to the forward fuselage keel beam via a trunnion pivot fitting. A side-stay brace (metallic) provides lateral load restraint during ground operations and locks the gear in the extended position as part of the downlock mechanism.
+
+---
+
+## §4 Scope
+
+### 4.1 Included
+- NLG main gear leg, trunnion pivot, and structural fittings at forward fuselage keel
+- Oleo-pneumatic shock absorber (outer and inner cylinder)
+- Twin nose wheel axle and side-by-side wheel assembly
+- Torque links (upper and lower scissors)
+- Centering cam assembly
+- NWS electric actuator (mechanical interface only; control covered by 032-050)
+- EMA for gear retraction/extension
+- Gear bay doors and door EMA actuators
+- Uplock hook and downlock side-stay mechanism
+- WoW proximity switches (primary + redundant)
+- TPIS transmitters on both nose wheels
+
+### 4.2 Excluded
+- NWS control logic and BSCU interface — covered by 032-050
+- LGCIU retraction/extension control logic — covered by 032-030
+- Tyre procurement (commercial supply)
+- Electrical power supply chain — covered by ATA 24
+- Forward fuselage keel beam structural design — covered by ATA 53
+
+---
+
+## §5 Architecture Description
+
+- **Forward-retracting gear**: The NLG retracts forward and upward; this direction is preferred for gravity-assisted extension in the event of EMA failure (aerodynamic drag also assists forward retraction geometry).
+- **Twin nose wheels**: Side-by-side twin-wheel configuration increases nose gear load footprint; both wheels are non-braked (braking on MLG only).
+- **Electric NWS actuator**: Integral to the upper gear leg structure; driven by the BSCU; provides ±70° steering authority from tiller, ±5° from rudder pedals. Full NWS architecture described in 032-050.
+- **Centering cam**: Passive mechanical device in the shock absorber assembly; as the gear is retracted and the inner cylinder compresses under retraction kinematics, the cam rotates the wheel assembly to the centreline. No electrical input required.
+- **Torque links**: Upper and lower scissor arms prevent inner cylinder rotation relative to outer cylinder while allowing axial (shock absorber) travel. The torque link joint friction and NWS actuator motor impedance provide shimmy damping.
+- **Shock absorber**: Sized for CS-25.479 level landing and CS-25.499 nose-gear yaw loads; nitrogen servicing via standard valve; fluid service via port on outer cylinder.
+- **Side-stay downlock**: The side-stay (brace strut between upper gear leg and fuselage) serves as both a structural brace during ground operations and the downlock mechanism; a locking over-centre geometry provides positive lock. Side-stay release is electrically commanded by the LGCIU during retraction.
+- **WoW dual sensor**: Primary and redundant proximity switches mounted on outer/inner cylinder; LGCIU cross-checks both; disagreement logged to CMC.
+
+---
+
+## §6 Functional Breakdown
+
+| Function ID | Function Title | Description | Applicable Subsystem |
+|---|---|---|---|
+| F-020-001 | NLG Structural Support | Carry nose reactions (static, taxi, steering, landing) via gear leg and fittings to fuselage keel | 032-020 |
+| F-020-002 | NLG Shock Absorption | Absorb nose-wheel landing and taxi loads via oleo-pneumatic shock absorber | 032-020 / 032-070 |
+| F-020-003 | Gear Retraction (NLG) | EMA retracts NLG forward and up; centering cam aligns wheels; uplock engaged | 032-020 / 032-030 |
+| F-020-004 | Gear Extension (NLG Normal) | EMA extends NLG down and aft; side-stay downlock engaged | 032-020 / 032-030 |
+| F-020-005 | Gear Extension (NLG Emergency) | Gravity extension with EMA power removed; aerodynamic drag assists | 032-020 / 032-030 |
+| F-020-006 | Nose-Wheel Steering | NWS actuator pivots NLG per BSCU command from tiller or rudder pedals | 032-020 / 032-050 |
+| F-020-007 | Shimmy Suppression | Torque link stiffness and NWS actuator impedance resist nose-wheel oscillation | 032-020 |
+| F-020-008 | WoW Signal Generation | Proximity switches detect gear compression; output to LGCIU as ground/air discrete | 032-020 / 032-060 |
+| F-020-009 | Tyre Pressure Monitoring | TPIS transmitters on nose wheels broadcast pressure and temperature | 032-020 / 032-040 |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    LGCIU[LGCIU IMA] -->|NLG EMA command| NLGEMA[NLG EMA]
+    LGCIU -->|NLG Door EMA command| NLGDOOR[NLG Door EMA]
+    BSCU[BSCU IMA] -->|NWS actuator command| NWSACT[NWS Electric Actuator]
+    HVDC[HVDC Bus ATA 24] -->|Power via PDU| NLGEMA
+    NLGEMA -->|Position feedback| LGCIU
+    NLGWOW[WoW Proximity Switches × 2] -->|Ground/air discrete| LGCIU
+    NLGWOW -->|WoW discrete| OTHERSYS[FWC / GPWS / AFCS / ATA 21]
+    TPISNLG[TPIS Transmitters × 2 nose wheels] -->|Wireless| TPISRX[TPIS Receiver]
+    TPISRX -->|ARINC 429| LGCIU
+    TILLER[Captain/FO Tiller] -->|Transducer| BSCU
+    PEDALS[Rudder Pedals] -->|Transducer| BSCU
+    CMC[CMC ATA 45] -->|BITE request| LGCIU
+    KEEL[Fwd Fuselage Keel ATA 53] -->|Structural attachment| NLGLEG[NLG Main Leg]
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["032 — Landing Gear<br/>(ATA 32)"]:::subsection
-    THIS["032-020<br/>Nose Landing Gear"]:::document
-
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
-
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    NLGLEG[NLG Main Leg / Trunnion] --> KEEL_FIT[Fwd Fuselage Keel Fitting]
+    NLGLEG --> SIDESTAY[Side-Stay Strut — Downlock Over-centre]
+    NLGLEG --> OLEO[Oleo-Pneumatic Shock Absorber]
+    OLEO --> INNERCY[Inner Cylinder — Axle / Wheel Assembly]
+    INNERCY --> WHEEL1[Port Nose Wheel — Tyre / TPIS]
+    INNERCY --> WHEEL2[Stbd Nose Wheel — Tyre / TPIS]
+    INNERCY --> CENTERINGCAM[Centering Cam — Passive Mechanical]
+    OLEO --> TORQLINKS[Torque Links — Upper + Lower]
+    NLGLEG --> NWSACT[NWS Electric Actuator — upper leg]
+    NWSACT --> STEERINGAXIS[Steering Pivot Axis]
+    NLGLEG --> EMA[EMA Retraction Actuator]
+    EMA --> PDU[PDU HVDC Interface]
+    EMA --> MOTORCTRL[EMA Motor Controller — integral]
+    MOTORCTRL -->|Position feedback| LGCIU[LGCIU IMA]
+    OLEO --> WOWSW[WoW Proximity Switch — Primary + Redundant]
+    NLGBAY[NLG Bay Structure] --> NLGDOOR1[Forward Door + Door EMA]
+    NLGBAY --> NLGDOOR2[Aft Door + Door EMA]
+    NLGBAY --> UPLOCKH[Uplock Hook — passive]
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    LC02[LC02 Requirements] --> LC03[LC03 Architecture]
+    LC03 --> LC05[LC05 Detailed Design]
+    LC05 --> LC06[LC06 Verification Planning]
+    LC06 --> LC10[LC10 Certification]
+    LC10 --> LC11[LC11 Operation]
+    LC11 --> LC12[LC12 Maintenance]
+    LC12 --> LC13[LC13 Disposal]
+    LC02 -->|NLG load requirements; steering range spec| REQ[NLG System Requirements]
+    LC03 -->|EMA selection; NWS actuator type; centering cam concept| ARCH[NLG Architecture]
+    LC05 -->|NLG leg detail design; side-stay geometry; shimmy analysis| DESIGN[NLG Design Package]
+    LC06 -->|Drop test plan CS-25.723; CS-25.499 yaw load test| VPLAN[Verification Plan NLG]
+    LC10 -->|TC data — NLG certification evidence| TC[TC Data NLG]
+    LC12 -->|AMM 32-20; shock absorber service; WoW replacement| MAINT[AMM NLG]
+```
 
-| Term / Acronym | Expansion | Definition |
+---
+
+## §10 Interfaces
+
+| Interface ID | System / Chapter | Interface Type | Data / Signal | Direction | Status |
+|---|---|---|---|---|---|
+| IF-020-001 | ATA 24 Electrical Power | HVDC / PDU | Power for NLG EMA retraction actuator | ATA24 → ATA32-020 | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-020-002 | ATA 32-030 Extension/Retraction | Discrete / EMA bus | EMA command / position feedback; door EMA command; side-stay release command | ATA32-030 ↔ ATA32-020 | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-020-003 | ATA 32-050 Steering | NWS actuator interface | NWS motor command; position feedback to BSCU | ATA32-050 ↔ ATA32-020 | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-020-004 | ATA 32-060 Position Indication | Discrete | WoW signal (primary and redundant) to LGCIU | ATA32-020 → ATA32-060 | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-020-005 | ATA 53 Fuselage Structure | Physical / structural | NLG trunnion pivot fitting and side-stay attachment at forward fuselage keel | Structural | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-020-006 | ATA 45 Maintenance System | AFDX maintenance bus | NLG EMA BITE, WoW fault data to CMC | ATA32-020 → ATA45 | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-020-007 | ATA 32-040 TPIS | Wireless / ARINC 429 | Nose wheel tyre pressure and temperature to LGCIU | ATA32-020 → ATA32-040 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §11 Operating Modes
+
+| Mode ID | Mode Name | Description | Entry Condition | Exit Condition |
+|---|---|---|---|---|
+| OM-020-001 | Ground — Down Locked | NLG extended; side-stay downlock engaged; WoW active | Aircraft on ground | Take-off rotation |
+| OM-020-002 | Retraction Sequence | EMA retracting NLG forward/upward; doors cycling; centering cam activating | Gear handle UP + airborne | Uplock confirmed + doors closed |
+| OM-020-003 | Gear Up Locked | NLG retracted and uplocked; wheels centred; bay doors closed | Retraction complete | Gear handle DOWN |
+| OM-020-004 | Extension Sequence (Normal) | EMA extending NLG; side-stay deploying; downlock engaging | Gear handle DOWN in flight | Downlock confirmed + doors closed |
+| OM-020-005 | Emergency Free-Fall Extension | EMA power off; gravity + aerodynamic drag extends NLG forward and down | Emergency extension commanded | Downlock confirmed (gravity) |
+| OM-020-006 | Steering Active | NWS actuator commanding nose wheel pivot per tiller or rudder pedal input | WoW active + aircraft taxiing | Gear retraction (auto-centering) or NWS fault |
+| OM-020-007 | Free-Castor Mode | NWS actuator unpowered; nose wheel rotates freely about steering axis | NWS fault or BSCU free-castor command | NWS restored or end of operation |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+The NLG EMA motor controller monitors motor current, temperature, rotor position, and bus voltage continuously. Position is compared to LGCIU commanded position; a timeout or disagreement generates a BITE fault. The NWS actuator current and position are monitored by BSCU; a current overload or stall condition causes fault flagging and reversion to free-castor mode.
+
+WoW switch disagreement between primary and redundant sensors on the NLG is detected by LGCIU and flagged as an ECAM advisory. The CMC logs all WoW transition events with flight phase, gear cycle number, and weight.
+
+Centering cam mechanical integrity is checked during the gear retraction cycle test (iron-bird); a misaligned nose wheel on retraction would result in a door contact sensor triggering a fault (sensor TBD). TPIS self-test is performed at system power-on; transmitter BITE faults are logged to CMC.
+
+---
+
+## §13 Maintenance Concept
+
+NLG maintenance activities at line level: walk-around tyre inspection; tyre pressure check; nose gear leg visual inspection; door clearance check. Shock absorber service (nitrogen and fluid checks) is a scheduled task per AMM. NWS actuator lubrication is a scheduled task per AMM interval (TBD by MRB).
+
+EMA replacement on the NLG is an LRU task at line maintenance level, requiring gear bay access from below the nose section. A post-replacement functional test via CMC maintenance test mode is required. WoW switch replacement is an LRU task accessible via the gear bay.
+
+Gear bay structural inspection: visual inspection at every heavy maintenance input; zonal inspection programme per AMM structure section. NLG leg is a metallic forging and is subject to standard metallic NDT requirements (dye penetrant or magnetic particle as appropriate for material). Shimmy damper (if fitted — TBD) is an LRU replacement per AMM.
+
+---
+
+## §14 S1000D / CSDB Mapping
+
+### 14.1 SNS to DMC Mapping
+
+| SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
+|---|---|---|---|---|
+| 032-20 | Nose Landing Gear | DMC-AMPEL360E-EWTW-032-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+### 14.2 Information Code Definitions
+
+| Info Code | Description | Applicable |
 |---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+| 040 | Description — NLG assembly, components | Yes |
+| 300 | Operation — steering, extension, emergency procedures | Yes |
+| 400 | Maintenance — inspection, oleo service, NWS actuator | Yes |
+| 520 | Troubleshooting — EMA fault, NWS fault, WoW disagreement | Yes |
+| 720 | Removal / installation — EMA, NWS actuator, shock absorber, doors | Yes |
+| 941 | Illustrated Parts Data — NLG assembly | Yes |
 
-### Domain-Specific Terms — ATA 32 Landing Gear
+---
 
-| Term / Acronym | Expansion | Definition |
-|---|---|---|
-| **BSCU** | Brake and Steering Control Unit | Computer managing antiskid, autobrake, and nose-wheel steering functions for the landing gear. |
-| **BTV** | Brake-to-Vacate | Airbus autobrake mode that automatically decelerates the aircraft to exit the runway at a selected taxiway. |
-| **GLA** | Gust Load Alleviation | Active control function that reduces wing bending moments by deflecting control surfaces in response to detected gust loads. |
-| **LGCIU** | Landing Gear Control and Interface Unit | Computer managing gear retraction/extension sequencing, door operation, and position signal interfaces. |
-| **MLG** | Main Landing Gear | Primary undercarriage assembly supporting the majority of the aircraft's weight on the ground. |
-| **NLG** | Nose Landing Gear | Forward undercarriage assembly providing directional control (steering) and nose support. |
-| **PSEU** | Proximity Sensor Electronic Unit | Signal conditioner processing proximity-switch (WoW and door position) inputs for the LGCIU. |
-| **TPIS** | Tyre Pressure Indication System | Onboard system monitoring tyre pressures and temperatures on main and nose gear wheels. |
-| **WoW** | Weight on Wheels | Proximity switch (squat switch) indicating whether the aircraft is airborne or on the ground; critical for system mode logic. |
+## §15 Footprints
+
+### 15.1 Physical Footprint
+- NLG bay location: forward fuselage below nose radome and aft of nose pressure bulkhead; bay dimensions TBD
+- Nose wheel footprint: tyre size TBD; side-by-side twin wheels with track width TBD
+- NLG retracted position: forward/upward into nose bay; wheels horizontal in bay
+- Steering pivot: centreline of NLG leg (vertical axis through trunnion)
+
+### 15.2 Electrical / Data Footprint
+- EMA power: HVDC bus via PDU; peak power per NLG EMA TBD (lower than MLG EMA due to lower NLG weight fraction)
+- NWS actuator: 28 VDC or low-voltage supply from BSCU controller (TBD)
+- Data: EMA interface bus (CAN TBD); ARINC 429 for TPIS; discrete for WoW
+
+### 15.3 Maintenance Footprint
+- EMA access: nose gear bay below forward fuselage; access door dimensions TBD
+- Shock absorber service: standard valve access within gear bay
+- NWS actuator: accessible within upper gear leg area; gear bay access required
+
+### 15.4 Data Footprint
+- EMA torque/current history: in motor controller non-volatile memory; downloadable via CMC
+- NWS actuator usage: cycle count and position history in BSCU
+- WoW events: logged by LGCIU per cycle number
+
+---
+
+## §16 Safety and Certification Considerations
+
+| Requirement | Source | Description | Compliance Approach | Status |
+|---|---|---|---|---|
+| CS-25.499 | EASA CS-25 | Nose-wheel yaw and steering — NLG must withstand specified yaw loads | NLG structural analysis for steering load cases | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.503 | EASA CS-25 | Pivoting — NLG must withstand pivoting (steering) loads | Load analysis; fatigue assessment of NLG leg | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.721 | EASA CS-25 | Landing gear general — NLG must not collapse; WoW reliability | FHA; dual WoW sensor; NLG drop test | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.723 | EASA CS-25 | Shock absorber drop test — NLG limit sink rate | NLG drop test at design limit conditions | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.729 | EASA CS-25 | Retracting mechanisms — NLG retraction | Retraction cycle test; centering cam function verification | <img src="https://img.shields.io/badge/TBD-red"> |
+| Shimmy | AMC 25.499 | Nose-wheel shimmy demonstration | Ground taxi test including critical shimmy speed range | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §17 Verification and Validation
+
+| V&V ID | Requirement | Method | Success Criterion | Status |
+|---|---|---|---|---|
+| VV-020-001 | CS-25.723 — NLG drop test | Full-scale NLG drop test at limit sink rate and limit nose-down attitude | No structural failure; energy absorption within design limits | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-020-002 | CS-25.499 — NLG yaw loads | Static structural test at limit yaw load | No permanent deformation; no failure | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-020-003 | EMA retraction cycle — NLG | Iron-bird test — 2× life cycles | Correct centering cam alignment; no door interference; no EMA fault | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-020-004 | Emergency free-fall — NLG | Jacks test with EMA power removed | NLG extends and locks under gravity within required time | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-020-005 | Shimmy demonstration | Ground taxi test across critical speed range | No sustained shimmy oscillation detected | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-020-006 | Centering cam function | Retraction cycle test with wheel angle deliberately offset pre-test | Wheels centred before entering bay; no structural contact | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §18 Glossary
+
+| Term | Definition |
+|---|---|
+| Centering cam | A passive mechanical device in the NLG shock absorber that rotates the nose wheels to the straight-ahead position as the gear retracts, preventing wheel contact with the gear bay structure |
+| Free-castor mode | Nose-wheel steering mode where the NWS actuator is unpowered and the wheel rotates freely; entered on NWS fault; aircraft directional control via differential braking |
+| NLG | Nose Landing Gear — the single forward gear assembly of the tricycle configuration; carries approximately 8–12% of total aircraft ground load |
+| NWS | Nose-Wheel Steering — electric actuator system providing directional control during taxiing |
+| Oleo-pneumatic | Shock absorber using compressed nitrogen and hydraulic fluid to absorb landing impact |
+| Shimmy | Self-excited oscillation of the nose wheel about the steering axis; suppressed by torque link stiffness and NWS actuator impedance |
+| Side-stay | The brace strut providing lateral structural support for the NLG during ground operations; incorporates the downlock mechanism via over-centre geometry |
+| Torque links | Scissor-type linkage between inner and outer shock absorber cylinders preventing relative rotation while allowing axial travel |
+| WoW | Weight on Wheels — proximity switch signal indicating gear compression |
+
+---
+
+## §19 Citations
+
+| Citation ID | Reference | Description | Relevance |
+|---|---|---|---|
+| CIT-020-001 | EASA CS-25 Amdt 27 | CS-25.499, CS-25.503, CS-25.721, CS-25.723, CS-25.729 | Primary certification basis for NLG |
+| CIT-020-002 | EASA AMC 25.499 | Nose-wheel shimmy — acceptable means of compliance | Shimmy test programme design |
+| CIT-020-003 | SAE AS1194 | Landing Gear Systems Design and Test Requirements | NLG design reference |
+
+---
+
+## §20 References
+
+| Ref ID | Title | Document | Link |
+|---|---|---|---|
+| REF-020-001 | ATA 32 General | 032-000 | [./032-000-Landing-Gear-General.md](./032-000-Landing-Gear-General.md) |
+| REF-020-002 | Extension and Retraction | 032-030 | [./032-030-Extension-and-Retraction.md](./032-030-Extension-and-Retraction.md) |
+| REF-020-003 | Steering | 032-050 | [./032-050-Steering.md](./032-050-Steering.md) |
+| REF-020-004 | Shock Absorption | 032-070 | [./032-070-Shock-Absorption-and-Structural-Interfaces.md](./032-070-Shock-Absorption-and-Structural-Interfaces.md) |
+| REF-020-005 | EASA CS-25 | Certification Specifications | [https://www.easa.europa.eu](https://www.easa.europa.eu) |
+
+---
+
+## §21 Open Issues
+
+| Issue ID | Description | Owner | Priority | Target Resolution | Status |
+|---|---|---|---|---|---|
+| OI-020-001 | NLG EMA supplier not selected | Procurement | High | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-020-002 | NWS actuator type and supplier not confirmed | Procurement | High | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-020-003 | Shimmy damper requirement not yet assessed; conventional torque link may be sufficient | Systems | Medium | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-020-004 | NLG bay door configuration (bifold vs two-door) not confirmed | Systems / Aero | Medium | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-020-005 | Nose wheel tyre size and load rating TBD pending detailed weight and CG analysis | Systems | Medium | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description |
+|---|---|---|---|
+| 0.1.0 | 2026-05-09 | Q+ATLANTIDE Authoring | Initial scaffold — all sections to template standard; data TBD |
