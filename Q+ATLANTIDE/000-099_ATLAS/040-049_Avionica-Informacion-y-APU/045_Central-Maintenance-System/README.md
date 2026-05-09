@@ -27,7 +27,7 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *Central Maintenance System* (`041`) within ATLAS `040-049` — *Aviónica, Información & APU* — ATA 45.
+Subsection-level index for *Central Maintenance System* (`045`) within ATLAS `040-049` — *Aviónica, Información & APU* — ATA 45.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
