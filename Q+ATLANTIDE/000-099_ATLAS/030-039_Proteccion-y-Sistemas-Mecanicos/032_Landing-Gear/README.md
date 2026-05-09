@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -39,9 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| `000` | Landing Gear General | [`032-000-Landing-Gear-General.md`](./032-000-Landing-Gear-General.md) | active |
+| `010` | Main Landing Gear | [`032-010-Main-Landing-Gear.md`](./032-010-Main-Landing-Gear.md) | active |
+| `020` | Nose Landing Gear | [`032-020-Nose-Landing-Gear.md`](./032-020-Nose-Landing-Gear.md) | active |
+| `030` | Extension and Retraction | [`032-030-Extension-and-Retraction.md`](./032-030-Extension-and-Retraction.md) | active |
+| `040` | Wheels, Tires and Brakes | [`032-040-Wheels-Tires-and-Brakes.md`](./032-040-Wheels-Tires-and-Brakes.md) | active |
+| `050` | Steering | [`032-050-Steering.md`](./032-050-Steering.md) | active |
+| `060` | Position Indication and Warning | [`032-060-Position-Indication-and-Warning.md`](./032-060-Position-Indication-and-Warning.md) | active |
+| `070` | Shock Absorption and Structural Interfaces | [`032-070-Shock-Absorption-and-Structural-Interfaces.md`](./032-070-Shock-Absorption-and-Structural-Interfaces.md) | active |
+| `080` | Landing Gear Monitoring, Diagnostics and Control Interfaces | [`032-080-Landing-Gear-Monitoring-Diagnostics-and-Control-Interfaces.md`](./032-080-Landing-Gear-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| `090` | S1000D CSDB Mapping and Traceability | [`032-090-S1000D-CSDB-Mapping-and-Traceability.md`](./032-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 

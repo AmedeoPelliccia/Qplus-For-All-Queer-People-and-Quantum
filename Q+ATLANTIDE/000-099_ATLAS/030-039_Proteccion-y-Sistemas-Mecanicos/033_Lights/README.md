@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -39,9 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| `000` | Lights General | [`033-000-Lights-General.md`](./033-000-Lights-General.md) | active |
+| `010` | Flight Deck and Crew Compartment Lighting | [`033-010-Flight-Deck-and-Crew-Compartment-Lighting.md`](./033-010-Flight-Deck-and-Crew-Compartment-Lighting.md) | active |
+| `020` | Passenger Cabin Lighting | [`033-020-Passenger-Cabin-Lighting.md`](./033-020-Passenger-Cabin-Lighting.md) | active |
+| `030` | Cargo and Service Compartment Lighting | [`033-030-Cargo-and-Service-Compartment-Lighting.md`](./033-030-Cargo-and-Service-Compartment-Lighting.md) | active |
+| `040` | Exterior Lighting | [`033-040-Exterior-Lighting.md`](./033-040-Exterior-Lighting.md) | active |
+| `050` | Emergency Lighting | [`033-050-Emergency-Lighting.md`](./033-050-Emergency-Lighting.md) | active |
+| `060` | Signage and Information Lighting | [`033-060-Signage-and-Information-Lighting.md`](./033-060-Signage-and-Information-Lighting.md) | active |
+| `070` | Lighting Control, Dimming and Power Interfaces | [`033-070-Lighting-Control-Dimming-and-Power-Interfaces.md`](./033-070-Lighting-Control-Dimming-and-Power-Interfaces.md) | active |
+| `080` | Lights Monitoring, Diagnostics and Control Interfaces | [`033-080-Lights-Monitoring-Diagnostics-and-Control-Interfaces.md`](./033-080-Lights-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| `090` | S1000D CSDB Mapping and Traceability | [`033-090-S1000D-CSDB-Mapping-and-Traceability.md`](./033-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
