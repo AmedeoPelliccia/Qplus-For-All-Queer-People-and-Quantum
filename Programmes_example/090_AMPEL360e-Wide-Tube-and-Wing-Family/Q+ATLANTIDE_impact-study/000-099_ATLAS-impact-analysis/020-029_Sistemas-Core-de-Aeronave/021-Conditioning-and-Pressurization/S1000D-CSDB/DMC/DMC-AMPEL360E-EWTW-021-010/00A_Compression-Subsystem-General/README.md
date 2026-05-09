@@ -122,3 +122,5 @@ For the AMPEL360e EWTW configuration, the subsystem is treated as part of an ele
 ## Governance Note
 
 > Programme-controlled scaffold. Content is subject to BREX, SNS, applicability, DMRL, and CCB freeze before controlled release.
+>
+**to be reviewed by system expert**
