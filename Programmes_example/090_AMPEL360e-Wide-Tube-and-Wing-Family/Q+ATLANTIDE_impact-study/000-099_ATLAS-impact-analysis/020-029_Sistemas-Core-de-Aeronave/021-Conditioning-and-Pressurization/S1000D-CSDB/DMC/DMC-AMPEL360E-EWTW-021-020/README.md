@@ -14,6 +14,26 @@ assy_code: "N/A (group index)"
 item_location_code: "D"
 status: "programme-controlled-scaffold-placeholder"
 created: 2026-05-09
+dmc_control:
+  parent_dmc_family: "DMC-AMPEL360E-EWTW-021-020"
+  system: "021 — Conditioning and Pressurization"
+  subsystem: "021-020 — Distribution"
+  programme: "AMPEL360e Wide Tube-and-Wing Family"
+  short_code: "eWTW"
+  first_authoring_wave:
+    - "040A Description for every component"
+    - "941A Illustrated Parts Data for catalogued components"
+  second_authoring_wave:
+    - "300A / 310A / 320A checks and tests"
+    - "400A / 420A fault reporting and fault isolation"
+  third_authoring_wave:
+    - "500A / 520A / 540A removal and disassembly where applicable"
+    - "700A / 720A / 740A installation and connection where applicable"
+  conditional_authoring:
+    "200A": "where servicing exists"
+    "600A": "where repair is authorized"
+    "800A/820A/840A/860A": "where packaging, handling, storage or transportation control is required"
+    "C00A/C10A/C20A": "only for software, diagnostics, control logic or PHM data"
 ---
 
 # DMC Group: DMC-AMPEL360E-EWTW-021-020
@@ -34,6 +54,11 @@ created: 2026-05-09
 | `05A_Air-Outlets-Diffusers-and-Gaspers` | `05A` | Air Outlets, Diffusers and Gaspers |
 | `06A_Recirculation-Fans-and-Return-Air-Paths` | `06A` | Recirculation Fans and Return Air Paths |
 | `07A_Mixing-Chamber-and-Trim-Air-Interfaces` | `07A` | Mixing Chamber and Trim Air Interfaces |
+| `08A_Flow-Control-Dampers-and-Zone-Valves` | `08A` | Flow Control Dampers and Zone Valves |
+| `09A_Filtration-and-Air-Quality-Distribution-Elements` | `09A` | Filtration and Air Quality Distribution Elements |
+| `10A_Equipment-Bay-and-Avionics-Ventilation-Distribution` | `10A` | Equipment Bay and Avionics Ventilation Distribution |
+| `11A_Distribution-Sensors-and-Feedback` | `11A` | Distribution Sensors and Feedback |
+| `12A_Distribution-Monitoring-Diagnostics-and-PHM` | `12A` | Distribution Monitoring, Diagnostics and PHM |
 
 ---
 
