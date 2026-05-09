@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -39,9 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| `000` | Pneumatic General | [`036-000-Pneumatic-General.md`](./036-000-Pneumatic-General.md) | active |
+| `010` | Pneumatic Air Sources | [`036-010-Pneumatic-Air-Sources.md`](./036-010-Pneumatic-Air-Sources.md) | active |
+| `020` | Pneumatic Air Distribution | [`036-020-Pneumatic-Air-Distribution.md`](./036-020-Pneumatic-Air-Distribution.md) | active |
+| `030` | Pressure Regulation and Shutoff | [`036-030-Pressure-Regulation-and-Shutoff.md`](./036-030-Pressure-Regulation-and-Shutoff.md) | active |
+| `040` | Pneumatic Valves, Ducts and Manifolds | [`036-040-Pneumatic-Valves-Ducts-and-Manifolds.md`](./036-040-Pneumatic-Valves-Ducts-and-Manifolds.md) | active |
+| `050` | Leak Detection and Overheat Protection | [`036-050-Leak-Detection-and-Overheat-Protection.md`](./036-050-Leak-Detection-and-Overheat-Protection.md) | active |
+| `060` | Pneumatic System Indication and Warning | [`036-060-Pneumatic-System-Indication-and-Warning.md`](./036-060-Pneumatic-System-Indication-and-Warning.md) | active |
+| `070` | Pneumatic Ground Service and Test Interfaces | [`036-070-Pneumatic-Ground-Service-and-Test-Interfaces.md`](./036-070-Pneumatic-Ground-Service-and-Test-Interfaces.md) | active |
+| `080` | Pneumatic Monitoring, Diagnostics and Control Interfaces | [`036-080-Pneumatic-Monitoring-Diagnostics-and-Control-Interfaces.md`](./036-080-Pneumatic-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| `090` | S1000D CSDB Mapping and Traceability | [`036-090-S1000D-CSDB-Mapping-and-Traceability.md`](./036-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
