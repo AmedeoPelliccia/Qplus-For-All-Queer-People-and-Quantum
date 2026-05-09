@@ -27,7 +27,7 @@ language: en
 
 ## 1. Purpose
 
-Subsection-level index for *Standard Practices — Structures* (`050`) within ATLAS `050-059` — *Estructuras Primarias e Interfaces de Programa / Q-Division* — ATA 51.
+Subsection-level index for *Standard Practices — Structures* (`051`) within ATLAS `050-059` — *Estructuras* — ATA 51.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
