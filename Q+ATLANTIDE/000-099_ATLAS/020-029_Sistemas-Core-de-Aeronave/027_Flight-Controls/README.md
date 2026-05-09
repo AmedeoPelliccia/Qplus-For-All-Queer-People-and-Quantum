@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-020-029-02-024-README
-title: "ATLAS 020-029 · 02.024 — Equipment and Furnishings (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-020-029-02-027-README
+title: "ATLAS 020-029 · 02.027 — Flight Controls (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -12,8 +12,8 @@ master_range: "000–099"
 code_range: "020-029"
 section: "02"
 section_title: "Sistemas Core de Aeronave"
-subsection: "024"
-subsection_title: "Equipment and Furnishings"
+subsection: "027"
+subsection_title: "Flight Controls"
 primary_q_division: Q-AIR
 support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 020-029 · Section 02 · Subsection 024 — Equipment and Furnishings
+# ATLAS 020-029 · Section 02 · Subsection 027 — Flight Controls
 
 ## 1. Purpose
 
-Subsection-level index for *Equipment and Furnishings* (`024`) within ATLAS `020-029` — *Sistemas Core de Aeronave* — ATA 25.
+Subsection-level index for *Flight Controls* (`027`) within ATLAS `020-029` — *Sistemas Core de Aeronave* — ATA 27.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `024` *Equipment and Furnishings*.
+- Reserves the subsubject namespace `00`–`99` of subsection `027` *Flight Controls*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `020-029` |
 | Section | `02` — Sistemas Core de Aeronave |
-| Subsection | `024` — Equipment and Furnishings |
+| Subsection | `027` — Flight Controls |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-AIR[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/024_Equipment-and-Furnishings/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/027_Flight-Controls/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-020-029-02-027-README
-title: "ATLAS 020-029 · 02.027 — Fuel and Energy Storage (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-020-029-02-023-README
+title: "ATLAS 020-029 · 02.023 — Communications (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -12,8 +12,8 @@ master_range: "000–099"
 code_range: "020-029"
 section: "02"
 section_title: "Sistemas Core de Aeronave"
-subsection: "027"
-subsection_title: "Fuel and Energy Storage"
+subsection: "023"
+subsection_title: "Communications"
 primary_q_division: Q-AIR
 support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 020-029 · Section 02 · Subsection 027 — Fuel and Energy Storage
+# ATLAS 020-029 · Section 02 · Subsection 023 — Communications
 
 ## 1. Purpose
 
-Subsection-level index for *Fuel and Energy Storage* (`027`) within ATLAS `020-029` — *Sistemas Core de Aeronave* — ATA 28 — extended for H₂.
+Subsection-level index for *Communications* (`023`) within ATLAS `020-029` — *Sistemas Core de Aeronave* — ATA 23.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `027` *Fuel and Energy Storage*.
+- Reserves the subsubject namespace `00`–`99` of subsection `023` *Communications*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `020-029` |
 | Section | `02` — Sistemas Core de Aeronave |
-| Subsection | `027` — Fuel and Energy Storage |
+| Subsection | `023` — Communications |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-AIR[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/027_Fuel-and-Energy-Storage/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/023_Communications/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

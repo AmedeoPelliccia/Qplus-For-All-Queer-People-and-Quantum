@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS-1000-ATLAS-020-029-02-029-README
-title: "ATLAS 020-029 · 02.029 — Indicating, Recording and Cabin Systems (Subsection Index)"
+title: "ATLAS 020-029 · 02.029 — Hydraulic Power (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,7 +13,7 @@ code_range: "020-029"
 section: "02"
 section_title: "Sistemas Core de Aeronave"
 subsection: "029"
-subsection_title: "Indicating, Recording and Cabin Systems"
+subsection_title: "Hydraulic Power"
 primary_q_division: Q-AIR
 support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 020-029 · Section 02 · Subsection 029 — Indicating, Recording and Cabin Systems
+# ATLAS 020-029 · Section 02 · Subsection 029 — Hydraulic Power
 
 ## 1. Purpose
 
-Subsection-level index for *Indicating, Recording and Cabin Systems* (`029`) within ATLAS `020-029` — *Sistemas Core de Aeronave* — ATA 31, 44.
+Subsection-level index for *Hydraulic Power* (`029`) within ATLAS `020-029` — *Sistemas Core de Aeronave* — ATA 29.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `029` *Indicating, Recording and Cabin Systems*.
+- Reserves the subsubject namespace `00`–`99` of subsection `029` *Hydraulic Power*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `020-029` |
 | Section | `02` — Sistemas Core de Aeronave |
-| Subsection | `029` — Indicating, Recording and Cabin Systems |
+| Subsection | `029` — Hydraulic Power |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-AIR[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/029_Indicating-Recording-and-Cabin-Systems/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/029_Hydraulic-Power/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
