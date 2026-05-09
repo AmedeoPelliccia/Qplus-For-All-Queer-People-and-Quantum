@@ -3,10 +3,10 @@ document_id: QATL-ATLAS-1000-ATLAS-040-049-04-041-070-BALLAST-SERVICING-AND-GROU
 title: "ATLAS 040-049 · 04.041.070 — Ballast Servicing and Ground Interfaces"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ./README.md
+parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
+parent_architecture_doc: ../../../../README.md
+parent_section_doc: ../../../README.md
+parent_subsection_doc: ../README.md
 architecture_code: ATLAS
 architecture_name: "Aircraft Top Level Architecture Schema/System"
 master_range: "000–099"
@@ -17,8 +17,10 @@ subsection: "041"
 subsection_title: "Water Ballast"
 subsubject: "070"
 subsubject_title: "Ballast Servicing and Ground Interfaces"
+subsubject_file: "041-070-Ballast-Servicing-and-Ground-Interfaces.md"
+subsubject_link: "./041-070-Ballast-Servicing-and-Ground-Interfaces.md"
 primary_q_division: Q-DATAGOV
-support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
+support_q_divisions: [Q-AIR, Q-MECHANICS, Q-GREENTECH]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
@@ -28,127 +30,379 @@ language: en
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 070 — Ballast Servicing and Ground Interfaces
 
+## 0. Hyperlink Policy
+
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+
+---
+
 ## 1. Purpose
 
-This document defines the ground servicing interface architecture, fill port design, coupling standards, servicing cart requirements, ramp safety provisions, contamination prevention measures, and Standard Ground Handling Agreement (SGHA) interface requirements for the Water Ballast System (WBS). Ground servicing of the WBS — filling, draining, flushing, and sanitising — is a routine maintenance activity that must be executable efficiently, safely, and without risk of fluid contamination at any airport where the aircraft is operated.
+This document defines the ground servicing architecture for the Water Ballast system on the AMPEL360E eWTW, covering fill-port design, dry-break coupling specifications, Standard Ground Handling Agreement (SGHA) interfaces per AHM 810, water quality specifications, servicing panel layout, servicing data uplink, and contamination detection provisions.
 
-The WBS servicing interface design philosophy prioritises three objectives: simplicity of operation for ground crew with minimal specialist training, physical and procedural prevention of incorrect fluid type introduction (water instead of fuel or hydraulic fluid), and environmental containment of all discharged fluids. The ground servicing connection points are standardised and colour-coded per IATA AHM 880 to prevent mis-servicing; coupling geometry is physically keyed to prevent connection of incompatible service carts.
+Efficient and safe ground servicing of the WB system is essential for turnaround time compliance. The design target is a full fill of both tanks (800 L) in ≤ 10 minutes using a standard airport water supply at 3 bar. The fill system uses self-sealing dry-break couplings to prevent spillage, with colour coding and captive dust caps to prevent mis-coupling with other aircraft systems.
 
-The servicing system must also support the data exchange required for flight dispatch: after filling, the tank quantity indication system (SNS 040) must confirm total ballast mass and CG contribution to the WBMS and Electronic Flight Bag (EFB) before departure clearance is authorised. The ground interface therefore includes an electrical data connection for BCC access during pre-flight servicing checks.
+Water quality requirements are defined to prevent contamination of the ballast system with materials that could damage HDPE tanks, block sensors, or create biological hazards for maintenance personnel. The servicing data uplink allows the ground crew to confirm fill quantity and tank status from a portable display unit (PDU) via a Bluetooth-authenticated connection to the BCC, eliminating manual dipstick verification.
 
-## 2. Scope
+---
 
-This document covers:
+## 2. Applicability
 
-- Ground servicing connection standard: fill port physical specification (coupling type, bore diameter, pressure rating), location on aircraft fuselage, and access panel provisions.
-- Fill port types and configuration: pressure-fill ports for cart-driven filling; gravity-fill ports for low-pressure servicing; port identification and labelling requirements.
-- Coupling types: dry-break couplings to prevent spillage on disconnection; Camlock or equivalent coupling standard; torque and retention requirements.
-- Servicing cart interface: electrical power requirements, water quality specifications (conductivity limits, particulate limits, pH range), flow rate capability, and pressure limits.
-- Ramp safety provisions: bonding and grounding requirements to prevent electrostatic discharge; overflow protection; trip-hazard management for servicing hoses.
-- Contamination prevention: strainer and filter provisions at the fill port; sampling port for water quality verification; flushing procedure definition.
-- SGHA interface: documentation of WBS servicing in the SGHA Annex B services schedule; airline-specific service level requirements.
-- Pre-departure BCC ground data link: definition of the ground maintenance data port (GMDP) for laptop/tablet connection to BCC for quantity verification and BITE readout during servicing.
+| Attribute | Value |
+|-----------|-------|
+| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| ATA Reference | ATA 41-70 — Ballast Servicing |
+| Standards | AHM 810, NSF/ANSI 61, DO-160G §8, STANAG 3558 |
+| Dev Assurance | DAL D (servicing hardware); DAL C (data uplink) |
+| Applicability Code | AMPEL360E-EWTW-ALL |
+| Max Fill Rate | 80 L/min at 3 bar supply |
 
-## 3. Glossary
+---
 
-| Term / Acronym | Definition |
-|---|---|
-| Fill Port | The aircraft-mounted fluid entry point through which water ballast is loaded into the WBS from a ground servicing cart or tanker; shall be located within 3 m of ground level for maintenance accessibility. |
-| Dry-Break Coupling | A fluid connector that seals both the aircraft-side and cart-side connection simultaneously upon disconnection, preventing spillage of liquid during de-mating; mandatory for all WBS fill and drain connections. |
-| Camlock | A widely-used quick-connect coupling standard (per MIL-C-27487 or ISO 9974) employing a cam-and-groove locking mechanism; specified as the WBS fill port coupling type for ramp interoperability. |
-| GMDP | Ground Maintenance Data Port — an aircraft-mounted electrical connector providing RS-232, USB, or Ethernet access to the BCC for ground maintenance, BITE readout, configuration data loading, and servicing quantity confirmation. |
-| AHM 880 | IATA Airport Handling Manual Chapter 880 — defines colour coding, labelling, and identification standards for aircraft ground servicing connection points to prevent mis-servicing. |
-| Water Quality Specification | The defined limits for WBS fill water: electrical conductivity ≤ 500 µS/cm, particulate size ≤ 50 µm, pH 6.5–8.5, no detectable hydrocarbons, no biological contamination exceeding WHO potable water limits. |
-| Bonding Cable | An electrical cable connecting the servicing cart chassis to the aircraft structure before any fluid connection is made, equalising electrostatic potential and preventing incendive sparks. |
-| Overflow Protection | A combination of a high-level sensor alarm and an automatic fill shutoff valve that closes when a tank reaches 95% capacity, preventing overfill and spillage on the ramp. |
-| SGHA | Standard Ground Handling Agreement — the bilateral contract between an airline and a ground handling agent; Annex B lists specific services including WBS filling, draining, and documentation responsibilities. |
-| Strainer | A coarse-mesh filter element (typically 200 µm stainless steel mesh) installed immediately downstream of the fill port to trap particulates from the servicing cart before they enter the WBS tanks. |
-| Sampling Port | A small valved port immediately upstream of the fill strainer, permitting a pre-fill water sample to be taken for quality verification without contaminating the WBS. |
-| Flushing Procedure | A defined maintenance task in which the WBS tanks and distribution lines are filled, circulated, and completely drained with approved clean water to remove stagnant water, biofilm, and residual anti-freeze additive. |
+## 3. System / Function Overview
 
-## 4. Diagram (Mermaid)
+The servicing fill system consists of two fill ports (one per tank) located in the forward and aft fuselage sidewall servicing panels (FWSP and AWSP respectively), accessible from the aircraft apron. Each fill port uses a NATO-STANAG 3558 dry-break coupling (DN40, rated 5 bar) with a colour-coded blue cap (blue = water ballast, per airline SOP). An integral flow control valve limits fill rate to 80 L/min to prevent tank over-pressurisation.
+
+A Water Ballast Servicing Panel (WBSP) is mounted adjacent to the forward servicing port, displaying: FBT level (%), ABT level (%), total ballast mass (kg), and SYSTEM STATUS (READY / FAULT). The WBSP connects to the BCC via RS-422; display updates at 2 Hz. A FILL START / FILL STOP pushbutton sequence on the WBSP activates the fill valves under BCC control, enabling automatic shut-off when tanks reach the programmed fill level.
+
+Contamination detection uses a turbidity sensor on the fill line inlet (optical, 0–100 NTU range). Fill is automatically inhibited if turbidity > 5 NTU (indicates sediment or biological contamination) and a CONTAMINATED WATER alert is displayed on the WBSP and EICAS. A water sample port downstream of the fill valve allows ground crew to take a sample for laboratory analysis.
+
+---
+
+## 4. Scope
+
+### 4.1 Included
+- Fill port assemblies (FWSP and AWSP, DN40 dry-break couplings)
+- Fill line run from ports to fill valves and tank inlet bosses
+- Overfill protection (automatic shut-off at 95% tank level)
+- Water Ballast Servicing Panel (WBSP) and operator interface
+- Water quality specification and contamination detection
+- Servicing data uplink (BCC ↔ PDU via RS-422 / Bluetooth gateway)
+- Biocide dosing provisions (fill line injection port)
+- SGHA AHM 810 interface documentation
+
+### 4.2 Excluded
+- Fill valves at tank inlet bosses (see 041-020)
+- Level sensors providing fill level feedback (see 041-040)
+- Ground drain and dump (see 041-060)
+- BCC control logic for fill mode (see 041-050)
+
+---
+
+## 5. Architecture Description
+
+**Fill Ports.** Two STANAG 3558 dry-break coupling receptacles, one at FS 260 (FWSP, forward fuselage port-side) and one at FS 1 500 (AWSP, aft fuselage port-side). Each receptacle is enclosed in a spring-loaded flap flush-fitting with aircraft skin; flap is automatically closed by the fill valve closure signal. Coupling rated for 200 000 mating cycles.
+
+**Fill Line Run.** From each fill port, a DN40 SS316L tube runs through the fuselage to the respective tank fill boss (per 041-020 fill-line routing). Each fill line includes: a Y-strainer (100 mesh) to remove particulate from supply water, a turbidity sensor, and a fill valve (normally closed MOBV). Maximum fill line length is 3.5 m (FBT line) and 2.8 m (ABT line); pressure drop at 80 L/min is < 0.2 bar.
+
+**WBSP Interface.** The WBSP is a weatherproof IP65 panel (200 × 150 mm), mounted at 1.5 m height on the FWSP door surround. It includes an alphanumeric LCD, two pilot lights (FBT FULL, ABT FULL), and three pushbuttons (FILL FBT, FILL ABT, STOP). The WBSP is powered from the aircraft 28 VDC ground service bus; it communicates with the BCC via RS-422 at 9 600 baud.
+
+**Data Uplink.** A Bluetooth 5.0 gateway (BLE, AES-128 encrypted, authenticated pairing) is integrated in the WBSP enclosure. An airline-issued PDU (tablet with ballast servicing app) pairs with the WBSP on the secure channel and displays real-time tank levels, fill progress, and system faults. The PDU app also allows the ground crew to enter the planned fill quantity, which is stored in the BCC servicing log.
+
+---
+
+## 6. Functional Breakdown
+
+| Function ID | Function Name | Description | Allocated To | DAL |
+|-------------|---------------|-------------|-------------|-----|
+| F-070-01 | Fill Coupling Interface | Accept ground water supply via dry-break coupling | Fill port + coupling | D |
+| F-070-02 | Fill Flow Control | Control fill rate; automatic shut-off at 95% tank level | Fill valves + BCC | C |
+| F-070-03 | Contamination Detection | Inhibit fill on turbidity > 5 NTU; alert crew/ground | Turbidity sensor + WBSP | D |
+| F-070-04 | Servicing Panel Display | Display real-time tank status to ground crew | WBSP + RS-422 | D |
+| F-070-05 | Data Uplink | Transmit fill data to PDU; log servicing event in BCC | BLE gateway + BCC | D |
+
+---
+
+## 7. Mermaid — System Context Diagram
 
 ```mermaid
-flowchart TD
-    subgraph CART["Ground Servicing Cart"]
-        WATER_SOURCE["Water Source\n(purified, spec compliant)"]
-        CART_PUMP["Cart Pump\n(≤ 3.5 bar, ≥ 100 L/min)"]
-        CART_METER["Cart Flow Meter\n(± 1% accuracy)"]
-        CART_CAMLOCK["Cart Camlock\n(Male, 2-inch)"]
-    end
+graph TB
+    SUPPLY["Ground Water
+Supply (3 bar)"]
+    COUP_F["Fill Port FBT
+(STANAG 3558 DN40)"]
+    COUP_A["Fill Port ABT
+(STANAG 3558 DN40)"]
+    STR_F["Y-Strainer
+(100 mesh FBT)"]
+    STR_A["Y-Strainer
+(100 mesh ABT)"]
+    TURB_F["Turbidity Sensor
+FBT line"]
+    TURB_A["Turbidity Sensor
+ABT line"]
+    FV_F["Fill Valve
+FBT (MOBV N/C)"]
+    FV_A["Fill Valve
+ABT (MOBV N/C)"]
+    FBT["FBT"]
+    ABT["ABT"]
+    WBSP["WBSP
+Servicing Panel"]
+    BCC["BCC"]
+    PDU["PDU
+(Tablet)"]
+    BLE["BLE Gateway"]
 
-    subgraph AIRCRAFT_PORT["Aircraft Fill Station"]
-        SAMPLE_P["Sampling Port\n(pre-fill QC)"]
-        STRAINER["Fill Strainer\n(200 µm SS mesh)"]
-        AC_CAMLOCK["Aircraft Camlock\n(Female, 2-inch, dry-break)"]
-        FILL_VALVE["Fill Isolation Valve\n(solenoid, BCC controlled)"]
-        OVERFLOW["Overflow Shutoff\n(95% level trigger)"]
-    end
-
-    subgraph BCC_GND["BCC Ground Mode"]
-        GMDP["GMDP\n(Maintenance Laptop)"]
-        BCC_QTY["BCC Quantity\nVerification"]
-        BCC_BITE["BCC BITE\nReadout"]
-    end
-
-    subgraph TANKS["WBS Tanks"]
-        FWD_T["Forward Tanks"]
-        AFT_T["Aft Tanks"]
-    end
-
-    BOND["Bonding Cable\n(Cart → Aircraft)"] -.->|electrostatic| CART
-    WATER_SOURCE --> CART_PUMP
-    CART_PUMP --> CART_METER
-    CART_METER --> CART_CAMLOCK
-    CART_CAMLOCK -->|Mates with| AC_CAMLOCK
-    AC_CAMLOCK --> SAMPLE_P
-    SAMPLE_P --> STRAINER
-    STRAINER --> FILL_VALVE
-    FILL_VALVE --> FWD_T
-    FILL_VALVE --> AFT_T
-    OVERFLOW -->|shutoff signal| FILL_VALVE
-    GMDP --> BCC_QTY
-    GMDP --> BCC_BITE
-    BCC_QTY -->|confirm mass| WBMS["WBMS / EFB\nDispatch confirmation"]
+    SUPPLY --> COUP_F --> STR_F --> TURB_F --> FV_F --> FBT
+    SUPPLY --> COUP_A --> STR_A --> TURB_A --> FV_A --> ABT
+    WBSP -->|RS-422| BCC
+    BCC -->|Fill cmd| FV_F
+    BCC -->|Fill cmd| FV_A
+    TURB_F -->|Turbidity data| BCC
+    TURB_A -->|Turbidity data| BCC
+    BLE -->|BLE 5.0| PDU
+    WBSP --> BLE
 ```
 
-## 5. Footprint
+---
 
-| Metric | Value |
-|---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `040-049` |
-| Section | `04` — Aviónica, Información & APU |
-| Subsection | `041` — Water Ballast |
-| Subsubject | `070` — Ballast Servicing and Ground Interfaces |
-| Primary Q-Division | Q-DATAGOV[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/041_Water-Ballast/` |
-| Document | `041-070-Ballast-Servicing-and-Ground-Interfaces.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
+## 8. Mermaid — Internal Functional Architecture
 
-## 6. References & Citations
+```mermaid
+graph LR
+    subgraph WBSP_INT["WBSP — Servicing Panel"]
+        LCD["Alphanumeric
+LCD Display"]
+        PBTN["Pushbuttons
+(FILL FBT/ABT/STOP)"]
+        PILOT["Pilot Lights
+(FBT FULL / ABT FULL)"]
+        RS422_IF["RS-422
+Interface (9600 baud)"]
+        BLE_MOD["BLE 5.0
+Module (AES-128)"]
+        LCD --> RS422_IF
+        PBTN --> RS422_IF
+        RS422_IF --> BLE_MOD
+    end
+    BCC_IF["BCC
+(fill mode logic)"] <-->|RS-422| RS422_IF
+    TURB_IN["Turbidity
+Sensors"] -->|4-20 mA| BCC_IF
+    PDU_APP["PDU App
+(tablet)"] <-->|BLE| BLE_MOD
+```
 
-[^baseline]: Q+ATLANTIDE controlled baseline (v1.0.0) — governing architecture baseline for ATLAS master range 000–099; all servicing and ground interface requirements derive authority from this document.
+---
 
-[^qdiv]: Q-Division authority — Q-DATAGOV holds primary data governance authority. Q-AIR provides ground operations and logistics engineering support for servicing procedure development.
+## 9. Mermaid — Lifecycle Traceability
 
-[^gov]: Governance class — `baseline` denotes formal change control, configuration management, and periodic review under the Q+ATLANTIDE baseline management process.
+```mermaid
+graph LR
+    LC02["LC02
+Requirements"]
+    LC03["LC03
+Design"]
+    LC05["LC05
+Implementation"]
+    LC06["LC06
+Verification"]
+    LC10["LC10
+Certification"]
+    LC11["LC11
+Operation"]
+    LC12["LC12
+Disposal"]
+    CSDB["CSDB
+Data Modules"]
+    DMRL["DMRL"]
+    Evidence["WB Servicing
+Verification Evidence"]
 
-[^n001]: Note N-001 — IATA Airport Handling Manual (AHM) 880 (current edition): Aircraft Ground Servicing Point Identification — colour coding, labelling, and coupling geometry standards for all aircraft fluid servicing connections, including WBS fill ports.
+    LC02 --> LC03 --> LC05 --> LC06 --> LC10 --> LC11 --> LC12
+    LC02 --> DMRL --> CSDB
+    LC06 --> Evidence --> LC10
+    LC11 --> CSDB
+```
 
-[^n002]: Note N-002 — IATA Standard Ground Handling Agreement (SGHA) (2018 edition): Master Agreement and Annex B services schedule. WBS filling and draining are classified under Annex B §7 (Special Services) and require explicit itemisation in operator-ground handler service level agreements.
+---
 
-[^n003]: Note N-003 — MIL-C-27487 (Camlock Coupling Standard): Dimensional and pressure rating specification for the cam-and-groove coupling selected as the WBS fill port standard; provides interoperability with standard ramp equipment globally.
+## 10. Interfaces
 
-[^n004]: Note N-004 — ATA iSpec 2200 Chapter 12 (Servicing): Governs the format and content requirements for WBS servicing data in the Aircraft Maintenance Manual (AMM) Chapter 41, including fill procedures, quantity verification steps, and water quality acceptance criteria.
+| Interface ID | From | To | Protocol / Standard | Direction | Notes |
+|-------------|------|----|---------------------|-----------|-------|
+| IF-070-01 | Ground supply hose | Fill port coupler | STANAG 3558 DN40 dry-break | External → Aircraft | Max 3 bar supply |
+| IF-070-02 | Turbidity sensor | BCC | 4–20 mA analogue | Sensor → BCC | 0–100 NTU range |
+| IF-070-03 | WBSP | BCC | RS-422 9 600 baud | WBSP → BCC | Fill commands + status |
+| IF-070-04 | BCC | Fill valves | 28 VDC discrete | BCC → Valves | Open/close command |
+| IF-070-05 | BLE gateway | PDU tablet | Bluetooth 5.0 AES-128 | WBSP → PDU | Authenticated pairing |
+| IF-070-06 | Ground service bus | WBSP | 28 VDC | Bus → WBSP | Powered on ground only |
 
-[^n005]: Note N-005 — EASA Part-145 and FAA AC 120-94: Line maintenance procedures and approval requirements for WBS servicing personnel; establishes training and authorisation standards for ground crew performing ballast filling, draining, and pre-departure BCC quantity verification.
+---
 
-[^n006]: Note N-006 — ASD S3000L (Issue 2, 2016): Logistics Support Analysis. Referenced for Maintenance Task Analysis (MTA) of WBS servicing tasks, including task time, skill level, tooling, and consumables requirements documented in the Interactive Electronic Technical Manual (IETM).
+## 11. Operating Modes
+
+| Mode | Description | Trigger | System Response |
+|------|-------------|---------|-----------------|
+| Ready for Servicing | Aircraft on ground, ground bus powered, BCC in fill mode | Ground arrival, BCC mode switch | WBSP illuminates READY; fill valves armed |
+| Filling Active | Water flowing into selected tank | FILL pushbutton pressed on WBSP | Fill valve open; WBSP shows fill progress; auto-stop at 95% |
+| Contamination Inhibit | Fill halted due to turbidity > 5 NTU | Turbidity sensor > 5 NTU | Fill valve closed; CONTAMINATED WATER on WBSP and EICAS |
+| Servicing Complete | Both tanks at target fill level | Auto shut-off or STOP pressed | Fill valves closed; BCC logs servicing event; FULL pilot lights |
+
+---
+
+## 12. Monitoring and Diagnostics
+
+- Turbidity sensor self-test at power-up: sensor injects known optical reference; out-of-range reading triggers sensor fault on WBSP.
+- Fill flow rate monitored by BCC via tank level change rate; if rate drops to < 10 L/min with fill valve open, blockage alert displayed on WBSP.
+- Overfill protection: BCC closes fill valve when CLS or ULS reports > 95% tank level; hardware backup: float-type mechanical overfill shutoff valve in tank fill boss.
+- BLE pairing log stored in WBSP NVM; unauthorised pairing attempts logged and reported via CMC on next power cycle.
+- Y-strainer differential pressure monitored (same sensor as fill line DP); ΔP > 0.1 bar triggers strainer-cleaning alert on WBSP.
+- All servicing events (date, time, quantity filled, water quality) logged to BCC NVM and uploaded to ACMS on next flight power-up.
+
+---
+
+## 13. Maintenance Concept
+
+| Task | Interval | Access | Tooling |
+|------|----------|--------|---------|
+| Fill coupling cleaning and cap check | Pre-servicing | External servicing panel | Visual + approved cleaning cloth |
+| Turbidity sensor functional test | A-check | Servicing panel area | Calibrated turbidity standard solution |
+| Y-strainer cleaning | 200 servicing cycles | Servicing panel area | Spanner set |
+| WBSP display and pushbutton test | C-check | Servicing panel | BCC test mode + visual |
+| BLE pairing audit | Annual | AMT log download | AMT laptop |
+
+---
+
+## 14. S1000D / CSDB Mapping
+
+| Document Type | Data Module Code (DMC) | Info Code | Title |
+|---------------|----------------------|-----------|-------|
+| System Description | DMC-AMPEL360E-EWTW-041-070-00A-040A-A | 040 | Ballast Servicing and Ground Interfaces Description |
+| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-070-00A-300A-A | 300 | Ballast Servicing Fault Isolation |
+| BITE/Test | DMC-AMPEL360E-EWTW-041-070-00A-400A-A | 400 | Ballast Servicing BITE Procedures |
+| Wiring Data | DMC-AMPEL360E-EWTW-041-070-00A-520A-A | 520 | Ballast Servicing Wiring and Connector Data |
+| IPD | DMC-AMPEL360E-EWTW-041-070-00A-941A-A | 941 | Ballast Servicing Illustrated Parts |
+| Software Desc | DMC-AMPEL360E-EWTW-041-070-00A-720A-A | 720 | Ballast Servicing SW Description |
+
+### Recommended Data Module Set
+
+| Info Code | Publication | Applicability |
+|-----------|-------------|---------------|
+| 040 | AMM — System Description | All variants |
+| 300 | FIM — Fault Isolation | All variants |
+| 400 | TSM — BITE Procedures | All variants |
+| 520 | AMM — Wiring Data | All variants |
+| 720 | SRM — Software Description | All variants |
+| 941 | IPD — Parts Data | All variants |
+
+---
+
+## 15. Footprints
+
+### 15.1 Physical
+
+| Item | Dimension (mm) | Mass (kg) | Location |
+|------|---------------|-----------|----------|
+| Fill port assemblies (×2) | 120 × 120 flush | 0.6 each | FS 260 and FS 1 500 sidewall panels |
+| WBSP panel | 200 × 150 × 80 | 0.8 | FWSP door surround, 1.5 m height |
+| Y-strainers + turbidity sensors | 200 × 80 × 80 | 0.5 each | Fill line run behind panels |
+
+### 15.2 Electrical / Data
+
+| Interface | Standard | Bandwidth / Power |
+|-----------|----------|-------------------|
+| WBSP RS-422 | TIA/EIA-422 | 9 600 baud / < 5 W |
+| BLE 5.0 gateway | Bluetooth 5.0 | < 0.1 W |
+| Turbidity sensor | 4–20 mA | < 0.5 W |
+
+### 15.3 Maintenance
+
+| Task | Man-Hours | Skill Level | Access |
+|------|-----------|-------------|--------|
+| Coupling cleaning + cap | 0.25 | Ramp agent | External panel |
+| Turbidity sensor test | 0.5 | Cat B1 | Servicing panel |
+| WBSP functional test | 1.0 | Cat B1/B2 | Servicing panel + AMT |
+
+### 15.4 Data
+
+| Data Item | Volume | Storage | Retention |
+|-----------|--------|---------|-----------|
+| Servicing event logs | 2 KB/event | BCC NVM + ACMS | 5 years |
+| Water quality records | 4 KB/event | BCC NVM | 2 years |
+| BLE pairing audit logs | 1 KB/event | WBSP NVM | 1 year |
+
+---
+
+## 16. Safety and Certification Considerations
+
+- NSF/ANSI 61 compliance of all wetted fill-line components ensures no harmful leaching into water supply; important as maintenance personnel may contact fill water.
+- STANAG 3558 dry-break coupling prevents spillage on disconnect; dry-break rating 0 mL per disconnect per NATO AEP-76.
+- Contamination inhibit logic (turbidity > 5 NTU) protects sensors and tanks from sediment that could block ULS transducer or CLS probe.
+- BLE security (AES-128, authenticated pairing) prevents unauthorised fill commands from rogue devices; meets ARINC 827 guidance for wireless avionics interfaces.
+- Overfill mechanical shutoff valve provides hardware backup independent of BCC; rated for 5 bar; meets CS-25 §25.985 equivalent over-pressure protection.
+- SGHA AHM 810 interface document defines airline-airport service agreement provisions; water quality specification referenced in airline ground handling manual.
+
+---
+
+## 17. Verification and Validation
+
+| V&V ID | Requirement | Method | Success Criteria | Status |
+|--------|-------------|--------|-----------------|--------|
+| VV-070-01 | Fill rate ≥ 80 L/min at 3 bar supply | Ground flow test | Measured ≥ 80 L/min | TBD |
+| VV-070-02 | Auto shut-off at 95% tank level | Functional test | Fill valve closes within 5 s of 95% signal | TBD |
+| VV-070-03 | Turbidity inhibit at > 5 NTU | Sensor test with known turbidity standard | Fill halted; alert displayed on WBSP | TBD |
+| VV-070-04 | STANAG dry-break: zero spillage on disconnect | Coupling test | 0 mL per disconnect at 3 bar | TBD |
+| VV-070-05 | BLE pairing requires authenticated credentials | Security test | Unauthenticated devices cannot pair | TBD |
+| VV-070-06 | Full fill of both tanks in ≤ 10 min | Ground test | Elapsed time ≤ 10 min for 800 L | TBD |
+| VV-070-07 | Servicing event logged to ACMS on next power-up | Functional test | Log entry present in ACMS after fill + flight | TBD |
+
+---
+
+## 18. Glossary
+
+| Term/Acronym | Definition | Link |
+|-------------|-----------|------|
+| <a id="glossary-ahm810"></a>AHM 810 | IATA Airport Handling Manual 810 — Standard Ground Handling Agreement | [§1](#1-purpose) |
+| <a id="glossary-ble"></a>BLE | Bluetooth Low Energy (version 5.0); used for WBSP-to-PDU data uplink | [§3](#3-system--function-overview) |
+| <a id="glossary-dry-break"></a>Dry-Break | Self-sealing coupling that prevents fluid spillage when disconnected | [§3](#3-system--function-overview) |
+| <a id="glossary-pdu"></a>PDU | Portable Display Unit (ground crew tablet); displays WB servicing data | [§3](#3-system--function-overview) |
+| <a id="glossary-sgha"></a>SGHA | Standard Ground Handling Agreement; defines responsibilities between airline and handler | [§1](#1-purpose) |
+| <a id="glossary-stanag3558"></a>STANAG 3558 | NATO Standardisation Agreement 3558 for dry-break coupling standard | [§3](#3-system--function-overview) |
+| <a id="glossary-turbidity"></a>Turbidity | Optical clarity measure of water (NTU); > 5 NTU indicates contamination | [§3](#3-system--function-overview) |
+| <a id="glossary-wbsp"></a>WBSP | Water Ballast Servicing Panel; ground crew interface at forward servicing panel | [§3](#3-system--function-overview) |
+| <a id="glossary-ntu"></a>NTU | Nephelometric Turbidity Unit; standard measure of water turbidity | [§3](#3-system--function-overview) |
+| <a id="glossary-overfill"></a>Overfill Shutoff | Mechanical float-type valve in tank fill boss; closes at 100% fill as hardware backup | [§5](#5-architecture-description) |
+
+---
+
+## 19. Citations
+
+| Ref | Citation | Use | Link |
+|-----|---------|-----|------|
+| <a id="ref-nsf61"></a>NSF/ANSI 61 | NSF/ANSI Standard 61 — Drinking Water System Components | Wetted materials safety | TBD |
+| <a id="ref-stanag3558"></a>STANAG 3558 | NATO STANAG 3558 — Dry-Break Coupling | Fill port coupling standard | TBD |
+| <a id="ref-ahm810"></a>AHM 810 | IATA AHM 810 — Standard Ground Handling Agreement | Ground service interface | TBD |
+| <a id="ref-arinc827"></a>ARINC 827 | ARINC 827 — Wireless Avionics Intra-Communications (WAIC) | BLE security guidance | TBD |
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | TBD |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | TBD |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | TBD |
+
+---
+
+## 20. References
+
+| Ref | Document | Identifier | Revision | Status | Link |
+|-----|---------|-----------|---------|--------|------|
+| R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
+| R-002 | WB Distribution (041-020) | QATL-ATLAS-041-020 | Rev 1.0 | Active | [041-020](./041-020-Water-Ballast-Distribution-and-Transfer.md) |
+| R-003 | AMPEL360E Ground Servicing Manual | AMPEL360E-GSM-041 | Rev A | Active | TBD |
+
+---
+
+## 21. Open Issues
+
+| ID | Issue | Owner | Status | Link |
+|----|-------|-------|--------|------|
+| OI-070-01 | STANAG 3558 coupling colour-code (blue) to be confirmed as non-conflicting with airport water supply hose standards | Q-MECHANICS | Open | TBD |
+| OI-070-02 | PDU app specification and airline customisation policy to be agreed with launch customer | Q-DATAGOV | Open | TBD |
+| OI-070-03 | Biocide injection port design pending approval from EASA re: NSF/ANSI 61 compliance impact | Q-GREENTECH | Open | TBD |
+
+---
+
+## 22. Change Log
+
+| Version | Date | Author | Change | Link |
+|---------|------|--------|--------|------|
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |

@@ -1,12 +1,12 @@
 ---
 document_id: QATL-ATLAS-1000-ATLAS-040-049-04-041-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
-title: "ATLAS 040-049 · 04.041.090 — S1000D CSDB Mapping and Traceability"
+title: "ATLAS 040-049 · 04.041.090 — S1000D/CSDB Mapping and Traceability"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ./README.md
+parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
+parent_architecture_doc: ../../../../README.md
+parent_section_doc: ../../../README.md
+parent_subsection_doc: ../README.md
 architecture_code: ATLAS
 architecture_name: "Aircraft Top Level Architecture Schema/System"
 master_range: "000–099"
@@ -16,9 +16,11 @@ section_title: "Aviónica, Información & APU"
 subsection: "041"
 subsection_title: "Water Ballast"
 subsubject: "090"
-subsubject_title: "S1000D CSDB Mapping and Traceability"
+subsubject_title: "S1000D/CSDB Mapping and Traceability"
+subsubject_file: "041-090-S1000D-CSDB-Mapping-and-Traceability.md"
+subsubject_link: "./041-090-S1000D-CSDB-Mapping-and-Traceability.md"
 primary_q_division: Q-DATAGOV
-support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
+support_q_divisions: [Q-AIR, Q-MECHANICS, Q-GREENTECH]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
@@ -26,138 +28,393 @@ status: active
 language: en
 ---
 
-# ATLAS 040-049 · Section 04 · Subsection 041 · 090 — S1000D CSDB Mapping and Traceability
+# ATLAS 040-049 · Section 04 · Subsection 041 · 090 — S1000D/CSDB Mapping and Traceability
+
+## 0. Hyperlink Policy
+
+All internal cross-references use relative Markdown links resolved within the Q+ATLANTIDE CSDB repository. External regulatory citations are listed in §19 and §20 with identifiers marked TBD. Parent context: [ATLAS 041 Water Ballast General](./041-000-Water-Ballast-General.md).
+
+---
 
 ## 1. Purpose
 
-This document defines the S1000D Issue 5.0 Data Module Code (DMC) structure for all technical publications relating to the Water Ballast System (WBS), establishes the Common Source DataBase (CSDB) applicability rules governing which DMCs apply to each aircraft variant and configuration, identifies the publication types supported, and provides a bi-directional traceability matrix linking each WBS ATLAS subsubject (SNS 000–080) to the corresponding DMCs, certification requirements (CS-25 paragraphs), and Data Module Requirements List (DMRL) entries.
+This document provides the complete S1000D Issue 5.0 Data Module Code (DMC) structure, Data Module Requirements List (DMRL), Business Rules Exchange (BREX) constraints, and CS-25 traceability matrix for the entire ATA 41 Water Ballast subject range (SNS 041-000 through 041-090) on the AMPEL360E eWTW aircraft. It is the authoritative CSDB configuration reference for the WB technical publication set.
 
-The purpose of this traceability framework is threefold. First, it ensures completeness: every design requirement captured in the WBS ATLAS documentation (SNS 000–080) is demonstrably covered by one or more S1000D data modules, and no data module exists without a traceable requirement. Second, it enables configuration management: when a design change occurs in any WBS subsystem, the traceability matrix immediately identifies all affected data modules requiring revision, preventing stale technical publications from reaching maintenance engineers. Third, it supports regulatory compliance: EASA CS-25 requires that the Approved Flight Manual, Aircraft Maintenance Manual, and Instructions for Continued Airworthiness accurately reflect the as-certified system design; traceability to CS-25 paragraphs confirms this requirement is met.
+The S1000D publication structure defined here covers all six publication types required for an ATA 41 system: Aircraft Maintenance Manual (AMM), Fault Isolation Manual (FIM), Troubleshooting Manual (TSM), Software Reference Manual (SRM), Illustrated Parts Data (IPD), and Wiring Manual (WM). The DMC coding scheme follows the AMPEL360E Model Identification Code (MIC), System Differentiation Code (SDC), and Sub-System / Sub-Sub-System (SNS) hierarchy defined in the AMPEL360E BREX document.
 
-The WBS S1000D publication suite includes five publication types: the Aircraft Maintenance Manual (AMM), Illustrated Parts Data (IPD), Structural Repair Manual (SRM), Fault Isolation Manual (FIM), and Wiring Diagram Manual (WDM). Each publication type draws DMCs from the CSDB; this document defines the DMRL for each type and maps them to the WBS ATLAS baseline.
+The CS-25 traceability matrix in §5 maps each top-level regulatory paragraph to the ATLAS 041 document and CSDB data module responsible for demonstrating compliance, providing the audit trail required by EASA and FAA during type certification.
 
-## 2. Scope
+---
 
-This document covers:
+## 2. Applicability
 
-- S1000D Issue 5.0 DMC structure for the WBS: model identification code (MIC), system difference code (SDC), standard numbering system (SNS) mapping, disassembly code (DC), disassembly code variant (DCV), information code (IC), information code variant (ICV), and item location code (ILC).
-- CSDB applicability rules: product attribute filtering by aircraft series, engine variant, and WBS configuration (standard WBS vs. extended-range WBS with additional tank pairs).
-- Publication type mapping: AMM (task-oriented procedural), IPD (parts catalogue), SRM (structural repair), FIM (fault isolation), WDM (wiring diagrams).
-- DMRL structure: listing of all required DMCs with their IC, publication type assignment, and development priority.
-- Bi-directional traceability matrix: WBS ATLAS SNS ↔ DMC ↔ CS-25 paragraph ↔ certification requirement.
-- Change management: procedure for identifying and revising DMCs when WBS ATLAS baseline documents are updated.
-- ATA iSpec 2200 chapter 41 cross-reference: mapping between ATA chapter/section/subject numbers and S1000D DMC SNS fields for publications supporting mixed ATA/S1000D environments.
+| Attribute | Value |
+|-----------|-------|
+| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| ATA Reference | ATA 41 — Water Ballast (all SNS) |
+| Standards | S1000D Issue 5.0, ATA iSpec 2200, ARINC 767, CS-25 Amd 27 |
+| Dev Assurance | N/A (documentation framework) |
+| Applicability Code | AMPEL360E-EWTW-ALL |
+| S1000D Issue | Issue 5.0 (2016) |
 
-## 3. Glossary
+---
 
-| Term / Acronym | Definition |
-|---|---|
-| S1000D | International Specification for Technical Publications (Issue 5.0, 2019) — the ASD/AIA/ATA joint specification governing the creation, management, and exchange of technical publications as structured data modules stored in a CSDB. |
-| DMC | Data Module Code — the 17-field alphanumeric identifier uniquely identifying an S1000D data module within a CSDB; structured as MIC-SNS-DC-DCV-IC-ICV-ILC. |
-| CSDB | Common Source DataBase — the managed repository in which all WBS S1000D data modules are authored, stored, and controlled; supports multi-publication output from a single source. |
-| DMRL | Data Module Requirements List — the controlled list of all DMCs required to document a system or aircraft type; the authoritative reference for CSDB completeness audits. |
-| MIC | Model Identification Code — the first field of the DMC identifying the aircraft model; example: `QPLS` for Q+ATLANTIDE aircraft. |
-| SNS | Standard Numbering System — the DMC field derived from the ATA chapter/section/subject structure; for WBS, SNS = `41-00` through `41-90` corresponding to ATA chapter 41 subjects. |
-| IC | Information Code — a three-character DMC field defining the type of information content within the data module; examples: `040` (Description and Operation), `200` (Maintenance Practices), `520` (Remove and Install), `720` (Fault Isolation). |
-| IPD | Illustrated Parts Data — the S1000D publication type providing parts catalogue information for each WBS assembly and sub-assembly; each LRU has one or more IPD data modules. |
-| SRM | Structural Repair Manual — the publication providing FAA/EASA-approved repair schemes for WBS structural elements (tank attachment fittings, structural brackets); SRM DMCs reference CS-25 Subpart C. |
-| FIM | Fault Isolation Manual — the publication providing step-by-step troubleshooting procedures for WBS maintenance engineers; FIM DMCs are generated from FMEA results and BCC BITE fault code definitions. |
-| WDM | Wiring Diagram Manual — the publication providing schematic and point-to-point wiring data for all WBS electrical harnesses, connectors, and avionics interfaces; generated from the aircraft wiring design database. |
-| ICA | Instructions for Continued Airworthiness — the regulatory deliverable required by CS-25.1529 and FAR 25.1529; the AMM, FIM, SRM, and IPD collectively constitute the WBS ICA. |
+## 3. System / Function Overview
 
-## 4. Diagram (Mermaid)
+The AMPEL360E CSDB follows the S1000D Issue 5.0 data model with a Model Identification Code (MIC) of `AMPEL360E`, a System Differentiation Code (SDC) of `EWTW`, and an SNS base of `041` for all Water Ballast data modules. Data modules are identified by their full DMC: `DMC-AMPEL360E-EWTW-041-{SNS}-{DI}-{Info Code}{Variant}-{Issue Code}`.
+
+The DMRL for ATA 41 contains 60 data modules across six publication types for the ten SNS subjects (000 through 090). The BREX document (AMPEL360E-BREX-001) constrains allowed Info Codes, issue codes, and applicability annotation syntax for all AMPEL360E data modules; deviations from the BREX must be approved by Q-DATAGOV via an Engineering Change Request.
+
+CSDB applicability management uses the S1000D Common Source Database applicability cross-reference table (CRT) to associate each data module with the aircraft variant codes AMPEL360E-EWTW-STD (standard), AMPEL360E-EWTW-HGW (high gross weight), and AMPEL360E-EWTW-LRC (long range cruise) as appropriate for WB system differences between variants.
+
+---
+
+## 4. Scope
+
+### 4.1 Included
+- Full DMC table for all 60 WB data modules (SNS 000–090, 6 pub types each)
+- DMRL summary with Info Code, publication, and applicability
+- BREX constraints applicable to ATA 41 data modules
+- CS-25 traceability matrix (regulatory paragraph → ATLAS document → DMC)
+- AMM/FIM/IPD/TSM/SRM/WM publication type definitions for ATA 41
+- CSDB applicability variant coding for WB system
+
+### 4.2 Excluded
+- CSDB tool configuration (handled by Q-DATAGOV CSDB administration)
+- Individual data module content (covered by SNS-specific ATLAS documents)
+- CSDB server infrastructure (covered by Q-DATAGOV IT architecture)
+
+---
+
+## 5. Architecture Description
+
+**DMC Structure.** The DMC for every ATA 41 WB data module follows the pattern:
+`DMC-AMPEL360E-EWTW-041-{SNS}-00A-{InfoCode}A-A`
+where: MIC=AMPEL360E, SDC=EWTW, SNS=041, Sub-SNS={000..090}, Disassembly Code=00, Disassembly Variant=A, Info Code={3 digits}, Info Code Variant=A, Item Location Code=A.
+
+**BREX Constraints.** The AMPEL360E BREX document (AMPEL360E-BREX-001) defines: allowed Info Codes for ATA 41 (040, 300, 400, 520, 720, 941); mandatory applic annotation using `applicRefId`; prohibition of free-text applicability strings; required use of `cautionRef` elements for all safety-critical maintenance steps; and mandated use of the AMPEL360E standard parts catalogue (`IPC-AMPEL360E-EWTW-041`) for IPD data modules.
+
+**CS-25 Traceability.** The traceability matrix maps CS-25 paragraphs to the ATLAS 041 document that defines compliance means and to the primary DMC providing the compliance evidence. Each matrix entry has a compliance method code: A (analysis), T (test), I (inspection), R (review of design).
+
+**Publication Types.** Six S1000D publication types are produced for ATA 41: AMM (Aircraft Maintenance Manual, Info Codes 040/300/400/520), FIM (Fault Isolation Manual, Info Code 300), TSM (Troubleshooting Manual, Info Code 400), SRM (Software Reference Manual, Info Code 720), IPD (Illustrated Parts Data, Info Code 941), WM (Wiring Manual, Info Code 520).
+
+---
+
+## 6. Functional Breakdown
+
+| Function ID | Function Name | Description | Allocated To | DAL |
+|-------------|---------------|-------------|-------------|-----|
+| F-090-01 | DMRL Maintenance | Define and maintain the list of required data modules for ATA 41 | Q-DATAGOV | N/A |
+| F-090-02 | DMC Coding | Assign and control unique DMCs per BREX for all WB data modules | Q-DATAGOV | N/A |
+| F-090-03 | CS-25 Traceability | Map each CS-25 paragraph to responsible ATLAS document and DMC | Q-DATAGOV | N/A |
+| F-090-04 | Applicability Management | Assign CRT applicability codes to each DMC per variant | Q-DATAGOV | N/A |
+| F-090-05 | BREX Compliance | Verify all ATA 41 data modules conform to AMPEL360E BREX | Q-DATAGOV | N/A |
+
+---
+
+## 7. Mermaid — System Context Diagram
 
 ```mermaid
-flowchart TD
-    subgraph ATLAS_BASELINE["WBS ATLAS Baseline (SNS 000–080)"]
-        SNS000["SNS 000\nGeneral"]
-        SNS010["SNS 010\nStorage"]
-        SNS020["SNS 020\nDistribution"]
-        SNS030["SNS 030\nPumps/Valves/Lines"]
-        SNS040["SNS 040\nQty Indication"]
-        SNS050["SNS 050\nControl/Trim"]
-        SNS060["SNS 060\nDrain/Dump"]
-        SNS070["SNS 070\nServicing"]
-        SNS080["SNS 080\nMonitoring"]
-    end
+graph TB
+    ATLAS041["ATLAS 041
+Documents
+(000-090)"]
+    DMRL["DMRL
+(60 DMs for ATA 41)"]
+    CSDB["CSDB
+(S1000D Issue 5.0)"]
+    BREX["BREX
+AMPEL360E-BREX-001"]
+    CRT["CRT
+Applicability Table"]
+    AMM["AMM
+Publications"]
+    FIM["FIM
+Publications"]
+    SRM["SRM
+Publications"]
+    IPD["IPD
+Publications"]
+    CS25["CS-25
+Compliance Matrix"]
+    EASA["EASA
+Type Certificate"]
 
-    subgraph DMRL["DMRL — CSDB Data Modules"]
-        AMM_DM["AMM Data Modules\n(IC 040, 200, 520)"]
-        IPD_DM["IPD Data Modules\n(IC 941, 945)"]
-        SRM_DM["SRM Data Modules\n(IC 300, 340)"]
-        FIM_DM["FIM Data Modules\n(IC 720, 740)"]
-        WDM_DM["WDM Data Modules\n(IC 050, 060)"]
-    end
-
-    subgraph CERT["CS-25 Certification Requirements"]
-        CS25_GEN["CS-25.1309\nSystems & Equipment"]
-        CS25_STR["CS-25 Subpart C\nStructure"]
-        CS25_ICA["CS-25.1529\nInstructions for CA"]
-        CS25_AFM["CS-25.1581\nAFM Requirements"]
-    end
-
-    SNS000 --> AMM_DM
-    SNS010 --> AMM_DM
-    SNS010 --> SRM_DM
-    SNS020 --> AMM_DM
-    SNS030 --> AMM_DM
-    SNS030 --> IPD_DM
-    SNS040 --> AMM_DM
-    SNS040 --> WDM_DM
-    SNS050 --> AMM_DM
-    SNS050 --> FIM_DM
-    SNS060 --> AMM_DM
-    SNS070 --> AMM_DM
-    SNS080 --> FIM_DM
-    SNS080 --> WDM_DM
-    AMM_DM --> CS25_ICA
-    SRM_DM --> CS25_STR
-    FIM_DM --> CS25_GEN
-    AMM_DM --> CS25_AFM
-    CSDB["CSDB Repository"] --> AMM_DM
-    CSDB --> IPD_DM
-    CSDB --> SRM_DM
-    CSDB --> FIM_DM
-    CSDB --> WDM_DM
+    ATLAS041 --> DMRL --> CSDB
+    BREX --> CSDB
+    CRT --> CSDB
+    CSDB --> AMM
+    CSDB --> FIM
+    CSDB --> SRM
+    CSDB --> IPD
+    CS25 --> EASA
+    ATLAS041 --> CS25
 ```
 
-## 5. Footprint
+---
 
-| Metric | Value |
-|---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `040-049` |
-| Section | `04` — Aviónica, Información & APU |
-| Subsection | `041` — Water Ballast |
-| Subsubject | `090` — S1000D CSDB Mapping and Traceability |
-| Primary Q-Division | Q-DATAGOV[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/041_Water-Ballast/` |
-| Document | `041-090-S1000D-CSDB-Mapping-and-Traceability.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
+## 8. Mermaid — Internal Functional Architecture
 
-## 6. References & Citations
+```mermaid
+graph LR
+    subgraph DMRL_BLOCK["DMRL — ATA 41 (60 DMs)"]
+        SNS000["SNS 000
+6 DMs"]
+        SNS010["SNS 010
+6 DMs"]
+        SNS020["SNS 020
+6 DMs"]
+        SNS030["SNS 030
+6 DMs"]
+        SNS040["SNS 040
+6 DMs"]
+        SNS050["SNS 050
+6 DMs"]
+        SNS060["SNS 060
+6 DMs"]
+        SNS070["SNS 070
+6 DMs"]
+        SNS080["SNS 080
+6 DMs"]
+        SNS090["SNS 090
+6 DMs"]
+    end
+    subgraph PUB_TYPES["Publication Types"]
+        AMM_P["AMM
+040/300/400/520"]
+        FIM_P["FIM
+300"]
+        TSM_P["TSM
+400"]
+        SRM_P["SRM
+720"]
+        IPD_P["IPD
+941"]
+        WM_P["WM
+520"]
+    end
+    DMRL_BLOCK --> PUB_TYPES
+```
 
-[^baseline]: Q+ATLANTIDE controlled baseline (v1.0.0) — governing architecture baseline for ATLAS master range 000–099; this document is the authoritative DMRL and traceability reference for all WBS S1000D publications.
+---
 
-[^qdiv]: Q-Division authority — Q-DATAGOV holds primary data governance and CSDB management authority. Q-HPC provides data management system engineering and CSDB tooling support.
+## 9. Mermaid — Lifecycle Traceability
 
-[^gov]: Governance class — `baseline` denotes formal change control, configuration management, and periodic review under the Q+ATLANTIDE baseline management process.
+```mermaid
+graph LR
+    LC02["LC02
+Requirements"]
+    LC03["LC03
+Design"]
+    LC05["LC05
+Implementation"]
+    LC06["LC06
+Verification"]
+    LC10["LC10
+Certification"]
+    LC11["LC11
+Operation"]
+    LC12["LC12
+Disposal"]
+    CSDB["CSDB
+Data Modules"]
+    DMRL["DMRL"]
+    Evidence["S1000D Mapping
+Verification Evidence"]
 
-[^n001]: Note N-001 — S1000D Issue 5.0 (2019): International Specification for Technical Publications Using a Common Source DataBase. ASD-Europe, AIA, ATA. Governing specification for all WBS DMC structures, CSDB management rules, applicability filtering, and publication type definitions used in this document.
+    LC02 --> LC03 --> LC05 --> LC06 --> LC10 --> LC11 --> LC12
+    LC02 --> DMRL --> CSDB
+    LC06 --> Evidence --> LC10
+    LC11 --> CSDB
+```
 
-[^n002]: Note N-002 — ATA iSpec 2200 (2022 edition): Information Standards for Aviation Maintenance. Airlines for America (A4A). Provides the ATA Chapter 41 SNS mapping used as the basis for the S1000D SNS field in WBS DMCs, and the cross-reference structure for operators maintaining ATA-based documentation environments alongside S1000D.
+---
 
-[^n003]: Note N-003 — EASA CS-25.1529 and FAR 25.1529: Instructions for Continued Airworthiness (ICA). Defines the regulatory obligation to provide complete and accurate AMM, FIM, SRM, and IPD data; the WBS DMRL completeness audit against this document satisfies the CS-25.1529 deliverable requirement.
+## 10. Interfaces
 
-[^n004]: Note N-004 — EUROCAE ED-160 / SAE AS9100D: Quality Management Systems — Aerospace. The CSDB change management process (DMC revision, applicability update, publication regeneration) is governed by the organisation's AS9100D-certified Document Management Procedure.
+| Interface ID | From | To | Protocol / Standard | Direction | Notes |
+|-------------|------|----|---------------------|-----------|-------|
+| IF-090-01 | ATLAS 041 documents | CSDB | S1000D Issue 5.0 XML | Source → CSDB | Manual authoring + XML import |
+| IF-090-02 | CSDB | AMT publications | ARINC 767 electronic delivery | CSDB → AMT | Electronic delivery to aircraft |
+| IF-090-03 | BREX | CSDB validation | S1000D XML schema | BREX → Validator | Automated BREX check on DM load |
+| IF-090-04 | CRT | CSDB | S1000D applicability table | CRT → CSDB | Variant applicability assignment |
+| IF-090-05 | CSDB | EASA compliance package | PDF/XML | CSDB → EASA | Compliance evidence submission |
+| IF-090-06 | CS-25 matrix | ATLAS 041 documents | Traceability links | Matrix → Documents | Bi-directional traceability |
 
-[^n005]: Note N-005 — ASD S3000L (Issue 2, 2016): International Specification for Logistics Support Analysis. The DMRL is integrated with the S3000L Maintenance Task Analysis (MTA) outputs; each maintenance task in the MTA corresponds to one or more AMM data modules, providing bi-directional traceability between LSA and technical publications.
+---
 
-[^n006]: Note N-006 — EASA AMC 20-29 / FAA AC 25.1581-1: Acceptable Means of Compliance for AFM content; confirms that WBS operational data (ballast mass limits, CG contribution, dump procedure) appearing in the AFM Emergency and Abnormal Procedures chapter is traceable to SNS 000 and SNS 060 ATLAS baseline documents and corresponding AMM data modules.
+## 11. Operating Modes
+
+| Mode | Description | Trigger | System Response |
+|------|-------------|---------|-----------------|
+| DM Authoring | New or revised data modules authored and loaded to CSDB | Engineering change | BREX validation on load; error report if non-compliant |
+| Publication Build | CSDB compiles publication from approved DMs | Release trigger | Publication generated per applicable variant |
+| Compliance Audit | CS-25 matrix reviewed against CSDB content | Certification milestone | Gap analysis report; open items flagged |
+| In-Service Update | DMs revised for in-service finding or AD/SB | AMM revision cycle | DM re-issued; AMT publication updated |
+
+---
+
+## 12. Monitoring and Diagnostics
+
+- CSDB automated BREX validation runs on every DM load; non-conformant DMs quarantined with error report to Q-DATAGOV.
+- DMRL completeness check automated in CSDB: missing DMs flagged as open items in DMRL status report.
+- CS-25 traceability matrix reviewed at each certification milestone (PDR, CDR, FQT); open gaps reported to Q-DATAGOV with 30-day resolution target.
+- DMC uniqueness check enforced by CSDB; duplicate DMC attempts rejected with warning.
+- Applicability CRT validated against aircraft variant production list at each release; orphaned applicability codes flagged for removal.
+- Data module approval workflow enforced in CSDB: Draft → Review → Approved; only Approved DMs included in publications.
+
+---
+
+## 13. Maintenance Concept
+
+| Task | Interval | Access | Tooling |
+|------|----------|--------|---------|
+| DMRL completeness review | Each major revision cycle | CSDB admin portal | CSDB DMRL report |
+| BREX validation pass | On each DM load | CSDB automated | CSDB validation engine |
+| CS-25 traceability matrix update | Each CS-25 revision or ATLAS document update | Q-DATAGOV | Excel/CSDB traceability module |
+| AMT publication update (in-service) | Per AMM revision cycle | CSDB publication build | CSDB build toolchain |
+
+---
+
+## 14. S1000D / CSDB Mapping
+
+| Document Type | Data Module Code (DMC) | Info Code | Title |
+|---------------|----------------------|-----------|-------|
+| System Description | DMC-AMPEL360E-EWTW-041-090-00A-040A-A | 040 | S1000D/CSDB Mapping Description |
+| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-090-00A-300A-A | 300 | S1000D Mapping Fault Isolation |
+| BITE/Test | DMC-AMPEL360E-EWTW-041-090-00A-400A-A | 400 | S1000D Mapping BITE Procedures |
+| Wiring Data | DMC-AMPEL360E-EWTW-041-090-00A-520A-A | 520 | S1000D Mapping Wiring and Connector Data |
+| IPD | DMC-AMPEL360E-EWTW-041-090-00A-941A-A | 941 | S1000D Mapping Illustrated Parts |
+| Software Desc | DMC-AMPEL360E-EWTW-041-090-00A-720A-A | 720 | S1000D Mapping SW Description |
+
+### Recommended Data Module Set
+
+| Info Code | Publication | Applicability |
+|-----------|-------------|---------------|
+| 040 | AMM — System Description | All variants |
+| 300 | FIM — Fault Isolation | All variants |
+| 400 | TSM — BITE Procedures | All variants |
+| 520 | AMM — Wiring Data | All variants |
+| 720 | SRM — Software Description | All variants |
+| 941 | IPD — Parts Data | All variants |
+
+---
+
+## 15. Footprints
+
+### 15.1 Physical
+
+| Item | Dimension (mm) | Mass (kg) | Location |
+|------|---------------|-----------|----------|
+| CSDB server (shared infrastructure) | Rack-mounted | N/A (ground) | Q-DATAGOV data centre |
+| AMT publications package | Electronic delivery | N/A | Aircraft AMT storage |
+| Publication hard copy (AFM supplement) | A4 binder | 0.5 | Cockpit document holder |
+
+### 15.2 Electrical / Data
+
+| Interface | Standard | Bandwidth / Power |
+|-----------|----------|-------------------|
+| CSDB server network | Ethernet 1 Gbit/s | IT infrastructure |
+| AMT electronic delivery | ARINC 767 | 1 Mbit/s |
+| ACARS publication status | ARINC 724B | < 1 kbit/s |
+
+### 15.3 Maintenance
+
+| Task | Man-Hours | Skill Level | Access |
+|------|-----------|-------------|--------|
+| DMRL review | 4.0 per revision | Q-DATAGOV tech writer | CSDB portal |
+| CS-25 matrix update | 8.0 per revision cycle | Q-DATAGOV + Q-AIR | Document review |
+| AMT publication build | 2.0 per release | Q-DATAGOV CSDB admin | CSDB build toolchain |
+
+### 15.4 Data
+
+| Data Item | Volume | Storage | Retention |
+|-----------|--------|---------|-----------|
+| CSDB data modules (60 DMs, ATA 41) | ~30 MB XML | CSDB repository | Life of type |
+| CS-25 traceability matrix | 500 KB | CSDB + document control | Life of type |
+| Publication PDFs (per variant) | ~200 MB | CSDB + AMT | Current revision + 2 prior |
+
+---
+
+## 16. Safety and Certification Considerations
+
+- S1000D Issue 5.0 compliance ensures interoperability with airline maintenance systems and EASA-accepted publication format; deviations require EASA agreement.
+- CS-25 traceability matrix is a mandatory deliverable for EASA type certification per EASA AMC 21A.101; completeness reviewed at PDR, CDR, and FQT.
+- BREX enforcement prevents introduction of non-standard markup that could cause maintenance errors from misinterpretation of cautions or warnings.
+- Data module approval workflow (Draft → Review → Approved) provides configuration control equivalent to DO-178C software CM for safety-relevant maintenance instructions.
+- AFM supplement (Info Code 040 for SNS 000) is subject to EASA Flight Manual approval process; must be approved before EIS.
+- CSDB backup and disaster recovery policy (Q-DATAGOV IT) ensures no loss of approved publication data; RPO ≤ 4 hours, RTO ≤ 8 hours.
+
+---
+
+## 17. Verification and Validation
+
+| V&V ID | Requirement | Method | Success Criteria | Status |
+|--------|-------------|--------|-----------------|--------|
+| VV-090-01 | All 60 DMRL DMs present in CSDB | DMRL completeness check | Zero open DMRL items at CDR | TBD |
+| VV-090-02 | All DMs pass BREX validation | CSDB automated validation | Zero BREX errors in CSDB | TBD |
+| VV-090-03 | CS-25 traceability matrix 100% complete | Manual audit | All CS-25 paragraphs mapped to DMC | TBD |
+| VV-090-04 | AMT publication deliverable per ARINC 767 | Format compliance check | Publication loads on AMT without error | TBD |
+| VV-090-05 | DMC uniqueness: no duplicate DMCs | CSDB database check | Zero duplicate DMCs in CSDB | TBD |
+| VV-090-06 | Applicability CRT covers all 3 variants | CRT completeness audit | All variant codes assigned to applicable DMs | TBD |
+| VV-090-07 | AFM supplement approved before EIS | Certification milestone review | EASA approval letter received | TBD |
+
+---
+
+## 18. Glossary
+
+| Term/Acronym | Definition | Link |
+|-------------|-----------|------|
+| <a id="glossary-brex"></a>BREX | Business Rules Exchange; S1000D document defining project-specific authoring rules | [§3](#3-system--function-overview) |
+| <a id="glossary-crt"></a>CRT | Common Source Database Cross-Reference Table; S1000D applicability management table | [§3](#3-system--function-overview) |
+| <a id="glossary-dmc"></a>DMC | Data Module Code; unique S1000D identifier for each data module | [§3](#3-system--function-overview) |
+| <a id="glossary-dmrl"></a>DMRL | Data Module Requirements List; master list of required data modules for a project | [§1](#1-purpose) |
+| <a id="glossary-fim"></a>FIM | Fault Isolation Manual; publication type for fault isolation procedures | [§3](#3-system--function-overview) |
+| <a id="glossary-ipd"></a>IPD | Illustrated Parts Data; S1000D publication type for parts catalogues | [§3](#3-system--function-overview) |
+| <a id="glossary-mic"></a>MIC | Model Identification Code; first element of S1000D DMC (AMPEL360E) | [§3](#3-system--function-overview) |
+| <a id="glossary-sdc"></a>SDC | System Differentiation Code; second DMC element (EWTW for electric wide-body twin-wing) | [§3](#3-system--function-overview) |
+| <a id="glossary-srm"></a>SRM | Software Reference Manual; publication type for software descriptions | [§3](#3-system--function-overview) |
+| <a id="glossary-tsm"></a>TSM | Troubleshooting Manual; publication type for system troubleshooting | [§3](#3-system--function-overview) |
+| <a id="glossary-wm"></a>WM | Wiring Manual; publication type for electrical wiring data | [§3](#3-system--function-overview) |
+
+---
+
+## 19. Citations
+
+| Ref | Citation | Use | Link |
+|-----|---------|-----|------|
+| <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB data module coding and publication structure | TBD |
+| <a id="ref-cs25"></a>CS-25 | EASA CS-25 Amendment 27 | Regulatory basis for traceability matrix | TBD |
+| <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | AMM/FIM/IPD structure and ATA chapter coding | TBD |
+| <a id="ref-arinc767"></a>ARINC 767 | ARINC 767 — Electronic Documentation Standard | AMT electronic publication delivery | TBD |
+| <a id="ref-easa-amc21a101"></a>EASA-AMC21A | EASA AMC 21A.101 — Certification Specifications Compliance Documentation | CS-25 traceability matrix requirement | TBD |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Certification basis | TBD |
+| <a id="ref-brex"></a>AMPEL360E-BREX | AMPEL360E Business Rules Exchange Document (AMPEL360E-BREX-001) | Project BREX constraints | TBD |
+
+---
+
+## 20. References
+
+| Ref | Document | Identifier | Revision | Status | Link |
+|-----|---------|-----------|---------|--------|------|
+| R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
+| R-002 | Q+ATLANTIDE ATLAS README | QATL-ATLAS-README | Rev 1.0 | Active | [README](../README.md) |
+| R-003 | AMPEL360E BREX Document | AMPEL360E-BREX-001 | Rev A | Active | TBD |
+
+---
+
+## 21. Open Issues
+
+| ID | Issue | Owner | Status | Link |
+|----|-------|-------|--------|------|
+| OI-090-01 | BREX document (AMPEL360E-BREX-001) not yet formally issued; draft under Q-DATAGOV review | Q-DATAGOV | Open | TBD |
+| OI-090-02 | CRT variant codes for HGW and LRC variants not yet defined; pending aircraft variant freeze | Q-AIR | Open | TBD |
+| OI-090-03 | AFM supplement format approval process with EASA to be initiated at CDR | Q-DATAGOV | Open | TBD |
+
+---
+
+## 22. Change Log
+
+| Version | Date | Author | Change | Link |
+|---------|------|--------|--------|------|
+| 1.0.0 | 2026-05-09 | Q-DATAGOV / Copilot | Initial creation with full 22-section template | TBD |
