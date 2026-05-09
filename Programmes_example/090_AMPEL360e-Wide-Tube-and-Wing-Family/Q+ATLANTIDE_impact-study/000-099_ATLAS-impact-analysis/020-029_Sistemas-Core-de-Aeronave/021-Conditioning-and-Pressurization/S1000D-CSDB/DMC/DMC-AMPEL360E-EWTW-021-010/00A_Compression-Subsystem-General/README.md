@@ -17,6 +17,10 @@ status: "programme-controlled-scaffold-placeholder"
 created: 2026-05-09
 ---
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/fc2d5c8c-283f-40a8-a0ff-3da359577f8b" />
+
+***Figure 1 — Compression Subsystem General, detailed ACM view.***
+
 # DMC Group: DMC-AMPEL360E-EWTW-021-010-00A
 
 **System:** 021 — Conditioning and Pressurization  
