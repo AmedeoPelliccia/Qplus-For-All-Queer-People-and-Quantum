@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -39,9 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| `000` | Water and Waste General | [`038-000-Water-and-Waste-General.md`](./038-000-Water-and-Waste-General.md) | active |
+| `010` | Potable Water System | [`038-010-Potable-Water-System.md`](./038-010-Potable-Water-System.md) | active |
+| `020` | Water Storage and Distribution | [`038-020-Water-Storage-and-Distribution.md`](./038-020-Water-Storage-and-Distribution.md) | active |
+| `030` | Water Heaters and Service Interfaces | [`038-030-Water-Heaters-and-Service-Interfaces.md`](./038-030-Water-Heaters-and-Service-Interfaces.md) | active |
+| `040` | Waste Water Drainage | [`038-040-Waste-Water-Drainage.md`](./038-040-Waste-Water-Drainage.md) | active |
+| `050` | Toilet and Vacuum Waste System | [`038-050-Toilet-and-Vacuum-Waste-System.md`](./038-050-Toilet-and-Vacuum-Waste-System.md) | active |
+| `060` | Water and Waste Indication and Warning | [`038-060-Water-and-Waste-Indication-and-Warning.md`](./038-060-Water-and-Waste-Indication-and-Warning.md) | active |
+| `070` | Water and Waste Servicing and Ground Interfaces | [`038-070-Water-and-Waste-Servicing-and-Ground-Interfaces.md`](./038-070-Water-and-Waste-Servicing-and-Ground-Interfaces.md) | active |
+| `080` | Water and Waste Monitoring, Diagnostics and Control Interfaces | [`038-080-Water-and-Waste-Monitoring-Diagnostics-and-Control-Interfaces.md`](./038-080-Water-and-Waste-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| `090` | S1000D CSDB Mapping and Traceability | [`038-090-S1000D-CSDB-Mapping-and-Traceability.md`](./038-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 

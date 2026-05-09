@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -39,9 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| `000` | Vacuum General | [`037-000-Vacuum-General.md`](./037-000-Vacuum-General.md) | active |
+| `010` | Vacuum Sources | [`037-010-Vacuum-Sources.md`](./037-010-Vacuum-Sources.md) | active |
+| `020` | Vacuum Distribution | [`037-020-Vacuum-Distribution.md`](./037-020-Vacuum-Distribution.md) | active |
+| `030` | Vacuum Regulation and Shutoff | [`037-030-Vacuum-Regulation-and-Shutoff.md`](./037-030-Vacuum-Regulation-and-Shutoff.md) | active |
+| `040` | Vacuum Pumps, Ejectors, Valves and Lines | [`037-040-Vacuum-Pumps-Ejectors-Valves-and-Lines.md`](./037-040-Vacuum-Pumps-Ejectors-Valves-and-Lines.md) | active |
+| `050` | Vacuum Consumers and System Interfaces | [`037-050-Vacuum-Consumers-and-System-Interfaces.md`](./037-050-Vacuum-Consumers-and-System-Interfaces.md) | active |
+| `060` | Vacuum System Indication and Warning | [`037-060-Vacuum-System-Indication-and-Warning.md`](./037-060-Vacuum-System-Indication-and-Warning.md) | active |
+| `070` | Vacuum Ground Service and Test Interfaces | [`037-070-Vacuum-Ground-Service-and-Test-Interfaces.md`](./037-070-Vacuum-Ground-Service-and-Test-Interfaces.md) | active |
+| `080` | Vacuum Monitoring, Diagnostics and Control Interfaces | [`037-080-Vacuum-Monitoring-Diagnostics-and-Control-Interfaces.md`](./037-080-Vacuum-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| `090` | S1000D CSDB Mapping and Traceability | [`037-090-S1000D-CSDB-Mapping-and-Traceability.md`](./037-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 

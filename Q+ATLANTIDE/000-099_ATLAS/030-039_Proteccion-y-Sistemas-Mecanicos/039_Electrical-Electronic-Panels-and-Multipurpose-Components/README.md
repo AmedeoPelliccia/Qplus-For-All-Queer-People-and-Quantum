@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -39,9 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| `000` | Electrical/Electronic Panels and Multipurpose Components — General | [`039-000-Electrical-Electronic-Panels-and-Multipurpose-Components-General.md`](./039-000-Electrical-Electronic-Panels-and-Multipurpose-Components-General.md) | active |
+| `010` | Control Panels and Switching Assemblies | [`039-010-Control-Panels-and-Switching-Assemblies.md`](./039-010-Control-Panels-and-Switching-Assemblies.md) | active |
+| `020` | Circuit Breaker and Protection Panels | [`039-020-Circuit-Breaker-and-Protection-Panels.md`](./039-020-Circuit-Breaker-and-Protection-Panels.md) | active |
+| `030` | Relay, Contactor and Power Distribution Panels | [`039-030-Relay-Contactor-and-Power-Distribution-Panels.md`](./039-030-Relay-Contactor-and-Power-Distribution-Panels.md) | active |
+| `040` | Avionics and Electronic Equipment Racks | [`039-040-Avionics-and-Electronic-Equipment-Racks.md`](./039-040-Avionics-and-Electronic-Equipment-Racks.md) | active |
+| `050` | Multipurpose Component Modules | [`039-050-Multipurpose-Component-Modules.md`](./039-050-Multipurpose-Component-Modules.md) | active |
+| `060` | Panel Indication, Lighting and Human-Machine Interfaces | [`039-060-Panel-Indication-Lighting-and-Human-Machine-Interfaces.md`](./039-060-Panel-Indication-Lighting-and-Human-Machine-Interfaces.md) | active |
+| `070` | Panel Wiring, Connectors and Installation Interfaces | [`039-070-Panel-Wiring-Connectors-and-Installation-Interfaces.md`](./039-070-Panel-Wiring-Connectors-and-Installation-Interfaces.md) | active |
+| `080` | Panel Monitoring, Diagnostics and Control Interfaces | [`039-080-Panel-Monitoring-Diagnostics-and-Control-Interfaces.md`](./039-080-Panel-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| `090` | S1000D CSDB Mapping and Traceability | [`039-090-S1000D-CSDB-Mapping-and-Traceability.md`](./039-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
