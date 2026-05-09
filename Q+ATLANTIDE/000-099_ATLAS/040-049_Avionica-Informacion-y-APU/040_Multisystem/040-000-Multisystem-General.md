@@ -381,7 +381,7 @@ Considerations include:
 - Environmental qualification per [DO-160G](#ref-do-160g);
 - Electromagnetic compatibility.
 
-Final safety classification shall remain **<img src="https://img.shields.io/badge/TBD-red" alt="TBD">** until reviewed against the applicable FHA, PSSA, SSA, and certification basis.
+Final safety classification shall remain <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> until reviewed against the applicable FHA, PSSA, SSA, and certification basis.
 
 ---
 

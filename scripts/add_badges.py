@@ -87,14 +87,8 @@ def process_prose_line(line):
     Process a non-table prose line.
     Replace TBD, DRAFT, To Be Completed with badges,
     but NOT inside link destinations ](...)  or inside backtick code spans.
+    Also unwrap lone badges wrapped in bold/italic markers.
     """
-    # First replace 'To Be Completed' (longest match first)
-    line = re.sub(r"\bTo Be Completed\b", BADGE_TBC, line)
-
-    # Replace DRAFT with badge — but skip if inside link parens or backtick
-    # We use a lookahead/lookbehind approach: don't replace inside ](...)
-    # Strategy: tokenise around link syntax and backtick spans, replace only in text parts
-
     def replace_word(line, word, badge):
         result = []
         i = 0
@@ -112,7 +106,9 @@ def process_prose_line(line):
             # Count backticks before start (odd = inside code span)
             backtick_count = before.count('`')
             inside_code = (backtick_count % 2 == 1)
-            if not inside_link and not inside_code:
+            # Check if inside an HTML tag <...> (e.g. already-applied badge)
+            inside_html = bool(re.search(r'<[^>]*$', before))
+            if not inside_link and not inside_code and not inside_html:
                 result.append((start, end))
         # Apply replacements in reverse to preserve indices
         line_list = list(line)
@@ -120,8 +116,11 @@ def process_prose_line(line):
             line_list[start:end] = list(badge)
         return "".join(line_list)
 
+    line = replace_word(line, "To Be Completed", BADGE_TBC)
     line = replace_word(line, "DRAFT", BADGE_DRAFT)
     line = replace_word(line, "TBD", BADGE_TBD)
+    # Unwrap bold/italic markers around lone badge (e.g. **<img ...>** -> <img ...>)
+    line = re.sub(r'\*{1,2}(<img src="https://img\.shields\.io/badge/[^"]*"[^>]*/?>)\*{1,2}', r'\1', line)
     return line
 
 
@@ -135,7 +134,7 @@ def process_body(body):
             lines = text.split("\n")
             new_lines = []
             for line in lines:
-                if "|" in line and not line.strip().startswith("```"):
+                if "|" in line:
                     new_lines.append(process_table_line(line))
                 else:
                     new_lines.append(process_prose_line(line))
