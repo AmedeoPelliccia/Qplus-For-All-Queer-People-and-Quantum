@@ -426,7 +426,7 @@ Routine maintenance includes periodic ACMS data quality check (comparing ACMS re
 | OI-031-070-001 | ACMS as IMA-hosted function vs standalone LRU — architecture trade not completed | Systems Architect | High | LC03 | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-031-070-002 | VHF vs SATCOM as primary ACARS datalink — requirements from airline customers not yet received | Sales / Operations | Medium | LC03 | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-031-070-003 | Electric propulsion ACMS parameter set and exceedance thresholds — not yet defined | Propulsion Systems Eng | High | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-031-070-004 | ACRS report format (ARINC 620 message types) — airline-specific requirements not yet collected | Customer Support | Medium | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-031-070-004 | ACARS report format (ARINC 620 message types) — airline-specific requirements not yet collected | Customer Support | Medium | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-031-070-005 | Cybersecurity assessment of ACARS datalink — DO-326A assessment not yet initiated | Security Engineer | High | LC05 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ---
