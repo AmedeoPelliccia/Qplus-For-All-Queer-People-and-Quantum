@@ -33,7 +33,7 @@ primary_q_division: "Q-MECHANICS"
 primary_q_division_link: "../../../../../Q-Divisions/Q-MECHANICS/"
 support_q_divisions:
   - name: "Q-STRUCTURES"
-    link: "../../../../../Q-Divisions/Q-AIR/"
+    link: "../../../../../Q-Divisions/Q-STRUCTURES/"
   - name: "Q-AIR"
     link: "../../../../../Q-Divisions/Q-AIR/"
 orb_functions:
