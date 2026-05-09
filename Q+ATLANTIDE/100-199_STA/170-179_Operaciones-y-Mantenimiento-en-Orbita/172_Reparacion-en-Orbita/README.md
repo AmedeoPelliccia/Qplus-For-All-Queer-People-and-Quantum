@@ -57,18 +57,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | On-Orbit Repair Controlled Definition | [`001_On-Orbit-Repair-Controlled-Definition.md`](001_On-Orbit-Repair-Controlled-Definition.md) | active |
-| 002 | Repair Mission Classes and Objectives | [`002_Repair-Mission-Classes-and-Objectives.md`](002_Repair-Mission-Classes-and-Objectives.md) | active |
-| 003 | Damage Assessment and Repair Admissibility | [`003_Damage-Assessment-and-Repair-Admissibility.md`](003_Damage-Assessment-and-Repair-Admissibility.md) | active |
-| 004 | Robotic Repair and Manipulation Functions | [`004_Robotic-Repair-and-Manipulation-Functions.md`](004_Robotic-Repair-and-Manipulation-Functions.md) | active |
-| 005 | Modular Replacement and Orbital LRU Exchange | [`005_Modular-Replacement-and-Orbital-LRU-Exchange.md`](005_Modular-Replacement-and-Orbital-LRU-Exchange.md) | active |
-| 006 | Structural Patch, Bonding and Sealing Concepts | [`006_Structural-Patch-Bonding-and-Sealing-Concepts.md`](006_Structural-Patch-Bonding-and-Sealing-Concepts.md) | active |
-| 007 | Electrical, Avionics and Payload Repair Interfaces | [`007_Electrical-Avionics-and-Payload-Repair-Interfaces.md`](007_Electrical-Avionics-and-Payload-Repair-Interfaces.md) | active |
-| 008 | Repair Safety Zones, Fault Containment and Abort Modes | [`008_Repair-Safety-Zones-Fault-Containment-and-Abort-Modes.md`](008_Repair-Safety-Zones-Fault-Containment-and-Abort-Modes.md) | active |
-| 009 | ECSS-NASA-CCSDS On-Orbit Repair Standards Mapping | [`009_ECSS-NASA-CCSDS-On-Orbit-Repair-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-On-Orbit-Repair-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`172-000-General.md`](./172-000-General.md) | active |
+| 010 | On Orbit Repair Controlled Definition | [`172-010-On-Orbit-Repair-Controlled-Definition.md`](./172-010-On-Orbit-Repair-Controlled-Definition.md) | active |
+| 020 | Repair Mission Classes and Objectives | [`172-020-Repair-Mission-Classes-and-Objectives.md`](./172-020-Repair-Mission-Classes-and-Objectives.md) | active |
+| 030 | Damage Assessment and Repair Admissibility | [`172-030-Damage-Assessment-and-Repair-Admissibility.md`](./172-030-Damage-Assessment-and-Repair-Admissibility.md) | active |
+| 040 | Robotic Repair and Manipulation Functions | [`172-040-Robotic-Repair-and-Manipulation-Functions.md`](./172-040-Robotic-Repair-and-Manipulation-Functions.md) | active |
+| 050 | Modular Replacement and Orbital LRU Exchange | [`172-050-Modular-Replacement-and-Orbital-LRU-Exchange.md`](./172-050-Modular-Replacement-and-Orbital-LRU-Exchange.md) | active |
+| 060 | Structural Patch Bonding and Sealing Concepts | [`172-060-Structural-Patch-Bonding-and-Sealing-Concepts.md`](./172-060-Structural-Patch-Bonding-and-Sealing-Concepts.md) | active |
+| 070 | Electrical Avionics and Payload Repair Interfaces | [`172-070-Electrical-Avionics-and-Payload-Repair-Interfaces.md`](./172-070-Electrical-Avionics-and-Payload-Repair-Interfaces.md) | active |
+| 080 | Repair Safety Zones Fault Containment and Abort Modes | [`172-080-Repair-Safety-Zones-Fault-Containment-and-Abort-Modes.md`](./172-080-Repair-Safety-Zones-Fault-Containment-and-Abort-Modes.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`172-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./172-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -79,7 +77,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `170-179` |
 | Section | `07` — Operaciones y Mantenimiento en Órbita |
 | Subsection | `172` — Reparación en Órbita |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY, Q-GREENTECH |
 | ORB support | ORB-LEG |

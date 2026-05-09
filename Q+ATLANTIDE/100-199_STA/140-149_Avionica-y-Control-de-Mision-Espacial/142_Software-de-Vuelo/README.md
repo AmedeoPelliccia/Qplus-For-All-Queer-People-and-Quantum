@@ -51,18 +51,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Flight Software Controlled Definition | [`001_Flight-Software-Controlled-Definition.md`](001_Flight-Software-Controlled-Definition.md) | active |
-| 002 | Onboard Software Architecture | [`002_Onboard-Software-Architecture.md`](002_Onboard-Software-Architecture.md) | active |
-| 003 | Command, Telemetry and Data Handling Software | [`003_Command-Telemetry-and-Data-Handling-Software.md`](003_Command-Telemetry-and-Data-Handling-Software.md) | active |
-| 004 | GNC Software Interfaces and Control Loops | [`004_GNC-Software-Interfaces-and-Control-Loops.md`](004_GNC-Software-Interfaces-and-Control-Loops.md) | active |
-| 005 | FDIR: Fault Detection, Isolation and Recovery Logic | [`005_FDIR-Fault-Detection-Isolation-and-Recovery-Logic.md`](005_FDIR-Fault-Detection-Isolation-and-Recovery-Logic.md) | active |
-| 006 | Safe-Mode, Contingency and Autonomous Recovery Software | [`006_Safe-Mode-Contingency-and-Autonomous-Recovery-Software.md`](006_Safe-Mode-Contingency-and-Autonomous-Recovery-Software.md) | active |
-| 007 | Real-Time Scheduling, Timing and Determinism | [`007_Real-Time-Scheduling-Timing-and-Determinism.md`](007_Real-Time-Scheduling-Timing-and-Determinism.md) | active |
-| 008 | Verification, Validation, Simulation and HIL Testing | [`008_Verification-Validation-Simulation-and-HIL-Testing.md`](008_Verification-Validation-Simulation-and-HIL-Testing.md) | active |
-| 009 | ECSS-NASA-CCSDS Software Standards Mapping | [`009_ECSS-NASA-CCSDS-Software-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-Software-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`142-000-General.md`](./142-000-General.md) | active |
+| 010 | Flight Software Controlled Definition | [`142-010-Flight-Software-Controlled-Definition.md`](./142-010-Flight-Software-Controlled-Definition.md) | active |
+| 020 | Onboard Software Architecture | [`142-020-Onboard-Software-Architecture.md`](./142-020-Onboard-Software-Architecture.md) | active |
+| 030 | Command Telemetry and Data Handling Software | [`142-030-Command-Telemetry-and-Data-Handling-Software.md`](./142-030-Command-Telemetry-and-Data-Handling-Software.md) | active |
+| 040 | GNC Software Interfaces and Control Loops | [`142-040-GNC-Software-Interfaces-and-Control-Loops.md`](./142-040-GNC-Software-Interfaces-and-Control-Loops.md) | active |
+| 050 | FDIR Fault Detection Isolation and Recovery Logic | [`142-050-FDIR-Fault-Detection-Isolation-and-Recovery-Logic.md`](./142-050-FDIR-Fault-Detection-Isolation-and-Recovery-Logic.md) | active |
+| 060 | Safe Mode Contingency and Autonomous Recovery Software | [`142-060-Safe-Mode-Contingency-and-Autonomous-Recovery-Software.md`](./142-060-Safe-Mode-Contingency-and-Autonomous-Recovery-Software.md) | active |
+| 070 | Real Time Scheduling Timing and Determinism | [`142-070-Real-Time-Scheduling-Timing-and-Determinism.md`](./142-070-Real-Time-Scheduling-Timing-and-Determinism.md) | active |
+| 080 | Verification Validation Simulation and HIL Testing | [`142-080-Verification-Validation-Simulation-and-HIL-Testing.md`](./142-080-Verification-Validation-Simulation-and-HIL-Testing.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`142-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./142-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -73,7 +71,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `140-149` |
 | Section | `04` — Aviónica y Control de Misión Espacial |
 | Subsection | `142` — Software de Vuelo |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

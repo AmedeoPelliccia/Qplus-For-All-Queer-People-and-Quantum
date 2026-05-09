@@ -53,18 +53,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | GNC Controlled Definition | [`001_GNC-Controlled-Definition.md`](001_GNC-Controlled-Definition.md) | active |
-| 002 | Guidance Architecture and Mission Trajectory Logic | [`002_Guidance-Architecture-and-Mission-Trajectory-Logic.md`](002_Guidance-Architecture-and-Mission-Trajectory-Logic.md) | active |
-| 003 | Navigation Sensors, State Estimation and Reference Frames | [`003_Navigation-Sensors-State-Estimation-and-Reference-Frames.md`](003_Navigation-Sensors-State-Estimation-and-Reference-Frames.md) | active |
-| 004 | Control Laws, Attitude and Orbit Control | [`004_Control-Laws-Attitude-and-Orbit-Control.md`](004_Control-Laws-Attitude-and-Orbit-Control.md) | active |
-| 005 | Actuators: Reaction Wheels, Thrusters and Magnetorquers | [`005_Actuators-Reaction-Wheels-Thrusters-and-Magnetorquers.md`](005_Actuators-Reaction-Wheels-Thrusters-and-Magnetorquers.md) | active |
-| 006 | Autonomous Modes, Safe Modes and Contingency Control | [`006_Autonomous-Modes-Safe-Modes-and-Contingency-Control.md`](006_Autonomous-Modes-Safe-Modes-and-Contingency-Control.md) | active |
-| 007 | GNC Software Interfaces and Timing Constraints | [`007_GNC-Software-Interfaces-and-Timing-Constraints.md`](007_GNC-Software-Interfaces-and-Timing-Constraints.md) | active |
-| 008 | Verification, Validation, Simulation and HIL Testing | [`008_Verification-Validation-Simulation-and-HIL-Testing.md`](008_Verification-Validation-Simulation-and-HIL-Testing.md) | active |
-| 009 | ECSS-NASA GNC Standards Mapping | [`009_ECSS-NASA-GNC-Standards-Mapping.md`](009_ECSS-NASA-GNC-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`140-000-General.md`](./140-000-General.md) | active |
+| 010 | GNC Controlled Definition | [`140-010-GNC-Controlled-Definition.md`](./140-010-GNC-Controlled-Definition.md) | active |
+| 020 | Guidance Architecture and Mission Trajectory Logic | [`140-020-Guidance-Architecture-and-Mission-Trajectory-Logic.md`](./140-020-Guidance-Architecture-and-Mission-Trajectory-Logic.md) | active |
+| 030 | Navigation Sensors State Estimation and Reference Frames | [`140-030-Navigation-Sensors-State-Estimation-and-Reference-Frames.md`](./140-030-Navigation-Sensors-State-Estimation-and-Reference-Frames.md) | active |
+| 040 | Control Laws Attitude and Orbit Control | [`140-040-Control-Laws-Attitude-and-Orbit-Control.md`](./140-040-Control-Laws-Attitude-and-Orbit-Control.md) | active |
+| 050 | Actuators Reaction Wheels Thrusters and Magnetorquers | [`140-050-Actuators-Reaction-Wheels-Thrusters-and-Magnetorquers.md`](./140-050-Actuators-Reaction-Wheels-Thrusters-and-Magnetorquers.md) | active |
+| 060 | Autonomous Modes Safe Modes and Contingency Control | [`140-060-Autonomous-Modes-Safe-Modes-and-Contingency-Control.md`](./140-060-Autonomous-Modes-Safe-Modes-and-Contingency-Control.md) | active |
+| 070 | GNC Software Interfaces and Timing Constraints | [`140-070-GNC-Software-Interfaces-and-Timing-Constraints.md`](./140-070-GNC-Software-Interfaces-and-Timing-Constraints.md) | active |
+| 080 | Verification Validation Simulation and HIL Testing | [`140-080-Verification-Validation-Simulation-and-HIL-Testing.md`](./140-080-Verification-Validation-Simulation-and-HIL-Testing.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`140-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./140-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -75,7 +73,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `140-149` |
 | Section | `04` — Aviónica y Control de Misión Espacial |
 | Subsection | `140` — GNC — Guiado, Navegación y Control |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-DATAGOV, Q-HORIZON, Q-AIR, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-LEG |

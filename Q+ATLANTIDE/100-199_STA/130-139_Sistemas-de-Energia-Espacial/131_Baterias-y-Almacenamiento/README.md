@@ -49,18 +49,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Batteries and Storage Controlled Definition | [`001_Batteries-and-Storage-Controlled-Definition.md`](001_Batteries-and-Storage-Controlled-Definition.md) | active |
-| 002 | Cell Chemistries and Storage Technology Families | [`002_Cell-Chemistries-and-Storage-Technology-Families.md`](002_Cell-Chemistries-and-Storage-Technology-Families.md) | active |
-| 003 | Battery Pack, Module and String Architecture | [`003_Battery-Pack-Module-and-String-Architecture.md`](003_Battery-Pack-Module-and-String-Architecture.md) | active |
-| 004 | Charge-Discharge and State Control | [`004_Charge-Discharge-and-State-Control.md`](004_Charge-Discharge-and-State-Control.md) | active |
-| 005 | Battery Management System (BMS) | [`005_Battery-Management-System-BMS.md`](005_Battery-Management-System-BMS.md) | active |
-| 006 | Thermal Management and Runaway Containment | [`006_Thermal-Management-and-Runaway-Containment.md`](006_Thermal-Management-and-Runaway-Containment.md) | active |
-| 007 | Degradation, Cycling and Lifetime Modelling | [`007_Degradation-Cycling-and-Lifetime-Modelling.md`](007_Degradation-Cycling-and-Lifetime-Modelling.md) | active |
-| 008 | Eclipse, Peak-Load and Contingency Energy Budgeting | [`008_Eclipse-Peak-Load-and-Contingency-Energy-Budgeting.md`](008_Eclipse-Peak-Load-and-Contingency-Energy-Budgeting.md) | active |
-| 009 | Testing, Qualification and Safety Assurance | [`009_Testing-Qualification-and-Safety-Assurance.md`](009_Testing-Qualification-and-Safety-Assurance.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`131-000-General.md`](./131-000-General.md) | active |
+| 010 | Batteries and Storage Controlled Definition | [`131-010-Batteries-and-Storage-Controlled-Definition.md`](./131-010-Batteries-and-Storage-Controlled-Definition.md) | active |
+| 020 | Cell Chemistries and Storage Technology Families | [`131-020-Cell-Chemistries-and-Storage-Technology-Families.md`](./131-020-Cell-Chemistries-and-Storage-Technology-Families.md) | active |
+| 030 | Battery Pack Module and String Architecture | [`131-030-Battery-Pack-Module-and-String-Architecture.md`](./131-030-Battery-Pack-Module-and-String-Architecture.md) | active |
+| 040 | Charge Discharge and State Control | [`131-040-Charge-Discharge-and-State-Control.md`](./131-040-Charge-Discharge-and-State-Control.md) | active |
+| 050 | Battery Management System BMS | [`131-050-Battery-Management-System-BMS.md`](./131-050-Battery-Management-System-BMS.md) | active |
+| 060 | Thermal Management and Runaway Containment | [`131-060-Thermal-Management-and-Runaway-Containment.md`](./131-060-Thermal-Management-and-Runaway-Containment.md) | active |
+| 070 | Degradation Cycling and Lifetime Modelling | [`131-070-Degradation-Cycling-and-Lifetime-Modelling.md`](./131-070-Degradation-Cycling-and-Lifetime-Modelling.md) | active |
+| 080 | Eclipse Peak Load and Contingency Energy Budgeting | [`131-080-Eclipse-Peak-Load-and-Contingency-Energy-Budgeting.md`](./131-080-Eclipse-Peak-Load-and-Contingency-Energy-Budgeting.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`131-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./131-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -71,7 +69,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `130-139` |
 | Section | `03` — Sistemas de Energía Espacial |
 | Subsection | `131` — Baterías y Almacenamiento |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-GREENTECH, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |
@@ -115,9 +113,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | General | [`131-000-General.md`](./131-000-General.md) | active |
+| 010 | Batteries and Storage Controlled Definition | [`131-010-Batteries-and-Storage-Controlled-Definition.md`](./131-010-Batteries-and-Storage-Controlled-Definition.md) | active |
+| 020 | Cell Chemistries and Storage Technology Families | [`131-020-Cell-Chemistries-and-Storage-Technology-Families.md`](./131-020-Cell-Chemistries-and-Storage-Technology-Families.md) | active |
+| 030 | Battery Pack Module and String Architecture | [`131-030-Battery-Pack-Module-and-String-Architecture.md`](./131-030-Battery-Pack-Module-and-String-Architecture.md) | active |
+| 040 | Charge Discharge and State Control | [`131-040-Charge-Discharge-and-State-Control.md`](./131-040-Charge-Discharge-and-State-Control.md) | active |
+| 050 | Battery Management System BMS | [`131-050-Battery-Management-System-BMS.md`](./131-050-Battery-Management-System-BMS.md) | active |
+| 060 | Thermal Management and Runaway Containment | [`131-060-Thermal-Management-and-Runaway-Containment.md`](./131-060-Thermal-Management-and-Runaway-Containment.md) | active |
+| 070 | Degradation Cycling and Lifetime Modelling | [`131-070-Degradation-Cycling-and-Lifetime-Modelling.md`](./131-070-Degradation-Cycling-and-Lifetime-Modelling.md) | active |
+| 080 | Eclipse Peak Load and Contingency Energy Budgeting | [`131-080-Eclipse-Peak-Load-and-Contingency-Energy-Budgeting.md`](./131-080-Eclipse-Peak-Load-and-Contingency-Energy-Budgeting.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`131-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./131-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -128,7 +135,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `130-139` |
 | Section | `03` — Sistemas de Energía Espacial |
 | Subsection | `131` — Baterías y Almacenamiento |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN |

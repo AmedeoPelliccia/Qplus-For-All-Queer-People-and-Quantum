@@ -53,18 +53,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Advanced Propulsion Controlled Definition | [`001_Advanced-Propulsion-Controlled-Definition.md`](001_Advanced-Propulsion-Controlled-Definition.md) | active |
-| 002 | High-Isp Propulsion Concepts | [`002_High-Isp-Propulsion-Concepts.md`](002_High-Isp-Propulsion-Concepts.md) | active |
-| 003 | Solar Sail and Light-Sail Propulsion | [`003_Solar-Sail-and-Light-Sail-Propulsion.md`](003_Solar-Sail-and-Light-Sail-Propulsion.md) | active |
-| 004 | Electric Sail and Plasma Sail Concepts | [`004_Electric-Sail-and-Plasma-Sail-Concepts.md`](004_Electric-Sail-and-Plasma-Sail-Concepts.md) | active |
-| 005 | Beam-Driven Propulsion Concepts | [`005_Beam-Driven-Propulsion-Concepts.md`](005_Beam-Driven-Propulsion-Concepts.md) | active |
-| 006 | Fusion Propulsion Conceptual Boundaries | [`006_Fusion-Propulsion-Conceptual-Boundaries.md`](006_Fusion-Propulsion-Conceptual-Boundaries.md) | active |
-| 007 | Field-Effect and Exotic Propulsion Claim Discipline | [`007_Field-Effect-and-Exotic-Propulsion-Claim-Discipline.md`](007_Field-Effect-and-Exotic-Propulsion-Claim-Discipline.md) | active |
-| 008 | Mission Use-Cases and Technology Readiness Screening | [`008_Mission-Use-Cases-and-Technology-Readiness-Screening.md`](008_Mission-Use-Cases-and-Technology-Readiness-Screening.md) | active |
-| 009 | Energy, Thermal and Structural Interface Boundaries | [`009_Energy-Thermal-and-Structural-Interface-Boundaries.md`](009_Energy-Thermal-and-Structural-Interface-Boundaries.md) | active |
-| 010 | Assurance Evidence and Non-Operational Boundaries | [`010_Assurance-Evidence-and-Non-Operational-Boundaries.md`](010_Assurance-Evidence-and-Non-Operational-Boundaries.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`123-000-General.md`](./123-000-General.md) | active |
+| 010 | Advanced Propulsion Controlled Definition | [`123-010-Advanced-Propulsion-Controlled-Definition.md`](./123-010-Advanced-Propulsion-Controlled-Definition.md) | active |
+| 020 | High Isp Propulsion Concepts | [`123-020-High-Isp-Propulsion-Concepts.md`](./123-020-High-Isp-Propulsion-Concepts.md) | active |
+| 030 | Solar Sail and Light Sail Propulsion | [`123-030-Solar-Sail-and-Light-Sail-Propulsion.md`](./123-030-Solar-Sail-and-Light-Sail-Propulsion.md) | active |
+| 040 | Electric Sail and Plasma Sail Concepts | [`123-040-Electric-Sail-and-Plasma-Sail-Concepts.md`](./123-040-Electric-Sail-and-Plasma-Sail-Concepts.md) | active |
+| 050 | Beam Driven Propulsion Concepts | [`123-050-Beam-Driven-Propulsion-Concepts.md`](./123-050-Beam-Driven-Propulsion-Concepts.md) | active |
+| 060 | Fusion Propulsion Conceptual Boundaries | [`123-060-Fusion-Propulsion-Conceptual-Boundaries.md`](./123-060-Fusion-Propulsion-Conceptual-Boundaries.md) | active |
+| 070 | Field Effect and Exotic Propulsion Claim Discipline | [`123-070-Field-Effect-and-Exotic-Propulsion-Claim-Discipline.md`](./123-070-Field-Effect-and-Exotic-Propulsion-Claim-Discipline.md) | active |
+| 080 | Mission Use Cases and Technology Readiness Screening | [`123-080-Mission-Use-Cases-and-Technology-Readiness-Screening.md`](./123-080-Mission-Use-Cases-and-Technology-Readiness-Screening.md) | active |
+| 090 | Assurance Evidence and Non Operational Boundaries | [`123-090-Assurance-Evidence-and-Non-Operational-Boundaries.md`](./123-090-Assurance-Evidence-and-Non-Operational-Boundaries.md) | active |
 
 ## 4. Footprint
 
@@ -75,7 +73,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `120-129` |
 | Section | `02` — Propulsión Espacial Tradicional y Avanzada |
 | Subsection | `123` — Propulsión Avanzada |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HPC, ORB-LEG |
 | ORB support | ORB-PMO, ORB-LEG |

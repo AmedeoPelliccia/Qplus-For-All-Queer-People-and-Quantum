@@ -58,18 +58,11 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | On-Orbit Assembly Controlled Definition | [`001_On-Orbit-Assembly-Controlled-Definition.md`](001_On-Orbit-Assembly-Controlled-Definition.md) | active |
-| 002 | Assembly Mission Classes and Objectives | [`002_Assembly-Mission-Classes-and-Objectives.md`](002_Assembly-Mission-Classes-and-Objectives.md) | active |
-| 003 | Modular Architecture and Assembly Units | [`003_Modular-Architecture-and-Assembly-Units.md`](003_Modular-Architecture-and-Assembly-Units.md) | active |
-| 004 | Rendezvous, Docking, Berthing and Positioning Interfaces | [`004_Rendezvous-Docking-Berthing-and-Positioning-Interfaces.md`](004_Rendezvous-Docking-Berthing-and-Positioning-Interfaces.md) | active |
-| 005 | Robotic Assembly and Manipulation Functions | [`005_Robotic-Assembly-and-Manipulation-Functions.md`](005_Robotic-Assembly-and-Manipulation-Functions.md) | active |
-| 006 | Structural Joining, Latching and Lockdown Mechanisms | [`006_Structural-Joining-Latching-and-Lockdown-Mechanisms.md`](006_Structural-Joining-Latching-and-Lockdown-Mechanisms.md) | active |
-| 007 | Power, Data, Thermal and Fluid Interface Integration | [`007_Power-Data-Thermal-and-Fluid-Interface-Integration.md`](007_Power-Data-Thermal-and-Fluid-Interface-Integration.md) | active |
-| 008 | Assembly Safety Zones, Fault Containment and Abort Modes | [`008_Assembly-Safety-Zones-Fault-Containment-and-Abort-Modes.md`](008_Assembly-Safety-Zones-Fault-Containment-and-Abort-Modes.md) | active |
-| 009 | ECSS-NASA-CCSDS On-Orbit Assembly Standards Mapping | [`009_ECSS-NASA-CCSDS-On-Orbit-Assembly-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-On-Orbit-Assembly-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`173-000-General.md`](./173-000-General.md) | active |
+| 010 | On Orbit Assembly Controlled Definition | [`173-010-On-Orbit-Assembly-Controlled-Definition.md`](./173-010-On-Orbit-Assembly-Controlled-Definition.md) | active |
+| 020 | Assembly Mission Classes and Objectives | [`173-020-Assembly-Mission-Classes-and-Objectives.md`](./173-020-Assembly-Mission-Classes-and-Objectives.md) | active |
+| 030 | Modular Architecture and Assembly Units | [`173-030-Modular-Architecture-and-Assembly-Units.md`](./173-030-Modular-Architecture-and-Assembly-Units.md) | active |
+| 040 | Rendezvous Docking Berthing and Positioning Interfaces | [`173-040-Rendezvous-Docking-Berthing-and-Positioning-Interfaces.md`](./173-040-Rendezvous-Docking-Berthing-and-Positioning-Interfaces.md) | active |
 
 ## 4. Footprint
 
@@ -80,7 +73,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `170-179` |
 | Section | `07` — Operaciones y Mantenimiento en Órbita |
 | Subsection | `173` — Ensamblaje en Órbita |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY, Q-GREENTECH |
 | ORB support | ORB-LEG |

@@ -39,19 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Interplanetary Architecture Controlled Definition | [`001_Interplanetary-Architecture-Controlled-Definition.md`](./001_Interplanetary-Architecture-Controlled-Definition.md) | active |
-| 02 | Mission Classes and Interplanetary Regimes | [`002_Mission-Classes-and-Interplanetary-Regimes.md`](./002_Mission-Classes-and-Interplanetary-Regimes.md) | active |
-| 03 | Trajectory Architecture and Transfer Windows | [`003_Trajectory-Architecture-and-Transfer-Windows.md`](./003_Trajectory-Architecture-and-Transfer-Windows.md) | active |
-| 04 | Deep-Space Transport and Propulsion Interfaces | [`004_Deep-Space-Transport-and-Propulsion-Interfaces.md`](./004_Deep-Space-Transport-and-Propulsion-Interfaces.md) | active |
-| 05 | Communication, Navigation and Time-Reference Boundaries | [`005_Communication-Navigation-and-Time-Reference-Boundaries.md`](./005_Communication-Navigation-and-Time-Reference-Boundaries.md) | active |
-| 06 | Surface, Orbital and Transit Infrastructure Interfaces | [`006_Surface-Orbital-and-Transit-Infrastructure-Interfaces.md`](./006_Surface-Orbital-and-Transit-Infrastructure-Interfaces.md) | active |
-| 07 | Autonomy, Safe Modes and Long-Duration Operations | [`007_Autonomy-Safe-Modes-and-Long-Duration-Operations.md`](./007_Autonomy-Safe-Modes-and-Long-Duration-Operations.md) | active |
-| 08 | Radiation, Life Support and Human Factors Boundaries | [`008_Radiation-Life-Support-and-Human-Factors-Boundaries.md`](./008_Radiation-Life-Support-and-Human-Factors-Boundaries.md) | active |
-| 09 | ECSS, NASA, CCSDS Deep-Space Standards Mapping | [`009_ECSS-NASA-CCSDS-Deep-Space-Standards-Mapping.md`](./009_ECSS-NASA-CCSDS-Deep-Space-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`190-000-General.md`](./190-000-General.md) | active |
+| 010 | Interplanetary Architecture Controlled Definition | [`190-010-Interplanetary-Architecture-Controlled-Definition.md`](./190-010-Interplanetary-Architecture-Controlled-Definition.md) | active |
+| 020 | Mission Classes and Interplanetary Regimes | [`190-020-Mission-Classes-and-Interplanetary-Regimes.md`](./190-020-Mission-Classes-and-Interplanetary-Regimes.md) | active |
+| 030 | Trajectory Architecture and Transfer Windows | [`190-030-Trajectory-Architecture-and-Transfer-Windows.md`](./190-030-Trajectory-Architecture-and-Transfer-Windows.md) | active |
+| 040 | Deep Space Transport and Propulsion Interfaces | [`190-040-Deep-Space-Transport-and-Propulsion-Interfaces.md`](./190-040-Deep-Space-Transport-and-Propulsion-Interfaces.md) | active |
+| 050 | Communication Navigation and Time Reference Boundaries | [`190-050-Communication-Navigation-and-Time-Reference-Boundaries.md`](./190-050-Communication-Navigation-and-Time-Reference-Boundaries.md) | active |
+| 060 | Surface Orbital and Transit Infrastructure Interfaces | [`190-060-Surface-Orbital-and-Transit-Infrastructure-Interfaces.md`](./190-060-Surface-Orbital-and-Transit-Infrastructure-Interfaces.md) | active |
+| 070 | Autonomy Safe Modes and Long Duration Operations | [`190-070-Autonomy-Safe-Modes-and-Long-Duration-Operations.md`](./190-070-Autonomy-Safe-Modes-and-Long-Duration-Operations.md) | active |
+| 080 | Radiation Life Support and Human Factors Boundaries | [`190-080-Radiation-Life-Support-and-Human-Factors-Boundaries.md`](./190-080-Radiation-Life-Support-and-Human-Factors-Boundaries.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`190-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./190-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -62,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `190-199` |
 | Section | `09` — Sistemas Avanzados, Conceptos y Futuro Espacial |
 | Subsection | `190` — Arquitecturas Interplanetarias |
-| Subsubject namespace | `00`–`99` (active: `00`–`10`) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-DATAGOV, Q-HPC, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |
