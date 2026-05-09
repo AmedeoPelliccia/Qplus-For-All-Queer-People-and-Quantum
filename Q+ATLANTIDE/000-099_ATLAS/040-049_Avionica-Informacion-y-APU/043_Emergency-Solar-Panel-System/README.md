@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS-1000-ATLAS-040-049-04-043-README
-title: "ATLAS 040-049 · 04.043 — Airborne Auxiliary Power (Subsection Index)"
+title: "ATLAS 040-049 · 04.043 — Emergency Solar Panel System (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,7 +13,7 @@ code_range: "040-049"
 section: "04"
 section_title: "Aviónica, Información & APU"
 subsection: "043"
-subsection_title: "Airborne Auxiliary Power"
+subsection_title: "Emergency Solar Panel System"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 040-049 · Section 04 · Subsection 043 — Airborne Auxiliary Power
+# ATLAS 040-049 · Section 04 · Subsection 043 — Emergency Solar Panel System
 
 ## 1. Purpose
 
-Subsection-level index for *Airborne Auxiliary Power* (`043`) within ATLAS `040-049` — *Aviónica, Información & APU* — ATA 49.
+Subsection-level index for *Emergency Solar Panel System* (`043`) within ATLAS `040-049` — *Aviónica, Información & APU*.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `043` *Airborne Auxiliary Power*.
+- Reserves the subsubject namespace `00`–`99` of subsection `043` *Emergency Solar Panel System*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `040-049` |
 | Section | `04` — Aviónica, Información & APU |
-| Subsection | `043` — Airborne Auxiliary Power |
+| Subsection | `043` — Emergency Solar Panel System |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/043_Airborne-Auxiliary-Power/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/043_Emergency-Solar-Panel-System/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-040-049-04-044-README
-title: "ATLAS 040-049 · 04.044 — Cargo and Accessory Compartments (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-040-049-04-047-README
+title: "ATLAS 040-049 · 04.047 — Nitrogen Generation System (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -12,8 +12,8 @@ master_range: "000–099"
 code_range: "040-049"
 section: "04"
 section_title: "Aviónica, Información & APU"
-subsection: "044"
-subsection_title: "Cargo and Accessory Compartments"
+subsection: "047"
+subsection_title: "Nitrogen Generation System"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 040-049 · Section 04 · Subsection 044 — Cargo and Accessory Compartments
+# ATLAS 040-049 · Section 04 · Subsection 047 — Nitrogen Generation System
 
 ## 1. Purpose
 
-Subsection-level index for *Cargo and Accessory Compartments* (`044`) within ATLAS `040-049` — *Aviónica, Información & APU* — ATA 50.
+Subsection-level index for *Nitrogen Generation System* (`047`) within ATLAS `040-049` — *Aviónica, Información & APU*.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `044` *Cargo and Accessory Compartments*.
+- Reserves the subsubject namespace `00`–`99` of subsection `047` *Nitrogen Generation System*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `040-049` |
 | Section | `04` — Aviónica, Información & APU |
-| Subsection | `044` — Cargo and Accessory Compartments |
+| Subsection | `047` — Nitrogen Generation System |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/044_Cargo-and-Accessory-Compartments/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/047_Nitrogen-Generation-System/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

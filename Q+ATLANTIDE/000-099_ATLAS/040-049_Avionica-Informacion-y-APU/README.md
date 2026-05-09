@@ -25,7 +25,7 @@ language: en
 
 ## 1. Purpose
 
-Section-level index for *Aviónica, Información & APU* (`040-049`) within the ATLAS band. Aviónica modular integrada (IMA), sistemas centrales de mantenimiento, sistemas de información, APU y modelos AI/ML embarcados.
+Section-level index for *Aviónica, Información & APU* (`040-049`) within the ATLAS band. Multisistema, lastre de agua, aviónica modular integrada (IMA), panel solar de emergencia, sistemas de cabina, sistema central de mantenimiento, sistemas de información, generación de nitrógeno, suministro de combustible en vuelo y APU aerotransportada.
 
 This section is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. Bands classify technologies, Q-Divisions provide technical authority and ORB-Functions provide enterprise support[^n002].
 
@@ -39,13 +39,16 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 | Code | Title | Folder | Status |
 |---:|---|---|---|
-| `040` | Integrated Modular Avionics | [`040_Integrated-Modular-Avionics/`](./040_Integrated-Modular-Avionics/) | active |
-| `041` | Central Maintenance System | [`041_Central-Maintenance-System/`](./041_Central-Maintenance-System/) | active |
-| `042` | Information Systems | [`042_Information-Systems/`](./042_Information-Systems/) | active |
-| `043` | Airborne Auxiliary Power | [`043_Airborne-Auxiliary-Power/`](./043_Airborne-Auxiliary-Power/) | active |
-| `044` | Cargo and Accessory Compartments | [`044_Cargo-and-Accessory-Compartments/`](./044_Cargo-and-Accessory-Compartments/) | active |
-| `045` | AI/ML Models Onboard | [`045_AI-ML-Models-Onboard/`](./045_AI-ML-Models-Onboard/) | active |
-| `046` | Synthetic Data Validation | [`046_Synthetic-Data-Validation/`](./046_Synthetic-Data-Validation/) | active |
+| `040` | Multisystem | [`040_Multisystem/`](./040_Multisystem/) | reserved |
+| `041` | Water Ballast | [`041_Water-Ballast/`](./041_Water-Ballast/) | reserved |
+| `042` | Integrated Modular Avionics | [`042_Integrated-Modular-Avionics/`](./042_Integrated-Modular-Avionics/) | reserved |
+| `043` | Emergency Solar Panel System | [`043_Emergency-Solar-Panel-System/`](./043_Emergency-Solar-Panel-System/) | reserved |
+| `044` | Cabin Systems | [`044_Cabin-Systems/`](./044_Cabin-Systems/) | reserved |
+| `045` | Central Maintenance System | [`045_Central-Maintenance-System/`](./045_Central-Maintenance-System/) | reserved |
+| `046` | Information Systems | [`046_Information-Systems/`](./046_Information-Systems/) | reserved |
+| `047` | Nitrogen Generation System | [`047_Nitrogen-Generation-System/`](./047_Nitrogen-Generation-System/) | reserved |
+| `048` | In-Flight Fuel Dispensing | [`048_In-Flight-Fuel-Dispensing/`](./048_In-Flight-Fuel-Dispensing/) | reserved |
+| `049` | Airborne Auxiliary Power | [`049_Airborne-Auxiliary-Power/`](./049_Airborne-Auxiliary-Power/) | reserved |
 
 ## 4. Interfaces Diagram
 
@@ -57,13 +60,16 @@ flowchart TB
 
     subgraph SUBS["Subsections"]
         direction LR
-        SUB_040["040 — Integrated Modular Avionics (ATA 42)"]:::sub
-        SUB_041["041 — Central Maintenance System (ATA 45)"]:::sub
-        SUB_042["042 — Information Systems (ATA 46)"]:::sub
-        SUB_043["043 — Airborne Auxiliary Power (ATA 49)"]:::sub
-        SUB_044["044 — Cargo & Accessory Compartments (ATA 50)"]:::sub
-        SUB_045["045 — AI/ML Models Onboard (ATA 95)"]:::sub
-        SUB_046["046 — Synthetic Data Validation (ATA 97)"]:::sub
+        SUB_040["040 — Multisystem"]:::sub
+        SUB_041["041 — Water Ballast"]:::sub
+        SUB_042["042 — Integrated Modular Avionics"]:::sub
+        SUB_043["043 — Emergency Solar Panel System"]:::sub
+        SUB_044["044 — Cabin Systems"]:::sub
+        SUB_045["045 — Central Maintenance System"]:::sub
+        SUB_046["046 — Information Systems"]:::sub
+        SUB_047["047 — Nitrogen Generation System"]:::sub
+        SUB_048["048 — In-Flight Fuel Dispensing"]:::sub
+        SUB_049["049 — Airborne Auxiliary Power"]:::sub
     end
     SEC --> SUBS
 
@@ -82,15 +88,15 @@ flowchart TB
     SUBS --> SUB_044
     SUBS --> SUB_045
     SUBS --> SUB_046
-    EXT_S08["§08 · Propulsion AI Hooks (089)"]:::ext
-    SUB_045 -. "AI/ML hooks" .- EXT_S08
+    SUBS --> SUB_047
+    SUBS --> SUB_048
+    SUBS --> SUB_049
 
     classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
     classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
     classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
     classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
     classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
-    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
 ```
 
 *Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
@@ -103,7 +109,7 @@ flowchart TB
 | Master range | `000–099` |
 | Code range | `040-049` |
 | Section | `04` — Aviónica, Información & APU |
-| Subsections | 7 populated |
+| Subsections | 10 populated |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |

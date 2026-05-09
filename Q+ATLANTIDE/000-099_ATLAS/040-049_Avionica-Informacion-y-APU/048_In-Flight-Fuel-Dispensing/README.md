@@ -1,6 +1,6 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-040-049-04-040-README
-title: "ATLAS 040-049 · 04.040 — Integrated Modular Avionics (Subsection Index)"
+document_id: QATL-ATLAS-1000-ATLAS-040-049-04-048-README
+title: "ATLAS 040-049 · 04.048 — In-Flight Fuel Dispensing (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -12,8 +12,8 @@ master_range: "000–099"
 code_range: "040-049"
 section: "04"
 section_title: "Aviónica, Información & APU"
-subsection: "040"
-subsection_title: "Integrated Modular Avionics"
+subsection: "048"
+subsection_title: "In-Flight Fuel Dispensing"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-LEG]
@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 040-049 · Section 04 · Subsection 040 — Integrated Modular Avionics
+# ATLAS 040-049 · Section 04 · Subsection 048 — In-Flight Fuel Dispensing
 
 ## 1. Purpose
 
-Subsection-level index for *Integrated Modular Avionics* (`040`) within ATLAS `040-049` — *Aviónica, Información & APU* — ATA 42.
+Subsection-level index for *In-Flight Fuel Dispensing* (`048`) within ATLAS `040-049` — *Aviónica, Información & APU*.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `040` *Integrated Modular Avionics*.
+- Reserves the subsubject namespace `00`–`99` of subsection `048` *In-Flight Fuel Dispensing*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `040-049` |
 | Section | `04` — Aviónica, Información & APU |
-| Subsection | `040` — Integrated Modular Avionics |
+| Subsection | `048` — In-Flight Fuel Dispensing |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/040_Integrated-Modular-Avionics/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/048_In-Flight-Fuel-Dispensing/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
