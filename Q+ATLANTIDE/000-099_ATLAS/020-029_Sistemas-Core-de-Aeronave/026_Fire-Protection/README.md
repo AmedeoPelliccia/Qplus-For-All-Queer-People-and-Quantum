@@ -15,11 +15,11 @@ section_title: "Sistemas Core de Aeronave"
 subsection: "026"
 subsection_title: "Fire Protection"
 primary_q_division: Q-AIR
-support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH]
+support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-GREENTECH, Q-GROUND, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,24 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `026` *Fire Protection*.
+- Defines the section namespace `026-000` through `026-090` of subsection `026` *Fire Protection*, aligned to ATA Chapter 26.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- `primary_q_division: Q-AIR` — fire protection is a safety-of-flight system authority. Q-MECHANICS covers engine/APU bay interfaces; Q-GREENTECH covers hydrogen and electric propulsion fire safety; Q-DATAGOV governs publication and CSDB traceability; Q-GROUND and Q-INDUSTRY cover airport/ground infrastructure and manufacturing interfaces.
 
-## 3. Subsubject Index
+## 3. Section Index
 
-| NN | Title | Document | Status |
-|---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| Section | ATA SNS | Title | Status |
+|---|---|---|---|
+| 026-000 | 26-00-00 | General | baseline |
+| 026-010 | 26-10-00 | Fire and Smoke Detection | baseline |
+| 026-020 | 26-20-00 | Fire Extinguishing | baseline |
+| 026-030 | 26-30-00 | Explosion Suppression | baseline |
+| 026-040 | 26-40-00 | Engine, APU and Nacelle Fire Protection | programme-controlled-extension |
+| 026-050 | 26-50-00 | Cargo and Baggage Compartment Fire Protection | baseline |
+| 026-060 | 26-60-00 | Cabin, Lavatory and Equipment Bay Fire Protection | baseline |
+| 026-070 | 26-70-00 | Hydrogen and Electric Propulsion Fire Safety Interfaces | programme-controlled-extension |
+| 026-080 | 26-80-00 | Fire Protection Monitoring, Diagnostics and Control Interfaces | programme-controlled-diagnostics-extension |
+| 026-090 | 26-90-00 | S1000D CSDB Mapping and Traceability | programme-controlled-publication-and-traceability-extension |
 
 ## 4. Footprint
 
@@ -52,9 +61,9 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `020-029` |
 | Section | `02` — Sistemas Core de Aeronave |
 | Subsection | `026` — Fire Protection |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Section namespace | `026-000`–`026-090` |
 | Primary Q-Division | Q-AIR[^qdiv] |
-| Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH |
+| Support Q-Divisions | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH, Q-GROUND, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |
 | Governance class | `baseline`[^gov] |
 | Folder path | `Q+ATLANTIDE/000-099_ATLAS/020-029_Sistemas-Core-de-Aeronave/026_Fire-Protection/` |
@@ -65,7 +74,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All sections under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-AIR` and `governance_class = baseline` from the parent ATLAS section. Programme-controlled extensions (`026-040`, `026-070`, `026-080`, `026-090`) require programme authority before population of detailed design data modules.
 
 ## 5. References & Citations
 
