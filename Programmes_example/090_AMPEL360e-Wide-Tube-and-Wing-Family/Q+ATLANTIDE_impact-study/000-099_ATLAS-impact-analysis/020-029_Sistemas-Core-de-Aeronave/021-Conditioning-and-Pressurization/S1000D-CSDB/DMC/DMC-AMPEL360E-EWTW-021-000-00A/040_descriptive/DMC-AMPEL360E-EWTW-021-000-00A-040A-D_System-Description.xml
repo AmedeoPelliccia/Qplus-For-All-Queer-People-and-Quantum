@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     S1000D Descriptive Data Module
+     DMC: DMC-AMPEL360E-EWTW-021-000-00A-040A-D
+     Title: Conditioning and Pressurization — System Description
+     Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+     ATLAS Node: 021 / SNS 021-000 / ATA 21-00-00
+     Status: draft / programme-controlled-placeholder
+     Issue: 001-00 | Date: 2026-05-09
+     Note: infoCode 040A is a programme-controlled placeholder pending
+           BREX / SNS / DMRL freeze by the programme CCB.
+     ============================================================ -->
+<dmodule xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E"
+                systemDiffCode="EWTW"
+                systemCode="021"
+                subSystemCode="0"
+                subSubSystemCode="00"
+                assyCode="00A"
+                disassyCode="00"
+                disassyCodeVariant="A"
+                infoCode="040"
+                infoCodeVariant="A"
+                itemLocationCode="D"/>
+        <language languageIsoCode="en" countryIsoCode="001"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="09"/>
+        <dmTitle>
+          <techName>Conditioning and Pressurization</techName>
+          <infoName>System Description</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </originator>
+      <applic>
+        <displayText>
+          <simplePara>AMPEL360e Wide Tube-and-Wing Family (eWTW) — All variants</simplePara>
+        </displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E"
+                    systemDiffCode="EWTW"
+                    systemCode="000"
+                    subSystemCode="0"
+                    subSubSystemCode="00"
+                    assyCode="00A"
+                    disassyCode="00"
+                    disassyCodeVariant="A"
+                    infoCode="022"
+                    infoCodeVariant="A"
+                    itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+      <remarks>
+        <simplePara>Programme-controlled placeholder. SNS alignment: 021-000 / Air Conditioning and Pressurization — General. infoCode 040A subject to BREX/SNS/DMRL freeze. Not for operational use.</simplePara>
+      </remarks>
+    </dmStatus>
+  </identAndStatusSection>
+
+  <content>
+    <description>
+
+      <levelledPara id="desc-021-000-001">
+        <title>General</title>
+        <para>This data module provides the top-level system description for the <emphasis emphasisType="em01">Conditioning and Pressurization</emphasis> system of the AMPEL360e Wide Tube-and-Wing Family (eWTW) aircraft, designated SNS node 021-000 and aligned to ATA chapter 21. It defines the system purpose, functional boundaries, major components and interfaces within the Environmental Control System (ECS).</para>
+        <para>This is a descriptive data module (Descriptive Data Module, infoCode 040A). It describes the system as designed and does not constitute an approved procedure, certification evidence or airworthiness approval.</para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-000-002">
+        <title>System Purpose</title>
+        <para>The Conditioning and Pressurization system maintains a safe, comfortable and controlled cabin environment for passengers and crew throughout all phases of flight. The system:</para>
+        <para>
+          <randomList>
+            <listItem><para>Supplies conditioned air to the cabin, cockpit and equipment bays at the required temperature, humidity and flow rate.</para></listItem>
+            <listItem><para>Maintains cabin pressure within certified altitude limits during climb, cruise and descent.</para></listItem>
+            <listItem><para>Controls temperature distribution across cabin zones.</para></listItem>
+            <listItem><para>Removes moisture and air contaminants to maintain air quality standards.</para></listItem>
+            <listItem><para>Provides monitoring, diagnostics and control interfaces for crew and maintenance personnel.</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-000-003">
+        <title>System Architecture</title>
+        <para>The ECS of the eWTW aircraft is organized into the following functional subsystems, each addressed by a dedicated descriptive data module:</para>
+        <para>
+          <randomList>
+            <listItem><para>Compression (021-010 / ATA 21-10): air supply sources and pack architecture.</para></listItem>
+            <listItem><para>Distribution (021-020 / ATA 21-20): cabin, cockpit and equipment-bay ducting.</para></listItem>
+            <listItem><para>Pressurization Control (021-030 / ATA 21-30): outflow valves, safety valves, controllers.</para></listItem>
+            <listItem><para>Heating (021-040 / ATA 21-40): heating loads and thermal interfaces.</para></listItem>
+            <listItem><para>Cooling (021-050 / ATA 21-50): cooling loads and heat rejection.</para></listItem>
+            <listItem><para>Temperature Control (021-060 / ATA 21-60): zone sensors and control logic.</para></listItem>
+            <listItem><para>Moisture and Air Contaminant Control (021-070 / ATA 21-70): filtration and humidity management.</para></listItem>
+            <listItem><para>ECS Monitoring, Diagnostics and Control Interfaces (021-080 / ATA 21-80): CMS, PHM and crew interfaces.</para></listItem>
+            <listItem><para>S1000D / CSDB Mapping and Traceability (021-090 / ATA 21-90): publication and data management.</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-000-004">
+        <title>eWTW Programme Integration</title>
+        <para>The eWTW hybrid-electric architecture creates additional thermal loads on the ECS compared to a conventional aircraft. The electric propulsion and power distribution systems generate heat that must be managed through the ECS cooling interfaces. The ECS design accounts for these additional loads across all operating modes.</para>
+        <para>The system is designed for compatibility with SAF (Sustainable Aviation Fuels) operation and hydrogen-readiness across the eWTW family variants.</para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-000-005">
+        <title>SNS and CSDB Mapping</title>
+        <para>This data module is the S1000D publication layer for the Conditioning and Pressurization system at SNS node 021-000 / Air Conditioning and Pressurization — General. The DMC is grouped under the DMC-AMPEL360E-EWTW-021-000-00A directory, infoCode folder 040_descriptive, in accordance with the S1000D-CSDB production path rule for system code 021.</para>
+        <para>The production path rule mandates use of <emphasis emphasisType="em01">021</emphasis> (not 020) for all S1000D-CSDB paths, DMC groupings, SNS-like system description files and descriptive data module naming within this CSDB. See the SNS README and BREX for the complete alignment table.</para>
+      </levelledPara>
+
+    </description>
+  </content>
+
+</dmodule>
