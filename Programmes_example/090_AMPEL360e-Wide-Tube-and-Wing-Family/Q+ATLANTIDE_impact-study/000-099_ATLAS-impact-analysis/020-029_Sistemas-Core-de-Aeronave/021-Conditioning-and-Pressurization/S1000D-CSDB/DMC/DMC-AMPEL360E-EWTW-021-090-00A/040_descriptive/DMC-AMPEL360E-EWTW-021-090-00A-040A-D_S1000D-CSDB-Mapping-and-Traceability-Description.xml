@@ -102,16 +102,16 @@
         <para>The following table maps ATLAS node sections to S1000D Data Module Codes and ATA SNS reference:</para>
         <para>
           <randomList>
-            <listItem><para>020-000 (ATA 21-00-00) → DMC-AMPEL360E-EWTW-021-000-00A-040A-D: Air Conditioning and Pressurization — System Description</para></listItem>
-            <listItem><para>020-010 (ATA 21-10-00) → DMC-AMPEL360E-EWTW-021-010-00A-040A-D: Compression — System Description</para></listItem>
-            <listItem><para>020-020 (ATA 21-20-00) → DMC-AMPEL360E-EWTW-021-020-00A-040A-D: Distribution — System Description</para></listItem>
-            <listItem><para>020-030 (ATA 21-30-00) → DMC-AMPEL360E-EWTW-021-030-00A-040A-D: Pressurization Control — System Description</para></listItem>
-            <listItem><para>020-040 (ATA 21-40-00) → DMC-AMPEL360E-EWTW-021-040-00A-040A-D: Heating — System Description</para></listItem>
-            <listItem><para>020-050 (ATA 21-50-00) → DMC-AMPEL360E-EWTW-021-050-00A-040A-D: Cooling — System Description</para></listItem>
-            <listItem><para>020-060 (ATA 21-60-00) → DMC-AMPEL360E-EWTW-021-060-00A-040A-D: Temperature Control — System Description</para></listItem>
-            <listItem><para>020-070 (ATA 21-70-00) → DMC-AMPEL360E-EWTW-021-070-00A-040A-D: Moisture and Air Contaminant Control — System Description</para></listItem>
-            <listItem><para>020-080 (ATA 21-80-00) → DMC-AMPEL360E-EWTW-021-080-00A-040A-D: ECS Monitoring, Diagnostics and Control Interfaces — Description [programme-controlled-extension]</para></listItem>
-            <listItem><para>020-090 (ATA 21-90-00) → DMC-AMPEL360E-EWTW-021-090-00A-040A-D: S1000D / CSDB Mapping and Traceability — Description [programme-controlled-publication-and-traceability-extension]</para></listItem>
+            <listItem><para>021-000 (ATA 21-00-00) → DMC-AMPEL360E-EWTW-021-000-00A-040A-D: Air Conditioning and Pressurization — System Description</para></listItem>
+            <listItem><para>021-010 (ATA 21-10-00) → DMC-AMPEL360E-EWTW-021-010-00A-040A-D: Compression — System Description</para></listItem>
+            <listItem><para>021-020 (ATA 21-20-00) → DMC-AMPEL360E-EWTW-021-020-00A-040A-D: Distribution — System Description</para></listItem>
+            <listItem><para>021-030 (ATA 21-30-00) → DMC-AMPEL360E-EWTW-021-030-00A-040A-D: Pressurization Control — System Description</para></listItem>
+            <listItem><para>021-040 (ATA 21-40-00) → DMC-AMPEL360E-EWTW-021-040-00A-040A-D: Heating — System Description</para></listItem>
+            <listItem><para>021-050 (ATA 21-50-00) → DMC-AMPEL360E-EWTW-021-050-00A-040A-D: Cooling — System Description</para></listItem>
+            <listItem><para>021-060 (ATA 21-60-00) → DMC-AMPEL360E-EWTW-021-060-00A-040A-D: Temperature Control — System Description</para></listItem>
+            <listItem><para>021-070 (ATA 21-70-00) → DMC-AMPEL360E-EWTW-021-070-00A-040A-D: Moisture and Air Contaminant Control — System Description</para></listItem>
+            <listItem><para>021-080 (ATA 21-80-00) → DMC-AMPEL360E-EWTW-021-080-00A-040A-D: ECS Monitoring, Diagnostics and Control Interfaces — Description [programme-controlled-extension]</para></listItem>
+            <listItem><para>021-090 (ATA 21-90-00) → DMC-AMPEL360E-EWTW-021-090-00A-040A-D: S1000D / CSDB Mapping and Traceability — Description [programme-controlled-publication-and-traceability-extension]</para></listItem>
           </randomList>
         </para>
       </levelledPara>
@@ -130,7 +130,7 @@
 
       <levelledPara id="desc-021-090-005">
         <title>Traceability and Digital Thread</title>
-        <para>Each data module in this CSDB node is traceable to the corresponding Q+ATLANTIDE impact analysis file via the ATLAS section code (020-000 through 020-090). The digital thread connects requirements (Q+ATLANTIDE impact study) through architecture (ATLAS classification) to technical publication (S1000D CSDB) and onwards to maintenance evidence and lifecycle records.</para>
+        <para>Each data module in this CSDB node is traceable to the corresponding Q+ATLANTIDE impact analysis file via the ATLAS section code (021-000 through 021-090). The digital thread connects requirements (Q+ATLANTIDE impact study) through architecture (ATLAS classification) to technical publication (S1000D CSDB) and onwards to maintenance evidence and lifecycle records.</para>
         <para>Traceability is maintained via:</para>
         <para>
           <randomList>
