@@ -403,7 +403,7 @@ stateDiagram-v2
 | Subsubject | 070 — APU Fire Protection, Shutdown and Safety Interlocks |
 | Sections | §0 – §22 (23 sections) |
 | Tables | 18 |
-| Mermaid diagrams | 2 (state machine 1 diagram) |
+| Mermaid diagrams | 2 (including 1 state machine diagram) |
 | LRUs documented | 10 |
 | Glossary entries | 10 |
 | Regulatory references | 9 |
