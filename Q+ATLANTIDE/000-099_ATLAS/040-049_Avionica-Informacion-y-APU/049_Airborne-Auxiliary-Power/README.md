@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Airborne Auxiliary Power — General | [049-000-Airborne-Auxiliary-Power-General.md](./049-000-Airborne-Auxiliary-Power-General.md) | active |
+| 10 | APU Architecture | [049-010-Auxiliary-Power-Unit-Architecture.md](./049-010-Auxiliary-Power-Unit-Architecture.md) | active |
+| 20 | APU Air Inlet and Exhaust | [049-020-APU-Air-Inlet-and-Exhaust.md](./049-020-APU-Air-Inlet-and-Exhaust.md) | active |
+| 30 | APU Fuel Supply and Control | [049-030-APU-Fuel-Supply-and-Control.md](./049-030-APU-Fuel-Supply-and-Control.md) | active |
+| 40 | APU Ignition, Starting and Generation | [049-040-APU-Ignition-Starting-and-Generation.md](./049-040-APU-Ignition-Starting-and-Generation.md) | active |
+| 50 | APU Pneumatic and Electrical Load Interfaces | [049-050-APU-Pneumatic-and-Electrical-Load-Interfaces.md](./049-050-APU-Pneumatic-and-Electrical-Load-Interfaces.md) | active |
+| 60 | APU Control, Indication and Warning | [049-060-APU-Control-Indication-and-Warning.md](./049-060-APU-Control-Indication-and-Warning.md) | active |
+| 70 | APU Fire Protection, Shutdown and Safety Interlocks | [049-070-APU-Fire-Protection-Shutdown-and-Safety-Interlocks.md](./049-070-APU-Fire-Protection-Shutdown-and-Safety-Interlocks.md) | active |
+| 80 | APU Monitoring, Diagnostics and Control Interfaces | [049-080-APU-Monitoring-Diagnostics-and-Control-Interfaces.md](./049-080-APU-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [049-090-S1000D-CSDB-Mapping-and-Traceability.md](./049-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `040-049` |
 | Section | `04` — Aviónica, Información & APU |
 | Subsection | `049` — Airborne Auxiliary Power |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`90` (active — 10 subsubjects defined) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |
