@@ -1,160 +1,506 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-037-000-VACUUM-GENERAL
-title: "ATLAS 030-039 · 03.037.000 — Vacuum General"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "037"
-subsection_title: "Vacuum"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-037-000"
+title: "037-000 — Vacuum — General"
+short_title: "ATA 37 General"
 subsubject: "000"
-subsubject_title: "Vacuum General"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+subsubject_title: "Vacuum — General"
+file_name: "037-000-Vacuum-General.md"
+sns_reference: "037-00"
+dmc_prefix: "DMC-AMPEL360E-EWTW-037-00"
+ata_chapter: 37
+aircraft: "AMPEL360e eWTW"
+project: "Q+ATLANTIDE"
+status: "DRAFT"
+keywords:
+  - "ATA 37"
+  - "Vacuum"
+  - "EVG"
+  - "Electric Vacuum Generator"
+  - "VWS"
+  - "Vacuum Waste System"
+  - "CS-25.1438"
+  - "eWTW"
+  - "no-gyro-vacuum"
+  - "lavatory"
+  - "VRV"
+  - "SOV"
+  - "EFV"
+  - "CMC"
+created: "2025-07-14"
+revised: "2025-07-14"
+revision: "0.1"
+author: "Q+ATLANTIDE ATLAS Working Group"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 037 · 000 — Vacuum General
+# 037-000 — Vacuum — General
+### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+**Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
+**Revision:** 0.1 — 2025-07-14  
+**Classification:** Q-AIR Primary
 
-Scope and overview of the vacuum system chapter per ATA 37. Covers all vacuum sources, distribution, regulation, and consumer interfaces installed in the aircraft.
+---
 
-## 2. Scope
+## §0 Hyperlink Policy
 
-- Defines the ATA 37 scope, vacuum system architecture, and design philosophy.
-- Lists applicable certification standards: CS-25 and relevant RTCA/EUROCAE standards.
-- Identifies Q-Division authority (Q-MECHANICS) and supporting divisions.
-- Not in scope: pneumatic system (ATA 36), or waste system (ATA 38).
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, AMC) are cited by document identifier only; no live URLs are embedded because regulatory document URLs are subject to change without notice. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-037-XX-YYYY-A`. Traceability links to CSDB are maintained in §14. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
-## 3. Footprint
+---
 
-| Metric | Value |
+## §1 Purpose
+
+This document provides the general overview and system-level description of ATA Chapter 37 — Vacuum — as applied to the **AMPEL360e eWTW** (Electric Wide-body Twin-engine Widebody) aircraft. It establishes:
+
+1. The rationale for the elimination of conventional vacuum-driven gyroscopic instruments on the eWTW.
+2. The residual role of vacuum in the aircraft: the **Vacuum Waste System (VWS)** serving lavatory toilets.
+3. The top-level architecture of the **Electric Vacuum Generator (EVG)** and its integration with ATA 38 (Water and Waste).
+4. Certification basis under CS-25.1438 and related articles.
+5. The document hierarchy for ATA 37, covering subsubjects 037-000 through 037-090.
+
+This document is authoritative for system boundary definition and interfaces for all lower-level ATA 37 documents.
+
+---
+
+## §2 Applicability
+
+| Item | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `037` — Vacuum |
-| Subsubject | `000` — Vacuum General |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/037_Vacuum/` |
-| Document | `037-000-Vacuum-General.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Aircraft Programme | AMPEL360e eWTW |
+| Variant | All variants (unless noted) |
+| ATA Chapter | 37 — Vacuum |
+| Document Tier | Level 2 — System Description Document (SDD) |
+| Effectivity | MSN 0001 onwards (TBD) |
+| Preceding Document | QATL-ATLAS-000099-ATLAS-030039-037-000 Rev 0.0 (scaffold) |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+This document applies to all systems that produce, distribute, regulate, or consume vacuum pressure aboard the AMPEL360e eWTW. It explicitly excludes vacuum associated with:
+- Pneumatic actuation (ATA 36)
+- Cabin pressurisation differential (ATA 21)
+- Fuel venting suction (ATA 28)
 
+---
 
-## 4. Interfaces Diagram
+## §3 System/Function Overview
+
+### 3.1 Conventional Aircraft Context
+
+In conventional transport aircraft, ATA 37 covers two primary vacuum applications:
+
+1. **Vacuum-driven gyroscopic instruments** — attitude indicator, directional gyro, and turn coordinator powered by engine-driven vacuum pumps (typically 4–5 in Hg suction). These provide mechanical backup to pitot-static and electrical flight instruments.
+2. **Vacuum autopilot servos** — used on older aircraft types for autopilot actuation where hydraulic/electric actuators were not fitted.
+3. **Vacuum waste systems** — galley/lavatory suction toilets on newer-generation narrow/widebodies.
+
+### 3.2 eWTW Vacuum Philosophy
+
+The AMPEL360e eWTW departs from this convention in two critical respects:
+
+| Conventional Use | eWTW Status | Reason |
+|---|---|---|
+| Vacuum gyroscopic instruments | **ELIMINATED** | ADIRU/IRS (ATA 34) provides all attitude and heading data digitally; no mechanical gyros fitted |
+| Vacuum autopilot servos | **ELIMINATED** | Full fly-by-wire (FBW) with electric actuators (ATA 27); no vacuum-powered control surfaces |
+| Vacuum waste system (toilets) | **RETAINED** | Primary and only use of ATA 37 on eWTW |
+
+The elimination of vacuum gyroscopes removes a significant maintenance burden (pump replacement, filter changes, suction gauge calibration) and eliminates a failure mode that has historically caused spatial disorientation accidents when vacuum supply failed undetected.
+
+### 3.3 Vacuum Waste System (VWS) Overview
+
+The VWS uses differential pressure (cabin pressure above ambient inside waste lines) to transport waste from toilet bowls to waste tanks:
+
+- **Electric Vacuum Generator (EVG):** motor-driven pump maintaining manifold vacuum of approximately −0.7 to −1.0 bar gauge <img src="https://img.shields.io/badge/TBD-red">
+- **Vacuum manifold:** distributes vacuum to all toilet connections
+- **Electric Flush Valve (EFV):** solenoid valve per toilet, initiates flush cycle
+- **Non-Return Valve (NRV/check valve):** per toilet connection, prevents backflow
+- **Vacuum Relief Valve (VRV):** limits maximum manifold vacuum
+- **Shutoff Valve (SOV):** isolates EVG from manifold for maintenance
+- **Waste tanks:** ATA 38 boundary (waste storage and ground servicing)
+
+---
+
+## §4 Scope
+
+### 4.1 In-Scope
+
+- All vacuum generation equipment (EVG units, motor controllers)
+- Vacuum manifold and distribution lines from EVG outlet to toilet inlet NRVs
+- Regulation and protection valves (VRV, SOV)
+- Monitoring and diagnostics (vacuum transducers, CMC interface, ECAM messages)
+- Interfaces with ATA 24 (electrical power), ATA 31 (indicating), ATA 38 (water and waste)
+
+### 4.2 Out-of-Scope
+
+- Waste tanks, waste servicing ports, and ground drain equipment (ATA 38)
+- Toilet bowl assemblies and seat mechanisms (ATA 25)
+- Cabin pressurisation (ATA 21)
+- Avionics air supply (ATA 21)
+
+### 4.3 Document Hierarchy
+
+| Subsubject | Title | Status |
+|---|---|---|
+| 037-000 | Vacuum — General | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-010 | Vacuum Sources | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-020 | Vacuum Distribution | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-030 | Vacuum Regulation and Shutoff | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-040 | Vacuum Pumps, Ejectors, Valves, and Lines | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-050 | Vacuum Consumers and System Interfaces | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-060 | Vacuum System Indication and Warning | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-070 | Vacuum Ground Service and Test Interfaces | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-080 | Vacuum Monitoring, Diagnostics, and Control Interfaces | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-090 | S1000D/CSDB Mapping and Traceability | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §5 Architecture Description
+
+### 5.1 System Architecture Summary
+
+The ATA 37 Vacuum system on the eWTW consists of a single-purpose subsystem: the Vacuum Waste System (VWS). There is no multi-purpose vacuum bus serving instruments or autopilot.
+
+```
+[AC Bus (ATA 24)] ──────► [EVG Motor Controller]
+                                    │
+                              [EVG-1 (Primary)]
+                              [EVG-2 (Standby)]
+                                    │
+                              [SOV (N/O solenoid)]
+                                    │
+                          [Vacuum Main Manifold]
+                         /          │           \
+                    [VRV]     [Pressure        [Branch lines]
+                  (relief)    Transducer]      /     │     \
+                                           [NRV-1] [NRV-2] [NRV-3]
+                                              │       │       │
+                                          [Toilet] [Toilet] [Toilet]
+                                              └───────┴───────┘
+                                                      │
+                                              [Waste Tank (ATA 38)]
+```
+
+### 5.2 Redundancy Strategy
+
+EVG redundancy: Two units (primary + standby). Automatic switchover on primary fault. <img src="https://img.shields.io/badge/TBD-red"> — exact switchover logic and timing TBD pending EVG supplier selection.
+
+---
+
+## §6 Functional Breakdown
+
+| Subsubject | Function | Key Components | Status |
+|---|---|---|---|
+| 037-000 | System overview and general | All ATA 37 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-010 | Vacuum generation | EVG-1, EVG-2, motor controllers | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-020 | Vacuum distribution | Manifold, branch lines, NRVs | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-030 | Regulation and shutoff | VRV, SOV, EVG controller, transducer | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-040 | Pumps, ejectors, valves, lines | EVG, EFV, NRV, VRV, SOV, lines | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 037-050 | Consumers and interfaces | Toilets (ATA 25), waste tanks (ATA 38) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-060 | Indication and warning | ECAM, CMC, crew alerts | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-070 | Ground service and test | Ground test port, drain panel | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-080 | Monitoring, diagnostics, control | AFDX, CMC, BITE | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-090 | S1000D/CSDB mapping | DMC assignments, data module codes | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    ATA24["ATA 24\nElectrical Power\n(AC Bus 115VAC)"]
+    ATA31["ATA 31\nIndicating/Recording\n(ECAM/CMC)"]
+    ATA38["ATA 38\nWater & Waste\n(Waste Tanks)"]
+    ATA25["ATA 25\nEquipment & Furnishings\n(Toilet Bowls)"]
+
+    EVG1["EVG-1\n(Primary)"]
+    EVG2["EVG-2\n(Standby)"]
+    SOV["SOV\n(Shutoff Valve)"]
+    Manifold["Vacuum Manifold\n(Main)"]
+    VRV["VRV\n(Relief Valve)"]
+    PT["Pressure\nTransducer"]
+    NRV1["NRV-1"]
+    NRV2["NRV-2"]
+    NRV3["NRV-3"]
+    T1["Toilet-1"]
+    T2["Toilet-2"]
+    T3["Toilet-3+"]
+    CMC["CMC\n(AFDX)"]
+
+    ATA24 -->|"115VAC"| EVG1
+    ATA24 -->|"115VAC"| EVG2
+    EVG1 --> SOV
+    EVG2 --> SOV
+    SOV --> Manifold
+    Manifold --> VRV
+    Manifold --> PT
+    PT -->|"vacuum signal"| CMC
+    CMC --> ATA31
+    Manifold --> NRV1 --> T1 --> ATA38
+    Manifold --> NRV2 --> T2 --> ATA38
+    Manifold --> NRV3 --> T3 --> ATA38
+    ATA25 -.->|"toilet bowl\nassembly"| T1
+    ATA25 -.->|"toilet bowl\nassembly"| T2
+    ATA25 -.->|"toilet bowl\nassembly"| T3
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["037 — Vacuum<br/>(ATA 37)"]:::subsection
-    THIS["037-000<br/>Vacuum General"]:::document
+    PWR["Power ON\n(AC Bus Available)"]
+    EVGEN["EVG Enable\n(Controller Command)"]
+    SPINUP["EVG Spins Up\n(Motor Speed Ramp)"]
+    VACBLD["Vacuum Builds\n(Manifold)"]
+    VACCHK{"Vacuum at\nSet-Point?\n(~−0.7 bar TBD)"}
+    CMCFLT["CMC Fault\n(LOW VAC warning)"]
+    HOLD["Steady-State Hold\n(EVG cycles on/off)"]
+    FLUSHD["Flush Demand\n(Passenger presses button)"]
+    EFVOPEN["EFV Opens\n(1.5s TBD)"]
+    WASTE["Waste Flows\n(differential pressure)"]
+    TANK["Waste Tank\n(ATA 38)"]
+    EFVCLOSE["EFV Closes\n(cycle complete)"]
+    READY["System Ready\nfor next flush"]
 
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
-
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    PWR --> EVGEN --> SPINUP --> VACBLD --> VACCHK
+    VACCHK -- "Yes" --> HOLD
+    VACCHK -- "No" --> CMCFLT
+    CMCFLT --> EVGEN
+    HOLD --> FLUSHD
+    FLUSHD --> EFVOPEN --> WASTE --> TANK
+    TANK --> EFVCLOSE --> READY --> HOLD
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    REQ["Requirements\n(CS-25.1438,\nCS-25.1301/1309)"]
+    SRD["System Requirements\nDocument (SRD)"]
+    SDD["System Description\nDocument (SDD)\n037-000"]
+    ICD["Interface Control\nDocuments (ICDs)\nATA 24/31/38"]
+    COMP["Component Specs\n(EVG, EFV, VRV, SOV)"]
+    VTP["V&T Plan\n(§17)"]
+    TEST["Test Reports\n(pull-down, leak,\nflush cycle)"]
+    CERT["CS-25 Certification\n(CS-25.1438)"]
+    EIS["Entry Into Service"]
+    MAINT["Maintenance\n(AMM/CMM)"]
 
-| Term / Acronym | Expansion | Definition |
+    REQ --> SRD --> SDD --> ICD --> COMP
+    SDD --> VTP --> TEST --> CERT --> EIS --> MAINT
+```
+
+---
+
+## §10 Interfaces
+
+| Interface | ATA Chapter | Direction | Signal/Medium | Notes |
+|---|---|---|---|---|
+| Electrical power supply | ATA 24 | In | 115 VAC <img src="https://img.shields.io/badge/TBD-red"> | Powers EVG motor controllers |
+| Ground electrical power | ATA 24 | In | 115 VAC GPU | EVG operable on ground power |
+| Waste tanks | ATA 38 | Out | Waste (liquid/solid) | Tanks receive toilet waste; serviced per ATA 38 |
+| Toilet bowl assemblies | ATA 25 | Bi | Mechanical, electrical | EFV flush valve integrated with toilet; flush button signal |
+| ECAM/SDAC | ATA 31 | Out | AFDX | Vacuum system status pages, crew alerts |
+| CMC/OMS | ATA 45 | Bi | AFDX | Fault codes, maintenance data, BITE |
+| Odour filter vent | ATA 21 | Out | Air (filtered) | Tank vent air exits via odour filter to cabin/ambient <img src="https://img.shields.io/badge/TBD-red"> |
+| Freeze protection | ATA 30 | In | Heat (electric trace) | Waste line freeze protection <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §11 Operating Modes
+
+| Mode | Description | EVG State | SOV | EFV |
+|---|---|---|---|---|
+| Normal — In-flight | EVG maintains manifold vacuum; toilets available | Running (cycling) | Open | Closed (ready) |
+| Normal — Ground | EVG on ground power; toilets available for boarding/deplaning | Running | Open | Closed (ready) |
+| Flush Active | Passenger flush cycle in progress | Running | Open | Open (1.5 s TBD) |
+| Standby (EVG-2 Active) | EVG-1 fault; EVG-2 auto-started | EVG-2 running | Open | Closed (ready) |
+| Maintenance Isolation | SOV closed; EVG off; ground drain open | Off | Closed | Closed |
+| Total Vacuum Loss | Both EVGs failed; no flush capability | Off | Closed | Locked closed |
+| Ground Drain | Waste tanks drained via ATA 38 service panel | Off | Closed | Closed |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+| Parameter | Sensor | Threshold | CMC Action | ECAM Message |
+|---|---|---|---|---|
+| Manifold vacuum | Pressure transducer | < −0.5 bar (low) <img src="https://img.shields.io/badge/TBD-red"> | Fault log, EVG-2 start | VAC SYS LO PRESS |
+| Manifold vacuum | Pressure transducer | > −1.2 bar (over-vacuum) | Fault log, VRV check advisory | VAC SYS HI PRESS |
+| EVG-1 motor current | Motor controller | Over-current / stall | Fault log, EVG-2 start | VAC GEN 1 FAULT |
+| EVG-2 motor current | Motor controller | Over-current / stall | Fault log, crew alert | VAC GEN 2 FAULT |
+| SOV position | Position sensor | Disagree | Fault log | VAC SOV FAULT |
+| EFV flush cycle time | Timer | > 5 s (stuck open) | Fault log, EFV close command | LAVATORY FAULT |
+| Waste tank level | Float/ultrasonic (ATA 38) | Full | Advisory via ATA 38 | WASTE TANK FULL |
+
+---
+
+## §13 Maintenance Concept
+
+| Task | Interval | Skill Level | Reference |
+|---|---|---|---|
+| EVG filter inspection/replacement | <img src="https://img.shields.io/badge/TBD-red"> | L2 Avionics/Mechanical | AMM 37-10-XX |
+| EVG oil replenishment (if oil-sealed) | <img src="https://img.shields.io/badge/TBD-red"> | L2 | AMM 37-10-XX |
+| NRV check valve functional test | Annual / C-check | L2 | AMM 37-20-XX |
+| VRV pop test | Annual / C-check | L2 | AMM 37-30-XX |
+| SOV open/close function test | Annual / C-check | L2 | AMM 37-30-XX |
+| Vacuum line visual inspection | Annual | L1 | AMM 37-20-XX |
+| Vacuum decay leak test | C-check | L2 | AMM 37-40-XX |
+| Odour filter replacement | <img src="https://img.shields.io/badge/TBD-red"> | L1 | AMM 38-XX-XX |
+| EFV flush cycle test | A-check | L1 | AMM 37-40-XX |
+| CMC fault log review | As required | L1 | AMM 45-XX-XX |
+
+---
+
+## §14 S1000D/CSDB Mapping
+
+| DMC Code | Title | Infocode |
 |---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+| DMC-AMPEL360E-EWTW-037-00-00-00A-040A-D | ATA 37 General Description | 040 (Description) |
+| DMC-AMPEL360E-EWTW-037-00-00-00A-200A-D | ATA 37 Maintenance Practices | 200 (Maintenance) |
+| DMC-AMPEL360E-EWTW-037-00-00-00A-520A-D | ATA 37 Fault Isolation | 520 (Fault Isolation) |
+| DMC-AMPEL360E-EWTW-037-10-00-00A-040A-D | Vacuum Sources Description | 040 |
+| DMC-AMPEL360E-EWTW-037-20-00-00A-040A-D | Vacuum Distribution Description | 040 |
+| DMC-AMPEL360E-EWTW-037-30-00-00A-040A-D | Vacuum Regulation Description | 040 |
+| DMC-AMPEL360E-EWTW-037-40-00-00A-040A-D | Pumps, Valves, Lines Description | 040 |
 
-### Domain-Specific Terms — ATA 37 Vacuum
+CSDB publication target: <img src="https://img.shields.io/badge/TBD-red">
 
-| Term / Acronym | Expansion | Definition |
+---
+
+## §15 Footprints
+
+| Component | Location | Volume (L) | Mass (kg) | Notes |
+|---|---|---|---|---|
+| EVG-1 | Aft service compartment <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | Primary unit |
+| EVG-2 | Aft service compartment <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | Standby unit |
+| Vacuum manifold | Bilge / lower sidewall <img src="https://img.shields.io/badge/TBD-red"> | — | <img src="https://img.shields.io/badge/TBD-red"> | Routing TBD |
+| SOV | Adjacent to EVG outlet | — | <img src="https://img.shields.io/badge/TBD-red"> | |
+| VRV | Manifold tee | — | <img src="https://img.shields.io/badge/TBD-red"> | |
+| Total ATA 37 estimated mass | — | — | <img src="https://img.shields.io/badge/TBD-red"> | |
+
+---
+
+## §16 Safety and Certification
+
+### 16.1 Certification Basis
+
+| Regulation | Topic | Applicability |
 |---|---|---|
-| **ADI** | Attitude Director Indicator | Gyroscopic instrument displaying aircraft pitch and bank attitude; vacuum-driven on legacy aircraft. |
-| **AI** | Artificial Horizon / Attitude Indicator | Gyroscopic instrument presenting pitch and bank attitude; vacuum-powered on older designs. |
-| **DG** | Directional Gyro | Vacuum-driven heading reference gyroscope; predecessor to remote-sensing HSI. |
-| **HSI** | Horizontal Situation Indicator | Compass rose display combining heading reference with course deviation indication; vacuum-driven on legacy systems. |
-| **in Hg** | Inches of Mercury | Non-SI pressure unit (1 in Hg ≈ 33.86 hPa) historically used to specify vacuum system suction requirements. |
-| **TCAS** | Traffic Collision Avoidance System | See ATA 34 glossary; noted here because vacuum-driven ADI/AI failure can affect pilot spatial orientation in TCAS RA scenarios. |
-| **VSI** | Vertical Speed Indicator | Instrument displaying rate of climb or descent; vacuum-operated on older unpressurised piston aircraft. |
-| **WAI** | Wing Anti-Ice | Thermal or bleed-air anti-icing system; vacuum system may provide suction for associated static ports when bleed is off. |
+| CS-25.1438 | Pressurisation and pneumatic systems | Applies to VWS vacuum system |
+| CS-25.1301 | Function and installation | All ATA 37 equipment |
+| CS-25.1309 | Equipment, systems and installations | EVG, EFV, VRV, SOV safety assessment |
+| AMC 25.831 | Ventilation (odour/contamination) | Waste tank vent and odour filter |
+| CS-25.869 | Fire protection (electrical equipment) | EVG motor fire risk |
+
+### 16.2 Eliminated Hazards (vs. Conventional ATA 37)
+
+| Conventional Hazard | eWTW Status | Reason |
+|---|---|---|
+| Vacuum gyro failure → spatial disorientation | **ELIMINATED** | No vacuum gyros; ADIRU/IRS provides attitude data (ATA 34) |
+| Vacuum pump oil contamination of instruments | **ELIMINATED** | No instrument vacuum supply |
+| Engine-driven vacuum pump seizure | **ELIMINATED** | No engine-driven vacuum pumps |
+
+### 16.3 Failure Effects (VWS Specific)
+
+| Failure | Effect | Severity | Mitigation |
+|---|---|---|---|
+| EVG-1 failure | Switchover to EVG-2; no flush loss | Minor | Auto-switchover + CMC alert |
+| EVG-1 + EVG-2 failure | No toilet flushing; passenger discomfort | Major (non-hazardous) | Crew advisory; dispatch with MEL |
+| SOV stuck closed | No vacuum to manifold | Major | SOV position monitoring; bypass TBD |
+| SOV stuck open | Cannot isolate for maintenance | Minor | Manual override TBD |
+| VRV fails to relieve | Over-vacuum; potential line damage | Hazardous | Secondary protection <img src="https://img.shields.io/badge/TBD-red"> |
+| EFV stuck open | Continuous waste flow; tank over-capacity | Major | Auto-close timer, CMC fault |
+| Line rupture | Vacuum loss; odour ingress | Major | SOV close; odour filter |
+
+---
+
+## §17 Verification and Validation
+
+| Test | Method | Acceptance Criteria | Status |
+|---|---|---|---|
+| EVG vacuum pull-down test | Rig test — sealed manifold | Achieve set-point vacuum in < X seconds TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Manifold vacuum accuracy | Transducer calibration bench test | ±0.02 bar vs. reference gauge | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| VRV pop test | Rig test — apply increasing vacuum | VRV opens at set-point ±5% TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| SOV open/close functional test | Ground test | Operates within < 2 s, position confirmed | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EFV flush cycle test | Ground test (water substitute) | Cycle completes within 1.5 s TBD; no leakage | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Vacuum decay leak test | System test — pressurised decay | < X mbar/min decay TBD at set vacuum | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| CMC fault flag test | Fault injection simulation | All defined fault codes logged correctly | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fill-level sensor (ATA 38) | Ground test — fill to threshold | Sensor triggers advisory at correct fill level | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Auto-switchover EVG-1 → EVG-2 | Fault injection (EVG-1 shutdown) | EVG-2 starts within X seconds TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §18 Glossary
+
+| Term | Definition |
+|---|---|
+| ADIRU | Air Data Inertial Reference Unit — digital replacement for vacuum-driven gyros |
+| ATA 37 | Air Transport Association chapter covering vacuum systems |
+| CMC | Central Maintenance Computer |
+| CS-25.1438 | EASA CS-25 airworthiness standard for pressurisation and pneumatic systems |
+| ECAM | Electronic Centralised Aircraft Monitor |
+| EFV | Electric Flush Valve — solenoid valve initiating toilet flush cycle |
+| EVG | Electric Vacuum Generator — motor-driven vacuum pump |
+| FBW | Fly-By-Wire — electric flight control system eliminating need for vacuum autopilot servos |
+| Freeze protection | Heating of waste lines to prevent freezing at altitude (ATA 30 interface) |
+| Gyroscopic instruments | Attitude/heading instruments driven by vacuum suction — **eliminated on eWTW** |
+| IRS | Inertial Reference System |
+| Manifold | Common distribution tube connecting EVG to all toilet branch lines |
+| MEL | Minimum Equipment List |
+| NRV | Non-Return Valve (check valve) — prevents backflow from waste line to manifold |
+| Odour filter | Activated-carbon filter on waste tank vent preventing odour release to cabin |
+| PTFE | Polytetrafluoroethylene — chemically resistant lining for vacuum waste lines |
+| SOV | Shutoff Valve — solenoid valve isolating EVG from manifold |
+| Vacuum transducer | Pressure sensor measuring manifold vacuum; feeds EVG controller and CMC |
+| VRV | Vacuum Relief Valve — limits maximum manifold vacuum to prevent over-pressure damage |
+| VWS | Vacuum Waste System |
+| Waste tank | Containment vessel for toilet waste; ATA 38 boundary |
+
+---
+
+## §19 Citations
+
+1. EASA CS-25 Amendment 27 — Certification Specifications for Large Aeroplanes, Book 1, CS-25.1438 "Pressurisation and Pneumatic Systems."
+2. EASA CS-25 Amendment 27 — CS-25.1301 "Function and Installation."
+3. EASA CS-25 Amendment 27 — CS-25.1309 "Equipment, Systems and Installations."
+4. EASA AMC 25.831 — Acceptable Means of Compliance for Ventilation.
+5. ATA iSpec 2200 Chapter 37 — Vacuum (reference chapter definition).
+6. S1000D Issue 5.0 — International Specification for Technical Publications.
+7. AMPEL360e eWTW System Requirements Document (SRD-eWTW-037) — <img src="https://img.shields.io/badge/TBD-red">
+
+---
+
+## §20 References
+
+| Document | Description | Status |
+|---|---|---|
+| QATL-ATLAS-000099-ATLAS-030039-037-010 | Vacuum Sources | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| QATL-ATLAS-000099-ATLAS-030039-037-020 | Vacuum Distribution | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| QATL-ATLAS-000099-ATLAS-030039-037-030 | Vacuum Regulation and Shutoff | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| QATL-ATLAS-000099-ATLAS-030039-037-040 | Vacuum Pumps, Ejectors, Valves, and Lines | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| QATL-ATLAS-000099-ATLAS-030039-038-000 | Water and Waste — General (ATA 38) | <img src="https://img.shields.io/badge/TBD-red"> |
+| QATL-ATLAS-000099-ATLAS-030039-024-000 | Electrical Power — General (ATA 24) | <img src="https://img.shields.io/badge/TBD-red"> |
+| QATL-ATLAS-000099-ATLAS-030039-034-000 | Navigation — General (ATA 34, ADIRU) | <img src="https://img.shields.io/badge/TBD-red"> |
+| AMM-AMPEL360E-037 | Aircraft Maintenance Manual Chapter 37 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §21 Open Issues
+
+| OI ID | Title | Status | Owner |
+|---|---|---|---|
+| OI-037-001 | EVG count and sizing (qty, rated vacuum, motor power) | <img src="https://img.shields.io/badge/TBD-red"> | Systems Engineering |
+| OI-037-002 | Dry-flush vs. vacuum toilet decision | <img src="https://img.shields.io/badge/TBD-red"> | Cabin Design / Marketing |
+| OI-037-003 | Waste tank material and capacity (CFRP vs. stainless steel) | <img src="https://img.shields.io/badge/TBD-red"> | Structures / ATA 38 |
+| OI-037-004 | Vacuum line routing through composite fuselage (penetration sealing) | <img src="https://img.shields.io/badge/TBD-red"> | Stress / Systems |
+| OI-037-005 | Freeze protection for waste lines (altitude, electric trace heating) | <img src="https://img.shields.io/badge/TBD-red"> | Thermal / ATA 30 |
+| OI-037-006 | Odour filter certification and replacement interval | <img src="https://img.shields.io/badge/TBD-red"> | Cabin Systems |
+| OI-037-007 | Ground waste drain panel location | <img src="https://img.shields.io/badge/TBD-red"> | Ground Ops / ATA 38 |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description |
+|---|---|---|---|
+| 0.0 | 2025-07-01 | Q+ATLANTIDE WG | Initial scaffold created |
+| 0.1 | 2025-07-14 | Q+ATLANTIDE WG | Full content draft — all §0–§22 populated |

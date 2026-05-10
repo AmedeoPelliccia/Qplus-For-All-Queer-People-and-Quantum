@@ -1,161 +1,453 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-037-020-VACUUM-DISTRIBUTION
-title: "ATLAS 030-039 · 03.037.020 — Vacuum Distribution"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "037"
-subsection_title: "Vacuum"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-037-020"
+title: "037-020 — Vacuum Distribution"
+short_title: "Vacuum Distribution"
 subsubject: "020"
 subsubject_title: "Vacuum Distribution"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "037-020-Vacuum-Distribution.md"
+sns_reference: "037-20"
+dmc_prefix: "DMC-AMPEL360E-EWTW-037-20"
+ata_chapter: 37
+aircraft: "AMPEL360e eWTW"
+project: "Q+ATLANTIDE"
+status: "DRAFT"
+keywords:
+  - "vacuum manifold"
+  - "distribution"
+  - "PTFE"
+  - "check valve"
+  - "NRV"
+  - "vacuum lines"
+  - "routing"
+  - "composite fuselage"
+  - "bonding"
+  - "branch lines"
+  - "ATA 37"
+created: "2025-07-14"
+revised: "2025-07-14"
+revision: "0.1"
+author: "Q+ATLANTIDE ATLAS Working Group"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 037 · 020 — Vacuum Distribution
+# 037-020 — Vacuum Distribution
+### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+**Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
+**Revision:** 0.1 — 2025-07-14  
+**Classification:** Q-AIR Primary
 
-Documents the vacuum manifold, distribution lines, check valves, and routing that connects vacuum sources to consumer instruments and equipment.
+---
 
-## 2. Scope
+## §0 Hyperlink Policy
 
-- Manifold design pressure and material specification.
-- Check valve installation to prevent back-flow from failed sources.
-- Line routing, support clamps, and protection from chafing.
-- Vacuum system isolation valve locations and control.
-- Not in scope: consumer instrument interfaces (subsubject 050).
+All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-AMPEL360E-EWTW-037-20-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline.
 
-## 3. Footprint
+---
 
-| Metric | Value |
+## §1 Purpose
+
+This document describes the vacuum distribution network for the AMPEL360e eWTW Vacuum Waste System (VWS). The distribution system connects the Electric Vacuum Generator (EVG) outlets to each toilet unit via a common manifold, branch lines, and individual non-return valves (NRVs).
+
+Objectives:
+1. Define the main manifold architecture, material, and routing.
+2. Define branch line sizing, material, routing, and connection types.
+3. Describe penetration sealing through the composite fuselage.
+4. Define bonding and grounding requirements for composite fuselage integration.
+5. Describe the location and function of NRVs at each toilet connection.
+6. Document open issues related to line routing, materials, and sizing.
+
+The distribution network operates entirely in the sub-atmospheric domain (below cabin ambient pressure). It is not a pressurised system in the over-ambient sense, but the differential across the manifold walls (cabin pressure outside, vacuum inside) must be accounted for in structural design.
+
+---
+
+## §2 Applicability
+
+| Item | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `037` — Vacuum |
-| Subsubject | `020` — Vacuum Distribution |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/037_Vacuum/` |
-| Document | `037-020-Vacuum-Distribution.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Aircraft Programme | AMPEL360e eWTW |
+| ATA Chapter / Subsubject | 37-020 — Vacuum Distribution |
+| Document Tier | Level 3 — Subsystem Description |
+| Effectivity | MSN 0001 onwards (TBD) |
+| Parent Document | QATL-ATLAS-000099-ATLAS-030039-037-000 |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System/Function Overview
 
-## 4. Interfaces Diagram
+### 3.1 Distribution Network Summary
+
+| Component | Material | Size | Status |
+|---|---|---|---|
+| Main vacuum manifold | PTFE-lined aluminium or 316L stainless | DN40 TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| Branch lines (manifold to toilet) | PTFE-lined aluminium or stainless | DN25 TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| NRV (check valve) at each toilet | Stainless body, PTFE seat, spring-loaded | DN25 TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| VRV tee fitting (manifold) | Stainless | Manifold body integrated | <img src="https://img.shields.io/badge/TBD-red"> |
+| Pressure transducer port | Stainless | 1/4" NPT TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| SOV connection port | Stainless | DN40 TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| Line joints | Swaged or compression-type | Per line size | <img src="https://img.shields.io/badge/TBD-red"> |
+| Fuselage penetration fittings | Composite-compatible sealant + through-bulkhead | Per line size | <img src="https://img.shields.io/badge/TBD-red"> |
+
+### 3.2 Routing Concept
+
+The main manifold runs longitudinally from the aft service compartment (EVG location) forward along the aircraft centreline or lower sidewall (bilge route preferred for gravity drainage of condensation). Branch lines rise from the manifold to each lavatory unit. Routing through composite fuselage frames requires sealed penetrations per structural and lightning protection requirements.
+
+### 3.3 Toilet Count and Branch Points
+
+| Zone | Toilets | Branch Points | Status |
+|---|---|---|---|
+| Aft lavatory | TBD | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| Mid lavatory | TBD | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| Fwd lavatory | TBD | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| Total | ~4–6 TBD | ~4–6 NRVs | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §4 Scope
+
+### 4.1 In-Scope
+
+- Main vacuum manifold (from SOV outlet to last toilet branch point)
+- Branch lines (from manifold tee to each toilet NRV inlet)
+- NRVs at each toilet connection
+- VRV tee on main manifold
+- Pressure transducer port on main manifold
+- Fuselage penetration fittings and sealing
+- Line supports, clamps, and vibration isolation
+- Bonding/grounding straps for composite fuselage integration
+
+### 4.2 Out-of-Scope
+
+- EVG and outlet check valves (→ 037-010)
+- SOV and VRV valves (→ 037-030)
+- EFV flush valves (→ 037-040)
+- Waste tank connections (→ ATA 38)
+- Toilet bowl assemblies (→ ATA 25)
+
+---
+
+## §5 Architecture Description
+
+### 5.1 Main Manifold
+
+The main manifold is a rigid tube running longitudinally through the lower fuselage. It collects vacuum from both EVG outlet check valves and distributes it to all branch lines. Design features:
+
+- **Material:** PTFE-lined aluminium (preferred for mass) or 316L stainless steel (preferred for chemical resistance). Final selection pending OI-037-003/004. <img src="https://img.shields.io/badge/TBD-red">
+- **Diameter:** DN40 (nominal 40mm bore) TBD — sized for simultaneous flush events without excessive pressure drop. <img src="https://img.shields.io/badge/TBD-red">
+- **Wall pressure rating:** Must withstand cabin–to–vacuum differential (max ~1.0 bar) × safety factor (×4 per CS-25.1438 TBD).
+- **Slope:** Minimum 1° slope toward low point drain to prevent condensate pooling. <img src="https://img.shields.io/badge/TBD-red">
+- **Thermal expansion:** Expansion loops or bellows at frame penetrations. <img src="https://img.shields.io/badge/TBD-red">
+
+### 5.2 Branch Lines
+
+Each branch line connects a manifold tee to a toilet NRV:
+
+- **Material:** PTFE-lined aluminium or stainless TBD. <img src="https://img.shields.io/badge/TBD-red">
+- **Diameter:** DN25 (nominal 25mm bore) TBD per toilet. <img src="https://img.shields.io/badge/TBD-red">
+- **Routing:** Routed upward from manifold bilge level to toilet bowl at floor level; shortest practical path to minimise volume and pressure drop.
+- **Slope:** Drain-back slope toward manifold where possible.
+
+### 5.3 Non-Return Valves (NRVs)
+
+One NRV is installed on each branch line immediately upstream of the toilet EFV:
+
+- **Function:** Prevents backflow of waste/odour from waste line to manifold when adjacent toilets flush.
+- **Type:** Spring-loaded, disc-type check valve.
+- **Material:** 316L stainless steel body; PTFE or EPDM seat; stainless spring.
+- **Cracking pressure:** < 5 mbar TBD (opens easily under vacuum differential).
+- **Seal pressure:** Positive seal against reverse flow at manifold operating vacuum.
+
+### 5.4 Composite Fuselage Penetrations
+
+The eWTW uses a composite (CFRP) fuselage. Vacuum line penetrations require:
+- **Electrically isolated through-fittings** to prevent galvanic corrosion between metal lines and CFRP.
+- **Sealant** per materials specification TBD (PRC-1422 or equivalent) to maintain cabin pressurisation barrier.
+- **Lightning protection:** Lines bonded at each frame crossing to structure via bonding jumpers; no unintended current paths through vacuum lines.
+- **Structural approval:** Each penetration requires Stress review per CS-25 structure TBD.
+
+### 5.5 Bonding and Grounding
+
+In a composite fuselage, explicit bonding paths are required:
+- Each metallic manifold/line segment bonded to aircraft earth via AWG 12 or heavier bonding strap at maximum 1.0 m intervals. <img src="https://img.shields.io/badge/TBD-red">
+- Resistance: < 2.5 mΩ from any fitting to aircraft structural earth. <img src="https://img.shields.io/badge/TBD-red">
+
+---
+
+## §6 Functional Breakdown
+
+| Function | Component | Material | Status |
+|---|---|---|---|
+| Vacuum distribution (main) | Main manifold | PTFE-lined Al or 316L SS | <img src="https://img.shields.io/badge/TBD-red"> |
+| Vacuum distribution (branch) | Branch lines | PTFE-lined Al or 316L SS | <img src="https://img.shields.io/badge/TBD-red"> |
+| Backflow prevention | NRV per toilet | 316L SS / PTFE seat | <img src="https://img.shields.io/badge/TBD-red"> |
+| Relief protection | VRV tee (manifold) | SS spring-loaded | → 037-030 |
+| Vacuum monitoring | Pressure transducer port | Manifold-integrated | → 037-030 |
+| Line support | Clamps, hangers | Composite-compatible | <img src="https://img.shields.io/badge/TBD-red"> |
+| Penetration sealing | Through-bulkhead fittings | Composite + sealant | <img src="https://img.shields.io/badge/TBD-red"> |
+| Condensate drainage | Low-point drain point | Stainless | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    EVG1["EVG-1\n(Primary)"]
+    EVG2["EVG-2\n(Standby)"]
+    SOV["SOV\n(Shutoff Valve)"]
+    MAINMAN["Main Vacuum Manifold\n(longitudinal, lower fuselage)"]
+    PT["Pressure\nTransducer"]
+    VRV["VRV\n(Relief Valve)"]
+    ATM["Atmosphere\n(via VRV)"]
+    TEE1["Manifold Tee 1"]
+    TEE2["Manifold Tee 2"]
+    TEE3["Manifold Tee 3"]
+    NRV1["NRV-1\n(check valve)"]
+    NRV2["NRV-2\n(check valve)"]
+    NRV3["NRV-3\n(check valve)"]
+    T1["Toilet 1\n(EFV + bowl)"]
+    T2["Toilet 2\n(EFV + bowl)"]
+    T3["Toilet 3+\n(EFV + bowl)"]
+    WT["Waste Tank\n(ATA 38)"]
+
+    EVG1 --> SOV
+    EVG2 --> SOV
+    SOV --> MAINMAN
+    MAINMAN --> PT
+    MAINMAN --> VRV --> ATM
+    MAINMAN --> TEE1 --> NRV1 --> T1 --> WT
+    MAINMAN --> TEE2 --> NRV2 --> T2 --> WT
+    MAINMAN --> TEE3 --> NRV3 --> T3 --> WT
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["037 — Vacuum<br/>(ATA 37)"]:::subsection
-    THIS["037-020<br/>Vacuum Distribution"]:::document
+    MCHARGED["Manifold Charged\n(at operating vacuum)"]
+    FLREQ["Flush Request\n(passenger button)"]
+    EFVSIG["EFV Open Signal\n(→ 037-040)"]
+    NRVOPEN["NRV Opens\n(differential pressure)"]
+    WASTEFLOW["Waste Flows\n(bowl → branch line)"]
+    SEPTANK["Waste to Tank\n(ATA 38)"]
+    EFVCL["EFV Closes\n(1.5s TBD timer)"]
+    NRVCL["NRV Closes\n(spring return)"]
+    PDREC["Pressure Drop\nRecovery\n(EVG compensates)"]
+    READY["System Ready"]
 
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
+    MCHARGED --> FLREQ --> EFVSIG --> NRVOPEN --> WASTEFLOW --> SEPTANK
+    SEPTANK --> EFVCL --> NRVCL --> PDREC --> READY --> MCHARGED
 
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    MCHARGED -->|"parallel path"| PDCHK{"Manifold pressure\ndrop detected?"}
+    PDCHK -- "Yes" --> EVGSPEEDUP["EVG Speed Up\n(→ 037-010)"]
+    EVGSPEEDUP --> MCHARGED
+    PDCHK -- "No" --> READY
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    TOQTY["Toilet Quantity\n(cabin layout TBD)"]
+    LINESIZE["Line Sizing Analysis\n(pressure drop, simultaneous flush)"]
+    MATSEL["Material Selection\n(PTFE-Al vs SS — OI-037-003)"]
+    ROUTEAPPR["Routing Approval\n(Structures, Lightning Prot.)"]
+    COMPSPEC["Component Specs\n(NRV, manifold, fittings)"]
+    VTP["V&T Plan\n(§17)"]
+    LEAKTEST["Leak Test\n(vacuum decay)"]
+    CERT["CS-25.1438\nCompliance"]
+    AMM["AMM 37-20\n(Maintenance)"]
 
-| Term / Acronym | Expansion | Definition |
-|---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+    TOQTY --> LINESIZE --> MATSEL --> ROUTEAPPR --> COMPSPEC --> VTP
+    VTP --> LEAKTEST --> CERT --> AMM
+```
 
-### Domain-Specific Terms — ATA 37 Vacuum
+---
 
-| Term / Acronym | Expansion | Definition |
-|---|---|---|
-| **ADI** | Attitude Director Indicator | Gyroscopic instrument displaying aircraft pitch and bank attitude; vacuum-driven on legacy aircraft. |
-| **AI** | Artificial Horizon / Attitude Indicator | Gyroscopic instrument presenting pitch and bank attitude; vacuum-powered on older designs. |
-| **DG** | Directional Gyro | Vacuum-driven heading reference gyroscope; predecessor to remote-sensing HSI. |
-| **HSI** | Horizontal Situation Indicator | Compass rose display combining heading reference with course deviation indication; vacuum-driven on legacy systems. |
-| **in Hg** | Inches of Mercury | Non-SI pressure unit (1 in Hg ≈ 33.86 hPa) historically used to specify vacuum system suction requirements. |
-| **TCAS** | Traffic Collision Avoidance System | See ATA 34 glossary; noted here because vacuum-driven ADI/AI failure can affect pilot spatial orientation in TCAS RA scenarios. |
-| **VSI** | Vertical Speed Indicator | Instrument displaying rate of climb or descent; vacuum-operated on older unpressurised piston aircraft. |
-| **WAI** | Wing Anti-Ice | Thermal or bleed-air anti-icing system; vacuum system may provide suction for associated static ports when bleed is off. |
+## §10 Interfaces
+
+| Interface | Direction | Signal/Medium | ATA Chapter | Notes |
+|---|---|---|---|---|
+| SOV outlet | In | Vacuum (air) | ATA 37-030 | Main manifold inlet |
+| VRV connection | Bi | Vacuum (air, relief) | ATA 37-030 | Relief tee on manifold |
+| Pressure transducer | Out | Manifold vacuum signal | ATA 37-030 | Feedback to EVG controller |
+| NRV outlets | Out | Vacuum (to toilet) | ATA 37-040 | To EFV inlet |
+| Waste outlet (post-EFV) | Out | Waste (liquid/solid) | ATA 38 | Waste lines to tank |
+| Fuselage structure | Physical | Mechanical attachment | ATA 53 | Clamps, brackets, penetrations |
+| Electrical bonding | Physical | Bonding strap | ATA 24 | Earth continuity |
+| Freeze protection heaters | In | Heat (electric trace) | ATA 30 | Manifold segments at risk of freezing |
+
+---
+
+## §11 Operating Modes
+
+| Mode | Manifold State | NRV State | Notes |
+|---|---|---|---|
+| Normal — charged | −0.7 bar TBD | Closed (spring) | Ready for flush demand |
+| Flush active (toilet N) | Slight pressure rise at NRV-N | NRV-N open | Other NRVs remain closed |
+| EVG-1 failure | Manifold drains slowly | Closed | EVG-2 auto-starts; NRVs remain closed |
+| Dual EVG failure | Manifold returns to ambient | Closed | No flush possible |
+| VRV active | Manifold at relief pressure | Closed | Over-vacuum condition; VRV bleeds |
+| Maintenance isolation | Ambient | Closed | SOV closed; manifold at cabin pressure |
+| Ground drain | Ambient | Closed | Low-point drain opened (ATA 38) |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+| Parameter | Sensor | Location | CMC Fault | Threshold |
+|---|---|---|---|---|
+| Manifold vacuum | Pressure transducer | Main manifold | F037-2001 | < −0.5 bar TBD (low vacuum) |
+| Manifold vacuum | Pressure transducer | Main manifold | F037-2002 | > −1.1 bar TBD (over-vacuum) |
+| NRV stuck open | Inferred (continuous pressure drop) | Via transducer | F037-2010 | Pressure drop > TBD mbar/min without flush |
+| Line leak | Vacuum decay test | Ground test only | — | Decay > TBD mbar/min |
+| Condensate level | Low-point sensor TBD | Manifold low point | F037-2020 | Level > TBD (advisory) |
+
+---
+
+## §13 Maintenance Concept
+
+| Task | Interval | Level | Reference |
+|---|---|---|---|
+| Manifold visual inspection | A-check | L1 | AMM 37-20-01 |
+| Branch line visual inspection | A-check | L1 | AMM 37-20-02 |
+| NRV functional test (per toilet) | Annual / C-check | L2 | AMM 37-20-03 |
+| NRV cleaning and inspection | C-check | L2 | AMM 37-20-04 |
+| NRV replacement | On-condition / TBD FH | L2 | AMM 37-20-05 |
+| Vacuum decay leak test (system) | C-check | L2 | AMM 37-20-06 |
+| Bonding resistance check | C-check | L2 | AMM 37-20-07 |
+| Penetration seal inspection | Annual | L2 | AMM 37-20-08 |
+| Condensate low-point drain | A-check or as needed | L1 | AMM 37-20-09 |
+| Freeze protection heater check | Annual | L2 | AMM 30-XX-XX |
+
+---
+
+## §14 S1000D/CSDB Mapping
+
+| DMC Code | Title | Infocode | Status |
+|---|---|---|---|
+| DMC-AMPEL360E-EWTW-037-20-00-00A-040A-D | Vacuum Distribution Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-AMPEL360E-EWTW-037-20-00-00A-200A-D | Manifold Removal and Installation | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-AMPEL360E-EWTW-037-20-00-00A-300A-D | Line and NRV Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-AMPEL360E-EWTW-037-20-00-00A-400A-D | Vacuum Decay Leak Test | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-AMPEL360E-EWTW-037-20-00-00A-520A-D | Distribution Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §15 Footprints
+
+| Component | Location | Length / Volume | Mass (kg) | Notes |
+|---|---|---|---|---|
+| Main manifold | Lower fuselage centreline / bilge | TBD m | <img src="https://img.shields.io/badge/TBD-red"> | Longitudinal run, EVG to fwd lav |
+| Branch line (per toilet) | Manifold tee to toilet | TBD m each | <img src="https://img.shields.io/badge/TBD-red"> | Shorter = better for pressure drop |
+| NRV (per toilet) | At toilet EFV inlet | ~100mm inline | < 0.3 kg TBD | One per toilet |
+| Manifold clamps/hangers | Every 500mm TBD | — | < 0.1 kg each | Composite-compatible clamps |
+| Penetration fittings | Per frame crossing | Inline | < 0.2 kg each | Sealed, electrically isolated |
+| Bonding straps | Every 1.0m TBD | — | < 0.05 kg each | AWG 12 minimum |
+
+---
+
+## §16 Safety and Certification
+
+### 16.1 Applicable Regulations
+
+| Regulation | Application |
+|---|---|
+| CS-25.1438 | Vacuum system line and manifold structural integrity |
+| CS-25.1301 | Distribution equipment function and installation |
+| CS-25.1309 | Failure effects — manifold/line failures |
+| CS-25.869 | No flammable fluid (waste — but CS-25.1438 covers system containment) |
+| CS-25 Subpart D (Structural) | Fuselage penetration structural approval |
+| CS-25.581 | Lightning protection — composite fuselage penetrations |
+
+### 16.2 Failure Effects Table
+
+| Failure | Effect | Severity | Detection | Mitigation |
+|---|---|---|---|---|
+| Main manifold rupture | Full vacuum loss; odour ingress | Major | CMC vacuum low; crew reports | SOV close; odour containment |
+| Branch line rupture (one toilet) | That toilet unusable; odour local | Minor | CMC NRV anomaly | NRV closes; other toilets unaffected |
+| NRV stuck open | Backflow of odour/waste to manifold | Major | CMC pressure anomaly | Replacement NRV on-condition |
+| NRV stuck closed | That toilet unusable | Minor | Failed flush cycle CMC alert | Removal of NRV; toilet out of service |
+| Penetration seal leak | Pressurisation loss path; odour to cabin | Minor to Major | Cabin crew report; CMC | Structural seal inspection |
+
+---
+
+## §17 Verification and Validation
+
+| Test ID | Description | Method | Acceptance Criterion | Status |
+|---|---|---|---|---|
+| V037-020-001 | Manifold vacuum hold test | Sealed manifold, pump to set-point, monitor | < TBD mbar/min decay at −0.7 bar | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-020-002 | Branch line pressure drop test | Flow simulation, simultaneous flush | Pressure drop < TBD mbar per flush cycle | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-020-003 | NRV cracking pressure test | Apply increasing differential, note open point | Opens at < 5 mbar TBD differential | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-020-004 | NRV backflow seal test | Reverse pressure, check leakage | Zero leakage at TBD bar reverse | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-020-005 | Penetration seal leak test | Pressurised soap bubble / decay test | Zero visible leakage; decay < TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-020-006 | Bonding resistance measurement | Milliohm meter manifold-to-earth | < 2.5 mΩ at all test points | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-020-007 | Thermal cycle manifold integrity | −55°C to +70°C cycle × TBD cycles | No leakage; no distortion | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-020-008 | Simultaneous multi-toilet flush | Ground integration test | All toilets flush; vacuum recovers | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §18 Glossary
+
+| Term | Definition |
+|---|---|
+| Branch line | Vacuum tube connecting main manifold tee to individual toilet NRV |
+| CFRP | Carbon Fibre Reinforced Polymer — eWTW fuselage primary material |
+| Cracking pressure | Minimum differential pressure required to open the NRV |
+| DN | Diamètre Nominal — European pipe nominal bore designation (e.g. DN25 = 25mm bore) |
+| EPDM | Ethylene Propylene Diene Monomer — rubber used for valve seats in vacuum service |
+| Main manifold | Primary longitudinal vacuum distribution tube from SOV to all branch tees |
+| NRV | Non-Return Valve — spring-loaded check valve preventing backflow at toilet connection |
+| PTFE | Polytetrafluoroethylene — chemically resistant lining/material for vacuum waste tubes |
+| Swaged joint | Permanent tube joint formed by deforming a fitting onto the tube end |
+| Through-bulkhead fitting | Sealed connector passing through a structural frame or bulkhead |
+| Vacuum decay test | Test method where a sealed system is evacuated and monitored for pressure rise (leakage) |
+| VWS | Vacuum Waste System |
+
+---
+
+## §19 Citations
+
+1. EASA CS-25 Amendment 27 — CS-25.1438 "Pressurisation and Pneumatic Systems."
+2. EASA CS-25 Amendment 27 — CS-25.1309 "Equipment, Systems and Installations."
+3. EASA CS-25 Amendment 27 — CS-25.581 "Lightning Protection."
+4. ATA iSpec 2200 Chapter 37 — Vacuum.
+5. AMPEL360e eWTW Composite Fuselage Penetration Standard — <img src="https://img.shields.io/badge/TBD-red">
+6. AMPEL360e eWTW Lightning Protection Plan — <img src="https://img.shields.io/badge/TBD-red">
+
+---
+
+## §20 References
+
+| Document | Description |
+|---|---|
+| QATL-ATLAS-000099-ATLAS-030039-037-000 | ATA 37 General |
+| QATL-ATLAS-000099-ATLAS-030039-037-010 | Vacuum Sources (EVG) |
+| QATL-ATLAS-000099-ATLAS-030039-037-030 | Vacuum Regulation and Shutoff |
+| QATL-ATLAS-000099-ATLAS-030039-037-040 | Pumps, Ejectors, Valves, and Lines |
+| QATL-ATLAS-000099-ATLAS-030039-038-000 | Water and Waste General (ATA 38) |
+| AMM-AMPEL360E-037-20 | Aircraft Maintenance Manual Chapter 37-20 |
+| QATL-ATLAS-000099-ATLAS-030039-053-000 | Fuselage Structure General (ATA 53) |
+
+---
+
+## §21 Open Issues
+
+| OI ID | Title | Impact | Status |
+|---|---|---|---|
+| OI-037-003 | Waste tank material and capacity (CFRP vs. stainless) | Affects line material compatibility | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-037-004 | Vacuum line routing through composite fuselage | Penetration sealing, lightning protection, structural approval | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-037-005 | Freeze protection for waste lines | Manifold and branch line heat trace routing | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-037-002 | Dry-flush vs. vacuum toilet decision | If dry-flush: no distribution network required | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description |
+|---|---|---|---|
+| 0.0 | 2025-07-01 | Q+ATLANTIDE WG | Initial scaffold |
+| 0.1 | 2025-07-14 | Q+ATLANTIDE WG | Full content draft — all §0–§22 populated |

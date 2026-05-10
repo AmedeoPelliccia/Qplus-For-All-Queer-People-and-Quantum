@@ -1,161 +1,451 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-037-010-VACUUM-SOURCES
-title: "ATLAS 030-039 · 03.037.010 — Vacuum Sources"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "037"
-subsection_title: "Vacuum"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-037-010"
+title: "037-010 — Vacuum Sources"
+short_title: "Vacuum Sources"
 subsubject: "010"
 subsubject_title: "Vacuum Sources"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "037-010-Vacuum-Sources.md"
+sns_reference: "037-10"
+dmc_prefix: "DMC-AMPEL360E-EWTW-037-10"
+ata_chapter: 37
+aircraft: "AMPEL360e eWTW"
+project: "Q+ATLANTIDE"
+status: "DRAFT"
+keywords:
+  - "EVG"
+  - "Electric Vacuum Generator"
+  - "vacuum pump"
+  - "rotary vane"
+  - "AC bus"
+  - "vacuum source"
+  - "motor controller"
+  - "standby"
+  - "auto-switchover"
+  - "ATA 37"
+created: "2025-07-14"
+revised: "2025-07-14"
+revision: "0.1"
+author: "Q+ATLANTIDE ATLAS Working Group"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 037 · 010 — Vacuum Sources
+# 037-010 — Vacuum Sources
+### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+**Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
+**Revision:** 0.1 — 2025-07-14  
+**Classification:** Q-AIR Primary
 
-Documents vacuum pumps (engine-driven and electric), venturi tubes, and ejectors that generate the required vacuum levels for system consumers.
+---
 
-## 2. Scope
+## §0 Hyperlink Policy
 
-- Engine-driven vacuum pump specifications, drive pad interface, and failure modes.
-- Electric vacuum pump installation and power source interface.
-- Venturi tube installation and airspeed dependency.
-- Vacuum source selection and automatic switchover logic.
-- Not in scope: vacuum distribution (subsubject 020) or consumer equipment.
+All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-AMPEL360E-EWTW-037-10-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline. Traceability to CSDB maintained in §14.
 
-## 3. Footprint
+---
 
-| Metric | Value |
+## §1 Purpose
+
+This document describes all vacuum source equipment for the AMPEL360e eWTW Vacuum Waste System (VWS). The only vacuum sources in the eWTW ATA 37 system are **Electric Vacuum Generators (EVGs)** — motor-driven vacuum pumps powered from the aircraft electrical network.
+
+Key objectives:
+1. Define the EVG architecture (primary + standby), power supply, operating parameters, and location.
+2. Confirm the absence of legacy vacuum source types (engine-driven pumps, venturi ejectors, bleed-air ejectors) and justify their elimination.
+3. Describe the EVG motor controller logic including auto-switchover.
+4. Document all open issues related to EVG sizing and selection.
+
+No engine-driven vacuum pumps are fitted. No bleed-air or pneumatic ejectors are fitted (eWTW has no bleed air extraction — fully electric architecture). No venturi-type vacuum generators are fitted.
+
+---
+
+## §2 Applicability
+
+| Item | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `037` — Vacuum |
-| Subsubject | `010` — Vacuum Sources |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/037_Vacuum/` |
-| Document | `037-010-Vacuum-Sources.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Aircraft Programme | AMPEL360e eWTW |
+| ATA Chapter / Subsubject | 37-010 — Vacuum Sources |
+| Document Tier | Level 3 — Subsystem Description |
+| Effectivity | MSN 0001 onwards (TBD) |
+| Parent Document | QATL-ATLAS-000099-ATLAS-030039-037-000 |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System/Function Overview
 
-## 4. Interfaces Diagram
+### 3.1 EVG Role in eWTW
+
+The EVG is the sole means of generating the sub-atmospheric (vacuum) pressure required to operate the Vacuum Waste System. The EVG draws air from the vacuum manifold, reducing manifold pressure to approximately −0.7 to −1.0 bar gauge <img src="https://img.shields.io/badge/TBD-red">, creating the differential that drives waste from toilet bowls to waste tanks.
+
+### 3.2 EVG Parameter Summary
+
+| Parameter | Value | Status |
+|---|---|---|
+| EVG quantity | 2 (primary + standby) | <img src="https://img.shields.io/badge/TBD-red"> |
+| EVG type | Rotary vane or diaphragm pump | <img src="https://img.shields.io/badge/TBD-red"> |
+| Motor type | Brushless DC or AC induction | <img src="https://img.shields.io/badge/TBD-red"> |
+| Rated operating vacuum | −0.7 to −1.0 bar gauge | <img src="https://img.shields.io/badge/TBD-red"> |
+| Max operating vacuum (VRV limit) | −1.2 bar gauge | <img src="https://img.shields.io/badge/TBD-red"> |
+| Motor input power | TBD kW | <img src="https://img.shields.io/badge/TBD-red"> |
+| Power supply | 115 VAC (AC Bus 1 / AC Bus 2) | <img src="https://img.shields.io/badge/TBD-red"> |
+| Location | Aft service compartment | <img src="https://img.shields.io/badge/TBD-red"> |
+| Mass per unit | TBD kg | <img src="https://img.shields.io/badge/TBD-red"> |
+| Operating life | TBD flight hours / TBD cycles | <img src="https://img.shields.io/badge/TBD-red"> |
+| Cooling | Self-cooled / forced air TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| Lubrication | Oil-sealed or oil-free TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| Battery backup for EVG | TBD — likely not required (non-essential system) | <img src="https://img.shields.io/badge/TBD-red"> |
+
+### 3.3 Eliminated Vacuum Source Types
+
+| Source Type | Conventional Aircraft | eWTW | Justification |
+|---|---|---|---|
+| Engine-driven vacuum pump | Yes (Piper, Cessna, some turboprops) | **NO** | eWTW has no accessory gearbox-driven pumps |
+| Bleed-air ejector/venturi | Some business jets | **NO** | eWTW has no bleed air (fully electric) |
+| Pneumatic engine bleed | No (ATA 36 not applicable) | **NO** | No engine bleed extraction on eWTW |
+| RAM air venturi | Some light aircraft | **NO** | Not applicable to transport category |
+| Hydraulic vacuum pump | Rare | **NO** | Not fitted on eWTW |
+
+---
+
+## §4 Scope
+
+### 4.1 In-Scope
+
+- EVG-1 (primary) unit and motor controller
+- EVG-2 (standby) unit and motor controller
+- Power supply connections from AC buses
+- EVG outlet check valve (prevents backflow through idle EVG)
+- EVG controller logic (set-point, auto-switchover, speed modulation)
+- Ground power operation of EVG
+
+### 4.2 Out-of-Scope
+
+- Vacuum manifold downstream of EVG outlet (→ 037-020)
+- Regulation and shutoff valves (→ 037-030)
+- EVG exhaust air path (routed to ambient or filter; TBD)
+- Waste tanks and servicing (→ ATA 38)
+
+---
+
+## §5 Architecture Description
+
+### 5.1 Dual-EVG Architecture
+
+The VWS uses a **primary/standby EVG architecture**:
+
+- **EVG-1 (Primary):** Normally running during flight and ground ops. Powered from AC Bus 1 (TBD). Motor controller governs speed to maintain manifold vacuum at set-point.
+- **EVG-2 (Standby):** Normally in standby (off or slow spin). Powered from AC Bus 2 (TBD — cross-bus connection TBD). Auto-starts on EVG-1 fault or manifold low-vacuum condition.
+
+Each EVG has a dedicated **outlet check valve** to prevent recirculation of air back through the idle unit when its counterpart is running.
+
+### 5.2 EVG Motor Controller Logic
+
+The EVG Motor Controller (EVGMC) performs:
+1. **Speed regulation:** PID control of motor speed to maintain manifold vacuum transducer reading at the set-point (~−0.7 bar TBD).
+2. **Soft-start:** Ramp-up of motor speed on start to limit inrush current.
+3. **Over-current protection:** Trips EVG on sustained over-current; sends fault to CMC.
+4. **Auto-switchover:** If EVG-1 motor current fault, thermal fault, or manifold vacuum remains below threshold for > X seconds TBD → commands EVG-2 start.
+5. **AFDX reporting:** Outputs motor speed, current draw, thermal status, and fault flags to CMC via AFDX network.
+
+### 5.3 Ground Operation
+
+The EVG operates identically on ground power (GPU) as in-flight. Ground operation supports:
+- Pre-flight toilet servicing
+- Passenger boarding/deplaning lavatory use
+- Maintenance functional testing
+
+Battery backup for the EVG is assessed as not required since the VWS is a non-safety-critical system. <img src="https://img.shields.io/badge/TBD-red"> — subject to safety assessment per CS-25.1309.
+
+### 5.4 EVG Exhaust
+
+The EVG pulls air from the vacuum manifold and exhausts it to: <img src="https://img.shields.io/badge/TBD-red">  
+Options under evaluation:
+- Direct exhaust to ambient (external vent port — preferred for contamination control)
+- Exhaust through odour filter to bilge
+- Exhaust to cargo bay ventilation
+
+---
+
+## §6 Functional Breakdown
+
+| Function | Component | Parameters | Notes |
+|---|---|---|---|
+| Vacuum generation — primary | EVG-1 | −0.7 to −1.0 bar TBD | Motor-driven pump |
+| Vacuum generation — standby | EVG-2 | −0.7 to −1.0 bar TBD | Auto-start on EVG-1 fault |
+| Motor speed control | EVGMC-1 / EVGMC-2 | PID, soft-start | One controller per EVG |
+| Backflow prevention | Outlet NRV per EVG | Spring-loaded check | Prevents recirculation |
+| Power supply switching | AC Bus contactors (ATA 24) | 115 VAC TBD | Cross-bus TBD |
+| Fault detection | EVGMC, motor current sensor | Over-current, thermal | AFDX to CMC |
+| Auto-switchover | EVGMC logic | < X s TBD delay | CMC alert on switchover |
+| Ground operation | GPU connection (ATA 24) | Same as in-flight | No special ground mode |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    GPU["Ground Power Unit\n(ATA 24)"]
+    ACB1["AC Bus 1\n115VAC"]
+    ACB2["AC Bus 2\n115VAC"]
+    EVGMC1["EVG Motor\nController 1\n(EVGMC-1)"]
+    EVGMC2["EVG Motor\nController 2\n(EVGMC-2)"]
+    EVG1["EVG-1\n(Primary Pump)"]
+    EVG2["EVG-2\n(Standby Pump)"]
+    NRV_EVG1["Outlet NRV-1\n(check valve)"]
+    NRV_EVG2["Outlet NRV-2\n(check valve)"]
+    Manifold["Vacuum Manifold\n(→ 037-020)"]
+    CMC["CMC / AFDX\n(ATA 45)"]
+    PT["Pressure\nTransducer"]
+
+    GPU -->|"115VAC on ground"| ACB1
+    ACB1 --> EVGMC1 --> EVG1 --> NRV_EVG1 --> Manifold
+    ACB2 --> EVGMC2 --> EVG2 --> NRV_EVG2 --> Manifold
+    Manifold --> PT -->|"vacuum feedback"| EVGMC1
+    PT -->|"vacuum feedback"| EVGMC2
+    EVGMC1 -->|"fault/status AFDX"| CMC
+    EVGMC2 -->|"fault/status AFDX"| CMC
+    EVGMC1 -->|"switchover cmd"| EVGMC2
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["037 — Vacuum<br/>(ATA 37)"]:::subsection
-    THIS["037-010<br/>Vacuum Sources"]:::document
+    START["EVG Start\nCommand (EVGMC)"]
+    SOFTSTART["Soft Start\n(Current Ramp)"]
+    SPINUP["Motor Spin-Up\n(speed ramp)"]
+    VACBLD["Vacuum Builds\n(manifold pressure drops)"]
+    SETPTCHK{"At Set-Point?\n(~−0.7 bar TBD)"}
+    HOLD["Steady-State Hold\n(PID speed modulation)"]
+    FLUSHLOAD["Flush Demand Load\n(manifold pressure rises)"]
+    SPEEDUP["Motor Speed Up\n(maintain set-point)"]
+    FAULTCHK{"Fault Detected?\n(over-current/thermal)"}
+    FAULTLOG["Fault Logged\n(CMC via AFDX)"]
+    EVG2START["EVG-2 Auto-Start\n(switchover)"]
+    EVG1TRIP["EVG-1 Trip\n(motor off)"]
 
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
-
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    START --> SOFTSTART --> SPINUP --> VACBLD --> SETPTCHK
+    SETPTCHK -- "Yes" --> HOLD
+    SETPTCHK -- "No" --> SPINUP
+    HOLD --> FLUSHLOAD --> SPEEDUP --> HOLD
+    HOLD --> FAULTCHK
+    FAULTCHK -- "No" --> HOLD
+    FAULTCHK -- "Yes" --> FAULTLOG --> EVG2START
+    FAULTLOG --> EVG1TRIP
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    OEM_REQ["OEM/Operator Req\n(toilet qty, flush rate,\nEVG sizing)"]
+    SRD["SRD-eWTW-037\n(System Req Doc)"]
+    EVG_SPEC["EVG Component Spec\n(supplier TBD)"]
+    ICD_24["ICD ATA 24\n(AC power supply)"]
+    ICD_45["ICD ATA 45\n(CMC AFDX)"]
+    VTP["Verification &\nTest Plan"]
+    RIG["EVG Rig Test\n(pull-down, duty cycle)"]
+    CERT["CS-25.1438\nCompliance"]
+    PROD["Production\n(MSN 0001+)"]
+    MRO["MRO\n(AMM 37-10)"]
 
-| Term / Acronym | Expansion | Definition |
-|---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+    OEM_REQ --> SRD --> EVG_SPEC
+    EVG_SPEC --> ICD_24
+    EVG_SPEC --> ICD_45
+    EVG_SPEC --> VTP --> RIG --> CERT --> PROD --> MRO
+```
 
-### Domain-Specific Terms — ATA 37 Vacuum
+---
 
-| Term / Acronym | Expansion | Definition |
-|---|---|---|
-| **ADI** | Attitude Director Indicator | Gyroscopic instrument displaying aircraft pitch and bank attitude; vacuum-driven on legacy aircraft. |
-| **AI** | Artificial Horizon / Attitude Indicator | Gyroscopic instrument presenting pitch and bank attitude; vacuum-powered on older designs. |
-| **DG** | Directional Gyro | Vacuum-driven heading reference gyroscope; predecessor to remote-sensing HSI. |
-| **HSI** | Horizontal Situation Indicator | Compass rose display combining heading reference with course deviation indication; vacuum-driven on legacy systems. |
-| **in Hg** | Inches of Mercury | Non-SI pressure unit (1 in Hg ≈ 33.86 hPa) historically used to specify vacuum system suction requirements. |
-| **TCAS** | Traffic Collision Avoidance System | See ATA 34 glossary; noted here because vacuum-driven ADI/AI failure can affect pilot spatial orientation in TCAS RA scenarios. |
-| **VSI** | Vertical Speed Indicator | Instrument displaying rate of climb or descent; vacuum-operated on older unpressurised piston aircraft. |
-| **WAI** | Wing Anti-Ice | Thermal or bleed-air anti-icing system; vacuum system may provide suction for associated static ports when bleed is off. |
+## §10 Interfaces
+
+| Interface | Direction | Signal / Medium | ATA Chapter | Notes |
+|---|---|---|---|---|
+| AC Bus 1 power | In | 115 VAC TBD | ATA 24 | EVG-1 primary power |
+| AC Bus 2 power | In | 115 VAC TBD | ATA 24 | EVG-2 standby power |
+| Ground power | In | 115 VAC GPU | ATA 24 | Ground ops |
+| Manifold pressure (transducer) | In | 0–5V or 4–20mA TBD | ATA 37-030 | Vacuum feedback to EVGMC |
+| CMC/AFDX | Out | AFDX discrete | ATA 45 | Fault flags, speed, current, thermal |
+| ECAM | Out | Via CMC | ATA 31 | EVG status display |
+| SOV command | Out | 28 VDC discrete TBD | ATA 37-030 | EVGMC commands SOV close on fault |
+| EVG exhaust | Out | Air (ambient) | — | Exhaust routing TBD |
+
+---
+
+## §11 Operating Modes
+
+| Mode | EVG-1 | EVG-2 | EVGMC | Notes |
+|---|---|---|---|---|
+| Pre-flight / Ground | Running | Standby | Active | GPU power; toilets available |
+| Normal — In-flight | Running | Standby | Active | AC Bus power; set-point maintained |
+| Flush Load | Running (speed up) | Standby | Active | Transient demand; speed increases |
+| EVG-1 Fault | Tripped | Starting | Switchover | CMC alert; crew advisory |
+| Dual EVG Fault | Off | Off | Fault mode | No flushing; MEL |
+| Maintenance | Off | Off | Powered down | SOV closed; AC Bus isolated |
+| BITE Self-Test | Running (reduced) | Standby | Test mode | CMC-initiated |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+| Parameter | Sensor | CMC Fault Code | ECAM Message | Threshold |
+|---|---|---|---|---|
+| EVG-1 motor current | EVGMC-1 internal | F037-1001 | VAC GEN 1 FAULT | Over-current TBD A |
+| EVG-1 thermal | EVGMC-1 NTC | F037-1002 | VAC GEN 1 OVERHEAT | > TBD °C |
+| EVG-2 motor current | EVGMC-2 internal | F037-1003 | VAC GEN 2 FAULT | Over-current TBD A |
+| EVG-2 thermal | EVGMC-2 NTC | F037-1004 | VAC GEN 2 OVERHEAT | > TBD °C |
+| Auto-switchover event | EVGMC logic | F037-1005 | VAC GEN SWITCHOVER | EVG-2 started |
+| Manifold vacuum (low) | Pressure transducer | F037-1010 | VAC SYS LO PRESS | < −0.5 bar TBD |
+| AC Bus 1 loss | ATA 24 bus monitor | F037-1020 | VAC GEN 1 PWR LOSS | Bus voltage < TBD V |
+| EVGMC-1 AFDX loss | CMC heartbeat | F037-1021 | VAC GEN 1 COM FAIL | Heartbeat timeout TBD |
+
+---
+
+## §13 Maintenance Concept
+
+| Task | Interval | Level | AMM Reference |
+|---|---|---|---|
+| EVG-1 / EVG-2 visual inspection | Pre-flight / A-check | L1 | AMM 37-10-01 |
+| EVG motor controller BITE test | A-check | L1 | AMM 37-10-02 |
+| EVG oil level check (if oil-sealed) | <img src="https://img.shields.io/badge/TBD-red"> | L2 | AMM 37-10-03 |
+| EVG oil change | <img src="https://img.shields.io/badge/TBD-red"> | L2 | AMM 37-10-04 |
+| EVG vane replacement (rotary vane) | <img src="https://img.shields.io/badge/TBD-red"> FH | L3 workshop | CMM 37-10-01 |
+| EVG motor winding resistance check | C-check | L2 | AMM 37-10-05 |
+| Outlet NRV check valve test | Annual | L2 | AMM 37-10-06 |
+| Auto-switchover functional test | A-check | L1 | AMM 37-10-07 |
+| EVGMC software version verification | As required | L2 | AMM 37-10-08 |
+
+---
+
+## §14 S1000D/CSDB Mapping
+
+| DMC Code | Title | Infocode | Status |
+|---|---|---|---|
+| DMC-AMPEL360E-EWTW-037-10-00-00A-040A-D | Vacuum Sources — Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-AMPEL360E-EWTW-037-10-00-00A-200A-D | EVG Removal and Installation | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-AMPEL360E-EWTW-037-10-00-00A-300A-D | EVG Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-AMPEL360E-EWTW-037-10-00-00A-520A-D | EVG Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-AMPEL360E-EWTW-037-10-00-00A-720A-D | EVG Motor Controller BITE | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §15 Footprints
+
+| Component | Location | Envelope (mm) | Mass (kg) | Mounting |
+|---|---|---|---|---|
+| EVG-1 | Aft service compartment <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | Vibration-isolated mount |
+| EVG-2 | Aft service compartment <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | Vibration-isolated mount |
+| EVGMC-1 | Adjacent to EVG-1 <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | Rack-mounted TBD |
+| EVGMC-2 | Adjacent to EVG-2 <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | <img src="https://img.shields.io/badge/TBD-red"> | Rack-mounted TBD |
+| Outlet NRV-1 | EVG-1 outlet port | Inline | < 0.5 TBD | Threaded inline |
+| Outlet NRV-2 | EVG-2 outlet port | Inline | < 0.5 TBD | Threaded inline |
+
+---
+
+## §16 Safety and Certification
+
+### 16.1 Applicable Regulations
+
+| Regulation | Topic |
+|---|---|
+| CS-25.1438 | Pressurisation and pneumatic systems — applies to EVG and vacuum manifold |
+| CS-25.1301 | Function and installation — EVG and EVGMC equipment approval |
+| CS-25.1309 | Equipment, systems and installations — EVG failure assessment |
+| CS-25.869 | Fire protection — EVG motor overtemperature protection |
+| CS-25.1353 | Electrical equipment and installations — EVG motor wiring |
+
+### 16.2 Failure Effects Table
+
+| Failure | Probability Target | Effect | Mitigation |
+|---|---|---|---|
+| EVG-1 failure | < 1×10⁻³ /FH TBD | Switchover to EVG-2; no service interruption | Auto-switchover; CMC alert |
+| EVG-1 + EVG-2 failure | < 1×10⁻⁵ /FH TBD | No toilet flushing; passenger discomfort | MEL dispatch; crew advisory |
+| EVGMC-1 failure | < 1×10⁻³ /FH TBD | EVG-1 uncontrolled; EVGMC-2 takes over | Dual controller architecture |
+| EVG motor fire | Extremely improbable | Potential smoke in service compartment | Thermal protection; fire detection ATA 26 |
+
+### 16.3 No Gyro Vacuum Hazard Statement
+
+The eWTW does not use vacuum for gyroscopic flight instruments. The loss of EVG (both units) presents no flight safety risk. ADIRU/IRS (ATA 34) provides all attitude and heading data independently of ATA 37. This eliminates the CS-25.1438 vacuum gyro loss scenario that historically required dual vacuum pump demonstration.
+
+---
+
+## §17 Verification and Validation
+
+| Test ID | Test Description | Method | Acceptance Criterion | Status |
+|---|---|---|---|---|
+| V037-010-001 | EVG vacuum pull-down test | Rig test, sealed manifold | Achieve −0.7 bar in < TBD seconds | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-010-002 | EVG duty cycle endurance | Rig test, continuous operation | No degradation over TBD FH | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-010-003 | Auto-switchover timing | Fault injection (EVGMC-1 shutdown) | EVG-2 running within < TBD seconds | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-010-004 | EVGMC AFDX fault reporting | Simulation | All defined fault codes transmitted | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-010-005 | EVG soft-start inrush current | Electrical rig | Inrush < TBD A peak | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-010-006 | EVG thermal protection | Thermal chamber test | Trip at TBD °C; CMC alert generated | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-010-007 | Ground power EVG operation | Ground test | Full EVG function on GPU | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| V037-010-008 | Outlet NRV backflow prevention | Rig test — reverse differential | No backflow through idle EVG | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §18 Glossary
+
+| Term | Definition |
+|---|---|
+| AC Bus | Alternating Current electrical bus supplying EVG motor controllers |
+| AFDX | Avionics Full-Duplex Switched Ethernet — data network for CMC reporting |
+| Auto-switchover | Automatic changeover from EVG-1 to EVG-2 upon fault detection |
+| BITE | Built-In Test Equipment — internal self-test capability of EVGMC |
+| CMC | Central Maintenance Computer |
+| EVG | Electric Vacuum Generator — motor-driven vacuum pump |
+| EVGMC | EVG Motor Controller — speed/current control and fault detection unit |
+| GPU | Ground Power Unit — external electrical source for ground operations |
+| NRV | Non-Return Valve — check valve preventing backflow through idle EVG |
+| Oil-free pump | Vacuum pump design with no lubricating oil (dry vane or diaphragm) |
+| Oil-sealed pump | Vacuum pump using oil for sealing and lubrication (e.g. rotary vane) |
+| PID | Proportional-Integral-Derivative — control algorithm for EVG speed regulation |
+| Rotary vane | Pump type using spring-loaded vanes rotating in an eccentric cavity |
+| Soft-start | Motor starting method that ramps current gradually to limit inrush |
+| VWS | Vacuum Waste System |
+
+---
+
+## §19 Citations
+
+1. EASA CS-25 Amendment 27 — CS-25.1438 "Pressurisation and Pneumatic Systems."
+2. EASA CS-25 Amendment 27 — CS-25.1309 "Equipment, Systems and Installations."
+3. EASA CS-25 Amendment 27 — CS-25.1353 "Electrical Equipment and Installations."
+4. ATA iSpec 2200 Chapter 37 — Vacuum.
+5. AMPEL360e eWTW SRD-eWTW-037 (EVG section) — <img src="https://img.shields.io/badge/TBD-red">
+6. EVG Supplier Specification — <img src="https://img.shields.io/badge/TBD-red"> (supplier not yet selected — OI-037-001)
+
+---
+
+## §20 References
+
+| Document | Description |
+|---|---|
+| QATL-ATLAS-000099-ATLAS-030039-037-000 | ATA 37 General (parent document) |
+| QATL-ATLAS-000099-ATLAS-030039-037-020 | Vacuum Distribution |
+| QATL-ATLAS-000099-ATLAS-030039-037-030 | Vacuum Regulation and Shutoff |
+| QATL-ATLAS-000099-ATLAS-030039-024-000 | Electrical Power — General (ATA 24) |
+| QATL-ATLAS-000099-ATLAS-030039-045-000 | Central Maintenance System (ATA 45) |
+| AMM-AMPEL360E-037-10 | Aircraft Maintenance Manual Chapter 37-10 — Vacuum Sources |
+
+---
+
+## §21 Open Issues
+
+| OI ID | Title | Impact | Status |
+|---|---|---|---|
+| OI-037-001 | EVG count and sizing (qty, rated vacuum, motor power) | Drives power budget, mass, footprint | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-037-002 | Dry-flush vs. vacuum toilet decision | Determines if EVG is needed at all | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-037-005 | Freeze protection for EVG exhaust line | EVG exhaust port may freeze at altitude | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description |
+|---|---|---|---|
+| 0.0 | 2025-07-01 | Q+ATLANTIDE WG | Initial scaffold |
+| 0.1 | 2025-07-14 | Q+ATLANTIDE WG | Full content draft — all §0–§22 populated |
