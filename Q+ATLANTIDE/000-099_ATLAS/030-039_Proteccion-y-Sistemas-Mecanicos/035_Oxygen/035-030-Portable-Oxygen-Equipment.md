@@ -1,164 +1,426 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-035-030-PORTABLE-OXYGEN-EQUIPMENT
-title: "ATLAS 030-039 · 03.035.030 — Portable Oxygen Equipment"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "035"
-subsection_title: "Oxygen"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-035-030"
+title: "035-030 — Portable Oxygen Equipment"
+short_title: "Portable Oxygen Equipment"
 subsubject: "030"
 subsubject_title: "Portable Oxygen Equipment"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "035-030-Portable-Oxygen-Equipment.md"
+sns_reference: "035-30"
+dmc_prefix: "DMC-AMPEL360E-EWTW-035-30"
+programme: "AMPEL360e Wide Tube-and-Wing Family"
+programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+short_code: "eWTW"
+register: "Q+ATLANTIDE"
+register_link: "../../../../../Q+ATLANTIDE/"
+architecture_band: "000-099_ATLAS"
+architecture_band_link: "../../../"
+architecture_band_title: "New Commercial Aircraft Architectures"
+code_range: "030-039_Proteccion-y-Sistemas-Mecanicos"
+code_range_link: "../../"
+code_range_title: "Protección & Sistemas Mecánicos"
+node_code: "035"
+node_title: "Oxygen"
+node_link: "./"
+parent_path: "Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/035_Oxygen/"
+parent_path_link: "./"
+ata_reference: "ATA 35"
+ata_reference_link: "#20-references"
+s1000d_applicability: "S1000D-CSDB-compatible"
+s1000d_link: "https://s1000d.org/"
+domain: "A-Aerospace"
+domain_link: "../../../../../IDEALE-ESG/A-Aerospace/"
+primary_q_division: "Q-AIR"
+primary_q_division_link: "../../../../../Q-Divisions/Q-AIR/"
+support_q_divisions:
+  - name: "Q-MECHANICS"
+    link: "../../../../../Q-Divisions/Q-MECHANICS/"
+  - name: "Q-DATAGOV"
+    link: "../../../../../Q-Divisions/Q-DATAGOV/"
+  - name: "Q-GREENTECH"
+    link: "../../../../../Q-Divisions/Q-GREENTECH/"
+orb_functions:
+  - name: "ORB-PMO"
+    link: "../../../../../ORB-Functions/ORB-PMO/"
+  - name: "ORB-LEG"
+    link: "../../../../../ORB-Functions/ORB-LEG/"
+classification: "open-technical-scaffold"
+status: "programme-controlled-scaffold"
+revision: "0.1.0"
+created: "2026-05-10"
+updated: "2026-05-10"
+authoring_mode: "deterministic-technical-publication"
+review_status: "to-be-reviewed-by-system-expert"
+lifecycle_phase:
+  - code: "LC02"
+    title: "Requirements Definition"
+  - code: "LC03"
+    title: "Architecture Definition"
+  - code: "LC05"
+    title: "Detailed Design"
+  - code: "LC06"
+    title: "Verification Planning"
+  - code: "LC10"
+    title: "Certification / Approval"
+  - code: "LC11"
+    title: "Operation"
+  - code: "LC12"
+    title: "Maintenance / Support"
+traceability:
+  atlas_node: "035_Oxygen"
+  atlas_node_link: "./"
+  parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
+  parent_branch_link: "../../"
+  csdb_path: "TBD"
+  evidence_status: "draft"
+  brex_status: "not-yet-validated"
+  dmrl_status: "not-yet-frozen"
+keywords:
+  - "Q+ATLANTIDE"
+  - "ATLAS"
+  - "AMPEL360e"
+  - "S1000D"
+  - "ATA 35"
+  - "Oxygen"
+  - "PBE"
+  - "portable breathing equipment"
+  - "medical oxygen"
+  - "CS-25.1441"
+  - "DO-160G"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 035 · 030 — Portable Oxygen Equipment
+# 035-030 — Portable Oxygen Equipment
+### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+---
 
-Documents portable oxygen bottles, therapeutic oxygen sets, smoke goggles with oxygen supply, and walk-around bottles used by cabin crew during emergency and medical operations.
+## §0 Hyperlink Policy
 
-## 2. Scope
+All internal links in this document use relative paths from the current directory. External regulatory and standards references use anchor links defined in [§20 References](#20-references). Links marked **TBD** indicate targets not yet allocated within the CSDB or ATLAS hierarchy. Programme-level links traverse five directory levels (`../../../../../`) to reach the repository root. No absolute URLs are used for internal navigation.
 
-- Portable bottle type (aluminium/composite), pressure, and duration.
-- Therapeutic oxygen mask and flow-selector specifications.
-- Smoke hood / goggle assembly with integral oxygen supply.
-- Walk-around bottle interface with crew protective breathing equipment (PBE).
-- Not in scope: emergency escape breathing devices (EEBDs) which are part of ATA 35 portable equipment.
+---
 
-## 3. Footprint
+## §1 Purpose
 
-| Metric | Value |
+This document describes the Portable Oxygen Equipment (ATA 35-30) as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It defines the types, quantities, locations, maintenance concept, and certification compliance of all portable oxygen equipment carried on board, including portable breathing equipment (PBE) for cabin crew response to smoke/fire events and medical supplemental oxygen for first-aid use.
+
+Portable oxygen equipment is independent of the fixed crew and passenger oxygen systems. PBE units are self-contained chemical oxygen devices providing protective breathing for cabin crew during smoke or toxic fume events (minimum 15 minutes duration). Medical oxygen cylinders provide supplemental oxygen for incapacitated passengers. Quantities and stowage locations are determined by aircraft type, route, operator policy, and regulatory requirements (CS-25.1441 and applicable operational regulations).
+
+---
+
+## §2 Applicability
+
+| Attribute | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `035` — Oxygen |
-| Subsubject | `030` — Portable Oxygen Equipment |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/035_Oxygen/` |
-| Document | `035-030-Portable-Oxygen-Equipment.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| ATA Subsubject | 035-30 — Portable Oxygen Equipment |
+| PBE Type | Self-contained chemical PBE (smoke hood with O₂ supply) |
+| PBE Duration | Minimum 15 min |
+| Medical O₂ Type | Portable cylinder — 2 L/min flow rate; 24–36 min duration TBD |
+| PBE Quantity | TBD (function of cabin crew count, route, authority requirement) |
+| Medical O₂ Quantity | TBD (function of route, operator policy) |
+| PBE Shelf Life | Typically 15 years (chemical shelf life — manufacturer specification) |
+| Stowage Locations | Galley, forward cabin crew station, aft cabin crew station — TBD |
+| Certification Basis | CS-25.1441; operational regulations (EU-OPS / FAR 121) |
+| DO-160G | Environmental qualification — TBD applicability per unit type |
+| S1000D SNS | 035-30 |
+| Applicability Code | ALL (all eWTW aircraft in programme) |
+| Effectivity | From MSN 001 |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System / Function Overview
 
-## 4. Interfaces Diagram
+Portable oxygen equipment on the AMPEL360e eWTW consists of two categories:
+
+**Category A — Protective Breathing Equipment (PBE)**: Chemical PBE smoke hoods (self-contained chemical oxygen generator integrated with a hood that covers the head and provides protection against smoke, toxic fumes, and heat). Each PBE unit is a single-use device. When activated, the chemical reaction produces oxygen for a minimum of 15 minutes. Cabin crew don PBE units when responding to a fire, smoke, or toxic fume event. PBE quantity is determined by the number of cabin crew members plus regulatory requirements for concurrent use scenarios (CS-25.1441, EU-OPS/FAR 121 operational regulations — quantity TBD).
+
+**Category B — Medical Supplemental Oxygen**: A portable gaseous oxygen cylinder with a continuous-flow mask and flow regulator for medical first-aid use. Provides supplemental oxygen to incapacitated passengers at 2 L/min (TBD flow rate). Duration: 24–36 minutes (TBD based on cylinder size). Quantity: TBD (typically 1–2 units per aircraft for ~100-seat configuration). Stowage location TBD (accessible to cabin crew).
+
+All portable units are fully self-contained and have no interface with the fixed aircraft oxygen distribution system. Units are identified by serviceability labels and tracked in the maintenance programme.
+
+---
+
+## §4 Scope
+
+### 4.1 Included
+- Portable breathing equipment (PBE) — self-contained chemical smoke hoods, quantity TBD
+- PBE stowage pouches/holders at designated cabin locations
+- Medical supplemental oxygen cylinder(s), quantity TBD
+- Medical O₂ continuous-flow mask and regulator (2 L/min flow — TBD)
+- Serviceability labels and expiry tracking for all portable units
+- Maintenance procedures for PBE and medical O₂ inspection, replacement, and record-keeping
+
+### 4.2 Excluded
+- Crew fixed oxygen system (high-pressure cylinder, QDM) — 035-010
+- Passenger COG system — 035-020
+- Fire detection and extinguishing — ATA 26 (triggers PBE use; interface is procedural only)
+- Cabin crew station structure — ATA 25
+- Pharmaceutical / first aid equipment (other than O₂ delivery) — outside ATA 35
+
+---
+
+## §5 Architecture Description
+
+- **PBE independence**: PBE units have no electrical, pneumatic, or mechanical interface with aircraft systems. Each unit is a standalone self-contained device carried in a designated stowage pouch or holder. No installation wiring, connectors, or plumbing is required.
+- **PBE chemical principle**: PBE units contain a chemical oxygen candle (sodium chlorate or potassium superoxide TBD) that generates oxygen on activation. Activation is by a mechanical initiator (pull-tab or squeeze-to-activate mechanism). The hood seals around the user's head, providing eye, face, and respiratory protection. Generated O₂ is breathed within the hood atmosphere; CO₂ is scrubbed by a chemical absorber.
+- **Medical O₂ portability**: The medical oxygen cylinder is a small high-pressure cylinder (TBD material — aluminium or composite) with a built-in or attached demand/continuous-flow regulator. The continuous-flow regulator delivers oxygen via a non-rebreather mask to the patient. The cylinder is carried by cabin crew to the patient's seat.
+- **Stowage architecture**: PBE units stowed at accessible locations near cabin crew work areas: forward galley, aft galley, and cabin crew rest area (if applicable — TBD). Medical O₂ cylinder stowed in a designated accessible location (TBD — typically forward galley or adjacent to first aid kit).
+- **eWTW-specific notes**: No OBOGS or fixed portable O₂ panel is planned. PBE compatibility with DO-160G environmental conditions must be verified for altitude, temperature, and humidity categories applicable to on-board stowage.
+
+---
+
+## §6 Functional Breakdown
+
+| Function ID | Function Title | Description | Unit |
+|---|---|---|---|
+| F-030-001 | Smoke / Fume Crew Protection | PBE provides head/respiratory protection in smoke or toxic fume event; minimum 15 min O₂ | Chemical PBE unit |
+| F-030-002 | PBE O₂ Generation | Chemical reaction generates O₂ on PBE activation; provides breathing gas within sealed hood | PBE chemical generator |
+| F-030-003 | CO₂ Scrubbing | Chemical absorber within PBE hood removes exhaled CO₂ from hood atmosphere | PBE internal scrubber |
+| F-030-004 | Medical O₂ Supply | Supplemental O₂ for incapacitated or hypoxic passengers; continuous-flow via non-rebreather mask | Medical O₂ cylinder + regulator |
+| F-030-005 | PBE Stowage | Pre-positioned PBE units at designated cabin crew stations | PBE stowage pouch/holder |
+| F-030-006 | Medical O₂ Stowage | Pre-positioned medical O₂ cylinder at accessible cabin location | Medical O₂ stowage cradle/holder |
+| F-030-007 | Serviceability Management | Expiry tracking, inspection, replacement of all portable units | Maintenance programme |
+| F-030-008 | Usage Record | Post-event record of PBE activation, medical O₂ use — unit replacement before next flight | Maintenance record |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    ATA26[ATA 26 Fire / Smoke Detection] -->|Smoke alarm — crew decision| CABCREW[Cabin Crew — PBE Donning]
+    CABCREW -->|Retrieves from stowage| PBE1[PBE Unit — Forward Galley]
+    CABCREW -->|Retrieves from stowage| PBE2[PBE Unit — Aft Galley]
+    CABCREW -->|Retrieves from stowage| PBEN[PBE Unit — Additional Locations TBD]
+    PBE1 -->|Activated — hood sealed| HOOD[PBE Hood — O₂ Supply 15 min min]
+    PAX[Incapacitated Passenger] -->|Medical event| CABCREW2[Cabin Crew — Medical O₂]
+    CABCREW2 -->|Retrieves from stowage| MEDOX[Medical O₂ Cylinder + Regulator]
+    MEDOX -->|Continuous-flow 2 L/min| NONRB[Non-Rebreather Mask — Patient]
+    MAINT[Maintenance] -->|Post-use replacement; expiry inspection| PBE1
+    MAINT -->|Post-use replacement; expiry inspection| MEDOX
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["035 — Oxygen<br/>(ATA 35)"]:::subsection
-    THIS["035-030<br/>Portable Oxygen Equipment"]:::document
-
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
-
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    PBE[PBE Unit — Stowed in Pouch] -->|Crew removes from stowage| RETRIEV[Crew Retrieves PBE]
+    RETRIEV -->|Pull activation tab| ACTIV[PBE Initiator Activated]
+    ACTIV -->|Chemical reaction starts| GEN[O₂ Generation — Chemical Candle]
+    GEN -->|O₂ inside hood| HOOD[Sealed Hood — Protected Breathing Atmosphere]
+    HOOD -->|CO₂ exhaled| SCRUB[CO₂ Scrubber — Chemical Absorber]
+    SCRUB -->|Scrubbed atmosphere| HOOD
+    GEN -->|Reaction complete ~15 min| EXHST[PBE Exhausted — Unit Replace Before Next Flight]
+    MEDOX[Medical O₂ Cylinder — Stowed] -->|Crew retrieves and carries to patient| REGUL[Flow Regulator — 2 L/min continuous-flow]
+    REGUL -->|O₂ via tubing| MASK[Non-Rebreather Mask — Patient]
+    REGUL -->|Cylinder empty| EMPTY[Replace Cylinder]
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    LC02[LC02 Requirements Definition] --> LC03[LC03 Architecture Definition]
+    LC03 --> LC05[LC05 Detailed Design]
+    LC05 --> LC06[LC06 Verification Planning]
+    LC06 --> LC10[LC10 Certification / Approval]
+    LC10 --> LC11[LC11 Operation]
+    LC11 --> LC12[LC12 Maintenance / Support]
+    LC02 -->|CS-25.1441; EU-OPS PBE quantity; medical O₂ requirement| REQ[Portable O₂ Requirements]
+    LC03 -->|PBE type selection; medical O₂ cylinder size; stowage locations| ARCH[Portable O₂ Architecture]
+    LC05 -->|PBE model; medical O₂ regulator; stowage holder design| DESIGN[Equipment Selection and Design]
+    LC06 -->|PBE donning time; duration test; DO-160G environmental| VPLAN[Verification Plans]
+    LC10 -->|CS-25.1441 evidence; PBE TSO qualification| TC[TC Data — 035-30]
+    LC11 -->|Cabin crew PBE donning drill; medical O₂ procedure| OPS[Operations Data]
+    LC12 -->|AMM 35-30; PBE expiry inspection; post-use replacement| MAINT[Maintenance Data]
+```
 
-| Term / Acronym | Expansion | Definition |
-|---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+---
 
-### Domain-Specific Terms — ATA 35 Oxygen
+## §10 Interfaces
 
-| Term / Acronym | Expansion | Definition |
-|---|---|---|
-| **CCOX** | Chemical Crew Oxygen | Solid-state chemical oxygen generator (chlorate candle type) providing emergency oxygen without pressurised cylinders. |
-| **CPOX** | Crew Portable Oxygen | Portable oxygen equipment carried for crew use during walk-around inspection or in smoke/fumes situations. |
-| **EASA** | European Union Aviation Safety Agency | European regulatory authority setting and overseeing airworthiness standards for aircraft and components. |
-| **FAA** | Federal Aviation Administration | US regulatory authority overseeing civil aviation safety, including aircraft certification and operations. |
-| **FAR** | Federal Aviation Regulations | US aviation regulations codified in Title 14 of the Code of Federal Regulations (14 CFR). |
-| **GOX** | Gaseous Oxygen | Oxygen stored and distributed in gaseous form under pressure in high-pressure cylinders. |
-| **LOX** | Liquid Oxygen | Oxygen stored in cryogenic liquid form; used in military aircraft, rarely in civil transports. |
-| **OBOGS** | On-Board Oxygen Generation System | Molecular sieve system that concentrates atmospheric oxygen for crew breathing without stored-gas cylinders. |
-| **PBE** | Protective Breathing Equipment | Smoke hood/hood assembly used by crew when combating smoke or fumes; provides approx. 15 min of breathing protection. |
-| **PSI** | Pounds per Square Inch | Pressure unit used for oxygen cylinder and regulator specifications in US/UK aviation contexts. |
-| **TSO** | Technical Standard Order | FAA authorisation for an article meeting minimum performance standards for use on certificated aircraft. |
+| Interface ID | System / Chapter | Interface Type | Data / Signal | Direction | Status |
+|---|---|---|---|---|---|
+| IF-035-30-001 | ATA 26 Fire Protection | Procedural | Smoke/fire detection alarm — crew decision to don PBE; no automated interface | ATA26 → Crew | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-035-30-002 | ATA 25 Cabin Interior / Furnishings | Physical | PBE stowage pouches and medical O₂ holders mounted to cabin structure | ATA35 / ATA25 | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-035-30-003 | Crew training (ops procedure) | Procedural | PBE donning drills; medical O₂ use procedures — no aircraft system interface | Operational | N/A |
+
+---
+
+## §11 Operating Modes
+
+| Mode ID | Mode Name | Description | Entry Condition | Exit Condition |
+|---|---|---|---|---|
+| OM-030-001 | Stowed / Ready | PBE and medical O₂ stowed in designated locations; serviceability labels current | Aircraft serviceable; units in-date | Crew retrieval or maintenance |
+| OM-030-002 | PBE Donned — Active | Cabin crew wearing activated PBE hood; chemical O₂ being produced; smoke/fire response | Crew activates PBE by pull-tab | PBE chemical exhausted (~15 min) |
+| OM-030-003 | PBE Exhausted | PBE chemical reaction complete; unit must be replaced before next flight | ~15 min after activation | Replacement PBE installed |
+| OM-030-004 | Medical O₂ Active | Cabin crew administering O₂ to patient; cylinder valve open; continuous-flow via mask | Crew opens cylinder valve | Cylinder empty or medical event resolved |
+| OM-030-005 | Medical O₂ Empty | Cylinder depleted; unit must be replaced before next flight | Cylinder pressure at zero | Replacement cylinder installed |
+| OM-030-006 | Ground Inspection | Periodic serviceability check; expiry label inspection; pressure check (medical O₂) | Scheduled maintenance | Inspection complete |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+- **No aircraft-integrated monitoring**: Portable equipment has no electrical interface with aircraft monitoring systems. All serviceability checks are visual inspections by maintenance or cabin crew.
+- **PBE serviceability label**: Each PBE unit carries a serviceability label showing expiry date, serial number, and inspection status. Cabin crew perform a pre-flight check of each PBE label.
+- **Medical O₂ pressure check**: Medical O₂ cylinder has an integrated pressure gauge. Pre-flight check by cabin crew or maintenance confirms cylinder is charged to operating pressure. Minimum pressure for continued service: TBD (typically > 50% of full charge).
+- **Activation detection**: No automated detection of PBE activation. Post-event: cabin crew reports PBE use. Maintenance replaces unit and logs replacement.
+- **Maintenance tracking**: Each PBE serial number and expiry date recorded in aircraft maintenance management system. Batch replacements managed as LRU consumable.
+- **DO-160G stowage environment**: PBE stowage locations subject to aircraft vibration, temperature, and humidity cycles. PBE environmental qualification must cover on-board stowage conditions over the 15-year shelf life (TBD qualification evidence).
+
+---
+
+## §13 Maintenance Concept
+
+- **PBE expiry inspection (pre-flight / scheduled)**: Visual check of expiry label. Replace any unit at or within TBD days of expiry. Log replacement in maintenance record with old unit serial number, new unit serial number, and expiry date.
+- **PBE replacement after use**: After any PBE activation, replace that unit before next flight. Inspect stowage holder for damage. Log replacement.
+- **Medical O₂ pressure check (pre-flight / scheduled)**: Read integrated gauge. Replace or refill cylinder if pressure < TBD. Regulator function check TBD.
+- **Medical O₂ cylinder replacement / refill**: Replace cylinder unit (if disposable) or refill via certified O₂ filling station (TBD — disposable vs. refillable cylinder decision). Log replacement.
+- **PBE stowage holder inspection**: Inspect at each A-check for damage, secure mounting, and accessibility. Replace if damaged.
+- **DO-160G re-qualification**: If PBE model changes during programme, new unit requires DO-160G environmental qualification for on-board stowage conditions.
+
+---
+
+## §14 S1000D / CSDB Mapping
+
+### 14.1 SNS to DMC Mapping
+
+| SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
+|---|---|---|---|---|
+| 035-30 | Portable Oxygen Equipment | DMC-AMPEL360E-EWTW-035-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+### 14.2 Data Module Breakdown — 035-30
+
+| DM Code Suffix | Info Code | Data Module Title | Priority |
+|---|---|---|---|
+| -035-30-00-040A | 040 | Portable Oxygen Equipment — System Description | High |
+| -035-30-00-300A | 300 | PBE — Donning and Operating Procedures | High |
+| -035-30-00-300B | 300 | Medical Oxygen Cylinder — Operating Procedure | High |
+| -035-30-00-400A | 400 | Portable O₂ Equipment — Inspection and Replacement | High |
+| -035-30-00-520A | 520 | Portable O₂ Equipment — Fault Isolation (serviceability) | Low |
+| -035-30-00-720A | 720 | PBE — Removal and Installation (stowage holder) | Medium |
+| -035-30-00-720B | 720 | Medical O₂ Cylinder — Removal and Installation | Medium |
+| -035-30-00-941A | 941 | Portable O₂ Equipment — Illustrated Parts Data | Medium |
+
+---
+
+## §15 Footprints
+
+### 15.1 Physical Footprint
+- PBE units: stowed at forward galley, aft galley, additional locations TBD — quantity TBD
+- PBE stowage holders: wall-mounted brackets or integrated in galley panel — ATA 25 interface
+- Medical O₂ cylinder: stowed at designated accessible location — TBD (typically forward galley)
+- Mass: PBE unit typically 0.8–1.2 kg each; medical O₂ cylinder typically 1–3 kg — TBD per selected model
+
+### 15.2 Electrical / Data Footprint
+- No electrical interface for portable units
+- No data bus connection
+- Aircraft system impact: nil (portable, self-contained)
+
+### 15.3 Maintenance Footprint
+- PBE replacement: line maintenance — visual inspection, swap unit, log serial number
+- Medical O₂ replacement: line maintenance — pressure check, swap cylinder
+- No special tooling required for any portable O₂ unit
+- Maintenance interval: pre-flight check (visual); scheduled replacement at expiry
+
+### 15.4 Data Footprint
+- Maintenance management system: PBE serial number, expiry date, installation date per stowage location
+- Medical O₂ cylinder: serial number, fill date, pressure check record
+- Activation log: post-event replacement records
+
+---
+
+## §16 Safety and Certification Considerations
+
+| Requirement | Source | Description | Compliance Approach | Status |
+|---|---|---|---|---|
+| CS-25.1441 | EASA CS-25 Subpart K | Minimum portable O₂ equipment and PBE quantities | PBE quantity per CS-25.1441(d) and operational rules; TSO-qualified units | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1445 | EASA CS-25 Subpart K | Equipment standards — TSO qualification | PBE TSO-C116 (or equivalent); medical O₂ TSO-C105 or TSO-C89 | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.858 | EASA CS-25 | Smoke detection — PBE required for cargo area response | Cargo area PBE provision per CS-25.858 (if applicable — eWTW cargo hold TBD) | <img src="https://img.shields.io/badge/TBD-red"> |
+| DO-160G | RTCA | Environmental qualification — on-board stowage | PBE and medical O₂ environmental qualification for aircraft stowage conditions | <img src="https://img.shields.io/badge/TBD-red"> |
+| EU-OPS / FAR 121 | EASA / FAA | Operational regulations — PBE quantity for cabin crew | PBE quantity per operational rules (TBD quantity determination) | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §17 Verification and Validation
+
+| V&V ID | Requirement | Method | Success Criterion | Status |
+|---|---|---|---|---|
+| VV-035-30-001 | PBE donning time | Cabin crew representative donning demonstration | PBE donned (hood sealed) within TBD sec; O₂ flow confirmed | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-30-002 | PBE duration test — CS-25.1441 | Flow rate measurement; duration computation | O₂ supply ≥ 15 min at rated flow | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-30-003 | PBE CO₂ scrubbing | CO₂ concentration measurement in hood during test | CO₂ < TBD % in hood during 15-min activation | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-30-004 | Medical O₂ flow rate | Flow meter measurement at regulator outlet | Flow ≥ 2 L/min TBD at rated setting | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-30-005 | Medical O₂ duration | Cylinder volume and flow rate calculation | Duration ≥ 24 min at 2 L/min (TBD) | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-30-006 | PBE stowage accessibility | Physical demonstration: cabin crew retrieves PBE from stowage within TBD sec | Accessible without obstruction; label readable; holder releases correctly | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-30-007 | DO-160G environmental | DO-160G categories applicable to on-board stowage | PBE and medical O₂ function correctly after environmental test | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-30-008 | PBE shelf life qualification | Supplier qualification data; ageing test | PBE functional at end of stated shelf life (15 years TBD) | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-30-009 | Cylinder hydrostatic test | Not applicable to medical O₂ (disposable or pre-qualified cylinder) | N/A per cylinder type (TBD) | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §18 Glossary
+
+| Term | Definition |
+|---|---|
+| CO₂ scrubber | Chemical absorber within PBE hood that removes exhaled carbon dioxide from the breathing atmosphere |
+| continuous-flow mask | Non-rebreather oro-nasal mask delivering a constant oxygen flow; used with medical O₂ cylinder |
+| DO-160G | RTCA environmental conditions and test procedures — applicable to on-board stowage conditions |
+| EU-OPS | European Operations regulations for commercial air transport — specifies cabin crew PBE requirements |
+| FAR 121 | US Federal Aviation Regulations Part 121 — commercial air operations; specifies PBE quantity requirements |
+| LRU | Line Replaceable Unit — a component replaced at line maintenance; applicable to PBE and medical O₂ as consumable LRUs |
+| PBE | Portable Breathing Equipment — self-contained chemical smoke hood providing head and respiratory protection plus O₂ supply for cabin crew; minimum 15 min duration |
+| serviceability label | Label attached to each portable unit showing serial number, expiry date, and last inspection date |
+| shelf life | The maximum storage period during which a chemical unit (PBE or COG) remains functional; typically 15 years for PBE chemical charge |
+| TSO-C116 | FAA Technical Standard Order for crewmember protective breathing equipment (PBE) |
+
+---
+
+## §19 Citations
+
+| Citation ID | Source | Title | Relevance |
+|---|---|---|---|
+| CIT-035-30-001 | EASA | CS-25 Subpart K §25.1441, §25.1445 | Portable O₂ and PBE certification requirements |
+| CIT-035-30-002 | RTCA | DO-160G Environmental Conditions and Test Procedures | PBE on-board stowage environmental qualification |
+| CIT-035-30-003 | FAA | TSO-C116 — Crewmember Protective Breathing Equipment | PBE qualification standard |
+| CIT-035-30-004 | EASA | CS-25.858 — Cargo compartment smoke detection | PBE requirement cross-reference |
+| CIT-035-30-005 | ASD-STAN | S1000D Issue 5.0 | CSDB mapping for ATA 35-30 |
+
+---
+
+## §20 References
+
+| Ref ID | Document | Title | Link |
+|---|---|---|---|
+| REF-035-30-001 | CS-25.1441 | Oxygen equipment and supply — portable O₂ | [EASA CS-25](#) |
+| REF-035-30-002 | CS-25.1445 | Equipment standards — TSO requirements | [EASA CS-25](#) |
+| REF-035-30-003 | CS-25.858 | Cargo compartment smoke detection | [EASA CS-25](#) |
+| REF-035-30-004 | DO-160G | Environmental Conditions and Test Procedures | [RTCA](https://www.rtca.org/) |
+| REF-035-30-005 | TSO-C116 | Crewmember Protective Breathing Equipment | [FAA](https://www.faa.gov/) |
+| REF-035-30-006 | TSO-C105 | Portable Oxygen Concentrators | [FAA](https://www.faa.gov/) |
+| REF-035-30-007 | S1000D Issue 5.0 | International Specification for Technical Publications | [s1000d.org](https://s1000d.org/) |
+
+---
+
+## §21 Open Issues
+
+| Issue ID | Description | Owner | Priority | Status |
+|---|---|---|---|---|
+| OI-035-30-001 | PBE quantity per aisle — determine required number of PBE units per CS-25.1441 and applicable operational rules (EU-OPS / FAR 121) for ~100-seat configuration | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-30-002 | Medical O₂ quantity and cylinder size — define number of medical O₂ cylinders; determine cylinder volume for 24–36 min duration at 2 L/min | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-30-003 | PBE model selection — confirm PBE type (chemical vs. compressed gas); TSO-C116 qualification; CO₂ scrubber performance; shelf-life specification | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-30-004 | Medical O₂ cylinder type — disposable vs. refillable; composite vs. aluminium cylinder; regulator type (continuous-flow vs. demand) | Q-MECHANICS / Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-30-005 | Cargo hold PBE — confirm whether eWTW cargo hold access requires PBE per CS-25.858; cargo hold access procedure TBD | Q-AIR / ORB-LEG | Low | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-30-006 | PBE stowage locations — finalise number and positions (forward galley, aft galley, over-wing TBD, jumpseats TBD) per cabin layout | Q-AIR / Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description |
+|---|---|---|---|
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE / Q-AIR | Initial full-template creation — all §0–§22 sections drafted; TBD items identified; open issues registered |
