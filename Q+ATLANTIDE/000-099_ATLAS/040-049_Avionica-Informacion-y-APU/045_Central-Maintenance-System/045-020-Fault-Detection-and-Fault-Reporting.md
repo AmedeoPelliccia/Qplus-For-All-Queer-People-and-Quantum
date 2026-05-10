@@ -141,6 +141,26 @@ graph LR
 | ACARS Gateway Interface | Formats and queues fault messages for ACARS uplink | CCU-A/B (SW) |
 | ML Anomaly Engine (eWTW) | Random forest model for pre-fault anomaly detection | CCU-A/B (SW, prog-ctrl) |
 
+### Diagram 3: ACARS Fault Uplink Flow
+
+```mermaid
+graph TD
+    FaultDB["Fault Database\n(CMDB)"]
+    SevCheck{"Severity\nCheck"}
+    AOG["AOG / CRITICAL\nFault"]
+    Advisory["ADVISORY /\nCAUTION Fault"]
+    ACARS_Q["ACARS Message\nQueue (< 60 s)"]
+    SAT_VHF["SATCOM / VHF\nData Link"]
+    AHM["AHM Ground System\n(Airline Ops Centre)"]
+    CMP_MAT["CMP / MAT\nDisplay Only"]
+
+    FaultDB --> SevCheck
+    SevCheck -->|AOG or CRITICAL| AOG
+    SevCheck -->|Advisory/Caution| Advisory
+    AOG --> ACARS_Q --> SAT_VHF --> AHM
+    Advisory --> CMP_MAT
+```
+
 ---
 
 ## 6. Interfaces
