@@ -1,172 +1,477 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-034-040-SATELLITE-NAVIGATION-AND-AUGMENTATION
-title: "ATLAS 030-039 · 03.034.040 — Satellite Navigation and Augmentation"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "034"
-subsection_title: "Navigation"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-034-040"
+title: "034-040 — Satellite Navigation and Augmentation"
+short_title: "Satellite Navigation & SBAS"
 subsubject: "040"
 subsubject_title: "Satellite Navigation and Augmentation"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "034-040-Satellite-Navigation-and-Augmentation.md"
+sns_reference: "034-40"
+dmc_prefix: "DMC-AMPEL360E-EWTW-034-40"
+programme: "AMPEL360e Wide Tube-and-Wing Family"
+programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+short_code: "eWTW"
+register: "Q+ATLANTIDE"
+register_link: "../../../../../Q+ATLANTIDE/"
+architecture_band: "000-099_ATLAS"
+architecture_band_link: "../../../"
+architecture_band_title: "New Commercial Aircraft Architectures"
+code_range: "030-039_Proteccion-y-Sistemas-Mecanicos"
+code_range_link: "../../"
+code_range_title: "Protección & Sistemas Mecánicos"
+node_code: "034"
+node_title: "Navigation"
+node_link: "./"
+parent_path: "Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/034_Navigation/"
+parent_path_link: "./"
+ata_reference: "ATA 34"
+ata_reference_link: "#20-references"
+s1000d_applicability: "S1000D-CSDB-compatible"
+s1000d_link: "https://s1000d.org/"
+domain: "A-Aerospace"
+domain_link: "../../../../../IDEALE-ESG/A-Aerospace/"
+primary_q_division: "Q-AIR"
+primary_q_division_link: "../../../../../Q-Divisions/Q-AIR/"
+support_q_divisions:
+  - name: "Q-HPC"
+    link: "../../../../../Q-Divisions/Q-HPC/"
+  - name: "Q-DATAGOV"
+    link: "../../../../../Q-Divisions/Q-DATAGOV/"
+  - name: "Q-MECHANICS"
+    link: "../../../../../Q-Divisions/Q-MECHANICS/"
+orb_functions:
+  - name: "ORB-PMO"
+    link: "../../../../../ORB-Functions/ORB-PMO/"
+  - name: "ORB-LEG"
+    link: "../../../../../ORB-Functions/ORB-LEG/"
+classification: "open-technical-scaffold"
+status: "programme-controlled-scaffold"
+revision: "0.1.0"
+created: "2026-05-10"
+updated: "2026-05-10"
+authoring_mode: "deterministic-technical-publication"
+review_status: "to-be-reviewed-by-system-expert"
+lifecycle_phase:
+  - code: "LC02"
+    title: "Requirements Definition"
+  - code: "LC03"
+    title: "Architecture Definition"
+  - code: "LC05"
+    title: "Detailed Design"
+  - code: "LC06"
+    title: "Verification Planning"
+  - code: "LC10"
+    title: "Certification / Approval"
+  - code: "LC11"
+    title: "Operation"
+  - code: "LC12"
+    title: "Maintenance / Support"
+traceability:
+  atlas_node: "034_Navigation"
+  atlas_node_link: "./"
+  parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
+  parent_branch_link: "../../"
+  csdb_path: "TBD"
+  evidence_status: "draft"
+  brex_status: "not-yet-validated"
+  dmrl_status: "not-yet-frozen"
+keywords:
+  - "Q+ATLANTIDE"
+  - "ATLAS"
+  - "AMPEL360e"
+  - "S1000D"
+  - "ATA 34"
+  - "GNSS"
+  - "GPS"
+  - "SBAS"
+  - "WAAS"
+  - "EGNOS"
+  - "GBAS"
+  - "RAIM"
+  - "ARAIM"
+  - "RNP-AR"
+  - "DO-229"
+  - "TSO-C145"
+  - "TSO-C146"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 034 · 040 — Satellite Navigation and Augmentation
+# 034-040 — Satellite Navigation and Augmentation
+### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+---
 
-Documents Multi-Mode Receiver (MMR) GNSS functions, SBAS (WAAS/EGNOS), GBAS, dual-constellation GPS/GALILEO positioning, and receiver autonomous integrity monitoring (RAIM).
+## §0 Hyperlink Policy
 
-## 2. Scope
+All internal links use relative paths from the current directory. External regulatory and standards references use anchor links in [§20 References](#20-references). Links marked **TBD** indicate unallocated targets. Programme-level links traverse five levels (`../../../../../`). No absolute URLs used for internal navigation.
 
-- MMR GPS/GNSS receiver architecture, antenna placement, and RNP output quality.
-- SBAS signal processing: WAAS (Americas), EGNOS (Europe), MSAS (Japan).
-- GBAS Category III approach architecture and VDB data-link interface.
-- RAIM / ARAIM algorithm requirements and integrity levels per ED-75D.
-- ARINC 743A interface and ARINC 429 label assignments for lat/lon, altitude, integrity.
-- Not in scope: FMS position computation (ATA 34 is sensor-only) or ADS-B out (ATA 34-050).
+---
 
-## 3. Footprint
+## §1 Purpose
 
-| Metric | Value |
+This document describes the Satellite Navigation and Augmentation subsystem (ATA 034-040) of the AMPEL360e eWTW aircraft. It covers the dual GNSS receivers, SBAS augmentation (WAAS / EGNOS), GBAS approach capability (TBD), RAIM integrity monitoring, ARAIM future upgrade path, and RNP-AR approach qualification.
+
+The eWTW uses two standalone GNSS receivers (GNSS-1 and GNSS-2), each qualified for SBAS augmentation (WAAS in North America, EGNOS in Europe). L1 frequency is the baseline; L5 dual-frequency capability is TBD. Both receivers feed the FMGC navigation filter. RNP-AR approach capability (lateral accuracy < 0.1 NM TBD) requires GNSS/SBAS with RAIM monitoring. ARAIM (Advanced RAIM using multiple constellations) is a planned future upgrade when ICAO standards mature.
+
+GBAS (Ground-Based Augmentation System) approach capability is TBD as optional fitment for operations at GBAS-equipped airports, potentially enabling Cat I and Cat II/III approach minima at GBAS airports.
+
+Key applicable standards: DO-229 (MOPS for GPS/SBAS), TSO-C145e / C146e, AMC 20-28 (EASA GNSS/SBAS approval), AMC 20-26 (RNP-AR).
+
+---
+
+## §2 Applicability
+
+| Attribute | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `034` — Navigation |
-| Subsubject | `040` — Satellite Navigation and Augmentation |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/034_Navigation/` |
-| Document | `034-040-Satellite-Navigation-and-Augmentation.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| ATA Subsubject | 034-040 — Satellite Navigation and Augmentation |
+| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
+| GNSS Receivers | 2 (dual — GNSS-1 and GNSS-2) |
+| Constellations | GPS L1 (baseline); Galileo TBD; L5 dual-frequency TBD |
+| SBAS Augmentation | WAAS (Americas) and EGNOS (Europe) — region-selectable |
+| GBAS | TBD — optional fitment |
+| RAIM | Yes — autonomous integrity monitoring in each receiver |
+| ARAIM | TBD — future upgrade; dependent on ICAO standards |
+| RNP-AR Capability | Yes — lateral accuracy < 0.1 NM TBD |
+| GNSS Antennas | 2 (top fuselage crown — positions TBD) |
+| Qualification | TSO-C145e / C146e; DO-229F |
+| Output Bus | ARINC 429 (high speed) |
+| S1000D Issue | 5.0 |
+| SNS Reference | 034-40 |
+| Applicability Code | ALL |
+| Effectivity | From MSN 001 |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System / Function Overview
 
-## 4. Interfaces Diagram
+The Satellite Navigation subsystem provides the primary precision positioning capability for the AMPEL360e eWTW. Two independent GNSS receivers (GNSS-1 and GNSS-2) receive satellite signals, compute position, velocity, and time (PVT) solutions, perform RAIM integrity monitoring, and output data on ARINC 429 to the FMGC navigation filter.
+
+**GNSS Receiver function**: Each receiver tracks GPS satellites (L1 C/A code baseline; L5 TBD), Galileo satellites (TBD), and SBAS geostationary satellites (WAAS PRN 135/138; EGNOS PRN 120/124/126). The SBAS differential corrections and integrity data received from geostationary satellites are applied to improve position accuracy to < 3 m (H, 95%) and provide signal-in-space integrity (SISA) for LPV-200 approach operations.
+
+**RAIM (Receiver Autonomous Integrity Monitoring)**: Each GNSS receiver computes a self-contained integrity check using satellite redundancy (Horizontal Protection Level, HPL; Vertical Protection Level, VPL). If the Protection Level exceeds the Alert Limit for the selected operation (e.g., HPL > 0.3 NM for en-route; HPL > 40 m for LNAV approach), the receiver generates a RAIM FAIL flag and the FMS generates an RNP UNABLE alert.
+
+**SBAS LPV approach**: With EGNOS/WAAS augmentation, the GNSS receiver supports Localizer Performance with Vertical guidance (LPV) approaches to minima as low as 200 ft DH (LPV-200). LPV approaches are defined in the FMS navigation database and displayed on the PFD as a virtual ILS.
+
+**RNP-AR**: Required Navigation Performance — Authorization Required approach operations require lateral accuracy (RNP) < 0.1 NM (TBD), continuous RAIM monitoring, and FMS trajectory with radius-to-fix (RF) legs. Authorisation Required from the competent authority.
+
+**GBAS (TBD)**: If fitted, the GNSS receiver would also receive VHF data broadcasts from a GBAS ground station, applying local differential corrections for Cat I (and potentially Cat II/III with SCAT-I GBAS) approach operations at GBAS-equipped airports. GBAS receiver function may be integrated in the standalone GNSS LRU or in the MMR TBD.
+
+---
+
+## §4 Scope
+
+### 4.1 Included
+- GNSS Receiver-1 and GNSS Receiver-2 (LRUs — avionics bay)
+- GPS L1 C/A signal reception and processing
+- GPS L5 signal reception (TBD — dual frequency upgrade)
+- Galileo signal reception (TBD)
+- SBAS signal reception and processing (WAAS / EGNOS geostationary PRNs)
+- GBAS VHF datalink reception (TBD — optional fitment)
+- PVT (Position, Velocity, Time) solution computation
+- RAIM computation (HPL/VPL vs. alert limits)
+- SBAS differential correction application (LPV approach accuracy)
+- ARAIM integrity monitoring (TBD — future upgrade)
+- RNP-AR approach support (FMS filter integration)
+- GNSS antenna-1 and antenna-2 (top fuselage crown mounting, TBD)
+- ARINC 429 output to FMGC, PFD, and CMC
+- GNSS BITE and CMC fault reporting
+
+### 4.2 Excluded
+- IRS integration and navigation filter (FMGC-hosted) — 034-070
+- MMR GPS approach channel (separate GNSS channel within MMR) — 034-030
+- FMS flight planning using GNSS — ATA 22
+- IRS alignment using GNSS — 034-020
+
+---
+
+## §5 Architecture Description
+
+- **Dual independent GNSS receivers**: GNSS-1 and GNSS-2 are independent LRUs, each with its own antenna, power supply, and ARINC 429 output. This provides redundancy: failure of one receiver does not affect the other. Both receivers feed the FMGC simultaneously.
+- **SBAS regional selection**: The FMS or crew selects the SBAS region (WAAS for North America, EGNOS for Europe, MSAS for Japan, etc.) based on geographic position. The GNSS receivers automatically track the appropriate geostationary SBAS satellites for the selected region.
+- **L1 baseline, L5 TBD**: The baseline GNSS receiver tracks GPS L1 (1575.42 MHz). L5 (1176.45 MHz) dual-frequency tracking eliminates ionospheric delay error (the largest ranging error source), enabling ARAIM and potentially reducing the SBAS requirement. The L5 decision depends on receiver supplier capability and TSO-C145e/C146e scope (TBD).
+- **RAIM operation**: Each GNSS receiver performs RAIM using a minimum of 5 GPS satellites (for Fault Detection) or 6 satellites (for Fault Detection and Exclusion — FDE). The FMGC monitors the RAIM availability outputs from both receivers and generates an RNP UNABLE flag if RAIM is unavailable for the required operation.
+- **GNSS antenna installation on composite fuselage**: GNSS antennas (L-band patch antennas) are mounted on the top fuselage crown. The CFRP composite structure is non-conductive (beneficial for GNSS — no groundplane required in the traditional sense), but structural attachment and environmental sealing of antenna mounts in CFRP skin requires careful engineering (TBD).
+- **Navigation filter integration**: The FMGC navigation filter (034-070) fuses GNSS-1 and GNSS-2 position/velocity with IRS and DME/VOR data in a Kalman filter. The GNSS data dominates the position solution under normal conditions; IRS provides continuity during GNSS outages; DME-DME provides a radio navigation backup.
+- **ARAIM future upgrade**: When ICAO Navigation System Panel standards for ARAIM are finalised and dual-constellation receivers (GPS + Galileo) are mature, the FMGC navigation filter is planned to be upgraded to support ARAIM for oceanic/continental operations without SBAS (TBD upgrade path).
+
+---
+
+## §6 Functional Breakdown
+
+| Function ID | Function Title | Description | LRU |
+|---|---|---|---|
+| F-040-001 | GPS L1 Signal Acquisition and Tracking | Acquire and track GPS L1 C/A code signals from ≥4 satellites | GNSS-1 / GNSS-2 |
+| F-040-002 | GPS L5 Signal Tracking (TBD) | Track GPS L5 signals for dual-frequency ionosphere-free solution | GNSS-1 / GNSS-2 (TBD) |
+| F-040-003 | Galileo Signal Tracking (TBD) | Track Galileo E1 / E5a signals for multi-constellation | GNSS-1 / GNSS-2 (TBD) |
+| F-040-004 | SBAS Signal Reception | Receive WAAS / EGNOS geostationary satellite signal; decode corrections and integrity | GNSS-1 / GNSS-2 |
+| F-040-005 | PVT Solution Computation | Compute position (lat/lon/alt), velocity, and time from satellite measurements | GNSS-1 / GNSS-2 |
+| F-040-006 | SBAS Differential Correction Application | Apply SBAS differential corrections to GPS pseudoranges for LPV accuracy | GNSS-1 / GNSS-2 |
+| F-040-007 | RAIM Computation | Compute HPL / VPL; compare with alert limits; output RAIM flag | GNSS-1 / GNSS-2 |
+| F-040-008 | GBAS Differential Processing (TBD) | Receive and apply GBAS VHF differential corrections for Cat I/II approach | GNSS-1 / GNSS-2 (TBD) |
+| F-040-009 | ARAIM Integrity Monitoring (TBD) | Multi-constellation integrity monitoring for ARAIM operations | GNSS-1 / GNSS-2 + FMGC (TBD) |
+| F-040-010 | ARINC 429 Output | Transmit GNSS PVT, RAIM status, protection levels to FMGC and PFD | GNSS-1 / GNSS-2 |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    GPSANT1[GNSS Antenna-1 — Top Fuselage Crown] -->|L-band RF| GNSS1[GNSS Receiver-1]
+    GPSANT2[GNSS Antenna-2 — Top Fuselage Crown] -->|L-band RF| GNSS2[GNSS Receiver-2]
+    GPSSATS[GPS Satellites L1/L5] -->|L-band signal| GPSANT1
+    GPSSATS -->|L-band signal| GPSANT2
+    SBASSAT[SBAS Geostationary — WAAS/EGNOS] -->|L-band corrections| GPSANT1
+    SBASSAT -->|L-band corrections| GPSANT2
+    GBASVHF[GBAS VHF Station TBD] -->|VHF datalink| GNSS1
+    GNSS1 -->|ARINC 429 PVT/RAIM| FMGC[FMGC Navigation Filter]
+    GNSS2 -->|ARINC 429 PVT/RAIM| FMGC
+    GNSS1 -->|ARINC 429| PFD1[PFD-1 GNSS Status]
+    GNSS2 -->|ARINC 429| PFD2[PFD-2 GNSS Status]
+    FMGC -->|GNSS BITE / RAIM data| CMC[CMC]
+    FMGC -->|RNP UNABLE flag| PFD1
+    GNSS1 -->|Alignment data| IRU1[IRU-1/2/3 GPS-Aided Alignment]
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["034 — Navigation<br/>(ATA 34)"]:::subsection
-    THIS["034-040<br/>Satellite Navigation and Augme…"]:::document
-
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
-
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
-
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    ANTRF[Antenna RF Input — L1/L5] -->|Filtered RF| RFFRONT[RF Front End — LNA + Downconverter]
+    RFFRONT -->|IF signal| ADC[Analogue-to-Digital Converter]
+    ADC -->|Digital samples| CORRELATOR[GPS Correlator Channels — min 12 channels]
+    CORRELATOR -->|Code / carrier measurements| PVTENGINE[PVT Engine — Least Squares / Kalman]
+    SBASDATA[SBAS Geostationary Demodulator] -->|Differential corrections| PVTENGINE
+    PVTENGINE -->|PVT solution| RAIMENGINE[RAIM Engine — HPL/VPL computation]
+    RAIMENGINE -->|HPL, VPL, RAIM flag| ARINC429[ARINC 429 Output Transmitter]
+    PVTENGINE -->|Position, Velocity, Time| ARINC429
+    BITE[GNSS Receiver BITE] -->|Fault word| ARINC429
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    LC02[LC02 Requirements] --> LC03[LC03 Architecture]
+    LC03 --> LC05[LC05 Detailed Design]
+    LC05 --> LC06[LC06 Verification]
+    LC06 --> LC10[LC10 Certification]
+    LC10 --> LC11[LC11 Operation]
+    LC11 --> LC12[LC12 Maintenance]
+    LC02 -->|GNSS/SBAS; RAIM; RNP-AR; DO-229 requirements| REQ[GNSS Requirements]
+    LC03 -->|Dual GNSS; SBAS; GBAS TBD; L5 TBD; antenna placement| ARCH[GNSS Architecture]
+    LC05 -->|GNSS LRU selection; TSO-C145e/C146e; antenna TBD| DESIGN[GNSS Design]
+    LC06 -->|RAIM prediction test; SBAS LPV approach test; DO-229 compliance| VPLAN[V Plan]
+    LC10 -->|DO-229 / AMC 20-28 compliance data; RNP-AR AMC 20-26 evidence| TC[TC Data GNSS]
+    LC11 -->|QRH: RAIM unavailable; RNP UNABLE; GNSS lost| OPS[Crew Procedures]
+    LC12 -->|AMM 34-40: GNSS R&I; antenna check; RAIM prediction page use| MAINT[AMM 34]
+```
 
-| Term / Acronym | Expansion | Definition |
+---
+
+## §10 Interfaces
+
+| Interface ID | System / Chapter | Interface Type | Data / Signal | Direction | Status |
+|---|---|---|---|---|---|
+| IF-040-001 | ATA 22 FMGC | ARINC 429 | GNSS position (lat/lon/alt), velocity, HPL/VPL, RAIM flag, SBAS mode | GNSS → FMGC | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-040-002 | ATA 34 IRU (034-020) | ARINC 429 | GPS position and velocity for IRS GPS-aided alignment | GNSS → IRU | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-040-003 | ATA 31 PFD | ARINC 429 | GNSS status (mode, number of satellites, RAIM available) for PFD display | GNSS → PFD | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-040-004 | ATA 31 MCDU | ARINC 429 | GNSS status and RAIM prediction data for MCDU GNSS STATUS page | GNSS → MCDU | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-040-005 | ATA 24 Electrical Power | 28 VDC essential bus | Power for GNSS-1 and GNSS-2 | ATA24 → GNSS | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-040-006 | ATA 45 CMC | ARINC 429 / AFDX | GNSS BITE fault words; RAIM alert events; navigation DB currency | GNSS → CMC | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-040-007 | ATA 31 ECAM | AFDX | GNSS RAIM advisory; GNSS FAIL advisory | FMGC → ECAM | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §11 Operating Modes
+
+| Mode ID | Mode Name | Description | Entry Condition | Exit Condition |
+|---|---|---|---|---|
+| OM-040-001 | GNSS Acquisition | Receiver acquiring satellite signals post power-on; computing initial PVT | Power-on or signal loss recovery | PVT valid (≥4 satellites) |
+| OM-040-002 | GNSS Navigation — GPS only | PVT from GPS L1 only; no SBAS correction; RAIM available | GPS PVT valid; SBAS unavailable or not selected | SBAS available |
+| OM-040-003 | GNSS Navigation — GPS + SBAS | PVT with SBAS differential corrections applied; LPV accuracy available | SBAS signal valid; differential corrections applied | SBAS signal lost |
+| OM-040-004 | LPV Approach — SBAS | SBAS-augmented LPV approach; VPL < VAL (Vertical Alert Limit); HPL < HAL | FMS LPV approach selected; SBAS RAIM available for approach | Go-around or landing |
+| OM-040-005 | RNP-AR Approach — GNSS | High-precision GNSS approach; HPL < RNP (0.1 NM TBD); FMS RF legs | FMS RNP-AR approach selected; RAIM available | Go-around or landing |
+| OM-040-006 | RAIM Unavailable | GNSS RAIM not available for required operation; RNP UNABLE on PFD | HPL or VPL exceeds alert limit | Sufficient satellite geometry restored |
+| OM-040-007 | GNSS Failure | One or both GNSS receivers failed; IRS + DME navigation continues | GNSS receiver BITE fail or no PVT | GNSS receiver replaced |
+| OM-040-008 | GBAS Approach (TBD) | GBAS differential corrections applied from VHF datalink; Cat I approach TBD | GBAS receiver fitted and GBAS station in range (TBD) | Landing or go-around |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+- **GNSS BITE**: Each GNSS receiver performs continuous self-monitoring: RF front end, correlator channels, PVT computation, SBAS demodulator, RAIM engine. BITE fault words on ARINC 429 logged by CMC. A GNSS receiver failure generates a GNSS FAIL advisory and CMC fault log entry.
+- **RAIM monitoring**: The FMGC monitors RAIM availability from both receivers. Loss of RAIM for the current operation generates an RNP UNABLE alert on the PFD. Crew action: revert to alternate navigation source (IRS + DME) or change to a route/approach not requiring GNSS RAIM.
+- **SBAS integrity monitoring**: SBAS provides signal-in-space integrity data (UDRE, GIVE parameters) for each satellite. The GNSS receiver uses this data to compute the HPL/VPL for SBAS-aided operations. If SBAS integrity data is flagged (DNU — Do Not Use), the receiver reverts to GPS-only operation.
+- **Navigation database currency**: The FMGC monitors the navigation database expiry date (AIRAC cycle). An expired database generates a NAV DB OUTDATED advisory via the CMC and ECAM (NAV DB EXPIRED). Use of an expired database may be restricted to specific operations per regulatory authority.
+- **Satellite geometry prediction (RAIM prediction)**: The MCDU GNSS STATUS / RAIM PREDICTION page allows pre-flight prediction of RAIM availability for the planned route and approach time window. This uses the GPS satellite almanac stored in the receiver. Crew checks RAIM availability before departure for planned RNP-AR approaches.
+
+---
+
+## §13 Maintenance Concept
+
+- **GNSS receiver replacement**: Line maintenance. GNSS receiver in avionics bay. Replacement: ARINC 429 connector disconnection; RF coaxial antenna cable disconnection; LRU extraction. Post-replacement: verify PVT acquisition and RAIM status on CMC or MCDU GNSS STATUS page. No bench calibration required.
+- **GNSS antenna replacement**: GNSS patch antenna on top fuselage crown requires physical access to upper fuselage exterior. Antenna removal: disconnect coaxial cable; remove fasteners. Antenna is flush with the fuselage skin profile. Composite CFRP fuselage attachment: check for delamination or water ingress at antenna mount after replacement. Post-replacement: verify GNSS signal acquisition (≥TBD satellites in TBD minutes on ground).
+- **Navigation database update**: AIRAC 28-day cycle update via ARINC 615A data loader. Loaded via CMC maintenance port. Both GNSS receivers receive navigation database update data for RAIM prediction almanac and approach procedure waypoints. Post-update: verify database effective date on MCDU.
+- **No overhaul**: GNSS receivers are on-condition LRUs. No scheduled overhaul interval.
+
+---
+
+## §14 S1000D / CSDB Mapping
+
+### 14.1 SNS to DMC Mapping
+
+| SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
+|---|---|---|---|---|
+| 034-40 | Satellite Navigation and Augmentation | DMC-AMPEL360E-EWTW-034-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+
+### 14.2 Recommended DM Set for 034-40
+
+| Info Code | DM Title | Description |
 |---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+| 040 | GNSS System Description | Dual GNSS, SBAS, RAIM, RNP-AR architecture |
+| 300 | GNSS Normal / Abnormal Procedures | RAIM unavailable; RNP UNABLE; GNSS lost; navigation DB expired |
+| 400 | GNSS Inspection and Test | GNSS signal acquisition test; RAIM prediction check; nav DB update |
+| 520 | GNSS Fault Isolation | GNSS receiver fault; antenna fault; RAIM permanent fail |
+| 720 | GNSS Receiver and Antenna R&I | GNSS receiver R&I; GNSS antenna R&I |
 
-### Domain-Specific Terms — ATA 34 Navigation
+---
 
-| Term / Acronym | Expansion | Definition |
-|---|---|---|
-| **ADC** | Air Data Computer | Computer converting pitot-static pressures and total air temperature into calibrated airspeed, Mach, altitude, and vertical speed. |
-| **ADIRS** | Air Data and Inertial Reference System | Integrated unit combining ADC and IRS functions; standard on modern commercial transports. |
-| **ADSB** | Automatic Dependent Surveillance – Broadcast | Surveillance technology in which aircraft broadcast GPS-derived position, enabling ground stations and other aircraft to track traffic without active radar. |
-| **DME** | Distance Measuring Equipment | VHF/UHF radio navigation aid providing slant-range distance from the aircraft to a ground transponder. |
-| **EGPWS** | Enhanced Ground Proximity Warning System | TAWS variant (Honeywell brand name) adding terrain database look-ahead to the classic GPWS envelope-protection modes. |
-| **GNSS** | Global Navigation Satellite System | Generic term for satellite constellations providing position, navigation, and timing (GPS, GLONASS, Galileo, BeiDou). |
-| **GPS** | Global Positioning System | US DoD satellite constellation providing worldwide navigation signals; primary civilian GNSS for commercial aviation. |
-| **ILS** | Instrument Landing System | Ground-based radio navigation aid providing lateral (localiser) and vertical (glidepath) guidance for precision approach to a runway. |
-| **IRS** | Inertial Reference System | Navigation system computing position, velocity, and attitude from accelerometer and gyroscope data without external reference. |
-| **IRU** | Inertial Reference Unit | Hardware sensor assembly (gyros + accelerometers) within an ADIRS or IRS. |
-| **MCDU** | Multipurpose Control and Display Unit | Crew interface for entering and monitoring FMS navigation data, performance parameters, and datalink messages. |
-| **MMR** | Multi-Mode Receiver | Integrated receiver processing ILS, GPS/GNSS, MLS, and GLS signals for approach and navigation guidance. |
-| **RNP** | Required Navigation Performance | Performance-based navigation standard specifying the accuracy and onboard monitoring capability required for a route or procedure. |
-| **SBAS** | Satellite-Based Augmentation System | Wide-area augmentation of GNSS providing improved accuracy and integrity (e.g., WAAS in North America, EGNOS in Europe). |
-| **TAWS** | Terrain Awareness and Warning System | Onboard terrain protection system using GPS position and terrain databases to provide look-ahead warnings. |
-| **TCAS** | Traffic Collision Avoidance System | Onboard surveillance system that interrogates transponders of nearby aircraft and issues Resolution Advisories (RAs) to avoid collisions. |
-| **VOR** | VHF Omnidirectional Range | Ground-based VHF radio navigation beacon providing magnetic bearing information to equipped aircraft. |
-| **WXR** | Weather Radar | Onboard airborne weather detection radar providing precipitation, turbulence, and wind-shear detection. |
+## §15 Footprints
+
+### 15.1 Physical Footprint
+- GNSS Receiver-1 and GNSS Receiver-2: avionics bay — LRU envelope TBD; weight TBD kg
+- GNSS Antenna-1 and GNSS Antenna-2: top fuselage crown — patch antenna, flush profile; positions TBD
+
+### 15.2 Electrical / Data Footprint
+- GNSS receiver power: 28 VDC essential bus; TBD W per receiver
+- ARINC 429 output buses per GNSS receiver: TBD (FMGC, PFD, MCDU, CMC)
+
+### 15.3 Maintenance Footprint
+- GNSS receiver R&I: line maintenance; no special tooling
+- GNSS antenna R&I: exterior fuselage access; composite CFRP attachment check
+- Navigation DB update: AIRAC 28-day cycle; ARINC 615A data loader
+
+### 15.4 Data Footprint
+- GNSS BITE fault log: TBD entries per receiver, in CMC
+- RAIM prediction log: pre-flight check records — TBD retention
+- Navigation DB update log: cycle, effective date — per AMM retention
+
+---
+
+## §16 Safety and Certification Considerations
+
+| Requirement | Source | Description | Compliance Approach | Status |
+|---|---|---|---|---|
+| CS-25.1301 | EASA CS-25 | Equipment function and installation | GNSS qualification; DO-160G | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1309 | EASA CS-25 | System safety | Dual GNSS; RAIM; FHA/FMEA | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-ACNS | EASA | RNAV/RNP airspace compliance | GNSS-based RNAV/RNP; CS-ACNS.B.RNAV; CS-ACNS.B.RNP | <img src="https://img.shields.io/badge/TBD-red"> |
+| AMC 20-28 | EASA AMC | GNSS / SBAS airworthiness approval | Dual GNSS + SBAS; DO-229 compliance; RAIM; SBAS LPV | <img src="https://img.shields.io/badge/TBD-red"> |
+| AMC 20-26 | EASA AMC | RNP-AR approach approval | RNP-AR capability; FMS RF legs; RAIM for RNP-AR | <img src="https://img.shields.io/badge/TBD-red"> |
+| DO-229F | RTCA | MOPS for GPS/WAAS | GNSS receiver qualification; TSO-C145e / C146e | <img src="https://img.shields.io/badge/TBD-red"> |
+| TSO-C145e | FAA | Airborne Navigation Sensors Using GPS + SBAS | GNSS receiver TSO qualification | <img src="https://img.shields.io/badge/TBD-red"> |
+| TSO-C146e | FAA | Stand-Alone Airborne Navigation Equipment Using GPS + SBAS | GNSS receiver TSO qualification | <img src="https://img.shields.io/badge/TBD-red"> |
+| DO-178C | RTCA | Software DAL | GNSS receiver software DAL — TBD (likely DAL B) | <img src="https://img.shields.io/badge/TBD-red"> |
+| DO-160G | RTCA | Environmental qualification | GNSS receiver and antenna environmental testing | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §17 Verification and Validation
+
+| V&V ID | Requirement | Method | Success Criterion | Status |
+|---|---|---|---|---|
+| VV-040-001 | GNSS RAIM prediction — DO-229 | RAIM availability simulation for planned route set | RAIM available > TBD% for all planned RNP-AR approaches | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-040-002 | RNP-AR approach simulation | FMS RNP-AR flight simulation; injected GNSS errors | Cross-track error < RNP value; no false RNP UNABLE during nominal operation | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-040-003 | SBAS LPV approach accuracy — DO-229 | Ground test with GNSS simulator; SBAS signal injection | Position error < 3 m (H, 95%); HPL < 40 m; VPL < 50 m | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-040-004 | RAIM fail alert — DO-229 | GNSS simulator: remove satellites below RAIM threshold | RAIM FAIL flag generated; RNP UNABLE on PFD within TBD seconds | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-040-005 | GPS acquisition time | Power-on test: time to first fix with cold start | First fix in < TBD minutes (cold start); < TBD seconds (warm start) | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-040-006 | Navigation DB update process | ARINC 615A data load test | Successful database load; correct effective date on MCDU; RAIM prediction uses new almanac | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-040-007 | IRS alignment accuracy test using GNSS | GPS-aided IRS alignment test | IRS achieves NAV mode in < 5 min with GPS; position error < TBD NM | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-040-008 | DO-160G — Environmental qualification | Full DO-160G test suite for GNSS receiver | Pass all applicable DO-160G categories | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §18 Glossary
+
+| Term | Definition |
+|---|---|
+| ARAIM | Advanced Receiver Autonomous Integrity Monitoring — next-generation GNSS integrity using multiple constellations (GPS + Galileo); future upgrade to RAIM |
+| EGNOS | European Geostationary Navigation Overlay Service — SBAS for Europe; provides GPS differential corrections and integrity from geostationary satellites |
+| Galileo | European GNSS constellation providing L1/E1 and E5a signals; multi-constellation capability TBD |
+| GBAS | Ground-Based Augmentation System — local differential GNSS using VHF data broadcast; supports Cat I/II/III precision approaches; fitment TBD |
+| GNSS | Global Navigation Satellite System — generic term for all satellite navigation systems (GPS, Galileo, GLONASS, BeiDou, QZSS) |
+| GPS | Global Positioning System — US Department of Defense satellite navigation system; primary GNSS constellation for eWTW |
+| HPL | Horizontal Protection Level — a RAIM-computed bound on horizontal position error; compared with Horizontal Alert Limit (HAL) |
+| L1 | GPS frequency band 1 at 1575.42 MHz; carries GPS L1 C/A and L1C signals |
+| L5 | GPS frequency band 5 at 1176.45 MHz; carries GPS L5 signal; dual-frequency with L1 eliminates ionospheric delay; TBD on eWTW |
+| LPV | Localizer Performance with Vertical Guidance — a SBAS-based precision approach providing lateral and vertical guidance similar to ILS; minimum DH 200 ft |
+| LNAV | Lateral Navigation — non-precision GPS approach using horizontal GNSS guidance only |
+| MSAS | MTSAT Satellite Augmentation System — SBAS for Japan; compatible with EGNOS/WAAS architecture |
+| PVT | Position, Velocity, Time — the primary output solution of a GNSS receiver |
+| RAIM | Receiver Autonomous Integrity Monitoring — integrity monitoring using redundant satellite geometry; provides HPL/VPL computation |
+| RF Leg | Radius-to-Fix — a curved FMS path segment used in RNP-AR approaches; requires continuous RAIM monitoring |
+| RNP | Required Navigation Performance — navigation specification with on-board monitoring (HPL < RNP value) and alerting capability |
+| RNP-AR | RNP — Authorization Required — the most demanding RNP specification; requires authorisation from competent authority; lateral accuracy < 0.1 NM TBD |
+| SBAS | Satellite-Based Augmentation System — wide-area GNSS differential correction system (WAAS, EGNOS, MSAS) |
+| SISA | Signal-In-Space Accuracy — Galileo integrity parameter; equivalent to SBAS UDRE for GPS |
+| VPL | Vertical Protection Level — RAIM-computed bound on vertical position error; compared with Vertical Alert Limit (VAL) |
+| WAAS | Wide Area Augmentation System — SBAS for North America operated by the FAA |
+
+---
+
+## §19 Citations
+
+| Citation ID | Source | Title | Relevance |
+|---|---|---|---|
+| CIT-040-001 | EASA | AMC 20-28 — GNSS/SBAS Airworthiness Approval | SBAS and GNSS approval guidance |
+| CIT-040-002 | EASA | AMC 20-26 — Airworthiness Approval of RNP-AR | RNP-AR approach approval |
+| CIT-040-003 | RTCA | DO-229F — MOPS for GPS/WAAS | GNSS/SBAS qualification standard |
+| CIT-040-004 | FAA | TSO-C145e / C146e | GNSS TSO qualification |
+| CIT-040-005 | EASA | CS-ACNS — CNS Airspace Requirements | RNAV/RNP compliance |
+| CIT-040-006 | RTCA | DO-178C — Software Considerations | GNSS software DAL |
+| CIT-040-007 | RTCA | DO-160G | GNSS environmental qualification |
+| CIT-040-008 | ARINC | ARINC 615A — Data Loading | Navigation database update |
+| CIT-040-009 | ASD-STAN | S1000D Issue 5.0 | CSDB mapping |
+
+---
+
+## §20 References
+
+| Ref ID | Document | Title | Link |
+|---|---|---|---|
+| REF-040-001 | DO-229F | MOPS for GPS/WAAS Airborne Equipment | [RTCA](https://www.rtca.org/) |
+| REF-040-002 | TSO-C145e | Airborne Navigation Sensors Using GPS+SBAS | [FAA TSO](#) |
+| REF-040-003 | TSO-C146e | Stand-Alone Airborne Navigation Equipment Using GPS+SBAS | [FAA TSO](#) |
+| REF-040-004 | AMC 20-28 | GNSS/SBAS Airworthiness Approval | [EASA AMC](#) |
+| REF-040-005 | AMC 20-26 | RNP-AR Airworthiness Approval | [EASA AMC](#) |
+| REF-040-006 | CS-ACNS | Communications, Navigation, Surveillance | [EASA CS-ACNS](#) |
+| REF-040-007 | DO-160G | Environmental Conditions and Test Procedures | [RTCA](https://www.rtca.org/) |
+| REF-040-008 | DO-178C | Software Considerations | [RTCA](https://www.rtca.org/) |
+| REF-040-009 | ARINC 615A | Data Loading | [ARINC](https://www.aviation-ia.com/) |
+| REF-040-010 | S1000D Issue 5.0 | International Specification for Technical Publications | [s1000d.org](https://s1000d.org/) |
+
+---
+
+## §21 Open Issues
+
+| Issue ID | Description | Owner | Priority | Status |
+|---|---|---|---|---|
+| OI-040-001 | GNSS L5 dual-frequency decision — confirm whether L5 is required for ARAIM; impact on receiver selection and TSO scope | Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-040-002 | Galileo multi-constellation — confirm Galileo receiver integration; dependency on ARAIM standards maturation | Q-AIR / Q-DATAGOV | Low | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-040-003 | GBAS fitment decision — Cat I/II GBAS as standard or optional equipment | Q-AIR / ORB-PMO | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-040-004 | GNSS antenna installation on CFRP — composite fuselage attachment engineering; delamination risk; RF coax routing through CFRP structure | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-040-005 | ARAIM upgrade path — define certification programme for ARAIM when ICAO NSP standards finalised | Q-AIR / Q-DATAGOV | Low | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-040-006 | RNP-AR approval — confirm <0.1 NM lateral accuracy target and RAIM availability requirements for planned route network | Q-AIR / ORB-LEG | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-040-007 | Cat II / Cat III ILS decision (cross-reference 034-030) | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-040-008 | MEMS vs. FOG IRS technology decision (cross-reference 034-020) | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description |
+|---|---|---|---|
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE / Q-AIR | Initial full-template creation — all §0–§22 sections drafted; TBD items identified |
