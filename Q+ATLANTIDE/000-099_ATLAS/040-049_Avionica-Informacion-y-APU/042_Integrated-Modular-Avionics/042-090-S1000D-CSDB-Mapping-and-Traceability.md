@@ -17,8 +17,10 @@ subsection: "042"
 subsection_title: "Integrated Modular Avionics"
 subsubject: "090"
 subsubject_title: "S1000D CSDB Mapping and Traceability"
+subsubject_file: "042-090-s1000d-csdb-mapping-and-traceability.md"
+subsubject_link: "./042-090-s1000d-csdb-mapping-and-traceability.md"
 primary_q_division: Q-DATAGOV
-support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
+support_q_divisions: [Q-AIR, Q-HPC, Q-MECHANICS]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
@@ -28,124 +30,350 @@ language: en
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 090 — S1000D CSDB Mapping and Traceability
 
+## 0. Hyperlink Policy
+
+All internal cross-references use relative Markdown links within Q+ATLANTIDE CSDB. External citations in §19/§20 marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent: [042 README](./README.md).
+
+---
+
 ## 1. Purpose
 
-This document defines the S1000D Issue 5.0 data module architecture, Common Source DataBase (CSDB) mapping, and traceability framework for the IMA subsystem within the Q+ATLANTIDE ATLAS baseline. It establishes how IMA technical documentation — including system descriptions, maintenance procedures, fault reporting, illustrated parts breakdown, and wiring data — is structured as S1000D Data Modules (DMs) within the CSDB, and how these DMs trace to the DO-178C and DO-254 qualification artefacts, the DO-297 IMA certification evidence, and the ASD S3000L logistics support analysis.
+This document defines the S1000D Issue 5.0 Data Module Code (DMC) scheme, Data Module Requirements List (DMRL), Business Rules Exchange (BREX) compliance, cross-document traceability, and publication configuration for the complete ATLAS 042 Integrated Modular Avionics subsection. It establishes the CSDB framework ensuring all technical publications for IMA are traceable to regulatory requirements, design documents, and verification evidence.
 
-The adoption of S1000D Issue 5.0 as the technical documentation standard for the IMA subsystem ensures that all maintenance, operations, and training publications are produced from a single controlled source, eliminating the duplication and inconsistency risks associated with document-centric approaches. The CSDB-centric workflow enables automatic generation of publication types — Aircraft Maintenance Manual (AMM), Fault Isolation Manual (FIM), Illustrated Parts Data (IPD), Troubleshooting Manual (TSM), and Wiring Manual (WM) — from reusable, version-controlled data modules.
+---
 
-## 2. Scope
+## 2. Applicability
 
-This subject covers:
+| Attribute | Value |
+|-----------|-------|
+| Aircraft Program | AMPEL360E eWTW |
+| ATA Chapter | ATA 42 — Integrated Modular Avionics |
+| Certification Basis | CS-25 Amendment 28 |
+| Applicable Standards | S1000D Issue 5.0; ATA iSpec 2200; ASD-STE100; DO-297; DO-178C; DO-254 |
+| Documentation Class | Maintenance and Technical Publication |
+| Configuration | AMPEL360E Build Standard 1.0 and above |
 
-- S1000D Issue 5.0 Data Module Code (DMC) structure for the IMA subsystem: model identification code, system/subsystem codes, and information code allocation.
-- Data Module Requirements List (DMRL): IMA-specific DM types, publication applicability, and review responsibility.
-- System Description Data Module (SD-DM): IMA architecture narrative and functional description.
-- Maintenance Procedure Data Module (MP-DM): IMA line and base maintenance task structures.
-- Fault Reporting Manual Data Module (FR-DM): fault code to DM mapping and CMC fault message linkage.
-- Illustrated Parts Data Module (IP-DM): IMA LRU and LRM part catalogue with effectivity codes.
-- Traceability matrix: mapping from DO-178C life-cycle data artefacts and DO-254 hardware design records to S1000D DMs.
-- Publication types: AMM, FIM, IPD, TSM, and WM content allocation from the IMA CSDB.
-- CSDB governance: issue control, applicability management, and CMS integration with the Q+ATLANTIDE configuration management system.
-- ASD S3000L interface: IMA maintenance task data exchange with the Logistics Support Analysis (LSA) record.
+---
 
-## 3. Glossary
+## 3. System / Function Overview
 
-| Term / Acronym | Definition |
-|---|---|
-| S1000D | An international specification for the production of technical publications using a Common Source DataBase (CSDB), maintained by the ASD/AIA/ATA consortium; Issue 5.0 is the current major release applicable to IMA documentation. |
-| CSDB | Common Source DataBase — the central, structured repository in which S1000D Data Modules, illustrations, multimedia, and applicability data are stored, managed, and published for all technical publications for the IMA subsystem. |
-| DMC | Data Module Code — a structured, 17-character alphanumeric identifier uniquely identifying each S1000D Data Module, comprising model identification, system/subsystem/subsubsystem codes, assembly code, disassembly code, information code, and information code variant. |
-| DMRL | Data Module Requirements List — the master planning document that inventories all required Data Modules for a given product, specifying their DMC, title, information type, publication applicability, and responsible author. |
-| AMM | Aircraft Maintenance Manual — an S1000D publication type providing scheduled and unscheduled maintenance task procedures for aircraft systems and components, generated from maintenance procedure DMs in the CSDB. |
-| FIM | Fault Isolation Manual — an S1000D publication type providing fault isolation procedures linking avionics fault codes (CMC messages) to physical root-cause faults and directing the maintenance engineer to corrective actions. |
-| IPD | Illustrated Parts Data — an S1000D publication type providing illustrated parts catalogues with part numbers, quantities, effectivities, and vendor information for all IMA LRUs, LRMs, and associated components. |
-| TSM | Troubleshooting Manual — an S1000D publication type providing symptom-based diagnostic procedures that guide maintenance engineers from observed failure symptoms to probable root causes without relying solely on CMC fault codes. |
-| ASD S3000L | ASD Specification S3000L — "Logical Support Analysis", defining the data exchange format for logistics support analysis records, enabling IMA maintenance task data to be shared between the technical documentation CSDB and the LSA tool. |
-| Traceability Matrix | A structured table mapping each certified software or hardware development artefact (DO-178C, DO-254, DO-297 evidence) to the corresponding S1000D Data Module that documents the operational or maintenance aspect of the same item. |
+The Q+ATLANTIDE CSDB is an S1000D Issue 5.0-compliant Common Source Database managing all technical documentation for the AMPEL360E. For the IMA subsection (SNS 042-000 through 042-090), the CSDB contains Data Modules spanning:
 
-## 4. Diagram (Mermaid)
+- **AMM (Aircraft Maintenance Manual):** System descriptions, procedures, BITE, and fault isolation.
+- **FIM (Fault Isolation Manual):** Fault code index, isolation trees, and corrective actions.
+- **IPD (Illustrated Parts Data):** Part numbers, effectivity, and interchangeability data.
+- **TSM (Troubleshooting Manual):** Fault scenario guides for complex multi-system faults.
+- **SRM (Structural Repair Manual):** Cabinet structural repair data (minor repairs only).
+
+The DMC scheme for IMA follows the pattern: `QATL-A-042-{SNS2}-{SNS3}-{SNS4}AAA-{ICN}-A` where SNS2=subsection (042), SNS3=sub-subject (00–09), SNS4=subject (00), and ICN defines the information code (040A=description, 520A=procedure, 920A=fault isolation, 941A=IPD).
+
+The DMRL lists all approved DMs for ATLAS 042, with effective status, publication type, and traceability to AMPEL360E design documents. BREX compliance is enforced by the CSDB tool chain; all DMs must pass BREX validation before publication.
+
+---
+
+## 4. Scope
+
+### 4.1 Included
+
+- DMC scheme definition for SNS 042-000 through 042-090.
+- DMRL structure, required DM list, and effective status per build standard.
+- BREX rule set applicable to ATLAS 042 data modules.
+- Cross-document traceability matrix from DMs to design documents and V&V evidence.
+- Publication configuration (AMM/FIM/IPD/TSM/SRM) for ATLAS 042.
+- Configuration management of CSDB DMs under S1000D CM framework.
+
+### 4.2 Excluded
+
+- CSDB tool chain implementation (managed by Q-DATAGOV IT).
+- Publication delivery and distribution to airlines (OEM commercial process).
+- Translation into languages other than English (covered by separate translation project).
+
+---
+
+## 5. Architecture Description
+
+**DMC Scheme:** The AMPEL360E DMC structure follows S1000D Issue 5.0 Chapter 7.4. Model Identification Code (MIC): QATL; System Difference Code (SDC): A; SNS: 042-{sub}-{subject}-{variant}; Information Code (IC): per ATA iSpec 2200 mapping; Item Location Code (ILC): A. Full DMC example: `QATL-A-042-00-00-00AAA-040A-A` = IMA General, System Description.
+
+**BREX:** The AMPEL360E BREX file defines: permitted SNS values for ATLAS 042, required metadata elements (applicability, language, issue date, security classification), prohibited information codes per publication type, and permitted markup elements. BREX validation is mandatory before DM acceptance into CSDB.
+
+**Traceability Matrix:** Each DM is linked in the traceability matrix to: (a) source design document (ATLAS 042-xxx files in this repository); (b) regulatory requirement (CS-25 paragraph); (c) V&V evidence item (VV-042-xxx reference). Traceability is bi-directional and maintained in a dedicated CSDB traceability data module.
+
+**Publication Configuration:** Publication Configuration Objects (PCOs) define the DM sets assembled for each publication: AMM PCO includes all 040A and 520A DMs for SNS 042-000 to 042-090; FIM PCO includes all 920A DMs; IPD PCO includes all 941A DMs. PCOs are version-controlled under CSDB CM.
+
+---
+
+## 6. Functional Breakdown
+
+| Function ID | Function Name | Description | DAL | Owner |
+|-------------|---------------|-------------|-----|-------|
+| F-042-01 | DMC Scheme Management | Maintain and control the ATLAS 042 DMC scheme; issue new DMCs per DMRL additions; ensure uniqueness across CSDB | N/A | Q-DATAGOV |
+| F-042-02 | DMRL Maintenance | Maintain the DMRL for SNS 042-000 to 042-090; track DM status (draft/review/approved/obsolete); update effectivity per build standard change | N/A | Q-DATAGOV |
+| F-042-03 | BREX Compliance | Validate all ATLAS 042 DMs against AMPEL360E BREX before acceptance; maintain BREX rule set as IMA design evolves | N/A | Q-DATAGOV |
+| F-042-04 | Cross-Document Traceability | Maintain bi-directional traceability matrix linking DMs to design documents, requirements, and V&V evidence; update at each design change | N/A | Q-DATAGOV |
+| F-042-05 | Publication Configuration | Define and maintain AMM/FIM/IPD/TSM/SRM PCOs for ATLAS 042; generate publications from CSDB per release schedule | N/A | Q-DATAGOV |
+
+---
+
+## 7. Mermaid — System Context Diagram
 
 ```mermaid
-flowchart TD
-    subgraph CERT_ARTEFACTS["Certification Artefacts"]
-        DO178C_ART["DO-178C Life-Cycle Data\n(SRS, SDD, STP, SVR)"]
-        DO254_ART["DO-254 Hardware\nDesign Records (PHAC, HDR)"]
-        DO297_ART["DO-297 IMA\nCertification Evidence"]
-        ARP4754_ART["ARP4754A\nSSA / PSSA / CMA"]
-    end
+graph TB
+    DESIGN["ATLAS 042 Design Docs\n(This Repository)"]
+    CSDB["Q+ATLANTIDE CSDB\nS1000D Issue 5.0"]
+    BREX["BREX Validator\nBusiness Rules"]
+    DMRL["DMRL\nDM Requirements List"]
+    TRACE["Traceability Matrix\nDM ↔ Req ↔ V&V"]
+    AMM["AMM Publication\nPCO-AMM-042"]
+    FIM["FIM Publication\nPCO-FIM-042"]
+    IPD["IPD Publication\nPCO-IPD-042"]
+    AIRLINES["Airline Operators\nPublication Recipients"]
 
-    subgraph CSDB["S1000D CSDB — IMA Data Modules"]
-        direction TB
-        SD_DM["System Description DM\n(DMC: ...042-00A-D)"]
-        MP_DM["Maintenance Procedure DMs\n(DMC: ...042-00A-M)"]
-        FR_DM["Fault Reporting DMs\n(DMC: ...042-00A-F)"]
-        IP_DM["Illustrated Parts DMs\n(DMC: ...042-00A-C)"]
-        WD_DM["Wiring Data DMs\n(DMC: ...042-00A-W)"]
-        TS_DM["Troubleshooting DMs\n(DMC: ...042-00A-T)"]
-    end
-
-    subgraph PUBS["Published Manuals"]
-        AMM_PUB["AMM\n(Aircraft Maintenance Manual)"]
-        FIM_PUB["FIM\n(Fault Isolation Manual)"]
-        IPD_PUB["IPD\n(Illustrated Parts Data)"]
-        TSM_PUB["TSM\n(Troubleshooting Manual)"]
-        WM_PUB["WM\n(Wiring Manual)"]
-    end
-
-    subgraph LSA["Logistics Interface"]
-        S3000L["ASD S3000L\nLSA Record"]
-    end
-
-    DO178C_ART -->|"Traceability Matrix"| SD_DM
-    DO254_ART -->|"Traceability Matrix"| SD_DM
-    DO297_ART --> SD_DM
-    ARP4754_ART --> FR_DM
-
-    SD_DM --> AMM_PUB
-    MP_DM --> AMM_PUB
-    FR_DM --> FIM_PUB
-    IP_DM --> IPD_PUB
-    TS_DM --> TSM_PUB
-    WD_DM --> WM_PUB
-    MP_DM --> S3000L
+    DESIGN --> CSDB
+    CSDB --> BREX
+    DMRL --> CSDB
+    CSDB --> TRACE
+    CSDB --> AMM
+    CSDB --> FIM
+    CSDB --> IPD
+    AMM --> AIRLINES
+    FIM --> AIRLINES
+    IPD --> AIRLINES
 ```
 
-## 5. Footprint
+---
 
-| Metric | Value |
-|---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `040-049` |
-| Section | `04` — Aviónica, Información & APU |
-| Subsection | `042` — Integrated Modular Avionics |
-| Subsubject | `090` — S1000D CSDB Mapping and Traceability |
-| Primary Q-Division | Q-DATAGOV[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/042_Integrated-Modular-Avionics/` |
-| Document | `042-090-S1000D-CSDB-Mapping-and-Traceability.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
+## 8. Mermaid — Internal Functional Architecture
 
-## 6. References & Citations
+```mermaid
+graph LR
+    subgraph CSDB_SYS["CSDB System"]
+        DM_REPO["DM Repository\nSNS 042-000 to 042-090"]
+        CM_SYS["CM System\nVersion Control"]
+        BREX_VAL["BREX Validator\nAutomated Check"]
+        PCO_MGR["PCO Manager\nAMM/FIM/IPD"]
+        DM_REPO --> CM_SYS
+        DM_REPO --> BREX_VAL
+        BREX_VAL --> PCO_MGR
+    end
+    DMRL_IN["DMRL Input"]
+    DESIGN_IN["Design Document Input"]
+    PUB_OUT["Publications Output"]
+    DMRL_IN --> DM_REPO
+    DESIGN_IN --> DM_REPO
+    PCO_MGR --> PUB_OUT
+```
 
-[^baseline]: Q+ATLANTIDE controlled baseline (v1.0.0) — the governing programme baseline document for all ATLAS architecture artefacts. Maintained under configuration management per the Q+ATLANTIDE governance framework.
+---
 
-[^qdiv]: Q-Division authority — Q-DATAGOV holds primary governance authority over IMA architecture documentation, data integrity, and configuration control within the Q+ATLANTIDE programme.
+## 9. Mermaid — Lifecycle Traceability
 
-[^gov]: Governance class — `baseline` denotes that this document forms part of the formally controlled baseline configuration. Changes require formal change-request approval through ORB-PMO.
+```mermaid
+graph LR
+    LC02["LC02\nRequirements"]
+    LC03["LC03\nDesign"]
+    LC05["LC05\nImplementation"]
+    LC06["LC06\nVerification"]
+    LC10["LC10\nCertification"]
+    LC11["LC11\nOperation"]
+    LC12["LC12\nDisposal"]
+    CSDB["CSDB\nData Modules"]
+    DMRL["DMRL"]
+    Evidence["S1000D/CSDB\nVerification Evidence"]
+    LC02 --> LC03 --> LC05 --> LC06 --> LC10 --> LC11 --> LC12
+    LC02 --> DMRL --> CSDB
+    LC06 --> Evidence --> LC10
+    LC11 --> CSDB
+```
 
-[^n001]: Note N-001 — The IMA Data Module Requirements List (DMRL-042-090) is the master planning document for all S1000D IMA data modules and is maintained under Q-DATAGOV configuration control.
+---
 
-[^s1000d]: S1000D Issue 5.0 — "International Specification for Technical Publications Using a Common Source DataBase", ASD/AIA/ATA, 2016. The normative specification governing the structure, encoding, and management of all IMA technical documentation data modules.
+## 10. Interfaces
 
-[^asds3000l]: ASD Specification S3000L Issue 2.0 — "Logical Support Analysis", ASD, 2014. Defines the data format and exchange process between the S1000D CSDB and the Logistics Support Analysis record for IMA maintenance task integration.
+| Interface ID | Name | Type | Counterpart System | Protocol | Direction |
+|--------------|------|------|--------------------|----------|-----------|
+| IF-042-01 | CSDB to Design Documents | Data | ATLAS Repository (this repo) | Git version control; Markdown → CSDB import | Input |
+| IF-042-02 | CSDB to BREX Validator | Data | BREX tool chain | S1000D XML BREX file | Bidirectional |
+| IF-042-03 | CSDB to Publication Engine | Data | Publication PDF/XML renderer | S1000D XML DMs | Output |
+| IF-042-04 | CSDB to Airline EFB | Data | Airline Electronic Flight Bag | PDF / IETP XML delivery | Output |
+| IF-042-05 | DMRL to CSDB CM | Data | CSDB configuration management | DMRL Excel/XML | Input |
+| IF-042-06 | Traceability Matrix to EASA | Data | EASA type certificate authority | Traceability report | Output |
 
-[^do297]: RTCA DO-297 / EUROCAE ED-124 — "Integrated Modular Avionics (IMA) Development Guidance and Certification Considerations". Section 6 defines the certification evidence documentation requirements that form the basis of the IMA traceability matrix to S1000D DMs.
+---
 
-[^ataispec]: ATA iSpec 2200 — "Information Standards for Aviation Maintenance", Air Transport Association, 2012. Provides the chapter/system coding baseline (ATA 42) against which the S1000D DMC system-subsystem codes for IMA are mapped.
+## 11. Operating Modes
+
+| Mode | Name | Description | Entry Condition | Exit Condition |
+|------|------|-------------|-----------------|----------------|
+| M1 | Draft | DM in authoring; not yet BREX-validated; not in DMRL effective set | DM created | Review submitted |
+| M2 | Review | DM under technical review; BREX validation running; traceability being populated | Review submitted | Review approved or rejected |
+| M3 | Approved | DM approved; in DMRL effective set for current build standard; included in PCO | Review approved | Design change or obsolescence |
+| M4 | Revised | DM under revision due to design change; new version in Draft while approved version remains active | Design change raised | Revised DM approved |
+| M5 | Obsolete | DM superseded; no longer in effective set; retained in CSDB archive | New DM approved | Archive (permanent) |
+
+---
+
+## 12. Monitoring and Diagnostics
+
+- **DMRL Completeness Check:** Automated CSDB tool checks that all SNS 042-000 to 042-090 DM slots defined in DMRL have at least one Approved DM; gaps generate DMRL deficiency report.
+- **BREX Validation Rate:** BREX validation pass rate tracked per DM author; persistent failures trigger authoring training.
+- **Traceability Coverage:** Traceability matrix coverage (percentage of DMs with ≥1 design doc link and ≥1 V&V link) reported monthly; target ≥98% before first publication.
+- **DM Revision Cycle Time:** Time from design change initiation to DM revision approval tracked; >30-day cycle time triggers process review.
+- **Publication Generation Time:** Time from PCO release to PDF/IETP generation tracked; >2-hour generation time triggers tool chain review.
+- **BREX Rule Evolution:** BREX rule set version-controlled; each rule change tracked with justification and impact assessment on existing approved DMs.
+- **Obsolete DM Tracking:** Obsolete DMs tracked in CSDB archive; accumulation >50 per subsection triggers archival tidy-up review.
+- **Airline DM Download Statistics:** Publication download statistics collected per airline; zero-download DMs after 12 months reviewed for continued relevance.
+
+---
+
+## 13. Maintenance Concept
+
+| Task ID | Task Description | Interval | Access | Skill Level |
+|---------|-----------------|----------|--------|-------------|
+| MC-042-01 | DMRL completeness audit | Each build standard release | CSDB tool | Technical Publications Engineer |
+| MC-042-02 | BREX validation run on all SNS 042 DMs | Each DM update | CSDB automated tool | Technical Publications Engineer |
+| MC-042-03 | Traceability matrix update following design change | Each design change | Traceability tool | Systems Engineer |
+| MC-042-04 | Publication configuration update (PCO) for new build standard | Each build standard | CSDB PCO editor | Technical Publications Engineer |
+| MC-042-05 | CSDB archive tidy-up and obsolete DM purge | Annually | CSDB admin | Technical Publications Manager |
+
+---
+
+## 14. S1000D / CSDB Mapping
+
+| Data Module Code (DMC) | Title | Publication Type | SNS |
+|------------------------|-------|-----------------|-----|
+| QATL-A-042-09-00-00AAA-040A-A | S1000D CSDB Mapping and Traceability Description | AMM | 042-090 |
+| QATL-A-042-09-00-00AAA-520A-A | DMRL Audit and BREX Validation Procedures | AMM | 042-090 |
+| QATL-A-042-09-00-00AAA-920A-A | CSDB Fault Isolation — DM Traceability Gap Resolution | FIM | 042-090 |
+| QATL-A-042-09-00-00AAA-941A-A | CSDB Publication Configuration Objects Parts List | IPD | 042-090 |
+
+### Recommended DM Set
+
+| DM Role | DMC Suffix | Content |
+|---------|-----------|---------|
+| System Overview | 040A | DMC scheme, BREX, DMRL, traceability framework |
+| BITE Procedure | 520A | DMRL audit, BREX run, traceability check |
+| Fault Isolation | 920A | Traceability gap isolation and resolution |
+| IPD | 941A | PCO version catalogue, DMRL snapshot |
+
+---
+
+## 15. Footprints
+
+### 15.1 Physical
+
+| Item | Value |
+|------|-------|
+| CSDB Storage (SNS 042 DMs) | ≈ 150 MB XML + 500 MB graphics |
+| DM Count (SNS 042-000 to 042-090) | ≈ 80 DMs (4 per sub-subject × 10 sub-subjects × 2 pub types) |
+| DMRL Line Count | ≈ 200 lines |
+
+### 15.2 Electrical / Data
+
+| Parameter | Value |
+|-----------|-------|
+| S1000D Version | Issue 5.0 |
+| BREX File Size | ≈ 2 MB XML |
+| Traceability Matrix Size | ≈ 500 rows |
+| PCO Publication Size | AMM ≈ 800 pages; FIM ≈ 300 pages |
+
+### 15.3 Maintenance
+
+| Parameter | Value |
+|-----------|-------|
+| BREX Validation Time | <5 min per DM (automated) |
+| DMRL Audit Duration | <2 hours |
+| Publication Generation Time | <2 hours for full AMM |
+
+### 15.4 Data
+
+| Parameter | Value |
+|-----------|-------|
+| DM Revision History Retention | Minimum 10 versions per DM |
+| CSDB Backup Frequency | Daily incremental; weekly full |
+| Traceability Matrix Format | S1000D DM (XML) + XLSX export |
+
+---
+
+## 16. Safety and Certification Considerations
+
+- **Regulatory Traceability:** S1000D traceability matrix provides regulators with transparent link from each maintenance procedure to the design document and verification evidence justifying it; required for EASA Type Certificate.
+- **BREX as Quality Gate:** BREX validation prevents non-compliant DMs entering the approved set; reduces risk of ambiguous or incorrect maintenance instructions reaching operators.
+- **Configuration Control:** CSDB CM ensures that aircraft-specific effectivity data (build standard) is correctly reflected in publications; prevents incorrect parts or procedures being applied.
+- **ASD-STE100 Language Compliance:** All procedural DMs use Simplified Technical English per ASD-STE100; reduces risk of maintenance errors due to language ambiguity.
+- **Access Control:** CSDB write access is role-controlled; only qualified authors can create or modify DMs; separate approval roles for technical review and quality; audit trail of all changes.
+- **Export Control:** IMA detailed design information classified as Export Controlled; CSDB access controls enforce export restrictions; DMs containing controlled content marked with ECCN/ITAR references.
+
+---
+
+## 17. Verification and Validation
+
+| V&V ID | Requirement | Method | Evidence | Status |
+|--------|-------------|--------|----------|--------|
+| VV-042-01 | All SNS 042 DMs pass BREX validation | Automated test | BREX validation report | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-02 | DMRL completeness ≥98% (all required DMs approved) | Audit | DMRL completeness report | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-03 | Traceability coverage ≥98% (DMs linked to design + V&V) | Audit | Traceability matrix review | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-04 | All procedural DMs comply with ASD-STE100 | Review | STE compliance audit | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-05 | PCO generates correct DM set for AMM/FIM/IPD | Test | PCO generation test | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-06 | CSDB CM audit trail captures all DM changes | Audit | CM audit trail review | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-07 | Export-controlled DMs accessible only to authorised users | Test | Access control test | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+
+---
+
+## 18. Glossary
+
+| Term | Acronym | Definition |
+|------|---------|------------|
+| S1000D | — | International specification for technical publications using a Common Source Database |
+| Data Module Code | DMC | Unique identifier for each S1000D data module; structured per S1000D Chapter 7.4 |
+| Data Module Requirements List | DMRL | List of all required data modules for a product, with status and effectivity |
+| Business Rules Exchange | BREX | S1000D mechanism for defining and exchanging project-specific business rules governing DM content |
+| Common Source Database | CSDB | Repository storing all S1000D data modules for a product |
+| System Numbering Standard | SNS | ATA-based numbering system used in S1000D DMC to identify the system/subsystem |
+| Aircraft Maintenance Manual | AMM | Publication containing system descriptions and maintenance procedures |
+| Fault Isolation Manual | FIM | Publication containing fault codes, isolation trees, and corrective actions |
+| Illustrated Parts Data | IPD | Publication containing part numbers, effectivity, and interchangeability data |
+| Common Information Repository | CIR | S1000D shared data repository for common elements (warnings, cautions, parts) reused across DMs |
+
+---
+
+## 19. Citations
+
+| Ref ID | Standard / Document | Applicability | Status |
+|--------|--------------------|-----------|----|
+| CIT-042-01 | S1000D Issue 5.0, International Specification for Technical Publications | CSDB and DM authoring framework | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-02 | ATA iSpec 2200, Information Standards for Aviation Maintenance | Information code mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-03 | ASD-STE100, Simplified Technical English | Procedural DM language | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-04 | RTCA DO-297, IMA Development Guidance | DO-297 traceability to CSDB DMs | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-05 | RTCA DO-178C, Software Considerations | DO-178C evidence traceability in CSDB | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-06 | RTCA DO-254, Hardware Assurance Guidance | DO-254 evidence traceability in CSDB | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-07 | EASA CS-25 §25.1309 | Maintenance procedure traceability to safety requirement | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-08 | ATA MSG-3, Scheduled Maintenance Development | DMRL alignment with MSG-3 tasks | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+
+---
+
+## 20. References
+
+| Ref ID | Document | Version | Status |
+|--------|----------|---------|--------|
+| REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-02 | AMPEL360E CSDB Business Rules | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | AMPEL360E DMRL Master | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | AMPEL360E Traceability Matrix — ATA 42 | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+
+---
+
+## 21. Open Issues
+
+| Issue ID | Description | Owner | Status |
+|----------|-------------|-------|--------|
+| OI-042-01 | BREX rule set version for ATLAS 042 not yet baselined; pending Q+ATLANTIDE BREX governance review | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-042-02 | DMRL completeness for TSM and SRM publications not yet achieved; authoring to begin at PDR | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-042-03 | CSDB tool chain selection (Authoring tool) pending procurement decision | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+
+---
+
+## 22. Change Log
+
+| Version | Date | Author | Description |
+|---------|------|--------|-------------|
+| 1.0.0 | 2025-01-01 | Q-DATAGOV | Initial baseline release | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

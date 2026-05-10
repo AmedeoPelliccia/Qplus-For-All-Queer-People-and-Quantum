@@ -17,8 +17,10 @@ subsection: "042"
 subsection_title: "Integrated Modular Avionics"
 subsubject: "050"
 subsubject_title: "IMA Power, Cooling and Installation Interfaces"
-primary_q_division: Q-DATAGOV
-support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
+subsubject_file: "042-050-ima-power-cooling-and-installation-interfaces.md"
+subsubject_link: "./042-050-ima-power-cooling-and-installation-interfaces.md"
+primary_q_division: Q-MECHANICS
+support_q_divisions: [Q-DATAGOV, Q-AIR, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
@@ -28,125 +30,348 @@ language: en
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 050 — IMA Power, Cooling and Installation Interfaces
 
+## 0. Hyperlink Policy
+
+All internal cross-references use relative Markdown links within the Q+ATLANTIDE CSDB repository. External citations in §19/§20 marked <img src="https://img.shields.io/badge/TBD-red" alt="TBD">. Parent: [042 README](./README.md) · [042-000](./042-000-Integrated-Modular-Avionics-General.md).
+
+---
+
 ## 1. Purpose
 
-This document establishes the power conversion, distribution, and cooling architecture for the IMA platform within the Q+ATLANTIDE ATLAS baseline. It defines the electrical power interface requirements, internal power distribution unit (PDU) design, thermal management solutions, cabinet installation standards, connector keying provisions, and LRU/LRM exchange procedures. These interfaces are critical for ensuring the IMA system's continued safe operation across the full range of aircraft operating environments, including extreme temperature, altitude, humidity, vibration, and electromagnetic conditions.
+This document defines the power distribution, cooling, cable routing, grounding, bonding, and installation interface requirements for the AMPEL360E IMA system. It covers the Power Supply Module (PSM) and Power Distribution Unit (PDU) architecture, cold plate liquid cooling design, DO-160G Section 16 power quality compliance, cable routing and shielding per MIL-W-22759, grounding and bonding per MIL-HDBK-1857, and Solid State Power Controller (SSPC) integration.
 
-The IMA power and cooling architecture must satisfy the environmental qualification requirements of RTCA DO-160G while complying with the aircraft power system characteristics defined under ATA Chapter 24 and the installation geometry constraints imposed by ARINC 600 and ARINC 404A. Thermal management is of particular importance given the high-density processing environment of IMA cabinets, where conduction-cooled module designs and liquid or ram-air cooling interfaces must be carefully engineered to maintain junction temperatures within the operating limits of all semiconductor devices.
+---
 
-## 2. Scope
+## 2. Applicability
 
-This subject covers:
+| Attribute | Value |
+|-----------|-------|
+| Aircraft Program | AMPEL360E eWTW |
+| ATA Chapter | ATA 42 — Integrated Modular Avionics |
+| Certification Basis | CS-25 Amendment 28; DO-160G Issue G |
+| Applicable Standards | DO-160G §16; MIL-W-22759; MIL-HDBK-1857; ARINC 600; SAE AS50881 |
+| Design Assurance Level | PSM: DAL B; PDU: DAL B; Cooling: DAL C |
+| Configuration | AMPEL360E Build Standard 1.0 and above |
 
-- Aircraft power bus interface: 28 VDC primary power, 115 VAC 400 Hz single-phase or three-phase, and essential bus considerations.
-- IMA Power Supply Module (PSM) and Power Distribution Unit (PDU): conversion, filtering, over-current protection, and current sensing.
-- DO-160G Section 16 power input qualification: normal and abnormal voltage conditions, surge, spike, and loss of power.
-- Thermal design: conduction-cooled cold plate interface, airflow-cooled designs, thermal interface material (TIM) selection.
-- Airflow management: internal cabinet ducting, air inlet/outlet positioning, and fan-assisted versus ram-air cooling trade-offs.
-- Cabinet installation standards per ARINC 600 and ARINC 404A: rack mounting, vibration isolator selection, and shock mounting.
-- Connector keying and polarisation: error-proofing provisions to prevent incorrect module installation.
-- LRU and LRM exchange procedures: no-tools or quarter-turn fasteners, electrostatic discharge (ESD) precautions, and post-installation BIT verification.
+---
 
-## 3. Glossary
+## 3. System / Function Overview
 
-| Term / Acronym | Definition |
-|---|---|
-| PDU | Power Distribution Unit — a module or sub-assembly within the IMA cabinet that receives primary aircraft power and distributes conditioned, protected power rails to each installed processing and I/O module. |
-| PSM | Power Supply Module — an IMA Line Replaceable Module that converts aircraft bus power (28 VDC or 115 VAC) to the regulated secondary voltages (typically +3.3 V, +5 V, +12 V) required by the cabinet's processing and I/O modules. |
-| Cold Plate | An aluminium or copper heat exchanger mounted within the IMA cabinet structure, cooled by ram air or recirculated cabin air, to which conduction-cooled modules transfer their heat via mechanical card-edge contact. |
-| TIM | Thermal Interface Material — a compliant, thermally conductive compound, pad, or gap-filler used between a module's heat spreader and the cabinet cold plate to minimise contact thermal resistance. |
-| DO-160G §16 | Section 16 of RTCA DO-160G — "Power Input", specifying normal operating voltage ranges, abnormal condition limits (under-voltage, over-voltage, surges, spikes, interruptions), and qualification test procedures for airborne equipment. |
-| Essential Bus | An aircraft electrical bus supplied by multiple independent sources (generator and battery) ensuring continuity of power to flight-critical avionics during partial power generation failures. |
-| Connector Keying | A mechanical feature on IMA module connectors and cabinet backplane receptacles that physically prevents incorrect module installation in the wrong slot, reducing maintenance errors. |
-| ESD | Electrostatic Discharge — the sudden flow of electricity between electrically charged objects, capable of damaging sensitive electronic components; IMA module exchange procedures require ESD precautions (wrist straps, ESD bags). |
-| Quarter-Turn Fastener | A captive fastener used on IMA LRM module faceplates that can be locked or released with a 90° rotation, enabling rapid, tool-free module replacement at the flight line. |
-| Vibration Isolator | A resilient mechanical mount, typically elastomeric, used between the IMA cabinet and the aircraft structure to attenuate the transmission of airframe vibration into the avionics equipment, per DO-160G Category requirements. |
+The AMPEL360E IMA power architecture provides 28 V DC primary power and 115 V AC 400 Hz secondary power to each IMA cabinet from the aircraft Essential Power Distribution Centre (EPDC). Each cabinet has two independently powered PSMs (PSM-A and PSM-B) providing N+1 redundancy. Each PSM accepts 28 V DC input and generates regulated 5 V, 3.3 V, and 1.8 V DC rails for LRM supply via the cabinet backplane.
 
-## 4. Diagram (Mermaid)
+Liquid cooling is provided by the aircraft Environmental Control System (ECS) liquid cooling loop operating at 40–55°C coolant inlet temperature. The IMA cold plate is a dedicated aluminium extrusion cold wall within each cabinet, interfacing with the aircraft liquid loop via a self-sealing quick-disconnect coupling (QD coupling). Thermal resistance from LRM junction to coolant is ≤0.8°C/W per LRM slot under maximum load.
+
+Cable routing follows SAE AS50881 Rev F requirements for avionics wiring. All IMA signal cables use shielded twisted pairs (MIL-W-22759/87) with shield grounding at the cabinet end to provide Faraday cage effect. Power cables use MIL-W-22759/16 at appropriate gauge for ≤3% voltage drop at maximum load.
+
+---
+
+## 4. Scope
+
+### 4.1 Included
+
+- PSM and PDU architecture, input power specifications, and output rail regulation.
+- SSPC integration for IMA power feed protection and remote control.
+- Cold plate liquid cooling design, QD coupling, and thermal analysis.
+- Cable routing rules, minimum bend radius, conduit, and fire wall penetration requirements.
+- Grounding strap specification and bonding resistance requirements.
+- EMI filter design on power inputs (DO-160G §16 power quality compliance).
+
+### 4.2 Excluded
+
+- Aircraft-level EPDC and bus tie breaker configuration (ATA 24).
+- ECS liquid cooling loop pumps and heat exchanger (ATA 21).
+- Aircraft structural mounting provisions for cabinets (ATA 53/57).
+
+---
+
+## 5. Architecture Description
+
+**PSM Architecture:** Each PSM is a 200 W, 28 V DC input, multi-output regulated DC-DC converter with >90% efficiency. Output rails: 5 V @ 20 A, 3.3 V @ 30 A, 1.8 V @ 25 A, 12 V @ 5 A. Input includes EMI filter (DO-160G §16), inrush current limiter, reverse polarity protection, and under-voltage lockout at 22 V. PSM output is current-limited and short-circuit protected; fault does not damage backplane or adjacent LRMs.
+
+**SSPC Integration:** Each IMA cabinet power feed from EPDC passes through a Solid State Power Controller (SSPC) rated at 30 A, providing electronic circuit protection, soft-start inrush control, and remote on/off capability commanded from the IMA Health Monitor via ARINC 429 to the Power Management Bus (PMB). SSPC trip events are reported to CMC within 100 ms.
+
+**Cold Plate Design:** The cold plate aluminium extrusion provides 12 slots of direct thermal contact with LRM wedge locks. Coolant flows through two parallel serpentine channels machined into the extrusion. Coolant inlet pressure ≤ 0.5 bar gauge; flow rate ≥ 2 L/min. QD couplings are self-sealing on disconnect to prevent coolant spillage in the avionics bay.
+
+**Cable Routing:** Power cables routed on the left side of the avionics bay conduit; signal cables on the right side; minimum separation 50 mm to reduce crosstalk. All cables are clamped every 300 mm with EPDM-lined clamps and supported at each penetration through structure frames. Fire wall penetrations use fire-rated grommet assemblies.
+
+**Bonding:** Cabinet chassis bonded to aircraft structure with a 25 mm² copper braid strap, maximum 2.5 mΩ measured per MIL-HDBK-1857. Additional EMI bonding straps (10 mm² minimum) at each cable shield termination point.
+
+---
+
+## 6. Functional Breakdown
+
+| Function ID | Function Name | Description | DAL | Owner |
+|-------------|---------------|-------------|-----|-------|
+| F-042-01 | Power Distribution Management | Distribute 28 V DC from EPDC through SSPC to PSMs; regulate 5 V/3.3 V/1.8 V/12 V rails to LRMs with ≤2% regulation and ≤50 mV ripple | B | Q-MECHANICS |
+| F-042-02 | Cooling Flow Regulation | Maintain LRM baseplate temperature ≤85°C via liquid cooling; monitor coolant flow rate and temperature; alert CMC on thermal fault | C | Q-MECHANICS |
+| F-042-03 | Cable Routing and Shielding | Route IMA wiring per SAE AS50881; maintain shield continuity ≥60 dB insertion loss; protect cables from chafing, vibration, and heat sources | C | Q-MECHANICS |
+| F-042-04 | Grounding Integrity Monitoring | Verify cabinet bonding resistance ≤2.5 mΩ; monitor SSPC ground fault current; alert CMC on grounding degradation | B | Q-MECHANICS |
+| F-042-05 | Installation Interface Control | Manage PSM hot-swap capability; enforce cable connector keying; control SSPC state via PMB during maintenance mode | B | Q-MECHANICS |
+
+---
+
+## 7. Mermaid — System Context Diagram
 
 ```mermaid
-flowchart TD
-    subgraph ACPOWER["Aircraft Power Sources"]
-        GEN["Generator\n115 VAC 400 Hz"]
-        BATT["Battery / EPU\n28 VDC Essential"]
-        APU_GEN["APU Generator\n115 VAC"]
-    end
+graph TB
+    EPDC["EPDC\n28V DC Bus (ATA 24)"]
+    SSPC["SSPC 30A\nPower Protection"]
+    PSM["PSM ×2\n200W DC-DC"]
+    BACKPLANE["Cabinet Backplane\nPower Rails"]
+    LRMS["LRM Slots\nGPPM/IO/etc"]
+    ECS["ECS Liquid Loop\n(ATA 21)"]
+    COLDPLATE["Cold Plate\nHeat Exchanger"]
+    CMC["CMC (ATA 45)\nFault Reporting"]
+    STRUCTURE["Aircraft Structure\nBonding Ground"]
 
-    subgraph PDU_BLOCK["IMA Cabinet PDU / PSM"]
-        PSM1["PSM — Primary\n(AC/DC Converter)"]
-        PSM2["PSM — Standby\n(Hot Standby)"]
-        FILT["EMI Filter\n(DO-160G §16)"]
-        DIST["Power Distribution Rails\n+3.3V / +5V / +12V / +28V"]
-        PROT["Over-Current /\nOver-Voltage Protection"]
-        GEN --> FILT --> PSM1 --> DIST
-        APU_GEN --> FILT
-        BATT --> PSM2 --> DIST
-        DIST --> PROT
-    end
-
-    subgraph THERMAL["Thermal Management"]
-        COLD_PLATE["Cold Plate\n(Ram Air / Recirculated)"]
-        TIM_LAYER["TIM Layer\n(Gap Filler / Pad)"]
-        MODS["Processing Modules\n(Conduction Cooled)"]
-        MODS --> TIM_LAYER --> COLD_PLATE
-    end
-
-    subgraph INSTALL["Installation Interface"]
-        RACK["ARINC 600 Rack\n+ ARINC 404A Case"]
-        VIB["Vibration Isolators\n(DO-160G Cat. S/U)"]
-        CONN["Keyed Connectors\n(Error-Proofed)"]
-        RACK --- VIB
-        RACK --- CONN
-    end
-
-    subgraph MX["Line Maintenance"]
-        LRM_SWAP["LRM Exchange\n(Quarter-Turn Fastener)"]
-        ESD_PROC["ESD Precautions\n(Wrist Strap / ESD Bag)"]
-        POST_BIT["Post-Install BIT\n(PBIT + IBIT)"]
-        LRM_SWAP --> ESD_PROC --> POST_BIT
-    end
-
-    ACPOWER --> PDU_BLOCK
-    PDU_BLOCK --> MODS
-    THERMAL --> INSTALL
-    INSTALL --> MX
+    EPDC --> SSPC --> PSM --> BACKPLANE --> LRMS
+    ECS --> COLDPLATE --> LRMS
+    SSPC --> CMC
+    PSM --> CMC
+    COLDPLATE --> CMC
+    BACKPLANE --> STRUCTURE
 ```
 
-## 5. Footprint
+---
 
-| Metric | Value |
-|---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `040-049` |
-| Section | `04` — Aviónica, Información & APU |
-| Subsection | `042` — Integrated Modular Avionics |
-| Subsubject | `050` — IMA Power, Cooling and Installation Interfaces |
-| Primary Q-Division | Q-DATAGOV[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/040-049_Avionica-Informacion-y-APU/042_Integrated-Modular-Avionics/` |
-| Document | `042-050-IMA-Power-Cooling-and-Installation-Interfaces.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
+## 8. Mermaid — Internal Functional Architecture
 
-## 6. References & Citations
+```mermaid
+graph LR
+    subgraph POWER_COOLING["Power and Cooling System"]
+        SSPC_BOX["SSPC\n30A, Soft-Start"]
+        PSM_A["PSM-A\n200W Converter"]
+        PSM_B["PSM-B\n200W Converter"]
+        RAILS["Backplane Rails\n5V/3.3V/1.8V/12V"]
+        COLD["Cold Plate\nSerpentine Channel"]
+        QD["QD Coupling\nSelf-Sealing"]
+        SSPC_BOX --> PSM_A
+        SSPC_BOX --> PSM_B
+        PSM_A --> RAILS
+        PSM_B --> RAILS
+        QD --> COLD
+    end
+    EPDC_IN["EPDC 28V DC"]
+    ECS_IN["ECS Coolant Loop"]
+    LRM_OUT["LRM Slots"]
+    EPDC_IN --> SSPC_BOX
+    ECS_IN --> QD
+    RAILS --> LRM_OUT
+    COLD --> LRM_OUT
+```
 
-[^baseline]: Q+ATLANTIDE controlled baseline (v1.0.0) — the governing programme baseline document for all ATLAS architecture artefacts. Maintained under configuration management per the Q+ATLANTIDE governance framework.
+---
 
-[^qdiv]: Q-Division authority — Q-DATAGOV holds primary governance authority over IMA architecture documentation, data integrity, and configuration control within the Q+ATLANTIDE programme.
+## 9. Mermaid — Lifecycle Traceability
 
-[^gov]: Governance class — `baseline` denotes that this document forms part of the formally controlled baseline configuration. Changes require formal change-request approval through ORB-PMO.
+```mermaid
+graph LR
+    LC02["LC02\nRequirements"]
+    LC03["LC03\nDesign"]
+    LC05["LC05\nImplementation"]
+    LC06["LC06\nVerification"]
+    LC10["LC10\nCertification"]
+    LC11["LC11\nOperation"]
+    LC12["LC12\nDisposal"]
+    CSDB["CSDB\nData Modules"]
+    DMRL["DMRL"]
+    Evidence["Power & Cooling\nVerification Evidence"]
+    LC02 --> LC03 --> LC05 --> LC06 --> LC10 --> LC11 --> LC12
+    LC02 --> DMRL --> CSDB
+    LC06 --> Evidence --> LC10
+    LC11 --> CSDB
+```
 
-[^n001]: Note N-001 — The IMA Thermal Analysis Report (TAR-042-050) and Power Budget Document (PBD-042-050) are configuration-controlled deliverables maintained under Q-AIR.
+---
 
-[^do160g]: RTCA DO-160G / EUROCAE ED-14G — "Environmental Conditions and Test Procedures for Airborne Equipment", RTCA Inc., 2010. Section 16 (Power Input) is the primary reference for IMA power qualification; Sections 8 (Vibration) and 14/15 (Humidity/Fluid Susceptibility) are also applicable.
+## 10. Interfaces
 
-[^arinc600]: ARINC Specification 600-22 — "Air Transport Avionics Equipment Interfaces". Defines the mechanical envelope, rack dimensions, and connector standards governing IMA cabinet and module installation.
+| Interface ID | Name | Type | Counterpart System | Protocol | Direction |
+|--------------|------|------|--------------------|----------|-----------|
+| IF-042-01 | EPDC to SSPC | Electrical | EPDC (ATA 24) | 28 V DC, MIL-W-22759/16 | Input |
+| IF-042-02 | SSPC to PSM | Electrical | PSM LRM | 28 V DC, backplane rail | Input |
+| IF-042-03 | ECS to Cold Plate | Thermal/Fluid | ECS Liquid Loop (ATA 21) | Water-glycol, QD coupling, ≤0.5 bar | Input |
+| IF-042-04 | PSM to LRM Slots | Electrical | All IMA LRMs | 5/3.3/1.8/12 V DC backplane rails | Output |
+| IF-042-05 | SSPC to CMC | Data | CMC (ATA 45) | ARINC 429 trip status | Output |
+| IF-042-06 | Cabinet to Aircraft Structure | Ground | Aircraft Structure | 25 mm² copper bonding strap | Ground |
 
-[^arinc404a]: ARINC Specification 404A — "Air Transport Equipment Cases and Racking". Provides the standard equipment case dimensions and aircraft racking provisions applied to IMA cabinet installation.
+---
 
-[^ata24]: ATA iSpec 2200 Chapter 24 — "Electrical Power". Defines the aircraft electrical power system characteristics (bus voltages, frequency, quality) to which IMA power input interfaces must comply.
+## 11. Operating Modes
+
+| Mode | Name | Description | Entry Condition | Exit Condition |
+|------|------|-------------|-----------------|----------------|
+| M1 | Power-Off | All rails de-energised; cold plate coolant circulating (ECS may remain active) | SSPC off | SSPC on |
+| M2 | Soft-Start | SSPC limits inrush to 15 A peak; PSM rails rise in sequence (5V, 3.3V, 1.8V, 12V) | SSPC on | Rails stable ±2% |
+| M3 | Normal Operation | Dual PSM-A and PSM-B active; load-shared; thermal within limits | Rails stable | Fault or power-off |
+| M4 | Single PSM Degraded | PSM-A or PSM-B faulted; surviving PSM supports full load ≤180W with thermal derating | PSM fault | PSM replacement |
+| M5 | Maintenance | SSPC remotely controllable; PSM hot-swap; coolant isolated via QD | Ground; maintenance mode | Maintenance complete |
+
+---
+
+## 12. Monitoring and Diagnostics
+
+- **PSM Rail Voltage:** Each PSM monitors 5 V, 3.3 V, 1.8 V, and 12 V rails at 100 Hz; out-of-tolerance (±2%) events logged and reported to CMC within 50 ms.
+- **PSM Temperature:** NTC thermistor on PSM heat sink monitors junction temperature; >95°C triggers CMC caution and PSM power derating.
+- **SSPC Current Monitoring:** SSPC measures RMS current at 10 Hz; over-current (>30 A) triggers trip and CMC fault record; under-current (>50% below nominal) suggests LRM failure.
+- **Coolant Flow Rate:** Turbine flow meter on cold plate inlet measures flow rate at 1 Hz; <2 L/min triggers CMC caution; <1 L/min triggers emergency thermal shutdown.
+- **Coolant Temperature:** PT100 sensors at inlet and outlet; ΔT monitored to calculate heat dissipation; ΔT >15°C triggers CMC advisory.
+- **Bonding Resistance:** Ground fault monitoring circuit in SSPC detects chassis-to-structure resistance >5 mΩ; generates CMC maintenance advisory.
+- **Cable Integrity:** Automated continuity test on shielded cable shields during IBIT; open shield detected and reported to CMC as maintenance advisory.
+- **PHM — PSM RUL:** PHM algorithm tracks PSM thermal cycling count and estimates RUL; alert dispatched when RUL <500 flight hours for proactive replacement.
+
+---
+
+## 13. Maintenance Concept
+
+| Task ID | Task Description | Interval | Access | Skill Level |
+|---------|-----------------|----------|--------|-------------|
+| MC-042-01 | PSM rail voltage check and bonding resistance measurement | A-Check | Ground Support Terminal | Avionics Technician |
+| MC-042-02 | Coolant flow and temperature ΔT check | A-Check | ECS maintenance panel | Systems Technician |
+| MC-042-03 | PSM hot-swap replacement | On-Condition | Cabinet PSM slot | Avionics Technician |
+| MC-042-04 | Cable routing inspection and clamp condition check | C-Check | Avionics Bay Full Access | Aircraft Technician |
+| MC-042-05 | QD coupling inspection and replacement | C-Check | Cold plate access | Systems Technician |
+
+---
+
+## 14. S1000D / CSDB Mapping
+
+| Data Module Code (DMC) | Title | Publication Type | SNS |
+|------------------------|-------|-----------------|-----|
+| QATL-A-042-05-00-00AAA-040A-A | IMA Power and Cooling Description | AMM | 042-050 |
+| QATL-A-042-05-00-00AAA-520A-A | PSM Rail Check and Cooling Flow Test | AMM | 042-050 |
+| QATL-A-042-05-00-00AAA-920A-A | PSM and Cooling Fault Isolation | FIM | 042-050 |
+| QATL-A-042-05-00-00AAA-941A-A | PSM, QD Coupling, and Cable Assembly Parts Data | IPD | 042-050 |
+
+### Recommended DM Set
+
+| DM Role | DMC Suffix | Content |
+|---------|-----------|---------|
+| System Overview | 040A | PSM architecture, cold plate, cable routing, grounding |
+| BITE Procedure | 520A | Rail voltage check, flow rate measurement, bonding test |
+| Fault Isolation | 920A | PSM fault isolation, SSPC trip analysis |
+| IPD | 941A | PSM PN, QD coupling PN, bonding strap PN |
+
+---
+
+## 15. Footprints
+
+### 15.1 Physical
+
+| Item | Value |
+|------|-------|
+| PSM LRM Dimensions | 233.4 mm × 194.0 mm × 22.5 mm (ARINC 600 3MCU) |
+| PSM Mass | ≤0.8 kg |
+| Cold Plate Mass | ≤2.5 kg per cabinet |
+| QD Coupling Size | 12.7 mm (1/2 inch) tube, SAE J2064 |
+
+### 15.2 Electrical / Data
+
+| Parameter | Value |
+|-----------|-------|
+| Input Power (per cabinet) | 28 V DC, ≤25 A nominal; ≤30 A peak |
+| Secondary Power | 115 V AC 400 Hz, ≤5 A (AFDX switch and display interface) |
+| PSM Efficiency | ≥90% at full load |
+| Output Ripple | ≤50 mV peak-to-peak on all rails |
+
+### 15.3 Maintenance
+
+| Parameter | Value |
+|-----------|-------|
+| PSM Hot-Swap Time | <5 min |
+| QD Coupling Disconnect Time | <2 min (tool-free) |
+| Bonding Strap Replacement Time | <10 min |
+
+### 15.4 Data
+
+| Parameter | Value |
+|-----------|-------|
+| PSM Fault Log Capacity | 500 events in NVM |
+| Thermal Log Sample Rate | 1 Hz per sensor |
+| SSPC Trip Event Reporting Latency | ≤100 ms to CMC |
+
+---
+
+## 16. Safety and Certification Considerations
+
+- **DO-160G §16 Power Quality:** IMA PSMs are qualified to DO-160G Section 16 power quality levels; input filters ensure IMA does not generate conducted interference onto aircraft power bus.
+- **SSPC Certification:** SSPCs used for IMA power feeds are qualified to ETSO-C179b; electronic over-current trip provides faster and more reliable protection than thermal circuit breakers.
+- **Coolant Spillage Prevention:** Self-sealing QD couplings prevent coolant release on maintenance disconnect; eliminates avionics bay contamination risk from coolant leaks.
+- **Flammability:** All cable insulation materials (MIL-W-22759) comply with CS-25 §25.853 flammability requirements; fire wall penetrations use approved fire-resistant grommet assemblies.
+- **Lightning Indirect Effects:** Power cable EMI filters and bonding straps provide attenuation of lightning-induced transients; analysis per CS-25 §25.1316 demonstrates no upset to IMA functions.
+- **Single Failure Tolerance:** Loss of PSM-A does not reduce IMA functionality (PSM-B provides full load); loss of coolant flow triggers orderly shutdown sequence before thermal damage occurs.
+
+---
+
+## 17. Verification and Validation
+
+| V&V ID | Requirement | Method | Evidence | Status |
+|--------|-------------|--------|----------|--------|
+| VV-042-01 | PSM output rails within ±2% across load and temperature | Test | PSM qualification test report | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-02 | DO-160G §16 power quality compliance | Test | DO-160G §16 test report | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-03 | Thermal: LRM baseplate ≤85°C at 55°C coolant, full load | Test | Thermal test report | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-04 | SSPC trips within 10 ms of sustained 35 A over-current | Test | SSPC over-current test | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-05 | Bonding resistance ≤2.5 mΩ after 1000 thermal cycles | Test | Bond resistance measurement | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-06 | QD coupling zero spillage on disconnect under 0.5 bar | Test | QD coupling disconnect test | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| VV-042-07 | All cables pass CS-25 §25.853 flammability | Test | Flammability certificate | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+
+---
+
+## 18. Glossary
+
+| Term | Acronym | Definition |
+|------|---------|------------|
+| Power Supply Module | PSM | IMA LRM providing regulated DC power rails from 28 V DC input to all LRM slots in the cabinet |
+| Power Distribution Unit | PDU | Aircraft-level unit distributing power from bus to multiple circuit feeds; upstream of IMA SSPC |
+| Cold Plate | — | Aluminium extrusion with internal coolant channels providing conduction cooling for IMA LRMs |
+| DO-160G | — | RTCA standard defining environmental conditions and test procedures for airborne equipment |
+| Bonding Strap | — | Low-resistance copper braid connecting equipment chassis to aircraft structure for EMI and lightning protection |
+| MIL-W-22759 | — | Military standard for fluoropolymer-insulated aircraft wire; fire-resistant and lightweight |
+| Grounding | — | Connection of equipment to aircraft structure to provide common electrical reference and lightning path |
+| Solid State Power Controller | SSPC | Electronic device replacing thermal circuit breakers; provides fast, precise over-current protection with remote control |
+| EMI Filter | — | Passive LC network on power input attenuating conducted EMI between equipment and aircraft power bus |
+| Thermal Resistance | — | Measure of resistance to heat flow; expressed in °C/W; lower value = better thermal conductivity |
+
+---
+
+## 19. Citations
+
+| Ref ID | Standard / Document | Applicability | Status |
+|--------|--------------------|-----------|----|
+| CIT-042-01 | RTCA DO-160G §16, Power Input | PSM power quality qualification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-02 | MIL-W-22759, Wire, Electric, Fluoropolymer-Insulated | IMA cable specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-03 | MIL-HDBK-1857, Grounding, Bonding and Shielding | Bonding strap design and verification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-04 | SAE AS50881 Rev F, Wiring Aerospace Vehicle | Wiring routing and installation requirements | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-05 | EASA ETSO-C179b, Solid State Power Controllers | SSPC airworthiness qualification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-06 | EASA CS-25 §25.853, Compartment Interiors Flammability | Cable flammability requirements | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-07 | EASA CS-25 §25.1316, System Lightning Protection | IMA power lightning indirect effects | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| CIT-042-08 | SAE J2064, R-134a Refrigerant Automotive Liquid Coupling | QD coupling specification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+
+---
+
+## 20. References
+
+| Ref ID | Document | Version | Status |
+|--------|----------|---------|--------|
+| REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-02 | AMPEL360E IMA Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | AMPEL360E IMA Thermal Analysis Report | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | AMPEL360E Wiring Design Standard | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+
+---
+
+## 21. Open Issues
+
+| Issue ID | Description | Owner | Status |
+|----------|-------------|-------|--------|
+| OI-042-01 | Coolant type (PAG-based vs water-glycol) to be confirmed with ATA 21 ECS team | Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-042-02 | PSM efficiency at partial load (<50W) below target; redesign under review | Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-042-03 | SSPC remote control interface (PMB) protocol version to be agreed with ATA 24 | Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+
+---
+
+## 22. Change Log
+
+| Version | Date | Author | Description |
+|---------|------|--------|-------------|
+| 1.0.0 | 2025-01-01 | Q-MECHANICS | Initial baseline release | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
