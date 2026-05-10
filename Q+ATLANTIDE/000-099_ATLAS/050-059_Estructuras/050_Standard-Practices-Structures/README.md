@@ -1,5 +1,5 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-050-059-05-050-README
+document_id: "QATL-ATLAS-1000-ATLAS-050-059-05-050-README"
 title: "ATLAS 050-059 · 05.050 — Standard Practices — Structures (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
