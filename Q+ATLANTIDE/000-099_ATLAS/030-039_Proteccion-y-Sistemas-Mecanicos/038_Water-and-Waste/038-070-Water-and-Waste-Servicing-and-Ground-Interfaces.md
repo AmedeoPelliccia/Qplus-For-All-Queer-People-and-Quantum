@@ -1,163 +1,556 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-038-070-WATER-AND-WASTE-SERVICING-AND-GROUND-INTERFACES
-title: "ATLAS 030-039 · 03.038.070 — Water and Waste Servicing and Ground Interfaces"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "038"
-subsection_title: "Water and Waste"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-038-070"
+title: "038-070 — Water and Waste Servicing and Ground Interfaces"
+short_title: "Water and Waste Servicing and Ground Interfaces"
 subsubject: "070"
 subsubject_title: "Water and Waste Servicing and Ground Interfaces"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "038-070-Water-and-Waste-Servicing-and-Ground-Interfaces.md"
+sns_reference: "038-07"
+dmc_prefix: "DMC-AMPEL360E-EWTW-038-07"
+programme: "AMPEL360e Wide Tube-and-Wing Family"
+programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+short_code: "eWTW"
+register: "Q+ATLANTIDE"
+register_link: "../../../../../Q+ATLANTIDE/"
+architecture_band: "000-099_ATLAS"
+architecture_band_link: "../../../"
+architecture_band_title: "New Commercial Aircraft Architectures"
+code_range: "030-039_Proteccion-y-Sistemas-Mecanicos"
+code_range_link: "../../"
+code_range_title: "Protección & Sistemas Mecánicos"
+node_code: "038"
+node_title: "Water and Waste"
+node_link: "./"
+parent_path: "Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/038_Water-and-Waste/"
+parent_path_link: "./"
+ata_reference: "ATA 38"
+ata_reference_link: "#20-references"
+s1000d_applicability: "S1000D-CSDB-compatible"
+s1000d_link: "https://s1000d.org/"
+domain: "A-Aerospace"
+domain_link: "../../../../../IDEALE-ESG/A-Aerospace/"
+primary_q_division: "Q-AIR"
+primary_q_division_link: "../../../../../Q-Divisions/Q-AIR/"
+support_q_divisions:
+  - name: "Q-MECHANICS"
+    link: "../../../../../Q-Divisions/Q-MECHANICS/"
+  - name: "Q-DATAGOV"
+    link: "../../../../../Q-Divisions/Q-DATAGOV/"
+  - name: "Q-GREENTECH"
+    link: "../../../../../Q-Divisions/Q-GREENTECH/"
+  - name: "Q-GROUND"
+    link: "../../../../../Q-Divisions/Q-GROUND/"
+orb_functions:
+  - name: "ORB-PMO"
+    link: "../../../../../ORB-Functions/ORB-PMO/"
+  - name: "ORB-LEG"
+    link: "../../../../../ORB-Functions/ORB-LEG/"
+classification: "open-technical-scaffold"
+status: "programme-controlled-scaffold"
+revision: "0.1.0"
+created: "2026-05-10"
+updated: "2026-05-10"
+authoring_mode: "deterministic-technical-publication"
+review_status: "to-be-reviewed-by-system-expert"
+lifecycle_phase:
+  - code: "LC02"
+    title: "Requirements Definition"
+  - code: "LC03"
+    title: "Architecture Definition"
+  - code: "LC05"
+    title: "Detailed Design"
+  - code: "LC06"
+    title: "Verification Planning"
+  - code: "LC10"
+    title: "Certification / Approval"
+  - code: "LC11"
+    title: "Operation"
+  - code: "LC12"
+    title: "Maintenance / Support"
+traceability:
+  atlas_node: "038_Water-and-Waste"
+  atlas_node_link: "./"
+  parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
+  parent_branch_link: "../../"
+  csdb_path: "TBD"
+  evidence_status: "draft"
+  brex_status: "not-yet-validated"
+  dmrl_status: "not-yet-frozen"
+keywords:
+  - "Q+ATLANTIDE"
+  - "ATLAS"
+  - "AMPEL360e"
+  - "S1000D"
+  - "ATA 38"
+  - "Water and Waste"
+  - "Ground Servicing"
+  - "service panel"
+  - "fill port"
+  - "drain fitting"
+  - "water truck"
+  - "waste truck"
+  - "single-point servicing"
+  - "UV lamp check"
+  - "water quality sample"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 038 · 070 — Water and Waste Servicing and Ground Interfaces
+# 038-070 — Water and Waste Servicing and Ground Interfaces
+### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+**Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
+**Revision:** 0.1.0 — 2026-05-10  
+**Classification:** Q-AIR Primary | Q-MECHANICS / Q-DATAGOV / Q-GREENTECH / Q-GROUND Support
 
-Documents the potable water service panel, waste drain/flush panel, and interface with ground servicing vehicles and standard couplings.
+---
 
-## 2. Scope
+## §0 Hyperlink Policy
 
-- Potable water fill coupling type and location.
-- Waste drain coupling and toilet service truck interface.
-- Service panel layout, valve labelling, and access door.
-- Servicing quantity limits and overfill protection.
-- Not in scope: cabin crew operating procedures.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-07-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
-## 3. Footprint
+---
 
-| Metric | Value |
+## §1 Purpose
+
+This document describes the **Water and Waste Servicing and Ground Interfaces** of ATA 38 for the **AMPEL360e eWTW**. It covers:
+
+1. Potable water pressure fill port: location, fitting type, quick-disconnect, overflow protection, manual shutoff.
+2. Potable water quality test port: inline sample port for water quality checks.
+3. Potable water maintenance drain: gravity drain valve location and access.
+4. Waste tank ground drain fittings: per-tank or single-point consolidated drain for ground service truck.
+5. Waste tank rinse water connector: for rinsing tank interior during servicing.
+6. Single-point service panel: TBD location (aft lower fuselage typical); combined potable + waste on one panel (OI-038-009).
+7. Ground vehicle requirements: standard aircraft water/waste service truck.
+8. Service intervals: per-turn or operator-defined, UV lamp check, water flush.
+9. Service procedures overview: fill, drain, rinse, sample.
+
+---
+
+## §2 Applicability
+
+| Item | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `038` — Water and Waste |
-| Subsubject | `070` — Water and Waste Servicing and Ground Interfaces |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/038_Water-and-Waste/` |
-| Document | `038-070-Water-and-Waste-Servicing-and-Ground-Interfaces.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Aircraft Programme | AMPEL360e eWTW |
+| Variant | All variants |
+| ATA Chapter/Subsubject | 038-070 — Servicing and Ground Interfaces |
+| Document Tier | Level 2 — SDD |
+| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
+| Parent Document | [038-000](./038-000-Water-and-Waste-General.md) |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System/Function Overview
 
-## 4. Interfaces Diagram
+### 3.1 Ground Servicing Concept
+
+The eWTW ATA 38 ground servicing design targets minimum turn-around time consistent with water quality and waste management requirements. The preferred design is a **single-point service panel** combining both potable water fill and waste drain connections on one panel, accessible from one ground vehicle position.
+
+| Service Operation | Interface | Vehicle | Typical Interval |
+|---|---|---|---|
+| Potable water fill | Fill port + quick-disconnect | Water service truck | Per turn or per operator |
+| Water quality sample | Sample port (inline) | Handheld test kit | Per operator water program (e.g. monthly) |
+| Potable water drain (maintenance) | Gravity drain valve DV-038-01 | Drain bucket / drain hose | Periodic maintenance TBD |
+| Waste tank drain | Drain fitting GDF-W (per tank or consolidated) | Waste vacuum/gravity truck | Per turn or per operator |
+| Waste tank rinse | Rinse water fitting | Water service truck | Per maintenance program TBD |
+| UV lamp check | UV unit access panel | Handheld UV meter / visual | Per lamp hours TBD |
+
+### 3.2 Service Panel Concept
+
+Proposed single-point service panel location: **aft lower fuselage, port side** <img src="https://img.shields.io/badge/TBD-red"> (OI-038-009).
+
+Panel contents (TBD):
+- Potable water fill fitting (quick-disconnect, colour-coded, labelled)
+- Potable water drain valve (DV-038-01, manual quarter-turn)
+- Potable water sample port (SP-038-01, threaded cap)
+- Waste drain fitting(s) (GDF-W, truck-connect coupling)
+- Waste tank rinse fitting (RF-W, separate coupling)
+- Service indicators: water full light (optional), waste full light (optional)
+
+Fitting compatibility: potable water fill fitting is NOT compatible with waste drain coupling, preventing cross-connection.
+
+---
+
+## §4 Scope
+
+### 4.1 In-Scope
+
+- Potable water fill port assembly (FP-038-01): quick-disconnect fitting, dustcap, manual shutoff, overfill float valve connection
+- Water quality sample port (SP-038-01): inline threaded port with dust cap
+- Potable water maintenance drain valve (DV-038-01): location, access, procedure
+- Waste tank drain fittings (GDF-W-1 through GDF-W-N or consolidated): truck-connect coupling, manual valve, cap
+- Waste tank rinse fitting (RF-W): separate coupling for rinse water injection
+- Single-point service panel (TBD — OI-038-009): panel door, lighting, labelling
+- Service panel location and accessibility: ground clearance, vehicle access angle, service time
+- Ground vehicle interface definition: hose coupling standard TBD
+- Low-point drain valves on distribution lines (access and procedure)
+- UV lamp check procedure: access, visual or meter check
+
+### 4.2 Out-of-Scope
+
+- Fill port detailed structural integration: → [038-020](./038-020-Water-Storage-and-Distribution.md)
+- Waste tank structural: → [038-050](./038-050-Toilet-and-Vacuum-Waste-System.md)
+- Ground vehicles and ground support equipment: → Q-GROUND
+
+---
+
+## §5 Architecture Description
+
+### 5.1 Service Panel Layout (Conceptual)
+
+```
+┌─────────────────────────────────────────────────────────┐
+│            ATA 38 SERVICE PANEL (TBD location)          │
+│                                                          │
+│  [POTABLE WATER FILL PORT]      [WATER SAMPLE PORT]     │
+│   FP-038-01 (QD, colour=blue)   SP-038-01 (threaded)   │
+│                                                          │
+│  [POTABLE WATER DRAIN]          [WASTE DRAIN FITTING]   │
+│   DV-038-01 (quarter-turn)      GDF-W (colour=grey)     │
+│                                                          │
+│  [WASTE RINSE FITTING]          [PANEL STATUS LIGHTS]   │
+│   RF-W (colour=yellow TBD)      (optional TBD)          │
+└─────────────────────────────────────────────────────────┘
+```
+
+### 5.2 Fill Procedure Overview
+
+1. Connect ground water truck hose to FP-038-01 fill port.
+2. Ensure DV-038-01 (tank drain) is closed.
+3. Open fill valve: water flows under truck pressure through carbon filter and NRV-F to tank.
+4. Overfill float valve (OF-038-01) auto-shuts when tank reaches 100% TBD.
+5. Confirm fill level on ECAM water quantity display or galley panel gauge.
+6. Disconnect fill hose; replace dust cap.
+7. CMC logs fill event (sensor-triggered, timestamp, quantity TBD).
+
+### 5.3 Waste Drain Procedure Overview
+
+1. Connect waste service truck vacuum/gravity hose to GDF-W drain fitting.
+2. Open GDF-W valve.
+3. Waste drains under gravity (or truck vacuum if gravity insufficient).
+4. When empty (level sensor at zero, or ground crew confirms), close GDF-W valve.
+5. Optionally, connect rinse water to RF-W fitting; rinse tank interior with potable water.
+6. Disconnect hose; replace cap.
+7. CMC optionally logs drain event (manual entry or sensor-triggered).
+
+---
+
+## §6 Functional Breakdown
+
+| Component | Function | Qty | Status |
+|---|---|---|---|
+| Fill port FP-038-01 | Pressure fill interface; quick-disconnect; dust cap | 1 | <img src="https://img.shields.io/badge/TBD-red"> |
+| Overfill float valve OF-038-01 | Auto-shutoff at 100% fill TBD | 1 | Integral to tank; see 038-020 |
+| Potable drain valve DV-038-01 | Manual gravity drain for maintenance | 1 | Quarter-turn; see 038-020 |
+| Water sample port SP-038-01 | Inline sample port for quality testing | 1 | Threaded cap; panel-mounted |
+| Waste drain fittings GDF-W | Ground service truck connection per tank | TBD (1–3 or 1 consolidated) | OI-038-005 / OI-038-009 |
+| Waste rinse fitting RF-W | Inject rinse water into waste tank | 1 (consolidated) TBD | TBD |
+| Service panel door and housing | Weatherproof enclosure; labelling; lighting | 1 | TBD |
+| Low-point line drain valves | Residual water drain from distribution lines | TBD | Manual; see 038-020 |
+| UV lamp access panel | Quick access for lamp check and replacement | TBD (1 per UV unit) | See 038-010 |
+| Service indicators (optional) | Water full / waste full LED at panel | TBD | Optional |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    GND_WATER["Water Service\nTruck\n(potable fill)"]
+    GND_WASTE["Waste Service\nTruck\n(vacuum/gravity drain)"]
+    GND_SAMPLE["Water Quality\nTest Kit\n(sample port)"]
+    MAINT_CREW["Maintenance\nCrew\n(UV lamp, drain)"]
+
+    PANEL["Service Panel\n(aft lower fuselage\nTBD — OI-038-009)"]
+    FP["Fill Port\nFP-038-01"]
+    SP["Sample Port\nSP-038-01"]
+    DV["Drain Valve\nDV-038-01"]
+    GDF["Waste Drain\nFitting(s) GDF-W"]
+    RF["Rinse Fitting\nRF-W"]
+
+    TANK["Potable Water\nTank (038-020)"]
+    WTANK["Waste Tank(s)\n(038-050)"]
+    UVUNIT["UV Unit\n(038-010)\n(lamp access panel)"]
+    CMC["CMC\n(logs service events)"]
+
+    GND_WATER -->|"potable water"| FP
+    GND_SAMPLE -->|"sample"| SP
+    MAINT_CREW -->|"drain"| DV
+    GND_WASTE -->|"waste drain"| GDF
+    GND_WASTE -->|"rinse water"| RF
+
+    FP --> PANEL --> TANK
+    SP --> PANEL --> TANK
+    DV --> PANEL --> TANK
+    GDF --> PANEL --> WTANK
+    RF --> PANEL --> WTANK
+    MAINT_CREW -.->|"UV lamp check"| UVUNIT
+    TANK -->|"fill event"| CMC
+    WTANK -->|"drain event TBD"| CMC
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["038 — Water and Waste<br/>(ATA 38)"]:::subsection
-    THIS["038-070<br/>Water and Waste Servicing and …"]:::document
+    TRUCK_FILL["Water Truck\n(pressure fill)"]
+    FP["Fill Port FP-038-01\n(quick-disconnect + dustcap)"]
+    CF["Activated Carbon\nPre-filter"]
+    NRV_F["Fill NRV (NRV-F)\n(backflow prevention)"]
+    TANK["Potable Water Tank\n(038-020)"]
+    OF["Overfill Float Valve\nOF-038-01"]
+    DV["Potable Drain Valve\nDV-038-01\n(manual)"]
+    SP["Water Sample Port\nSP-038-01\n(threaded, panel)"]
 
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
+    TRUCK_WASTE["Waste Service Truck\n(vacuum/gravity drain)"]
+    GDF["Waste Drain Fitting\nGDF-W\n(per tank / consolidated)"]
+    RF["Waste Rinse Fitting\nRF-W"]
+    WTANK["Waste Tank(s)\n(038-050)"]
 
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
+    CMC["CMC\n(service event log)"]
 
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    TRUCK_FILL --> FP --> CF --> NRV_F --> TANK
+    TANK --> OF
+    TANK --> DV
+    TANK --> SP
+    OF -->|"auto-shutoff at full"| TANK
+    TRUCK_WASTE --> GDF --> WTANK
+    TRUCK_WASTE --> RF --> WTANK
+    TANK -->|"level signal → fill event"| CMC
+    WTANK -->|"drain event TBD"| CMC
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    REQ["Requirements\n(WHO/14 CFR 121 App A water quality,\noperator servicing standards,\nground efficiency)"]
+    SRD["System Requirements\nDocument"]
+    SDD["SDD 038-070\nServicing & Ground Interfaces"]
+    ICD["ICDs\n(Ground support equipment,\nservice vehicle coupling standards,\nATA 38-020, 038-050)"]
+    COMP["Component Specs\n(fill port, sample port,\nservice panel, drain fittings)"]
+    VTP["V&V Plan (§17)"]
+    TEST["Test Reports\n(fill rate, drain rate,\nwater quality, coupling compatibility)"]
+    CERT["EASA/FAA Certification"]
+    EIS["Entry Into Service"]
+    MAINT["AMM Servicing Procedures\n/ S1000D DMs"]
 
-| Term / Acronym | Expansion | Definition |
+    REQ --> SRD --> SDD --> ICD --> COMP
+    SDD --> VTP --> TEST --> CERT --> EIS --> MAINT
+```
+
+---
+
+## §10 Interfaces
+
+| Interface | ATA Chapter | Direction | Signal/Medium | Notes |
+|---|---|---|---|---|
+| Potable water fill | Ground (water truck) | In | Potable water (fluid) | Pressure fill via FP-038-01 |
+| Potable water quality sample | Ground (test kit) | Out | Water sample | Via SP-038-01 |
+| Potable water maintenance drain | Maintenance (drain hose) | Out | Water (fluid) | DV-038-01 gravity drain |
+| Waste tank drain | Ground (waste truck) | Out | Waste fluid | GDF-W drain fitting |
+| Waste tank rinse | Ground (rinse water) | In | Potable water (rinse) | RF-W fitting |
+| Fill event signal | ATA 38-060 / CMC | Out | AFDX TBD | Level sensor triggers fill event log |
+| Service panel lighting | ATA 24 | In | Low-voltage DC | Panel interior light TBD |
+| UV lamp check | Maintenance access | Physical | Visual/UV meter | Access panel at UV unit |
+
+---
+
+## §11 Operating Modes
+
+| Mode | Service Action | Access | Notes |
+|---|---|---|---|
+| Normal Turn (per-turn service) | Waste drain + water fill | Service panel | Ground crew with water/waste truck |
+| Water Quality Check | Water sample taken at SP-038-01 | Service panel | Per operator water program |
+| Potable Water Maintenance Drain | Full system drain via DV-038-01 | Service panel | Before tank removal or flush |
+| Waste Tank Rinse | Rinse water injected via RF-W | Service panel | After drain; periodic |
+| UV Lamp Check | Visual or UV meter check at UV unit | UV access panel | Per lamp hours (TBD ~6000 h) |
+| Water Tank Flush (Legionella) | Full flush + drain cycle | Service panel | Per operator schedule |
+| Cold Weather Service | Standard procedure; EMH and THC active | Service panel | Prevent ice in lines during servicing |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+| Parameter | How Monitored | Notes |
 |---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+| Fill level during fill | ECAM water quantity display / galley gauge | Ground crew confirms target level |
+| Water quality | Offline water sample analysis | Per operator water program |
+| UV lamp hours | CMC lamp hour counter | Alert at TBD hours |
+| Waste tank level during drain | ECAM waste fill / ground crew visual | Confirm zero before disconnect |
+| Service event logging | CMC (fill + drain events) | Time-stamped; supports operator water program |
 
-### Domain-Specific Terms — ATA 38 Water and Waste
+---
 
-| Term / Acronym | Expansion | Definition |
+## §13 Maintenance Concept
+
+| Task | Access | Interval | Skill |
+|---|---|---|---|
+| Potable water fill | Service panel | Per turn or operator | Ground crew |
+| Waste tank drain | Service panel | Per turn or operator | Ground crew |
+| Waste tank rinse | Service panel | Per maintenance program | Line maintenance |
+| Water sample collection | Service panel (SP-038-01) | Per operator water program | Line maintenance |
+| Sample analysis | Offsite lab or onsite kit | Per operator program | Trained tester |
+| Service panel inspection | Visual inspection | A-check TBD | Line |
+| Fill port coupling inspect/replace | Service panel | C-check TBD | Line |
+| Waste drain coupling inspect/replace | Service panel | C-check TBD | Line |
+| UV lamp check | UV unit access panel | Per lamp hours TBD | Line |
+| Water system flush | Full system via service panel | Per operator schedule | Line maintenance |
+
+---
+
+## §14 S1000D/CSDB Mapping
+
+| Document | DMC Pattern | Info Code | Status |
+|---|---|---|---|
+| System description — ground interfaces | DMC-AMPEL360E-EWTW-038-07-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| Potable water fill servicing | DMC-AMPEL360E-EWTW-038-07-10A-910A-A | 910 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Waste tank drain servicing | DMC-AMPEL360E-EWTW-038-07-20A-910A-A | 910 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Water quality sample procedure | DMC-AMPEL360E-EWTW-038-07-30A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| UV lamp check procedure | DMC-AMPEL360E-EWTW-038-07-40A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Service panel description | DMC-AMPEL360E-EWTW-038-07-50A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — servicing interface | DMC-AMPEL360E-EWTW-038-07-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §15 Footprints
+
+| Parameter | Value |
+|---|---|
+| Service panel location | <img src="https://img.shields.io/badge/TBD-red"> (aft lower fuselage, port side; OI-038-009) |
+| Service panel size | <img src="https://img.shields.io/badge/TBD-red"> |
+| Fill rate (water truck) | <img src="https://img.shields.io/badge/TBD-red"> (L/min) |
+| Waste drain rate | <img src="https://img.shields.io/badge/TBD-red"> (gravity or vacuum truck TBD) |
+| Turn-around service time (target) | <img src="https://img.shields.io/badge/TBD-red"> (minutes) |
+| Water truck hose coupling standard | <img src="https://img.shields.io/badge/TBD-red"> (e.g. ATA standard quick-disconnect TBD) |
+| Waste truck coupling standard | <img src="https://img.shields.io/badge/TBD-red"> |
+| Sample port type | <img src="https://img.shields.io/badge/TBD-red"> (threaded or push-fit; cap) |
+
+---
+
+## §16 Safety and Certification
+
+| Requirement | Standard | Application |
 |---|---|---|
-| **BIOCIDE** | — | Chemical additive to potable water to prevent microbial growth; usage and concentration governed by aviation health regulations. |
-| **EASA CS-25** | EASA Certification Specification 25 | Airworthiness standards for large aeroplanes (equivalent to FAA FAR Part 25); governs potable water system design and materials. |
-| **LOPA** | Layout of Passenger Accommodation | Cabin-layout document defining seat rows, galley positions, lavatory locations, and emergency-equipment placement; drives water/waste pipe routing. |
-| **PED** | Portable Electronic Device | Passenger device; some airlines use PED charging integration near water/waste service panels — noted for interface awareness. |
-| **PPM** | Parts Per Million | Concentration unit for disinfectant (e.g., chlorine) in potable water; regulatory limits specified in EASA and FAA guidelines. |
-| **PSU** | Passenger Service Unit | See ATA 33; the PSU water outlet (if fitted) is an interface point for ATA 38 potable water distribution. |
-| **QAC** | Quaternary Ammonium Compound | Class of biocidal disinfectants used for potable water system decontamination. |
-| **RVDT** | Rotary Variable Differential Transformer | Position-sensing transducer used in some waste-tank level sensors and valve-position indicators. |
-| **VWS** | Vacuum Waste System | Closed-circuit waste collection system using differential pressure (vacuum) generated by cabin–ambient pressure difference to transport waste to storage tanks. |
-| **WHO** | World Health Organisation | UN agency that publishes the _Guide to Hygiene and Sanitation in Aviation_ governing potable water quality standards for aircraft. |
+| Water quality compliance | WHO / 14 CFR Part 121 Appendix A | Water quality testing at fill; sample port enables compliance |
+| Coupling cross-connection prevention | Design requirement | Fill port NOT compatible with waste coupling |
+| Contamination of fill water | Carbon pre-filter; NRV at fill | Prevents backflow; filters fill water |
+| Waste disposal compliance | Local airport regulations TBD | Waste truck disposal per OI-038-004 |
+| Service panel weatherproofing | CS-25.1301 | Panel enclosure rated for operating environment |
+| Ground safety | Ground operations procedures | Clear labelling; colour coding; personnel safety |
+| UV lamp handling | Per manufacturer safety sheet | UV-C lamp — safe handling instructions in AMM |
+
+---
+
+## §17 Verification and Validation
+
+| Test | Method | Acceptance Criterion | Status |
+|---|---|---|---|
+| EWP flow test | Bench/rig | ≥ TBD L/min | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Tank leak test | Hydrostatic 1.5× WP | No leakage TBD min | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWH thermal test | Bench | Outlet ≥ 60°C; TMV ≤ 43°C TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| UV steriliser output test | UV intensity + log-reduction | ≥ 4-log TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Mast heater continuity test | Resistance at install | Within tolerance | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Flush cycle test | Functional rig | Waste ≤ 1.5 s TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fill-level sensor accuracy | Cal 0/50/100% | ± TBD % | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Overflow sensor function | Simulated overfill | Alert within TBD s | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Grey water drain flow test | Max load | Clear within TBD s | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Potable water quality test | Sample analysis | Meets WHO/FAA standard | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Freeze protection activation test | Cold chamber | THC/EMH activate; no freeze | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fill rate test | Timed fill at nominal truck pressure | Meets target turn time TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Coupling cross-connection test | Attempt cross-connection | Fill fitting incompatible with waste fitting | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §18 Glossary
+
+| Term | Definition |
+|---|---|
+| PWS | Potable Water System |
+| EWP | Electric Water Pump |
+| EWH | Electric Water Heater |
+| VWS | Vacuum Waste System |
+| EFV | Electric Flush Valve |
+| WIV | Waste Inlet Valve |
+| Mast drain | Heated overboard grey drain nozzle |
+| EMH | Electric Mast Heater |
+| UV sterilisation | UV-C inline water treatment |
+| Activated carbon filter | Filter at fill point |
+| LLDPE | Linear Low-Density Polyethylene |
+| PEX | Cross-linked Polyethylene |
+| Capacitive level sensor | Non-contact fluid level sensor |
+| NRV | Non-Return Valve |
+| TMV | Thermostatic Mixing Valve |
+| Grey water | Sink drainage |
+| Black water | Toilet waste |
+| Waste tank | Toilet waste storage vessel |
+| Freeze protection | Trace/mast heating |
+| Trace heating | Resistance elements on water lines |
+| THC | Trace Heater Controller |
+| CMC | Central Maintenance Computer |
+| FP | Fill Port — potable water pressure fill interface |
+| SP | Sample Port — inline water quality sample |
+| DV | Drain Valve — potable water maintenance drain |
+| GDF | Ground Drain Fitting — waste tank drain interface |
+| RF | Rinse Fitting — waste tank rinse water interface |
+| QD | Quick-Disconnect coupling |
+| GPU | Ground Power Unit |
+
+---
+
+## §19 Citations
+
+1. EASA CS-25.1301 — Function and installation.
+2. WHO, *Guidelines for Drinking-water Quality*, 4th Ed.
+3. 14 CFR Part 121 Appendix A — Aircraft Drinking Water Rule.
+4. OI-038-009 — Single-point servicing panel location TBD.
+5. OI-038-004 — Grey water retention regulatory review.
+6. [038-000 General](./038-000-Water-and-Waste-General.md).
+7. [038-020 Water Storage and Distribution](./038-020-Water-Storage-and-Distribution.md).
+8. [038-050 Toilet and Vacuum Waste](./038-050-Toilet-and-Vacuum-Waste-System.md).
+9. [038-060 Indication and Warning](./038-060-Water-and-Waste-Indication-and-Warning.md).
+10. [038-080 Monitoring and Diagnostics](./038-080-Water-and-Waste-Monitoring-Diagnostics-and-Control-Interfaces.md).
+
+---
+
+## §20 References
+
+| Ref | Document | Notes |
+|---|---|---|
+| [R1] | CS-25.1301 | Installation |
+| [R2] | WHO Guidelines 4th Ed. | Water quality |
+| [R3] | 14 CFR Part 121 Appendix A | US commercial water quality |
+| [R4] | [038-000](./038-000-Water-and-Waste-General.md) | ATA 38 General |
+| [R5] | [038-020](./038-020-Water-Storage-and-Distribution.md) | Tank and distribution |
+| [R6] | [038-050](./038-050-Toilet-and-Vacuum-Waste-System.md) | Waste tanks |
+| [R7] | [038-060](./038-060-Water-and-Waste-Indication-and-Warning.md) | Indication |
+| [R8] | [038-080](./038-080-Water-and-Waste-Monitoring-Diagnostics-and-Control-Interfaces.md) | Monitoring |
+| [R9] | OI-038-004 | Grey water retention |
+| [R10] | OI-038-009 | Service panel location |
+
+---
+
+## §21 Open Issues
+
+| ID | Description | Owner | Status |
+|---|---|---|---|
+| OI-038-001 | Tank capacity and material | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-002 | Tank pressurisation method | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-003 | EWH count, placement, power budget | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-004 | Grey water retention regulatory review | Q-AIR / ORB-LEG | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-005 | Waste tank count and capacity | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-006 | Freeze protection strategy | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-007 | UV sterilisation certification and interval | Q-AIR / ORB-LEG | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-008 | Mast drain count and location | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-009 | Single-point servicing panel location and configuration | Q-AIR / Q-GROUND | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description |
+|---|---|---|---|
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections; ground servicing, fill, drain, sample, UV |
+| 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

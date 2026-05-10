@@ -1,163 +1,551 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-030-039-03-038-060-WATER-AND-WASTE-INDICATION-AND-WARNING
-title: "ATLAS 030-039 · 03.038.060 — Water and Waste Indication and Warning"
-register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "030-039"
-section: "03"
-section_title: "Protección & Sistemas Mecánicos"
-subsection: "038"
-subsection_title: "Water and Waste"
+document_id: "QATL-ATLAS-000099-ATLAS-030039-038-060"
+title: "038-060 — Water and Waste Indication and Warning"
+short_title: "Water and Waste Indication and Warning"
 subsubject: "060"
 subsubject_title: "Water and Waste Indication and Warning"
-primary_q_division: Q-MECHANICS
-support_q_divisions: [Q-AIR, Q-STRUCTURES]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
-status: active
-language: en
+file_name: "038-060-Water-and-Waste-Indication-and-Warning.md"
+sns_reference: "038-06"
+dmc_prefix: "DMC-AMPEL360E-EWTW-038-06"
+programme: "AMPEL360e Wide Tube-and-Wing Family"
+programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+short_code: "eWTW"
+register: "Q+ATLANTIDE"
+register_link: "../../../../../Q+ATLANTIDE/"
+architecture_band: "000-099_ATLAS"
+architecture_band_link: "../../../"
+architecture_band_title: "New Commercial Aircraft Architectures"
+code_range: "030-039_Proteccion-y-Sistemas-Mecanicos"
+code_range_link: "../../"
+code_range_title: "Protección & Sistemas Mecánicos"
+node_code: "038"
+node_title: "Water and Waste"
+node_link: "./"
+parent_path: "Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/038_Water-and-Waste/"
+parent_path_link: "./"
+ata_reference: "ATA 38"
+ata_reference_link: "#20-references"
+s1000d_applicability: "S1000D-CSDB-compatible"
+s1000d_link: "https://s1000d.org/"
+domain: "A-Aerospace"
+domain_link: "../../../../../IDEALE-ESG/A-Aerospace/"
+primary_q_division: "Q-AIR"
+primary_q_division_link: "../../../../../Q-Divisions/Q-AIR/"
+support_q_divisions:
+  - name: "Q-MECHANICS"
+    link: "../../../../../Q-Divisions/Q-MECHANICS/"
+  - name: "Q-DATAGOV"
+    link: "../../../../../Q-Divisions/Q-DATAGOV/"
+  - name: "Q-GREENTECH"
+    link: "../../../../../Q-Divisions/Q-GREENTECH/"
+  - name: "Q-GROUND"
+    link: "../../../../../Q-Divisions/Q-GROUND/"
+orb_functions:
+  - name: "ORB-PMO"
+    link: "../../../../../ORB-Functions/ORB-PMO/"
+  - name: "ORB-LEG"
+    link: "../../../../../ORB-Functions/ORB-LEG/"
+classification: "open-technical-scaffold"
+status: "programme-controlled-scaffold"
+revision: "0.1.0"
+created: "2026-05-10"
+updated: "2026-05-10"
+authoring_mode: "deterministic-technical-publication"
+review_status: "to-be-reviewed-by-system-expert"
+lifecycle_phase:
+  - code: "LC02"
+    title: "Requirements Definition"
+  - code: "LC03"
+    title: "Architecture Definition"
+  - code: "LC05"
+    title: "Detailed Design"
+  - code: "LC06"
+    title: "Verification Planning"
+  - code: "LC10"
+    title: "Certification / Approval"
+  - code: "LC11"
+    title: "Operation"
+  - code: "LC12"
+    title: "Maintenance / Support"
+traceability:
+  atlas_node: "038_Water-and-Waste"
+  atlas_node_link: "./"
+  parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
+  parent_branch_link: "../../"
+  csdb_path: "TBD"
+  evidence_status: "draft"
+  brex_status: "not-yet-validated"
+  dmrl_status: "not-yet-frozen"
+keywords:
+  - "Q+ATLANTIDE"
+  - "ATLAS"
+  - "AMPEL360e"
+  - "S1000D"
+  - "ATA 38"
+  - "Water and Waste"
+  - "Indication"
+  - "Warning"
+  - "ECAM"
+  - "CAS"
+  - "WATER LO"
+  - "WASTE FULL"
+  - "DRAIN HTR FAULT"
+  - "EWH FAULT"
+  - "UV FAULT"
+  - "galley panel"
+  - "CMC"
 ---
 
-# ATLAS 030-039 · Section 03 · Subsection 038 · 060 — Water and Waste Indication and Warning
+# 038-060 — Water and Waste Indication and Warning
+### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
-## 1. Purpose
+**Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
+**Revision:** 0.1.0 — 2026-05-10  
+**Classification:** Q-AIR Primary | Q-MECHANICS / Q-DATAGOV / Q-GREENTECH / Q-GROUND Support
 
-Covers potable water quantity, waste tank quantity, low-water and tank-full warning sensors, and ECAM/EICAS advisory integration.
+---
 
-## 2. Scope
+## §0 Hyperlink Policy
 
-- Potable water quantity sensor type and accuracy.
-- Waste tank quantity sensor and tank-full warning threshold.
-- Low-water level caution: threshold and hysteresis.
-- ECAM/EICAS advisory message and aural annunciation.
-- Not in scope: BITE/diagnostic interface (subsubject 080).
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-06-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
-## 3. Footprint
+---
 
-| Metric | Value |
+## §1 Purpose
+
+This document describes the **Water and Waste Indication and Warning** subsystem of ATA 38 for the **AMPEL360e eWTW**. It covers:
+
+1. Cockpit ECAM indications: potable water quantity, waste tank fill level.
+2. Crew Alerting System (CAS) messages for ATA 38 — amber warnings, cautions, and advisories.
+3. Galley operator panel indication (optional): water quantity gauge.
+4. Lavatory indication: flush ready indicator (optional).
+5. Maintenance indications: EWP run hours, EWH energy consumption, UV lamp hours, mast heater status, CMC fault log.
+6. Signal sources: all ATA 38 sensors (level sensor, overflow sensor, temperature sensors, EWP status, EWH status, UV status, EMH status).
+7. Data bus integration: AFDX or ARINC 429 TBD.
+
+---
+
+## §2 Applicability
+
+| Item | Value |
 |---|---|
-| Architecture | `ATLAS` — Aircraft Top Level Architecture Schema/System (controlled term) |
-| Master range | `000–099` |
-| Code range | `030-039` |
-| Section | `03` — Protección & Sistemas Mecánicos |
-| Subsection | `038` — Water and Waste |
-| Subsubject | `060` — Water and Waste Indication and Warning |
-| Primary Q-Division | Q-MECHANICS[^qdiv] |
-| Support Q-Divisions | Q-AIR, Q-STRUCTURES |
-| ORB support | ORB-PMO, ORB-LEG |
-| Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/030-039_Proteccion-y-Sistemas-Mecanicos/038_Water-and-Waste/` |
-| Document | `038-060-Water-and-Waste-Indication-and-Warning.md` (this file) |
-| Parent subsection | [`README.md`](./README.md) |
-| Parent section | [`../../README.md`](../../README.md) |
-| Parent architecture | [`../../../README.md`](../../../README.md) |
-| Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) |
+| Aircraft Programme | AMPEL360e eWTW |
+| Variant | All variants (unless noted) |
+| ATA Chapter/Subsubject | 038-060 — Indication and Warning |
+| Document Tier | Level 2 — SDD |
+| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
+| Parent Document | [038-000](./038-000-Water-and-Waste-General.md) |
 
-> **Footprint Notes**
-> - **Architecture**: `ATLAS` is the controlled term for the Aircraft Top-Level Architecture Schema/System within the Q+ATLANTIDE-1000 register.
-> - **Primary Q-Division**: Q-MECHANICS holds technical authority for mechanical and electro-mechanical aircraft systems.
-> - **Support Q-Divisions**: Q-AIR provides systems integration oversight; Q-STRUCTURES provides structural interface authority.
-> - **Governance class**: `baseline` documents are subject to formal change control under the Q+ATLANTIDE Configuration Management Plan.
-> - **ORB support**: ORB-PMO coordinates programme management; ORB-LEG provides regulatory and certification support.
+---
 
+## §3 System/Function Overview
 
-## 4. Interfaces Diagram
+### 3.1 Indication Architecture
+
+The ATA 38 indication system collects sensor data from all water and waste system components and distributes it to:
+
+- **ECAM (Electronic Centralised Aircraft Monitor):** Operational parameters visible to flight crew — water quantity, waste fill level.
+- **CAS (Crew Alerting System):** Alert messages when operational limits are exceeded or equipment faults occur.
+- **CMC (Central Maintenance Computer):** Detailed maintenance data — run hours, energy, fault codes, BITE results, sensor values.
+- **Galley operator panel (TBD):** Optional water quantity indicator visible to cabin crew.
+- **Lavatory (TBD):** Optional flush-ready indicator light.
+
+### 3.2 Data Bus
+
+All ATA 38 component status and sensor data is transmitted to the CMC and ECAM via <img src="https://img.shields.io/badge/TBD-red"> (AFDX or ARINC 429 — data bus selection pending).
+
+---
+
+## §4 Scope
+
+### 4.1 In-Scope
+
+- ECAM page for ATA 38 (water and waste system page — TBD, may be combined on a systems page)
+- Water quantity indication: LS-038-01 signal → ECAM display (% full or litres)
+- Waste tank fill level indication: LS-W signal → ECAM display (% full per tank)
+- All CAS messages for ATA 38 (see §6 Functional Breakdown and §11)
+- CMC fault log and data storage for ATA 38 components
+- Galley operator water quantity gauge (optional, TBD)
+- Lavatory flush ready light (optional, TBD)
+- Data bus wiring and interface: ATA 38 sensors → AFDX/ARINC 429 concentrators
+- BITE results output to CMC display and maintenance terminal
+
+### 4.2 Out-of-Scope
+
+- Sensor units themselves (LS, OS, TS, EWP monitor, EWH monitor, UV sensor, EMH monitor): defined in their respective subsubjects (038-010 to 038-050).
+- ECAM display hardware (ATA 31 scope).
+- CMC hardware (ATA 45 scope).
+- Cabin crew interphone and PA system.
+
+---
+
+## §5 Architecture Description
+
+### 5.1 Signal Flow
+
+```
+[LS-038-01 — potable water level] ─────────────────────────────→ ECAM water qty
+[LS-W-1/2/3 — waste tank level] ──────────────────────────────→ ECAM waste fill
+[OS-W-1/2/3 — waste tank overflow] ──────────────────────────→ CAS "WASTE OVFL"
+[PS-038-01 — tank pressure] ──────────────────────────────────→ CMC log
+[EWP status (current + speed)] ───────────────────────────────→ CAS "EWP FAULT"
+[EWH-G1/G2/L1/L2/L3 — temp/status/power] ────────────────────→ CAS "EWH FAULT"
+[UV-038-01 — lamp status/hours] ──────────────────────────────→ CAS "UV FAULT"
+[EMH-1/2 — continuity] ──────────────────────────────────────→ CAS "DRAIN HTR FAULT"
+[THC-038-01 — heater status/temp] ───────────────────────────→ CMC log; advisory
+[TS-W — waste tank temp] ────────────────────────────────────→ CMC / freeze alert
+[EFV cycle count] ───────────────────────────────────────────→ CMC maintenance advisory
+                │
+                └── Data bus (AFDX / ARINC 429 TBD) ── CMC ── Maintenance terminal
+```
+
+---
+
+## §6 Functional Breakdown
+
+### 6.1 CAS Message Summary
+
+| Message | Level | Trigger | System | Action |
+|---|---|---|---|---|
+| WATER LO | Amber | Water quantity < TBD% (e.g. 15%) | PWS | Notify crew; plan water fill at next stop |
+| WATER FILL | Advisory (blue/white) | Water quantity < TBD% (e.g. 30%) | PWS | Cabin crew advisory: fill water at next turn |
+| WATER PRESS | Advisory | Tank pressure out of band TBD | PWS | CMC log; monitor |
+| EWP FAULT | Caution (amber) | EWP current fault or speed fault | PWS | Reduced water flow; crew informed; maintenance |
+| EWH FAULT | Caution (amber) | EWH temperature fault or TCO activation | PWS | Hot water degraded; crew informed; maintenance |
+| UV FAULT | Advisory | UV lamp fail or lamp end-of-life | PWS | Water quality advisory; ops check per QRH TBD |
+| WASTE FULL | Amber | Waste tank ≥ 90% TBD | VWS | Plan waste drain at next stop; reduced flush capability TBD |
+| WASTE OVFL | Red (warning) | Waste tank overflow sensor activated | VWS | Immediate action; EFV inhibit TBD; maintenance |
+| DRAIN HTR FAULT | Caution (amber) | EMH continuity loss (open circuit) | Grey drain | Monitor for ice; plan maintenance |
+| TRACE HTR FAULT | Caution (amber) | Trace heater circuit fault | PWS/all | Freeze risk; crew aware; monitor temp |
+| EFV FAULT | Caution (amber) | EFV solenoid fault (no cycle confirmation) | VWS | Lavatory out of service; maintenance |
+
+### 6.2 ECAM Page Elements
+
+| Element | Source | Display | Notes |
+|---|---|---|---|
+| Potable water quantity | LS-038-01 | % full (0–100%) and/or litres TBD | Bar graph or numeric |
+| Waste tank fill (per tank) | LS-W per tank | % full (0–100%) per tank | Bar graph or numeric |
+| EWP status | EWP monitor | ON / OFF / FAULT | Coloured indicator |
+| UV status | UV-038-01 | OK / FAULT / LAMP-EOL | Coloured indicator |
+| EMH status (mast heaters) | EMH monitors | OK / FAULT per unit | Coloured indicators |
+| EWH status (per unit) | EWH monitors | OK / FAULT per unit | Coloured indicators TBD |
+
+### 6.3 Galley Operator Panel (TBD)
+
+Optional water quantity indicator on galley operator panel: simple LED bar gauge showing 0–100% potable water level. Sourced from same LS-038-01 signal via cabin system bus TBD. OI TBD.
+
+### 6.4 Lavatory Flush Ready Indicator (TBD)
+
+Optional LED indicator on lavatory wall panel: green = flush ready, red = tank full / system fault. Sourced from EFV cycle complete signal and waste tank level. OI TBD.
+
+### 6.5 Maintenance Data (CMC)
+
+| Data Item | Source | CMC Record |
+|---|---|---|
+| Potable water quantity (continuous) | LS-038-01 | Time-stamped log |
+| Waste fill level (continuous) | LS-W | Time-stamped log |
+| EWP run hours | Hour counter | Cumulative |
+| EWP fault events | EWP monitor | Fault log with timestamp |
+| EWH energy consumption (per unit) | EWH watt-meter | kWh cumulative |
+| EWH fault events | EWH monitor | Fault log |
+| UV lamp hours | UV unit counter | Cumulative; alert at TBD h |
+| UV fault events | UV monitor | Fault log |
+| EMH fault events | EMH monitor | Fault log |
+| Trace heater fault events | THC | Fault log |
+| EFV cycle count (per valve) | EFV controller | Cumulative; maintenance advisory at TBD |
+| Waste tank service events | CMC log (manual entry) | Date/time of drain |
+| Water fill events | CMC log (sensor-triggered) | Date/time; quantity |
+
+---
+
+## §7 System Context Diagram
+
+```mermaid
+flowchart LR
+    PWS_SENS["PWS Sensors\n(LS-038-01, PS-038-01,\nEWP, UV, EWH)"]
+    VWS_SENS["VWS Sensors\n(LS-W, OS-W, TS-W,\nEFV status)"]
+    GWD_SENS["Grey Water Sensors\n(EMH continuity)"]
+    THC_SENS["THC / Trace Heater\n(temp probes, heater status)"]
+
+    AFDX["AFDX / ARINC 429\nData Bus TBD"]
+    ECAM["ECAM\n(ATA 31)\nWater qty, Waste fill,\nCAS messages"]
+    CMC["CMC\n(ATA 45)\nMaintenance data,\nBITE, fault log"]
+    GALLEY["Galley Panel\n(water qty TBD)"]
+    LAV["Lavatory Panel\n(flush ready TBD)"]
+    MAINT["Maintenance Terminal\n(full data access)"]
+
+    PWS_SENS --> AFDX
+    VWS_SENS --> AFDX
+    GWD_SENS --> AFDX
+    THC_SENS --> AFDX
+    AFDX --> ECAM
+    AFDX --> CMC
+    AFDX -.-> GALLEY
+    AFDX -.-> LAV
+    CMC --> MAINT
+```
+
+---
+
+## §8 Internal Functional Architecture
 
 ```mermaid
 flowchart TB
-    BASELINE["Q+ATLANTIDE Baseline"]:::baseline
-    ATLAS["ATLAS-1000 · 000–099"]:::atlas
-    SEC["Section 03 · 030-039<br/>Protección &amp; Sistemas Mecánicos"]:::section
-    SUB["038 — Water and Waste<br/>(ATA 38)"]:::subsection
-    THIS["038-060<br/>Water and Waste Indication and…"]:::document
+    LS1["LS-038-01\n(potable water level)"]
+    LSW["LS-W-1/2/3\n(waste tank level)"]
+    OSW["OS-W\n(waste overflow)"]
+    TSW["TS-W\n(waste temp)"]
+    EWPS["EWP Status\n(current + speed)"]
+    EWHS["EWH Status\n(temp + power × 5 TBD)"]
+    UVS["UV Status\n(lamp + hours)"]
+    EMHS["EMH Status\n(continuity × N)"]
+    THCS["THC Status\n(temp probes + heater)"]
+    EFVS["EFV Status\n(cycle count + fault)"]
 
-    BASELINE --> ATLAS --> SEC --> SUB --> THIS
+    CONC["ATA 38\nSignal Concentrator\n(AFDX / ARINC 429 TBD)"]
 
-    QPRIM["Q-MECHANICS[^qdiv]<br/>(primary authority)"]:::qdiv
-    QSUPP["Q-AIR · Q-STRUCTURES[^qdiv]<br/>(support)"]:::qdiv
-    ORB["ORB-PMO · ORB-LEG<br/>(enterprise support)"]:::orb
+    LS1 --> CONC
+    LSW --> CONC
+    OSW --> CONC
+    TSW --> CONC
+    EWPS --> CONC
+    EWHS --> CONC
+    UVS --> CONC
+    EMHS --> CONC
+    THCS --> CONC
+    EFVS --> CONC
 
-    THIS --> QPRIM
-    THIS -.-> QSUPP
-    THIS -.-> ORB
-
-    classDef baseline fill:#1f3a93,stroke:#0b1d4a,color:#fff
-    classDef atlas fill:#154360,stroke:#0b1d4a,color:#fff
-    classDef section fill:#2c82c9,stroke:#0b1d4a,color:#fff
-    classDef subsection fill:#85c1e9,stroke:#2c82c9,color:#0b1d4a
-    classDef document fill:#ffd700,stroke:#b8860b,color:#000
-    classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
-    classDef orb fill:#e9f7ef,stroke:#1e8449,color:#145a32
+    CONC --> ECAM_P["ECAM\n(water qty / waste fill\n/ CAS messages)"]
+    CONC --> CMC_P["CMC\n(fault log / run hours /\nenergy / BITE)"]
+    CONC --> GALLY_P["Galley Panel\n(qty bar gauge TBD)"]
+    CONC --> LAV_P["Lavatory Panel\n(flush ready TBD)"]
 ```
-
-## 5. References & Citation Map
-
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../../organization/Q+ATLANTIDE.md#4-notes).
-
-### Citation & Traceability Map
-
-| Ref | Target Document | Relationship | Scope |
-|---|---|---|---|
-| [^baseline] | [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md) | Normative baseline | ATLAS-1000 register authority |
-| [^qdiv] | [`organization/Q-Divisions/`](../../../../../organization/Q-Divisions/) | Technical authority | Q-Division assignment |
-| [^gov] | Q+ATLANTIDE governance class definition | Governance class | Change-management classification |
-| [^n001] | [`organization/Q+ATLANTIDE.md §4`](../../../../../organization/Q+ATLANTIDE.md#4-notes) | Taxonomy note | Ecosystem scope clarification |
 
 ---
 
-## Glossary
+## §9 Lifecycle Traceability
 
-### Common Terms & Acronyms
+```mermaid
+flowchart LR
+    REQ["Requirements\n(CS-25.1301, CS-25.1309,\nCS-25.1322 CAS layout,\nCS-25.1543 instrument markings)"]
+    SRD["System Requirements\nDocument"]
+    SDD["SDD 038-060\nIndication & Warning"]
+    ICD["ICDs\n(ATA 31 ECAM,\nATA 45 CMC,\nATA 38-010 to 050 sensors)"]
+    COMP["Component Specs\n(sensor outputs, data bus,\nCAS message text)"]
+    VTP["V&V Plan (§17)"]
+    TEST["Test Reports\n(CAS trigger tests,\nECAM display verification,\nCMC data accuracy)"]
+    CERT["EASA/FAA Certification"]
+    EIS["Entry Into Service"]
+    MAINT["AMM / S1000D DMs"]
 
-| Term / Acronym | Expansion | Definition |
+    REQ --> SRD --> SDD --> ICD --> COMP
+    SDD --> VTP --> TEST --> CERT --> EIS --> MAINT
+```
+
+---
+
+## §10 Interfaces
+
+| Interface | ATA Chapter | Direction | Signal/Medium | Notes |
+|---|---|---|---|---|
+| All ATA 38 sensors | ATA 38-010 to 038-050 | In | Analogue/digital | Level, pressure, temp, status |
+| ECAM display system | ATA 31 | Out | AFDX / ARINC 429 | Water and waste page data |
+| CMC | ATA 45 | Out | AFDX | Maintenance data, BITE |
+| Galley management system (if applicable) | ATA 46 TBD | Out | Data bus TBD | Galley panel water qty |
+| Cabin interphone (crew alert TBD) | ATA 23 TBD | Out | Discrete TBD | Optional crew alert for waste full |
+| Maintenance terminal | ATA 45 | Out | Ethernet / AFDX TBD | Full maintenance data display |
+
+---
+
+## §11 Operating Modes
+
+| Mode | ECAM Display | CAS | CMC | Notes |
+|---|---|---|---|---|
+| Normal Flight | Water qty + waste fill displayed | No active alerts | Monitoring continuously | Normal state |
+| Water Low | Water qty bar red/amber | WATER LO (amber) | Log event | Crew plans water fill |
+| Waste Near Full | Waste fill bar amber | WASTE FULL (amber) | Log event | Crew plans waste drain |
+| Waste Overflow | Waste bar full + overflow | WASTE OVFL (red) | Log + alert | Immediate action |
+| EWP Fault | EWP FAULT indication | EWP FAULT (amber) | Log fault | Reduced water service |
+| EWH Fault | EWH FAULT indication | EWH FAULT (amber) | Log fault | Cold water only at affected outlet |
+| UV Fault | UV FAULT indication | UV FAULT (advisory) | Log fault | Water quality advisory |
+| Drain Heater Fault | DRAIN HTR FAULT | DRAIN HTR FAULT (amber) | Log fault | Monitor for ice |
+| Maintenance | Full BITE display | N/A | Full access | Maintenance terminal active |
+
+---
+
+## §12 Monitoring and Diagnostics
+
+| Parameter | Source | ECAM | CMC | Alert |
+|---|---|---|---|---|
+| Potable water qty | LS-038-01 | Yes (% full) | Yes (log) | WATER LO / WATER FILL |
+| Waste tank fill | LS-W | Yes (% per tank) | Yes (log) | WASTE FULL / WASTE OVFL |
+| Tank pressure | PS-038-01 | Optional TBD | Yes (log) | WATER PRESS advisory |
+| EWP status | EWP monitor | Indicator | Yes (run hours, faults) | EWP FAULT |
+| EWH status | EWH monitor (×N) | Indicator | Yes (energy, faults) | EWH FAULT |
+| UV status | UV monitor | Indicator | Yes (lamp hours) | UV FAULT |
+| EMH status | EMH monitor | Indicator | Yes (faults) | DRAIN HTR FAULT |
+| Trace heater status | THC | Optional TBD | Yes (faults) | TRACE HTR FAULT |
+| EFV cycle count | EFV controller | N/A | Yes (cumulative) | Maintenance advisory |
+| Waste temp | TS-W | N/A | Yes (log) | Freeze advisory |
+
+---
+
+## §13 Maintenance Concept
+
+| Task | Access | Interval | Skill |
+|---|---|---|---|
+| CMC fault review | CMC terminal / maintenance terminal | Each visit | Line |
+| ECAM indication functional test | Maintenance BITE mode | C-check TBD | Line/base |
+| CAS message verification test | Signal injection / BITE | C-check TBD | Line/base |
+| Sensor calibration check | Per sensor subsubject | C-check TBD | Line/base |
+| Data bus continuity check | AFDX / ARINC 429 test | C-check TBD | Base |
+| CMC data download | Maintenance terminal USB/network | On demand | Line |
+
+---
+
+## §14 S1000D/CSDB Mapping
+
+| Document | DMC Pattern | Info Code | Status |
+|---|---|---|---|
+| System description — indication & warning | DMC-AMPEL360E-EWTW-038-06-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| CAS message list | DMC-AMPEL360E-EWTW-038-06-00A-040B-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| ECAM page description | DMC-AMPEL360E-EWTW-038-06-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — indication system | DMC-AMPEL360E-EWTW-038-06-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| BITE / ECAM test procedure | DMC-AMPEL360E-EWTW-038-06-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §15 Footprints
+
+| Parameter | Value |
+|---|---|
+| Data bus type | <img src="https://img.shields.io/badge/TBD-red"> (AFDX or ARINC 429) |
+| ECAM page count for ATA 38 | <img src="https://img.shields.io/badge/TBD-red"> (likely sub-page on systems display) |
+| Number of CAS messages | <img src="https://img.shields.io/badge/TBD-red"> (~11 defined; more TBD) |
+| CMC data retention | <img src="https://img.shields.io/badge/TBD-red"> (e.g. last 500 flight hours TBD) |
+| Galley panel water gauge | <img src="https://img.shields.io/badge/TBD-red"> (optional; OI TBD) |
+| Lavatory flush ready light | <img src="https://img.shields.io/badge/TBD-red"> (optional; OI TBD) |
+
+---
+
+## §16 Safety and Certification
+
+| Requirement | Standard | Application |
 |---|---|---|
-| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
-| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
-| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
-| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
-| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
-| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
-| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
-| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
-| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
-| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
-| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
-| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
-| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
-| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
-| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
-| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
-| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
-| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
-| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
-| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
-| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |
+| Equipment installation | CS-25.1301 | All ATA 38 indication components |
+| System safety | CS-25.1309 | False alerts; missed alerts (single failure analysis) |
+| CAS message format and levels | CS-25.1322 | Warning (red)/Caution (amber)/Advisory colours and levels |
+| Instrument markings | CS-25.1543 TBD | ECAM quantity bar markings |
+| Data bus safety | CS-25.1309 | AFDX or ARINC 429 reliability |
+| EMC | CS-25.1353 | Data bus, sensor wiring |
 
-### Domain-Specific Terms — ATA 38 Water and Waste
+---
 
-| Term / Acronym | Expansion | Definition |
+## §17 Verification and Validation
+
+| Test | Method | Acceptance Criterion | Status |
+|---|---|---|---|
+| EWP flow test | Bench/rig | ≥ TBD L/min | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Tank leak test | Hydrostatic 1.5× WP | No leakage TBD min | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWH thermal test | Bench | Outlet ≥ 60°C; TMV ≤ 43°C TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| UV steriliser output test | UV intensity | ≥ 4-log TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Mast heater continuity test | Resistance | Within tolerance | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Flush cycle test | Functional rig | Waste ≤ 1.5 s TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fill-level sensor accuracy | Cal 0/50/100% | ± TBD % | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Overflow sensor function | Simulated overfill | Alert within TBD s | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Grey water drain flow test | Max load | Clear within TBD s | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Potable water quality test | Sample | Meets WHO/FAA standard | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Freeze protection activation test | Cold chamber | THC activates; no freeze | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| CAS trigger test | Signal injection | All CAS messages trigger at correct thresholds | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| ECAM display verification | Display test | Correct values displayed; correct colours | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+
+---
+
+## §18 Glossary
+
+| Term | Definition |
+|---|---|
+| PWS | Potable Water System |
+| EWP | Electric Water Pump |
+| EWH | Electric Water Heater |
+| VWS | Vacuum Waste System |
+| EFV | Electric Flush Valve |
+| WIV | Waste Inlet Valve |
+| Mast drain | Heated overboard grey drain nozzle |
+| EMH | Electric Mast Heater |
+| UV sterilisation | UV-C inline water treatment |
+| Activated carbon filter | Filter on vent or fill |
+| LLDPE | Linear Low-Density Polyethylene |
+| PEX | Cross-linked Polyethylene |
+| Capacitive level sensor | Non-contact level measurement |
+| NRV | Non-Return Valve |
+| TMV | Thermostatic Mixing Valve |
+| Grey water | Sink drainage |
+| Black water | Toilet waste |
+| Waste tank | Toilet waste vessel |
+| Freeze protection | Electric trace / mast heating |
+| Trace heating | Resistance elements on water lines |
+| THC | Trace Heater Controller |
+| CMC | Central Maintenance Computer |
+| ECAM | Electronic Centralised Aircraft Monitor |
+| CAS | Crew Alerting System — cockpit alert messages |
+| AFDX | Avionics Full-Duplex Switched Ethernet |
+| ARINC 429 | Standard avionics data bus |
+| BITE | Built-In Test Equipment |
+
+---
+
+## §19 Citations
+
+1. EASA CS-25.1301 — Function and installation.
+2. EASA CS-25.1309 — Equipment, systems, and installations.
+3. EASA CS-25.1322 — Warning, caution, and advisory lights.
+4. EASA CS-25.1543 — Instrument markings (TBD applicability).
+5. ARINC 429 standard (Aeronautical Radio Inc.).
+6. AFDX standard (ARINC 664 Part 7).
+7. [038-000 General](./038-000-Water-and-Waste-General.md).
+8. [038-010 Potable Water System](./038-010-Potable-Water-System.md).
+9. [038-050 Toilet and Vacuum Waste](./038-050-Toilet-and-Vacuum-Waste-System.md).
+10. [038-080 Monitoring Diagnostics and Control](./038-080-Water-and-Waste-Monitoring-Diagnostics-and-Control-Interfaces.md).
+
+---
+
+## §20 References
+
+| Ref | Document | Notes |
 |---|---|---|
-| **BIOCIDE** | — | Chemical additive to potable water to prevent microbial growth; usage and concentration governed by aviation health regulations. |
-| **EASA CS-25** | EASA Certification Specification 25 | Airworthiness standards for large aeroplanes (equivalent to FAA FAR Part 25); governs potable water system design and materials. |
-| **LOPA** | Layout of Passenger Accommodation | Cabin-layout document defining seat rows, galley positions, lavatory locations, and emergency-equipment placement; drives water/waste pipe routing. |
-| **PED** | Portable Electronic Device | Passenger device; some airlines use PED charging integration near water/waste service panels — noted for interface awareness. |
-| **PPM** | Parts Per Million | Concentration unit for disinfectant (e.g., chlorine) in potable water; regulatory limits specified in EASA and FAA guidelines. |
-| **PSU** | Passenger Service Unit | See ATA 33; the PSU water outlet (if fitted) is an interface point for ATA 38 potable water distribution. |
-| **QAC** | Quaternary Ammonium Compound | Class of biocidal disinfectants used for potable water system decontamination. |
-| **RVDT** | Rotary Variable Differential Transformer | Position-sensing transducer used in some waste-tank level sensors and valve-position indicators. |
-| **VWS** | Vacuum Waste System | Closed-circuit waste collection system using differential pressure (vacuum) generated by cabin–ambient pressure difference to transport waste to storage tanks. |
-| **WHO** | World Health Organisation | UN agency that publishes the _Guide to Hygiene and Sanitation in Aviation_ governing potable water quality standards for aircraft. |
+| [R1] | CS-25.1301 | Installation |
+| [R2] | CS-25.1309 | System safety |
+| [R3] | CS-25.1322 | CAS format and levels |
+| [R4] | ARINC 429 | Data bus standard |
+| [R5] | ARINC 664 Part 7 (AFDX) | Data bus standard |
+| [R6] | [038-000](./038-000-Water-and-Waste-General.md) | ATA 38 General |
+| [R7] | [038-010](./038-010-Potable-Water-System.md) | PWS sensors |
+| [R8] | [038-050](./038-050-Toilet-and-Vacuum-Waste-System.md) | VWS sensors |
+| [R9] | [038-080](./038-080-Water-and-Waste-Monitoring-Diagnostics-and-Control-Interfaces.md) | Monitoring |
+| [R10] | [038-090](./038-090-S1000D-CSDB-Mapping-and-Traceability.md) | CSDB mapping |
+
+---
+
+## §21 Open Issues
+
+| ID | Description | Owner | Status |
+|---|---|---|---|
+| OI-038-001 | Tank capacity and material | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-002 | Tank pressurisation method | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-003 | EWH count, placement, power budget | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-004 | Grey water retention regulatory review | Q-AIR / ORB-LEG | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-005 | Waste tank count and capacity | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-006 | Freeze protection strategy | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-007 | UV sterilisation certification and interval | Q-AIR / ORB-LEG | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-008 | Mast drain count and location | Q-AIR / Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-038-009 | Single-point servicing panel location | Q-AIR / Q-GROUND | <img src="https://img.shields.io/badge/TBD-red"> |
+
+---
+
+## §22 Change Log
+
+| Revision | Date | Author | Description |
+|---|---|---|---|
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections; CAS messages, ECAM, CMC data |
+| 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |
