@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-SPACE, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | In-Flight Fuel Dispensing — General | [048-000-In-Flight-Fuel-Dispensing-General.md](./048-000-In-Flight-Fuel-Dispensing-General.md) | active |
+| 10 | Fuel Dispensing Architecture and Modes | [048-010-Fuel-Dispensing-Architecture-and-Modes.md](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) | active |
+| 20 | Refuelling Probe, Drogue and Receptacle Interfaces | [048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) | active |
+| 30 | Fuel Transfer Pumps, Valves and Manifolds | [048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) | active |
+| 40 | Fuel Quantity, Flow and Pressure Control | [048-040-Fuel-Quantity-Flow-and-Pressure-Control.md](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) | active |
+| 50 | Dispensing Hose, Boom and Coupling Interfaces | [048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) | active |
+| 60 | In-Flight Fuel Dispensing Control and Indication | [048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) | active |
+| 70 | Safety Interlocks, Emergency Disconnect and Jettison | [048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) | active |
+| 80 | IFFD Monitoring, Diagnostics and Control Interfaces | [048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [048-090-S1000D-CSDB-Mapping-and-Traceability.md](./048-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `040-049` |
 | Section | `04` — Aviónica, Información & APU |
 | Subsection | `048` — In-Flight Fuel Dispensing |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active — 10 subsubjects defined) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |
