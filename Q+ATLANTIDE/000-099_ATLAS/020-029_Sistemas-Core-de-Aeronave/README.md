@@ -39,16 +39,16 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 | Code | Title | Folder | Status |
 |---:|---|---|---|
-| `020` | Air Conditioning and Pressurization | [`020_Air-Conditioning-and-Pressurization/`](./020_Air-Conditioning-and-Pressurization/) | active |
-| `021` | Auto Flight | [`021_Auto-Flight/`](./021_Auto-Flight/) | active |
-| `022` | Communications | [`022_Communications/`](./022_Communications/) | active |
-| `023` | Electrical Power | [`023_Electrical-Power/`](./023_Electrical-Power/) | active |
-| `024` | Equipment and Furnishings | [`024_Equipment-and-Furnishings/`](./024_Equipment-and-Furnishings/) | active |
-| `025` | Fire Protection | [`025_Fire-Protection/`](./025_Fire-Protection/) | active |
-| `026` | Flight Controls | [`026_Flight-Controls/`](./026_Flight-Controls/) | active |
-| `027` | Fuel and Energy Storage | [`027_Fuel-and-Energy-Storage/`](./027_Fuel-and-Energy-Storage/) | active |
-| `028` | Hydraulic Power | [`028_Hydraulic-Power/`](./028_Hydraulic-Power/) | active |
-| `029` | Indicating, Recording and Cabin Systems | [`029_Indicating-Recording-and-Cabin-Systems/`](./029_Indicating-Recording-and-Cabin-Systems/) | active |
+| `020` | Standard Practices Airframe | [`020_Standard-Practices-Airframe/`](./020_Standard-Practices-Airframe/) | active |
+| `021` | Air Conditioning and Pressurization | [`021_Air-Conditioning-and-Pressurization/`](./021_Air-Conditioning-and-Pressurization/) | active |
+| `022` | Auto Flight | [`022_Auto-Flight/`](./022_Auto-Flight/) | active |
+| `023` | Communications | [`023_Communications/`](./023_Communications/) | active |
+| `024` | Electrical Power | [`024_Electrical-Power/`](./024_Electrical-Power/) | active |
+| `025` | Equipment and Furnishings | [`025_Equipment-and-Furnishings/`](./025_Equipment-and-Furnishings/) | active |
+| `026` | Fire Protection | [`026_Fire-Protection/`](./026_Fire-Protection/) | active |
+| `027` | Flight Controls | [`027_Flight-Controls/`](./027_Flight-Controls/) | active |
+| `028` | Fuel and Energy Storage | [`028_Fuel-and-Energy-Storage/`](./028_Fuel-and-Energy-Storage/) | active |
+| `029` | Hydraulic Power | [`029_Hydraulic-Power/`](./029_Hydraulic-Power/) | active |
 
 ## 4. Interfaces Diagram
 
@@ -60,16 +60,16 @@ flowchart TB
 
     subgraph SUBS["Subsections"]
         direction LR
-        SUB_020["020 — Air Cond. & Press. (ATA 21)"]:::sub
-        SUB_021["021 — Auto Flight (ATA 22)"]:::sub
-        SUB_022["022 — Communications (ATA 23)"]:::sub
-        SUB_023["023 — Electrical Power (ATA 24)"]:::sub
-        SUB_024["024 — Equipment & Furnishings (ATA 25)"]:::sub
-        SUB_025["025 — Fire Protection (ATA 26)"]:::sub
-        SUB_026["026 — Flight Controls (ATA 27)"]:::sub
-        SUB_027["027 — Fuel & Energy Storage (ATA 28)"]:::sub
-        SUB_028["028 — Hydraulic Power (ATA 29)"]:::sub
-        SUB_029["029 — Indicating/Recording/Cabin (ATA 31, 44)"]:::sub
+        SUB_020["020 — Standard Practices Airframe (ATA 20)"]:::sub
+        SUB_021["021 — Air Cond. & Press. (ATA 21)"]:::sub
+        SUB_022["022 — Auto Flight (ATA 22)"]:::sub
+        SUB_023["023 — Communications (ATA 23)"]:::sub
+        SUB_024["024 — Electrical Power (ATA 24)"]:::sub
+        SUB_025["025 — Equipment & Furnishings (ATA 25)"]:::sub
+        SUB_026["026 — Fire Protection (ATA 26)"]:::sub
+        SUB_027["027 — Flight Controls (ATA 27)"]:::sub
+        SUB_028["028 — Fuel & Energy Storage (ATA 28)"]:::sub
+        SUB_029["029 — Hydraulic Power (ATA 29)"]:::sub
     end
     SEC --> SUBS
 
@@ -92,9 +92,9 @@ flowchart TB
     SUBS --> SUB_028
     SUBS --> SUB_029
     EXT_S07["§07 · H₂ Storage (076)"]:::ext
-    SUB_027 -. "ATA 28 ↔ LH₂" .- EXT_S07
+    SUB_028 -. "ATA 28 ↔ LH₂" .- EXT_S07
     EXT_S04["§04 · IMA (040)"]:::ext
-    SUB_021 -. "avionics bus" .- EXT_S04
+    SUB_022 -. "avionics bus" .- EXT_S04
 
     classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
     classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff

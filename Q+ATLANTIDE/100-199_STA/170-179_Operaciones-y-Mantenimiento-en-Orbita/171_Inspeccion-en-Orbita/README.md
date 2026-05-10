@@ -57,18 +57,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | On-Orbit Inspection Controlled Definition | [`001_On-Orbit-Inspection-Controlled-Definition.md`](001_On-Orbit-Inspection-Controlled-Definition.md) | active |
-| 002 | Inspection Mission Classes and Objectives | [`002_Inspection-Mission-Classes-and-Objectives.md`](002_Inspection-Mission-Classes-and-Objectives.md) | active |
-| 003 | Visual, Optical and Multispectral Inspection | [`003_Visual-Optical-and-Multispectral-Inspection.md`](003_Visual-Optical-and-Multispectral-Inspection.md) | active |
-| 004 | Radar, Lidar and Proximity Sensing Inspection | [`004_Radar-Lidar-and-Proximity-Sensing-Inspection.md`](004_Radar-Lidar-and-Proximity-Sensing-Inspection.md) | active |
-| 005 | Structural Health Monitoring and Damage Assessment | [`005_Structural-Health-Monitoring-and-Damage-Assessment.md`](005_Structural-Health-Monitoring-and-Damage-Assessment.md) | active |
-| 006 | Thermal, Radiation and Surface Degradation Inspection | [`006_Thermal-Radiation-and-Surface-Degradation-Inspection.md`](006_Thermal-Radiation-and-Surface-Degradation-Inspection.md) | active |
-| 007 | Autonomous Inspection and Robotic Inspection Modes | [`007_Autonomous-Inspection-and-Robotic-Inspection-Modes.md`](007_Autonomous-Inspection-and-Robotic-Inspection-Modes.md) | active |
-| 008 | Inspection Safety Zones and Proximity Operations | [`008_Inspection-Safety-Zones-and-Proximity-Operations.md`](008_Inspection-Safety-Zones-and-Proximity-Operations.md) | active |
-| 009 | ECSS-NASA-CCSDS On-Orbit Inspection Standards Mapping | [`009_ECSS-NASA-CCSDS-On-Orbit-Inspection-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-On-Orbit-Inspection-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`171-000-General.md`](./171-000-General.md) | active |
+| 010 | On Orbit Inspection Controlled Definition | [`171-010-On-Orbit-Inspection-Controlled-Definition.md`](./171-010-On-Orbit-Inspection-Controlled-Definition.md) | active |
+| 020 | Inspection Mission Classes and Objectives | [`171-020-Inspection-Mission-Classes-and-Objectives.md`](./171-020-Inspection-Mission-Classes-and-Objectives.md) | active |
+| 030 | Visual Optical and Multispectral Inspection | [`171-030-Visual-Optical-and-Multispectral-Inspection.md`](./171-030-Visual-Optical-and-Multispectral-Inspection.md) | active |
+| 040 | Radar Lidar and Proximity Sensing Inspection | [`171-040-Radar-Lidar-and-Proximity-Sensing-Inspection.md`](./171-040-Radar-Lidar-and-Proximity-Sensing-Inspection.md) | active |
+| 050 | Structural Health Monitoring and Damage Assessment | [`171-050-Structural-Health-Monitoring-and-Damage-Assessment.md`](./171-050-Structural-Health-Monitoring-and-Damage-Assessment.md) | active |
+| 060 | Thermal Radiation and Surface Degradation Inspection | [`171-060-Thermal-Radiation-and-Surface-Degradation-Inspection.md`](./171-060-Thermal-Radiation-and-Surface-Degradation-Inspection.md) | active |
+| 070 | Autonomous Inspection and Robotic Inspection Modes | [`171-070-Autonomous-Inspection-and-Robotic-Inspection-Modes.md`](./171-070-Autonomous-Inspection-and-Robotic-Inspection-Modes.md) | active |
+| 080 | Inspection Safety Zones and Proximity Operations | [`171-080-Inspection-Safety-Zones-and-Proximity-Operations.md`](./171-080-Inspection-Safety-Zones-and-Proximity-Operations.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`171-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./171-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -79,7 +77,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `170-179` |
 | Section | `07` — Operaciones y Mantenimiento en Órbita |
 | Subsection | `171` — Inspección en Órbita |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY |
 | ORB support | ORB-LEG |

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     S1000D Descriptive Data Module
+     DMC: DMC-AMPEL360E-EWTW-021-040-00A-040A-D
+     Title: Heating — System Description
+     Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+     ATLAS Node: 021-040 / ATA 21-40-00
+     Status: draft / programme-controlled-placeholder
+     Issue: 001-00 | Date: 2026-05-09
+     ============================================================ -->
+<dmodule xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E"
+                systemDiffCode="EWTW"
+                systemCode="021"
+                subSystemCode="0"
+                subSubSystemCode="40"
+                assyCode="00A"
+                disassyCode="00"
+                disassyCodeVariant="A"
+                infoCode="040"
+                infoCodeVariant="A"
+                itemLocationCode="D"/>
+        <language languageIsoCode="en" countryIsoCode="001"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="09"/>
+        <dmTitle>
+          <techName>Heating System</techName>
+          <infoName>System Description</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </originator>
+      <applic>
+        <displayText>
+          <simplePara>AMPEL360e Wide Tube-and-Wing Family (eWTW) — All variants</simplePara>
+        </displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E"
+                    systemDiffCode="EWTW"
+                    systemCode="000"
+                    subSystemCode="0"
+                    subSubSystemCode="00"
+                    assyCode="00A"
+                    disassyCode="00"
+                    disassyCodeVariant="A"
+                    infoCode="022"
+                    infoCodeVariant="A"
+                    itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+      <remarks>
+        <simplePara>Programme-controlled placeholder. infoCode 040A subject to BREX/SNS/DMRL freeze. Not for operational use.</simplePara>
+      </remarks>
+    </dmStatus>
+  </identAndStatusSection>
+
+  <content>
+    <description>
+
+      <levelledPara id="desc-021-040-001">
+        <title>General</title>
+        <para>This data module describes the <emphasis emphasisType="em01">Heating System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 021-040 and ATA 21-40. The heating system provides supplemental heating to cabin zones, flight deck, cargo compartments and critical equipment areas during cold-soak ground operations, cold-weather flight and altitude operations.</para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-040-002">
+        <title>Heating Architecture</title>
+        <para>The eWTW heating function is integrated into the ECS air conditioning packs and zone temperature control system. Primary heating is provided by the hot trim air supply from the compression subsystem. Supplemental electric heating elements may be used in selected zones for the hybrid-electric variants.</para>
+        <para>Heating loads are managed across:</para>
+        <para>
+          <randomList>
+            <listItem><para>Cabin and passenger zone heating via hot trim air injection.</para></listItem>
+            <listItem><para>Flight deck heating and windshield anti-icing interface.</para></listItem>
+            <listItem><para>Lower deck and cargo zone heating for cargo protection.</para></listItem>
+            <listItem><para>Equipment bay heating to maintain avionics operating temperature range during cold-soak.</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-040-003">
+        <title>eWTW Thermal Interface</title>
+        <para>The hybrid-electric propulsion system of the eWTW generates waste heat that is partially recovered and redirected to supplement cabin heating during certain operating conditions. This thermal coupling is managed by the aircraft energy management controller and coordinated with the ECS temperature control system (see DMC-AMPEL360E-EWTW-021-060-00A-040A-D).</para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-040-004">
+        <title>Key Components</title>
+        <para>Major components of the heating subsystem include:</para>
+        <para>
+          <randomList>
+            <listItem><para>Hot trim air ducting and valves.</para></listItem>
+            <listItem><para>Zone heating control valves.</para></listItem>
+            <listItem><para>Supplemental electric heating elements (hybrid-electric variants).</para></listItem>
+            <listItem><para>Cargo compartment heating ducts and control valves.</para></listItem>
+            <listItem><para>Temperature sensors for closed-loop heating control.</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+    </description>
+  </content>
+
+</dmodule>

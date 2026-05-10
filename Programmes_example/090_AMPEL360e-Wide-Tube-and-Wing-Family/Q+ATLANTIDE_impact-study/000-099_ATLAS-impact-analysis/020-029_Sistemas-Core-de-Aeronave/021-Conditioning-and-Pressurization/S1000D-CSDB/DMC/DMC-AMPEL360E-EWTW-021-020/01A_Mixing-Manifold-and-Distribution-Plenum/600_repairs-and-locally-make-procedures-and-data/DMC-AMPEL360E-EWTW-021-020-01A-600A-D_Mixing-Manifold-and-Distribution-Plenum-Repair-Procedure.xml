@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     S1000D Data Module
+     DMC: DMC-AMPEL360E-EWTW-021-020-01A-600A-D
+     Title: Mixing Manifold and Distribution Plenum — Repair Procedure
+     Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+     ATLAS Node: 021 / SNS 021-020 / ATA 21-20
+     Status: draft / programme-controlled-placeholder
+     Issue: 001-00 | Date: 2026-05-09
+     Note: infoCode 600A is a programme-controlled placeholder pending
+           BREX / SNS / DMRL freeze by the programme CCB.
+     ============================================================ -->
+<dmodule xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E"
+                systemDiffCode="EWTW"
+                systemCode="021"
+                subSystemCode="2"
+                subSubSystemCode="0"
+                assyCode="01A"
+                disassyCode="00"
+                disassyCodeVariant="A"
+                infoCode="600"
+                infoCodeVariant="A"
+                itemLocationCode="D"/>
+        <language languageIsoCode="en" countryIsoCode="001"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="09"/>
+        <dmTitle>
+          <techName>Mixing Manifold and Distribution Plenum</techName>
+          <infoName>Repair Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </originator>
+      <applic>
+        <displayText>
+          <simplePara>AMPEL360e Wide Tube-and-Wing Family (eWTW) — All variants</simplePara>
+        </displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E"
+                    systemDiffCode="EWTW"
+                    systemCode="000"
+                    subSystemCode="0"
+                    subSubSystemCode="00"
+                    assyCode="00A"
+                    disassyCode="00"
+                    disassyCodeVariant="A"
+                    infoCode="022"
+                    infoCodeVariant="A"
+                    itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+      <remarks>
+        <simplePara>Programme-controlled placeholder. SNS alignment: 021-020 / Mixing Manifold and Distribution Plenum. infoCode 600A subject to BREX/SNS/DMRL freeze. Not for operational use.</simplePara>
+      </remarks>
+    </dmStatus>
+  </identAndStatusSection>
+
+  <content>
+    <description>
+
+      <levelledPara id="mix-mnf-600-001">
+        <title>General</title>
+        <para>This data module covers repair procedures for this component within the ATA 21-20 Air Distribution subsystem. Content is a programme-controlled scaffold placeholder.</para>
+      </levelledPara>
+      <levelledPara id="mix-mnf-600-002">
+        <title>Repair Criteria</title>
+        <para>Damage limits, repair categories, airworthiness boundaries and repair authority shall be defined here following programme CCB approval.</para>
+      </levelledPara>
+      <levelledPara id="mix-mnf-600-003">
+        <title>Repair Procedures</title>
+        <para>Step-by-step repair procedures, material specifications, tooling and inspection requirements shall be documented here pending BREX/SNS/DMRL freeze.</para>
+      </levelledPara>
+
+    </description>
+  </content>
+
+</dmodule>

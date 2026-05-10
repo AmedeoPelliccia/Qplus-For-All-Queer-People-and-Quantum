@@ -51,18 +51,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Nuclear Propulsion Conceptual Definition | [`001_Nuclear-Propulsion-Conceptual-Definition.md`](001_Nuclear-Propulsion-Conceptual-Definition.md) | active |
-| 002 | Nuclear Thermal Propulsion Concepts | [`002_Nuclear-Thermal-Propulsion-Concepts.md`](002_Nuclear-Thermal-Propulsion-Concepts.md) | active |
-| 003 | Nuclear Electric Propulsion Concepts | [`003_Nuclear-Electric-Propulsion-Concepts.md`](003_Nuclear-Electric-Propulsion-Concepts.md) | active |
-| 004 | Radioisotope Power and Propulsion Boundaries | [`004_Radioisotope-Power-and-Propulsion-Boundaries.md`](004_Radioisotope-Power-and-Propulsion-Boundaries.md) | active |
-| 005 | Reactor Power Conversion and Thermal Interface Boundaries | [`005_Reactor-Power-Conversion-and-Thermal-Interface-Boundaries.md`](005_Reactor-Power-Conversion-and-Thermal-Interface-Boundaries.md) | active |
-| 006 | Radiation Shielding and Separation Distance Concepts | [`006_Radiation-Shielding-and-Separation-Distance-Concepts.md`](006_Radiation-Shielding-and-Separation-Distance-Concepts.md) | active |
-| 007 | Mission Classes and Use-Case Screening | [`007_Mission-Classes-and-Use-Case-Screening.md`](007_Mission-Classes-and-Use-Case-Screening.md) | active |
-| 008 | Safety, Security and Regulatory Constraints | [`008_Safety-Security-and-Regulatory-Constraints.md`](008_Safety-Security-and-Regulatory-Constraints.md) | active |
-| 009 | ECSS, NASA, IAEA and Outer Space Treaty Mapping | [`009_ECSS-NASA-IAEA-Outer-Space-Treaty-Mapping.md`](009_ECSS-NASA-IAEA-Outer-Space-Treaty-Mapping.md) | active |
-| 010 | Assurance Evidence and Non-Deployment Boundaries | [`010_Assurance-Evidence-and-Non-Deployment-Boundaries.md`](010_Assurance-Evidence-and-Non-Deployment-Boundaries.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`122-000-General.md`](./122-000-General.md) | active |
+| 010 | Nuclear Propulsion Conceptual Definition | [`122-010-Nuclear-Propulsion-Conceptual-Definition.md`](./122-010-Nuclear-Propulsion-Conceptual-Definition.md) | active |
+| 020 | Nuclear Thermal Propulsion Concepts | [`122-020-Nuclear-Thermal-Propulsion-Concepts.md`](./122-020-Nuclear-Thermal-Propulsion-Concepts.md) | active |
+| 030 | Nuclear Electric Propulsion Concepts | [`122-030-Nuclear-Electric-Propulsion-Concepts.md`](./122-030-Nuclear-Electric-Propulsion-Concepts.md) | active |
+| 040 | Radioisotope Power and Propulsion Boundaries | [`122-040-Radioisotope-Power-and-Propulsion-Boundaries.md`](./122-040-Radioisotope-Power-and-Propulsion-Boundaries.md) | active |
+| 050 | Reactor Power Conversion and Thermal Interface Boundaries | [`122-050-Reactor-Power-Conversion-and-Thermal-Interface-Boundaries.md`](./122-050-Reactor-Power-Conversion-and-Thermal-Interface-Boundaries.md) | active |
+| 060 | Radiation Shielding and Separation Distance Concepts | [`122-060-Radiation-Shielding-and-Separation-Distance-Concepts.md`](./122-060-Radiation-Shielding-and-Separation-Distance-Concepts.md) | active |
+| 070 | Mission Classes and Use Case Screening | [`122-070-Mission-Classes-and-Use-Case-Screening.md`](./122-070-Mission-Classes-and-Use-Case-Screening.md) | active |
+| 080 | Safety Security and Regulatory Constraints | [`122-080-Safety-Security-and-Regulatory-Constraints.md`](./122-080-Safety-Security-and-Regulatory-Constraints.md) | active |
+| 090 | Assurance Evidence and Non Deployment Boundaries | [`122-090-Assurance-Evidence-and-Non-Deployment-Boundaries.md`](./122-090-Assurance-Evidence-and-Non-Deployment-Boundaries.md) | active |
 
 ## 4. Footprint
 
@@ -73,7 +71,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `120-129` |
 | Section | `02` — Propulsión Espacial Tradicional y Avanzada |
 | Subsection | `122` — Propulsión Nuclear Conceptual |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HPC, ORB-LEG |
 | ORB support | ORB-PMO, ORB-LEG |

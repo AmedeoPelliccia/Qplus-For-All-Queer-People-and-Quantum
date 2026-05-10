@@ -52,18 +52,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Payloads Controlled Definition | [`001_Payloads-Controlled-Definition.md`](001_Payloads-Controlled-Definition.md) | active |
-| 002 | Payload Classes and Mission Roles | [`002_Payload-Classes-and-Mission-Roles.md`](002_Payload-Classes-and-Mission-Roles.md) | active |
-| 003 | Scientific Payloads and Instruments | [`003_Scientific-Payloads-and-Instruments.md`](003_Scientific-Payloads-and-Instruments.md) | active |
-| 004 | Communication Payloads and Relay Functions | [`004_Communication-Payloads-and-Relay-Functions.md`](004_Communication-Payloads-and-Relay-Functions.md) | active |
-| 005 | Earth Observation and Remote Sensing Payloads | [`005_Earth-Observation-and-Remote-Sensing-Payloads.md`](005_Earth-Observation-and-Remote-Sensing-Payloads.md) | active |
-| 006 | Navigation, Timing and Positioning Payloads | [`006_Navigation-Timing-and-Positioning-Payloads.md`](006_Navigation-Timing-and-Positioning-Payloads.md) | active |
-| 007 | Payload Interfaces: Power, Data, Thermal and Mechanical | [`007_Payload-Interfaces-Power-Data-Thermal-and-Mechanical.md`](007_Payload-Interfaces-Power-Data-Thermal-and-Mechanical.md) | active |
-| 008 | Payload Operations, Calibration and Commissioning | [`008_Payload-Operations-Calibration-and-Commissioning.md`](008_Payload-Operations-Calibration-and-Commissioning.md) | active |
-| 009 | ECSS-NASA-CCSDS Payload Standards Mapping | [`009_ECSS-NASA-CCSDS-Payload-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-Payload-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`160-000-General.md`](./160-000-General.md) | active |
+| 010 | Payloads Controlled Definition | [`160-010-Payloads-Controlled-Definition.md`](./160-010-Payloads-Controlled-Definition.md) | active |
+| 020 | Payload Classes and Mission Roles | [`160-020-Payload-Classes-and-Mission-Roles.md`](./160-020-Payload-Classes-and-Mission-Roles.md) | active |
+| 030 | Scientific Payloads and Instruments | [`160-030-Scientific-Payloads-and-Instruments.md`](./160-030-Scientific-Payloads-and-Instruments.md) | active |
+| 040 | Communication Payloads and Relay Functions | [`160-040-Communication-Payloads-and-Relay-Functions.md`](./160-040-Communication-Payloads-and-Relay-Functions.md) | active |
+| 050 | Earth Observation and Remote Sensing Payloads | [`160-050-Earth-Observation-and-Remote-Sensing-Payloads.md`](./160-050-Earth-Observation-and-Remote-Sensing-Payloads.md) | active |
+| 060 | Navigation Timing and Positioning Payloads | [`160-060-Navigation-Timing-and-Positioning-Payloads.md`](./160-060-Navigation-Timing-and-Positioning-Payloads.md) | active |
+| 070 | Payload Interfaces Power Data Thermal and Mechanical | [`160-070-Payload-Interfaces-Power-Data-Thermal-and-Mechanical.md`](./160-070-Payload-Interfaces-Power-Data-Thermal-and-Mechanical.md) | active |
+| 080 | Payload Operations Calibration and Commissioning | [`160-080-Payload-Operations-Calibration-and-Commissioning.md`](./160-080-Payload-Operations-Calibration-and-Commissioning.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`160-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./160-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -74,7 +72,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `160-169` |
 | Section | `06` — Sensores y Carga Útil Espacial |
 | Subsection | `160` — Cargas Útiles |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-MKTG |

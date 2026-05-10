@@ -41,19 +41,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Post-2040 Concepts Controlled Definition | [`001_Post-2040-Concepts-Controlled-Definition.md`](./001_Post-2040-Concepts-Controlled-Definition.md) | active |
-| 02 | Future Space System Classes and Mission Roles | [`002_Future-Space-System-Classes-and-Mission-Roles.md`](./002_Future-Space-System-Classes-and-Mission-Roles.md) | active |
-| 03 | Post-2040 Propulsion and Energy Concepts | [`003_Post-2040-Propulsion-and-Energy-Concepts.md`](./003_Post-2040-Propulsion-and-Energy-Concepts.md) | active |
-| 04 | Autonomous and Self-Reconfiguring Space Systems | [`004_Autonomous-and-Self-Reconfiguring-Space-Systems.md`](./004_Autonomous-and-Self-Reconfiguring-Space-Systems.md) | active |
-| 05 | Deep-Space Infrastructure and Distributed Architectures | [`005_Deep-Space-Infrastructure-and-Distributed-Architectures.md`](./005_Deep-Space-Infrastructure-and-Distributed-Architectures.md) | active |
-| 06 | Quantum Sensing, Communication and Computation Interfaces | [`006_Quantum-Sensing-Communication-and-Computation-Interfaces.md`](./006_Quantum-Sensing-Communication-and-Computation-Interfaces.md) | active |
-| 07 | Sentient Agency and Human-Machine Governance Boundaries | [`007_Sentient-Agency-and-Human-Machine-Governance-Boundaries.md`](./007_Sentient-Agency-and-Human-Machine-Governance-Boundaries.md) | active |
-| 08 | Sustainability, Planetary Protection and Civilisational Risk | [`008_Sustainability-Planetary-Protection-and-Civilisational-Risk.md`](./008_Sustainability-Planetary-Protection-and-Civilisational-Risk.md) | active |
-| 09 | Evidence Readiness, Claim Discipline and Foresight Gates | [`009_Evidence-Readiness-Claim-Discipline-and-Foresight-Gates.md`](./009_Evidence-Readiness-Claim-Discipline-and-Foresight-Gates.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`192-000-General.md`](./192-000-General.md) | active |
+| 010 | Post 2040 Concepts Controlled Definition | [`192-010-Post-2040-Concepts-Controlled-Definition.md`](./192-010-Post-2040-Concepts-Controlled-Definition.md) | active |
+| 020 | Future Space System Classes and Mission Roles | [`192-020-Future-Space-System-Classes-and-Mission-Roles.md`](./192-020-Future-Space-System-Classes-and-Mission-Roles.md) | active |
+| 030 | Post 2040 Propulsion and Energy Concepts | [`192-030-Post-2040-Propulsion-and-Energy-Concepts.md`](./192-030-Post-2040-Propulsion-and-Energy-Concepts.md) | active |
+| 040 | Autonomous and Self Reconfiguring Space Systems | [`192-040-Autonomous-and-Self-Reconfiguring-Space-Systems.md`](./192-040-Autonomous-and-Self-Reconfiguring-Space-Systems.md) | active |
+| 050 | Deep Space Infrastructure and Distributed Architectures | [`192-050-Deep-Space-Infrastructure-and-Distributed-Architectures.md`](./192-050-Deep-Space-Infrastructure-and-Distributed-Architectures.md) | active |
+| 060 | Quantum Sensing Communication and Computation Interfaces | [`192-060-Quantum-Sensing-Communication-and-Computation-Interfaces.md`](./192-060-Quantum-Sensing-Communication-and-Computation-Interfaces.md) | active |
+| 070 | Sentient Agency and Human Machine Governance Boundaries | [`192-070-Sentient-Agency-and-Human-Machine-Governance-Boundaries.md`](./192-070-Sentient-Agency-and-Human-Machine-Governance-Boundaries.md) | active |
+| 080 | Sustainability Planetary Protection and Civilisational Risk | [`192-080-Sustainability-Planetary-Protection-and-Civilisational-Risk.md`](./192-080-Sustainability-Planetary-Protection-and-Civilisational-Risk.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`192-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./192-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -64,7 +63,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `190-199` |
 | Section | `09` — Sistemas Avanzados, Conceptos y Futuro Espacial |
 | Subsection | `192` — Conceptos Post-2040 |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-SPACE, Q-DATAGOV, Q-HPC, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

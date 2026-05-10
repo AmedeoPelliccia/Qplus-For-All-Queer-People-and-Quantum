@@ -46,18 +46,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Orbital Structures Controlled Definition | [`001_Orbital-Structures-Controlled-Definition.md`](001_Orbital-Structures-Controlled-Definition.md) | active |
-| 002 | Primary and Secondary Structural Elements | [`002_Primary-and-Secondary-Structural-Elements.md`](002_Primary-and-Secondary-Structural-Elements.md) | active |
-| 003 | Truss, Frames, Shells and Deployable Structures | [`003_Truss-Frames-Shells-and-Deployable-Structures.md`](003_Truss-Frames-Shells-and-Deployable-Structures.md) | active |
-| 004 | Load Paths, Launch Loads and Orbital Loads | [`004_Load-Paths-Launch-Loads-and-Orbital-Loads.md`](004_Load-Paths-Launch-Loads-and-Orbital-Loads.md) | active |
-| 005 | Docking, Berthing and Structural Interfaces | [`005_Docking-Berthing-and-Structural-Interfaces.md`](005_Docking-Berthing-and-Structural-Interfaces.md) | active |
-| 006 | Modular Assembly and On-Orbit Construction | [`006_Modular-Assembly-and-On-Orbit-Construction.md`](006_Modular-Assembly-and-On-Orbit-Construction.md) | active |
-| 007 | Thermal Distortion, Fatigue and Damage Tolerance | [`007_Thermal-Distortion-Fatigue-and-Damage-Tolerance.md`](007_Thermal-Distortion-Fatigue-and-Damage-Tolerance.md) | active |
-| 008 | Inspection, Monitoring and Structural Health Management | [`008_Inspection-Monitoring-and-Structural-Health-Management.md`](008_Inspection-Monitoring-and-Structural-Health-Management.md) | active |
-| 009 | ECSS / NASA Structural Standards Mapping | [`009_ECSS-NASA-Structural-Standards-Mapping.md`](009_ECSS-NASA-Structural-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`110-000-General.md`](./110-000-General.md) | active |
+| 010 | Orbital Structures Controlled Definition | [`110-010-Orbital-Structures-Controlled-Definition.md`](./110-010-Orbital-Structures-Controlled-Definition.md) | active |
+| 020 | Primary and Secondary Structural Elements | [`110-020-Primary-and-Secondary-Structural-Elements.md`](./110-020-Primary-and-Secondary-Structural-Elements.md) | active |
+| 030 | Truss Frames Shells and Deployable Structures | [`110-030-Truss-Frames-Shells-and-Deployable-Structures.md`](./110-030-Truss-Frames-Shells-and-Deployable-Structures.md) | active |
+| 040 | Load Paths Launch Loads and Orbital Loads | [`110-040-Load-Paths-Launch-Loads-and-Orbital-Loads.md`](./110-040-Load-Paths-Launch-Loads-and-Orbital-Loads.md) | active |
+| 050 | Docking Berthing and Structural Interfaces | [`110-050-Docking-Berthing-and-Structural-Interfaces.md`](./110-050-Docking-Berthing-and-Structural-Interfaces.md) | active |
+| 060 | Modular Assembly and On Orbit Construction | [`110-060-Modular-Assembly-and-On-Orbit-Construction.md`](./110-060-Modular-Assembly-and-On-Orbit-Construction.md) | active |
+| 070 | Thermal Distortion Fatigue and Damage Tolerance | [`110-070-Thermal-Distortion-Fatigue-and-Damage-Tolerance.md`](./110-070-Thermal-Distortion-Fatigue-and-Damage-Tolerance.md) | active |
+| 080 | Inspection Monitoring and Structural Health Management | [`110-080-Inspection-Monitoring-and-Structural-Health-Management.md`](./110-080-Inspection-Monitoring-and-Structural-Health-Management.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`110-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./110-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -68,7 +66,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `110-119` |
 | Section | `01` — Estructuras y Materiales Espaciales |
 | Subsection | `110` — Estructuras Orbitales |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |

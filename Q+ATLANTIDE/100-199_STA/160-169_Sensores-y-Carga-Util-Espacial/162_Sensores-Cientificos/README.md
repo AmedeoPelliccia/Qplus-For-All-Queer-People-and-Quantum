@@ -52,18 +52,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Scientific Sensors Controlled Definition | [`001_Scientific-Sensors-Controlled-Definition.md`](001_Scientific-Sensors-Controlled-Definition.md) | active |
-| 002 | Sensor Classes and Scientific Measurement Objectives | [`002_Sensor-Classes-and-Scientific-Measurement-Objectives.md`](002_Sensor-Classes-and-Scientific-Measurement-Objectives.md) | active |
-| 003 | Optical, Infrared and Ultraviolet Sensors | [`003_Optical-Infrared-and-Ultraviolet-Sensors.md`](003_Optical-Infrared-and-Ultraviolet-Sensors.md) | active |
-| 004 | Radar, Radiofrequency and Microwave Sensors | [`004_Radar-Radiofrequency-and-Microwave-Sensors.md`](004_Radar-Radiofrequency-and-Microwave-Sensors.md) | active |
-| 005 | Particle, Field and Plasma Sensors | [`005_Particle-Field-and-Plasma-Sensors.md`](005_Particle-Field-and-Plasma-Sensors.md) | active |
-| 006 | Spectrometers, Imagers and Radiometers | [`006_Spectrometers-Imagers-and-Radiometers.md`](006_Spectrometers-Imagers-and-Radiometers.md) | active |
-| 007 | Calibration, Metrology and Reference Standards | [`007_Calibration-Metrology-and-Reference-Standards.md`](007_Calibration-Metrology-and-Reference-Standards.md) | active |
-| 008 | Data Quality, Uncertainty and Validation | [`008_Data-Quality-Uncertainty-and-Validation.md`](008_Data-Quality-Uncertainty-and-Validation.md) | active |
-| 009 | ECSS-NASA-CCSDS Scientific Sensor Standards Mapping | [`009_ECSS-NASA-CCSDS-Scientific-Sensor-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-Scientific-Sensor-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`162-000-General.md`](./162-000-General.md) | active |
+| 010 | Scientific Sensors Controlled Definition | [`162-010-Scientific-Sensors-Controlled-Definition.md`](./162-010-Scientific-Sensors-Controlled-Definition.md) | active |
+| 020 | Sensor Classes and Scientific Measurement Objectives | [`162-020-Sensor-Classes-and-Scientific-Measurement-Objectives.md`](./162-020-Sensor-Classes-and-Scientific-Measurement-Objectives.md) | active |
+| 030 | Optical Infrared and Ultraviolet Sensors | [`162-030-Optical-Infrared-and-Ultraviolet-Sensors.md`](./162-030-Optical-Infrared-and-Ultraviolet-Sensors.md) | active |
+| 040 | Radar Radiofrequency and Microwave Sensors | [`162-040-Radar-Radiofrequency-and-Microwave-Sensors.md`](./162-040-Radar-Radiofrequency-and-Microwave-Sensors.md) | active |
+| 050 | Particle Field and Plasma Sensors | [`162-050-Particle-Field-and-Plasma-Sensors.md`](./162-050-Particle-Field-and-Plasma-Sensors.md) | active |
+| 060 | Spectrometers Imagers and Radiometers | [`162-060-Spectrometers-Imagers-and-Radiometers.md`](./162-060-Spectrometers-Imagers-and-Radiometers.md) | active |
+| 070 | Calibration Metrology and Reference Standards | [`162-070-Calibration-Metrology-and-Reference-Standards.md`](./162-070-Calibration-Metrology-and-Reference-Standards.md) | active |
+| 080 | Data Quality Uncertainty and Validation | [`162-080-Data-Quality-Uncertainty-and-Validation.md`](./162-080-Data-Quality-Uncertainty-and-Validation.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`162-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./162-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -74,7 +72,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `160-169` |
 | Section | `06` — Sensores y Carga Útil Espacial |
 | Subsection | `162` — Sensores Científicos |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-MKTG |

@@ -52,18 +52,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Instrumentation Controlled Definition | [`001_Instrumentation-Controlled-Definition.md`](001_Instrumentation-Controlled-Definition.md) | active |
-| 002 | Instrument Classes and Mission Functions | [`002_Instrument-Classes-and-Mission-Functions.md`](002_Instrument-Classes-and-Mission-Functions.md) | active |
-| 003 | Detectors, Transducers and Sensing Chains | [`003_Detectors-Transducers-and-Sensing-Chains.md`](003_Detectors-Transducers-and-Sensing-Chains.md) | active |
-| 004 | Calibration Reference and Metrology Baselines | [`004_Calibration-Reference-and-Metrology-Baselines.md`](004_Calibration-Reference-and-Metrology-Baselines.md) | active |
-| 005 | Signal Conditioning, Data Acquisition and Timing | [`005_Signal-Conditioning-Data-Acquisition-and-Timing.md`](005_Signal-Conditioning-Data-Acquisition-and-Timing.md) | active |
-| 006 | Environmental Constraints: Thermal, Radiation and Vacuum | [`006_Environmental-Constraints-Thermal-Radiation-and-Vacuum.md`](006_Environmental-Constraints-Thermal-Radiation-and-Vacuum.md) | active |
-| 007 | Instrument Interfaces: Power, Data, Thermal and Mechanical | [`007_Instrument-Interfaces-Power-Data-Thermal-and-Mechanical.md`](007_Instrument-Interfaces-Power-Data-Thermal-and-Mechanical.md) | active |
-| 008 | Commissioning, Operations and Health Monitoring | [`008_Commissioning-Operations-and-Health-Monitoring.md`](008_Commissioning-Operations-and-Health-Monitoring.md) | active |
-| 009 | ECSS-NASA-CCSDS Instrumentation Standards Mapping | [`009_ECSS-NASA-CCSDS-Instrumentation-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-Instrumentation-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`161-000-General.md`](./161-000-General.md) | active |
+| 010 | Instrumentation Controlled Definition | [`161-010-Instrumentation-Controlled-Definition.md`](./161-010-Instrumentation-Controlled-Definition.md) | active |
+| 020 | Instrument Classes and Mission Functions | [`161-020-Instrument-Classes-and-Mission-Functions.md`](./161-020-Instrument-Classes-and-Mission-Functions.md) | active |
+| 030 | Detectors Transducers and Sensing Chains | [`161-030-Detectors-Transducers-and-Sensing-Chains.md`](./161-030-Detectors-Transducers-and-Sensing-Chains.md) | active |
+| 040 | Calibration Reference and Metrology Baselines | [`161-040-Calibration-Reference-and-Metrology-Baselines.md`](./161-040-Calibration-Reference-and-Metrology-Baselines.md) | active |
+| 050 | Signal Conditioning Data Acquisition and Timing | [`161-050-Signal-Conditioning-Data-Acquisition-and-Timing.md`](./161-050-Signal-Conditioning-Data-Acquisition-and-Timing.md) | active |
+| 060 | Environmental Constraints Thermal Radiation and Vacuum | [`161-060-Environmental-Constraints-Thermal-Radiation-and-Vacuum.md`](./161-060-Environmental-Constraints-Thermal-Radiation-and-Vacuum.md) | active |
+| 070 | Instrument Interfaces Power Data Thermal and Mechanical | [`161-070-Instrument-Interfaces-Power-Data-Thermal-and-Mechanical.md`](./161-070-Instrument-Interfaces-Power-Data-Thermal-and-Mechanical.md) | active |
+| 080 | Commissioning Operations and Health Monitoring | [`161-080-Commissioning-Operations-and-Health-Monitoring.md`](./161-080-Commissioning-Operations-and-Health-Monitoring.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`161-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./161-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -74,7 +72,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `160-169` |
 | Section | `06` — Sensores y Carga Útil Espacial |
 | Subsection | `161` — Instrumentación |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-MKTG |
