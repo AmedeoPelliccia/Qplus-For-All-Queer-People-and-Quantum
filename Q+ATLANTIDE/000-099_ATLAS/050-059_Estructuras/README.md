@@ -25,7 +25,7 @@ language: en
 
 ## 1. Purpose
 
-Section-level index for *Estructuras* (`050-059`) within the ATLAS band. Compartimentos de carga y accesorios, prácticas estándar estructurales, puertas, fuselaje, nacelles y pilones, estabilizadores, ventanas y alas.
+Section-level index for *Estructuras* (`050-059`) within the ATLAS band. Prácticas estándar estructurales, puertas, fuselaje, nacelles y pilones, estabilizadores, ventanas y alas.
 
 This section is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. Bands classify technologies, Q-Divisions provide technical authority and ORB-Functions provide enterprise support[^n002].
 
@@ -39,14 +39,14 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 | Code | Title | Folder | Status |
 |---:|---|---|---|
-| `050` | Cargo and Accessory Compartments | [`050_Cargo-and-Accessory-Compartments/`](./050_Cargo-and-Accessory-Compartments/) | reserved |
-| `051` | Standard Practices — Structures | [`051_Standard-Practices-Structures/`](./051_Standard-Practices-Structures/) | reserved |
-| `052` | Doors | [`052_Doors/`](./052_Doors/) | reserved |
-| `053` | Fuselage | [`053_Fuselage/`](./053_Fuselage/) | reserved |
-| `054` | Nacelles and Pylons | [`054_Nacelles-and-Pylons/`](./054_Nacelles-and-Pylons/) | reserved |
-| `055` | Stabilizers | [`055_Stabilizers/`](./055_Stabilizers/) | reserved |
-| `056` | Windows | [`056_Windows/`](./056_Windows/) | reserved |
-| `057` | Wings | [`057_Wings/`](./057_Wings/) | reserved |
+| `050` | Standard Practices — Structures | [`050_Standard-Practices-Structures/`](./050_Standard-Practices-Structures/) | active |
+| `051` | Doors | [`051_Doors/`](./051_Doors/) | reserved |
+| `052` | Fuselage | [`052_Fuselage/`](./052_Fuselage/) | reserved |
+| `053` | Nacelles and Pylons | [`053_Nacelles-and-Pylons/`](./053_Nacelles-and-Pylons/) | reserved |
+| `054` | Stabilizers | [`054_Stabilizers/`](./054_Stabilizers/) | reserved |
+| `055` | Windows | [`055_Windows/`](./055_Windows/) | reserved |
+| `056` | Wings | [`056_Wings/`](./056_Wings/) | reserved |
+| `057` | Reserved or Programme-Controlled | [`057_Reserved-or-Programme-Controlled/`](./057_Reserved-or-Programme-Controlled/) | reserved |
 | `058` | Reserved or Programme-Controlled | [`058_Reserved-or-Programme-Controlled/`](./058_Reserved-or-Programme-Controlled/) | reserved |
 | `059` | Reserved or Programme-Controlled | [`059_Reserved-or-Programme-Controlled/`](./059_Reserved-or-Programme-Controlled/) | reserved |
 
@@ -60,14 +60,14 @@ flowchart TB
 
     subgraph SUBS["Subsections"]
         direction LR
-        SUB_050["050 — Cargo and Accessory Compartments (ATA 50)"]:::sub
-        SUB_051["051 — Standard Practices — Structures (ATA 51)"]:::sub
-        SUB_052["052 — Doors (ATA 52)"]:::sub
-        SUB_053["053 — Fuselage (ATA 53)"]:::sub
-        SUB_054["054 — Nacelles & Pylons (ATA 54)"]:::sub
-        SUB_055["055 — Stabilizers (ATA 55)"]:::sub
-        SUB_056["056 — Windows (ATA 56)"]:::sub
-        SUB_057["057 — Wings (ATA 57)"]:::sub
+        SUB_050["050 — Standard Practices — Structures (ATA 51)"]:::sub
+        SUB_051["051 — Doors (ATA 52)"]:::sub
+        SUB_052["052 — Fuselage (ATA 53)"]:::sub
+        SUB_053["053 — Nacelles & Pylons (ATA 54)"]:::sub
+        SUB_054["054 — Stabilizers (ATA 55)"]:::sub
+        SUB_055["055 — Windows (ATA 56)"]:::sub
+        SUB_056["056 — Wings (ATA 57)"]:::sub
+        SUB_057["057 — Reserved or Programme-Controlled"]:::sub
         SUB_058["058 — Reserved or Programme-Controlled"]:::sub
         SUB_059["059 — Reserved or Programme-Controlled"]:::sub
     end
