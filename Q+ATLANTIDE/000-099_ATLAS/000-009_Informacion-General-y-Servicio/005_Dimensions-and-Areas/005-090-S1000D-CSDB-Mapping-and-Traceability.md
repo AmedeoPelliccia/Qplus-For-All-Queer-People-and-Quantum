@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **S1000D CSDB Mapping and Traceability** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 005 Dimensions and Areas topics and the AMPEL360E eWTW S1000D Data Module structure. Each 005-NNN subsubject maps to one or more DMs under systemCode="005" (ATA 06 equivalent), model ident code AMPEL360E, system diff code EWTW, in the Q+ATLANTIDE CSDB instance. The primary DM types for this section are: dimensions and areas description (info code "040"), illustrated parts cross-reference (info code "941"), and zone reference chart (info code "300").
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Traceability links are: ATLAS 005 dimensional baselines → AMM Chapter 6 (Dimensions and Areas) DMs → IPD zone cross-references → FIM and structural inspection task DMs. The DMRL for ATA 06-equivalent topics shall confirm that all primary structural stations, HVDC access zones (200E), and maintenance dock envelope data are covered by published DMs before Entry Into Service (EIS). The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV captures the DM code allocation status for each 005-NNN subsubject and flags any gaps for resolution by the responsible system expert.
 
 ---
 

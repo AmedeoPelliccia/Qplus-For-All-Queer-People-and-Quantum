@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Maintenance Areas and Work-Zones** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Maintenance Areas and Work-Zones** node defines the required maintenance workspace envelopes around the AMPEL360E eWTW for scheduled and unscheduled maintenance tasks. Maintenance docking layouts (MDL) are defined for three configurations: (A) Line maintenance — flat apron, no docking, standard maintenance stands (max height 4.5 m); (B) Base maintenance — hangar docking, six-point dock with bridge to forward, mid, and aft fuselage, plus wing-root and nacelle stands; (C) Heavy maintenance — full strip dock including empennage access and lower-lobe battery bay pit access.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+For the eWTW, specific work-zone exclusions apply during HVDC energised maintenance: a 3 m exclusion radius around the HVDC Ground Power receptacle and EPCU panels. Work-zone safety boundaries are marked on the maintenance dock layout drawings and referenced in the AMM Chapter 20 (Standard Practices — Airframe). Overhead crane and hoist exclusion zones for battery pack removal are defined by the battery bay access hatch dimensions (approximately 1.2 m × 0.8 m per panel) and the battery module extraction envelope (trolley height 1.4 m minimum below belly). All maintenance area requirements feed directly into the MPD task time standards and tooling lists.
 
 ---
 

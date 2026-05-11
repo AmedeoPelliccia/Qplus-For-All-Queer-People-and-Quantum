@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Access Areas and Service Zones** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Access Areas and Service Zones** node defines the structured set of aircraft access areas (panel zones, doors, hatches, and maintenance access points) for the AMPEL360E eWTW, in accordance with the ATA 5-zone coding scheme. The eWTW access zone map is divided into: Zone 100 (nose and forward fuselage — avionics bays, nose gear, cockpit access); Zone 200 (centre section and wing — motor-drive units, main landing gear, battery bay, wing fuel-free structure); Zone 300 (aft fuselage and empennage — tail power distribution, APU ground port, horizontal and vertical stabilizer access); Zone 400 (engines/propulsors — nacelle cowls, EPCU panels, fan/LPC access); Zone 500 (landing gear doors and wheel wells).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+For the eWTW, a new access category is defined: Zone 200E (HVDC/battery access) — access panels requiring eHV (Electric High Voltage) personnel qualification before entry. All Zone 200E panels are colour-coded amber and bear the HVDC hazard symbol. Access dimensions for all panels and hatches shall comply with AMM Chapter 6 (Dimensions and Areas) and shall respect the ergonomic access requirements of EASA CS-25 §25.1557 (miscellaneous markings and placards) and the applicable Work Instruction (WI) templates in the CSDB.
 
 ---
 

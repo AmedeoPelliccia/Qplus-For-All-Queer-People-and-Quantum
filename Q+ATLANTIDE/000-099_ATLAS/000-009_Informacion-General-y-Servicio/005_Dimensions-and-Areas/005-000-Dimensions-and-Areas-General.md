@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Dimensions and Areas General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Dimensions and Areas General** node establishes the master dimensional reference framework for the AMPEL360E eWTW. It defines the aircraft datum coordinate system (X-station, Y-buttock, Z-waterline) and the controlled vocabulary for zones, bays, and access areas used across all Q+ATLANTIDE ATLAS chapters. The eWTW configuration introduces additional dimensional constraints compared to conventional narrow-body aircraft: propulsor nacelles are under-wing with motor-drive fairings that extend the nacelle cross-section, and the wing trailing-edge houses distributed electric actuators that add to the chord envelope.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Key dimensional references are: overall length ≈ 38.5 m, wing span ≈ 35.8 m, fuselage external diameter ≈ 4.14 m (wide-tube cross-section for 5-abreast or 6-abreast seating). All dimensional data in this section is provisional and shall be validated against the Type Design definition freeze. Dimensions are relevant to hangar clearances, gate compatibility (ICAO Code C), ground support equipment reach envelopes, and the maintenance access planning described in the applicable Maintenance Planning Document (MPD).
 
 ---
 

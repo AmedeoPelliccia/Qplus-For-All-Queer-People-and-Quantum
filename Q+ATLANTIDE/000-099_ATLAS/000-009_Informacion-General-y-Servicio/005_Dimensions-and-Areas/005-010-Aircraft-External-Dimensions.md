@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Aircraft External Dimensions** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Aircraft External Dimensions** node provides the controlled set of external envelope dimensions for the AMPEL360E eWTW applicable to airport planning, hangar compatibility, and ground support equipment (GSE) envelope checks. Principal dimensions (all provisional until Type Design freeze): overall length ≈ 38.5 m; wing span (geometric) ≈ 35.8 m; overall height (to top of vertical tail) ≈ 11.9 m; fuselage maximum external diameter ≈ 4.14 m; wheel track (main gear) ≈ 7.6 m; wheel base (nose-to-main gear) ≈ 15.2 m; nacelle maximum diameter ≈ 1.85 m (including motor-drive fairing).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+These dimensions place the eWTW in ICAO Aeroplane Reference Code C (wingspan 24–36 m) or borderline Code D, requiring verification at Type Design freeze for airport compatibility declarations. The motor-drive fairings on the under-wing nacelles add approximately 120 mm to the nacelle diameter compared to a conventional CFM56-class engine; GSE designers and hangar planners must account for this. All external dimensions shall be verified against the eWTW 3D master geometry model (CAD) and the applicable EASA CS-25 §25.771 (cockpit view) and §25.1521 (powerplant limitations) dimensional references.
 
 ---
 

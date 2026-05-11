@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Ground Clearance and Swept Areas** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Ground Clearance and Swept Areas** node specifies the minimum ground clearances and swept envelope dimensions applicable to the AMPEL360E eWTW during ground manoeuvring. Critical clearances (provisional): propulsor nacelle-to-ground clearance ≈ 0.42 m (engine-out, MLG compressed); wing tip-to-ground ≈ 6.2 m (level ground, nominal); belly-to-ground ≈ 0.52 m (maximum payload, MLG static). These values shall be validated against the structural loads model and the MLG stroke/oleo compression data at Type Design freeze.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Swept areas during nose-wheel steering (NWS) turning are larger than a conventional aircraft of similar span due to the under-wing motor-drive nacelle fairings: the nacelle trailing-edge describes a swept arc of approximately 2.3 m larger radius than the wing trailing-edge. Gate planners and marshalling procedures must account for the eWTW nacelle swept envelope, which is specified in the eWTW Airport Compatibility Report (ACR). Minimum pavement turning radius, wingtip clearance on standard Code C taxiways, and bridge docking envelope are documented in the ACR and cross-referenced to this ATLAS 005-040 node.
 
 ---
 

@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Cabin Cargo and Equipment Areas** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Cabin Cargo and Equipment Areas** node documents the controlled dimensional and functional boundaries of the passenger cabin, cargo holds, galley areas, and equipment bays aboard the AMPEL360E eWTW. The passenger cabin occupies approximately 22.5 m of pressurised fuselage length (forward pressure bulkhead to aft pressure bulkhead), providing floor area for up to 110 passenger seats at 29-inch pitch in a high-density single-class layout. The forward galley occupies a full cross-section bay (≈ 1.4 m long); the aft galley and crew rest share a second bay (≈ 2.1 m long). Overhead stowage bins are designed for IATA-standard carry-on bags.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Below-deck cargo is distributed between two holds: (FWD) forward hold capacity ≈ 11.5 m³ (2 LD3-45 equivalents or bulk); (AFT) aft hold capacity ≈ 14.2 m³ (3 LD3-45 equivalents or bulk). The centre lower-lobe battery bay (≈ 3.8 m long) is classified as non-cargo space and is accessible only via maintenance panels. All cargo hold dimensions comply with IATA AHM 913 container interoperability requirements. Freight load limits and restraint system specifications are defined in the Weight and Balance Manual (WBM) derived from this ATLAS 005-060 dimensional baseline.
 
 ---
 

@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Dimensions Monitoring Diagnostics and Control Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Dimensions Monitoring Diagnostics and Control Interfaces** node describes the digital and physical interfaces through which dimensional and structural health data are monitored on the AMPEL360E eWTW. The Structural Health Monitoring (SHM) system uses an array of distributed strain gauges, accelerometers, and fibre-optic sensors embedded in the CFRP primary structure to continuously measure load distribution, flutter margins, and fatigue accumulation. SHM data is aggregated by the Structural Monitoring Unit (SMU) and transmitted to the Central Maintenance System (CMS) via ARINC 664 (AFDX).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Dimensional monitoring for deformation events (e.g., hard landing, exceedance of manoeuvre load) is performed by the Landing and Maneuvering Loads Recorder (LMLR), a DO-178C DAL C function within the Flight Data Recorder (FDR) chain. Post-event, the CMS generates an automatic maintenance alert referencing the relevant exceedance zone and the applicable AMM inspection task. Geometric alignment data (rigging check measurements) are recorded in the ETL and CMS dimensional history log, enabling trend analysis and early detection of structural fatigue initiation sites. S1000D DMs for SHM-driven inspection tasks use info code "200" (inspection procedure) and cross-reference the applicable SHM threshold data in the associated CSDB data module.
 
 ---
 

@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Aircraft Station and Zone Reference** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Aircraft Station and Zone Reference** node establishes the master station numbering (FS — Fuselage Station), buttock line (BL), and waterline (WL) coordinate reference system for the AMPEL360E eWTW. FS 0 is located at the aircraft theoretical datum (forward of the nose cone apex by 100 mm by convention); FS values increase aft. BL 0 is the aircraft centreline; positive BL is starboard. WL 0 is the aircraft ground line with gear extended; WL values increase upward. Primary structural stations are: FS 200 (forward pressure bulkhead), FS 600 (wing front spar root), FS 780 (wing rear spar root and battery bay forward), FS 1100 (aft pressure bulkhead), FS 1380 (tail attachment).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Zone reference follows the ATA 100 zone system augmented with eWTW-specific sub-zones for HVDC and battery systems: Zone 211 = port HVDC bus run, Zone 212 = starboard HVDC bus run, Zone 220 = centre battery bay. Zone numbers are used as the primary address in the Illustrated Parts Data (IPD), fault isolation manual (FIM), and CSDB applicability data. All station and zone references shall be consistent with the Type Design master drawing tree and the eWTW Master Zone Chart (MZC) maintained by the Q-DATAGOV data governance division.
 
 ---
 

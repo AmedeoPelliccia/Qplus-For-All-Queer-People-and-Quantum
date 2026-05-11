@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Aircraft Internal Dimensions** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Aircraft Internal Dimensions** node defines the interior dimensional references for the AMPEL360E eWTW, covering the passenger cabin, crew rest, cargo hold, avionics bay, and propulsion/power compartments. The wide-tube fuselage cross-section (≈ 4.14 m OD) provides an internal cabin width of approximately 3.76 m at armrest level, enabling a 5-abreast or a comfortable 6-abreast seating layout (2+4 or 3+3). Nominal cabin height is ≈ 2.20 m at centreline. The cabin is divided into forward and aft sections separated by a galley/crew station bay, accommodating approximately 90–110 passengers in a single-class high-density or dual-class mixed configuration.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Below the cabin floor, the lower lobe is divided into forward cargo (LD3-equivalent containers or bulk) and aft cargo compartments, with the centre section housing HVDC battery packs and the Battery Management System (BMS) in a thermally managed enclosure. The battery bay occupies approximately 3.8 m of fuselage length at the centre of gravity and is accessible via lower-lobe access panels. All internal dimensional data shall be cross-referenced with the Cabin Configuration Drawing (CCD) and EASA CS-25 §25.803 (emergency evacuation) geometry requirements.
 
 ---
 
