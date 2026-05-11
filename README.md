@@ -190,10 +190,10 @@ is generative and regenerative, but: algorithms only if accountable.
 
 | Version | Date | Changes | Author |
 |---|---:|---|---|
-| 2.4.0 | 2026-04-26 | Root README normalized to Q+ATLANTIDE1000 hierarchy: Architecture Bands → Master ranges → Code ranges → Sections → Subjects → Subsections → Subsubjects. Deprecated “sub-range” as controlled hierarchy term. Replaced Q-SCIRES with Q-HORIZON. Reinforced No-AAA Rule. | A. Pelliccia |
-| 2.3.0 | 2025-07-24 | Full organizational rewrite: flattened hierarchy, multi-level TOC, TRL demarcation, Annex F/G extraction, financial unit normalization, KPI/Risk/Compliance/Financial alignment, DEGF v1.0 integration. | A. Pelliccia |
-| 2.2.0 | 2026-04-26 | Aligned README with coded `organization/` and `Q+ATLANTIDE/` repository structure. | A. Pelliccia |
-| 2.0.0 | 2025-07-23 | Initial master baseline. | A. Pelliccia |
+| 2.4.0 | 2026-04-26 | Root README normalized to Q+ATLANTIDE1000 hierarchy: Architecture Bands → Master ranges → Code ranges → Sections → Subjects → Subsections → Subsubjects. Deprecated “sub-range” as controlled hierarchy term. Replaced Q-SCIRES with Q-HORIZON. Reinforced No-AAA Rule. | Q+ Team/Amedeo Pelliccia + AI |
+| 2.3.0 | 2025-07-24 | Full organizational rewrite: flattened hierarchy, multi-level TOC, TRL demarcation, Annex F/G extraction, financial unit normalization, KPI/Risk/Compliance/Financial alignment, DEGF v1.0 integration. | Q+ Team/Amedeo Pelliccia + AI |
+| 2.2.0 | 2026-04-26 | Aligned README with coded `organization/` and `Q+ATLANTIDE/` repository structure. | Q+ Team/Amedeo Pelliccia + AI |
+| 2.0.0 | 2025-07-23 | Initial master baseline. | Q+ Team/Amedeo Pelliccia + AI |
 
 ---
 

@@ -52,18 +52,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Space Nuclear Energy Conceptual Definition | [`001_Space-Nuclear-Energy-Conceptual-Definition.md`](001_Space-Nuclear-Energy-Conceptual-Definition.md) | active |
-| 002 | Radioisotope Power System Concepts | [`002_Radioisotope-Power-System-Concepts.md`](002_Radioisotope-Power-System-Concepts.md) | active |
-| 003 | Fission Power System Concepts | [`003_Fission-Power-System-Concepts.md`](003_Fission-Power-System-Concepts.md) | active |
-| 004 | Nuclear Electric Power Architecture Boundaries | [`004_Nuclear-Electric-Power-Architecture-Boundaries.md`](004_Nuclear-Electric-Power-Architecture-Boundaries.md) | active |
-| 005 | Power Conversion, Thermal Rejection and Shielding | [`005_Power-Conversion-Thermal-Rejection-and-Shielding.md`](005_Power-Conversion-Thermal-Rejection-and-Shielding.md) | active |
-| 006 | Mission Class and Use-Case Screening | [`006_Mission-Class-and-Use-Case-Screening.md`](006_Mission-Class-and-Use-Case-Screening.md) | active |
-| 007 | Safety, Security and Regulatory Constraints | [`007_Safety-Security-and-Regulatory-Constraints.md`](007_Safety-Security-and-Regulatory-Constraints.md) | active |
-| 008 | Launch, Reentry and Disposal Risk Boundaries | [`008_Launch-Reentry-and-Disposal-Risk-Boundaries.md`](008_Launch-Reentry-and-Disposal-Risk-Boundaries.md) | active |
-| 009 | IAEA, NASA, ECSS and Outer Space Treaty Mapping | [`009_IAEA-NASA-ECSS-and-Outer-Space-Treaty-Mapping.md`](009_IAEA-NASA-ECSS-and-Outer-Space-Treaty-Mapping.md) | active |
-| 010 | Assurance, Evidence and Non-Deployment Boundaries | [`010_Assurance-Evidence-and-Non-Deployment-Boundaries.md`](010_Assurance-Evidence-and-Non-Deployment-Boundaries.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`132-000-General.md`](./132-000-General.md) | active |
+| 010 | Space Nuclear Energy Conceptual Definition | [`132-010-Space-Nuclear-Energy-Conceptual-Definition.md`](./132-010-Space-Nuclear-Energy-Conceptual-Definition.md) | active |
+| 020 | Radioisotope Power System Concepts | [`132-020-Radioisotope-Power-System-Concepts.md`](./132-020-Radioisotope-Power-System-Concepts.md) | active |
+| 030 | Fission Power System Concepts | [`132-030-Fission-Power-System-Concepts.md`](./132-030-Fission-Power-System-Concepts.md) | active |
+| 040 | Nuclear Electric Power Architecture Boundaries | [`132-040-Nuclear-Electric-Power-Architecture-Boundaries.md`](./132-040-Nuclear-Electric-Power-Architecture-Boundaries.md) | active |
+| 050 | Power Conversion Thermal Rejection and Shielding | [`132-050-Power-Conversion-Thermal-Rejection-and-Shielding.md`](./132-050-Power-Conversion-Thermal-Rejection-and-Shielding.md) | active |
+| 060 | Mission Class and Use Case Screening | [`132-060-Mission-Class-and-Use-Case-Screening.md`](./132-060-Mission-Class-and-Use-Case-Screening.md) | active |
+| 070 | Safety Security and Regulatory Constraints | [`132-070-Safety-Security-and-Regulatory-Constraints.md`](./132-070-Safety-Security-and-Regulatory-Constraints.md) | active |
+| 080 | Launch Reentry and Disposal Risk Boundaries | [`132-080-Launch-Reentry-and-Disposal-Risk-Boundaries.md`](./132-080-Launch-Reentry-and-Disposal-Risk-Boundaries.md) | active |
+| 090 | Assurance Evidence and Non Deployment Boundaries | [`132-090-Assurance-Evidence-and-Non-Deployment-Boundaries.md`](./132-090-Assurance-Evidence-and-Non-Deployment-Boundaries.md) | active |
 
 ## 4. Footprint
 
@@ -74,7 +72,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `130-139` |
 | Section | `03` — Sistemas de Energía Espacial |
 | Subsection | `132` — Energía Nuclear Espacial Conceptual |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HPC, ORB-LEG |
 | ORB support | ORB-PMO, ORB-LEG |
@@ -118,9 +116,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | General | [`132-000-General.md`](./132-000-General.md) | active |
+| 010 | Space Nuclear Energy Conceptual Definition | [`132-010-Space-Nuclear-Energy-Conceptual-Definition.md`](./132-010-Space-Nuclear-Energy-Conceptual-Definition.md) | active |
+| 020 | Radioisotope Power System Concepts | [`132-020-Radioisotope-Power-System-Concepts.md`](./132-020-Radioisotope-Power-System-Concepts.md) | active |
+| 030 | Fission Power System Concepts | [`132-030-Fission-Power-System-Concepts.md`](./132-030-Fission-Power-System-Concepts.md) | active |
+| 040 | Nuclear Electric Power Architecture Boundaries | [`132-040-Nuclear-Electric-Power-Architecture-Boundaries.md`](./132-040-Nuclear-Electric-Power-Architecture-Boundaries.md) | active |
+| 050 | Power Conversion Thermal Rejection and Shielding | [`132-050-Power-Conversion-Thermal-Rejection-and-Shielding.md`](./132-050-Power-Conversion-Thermal-Rejection-and-Shielding.md) | active |
+| 060 | Mission Class and Use Case Screening | [`132-060-Mission-Class-and-Use-Case-Screening.md`](./132-060-Mission-Class-and-Use-Case-Screening.md) | active |
+| 070 | Safety Security and Regulatory Constraints | [`132-070-Safety-Security-and-Regulatory-Constraints.md`](./132-070-Safety-Security-and-Regulatory-Constraints.md) | active |
+| 080 | Launch Reentry and Disposal Risk Boundaries | [`132-080-Launch-Reentry-and-Disposal-Risk-Boundaries.md`](./132-080-Launch-Reentry-and-Disposal-Risk-Boundaries.md) | active |
+| 090 | Assurance Evidence and Non Deployment Boundaries | [`132-090-Assurance-Evidence-and-Non-Deployment-Boundaries.md`](./132-090-Assurance-Evidence-and-Non-Deployment-Boundaries.md) | active |
 
 ## 4. Footprint
 
@@ -131,7 +138,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `130-139` |
 | Section | `03` — Sistemas de Energía Espacial |
 | Subsection | `132` — Energía Nuclear Espacial Conceptual |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN |

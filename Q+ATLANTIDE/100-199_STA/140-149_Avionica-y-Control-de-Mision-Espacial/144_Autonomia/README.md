@@ -50,18 +50,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Autonomy Controlled Definition | [`001_Autonomy-Controlled-Definition.md`](001_Autonomy-Controlled-Definition.md) | active |
-| 002 | Autonomous Modes and Authority Boundaries | [`002_Autonomous-Modes-and-Authority-Boundaries.md`](002_Autonomous-Modes-and-Authority-Boundaries.md) | active |
-| 003 | Onboard Decision Logic and Supervision | [`003_Onboard-Decision-Logic-and-Supervision.md`](003_Onboard-Decision-Logic-and-Supervision.md) | active |
-| 004 | FDIR Autonomy and Contingency Response | [`004_FDIR-Autonomy-and-Contingency-Response.md`](004_FDIR-Autonomy-and-Contingency-Response.md) | active |
-| 005 | AI/ML Autonomy Admission and Assurance Boundaries | [`005_AI-ML-Autonomy-Admission-and-Assurance-Boundaries.md`](005_AI-ML-Autonomy-Admission-and-Assurance-Boundaries.md) | active |
-| 006 | Human-in-the-Loop and Ground Override Interfaces | [`006_Human-in-the-Loop-and-Ground-Override-Interfaces.md`](006_Human-in-the-Loop-and-Ground-Override-Interfaces.md) | active |
-| 007 | Safe-Mode Transition and Recovery Logic | [`007_Safe-Mode-Transition-and-Recovery-Logic.md`](007_Safe-Mode-Transition-and-Recovery-Logic.md) | active |
-| 008 | Verification, Validation, Simulation and HIL Testing | [`008_Verification-Validation-Simulation-and-HIL-Testing.md`](008_Verification-Validation-Simulation-and-HIL-Testing.md) | active |
-| 009 | ECSS-NASA Autonomy Standards Mapping | [`009_ECSS-NASA-Autonomy-Standards-Mapping.md`](009_ECSS-NASA-Autonomy-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`144-000-General.md`](./144-000-General.md) | active |
+| 010 | Autonomy Controlled Definition | [`144-010-Autonomy-Controlled-Definition.md`](./144-010-Autonomy-Controlled-Definition.md) | active |
+| 020 | Autonomous Modes and Authority Boundaries | [`144-020-Autonomous-Modes-and-Authority-Boundaries.md`](./144-020-Autonomous-Modes-and-Authority-Boundaries.md) | active |
+| 030 | Onboard Decision Logic and Supervision | [`144-030-Onboard-Decision-Logic-and-Supervision.md`](./144-030-Onboard-Decision-Logic-and-Supervision.md) | active |
+| 040 | FDIR Autonomy and Contingency Response | [`144-040-FDIR-Autonomy-and-Contingency-Response.md`](./144-040-FDIR-Autonomy-and-Contingency-Response.md) | active |
+| 050 | AI ML Autonomy Admission and Assurance Boundaries | [`144-050-AI-ML-Autonomy-Admission-and-Assurance-Boundaries.md`](./144-050-AI-ML-Autonomy-Admission-and-Assurance-Boundaries.md) | active |
+| 060 | Human in the Loop and Ground Override Interfaces | [`144-060-Human-in-the-Loop-and-Ground-Override-Interfaces.md`](./144-060-Human-in-the-Loop-and-Ground-Override-Interfaces.md) | active |
+| 070 | Safe Mode Transition and Recovery Logic | [`144-070-Safe-Mode-Transition-and-Recovery-Logic.md`](./144-070-Safe-Mode-Transition-and-Recovery-Logic.md) | active |
+| 080 | Verification Validation Simulation and HIL Testing | [`144-080-Verification-Validation-Simulation-and-HIL-Testing.md`](./144-080-Verification-Validation-Simulation-and-HIL-Testing.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`144-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./144-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -72,7 +70,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `140-149` |
 | Section | `04` — Aviónica y Control de Misión Espacial |
 | Subsection | `144` — Autonomía |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-LEG |

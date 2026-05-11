@@ -49,18 +49,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Chemical Propulsion Controlled Definition | [`001_Chemical-Propulsion-Controlled-Definition.md`](001_Chemical-Propulsion-Controlled-Definition.md) | active |
-| 002 | Propellant Families and Selection Criteria | [`002_Propellant-Families-and-Selection-Criteria.md`](002_Propellant-Families-and-Selection-Criteria.md) | active |
-| 003 | Liquid Propulsion Systems | [`003_Liquid-Propulsion-Systems.md`](003_Liquid-Propulsion-Systems.md) | active |
-| 004 | Solid Propulsion Systems | [`004_Solid-Propulsion-Systems.md`](004_Solid-Propulsion-Systems.md) | active |
-| 005 | Hybrid Propulsion Systems | [`005_Hybrid-Propulsion-Systems.md`](005_Hybrid-Propulsion-Systems.md) | active |
-| 006 | Combustion Chambers, Nozzles and Thrust Generation | [`006_Combustion-Chambers-Nozzles-and-Thrust-Generation.md`](006_Combustion-Chambers-Nozzles-and-Thrust-Generation.md) | active |
-| 007 | Feed Systems, Tanks, Valves and Pressurization | [`007_Feed-Systems-Tanks-Valves-and-Pressurization.md`](007_Feed-Systems-Tanks-Valves-and-Pressurization.md) | active |
-| 008 | Ignition, Start-Stop and Throttle Boundaries | [`008_Ignition-Start-Stop-and-Throttle-Boundaries.md`](008_Ignition-Start-Stop-and-Throttle-Boundaries.md) | active |
-| 009 | Performance Metrics: Isp, Thrust and Mass Fraction | [`009_Performance-Metrics-Isp-Thrust-and-Mass-Fraction.md`](009_Performance-Metrics-Isp-Thrust-and-Mass-Fraction.md) | active |
-| 010 | Safety, Hazards, Testing and Assurance Boundaries | [`010_Safety-Hazards-Testing-and-Assurance-Boundaries.md`](010_Safety-Hazards-Testing-and-Assurance-Boundaries.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`120-000-General.md`](./120-000-General.md) | active |
+| 010 | Chemical Propulsion Controlled Definition | [`120-010-Chemical-Propulsion-Controlled-Definition.md`](./120-010-Chemical-Propulsion-Controlled-Definition.md) | active |
+| 020 | Propellant Families and Selection Criteria | [`120-020-Propellant-Families-and-Selection-Criteria.md`](./120-020-Propellant-Families-and-Selection-Criteria.md) | active |
+| 030 | Liquid Propulsion Systems | [`120-030-Liquid-Propulsion-Systems.md`](./120-030-Liquid-Propulsion-Systems.md) | active |
+| 040 | Solid Propulsion Systems | [`120-040-Solid-Propulsion-Systems.md`](./120-040-Solid-Propulsion-Systems.md) | active |
+| 050 | Hybrid Propulsion Systems | [`120-050-Hybrid-Propulsion-Systems.md`](./120-050-Hybrid-Propulsion-Systems.md) | active |
+| 060 | Combustion Chambers Nozzles and Thrust Generation | [`120-060-Combustion-Chambers-Nozzles-and-Thrust-Generation.md`](./120-060-Combustion-Chambers-Nozzles-and-Thrust-Generation.md) | active |
+| 070 | Feed Systems Tanks Valves and Pressurization | [`120-070-Feed-Systems-Tanks-Valves-and-Pressurization.md`](./120-070-Feed-Systems-Tanks-Valves-and-Pressurization.md) | active |
+| 080 | Ignition Start Stop and Throttle Boundaries | [`120-080-Ignition-Start-Stop-and-Throttle-Boundaries.md`](./120-080-Ignition-Start-Stop-and-Throttle-Boundaries.md) | active |
+| 090 | Safety Hazards Testing and Assurance Boundaries | [`120-090-Safety-Hazards-Testing-and-Assurance-Boundaries.md`](./120-090-Safety-Hazards-Testing-and-Assurance-Boundaries.md) | active |
 
 ## 4. Footprint
 
@@ -71,7 +69,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `120-129` |
 | Section | `02` — Propulsión Espacial Tradicional y Avanzada |
 | Subsection | `120` — Propulsión Química |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

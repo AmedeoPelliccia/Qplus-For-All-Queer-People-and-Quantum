@@ -51,18 +51,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Space Avionics Controlled Definition | [`001_Space-Avionics-Controlled-Definition.md`](001_Space-Avionics-Controlled-Definition.md) | active |
-| 002 | Onboard Computer and Data Handling Architecture | [`002_Onboard-Computer-and-Data-Handling-Architecture.md`](002_Onboard-Computer-and-Data-Handling-Architecture.md) | active |
-| 003 | Command and Telemetry Interfaces | [`003_Command-and-Telemetry-Interfaces.md`](003_Command-and-Telemetry-Interfaces.md) | active |
-| 004 | Sensor, Actuator and Payload Avionics Interfaces | [`004_Sensor-Actuator-and-Payload-Avionics-Interfaces.md`](004_Sensor-Actuator-and-Payload-Avionics-Interfaces.md) | active |
-| 005 | Time Synchronization and Data Bus Architecture | [`005_Time-Synchronization-and-Data-Bus-Architecture.md`](005_Time-Synchronization-and-Data-Bus-Architecture.md) | active |
-| 006 | Redundancy, Fault Tolerance and Safe-Mode Support | [`006_Redundancy-Fault-Tolerance-and-Safe-Mode-Support.md`](006_Redundancy-Fault-Tolerance-and-Safe-Mode-Support.md) | active |
-| 007 | Radiation Hardening and Single Event Effects | [`007_Radiation-Hardening-and-Single-Event-Effects.md`](007_Radiation-Hardening-and-Single-Event-Effects.md) | active |
-| 008 | EMC, Thermal and Power Interface Boundaries | [`008_EMC-Thermal-and-Power-Interface-Boundaries.md`](008_EMC-Thermal-and-Power-Interface-Boundaries.md) | active |
-| 009 | ECSS-NASA-CCSDS Avionics Standards Mapping | [`009_ECSS-NASA-CCSDS-Avionics-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-Avionics-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`141-000-General.md`](./141-000-General.md) | active |
+| 010 | Space Avionics Controlled Definition | [`141-010-Space-Avionics-Controlled-Definition.md`](./141-010-Space-Avionics-Controlled-Definition.md) | active |
+| 020 | Onboard Computer and Data Handling Architecture | [`141-020-Onboard-Computer-and-Data-Handling-Architecture.md`](./141-020-Onboard-Computer-and-Data-Handling-Architecture.md) | active |
+| 030 | Command and Telemetry Interfaces | [`141-030-Command-and-Telemetry-Interfaces.md`](./141-030-Command-and-Telemetry-Interfaces.md) | active |
+| 040 | Sensor Actuator and Payload Avionics Interfaces | [`141-040-Sensor-Actuator-and-Payload-Avionics-Interfaces.md`](./141-040-Sensor-Actuator-and-Payload-Avionics-Interfaces.md) | active |
+| 050 | Time Synchronization and Data Bus Architecture | [`141-050-Time-Synchronization-and-Data-Bus-Architecture.md`](./141-050-Time-Synchronization-and-Data-Bus-Architecture.md) | active |
+| 060 | Redundancy Fault Tolerance and Safe Mode Support | [`141-060-Redundancy-Fault-Tolerance-and-Safe-Mode-Support.md`](./141-060-Redundancy-Fault-Tolerance-and-Safe-Mode-Support.md) | active |
+| 070 | Radiation Hardening and Single Event Effects | [`141-070-Radiation-Hardening-and-Single-Event-Effects.md`](./141-070-Radiation-Hardening-and-Single-Event-Effects.md) | active |
+| 080 | EMC Thermal and Power Interface Boundaries | [`141-080-EMC-Thermal-and-Power-Interface-Boundaries.md`](./141-080-EMC-Thermal-and-Power-Interface-Boundaries.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`141-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./141-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -73,7 +71,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `140-149` |
 | Section | `04` — Aviónica y Control de Misión Espacial |
 | Subsection | `141` — Aviónica Espacial |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-AIR, Q-GREENTECH, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

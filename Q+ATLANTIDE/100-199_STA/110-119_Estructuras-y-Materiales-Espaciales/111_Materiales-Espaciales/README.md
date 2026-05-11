@@ -45,18 +45,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Space Materials Controlled Definition | [`001_Space-Materials-Controlled-Definition.md`](001_Space-Materials-Controlled-Definition.md) | active |
-| 002 | Material Families and Selection Criteria | [`002_Material-Families-and-Selection-Criteria.md`](002_Material-Families-and-Selection-Criteria.md) | active |
-| 003 | Metals, Alloys and Superalloys | [`003_Metals-Alloys-and-Superalloys.md`](003_Metals-Alloys-and-Superalloys.md) | active |
-| 004 | Composites, Ceramics and Hybrid Materials | [`004_Composites-Ceramics-and-Hybrid-Materials.md`](004_Composites-Ceramics-and-Hybrid-Materials.md) | active |
-| 005 | Polymers, Elastomers and Sealants | [`005_Polymers-Elastomers-and-Sealants.md`](005_Polymers-Elastomers-and-Sealants.md) | active |
-| 006 | Outgassing, Vacuum and Contamination Control | [`006_Outgassing-Vacuum-and-Contamination-Control.md`](006_Outgassing-Vacuum-and-Contamination-Control.md) | active |
-| 007 | Radiation, Thermal Cycling and Atomic Oxygen Effects | [`007_Radiation-Thermal-Cycling-and-Atomic-Oxygen-Effects.md`](007_Radiation-Thermal-Cycling-and-Atomic-Oxygen-Effects.md) | active |
-| 008 | Qualification Testing and Material Allowables | [`008_Qualification-Testing-and-Material-Allowables.md`](008_Qualification-Testing-and-Material-Allowables.md) | active |
-| 009 | ECSS / NASA Materials Standards Mapping | [`009_ECSS-NASA-Materials-Standards-Mapping.md`](009_ECSS-NASA-Materials-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`111-000-General.md`](./111-000-General.md) | active |
+| 010 | Space Materials Controlled Definition | [`111-010-Space-Materials-Controlled-Definition.md`](./111-010-Space-Materials-Controlled-Definition.md) | active |
+| 020 | Material Families and Selection Criteria | [`111-020-Material-Families-and-Selection-Criteria.md`](./111-020-Material-Families-and-Selection-Criteria.md) | active |
+| 030 | Metals Alloys and Superalloys | [`111-030-Metals-Alloys-and-Superalloys.md`](./111-030-Metals-Alloys-and-Superalloys.md) | active |
+| 040 | Composites Ceramics and Hybrid Materials | [`111-040-Composites-Ceramics-and-Hybrid-Materials.md`](./111-040-Composites-Ceramics-and-Hybrid-Materials.md) | active |
+| 050 | Polymers Elastomers and Sealants | [`111-050-Polymers-Elastomers-and-Sealants.md`](./111-050-Polymers-Elastomers-and-Sealants.md) | active |
+| 060 | Outgassing Vacuum and Contamination Control | [`111-060-Outgassing-Vacuum-and-Contamination-Control.md`](./111-060-Outgassing-Vacuum-and-Contamination-Control.md) | active |
+| 070 | Radiation Thermal Cycling and Atomic Oxygen Effects | [`111-070-Radiation-Thermal-Cycling-and-Atomic-Oxygen-Effects.md`](./111-070-Radiation-Thermal-Cycling-and-Atomic-Oxygen-Effects.md) | active |
+| 080 | Qualification Testing and Material Allowables | [`111-080-Qualification-Testing-and-Material-Allowables.md`](./111-080-Qualification-Testing-and-Material-Allowables.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`111-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./111-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -67,7 +65,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `110-119` |
 | Section | `01` — Estructuras y Materiales Espaciales |
 | Subsection | `111` — Materiales Espaciales |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |

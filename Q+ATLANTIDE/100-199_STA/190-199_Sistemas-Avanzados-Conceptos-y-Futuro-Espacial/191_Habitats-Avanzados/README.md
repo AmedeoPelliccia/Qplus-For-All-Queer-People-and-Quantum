@@ -44,19 +44,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Advanced Habitats Controlled Definition | [`001_Advanced-Habitats-Controlled-Definition.md`](./001_Advanced-Habitats-Controlled-Definition.md) | active |
-| 02 | Habitat Classes and Mission Roles | [`002_Habitat-Classes-and-Mission-Roles.md`](./002_Habitat-Classes-and-Mission-Roles.md) | active |
-| 03 | Modular Habitat Architecture and Expansion Logic | [`003_Modular-Habitat-Architecture-and-Expansion-Logic.md`](./003_Modular-Habitat-Architecture-and-Expansion-Logic.md) | active |
-| 04 | Closed-Loop ECLSS and Regenerative Life Support | [`004_Closed-Loop-ECLSS-and-Regenerative-Life-Support.md`](./004_Closed-Loop-ECLSS-and-Regenerative-Life-Support.md) | active |
-| 05 | Radiation Protection, Safe Haven and Shielding Concepts | [`005_Radiation-Protection-Safe-Haven-and-Shielding-Concepts.md`](./005_Radiation-Protection-Safe-Haven-and-Shielding-Concepts.md) | active |
-| 06 | Human Factors, Crew Health and Long-Duration Habitability | [`006_Human-Factors-Crew-Health-and-Long-Duration-Habitability.md`](./006_Human-Factors-Crew-Health-and-Long-Duration-Habitability.md) | active |
-| 07 | Structure, Thermal, Power and Resource Interfaces | [`007_Structure-Thermal-Power-and-Resource-Interfaces.md`](./007_Structure-Thermal-Power-and-Resource-Interfaces.md) | active |
-| 08 | Surface, Orbital and Interplanetary Habitat Boundaries | [`008_Surface-Orbital-and-Interplanetary-Habitat-Boundaries.md`](./008_Surface-Orbital-and-Interplanetary-Habitat-Boundaries.md) | active |
-| 09 | ECSS, NASA Habitat and Human Spaceflight Standards Mapping | [`009_ECSS-NASA-Habitat-and-Human-Spaceflight-Standards-Mapping.md`](./009_ECSS-NASA-Habitat-and-Human-Spaceflight-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`191-000-General.md`](./191-000-General.md) | active |
+| 010 | Advanced Habitats Controlled Definition | [`191-010-Advanced-Habitats-Controlled-Definition.md`](./191-010-Advanced-Habitats-Controlled-Definition.md) | active |
+| 020 | Habitat Classes and Mission Roles | [`191-020-Habitat-Classes-and-Mission-Roles.md`](./191-020-Habitat-Classes-and-Mission-Roles.md) | active |
+| 030 | Modular Habitat Architecture and Expansion Logic | [`191-030-Modular-Habitat-Architecture-and-Expansion-Logic.md`](./191-030-Modular-Habitat-Architecture-and-Expansion-Logic.md) | active |
+| 040 | Closed Loop ECLSS and Regenerative Life Support | [`191-040-Closed-Loop-ECLSS-and-Regenerative-Life-Support.md`](./191-040-Closed-Loop-ECLSS-and-Regenerative-Life-Support.md) | active |
+| 050 | Radiation Protection Safe Haven and Shielding Concepts | [`191-050-Radiation-Protection-Safe-Haven-and-Shielding-Concepts.md`](./191-050-Radiation-Protection-Safe-Haven-and-Shielding-Concepts.md) | active |
+| 060 | Human Factors Crew Health and Long Duration Habitability | [`191-060-Human-Factors-Crew-Health-and-Long-Duration-Habitability.md`](./191-060-Human-Factors-Crew-Health-and-Long-Duration-Habitability.md) | active |
+| 070 | Structure Thermal Power and Resource Interfaces | [`191-070-Structure-Thermal-Power-and-Resource-Interfaces.md`](./191-070-Structure-Thermal-Power-and-Resource-Interfaces.md) | active |
+| 080 | Surface Orbital and Interplanetary Habitat Boundaries | [`191-080-Surface-Orbital-and-Interplanetary-Habitat-Boundaries.md`](./191-080-Surface-Orbital-and-Interplanetary-Habitat-Boundaries.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`191-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./191-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint & Governance
 
@@ -67,7 +66,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `190-199` |
 | Section | `09` — Sistemas Avanzados, Conceptos y Futuro Espacial |
 | Subsection | `191` — Hábitats Avanzados |
-| Subsubject namespace | `00`–`99` (active: 000–010) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-DATAGOV, Q-HPC, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

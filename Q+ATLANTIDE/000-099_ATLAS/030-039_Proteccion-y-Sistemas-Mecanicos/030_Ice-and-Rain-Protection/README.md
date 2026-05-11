@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Ice and Rain Protection General | [030-000-Ice-and-Rain-Protection-General.md](./030-000-Ice-and-Rain-Protection-General.md) | active |
+| 10 | Wing Ice Protection | [030-010-Wing-Ice-Protection.md](./030-010-Wing-Ice-Protection.md) | active |
+| 20 | Engine and Inlet Ice Protection | [030-020-Engine-and-Inlet-Ice-Protection.md](./030-020-Engine-and-Inlet-Ice-Protection.md) | active |
+| 30 | Air Data and Sensor Ice Protection | [030-030-Air-Data-and-Sensor-Ice-Protection.md](./030-030-Air-Data-and-Sensor-Ice-Protection.md) | active |
+| 40 | Windshield and Window Ice/Rain Protection | [030-040-Windshield-and-Window-Ice-Rain-Protection.md](./030-040-Windshield-and-Window-Ice-Rain-Protection.md) | active |
+| 50 | Probe, Drain and Service Point Ice Protection | [030-050-Probe-Drain-and-Service-Point-Ice-Protection.md](./030-050-Probe-Drain-and-Service-Point-Ice-Protection.md) | active |
+| 60 | Rain Removal and Water Runoff Management | [030-060-Rain-Removal-and-Water-Runoff-Management.md](./030-060-Rain-Removal-and-Water-Runoff-Management.md) | active |
+| 70 | Ice Detection and Protection Control | [030-070-Ice-Detection-and-Protection-Control.md](./030-070-Ice-Detection-and-Protection-Control.md) | active |
+| 80 | Ice and Rain Monitoring, Diagnostics, and Control Interfaces | [030-080-Ice-and-Rain-Monitoring-Diagnostics-and-Control-Interfaces.md](./030-080-Ice-and-Rain-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [030-090-S1000D-CSDB-Mapping-and-Traceability.md](./030-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `030-039` |
 | Section | `03` — Protección & Sistemas Mecánicos |
 | Subsection | `030` — Ice and Rain Protection |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (populated: 00, 10, 20, 30, 40, 50, 60, 70, 80, 90) |
 | Primary Q-Division | Q-MECHANICS[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG |
@@ -78,3 +87,33 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 [^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
 
 [^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../../organization/Q+ATLANTIDE.md#4-notes).
+
+---
+
+## Glossary
+
+### Common Terms & Acronyms
+
+| Term / Acronym | Expansion | Definition |
+|---|---|---|
+| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
+| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
+| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
+| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
+| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
+| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
+| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
+| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
+| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
+| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
+| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
+| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
+| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
+| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
+| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
+| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
+| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
+| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
+| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
+| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
+| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |

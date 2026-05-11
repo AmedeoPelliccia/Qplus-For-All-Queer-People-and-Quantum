@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     S1000D Data Module
+     DMC: DMC-AMPEL360E-EWTW-021-020-12A-C20A-D
+     Title: Distribution Monitoring, Diagnostics and PHM — Diagnostic Data and Control Logic
+     Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+     ATLAS Node: 021 / SNS 021-020 / ATA 21-20
+     Status: draft / programme-controlled-placeholder
+     Issue: 001-00 | Date: 2026-05-09
+     Note: infoCode C20A is a programme-controlled placeholder pending
+           BREX / SNS / DMRL freeze by the programme CCB.
+     ============================================================ -->
+<dmodule xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E"
+                systemDiffCode="EWTW"
+                systemCode="021"
+                subSystemCode="2"
+                subSubSystemCode="0"
+                assyCode="12A"
+                disassyCode="00"
+                disassyCodeVariant="A"
+                infoCode="C20"
+                infoCodeVariant="A"
+                itemLocationCode="D"/>
+        <language languageIsoCode="en" countryIsoCode="001"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="09"/>
+        <dmTitle>
+          <techName>Distribution Monitoring, Diagnostics and PHM</techName>
+          <infoName>Diagnostic Data and Control Logic</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </originator>
+      <applic>
+        <displayText>
+          <simplePara>AMPEL360e Wide Tube-and-Wing Family (eWTW) — All variants</simplePara>
+        </displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E"
+                    systemDiffCode="EWTW"
+                    systemCode="000"
+                    subSystemCode="0"
+                    subSubSystemCode="00"
+                    assyCode="00A"
+                    disassyCode="00"
+                    disassyCodeVariant="A"
+                    infoCode="022"
+                    infoCodeVariant="A"
+                    itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+      <remarks>
+        <simplePara>Programme-controlled placeholder. SNS alignment: 021-020 / Distribution Monitoring, Diagnostics and PHM. infoCode C20A subject to BREX/SNS/DMRL freeze. Not for operational use.</simplePara>
+      </remarks>
+    </dmStatus>
+  </identAndStatusSection>
+
+  <content>
+    <description>
+
+      <levelledPara id="dist-phm-C20-001">
+        <title>General</title>
+        <para>This data module provides the diagnostic data and control logic for the <emphasis emphasisType="em01">Distribution Monitoring, Diagnostics and PHM</emphasis> component within the ATA 21-20 Air Distribution subsystem of the AMPEL360e Wide Tube-and-Wing Family (eWTW). Content is a programme-controlled scaffold placeholder pending BREX/SNS/DMRL freeze.</para>
+      </levelledPara>
+      <levelledPara id="dist-phm-C20-002">
+        <title>Scope</title>
+        <para>This data module is assigned to SNS node 021-020 / Air Distribution, assyCode 12A. Detailed content shall be populated following programme CCB approval and DMRL freeze.</para>
+      </levelledPara>
+      <levelledPara id="dist-phm-C20-003">
+        <title>SNS and CSDB Mapping</title>
+        <para>This data module maps to SNS node 021-020 within the AMPEL360e CSDB. Cross-references to related data modules shall be established following DMRL freeze.</para>
+      </levelledPara>
+
+    </description>
+  </content>
+
+</dmodule>

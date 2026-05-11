@@ -55,18 +55,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | On-Orbit Servicing Controlled Definition | [`001_On-Orbit-Servicing-Controlled-Definition.md`](001_On-Orbit-Servicing-Controlled-Definition.md) | active |
-| 002 | Servicing Mission Classes and Objectives | [`002_Servicing-Mission-Classes-and-Objectives.md`](002_Servicing-Mission-Classes-and-Objectives.md) | active |
-| 003 | Rendezvous, Proximity and Servicing Boundaries | [`003_Rendezvous-Proximity-and-Servicing-Boundaries.md`](003_Rendezvous-Proximity-and-Servicing-Boundaries.md) | active |
-| 004 | Docking, Berthing and Capture Interfaces | [`004_Docking-Berthing-and-Capture-Interfaces.md`](004_Docking-Berthing-and-Capture-Interfaces.md) | active |
-| 005 | Robotic Servicing and Manipulation Functions | [`005_Robotic-Servicing-and-Manipulation-Functions.md`](005_Robotic-Servicing-and-Manipulation-Functions.md) | active |
-| 006 | Refueling, Recharging and Consumables Replenishment | [`006_Refueling-Recharging-and-Consumables-Replenishment.md`](006_Refueling-Recharging-and-Consumables-Replenishment.md) | active |
-| 007 | Modular Replacement and Line-Replaceable Orbital Units | [`007_Modular-Replacement-and-Line-Replaceable-Orbital-Units.md`](007_Modular-Replacement-and-Line-Replaceable-Orbital-Units.md) | active |
-| 008 | Servicing Safety Zones and Fault Containment | [`008_Servicing-Safety-Zones-and-Fault-Containment.md`](008_Servicing-Safety-Zones-and-Fault-Containment.md) | active |
-| 009 | ECSS-NASA-CCSDS On-Orbit Servicing Standards Mapping | [`009_ECSS-NASA-CCSDS-On-Orbit-Servicing-Standards-Mapping.md`](009_ECSS-NASA-CCSDS-On-Orbit-Servicing-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`170-000-General.md`](./170-000-General.md) | active |
+| 010 | On Orbit Servicing Controlled Definition | [`170-010-On-Orbit-Servicing-Controlled-Definition.md`](./170-010-On-Orbit-Servicing-Controlled-Definition.md) | active |
+| 020 | Servicing Mission Classes and Objectives | [`170-020-Servicing-Mission-Classes-and-Objectives.md`](./170-020-Servicing-Mission-Classes-and-Objectives.md) | active |
+| 030 | Rendezvous Proximity and Servicing Boundaries | [`170-030-Rendezvous-Proximity-and-Servicing-Boundaries.md`](./170-030-Rendezvous-Proximity-and-Servicing-Boundaries.md) | active |
+| 040 | Docking Berthing and Capture Interfaces | [`170-040-Docking-Berthing-and-Capture-Interfaces.md`](./170-040-Docking-Berthing-and-Capture-Interfaces.md) | active |
+| 050 | Robotic Servicing and Manipulation Functions | [`170-050-Robotic-Servicing-and-Manipulation-Functions.md`](./170-050-Robotic-Servicing-and-Manipulation-Functions.md) | active |
+| 060 | Refueling Recharging and Consumables Replenishment | [`170-060-Refueling-Recharging-and-Consumables-Replenishment.md`](./170-060-Refueling-Recharging-and-Consumables-Replenishment.md) | active |
+| 070 | Modular Replacement and Line Replaceable Orbital Units | [`170-070-Modular-Replacement-and-Line-Replaceable-Orbital-Units.md`](./170-070-Modular-Replacement-and-Line-Replaceable-Orbital-Units.md) | active |
+| 080 | Servicing Safety Zones and Fault Containment | [`170-080-Servicing-Safety-Zones-and-Fault-Containment.md`](./170-080-Servicing-Safety-Zones-and-Fault-Containment.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`170-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./170-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -77,7 +75,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `170-179` |
 | Section | `07` — Operaciones y Mantenimiento en Órbita |
 | Subsection | `170` — Servicing Orbital |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-STRUCTURES, Q-INDUSTRY |
 | ORB support | ORB-LEG |

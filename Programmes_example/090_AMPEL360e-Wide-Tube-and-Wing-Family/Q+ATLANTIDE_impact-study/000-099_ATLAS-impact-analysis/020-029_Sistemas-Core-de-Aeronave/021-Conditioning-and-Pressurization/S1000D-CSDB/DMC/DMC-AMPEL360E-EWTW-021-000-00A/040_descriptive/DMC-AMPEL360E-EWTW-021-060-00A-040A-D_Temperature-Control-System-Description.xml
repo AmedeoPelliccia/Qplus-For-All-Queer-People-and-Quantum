@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     S1000D Descriptive Data Module
+     DMC: DMC-AMPEL360E-EWTW-021-060-00A-040A-D
+     Title: Temperature Control — System Description
+     Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+     ATLAS Node: 021-060 / ATA 21-60-00
+     Status: draft / programme-controlled-placeholder
+     Issue: 001-00 | Date: 2026-05-09
+     ============================================================ -->
+<dmodule xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E"
+                systemDiffCode="EWTW"
+                systemCode="021"
+                subSystemCode="0"
+                subSubSystemCode="60"
+                assyCode="00A"
+                disassyCode="00"
+                disassyCodeVariant="A"
+                infoCode="040"
+                infoCodeVariant="A"
+                itemLocationCode="D"/>
+        <language languageIsoCode="en" countryIsoCode="001"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="09"/>
+        <dmTitle>
+          <techName>Temperature Control System</techName>
+          <infoName>System Description</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </originator>
+      <applic>
+        <displayText>
+          <simplePara>AMPEL360e Wide Tube-and-Wing Family (eWTW) — All variants</simplePara>
+        </displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E"
+                    systemDiffCode="EWTW"
+                    systemCode="000"
+                    subSystemCode="0"
+                    subSubSystemCode="00"
+                    assyCode="00A"
+                    disassyCode="00"
+                    disassyCodeVariant="A"
+                    infoCode="022"
+                    infoCodeVariant="A"
+                    itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+      <remarks>
+        <simplePara>Programme-controlled placeholder. infoCode 040A subject to BREX/SNS/DMRL freeze. Not for operational use.</simplePara>
+      </remarks>
+    </dmStatus>
+  </identAndStatusSection>
+
+  <content>
+    <description>
+
+      <levelledPara id="desc-021-060-001">
+        <title>General</title>
+        <para>This data module describes the <emphasis emphasisType="em01">Temperature Control System</emphasis> of the AMPEL360e eWTW ECS, aligned to ATLAS node 021-060 and ATA 21-60. The temperature control system maintains the temperature in each cabin zone, the cockpit and equipment bays within defined comfort and operational limits, using closed-loop control of trim air valves, pack output and supplemental heating elements.</para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-060-002">
+        <title>Temperature Control Architecture</title>
+        <para>The temperature control system uses a multi-zone control architecture with independent temperature targets for each zone:</para>
+        <para>
+          <randomList>
+            <listItem><para>Zone Temperature Controllers (ZTC) — one per temperature zone, with redundant sensors.</para></listItem>
+            <listItem><para>Pack discharge temperature control — adjusts pack output temperature as a function of zone demand.</para></listItem>
+            <listItem><para>Trim air valves — add hot trim air to individual zone ducts to trim temperature upward from pack base temperature.</para></listItem>
+            <listItem><para>Flight deck temperature control — independent circuit with pilot and co-pilot selector inputs.</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-060-003">
+        <title>Sensors and Inputs</title>
+        <para>The temperature control system uses the following sensor types:</para>
+        <para>
+          <randomList>
+            <listItem><para>Cabin air temperature sensors (supply and return air, dual redundant per zone).</para></listItem>
+            <listItem><para>Duct temperature sensors (for overheat protection).</para></listItem>
+            <listItem><para>Pack discharge temperature sensors.</para></listItem>
+            <listItem><para>Crew-set temperature targets (cabin management panel and flight deck selectors).</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-060-004">
+        <title>Duct Overheat Protection</title>
+        <para>The temperature control system includes duct overheat detection and protection. If duct temperature exceeds a defined threshold, the system automatically reduces hot trim air supply and generates a crew advisory. Persistent overheat causes automatic closure of the affected trim air valve and generation of a maintenance message.</para>
+      </levelledPara>
+
+    </description>
+  </content>
+
+</dmodule>

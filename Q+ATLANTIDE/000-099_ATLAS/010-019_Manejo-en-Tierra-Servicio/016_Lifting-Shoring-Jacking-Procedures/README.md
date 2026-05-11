@@ -90,8 +90,8 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-GROUND | Initial reserve — subsection index only; all subsubjects `to be populated`. |
-| 1.1.0 | 2026-05-07 | Q-GROUND | Baseline release — `000_Overview.md` + subsubjects `001`–`006` populated; subsubject index updated; Scope section revised to reflect populated content. |
+| 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial reserve — subsection index only; all subsubjects `to be populated`. |
+| 1.1.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Baseline release — `000_Overview.md` + subsubjects `001`–`006` populated; subsubject index updated; Scope section revised to reflect populated content. |
 
 ## 7. References & Citations
 
