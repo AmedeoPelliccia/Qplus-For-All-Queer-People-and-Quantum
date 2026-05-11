@@ -1,0 +1,63 @@
+---
+document_id: "QATL-ATLAS-1000-ATLAS-050-059-05-050-020-LOAD-BEARING-AND-NON-LOAD-BEARING-BOUNDARIES"
+title: "ATLAS 050-059 · 05.050.020 — Load-Bearing and Non-Load-Bearing Boundaries"
+register: ATLAS-1000
+parent_baseline: Q+ATLANTIDE
+parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
+parent_architecture_doc: ../../../README.md
+parent_section_doc: ../../README.md
+parent_subsection_doc: ../README.md
+parent_subsubject_doc: ./README.md
+architecture_code: ATLAS
+architecture_name: "Aircraft Top Level Architecture Schema/System"
+master_range: "000–099"
+code_range: "050-059"
+section: "05"
+section_title: "Estructuras"
+subsection: "050"
+subsection_title: "General"
+subsubject: "020"
+subsubject_title: "Load-Bearing and Non-Load-Bearing Boundaries"
+primary_q_division: Q-STRUCTURES
+support_q_divisions: [Q-AIR, Q-INDUSTRY, Q-HPC]
+orb_function_support: [ORB-PMO, ORB-FIN, ORB-LEG]
+governance_class: baseline
+version: 1.0.0
+status: draft
+language: en
+---
+
+# ATLAS 050-059 · 05.050.020 — Load-Bearing and Non-Load-Bearing Boundaries
+
+## 1. Purpose
+
+Establishes the boundary between load-bearing and non-load-bearing structural regions including the rules for classifying attachments fasteners and fittings.
+
+## 2. Scope
+
+> **TBD** — Content to be developed at SDD stage.
+>
+> This document will cover:
+> - Classification rules and criteria
+> - Applicable CS-25 / MSG-3 requirements
+> - Programme-specific AMPEL360 eWTW constraints
+> - Interface with adjacent subsubject documents
+
+## 3. Footprint
+
+| Metric | Value |
+|---|---|
+| Document ID | `QATL-ATLAS-1000-ATLAS-050-059-05-050-020-LOAD-BEARING-AND-NON-LOAD-BEARING-BOUNDARIES` |
+| Status | ![DRAFT](https://img.shields.io/badge/status-DRAFT-yellow) |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras/050_General/050-020-Structural-Classification-and-Boundaries/` |
+
+## 4. References
+
+[^baseline]: Q+ATLANTIDE Baseline — [`organization/Q+ATLANTIDE.md`](../../../../../organization/Q+ATLANTIDE.md)
+
+| Ref | Document |
+|---|---|
+| CS-25.571 | Damage-tolerance and fatigue evaluation |
+| MSG-3 Rev 3 | Maintenance programme development |
+| [`./README.md`](./README.md) | Subsubject index |
+| [`../README.md`](../README.md) | 050_General subsection index |
