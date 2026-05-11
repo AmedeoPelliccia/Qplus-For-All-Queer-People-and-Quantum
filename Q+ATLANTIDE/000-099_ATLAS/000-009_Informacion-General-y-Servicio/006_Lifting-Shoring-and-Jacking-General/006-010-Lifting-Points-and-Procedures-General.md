@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Lifting Points and Procedures General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Lifting Points and Procedures General** node defines the approved structural hard-points and the associated step-by-step lifting procedures for the AMPEL360E eWTW. Three primary lifting lugs are machined into the fuselage structure at certified locations: one forward (at FS 180, top centreline), one port (at FS 630, BL-95), and one starboard (at FS 630, BL+95). These three lugs allow full aircraft lifting via an overhead crane sling assembly with a minimum spreader bar length of 8.5 m.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Each lug is rated for a proof load of 30 000 kg (the forward lug is 25 000 kg) with a 1.5× ultimate safety factor per CS-25 §25.561. The forward lug is positioned to avoid load transfer through the nose avionics bay; the wing-root lugs are located outboard of the HVDC battery bay to ensure no battery module interfaces are stressed. Before lifting, the technician must verify: (1) HVDC bus de-energised and tagged out; (2) landing gear ground lock pins installed; (3) all fuel (wing tank) quantity confirmed; (4) cabin and cargo doors closed and latched. Load sharing between lugs shall be monitored via the crane spreader load cells, with abort criteria if asymmetry exceeds 5% of nominal.
 
 ---
 

@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **S1000D CSDB Mapping and Traceability** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 006 Lifting, Shoring and Jacking subsubjects and the AMPEL360E eWTW S1000D Data Module structure. ATLAS 006 subsubjects map to DMs under systemCode="006" (ATA 07 equivalent), model ident code AMPEL360E, system diff code EWTW, in the Q+ATLANTIDE CSDB instance. Primary DM types for this section are: procedural DMs for jacking/lifting tasks (info code "520"), descriptive DMs for structural interface requirements (info code "040"), illustrated parts cross-reference (info code "941"), and safety warning DMs (info code "300").
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Traceability chain: ATLAS 006 structural and GSE interface data → AMM Chapter 7 (Lifting and Shoring) procedural DMs → SRM allowable damage limits → WMMS monitoring data modules → CSDB maintenance record DMs. The DMRL for ATA 07 shall confirm coverage of all eWTW-specific jack points (including the HVDC de-energise pre-condition), shoring cradle interface requirements, and WMMS monitoring tasks before Entry Into Service. The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV assigns DM codes to each 006-NNN subsubject and tracks publication status.
 
 ---
 

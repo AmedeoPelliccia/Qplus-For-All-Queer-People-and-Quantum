@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Safety Precautions and Load Limits** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Safety Precautions and Load Limits** node specifies the mandatory safety precautions, personnel qualification requirements, environmental restrictions, and structural load limits applicable to all lifting, shoring, and jacking operations on the AMPEL360E eWTW. Personnel: minimum two qualified Licensed Aircraft Maintenance Engineers (LAME) Category B2/B1 plus a supervisor; all personnel must hold the eWTW type-specific lifting & jacking endorsement (Q-GROUND-TRAIN-006). Minimum PPE: hard hat, safety boots, high-visibility vest, and anti-static wrist strap when within 3 m of any HVDC panel.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Structural load limits (absolute maxima, must not be exceeded): forward lift lug 25 000 kg; wing-root lift lugs 30 000 kg each; J1 jack pad 15 000 kg; J2/J3 jack pads 30 000 kg each; J4 tail stand 5 000 kg; fuselage shoring cradle 40 000 kg. Environmental restrictions: maximum sustained wind for jacking 25 kts; temperature range for jacking −20 °C to +55 °C; jacking prohibited on ice-contaminated surfaces. HVDC pre-condition: before any jacking or lifting, the HVDC main bus must be de-energised and tagged out (LOTO procedure per AMM 20-LOTO-001). If WMMS load asymmetry alert triggers during jacking, the operation must stop and the root cause must be identified and corrected before resuming.
 
 ---
 

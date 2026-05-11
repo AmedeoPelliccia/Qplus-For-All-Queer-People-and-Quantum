@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Structural Interface Protection** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Structural Interface Protection** node defines the requirements for protecting the AMPEL360E eWTW primary structure, surface treatments, and system interfaces from damage during lifting, shoring, and jacking operations. The eWTW fuselage skin is CFRP (carbon-fibre reinforced polymer); any unprotected metal GSE contact point can cause galvanic corrosion, FOD damage, or delamination. All jack pads and shoring cradle saddle contact surfaces must be fitted with neoprene isolation pads (minimum thickness 10 mm, shore hardness 45 A) before any load is applied. Jack pad adapters include CFRP-compatible non-conductive isolating inserts (P/N Q-ISO-PAD-A) certified per ASTM C297.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Areas requiring special protection during jacking/lifting: (1) HVDC cable routing zones (marked "HVDC - NO CONTACT" in orange on the lower fuselage); (2) antenna ground planes (GPS, SATCOM, lower ATC antennas); (3) CFRP lower fuselage panel lap joints. All contact points must be inspected for paint damage, surface marking, or delamination after each jacking cycle. Any damage is to be recorded in the CSDB aircraft health log and assessed against the applicable Structural Repair Manual (SRM) allowable damage limits. Shoring cradle placement must avoid all inspection access panels (lower fuselage zones per ATLAS 005-030) to maintain accessibility during concurrent maintenance tasks.
 
 ---
 

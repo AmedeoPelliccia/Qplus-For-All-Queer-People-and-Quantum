@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Lifting Shoring and Jacking General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Lifting Shoring and Jacking General** node establishes the overarching principles, safety constraints, and GSE interface requirements for all lifting, shoring, and jacking operations on the AMPEL360E eWTW. The eWTW configuration introduces specific constraints relative to conventional aircraft: the wide-tube fuselage cross-section (OD ≈ 4.14 m) and the centre lower-lobe HVDC battery bay require dedicated structural hard-points to avoid transmitting jack loads through the battery enclosure; the under-wing motor-drive nacelles have separate jacking provisions from the engine pylons. All jacking and lifting operations must be preceded by an HVDC system de-energise sequence (battery contactors open, EPCU isolated, ground bonding applied) documented in AMM Chapter 20.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Lifting, shoring, and jacking on the eWTW use a standardised 3-point jack system (forward fuselage jack point + two wing-root jack points) capable of a combined maximum jacking load of ≈ 75 000 kg. A fourth optional tail-support jack point is provided for partial-aircraft configurations (e.g., nose gear replacement). All jack points include load cells interfaced to the Wireless Maintenance Monitoring System (WMMS) to ensure load symmetry is maintained within ±5% during any jacking cycle. The applicable GSE part numbers, load limits, and safety interlocks are defined in the AMM 07 (Lifting and Shoring) chapter, which draws its dimensional and structural basis from this ATLAS 006 node.
 
 ---
 

@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Lifting Jacking Monitoring Diagnostics and Control Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Lifting Jacking Monitoring Diagnostics and Control Interfaces** node describes the digital monitoring, diagnostic alerting, and GSE control interfaces provided for lifting and jacking operations on the AMPEL360E eWTW. The Wireless Maintenance Monitoring System (WMMS) integrates data from: (i) jack set load cells (J1–J4), sampled at 10 Hz; (ii) fuselage inclinometers (crown and wing panels), sampled at 1 Hz; (iii) HVDC bus voltage sensor (to confirm de-energisation); (iv) landing gear position sensors (to confirm gear locks). All data streams are displayed on the WMMS maintenance workstation (GAIA-QA client) and recorded in the CSDB maintenance log for each jacking event.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Alert thresholds programmed in the WMMS: load asymmetry >5% → amber alert; load asymmetry >10% → red alert + automatic jack pause command via CAN bus; inclinometer deviation >0.5° (roll) or >1.0° (pitch) → amber alert; HVDC bus voltage >2 V (unexpected energisation) → red alert + audio alarm. All alerts are classified as mandatory-action maintenance messages and require a LAME acknowledgement before jacking can resume. Jacking event data (timestamp, load traces, alarm events) are exported to the CSDB as a structured S1000D maintenance data module (info code "200") and archived for at least 5 years per EASA Part-M requirements.
 
 ---
 

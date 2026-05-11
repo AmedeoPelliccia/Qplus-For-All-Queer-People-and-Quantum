@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Shoring Points and Support General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Shoring Points and Support General** node defines the structural support (shoring) provisions and associated equipment for the AMPEL360E eWTW when the aircraft must be maintained in a stable on-ground position with the landing gear removed, retracted, or under repair. The eWTW shoring system uses a primary fuselage cradle (two-piece, saddle design) that wraps the lower fuselage at FS 520 and FS 780, providing vertical and lateral support without loading the battery bay panels. Shoring cradle height is adjustable from 0.85 m to 1.50 m above ground, accommodating different hangar floor levels and tire configurations.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Shoring load limits: primary cradle vertical load ≤ 40 000 kg; lateral stability moment ≤ 60 kN·m per cradle point. Shoring must never be placed against the lower fuselage zone FS 680–FS 800 (battery bay zone) without the dedicated battery bay protective shell (P/N: Q-SHORE-001) installed. Wing tip shoring (wingtip rest pads) are required any time the wing is off the aircraft or when wing-bending moments could exceed the safe-ground moment limit (e.g., engine installation/removal). All shoring equipment is listed in the AMM Chapter 7 (Leveling and Weighing) equipment annex and cross-referenced in this ATLAS 006-030 node.
 
 ---
 

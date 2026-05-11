@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Jacking Points and Procedures General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Jacking Points and Procedures General** node specifies the approved jack pad locations, jack types, and step-by-step jacking procedures for the AMPEL360E eWTW. The standard 3-point jack configuration uses: (J1) a single nose-gear leg jack pad at FS 390 (centre lower fuselage frame), rated 15 000 kg; (J2) port main-gear trunnion jack pad at FS 680 / BL-185, rated 30 000 kg; (J3) starboard main-gear trunnion jack pad at FS 680 / BL+185, rated 30 000 kg. All jack pads are flush-mounted, colour-coded yellow, and engraved with the rated load. A tail support stand is available at FS 1260 (auxiliary, rated 5 000 kg) for nose-gear-removed configuration.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Jacking sequence: simultaneously raise J2 and J3 at equal rate (≤ 20 mm/min) until tyres just clear the ground, then raise J1 until a 30 mm gear-to-ground clearance is achieved across all gear legs. The WMMS jacking monitoring sub-function displays live load readings on all four jack channels; if any reading deviates by >5% from nominal, jacking must pause and load redistribution must be assessed. Jacking is prohibited if ambient wind exceeds 25 kts at ground level, and the aircraft must be hangared for any jacking duration exceeding 4 hours. All jack adapter fittings are listed in the eWTW GSE catalogue (Q-GROUND-GSE-CAT-001).
 
 ---
 

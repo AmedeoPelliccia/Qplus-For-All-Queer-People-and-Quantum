@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Aircraft Leveling for Lifting and Jacking** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Aircraft Leveling for Lifting and Jacking** node defines the leveling reference, measurement methods, and acceptable tolerances for establishing the eWTW aircraft reference datum during lifting and jacking operations. The aircraft reference datum for leveling is defined by the WL 0 plane; the fore-aft level reference is the longitudinal FS axis. Leveling is confirmed using electronic digital inclinometers placed on the fuselage crown (at FS 600 and FS 900) and the wing lower surface (at BL±200), all read via the WMMS maintenance display or a portable calibrated digital level (resolution ≤ 0.01°).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Acceptable leveling tolerances during jacking: lateral (roll) ≤ ±0.25°; longitudinal (pitch) ≤ ±0.50°. Exceeding these tolerances during jacking requires an immediate pause and realignment before proceeding. Leveling is required before any maintenance task that depends on gravitational alignment: fuel quantity calibration, cargo floor flatness check, landing gear rigging, and battery module extraction. The tail-support jack (J4 at FS 1260) is used to fine-tune longitudinal leveling by adjusting its height after J1/J2/J3 are loaded. Leveling data is logged in the WMMS maintenance record and archived in the CSDB task completion log.
 
 ---
 

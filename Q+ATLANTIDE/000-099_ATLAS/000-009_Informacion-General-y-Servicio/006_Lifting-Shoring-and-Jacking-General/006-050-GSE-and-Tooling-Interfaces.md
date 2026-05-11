@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **GSE and Tooling Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **GSE and Tooling Interfaces** node catalogs the Ground Support Equipment (GSE) and special tooling required for lifting, shoring, and jacking operations on the AMPEL360E eWTW, together with their mechanical, electrical, and data interfaces. Key items: (1) Crane sling assembly (P/N Q-LIFT-001): four-leg synthetic sling, 100 t rated, with adjustable spreader bar; attaches to the three primary lifting lugs; (2) 3-point hydraulic jack set (P/N Q-JACK-003): electrically driven, WMMS load-cell interface via CAN bus, max stroke 850 mm, rated 35 t per unit; (3) Fuselage shoring cradle (P/N Q-SHORE-001): two-piece saddle, adjustable height, padded contact surface; (4) Tail support stand (P/N Q-SHORE-002): screw-jack type, range 0.6–1.8 m.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+All motorised jacks and the crane sling load cells connect to the WMMS via a dedicated wireless channel (ISM 2.4 GHz, AES-128 encrypted) or a wired Ethernet fallback. The WMMS maintenance workstation (laptop with GAIA-QA client) displays a real-time load distribution schematic during jacking. GSE electrical interfaces operate at 28 V DC (aircraft GPU circuit) and must be grounded to the aircraft static bond point before use. All GSE items require annual recertification per EASA Part-145 quality requirements, with certificates archived in the Q-GROUND asset management system.
 
 ---
 
