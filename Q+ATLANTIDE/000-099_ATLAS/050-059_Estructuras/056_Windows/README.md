@@ -23,17 +23,17 @@ status: reserved
 language: en
 ---
 
-# ATLAS 050-059 · Section 05 · Subsection 055 — Windows
+# ATLAS 050-059 · Section 05 · Subsection 056 — Windows
 
 ## 1. Purpose
 
-Subsection-level index for *Windows* (`055`) within ATLAS `050-059` — *Estructuras* — ATA 56.
+Subsection-level index for *Windows* (`056`) within ATLAS `050-059` — *Estructuras* — ATA 56.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `055` *Windows*.
+- Reserves the subsubject namespace `00`–`99` of subsection `056` *Windows*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +51,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `050-059` |
 | Section | `05` — Estructuras |
-| Subsection | `055` — Windows |
+| Subsection | `056` — Windows |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-STRUCTURES[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-INDUSTRY, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN, ORB-LEG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras/055_Windows/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/050-059_Estructuras/056_Windows/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
