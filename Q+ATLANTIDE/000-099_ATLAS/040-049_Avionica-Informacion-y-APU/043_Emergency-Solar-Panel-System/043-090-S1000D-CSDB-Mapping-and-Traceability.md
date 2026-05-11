@@ -407,4 +407,4 @@ No physical components — this is a data governance document.
 
 | Version | Date | Author | Description | Status |
 |---------|------|--------|-------------|--------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV | Initial baseline release — DMRL and traceability matrix established | TBD |
+| 1.0.0 | 2026-05-10 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline release — DMRL and traceability matrix established | TBD |

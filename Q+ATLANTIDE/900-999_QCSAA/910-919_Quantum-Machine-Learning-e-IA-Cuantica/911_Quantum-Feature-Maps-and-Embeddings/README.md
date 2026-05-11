@@ -91,7 +91,7 @@ The feature map and embedding vocabulary, encoding strategy taxonomy, and aerosp
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HPC | Initial baseline release: `000_Overview.md` plus subsubjects `001`–`010`, using the sequential `00N_*.md` scheme under the `911_Quantum-Feature-Maps-and-Embeddings/` subsection. Subsection index established. |
+| 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline release: `000_Overview.md` plus subsubjects `001`–`010`, using the sequential `00N_*.md` scheme under the `911_Quantum-Feature-Maps-and-Embeddings/` subsection. Subsection index established. |
 
 ## 8. References & Citations
 

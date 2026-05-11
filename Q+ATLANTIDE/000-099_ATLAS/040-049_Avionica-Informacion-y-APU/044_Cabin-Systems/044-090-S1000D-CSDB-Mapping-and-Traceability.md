@@ -377,4 +377,4 @@ graph LR
 
 | Version | Date | Author | Description | Status |
 |---------|------|--------|-------------|--------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV | Initial DMRL and traceability baseline (programme-controlled-publication-and-traceability-extension) | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
+| 1.0.0 | 2026-05-10 | Q+ Team/Amedeo Pelliccia + AI | Initial DMRL and traceability baseline (programme-controlled-publication-and-traceability-extension) | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
