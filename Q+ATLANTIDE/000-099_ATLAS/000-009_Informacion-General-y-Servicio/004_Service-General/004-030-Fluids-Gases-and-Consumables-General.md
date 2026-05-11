@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Fluids Gases and Consumables General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Fluids Gases and Consumables General** node defines the controlled fluids, gases, and consumables roster for the AMPEL360E eWTW. The roster differs substantially from conventional aircraft: there is no avgas or jet fuel; propulsion energy is electrical. The primary fluids are: (1) Battery Coolant Loop (BCL) glycol-water mix (specified concentration and inhibitor type defined in AMM); (2) Motor-Drive thermal fluid (dielectric coolant for EPCU heat exchangers); (3) Landing gear hydraulic fluid (Skydrol LD4 or equivalent, limited to actuators where no electric alternative is fitted); (4) Crew oxygen (LOX or gaseous high-pressure); (5) Potable water and waste (cabin services).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Consumables include: IMA battery (non-rechargeable backup cells), fire suppression agent (HFC-227ea or equivalent), landing gear grease (MIL-PRF-23827 or equivalent), and anti-corrosion compounds for composite interfaces. All fluids have controlled shelf lives, mixing restrictions, and disposal routes managed via the Q+GROUND division's materials data register. Hazardous Materials (HAZMAT) handling follows IATA DGR and REACH/RoHS requirements, with material safety data sheets (MSDS) stored in the CSDB as S1000D ICNs.
 
 ---
 

@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Crew and Maintenance Coordination Basics** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Crew and Maintenance Coordination Basics** node establishes the interface between flight-crew operations and ground-maintenance activities for the AMPEL360E eWTW. The aircraft's IMA-based Central Maintenance System (CMS) provides a common data repository: post-flight BITE reports are available to ground crews via the Electronic Technical Log (ETL) and the IETP (Interactive Electronic Technical Publication) before the aircraft reaches the gate.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+For the eWTW, coordination emphasis is placed on HVDC system safety: maintenance personnel require eHV (electric High Voltage) qualification before accessing propulsion, battery, or EPCU compartments. Lockout/Tagout (LOTO) procedures replace conventional hydraulic depressurisation steps with HVDC discharge verification (< 60 V residual within 5 s of bus isolation). Crew debrief data, including propulsor SoC trend, motor thermal margins, and IMA fault counters, are automatically forwarded to the Maintenance Control Centre (MCC) via ACARS/ATN datalink.
 
 ---
 

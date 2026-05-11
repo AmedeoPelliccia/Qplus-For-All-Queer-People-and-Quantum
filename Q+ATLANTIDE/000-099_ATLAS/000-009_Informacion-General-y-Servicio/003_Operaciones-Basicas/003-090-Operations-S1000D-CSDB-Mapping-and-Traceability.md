@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Operations S1000D CSDB Mapping and Traceability** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Operations S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 003 operational topics and the AMPEL360E eWTW S1000D Data Module (DM) structure. Each 003-NNN subsubject maps to one or more S1000D system/sub-system codes under systemCode="003", and the resulting DMCs populate the CSDB under the model identification code AMPEL360E, system differential code EWTW.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Traceability runs from the Q+ATLANTIDE ATLAS-1000 requirement nodes → ATLAS 003 architecture documents (this section) → S1000D CSDB DMs (operating procedures, fault isolation, crew checklists) → Illustrated Parts Data (IPD) and Wiring Data. The Data Module Requirement List (DMRL) for ATA 00/03 equivalent topics shall reference this mapping to ensure completeness of crew procedures, ground handling, and emergency checklist DMs prior to Entry Into Service (EIS).
 
 ---
 

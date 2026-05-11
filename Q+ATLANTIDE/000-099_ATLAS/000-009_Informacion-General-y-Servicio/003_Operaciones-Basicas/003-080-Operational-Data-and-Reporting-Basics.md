@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Operational Data and Reporting Basics** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Operational Data and Reporting Basics** node covers the data capture, retention, and reporting framework for operational events on the AMPEL360E eWTW. The Aircraft Condition Monitoring System (ACMS) records IMA-sourced parameters at 1 Hz (normal) and 8 Hz (burst on trigger), including HVDC bus voltage/current, battery cell temperatures, motor-drive efficiency, and EAC load profiles.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Post-flight, CMS-generated Aircraft Health Monitoring (AHM) reports are transmitted via ACARS/ATN to the Airline Operations Control (AOC) system and to the AMPEL programme's Q-GROUND data aggregation layer. Mandatory reports include: battery thermal event notifications (BMS threshold crossing), propulsor performance deviation alerts (EPCU efficiency < nominal −3%), and IMA DAL-B software fault logs. Regulatory reporting interfaces cover EASA SERA Part-ORO and CS-25 §25.1415 (emergency equipment) equivalents adapted for the all-electric configuration.
 
 ---
 

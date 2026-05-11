@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Service Access and Ground Safety** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Service Access and Ground Safety** node defines the access hierarchy and safety rules applicable to ground personnel working on or around the AMPEL360E eWTW. Because the aircraft operates at HVDC voltages (270 V DC nominal, 540 V DC high-density bus), all personnel entering an exclusion zone around open propulsion panels must hold an eHV (Electric High Voltage) safety certificate per the applicable national regulation (e.g., BS EN 50110 or NFPA 70E equivalent).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Arc-flash risk areas are defined for: HVDC ground-power receptacle (3 m exclusion during connection/disconnection), motor-drive compartment doors (bus must be isolated and residual voltage < 60 V before opening), and battery compartment access panels (thermal runaway watch — infrared thermometer check before panel removal). Lockout/Tagout (LOTO) procedure reference is AMM Chapter 20, and the eWTW LOTO device set includes colour-coded HVDC plug covers, mechanical interlock pins for battery disconnect switches, and QR-code-readable LOTO tags linked to the CMS digital maintenance record.
 
 ---
 

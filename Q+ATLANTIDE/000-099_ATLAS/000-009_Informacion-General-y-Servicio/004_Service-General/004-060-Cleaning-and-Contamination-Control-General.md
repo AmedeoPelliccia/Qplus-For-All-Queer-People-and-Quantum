@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Cleaning and Contamination Control General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Cleaning and Contamination Control General** node establishes the cleaning methods and contamination control requirements for the AMPEL360E eWTW. Electrostatic Discharge (ESD) sensitivity is elevated compared to conventional aircraft due to the proliferation of high-density power electronics (EPCU modules, BMS cells, IMA modules). All cleaning operations on or near open avionics/propulsion panels require ESD-safe equipment (grounded wrist straps, ESD-safe brushes, anti-static cleaning agents).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Approved cleaning agents are listed in the AMM Chapter 20 Materials register and include: water-based detergents (pH 6–8) for exterior surfaces; isopropyl alcohol (IPA 99.9%) for avionics connector faces; dielectric-safe solvent for motor-drive heat-exchanger fins; and approved composite-safe cleaner for CFRP structural panels. Jet fuel residue cleaning (relevant only to ground-contamination scenarios, since the aircraft carries no fuel) follows the same composite-safe protocol. Foreign Object Debris (FOD) prevention is mandatory in all service zones, with post-service FOD walk-down required before HVDC power-on.
 
 ---
 

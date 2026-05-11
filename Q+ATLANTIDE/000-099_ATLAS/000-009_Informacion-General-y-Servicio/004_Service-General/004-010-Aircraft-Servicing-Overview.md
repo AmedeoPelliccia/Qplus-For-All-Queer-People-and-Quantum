@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Aircraft Servicing Overview** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Aircraft Servicing Overview** node maps the complete servicing cycle for the eWTW from block-in to block-out. The servicing cycle is divided into four activity streams running in parallel during the minimum ground time: (A) HVDC recharge — GPU connect, BMS-directed rapid charge, SoC verification; (B) Fluids and consumables — BCL coolant, motor-drive thermal fluid, landing gear lubrication, oxygen system top-up (crew and passenger); (C) Cabin and cargo — passenger/crew servicing, galley water, waste disposal, cargo loading; (D) Technical — CMS BITE readout, EPCU channel health check, avionics preflight.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Servicing zone allocation follows the eWTW Maintenance Planning Document (MPD): Zone 100-series (nose and forward fuselage) covers avionics and nose gear; Zone 200-series (wing and centre section) covers motor-drive units and main landing gear; Zone 300-series (aft fuselage and empennage) covers tail power distribution and APU ground port. Access panel codes and service point locations are defined in the AMM Chapter 12 (Service — Routine Maintenance) derived from this ATLAS baseline.
 
 ---
 

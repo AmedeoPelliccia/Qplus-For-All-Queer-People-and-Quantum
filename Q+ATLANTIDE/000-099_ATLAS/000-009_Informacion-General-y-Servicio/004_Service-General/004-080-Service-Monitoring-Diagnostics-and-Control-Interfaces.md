@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Service Monitoring Diagnostics and Control Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Service Monitoring Diagnostics and Control Interfaces** node describes the digital interfaces through which ground personnel and maintenance systems interact with the AMPEL360E eWTW during servicing. The primary interface is the CMS (Central Maintenance System) accessed via the MCDU maintenance page in the flight deck or via a Wireless Maintenance Access Point (WMAP) at the forward service panel (802.11ax, secured, maintenance network). The CMS presents BITE results, LRU status, fluid-level sensors, and charging progress in real time.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Ground diagnostic tools connect via the Data Loading and Configuration System (DLCS) port (ARINC 615A) or via the eWTW Ground Test Interface (EGTI) connector (USB Type-C derivative, TBD ICD). Diagnostic data is logged to the ETL and forwarded to the Maintenance Planning System (MPS) in the Airline Operations Control centre for predictive maintenance scheduling. S1000D DMs covering ground diagnostic procedures are assigned info code "900" (maintenance checks) and cross-reference the applicable FRMCS/BITE fault code tables maintained in the CSDB.
 
 ---
 

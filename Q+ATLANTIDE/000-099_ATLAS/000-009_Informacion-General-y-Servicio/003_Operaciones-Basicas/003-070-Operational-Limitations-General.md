@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Operational Limitations General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Operational Limitations General** node defines the master set of operational limitations applicable to the AMPEL360E eWTW. Key limitations categories include: maximum/minimum battery SoC for dispatch, HVDC bus voltage and current ratings, motor/propulsor torque and speed limits, Environmental Control System (ECS/EAC) capacity limits as a function of ambient temperature, and All-Electric Anti-Ice (AEAI) power-draw limits during specific flight phases.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Range and diversion limitations are energy-based rather than fuel-mass-based: the eWTW Operational Flight Plan (OFP) shall specify en-route energy reserves in kWh, and the applicable Airplane Flight Manual (AFM) shall define minimum diversion SoC at destination. ETOPS-analogous rules ("eTOPS") apply for routes with en-route alternates beyond the nominal single-propulsor-failed energy range. Certification basis is EASA CS-25 Amendment 27+ with Special Conditions for electric propulsion systems.
 
 ---
 

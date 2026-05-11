@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Flight Operations Basics** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Flight Operations Basics** node describes the standard sequence of flight phases applicable to the AMPEL360E eWTW: engine-start-equivalent (electric motor spin-up via FADEC/EPCU), taxi, take-off, initial climb, cruise, descent, approach, landing, and taxi-in. Each phase has defined power-draw budgets across the HVDC backbone and thermal management requirements for the motor-drive units and battery packs.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+For the AMPEL360E eWTW, "fuel planning" is replaced by energy planning: the pre-flight energy check confirms battery state-of-charge (SoC), contingency reserve, alternate energy, and final reserve in kWh equivalents. The full-electric propulsion eliminates engine-bleed-dependent procedures (no pneumatic start, no anti-ice bleed) and replaces them with All-Electric Anti-Ice (AEAI) sequencing, electric Environmental Air Conditioning (EAC) pre-conditioning from ground power, and propulsor health monitoring via the Electrical Power Control Unit (EPCU) network.
 
 ---
 

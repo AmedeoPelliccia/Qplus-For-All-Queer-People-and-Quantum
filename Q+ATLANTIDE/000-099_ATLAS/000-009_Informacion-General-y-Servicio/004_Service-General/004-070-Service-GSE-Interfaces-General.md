@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Service GSE Interfaces General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Service GSE Interfaces General** node defines the general interface requirements between the AMPEL360E eWTW and the Ground Support Equipment (GSE) fleet. The dominant new GSE type for the eWTW is the HVDC Ground Power Unit (GPU): it must supply 270 V DC ± 5% at up to 400 A (108 kW) for line charging, with a provision for 540 V DC boost charging for fast-turn operations. The GPU connector follows the proposed ACS (Aircraft Charging Standard) interface or the interim agreed AMPEL360E proprietary receptacle defined in the applicable GSE Interface Control Document (ICD).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Towing and pushback GSE interfaces are conventional (towbar or towbarless tractor at nose gear), but the tractor must respect the eWTW nose-gear steering-angle limit and must not activate during HVDC connection. Passenger boarding bridges, cargo loaders, and catering vehicles are electrically neutral — they interface with the aircraft via standard ATA 416 and IATA AHM standards. All GSE must be bonded to the aircraft ground point before fluid or electrical connection, per the eWTW Ground Handling Manual (GHM) electrostatic bonding requirements.
 
 ---
 

@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Service General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Service General** node establishes the overarching servicing philosophy for the AMPEL360E eWTW. Unlike conventional narrow-body aircraft, the eWTW has no fuel-line servicing at underfloor panels; instead, the dominant servicing interfaces are the HVDC Ground Power receptacle, the Battery Coolant Loop (BCL) fill/drain point, the motor-drive thermal fluid circuit, and the standard hydraulic-free actuator bus (the eWTW uses distributed electric actuation — no bulk hydraulic fluid). Lubrication is limited to landing gear, actuator gear-trains, and nose-wheel steering.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+The servicing philosophy follows a "clean, connect, verify" sequence: (1) safe HVDC ground power connection and BMS state verification; (2) top-up of coolants and lubricants as per CMS-generated service demand; (3) functional BITE verification of serviced systems before connection removal. All service actions are logged to the ETL and CMS to maintain the aircraft's digital service record within the Q+ATLANTIDE data governance framework.
 
 ---
 

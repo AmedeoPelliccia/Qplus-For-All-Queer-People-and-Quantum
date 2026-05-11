@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Abnormal and Emergency Operations Basics** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Abnormal and Emergency Operations Basics** node defines the crew and maintenance response framework for non-normal and emergency conditions specific to the AMPEL360E eWTW full-electric architecture. Principal abnormal scenarios include: single or dual HVDC bus fault, propulsor (EPCU/motor) degradation, Battery Management System thermal runaway warning, Integrated Modular Avionics (IMA) channel loss, and All-Electric Anti-Ice system failure.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Emergency procedures replace conventional "engine failure" checklists with "propulsor isolation" actions: the EPCU network isolates a faulted motor-drive channel within 50 ms, and the Flight Management System (FMS) immediately recalculates achievable thrust and energy reserve. Ditching or forced-landing energy management accounts for battery safe-state (discharge to ≤20% SoC prior to ground contact per the applicable Emergency Procedures chapter). All abnormal procedures shall be validated against the Functional Hazard Assessment (FHA) and PSSA for the eWTW propulsion and power systems.
 
 ---
 

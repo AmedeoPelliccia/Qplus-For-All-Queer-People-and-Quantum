@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Service Points and Panels General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Service Points and Panels General** node catalogues the external service access points and panels of the AMPEL360E eWTW and their functions. Primary service points include: (SP-01) HVDC Ground Power Receptacle — forward fuselage, port side, below nose gear bay; (SP-02) BCL Coolant Fill/Drain — wing root fairing, accessible from ground level; (SP-03) Motor-Drive Thermal Fluid Fill/Drain — nacelle service panel, reachable from standard maintenance stand; (SP-04) Crew Oxygen Fill Point — nose gear bay, port side; (SP-05) Potable Water Fill/Drain — aft fuselage service panel; (SP-06) APU Ground Port — aft fuselage, starboard side.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Panels are colour-coded and marked with internationally standardised service symbols per ISO 11684. Each panel features a QR code linked to the relevant AMM Chapter 12 service task in the IETP. Panel access force and fastener types comply with EASA CS-25 §25.773 (pilot's compartment) and §25.810 (emergency exits) where applicable, and with the eWTW Ground Handling Manual (GHM) access-time budget.
 
 ---
 

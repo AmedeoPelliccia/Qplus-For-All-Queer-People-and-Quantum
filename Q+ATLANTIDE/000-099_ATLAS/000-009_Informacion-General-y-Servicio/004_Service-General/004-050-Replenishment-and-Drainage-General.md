@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Replenishment and Drainage General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Replenishment and Drainage General** node describes the general replenishment and drainage procedures applicable to fluids and gases on the AMPEL360E eWTW. Replenishment sequences are defined by system priority and safety interlock: HVDC recharge must be initiated before or in parallel with coolant replenishment, but the battery compartment must be at temperature < 40 °C before BCL top-up is permitted (BMS thermal interlock). Motor-drive thermal fluid replenishment requires the EPCU to be in "ground maintenance" mode (activated via the Multipurpose Control and Display Unit, MCDU, maintenance page).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Drainage procedures address: BCL drain for scheduled coolant replacement (every 5,000 FH or per coolant degradation check); motor-drive fluid drain for heat-exchanger removal; waste water drain (daily ground operation); hydraulic fluid drain (scheduled component replacement). All drainage volumes shall be recorded in the ETL and CMS fluid-consumption trend module. Drainage fluid is classified as controlled waste under the applicable environmental regulation and disposed of per the operator's Spill Prevention, Control and Countermeasure (SPCC) plan.
 
 ---
 

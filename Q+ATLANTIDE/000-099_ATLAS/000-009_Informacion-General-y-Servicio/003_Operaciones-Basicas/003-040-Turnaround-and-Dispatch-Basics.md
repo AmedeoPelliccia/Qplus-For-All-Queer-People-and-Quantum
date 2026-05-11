@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Turnaround and Dispatch Basics** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Turnaround and Dispatch Basics** node covers the standard ground sequence between aircraft arrival and next-flight departure for the AMPEL360E eWTW. The turnaround critical path is dominated by HVDC charging: a 270 V DC / 540 V DC Ground Power Unit (GPU) connects at the ground-service receptacle, and the Battery Management System (BMS) coordinates rapid-charge and top-up sequences within thermal and SoC limits defined by the applicable AMM.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+eWTW-specific dispatch items include: BMS state-of-charge and health confirmation (GO / NO-GO gate), Quantum Electro-Mechanical Actuator (QEMA) self-test completion, EPCU channel readiness, and EAC system availability from the Auxiliary Power Unit (APU, electric-output-only). The Minimum Equipment List (MEL) for the eWTW references DO-178C DAL levels for propulsion control software and CS-25 §25.1329 for auto-flight, replacing bleed-air MEL items with equivalents for HVDC bus redundancy.
 
 ---
 
