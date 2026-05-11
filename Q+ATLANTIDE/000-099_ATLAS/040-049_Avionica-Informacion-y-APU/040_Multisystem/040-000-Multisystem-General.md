@@ -465,7 +465,7 @@ Final safety classification shall remain <img src="https://img.shields.io/badge/
 
 | Version | Date | Author | Change | Link |
 |---|---|---|---|---|
-| [1.0.0](#chg-100) | <a id="chg-100"></a>2026-05-09 | GAIA-QAO / IDEALE-ESG | Initial active baseline for ATLAS 040-049 · 04.040.000 — Multisystem General. | [Document root](#atlas-040-049--section-04--subsection-040--000--multisystem-general) |
+| [1.0.0](#chg-100) | <a id="chg-100"></a>2026-05-09 | Q+ Team/Amedeo Pelliccia + AI | Initial active baseline for ATLAS 040-049 · 04.040.000 — Multisystem General. | [Document root](#atlas-040-049--section-04--subsection-040--000--multisystem-general) |
 
 ---
 

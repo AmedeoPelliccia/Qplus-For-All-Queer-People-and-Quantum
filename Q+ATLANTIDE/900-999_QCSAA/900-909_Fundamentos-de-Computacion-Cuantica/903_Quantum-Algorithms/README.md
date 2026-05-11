@@ -94,7 +94,7 @@ The algorithm vocabulary and resource-estimation methods defined in this subsect
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `000_Overview.md` plus subsubjects `001`–`008`, using the sequential `00N_*.md` scheme under the `903_Quantum-Algorithms/` subsection. Subsection index established. |
+| 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline: `000_Overview.md` plus subsubjects `001`–`008`, using the sequential `00N_*.md` scheme under the `903_Quantum-Algorithms/` subsection. Subsection index established. |
 
 ## 8. References & Citations
 

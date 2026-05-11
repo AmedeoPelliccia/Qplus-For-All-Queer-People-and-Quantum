@@ -389,4 +389,4 @@ graph LR
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2025-01-01 | Q-DATAGOV | Initial baseline release | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 1.0.0 | 2025-01-01 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline release | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

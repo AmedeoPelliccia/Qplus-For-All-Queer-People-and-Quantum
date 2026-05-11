@@ -367,4 +367,4 @@ All BMC, BITE Manager, and BITE Aggregator components are software modules on CC
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline document creation |
+| 1.0.0 | 2026-05-10 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline document creation |

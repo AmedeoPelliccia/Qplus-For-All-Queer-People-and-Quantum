@@ -79,7 +79,7 @@ Subsection `908` is currently reserved; no downstream consumers are registered i
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: subsection reservation with `000_Overview.md` populated; slots `001`–`009` reserved for future foundational extensions. |
+| 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline: subsection reservation with `000_Overview.md` populated; slots `001`–`009` reserved for future foundational extensions. |
 
 ## 8. References & Citations
 

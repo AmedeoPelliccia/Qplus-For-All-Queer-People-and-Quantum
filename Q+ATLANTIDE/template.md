@@ -570,7 +570,7 @@ Verification shall demonstrate that the system satisfies its requirements under 
 
 | Revision          | Date                           | Author                | Change                                 | Link                                     | Status                                              |
 | ----------------- | ------------------------------ | --------------------- | -------------------------------------- | ---------------------------------------- | --------------------------------------------------- |
-| [0.1.0](#chg-010) | <a id="chg-010"></a>2026-05-09 | GAIA-QAO / IDEALE-ESG | Initial programme-controlled scaffold. | [Document root](#code--controlled-title) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [0.1.0](#chg-010) | <a id="chg-010"></a>2026-05-09 | Q+ Team/Amedeo Pelliccia + AI | Initial programme-controlled scaffold. | [Document root](#code--controlled-title) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 
 ---
 

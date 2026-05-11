@@ -86,7 +86,7 @@ The circuit vocabulary defined in this subsection is consumed by:
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HORIZON | Initial baseline: `000_Overview.md` plus subsubjects `001`–`005`, using the sequential `00N_*.md` scheme under the `902_Circuits/` subsection. Subsection index established. |
+| 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline: `000_Overview.md` plus subsubjects `001`–`005`, using the sequential `00N_*.md` scheme under the `902_Circuits/` subsection. Subsection index established. |
 
 ## 8. References & Citations
 

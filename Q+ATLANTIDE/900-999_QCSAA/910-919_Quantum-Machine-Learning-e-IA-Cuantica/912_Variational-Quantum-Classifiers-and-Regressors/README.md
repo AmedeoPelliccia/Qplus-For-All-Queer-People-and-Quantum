@@ -96,7 +96,7 @@ The variational QML vocabulary, circuit structures, and training-loop definition
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HPC | Initial baseline: `000_Overview.md` plus subsubjects `001`–`010`, using the sequential `00N_*.md` scheme under the `912_Variational-Quantum-Classifiers-and-Regressors/` subsection. Subsection index established. |
+| 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline: `000_Overview.md` plus subsubjects `001`–`010`, using the sequential `00N_*.md` scheme under the `912_Variational-Quantum-Classifiers-and-Regressors/` subsection. Subsection index established. |
 
 ## 8. References & Citations
 

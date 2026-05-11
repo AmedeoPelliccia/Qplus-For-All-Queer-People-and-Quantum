@@ -354,4 +354,4 @@ graph LR
 
 | Version | Date | Author | Description | Status |
 |---------|------|--------|-------------|--------|
-| 1.0.0 | 2026-05-10 | Q-GREENTECH | Initial baseline release | TBD |
+| 1.0.0 | 2026-05-10 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline release | TBD |

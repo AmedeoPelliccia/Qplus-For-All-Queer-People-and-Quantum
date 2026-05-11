@@ -91,7 +91,7 @@ The QML vocabulary, taxonomy, and claim-discipline rules defined in this subsect
 
 | Version | Date | Author | Notes |
 |---|---|---|---|
-| 1.0.0 | 2026-05-07 | Q-HPC | Initial baseline: `000_Overview.md` plus subsubjects `001`–`010`, using the sequential `00N_*.md` scheme under the `910_QML-Foundations-and-Taxonomy/` subsection. Subsection index established. |
+| 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline: `000_Overview.md` plus subsubjects `001`–`010`, using the sequential `00N_*.md` scheme under the `910_QML-Foundations-and-Taxonomy/` subsection. Subsection index established. |
 
 ## 8. References & Citations
 

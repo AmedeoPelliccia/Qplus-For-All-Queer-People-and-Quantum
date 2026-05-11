@@ -418,4 +418,4 @@ The CSDB platform is a ground-based server system with standard data-centre powe
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline; 36-DM DMRL established; programme-controlled traceability extension |
+| 1.0.0 | 2026-05-10 | Q+ Team/Amedeo Pelliccia + AI | Initial baseline; 36-DM DMRL established; programme-controlled traceability extension |
