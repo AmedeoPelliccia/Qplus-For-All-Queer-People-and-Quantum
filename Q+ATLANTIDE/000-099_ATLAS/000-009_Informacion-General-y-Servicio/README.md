@@ -1,5 +1,5 @@
 ---
-document_id: QATL-ATLAS-1000-ATLAS-000-009-00-README
+document_id: "QATL-ATLAS-1000-ATLAS-000-009-00-README"
 title: "ATLAS 000-009 · 00 — Información General y Servicio (Section Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
@@ -16,7 +16,7 @@ primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GROUND, Q-AIR]
 orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
-version: 1.0.0
+version: 1.1.0
 status: active
 language: en
 ---
@@ -25,15 +25,15 @@ language: en
 
 ## 1. Purpose
 
-Section-level index for *Información General y Servicio* (`000-009`) within the ATLAS band. Identificación, configuración, documentación general y operaciones básicas de la aeronave.
+Section-level index for *Información General y Servicio* (`000-009`) within the ATLAS band. Covers identification, configuration, general documentation, basic operations, servicing, dimensions, lifting/jacking, leveling/weighing, towing/taxiing, and parking/storage for the AMPEL360E eWTW.
 
-This section is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. Bands classify technologies, Q-Divisions provide technical authority and ORB-Functions provide enterprise support[^n002].
+This section is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Aggregates the subsections within the `000-009` code range listed in §3.
+- Aggregates the 10 subsections within the `000-009` code range listed in §3.
 - Inherits Q-Division authority and ORB support from the parent row in [`../README.md` §3](../README.md#3-architecture-table)[^archtable].
-- Each subsection folder contains its own `README.md` (subsection index) and may contain Overview and subsubject documents.
+- Applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
 
 ## 3. Subsection Index
 
@@ -43,6 +43,12 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `001` | Configuración | [`001_Configuracion/`](./001_Configuracion/) | active |
 | `002` | Documentación General | [`002_Documentacion-General/`](./002_Documentacion-General/) | active |
 | `003` | Operaciones Básicas | [`003_Operaciones-Basicas/`](./003_Operaciones-Basicas/) | active |
+| `004` | Service General | [`004_Service-General/`](./004_Service-General/) | active |
+| `005` | Dimensions and Areas | [`005_Dimensions-and-Areas/`](./005_Dimensions-and-Areas/) | active |
+| `006` | Lifting, Shoring and Jacking General | [`006_Lifting-Shoring-and-Jacking-General/`](./006_Lifting-Shoring-and-Jacking-General/) | active |
+| `007` | Leveling and Weighing General | [`007_Leveling-and-Weighing-General/`](./007_Leveling-and-Weighing-General/) | active |
+| `008` | Towing and Taxiing General | [`008_Towing-and-Taxiing-General/`](./008_Towing-and-Taxiing-General/) | active |
+| `009` | Parking, Mooring, Storage and Return to Service General | [`009_Parking-Mooring-Storage-and-Return-to-Service-General/`](./009_Parking-Mooring-Storage-and-Return-to-Service-General/) | active |
 
 ## 4. Interfaces Diagram
 
@@ -54,12 +60,29 @@ flowchart TB
 
     subgraph SUBS["Subsections"]
         direction LR
-        SUB_000["000 — Identificación"]:::sub
-        SUB_001["001 — Configuración"]:::sub
-        SUB_002["002 — Documentación General"]:::sub
-        SUB_003["003 — Operaciones Básicas"]:::sub
+    SUB_000["000 — Identificación"]:::sub
+    SUB_001["001 — Configuración"]:::sub
+    SUB_002["002 — Documentación General"]:::sub
+    SUB_003["003 — Operaciones Básicas"]:::sub
+    SUB_004["004 — Service General"]:::sub
+    SUB_005["005 — Dimensions and Areas"]:::sub
+    SUB_006["006 — Lifting, Shoring and Jacking General"]:::sub
+    SUB_007["007 — Leveling and Weighing General"]:::sub
+    SUB_008["008 — Towing and Taxiing General"]:::sub
+    SUB_009["009 — Parking, Mooring, Storage and Return to Service General"]:::sub
     end
     SEC --> SUBS
+
+    SUBS --> SUB_000
+    SUBS --> SUB_001
+    SUBS --> SUB_002
+    SUBS --> SUB_003
+    SUBS --> SUB_004
+    SUBS --> SUB_005
+    SUBS --> SUB_006
+    SUBS --> SUB_007
+    SUBS --> SUB_008
+    SUBS --> SUB_009
 
     QPRIM["Q-DATAGOV<br/>(primary Q-Division)"]:::qdiv
     QSUPP["Q-GROUND, Q-AIR<br/>(support Q-Divisions)"]:::qdiv
@@ -69,20 +92,12 @@ flowchart TB
     SEC -.-> QSUPP
     SEC -.-> ORB
 
-    SUBS --> SUB_000
-    SUBS --> SUB_001
-    SUBS --> SUB_002
-    SUBS --> SUB_003
-
     classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
     classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
     classDef sub fill:#eaf3fb,stroke:#2c82c9,color:#0b1d4a
     classDef qdiv fill:#f6e6ff,stroke:#7d3c98,color:#3b1f4d
     classDef orb fill:#fff4dd,stroke:#b9770e,color:#5a3b00
-    classDef ext fill:#fdebd0,stroke:#b9770e,color:#5a3b00,stroke-dasharray:3 3
 ```
-
-*Solid arrows show parent→section→subsection ownership and primary Q-Division authority; dotted arrows show support Q-Divisions, ORB enterprise support, and notable cross-section interfaces.*
 
 ## 5. Footprint
 
@@ -92,7 +107,7 @@ flowchart TB
 | Master range | `000–099` |
 | Code range | `000-009` |
 | Section | `00` — Información General y Servicio |
-| Subsections | 4 populated |
+| Subsections | 10 populated (000–009) |
 | Primary Q-Division | Q-DATAGOV[^qdiv] |
 | Support Q-Divisions | Q-GROUND, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |
@@ -104,22 +119,13 @@ flowchart TB
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections under this section inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline` from this section header. Templates declared in this section must populate `architecture_band`, `architecture_code = ATLAS`, `q_division_owner` and `orb_function_support` per the Templates System[^templates]. The No-AAA Rule[^n004] applies.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsections inherit `architecture_code = ATLAS`, `primary_q_division = Q-DATAGOV` and `governance_class = baseline`. The No-AAA Rule[^n004] applies.
 
 ## 6. References & Citations
 
-[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md). Defines the controlled `000-999` architecture-band taxonomy and the ATLAS-1000 register subpart.
-
-[^archtable]: **§3 — Architecture Table (parent)** — [`../README.md` §3](../README.md#3-architecture-table). Source of authority for primary/support Q-Divisions and ORB support of this section.
-
-[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../organization/Q-Divisions/). Technical-authority units for the Q+ATLANTIDE baseline.
-
-[^gov]: **Governance class** — `baseline` denotes documents under controlled change management within the Q+ATLANTIDE baseline.
-
-[^templates]: **§5 — Templates System** — [`organization/Q+ATLANTIDE.md` §5](../../../organization/Q+ATLANTIDE.md#5-templates-system).
-
-[^n001]: **Note N-001** — Q+ATLANTIDE (with its ATLAS-1000 register subpart) is a taxonomy and traceability ecosystem, not an organization chart. See [`organization/Q+ATLANTIDE.md` §4](../../../organization/Q+ATLANTIDE.md#4-notes).
-
-[^n002]: **Note N-002** — Architecture bands classify technologies; Q-Divisions provide technical authority; ORB-Functions provide enterprise support. See [`organization/Q+ATLANTIDE.md` §4](../../../organization/Q+ATLANTIDE.md#4-notes).
-
-[^n004]: **Note N-004 (No-AAA Rule)** — "AAA" is not a valid domain, division, architecture, interface or function in this baseline. See [`organization/Q+ATLANTIDE.md` §4](../../../organization/Q+ATLANTIDE.md#4-notes).
+[^baseline]: **Q+ATLANTIDE controlled baseline (v1.0.0)** — [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md).
+[^archtable]: **§3 — Architecture Table (parent)** — [`../README.md` §3](../README.md#3-architecture-table).
+[^qdiv]: **Q-Division authority** — [`organization/Q-Divisions/`](../../../organization/Q-Divisions/).
+[^gov]: **Governance class** — `baseline` denotes documents under controlled change management.
+[^n001]: **Note N-001** — Q+ATLANTIDE is a taxonomy and traceability ecosystem. See [`organization/Q+ATLANTIDE.md` §4](../../../organization/Q+ATLANTIDE.md#4-notes).
+[^n004]: **Note N-004 (No-AAA Rule)** — "AAA" is not a valid domain in this baseline. See [`organization/Q+ATLANTIDE.md` §4](../../../organization/Q+ATLANTIDE.md#4-notes).
