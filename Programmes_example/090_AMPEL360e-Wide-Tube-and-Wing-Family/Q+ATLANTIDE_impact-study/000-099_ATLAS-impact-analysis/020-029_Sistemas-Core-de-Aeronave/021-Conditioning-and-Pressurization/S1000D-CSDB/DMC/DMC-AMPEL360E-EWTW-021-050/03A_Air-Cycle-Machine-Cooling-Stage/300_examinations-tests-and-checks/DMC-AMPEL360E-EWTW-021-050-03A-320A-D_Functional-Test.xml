@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     S1000D Data Module
+     DMC: DMC-AMPEL360E-EWTW-021-050-03A-320A-D
+     Title: Air Cycle Machine Cooling Stage — Functional Test
+     Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+     ATLAS Node: 021-050 / 021-050-03A / ATA 21-50
+     Info Code: 320A — Functional Test
+     Status: draft / programme-controlled-placeholder
+     Issue: 001-00 | Date: 2026-05-11
+     Note: Programme-controlled scaffold placeholder pending BREX/DMRL freeze.
+     ============================================================ -->
+<dmodule xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E"
+                systemDiffCode="EWTW"
+                systemCode="021"
+                subSystemCode="0"
+                subSubSystemCode="50"
+                assyCode="03A"
+                disassyCode="03"
+                disassyCodeVariant="A"
+                infoCode="320"
+                infoCodeVariant="A"
+                itemLocationCode="D"/>
+        <language languageIsoCode="en" countryIsoCode="001"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="11"/>
+        <dmTitle>
+          <techName>Air Cycle Machine Cooling Stage</techName>
+          <infoName>Functional Test</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </originator>
+      <applic>
+        <displayText>
+          <simplePara>AMPEL360e Wide Tube-and-Wing Family (eWTW) — All variants</simplePara>
+        </displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E"
+                    systemDiffCode="EWTW"
+                    systemCode="000"
+                    subSystemCode="0"
+                    subSubSystemCode="00"
+                    assyCode="00A"
+                    disassyCode="00"
+                    disassyCodeVariant="A"
+                    infoCode="022"
+                    infoCodeVariant="A"
+                    itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+      <remarks>
+        <simplePara>Programme-controlled placeholder. infoCode 320A subject to BREX/SNS/DMRL freeze. Not for operational use.</simplePara>
+      </remarks>
+    </dmStatus>
+  </identAndStatusSection>
+
+  <content>
+    <description>
+      <levelledPara id="desc-320-001">
+        <title>Functional Test</title>
+        <para>This data module provides the functional test for the <emphasis emphasisType="em01">Air Cycle Machine Cooling Stage</emphasis> of the AMPEL360e eWTW Cooling Subsystem (ATLAS 021-050 / ATA 21-50). Content is a programme-controlled scaffold placeholder pending BREX/DMRL freeze.</para>
+      </levelledPara>
+    </description>
+  </content>
+
+</dmodule>
