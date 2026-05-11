@@ -19,7 +19,7 @@ support_q_divisions: [Q-AIR, Q-INDUSTRY, Q-HPC]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: draft
 language: en
 ---
 
@@ -39,9 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NN | Folder | Title | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 000 | [055-000-Stabilizers-General](./055-000-Stabilizers-General/README.md) | Stabilizers — General | draft |
+| 010 | [055-010-Horizontal-Stabilizer](./055-010-Horizontal-Stabilizer/README.md) | Horizontal Stabilizer | draft |
+| 020 | [055-020-Vertical-Stabilizer](./055-020-Vertical-Stabilizer/README.md) | Vertical Stabilizer | draft |
+| 030 | [055-030-Stabilizer-Control-Surfaces](./055-030-Stabilizer-Control-Surfaces/README.md) | Stabilizer Control Surfaces | draft |
+| 040 | [055-040-Stabilizer-Attachment-and-Actuation-Interfaces](./055-040-Stabilizer-Attachment-and-Actuation-Interfaces/README.md) | Stabilizer Attachment and Actuation Interfaces | draft |
+| 050 | [055-050-Stabilizer-Loads-and-Aeroelastic-Interfaces](./055-050-Stabilizer-Loads-and-Aeroelastic-Interfaces/README.md) | Stabilizer Loads and Aeroelastic Interfaces | draft |
+| 060 | [055-060-Stabilizer-Fairings-Tips-and-Access-Panels](./055-060-Stabilizer-Fairings-Tips-and-Access-Panels/README.md) | Stabilizer Fairings, Tips and Access Panels | draft |
+| 070 | [055-070-Stabilizer-Repairs-and-NDT](./055-070-Stabilizer-Repairs-and-NDT/README.md) | Stabilizer Repairs and NDT | draft |
+| 080 | [055-080-Stabilizer-Monitoring-Diagnostics-and-Control-Interfaces](./055-080-Stabilizer-Monitoring-Diagnostics-and-Control-Interfaces/README.md) | Stabilizer Monitoring, Diagnostics and Control Interfaces | draft |
+| 090 | [055-090-S1000D-CSDB-Mapping-and-Traceability](./055-090-S1000D-CSDB-Mapping-and-Traceability/README.md) | S1000D CSDB Mapping and Traceability | draft |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `050-059` |
 | Section | `05` — Estructuras |
 | Subsection | `055` — Stabilizers |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`090` (10 subsubjects, draft) |
 | Primary Q-Division | Q-STRUCTURES[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-INDUSTRY, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN, ORB-LEG |
