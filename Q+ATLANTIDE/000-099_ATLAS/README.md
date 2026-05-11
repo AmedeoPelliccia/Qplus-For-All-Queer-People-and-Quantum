@@ -71,7 +71,7 @@ Sub-ranges within this band, sourced from the Q+ATLANTIDE controlled baseline[^b
 | 020–029 | 02 | Sistemas Core de Aeronave | 00 | General Information | Aviónica base, eléctrica, hidráulica, ECS, fuel, flight control | Q-AIR | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH | ORB-PMO, ORB-LEG |
 | 030–039 | 03 | Protección & Sistemas Mecánicos | 00 | General Information | Ice/rain protection, fire protection, tren, actuadores | Q-MECHANICS | Q-AIR, Q-STRUCTURES | ORB-PMO, ORB-LEG |
 | 040–049 | 04 | Aviónica, Información & APU | 00 | General Information | IMA, redes de datos, CMS, APU, onboard information systems | Q-DATAGOV | Q-AIR, Q-SPACE, Q-HPC | ORB-PMO, ORB-LEG |
-| 050–059 | 05 | Estructuras Primarias e Interfaces de Programa / Q-Division | 00 | General Information | Fuselaje, alas, BWB, WTW, zonas estructurales, interfaces técnicas | Q-STRUCTURES | Q-AIR, Q-INDUSTRY, Q-HPC | ORB-PMO, ORB-FIN, ORB-LEG |
+| 050–059 | 05 | Estructuras | 00 | General Information | Compartimentos de carga, prácticas estándar estructurales, puertas, fuselaje, nacelles y pilones, estabilizadores, ventanas y alas | Q-STRUCTURES | Q-AIR, Q-INDUSTRY, Q-HPC | ORB-PMO, ORB-FIN, ORB-LEG |
 | 060–069 | 06 | Propulsión Tradicional | 00 | General Information | Turbofan, nacelles, thrust reversers, engine installation, fire zones | Q-GREENTECH | Q-MECHANICS, Q-AIR, Q-INDUSTRY | ORB-PMO, ORB-FIN |
 | 070–079 | 07 | Propulsión Eco-Tech e Híbrido-Eléctrica | 00 | General Information | Hybrid-electric propulsion, thermal management, power conversion, battery-assisted propulsion | Q-GREENTECH | Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY | ORB-PMO, ORB-FIN, ORB-CSR |
 | 080–089 | 08 | Propulsión Alternativa & Cuántica | 00 | General Information | LH₂, fuel cells, HVDC, superconductores, Q-sensing | Q-GREENTECH | Q-HORIZON, Q-HPC, Q-STRUCTURES | ORB-PMO, ORB-LEG, ORB-FIN |
@@ -92,7 +92,7 @@ flowchart TB
         S02["02 · 020-029<br/>Sistemas Core de Aeronave"]:::sec
         S03["03 · 030-039<br/>Protección & Sist. Mecánicos"]:::sec
         S04["04 · 040-049<br/>Aviónica, Información & APU"]:::sec
-        S05["05 · 050-059<br/>Estructuras Primarias e Interfaces"]:::sec
+        S05["05 · 050-059<br/>Estructuras"]:::sec
         S06["06 · 060-069<br/>Propulsión Tradicional"]:::sec
         S07["07 · 070-079<br/>Propulsión Eco-Tech & Híbrido-Eléctrica"]:::sec
         S08["08 · 080-089<br/>Propulsión Alternativa & Cuántica"]:::sec
@@ -168,7 +168,7 @@ flowchart TB
 | Subsections | 86 populated under the 10 section indexes |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../organization/Q+ATLANTIDE.md) |
 | Register subpart | ATLAS-1000 |
-| Structural-interface rule | Sub-range `050–059` shall use the title fragment *Estructuras Primarias e Interfaces de Programa / Q-Division* (rule N-005[^n005]). |
+| Structural-interface rule | Sub-range `050–059` covers structural elements of the aircraft (rule N-005[^n005]). |
 
 ## Governance
 
@@ -193,6 +193,6 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../organization/Q+ATLANTIDE.md)[^
 
 [^n004]: **Note N-004 (No-AAA Rule)** — "AAA" is not a valid domain, division, architecture, interface or function in this baseline. See [`organization/Q+ATLANTIDE.md` §4](../../organization/Q+ATLANTIDE.md#4-notes).
 
-[^n005]: **Note N-005** — `ATLAS 050–059` shall use *Estructuras Primarias e Interfaces de Programa / Q-Division*. See [`organization/Q+ATLANTIDE.md` §4](../../organization/Q+ATLANTIDE.md#4-notes).
+[^n005]: **Note N-005** — `ATLAS 050–059` covers structural elements (Estructuras). See [`organization/Q+ATLANTIDE.md` §4](../../organization/Q+ATLANTIDE.md#4-notes).
 
 [^repo]: **Repository root README** — [`README.md`](../../README.md). Top-level entry point referencing the Q+ATLANTIDE baseline and the ATLAS-1000 register subpart.

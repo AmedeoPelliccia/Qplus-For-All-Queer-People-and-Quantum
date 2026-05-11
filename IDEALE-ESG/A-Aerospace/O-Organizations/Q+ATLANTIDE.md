@@ -99,7 +99,7 @@ Q+ATLANTIDE provides a controlled `000-999` taxonomy and traceability ecosystem 
 | 000–099 | ATLAS | Aircraft Top-Level Architecture System | 020–029 | Sistemas Core de Aeronave | Aviónica base, eléctrica, hidráulica, ECS, fuel, flight control | Q-AIR | Q-MECHANICS, Q-DATAGOV, Q-GREENTECH | ORB-PMO, ORB-LEG |
 | 000–099 | ATLAS | Aircraft Top-Level Architecture System | 030–039 | Protección &amp; Sistemas Mecánicos | Ice/rain protection, fire protection, tren, actuadores | Q-MECHANICS | Q-AIR, Q-STRUCTURES | ORB-PMO, ORB-LEG |
 | 000–099 | ATLAS | Aircraft Top-Level Architecture System | 040–049 | Aviónica, Información &amp; APU | IMA, redes de datos, CMS, APU, onboard information systems | Q-DATAGOV | Q-AIR, Q-SPACE, Q-HPC | ORB-PMO, ORB-LEG |
-| 000–099 | ATLAS | Aircraft Top-Level Architecture System | 050–059 | Estructuras Primarias e Interfaces de Programa / Q-Division | Fuselaje, alas, BWB, WTW, zonas estructurales, interfaces técnicas | Q-STRUCTURES | Q-AIR, Q-INDUSTRY, Q-HPC | ORB-PMO, ORB-FIN, ORB-LEG |
+| 000–099 | ATLAS | Aircraft Top-Level Architecture System | 050–059 | Estructuras | Compartimentos de carga, prácticas estándar estructurales, puertas, fuselaje, nacelles y pilones, estabilizadores, ventanas y alas | Q-STRUCTURES | Q-AIR, Q-INDUSTRY, Q-HPC | ORB-PMO, ORB-FIN, ORB-LEG |
 | 000–099 | ATLAS | Aircraft Top-Level Architecture System | 060–079 | Propulsión Tradicional &amp; Eco-Tech | Turbofan, híbrido-eléctrico, thermal management, nacelles | Q-GREENTECH | Q-MECHANICS, Q-AIR, Q-INDUSTRY | ORB-PMO, ORB-FIN |
 | 000–099 | ATLAS | Aircraft Top-Level Architecture System | 080–089 | Propulsión Alternativa &amp; Cuántica | LH₂, fuel cells, HVDC, superconductores, Q-sensing | Q-GREENTECH | Q-HORIZON, Q-HPC, Q-STRUCTURES | ORB-PMO, ORB-LEG, ORB-FIN |
 | 000–099 | ATLAS | Aircraft Top-Level Architecture System | 090–099 | Tipos Específicos &amp; Expansión | Variantes BWB/WTW, demostradores, clases especiales de aeronaves | Q-HORIZON | Q-AIR, Q-STRUCTURES, Q-GREENTECH | ORB-PMO, ORB-MKTG |
@@ -204,7 +204,7 @@ Q+ATLANTIDE provides a controlled `000-999` taxonomy and traceability ecosystem 
 | N-002 | Architecture bands classify technologies. Q-Divisions provide technical authority. ORB-Functions provide enterprise support. |
 | N-003 | The `000-999` range is controlled. `ATLAS-1000` is the umbrella name, not an additional numeric band. |
 | N-004 | "AAA" is not a valid domain, division, architecture, interface or function in this baseline. |
-| N-005 | `ATLAS 050-059` shall use "Estructuras Primarias e Interfaces de Programa / Q-Division". |
+| N-005 | `ATLAS 050-059` covers structural elements of the aircraft (Estructuras). |
 | N-006 | Defence-related, cybersecurity-related and quantum-related bands (DTTA, CYB, QCSAA) require additional governance, evidence packages and access controls beyond the baseline trace record. |
 
 ---
@@ -234,7 +234,7 @@ Every template instance shall carry, at minimum, the following header fields:
 - Template owners shall be expressed as Q-Divisions (e.g. `Q-DATAGOV`, `Q-AIR`, `Q-STRUCTURES`) and never as "AAA", "AAA owner", "AAA division" or any equivalent term. (N-002, N-004)
 - Template tables shall use the column header **"División Responsable"** (Spanish docs) or **"Responsible Q-Division"** (English docs); the legacy header **"AAA Responsable"** is prohibited. (N-004)
 - Architecture references inside a template body shall use the canonical `<ACRONYM> <range>` form (e.g. `DTCEC 320–329`, `OGATA 600–609`) and not `AAA-XXX`. (N-004)
-- ATLAS 050–059 templates (structural / program-interface) shall use the title fragment **"Estructuras Primarias e Interfaces de Programa / Q-Division"**. (N-005)
+- ATLAS 050–059 templates (structural) shall use the section title **"Estructuras"**. (N-005)
 
 ### 5.3 Restricted-band templates (N-006)
 
