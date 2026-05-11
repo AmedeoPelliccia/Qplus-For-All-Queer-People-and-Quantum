@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Windows — General | [056-000-Windows-General/README.md](./056-000-Windows-General/README.md) | DRAFT |
+| 10 | Flight Deck Windows | [056-010-Flight-Deck-Windows/README.md](./056-010-Flight-Deck-Windows/README.md) | DRAFT |
+| 20 | Cabin Windows | [056-020-Cabin-Windows/README.md](./056-020-Cabin-Windows/README.md) | DRAFT |
+| 30 | Window Frames and Surround Structure | [056-030-Window-Frames-and-Surround-Structure/README.md](./056-030-Window-Frames-and-Surround-Structure/README.md) | DRAFT |
+| 40 | Window Sealing and Pressure Boundaries | [056-040-Window-Sealing-and-Pressure-Boundaries/README.md](./056-040-Window-Sealing-and-Pressure-Boundaries/README.md) | DRAFT |
+| 50 | Window Heating, Anti-Icing and Demist Interfaces | [056-050-Window-Heating-Anti-Icing-and-Demist-Interfaces/README.md](./056-050-Window-Heating-Anti-Icing-and-Demist-Interfaces/README.md) | DRAFT |
+| 60 | Window Damage Assessment and Repair | [056-060-Window-Damage-Assessment-and-Repair/README.md](./056-060-Window-Damage-Assessment-and-Repair/README.md) | DRAFT |
+| 70 | Window Removal, Installation and Replacement | [056-070-Window-Removal-Installation-and-Replacement/README.md](./056-070-Window-Removal-Installation-and-Replacement/README.md) | DRAFT |
+| 80 | Windows Monitoring, Diagnostics and Control Interfaces | [056-080-Windows-Monitoring-Diagnostics-and-Control-Interfaces/README.md](./056-080-Windows-Monitoring-Diagnostics-and-Control-Interfaces/README.md) | DRAFT |
+| 90 | S1000D CSDB Mapping and Traceability | [056-090-S1000D-CSDB-Mapping-and-Traceability/README.md](./056-090-S1000D-CSDB-Mapping-and-Traceability/README.md) | DRAFT |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `050-059` |
 | Section | `05` — Estructuras |
 | Subsection | `056` — Windows |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (populated) |
 | Primary Q-Division | Q-STRUCTURES[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-INDUSTRY, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN, ORB-LEG |
