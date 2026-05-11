@@ -274,7 +274,7 @@ flowchart TB
 |---|---|---|---|
 | OI-073-050-001 | Confirm 540 V busbar cross-section (Al 6061-T6) with final ATRU and EPM current specifications | Q-MECHANICS | 2026-Q4 |
 | OI-073-050-002 | Qualify titanium conduit assembly per CS-25 Appendix F Part III — test article procurement | Q-AIR | 2027-Q1 |
-| OI-073-050-003 | Define HVDC connector standard (IEC 62196-based) and obtain DO-160G qualfication from connector OEM | Q-INDUSTRY | 2027-Q1 |
+| OI-073-050-003 | Define HVDC connector standard (IEC 62196-based) and obtain DO-160G qualification from connector OEM | Q-INDUSTRY | 2027-Q1 |
 
 ---
 
