@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Aircraft Parking General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Aircraft Parking General** node defines the procedures, equipment requirements, and eWTW-specific considerations for routine ramp and gate parking of the AMPEL360E eWTW. Standard parking configuration: (1) nose into gate, ENWTD in park mode, electric parking brakes (EPB) set; (2) chocks installed at all four main gear positions (chock P/N Q-CHOCK-001, wheel-specific profile for 49-inch main gear tyres); (3) HVDC GPU connected within 30 min of engine shutdown to maintain battery SoC above 30%; (4) aircraft earthing/bonding cable connected to nose gear ground stud (GND-001) before any fuel, oil, or electrical servicing.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Parking duration categories: (A) transit (up to 4 h, HVDC GPU required only if SoC <40%); (B) overnight (4–72 h, HVDC GPU mandatory, PSMM activates battery conditioning cycle); (C) extended (>72 h, transition to short-term storage procedure). The PSMM displays parking status (GPU power, SoC, EPB state, chock detection via ground-clearance sensors) on the GMMS tablet. Pitot/static covers (Q-PITOT-COV-001) and engine inlet plugs (Q-ENG-PLUG-001) are installed for overnight and extended parking. Wing-walk areas are defined by anti-skid paint markings; ground crew access to the fuselage top surface requires platform and safety harness per Q-GROUND-SWI-001.
 
 ---
 

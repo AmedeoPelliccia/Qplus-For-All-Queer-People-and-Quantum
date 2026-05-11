@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Parking Mooring Storage and Return to Service General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Parking Mooring Storage and Return to Service General** node establishes the framework, philosophy, and boundaries for all parking, mooring, storage, and return-to-service activities on the AMPEL360E eWTW. The eWTW architecture introduces unique considerations absent in conventional aircraft: (1) the 540 V HVDC traction battery pack (nominal capacity 800 kWh) requires specific charge-state management during parking and storage to prevent electrochemical degradation; (2) the absence of engine bleed and hydraulic circuits eliminates the need for bleed-port preservation and hydraulic-fluid sampling during storage; (3) the electric drive systems (ENWTD, ENWS, EBAU) require software-controlled preservation modes rather than mechanical lockouts.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+The four primary categories addressed under ATLAS 009 are: (A) parking (ramp/gate, short-duration, up to 72 h); (B) mooring (tiedown for adverse weather, all MTOW conditions); (C) storage (short-term 3–30 days; long-term >30 days up to 24 months); (D) return to service (post-storage inspection, functional checks, and progressive reactivation of electric systems). The Ground Movement Management System (GMMS) hosts the Parking and Storage Management Module (PSMM), which coordinates traction battery SoC maintenance, system depreservation sequences, and generates return-to-service checklists. All PSMM data is exported to the CSDB under the EASA Part-M §M.A.306 aircraft technical log requirements.
 
 ---
 

@@ -70,9 +70,11 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **System Preservation and Depreservation** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **System Preservation and Depreservation** node defines the step-by-step preservation and depreservation actions for each aircraft system on the AMPEL360E eWTW, referenced by storage duration category. The eWTW preservation philosophy is driven by the replacement of legacy hydraulic and pneumatic systems with electric and digital systems, significantly reducing the number of fluid-based preservation actions and replacing them with software-mode and electro-mechanical preservation steps.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Key preservation actions by system: (A) HVDC bus / traction battery — PSMM SoC management (see 009-030/040); BMS firmware diagnostic check before any trickle-charge session; (B) FADEC/EEC — both FADECs placed in "storage mode" via ACARS command (turns off active BITE, enables accelerated condensation protection cycle every 24 h); (C) electric actuation systems (ENWTD, ENWS, EBAU, ELFCS, EICAS) — all actuators commanded to mid-range position; actuator seals lubricated per individual CMM; ELFCS (electric flight control system) enters "ground config hold" mode; (D) fuel system — see 009-040 tank drain/STADIS-450 procedure; fuel filter elements replaced; FOHE (fuel-oil heat exchanger) drained; (E) engines — CMM 72-00 preservation; oil replaced with preserving oil MIL-PRF-23699 class P; (F) ECS/ACS — refrigerant circuit nitrogen-pressurised to 5 psi for integrity; battery thermal management coolant loop flushed per AMM 21-60 depreservation coolant schedule.
+
+Depreservation sequence: PSMM Storage Exit Checklist activates systems in the sequence: BMS → avionics bus → FADEC powerup self-test → ECS → ELFCS → EBAU/ENWS/ENWTD → engine start pre-start checklist. Total depreservation time for LTS (30 days+): approximately 8 h with two-person crew.
 
 ---
 

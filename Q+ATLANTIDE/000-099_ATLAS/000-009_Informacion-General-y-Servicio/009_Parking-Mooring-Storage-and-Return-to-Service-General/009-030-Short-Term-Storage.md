@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Short-Term Storage** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Short-Term Storage** node defines the procedures and system states for parking the AMPEL360E eWTW out of service for 3 to 30 days. Short-term storage differs from routine parking primarily in the battery management strategy and the extent of system protective measures. PSMM short-term storage mode (activated from GMMS tablet: STORAGE > SHORT-TERM): (1) traction battery SoC target is set to 60% (optimal electrochemical rest state for NMC chemistry); PSMM uses a low-rate HVDC GPU trickle charge (max 10 kW) to maintain SoC ±5%; (2) ENWTD, ENWS, and EBAU are placed in deep-sleep mode (all power-electronics boards de-energised, spring-set EPB locked); (3) FADEC and avionics are powered down; (4) the ADIRS accelerometers remain powered by the aircraft emergency bus to log any ramp movement or tilt events.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Physical protective measures for short-term storage: pitot/static covers (all ports), engine inlet plugs (both engines), AOA probe covers, landing gear door locks (visual streamer P/N Q-GEAR-LOCK-001), aileron/elevator/rudder gust locks (installed per AMM 09-30 sequence). GPU connection is mandatory; GPU minimum current capability: 32 A at 115 V AC or HVDC adapter. PSMM logs battery SoC, ambient temperature, and any anomalies daily; accessible via GAIA-QA web interface. Exit from short-term storage: PSMM Storage Exit Checklist (Q-PSMM-SEC-001, 45-step electronic form on GMMS tablet, estimated completion time 2 h).
 
 ---
 

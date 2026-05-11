@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Mooring and Tie Down General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Mooring and Tie Down General** node specifies the tiedown points, rated loads, chain/strap configuration, and mooring procedures for the AMPEL360E eWTW in adverse weather conditions. Tiedown points: (A) forward fuselage tiedown lug (FTL-001, FS 340, CL, rated ±150 kN downward/forward); (B) aft fuselage tiedown lug (ATL-001, FS 1820, CL, rated ±150 kN); (C) four wing tiedown points (WTL-001 through WTL-004, at each engine pylon lower attach, rated ±200 kN each); (D) nose gear tiedown lug (NTL-002, separate from tow lug, rated ±80 kN). All tiedown fittings are inspected per AMM 09-20 before use.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Approved tiedown hardware: chain Q-CHAIN-001 (Grade 100, 13 mm, MBL 160 kN, with load-binder Q-BIND-001); strap Q-STRAP-001 (polyester, 50 mm × 10 m, MBL 100 kN, with ratchet Q-RATCH-001). Maximum certified wind speed for outdoor mooring: 75 kt (139 km/h) with all six tiedown points connected; 100 kt with additional belly-band straps per SOP Q-MOORING-SOP-001. For crosswind mooring, wing tiedown loads are asymmetric — refer to GMMS mooring load calculator (input: tail number, wind speed, wind direction → output: per-point required chain tension). ENWTD must be in park mode (confirmed by GMMS), EPB set, and chocks installed at all four main gear positions before tiedown chains are attached.
 
 ---
 

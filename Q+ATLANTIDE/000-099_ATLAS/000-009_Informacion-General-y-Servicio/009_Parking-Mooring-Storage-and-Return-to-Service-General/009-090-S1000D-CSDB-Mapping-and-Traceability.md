@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **S1000D CSDB Mapping and Traceability** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 009 Parking, Mooring, Storage, and Return to Service subsubjects and the AMPEL360E eWTW S1000D Data Module structure. ATLAS 009 subsubjects map to DMs under systemCode="009" (ATA 10/12 equivalent), model ident code AMPEL360E, system diff code EWTW, in the Q+ATLANTIDE CSDB instance. Primary DM types: procedural DMs for parking, mooring, and storage operations (info code "520"), descriptive DMs for PSMM architecture (info code "040"), safety precautions DMs (info code "300"), fault-isolation DMs for PSMM alerts (info code "900"), preservation/depreservation task DMs (info code "720"), illustrated parts DMs for tiedown hardware (info code "941").
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Traceability chain: ATLAS 009 parking/storage geometry and battery SoC management data → AMM Chapter 10 (Parking and Mooring) and Chapter 12 (Servicing) procedural DMs → PSMM/BMS system description DMs → preservation task DMs → return-to-service checklist DMs → CSDB aircraft technical log → AFM Limitations section (battery SoC limits). The DMRL for ATA 10/12 shall confirm eWTW-specific coverage: PSMM e-storage mode, traction battery SoC management during parking, TBLT cradle park interface, EPB storage lock procedure, and GAIA-QA remote monitoring interface. The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV assigns DM codes to each 009-NNN subsubject and tracks publication status. Completion of ATLAS 009 contextualisation closes the last remaining open subsubject in the 000-009_Informacion-General-y-Servicio section.
 
 ---
 
