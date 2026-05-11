@@ -58,19 +58,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Space Transport Controlled Definition | [`001_Space-Transport-Controlled-Definition.md`](./001_Space-Transport-Controlled-Definition.md) | active |
-| 02 | Space Transport Classes and Mission Roles | [`002_Space-Transport-Classes-and-Mission-Roles.md`](./002_Space-Transport-Classes-and-Mission-Roles.md) | active |
-| 03 | Launch-to-Orbit Transport Interfaces | [`003_Launch-to-Orbit-Transport-Interfaces.md`](./003_Launch-to-Orbit-Transport-Interfaces.md) | active |
-| 04 | Orbital Transfer and In-Space Transport | [`004_Orbital-Transfer-and-In-Space-Transport.md`](./004_Orbital-Transfer-and-In-Space-Transport.md) | active |
-| 05 | Cargo, Crew and Service Transport Boundaries | [`005_Cargo-Crew-and-Service-Transport-Boundaries.md`](./005_Cargo-Crew-and-Service-Transport-Boundaries.md) | active |
-| 06 | Docking, Berthing and Transfer Interfaces | [`006_Docking-Berthing-and-Transfer-Interfaces.md`](./006_Docking-Berthing-and-Transfer-Interfaces.md) | active |
-| 07 | Propulsion, Power and Thermal Transport Constraints | [`007_Propulsion-Power-and-Thermal-Transport-Constraints.md`](./007_Propulsion-Power-and-Thermal-Transport-Constraints.md) | active |
-| 08 | Trajectory Operations, Rendezvous and Traffic Control | [`008_Trajectory-Operations-Rendezvous-and-Traffic-Control.md`](./008_Trajectory-Operations-Rendezvous-and-Traffic-Control.md) | active |
-| 09 | ECSS / NASA / CCSDS Space Transport Standards Mapping | [`009_ECSS-NASA-CCSDS-Space-Transport-Standards-Mapping.md`](./009_ECSS-NASA-CCSDS-Space-Transport-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`182-000-General.md`](./182-000-General.md) | active |
+| 010 | Space Transport Controlled Definition | [`182-010-Space-Transport-Controlled-Definition.md`](./182-010-Space-Transport-Controlled-Definition.md) | active |
+| 020 | Space Transport Classes and Mission Roles | [`182-020-Space-Transport-Classes-and-Mission-Roles.md`](./182-020-Space-Transport-Classes-and-Mission-Roles.md) | active |
+| 030 | Launch to Orbit Transport Interfaces | [`182-030-Launch-to-Orbit-Transport-Interfaces.md`](./182-030-Launch-to-Orbit-Transport-Interfaces.md) | active |
+| 040 | Orbital Transfer and In Space Transport | [`182-040-Orbital-Transfer-and-In-Space-Transport.md`](./182-040-Orbital-Transfer-and-In-Space-Transport.md) | active |
+| 050 | Cargo Crew and Service Transport Boundaries | [`182-050-Cargo-Crew-and-Service-Transport-Boundaries.md`](./182-050-Cargo-Crew-and-Service-Transport-Boundaries.md) | active |
+| 060 | Docking Berthing and Transfer Interfaces | [`182-060-Docking-Berthing-and-Transfer-Interfaces.md`](./182-060-Docking-Berthing-and-Transfer-Interfaces.md) | active |
+| 070 | Propulsion Power and Thermal Transport Constraints | [`182-070-Propulsion-Power-and-Thermal-Transport-Constraints.md`](./182-070-Propulsion-Power-and-Thermal-Transport-Constraints.md) | active |
+| 080 | Trajectory Operations Rendezvous and Traffic Control | [`182-080-Trajectory-Operations-Rendezvous-and-Traffic-Control.md`](./182-080-Trajectory-Operations-Rendezvous-and-Traffic-Control.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`182-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./182-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -81,7 +80,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `180-189` |
 | Section | `08` — Infraestructura y Logística Espacial |
 | Subsection | `182` — Transporte Espacial |
-| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC, Q-HORIZON, Q-GREENTECH, Q-STRUCTURES, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-LEG |

@@ -50,18 +50,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Electrical Distribution Controlled Definition | [`001_Electrical-Distribution-Controlled-Definition.md`](001_Electrical-Distribution-Controlled-Definition.md) | active |
-| 002 | Power Architecture and Bus Topology | [`002_Power-Architecture-and-Bus-Topology.md`](002_Power-Architecture-and-Bus-Topology.md) | active |
-| 003 | Power Conditioning, Regulation and Conversion | [`003_Power-Conditioning-Regulation-and-Conversion.md`](003_Power-Conditioning-Regulation-and-Conversion.md) | active |
-| 004 | Distribution Harnesses, Cables and Connectors | [`004_Distribution-Harnesses-Cables-and-Connectors.md`](004_Distribution-Harnesses-Cables-and-Connectors.md) | active |
-| 005 | Switching, Protection and Fault Isolation | [`005_Switching-Protection-and-Fault-Isolation.md`](005_Switching-Protection-and-Fault-Isolation.md) | active |
-| 006 | Load Management and Priority Shedding | [`006_Load-Management-and-Priority-Shedding.md`](006_Load-Management-and-Priority-Shedding.md) | active |
-| 007 | EMC, Grounding, Bonding and Isolation | [`007_EMC-Grounding-Bonding-and-Isolation.md`](007_EMC-Grounding-Bonding-and-Isolation.md) | active |
-| 008 | Redundancy, Cross-Strapping and Safe Modes | [`008_Redundancy-Cross-Strapping-and-Safe-Modes.md`](008_Redundancy-Cross-Strapping-and-Safe-Modes.md) | active |
-| 009 | Testing, Qualification and Assurance Boundaries | [`009_Testing-Qualification-and-Assurance-Boundaries.md`](009_Testing-Qualification-and-Assurance-Boundaries.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`133-000-General.md`](./133-000-General.md) | active |
+| 010 | Electrical Distribution Controlled Definition | [`133-010-Electrical-Distribution-Controlled-Definition.md`](./133-010-Electrical-Distribution-Controlled-Definition.md) | active |
+| 020 | Power Architecture and Bus Topology | [`133-020-Power-Architecture-and-Bus-Topology.md`](./133-020-Power-Architecture-and-Bus-Topology.md) | active |
+| 030 | Power Conditioning Regulation and Conversion | [`133-030-Power-Conditioning-Regulation-and-Conversion.md`](./133-030-Power-Conditioning-Regulation-and-Conversion.md) | active |
+| 040 | Distribution Harnesses Cables and Connectors | [`133-040-Distribution-Harnesses-Cables-and-Connectors.md`](./133-040-Distribution-Harnesses-Cables-and-Connectors.md) | active |
+| 050 | Switching Protection and Fault Isolation | [`133-050-Switching-Protection-and-Fault-Isolation.md`](./133-050-Switching-Protection-and-Fault-Isolation.md) | active |
+| 060 | Load Management and Priority Shedding | [`133-060-Load-Management-and-Priority-Shedding.md`](./133-060-Load-Management-and-Priority-Shedding.md) | active |
+| 070 | EMC Grounding Bonding and Isolation | [`133-070-EMC-Grounding-Bonding-and-Isolation.md`](./133-070-EMC-Grounding-Bonding-and-Isolation.md) | active |
+| 080 | Redundancy Cross Strapping and Safe Modes | [`133-080-Redundancy-Cross-Strapping-and-Safe-Modes.md`](./133-080-Redundancy-Cross-Strapping-and-Safe-Modes.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`133-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./133-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -72,7 +70,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `130-139` |
 | Section | `03` — Sistemas de Energía Espacial |
 | Subsection | `133` — Distribución Eléctrica |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-GREENTECH, Q-DATAGOV, Q-HPC, Q-HORIZON, Q-INDUSTRY, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-FIN |
@@ -116,9 +114,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | `000_Overview.md` | reserved |
+| 000 | General | [`133-000-General.md`](./133-000-General.md) | active |
+| 010 | Electrical Distribution Controlled Definition | [`133-010-Electrical-Distribution-Controlled-Definition.md`](./133-010-Electrical-Distribution-Controlled-Definition.md) | active |
+| 020 | Power Architecture and Bus Topology | [`133-020-Power-Architecture-and-Bus-Topology.md`](./133-020-Power-Architecture-and-Bus-Topology.md) | active |
+| 030 | Power Conditioning Regulation and Conversion | [`133-030-Power-Conditioning-Regulation-and-Conversion.md`](./133-030-Power-Conditioning-Regulation-and-Conversion.md) | active |
+| 040 | Distribution Harnesses Cables and Connectors | [`133-040-Distribution-Harnesses-Cables-and-Connectors.md`](./133-040-Distribution-Harnesses-Cables-and-Connectors.md) | active |
+| 050 | Switching Protection and Fault Isolation | [`133-050-Switching-Protection-and-Fault-Isolation.md`](./133-050-Switching-Protection-and-Fault-Isolation.md) | active |
+| 060 | Load Management and Priority Shedding | [`133-060-Load-Management-and-Priority-Shedding.md`](./133-060-Load-Management-and-Priority-Shedding.md) | active |
+| 070 | EMC Grounding Bonding and Isolation | [`133-070-EMC-Grounding-Bonding-and-Isolation.md`](./133-070-EMC-Grounding-Bonding-and-Isolation.md) | active |
+| 080 | Redundancy Cross Strapping and Safe Modes | [`133-080-Redundancy-Cross-Strapping-and-Safe-Modes.md`](./133-080-Redundancy-Cross-Strapping-and-Safe-Modes.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`133-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./133-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -129,7 +136,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `130-139` |
 | Section | `03` — Sistemas de Energía Espacial |
 | Subsection | `133` — Distribución Eléctrica |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-SPACE, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN |

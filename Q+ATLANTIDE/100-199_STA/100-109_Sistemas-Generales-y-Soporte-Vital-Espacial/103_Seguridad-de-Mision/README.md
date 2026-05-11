@@ -44,19 +44,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Mission Safety Controlled Definition | [`001_Mission-Safety-Controlled-Definition.md`](./001_Mission-Safety-Controlled-Definition.md) | active |
-| 02 | Mission Hazard Identification and Risk Classification | [`002_Mission-Hazard-Identification-and-Risk-Classification.md`](./002_Mission-Hazard-Identification-and-Risk-Classification.md) | active |
-| 03 | Crew Safety and Survivability Boundaries | [`003_Crew-Safety-and-Survivability-Boundaries.md`](./003_Crew-Safety-and-Survivability-Boundaries.md) | active |
-| 04 | Fault Detection, Isolation and Recovery (FDIR) | [`004_Fault-Detection-Isolation-and-Recovery-FDIR.md`](./004_Fault-Detection-Isolation-and-Recovery-FDIR.md) | active |
-| 05 | Abort, Escape and Contingency Modes | [`005_Abort-Escape-and-Contingency-Modes.md`](./005_Abort-Escape-and-Contingency-Modes.md) | active |
-| 06 | Safe Haven and Emergency Operations | [`006_Safe-Haven-and-Emergency-Operations.md`](./006_Safe-Haven-and-Emergency-Operations.md) | active |
-| 07 | Redundancy, Fail-Operational and Fail-Safe Architecture | [`007_Redundancy-Fail-Operational-and-Fail-Safe-Architecture.md`](./007_Redundancy-Fail-Operational-and-Fail-Safe-Architecture.md) | active |
-| 08 | Mission Assurance Reviews and Gate Criteria | [`008_Mission-Assurance-Reviews-and-Gate-Criteria.md`](./008_Mission-Assurance-Reviews-and-Gate-Criteria.md) | active |
-| 09 | ECSS / NASA / CCSDS Safety Standards Mapping | [`009_ECSS-NASA-CCSDS-Safety-Standards-Mapping.md`](./009_ECSS-NASA-CCSDS-Safety-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`103-000-General.md`](./103-000-General.md) | active |
+| 010 | Mission Safety Controlled Definition | [`103-010-Mission-Safety-Controlled-Definition.md`](./103-010-Mission-Safety-Controlled-Definition.md) | active |
+| 020 | Mission Hazard Identification and Risk Classification | [`103-020-Mission-Hazard-Identification-and-Risk-Classification.md`](./103-020-Mission-Hazard-Identification-and-Risk-Classification.md) | active |
+| 030 | Crew Safety and Survivability Boundaries | [`103-030-Crew-Safety-and-Survivability-Boundaries.md`](./103-030-Crew-Safety-and-Survivability-Boundaries.md) | active |
+| 040 | FDIR Fault Detection Isolation and Recovery | [`103-040-FDIR-Fault-Detection-Isolation-and-Recovery.md`](./103-040-FDIR-Fault-Detection-Isolation-and-Recovery.md) | active |
+| 050 | Abort Escape and Contingency Modes | [`103-050-Abort-Escape-and-Contingency-Modes.md`](./103-050-Abort-Escape-and-Contingency-Modes.md) | active |
+| 060 | Safe Haven and Emergency Operations | [`103-060-Safe-Haven-and-Emergency-Operations.md`](./103-060-Safe-Haven-and-Emergency-Operations.md) | active |
+| 070 | Redundancy Fail Operational and Fail Safe Architecture | [`103-070-Redundancy-Fail-Operational-and-Fail-Safe-Architecture.md`](./103-070-Redundancy-Fail-Operational-and-Fail-Safe-Architecture.md) | active |
+| 080 | Mission Assurance Reviews and Gate Criteria | [`103-080-Mission-Assurance-Reviews-and-Gate-Criteria.md`](./103-080-Mission-Assurance-Reviews-and-Gate-Criteria.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`103-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./103-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -67,7 +66,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `100-109` |
 | Section | `00` — Sistemas Generales y Soporte Vital Espacial |
 | Subsection | `103` — Seguridad de Misión |
-| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HORIZON, Q-HPC, Q-GREENTECH, Q-AIR |
 | ORB support | ORB-PMO, ORB-LEG |

@@ -46,19 +46,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | ECLSS Controlled Definition | [`001_ECLSS-Controlled-Definition.md`](./001_ECLSS-Controlled-Definition.md) | active |
-| 02 | Atmosphere Generation and Revitalization | [`002_Atmosphere-Generation-and-Revitalization.md`](./002_Atmosphere-Generation-and-Revitalization.md) | active |
-| 03 | Oxygen Supply and CO₂ Removal | [`003_Oxygen-Supply-and-CO2-Removal.md`](./003_Oxygen-Supply-and-CO2-Removal.md) | active |
-| 04 | Pressure Control and Cabin Atmosphere Monitoring | [`004_Pressure-Control-and-Cabin-Atmosphere-Monitoring.md`](./004_Pressure-Control-and-Cabin-Atmosphere-Monitoring.md) | active |
-| 05 | Thermal, Humidity and Condensate Control | [`005_Thermal-Humidity-and-Condensate-Control.md`](./005_Thermal-Humidity-and-Condensate-Control.md) | active |
-| 06 | Water Recovery and Management | [`006_Water-Recovery-and-Management.md`](./006_Water-Recovery-and-Management.md) | active |
-| 07 | Waste Management and Containment | [`007_Waste-Management-and-Containment.md`](./007_Waste-Management-and-Containment.md) | active |
-| 08 | Emergency Life Support and Contingency Modes | [`008_Emergency-Life-Support-and-Contingency-Modes.md`](./008_Emergency-Life-Support-and-Contingency-Modes.md) | active |
-| 09 | ECLSS Sensors, Automation and Fault Detection | [`009_ECLSS-Sensors-Automation-and-Fault-Detection.md`](./009_ECLSS-Sensors-Automation-and-Fault-Detection.md) | active |
-| 10 | Standards Traceability and Assurance Boundaries | [`010_Standards-Traceability-and-Assurance-Boundaries.md`](./010_Standards-Traceability-and-Assurance-Boundaries.md) | active |
+| 000 | General | [`102-000-General.md`](./102-000-General.md) | active |
+| 010 | ECLSS Controlled Definition | [`102-010-ECLSS-Controlled-Definition.md`](./102-010-ECLSS-Controlled-Definition.md) | active |
+| 020 | Atmosphere Generation and Revitalization | [`102-020-Atmosphere-Generation-and-Revitalization.md`](./102-020-Atmosphere-Generation-and-Revitalization.md) | active |
+| 030 | Oxygen Supply and CO2 Removal | [`102-030-Oxygen-Supply-and-CO2-Removal.md`](./102-030-Oxygen-Supply-and-CO2-Removal.md) | active |
+| 040 | Pressure Control and Cabin Atmosphere Monitoring | [`102-040-Pressure-Control-and-Cabin-Atmosphere-Monitoring.md`](./102-040-Pressure-Control-and-Cabin-Atmosphere-Monitoring.md) | active |
+| 050 | Thermal Humidity and Condensate Control | [`102-050-Thermal-Humidity-and-Condensate-Control.md`](./102-050-Thermal-Humidity-and-Condensate-Control.md) | active |
+| 060 | Water Recovery and Management | [`102-060-Water-Recovery-and-Management.md`](./102-060-Water-Recovery-and-Management.md) | active |
+| 070 | Waste Management and Containment | [`102-070-Waste-Management-and-Containment.md`](./102-070-Waste-Management-and-Containment.md) | active |
+| 080 | Emergency Life Support and Contingency Modes | [`102-080-Emergency-Life-Support-and-Contingency-Modes.md`](./102-080-Emergency-Life-Support-and-Contingency-Modes.md) | active |
+| 090 | ECLSS Sensors Automation and Fault Detection | [`102-090-ECLSS-Sensors-Automation-and-Fault-Detection.md`](./102-090-ECLSS-Sensors-Automation-and-Fault-Detection.md) | active |
 
 ## 4. Footprint
 
@@ -69,7 +68,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `100-109` |
 | Section | `00` — Sistemas Generales y Soporte Vital Espacial |
 | Subsection | `102` — Soporte Vital ECLSS |
-| Subsubject namespace | `00`–`10` (11 active); `11`–`99` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HORIZON, Q-HPC, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-LEG |

@@ -39,19 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Optical Links Controlled Definition | [`001_Optical-Links-Controlled-Definition.md`](./001_Optical-Links-Controlled-Definition.md) | active |
-| 02 | Free-Space Optical Communication Architecture | [`002_Free-Space-Optical-Communication-Architecture.md`](./002_Free-Space-Optical-Communication-Architecture.md) | active |
-| 03 | Laser Terminals, Transmitters and Receivers | [`003_Laser-Terminals-Transmitters-and-Receivers.md`](./003_Laser-Terminals-Transmitters-and-Receivers.md) | active |
-| 04 | Acquisition, Pointing and Tracking (APT) | [`004_Acquisition-Pointing-and-Tracking-APT.md`](./004_Acquisition-Pointing-and-Tracking-APT.md) | active |
-| 05 | Link Budget, Beam Divergence and Atmospheric Losses | [`005_Link-Budget-Beam-Divergence-and-Atmospheric-Losses.md`](./005_Link-Budget-Beam-Divergence-and-Atmospheric-Losses.md) | active |
-| 06 | Modulation, Coding and Data-Rate Classes | [`006_Modulation-Coding-and-Data-Rate-Classes.md`](./006_Modulation-Coding-and-Data-Rate-Classes.md) | active |
-| 07 | Ground Station and Optical Network Interfaces | [`007_Ground-Station-and-Optical-Network-Interfaces.md`](./007_Ground-Station-and-Optical-Network-Interfaces.md) | active |
-| 08 | Safety, Eye Hazard and Regulatory Boundaries | [`008_Safety-Eye-Hazard-and-Regulatory-Boundaries.md`](./008_Safety-Eye-Hazard-and-Regulatory-Boundaries.md) | active |
-| 09 | ECSS, CCSDS, ITU and NASA Standards Mapping | [`009_ECSS-CCSDS-ITU-and-NASA-Standards-Mapping.md`](./009_ECSS-CCSDS-ITU-and-NASA-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`151-000-General.md`](./151-000-General.md) | active |
+| 010 | Optical Links Controlled Definition | [`151-010-Optical-Links-Controlled-Definition.md`](./151-010-Optical-Links-Controlled-Definition.md) | active |
+| 020 | Free Space Optical Communication Architecture | [`151-020-Free-Space-Optical-Communication-Architecture.md`](./151-020-Free-Space-Optical-Communication-Architecture.md) | active |
+| 030 | Laser Terminals Transmitters and Receivers | [`151-030-Laser-Terminals-Transmitters-and-Receivers.md`](./151-030-Laser-Terminals-Transmitters-and-Receivers.md) | active |
+| 040 | Acquisition Pointing and Tracking APT | [`151-040-Acquisition-Pointing-and-Tracking-APT.md`](./151-040-Acquisition-Pointing-and-Tracking-APT.md) | active |
+| 050 | Link Budget Beam Divergence and Atmospheric Losses | [`151-050-Link-Budget-Beam-Divergence-and-Atmospheric-Losses.md`](./151-050-Link-Budget-Beam-Divergence-and-Atmospheric-Losses.md) | active |
+| 060 | Modulation Coding and Data Rate Classes | [`151-060-Modulation-Coding-and-Data-Rate-Classes.md`](./151-060-Modulation-Coding-and-Data-Rate-Classes.md) | active |
+| 070 | Ground Station and Optical Network Interfaces | [`151-070-Ground-Station-and-Optical-Network-Interfaces.md`](./151-070-Ground-Station-and-Optical-Network-Interfaces.md) | active |
+| 080 | Safety Eye Hazard and Regulatory Boundaries | [`151-080-Safety-Eye-Hazard-and-Regulatory-Boundaries.md`](./151-080-Safety-Eye-Hazard-and-Regulatory-Boundaries.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`151-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./151-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -62,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `150-159` |
 | Section | `05` — Comunicaciones Espaciales |
 | Subsection | `151` — Enlaces Ópticos |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |

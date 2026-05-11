@@ -38,18 +38,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | STA General Architecture Controlled Definition | [`001_STA-General-Architecture-Controlled-Definition.md`](./001_STA-General-Architecture-Controlled-Definition.md) | active |
-| 02 | Space System Architecture Boundaries | [`002_Space-System-Architecture-Boundaries.md`](./002_Space-System-Architecture-Boundaries.md) | active |
-| 03 | Mission Class and Orbital Regime Taxonomy | [`003_Mission-Class-and-Orbital-Regime-Taxonomy.md`](./003_Mission-Class-and-Orbital-Regime-Taxonomy.md) | active |
-| 04 | Spacecraft Segment Decomposition | [`004_Spacecraft-Segment-Decomposition.md`](./004_Spacecraft-Segment-Decomposition.md) | active |
-| 05 | Ground Segment and Mission Control Interfaces | [`005_Ground-Segment-and-Mission-Control-Interfaces.md`](./005_Ground-Segment-and-Mission-Control-Interfaces.md) | active |
-| 06 | Lifecycle and Configuration Governance | [`006_Lifecycle-and-Configuration-Governance.md`](./006_Lifecycle-and-Configuration-Governance.md) | active |
-| 07 | ECSS / NASA / CCSDS Standards Mapping | [`007_ECSS-NASA-CCSDS-Standards-Mapping.md`](./007_ECSS-NASA-CCSDS-Standards-Mapping.md) | active |
-| 08 | Safety, Risk and Assurance Boundaries | [`008_Safety-Risk-and-Assurance-Boundaries.md`](./008_Safety-Risk-and-Assurance-Boundaries.md) | active |
-| 09 | Q-Division and ORB Function Traceability | [`009_Q-Division-and-ORB-Function-Traceability.md`](./009_Q-Division-and-ORB-Function-Traceability.md) | active |
+| 000 | General | [`100-000-General.md`](./100-000-General.md) | active |
+| 010 | Controlled Definition | [`100-010-Controlled-Definition.md`](./100-010-Controlled-Definition.md) | active |
+| 020 | Space System Architecture Boundaries | [`100-020-Space-System-Architecture-Boundaries.md`](./100-020-Space-System-Architecture-Boundaries.md) | active |
+| 030 | Mission Class and Orbital Regime Taxonomy | [`100-030-Mission-Class-and-Orbital-Regime-Taxonomy.md`](./100-030-Mission-Class-and-Orbital-Regime-Taxonomy.md) | active |
+| 040 | Spacecraft Segment Decomposition | [`100-040-Spacecraft-Segment-Decomposition.md`](./100-040-Spacecraft-Segment-Decomposition.md) | active |
+| 050 | Ground Segment and Mission Control Interfaces | [`100-050-Ground-Segment-and-Mission-Control-Interfaces.md`](./100-050-Ground-Segment-and-Mission-Control-Interfaces.md) | active |
+| 060 | Lifecycle and Configuration Governance | [`100-060-Lifecycle-and-Configuration-Governance.md`](./100-060-Lifecycle-and-Configuration-Governance.md) | active |
+| 070 | ECSS NASA CCSDS Standards Mapping | [`100-070-ECSS-NASA-CCSDS-Standards-Mapping.md`](./100-070-ECSS-NASA-CCSDS-Standards-Mapping.md) | active |
+| 080 | Safety Risk and Assurance Boundaries | [`100-080-Safety-Risk-and-Assurance-Boundaries.md`](./100-080-Safety-Risk-and-Assurance-Boundaries.md) | active |
+| 090 | Q Division and ORB Function Traceability | [`100-090-Q-Division-and-ORB-Function-Traceability.md`](./100-090-Q-Division-and-ORB-Function-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -60,7 +60,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `100-109` |
 | Section | `00` — Sistemas Generales y Soporte Vital Espacial |
 | Subsection | `100` — Arquitectura General Espacial |
-| Subsubject namespace | `00`–`09` (10 active); `10`–`99` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HORIZON, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |

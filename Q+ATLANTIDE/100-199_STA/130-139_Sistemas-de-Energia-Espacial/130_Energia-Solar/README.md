@@ -50,18 +50,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](000_Overview.md) | active |
-| 001 | Solar Energy Controlled Definition | [`001_Solar-Energy-Controlled-Definition.md`](001_Solar-Energy-Controlled-Definition.md) | active |
-| 002 | Photovoltaic Array Architectures | [`002_Photovoltaic-Array-Architectures.md`](002_Photovoltaic-Array-Architectures.md) | active |
-| 003 | Solar Cell Technologies and Efficiency Classes | [`003_Solar-Cell-Technologies-and-Efficiency-Classes.md`](003_Solar-Cell-Technologies-and-Efficiency-Classes.md) | active |
-| 004 | Deployable Panels, Wings and Structural Interfaces | [`004_Deployable-Panels-Wings-and-Structural-Interfaces.md`](004_Deployable-Panels-Wings-and-Structural-Interfaces.md) | active |
-| 005 | Sun-Pointing, Tracking and Attitude Constraints | [`005_Sun-Pointing-Tracking-and-Attitude-Constraints.md`](005_Sun-Pointing-Tracking-and-Attitude-Constraints.md) | active |
-| 006 | Power Conversion, Regulation and MPPT | [`006_Power-Conversion-Regulation-and-MPPT.md`](006_Power-Conversion-Regulation-and-MPPT.md) | active |
-| 007 | Degradation, Radiation and Thermal Cycling Effects | [`007_Degradation-Radiation-and-Thermal-Cycling-Effects.md`](007_Degradation-Radiation-and-Thermal-Cycling-Effects.md) | active |
-| 008 | Eclipse Operations and Energy Budgeting | [`008_Eclipse-Operations-and-Energy-Budgeting.md`](008_Eclipse-Operations-and-Energy-Budgeting.md) | active |
-| 009 | ECSS-NASA Solar Power Standards Mapping | [`009_ECSS-NASA-Solar-Power-Standards-Mapping.md`](009_ECSS-NASA-Solar-Power-Standards-Mapping.md) | active |
-| 010 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
-| 011–099 | *(reserved)* | — | reserved |
+| 000 | General | [`130-000-General.md`](./130-000-General.md) | active |
+| 010 | Solar Energy Controlled Definition | [`130-010-Solar-Energy-Controlled-Definition.md`](./130-010-Solar-Energy-Controlled-Definition.md) | active |
+| 020 | Photovoltaic Array Architectures | [`130-020-Photovoltaic-Array-Architectures.md`](./130-020-Photovoltaic-Array-Architectures.md) | active |
+| 030 | Solar Cell Technologies and Efficiency Classes | [`130-030-Solar-Cell-Technologies-and-Efficiency-Classes.md`](./130-030-Solar-Cell-Technologies-and-Efficiency-Classes.md) | active |
+| 040 | Deployable Panels Wings and Structural Interfaces | [`130-040-Deployable-Panels-Wings-and-Structural-Interfaces.md`](./130-040-Deployable-Panels-Wings-and-Structural-Interfaces.md) | active |
+| 050 | Sun Pointing Tracking and Attitude Constraints | [`130-050-Sun-Pointing-Tracking-and-Attitude-Constraints.md`](./130-050-Sun-Pointing-Tracking-and-Attitude-Constraints.md) | active |
+| 060 | Power Conversion Regulation and MPPT | [`130-060-Power-Conversion-Regulation-and-MPPT.md`](./130-060-Power-Conversion-Regulation-and-MPPT.md) | active |
+| 070 | Degradation Radiation and Thermal Cycling Effects | [`130-070-Degradation-Radiation-and-Thermal-Cycling-Effects.md`](./130-070-Degradation-Radiation-and-Thermal-Cycling-Effects.md) | active |
+| 080 | Eclipse Operations and Energy Budgeting | [`130-080-Eclipse-Operations-and-Energy-Budgeting.md`](./130-080-Eclipse-Operations-and-Energy-Budgeting.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`130-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./130-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -72,7 +70,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `130-139` |
 | Section | `03` — Sistemas de Energía Espacial |
 | Subsection | `130` — Energía Solar |
-| Subsubject namespace | `000`–`010` active / `011`–`099` reserved |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-GREENTECH, Q-STRUCTURES, Q-DATAGOV, Q-HORIZON, Q-HPC, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |

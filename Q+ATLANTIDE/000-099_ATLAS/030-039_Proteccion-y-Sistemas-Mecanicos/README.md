@@ -25,7 +25,7 @@ language: en
 
 ## 1. Purpose
 
-Section-level index for *Protección & Sistemas Mecánicos* (`030-039`) within the ATLAS band. Protección hielo/lluvia, tren de aterrizaje, luces, navegación, oxígeno, neumática, agua/residuos e integración multisistema.
+Section-level index for *Protección & Sistemas Mecánicos* (`030-039`) within the ATLAS band. Protección hielo/lluvia, indicación y registro, tren de aterrizaje, luces, navegación, oxígeno, neumática, vacío, agua/residuos y paneles eléctrico-electrónicos y componentes multipropósito.
 
 This section is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. Bands classify technologies, Q-Divisions provide technical authority and ORB-Functions provide enterprise support[^n002].
 
@@ -40,15 +40,15 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | Code | Title | Folder | Status |
 |---:|---|---|---|
 | `030` | Ice and Rain Protection | [`030_Ice-and-Rain-Protection/`](./030_Ice-and-Rain-Protection/) | active |
-| `031` | Landing Gear | [`031_Landing-Gear/`](./031_Landing-Gear/) | active |
-| `032` | Lights | [`032_Lights/`](./032_Lights/) | active |
-| `033` | Navigation | [`033_Navigation/`](./033_Navigation/) | active |
-| `034` | Oxygen | [`034_Oxygen/`](./034_Oxygen/) | active |
-| `035` | Pneumatic | [`035_Pneumatic/`](./035_Pneumatic/) | active |
-| `036` | Vacuum | [`036_Vacuum/`](./036_Vacuum/) | active |
-| `037` | Water and Waste | [`037_Water-and-Waste/`](./037_Water-and-Waste/) | active |
-| `038` | Inert Gas Generation | [`038_Inert-Gas-Generation/`](./038_Inert-Gas-Generation/) | active |
-| `039` | Multisystem Integration | [`039_Multisystem-Integration/`](./039_Multisystem-Integration/) | active |
+| `031` | Indicating and Recording Systems | [`031_Indicating-and-Recording-Systems/`](./031_Indicating-and-Recording-Systems/) | reserved |
+| `032` | Landing Gear | [`032_Landing-Gear/`](./032_Landing-Gear/) | active |
+| `033` | Lights | [`033_Lights/`](./033_Lights/) | active |
+| `034` | Navigation | [`034_Navigation/`](./034_Navigation/) | active |
+| `035` | Oxygen | [`035_Oxygen/`](./035_Oxygen/) | active |
+| `036` | Pneumatic | [`036_Pneumatic/`](./036_Pneumatic/) | active |
+| `037` | Vacuum | [`037_Vacuum/`](./037_Vacuum/) | active |
+| `038` | Water and Waste | [`038_Water-and-Waste/`](./038_Water-and-Waste/) | active |
+| `039` | Electrical-Electronic Panels and Multipurpose Components | [`039_Electrical-Electronic-Panels-and-Multipurpose-Components/`](./039_Electrical-Electronic-Panels-and-Multipurpose-Components/) | active |
 
 ## 4. Interfaces Diagram
 
@@ -61,15 +61,15 @@ flowchart TB
     subgraph SUBS["Subsections"]
         direction LR
         SUB_030["030 — Ice & Rain Protection (ATA 30)"]:::sub
-        SUB_031["031 — Landing Gear (ATA 32)"]:::sub
-        SUB_032["032 — Lights (ATA 33)"]:::sub
-        SUB_033["033 — Navigation (ATA 34)"]:::sub
-        SUB_034["034 — Oxygen (ATA 35)"]:::sub
-        SUB_035["035 — Pneumatic (ATA 36)"]:::sub
-        SUB_036["036 — Vacuum (ATA 37)"]:::sub
-        SUB_037["037 — Water & Waste (ATA 38)"]:::sub
-        SUB_038["038 — Inert Gas Generation (ATA 47)"]:::sub
-        SUB_039["039 — Multisystem Integration (ATA 40)"]:::sub
+        SUB_031["031 — Indicating & Recording Systems (ATA 31)"]:::sub
+        SUB_032["032 — Landing Gear (ATA 32)"]:::sub
+        SUB_033["033 — Lights (ATA 33)"]:::sub
+        SUB_034["034 — Navigation (ATA 34)"]:::sub
+        SUB_035["035 — Oxygen (ATA 35)"]:::sub
+        SUB_036["036 — Pneumatic (ATA 36)"]:::sub
+        SUB_037["037 — Vacuum (ATA 37)"]:::sub
+        SUB_038["038 — Water & Waste (ATA 38)"]:::sub
+        SUB_039["039 — Electrical-Electronic Panels & Multipurpose Components (ATA 39)"]:::sub
     end
     SEC --> SUBS
 
@@ -92,7 +92,7 @@ flowchart TB
     SUBS --> SUB_038
     SUBS --> SUB_039
     EXT_S05["§05 · Wings/BWB (056)"]:::ext
-    SUB_031 -. "gear attach loads" .- EXT_S05
+    SUB_032 -. "gear attach loads" .- EXT_S05
 
     classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
     classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
@@ -143,3 +143,33 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../organization/Q+ATLANTIDE.md
 [^n002]: **Note N-002** — Architecture bands classify technologies; Q-Divisions provide technical authority; ORB-Functions provide enterprise support. See [`organization/Q+ATLANTIDE.md` §4](../../../organization/Q+ATLANTIDE.md#4-notes).
 
 [^n004]: **Note N-004 (No-AAA Rule)** — "AAA" is not a valid domain, division, architecture, interface or function in this baseline. See [`organization/Q+ATLANTIDE.md` §4](../../../organization/Q+ATLANTIDE.md#4-notes).
+
+---
+
+## Glossary
+
+### Common Terms & Acronyms
+
+| Term / Acronym | Expansion | Definition |
+|---|---|---|
+| **ATA** | Air Transport Association | Industry body that publishes iSpec 2200 (formerly ATA Spec. 100), the standard chapter-numbering scheme for aircraft systems documentation. |
+| **ATLAS** | Aircraft Top Level Architecture Schema/System | The controlled architecture taxonomy and documentation framework within the Q+ATLANTIDE-1000 register; governs chapters 000–099. |
+| **baseline** | — | A formally approved version of a document or configuration item, subject to formal change control, forming the reference for further development or maintenance. |
+| **CSDB** | Common Source Data Base | The central repository defined by S1000D for storing, managing, and exchanging Data Modules and Publication Modules. |
+| **DMC** | Data Module Code | Unique alphanumeric identifier for a single S1000D Data Module, encoding model identification, system/sub-system, information code, and variant. |
+| **governance\_class** | — | Classification field in Q+ATLANTIDE YAML frontmatter that indicates the change-control regime (`baseline`, `programme-controlled`, `legacy-deprecated`, etc.). |
+| **NNN** | — | Three-digit ATA-SNS sub-subject code (e.g., `010`, `020`, …, `090`) used as the local identifier within a subsection folder. |
+| **ORB** | Operations Review Board | Enterprise-level governance body within the Q+ATLANTIDE organisational structure, responsible for cross-domain oversight and authorisation. |
+| **ORB-LEG** | ORB — Legal & Regulatory | ORB function providing legal compliance, regulatory (EASA/FAA) liaison, and certification boundary advisory services. |
+| **ORB-PMO** | ORB — Programme Management Office | ORB function providing programme scheduling, resource, and milestone control across all Q-Division work-packages. |
+| **Q+ATLANTIDE** | — | The master controlled documentation baseline and taxonomy ecosystem for the ATLAS-1000 architecture register; versioned governance reference for all architecture bands (000–999). |
+| **Q-AIR** | Q-Division — Air Systems | Technical-authority Q-Division responsible for aerodynamics, air-data systems, and systems integration oversight. |
+| **Q-DATAGOV** | Q-Division — Data Governance | Technical-authority Q-Division responsible for data standards, traceability, and CSDB publication governance. |
+| **Q-GREENTECH** | Q-Division — Green Technologies | Technical-authority Q-Division responsible for sustainable propulsion, energy, and environmental compliance. |
+| **Q-GROUND** | Q-Division — Ground Systems | Technical-authority Q-Division responsible for ground handling, servicing interfaces, and airport compatibility. |
+| **Q-INDUSTRY** | Q-Division — Industry & Supply Chain | Technical-authority Q-Division responsible for industrial producibility, supplier qualification, and manufacturing interfaces. |
+| **Q-MECHANICS** | Q-Division — Mechanical Systems | Technical-authority Q-Division responsible for mechanical and electro-mechanical aircraft systems; primary authority for ATLAS sections 030–039. |
+| **Q-STRUCTURES** | Q-Division — Structures | Technical-authority Q-Division responsible for structural interfaces, loads, and airframe integrity. |
+| **S1000D** | — | International specification (ASD/AIA/ATA) for the production and procurement of technical publications; defines the Data Module (DM) paradigm and CSDB architecture. |
+| **SNS** | Standard Numbering System | The ATA/S1000D hierarchical chapter-section-subject numbering scheme mapping physical/functional aircraft systems to a standardised code space. |
+| **YAML** | YAML Ain't Markup Language | Human-readable data-serialisation language used for document frontmatter (metadata header blocks) throughout the Q+ATLANTIDE baseline. |

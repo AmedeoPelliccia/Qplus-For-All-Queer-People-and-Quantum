@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     S1000D Descriptive Data Module
+     DMC: DMC-AMPEL360E-EWTW-021-090-00A-040A-D
+     Title: S1000D / CSDB Mapping and Traceability — Description
+     Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+     ATLAS Node: 021-090 / ATA 21-90-00
+     Status: programme-controlled-publication-and-traceability-extension
+     Issue: 001-00 | Date: 2026-05-09
+     Note: This section is a programme-controlled publication and
+           traceability extension. It documents the S1000D/CSDB
+           mapping from ATLAS classification to data module codes.
+     ============================================================ -->
+<dmodule xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E"
+                systemDiffCode="EWTW"
+                systemCode="021"
+                subSystemCode="0"
+                subSubSystemCode="90"
+                assyCode="00A"
+                disassyCode="00"
+                disassyCodeVariant="A"
+                infoCode="040"
+                infoCodeVariant="A"
+                itemLocationCode="D"/>
+        <language languageIsoCode="en" countryIsoCode="001"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="09"/>
+        <dmTitle>
+          <techName>S1000D/CSDB Mapping and Traceability</techName>
+          <infoName>Description</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL360E">
+        <enterpriseName>AMPEL360 / Q+ Programme</enterpriseName>
+      </originator>
+      <applic>
+        <displayText>
+          <simplePara>AMPEL360e Wide Tube-and-Wing Family (eWTW) — All variants</simplePara>
+        </displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E"
+                    systemDiffCode="EWTW"
+                    systemCode="000"
+                    subSystemCode="0"
+                    subSubSystemCode="00"
+                    assyCode="00A"
+                    disassyCode="00"
+                    disassyCodeVariant="A"
+                    infoCode="022"
+                    infoCodeVariant="A"
+                    itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+      <remarks>
+        <simplePara>Programme-controlled publication and traceability extension. Documents ATLAS-to-CSDB mapping. infoCode 040A subject to BREX/SNS/DMRL freeze. Not for operational use.</simplePara>
+      </remarks>
+    </dmStatus>
+  </identAndStatusSection>
+
+  <content>
+    <description>
+
+      <levelledPara id="desc-021-090-001">
+        <title>General</title>
+        <para>This data module describes the <emphasis emphasisType="em01">S1000D / CSDB Mapping and Traceability</emphasis> framework for the ATLAS 021 — Air Conditioning and Pressurization system of the AMPEL360e eWTW aircraft. It defines how the Q+ATLANTIDE architecture classification maps to S1000D data module codes, SNS structure and CSDB retrieval keys, and documents the responsibility split between the impact analysis layer (Q+ATLANTIDE) and the publication layer (S1000D CSDB).</para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-090-002">
+        <title>Layer Responsibility Split</title>
+        <para>The eWTW programme uses two complementary layers for system documentation:</para>
+        <para>
+          <randomList>
+            <listItem><para><emphasis emphasisType="em01">Q+ATLANTIDE / ATLAS impact study layer</emphasis>: programme impact analysis, architecture-band effect, risk / opportunity / ESG / lifecycle impact, Q-Division and ORB ownership. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/021-Conditioning-and-Pressurization/</verbatimText></para></listItem>
+            <listItem><para><emphasis emphasisType="em01">S1000D CSDB publication layer</emphasis>: authoritative technical publication content in the form of standalone descriptive data modules, each retrieved by DMC from the CSDB. Located at: <verbatimText verbatimStyle="vs11">Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/Q+ATLANTIDE_impact-study/000-099_ATLAS-impact-analysis/020-029_Sistemas-Core-de-Aeronave/021-Conditioning-and-Pressurization/S1000D-CSDB/DMC/</verbatimText></para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-090-003">
+        <title>ATLAS to DMC Mapping Table</title>
+        <para>The following table maps ATLAS node sections to S1000D Data Module Codes and ATA SNS reference:</para>
+        <para>
+          <randomList>
+            <listItem><para>021-000 (ATA 21-00-00) → DMC-AMPEL360E-EWTW-021-000-00A-040A-D: Air Conditioning and Pressurization — System Description</para></listItem>
+            <listItem><para>021-010 (ATA 21-10-00) → DMC-AMPEL360E-EWTW-021-010-00A-040A-D: Compression — System Description</para></listItem>
+            <listItem><para>021-020 (ATA 21-20-00) → DMC-AMPEL360E-EWTW-021-020-00A-040A-D: Distribution — System Description</para></listItem>
+            <listItem><para>021-030 (ATA 21-30-00) → DMC-AMPEL360E-EWTW-021-030-00A-040A-D: Pressurization Control — System Description</para></listItem>
+            <listItem><para>021-040 (ATA 21-40-00) → DMC-AMPEL360E-EWTW-021-040-00A-040A-D: Heating — System Description</para></listItem>
+            <listItem><para>021-050 (ATA 21-50-00) → DMC-AMPEL360E-EWTW-021-050-00A-040A-D: Cooling — System Description</para></listItem>
+            <listItem><para>021-060 (ATA 21-60-00) → DMC-AMPEL360E-EWTW-021-060-00A-040A-D: Temperature Control — System Description</para></listItem>
+            <listItem><para>021-070 (ATA 21-70-00) → DMC-AMPEL360E-EWTW-021-070-00A-040A-D: Moisture and Air Contaminant Control — System Description</para></listItem>
+            <listItem><para>021-080 (ATA 21-80-00) → DMC-AMPEL360E-EWTW-021-080-00A-040A-D: ECS Monitoring, Diagnostics and Control Interfaces — Description [programme-controlled-extension]</para></listItem>
+            <listItem><para>021-090 (ATA 21-90-00) → DMC-AMPEL360E-EWTW-021-090-00A-040A-D: S1000D / CSDB Mapping and Traceability — Description [programme-controlled-publication-and-traceability-extension]</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-090-004">
+        <title>CSDB Source Classification</title>
+        <para>The source classification for this CSDB node is:</para>
+        <para>
+          <randomList>
+            <listItem><para><emphasis emphasisType="em01">Q+ATLANTIDE role</emphasis>: architecture classification and SNS alignment — defines how system nodes are numbered and related.</para></listItem>
+            <listItem><para><emphasis emphasisType="em01">S1000D role</emphasis>: authoritative technical publication content — standalone data modules containing system descriptions and procedures.</para></listItem>
+            <listItem><para><emphasis emphasisType="em01">CSDB role</emphasis>: controlled storage, retrieval, issue control and reuse — manages data module versions, applicability and publication output.</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+      <levelledPara id="desc-021-090-005">
+        <title>Traceability and Digital Thread</title>
+        <para>Each data module in this CSDB node is traceable to the corresponding Q+ATLANTIDE impact analysis file via the ATLAS section code (021-000 through 021-090). The digital thread connects requirements (Q+ATLANTIDE impact study) through architecture (ATLAS classification) to technical publication (S1000D CSDB) and onwards to maintenance evidence and lifecycle records.</para>
+        <para>Traceability is maintained via:</para>
+        <para>
+          <randomList>
+            <listItem><para>ATLAS section codes embedded in DMC subSystemCode and subSubSystemCode fields.</para></listItem>
+            <listItem><para>ATA SNS alignment providing cross-reference to industry standard numbering.</para></listItem>
+            <listItem><para>Programme DMRL linking requirements to data module codes.</para></listItem>
+            <listItem><para>CSDB issue and configuration management records.</para></listItem>
+          </randomList>
+        </para>
+      </levelledPara>
+
+    </description>
+  </content>
+
+</dmodule>

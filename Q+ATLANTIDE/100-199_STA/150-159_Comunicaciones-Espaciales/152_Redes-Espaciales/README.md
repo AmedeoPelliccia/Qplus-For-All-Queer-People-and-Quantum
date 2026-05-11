@@ -39,19 +39,18 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 3. Subsubject Index
 
-| NN | Title | Document | Status |
+| NNN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Space Networks Controlled Definition | [`001_Space-Networks-Controlled-Definition.md`](./001_Space-Networks-Controlled-Definition.md) | active |
-| 02 | Network Architecture and Topology | [`002_Network-Architecture-and-Topology.md`](./002_Network-Architecture-and-Topology.md) | active |
-| 03 | Routing, Switching and Store-and-Forward Patterns | [`003_Routing-Switching-and-Store-and-Forward-Patterns.md`](./003_Routing-Switching-and-Store-and-Forward-Patterns.md) | active |
-| 04 | Delay-Tolerant Networking (DTN) | [`004_Delay-Tolerant-Networking-DTN.md`](./004_Delay-Tolerant-Networking-DTN.md) | active |
-| 05 | Ground-Space and Inter-Satellite Network Interfaces | [`005_Ground-Space-and-Inter-Satellite-Network-Interfaces.md`](./005_Ground-Space-and-Inter-Satellite-Network-Interfaces.md) | active |
-| 06 | Network Time Synchronization and Reference Frames | [`006_Network-Time-Synchronization-and-Reference-Frames.md`](./006_Network-Time-Synchronization-and-Reference-Frames.md) | active |
-| 07 | QoS, Priority and Mission Traffic Classes | [`007_QoS-Priority-and-Mission-Traffic-Classes.md`](./007_QoS-Priority-and-Mission-Traffic-Classes.md) | active |
-| 08 | Cybersecurity, Resilience and Fault Tolerance | [`008_Cybersecurity-Resilience-and-Fault-Tolerance.md`](./008_Cybersecurity-Resilience-and-Fault-Tolerance.md) | active |
-| 09 | CCSDS, ECSS, ITU and NASA Standards Mapping | [`009_CCSDS-ECSS-ITU-and-NASA-Standards-Mapping.md`](./009_CCSDS-ECSS-ITU-and-NASA-Standards-Mapping.md) | active |
-| 10 | Traceability, Evidence and Lifecycle Governance | [`010_Traceability-Evidence-and-Lifecycle-Governance.md`](./010_Traceability-Evidence-and-Lifecycle-Governance.md) | active |
+| 000 | General | [`152-000-General.md`](./152-000-General.md) | active |
+| 010 | Space Networks Controlled Definition | [`152-010-Space-Networks-Controlled-Definition.md`](./152-010-Space-Networks-Controlled-Definition.md) | active |
+| 020 | Network Architecture and Topology | [`152-020-Network-Architecture-and-Topology.md`](./152-020-Network-Architecture-and-Topology.md) | active |
+| 030 | Routing Switching and Store and Forward Patterns | [`152-030-Routing-Switching-and-Store-and-Forward-Patterns.md`](./152-030-Routing-Switching-and-Store-and-Forward-Patterns.md) | active |
+| 040 | Delay Tolerant Networking DTN | [`152-040-Delay-Tolerant-Networking-DTN.md`](./152-040-Delay-Tolerant-Networking-DTN.md) | active |
+| 050 | Ground Space and Inter Satellite Network Interfaces | [`152-050-Ground-Space-and-Inter-Satellite-Network-Interfaces.md`](./152-050-Ground-Space-and-Inter-Satellite-Network-Interfaces.md) | active |
+| 060 | Network Time Synchronization and Reference Frames | [`152-060-Network-Time-Synchronization-and-Reference-Frames.md`](./152-060-Network-Time-Synchronization-and-Reference-Frames.md) | active |
+| 070 | QoS Priority and Mission Traffic Classes | [`152-070-QoS-Priority-and-Mission-Traffic-Classes.md`](./152-070-QoS-Priority-and-Mission-Traffic-Classes.md) | active |
+| 080 | Cybersecurity Resilience and Fault Tolerance | [`152-080-Cybersecurity-Resilience-and-Fault-Tolerance.md`](./152-080-Cybersecurity-Resilience-and-Fault-Tolerance.md) | active |
+| 090 | Traceability Evidence and Lifecycle Governance | [`152-090-Traceability-Evidence-and-Lifecycle-Governance.md`](./152-090-Traceability-Evidence-and-Lifecycle-Governance.md) | active |
 
 ## 4. Footprint
 
@@ -62,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `150-159` |
 | Section | `05` — Comunicaciones Espaciales |
 | Subsection | `152` — Redes Espaciales |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `000`–`090` (10 active); higher reserved |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HPC |
 | ORB support | ORB-PMO, ORB-LEG |
