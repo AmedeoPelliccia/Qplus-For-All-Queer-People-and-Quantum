@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Weighing Records and Traceability** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Weighing Records and Traceability** node defines the documentation, retention, and traceability requirements for all leveling and weighing events on the AMPEL360E eWTW. Each weighing event generates three mandatory records: (1) WMMS-LW raw data export (CSV, auto-archived to CSDB as DM info code "200"); (2) signed Weighing Report (Q-WB-REPORT-001, in PDF, generated from the WMMS-LW export and signed by LAME B1 and quality representative); (3) Mass and Balance Statement (Q-MB-STAT-001), issued after OEW computation and C-of-G confirmation, stored in the aircraft technical log and in the CSDB aircraft configuration record.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Records retention: raw data and signed reports ≥ 10 years (EASA Part-M §M.A.305); Mass and Balance Statement maintained current and updated whenever the certified OEW changes by more than ±0.5% or the C-of-G datum shifts by more than ±0.5% MAC. Traceability chain: WMMS-LW session log → Weighing Report → Mass and Balance Statement → CSDB aircraft configuration DM → AFM Operating Limitations (amendment status). The Q-DATAGOV CSDB configuration manager verifies that the current certified OEW and C-of-G match the values published in the MMBS baseline at all times. Any discrepancy triggers a mandatory review and re-weighing if the source of the difference cannot be identified and bounded.
 
 ---
 

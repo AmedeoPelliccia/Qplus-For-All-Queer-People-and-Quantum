@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Weight and Balance Data Capture** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Weight and Balance Data Capture** node defines the data acquisition process, data quality checks, and reporting format for all weighing events on the AMPEL360E eWTW. Once the aircraft is in the certified weighing configuration (007-020), the WMMS-LW module initiates a 30-second steady-state data capture window across all load cell channels, sampling at 10 Hz. Data quality checks applied automatically: coefficient of variation across the 300-sample window ≤ 0.1% per channel; total weight ≥ 70% of standard MTOW (plausibility check); load cell cross-check sum within ±0.3% of previous certified OEW (if available).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+The WMMS-LW module computes: (i) measured gross weight (GW) = sum of all gear leg loads; (ii) corrected OEW = GW − fuel mass (from FQMS) − battery SoC correction − standard operational items mass; (iii) longitudinal C-of-G = (nose load × nose arm + main load × main arm) / GW, expressed as percentage of MAC (Mean Aerodynamic Chord); (iv) lateral C-of-G offset = (port main − starboard main) × (main track / 2) / GW. All results, raw data, and metadata are exported as a structured S1000D maintenance DM (info code "200") and archived in the CSDB. A signed Weighing Report (Q-WB-REPORT-001) is generated automatically from the WMMS-LW export and must be countersigned by a LAME B1.
 
 ---
 

@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Leveling and Weighing Tolerances** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Leveling and Weighing Tolerances** node specifies the acceptable error bands for leveling (inclinometer) and weighing (load cell) measurements on the AMPEL360E eWTW, and the corrective actions when limits are exceeded. Leveling tolerances (measuring against WL 0): pitch deviation ≤ ±0.10° (combined LR1/LR2); roll deviation ≤ ±0.10° (LR3 port − starboard). If pitch deviation exceeds ±0.10° but is ≤ ±0.30°, a correction table (T1 in AMM 08-10) applies a geometric arm correction factor to the weighing data. If deviation exceeds ±0.30°, re-level before weighing.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Weighing tolerances: individual load-cell channel repeatability ≤ 0.05% of reading (3-sigma, over 30 s); total weight repeatability ≤ 0.10% between consecutive measurements; absolute accuracy ≤ ±0.3% of certified MTOW when using calibrated platform scales. If two consecutive weighing passes disagree by >0.3% of gross weight, the operation must be suspended, calibration of the weighing equipment checked, and the operation repeated. Environmental exclusions: weighing not permitted if hangar ambient temperature changes >5 °C during the measurement window; wind speed inside hangar exceeds 5 m/s (10 kts); or vibration from adjacent maintenance activities (e.g., engine run) is present. All out-of-tolerance events are recorded in the WMMS-LW event log and flagged for quality review.
 
 ---
 

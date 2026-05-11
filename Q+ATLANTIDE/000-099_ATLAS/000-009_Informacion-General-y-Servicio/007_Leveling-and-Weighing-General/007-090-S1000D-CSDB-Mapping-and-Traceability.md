@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **S1000D CSDB Mapping and Traceability** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 007 Leveling and Weighing subsubjects and the AMPEL360E eWTW S1000D Data Module structure. ATLAS 007 subsubjects map to DMs under systemCode="007" (ATA 08 equivalent), model ident code AMPEL360E, system diff code EWTW, in the Q+ATLANTIDE CSDB instance. Primary DM types: procedural DMs for leveling and weighing operations (info code "520"), descriptive DMs for equipment interface requirements (info code "040"), weight and balance data DMs (info code "200"), safety DMs (info code "300"), and illustrated parts DMs (info code "941").
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Traceability chain: ATLAS 007 reference geometry and equipment interface data → AMM Chapter 8 (Leveling and Weighing) procedural DMs → WMMS-LW session export DMs → Mass and Balance Statement → CSDB aircraft configuration record → AFM mass properties section. The DMRL for ATA 08 shall confirm coverage of all eWTW-specific items: battery SoC mass correction procedure, MMBS digital interface, WMMS-LW data quality checks, and certified OEW C-of-G envelope. The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV assigns DM codes to each 007-NNN subsubject and tracks publication status.
 
 ---
 

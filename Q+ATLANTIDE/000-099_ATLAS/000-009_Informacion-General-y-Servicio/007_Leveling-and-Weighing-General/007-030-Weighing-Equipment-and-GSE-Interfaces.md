@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Weighing Equipment and GSE Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Weighing Equipment and GSE Interfaces** node catalogs the certified weighing equipment and its integration with the AMPEL360E eWTW structure and the WMMS monitoring system. Three weighing methods are approved for the eWTW: (A) 3-point platform scale set: three self-contained load-cell platforms (each rated 30 t, resolution 1 kg), placed under each main gear leg (J2/J3) and the nose gear (J1); connected to the WMMS-LW controller via Ethernet or USB; (B) 4-point in-jack load-cell method: the motorised jack set (006-050, P/N Q-JACK-003) with integral load cells, used when jacked for combined jacking/weighing; (C) portable Weigh-in-Motion (WiM) ramps for rapid ramp weighing at line stations (accuracy ±0.5% of reading, calibrated per EASA Part-M requirements).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+All platforms and jack load cells connect to the WMMS-LW module, which displays live load values for each gear leg plus the computed total OEW and C-of-G (both longitudinal and lateral). GSE electrical power for the weighing platforms is provided by 28 V DC from the aircraft GPU or from the portable GSE battery pack (P/N Q-GSE-PWR-001). Platform data cables must be routed clear of the main gear trunnion zone to avoid interference with gear swing. All weighing equipment is calibrated by a UKAS/DakkS-approved laboratory at intervals ≤ 12 months; certificates are archived in the Q-GROUND asset management system.
 
 ---
 

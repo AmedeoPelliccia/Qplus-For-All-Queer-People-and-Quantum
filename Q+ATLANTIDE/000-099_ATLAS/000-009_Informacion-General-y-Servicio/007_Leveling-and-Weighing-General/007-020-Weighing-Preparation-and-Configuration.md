@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Weighing Preparation and Configuration** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Weighing Preparation and Configuration** node defines the mandatory pre-weighing checks, configuration standards, and documentation requirements for the AMPEL360E eWTW. The aircraft must be in the defined "weighing configuration" before any load-cell readings are accepted. This configuration is: (1) fuel quantity set to an agreed datum (typically zero fuel weight with dry tanks, or a defined calibration quantity per Wing Tank Fuel Quantity System calibration); (2) HVDC battery SoC recorded and normalised using the Battery Management System (BMS) charge-to-mass conversion table (P/N Q-BMS-MASSCAL-001) to establish the standard-condition battery mass; (3) hydraulic reservoirs drained (the eWTW has no hydraulic system; this step is N/A); (4) all loose equipment removed from cabin, cargo, and cockpit; (5) all doors and panels closed and latched; (6) landing gear extended and locked.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Specific to the eWTW: the HVDC main bus must be de-energised before load-cell connections are made, to avoid instrument noise from power electronics. The battery mass correction (ΔM_bat = actual SoC − reference SoC) × mass-per-SoC-unit is applied to the raw weighing result before reporting the certified Operating Empty Weight (OEW). Weighing preparation is documented on a pre-weighing checklist (form Q-WB-CHECK-001) and countersigned by a LAME B1 and the quality representative before the operation begins.
 
 ---
 

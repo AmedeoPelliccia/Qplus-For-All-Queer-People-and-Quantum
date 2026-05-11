@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Leveling Weighing Monitoring Diagnostics and Control Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Leveling Weighing Monitoring Diagnostics and Control Interfaces** node describes the digital monitoring, alerting, and control architecture of the WMMS Leveling & Weighing (WMMS-LW) sub-function for the AMPEL360E eWTW. The WMMS-LW integrates the following sensor streams: (i) 4-channel inclinometer array (LR1, LR2, LR3-port, LR3-stbd), sampled at 1 Hz via IEEE 802.11ax Wi-Fi; (ii) 3-channel (or 4-channel) load-cell platform set, sampled at 10 Hz via Ethernet; (iii) BMS SoC feed (CAN bus, 1 Hz) for battery mass correction; (iv) FQMS fuel mass feed (ARINC 429, 1 Hz). All streams are displayed on the GAIA-QA maintenance client in a dedicated Leveling & Weighing dashboard.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Automated alerts: inclinometer deviation >0.10° → yellow "Re-Level Required" flag; inclinometer >0.30° → red "Level Abort" flag + data acquisition hold; load-cell channel difference >2% of measured total → "Load Cell Asymmetry" amber flag; repeatability failure → "Data Quality Warning" and automatic second-pass request. All alert events are timestamped and included in the WMMS-LW session log exported to the CSDB. The WMMS-LW control interface also provides a "Jack Command" interface: when connected to the motorised 3-point jack set (CAN bus), it can issue single-axis trim commands to correct leveling within ±0.5° in increments of 0.01°, with a maximum auto-trim rate of 5 mm/min per jack.
 
 ---
 

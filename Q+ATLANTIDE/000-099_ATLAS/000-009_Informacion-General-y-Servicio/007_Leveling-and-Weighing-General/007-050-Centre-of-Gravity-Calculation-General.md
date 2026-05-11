@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Centre of Gravity Calculation General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Centre of Gravity Calculation General** node defines the C-of-G reference geometry, calculation methodology, and applicable limits for the AMPEL360E eWTW. The C-of-G reference datum is located at FS 0 (the nose reference plane); the MAC (Mean Aerodynamic Chord) reference is 6.2 m, with MAC leading edge at FS 620.0. The eWTW C-of-G envelope (from the Aircraft Flight Manual, AFM Chapter 6) is: forward limit 17% MAC (FS 725.4); aft limit 38% MAC (FS 855.6); lateral limit ±0.12 m from BL 0.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+The eWTW-specific complication is that the HVDC battery pack (lower centre fuselage, FS 680–FS 800) is a major fixed mass at a known station, but the battery SoC varies in flight (cells discharge, reducing mass). This introduces a small dynamic C-of-G shift during flight: ΔFS_CG ≈ 0.06 m forward per full discharge cycle (conservative bound per structural loads analysis Q-LOADS-001). This shift is pre-computed in the eWTW Mass and Balance system (MMBS) and accounted for in the certified AFM C-of-G envelope. The MMBS (DO-178C DAL B) ingests live BMS SoC and passenger/cargo loading data to compute in-flight C-of-G predictions displayed to the crew on the EFB mass-and-balance page.
 
 ---
 

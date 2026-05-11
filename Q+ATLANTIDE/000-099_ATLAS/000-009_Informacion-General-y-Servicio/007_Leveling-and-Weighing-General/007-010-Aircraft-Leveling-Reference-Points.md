@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Aircraft Leveling Reference Points** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Aircraft Leveling Reference Points** node defines the certified structural reference points and measurement targets used to establish the WL 0 datum for the AMPEL360E eWTW before any leveling or weighing operation. Three primary leveling reference targets are built into the airframe: (LR1) crown fuselage flat at FS 600, BL 0, WL 100; (LR2) crown fuselage flat at FS 900, BL 0, WL 100; (LR3) wing lower surface at FS 700, BL ±200, WL 50. These are polished aluminium pads inset into the CFRP skin, each labelled "LEVEL REF" in white paint.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Leveling is performed by placing calibrated electronic digital inclinometers (resolution ≤ 0.01°, range ±10°) on LR1 and LR2 (fore-aft level) and on LR3 port and starboard (lateral level). All four inclinometer channels are read simultaneously via the WMMS-LW maintenance interface (GAIA-QA client). Acceptable leveled condition: |pitch| ≤ 0.10° (combined LR1–LR2 average), |roll| ≤ 0.10° (LR3 port versus starboard difference). Corrections are applied via the 3-point jack set (J1/J2/J3) as defined in ATLAS 006-020, or via outrigger screw pads on the weighing platform, depending on the configuration. After leveling is confirmed, the WMMS-LW records a Level-Confirmed event with timestamp and the inclinometer readings logged in the CSDB maintenance record.
 
 ---
 

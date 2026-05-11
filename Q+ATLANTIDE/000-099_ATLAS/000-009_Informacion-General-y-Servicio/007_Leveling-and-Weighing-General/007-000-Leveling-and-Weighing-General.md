@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Leveling and Weighing General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Leveling and Weighing General** node establishes the framework, reference system, and procedural requirements for aircraft leveling and weighing operations on the AMPEL360E eWTW. Leveling and weighing are tightly linked: weighing operations require the aircraft to be set at WL 0 (the defined waterline reference plane) before load-cell readings are valid; leveling alone is required for maintenance tasks such as rigging, fuel quantity calibration, and battery module extraction. The eWTW architecture introduces two mass-specific factors compared to conventional aircraft: (1) the large lower-lobe HVDC battery pack (≈ 4 800 kg at full charge) forms a significant and variable fraction of the operating empty weight, requiring battery state-of-charge (SoC) normalisation before any weighing event; (2) the electric motor-nacelles on each wing significantly alter the C-of-G range versus a conventional turbofan layout.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+The leveling and weighing programme for the eWTW requires weighing at aircraft delivery, after any major structural repair, after each C-of-G-affecting modification, and at intervals not exceeding 5 years in service (per CS-25 §25.25 and EASA AMC 25.1585). All leveling and weighing data is recorded in the CSDB Maintenance Record DM (info code "200") and fed back to the eWTW mass-and-balance system. The WMMS Leveling & Weighing sub-function (WMMS-LW) provides real-time digital readout for leveling (3-axis inclinometers) and weighing (four or three-point load cell sets).
 
 ---
 
