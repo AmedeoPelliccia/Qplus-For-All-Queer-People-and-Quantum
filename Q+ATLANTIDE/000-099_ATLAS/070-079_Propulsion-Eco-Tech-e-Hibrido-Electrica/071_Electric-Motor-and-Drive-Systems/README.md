@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Electric Motor and Drive Systems — General | [071-000-Electric-Motor-and-Drive-Systems-General.md](./071-000-Electric-Motor-and-Drive-Systems-General.md) | active |
+| 10 | Traction Motor Architecture | [071-010-Traction-Motor-Architecture.md](./071-010-Traction-Motor-Architecture.md) | active |
+| 20 | Motor Rotor, Stator and Bearing Assemblies | [071-020-Motor-Rotor-Stator-and-Bearing-Assemblies.md](./071-020-Motor-Rotor-Stator-and-Bearing-Assemblies.md) | active |
+| 30 | Inverter and Motor Drive Unit | [071-030-Inverter-and-Motor-Drive-Unit.md](./071-030-Inverter-and-Motor-Drive-Unit.md) | active |
+| 40 | Motor Control and Torque Command | [071-040-Motor-Control-and-Torque-Command.md](./071-040-Motor-Control-and-Torque-Command.md) | active |
+| 50 | Motor Cooling and Thermal Protection | [071-050-Motor-Cooling-and-Thermal-Protection.md](./071-050-Motor-Cooling-and-Thermal-Protection.md) | active |
+| 60 | Motor Power Connectors and Insulation | [071-060-Motor-Power-Connectors-and-Insulation.md](./071-060-Motor-Power-Connectors-and-Insulation.md) | active |
+| 70 | Motor Inspection, Test and Maintenance | [071-070-Motor-Inspection-Test-and-Maintenance.md](./071-070-Motor-Inspection-Test-and-Maintenance.md) | active |
+| 80 | Electric Drive Monitoring, Diagnostics and Control Interfaces | [071-080-Electric-Drive-Monitoring-Diagnostics-and-Control-Interfaces.md](./071-080-Electric-Drive-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [071-090-S1000D-CSDB-Mapping-and-Traceability.md](./071-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `070-079` |
 | Section | `07` — Propulsión Eco-Tech e Híbrido-Eléctrica |
 | Subsection | `071` — Electric Motor and Drive Systems |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | 10 subsubjects populated |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN, ORB-CSR |
