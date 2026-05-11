@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-065-070-IGNITION-SYSTEM-MONITORING-AND-BITE"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
-ata: "ATA 64"
-sns: "064-090-00"
-subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+title: "Ignition System Monitoring and BITE"
+ata: "ATA 65"
+sns: "065-070-00"
+subsection: "065"
+subsubject_code: "070"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0065-070"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-065-070-IGNITION-SYSTEM-MONITORING-AND-BITE
+     ATA 65 · Ignition System Monitoring and BITE
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Ignition System Monitoring and BITE
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
-![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
+![ATA: ATA 65](https://img.shields.io/badge/ATA-65-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+FADEC monitors the ignition system through the exciter BITE output (fault discrete), plug start-count accumulation, and ignition mode confirmation (did the commanded ignition mode actually engage?). Ignition system BITE faults are reported to CMS via the EDIU AFDX interface and generate a CMS maintenance message for ground resolution.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 65-070 — Ignition System Monitoring and BITE |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 065-070-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+FADEC monitors the ignition system through the exciter BITE output (fault discrete), plug start-count accumulation, and ignition mode confirmation (did the commanded ignition mode actually engage?). Ignition system BITE faults are reported to CMS via the EDIU AFDX interface and generate a CMS maintenance message for ground resolution.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | Exciter fault discrete (BITE output) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Ignition System Monitoring and]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Ignition System Monitorin] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| Exciter fault discrete (BITE output) | Integrated in exciter | 1 per exciter | Exciter → FADEC discrete input | Monitor continuously | Declares exciter fault; FADEC reports to CMS |
+| Plug start counter (FADEC software) | FADEC software partition | Per plug | FADEC hardware | Software update | Counts engine starts through each plug; compares to life limit |
+| Ignition mode confirmation logic | FADEC software | Per engine | FADEC | Software update | Verifies commanded ignition mode was actually achieved |
+| CMS ignition maintenance message | FADEC → EDIU → AFDX → CMS | 1 per engine | CMS display terminal | On condition | Maintenance message text and recommended action for technician |
+| Ignition BITE test (ground, via CMS) | CMS maintenance test page | 1 (aircraft-shared) | Maintenance terminal | Functional test procedure | Allows ground activation of igniter for test (no fuel; safety interlock) |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Ignition System Monitoring and BITE maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Ignition System Monitoring and BITE dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Ignition System Monitoring and BITE inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Ignition System Monitoring and BITE functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| DO-178C | Software Considerations | RTCA | FADEC ignition BITE DAL C assurance |
+| ARINC 664 P7 | AFDX | ARINC | CMS interface |
+| SAE ARP4761 | Safety Assessment | SAE International | BITE coverage methodology |
+| ATA iSpec 2200 | Chapter 65 | ATA | ATA chapter scope |
+| EASA CS-E §790 | Ignition system | EASA | Ignition monitoring certification |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **Exciter fault discrete** | Discrete electrical signal from exciter box to FADEC declaring an internal exciter fault. |
+| **Plug start counter** | FADEC software accumulator tracking starts through each igniter plug; triggers replacement advisory at life limit. |
+| **Ignition mode confirmation** | FADEC logic verifying that the commanded ignition mode (START/CONTINUOUS/RELIGHT) was successfully achieved. |
+| **CMS maintenance message** | A standardised text message in the CMS maintenance page identifying the fault and recommended maintenance action. |
+| **Ground ignition test** | FADEC test mode allowing a controlled ground spark test without fuel flow to verify exciter and plug functionality. |
+| **Safety interlock** | A FADEC or aircraft-level interlock preventing ignition system activation under unsafe conditions (e.g., fuel flow active without N2). |
+| **Start count life limit** | The published maximum number of starts through an igniter plug before mandatory replacement. |
+| **FADEC DAL C ignition monitoring** | FADEC ignition monitoring function assurance level; non-catastrophic failure effect. |
+| **EDIU** | Engine Data Interface Unit — FADEC bus to aircraft AFDX gateway. |
+| **Maintenance advisory** | A FADEC output advising maintenance action (e.g., 'replace plug No.1 — start count exceeded') without preventing dispatch. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-065-070-001 | Finalise Ignition System Monitoring and BITE design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-065-070-002 | Define BITE coverage for Ignition System Monitoring and BITE | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -239,15 +239,15 @@ flowchart TB
 
 ## §19 Related Documents (Siblings in this Subsection)
 
-- [064-000](./064-000.md)
-- [064-010](./064-010.md)
-- [064-020](./064-020.md)
-- [064-030](./064-030.md)
-- [064-040](./064-040.md)
-- [064-050](./064-050.md)
-- [064-060](./064-060.md)
-- [064-070](./064-070.md)
-- [064-080](./064-080.md)
+- [065-000](./065-000.md)
+- [065-010](./065-010.md)
+- [065-020](./065-020.md)
+- [065-030](./065-030.md)
+- [065-040](./065-040.md)
+- [065-050](./065-050.md)
+- [065-060](./065-060.md)
+- [065-080](./065-080.md)
+- [065-090](./065-090.md)
 
 ---
 

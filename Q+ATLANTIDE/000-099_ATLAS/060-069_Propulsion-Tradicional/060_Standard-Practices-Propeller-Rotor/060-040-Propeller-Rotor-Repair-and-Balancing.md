@@ -1,468 +1,289 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-06-060-040-PROPELLERROTOR-REPAIR-AND-BALANCING"
-title: "ATLAS 060-069 · 06.060.040 — Propeller/Rotor Repair and Balancing"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-060-040-PROPELLER-ROTOR-REPAIR-AND-BALANCING"
 register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "060-069"
-section: "06"
-section_title: "Propulsión Tradicional"
+title: "Propeller/Rotor Repair and Balancing"
+ata: "ATA 60"
+sns: "060-040-00"
 subsection: "060"
-subsection_title: "Standard Practices — Propeller/Rotor"
-subsubject: "040"
-subsubject_title: "Propeller/Rotor Repair and Balancing"
-subsubject_file: "060-040-Propeller-Rotor-Repair-and-Balancing.md"
-subsubject_link: "./060-040-Propeller-Rotor-Repair-and-Balancing.md"
+subsubject_code: "040"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
 status: active
-language: en
-s1000d_applicability: "S1000D-CSDB-compatible"
-ata_reference: "ATA 60"
-created: "2026-05-11"
-updated: "2026-05-11"
-review_status: "to-be-reviewed-by-system-expert"
+governance_class: baseline
+revision: "0.1"
+date: "2026-05-11"
+parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
+parent_architecture_doc: "../../../README.md"
+parent_section_doc: "../../README.md"
+parent_subsection_doc: "../README.md"
+parent_subsubject_doc: "./README.md"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-040"
 ---
 
-![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-![TBD](https://img.shields.io/badge/TBD-red)
-![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+<!-- ──────────────────────────────────────────────────────────────────────────
+     QATL-ATLAS-1000-ATLAS-060-069-060-040-PROPELLER-ROTOR-REPAIR-AND-BALANCING
+     ATA 60 · Propeller/Rotor Repair and Balancing
+     AMPEL360E eWTW — ATLAS Register 1000
+────────────────────────────────────────────────────────────────────────────── -->
 
-# ATLAS 060-069 · Section 06 · Subsection 060 · 040 — Propeller/Rotor Repair and Balancing
+# Propeller/Rotor Repair and Balancing
 
-## 0. Hyperlink Policy
-
-All linkable content in this file shall be expressed as Markdown links where a stable target exists.
-
-Use:
-
-- relative links for repository-internal content;
-- anchor links for headings, figures, diagrams, glossary terms, citations, references, open issues, and lifecycle sections;
-- stable external links only for public standards or authoritative sources;
-- `TBD` or `<relative-link-or-TBD>` where no stable target exists.
-
-Do not invent links.
-
-Every table containing a document, path, code, reference, acronym, figure, diagram, lifecycle phase, Q-Division, ORB-Function, DMC, BREX, DMRL, evidence record, or issue shall include either a direct link or an explicit `TBD` target.
+![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
+![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
+![ATA: ATA 60](https://img.shields.io/badge/ATA-60-green)
+![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
-## 1. Purpose
+## §0 Hyperlink Policy
 
-This document defines the controlled technical scope for **Propeller/Rotor Repair and Balancing** (`060-040`) within the [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) / [ATLAS 000-099](../../../) architecture branch, section [060-069 Propulsión Tradicional](../../).
-
-The objective is to provide a deterministic, [S1000D](https://s1000d.org/)-compatible technical baseline covering the repair schemes, static and dynamic balancing requirements, and post-repair verification for propeller and rotor assemblies.
-
-This file belongs to:
-
-[`Q+ATLANTIDE/000-099_ATLAS/060-069_Propulsion-Tradicional/060_Standard-Practices-Propeller-Rotor/060-040-Propeller-Rotor-Repair-and-Balancing.md`](./)
+> All hyperlinks in this document are **relative** (five directory levels: `../../../../../`).
+> Absolute URLs are forbidden. Every linked document must exist in the Q+ATLANTIDE repository
+> before the link is activated. Broken links are treated as open issues and must be resolved
+> before the document is promoted from `DRAFT` to `APPROVED`.
 
 ---
 
-## 2. Applicability
+## §1 Purpose
 
-This document applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme and the **eWTW** configuration.
+This document defines the controlled repair classification system, approved repair schemes, and static/dynamic balancing requirements for propeller and rotor assemblies. Repair and balance decisions are safety-critical: an improperly repaired blade or an unbalanced propeller can produce aeromechanical excitation loads that damage the engine, airframe, and flight controls.
 
-| Applicability Item | Value | Status |
-|---|---|---|
-| Programme | [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Architecture register | [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATLAS band | [000-099_ATLAS](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Section | [060-069 Propulsión Tradicional](../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Subsection | [060 Standard Practices — Propeller/Rotor](../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATA reference | [ATA 60](#ref-ata) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| S1000D compatibility | [S1000D-CSDB-compatible](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Lifecycle use | [LC03](../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md) / [LC05](../../../../../Governance/Lifecycle/LC05-Detailed-Design.md) / [LC06](../../../../../Governance/Lifecycle/LC06-Verification-Planning.md) / [LC11](../../../../../Governance/Lifecycle/LC11-Operation.md) / [LC12](../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
+On the AMPEL360E eWTW, composite blade repair authority is split between line-level cosmetic repair (scratch and gel-coat damage), base-level structural repair (small leading-edge erosion filling, cosmetic disbond), and shop-level major repair (spar cap damage, root fitting repair). Each repair level requires specific material qualification, inspector certification, and engineering approval before application.
 
 ---
 
-## 3. System / Function Overview
+## §2 Applicability
 
-The **Propeller/Rotor Repair and Balancing** node covers the repair schemes, static and dynamic balancing requirements, and post-repair verification for propeller and rotor assemblies.
-
-For the [AMPEL360e](#glossary-ampel360e) configuration, this node shall be treated as part of a full-electric, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360e implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
-
-This document does not freeze the final certified design. It establishes a controlled scaffold for downstream engineering, [S1000D](#glossary-s1000d) data-module planning, [CSDB](#glossary-csdb) integration, and evidence capture.
-
----
-
-## 4. Scope
-
-### 4.1 Included
-
-This document includes:
-- Define allowable repair schemes by damage type
-- Specify static and dynamic balance limits
-- Document balance weight placement and records
-- Define functional test after repair
-- Map to S1000D repair DMs
-
-### 4.2 Excluded
-
-This document excludes:
-
-- supplier-proprietary internal design data unless released to the programme baseline;
-- final certification compliance statements;
-- detailed maintenance procedures unless assigned by the [DMRL](#glossary-dmrl);
-- final illustrated parts data unless released through the [CSDB](#glossary-csdb);
-- production-level configuration until [CCB](#glossary-ccb) freeze.
+| Parameter | Value |
+|---|---|
+| Aircraft Program | AMPEL360E eWTW |
+| ATA reference | ATA 60-040 — Repair and Balancing |
+| Repair classification | AMPEL360E SRM-060 Chapter 20 |
+| Balance standard | ISO 1940-1 Grade G1.0 for propeller assemblies |
+| Repair authority | Q-MECHANICS Engineering — Concession/repair approval |
+| Composite repair material | AMPEL360E-CFS-001 approved repair patch system |
+| S1000D SNS | 060-040-00 |
 
 ---
 
-## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §3 Functional Description ![DRAFT]
 
-The **Propeller/Rotor Repair and Balancing** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries.
+Repair classification uses a three-tier system:
 
-At architecture level, the system shall be described in terms of:
+- **Class 1 — Allowable Damage Limits (ADL)**: Damage within published ADL dimensions; no repair required; inspection record and monitoring required.
+- **Class 2 — Standard Repair**: Damage exceeds ADL but within defined repair limit; repair by approved scheme in SRM-060; no engineering concession required.
+- **Class 3 — Major Repair / Engineering Disposition**: Damage beyond standard repair limits; requires specific engineering disposition and may require component replacement.
 
-1. **Function** — what the system does.
-2. **Equipment** — which [LRUs](#glossary-lru), assemblies, panels, modules, or components implement the function.
-3. **Interfaces** — how the system exchanges power, data, fluid, air, signal, force, or commands.
-4. **Control logic** — how the system is commanded, monitored, degraded, isolated, or reset.
-5. **Maintenance boundary** — what a technician can inspect, test, remove, install, or replace.
-6. **Evidence boundary** — which requirements, tests, inspections, and records prove compliance.
+After any repair affecting blade mass distribution, static balance (tip-to-root moment check) and dynamic balance (ISO 1940-1 G1.0) are mandatory before return to service. Balance weights are installed in approved weight pockets on the hub or spinner; weight placement is recorded in the propeller configuration record.
 
 ---
 
-## 6. Functional Breakdown ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §4 Functional Breakdown
 
-| Ref | Function | Description | Primary Interface | Status |
-|---:|---|---|---|---|
-| [F-001](#f-001) | <a id="f-001"></a>Define allowable repair schemes by damage type | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-002](#f-002) | <a id="f-002"></a>Specify static and dynamic balance limits | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-003](#f-003) | <a id="f-003"></a>Document balance weight placement and records | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-004](#f-004) | <a id="f-004"></a>Monitoring | Captures status, failures, degradation, and maintenance data. | [CMS / BITE](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [F-005](#f-005) | <a id="f-005"></a>Traceability | Links architecture, requirements, evidence, and S1000D content. | [CSDB / DMRL / BREX](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| ID | Name | Description | Lead Division |
+|---|---|---|---|
+| F-001 | Damage Classification | Classify all damage against ADL and repair limits in SRM-060 Chapter 20. | Q-MECHANICS / inspector |
+| F-002 | Class 2 Standard Repair | Execute approved repair from SRM-060; document materials, process, and inspector sign-off. | Approved repair station / base MRO |
+| F-003 | Class 3 Engineering Disposition | Obtain engineering disposition for damage beyond standard limits; define approved repair or replacement. | Q-MECHANICS engineering |
+| F-004 | Static Balance Check | Measure static blade moment balance on approved balance fixture after any repair. | Balancing technician |
+| F-005 | Dynamic Balance Verification | Perform dynamic balance on balance machine to ISO 1940-1 G1.0; record and archive balance certificate. | Balance technician / QA |
 
 ---
 
-## 7. Mermaid — System Context Diagram
-
-<a id="diagram-system-context"></a>
+## §5 System Context — Mermaid Diagram
 
 ```mermaid
 flowchart LR
-    A[Aircraft-Level Function] --> B[060 Standard Practices — Propeller/Rotor]
-    B --> C[Power Interface]
-    B --> D[Data / Control Interface]
-    B --> E[Mechanical / Fluid / Air Interface]
-    B --> F[Monitoring and Diagnostics]
-    F --> G[Central Maintenance System]
-    G --> H[S1000D / CSDB Evidence]
+    A[Damage Found] --> B[Damage Classification SRM-060]
+    B --> C{Class?}
+    C -->|ADL Class 1| D[Inspect and Monitor]
+    C -->|Class 2| E[Standard Repair SRM-060]
+    C -->|Class 3| F[Engineering Disposition]
+    E --> G[Static Balance Check]
+    G --> H[Dynamic Balance ISO G1.0]
+    H --> I[Return to Service]
+    F --> J[Replace or Approved Major Repair]
+    J --> G
 ```
-
-***[Diagram 1](#diagram-system-context) — System context diagram for Propeller/Rotor Repair and Balancing. Related sections: [Interfaces](#10-interfaces), [Monitoring and Diagnostics](#12-monitoring-and-diagnostics), [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping).***
 
 ---
 
-## 8. Mermaid — Internal Functional Architecture
-
-<a id="diagram-internal-functional-architecture"></a>
+## §6 Internal Architecture — Mermaid Diagram
 
 ```mermaid
 flowchart TB
-    SYS[060-040 Propeller/Rotor Repair and Balancin] --> F1[Define allowable repair schemes by damage type]
-    SYS --> F2[Specify static and dynamic balance limits]
-    SYS --> CTRL[Control Logic]
-    SYS --> MON[Monitoring and Diagnostics]
-    SYS --> MAINT[Maintenance Boundary]
-    CTRL --> IMA[IMA / Controller Interface]
-    MON --> CMS[CMS / BITE]
-    MAINT --> CSDB[S1000D Data Modules]
+    REP[Repair and Balancing] --> CLASS[Damage Classification]
+    REP --> SREP[Standard Repair SRM-060]
+    REP --> ENGDISP[Engineering Disposition]
+    REP --> STAT[Static Balance]
+    REP --> DYN[Dynamic Balance G1.0]
+    CLASS --> ADLTABLE[ADL Tables]
+    SREP --> CFSCURE[CFS-001 Repair Patch Cure]
+    STAT --> FIXTURE[Approved Balance Fixture]
+    DYN --> MACHINE[Balance Machine ISO 1940-1]
+    DYN --> CERT[Balance Certificate CSDB DM]
 ```
 
-***[Diagram 2](#diagram-internal-functional-architecture) — Internal functional architecture. Related sections: [Functional Breakdown](#6-functional-breakdown), [Maintenance Concept](#13-maintenance-concept), [Footprints](#15-footprints).***
-
 ---
 
-## 9. Mermaid — Lifecycle Traceability
+## §7 Components and LRUs
 
-<a id="diagram-lifecycle-traceability"></a>
-
-```mermaid
-flowchart LR
-    LC02[LC02 Requirements] --> LC03[LC03 Architecture]
-    LC03 --> LC05[LC05 Detailed Design]
-    LC05 --> LC06[LC06 Verification Planning]
-    LC06 --> LC10[LC10 Certification / Approval]
-    LC10 --> LC11[LC11 Operation]
-    LC11 --> LC12[LC12 Maintenance / Support]
-
-    LC03 --> CSDB[S1000D / CSDB]
-    LC05 --> DMRL[DMRL]
-    LC06 --> EVID[Evidence Records]
-    LC12 --> FEEDBACK[In-Service Feedback]
-    FEEDBACK --> LC13[LC13 Upgrade / Modification]
-```
-
-***[Diagram 3](#diagram-lifecycle-traceability) — Lifecycle traceability from requirements to maintenance feedback. Related sections: [Verification and Validation](#17-verification-and-validation), [References](#20-references), [Open Issues](#21-open-issues).***
-
----
-
-## 10. Interfaces ![TBD](https://img.shields.io/badge/TBD-red)
-
-| Interface Type | Connected System | Description | Evidence Required | Status |
-|---|---|---|---|---|
-| Electrical power | [ATA 24 Power](TBD) | TBD — power supply interface. | [Wiring / load analysis](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data / control | [FADEC / CMS / IMA](TBD) | TBD — command and monitoring interface. | [ICD / data dictionary](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mechanical | [Structure / installation zone](TBD) | TBD — mounting, access, or load path. | [Installation drawing](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Fluid / air / thermal | [Adjacent propulsion system](TBD) | TBD — flow, pressure, temperature, or thermal interface. | [Test report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance | [CSDB / IETP](TBD) | TBD — technician-facing access and procedure boundary. | [DMRL / BREX](#14-s1000d--csdb-mapping) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 11. Operating Modes ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-| Mode | Description | Entry Condition | Exit Condition | Status |
-|---|---|---|---|---|
-| [Normal](#mode-normal) | <a id="mode-normal"></a>System operates within nominal limits. | Aircraft powered and system enabled. | Shutdown, fault, or mode change. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Degraded](#mode-degraded) | <a id="mode-degraded"></a>System operates with reduced function or redundancy. | Fault detected or partial loss of function. | Recovery, isolation, or maintenance action. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Maintenance](#mode-maintenance) | <a id="mode-maintenance"></a>System is configured for inspection, test, removal, installation, or servicing. | Authorized maintenance action. | Maintenance close-up and operational check. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Failure / Safe State](#mode-failure-safe-state) | <a id="mode-failure-safe-state"></a>System enters protective state to prevent unsafe operation. | Fault threshold exceeded. | Reset, repair, replacement, or dispatch decision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 12. Monitoring and Diagnostics ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The system shall provide sufficient monitoring to support safe operation, maintenance troubleshooting, and lifecycle evidence capture.
-
-Monitoring may include:
-
-- status indication;
-- fault detection;
-- [BITE](#glossary-bite) results;
-- sensor plausibility checks;
-- degraded-mode reporting;
-- maintenance messages;
-- event recording;
-- configuration status;
-- software or hardware part-number reporting where applicable.
-
-Diagnostic data shall be mapped to the relevant [S1000D / CSDB](#14-s1000d--csdb-mapping) fault isolation and maintenance data modules.
-
----
-
-## 13. Maintenance Concept ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The maintenance concept shall support modular inspection, fault isolation, removal, installation, and return-to-service verification.
-
-Maintenance content should be structured around:
-
-- access requirements;
-- safety precautions;
-- isolation conditions;
-- required tools and test equipment;
-- inspection criteria;
-- functional test criteria;
-- fault isolation logic;
-- replacement boundaries;
-- close-up and return-to-service checks.
-
-Maintenance procedures shall remain provisional until validated against the applicable [DMRL](#glossary-dmrl), [BREX](#glossary-brex), and task validation records.
-
----
-
-## 14. S1000D / CSDB Mapping ![TBD](https://img.shields.io/badge/TBD-red)
-
-| S1000D Element | Controlled Value | Status |
-|---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System code | `060` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Sub-system code | `0` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Sub-sub-system code | `40` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Assy code | `00A` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Info code | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| Item location code | `D` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| DMC prefix | [`DMC-AMPEL360E-EWTW-060-040`](TBD) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### Recommended Data Module Set
-
-| Info code | Data module purpose | Suggested filename | Status |
-|---:|---|---|---|
-| [040](#dm-040) | <a id="dm-040"></a>Descriptive information | [`DMC-AMPEL360E-EWTW-060-040-040A-D_System-Description.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [300](#dm-300) | <a id="dm-300"></a>Examination / inspection / check | [`DMC-AMPEL360E-EWTW-060-040-300A-D_Inspection.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [400](#dm-400) | <a id="dm-400"></a>Fault isolation | [`DMC-AMPEL360E-EWTW-060-040-400A-D_Fault-Isolation.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [520](#dm-520) | <a id="dm-520"></a>Remove / disassemble | [`DMC-AMPEL360E-EWTW-060-040-520A-D_Remove.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [720](#dm-720) | <a id="dm-720"></a>Install / assemble / connect | [`DMC-AMPEL360E-EWTW-060-040-720A-D_Install.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [941](#dm-941) | <a id="dm-941"></a>Illustrated parts data | [`DMC-AMPEL360E-EWTW-060-040-941A-D_Illustrated-Parts-Data.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 15. Footprints ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-### 15.1 Physical Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Installation zone | TBD — aircraft zone or compartment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Access panels | TBD — relevant access points. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mounting provisions | TBD — rack, bracket, panel, structural attachment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Clearance envelope | TBD — required removal / installation clearance. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cooling / ventilation | TBD — thermal management interface. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Drainage / leak path | TBD — if applicable. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.2 Electrical / Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Power supply | TBD — voltage / phase / bus source. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Protection | TBD — circuit breaker / SSPC / fuse / electronic protection. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data buses | TBD — ARINC / AFDX / CAN / discrete / optical / other. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Connectors | TBD — connector families or interface references. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Bonding / grounding | TBD — bonding and grounding provision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| EMC / EMI controls | TBD — shielding, segregation, filtering. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.3 Maintenance Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Access level | Line / base / shop | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Replaceable unit | LRU / SRU / assembly / panel | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Removal time | Estimated or controlled maintenance interval | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required tools | Standard / special tools | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required GSE | Ground support equipment | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Return-to-service check | Operational / functional / BITE check | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.4 Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Configuration records | Part number, serial number, software load, effectivity | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Evidence records | Test, inspection, compliance, review records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| CSDB records | DMCs, ICNs, BREX, applicability | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance data | Fault history, BITE, removal/installation records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cybersecurity records | Access, load authorization, integrity checks | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 16. Safety and Certification Considerations ![TBD](https://img.shields.io/badge/TBD-red)
-
-The system shall be assessed according to its aircraft-level function, failure effects, operational criticality, and integration dependencies.
-
-The certification and safety analysis shall consider:
-
-- functional hazard assessment;
-- failure modes and effects;
-- common-cause failures;
-- degraded-mode behavior;
-- latent failures;
-- maintenance-induced failures;
-- incorrect installation;
-- incorrect configuration;
-- loss of indication or misleading indication;
-- software and hardware assurance levels where applicable;
-- environmental qualification;
-- electromagnetic compatibility;
-- continued airworthiness impact.
-
-Final safety classification shall remain **TBD** ![TBD](https://img.shields.io/badge/TBD-red) until reviewed against the applicable [FHA](#glossary-fha), [PSSA](#glossary-pssa), [SSA](#glossary-ssa), and certification basis.
-
----
-
-## 17. Verification and Validation ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-Verification shall demonstrate that the system satisfies its requirements under nominal, degraded, maintenance, and failure conditions.
-
-| Verification Method | Description | Evidence | Status |
-|---|---|---|---|
-| [Analysis](#verification-analysis) | <a id="verification-analysis"></a>Engineering calculation, modelling, simulation, or safety analysis. | [Analysis report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Inspection](#verification-inspection) | <a id="verification-inspection"></a>Physical or visual verification of installation, marking, routing, or condition. | [Inspection record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Test](#verification-test) | <a id="verification-test"></a>Functional, environmental, integration, or system test. | [Test report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Demonstration](#verification-demonstration) | <a id="verification-demonstration"></a>Operational demonstration under controlled conditions. | [Demonstration record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Similarity](#verification-similarity) | <a id="verification-similarity"></a>Justified reuse of existing certified design evidence. | [Similarity report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 18. Glossary of Terms and Acronyms
-
-| Term / Acronym | Meaning | Link | Status |
-|---|---|---|---|
-| <a id="glossary-ampel360e"></a>AMPEL360e | Electrified aircraft programme family used as the programme example. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-atlas"></a>ATLAS | Aircraft Top Level Architecture Schema/System. | [ATLAS 000-099](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-bite"></a>BITE | Built-In Test Equipment. | [Monitoring and Diagnostics](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-brex"></a>BREX | Business Rules Exchange; S1000D rule set used to validate data-module content. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ccb"></a>CCB | Configuration Control Board. | [Governance](../../../../../Governance/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-csdb"></a>CSDB | Common Source DataBase. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmc"></a>DMC | Data Module Code. | [S1000D DMC Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmrl"></a>DMRL | Data Module Requirement List. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ewtw"></a>eWTW | Electric Wide Tube-and-Wing. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fadec"></a>FADEC | Full Authority Digital Engine Control. | [Engine Controls](../067_Engine-Controls/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fha"></a>FHA | Functional Hazard Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-lru"></a>LRU | Line Replaceable Unit. | [Maintenance Concept](#13-maintenance-concept) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-pssa"></a>PSSA | Preliminary System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-s1000d"></a>S1000D | International specification for technical publications using a common source database. | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-sns"></a>SNS | Standard Numbering System. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-ssa"></a>SSA | System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-tbd"></a>TBD | To Be Determined. | [Open Issues](#21-open-issues) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-
----
-
-## 19. Citations ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Citation | Use | Link | Status |
-|---|---|---|---|---|
-| [CIT-001](#cit-001) | <a id="cit-001"></a>`S1000D Issue 5.0, Part I — Introduction and overview.` | Architecture / terminology | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-002](#cit-002) | <a id="cit-002"></a>`EASA CS-25, Amendment 27 — Airworthiness Standards: Large Aeroplanes.` | Certification basis | [EASA](https://www.easa.europa.eu/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-003](#cit-003) | <a id="cit-003"></a>`AMPEL360e Programme Architecture Baseline, Rev TBD.` | Programme-specific requirement | [Programme baseline](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [CIT-004](#cit-004) | <a id="cit-004"></a>`ATA iSpec 2200, Chapter 60 — Standard Practices — Propeller/Rotor.` | ATA reference | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [CIT-005](#cit-005) | <a id="cit-005"></a>`DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment.` | Environmental qualification | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 20. References ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Document | Identifier | Revision | Status | Link |
-|---|---|---|---:|---|---|
-| [REF-001](#ref-001) | <a id="ref-001"></a>Q+ATLANTIDE ATLAS master index | `QATL-ATLAS-000-099` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../) |
-| [REF-002](#ref-002) | <a id="ref-002"></a>AMPEL360e programme architecture baseline | `AMP360E-ARCH-BASELINE` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) |
-| [REF-003](#ref-003) | <a id="ref-003"></a>060-069 Propulsión Tradicional section index | `QATL-ATLAS-060-069` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../) |
-| [REF-004](#ref-004) | <a id="ref-004"></a>060 Standard Practices — Propeller/Rotor subsection index | `QATL-ATLAS-060-069-060` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../) |
-| [REF-005](#ref-005) | <a id="ref-005"></a>S1000D project BREX | `BREX-AMPEL360E-EWTW` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-| [REF-ATA](#ref-ata) | <a id="ref-ata"></a>ATA iSpec 2200 — Chapter 60 | `ATA-ISPEC-2200-60` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-
----
-
-## 21. Open Issues
-
-| ID | Issue | Owner | Status | Badge | Link |
+| Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| [OI-001](#oi-001) | <a id="oi-001"></a>Confirm final system boundary for Propeller/Rotor Repair and Balancing. | System expert | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Architecture Description](#5-architecture-description) |
-| [OI-002](#oi-002) | <a id="oi-002"></a>Complete S1000D SNS allocation for 060-040. | Q-DATAGOV | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) |
-| [OI-003](#oi-003) | <a id="oi-003"></a>Confirm certification basis and safety classification. | Certification lead | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Safety and Certification](#16-safety-and-certification-considerations) |
-| [OI-004](#oi-004) | <a id="oi-004"></a>Confirm maintenance task allocation in DMRL. | Tech pubs lead | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [Maintenance Concept](#13-maintenance-concept) |
+| Dynamic balance machine (propeller-rated) | ISO 1940-1 qualified machine | 1 per MRO shop | Balance bay | Annual calibration + ISO cert | TBD |
+| Static balance fixture (blade moment arm) | Drawing-specific fixture | Per blade type | Shop fixture store | Annual inspection | TBD |
+| CFRP patch repair kit (Class 2) | AMPEL360E-CFS-001 repair system | Per batch | Controlled store −18 °C | Shelf life per PS | TBD |
+| Balance weight set (hub pocket weights) | Per hub drawing | Per hub | Assembly parts store | Part number controlled | TBD |
+| Surface profile gauge (erosion depth) | Calibrated depth micrometer | Per repair team | Repair bay | Annual calibration | TBD |
 
 ---
 
-## 22. Status Legend
+## §8 Interfaces
 
-| Badge | Meaning | Use |
-|---|---|---|
-| ![TBD](https://img.shields.io/badge/TBD-red) | To Be Determined | Required value, source, boundary, interface, requirement, or evidence is not yet determined. |
-| ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | To Be Completed | Section exists but content is intentionally incomplete. |
-| ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) | Draft | Content exists but is not yet reviewed, frozen, or baselined. |
-| ![DONE](https://img.shields.io/badge/DONE-brightgreen) | Done | Content has been reviewed and is complete for the current baseline. |
-
----
-
-## 23. Change Log
-
-| Revision | Date | Author | Change | Link | Status |
-|---|---|---|---|---|---|
-| [0.1.0](#chg-010) | <a id="chg-010"></a>2026-05-11 | Q+ Team / Amedeo Pelliccia + AI | Initial programme-controlled scaffold. | [Document root](#atlas-060-069--section-06--subsection-060--040--propeller-rotor-repair-and-balancing) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Interface Type | Connected System | Protocol / Medium | Data / Function |
+|---|---|---|---|
+| Engineering | Q-MECHANICS | Repair scheme approval and disposition authority | SRM-060 Chapter 20 |
+| NDT | NDT authority | Post-repair inspection requirement | NDT procedure card for each repair class |
+| Supply chain | Q-INDUSTRY | Repair materials supply | AMR-060 approved materials list |
+| CSDB | Q-DATAGOV | Repair and balance record DMs | S1000D DM-400 / DM-300 submissions |
+| Configuration management | CAMO | Balance weight record, component status update | Aircraft configuration record |
 
 ---
 
-> Programme-controlled scaffold. Content is subject to [BREX](#glossary-brex), [SNS](#glossary-sns), applicability, [DMRL](#glossary-dmrl), evidence review, and [CCB](#glossary-ccb) freeze before controlled release.
+## §9 Operating Modes
 
-> **To be reviewed by system expert.**
+| Mode | Trigger | System State | Actions / Consequences |
+|---|---|---|---|
+| Class 1 monitoring | ADL damage found | Damage within ADL | Repeat inspection at next interval |
+| Class 2 repair | Damage beyond ADL, within SRM | Repair station available | Post-repair NDT and balance verification |
+| Class 3 disposition | Damage beyond standard repair | Engineering engaged | Component replacement or approved major repair |
+| Re-balance only | Mass redistribution without structural damage | Balance facility available | New balance certificate issued |
+
+---
+
+## §10 Performance and Budgets ![DRAFT]
+
+| Parameter | Requirement | Target / Design Value | Status |
+|---|---|---|---|
+| Dynamic balance residual (ISO 1940-1 G1.0) | Residual < 0.4 mm/s at max governed RPM | Balance machine certificate | TBD per assembly |
+| CFRP patch repair strength restoration | ≥ 90 % of original laminate UTS | Coupon qualification per CFS-001 | TBD |
+| ADL erosion limit (leading edge) | < 3 mm depth over ≤ 50 mm span | SRM-060 ADL table (TBD) | TBD |
+| Balance weight limit (per pocket) | Per hub drawing — max mass TBD | Hub drawing specification | TBD |
+
+---
+
+## §11 Safety, Redundancy and Fault Tolerance
+
+- Class 3 damaged components must be tagged 'UNSERVICEABLE — AWAITING ENGINEERING DISPOSITION' and physically segregated from serviceable parts before any engineering assessment.
+- Post-repair dynamic balance is mandatory for any repair that removes or redistributes material ≥ 5 g at any blade span location.
+- CFRP patch repairs must be cured in a vacuum bag with a calibrated heat blanket; uncured or undercured patches are not acceptable and must be removed.
+- Balance weights must be torqued to the drawing specification and safety-locked; loss of a balance weight in flight can cause catastrophic propeller vibration.
+- All major repair (Class 3) components that are returned to service must carry a permanent modification record tag traceable to the engineering disposition.
+
+---
+
+## §12 Maintenance and Diagnostics
+
+| Task | Interval | Access | Special Tools |
+|---|---|---|---|
+| Dynamic balance check after blade replacement | After each blade replacement | Balance bay | ISO 1940-1 balance machine |
+| Static moment check during scheduled strip | At component overhaul | Shop balance fixture | Balance fixture, calibrated weights |
+| ADL erosion measurement | Per AMM scheduled inspection | External blade access | Calibrated depth gauge |
+| Balance machine calibration | Annual | Balance bay | ISO calibration authority |
+| Repair patch adhesion check (post-cure NDT) | After each Class 2 repair | Repair bay | Thermographic camera or tap test kit |
+
+---
+
+## §13 Footprint — Physical, Electrical, Maintenance, Data ![TBD]
+
+| Footprint Type | Parameter | Value | Notes |
+|---|---|---|---|
+| Physical | Mass (system total) | ![TBD] | Pending OEM data |
+| Physical | Envelope (max) | ![TBD] | Pending detailed design |
+| Electrical | Peak power (W) | ![TBD] | To be defined |
+| Maintenance | Access category | Standard line maintenance | Per AMM |
+| Data | AFDX bandwidth | ![TBD] | Per AFDX bus load analysis |
+
+---
+
+## §14 Safety and Certification References ![DRAFT]
+
+| Standard / Document | Title | Issuing Body | Applicability |
+|---|---|---|---|
+| ISO 1940-1 | Mechanical Vibration — Balance quality requirements for rotors in a constant (rigid) state | ISO | Dynamic balance quality grade G1.0 |
+| AMPEL360E SRM-060 | Structural Repair Manual — Chapter 60 Propeller/Rotor | AMPEL360E programme | Damage classification and repair schemes |
+| AMPEL360E-CFS-001 | Carbon Fibre System specification — repair patch system | AMPEL360E programme | CFRP repair material qualification |
+| ATA iSpec 2200 | Chapter 60 — Propeller Standard Practices | Air Transport Association | Repair practice scope |
+| SAE AS7506 | Maintenance Processes and Procedures for Aircraft Propellers | SAE International | Repair philosophy reference |
+
+---
+
+## §15 V&V Approach ![TBD]
+
+| Phase | Method | Acceptance Criterion | Status |
+|---|---|---|---|
+| Design | Analysis and simulation | Meets all §10 performance requirements | ![TBD] |
+| Integration | Ground functional test | All BITE tests pass; interfaces verified | ![TBD] |
+| Qualification | DO-160G environmental test | All applicable tests pass | ![TBD] |
+| Certification | EASA CS-25 / CS-E compliance demonstration | Type Certificate / STC approval | ![TBD] |
+
+---
+
+## §16 Glossary
+
+| Term | Definition |
+|---|---|
+| **ADL** | Allowable Damage Limits — defined maximum damage dimensions within which no repair is required; monitored and reinspected at next interval. |
+| **SRM** | Structural Repair Manual — approved document defining allowable repairs, repair schemes, and damage limits for aircraft structures. |
+| **ISO 1940-1** | International Standard for balancing quality of rigid rotors; Grade G1.0 is the most stringent commercial aviation grade. |
+| **Balance weight** | Precision mass installed in a hub or spinner pocket to correct mass imbalance resulting from production variance or repair. |
+| **Patch repair** | Composite repair method applying a CFRP pre-preg patch over damaged area, vacuum-bagged and heat-cured. |
+| **Class 1 damage** | Damage within ADL — no repair required but reinspection at next scheduled interval. |
+| **Class 2 repair** | Standard repair from SRM with approved materials; no additional engineering disposition required. |
+| **Class 3 repair** | Major repair or replacement; requires specific engineering disposition before execution. |
+| **Moment arm** | Distance from blade root rotation axis to the centre of mass of a blade; used in static balance calculation. |
+| **Residual imbalance** | Remaining unbalance after balancing; expressed in g·mm per ISO 1940-1. |
+
+---
+
+## §17 Open Issues
+
+| ID | Description | Owner | Target |
+|---|---|---|---|
+| OI-060-040-001 | Define ADL erosion limits for AMPEL360E CFRP blade leading edge (pending erosion coupon test campaign) | Q-MECHANICS / Q-AIR | 2026-Q4 |
+| OI-060-040-002 | Confirm maximum balance weight mass per pocket for AMPEL360E hub design | Q-MECHANICS / propeller supplier | 2026-Q3 |
+| OI-060-040-003 | Develop Class 2 repair scheme for carbon-spar blade root region (new repair type, no precedent) | Q-MECHANICS engineering | 2027-Q1 |
+
+---
+
+## §18 Status Legend
+
+| Badge | Meaning |
+|---|---|
+| `![DRAFT]` | Section is drafted but not yet reviewed |
+| `![TBD]` | Content not yet started — to be defined |
+| `![To Be Completed]` | Partially complete — needs additional content |
+| `![APPROVED]` | Reviewed and formally approved |
+
+---
+
+## §19 Related Documents (Siblings in this Subsection)
+
+- [060-000](./060-000.md)
+- [060-010](./060-010.md)
+- [060-020](./060-020.md)
+- [060-030](./060-030.md)
+- [060-050](./060-050.md)
+- [060-060](./060-060.md)
+- [060-070](./060-070.md)
+- [060-080](./060-080.md)
+- [060-090](./060-090.md)
+
+---
+
+## §20 Change Log
+
+| Rev | Date | Author | Description |
+|---|---|---|---|
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |

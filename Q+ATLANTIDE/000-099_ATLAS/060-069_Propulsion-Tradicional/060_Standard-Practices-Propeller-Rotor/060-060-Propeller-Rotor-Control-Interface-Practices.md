@@ -1,468 +1,282 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-06-060-060-PROPELLERROTOR-CONTROL-INTERFACE-PRACTICES"
-title: "ATLAS 060-069 · 06.060.060 — Propeller/Rotor Control Interface Practices"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-060-060-PROPELLER-ROTOR-CONTROL-INTERFACE-PRACTICES"
 register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "060-069"
-section: "06"
-section_title: "Propulsión Tradicional"
+title: "Propeller/Rotor Control Interface Practices"
+ata: "ATA 60"
+sns: "060-060-00"
 subsection: "060"
-subsection_title: "Standard Practices — Propeller/Rotor"
-subsubject: "060"
-subsubject_title: "Propeller/Rotor Control Interface Practices"
-subsubject_file: "060-060-Propeller-Rotor-Control-Interface-Practices.md"
-subsubject_link: "./060-060-Propeller-Rotor-Control-Interface-Practices.md"
+subsubject_code: "060"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
 status: active
-language: en
-s1000d_applicability: "S1000D-CSDB-compatible"
-ata_reference: "ATA 60"
-created: "2026-05-11"
-updated: "2026-05-11"
-review_status: "to-be-reviewed-by-system-expert"
+governance_class: baseline
+revision: "0.1"
+date: "2026-05-11"
+parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
+parent_architecture_doc: "../../../README.md"
+parent_section_doc: "../../README.md"
+parent_subsection_doc: "../README.md"
+parent_subsubject_doc: "./README.md"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-060"
 ---
 
-![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-![TBD](https://img.shields.io/badge/TBD-red)
-![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+<!-- ──────────────────────────────────────────────────────────────────────────
+     QATL-ATLAS-1000-ATLAS-060-069-060-060-PROPELLER-ROTOR-CONTROL-INTERFACE-PRACTICES
+     ATA 60 · Propeller/Rotor Control Interface Practices
+     AMPEL360E eWTW — ATLAS Register 1000
+────────────────────────────────────────────────────────────────────────────── -->
 
-# ATLAS 060-069 · Section 06 · Subsection 060 · 060 — Propeller/Rotor Control Interface Practices
+# Propeller/Rotor Control Interface Practices
 
-## 0. Hyperlink Policy
-
-All linkable content in this file shall be expressed as Markdown links where a stable target exists.
-
-Use:
-
-- relative links for repository-internal content;
-- anchor links for headings, figures, diagrams, glossary terms, citations, references, open issues, and lifecycle sections;
-- stable external links only for public standards or authoritative sources;
-- `TBD` or `<relative-link-or-TBD>` where no stable target exists.
-
-Do not invent links.
-
-Every table containing a document, path, code, reference, acronym, figure, diagram, lifecycle phase, Q-Division, ORB-Function, DMC, BREX, DMRL, evidence record, or issue shall include either a direct link or an explicit `TBD` target.
+![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
+![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
+![ATA: ATA 60](https://img.shields.io/badge/ATA-60-green)
+![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
-## 1. Purpose
+## §0 Hyperlink Policy
 
-This document defines the controlled technical scope for **Propeller/Rotor Control Interface Practices** (`060-060`) within the [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) / [ATLAS 000-099](../../../) architecture branch, section [060-069 Propulsión Tradicional](../../).
-
-The objective is to provide a deterministic, [S1000D](https://s1000d.org/)-compatible technical baseline covering the interface standards, signal protocols, and control system integration practices for propeller and rotor control interfaces.
-
-This file belongs to:
-
-[`Q+ATLANTIDE/000-099_ATLAS/060-069_Propulsion-Tradicional/060_Standard-Practices-Propeller-Rotor/060-060-Propeller-Rotor-Control-Interface-Practices.md`](./)
+> All hyperlinks in this document are **relative** (five directory levels: `../../../../../`).
+> Absolute URLs are forbidden. Every linked document must exist in the Q+ATLANTIDE repository
+> before the link is activated. Broken links are treated as open issues and must be resolved
+> before the document is promoted from `DRAFT` to `APPROVED`.
 
 ---
 
-## 2. Applicability
+## §1 Purpose
 
-This document applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme and the **eWTW** configuration.
+This document defines the controlled interface standards, rigging procedures, and verification tests for mechanical and electrical control interfaces between propeller/rotor systems and the aircraft propulsion control architecture. Incorrect rigging of pitch-change mechanisms or misconfigured electrical command signals are leading causes of propeller in-flight incidents.
 
-| Applicability Item | Value | Status |
-|---|---|---|
-| Programme | [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Architecture register | [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATLAS band | [000-099_ATLAS](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Section | [060-069 Propulsión Tradicional](../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Subsection | [060 Standard Practices — Propeller/Rotor](../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATA reference | [ATA 60](#ref-ata) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| S1000D compatibility | [S1000D-CSDB-compatible](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Lifecycle use | [LC03](../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md) / [LC05](../../../../../Governance/Lifecycle/LC05-Detailed-Design.md) / [LC06](../../../../../Governance/Lifecycle/LC06-Verification-Planning.md) / [LC11](../../../../../Governance/Lifecycle/LC11-Operation.md) / [LC12](../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
+On the AMPEL360E eWTW, the propulsion control interface uses the FADEC/ECU digital command architecture (ATA 67); pitch-change actuators receive digital commands via the Propeller Electronic Control Unit (PECU). This document defines the practices for verifying and setting both the mechanical range of travel and the digital signal calibration at the PECU–propeller actuator interface.
 
 ---
 
-## 3. System / Function Overview
+## §2 Applicability
 
-The **Propeller/Rotor Control Interface Practices** node covers the interface standards, signal protocols, and control system integration practices for propeller and rotor control interfaces.
-
-For the [AMPEL360e](#glossary-ampel360e) configuration, this node shall be treated as part of a full-electric, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360e implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
-
-This document does not freeze the final certified design. It establishes a controlled scaffold for downstream engineering, [S1000D](#glossary-s1000d) data-module planning, [CSDB](#glossary-csdb) integration, and evidence capture.
-
----
-
-## 4. Scope
-
-### 4.1 Included
-
-This document includes:
-- Define mechanical and electrical control interfaces
-- Specify signal and command protocols
-- Document rigging and adjustment procedures
-- Define interface verification tests
-- Map to S1000D descriptive DMs
-
-### 4.2 Excluded
-
-This document excludes:
-
-- supplier-proprietary internal design data unless released to the programme baseline;
-- final certification compliance statements;
-- detailed maintenance procedures unless assigned by the [DMRL](#glossary-dmrl);
-- final illustrated parts data unless released through the [CSDB](#glossary-csdb);
-- production-level configuration until [CCB](#glossary-ccb) freeze.
+| Parameter | Value |
+|---|---|
+| Aircraft Program | AMPEL360E eWTW |
+| ATA reference | ATA 60-060 — Control Interface Practices |
+| FADEC/PECU interface | ATA 67 Engine Controls |
+| Rigging standard | SAE AS7506 / AMM Chapter 27 rigging procedures |
+| Digital interface standard | ARINC 429 / AFDX ARINC 664 P7 |
+| Certification basis | CS-25 §25.901(b) — Installation of powerplant controls |
+| S1000D SNS | 060-060-00 |
 
 ---
 
-## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §3 Functional Description ![DRAFT]
 
-The **Propeller/Rotor Control Interface Practices** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries.
+Control interface practices address two coupled domains:
 
-At architecture level, the system shall be described in terms of:
+1. **Mechanical rigging** — physical range-of-travel checks for pitch-change actuator travel; mechanical stops set and verified; linkage freedom-of-movement check; null position and full-travel positions recorded against drawing limits.
 
-1. **Function** — what the system does.
-2. **Equipment** — which [LRUs](#glossary-lru), assemblies, panels, modules, or components implement the function.
-3. **Interfaces** — how the system exchanges power, data, fluid, air, signal, force, or commands.
-4. **Control logic** — how the system is commanded, monitored, degraded, isolated, or reset.
-5. **Maintenance boundary** — what a technician can inspect, test, remove, install, or replace.
-6. **Evidence boundary** — which requirements, tests, inspections, and records prove compliance.
+2. **Electrical / digital interface verification** — PECU signal calibration check; command-response verification across full authority range; ARINC 429 bus signal format check; BITE self-test pass verification; end-to-end control channel test from FADEC command to pitch-change actuator response.
 
 ---
 
-## 6. Functional Breakdown ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §4 Functional Breakdown
 
-| Ref | Function | Description | Primary Interface | Status |
-|---:|---|---|---|---|
-| [F-001](#f-001) | <a id="f-001"></a>Define mechanical and electrical control interfaces | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-002](#f-002) | <a id="f-002"></a>Specify signal and command protocols | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-003](#f-003) | <a id="f-003"></a>Document rigging and adjustment procedures | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-004](#f-004) | <a id="f-004"></a>Monitoring | Captures status, failures, degradation, and maintenance data. | [CMS / BITE](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [F-005](#f-005) | <a id="f-005"></a>Traceability | Links architecture, requirements, evidence, and S1000D content. | [CSDB / DMRL / BREX](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| ID | Name | Description | Lead Division |
+|---|---|---|---|
+| F-001 | Mechanical Rigging Check | Verify pitch-change actuator mechanical travel against drawing limits; set and lock stops. | Q-MECHANICS / technician |
+| F-002 | Electrical Interface Calibration | Calibrate PECU command-to-actuator response curve; verify ARINC 429 output format. | Avionics technician |
+| F-003 | Full-Authority Control Test | Command full pitch range from FADEC; verify actuator response at all control points. | Test engineer |
+| F-004 | BITE Self-Test Verification | Execute PECU PBIT and CBIT; confirm all diagnostic paths pass. | Avionics technician |
+| F-005 | Freedom-of-Movement Check | Verify all mechanical links move without binding, excessive friction, or interference. | Q-MECHANICS / technician |
 
 ---
 
-## 7. Mermaid — System Context Diagram
-
-<a id="diagram-system-context"></a>
+## §5 System Context — Mermaid Diagram
 
 ```mermaid
 flowchart LR
-    A[Aircraft-Level Function] --> B[060 Standard Practices — Propeller/Rotor]
-    B --> C[Power Interface]
-    B --> D[Data / Control Interface]
-    B --> E[Mechanical / Fluid / Air Interface]
-    B --> F[Monitoring and Diagnostics]
-    F --> G[Central Maintenance System]
-    G --> H[S1000D / CSDB Evidence]
+    A[FADEC Command] --> B[PECU Propeller ECU]
+    B --> C[Pitch Change Actuator]
+    C --> D[Blade Pitch Mechanism]
+    D --> E[Blade Angle Response]
+    E --> F[Blade Angle Sensor Feedback]
+    F --> B
+    B --> G[ARINC 429 CMS Interface]
+    G --> H[ATA 45 CMS]
 ```
-
-***[Diagram 1](#diagram-system-context) — System context diagram for Propeller/Rotor Control Interface Practices. Related sections: [Interfaces](#10-interfaces), [Monitoring and Diagnostics](#12-monitoring-and-diagnostics), [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping).***
 
 ---
 
-## 8. Mermaid — Internal Functional Architecture
-
-<a id="diagram-internal-functional-architecture"></a>
+## §6 Internal Architecture — Mermaid Diagram
 
 ```mermaid
 flowchart TB
-    SYS[060-060 Propeller/Rotor Control Interface P] --> F1[Define mechanical and electrical control interfaces]
-    SYS --> F2[Specify signal and command protocols]
-    SYS --> CTRL[Control Logic]
-    SYS --> MON[Monitoring and Diagnostics]
-    SYS --> MAINT[Maintenance Boundary]
-    CTRL --> IMA[IMA / Controller Interface]
-    MON --> CMS[CMS / BITE]
-    MAINT --> CSDB[S1000D Data Modules]
+    CTRL[Control Interface Practices] --> MRIG[Mechanical Rigging]
+    CTRL --> ECAL[Electrical Calibration]
+    CTRL --> BTEST[Full Authority Test]
+    CTRL --> BITE[PECU PBIT/CBIT]
+    CTRL --> FOM[Freedom of Movement]
+    MRIG --> STOPS[Mechanical Stop Setting]
+    ECAL --> ARINC[ARINC 429 Signal Check]
+    BTEST --> FADEC[FADEC Command Input]
+    BITE --> DIAGLOG[Diagnostic Log CSDB]
 ```
 
-***[Diagram 2](#diagram-internal-functional-architecture) — Internal functional architecture. Related sections: [Functional Breakdown](#6-functional-breakdown), [Maintenance Concept](#13-maintenance-concept), [Footprints](#15-footprints).***
-
 ---
 
-## 9. Mermaid — Lifecycle Traceability
+## §7 Components and LRUs
 
-<a id="diagram-lifecycle-traceability"></a>
-
-```mermaid
-flowchart LR
-    LC02[LC02 Requirements] --> LC03[LC03 Architecture]
-    LC03 --> LC05[LC05 Detailed Design]
-    LC05 --> LC06[LC06 Verification Planning]
-    LC06 --> LC10[LC10 Certification / Approval]
-    LC10 --> LC11[LC11 Operation]
-    LC11 --> LC12[LC12 Maintenance / Support]
-
-    LC03 --> CSDB[S1000D / CSDB]
-    LC05 --> DMRL[DMRL]
-    LC06 --> EVID[Evidence Records]
-    LC12 --> FEEDBACK[In-Service Feedback]
-    FEEDBACK --> LC13[LC13 Upgrade / Modification]
-```
-
-***[Diagram 3](#diagram-lifecycle-traceability) — Lifecycle traceability from requirements to maintenance feedback. Related sections: [Verification and Validation](#17-verification-and-validation), [References](#20-references), [Open Issues](#21-open-issues).***
-
----
-
-## 10. Interfaces ![TBD](https://img.shields.io/badge/TBD-red)
-
-| Interface Type | Connected System | Description | Evidence Required | Status |
-|---|---|---|---|---|
-| Electrical power | [ATA 24 Power](TBD) | TBD — power supply interface. | [Wiring / load analysis](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data / control | [FADEC / CMS / IMA](TBD) | TBD — command and monitoring interface. | [ICD / data dictionary](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mechanical | [Structure / installation zone](TBD) | TBD — mounting, access, or load path. | [Installation drawing](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Fluid / air / thermal | [Adjacent propulsion system](TBD) | TBD — flow, pressure, temperature, or thermal interface. | [Test report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance | [CSDB / IETP](TBD) | TBD — technician-facing access and procedure boundary. | [DMRL / BREX](#14-s1000d--csdb-mapping) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 11. Operating Modes ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-| Mode | Description | Entry Condition | Exit Condition | Status |
-|---|---|---|---|---|
-| [Normal](#mode-normal) | <a id="mode-normal"></a>System operates within nominal limits. | Aircraft powered and system enabled. | Shutdown, fault, or mode change. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Degraded](#mode-degraded) | <a id="mode-degraded"></a>System operates with reduced function or redundancy. | Fault detected or partial loss of function. | Recovery, isolation, or maintenance action. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Maintenance](#mode-maintenance) | <a id="mode-maintenance"></a>System is configured for inspection, test, removal, installation, or servicing. | Authorized maintenance action. | Maintenance close-up and operational check. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Failure / Safe State](#mode-failure-safe-state) | <a id="mode-failure-safe-state"></a>System enters protective state to prevent unsafe operation. | Fault threshold exceeded. | Reset, repair, replacement, or dispatch decision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 12. Monitoring and Diagnostics ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The system shall provide sufficient monitoring to support safe operation, maintenance troubleshooting, and lifecycle evidence capture.
-
-Monitoring may include:
-
-- status indication;
-- fault detection;
-- [BITE](#glossary-bite) results;
-- sensor plausibility checks;
-- degraded-mode reporting;
-- maintenance messages;
-- event recording;
-- configuration status;
-- software or hardware part-number reporting where applicable.
-
-Diagnostic data shall be mapped to the relevant [S1000D / CSDB](#14-s1000d--csdb-mapping) fault isolation and maintenance data modules.
-
----
-
-## 13. Maintenance Concept ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The maintenance concept shall support modular inspection, fault isolation, removal, installation, and return-to-service verification.
-
-Maintenance content should be structured around:
-
-- access requirements;
-- safety precautions;
-- isolation conditions;
-- required tools and test equipment;
-- inspection criteria;
-- functional test criteria;
-- fault isolation logic;
-- replacement boundaries;
-- close-up and return-to-service checks.
-
-Maintenance procedures shall remain provisional until validated against the applicable [DMRL](#glossary-dmrl), [BREX](#glossary-brex), and task validation records.
-
----
-
-## 14. S1000D / CSDB Mapping ![TBD](https://img.shields.io/badge/TBD-red)
-
-| S1000D Element | Controlled Value | Status |
-|---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System code | `060` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Sub-system code | `0` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Sub-sub-system code | `60` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Assy code | `00A` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Info code | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| Item location code | `D` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| DMC prefix | [`DMC-AMPEL360E-EWTW-060-060`](TBD) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### Recommended Data Module Set
-
-| Info code | Data module purpose | Suggested filename | Status |
-|---:|---|---|---|
-| [040](#dm-040) | <a id="dm-040"></a>Descriptive information | [`DMC-AMPEL360E-EWTW-060-060-040A-D_System-Description.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [300](#dm-300) | <a id="dm-300"></a>Examination / inspection / check | [`DMC-AMPEL360E-EWTW-060-060-300A-D_Inspection.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [400](#dm-400) | <a id="dm-400"></a>Fault isolation | [`DMC-AMPEL360E-EWTW-060-060-400A-D_Fault-Isolation.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [520](#dm-520) | <a id="dm-520"></a>Remove / disassemble | [`DMC-AMPEL360E-EWTW-060-060-520A-D_Remove.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [720](#dm-720) | <a id="dm-720"></a>Install / assemble / connect | [`DMC-AMPEL360E-EWTW-060-060-720A-D_Install.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [941](#dm-941) | <a id="dm-941"></a>Illustrated parts data | [`DMC-AMPEL360E-EWTW-060-060-941A-D_Illustrated-Parts-Data.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 15. Footprints ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-### 15.1 Physical Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Installation zone | TBD — aircraft zone or compartment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Access panels | TBD — relevant access points. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mounting provisions | TBD — rack, bracket, panel, structural attachment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Clearance envelope | TBD — required removal / installation clearance. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cooling / ventilation | TBD — thermal management interface. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Drainage / leak path | TBD — if applicable. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.2 Electrical / Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Power supply | TBD — voltage / phase / bus source. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Protection | TBD — circuit breaker / SSPC / fuse / electronic protection. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data buses | TBD — ARINC / AFDX / CAN / discrete / optical / other. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Connectors | TBD — connector families or interface references. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Bonding / grounding | TBD — bonding and grounding provision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| EMC / EMI controls | TBD — shielding, segregation, filtering. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.3 Maintenance Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Access level | Line / base / shop | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Replaceable unit | LRU / SRU / assembly / panel | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Removal time | Estimated or controlled maintenance interval | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required tools | Standard / special tools | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required GSE | Ground support equipment | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Return-to-service check | Operational / functional / BITE check | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.4 Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Configuration records | Part number, serial number, software load, effectivity | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Evidence records | Test, inspection, compliance, review records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| CSDB records | DMCs, ICNs, BREX, applicability | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance data | Fault history, BITE, removal/installation records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cybersecurity records | Access, load authorization, integrity checks | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 16. Safety and Certification Considerations ![TBD](https://img.shields.io/badge/TBD-red)
-
-The system shall be assessed according to its aircraft-level function, failure effects, operational criticality, and integration dependencies.
-
-The certification and safety analysis shall consider:
-
-- functional hazard assessment;
-- failure modes and effects;
-- common-cause failures;
-- degraded-mode behavior;
-- latent failures;
-- maintenance-induced failures;
-- incorrect installation;
-- incorrect configuration;
-- loss of indication or misleading indication;
-- software and hardware assurance levels where applicable;
-- environmental qualification;
-- electromagnetic compatibility;
-- continued airworthiness impact.
-
-Final safety classification shall remain **TBD** ![TBD](https://img.shields.io/badge/TBD-red) until reviewed against the applicable [FHA](#glossary-fha), [PSSA](#glossary-pssa), [SSA](#glossary-ssa), and certification basis.
-
----
-
-## 17. Verification and Validation ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-Verification shall demonstrate that the system satisfies its requirements under nominal, degraded, maintenance, and failure conditions.
-
-| Verification Method | Description | Evidence | Status |
-|---|---|---|---|
-| [Analysis](#verification-analysis) | <a id="verification-analysis"></a>Engineering calculation, modelling, simulation, or safety analysis. | [Analysis report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Inspection](#verification-inspection) | <a id="verification-inspection"></a>Physical or visual verification of installation, marking, routing, or condition. | [Inspection record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Test](#verification-test) | <a id="verification-test"></a>Functional, environmental, integration, or system test. | [Test report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Demonstration](#verification-demonstration) | <a id="verification-demonstration"></a>Operational demonstration under controlled conditions. | [Demonstration record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Similarity](#verification-similarity) | <a id="verification-similarity"></a>Justified reuse of existing certified design evidence. | [Similarity report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 18. Glossary of Terms and Acronyms
-
-| Term / Acronym | Meaning | Link | Status |
-|---|---|---|---|
-| <a id="glossary-ampel360e"></a>AMPEL360e | Electrified aircraft programme family used as the programme example. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-atlas"></a>ATLAS | Aircraft Top Level Architecture Schema/System. | [ATLAS 000-099](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-bite"></a>BITE | Built-In Test Equipment. | [Monitoring and Diagnostics](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-brex"></a>BREX | Business Rules Exchange; S1000D rule set used to validate data-module content. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ccb"></a>CCB | Configuration Control Board. | [Governance](../../../../../Governance/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-csdb"></a>CSDB | Common Source DataBase. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmc"></a>DMC | Data Module Code. | [S1000D DMC Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmrl"></a>DMRL | Data Module Requirement List. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ewtw"></a>eWTW | Electric Wide Tube-and-Wing. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fadec"></a>FADEC | Full Authority Digital Engine Control. | [Engine Controls](../067_Engine-Controls/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fha"></a>FHA | Functional Hazard Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-lru"></a>LRU | Line Replaceable Unit. | [Maintenance Concept](#13-maintenance-concept) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-pssa"></a>PSSA | Preliminary System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-s1000d"></a>S1000D | International specification for technical publications using a common source database. | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-sns"></a>SNS | Standard Numbering System. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-ssa"></a>SSA | System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-tbd"></a>TBD | To Be Determined. | [Open Issues](#21-open-issues) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-
----
-
-## 19. Citations ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Citation | Use | Link | Status |
-|---|---|---|---|---|
-| [CIT-001](#cit-001) | <a id="cit-001"></a>`S1000D Issue 5.0, Part I — Introduction and overview.` | Architecture / terminology | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-002](#cit-002) | <a id="cit-002"></a>`EASA CS-25, Amendment 27 — Airworthiness Standards: Large Aeroplanes.` | Certification basis | [EASA](https://www.easa.europa.eu/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-003](#cit-003) | <a id="cit-003"></a>`AMPEL360e Programme Architecture Baseline, Rev TBD.` | Programme-specific requirement | [Programme baseline](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [CIT-004](#cit-004) | <a id="cit-004"></a>`ATA iSpec 2200, Chapter 60 — Standard Practices — Propeller/Rotor.` | ATA reference | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [CIT-005](#cit-005) | <a id="cit-005"></a>`DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment.` | Environmental qualification | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 20. References ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Document | Identifier | Revision | Status | Link |
-|---|---|---|---:|---|---|
-| [REF-001](#ref-001) | <a id="ref-001"></a>Q+ATLANTIDE ATLAS master index | `QATL-ATLAS-000-099` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../) |
-| [REF-002](#ref-002) | <a id="ref-002"></a>AMPEL360e programme architecture baseline | `AMP360E-ARCH-BASELINE` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) |
-| [REF-003](#ref-003) | <a id="ref-003"></a>060-069 Propulsión Tradicional section index | `QATL-ATLAS-060-069` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../) |
-| [REF-004](#ref-004) | <a id="ref-004"></a>060 Standard Practices — Propeller/Rotor subsection index | `QATL-ATLAS-060-069-060` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../) |
-| [REF-005](#ref-005) | <a id="ref-005"></a>S1000D project BREX | `BREX-AMPEL360E-EWTW` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-| [REF-ATA](#ref-ata) | <a id="ref-ata"></a>ATA iSpec 2200 — Chapter 60 | `ATA-ISPEC-2200-60` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-
----
-
-## 21. Open Issues
-
-| ID | Issue | Owner | Status | Badge | Link |
+| Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| [OI-001](#oi-001) | <a id="oi-001"></a>Confirm final system boundary for Propeller/Rotor Control Interface Practices. | System expert | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Architecture Description](#5-architecture-description) |
-| [OI-002](#oi-002) | <a id="oi-002"></a>Complete S1000D SNS allocation for 060-060. | Q-DATAGOV | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) |
-| [OI-003](#oi-003) | <a id="oi-003"></a>Confirm certification basis and safety classification. | Certification lead | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Safety and Certification](#16-safety-and-certification-considerations) |
-| [OI-004](#oi-004) | <a id="oi-004"></a>Confirm maintenance task allocation in DMRL. | Tech pubs lead | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [Maintenance Concept](#13-maintenance-concept) |
+| Propeller Electronic Control Unit (PECU) | AMPEL360E-PECU-001 | 1 per propulsion unit | Nacelle avionics bay | On condition / per FADEC PBIT | TBD |
+| Blade angle sensor (LVDT type) | Drawing-specific | Per blade (N blades) | Pitch change mechanism | On condition / annual calibration | TBD |
+| Pitch-change actuator (EHA type) | Drawing-specific | 1 per propulsion unit | Hub actuation zone | On condition | TBD |
+| PECU GSE interface (digital test set) | Approved GSE list | 1 per hangar | Avionics shop | Annual calibration | TBD |
+| Mechanical rigging fixture (angular protractor) | Approved tool | Per hub type | Tool store | Annual calibration | TBD |
 
 ---
 
-## 22. Status Legend
+## §8 Interfaces
 
-| Badge | Meaning | Use |
-|---|---|---|
-| ![TBD](https://img.shields.io/badge/TBD-red) | To Be Determined | Required value, source, boundary, interface, requirement, or evidence is not yet determined. |
-| ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | To Be Completed | Section exists but content is intentionally incomplete. |
-| ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) | Draft | Content exists but is not yet reviewed, frozen, or baselined. |
-| ![DONE](https://img.shields.io/badge/DONE-brightgreen) | Done | Content has been reviewed and is complete for the current baseline. |
-
----
-
-## 23. Change Log
-
-| Revision | Date | Author | Change | Link | Status |
-|---|---|---|---|---|---|
-| [0.1.0](#chg-010) | <a id="chg-010"></a>2026-05-11 | Q+ Team / Amedeo Pelliccia + AI | Initial programme-controlled scaffold. | [Document root](#atlas-060-069--section-06--subsection-060--060--propeller-rotor-control-interface-practices) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Interface Type | Connected System | Protocol / Medium | Data / Function |
+|---|---|---|---|
+| FADEC | ATA 67 Engine Controls | ARINC 429 / AFDX digital command | ICD-060-067 |
+| ATA 45 CMS | Central Maintenance System | BITE fault codes; PECU health data | S1000D DM-400 fault isolation |
+| ATA 24 Electrical Power | Power distribution | 28 V DC / HVDC bus supply to PECU | ATA 24 load sheet |
+| ATA 31 ECAM | Cockpit indication | Blade angle, pitch-change status | ARINC 429 parameter list |
+| Structural | ATA 57 Wing attachment | Nacelle vibration interface; control cable routing clearance | Installation drawing |
 
 ---
 
-> Programme-controlled scaffold. Content is subject to [BREX](#glossary-brex), [SNS](#glossary-sns), applicability, [DMRL](#glossary-dmrl), evidence review, and [CCB](#glossary-ccb) freeze before controlled release.
+## §9 Operating Modes
 
-> **To be reviewed by system expert.**
+| Mode | Trigger | System State | Actions / Consequences |
+|---|---|---|---|
+| Normal operation | Powered, PECU PBIT complete | Full pitch authority active | FADEC commands accepted; BITE running |
+| Rigging mode | PECU in maintenance mode | Aircraft grounded; drive powered off | Full actuator travel exercised; stops verified |
+| PECU fault | Fault detected in PECU | Degraded command authority | Fixed-pitch fallback (fail-safe position) |
+| Ground functional test | Post-installation check | Aircraft grounded | Full command sweep; BITE pass required |
+
+---
+
+## §10 Performance and Budgets ![DRAFT]
+
+| Parameter | Requirement | Target / Design Value | Status |
+|---|---|---|---|
+| Pitch actuator travel accuracy | ± 0.5° of commanded angle across full range | LVDT calibration bench test | TBD |
+| PECU PBIT completion time | < 30 s | PECU spec | TBD |
+| ARINC 429 update rate (blade angle word) | 50 Hz | ARINC 429 bus analyser check | TBD |
+| Mechanical stop position tolerance | ± 0.25° of nominal drawing position | Angular protractor measurement | TBD |
+
+---
+
+## §11 Safety, Redundancy and Fault Tolerance
+
+- PECU must be isolated (ATA 24 circuit breaker pulled) before any work on the pitch-change actuator or blade angle sensor; LOTO required.
+- Any rigging adjustment must be followed by a complete full-authority sweep test before the aircraft is cleared for flight; partial rigging checks are not acceptable.
+- Fail-safe pitch position (feather or defined fixed pitch) must be verified to engage correctly following a simulated PECU power failure.
+- Calibrated angular measurement tooling is mandatory for all rigging tasks; protractors not on the approved calibration register are prohibited.
+
+---
+
+## §12 Maintenance and Diagnostics
+
+| Task | Interval | Access | Special Tools |
+|---|---|---|---|
+| PECU PBIT execution and log review | A-check / after PECU replacement | Maintenance terminal / MCDU | PECU GSE test set |
+| Blade angle sensor calibration check | Per AMM interval or after blade replacement | Hub access | PECU GSE + calibration reference |
+| Rigging position verification | At major inspection or following reported pitch anomaly | Maintenance bay, drive isolated | Angular protractor + rigging fixture |
+| ARINC 429 bus signal check | After PECU replacement | Avionics test bench | ARINC 429 analyser |
+| Freedom-of-movement full travel sweep | After any pitch linkage maintenance | Ground run or rigging mode | Test command set via PECU GSE |
+
+---
+
+## §13 Footprint — Physical, Electrical, Maintenance, Data ![TBD]
+
+| Footprint Type | Parameter | Value | Notes |
+|---|---|---|---|
+| Physical | Mass (system total) | ![TBD] | Pending OEM data |
+| Physical | Envelope (max) | ![TBD] | Pending detailed design |
+| Electrical | Peak power (W) | ![TBD] | To be defined |
+| Maintenance | Access category | Standard line maintenance | Per AMM |
+| Data | AFDX bandwidth | ![TBD] | Per AFDX bus load analysis |
+
+---
+
+## §14 Safety and Certification References ![DRAFT]
+
+| Standard / Document | Title | Issuing Body | Applicability |
+|---|---|---|---|
+| CS-25 §25.901(b) | Installation of powerplant controls | EASA | Propeller control system installation requirements |
+| ARINC 429 | Digital Information Transfer System | ARINC | PECU data bus standard |
+| SAE AS7506 | Maintenance Processes and Procedures for Aircraft Propellers | SAE International | Rigging practice reference |
+| ATA iSpec 2200 | Chapter 60 — Control Interface Practices | Air Transport Association | Interface practice scope |
+| DO-178C | Software Considerations in Airborne Systems — PECU Software | RTCA | PECU software assurance |
+
+---
+
+## §15 V&V Approach ![TBD]
+
+| Phase | Method | Acceptance Criterion | Status |
+|---|---|---|---|
+| Design | Analysis and simulation | Meets all §10 performance requirements | ![TBD] |
+| Integration | Ground functional test | All BITE tests pass; interfaces verified | ![TBD] |
+| Qualification | DO-160G environmental test | All applicable tests pass | ![TBD] |
+| Certification | EASA CS-25 / CS-E compliance demonstration | Type Certificate / STC approval | ![TBD] |
+
+---
+
+## §16 Glossary
+
+| Term | Definition |
+|---|---|
+| **PECU** | Propeller Electronic Control Unit — digital controller commanding pitch-change actuator from FADEC signals. |
+| **LVDT** | Linear Variable Differential Transformer — position sensor used to measure blade angle or actuator displacement. |
+| **EHA** | Electro-Hydraulic Actuator — an actuator containing an internal self-contained hydraulic circuit driven by an integral electric motor. |
+| **Pitch-change mechanism** | Assembly enabling individual blade pitch rotation; key to propeller pitch control including feathering and reverse thrust. |
+| **PBIT** | Power-On Built-In Test — diagnostic self-test executed automatically when the PECU receives power. |
+| **CBIT** | Continuous Built-In Test — ongoing background diagnostic running during normal PECU operation. |
+| **Feathering** | Rotating propeller blades to approximately 90° pitch to minimise drag in the event of engine failure. |
+| **Fine pitch** | Propeller blade angle set for maximum thrust at low forward speed (e.g., take-off); minimum blade angle. |
+| **Coarse pitch** | Propeller blade angle set for efficient cruise operation; high blade angle, lower RPM. |
+| **Rigging** | The process of mechanically setting and verifying control system positions and ranges of travel against design drawings. |
+
+---
+
+## §17 Open Issues
+
+| ID | Description | Owner | Target |
+|---|---|---|---|
+| OI-060-060-001 | Confirm ARINC 429 or AFDX interface type for PECU on AMPEL360E (PECU supplier data pending) | Q-MECHANICS / FADEC team | 2026-Q3 |
+| OI-060-060-002 | Define fail-safe pitch position for AMPEL360E propulsor (feather vs. fine pitch vs. coarse pitch) | Q-AIR / Q-GREENTECH | 2026-Q3 |
+
+---
+
+## §18 Status Legend
+
+| Badge | Meaning |
+|---|---|
+| `![DRAFT]` | Section is drafted but not yet reviewed |
+| `![TBD]` | Content not yet started — to be defined |
+| `![To Be Completed]` | Partially complete — needs additional content |
+| `![APPROVED]` | Reviewed and formally approved |
+
+---
+
+## §19 Related Documents (Siblings in this Subsection)
+
+- [060-000](./060-000.md)
+- [060-010](./060-010.md)
+- [060-020](./060-020.md)
+- [060-030](./060-030.md)
+- [060-040](./060-040.md)
+- [060-050](./060-050.md)
+- [060-070](./060-070.md)
+- [060-080](./060-080.md)
+- [060-090](./060-090.md)
+
+---
+
+## §20 Change Log
+
+| Rev | Date | Author | Description |
+|---|---|---|---|
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |

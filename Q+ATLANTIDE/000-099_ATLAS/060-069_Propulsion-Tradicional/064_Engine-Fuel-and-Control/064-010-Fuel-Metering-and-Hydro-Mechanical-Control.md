@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-010-FUEL-METERING-AND-HYDRO-MECHANICAL-CONTROL"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
+title: "Fuel Metering and Hydro-Mechanical Control"
 ata: "ATA 64"
-sns: "064-090-00"
+sns: "064-010-00"
 subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+subsubject_code: "010"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-010"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-064-010-FUEL-METERING-AND-HYDRO-MECHANICAL-CONTROL
+     ATA 64 · Fuel Metering and Hydro-Mechanical Control
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Fuel Metering and Hydro-Mechanical Control
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
 ![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+The HMU (Hydro-Mechanical Unit) is the primary fuel metering device. It receives high-pressure fuel from the HP pump and meters the correct flow rate to the combustor nozzles under FADEC command. The HMU also schedules VSV actuator hydraulic pressure and HPC bleed valve hydraulic pilot pressure, integrating fuel and compressor geometry control in a single LRU.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 64-010 — Fuel Metering and Hydro-Mechanical Control |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 064-010-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+The HMU (Hydro-Mechanical Unit) is the primary fuel metering device. It receives high-pressure fuel from the HP pump and meters the correct flow rate to the combustor nozzles under FADEC command. The HMU also schedules VSV actuator hydraulic pressure and HPC bleed valve hydraulic pilot pressure, integrating fuel and compressor geometry control in a single LRU.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | HMU (Hydro-Mechanical Unit) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Fuel Metering and Hydro-Mechan]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Fuel Metering and Hydro-M] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| HMU (Hydro-Mechanical Unit) | HMU-PN-TBD | 1 per engine | AGB upper face | On condition / overhaul | FADEC-commanded; meters fuel and VSV/bleed |
+| Fuel metering valve (FMV) | FMV — integral to HMU | 1 per engine | HMU internal | On condition | Controls fuel mass flow to nozzles |
+| Fuel shut-off valve (FSOV) | FSOV-PN-TBD | 1 per engine | HMU / LP fuel line | Functional test at C-check | Fail-safe closed; FADEC and crew fire-handle command |
+| EHV (FADEC-to-HMU) | EHV — integral to HMU | 1 per engine | HMU integral | On condition / FADEC BITE | FADEC electrical → HMU hydraulic interface |
+| Fuel filter (HMU inlet) | FuelFilt-PN-TBD | 1 per engine | HMU inlet | Replace at C-check interval | Prevents particulate contamination of HMU |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Fuel Metering and Hydro-Mechanical Control maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Fuel Metering and Hydro-Mechanical Control dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Fuel Metering and Hydro-Mechanical Control inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Fuel Metering and Hydro-Mechanical Control functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| EASA CS-E §780 | Fuel and induction system | EASA | HMU certification requirement |
+| SAE ARP1533 | Aircraft Fuel System Design | SAE International | HMU architecture reference |
+| SAE AIR5025 | Fuel Metering System Design | SAE International | FMV design reference |
+| ATA iSpec 2200 | Chapter 64 | ATA | ATA chapter scope |
+| DO-178C | Software Considerations | RTCA | FADEC EHV command software assurance |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **FMV** | Fuel Metering Valve — the variable-orifice valve controlling fuel flow to nozzles. |
+| **FSOV** | Fuel Shut-Off Valve — a normally-closed valve that shuts fuel flow to the engine; activated by FADEC shutdown command or crew fire handle. |
+| **EHV** | Electro-Hydraulic Valve — converts FADEC digital/electrical command into hydraulic metering action in the HMU. |
+| **HMU** | Hydro-Mechanical Unit — integrated fuel metering and engine geometry control unit. |
+| **Fuel filter DP** | Differential Pressure across the fuel filter; high DP indicates filter blockage; triggers replacement. |
+| **VSV schedule** | The relationship between HPC VSV angle and engine condition parameters; resident in both HMU and FADEC. |
+| **HP fuel pressure** | The working pressure at HMU inlet produced by HP pump; typically 80–120 bar at take-off. |
+| **Fail-safe closed** | The FSOV default position is closed; it requires positive command (power) to open and remain open. |
+| **Fuel burn-off** | The practice of using fuel as the heat sink and working fluid in fuel metering systems. |
+| **Metering pressure** | The differential pressure across the metering valve; maintained by a pressure-regulating valve in the HMU. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-064-010-001 | Finalise Fuel Metering and Hydro-Mechanical Control design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-064-010-002 | Define BITE coverage for Fuel Metering and Hydro-Mechanical Control | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -240,7 +240,6 @@ flowchart TB
 ## §19 Related Documents (Siblings in this Subsection)
 
 - [064-000](./064-000.md)
-- [064-010](./064-010.md)
 - [064-020](./064-020.md)
 - [064-030](./064-030.md)
 - [064-040](./064-040.md)
@@ -248,6 +247,7 @@ flowchart TB
 - [064-060](./064-060.md)
 - [064-070](./064-070.md)
 - [064-080](./064-080.md)
+- [064-090](./064-090.md)
 
 ---
 

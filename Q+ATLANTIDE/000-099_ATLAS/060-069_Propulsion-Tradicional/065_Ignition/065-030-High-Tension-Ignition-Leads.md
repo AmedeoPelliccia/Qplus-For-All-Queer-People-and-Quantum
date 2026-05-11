@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-065-030-HIGH-TENSION-IGNITION-LEADS"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
-ata: "ATA 64"
-sns: "064-090-00"
-subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+title: "High-Tension Ignition Leads"
+ata: "ATA 65"
+sns: "065-030-00"
+subsection: "065"
+subsubject_code: "030"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0065-030"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-065-030-HIGH-TENSION-IGNITION-LEADS
+     ATA 65 · High-Tension Ignition Leads
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# High-Tension Ignition Leads
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
-![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
+![ATA: ATA 65](https://img.shields.io/badge/ATA-65-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+High-tension (HT) ignition leads carry the high-voltage discharge from the exciter box to the igniter plug. The HT lead is a coaxial cable with an outer shield and inner conductor; the centre conductor carries the HV pulse while the outer shield provides EMI attenuation. HT leads must be routed clear of fuel lines and hot surfaces to prevent fire risk from potential HV arc-over.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 65-030 — High-Tension Ignition Leads |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 065-030-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+High-tension (HT) ignition leads carry the high-voltage discharge from the exciter box to the igniter plug. The HT lead is a coaxial cable with an outer shield and inner conductor; the centre conductor carries the HV pulse while the outer shield provides EMI attenuation. HT leads must be routed clear of fuel lines and hot surfaces to prevent fire risk from potential HV arc-over.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | HT lead (A-channel, exciter to plug No.1) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[High-Tension Ignition Leads]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[High-Tension Ignition Lea] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| HT lead (A-channel, exciter to plug No.1) | HTLead-A-PN-TBD | 1 per engine | Exciter → No.1 plug (4 o'clock) | Inspect at C-check; replace on damage | Coaxial HV cable; silicone outer jacket; shielded |
+| HT lead (B-channel, exciter to plug No.2) | HTLead-B-PN-TBD | 1 per engine | Exciter → No.2 plug (8 o'clock) | Inspect at C-check; replace on damage | Independent B-channel cable route |
+| HT lead clamps and P-clips | Clamp-HT-PN-TBD | Multiple per lead | Along nacelle structure | Inspect at C-check | Maintain routing; prevent chafing on adjacent lines |
+| HT lead end terminations (plug side) | Term-HT-PN-TBD | 2 per engine | At each igniter plug connection | Inspect at plug replacement | HV spring-contact terminal; inspect for corrosion/tracking |
+| Lead routing inspection fixture (tool) | Routing-Fix-PN-TBD | Per hangar | Tool store | Annual inspection | Ensures correct routing during HT lead replacement |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All High-Tension Ignition Leads maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting High-Tension Ignition Leads dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled High-Tension Ignition Leads inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| High-Tension Ignition Leads functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| SAE ARP1177 | Gas Turbine Ignition Systems | SAE International | HT lead design reference |
+| DO-160G Section 21 | EMI emission | RTCA | HT lead EMI compliance test |
+| EASA CS-E §790 | Ignition system | EASA | HT lead installation requirement |
+| CS-25 §25.1183 | Flammable fluid line separation | EASA | HT lead clearance from fuel lines |
+| ATA iSpec 2200 | Chapter 65 | ATA | ATA chapter scope |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **HT lead** | High-Tension lead — a coaxial cable carrying high-voltage ignition pulse from exciter to plug. |
+| **Coaxial cable** | A cable with a centre conductor surrounded by insulation, then a shield, then outer jacket; standard for HV signal transmission. |
+| **HV arc-over** | Unintended electrical discharge from the HT lead through adjacent material (insulation failure); can ignite fuel vapour. |
+| **Silicone jacket** | The outer protective covering of the HT lead; silicone is used for its resistance to high temperature and engine fluids. |
+| **P-clip** | A clip used to secure cables and leads to aircraft structure; prevents vibration-induced chafing. |
+| **Tracking** | Electrical breakdown along the surface of an insulator under voltage stress, leaving a carbon track; indicates insulation degradation. |
+| **Shielding** | The outer braid or foil of the coaxial HT lead that provides EMI attenuation and prevents HV radiation. |
+| **Spring-contact terminal** | The igniter-plug-end terminal of the HT lead; a spring-loaded contact that maintains electrical connection. |
+| **Minimum clearance** | The minimum distance HT leads must maintain from fuel lines and hot surfaces; defined in the routing drawing. |
+| **Insulation resistance** | The DC resistance measured between HT lead conductor and shield; low value indicates insulation degradation. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-065-030-001 | Finalise High-Tension Ignition Leads design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-065-030-002 | Define BITE coverage for High-Tension Ignition Leads | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -239,15 +239,15 @@ flowchart TB
 
 ## §19 Related Documents (Siblings in this Subsection)
 
-- [064-000](./064-000.md)
-- [064-010](./064-010.md)
-- [064-020](./064-020.md)
-- [064-030](./064-030.md)
-- [064-040](./064-040.md)
-- [064-050](./064-050.md)
-- [064-060](./064-060.md)
-- [064-070](./064-070.md)
-- [064-080](./064-080.md)
+- [065-000](./065-000.md)
+- [065-010](./065-010.md)
+- [065-020](./065-020.md)
+- [065-040](./065-040.md)
+- [065-050](./065-050.md)
+- [065-060](./065-060.md)
+- [065-070](./065-070.md)
+- [065-080](./065-080.md)
+- [065-090](./065-090.md)
 
 ---
 

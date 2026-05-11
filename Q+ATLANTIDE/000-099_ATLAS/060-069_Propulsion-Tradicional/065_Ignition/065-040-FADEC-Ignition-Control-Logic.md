@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-065-040-FADEC-IGNITION-CONTROL-LOGIC"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
-ata: "ATA 64"
-sns: "064-090-00"
-subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+title: "FADEC Ignition Control Logic"
+ata: "ATA 65"
+sns: "065-040-00"
+subsection: "065"
+subsubject_code: "040"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0065-040"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-065-040-FADEC-IGNITION-CONTROL-LOGIC
+     ATA 65 · FADEC Ignition Control Logic
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# FADEC Ignition Control Logic
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
-![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
+![ATA: ATA 65](https://img.shields.io/badge/ATA-65-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+FADEC software manages all ignition sequencing. The ignition control function within FADEC is classified as DO-178C DAL C (non-critical to continued safe flight; a single ignition failure does not result in catastrophic failure on a twin-engine aircraft). FADEC controls ignition in three modes: START, CONTINUOUS, and RELIGHT.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 65-040 — FADEC Ignition Control Logic |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 065-040-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+FADEC software manages all ignition sequencing. The ignition control function within FADEC is classified as DO-178C DAL C (non-critical to continued safe flight; a single ignition failure does not result in catastrophic failure on a twin-engine aircraft). FADEC controls ignition in three modes: START, CONTINUOUS, and RELIGHT.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | FADEC ignition control software (DAL C) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[FADEC Ignition Control Logic]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[FADEC Ignition Control Lo] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| FADEC ignition control software (DAL C) | FADEC partition | Per engine | FADEC hardware | Software update | Sequences START, CONTINUOUS, RELIGHT modes |
+| Ignition mode selector switch (crew) | ECAM/overhead panel switch | 1 per engine (AUTO, CONT, OFF) | Overhead panel | Functional test at C-check | Allows crew to command continuous ignition manually |
+| N1/N2 speed signal (start logic) | Speed sensor → FADEC | 2 per spool per engine | Fan frame / HP bearing frame | On condition | FADEC monitors spool acceleration for start success/abort |
+| EGT/T41 signal (hot-start protection) | T41 thermocouple → FADEC | Multiple per engine | HPT inlet | On condition | FADEC monitors EGT rise during start to abort hot start |
+| Igniter disable (fire handle) | Fire handle → FADEC | 1 per engine | Cockpit overhead panel | Functional test at C-check | Fire handle commands ignition OFF as part of engine shutdown |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All FADEC Ignition Control Logic maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting FADEC Ignition Control Logic dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled FADEC Ignition Control Logic inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| FADEC Ignition Control Logic functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| DO-178C | Software Considerations — FADEC ignition DAL C | RTCA | FADEC ignition software assurance |
+| SAE ARP4761 | Safety Assessment Process | SAE International | FADEC FHA for ignition function |
+| EASA CS-E §790 | Ignition system | EASA | Ignition control certification |
+| EASA CS-25 §25.1165 | Engine ignition systems | EASA | In-flight relight requirement |
+| ATA iSpec 2200 | Chapter 65 | ATA | ATA chapter scope |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **START mode** | Ignition mode during engine start sequence; both igniters energised until self-sustaining N1. |
+| **CONTINUOUS mode** | Sustained ignition commanded by crew or automatically during icing, heavy rain, or turbulence; prevents inadvertent flame-out. |
+| **RELIGHT mode** | In-flight ignition command following engine shutdown or flame-out; both igniters for 30 s with appropriate fuel schedule. |
+| **AUTO mode** | Normal ignition mode; FADEC commands ignition as needed for start and special conditions. |
+| **Hot-start abort** | FADEC detection of excessive EGT rise during start; FADEC cuts fuel and ignition before HPT over-temperature. |
+| **Hung-start abort** | FADEC detection of spool not reaching self-sustaining speed; FADEC terminates start. |
+| **N1 self-sustaining speed** | The fan speed at which the engine produces enough turbine power to continue accelerating without the starter. |
+| **FADEC DAL C** | Design Assurance Level C — ignition control; a failure results in a major failure effect, not catastrophic. |
+| **Fire handle ignition cutoff** | Pulling the engine fire handle simultaneously cuts fuel, hydraulics (if any), and ignition power to the engine. |
+| **Ignition enable discrete** | A FADEC output discrete signal switching power to the ignition exciter boxes. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-065-040-001 | Finalise FADEC Ignition Control Logic design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-065-040-002 | Define BITE coverage for FADEC Ignition Control Logic | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -239,15 +239,15 @@ flowchart TB
 
 ## §19 Related Documents (Siblings in this Subsection)
 
-- [064-000](./064-000.md)
-- [064-010](./064-010.md)
-- [064-020](./064-020.md)
-- [064-030](./064-030.md)
-- [064-040](./064-040.md)
-- [064-050](./064-050.md)
-- [064-060](./064-060.md)
-- [064-070](./064-070.md)
-- [064-080](./064-080.md)
+- [065-000](./065-000.md)
+- [065-010](./065-010.md)
+- [065-020](./065-020.md)
+- [065-030](./065-030.md)
+- [065-050](./065-050.md)
+- [065-060](./065-060.md)
+- [065-070](./065-070.md)
+- [065-080](./065-080.md)
+- [065-090](./065-090.md)
 
 ---
 

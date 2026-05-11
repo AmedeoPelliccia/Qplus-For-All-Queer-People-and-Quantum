@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-060-FUEL-HEATING-AND-THERMAL-MANAGEMENT"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
+title: "Fuel Heating and Thermal Management"
 ata: "ATA 64"
-sns: "064-090-00"
+sns: "064-060-00"
 subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+subsubject_code: "060"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-060"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-064-060-FUEL-HEATING-AND-THERMAL-MANAGEMENT
+     ATA 64 · Fuel Heating and Thermal Management
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Fuel Heating and Thermal Management
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
 ![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+The AMPEL360E eWTW eliminates the engine bleed-air fuel heater and uses only the engine Fuel/Oil Heat Exchanger (FOHE) for thermal management. The FOHE warms cold fuel to prevent wax crystal formation and icing, while simultaneously cooling engine lube oil. An additional electrically heated fuel inlet (EHFI) protects the LP pump inlet at extreme cold-soak conditions.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 64-060 — Fuel Heating and Thermal Management |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 064-060-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+The AMPEL360E eWTW eliminates the engine bleed-air fuel heater and uses only the engine Fuel/Oil Heat Exchanger (FOHE) for thermal management. The FOHE warms cold fuel to prevent wax crystal formation and icing, while simultaneously cooling engine lube oil. An additional electrically heated fuel inlet (EHFI) protects the LP pump inlet at extreme cold-soak conditions.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | FOHE (Fuel/Oil Heat Exchanger) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Fuel Heating and Thermal Manag]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Fuel Heating and Thermal ] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| FOHE (Fuel/Oil Heat Exchanger) | FOHE-PN-TBD | 1 per engine | LP fuel circuit after LP pump | On condition / inspect at C-check | Fuel warms; oil cools — no bleed-air heater |
+| EHFI (Electrically Heated Fuel Inlet) | EHFI-PN-TBD | 1 per engine | LP pump inlet | On condition | FADEC-controlled; prevents pump inlet icing at extreme cold |
+| Fuel temperature sensor (LP circuit) | FuelTemp-PN-TBD | 1 per engine | LP circuit after FOHE | On condition | FADEC input for fuel icing risk monitoring |
+| Oil temperature sensor (FOHE outlet) | OilTemp-PN-TBD | 1 per engine | FOHE oil outlet | On condition / calibrate | Oil temperature trending for FOHE effectiveness |
+| Engine oil cooler (ACOC, if any) | ACOC-PN-TBD | TBD per configuration | Nacelle air cooled | Inspect at C-check | Air-Cooled Oil Cooler for additional oil cooling if needed |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Fuel Heating and Thermal Management maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Fuel Heating and Thermal Management dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Fuel Heating and Thermal Management inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Fuel Heating and Thermal Management functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| EASA CS-E §780 | Fuel system thermal design | EASA | Fuel heating certification |
+| ASTM D7566 | SAF specification | ASTM | SAF thermal stability requirement |
+| SAE AIR1168 | Aircraft Fuel System Thermal Management | SAE International | Thermal management reference |
+| ATA iSpec 2200 | Chapter 64 | ATA | ATA chapter scope |
+| DO-160G Section 14 | Icing — Airborne Equipment | RTCA | EHFI environmental icing test |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **FOHE** | Fuel/Oil Heat Exchanger — bi-fluid heat exchanger using LP fuel as the oil cooling medium. |
+| **EHFI** | Electrically Heated Fuel Inlet — a resistive heater element at the LP pump inlet preventing icing in extreme cold-soak conditions. |
+| **Fuel icing** | Formation of ice crystals in fuel at very low temperature (< −40 °C, especially at high altitude). |
+| **Wax crystallisation** | Precipitation of wax crystals in fuel at low temperature; can block fuel filters; monitored by fuel temperature sensor. |
+| **ACOC** | Air-Cooled Oil Cooler — a heat exchanger using nacelle bypass air to cool engine oil. |
+| **Cold-soak** | Condition where aircraft (and fuel system) is exposed to extreme cold temperatures over a long period. |
+| **SAF thermal stability** | Thermal stability of SAF blends at high temperature in fuel wetted components; must meet ASTM D7566 Annex A limits. |
+| **Oil thermal management** | Maintaining engine oil temperature within operating limits; critical for bearing and gearbox lubrication effectiveness. |
+| **Bleed-less heating** | No hot engine bleed air used for fuel heating; replaced by FOHE and EHFI on AMPEL360E eWTW. |
+| **LP circuit** | Low-pressure fuel circuit between aircraft boost pump outlet and HP pump inlet. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-064-060-001 | Finalise Fuel Heating and Thermal Management design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-064-060-002 | Define BITE coverage for Fuel Heating and Thermal Management | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -245,9 +245,9 @@ flowchart TB
 - [064-030](./064-030.md)
 - [064-040](./064-040.md)
 - [064-050](./064-050.md)
-- [064-060](./064-060.md)
 - [064-070](./064-070.md)
 - [064-080](./064-080.md)
+- [064-090](./064-090.md)
 
 ---
 

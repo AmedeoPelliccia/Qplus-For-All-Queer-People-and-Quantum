@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-080-FUEL-AND-CONTROL-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
+title: "Fuel and Control Monitoring, Diagnostics and Control Interfaces"
 ata: "ATA 64"
-sns: "064-090-00"
+sns: "064-080-00"
 subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+subsubject_code: "080"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-080"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-064-080-FUEL-AND-CONTROL-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
+     ATA 64 · Fuel and Control Monitoring, Diagnostics and Control Interfaces
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Fuel and Control Monitoring, Diagnostics and Control Interfaces
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
 ![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+ATA 64 FADEC monitoring integration covers: fuel metering accuracy (FFT), filter DP, pump inlet suction, FOHE effectiveness, and EHFI status. FADEC provides all monitoring data to CMS via EDIU AFDX. ECAM engine page displays fuel flow, filter status, and fuel temperature for crew awareness.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 64-080 — Fuel and Control Monitoring, Diagnostics and Control Interfaces |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 064-080-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+ATA 64 FADEC monitoring integration covers: fuel metering accuracy (FFT), filter DP, pump inlet suction, FOHE effectiveness, and EHFI status. FADEC provides all monitoring data to CMS via EDIU AFDX. ECAM engine page displays fuel flow, filter status, and fuel temperature for crew awareness.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | FADEC fuel metering monitor (FFT data) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Fuel and Control Monitoring, D]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Fuel and Control Monitori] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| FADEC fuel metering monitor (FFT data) | FADEC internal — continuous | 1 per engine | FADEC | Continuous CBIT | Fuel flow vs. commanded flow comparison |
+| Filter DP indication (CMS) | Filter DP switch → CMS | 1 per engine | EDIU → AFDX → CMS | Test at C-check | CMS maintenance message on high DP |
+| FOHE effectiveness monitor | Fuel and oil temp sensors → FADEC | 1 per engine | FADEC calculation | On condition | Monitors FOHE thermal transfer effectiveness |
+| ECAM engine page (fuel flow) | ECAM display system | Crew-shared | Cockpit centre display | On condition | Fuel flow, filter status, fuel temp display |
+| FADEC fault history export (EDIU) | EDIU software | Per engine | EDIU hardware | Software update | Exports FADEC fault history to AHMS ground tool |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Fuel and Control Monitoring, Diagnostics and Control Interfaces maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Fuel and Control Monitoring, Diagnostics and Control Interfaces dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Fuel and Control Monitoring, Diagnostics and Control Interfaces inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Fuel and Control Monitoring, Diagnostics and Control Interfaces functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| DO-178C | Software Considerations — FADEC fuel BITE | RTCA | FADEC BITE DAL A assurance |
+| ARINC 664 P7 | AFDX | ARINC | CMS interface bus |
+| SAE ARP4761 | Safety Assessment | SAE International | BITE coverage analysis |
+| ATA iSpec 2200 | Chapter 64 | ATA | ATA chapter scope |
+| MSG-3 Rev 2020 | Maintenance Programme Development | ATA / IATA | PHM credit for on-condition monitoring |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **FFT** | Fuel Flow Transducer — measures actual fuel mass flow; FADEC closed-loop accuracy reference. |
+| **Filter DP indication** | CMS maintenance message generated when filter DP exceeds the alert threshold. |
+| **FOHE effectiveness** | Comparison of fuel temperature rise and oil temperature drop across FOHE; indicates FOHE blockage or fouling. |
+| **ECAM engine page** | The cockpit Electronic Centralised Aircraft Monitor display page showing engine parameters including fuel flow. |
+| **FADEC fault history** | Record of all FADEC BITE fault codes logged during operation; exported to AHMS for ground analysis. |
+| **EDIU** | Engine Data Interface Unit — FADEC-to-AFDX gateway delivering fuel system data to CMS and ECAM. |
+| **AHMS** | Aircraft Health Management System — ground tool analysing FADEC data for fuel system trending. |
+| **Commanded vs. actual fuel flow** | FADEC closed-loop comparison; large deviation indicates HMU metering valve fault. |
+| **Cold fuel alarm** | FADEC alert when LP fuel temperature drops below the icing risk threshold. |
+| **BITE coverage** | Percentage of detectable fuel system faults detected by FADEC BITE; target ≥ 80 %. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-064-080-001 | Finalise Fuel and Control Monitoring, Diagnostics and Control Interfaces design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-064-080-002 | Define BITE coverage for Fuel and Control Monitoring, Diagnostics and Control Interfaces | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -247,7 +247,7 @@ flowchart TB
 - [064-050](./064-050.md)
 - [064-060](./064-060.md)
 - [064-070](./064-070.md)
-- [064-080](./064-080.md)
+- [064-090](./064-090.md)
 
 ---
 

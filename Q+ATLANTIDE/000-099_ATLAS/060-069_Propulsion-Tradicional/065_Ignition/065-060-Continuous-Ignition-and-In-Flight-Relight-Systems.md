@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-065-060-CONTINUOUS-IGNITION-AND-IN-FLIGHT-RELIGHT-SYSTEMS"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
-ata: "ATA 64"
-sns: "064-090-00"
-subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+title: "Continuous Ignition and In-Flight Relight Systems"
+ata: "ATA 65"
+sns: "065-060-00"
+subsection: "065"
+subsubject_code: "060"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0065-060"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-065-060-CONTINUOUS-IGNITION-AND-IN-FLIGHT-RELIGHT-SYSTEMS
+     ATA 65 · Continuous Ignition and In-Flight Relight Systems
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Continuous Ignition and In-Flight Relight Systems
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
-![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
+![ATA: ATA 65](https://img.shields.io/badge/ATA-65-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Continuous ignition is activated by FADEC automatically or by crew command during conditions that elevate flame-out risk: flight through severe icing, heavy precipitation, gusty crosswinds during approach, or operation near aerodynamic stall. In-flight relight (air start) is the FADEC-managed process of restarting a shutdown engine at altitude using windmill N2 speed.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 65-060 — Continuous Ignition and In-Flight Relight Systems |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 065-060-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Continuous ignition is activated by FADEC automatically or by crew command during conditions that elevate flame-out risk: flight through severe icing, heavy precipitation, gusty crosswinds during approach, or operation near aerodynamic stall. In-flight relight (air start) is the FADEC-managed process of restarting a shutdown engine at altitude using windmill N2 speed.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | Continuous ignition switch (overhead panel) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Continuous Ignition and In-Fli]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Continuous Ignition and I] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| Continuous ignition switch (overhead panel) | Cont-Ign-SW-PN-TBD | 2 (1 per engine) | Overhead panel — engine section | Functional test at C-check | Allows crew to command continuous ignition independent of FADEC AUTO |
+| FADEC AUTO continuous ignition logic | FADEC software DAL C | Per engine | FADEC hardware | Software update | FADEC activates continuous ignition when icing or stall proximity detected |
+| Windmill speed sensor (N2, for air start) | N2-Sens-PN-TBD | 2 per engine (redundant) | HP bearing frame | On condition | FADEC determines if N2 windmill speed is above minimum relight speed |
+| Air start envelope definition (document) | AFM supplement — ATA 65 | Programme document | AFM | Per AFM revision | Defines altitude/speed/temperature envelope for in-flight relight |
+| Unfeathering accumulator (if applicable) | See ATA 61-040 | N/A for turbofan | N/A | N/A | Turbofan does not require unfeathering; propeller-specific only |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Continuous Ignition and In-Flight Relight Systems maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Continuous Ignition and In-Flight Relight Systems dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Continuous Ignition and In-Flight Relight Systems inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Continuous Ignition and In-Flight Relight Systems functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| EASA CS-25 §25.1165 | Engine ignition systems — in-flight relight | EASA | In-flight relight certification requirement |
+| EASA CS-E §790 | Ignition system | EASA | Continuous ignition certification |
+| SAE ARP1177 | Gas Turbine Ignition Systems | SAE International | Continuous ignition and relight reference |
+| DO-178C | Software Considerations | RTCA | FADEC AUTO ignition logic DAL C |
+| ATA iSpec 2200 | Chapter 65 | ATA | ATA chapter scope |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **Continuous ignition** | Persistent spark from both igniters during elevated flame-out risk conditions; prevents uncommanded engine shutdown. |
+| **In-flight relight** | Restart of a shutdown turbofan engine in flight; FADEC-managed with ignition + fuel schedule. |
+| **Windmill speed** | The spool speed maintained by ram air through a dead engine; the minimum windmill N2 for relight is a key certified parameter. |
+| **Air start envelope** | The certified altitude/airspeed/temperature range within which an in-flight relight can be attempted. |
+| **FADEC AUTO ignition** | FADEC algorithm that activates continuous ignition based on icing sensor, proximity to stall, or crew alert. |
+| **Flame-out** | Unexpected extinction of combustion; can result from fuel interruption, severe air disturbance, or ice ingestion. |
+| **Starter-assisted relight** | In-flight relight assisted by the electric starter motor; provides N2 above the minimum windmill speed. |
+| **Crosswind limit** | The maximum crosswind component for safe engine start; at high crosswinds, fuel-air mixture in combustor may be disturbed. |
+| **Approach mode ignition** | Automatic continuous ignition activated when aircraft is on approach phase; standard practice for twin-engine aircraft. |
+| **N2 relight minimum speed** | The minimum HP spool windmill speed below which a successful in-flight relight is not certified. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-065-060-001 | Finalise Continuous Ignition and In-Flight Relight Systems design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-065-060-002 | Define BITE coverage for Continuous Ignition and In-Flight Relight Systems | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -239,15 +239,15 @@ flowchart TB
 
 ## §19 Related Documents (Siblings in this Subsection)
 
-- [064-000](./064-000.md)
-- [064-010](./064-010.md)
-- [064-020](./064-020.md)
-- [064-030](./064-030.md)
-- [064-040](./064-040.md)
-- [064-050](./064-050.md)
-- [064-060](./064-060.md)
-- [064-070](./064-070.md)
-- [064-080](./064-080.md)
+- [065-000](./065-000.md)
+- [065-010](./065-010.md)
+- [065-020](./065-020.md)
+- [065-030](./065-030.md)
+- [065-040](./065-040.md)
+- [065-050](./065-050.md)
+- [065-070](./065-070.md)
+- [065-080](./065-080.md)
+- [065-090](./065-090.md)
 
 ---
 

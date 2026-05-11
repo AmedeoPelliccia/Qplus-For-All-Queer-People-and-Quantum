@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-070-FUEL-SYSTEM-MONITORING-AND-LEAK-DETECTION"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
+title: "Fuel System Monitoring and Leak Detection"
 ata: "ATA 64"
-sns: "064-090-00"
+sns: "064-070-00"
 subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+subsubject_code: "070"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-070"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-064-070-FUEL-SYSTEM-MONITORING-AND-LEAK-DETECTION
+     ATA 64 · Fuel System Monitoring and Leak Detection
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Fuel System Monitoring and Leak Detection
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
 ![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Engine fuel system monitoring covers fuel flow metering accuracy (ACMF), filter differential pressure, fuel temperature, pump inlet pressure, and leak detection. Fuel leaks in the engine fire zone are a primary safety concern; the fire detection system (ATA 26) is the ultimate defence, but fuel leak detection provisions in the nacelle drain system are the first line.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 64-070 — Fuel System Monitoring and Leak Detection |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 064-070-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Engine fuel system monitoring covers fuel flow metering accuracy (ACMF), filter differential pressure, fuel temperature, pump inlet pressure, and leak detection. Fuel leaks in the engine fire zone are a primary safety concern; the fire detection system (ATA 26) is the ultimate defence, but fuel leak detection provisions in the nacelle drain system are the first line.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | ACMF fuel flow data acquisition | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Fuel System Monitoring and Lea]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Fuel System Monitoring an] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| ACMF fuel flow data acquisition | FADEC/EDIU DAL D software | Per engine | FADEC/EDIU | Software update | Per-flight fuel flow record for OEM trending |
+| Filter DP switch (CMS alert) | DP-SW-PN-TBD | 1 per engine | Primary filter housing | Test at C-check | FADEC and CMS alert at high DP |
+| Fuel leak detector (nacelle drain) | Drain-Sen-PN-TBD | 1 per engine | Nacelle drain mast sensor (if fitted) | On condition | Detects fuel presence in nacelle drain flow |
+| Pump inlet pressure sensor | PumpInlet-PN-TBD | 1 per engine | LP pump inlet | On condition | FADEC low-pressure alarm if suction drops |
+| FADEC fuel system BITE | FADEC software | Per engine | FADEC hardware | Continuous CBIT | Monitors all fuel metering LRU signals; detects sensor/valve faults |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Fuel System Monitoring and Leak Detection maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Fuel System Monitoring and Leak Detection dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Fuel System Monitoring and Leak Detection inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Fuel System Monitoring and Leak Detection functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| EASA CS-25 §25.1183 | Flammable fluid lines and fittings in fire zones | EASA | Fuel line fire zone standard |
+| EASA CS-E §780 | Fuel system design | EASA | Engine fuel monitoring certification |
+| SAE ARP1533 | Aircraft Fuel System Design | SAE International | Leak detection reference |
+| ATA iSpec 2200 | Chapter 64 | ATA | ATA chapter scope |
+| DO-160G | Environmental Conditions | RTCA | Fuel system sensor qualification |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **ACMF** | Aircraft Condition Monitoring Function — records per-flight fuel flow data for long-term trending. |
+| **Filter DP** | Filter Differential Pressure — the pressure drop across the filter; increases as filter loads with contamination. |
+| **Nacelle drain** | The lowest point of the engine fire zone designed to drain any fuel or fluid accumulation overboard. |
+| **Fuel leak detection** | Sensing the presence of fuel outside the fuel system boundary in the nacelle; important for fire risk management. |
+| **Pump inlet suction pressure** | The fuel pressure at the LP pump inlet; must remain above the fuel vapour pressure to prevent cavitation. |
+| **FADEC BITE** | FADEC Built-In Test Equipment — continuously monitors all fuel control LRU signals during operation. |
+| **Fuel quantity imbalance** | Asymmetric fuel burn between engines; monitored by ATA 28 fuel management and FADEC fuel flow comparison. |
+| **Fuel system health trend** | Long-term monitoring of fuel consumption and system performance; used to detect deterioration. |
+| **Fire zone monitoring** | The fire detection system (ATA 26) monitors the engine fire zone for temperature and flame. |
+| **Continuous Built-In Test** | FADEC continuously checking fuel metering LRU signals for plausibility and range faults. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-064-070-001 | Finalise Fuel System Monitoring and Leak Detection design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-064-070-002 | Define BITE coverage for Fuel System Monitoring and Leak Detection | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -246,8 +246,8 @@ flowchart TB
 - [064-040](./064-040.md)
 - [064-050](./064-050.md)
 - [064-060](./064-060.md)
-- [064-070](./064-070.md)
 - [064-080](./064-080.md)
+- [064-090](./064-090.md)
 
 ---
 

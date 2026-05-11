@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-030-FUEL-FILTRATION-AND-MONITORING"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
+title: "Fuel Filtration and Monitoring"
 ata: "ATA 64"
-sns: "064-090-00"
+sns: "064-030-00"
 subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+subsubject_code: "030"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-030"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-064-030-FUEL-FILTRATION-AND-MONITORING
+     ATA 64 · Fuel Filtration and Monitoring
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Fuel Filtration and Monitoring
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
 ![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Fuel filtration protects the HMU, fuel nozzles, and FOHE from particulate contamination. The AMPEL360E eWTW engine fuel system includes a primary filter at HMU inlet and a secondary filter in the LP circuit. A differential pressure (DP) switch on the primary filter triggers a CMS alert when the filter approaches bypass threshold.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 64-030 — Fuel Filtration and Monitoring |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 064-030-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Fuel filtration protects the HMU, fuel nozzles, and FOHE from particulate contamination. The AMPEL360E eWTW engine fuel system includes a primary filter at HMU inlet and a secondary filter in the LP circuit. A differential pressure (DP) switch on the primary filter triggers a CMS alert when the filter approaches bypass threshold.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | Primary fuel filter (HMU inlet) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Fuel Filtration and Monitoring]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Fuel Filtration and Monit] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| Primary fuel filter (HMU inlet) | PrimFilt-PN-TBD | 1 per engine | HMU inlet | Replace at C-check interval | 20 µm absolute; DP switch |
+| Secondary fuel filter (LP circuit) | SecFilt-PN-TBD | 1 per engine | LP fuel line | Replace at C-check interval | 40 µm absolute; LP circuit protection |
+| Filter DP switch (primary) | DP-Switch-PN-TBD | 1 per engine | Primary filter housing | On condition / test at C-check | FADEC and CMS alert at high DP |
+| Fuel chip detector (magnetic) | FuelChip-PN-TBD | 1 per engine | LP/HP circuit union | Inspect at C-check | Metallic particle detection |
+| Fuel temperature sensor | FuelTemp-PN-TBD | 1 per engine | LP fuel circuit | On condition | FADEC fuel density compensation and icing monitor |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Fuel Filtration and Monitoring maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Fuel Filtration and Monitoring dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Fuel Filtration and Monitoring inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Fuel Filtration and Monitoring functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| EASA CS-E §790 | Fuel system filtration | EASA | Fuel filter certification requirement |
+| SAE AS8679 | Fuel Filter Standards | SAE International | Filter performance specification |
+| ASTM D7566 | SAF specification | ASTM | Filter material SAF compatibility |
+| ATA iSpec 2200 | Chapter 64 | ATA | ATA chapter scope |
+| DEF STAN 91-091 | Aviation Turbine Fuel — UK | UK MoD | Fuel quality reference (SAF blending allowance) |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **DP switch** | Differential Pressure switch — triggers when filter pressure drop exceeds threshold; indicates filter nearing bypass. |
+| **Primary fuel filter** | The main particulate filter protecting the HMU metering valve from contamination. |
+| **Filter bypass** | A valve that opens allowing unfiltered fuel to flow if filter becomes fully blocked; last-resort protection against starvation. |
+| **Chip detector** | Magnetic plug in fuel circuit accumulating ferrous metallic debris; indicator of component wear in fuel pump or HMU. |
+| **Fuel temperature** | Key FADEC input for fuel density compensation in fuel flow calculation and for cold fuel icing risk assessment. |
+| **µm absolute** | Filter rating in micrometres — 'absolute' means no particles of that size or larger pass through. |
+| **LP circuit** | Low-Pressure fuel circuit between aircraft boost pump and HP pump inlet. |
+| **Contamination** | Introduction of particles or water into the fuel system; can cause nozzle clogging or HMU valve sticking. |
+| **Fuel icing** | Formation of ice crystals in fuel at low temperature; can block filters; prevented by FOHE warming. |
+| **SAF compatibility** | All filter element materials must be compatible with SAF aromatic content range 0–25 %. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-064-030-001 | Finalise Fuel Filtration and Monitoring design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-064-030-002 | Define BITE coverage for Fuel Filtration and Monitoring | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -242,12 +242,12 @@ flowchart TB
 - [064-000](./064-000.md)
 - [064-010](./064-010.md)
 - [064-020](./064-020.md)
-- [064-030](./064-030.md)
 - [064-040](./064-040.md)
 - [064-050](./064-050.md)
 - [064-060](./064-060.md)
 - [064-070](./064-070.md)
 - [064-080](./064-080.md)
+- [064-090](./064-090.md)
 
 ---
 

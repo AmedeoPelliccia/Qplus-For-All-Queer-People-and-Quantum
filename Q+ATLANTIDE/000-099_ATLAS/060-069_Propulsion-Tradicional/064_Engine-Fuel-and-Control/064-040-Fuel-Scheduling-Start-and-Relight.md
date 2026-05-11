@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-040-FUEL-SCHEDULING-START-AND-RELIGHT"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
+title: "Fuel Scheduling, Start and Relight"
 ata: "ATA 64"
-sns: "064-090-00"
+sns: "064-040-00"
 subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+subsubject_code: "040"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-040"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-064-040-FUEL-SCHEDULING-START-AND-RELIGHT
+     ATA 64 · Fuel Scheduling, Start and Relight
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Fuel Scheduling, Start and Relight
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
 ![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+FADEC manages all engine fuel scheduling functions: start fuel schedule (pilot-circuit only during start for reliable light-off), idle scheduling, power management, relight envelope, and fuel flow limiting. The start fuel schedule is critical for hot-start prevention — a hot start occurs when EGT exceeds the T41 limit during start, causing HPT blade oxidation damage.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 64-040 — Fuel Scheduling, Start and Relight |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 064-040-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+FADEC manages all engine fuel scheduling functions: start fuel schedule (pilot-circuit only during start for reliable light-off), idle scheduling, power management, relight envelope, and fuel flow limiting. The start fuel schedule is critical for hot-start prevention — a hot start occurs when EGT exceeds the T41 limit during start, causing HPT blade oxidation damage.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | FADEC start fuel schedule (software) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Fuel Scheduling, Start and Rel]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Fuel Scheduling, Start an] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| FADEC start fuel schedule (software) | FADEC DAL A | Per engine | FADEC hardware | Software update cycle | Governs start fuel flow to prevent hot start / rich extinction |
+| Fuel flow transducer (FFT) | FFT-PN-TBD | 1 per engine | HP fuel supply line | On condition / calibration check | Measures fuel mass flow; FADEC and ACMF input |
+| Start valve (fuel) | StartValve-PN-TBD | 1 per engine | LP circuit | Functional test at C-check | FADEC-commanded; opens to supply fuel to pilot circuit at start |
+| Igniter trigger (FADEC-commanded) | Ign-Cmd — FADEC signal | 1 per engine | FADEC to ignition exciter | Software controlled | FADEC sequences fuel + ignition for start |
+| N1/N2 speed sensors (for start logic) | SpeedSens-PN-TBD | 2 per engine per spool | Fan frame / HP bearing frame | On condition / replace on failure | FADEC monitors spool acceleration during start |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Fuel Scheduling, Start and Relight maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Fuel Scheduling, Start and Relight dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Fuel Scheduling, Start and Relight inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Fuel Scheduling, Start and Relight functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| EASA CS-E §860 | Engine start system | EASA | Start fuel schedule certification |
+| DO-178C | Software Considerations | RTCA | FADEC start schedule DAL A assurance |
+| SAE ARP1533 | Aircraft Fuel System Design | SAE International | Start fuel design reference |
+| ATA iSpec 2200 | Chapter 64 | ATA | ATA chapter scope |
+| FAA AC 25.939 | Evaluating the Operating Limits of Turbine Engines | FAA | Hot start limit compliance guidance |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **Hot start** | Condition where EGT exceeds limit during engine start; FADEC must detect and abort. |
+| **Hung start** | Start where N1 accelerates to self-sustaining speed but fails to reach idle; FADEC detects and aborts. |
+| **Wet start** | Excess fuel flow during start without ignition; creates fuel pool; fire risk. |
+| **Pilot circuit** | The primary (small orifice) fuel nozzle circuit used exclusively during start and ground idle for stable combustion. |
+| **Relight envelope** | The range of altitude, airspeed, and windmill speed within which a dead engine can be relighted in flight. |
+| **In-flight relight** | Restart of a shutdown engine in flight; FADEC-managed with continuous ignition for 30 s. |
+| **N1 self-sustaining** | The N1 speed at which the engine generates enough turbine power to continue accelerating without the starter. |
+| **Starter cut-off** | The N2 speed at which the starter motor is de-energised during start (typically 50–55 % N2). |
+| **FFT** | Fuel Flow Transducer — measures fuel mass flow for FADEC control loops and ACMF condition monitoring. |
+| **FADEC DAL A** | Design Assurance Level A — the highest DO-178C software level; required for FADEC fuel scheduling functions that directly affect engine operation. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-064-040-001 | Finalise Fuel Scheduling, Start and Relight design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-064-040-002 | Define BITE coverage for Fuel Scheduling, Start and Relight | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -243,11 +243,11 @@ flowchart TB
 - [064-010](./064-010.md)
 - [064-020](./064-020.md)
 - [064-030](./064-030.md)
-- [064-040](./064-040.md)
 - [064-050](./064-050.md)
 - [064-060](./064-060.md)
 - [064-070](./064-070.md)
 - [064-080](./064-080.md)
+- [064-090](./064-090.md)
 
 ---
 

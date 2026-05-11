@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-065-020-IGNITER-PLUGS"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
-ata: "ATA 64"
-sns: "064-090-00"
-subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+title: "Igniter Plugs"
+ata: "ATA 65"
+sns: "065-020-00"
+subsection: "065"
+subsubject_code: "020"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0065-020"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-065-020-IGNITER-PLUGS
+     ATA 65 · Igniter Plugs
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Igniter Plugs
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
-![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
+![ATA: ATA 65](https://img.shields.io/badge/ATA-65-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Igniter plugs are the consumable elements of the ignition system. They are installed in the combustor casing at defined circumferential positions and produce an arc gap discharge that ignites the fuel-air mixture. Erosion of the electrode is the primary wear mechanism; plug life is measured in FH or number of starts and is defined in the engine OEM maintenance manual.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 65-020 — Igniter Plugs |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 065-020-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Igniter plugs are the consumable elements of the ignition system. They are installed in the combustor casing at defined circumferential positions and produce an arc gap discharge that ignites the fuel-air mixture. Erosion of the electrode is the primary wear mechanism; plug life is measured in FH or number of starts and is defined in the engine OEM maintenance manual.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | Igniter plug (No.1 — 4 o'clock) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Igniter Plugs]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Igniter Plugs] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| Igniter plug (No.1 — 4 o'clock) | IgnPlug1-PN-TBD | 1 per engine | Combustor 4 o'clock igniter boss | Replace per FH / start count / erosion limit | Air-gap plug; high-energy tip; SAF-compatible seat materials |
+| Igniter plug (No.2 — 8 o'clock) | IgnPlug2-PN-TBD | 1 per engine | Combustor 8 o'clock igniter boss | Replace per FH / start count / erosion limit | Second plug; redundant coverage |
+| Igniter plug boss (combustor casing) | IgnBoss-PN-TBD | 1 per plug position | Combustor casing | Inspect at plug removal / replace if damaged | Threaded insert in combustor outer casing for plug seating |
+| Igniter plug seating gasket | IgnGasket-PN-TBD | 2 per engine (1 per plug) | Between plug and boss | Replace at each plug removal | Seal prevents hot gas blowby; single-use |
+| Plug gap gauge (maintenance tool) | Calibrated gap gauge — engine-specific | Per MRO team | Tool store | Annual calibration | Measures electrode gap at removal for condition assessment |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Igniter Plugs maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Igniter Plugs dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Igniter Plugs inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Igniter Plugs functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| SAE ARP1177 | Gas Turbine Ignition Systems | SAE International | Igniter plug design and life reference |
+| SAE AS3266 | Igniter Plug Specification | SAE International | Igniter plug qualification |
+| EASA CS-E §790 | Ignition system | EASA | Plug certification |
+| ATA iSpec 2200 | Chapter 65 | ATA | ATA chapter scope |
+| ASTM D7566 | SAF specification | ASTM | Plug seat SAF material compatibility |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **Air-gap plug** | Igniter plug design with an open gap between the centre and outer electrodes; arc discharges across the gap. |
+| **Erosion** | Material loss from plug electrodes due to the high-energy arc discharge; the primary plug wear mechanism. |
+| **Plug life** | The maximum FH or start count before mandatory replacement; published in the engine OEM maintenance manual. |
+| **Electrode gap** | The distance between centre and outer electrodes of the igniter plug; must be within limits for reliable ignition. |
+| **Hot gas blowby** | Gas leakage past the plug seat into the nacelle environment if the seat gasket fails; a fire risk. |
+| **Plug seating torque** | Torque applied to igniter plug during installation; must be correct to seat the gasket and prevent blowby. |
+| **Combustor igniter boss** | The threaded insert in the combustor casing into which the igniter plug is screwed. |
+| **SAF compatibility (plug)** | Plug seat materials must be compatible with SAF fuel components that may be present in combustor zone. |
+| **Centre electrode** | The central conductor of the igniter plug; one end of the spark arc gap. |
+| **Outer electrode (ground)** | The outer conductor of the igniter plug; forms the other end of the spark arc gap; typically the plug body. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-065-020-001 | Finalise Igniter Plugs design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-065-020-002 | Define BITE coverage for Igniter Plugs | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -239,15 +239,15 @@ flowchart TB
 
 ## §19 Related Documents (Siblings in this Subsection)
 
-- [064-000](./064-000.md)
-- [064-010](./064-010.md)
-- [064-020](./064-020.md)
-- [064-030](./064-030.md)
-- [064-040](./064-040.md)
-- [064-050](./064-050.md)
-- [064-060](./064-060.md)
-- [064-070](./064-070.md)
-- [064-080](./064-080.md)
+- [065-000](./065-000.md)
+- [065-010](./065-010.md)
+- [065-030](./065-030.md)
+- [065-040](./065-040.md)
+- [065-050](./065-050.md)
+- [065-060](./065-060.md)
+- [065-070](./065-070.md)
+- [065-080](./065-080.md)
+- [065-090](./065-090.md)
 
 ---
 

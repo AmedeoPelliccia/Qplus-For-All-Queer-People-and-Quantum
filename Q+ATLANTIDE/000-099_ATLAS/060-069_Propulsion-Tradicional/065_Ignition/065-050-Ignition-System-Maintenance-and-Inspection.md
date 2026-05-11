@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-065-050-IGNITION-SYSTEM-MAINTENANCE-AND-INSPECTION"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
-ata: "ATA 64"
-sns: "064-090-00"
-subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+title: "Ignition System Maintenance and Inspection"
+ata: "ATA 65"
+sns: "065-050-00"
+subsection: "065"
+subsubject_code: "050"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0065-050"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-065-050-IGNITION-SYSTEM-MAINTENANCE-AND-INSPECTION
+     ATA 65 · Ignition System Maintenance and Inspection
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# Ignition System Maintenance and Inspection
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
-![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
+![ATA: ATA 65](https://img.shields.io/badge/ATA-65-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Ignition system maintenance comprises three main activities: scheduled igniter plug replacement (FH/start-count-limited), C-check functional test of exciter boxes (energy and repetition rate), and HT lead inspection (visual, insulation resistance). All maintenance on ignition hardware must be performed with exciter boxes isolated (28 V DC circuit breakers open); the stored charge in exciter capacitors is lethal.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 65-050 — Ignition System Maintenance and Inspection |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 065-050-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+Ignition system maintenance comprises three main activities: scheduled igniter plug replacement (FH/start-count-limited), C-check functional test of exciter boxes (energy and repetition rate), and HT lead inspection (visual, insulation resistance). All maintenance on ignition hardware must be performed with exciter boxes isolated (28 V DC circuit breakers open); the stored charge in exciter capacitors is lethal.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | Igniter plug replacement kit (2 per engine) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[Ignition System Maintenance an]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[Ignition System Maintenan] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| Igniter plug replacement kit (2 per engine) | Per engine OEM kit | Per event | Parts store | Single-use (plug + gasket per kit) | OEM-approved plug; must not substitute unapproved type |
+| Exciter functional test set | Approved test set — engine-specific | Per MRO team | Avionics test equipment store | Annual calibration | Measures exciter energy output and repetition rate |
+| HT lead insulation resistance kit | Calibrated megger / HV tester | Per team | Tool store | Annual calibration | Tests HT lead insulation integrity; pass/fail per drawing limit |
+| Torque wrench (igniter plug) | Calibrated torque wrench — plug torque range | Per team | Tool crib | 6-month calibration | Critical torque — gasket seating and blowby prevention |
+| Exciter isolation C/B list | AMM procedure reference | Per task | AMM reference | N/A — procedural | Lists specific circuit breakers to pull before any ignition work |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All Ignition System Maintenance and Inspection maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting Ignition System Maintenance and Inspection dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled Ignition System Maintenance and Inspection inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| Ignition System Maintenance and Inspection functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| SAE ARP1177 | Gas Turbine Ignition Systems | SAE International | Igniter plug life and maintenance reference |
+| EASA Part-145 | Approved Maintenance Organisation | EASA | Dual sign-off and authorised signatory |
+| IEC 60900 | Live working — Insulation gloves | IEC | Ignition maintenance electrical safety |
+| ATA iSpec 2200 | Chapter 65 | ATA | ATA chapter scope |
+| SAE AS3266 | Igniter Plug Specification | SAE International | Approved plug qualification standard |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **Igniter plug life limit** | Maximum FH or start count before mandatory replacement; published by engine OEM. |
+| **Exciter functional test** | Ground test energising the exciter with a dummy load; measures spark energy and repetition rate. |
+| **Insulation resistance test** | DC test measuring resistance between HT lead conductor and outer shield; low value indicates degradation. |
+| **Lethal stored charge** | The charge stored in exciter capacitors can be > 2 J at > 12 kV; capable of causing cardiac arrest; circuit breakers MUST be pulled before handling. |
+| **Circuit breaker isolation** | The specific 28 V DC C/Bs supplying A and B exciter channels must be pulled before any maintenance on ignition components. |
+| **Capacitor discharge time** | After C/B removal, the exciter capacitor discharges to a safe level in typically 5–10 s; a wait time is mandatory. |
+| **OEM-approved plug** | Igniter plug part number must exactly match OEM-approved list; unapproved plugs may have incorrect electrode material or gap geometry. |
+| **Dual sign-off (safety-critical)** | Independent second technician signs off igniter plug installation torque as a safety-critical task. |
+| **C-check functional test** | Full exciter functional test and HT lead inspection performed at every C-check interval. |
+| **Plug start count** | Cumulative number of engine starts through which the plug has fired; tracked by FADEC and CMS. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-065-050-001 | Finalise Ignition System Maintenance and Inspection design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-065-050-002 | Define BITE coverage for Ignition System Maintenance and Inspection | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -239,15 +239,15 @@ flowchart TB
 
 ## §19 Related Documents (Siblings in this Subsection)
 
-- [064-000](./064-000.md)
-- [064-010](./064-010.md)
-- [064-020](./064-020.md)
-- [064-030](./064-030.md)
-- [064-040](./064-040.md)
-- [064-050](./064-050.md)
-- [064-060](./064-060.md)
-- [064-070](./064-070.md)
-- [064-080](./064-080.md)
+- [065-000](./065-000.md)
+- [065-010](./065-010.md)
+- [065-020](./065-020.md)
+- [065-030](./065-030.md)
+- [065-040](./065-040.md)
+- [065-060](./065-060.md)
+- [065-070](./065-070.md)
+- [065-080](./065-080.md)
+- [065-090](./065-090.md)
 
 ---
 

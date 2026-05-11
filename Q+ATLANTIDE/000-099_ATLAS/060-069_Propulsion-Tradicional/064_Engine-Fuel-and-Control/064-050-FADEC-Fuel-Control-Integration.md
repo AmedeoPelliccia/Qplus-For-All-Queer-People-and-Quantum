@@ -1,12 +1,12 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-064-050-FADEC-FUEL-CONTROL-INTEGRATION"
 register: ATLAS-1000
-title: "S1000D / CSDB Mapping and Traceability"
+title: "FADEC Fuel Control Integration"
 ata: "ATA 64"
-sns: "064-090-00"
+sns: "064-050-00"
 subsection: "064"
-subsubject_code: "090"
-primary_q_division: Q-DATAGOV
+subsubject_code: "050"
+primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
 governance_class: baseline
@@ -17,22 +17,22 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-050"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
-     QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
-     ATA 64 · S1000D / CSDB Mapping and Traceability
+     QATL-ATLAS-1000-ATLAS-060-069-064-050-FADEC-FUEL-CONTROL-INTEGRATION
+     ATA 64 · FADEC Fuel Control Integration
      AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
-# S1000D / CSDB Mapping and Traceability
+# FADEC Fuel Control Integration
 
 ![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
 ![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
 ![ATA: ATA 64](https://img.shields.io/badge/ATA-64-green)
 ![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
-![Q-Division: Q-DATAGOV](https://img.shields.io/badge/Q--Division-Q-DATAGOV-brightgreen)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+FADEC is the primary closed-loop controller for engine fuel flow. It commands the HMU EHV to achieve the desired N1 (or N2/EGT limit) target. FADEC dual-channel architecture ensures that a single FADEC channel failure does not result in an unsafe fuel metering state. The FADEC fuel control function is certified to DO-178C DAL A.
 
 ---
 
@@ -56,15 +56,15 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 | Parameter | Value |
 |---|---|
 | Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
+| ATA reference | ATA 64-050 — FADEC Fuel Control Integration |
 | Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-090-00 |
+| S1000D SNS | 064-050-00 |
 
 ---
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+FADEC is the primary closed-loop controller for engine fuel flow. It commands the HMU EHV to achieve the desired N1 (or N2/EGT limit) target. FADEC dual-channel architecture ensures that a single FADEC channel failure does not result in an unsafe fuel metering state. The FADEC fuel control function is certified to DO-178C DAL A.
 
 ---
 
@@ -72,7 +72,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | S1000D Issue 5.0 | Primary function | Q-GREENTECH |
+| F-001 | FADEC dual-channel unit (fuel control partition) | Primary function | Q-GREENTECH |
 | F-002 | System integration | Interface management | Q-MECHANICS |
 | F-003 | Monitoring | BITE and health data | Q-AIR |
 
@@ -82,7 +82,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ```mermaid
 flowchart LR
-    A[Aircraft Level] --> B[S1000D / CSDB Mapping and Trac]
+    A[Aircraft Level] --> B[FADEC Fuel Control Integration]
     B --> C[Primary Function]
     B --> D[Interfaces]
     B --> E[Monitoring]
@@ -95,7 +95,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    SYS[S1000D / CSDB Mapping and] --> F1[Function 1]
+    SYS[FADEC Fuel Control Integr] --> F1[Function 1]
     SYS --> F2[Function 2]
     SYS --> CTRL[Control]
     SYS --> MON[BITE Diagnostics]
@@ -108,11 +108,11 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| S1000D Issue 5.0 | S1000D.org | CSDB | IT | Per release | XML authoring standard |
-| BREX-064-v1 | Programme doc | CSDB validator | IT | Per revision | Four domain constraints enforced |
-| DMRL — 36 DMs | Q-DATAGOV tracker | PMO | PMO tool | Monthly review | All 36 DMs tracked |
-| ICN registry ATA 64 | Q-DATAGOV database | CSDB | IT | Continuous | Illustration traceability |
-| SAF compatibility evidence registry | Q-GREENTECH / materials | Q-DATAGOV | Programme register | Per material approval | Evidence for BREX rule 1 |
+| FADEC dual-channel unit (fuel control partition) | FADEC-PN-TBD | 1 per engine | Accessories bay | On condition | DO-178C DAL A; dual-channel cross-comparison |
+| FADEC N1 feedback sensor | N1-Sens-PN-TBD | 2 per engine (redundant) | Fan frame | On condition | Dual redundant fan speed for FADEC closed loop |
+| T41 temperature monitor (EGT limiting) | T41-Mon-PN-TBD | Multiple per engine | HPT inlet | On condition / calibration | FADEC EGT limit protection — DAL A function |
+| Fuel control mode select (ECAM/pilot) | ECAM switch / FADEC logic | 1 (aircraft-level) | Overhead panel | Functional test C-check | Allows crew to command alternate fuel control mode (abnormal) |
+| FADEC power supply (dedicated) | FADEC-Pwr-PN-TBD | Dual 28 V DC (primary + secondary) | FADEC chassis | On condition | FADEC powered by aircraft bus + dedicated battery backup |
 
 ---
 
@@ -149,9 +149,9 @@ flowchart TB
 
 ## §11 Safety, Redundancy and Fault Tolerance
 
-- All S1000D / CSDB Mapping and Traceability maintenance requires FADEC and fuel system isolation before starting.
+- All FADEC Fuel Control Integration maintenance requires FADEC and fuel system isolation before starting.
 - Safety-critical fastener torques require calibrated tooling and dual sign-off.
-- BITE failures affecting S1000D / CSDB Mapping and Traceability dispatch must be resolved or deferred per approved MEL.
+- BITE failures affecting FADEC Fuel Control Integration dispatch must be resolved or deferred per approved MEL.
 
 ---
 
@@ -159,9 +159,9 @@ flowchart TB
 
 | Task | Interval | Access | Special Tools |
 |---|---|---|---|
-| Scheduled S1000D / CSDB Mapping and Traceability inspection | C-check | Per AMM access | NDT and inspection kit |
+| Scheduled FADEC Fuel Control Integration inspection | C-check | Per AMM access | NDT and inspection kit |
 | BITE log review and download | A-check | Maintenance terminal | CMS terminal |
-| S1000D / CSDB Mapping and Traceability functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
+| FADEC Fuel Control Integration functional test after LRU replacement | After LRU change | Ground run | FADEC GSE |
 
 ---
 
@@ -181,11 +181,11 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
-| ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
-| ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
-| DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
+| DO-178C | Software Considerations — DAL A FADEC fuel control | RTCA | FADEC software assurance standard |
+| SAE ARP4761 | Safety Assessment Process | SAE International | FADEC FHA and FTA methodology |
+| EASA CS-E §770 | Fuel system | EASA | FADEC fuel control certification |
+| ARINC 429 | Digital Information Transfer | ARINC | FADEC data bus to ECAM and CMS |
+| ATA iSpec 2200 | Chapter 64 | ATA | ATA chapter scope |
 
 ---
 
@@ -204,16 +204,16 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **DMC** | Data Module Code — unique S1000D identifier. |
-| **DMRL** | Data Module Requirement List. |
-| **BREX** | Business Rules eXchange — project-specific S1000D rules. |
-| **SAF evidence** | Test or analysis demonstrating material compatibility with SAF fuel. |
-| **CSDB** | Common Source DataBase. |
-| **SNS** | Standard Numbering System. |
-| **IETP** | Interactive Electronic Technical Publication. |
-| **DM-040** | Descriptive data module. |
-| **DM-300** | Inspection data module. |
-| **DM-941** | Illustrated parts data module. |
+| **FADEC** | Full Authority Digital Engine Control — closed-loop engine governor; DAL A software. |
+| **N1 control loop** | FADEC control loop commanding fuel flow to achieve target fan speed (N1). |
+| **EGT limiting** | FADEC function that reduces fuel flow when EGT approaches the limit; prevents turbine over-temperature. |
+| **Alternate fuel control mode** | A degraded but safe mode in which FADEC uses backup sensor data or a fixed fuel schedule. |
+| **Dual-channel FADEC** | Two independent computation channels; cross-comparison detects single-channel faults. |
+| **FADEC battery backup** | Dedicated battery ensuring FADEC remains powered through aircraft electrical transients during engine start. |
+| **DAL A** | Design Assurance Level A — the highest DO-178C level; a failure in this software could be catastrophic. |
+| **Closed-loop control** | Control system using sensor feedback (N1, EGT) to continuously correct the output (fuel flow). |
+| **Open-loop schedule** | Fallback fuel schedule without sensor feedback; used only if all feedback sensors fail. |
+| **Control law** | The mathematical algorithm governing FADEC fuel schedule as a function of thrust lever angle, altitude, temperature, and engine condition. |
 
 ---
 
@@ -221,8 +221,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-064-090-001 | Finalise S1000D / CSDB Mapping and Traceability design with engine OEM | Q-MECHANICS | 2026-Q4 |
-| OI-064-090-002 | Define BITE coverage for S1000D / CSDB Mapping and Traceability | Q-AIR / safety | 2027-Q1 |
+| OI-064-050-001 | Finalise FADEC Fuel Control Integration design with engine OEM | Q-MECHANICS | 2026-Q4 |
+| OI-064-050-002 | Define BITE coverage for FADEC Fuel Control Integration | Q-AIR / safety | 2027-Q1 |
 
 ---
 
@@ -244,10 +244,10 @@ flowchart TB
 - [064-020](./064-020.md)
 - [064-030](./064-030.md)
 - [064-040](./064-040.md)
-- [064-050](./064-050.md)
 - [064-060](./064-060.md)
 - [064-070](./064-070.md)
 - [064-080](./064-080.md)
+- [064-090](./064-090.md)
 
 ---
 

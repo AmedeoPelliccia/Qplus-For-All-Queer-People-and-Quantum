@@ -1,468 +1,271 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-06-061-030-BLADES-HUBS-AND-SPINNERS"
-title: "ATLAS 060-069 · 06.061.030 — Blades, Hubs and Spinners"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-061-030-BLADES-HUBS-AND-SPINNERS"
 register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "060-069"
-section: "06"
-section_title: "Propulsión Tradicional"
+title: "Blades, Hubs and Spinners"
+ata: "ATA 61"
+sns: "061-030-00"
 subsection: "061"
-subsection_title: "Propellers and Propulsors"
-subsubject: "030"
-subsubject_title: "Blades, Hubs and Spinners"
-subsubject_file: "061-030-Blades-Hubs-and-Spinners.md"
-subsubject_link: "./061-030-Blades-Hubs-and-Spinners.md"
+subsubject_code: "030"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
 status: active
-language: en
-s1000d_applicability: "S1000D-CSDB-compatible"
-ata_reference: "ATA 61"
-created: "2026-05-11"
-updated: "2026-05-11"
-review_status: "to-be-reviewed-by-system-expert"
+governance_class: baseline
+revision: "0.1"
+date: "2026-05-11"
+parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
+parent_architecture_doc: "../../../README.md"
+parent_section_doc: "../../README.md"
+parent_subsection_doc: "../README.md"
+parent_subsubject_doc: "./README.md"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-030"
 ---
 
-![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-![TBD](https://img.shields.io/badge/TBD-red)
-![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+<!-- ──────────────────────────────────────────────────────────────────────────
+     QATL-ATLAS-1000-ATLAS-060-069-061-030-BLADES-HUBS-AND-SPINNERS
+     ATA 61 · Blades, Hubs and Spinners
+     AMPEL360E eWTW — ATLAS Register 1000
+────────────────────────────────────────────────────────────────────────────── -->
 
-# ATLAS 060-069 · Section 06 · Subsection 061 · 030 — Blades, Hubs and Spinners
+# Blades, Hubs and Spinners
 
-## 0. Hyperlink Policy
-
-All linkable content in this file shall be expressed as Markdown links where a stable target exists.
-
-Use:
-
-- relative links for repository-internal content;
-- anchor links for headings, figures, diagrams, glossary terms, citations, references, open issues, and lifecycle sections;
-- stable external links only for public standards or authoritative sources;
-- `TBD` or `<relative-link-or-TBD>` where no stable target exists.
-
-Do not invent links.
-
-Every table containing a document, path, code, reference, acronym, figure, diagram, lifecycle phase, Q-Division, ORB-Function, DMC, BREX, DMRL, evidence record, or issue shall include either a direct link or an explicit `TBD` target.
+![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
+![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
+![ATA: ATA 61](https://img.shields.io/badge/ATA-61-green)
+![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q-GREENTECH-brightgreen)
 
 ---
 
-## 1. Purpose
+## §0 Hyperlink Policy
 
-This document defines the controlled technical scope for **Blades, Hubs and Spinners** (`061-030`) within the [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) / [ATLAS 000-099](../../../) architecture branch, section [060-069 Propulsión Tradicional](../../).
-
-The objective is to provide a deterministic, [S1000D](https://s1000d.org/)-compatible technical baseline covering the design definition, materials, and controlled configuration for propeller blades, hubs, and spinner assemblies.
-
-This file belongs to:
-
-[`Q+ATLANTIDE/000-099_ATLAS/060-069_Propulsion-Tradicional/061_Propellers-and-Propulsors/061-030-Blades-Hubs-and-Spinners.md`](./)
+> All hyperlinks in this document are **relative** (five directory levels: `../../../../../`).
+> Absolute URLs are forbidden. Every linked document must exist in the Q+ATLANTIDE repository
+> before the link is activated. Broken links are treated as open issues and must be resolved
+> before the document is promoted from `DRAFT` to `APPROVED`.
 
 ---
 
-## 2. Applicability
+## §1 Purpose
 
-This document applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme and the **eWTW** configuration.
+This document defines the design, material specification, and controlled configuration for propeller blades, hubs, and spinner assemblies. These three component types form the structural and aerodynamic core of any propulsor assembly; their design, inspection, and interchangeability are tightly controlled by the propeller Type Certificate.
 
-| Applicability Item | Value | Status |
-|---|---|---|
-| Programme | [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Architecture register | [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATLAS band | [000-099_ATLAS](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Section | [060-069 Propulsión Tradicional](../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Subsection | [061 Propellers and Propulsors](../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATA reference | [ATA 61](#ref-ata) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| S1000D compatibility | [S1000D-CSDB-compatible](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Lifecycle use | [LC03](../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md) / [LC05](../../../../../Governance/Lifecycle/LC05-Detailed-Design.md) / [LC06](../../../../../Governance/Lifecycle/LC06-Verification-Planning.md) / [LC11](../../../../../Governance/Lifecycle/LC11-Operation.md) / [LC12](../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
+For the AMPEL360E eWTW, blades are CFRP (carbon-fibre reinforced polymer) with a titanium or stainless steel leading-edge protective cap. The hub is a high-strength titanium or steel forging. The spinner is a composite or aluminium nosecone that houses the spinner dome and provides access to the pitch actuator if removal is required.
 
 ---
 
-## 3. System / Function Overview
+## §2 Applicability
 
-The **Blades, Hubs and Spinners** node covers the design definition, materials, and controlled configuration for propeller blades, hubs, and spinner assemblies.
-
-For the [AMPEL360e](#glossary-ampel360e) configuration, this node shall be treated as part of a full-electric, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360e implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
-
-This document does not freeze the final certified design. It establishes a controlled scaffold for downstream engineering, [S1000D](#glossary-s1000d) data-module planning, [CSDB](#glossary-csdb) integration, and evidence capture.
-
----
-
-## 4. Scope
-
-### 4.1 Included
-
-This document includes:
-- Define blade geometry and material standards
-- Specify hub design and attachment provisions
-- Document spinner and fairing requirements
-- Define aerodynamic and structural acceptance limits
-- Map to S1000D descriptive DMs
-
-### 4.2 Excluded
-
-This document excludes:
-
-- supplier-proprietary internal design data unless released to the programme baseline;
-- final certification compliance statements;
-- detailed maintenance procedures unless assigned by the [DMRL](#glossary-dmrl);
-- final illustrated parts data unless released through the [CSDB](#glossary-csdb);
-- production-level configuration until [CCB](#glossary-ccb) freeze.
+| Parameter | Value |
+|---|---|
+| Aircraft Program | AMPEL360E eWTW |
+| ATA reference | ATA 61-030 — Blades, Hubs and Spinners |
+| Certification basis | EASA CS-25 Amendment 27+ |
+| S1000D SNS | 061-030-00 |
 
 ---
 
-## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §3 Functional Description ![DRAFT]
 
-The **Blades, Hubs and Spinners** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries.
+**Blade design**: Aerofoil profile optimised for the AMPEL360E cruise Mach number; CFRP spar-cap and shell construction; leading-edge erosion shield (titanium or nickel alloy electroform); variable-pitch root fitting with precision spar bearing.
 
-At architecture level, the system shall be described in terms of:
+**Hub design**: Titanium alloy forging; blade retention pockets with matched-pair pitch bearings; central shaft bore to engine spline; internal channel for pitch actuator oil (if hydraulic type) or signal routing (if EMA type).
 
-1. **Function** — what the system does.
-2. **Equipment** — which [LRUs](#glossary-lru), assemblies, panels, modules, or components implement the function.
-3. **Interfaces** — how the system exchanges power, data, fluid, air, signal, force, or commands.
-4. **Control logic** — how the system is commanded, monitored, degraded, isolated, or reset.
-5. **Maintenance boundary** — what a technician can inspect, test, remove, install, or replace.
-6. **Evidence boundary** — which requirements, tests, inspections, and records prove compliance.
+**Spinner design**: CFRP or aluminium dome; attaches at spinner support frame on hub forward face; provides FOD and rain erosion protection to hub station; quick-release fasteners for maintenance access.
 
 ---
 
-## 6. Functional Breakdown ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §4 Functional Breakdown
 
-| Ref | Function | Description | Primary Interface | Status |
-|---:|---|---|---|---|
-| [F-001](#f-001) | <a id="f-001"></a>Define blade geometry and material standards | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-002](#f-002) | <a id="f-002"></a>Specify hub design and attachment provisions | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-003](#f-003) | <a id="f-003"></a>Document spinner and fairing requirements | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-004](#f-004) | <a id="f-004"></a>Monitoring | Captures status, failures, degradation, and maintenance data. | [CMS / BITE](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [F-005](#f-005) | <a id="f-005"></a>Traceability | Links architecture, requirements, evidence, and S1000D content. | [CSDB / DMRL / BREX](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| ID | Name | Description | Lead Division |
+|---|---|---|---|
+| F-001 | CFRP propeller blade with LE erosion cap | Blade-PN-TBD | N per propulsor |
+| F-001 | Titanium hub forging | Hub-PN-TBD | 1 per propulsor |
+| F-001 | Composite spinner dome | Spinner-PN-TBD | 1 per propulsor |
+| F-001 | Precision spar bearing (blade root) | Bearing-PN-TBD | N per propulsor |
+| F-001 | Titanium LE erosion shield (blade) | LE-Shield-PN-TBD | N per propulsor |
 
 ---
 
-## 7. Mermaid — System Context Diagram
-
-<a id="diagram-system-context"></a>
+## §5 System Context — Mermaid Diagram
 
 ```mermaid
 flowchart LR
-    A[Aircraft-Level Function] --> B[061 Propellers and Propulsors]
-    B --> C[Power Interface]
-    B --> D[Data / Control Interface]
-    B --> E[Mechanical / Fluid / Air Interface]
-    B --> F[Monitoring and Diagnostics]
-    F --> G[Central Maintenance System]
-    G --> H[S1000D / CSDB Evidence]
+    A[Aircraft Level] --> B[Blades, Hubs and Spinners]
+    B --> C[Primary Function]
+    B --> D[Structural Interface]
+    B --> E[Control Interface]
+    B --> F[Monitoring]
+    F --> G[CMS ATA 45]
 ```
-
-***[Diagram 1](#diagram-system-context) — System context diagram for Blades, Hubs and Spinners. Related sections: [Interfaces](#10-interfaces), [Monitoring and Diagnostics](#12-monitoring-and-diagnostics), [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping).***
 
 ---
 
-## 8. Mermaid — Internal Functional Architecture
-
-<a id="diagram-internal-functional-architecture"></a>
+## §6 Internal Architecture — Mermaid Diagram
 
 ```mermaid
 flowchart TB
-    SYS[061-030 Blades, Hubs and Spinners] --> F1[Define blade geometry and material standards]
-    SYS --> F2[Specify hub design and attachment provisions]
-    SYS --> CTRL[Control Logic]
-    SYS --> MON[Monitoring and Diagnostics]
-    SYS --> MAINT[Maintenance Boundary]
-    CTRL --> IMA[IMA / Controller Interface]
-    MON --> CMS[CMS / BITE]
-    MAINT --> CSDB[S1000D Data Modules]
+    SYS[Blades, Hubs and Spinners] --> F1[Function 1]
+    SYS --> F2[Function 2]
+    SYS --> CTRL[Control Path]
+    SYS --> MON[Monitoring]
+    MON --> CMS[CMS DM-400]
 ```
 
-***[Diagram 2](#diagram-internal-functional-architecture) — Internal functional architecture. Related sections: [Functional Breakdown](#6-functional-breakdown), [Maintenance Concept](#13-maintenance-concept), [Footprints](#15-footprints).***
-
 ---
 
-## 9. Mermaid — Lifecycle Traceability
+## §7 Components and LRUs
 
-<a id="diagram-lifecycle-traceability"></a>
-
-```mermaid
-flowchart LR
-    LC02[LC02 Requirements] --> LC03[LC03 Architecture]
-    LC03 --> LC05[LC05 Detailed Design]
-    LC05 --> LC06[LC06 Verification Planning]
-    LC06 --> LC10[LC10 Certification / Approval]
-    LC10 --> LC11[LC11 Operation]
-    LC11 --> LC12[LC12 Maintenance / Support]
-
-    LC03 --> CSDB[S1000D / CSDB]
-    LC05 --> DMRL[DMRL]
-    LC06 --> EVID[Evidence Records]
-    LC12 --> FEEDBACK[In-Service Feedback]
-    FEEDBACK --> LC13[LC13 Upgrade / Modification]
-```
-
-***[Diagram 3](#diagram-lifecycle-traceability) — Lifecycle traceability from requirements to maintenance feedback. Related sections: [Verification and Validation](#17-verification-and-validation), [References](#20-references), [Open Issues](#21-open-issues).***
-
----
-
-## 10. Interfaces ![TBD](https://img.shields.io/badge/TBD-red)
-
-| Interface Type | Connected System | Description | Evidence Required | Status |
-|---|---|---|---|---|
-| Electrical power | [ATA 24 Power](TBD) | TBD — power supply interface. | [Wiring / load analysis](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data / control | [FADEC / CMS / IMA](TBD) | TBD — command and monitoring interface. | [ICD / data dictionary](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mechanical | [Structure / installation zone](TBD) | TBD — mounting, access, or load path. | [Installation drawing](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Fluid / air / thermal | [Adjacent propulsion system](TBD) | TBD — flow, pressure, temperature, or thermal interface. | [Test report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance | [CSDB / IETP](TBD) | TBD — technician-facing access and procedure boundary. | [DMRL / BREX](#14-s1000d--csdb-mapping) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 11. Operating Modes ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-| Mode | Description | Entry Condition | Exit Condition | Status |
-|---|---|---|---|---|
-| [Normal](#mode-normal) | <a id="mode-normal"></a>System operates within nominal limits. | Aircraft powered and system enabled. | Shutdown, fault, or mode change. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Degraded](#mode-degraded) | <a id="mode-degraded"></a>System operates with reduced function or redundancy. | Fault detected or partial loss of function. | Recovery, isolation, or maintenance action. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Maintenance](#mode-maintenance) | <a id="mode-maintenance"></a>System is configured for inspection, test, removal, installation, or servicing. | Authorized maintenance action. | Maintenance close-up and operational check. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Failure / Safe State](#mode-failure-safe-state) | <a id="mode-failure-safe-state"></a>System enters protective state to prevent unsafe operation. | Fault threshold exceeded. | Reset, repair, replacement, or dispatch decision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 12. Monitoring and Diagnostics ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The system shall provide sufficient monitoring to support safe operation, maintenance troubleshooting, and lifecycle evidence capture.
-
-Monitoring may include:
-
-- status indication;
-- fault detection;
-- [BITE](#glossary-bite) results;
-- sensor plausibility checks;
-- degraded-mode reporting;
-- maintenance messages;
-- event recording;
-- configuration status;
-- software or hardware part-number reporting where applicable.
-
-Diagnostic data shall be mapped to the relevant [S1000D / CSDB](#14-s1000d--csdb-mapping) fault isolation and maintenance data modules.
-
----
-
-## 13. Maintenance Concept ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The maintenance concept shall support modular inspection, fault isolation, removal, installation, and return-to-service verification.
-
-Maintenance content should be structured around:
-
-- access requirements;
-- safety precautions;
-- isolation conditions;
-- required tools and test equipment;
-- inspection criteria;
-- functional test criteria;
-- fault isolation logic;
-- replacement boundaries;
-- close-up and return-to-service checks.
-
-Maintenance procedures shall remain provisional until validated against the applicable [DMRL](#glossary-dmrl), [BREX](#glossary-brex), and task validation records.
-
----
-
-## 14. S1000D / CSDB Mapping ![TBD](https://img.shields.io/badge/TBD-red)
-
-| S1000D Element | Controlled Value | Status |
-|---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System code | `061` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Sub-system code | `0` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Sub-sub-system code | `30` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Assy code | `00A` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Info code | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| Item location code | `D` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| DMC prefix | [`DMC-AMPEL360E-EWTW-061-030`](TBD) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### Recommended Data Module Set
-
-| Info code | Data module purpose | Suggested filename | Status |
-|---:|---|---|---|
-| [040](#dm-040) | <a id="dm-040"></a>Descriptive information | [`DMC-AMPEL360E-EWTW-061-030-040A-D_System-Description.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [300](#dm-300) | <a id="dm-300"></a>Examination / inspection / check | [`DMC-AMPEL360E-EWTW-061-030-300A-D_Inspection.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [400](#dm-400) | <a id="dm-400"></a>Fault isolation | [`DMC-AMPEL360E-EWTW-061-030-400A-D_Fault-Isolation.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [520](#dm-520) | <a id="dm-520"></a>Remove / disassemble | [`DMC-AMPEL360E-EWTW-061-030-520A-D_Remove.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [720](#dm-720) | <a id="dm-720"></a>Install / assemble / connect | [`DMC-AMPEL360E-EWTW-061-030-720A-D_Install.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [941](#dm-941) | <a id="dm-941"></a>Illustrated parts data | [`DMC-AMPEL360E-EWTW-061-030-941A-D_Illustrated-Parts-Data.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 15. Footprints ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-### 15.1 Physical Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Installation zone | TBD — aircraft zone or compartment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Access panels | TBD — relevant access points. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mounting provisions | TBD — rack, bracket, panel, structural attachment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Clearance envelope | TBD — required removal / installation clearance. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cooling / ventilation | TBD — thermal management interface. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Drainage / leak path | TBD — if applicable. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.2 Electrical / Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Power supply | TBD — voltage / phase / bus source. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Protection | TBD — circuit breaker / SSPC / fuse / electronic protection. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data buses | TBD — ARINC / AFDX / CAN / discrete / optical / other. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Connectors | TBD — connector families or interface references. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Bonding / grounding | TBD — bonding and grounding provision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| EMC / EMI controls | TBD — shielding, segregation, filtering. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.3 Maintenance Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Access level | Line / base / shop | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Replaceable unit | LRU / SRU / assembly / panel | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Removal time | Estimated or controlled maintenance interval | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required tools | Standard / special tools | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required GSE | Ground support equipment | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Return-to-service check | Operational / functional / BITE check | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.4 Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Configuration records | Part number, serial number, software load, effectivity | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Evidence records | Test, inspection, compliance, review records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| CSDB records | DMCs, ICNs, BREX, applicability | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance data | Fault history, BITE, removal/installation records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cybersecurity records | Access, load authorization, integrity checks | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 16. Safety and Certification Considerations ![TBD](https://img.shields.io/badge/TBD-red)
-
-The system shall be assessed according to its aircraft-level function, failure effects, operational criticality, and integration dependencies.
-
-The certification and safety analysis shall consider:
-
-- functional hazard assessment;
-- failure modes and effects;
-- common-cause failures;
-- degraded-mode behavior;
-- latent failures;
-- maintenance-induced failures;
-- incorrect installation;
-- incorrect configuration;
-- loss of indication or misleading indication;
-- software and hardware assurance levels where applicable;
-- environmental qualification;
-- electromagnetic compatibility;
-- continued airworthiness impact.
-
-Final safety classification shall remain **TBD** ![TBD](https://img.shields.io/badge/TBD-red) until reviewed against the applicable [FHA](#glossary-fha), [PSSA](#glossary-pssa), [SSA](#glossary-ssa), and certification basis.
-
----
-
-## 17. Verification and Validation ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-Verification shall demonstrate that the system satisfies its requirements under nominal, degraded, maintenance, and failure conditions.
-
-| Verification Method | Description | Evidence | Status |
-|---|---|---|---|
-| [Analysis](#verification-analysis) | <a id="verification-analysis"></a>Engineering calculation, modelling, simulation, or safety analysis. | [Analysis report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Inspection](#verification-inspection) | <a id="verification-inspection"></a>Physical or visual verification of installation, marking, routing, or condition. | [Inspection record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Test](#verification-test) | <a id="verification-test"></a>Functional, environmental, integration, or system test. | [Test report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Demonstration](#verification-demonstration) | <a id="verification-demonstration"></a>Operational demonstration under controlled conditions. | [Demonstration record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Similarity](#verification-similarity) | <a id="verification-similarity"></a>Justified reuse of existing certified design evidence. | [Similarity report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 18. Glossary of Terms and Acronyms
-
-| Term / Acronym | Meaning | Link | Status |
-|---|---|---|---|
-| <a id="glossary-ampel360e"></a>AMPEL360e | Electrified aircraft programme family used as the programme example. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-atlas"></a>ATLAS | Aircraft Top Level Architecture Schema/System. | [ATLAS 000-099](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-bite"></a>BITE | Built-In Test Equipment. | [Monitoring and Diagnostics](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-brex"></a>BREX | Business Rules Exchange; S1000D rule set used to validate data-module content. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ccb"></a>CCB | Configuration Control Board. | [Governance](../../../../../Governance/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-csdb"></a>CSDB | Common Source DataBase. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmc"></a>DMC | Data Module Code. | [S1000D DMC Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmrl"></a>DMRL | Data Module Requirement List. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ewtw"></a>eWTW | Electric Wide Tube-and-Wing. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fadec"></a>FADEC | Full Authority Digital Engine Control. | [Engine Controls](../067_Engine-Controls/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fha"></a>FHA | Functional Hazard Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-lru"></a>LRU | Line Replaceable Unit. | [Maintenance Concept](#13-maintenance-concept) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-pssa"></a>PSSA | Preliminary System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-s1000d"></a>S1000D | International specification for technical publications using a common source database. | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-sns"></a>SNS | Standard Numbering System. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-ssa"></a>SSA | System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-tbd"></a>TBD | To Be Determined. | [Open Issues](#21-open-issues) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-
----
-
-## 19. Citations ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Citation | Use | Link | Status |
-|---|---|---|---|---|
-| [CIT-001](#cit-001) | <a id="cit-001"></a>`S1000D Issue 5.0, Part I — Introduction and overview.` | Architecture / terminology | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-002](#cit-002) | <a id="cit-002"></a>`EASA CS-25, Amendment 27 — Airworthiness Standards: Large Aeroplanes.` | Certification basis | [EASA](https://www.easa.europa.eu/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-003](#cit-003) | <a id="cit-003"></a>`AMPEL360e Programme Architecture Baseline, Rev TBD.` | Programme-specific requirement | [Programme baseline](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [CIT-004](#cit-004) | <a id="cit-004"></a>`ATA iSpec 2200, Chapter 61 — Propellers and Propulsors.` | ATA reference | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [CIT-005](#cit-005) | <a id="cit-005"></a>`DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment.` | Environmental qualification | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 20. References ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Document | Identifier | Revision | Status | Link |
-|---|---|---|---:|---|---|
-| [REF-001](#ref-001) | <a id="ref-001"></a>Q+ATLANTIDE ATLAS master index | `QATL-ATLAS-000-099` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../) |
-| [REF-002](#ref-002) | <a id="ref-002"></a>AMPEL360e programme architecture baseline | `AMP360E-ARCH-BASELINE` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) |
-| [REF-003](#ref-003) | <a id="ref-003"></a>060-069 Propulsión Tradicional section index | `QATL-ATLAS-060-069` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../) |
-| [REF-004](#ref-004) | <a id="ref-004"></a>061 Propellers and Propulsors subsection index | `QATL-ATLAS-060-069-061` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../) |
-| [REF-005](#ref-005) | <a id="ref-005"></a>S1000D project BREX | `BREX-AMPEL360E-EWTW` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-| [REF-ATA](#ref-ata) | <a id="ref-ata"></a>ATA iSpec 2200 — Chapter 61 | `ATA-ISPEC-2200-61` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-
----
-
-## 21. Open Issues
-
-| ID | Issue | Owner | Status | Badge | Link |
+| Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| [OI-001](#oi-001) | <a id="oi-001"></a>Confirm final system boundary for Blades, Hubs and Spinners. | System expert | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Architecture Description](#5-architecture-description) |
-| [OI-002](#oi-002) | <a id="oi-002"></a>Complete S1000D SNS allocation for 061-030. | Q-DATAGOV | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) |
-| [OI-003](#oi-003) | <a id="oi-003"></a>Confirm certification basis and safety classification. | Certification lead | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Safety and Certification](#16-safety-and-certification-considerations) |
-| [OI-004](#oi-004) | <a id="oi-004"></a>Confirm maintenance task allocation in DMRL. | Tech pubs lead | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [Maintenance Concept](#13-maintenance-concept) |
+| CFRP propeller blade with LE erosion cap | Blade-PN-TBD | N per propulsor | Hub pitch pockets | On condition / SRM ADL check | TBD |
+| Titanium hub forging | Hub-PN-TBD | 1 per propulsor | Engine shaft output flange | Overhaul cycle (TBD cycles) | TBD |
+| Composite spinner dome | Spinner-PN-TBD | 1 per propulsor | Hub forward face, spinner frame | Replace on damage; inspect at A-check | TBD |
+| Precision spar bearing (blade root) | Bearing-PN-TBD | N per propulsor | Blade root in hub pocket | Replace at overhaul or on condition | TBD |
+| Titanium LE erosion shield (blade) | LE-Shield-PN-TBD | N per propulsor | Blade leading edge | On condition — replace per erosion ADL | TBD |
 
 ---
 
-## 22. Status Legend
+## §8 Interfaces
 
-| Badge | Meaning | Use |
-|---|---|---|
-| ![TBD](https://img.shields.io/badge/TBD-red) | To Be Determined | Required value, source, boundary, interface, requirement, or evidence is not yet determined. |
-| ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | To Be Completed | Section exists but content is intentionally incomplete. |
-| ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) | Draft | Content exists but is not yet reviewed, frozen, or baselined. |
-| ![DONE](https://img.shields.io/badge/DONE-brightgreen) | Done | Content has been reviewed and is complete for the current baseline. |
-
----
-
-## 23. Change Log
-
-| Revision | Date | Author | Change | Link | Status |
-|---|---|---|---|---|---|
-| [0.1.0](#chg-010) | <a id="chg-010"></a>2026-05-11 | Q+ Team / Amedeo Pelliccia + AI | Initial programme-controlled scaffold. | [Document root](#atlas-060-069--section-06--subsection-061--030--blades-hubs-and-spinners) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Interface Type | Connected System | Protocol / Medium | Data / Function |
+|---|---|---|---|
+| Pitch actuator | ATA 61-040 | Mechanical pin/spline at blade root | Pitch change mechanism engagement |
+| Engine shaft | ATA 62 Power Plant | Hub central spline bore | Torque and thrust transmission |
+| Deicing system | ATA 61-060 | Electrical slip ring at hub | Power distribution to blade heater mats |
+| NDT programme | ATA 60-030 | Inspection access | Hub bore ET / blade TT inspection |
 
 ---
 
-> Programme-controlled scaffold. Content is subject to [BREX](#glossary-brex), [SNS](#glossary-sns), applicability, [DMRL](#glossary-dmrl), evidence review, and [CCB](#glossary-ccb) freeze before controlled release.
+## §9 Operating Modes
 
-> **To be reviewed by system expert.**
+| Mode | Trigger | System State | Actions / Consequences |
+|---|---|---|---|
+| Operational | Blades rotating, pitch varied | All retention hardware at torque | Vibration monitored continuously |
+| Maintenance access | Spinner removed | Drive isolated | Hub and blade root accessible |
+| Blade replacement | Individual blade removed | Hub in maintenance bay | NDT of hub pocket; new blade torqued |
+| Overhaul | Hub removed to shop | Full disassembly | Life tracking reset; bearing replacement |
+
+---
+
+## §10 Performance and Budgets ![DRAFT]
+
+| Parameter | Requirement | Target / Design Value | Status |
+|---|---|---|---|
+| Hub design life (cycles) | TBD cycles (LLP per CS-35) | Fatigue analysis + test | TBD |
+| Blade root spar bearing clearance | < 0.05 mm diametral | Dimensional inspection at overhaul | TBD |
+| LE erosion shield adhesion (shear) | ≥ 25 MPa (APS-060 qualification) | Coupon test | TBD |
+| Spinner dome stiffness (bird strike) | Withstand 4 lb bird at Vmo | Bird strike analysis / test | TBD |
+
+---
+
+## §11 Safety, Redundancy and Fault Tolerance
+
+- Hub is a life-limited part (LLP); its cycle count must be tracked and it must be retired at the published limit regardless of condition.
+- Matched-pair spar bearings must not be separated; each bearing must be installed in the same blade/hub pocket it was removed from.
+- Any spinner dome damage exposing the hub to rain or bird ingestion requires immediate replacement; operating with a damaged spinner is prohibited.
+
+---
+
+## §12 Maintenance and Diagnostics
+
+| Task | Interval | Access | Special Tools |
+|---|---|---|---|
+| Blade root torque check | C-check | Spinner removed, hub accessible | Calibrated torque wrench |
+| Spar bearing condition check | Overhaul (shop) | Full hub disassembly | Dimensional gauge, clearance measurement |
+| LE erosion shield disbond inspection | A-check (visual) | External blade access | Torch, tap test kit |
+| Hub bore ET inspection | At blade removal / overhaul | Hub in shop | Eddy-current unit, bore probe |
+| Spinner FOD inspection | A-check (visual) | External access | Torch, VIS-001 |
+
+---
+
+## §13 Footprint — Physical, Electrical, Maintenance, Data ![TBD]
+
+| Footprint Type | Parameter | Value | Notes |
+|---|---|---|---|
+| Physical | Mass (system total) | ![TBD] | Pending OEM data |
+| Physical | Envelope (max) | ![TBD] | Pending detailed design |
+| Electrical | Peak power (W) | ![TBD] | To be defined |
+| Maintenance | Access category | Standard line maintenance | Per AMM |
+| Data | AFDX bandwidth | ![TBD] | Per AFDX bus load analysis |
+
+---
+
+## §14 Safety and Certification References ![DRAFT]
+
+| Standard / Document | Title | Issuing Body | Applicability |
+|---|---|---|---|
+| EASA CS-35 | Airworthiness Standards: Propellers | EASA | Hub LLP life limit and certification |
+| SAE ARP5765 | Aeronautical Design Standard — Propeller Design | SAE International | Blade and hub design guideline |
+| AMS 4928 | Titanium Alloy — Ti-6Al-4V | SAE International | Hub forging material |
+| ATA iSpec 2200 | Chapter 61 — Propellers and Propulsors | Air Transport Association | ATA chapter scope |
+| AMPEL360E APS-060 | Adhesive Process Specification — Propeller LE Cap Bonding | AMPEL360E programme | LE cap bonding process |
+
+---
+
+## §15 V&V Approach ![TBD]
+
+| Phase | Method | Acceptance Criterion | Status |
+|---|---|---|---|
+| Design | Analysis and simulation | Meets all §10 performance requirements | ![TBD] |
+| Integration | Ground functional test | All BITE tests pass; interfaces verified | ![TBD] |
+| Qualification | DO-160G environmental test | All applicable tests pass | ![TBD] |
+| Certification | EASA CS-25 / CS-E compliance demonstration | Type Certificate / STC approval | ![TBD] |
+
+---
+
+## §16 Glossary
+
+| Term | Definition |
+|---|---|
+| **Spar bearing** | Precision bearing at the blade root that allows blade pitch rotation within the hub pocket. |
+| **Matched-pair bearings** | Bearing sets that must be installed together in the same hub pocket; separation invalidates clearance characteristics. |
+| **LE erosion cap** | Metallic (Ti or Ni alloy) protective cap bonded to the blade leading edge to resist rain and particle erosion. |
+| **LLP** | Life-Limited Part — the hub is an LLP with a mandatory cycle retirement limit defined in the propeller Type Certificate. |
+| **Spinner frame** | Structural ring on the hub forward face to which the spinner dome attaches. |
+| **CFRP shell** | Outer structural skin of the blade; CFRP woven or UD material providing torsional and flexural stiffness. |
+| **Spar cap** | Unidirectional CFRP reinforcement running blade span-wise; carries primary bending load. |
+| **Quick-release fastener** | Quarter-turn or similar fastener enabling rapid spinner removal for maintenance access. |
+| **CS-35** | EASA Airworthiness Standards for Propellers; defines blade, hub, and spinner certification requirements. |
+| **Pitch pocket** | Precision-machined recess in the hub into which each blade root is inserted and retained. |
+
+---
+
+## §17 Open Issues
+
+| ID | Description | Owner | Target |
+|---|---|---|---|
+| OI-061-030-001 | Confirm hub design life (cycles) from propeller OEM fatigue analysis — pending OEM data | Q-MECHANICS / propeller OEM | 2026-Q4 |
+| OI-061-030-002 | Qualify titanium vs. nickel-alloy LE erosion cap bonding system for SAF fuel environment | Q-GREENTECH / Q-MECHANICS | 2026-Q4 |
+
+---
+
+## §18 Status Legend
+
+| Badge | Meaning |
+|---|---|
+| `![DRAFT]` | Section is drafted but not yet reviewed |
+| `![TBD]` | Content not yet started — to be defined |
+| `![To Be Completed]` | Partially complete — needs additional content |
+| `![APPROVED]` | Reviewed and formally approved |
+
+---
+
+## §19 Related Documents (Siblings in this Subsection)
+
+- [061-000](./061-000.md)
+- [061-010](./061-010.md)
+- [061-020](./061-020.md)
+- [061-040](./061-040.md)
+- [061-050](./061-050.md)
+- [061-060](./061-060.md)
+- [061-070](./061-070.md)
+- [061-080](./061-080.md)
+- [061-090](./061-090.md)
+
+---
+
+## §20 Change Log
+
+| Rev | Date | Author | Description |
+|---|---|---|---|
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
