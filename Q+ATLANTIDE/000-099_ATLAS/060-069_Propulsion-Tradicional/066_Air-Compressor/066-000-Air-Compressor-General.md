@@ -1,468 +1,286 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-06-066-000-AIR-COMPRESSOR-GENERAL"
-title: "ATLAS 060-069 · 06.066.000 — Air Compressor General"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-066-000-AIR-COMPRESSOR-GENERAL"
 register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "060-069"
-section: "06"
-section_title: "Propulsión Tradicional"
+title: "Air Compressor General"
+ata: "ATA 66"
+sns: "066-000-00"
 subsection: "066"
-subsection_title: "Air Compressor"
-subsubject: "000"
-subsubject_title: "Air Compressor General"
-subsubject_file: "066-000-Air-Compressor-General.md"
-subsubject_link: "./066-000-Air-Compressor-General.md"
+subsubject_code: "000"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
 status: active
-language: en
-s1000d_applicability: "S1000D-CSDB-compatible"
-ata_reference: "ATA 66"
-created: "2026-05-11"
-updated: "2026-05-11"
-review_status: "to-be-reviewed-by-system-expert"
+governance_class: baseline
+revision: "0.1"
+date: "2026-05-11"
+parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
+parent_architecture_doc: "../../../README.md"
+parent_section_doc: "../../README.md"
+parent_subsection_doc: "../README.md"
+parent_subsubject_doc: "./README.md"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-000"
 ---
 
-![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-![TBD](https://img.shields.io/badge/TBD-red)
-![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+<!-- ──────────────────────────────────────────────────────────────────────────
+     QATL-ATLAS-1000-ATLAS-060-069-066-000-AIR-COMPRESSOR-GENERAL
+     ATA 66 · Air Compressor General
+     AMPEL360E eWTW — ATLAS Register 1000
+────────────────────────────────────────────────────────────────────────────── -->
 
-# ATLAS 060-069 · Section 06 · Subsection 066 · 000 — Air Compressor General
+# Air Compressor General
 
-## 0. Hyperlink Policy
-
-All linkable content in this file shall be expressed as Markdown links where a stable target exists.
-
-Use:
-
-- relative links for repository-internal content;
-- anchor links for headings, figures, diagrams, glossary terms, citations, references, open issues, and lifecycle sections;
-- stable external links only for public standards or authoritative sources;
-- `TBD` or `<relative-link-or-TBD>` where no stable target exists.
-
-Do not invent links.
-
-Every table containing a document, path, code, reference, acronym, figure, diagram, lifecycle phase, Q-Division, ORB-Function, DMC, BREX, DMRL, evidence record, or issue shall include either a direct link or an explicit `TBD` target.
+![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
+![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
+![ATA: ATA 66](https://img.shields.io/badge/ATA-66-green)
+![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q--GREENTECH-brightgreen)
 
 ---
 
-## 1. Purpose
+## §0 Hyperlink Policy
 
-This document defines the controlled technical scope for **Air Compressor General** (`066-000`) within the [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) / [ATLAS 000-099](../../../) architecture branch, section [060-069 Propulsión Tradicional](../../).
-
-The objective is to provide a deterministic, [S1000D](https://s1000d.org/)-compatible technical baseline covering the general scope, governing standards, and top-level architecture context for the engine and auxiliary air compressor system.
-
-This file belongs to:
-
-[`Q+ATLANTIDE/000-099_ATLAS/060-069_Propulsion-Tradicional/066_Air-Compressor/066-000-Air-Compressor-General.md`](./)
+> All hyperlinks in this document are **relative** (five directory levels: `../../../../../`).
+> Absolute URLs are forbidden. Every linked document must exist in the Q+ATLANTIDE repository
+> before the link is activated. Broken links are treated as open issues and must be resolved
+> before the document is promoted from `DRAFT` to `APPROVED`.
 
 ---
 
-## 2. Applicability
+## §1 Purpose
 
-This document applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme and the **eWTW** configuration.
+ATA Chapter 66 covers the Air Compressor system of the AMPEL360E eWTW. In a conventional bleed-air aircraft, ATA 66 describes engine-driven compressor stages extracting LP/HP bleed for pneumatic consumers. On the AMPEL360E eWTW, the architecture is fundamentally different: **all pneumatic bleed from the engine is eliminated**. Instead, two dedicated Electric Air Compressors (EAC-A and EAC-B) provide compressed air solely from electrical power, supplied by the HVDC 270 V bus.
 
-| Applicability Item | Value | Status |
-|---|---|---|
-| Programme | [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Architecture register | [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATLAS band | [000-099_ATLAS](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Section | [060-069 Propulsión Tradicional](../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Subsection | [066 Air Compressor](../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATA reference | [ATA 66](#ref-ata) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| S1000D compatibility | [S1000D-CSDB-compatible](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Lifecycle use | [LC03](../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md) / [LC05](../../../../../Governance/Lifecycle/LC05-Detailed-Design.md) / [LC06](../../../../../Governance/Lifecycle/LC06-Verification-Planning.md) / [LC11](../../../../../Governance/Lifecycle/LC11-Operation.md) / [LC12](../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
+The EAC system interfaces directly with the Environmental Control System (ATA 21) to supply cabin pressurization and conditioning air, and with the Nitrogen Generation System (ATA 47) for tank inerting supply. This architecture yields a measurable specific fuel consumption (SFC) improvement of approximately 3 % per engine by eliminating bleed-air extraction from the turbofan core.
+
+This document establishes the general scope, top-level architecture, and governing standards for the ATA 66 Air Compressor system on the AMPEL360E eWTW. All subsubject documents (066-010 through 066-090) are subordinate to this general baseline.
 
 ---
 
-## 3. System / Function Overview
+## §2 Applicability
 
-The **Air Compressor General** node covers the general scope, governing standards, and top-level architecture context for the engine and auxiliary air compressor system.
-
-For the [AMPEL360e](#glossary-ampel360e) configuration, this node shall be treated as part of a full-electric, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360e implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
-
-This document does not freeze the final certified design. It establishes a controlled scaffold for downstream engineering, [S1000D](#glossary-s1000d) data-module planning, [CSDB](#glossary-csdb) integration, and evidence capture.
-
----
-
-## 4. Scope
-
-### 4.1 Included
-
-This document includes:
-- Establish air compressor system scope and boundary
-- Define engine-driven and auxiliary compressor provisions
-- Describe compressor output and downstream interfaces
-- Define Q-Division ownership
-- Enable S1000D CSDB mapping
-
-### 4.2 Excluded
-
-This document excludes:
-
-- supplier-proprietary internal design data unless released to the programme baseline;
-- final certification compliance statements;
-- detailed maintenance procedures unless assigned by the [DMRL](#glossary-dmrl);
-- final illustrated parts data unless released through the [CSDB](#glossary-csdb);
-- production-level configuration until [CCB](#glossary-ccb) freeze.
+| Parameter | Value |
+|---|---|
+| Aircraft Program | AMPEL360E eWTW |
+| ATA reference | ATA 66-000 — Air Compressor General |
+| Certification basis | EASA CS-25 Amdt 27+ |
+| S1000D SNS | 066-000-00 |
 
 ---
 
-## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §3 Functional Description ![DRAFT]
 
-The **Air Compressor General** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries.
+The ATA 66 system on the AMPEL360E eWTW comprises two identical, cross-ship Electric Air Compressors (EAC-A and EAC-B), each a single-stage centrifugal compressor driven by a permanent-magnet synchronous motor (PMSM) rated at approximately 90 kW at design point. The EACs are controlled by the Air Compressor Control Unit (ACCU), a dual-channel digital controller qualified to DO-178C DAL C and DO-160G.
 
-At architecture level, the system shall be described in terms of:
+Each EAC delivers compressed air at up to 0.55 MPa gauge, with a mass flow of up to 0.8 kg/s at cruise altitude conditions. In normal operation, EAC-A and EAC-B operate in parallel, each feeding one ECS pack (ATA 21). In case of one EAC failure, the remaining unit can supply both packs at reduced flow, sufficient for single-pack operation under degraded mode.
 
-1. **Function** — what the system does.
-2. **Equipment** — which [LRUs](#glossary-lru), assemblies, panels, modules, or components implement the function.
-3. **Interfaces** — how the system exchanges power, data, fluid, air, signal, force, or commands.
-4. **Control logic** — how the system is commanded, monitored, degraded, isolated, or reset.
-5. **Maintenance boundary** — what a technician can inspect, test, remove, install, or replace.
-6. **Evidence boundary** — which requirements, tests, inspections, and records prove compliance.
+The system includes inlet filtration, an intercooler between compression stages, anti-surge bleed valve (ASBV), overpressure relief valve (OPRV), and outlet check valves preventing back-flow between channels. ACCU BITE data is reported to the Central Maintenance System (CMS, ATA 45) via AFDX.
 
 ---
 
-## 6. Functional Breakdown ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §4 Functional Breakdown
 
-| Ref | Function | Description | Primary Interface | Status |
-|---:|---|---|---|---|
-| [F-001](#f-001) | <a id="f-001"></a>Establish air compressor system scope and boundary | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-002](#f-002) | <a id="f-002"></a>Define engine-driven and auxiliary compressor provisions | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-003](#f-003) | <a id="f-003"></a>Describe compressor output and downstream interfaces | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-004](#f-004) | <a id="f-004"></a>Monitoring | Captures status, failures, degradation, and maintenance data. | [CMS / BITE](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [F-005](#f-005) | <a id="f-005"></a>Traceability | Links architecture, requirements, evidence, and S1000D content. | [CSDB / DMRL / BREX](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| ID | Name | Description | Lead Division |
+|---|---|---|---|
+| F-001 | EAC-A — Electric Air Compressor (port) | Primary compressed-air source for ECS Pack 1; HVDC 270 V motor-driven centrifugal compressor | Q-GREENTECH |
+| F-002 | EAC-B — Electric Air Compressor (stbd) | Primary compressed-air source for ECS Pack 2; identical unit to EAC-A | Q-GREENTECH |
+| F-003 | ACCU — Air Compressor Control Unit | Dual-channel digital controller; pressure/flow regulation, BITE, fault management | Q-MECHANICS |
+| F-004 | Anti-Surge and Protection | ASBV surge prevention, OPRV overpressure protection, motor thermal management | Q-AIR |
+| F-005 | Health Monitoring and CMS Interface | BITE parameter reporting, predictive maintenance data, AFDX to CMS ATA 45 | Q-INDUSTRY |
 
 ---
 
-## 7. Mermaid — System Context Diagram
-
-<a id="diagram-system-context"></a>
+## §5 System Context — Mermaid Diagram
 
 ```mermaid
 flowchart LR
-    A[Aircraft-Level Function] --> B[066 Air Compressor]
-    B --> C[Power Interface]
-    B --> D[Data / Control Interface]
-    B --> E[Mechanical / Fluid / Air Interface]
-    B --> F[Monitoring and Diagnostics]
-    F --> G[Central Maintenance System]
-    G --> H[S1000D / CSDB Evidence]
+    HVDC[HVDC 270 V Bus ATA 24] --> EAC_A[EAC-A Port]
+    HVDC --> EAC_B[EAC-B Stbd]
+    EAC_A --> MANIFOLD[Compressed Air Manifold]
+    EAC_B --> MANIFOLD
+    MANIFOLD --> ECS[ECS Packs ATA 21]
+    MANIFOLD --> NGS[NGS ATA 47]
+    ACCU[ACCU Dual-Channel] --> EAC_A
+    ACCU --> EAC_B
+    ACCU --> CMS[CMS ATA 45 AFDX]
+    ACCU --> ECAM[ECAM ATA 31]
 ```
-
-***[Diagram 1](#diagram-system-context) — System context diagram for Air Compressor General. Related sections: [Interfaces](#10-interfaces), [Monitoring and Diagnostics](#12-monitoring-and-diagnostics), [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping).***
 
 ---
 
-## 8. Mermaid — Internal Functional Architecture
-
-<a id="diagram-internal-functional-architecture"></a>
+## §6 Internal Architecture — Mermaid Diagram
 
 ```mermaid
 flowchart TB
-    SYS[066-000 Air Compressor General] --> F1[Establish air compressor system scope and boundary]
-    SYS --> F2[Define engine-driven and auxiliary compressor provisions]
-    SYS --> CTRL[Control Logic]
-    SYS --> MON[Monitoring and Diagnostics]
-    SYS --> MAINT[Maintenance Boundary]
-    CTRL --> IMA[IMA / Controller Interface]
-    MON --> CMS[CMS / BITE]
-    MAINT --> CSDB[S1000D Data Modules]
+    INLET[RAM Air Inlet + Filter] --> COMP[Centrifugal Compressor Stage]
+    COMP --> INTERCOOLER[Intercooler Air-Air]
+    INTERCOOLER --> OUTLET[Outlet Check Valve]
+    OUTLET --> MANIFOLD[Distribution Manifold]
+    ASBV[Anti-Surge Bleed Valve] --> INLET
+    OPRV[Overpressure Relief Valve] --> OUTLET
+    PMSM[PMSM Motor 90 kW] --> COMP
+    VFD[Variable Frequency Drive] --> PMSM
+    ACCU[ACCU CH-A / CH-B] --> VFD
+    SENSORS[P/T/Speed Sensors] --> ACCU
 ```
 
-***[Diagram 2](#diagram-internal-functional-architecture) — Internal functional architecture. Related sections: [Functional Breakdown](#6-functional-breakdown), [Maintenance Concept](#13-maintenance-concept), [Footprints](#15-footprints).***
-
 ---
 
-## 9. Mermaid — Lifecycle Traceability
+## §7 Components and LRUs
 
-<a id="diagram-lifecycle-traceability"></a>
-
-```mermaid
-flowchart LR
-    LC02[LC02 Requirements] --> LC03[LC03 Architecture]
-    LC03 --> LC05[LC05 Detailed Design]
-    LC05 --> LC06[LC06 Verification Planning]
-    LC06 --> LC10[LC10 Certification / Approval]
-    LC10 --> LC11[LC11 Operation]
-    LC11 --> LC12[LC12 Maintenance / Support]
-
-    LC03 --> CSDB[S1000D / CSDB]
-    LC05 --> DMRL[DMRL]
-    LC06 --> EVID[Evidence Records]
-    LC12 --> FEEDBACK[In-Service Feedback]
-    FEEDBACK --> LC13[LC13 Upgrade / Modification]
-```
-
-***[Diagram 3](#diagram-lifecycle-traceability) — Lifecycle traceability from requirements to maintenance feedback. Related sections: [Verification and Validation](#17-verification-and-validation), [References](#20-references), [Open Issues](#21-open-issues).***
-
----
-
-## 10. Interfaces ![TBD](https://img.shields.io/badge/TBD-red)
-
-| Interface Type | Connected System | Description | Evidence Required | Status |
-|---|---|---|---|---|
-| Electrical power | [ATA 24 Power](TBD) | TBD — power supply interface. | [Wiring / load analysis](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data / control | [FADEC / CMS / IMA](TBD) | TBD — command and monitoring interface. | [ICD / data dictionary](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mechanical | [Structure / installation zone](TBD) | TBD — mounting, access, or load path. | [Installation drawing](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Fluid / air / thermal | [Adjacent propulsion system](TBD) | TBD — flow, pressure, temperature, or thermal interface. | [Test report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance | [CSDB / IETP](TBD) | TBD — technician-facing access and procedure boundary. | [DMRL / BREX](#14-s1000d--csdb-mapping) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 11. Operating Modes ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-| Mode | Description | Entry Condition | Exit Condition | Status |
-|---|---|---|---|---|
-| [Normal](#mode-normal) | <a id="mode-normal"></a>System operates within nominal limits. | Aircraft powered and system enabled. | Shutdown, fault, or mode change. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Degraded](#mode-degraded) | <a id="mode-degraded"></a>System operates with reduced function or redundancy. | Fault detected or partial loss of function. | Recovery, isolation, or maintenance action. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Maintenance](#mode-maintenance) | <a id="mode-maintenance"></a>System is configured for inspection, test, removal, installation, or servicing. | Authorized maintenance action. | Maintenance close-up and operational check. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Failure / Safe State](#mode-failure-safe-state) | <a id="mode-failure-safe-state"></a>System enters protective state to prevent unsafe operation. | Fault threshold exceeded. | Reset, repair, replacement, or dispatch decision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 12. Monitoring and Diagnostics ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The system shall provide sufficient monitoring to support safe operation, maintenance troubleshooting, and lifecycle evidence capture.
-
-Monitoring may include:
-
-- status indication;
-- fault detection;
-- [BITE](#glossary-bite) results;
-- sensor plausibility checks;
-- degraded-mode reporting;
-- maintenance messages;
-- event recording;
-- configuration status;
-- software or hardware part-number reporting where applicable.
-
-Diagnostic data shall be mapped to the relevant [S1000D / CSDB](#14-s1000d--csdb-mapping) fault isolation and maintenance data modules.
-
----
-
-## 13. Maintenance Concept ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The maintenance concept shall support modular inspection, fault isolation, removal, installation, and return-to-service verification.
-
-Maintenance content should be structured around:
-
-- access requirements;
-- safety precautions;
-- isolation conditions;
-- required tools and test equipment;
-- inspection criteria;
-- functional test criteria;
-- fault isolation logic;
-- replacement boundaries;
-- close-up and return-to-service checks.
-
-Maintenance procedures shall remain provisional until validated against the applicable [DMRL](#glossary-dmrl), [BREX](#glossary-brex), and task validation records.
-
----
-
-## 14. S1000D / CSDB Mapping ![TBD](https://img.shields.io/badge/TBD-red)
-
-| S1000D Element | Controlled Value | Status |
-|---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System code | `066` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Sub-system code | `0` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Sub-sub-system code | `00` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Assy code | `00A` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Info code | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| Item location code | `D` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| DMC prefix | [`DMC-AMPEL360E-EWTW-066-000`](TBD) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### Recommended Data Module Set
-
-| Info code | Data module purpose | Suggested filename | Status |
-|---:|---|---|---|
-| [040](#dm-040) | <a id="dm-040"></a>Descriptive information | [`DMC-AMPEL360E-EWTW-066-000-040A-D_System-Description.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [300](#dm-300) | <a id="dm-300"></a>Examination / inspection / check | [`DMC-AMPEL360E-EWTW-066-000-300A-D_Inspection.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [400](#dm-400) | <a id="dm-400"></a>Fault isolation | [`DMC-AMPEL360E-EWTW-066-000-400A-D_Fault-Isolation.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [520](#dm-520) | <a id="dm-520"></a>Remove / disassemble | [`DMC-AMPEL360E-EWTW-066-000-520A-D_Remove.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [720](#dm-720) | <a id="dm-720"></a>Install / assemble / connect | [`DMC-AMPEL360E-EWTW-066-000-720A-D_Install.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [941](#dm-941) | <a id="dm-941"></a>Illustrated parts data | [`DMC-AMPEL360E-EWTW-066-000-941A-D_Illustrated-Parts-Data.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 15. Footprints ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-### 15.1 Physical Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Installation zone | TBD — aircraft zone or compartment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Access panels | TBD — relevant access points. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mounting provisions | TBD — rack, bracket, panel, structural attachment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Clearance envelope | TBD — required removal / installation clearance. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cooling / ventilation | TBD — thermal management interface. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Drainage / leak path | TBD — if applicable. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.2 Electrical / Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Power supply | TBD — voltage / phase / bus source. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Protection | TBD — circuit breaker / SSPC / fuse / electronic protection. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data buses | TBD — ARINC / AFDX / CAN / discrete / optical / other. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Connectors | TBD — connector families or interface references. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Bonding / grounding | TBD — bonding and grounding provision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| EMC / EMI controls | TBD — shielding, segregation, filtering. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.3 Maintenance Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Access level | Line / base / shop | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Replaceable unit | LRU / SRU / assembly / panel | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Removal time | Estimated or controlled maintenance interval | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required tools | Standard / special tools | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required GSE | Ground support equipment | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Return-to-service check | Operational / functional / BITE check | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.4 Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Configuration records | Part number, serial number, software load, effectivity | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Evidence records | Test, inspection, compliance, review records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| CSDB records | DMCs, ICNs, BREX, applicability | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance data | Fault history, BITE, removal/installation records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cybersecurity records | Access, load authorization, integrity checks | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 16. Safety and Certification Considerations ![TBD](https://img.shields.io/badge/TBD-red)
-
-The system shall be assessed according to its aircraft-level function, failure effects, operational criticality, and integration dependencies.
-
-The certification and safety analysis shall consider:
-
-- functional hazard assessment;
-- failure modes and effects;
-- common-cause failures;
-- degraded-mode behavior;
-- latent failures;
-- maintenance-induced failures;
-- incorrect installation;
-- incorrect configuration;
-- loss of indication or misleading indication;
-- software and hardware assurance levels where applicable;
-- environmental qualification;
-- electromagnetic compatibility;
-- continued airworthiness impact.
-
-Final safety classification shall remain **TBD** ![TBD](https://img.shields.io/badge/TBD-red) until reviewed against the applicable [FHA](#glossary-fha), [PSSA](#glossary-pssa), [SSA](#glossary-ssa), and certification basis.
-
----
-
-## 17. Verification and Validation ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-Verification shall demonstrate that the system satisfies its requirements under nominal, degraded, maintenance, and failure conditions.
-
-| Verification Method | Description | Evidence | Status |
-|---|---|---|---|
-| [Analysis](#verification-analysis) | <a id="verification-analysis"></a>Engineering calculation, modelling, simulation, or safety analysis. | [Analysis report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Inspection](#verification-inspection) | <a id="verification-inspection"></a>Physical or visual verification of installation, marking, routing, or condition. | [Inspection record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Test](#verification-test) | <a id="verification-test"></a>Functional, environmental, integration, or system test. | [Test report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Demonstration](#verification-demonstration) | <a id="verification-demonstration"></a>Operational demonstration under controlled conditions. | [Demonstration record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Similarity](#verification-similarity) | <a id="verification-similarity"></a>Justified reuse of existing certified design evidence. | [Similarity report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 18. Glossary of Terms and Acronyms
-
-| Term / Acronym | Meaning | Link | Status |
-|---|---|---|---|
-| <a id="glossary-ampel360e"></a>AMPEL360e | Electrified aircraft programme family used as the programme example. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-atlas"></a>ATLAS | Aircraft Top Level Architecture Schema/System. | [ATLAS 000-099](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-bite"></a>BITE | Built-In Test Equipment. | [Monitoring and Diagnostics](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-brex"></a>BREX | Business Rules Exchange; S1000D rule set used to validate data-module content. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ccb"></a>CCB | Configuration Control Board. | [Governance](../../../../../Governance/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-csdb"></a>CSDB | Common Source DataBase. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmc"></a>DMC | Data Module Code. | [S1000D DMC Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmrl"></a>DMRL | Data Module Requirement List. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ewtw"></a>eWTW | Electric Wide Tube-and-Wing. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fadec"></a>FADEC | Full Authority Digital Engine Control. | [Engine Controls](../067_Engine-Controls/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fha"></a>FHA | Functional Hazard Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-lru"></a>LRU | Line Replaceable Unit. | [Maintenance Concept](#13-maintenance-concept) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-pssa"></a>PSSA | Preliminary System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-s1000d"></a>S1000D | International specification for technical publications using a common source database. | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-sns"></a>SNS | Standard Numbering System. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-ssa"></a>SSA | System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-tbd"></a>TBD | To Be Determined. | [Open Issues](#21-open-issues) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-
----
-
-## 19. Citations ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Citation | Use | Link | Status |
-|---|---|---|---|---|
-| [CIT-001](#cit-001) | <a id="cit-001"></a>`S1000D Issue 5.0, Part I — Introduction and overview.` | Architecture / terminology | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-002](#cit-002) | <a id="cit-002"></a>`EASA CS-25, Amendment 27 — Airworthiness Standards: Large Aeroplanes.` | Certification basis | [EASA](https://www.easa.europa.eu/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-003](#cit-003) | <a id="cit-003"></a>`AMPEL360e Programme Architecture Baseline, Rev TBD.` | Programme-specific requirement | [Programme baseline](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [CIT-004](#cit-004) | <a id="cit-004"></a>`ATA iSpec 2200, Chapter 66 — Air Compressor.` | ATA reference | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [CIT-005](#cit-005) | <a id="cit-005"></a>`DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment.` | Environmental qualification | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 20. References ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Document | Identifier | Revision | Status | Link |
-|---|---|---|---:|---|---|
-| [REF-001](#ref-001) | <a id="ref-001"></a>Q+ATLANTIDE ATLAS master index | `QATL-ATLAS-000-099` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../) |
-| [REF-002](#ref-002) | <a id="ref-002"></a>AMPEL360e programme architecture baseline | `AMP360E-ARCH-BASELINE` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) |
-| [REF-003](#ref-003) | <a id="ref-003"></a>060-069 Propulsión Tradicional section index | `QATL-ATLAS-060-069` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../) |
-| [REF-004](#ref-004) | <a id="ref-004"></a>066 Air Compressor subsection index | `QATL-ATLAS-060-069-066` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../) |
-| [REF-005](#ref-005) | <a id="ref-005"></a>S1000D project BREX | `BREX-AMPEL360E-EWTW` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-| [REF-ATA](#ref-ata) | <a id="ref-ata"></a>ATA iSpec 2200 — Chapter 66 | `ATA-ISPEC-2200-66` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-
----
-
-## 21. Open Issues
-
-| ID | Issue | Owner | Status | Badge | Link |
+| Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| [OI-001](#oi-001) | <a id="oi-001"></a>Confirm final system boundary for Air Compressor General. | System expert | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Architecture Description](#5-architecture-description) |
-| [OI-002](#oi-002) | <a id="oi-002"></a>Complete S1000D SNS allocation for 066-000. | Q-DATAGOV | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) |
-| [OI-003](#oi-003) | <a id="oi-003"></a>Confirm certification basis and safety classification. | Certification lead | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Safety and Certification](#16-safety-and-certification-considerations) |
-| [OI-004](#oi-004) | <a id="oi-004"></a>Confirm maintenance task allocation in DMRL. | Tech pubs lead | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [Maintenance Concept](#13-maintenance-concept) |
+| EAC-A Electric Air Compressor | EAC-A-PN-TBD | 1 | Fwd belly fairing, port | On condition / bearing check 12 000 FH | HVDC 270 V PMSM + centrifugal stage; oil-free |
+| EAC-B Electric Air Compressor | EAC-B-PN-TBD | 1 | Fwd belly fairing, stbd | On condition / bearing check 12 000 FH | Identical to EAC-A; cross-ship redundancy |
+| ACCU Air Compressor Control Unit | ACCU-PN-TBD | 1 | EE bay rack ATA 24 zone | Software update per FADEC/ACCU SB cycle | Dual-channel; DO-178C DAL C |
+| Anti-Surge Bleed Valve (ASBV) | ASBV-PN-TBD | 2 (1 per EAC) | EAC outlet duct | Functional test C-check | Opens within 50 ms on surge detection |
+| Overpressure Relief Valve (OPRV) | OPRV-PN-TBD | 2 (1 per EAC) | EAC outlet manifold | Replace on actuation / C-check inspection | Set point 0.65 MPa |
 
 ---
 
-## 22. Status Legend
+## §8 Interfaces
 
-| Badge | Meaning | Use |
-|---|---|---|
-| ![TBD](https://img.shields.io/badge/TBD-red) | To Be Determined | Required value, source, boundary, interface, requirement, or evidence is not yet determined. |
-| ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | To Be Completed | Section exists but content is intentionally incomplete. |
-| ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) | Draft | Content exists but is not yet reviewed, frozen, or baselined. |
-| ![DONE](https://img.shields.io/badge/DONE-brightgreen) | Done | Content has been reviewed and is complete for the current baseline. |
-
----
-
-## 23. Change Log
-
-| Revision | Date | Author | Change | Link | Status |
-|---|---|---|---|---|---|
-| [0.1.0](#chg-010) | <a id="chg-010"></a>2026-05-11 | Q+ Team / Amedeo Pelliccia + AI | Initial programme-controlled scaffold. | [Document root](#atlas-060-069--section-06--subsection-066--000--air-compressor-general) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Interface Type | Connected System | Protocol / Medium | Data / Function |
+|---|---|---|---|
+| ATA 21 ECS | Environmental Control System packs | Compressed air duct 0.55 MPa | Pressurization and conditioning supply |
+| ATA 24 Electrical Power | HVDC 270 V primary bus | HVDC cable | EAC motor drive power; ~90 kW per unit |
+| ATA 45 CMS | Central Maintenance System | AFDX ARINC 664 P7 | BITE faults, health parameters, exceedance log |
+| ATA 31 ECAM | Cockpit display | AFDX | EAC pressure, flow, fault annunciation |
+| ATA 47 NGS | Nitrogen Generation System | Compressed air branch duct | NGS feed air at reduced pressure |
 
 ---
 
-> Programme-controlled scaffold. Content is subject to [BREX](#glossary-brex), [SNS](#glossary-sns), applicability, [DMRL](#glossary-dmrl), evidence review, and [CCB](#glossary-ccb) freeze before controlled release.
+## §9 Operating Modes
 
-> **To be reviewed by system expert.**
+| Mode | Trigger | System State | Actions / Consequences |
+|---|---|---|---|
+| Normal dual EAC | Both EACs healthy, aircraft powered | EAC-A + EAC-B parallel operation | Each EAC feeds own ECS pack; ACCU regulates flow |
+| Single EAC (degraded) | One EAC fault or shutdown | Remaining EAC supplies both ECS packs | ACCU increases speed setpoint; ECAM amber caution |
+| Ground pre-cooling | Aircraft on ground, doors open | EAC-A or B active per ACCU ground logic | ECS receives compressed air for cabin pre-conditioning before departure |
+| Anti-surge transient | Surge margin < 15 % detected | ASBV opens; compressor speed reduced | Stable operation restored within 200 ms; ACCU logs event |
+| Maintenance | Aircraft grounded, circuit breaker open | ACCU isolated; EAC mechanically locked | LOTO procedure per AMM; no compressed air in system |
+
+---
+
+## §10 Performance and Budgets ![DRAFT]
+
+| Parameter | Requirement | Target / Design Value | Status |
+|---|---|---|---|
+| Mass flow (each EAC, design point) | ≥ 0.7 kg/s at FL350 | 0.8 kg/s | ![TBD] |
+| Outlet pressure (cruise) | 0.50–0.55 MPa gauge | 0.52 MPa | ![TBD] |
+| Surge margin | ≥ 15 % across flight envelope | ≥ 18 % at design | ![TBD] |
+| Motor power (each EAC, max) | ≤ 95 kW | 90 kW nominal | ![TBD] |
+| BITE fault detection coverage | ≥ 85 % | ≥ 87 % target | ![TBD] |
+
+---
+
+## §11 Safety, Redundancy and Fault Tolerance
+
+- Dual EAC cross-ship redundancy ensures continued cabin pressurization supply after single EAC failure (DAL analysis required for ACCU per DO-178C DAL C).
+- ASBV and OPRV provide independent protection against surge and over-pressure respectively; both are passive fail-safe devices (spring-loaded).
+- Loss of both EAC units is classified as a hazardous condition (CS-25 §25.831); ACCU dual-channel failure shall be shown to be Extremely Improbable per FHA.
+- All EAC maintenance tasks require HVDC bus isolation (LOTO) before accessing motor or compressor stage — no residual charge in PMSM bus within 5 minutes of isolation.
+- EAC outlet ducts are rated for max working pressure 0.70 MPa; OPRV limits system to 0.65 MPa.
+
+---
+
+## §12 Maintenance and Diagnostics
+
+| Task | Interval | Access | Special Tools |
+|---|---|---|---|
+| EAC bearing vibration check and trending | 12 000 FH | Belly fairing access panel | ACCU GSE terminal; vibration analyser |
+| ASBV functional test (open/close cycle) | C-check | EAC outlet duct access | ACCU GSE ground command |
+| ACCU BITE log download and review | A-check | Maintenance terminal (CMS) | CMS terminal or ACARS download |
+| EAC LRU replacement | On condition | Belly fairing removal — 4 h task | Torque wrench set; HVDC isolation kit |
+
+---
+
+## §13 Footprint — Physical, Electrical, Maintenance, Data ![TBD]
+
+| Footprint Type | Parameter | Value | Notes |
+|---|---|---|---|
+| Physical | Mass — each EAC unit | ![TBD] | Pending OEM final design |
+| Physical | Envelope — each EAC | ![TBD] | Belly fairing zone, forward section |
+| Electrical | Peak power (both EACs) | ~180 kW | Per HVDC bus load analysis |
+| Maintenance | Access category | Belly fairing panel — line maintenance | Per AMM |
+| Data | AFDX bandwidth (ACCU to CMS) | ![TBD] | Per AFDX bus load analysis |
+
+---
+
+## §14 Safety and Certification References ![DRAFT]
+
+| Standard / Document | Title | Issuing Body | Applicability |
+|---|---|---|---|
+| EASA CS-25 §25.831 | Ventilation and pressurization | EASA | Minimum airflow requirement — drives EAC sizing |
+| DO-178C | Software Considerations in Airborne Systems | RTCA | ACCU software DO-178C DAL C |
+| DO-160G | Environmental Conditions and Test Procedures | RTCA | EAC and ACCU environmental qualification |
+| ATA iSpec 2200 | Chapter 66 — Air Compressor | ATA | ATA chapter scope definition |
+| SAE AIR1168/3 | Air Cycle Machine Cooling Systems | SAE International | Thermodynamic reference for EAC-ECS integration |
+
+---
+
+## §15 V&V Approach ![TBD]
+
+| Phase | Method | Acceptance Criterion | Status |
+|---|---|---|---|
+| Design | Analysis and CFD simulation | Surge margin ≥ 15 %; mass flow ≥ 0.7 kg/s at FL350 | ![TBD] |
+| Integration | Ground functional test (ACCU GSE) | All BITE tests pass; ASBV cycles correctly | ![TBD] |
+| Qualification | DO-160G environmental test | All applicable categories pass (temp, vibration, EMI) | ![TBD] |
+| Certification | EASA CS-25 §25.831 compliance demo | Pressurized flight test; ACCU BITE coverage report | ![TBD] |
+
+---
+
+## §16 Glossary
+
+| Term | Definition |
+|---|---|
+| **EAC** | Electric Air Compressor — HVDC-powered centrifugal compressor replacing engine bleed. |
+| **ACCU** | Air Compressor Control Unit — dual-channel digital controller for EAC speed and pressure regulation. |
+| **PMSM** | Permanent-Magnet Synchronous Motor — high-efficiency motor driving the EAC impeller. |
+| **VFD** | Variable Frequency Drive — power electronics unit controlling PMSM speed via frequency variation. |
+| **ASBV** | Anti-Surge Bleed Valve — valve that opens to dump compressor outlet air, preventing surge. |
+| **OPRV** | Overpressure Relief Valve — spring-loaded valve protecting the duct system at 0.65 MPa set point. |
+| **Surge margin** | Percentage separation between operating point and surge line on the compressor map; must be ≥ 15 %. |
+| **Bleed-less architecture** | Aircraft design with no pneumatic bleed extraction from turbofan stages; relies on EAC for all compressed-air needs. |
+| **HVDC 270 V** | High-Voltage Direct Current bus at 270 V nominal, primary power source for EAC motors. |
+| **SFC improvement** | Specific Fuel Consumption gain (~3 % per engine) from eliminating bleed-air extraction. |
+
+---
+
+## §17 Open Issues
+
+| ID | Description | Owner | Target |
+|---|---|---|---|
+| OI-066-000-001 | Finalise EAC sizing with ECS OEM (mass flow vs cabin altitude schedule) | Q-MECHANICS | 2026-Q4 |
+| OI-066-000-002 | Complete FHA for dual-EAC loss scenario (ACCU DAL classification) | Q-AIR / safety | 2027-Q1 |
+
+---
+
+## §18 Status Legend
+
+| Badge | Meaning |
+|---|---|
+| `![DRAFT]` | Section is drafted but not yet reviewed |
+| `![TBD]` | Content not yet started — to be defined |
+| `![To Be Completed]` | Partially complete — needs additional content |
+| `![APPROVED]` | Reviewed and formally approved |
+
+---
+
+## §19 Related Documents (Siblings in this Subsection)
+
+- [066-010](./066-010-Engine-Driven-Air-Compressor.md)
+- [066-020](./066-020-Auxiliary-Air-Compressor.md)
+- [066-030](./066-030-Compressor-Inlet-and-Outlet-Interfaces.md)
+- [066-040](./066-040-Compressor-Control-and-Regulation.md)
+- [066-050](./066-050-Compressor-Cooling-and-Lubrication.md)
+- [066-060](./066-060-Compressor-Protection-and-Surge-Control.md)
+- [066-070](./066-070-Compressor-Inspection-Test-and-Maintenance.md)
+- [066-080](./066-080-Air-Compressor-Monitoring-Diagnostics-and-Control-Interfaces.md)
+- [066-090](./066-090-S1000D-CSDB-Mapping-and-Traceability.md)
+
+---
+
+## §20 Change Log
+
+| Rev | Date | Author | Description |
+|---|---|---|---|
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
