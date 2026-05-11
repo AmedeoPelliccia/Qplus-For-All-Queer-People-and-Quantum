@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Wings — General | [057-000-Wings-General/README.md](./057-000-Wings-General/README.md) | DRAFT |
+| 10 | Center Wing and Wing Box | [057-010-Center-Wing-and-Wing-Box/README.md](./057-010-Center-Wing-and-Wing-Box/README.md) | DRAFT |
+| 20 | Outer Wing Structure | [057-020-Outer-Wing-Structure/README.md](./057-020-Outer-Wing-Structure/README.md) | DRAFT |
+| 30 | Winglet and Wing Tip | [057-030-Winglet-and-Wing-Tip/README.md](./057-030-Winglet-and-Wing-Tip/README.md) | DRAFT |
+| 40 | Leading Edge and Leading Edge Devices | [057-040-Leading-Edge-and-Leading-Edge-Devices/README.md](./057-040-Leading-Edge-and-Leading-Edge-Devices/README.md) | DRAFT |
+| 50 | Trailing Edge and Trailing Edge Devices | [057-050-Trailing-Edge-and-Trailing-Edge-Devices/README.md](./057-050-Trailing-Edge-and-Trailing-Edge-Devices/README.md) | DRAFT |
+| 60 | Ailerons, Spoilers and Wing Control Surfaces | [057-060-Ailerons-Spoilers-and-Wing-Control-Surfaces/README.md](./057-060-Ailerons-Spoilers-and-Wing-Control-Surfaces/README.md) | DRAFT |
+| 70 | Wing Joints, Splices and Structural Repairs | [057-070-Wing-Joints-Splices-and-Structural-Repairs/README.md](./057-070-Wing-Joints-Splices-and-Structural-Repairs/README.md) | DRAFT |
+| 80 | Wing Monitoring, Diagnostics and Control Interfaces | [057-080-Wing-Monitoring-Diagnostics-and-Control-Interfaces/README.md](./057-080-Wing-Monitoring-Diagnostics-and-Control-Interfaces/README.md) | DRAFT |
+| 90 | S1000D CSDB Mapping and Traceability | [057-090-S1000D-CSDB-Mapping-and-Traceability/README.md](./057-090-S1000D-CSDB-Mapping-and-Traceability/README.md) | DRAFT |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `050-059` |
 | Section | `05` — Estructuras |
 | Subsection | `057` — Wings |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (populated) |
 | Primary Q-Division | Q-STRUCTURES[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-INDUSTRY, Q-HPC |
 | ORB support | ORB-PMO, ORB-FIN, ORB-LEG |
