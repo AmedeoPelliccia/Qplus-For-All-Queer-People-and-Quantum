@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Ground Crew Communication and Safety** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Ground Crew Communication and Safety** node defines the communication protocols, safety zones, and hazard-specific precautions for ground personnel during towing and taxiing operations on the AMPEL360E eWTW. The eWTW introduces two unique ground safety considerations compared to conventional aircraft: (1) the ENWTD operates silently (no engine noise cue) — ground crew must confirm aircraft movement authorisation via WGI handshake, not by engine noise; (2) the 540 V HVDC bus is active during e-taxi — standard high-voltage safety zone applies (minimum 1 m clearance from HVDC component access panels marked with the lightning-bolt hazard decal).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Communication system: the WGI (Wireless Ground Interphone) connects the flight crew interphone bus to maintenance tablets and belt-pack transceivers (ARINC 615A protocol, 2.4 GHz DSSS, encrypted AES-128). The flight deck / ground crew handshake for any movement is: "Brakes Off — Moving" (flight deck) → "Clear to Move — Moving Understood" (ground crew). ENWTD active indication: amber rotating beacon light illuminated on nose gear service panel. Wing-walking crew required for turns exceeding 30° nose-gear deflection. Safety exclusion zones during e-taxi: (A) 3 m around nose gear cradle zone, (B) 5 m aft of wing trailing edge, (C) 10 m aft of any operating APU exhaust. FOD walk-down required before any ENWTD e-taxi is authorised.
 
 ---
 

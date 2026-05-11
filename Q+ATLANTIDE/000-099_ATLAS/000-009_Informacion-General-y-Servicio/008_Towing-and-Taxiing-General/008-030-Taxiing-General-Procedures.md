@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Taxiing General Procedures** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Taxiing General Procedures** node defines the operational procedures and system modes for ground movement of the AMPEL360E eWTW under its own power via the Electric Nose-Wheel Taxiing Drive (ENWTD). The e-taxi sequence is: (1) GPU/APU power establishes 540 V HVDC bus; (2) crew selects "E-TAXI" mode on the ECAM ground movement page; (3) GMMS activates ENWTD and releases electric parking brakes (EPB); (4) thrust levers remain at idle (engines may be off for e-taxi); (5) nose-wheel steering via the tiller or rudder pedals as normal (ENWTD follows ENWS commands). Maximum e-taxi speed: 30 kt (56 km/h); maximum continuous ENWTD current: 100 A (540 V); battery minimum SoC for e-taxi authorisation: 20%.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+During conventional taxi (with engines running), the ENWTD is in "passive" mode (free-wheeling). GMMS monitors nose gear torque and temperature continuously. Taxi turn limits: nose gear steering ±75° (hard stop); minimum turning radius 19 m (outer wingtip). Regulatory reference: EASA CS-25 §25.1515 (taxi speeds); AMPEL360E AFM Chapter 4 (normal procedures). Soft-surface taxi is not approved for the eWTW; dry or wet paved surfaces only.
 
 ---
 

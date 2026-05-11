@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Abnormal Towing and Taxiing Conditions** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Abnormal Towing and Taxiing Conditions** node describes the fault conditions, ECAM warnings, and corrective procedures for abnormal ground movement events on the AMPEL360E eWTW. Primary abnormal conditions and responses: (A) ENWTD overcurrent (>120 A continuous) — GMMS issues "ENWTD OVER CURRENT" amber ECAM message; ENWTD auto-derate to 60 A; if not cleared within 10 s, ENWTD shuts down and "E-TAXI FAULT" red ECAM message requires normal engine taxi or tow; (B) ENWS single-channel failure — "STEER DEGRADED" amber ECAM; crew selects alternate channel via ENWS MODE panel; tiller authority limited to ±45°; (C) electric brake channel failure — "EBAU CHAN [X] FAULT" amber ECAM; BSCU-E automatically reconfigures to remaining channels; autobrake degrades to LO mode; (D) shear bolt shear during tow — GMMS "TOW LOAD EXCEEDED" red ECAM; stop tow immediately; inspect NTL-001 and shear bolt before resuming; (E) nose gear not centered after TBLT cradle release — "NLG NOT CENTERED" amber ECAM; do not commence engine start; apply manual centering procedure per AMM 09-10.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+ENWTD battery over-temperature (>55 °C at BMS cell): GMMS "ENWTD BAT HOT" amber alert; reduce e-taxi speed to 10 kt max; if temperature reaches 65 °C GMMS commands automatic shutdown. All abnormal events are logged in the GMMS event journal and exported to the CSDB as maintenance DMs (info code "900").
 
 ---
 

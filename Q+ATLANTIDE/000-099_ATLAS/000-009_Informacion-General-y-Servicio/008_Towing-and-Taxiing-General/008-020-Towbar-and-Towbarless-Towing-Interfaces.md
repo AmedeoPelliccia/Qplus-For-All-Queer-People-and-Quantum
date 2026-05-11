@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Towbar and Towbarless Towing Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Towbar and Towbarless Towing Interfaces** node specifies the mechanical and electrical interface requirements between the AMPEL360E eWTW and its approved towing GSE. Towbar interface: the NTL-001 lug accepts the Q-TOWBAR-001 NATO 3-lug pin (diameter 63.5 mm, bushing material Ampco-18 bronze, lubrication MIL-PRF-23827). Shear bolt Q-SHEAR-001 is installed in the lower pin slot; rated shear force 90 kN; replacement required after any shear event. The towbar carries a load-measurement shackle (optional, P/N Q-TMLOAD-001) for real-time longitudinal load display to the tug driver.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Towbarless interface: the Q-TBLT-001 cradle lifts and captures the nose gear wheels in a fork cradle; locking confirmed by cradle closed-limit switch (CAN signal to GMMS). ENWTD tow-mode command is issued via the Q-TBLT-001 cradle console (RS-422 datalink to WGI, then ACARS to GMMS); GMMS confirms drive decoupling and issues "ready to tow" indication on cradle console. Electrical tow-on-charge (ToC) option: the Q-TBLT-001 carries a 28 V/HVDC GSE power adapter that can supply up to 30 kW to the aircraft HVDC bus during taxi-in to maintain battery SoC. The ToC interface uses the standard HVDC GPU connector (P/N Q-GPU-CON-001) on the nose gear service panel.
 
 ---
 

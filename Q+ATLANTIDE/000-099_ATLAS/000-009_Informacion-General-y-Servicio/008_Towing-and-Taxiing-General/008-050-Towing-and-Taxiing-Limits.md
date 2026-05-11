@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Towing and Taxiing Limits** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Towing and Taxiing Limits** node lists the certified operating limits for towing and taxiing the AMPEL360E eWTW. Towing limits: maximum tow speed (towbar/TBLT) 10 kt (18.5 km/h) forward, 5 kt (9.3 km/h) rearward; maximum ramp/gradient during towing ±3° (CS-25 §25.499 equivalent); maximum nose-gear tow angle ±88° for TBLT, ±70° for towbar; maximum crosswind during towing 25 kt; minimum ambient temperature −40 °C; maximum ambient temperature +55 °C. Towing is prohibited with OEW exceeding certified MTOW limit; GMMS checks WMMS-LW weight data before authorising any movement.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Taxiing limits: maximum e-taxi speed 30 kt; maximum ENWTD torque 2 100 N·m at nose gear axle; maximum main gear tyre temperature (from GMMS tyre-pressure and temperature monitoring): 130 °C (caution) / 160 °C (warning, stop); ENWTD minimum SoC authorisation: 20% battery; maximum crosswind during taxiing 45 kt; pavement bearing strength: minimum ACN ≤ PCN 43/F/B/X/T (per ICAO Annex 14). E-taxi is prohibited on icy or snow-covered taxiways without specific operator SOP. ENWTD is not authorised for steep-gradient ramp entries exceeding ±5° (battery current limit protection).
 
 ---
 

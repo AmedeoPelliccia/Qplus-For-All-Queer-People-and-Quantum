@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Steering Braking and Ground Movement Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Steering Braking and Ground Movement Interfaces** node describes the integrated steering, braking, and ground movement control architecture for the AMPEL360E eWTW. Nose-wheel steering is provided by the Electric Nose-Wheel Steering (ENWS) actuator (dual-channel, DO-178C DAL B, redundancy: two independent motor-control channels with automatic crossover on channel failure). Steering authority: ±75° full tiller; ±6° pedal; blend function (tiller authority reduces to 0 at 40 kt IAS, pedal authority reduces to 0 at 160 kt IAS).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Braking: all four main gear legs have Electric Brake Actuator Units (EBAU, DO-178C DAL A, triple-redundancy), powered from the 28 V DC essential bus with energy storage in a dedicated brake capacitor pack (10 s peak at maximum braking). The Anti-Skid System (BSCU-E, DO-178C DAL A) integrates with the EBAU via ARINC 429. Autobrake is available in LO/MED/HI/MAX modes, fully integrated with the FADEC thrust reverser inhibit signal. Parking brake (electric, spring-set / hydraulic-release replaced by: spring-set / electric-release via the EBAU) is set by a dedicated switch on the cockpit centre console, confirmed by "PARK BRK" ECAM memo. The GMMS provides a unified dashboard showing all ENWS, EBAU, and ENWTD status to ground crew on the maintenance tablet.
 
 ---
 

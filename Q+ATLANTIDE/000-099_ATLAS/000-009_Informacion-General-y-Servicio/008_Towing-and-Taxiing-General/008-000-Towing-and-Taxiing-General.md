@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Towing and Taxiing General** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Towing and Taxiing General** node establishes the framework, definitions, and operational boundaries for all towing and taxiing activities on the AMPEL360E eWTW. The eWTW introduces significant departures from conventional aircraft ground-movement procedures. The primary differences are: (1) the nose gear is equipped with an Electric Nose-Wheel Steering and Taxiing Drive (ENWTD), rated at 55 kW continuous / 80 kW peak, powered directly from the 540 V HVDC bus; (2) main gear electric brake actuators replace conventional hydraulic brake systems, removing all hydraulic lines and fluid hazard zones from the gear bays; (3) the absence of engine bleed eliminates compressor-induced ground wake, reducing turbulent-jet safety distances around the aircraft.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+The ENWTD enables the eWTW to taxi under electric power alone, without starting the main turbofan engines, from the gate to the runway hold point ("e-taxi"). Towing is required for tight gate manoeuvres, pushback, and hangar moves. Towbarless towing (TBLT) with a nose-gear cradle is the preferred method for line operations; towbar towing is approved as a backup. All towing and taxiing ground operations are supervised by the GMMS (Ground Movement Management System) which monitors gear loads, ENWTD current, brake temperature, and steering angle, and is linked to the WMMS-LW for weight data. Ground crew communication is provided by the Wireless Ground Interphone (WGI) system (ARINC 615).
 
 ---
 

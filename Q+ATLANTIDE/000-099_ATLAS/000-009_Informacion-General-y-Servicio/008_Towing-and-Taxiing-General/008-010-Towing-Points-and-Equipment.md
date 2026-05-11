@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Towing Points and Equipment** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Towing Points and Equipment** node defines the structural tow attachment points, rated loads, and certified GSE for ground movement of the AMPEL360E eWTW. Towing loads are transmitted to the airframe through the nose gear towing lug (NTL-001, forward face of nose gear leg, rated ±800 kN longitudinal, ±100 kN lateral per side). Two body-gear rear towing points (BGT-001L and BGT-001R, main gear trunnion aft attach fittings, rated ±400 kN each) are provided for push-in manoeuvres and hangar positioning only — these are not to be used for towing more than 5 m without nose gear guidance.
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Approved GSE: (A) TBLT cradle set Q-TBLT-001 (for nose-gear widths 450–600 mm, compatible with the eWTW 520 mm nose-gear track, tow capacity 100 t gross, 28 V DC powered with HVDC adapter for tow-on-charge feature); (B) towbar Q-TOWBAR-001 (standard 3-lug NATO pin, rated 80 t, for backup towing); (C) shear bolts set Q-SHEAR-001 (mandatory, rated 90 kN shear, must be installed in NTL-001 before any tow). The ENWTD must be placed in "tow mode" before any external tow to decouple the electric drive from the nose gear bearings; confirmation is displayed on the GMMS maintenance screen. All tow attachments are documented per the Pre-Move Checklist (Q-GMMS-CHECK-001).
 
 ---
 

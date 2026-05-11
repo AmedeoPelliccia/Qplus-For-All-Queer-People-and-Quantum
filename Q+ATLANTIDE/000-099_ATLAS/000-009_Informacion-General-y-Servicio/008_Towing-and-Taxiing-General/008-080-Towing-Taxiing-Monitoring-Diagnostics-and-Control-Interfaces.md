@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Towing Taxiing Monitoring Diagnostics and Control Interfaces** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **Towing Taxiing Monitoring Diagnostics and Control Interfaces** node describes the GMMS (Ground Movement Management System) architecture and its integration with the ENWTD, ENWS, EBAU, BSCU-E, and WMMS for the AMPEL360E eWTW. The GMMS is a DO-178C DAL C application hosted on the CPIOM-G (Ground Systems CPIOM), ARINC 664 Part 7 (AFDX) connected to all ground-movement subsystems. Key monitored parameters: ENWTD drive current (A), motor winding temperature (°C), nose-gear bearing temperature (°C), ENWS actuator position (deg), EBAU actuator position and clamp force per wheel, tyre pressure and temperature per wheel, battery SoC for e-taxi authority, WMMS-LW weight data (real-time), GPS ground speed (from ADIRU), and taxiway proximity (ADS-B and SWIM data overlay on maintenance tablet map).
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+GMMS provides three operator interfaces: (1) ECAM GROUND page (primary flight crew interface, ARINC 661 display); (2) GMMS maintenance tablet (ground crew, iOS/Android app, WGI link); (3) GAIA-QA maintenance client (line maintenance, CSDB DM export, event history). GMMS diagnostic features: built-in test (BIT) activated automatically on each ENWTD/ENWS/EBAU power-up (result displayed in <10 s); continuous parameter trend monitoring with 72-hour on-board history; predictive alert for ENWTD bearing wear (vibration FFT from MEMS sensor on motor housing). All GMMS data is time-stamped and signed with the aircraft tail number for audit traceability per EASA Part-M §M.A.306.
 
 ---
 

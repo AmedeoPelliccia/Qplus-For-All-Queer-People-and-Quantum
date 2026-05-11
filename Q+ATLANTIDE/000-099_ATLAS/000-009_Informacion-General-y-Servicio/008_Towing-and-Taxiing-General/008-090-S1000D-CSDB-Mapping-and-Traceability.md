@@ -70,9 +70,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **S1000D CSDB Mapping and Traceability** node covers the architecture, interfaces, operational logic, maintenance boundaries, and traceability requirements associated with this topic.
+The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 008 Towing and Taxiing subsubjects and the AMPEL360E eWTW S1000D Data Module structure. ATLAS 008 subsubjects map to DMs under systemCode="008" (ATA 09 equivalent), model ident code AMPEL360E, system diff code EWTW, in the Q+ATLANTIDE CSDB instance. Primary DM types: procedural DMs for towing and e-taxi operations (info code "520"), descriptive DMs for GMMS and ENWTD architecture (info code "040"), safety precautions DMs (info code "300"), fault-isolation DMs (info code "900"), illustrated parts DMs (info code "941").
 
-For the AMPEL360E eWTW configuration, this topic shall be treated as part of a full-electric, bleed-less, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360E implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+Traceability chain: ATLAS 008 tow-point geometry and GSE interface data → AMM Chapter 9 (Towing and Taxiing) procedural DMs → ENWTD/ENWS/EBAU system description DMs → GMMS event-log DMs → CSDB aircraft configuration record → AFM Ground Limitations section. The DMRL for ATA 09 shall confirm coverage of all eWTW-specific items: ENWTD e-taxi procedures, TBLT cradle interface, tow-on-charge procedure, electric-brake abnormal procedures, and GMMS maintenance interface. The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV assigns DM codes to each 008-NNN subsubject and tracks publication status.
 
 ---
 
