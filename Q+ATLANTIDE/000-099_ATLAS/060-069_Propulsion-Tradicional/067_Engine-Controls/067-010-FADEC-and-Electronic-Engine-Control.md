@@ -1,468 +1,274 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-06-067-010-FADEC-AND-ELECTRONIC-ENGINE-CONTROL"
-title: "ATLAS 060-069 · 06.067.010 — FADEC and Electronic Engine Control"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-067-010-FADEC-AND-ELECTRONIC-ENGINE-CONTROL"
 register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "060-069"
-section: "06"
-section_title: "Propulsión Tradicional"
+title: "FADEC and Electronic Engine Control"
+ata: "ATA 67"
+sns: "067-010-00"
 subsection: "067"
-subsection_title: "Engine Controls"
-subsubject: "010"
-subsubject_title: "FADEC and Electronic Engine Control"
-subsubject_file: "067-010-FADEC-and-Electronic-Engine-Control.md"
-subsubject_link: "./067-010-FADEC-and-Electronic-Engine-Control.md"
+subsubject_code: "010"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
 status: active
-language: en
-s1000d_applicability: "S1000D-CSDB-compatible"
-ata_reference: "ATA 67"
-created: "2026-05-11"
-updated: "2026-05-11"
-review_status: "to-be-reviewed-by-system-expert"
+governance_class: baseline
+revision: "0.1"
+date: "2026-05-11"
+parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
+parent_architecture_doc: "../../../README.md"
+parent_section_doc: "../../README.md"
+parent_subsection_doc: "../README.md"
+parent_subsubject_doc: "./README.md"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-010"
 ---
 
-![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-![TBD](https://img.shields.io/badge/TBD-red)
-![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+# FADEC and Electronic Engine Control
 
-# ATLAS 060-069 · Section 06 · Subsection 067 · 010 — FADEC and Electronic Engine Control
-
-## 0. Hyperlink Policy
-
-All linkable content in this file shall be expressed as Markdown links where a stable target exists.
-
-Use:
-
-- relative links for repository-internal content;
-- anchor links for headings, figures, diagrams, glossary terms, citations, references, open issues, and lifecycle sections;
-- stable external links only for public standards or authoritative sources;
-- `TBD` or `<relative-link-or-TBD>` where no stable target exists.
-
-Do not invent links.
-
-Every table containing a document, path, code, reference, acronym, figure, diagram, lifecycle phase, Q-Division, ORB-Function, DMC, BREX, DMRL, evidence record, or issue shall include either a direct link or an explicit `TBD` target.
+![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
+![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
+![ATA: ATA 67](https://img.shields.io/badge/ATA-67-green)
+![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q--GREENTECH-brightgreen)
 
 ---
 
-## 1. Purpose
+## §0 Hyperlink Policy
 
-This document defines the controlled technical scope for **FADEC and Electronic Engine Control** (`067-010`) within the [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) / [ATLAS 000-099](../../../) architecture branch, section [060-069 Propulsión Tradicional](../../).
-
-The objective is to provide a deterministic, [S1000D](https://s1000d.org/)-compatible technical baseline covering the Full Authority Digital Engine Control (FADEC) architecture, dual-channel design, software assurance level, and controlled FADEC definition.
-
-This file belongs to:
-
-[`Q+ATLANTIDE/000-099_ATLAS/060-069_Propulsion-Tradicional/067_Engine-Controls/067-010-FADEC-and-Electronic-Engine-Control.md`](./)
+> All hyperlinks in this document are **relative** (five directory levels: `../../../../../`).
+> Absolute URLs are forbidden.
 
 ---
 
-## 2. Applicability
+## §1 Purpose
 
-This document applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme and the **eWTW** configuration.
+This document describes the hardware architecture and operational characteristics of the FADEC Electronic Engine Controller (EEC) on the AMPEL360E eWTW. The EEC is the physical implementation of the FADEC authority: a dual-channel digital computer mounted on the engine fan case, receiving all engine control inputs and outputting all engine control commands.
 
-| Applicability Item | Value | Status |
-|---|---|---|
-| Programme | [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Architecture register | [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATLAS band | [000-099_ATLAS](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Section | [060-069 Propulsión Tradicional](../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Subsection | [067 Engine Controls](../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATA reference | [ATA 67](#ref-ata) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| S1000D compatibility | [S1000D-CSDB-compatible](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Lifecycle use | [LC03](../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md) / [LC05](../../../../../Governance/Lifecycle/LC05-Detailed-Design.md) / [LC06](../../../../../Governance/Lifecycle/LC06-Verification-Planning.md) / [LC11](../../../../../Governance/Lifecycle/LC11-Operation.md) / [LC12](../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
+The EEC is a Line Replaceable Unit (LRU) of approximately 6–8 kg, conforming to ARINC 600 size 6 MCU form factor, qualified per DO-160G to the thermal, vibration, humidity, and EMI environments of the engine fan case location. Software is DO-178C DAL A with an Engine Model Data File (EDF) specific to the engine serial number, uploaded via FADEC LOADMASTER ground software.
 
 ---
 
-## 3. System / Function Overview
+## §2 Applicability
 
-The **FADEC and Electronic Engine Control** node covers the Full Authority Digital Engine Control (FADEC) architecture, dual-channel design, software assurance level, and controlled FADEC definition.
-
-For the [AMPEL360e](#glossary-ampel360e) configuration, this node shall be treated as part of a full-electric, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360e implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
-
-This document does not freeze the final certified design. It establishes a controlled scaffold for downstream engineering, [S1000D](#glossary-s1000d) data-module planning, [CSDB](#glossary-csdb) integration, and evidence capture.
-
----
-
-## 4. Scope
-
-### 4.1 Included
-
-This document includes:
-- Define FADEC architecture and dual-channel design
-- Specify software assurance level (DO-178C DAL)
-- Document FADEC power supply and redundancy
-- Define FADEC configuration management requirements
-- Map to S1000D descriptive DMs
-
-### 4.2 Excluded
-
-This document excludes:
-
-- supplier-proprietary internal design data unless released to the programme baseline;
-- final certification compliance statements;
-- detailed maintenance procedures unless assigned by the [DMRL](#glossary-dmrl);
-- final illustrated parts data unless released through the [CSDB](#glossary-csdb);
-- production-level configuration until [CCB](#glossary-ccb) freeze.
+| Parameter | Value |
+|---|---|
+| Aircraft Program | AMPEL360E eWTW |
+| ATA reference | ATA 67-010 — FADEC and Electronic Engine Control |
+| Certification basis | EASA CS-E §150 / DO-178C DAL A / DO-254 |
+| S1000D SNS | 067-010-00 |
 
 ---
 
-## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §3 Functional Description ![DRAFT]
 
-The **FADEC and Electronic Engine Control** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries.
+**EEC hardware:** Dual-channel single enclosure. Channel A board and Channel B board are physically separated within the EEC box, each with its own processor (32-bit RISC), RAM, NVM (for EDF storage and fault logs), ARINC 429 transceivers, AFDX end-system, analogue I/O (sensor inputs), discrete I/O (actuator enables, ignition commands), and power supply module. The two boards share no hardware components except the EEC housing and the fan-case mounting bracket.
 
-At architecture level, the system shall be described in terms of:
+**Cooling:** Passive RAM-air cooling via a dedicated cooling channel through the EEC enclosure. A temperature sensor inside the EEC monitors internal temperature; if internal temperature exceeds 95 °C, FADEC logs an advisory. No liquid cooling or thermoelectric cooling required.
 
-1. **Function** — what the system does.
-2. **Equipment** — which [LRUs](#glossary-lru), assemblies, panels, modules, or components implement the function.
-3. **Interfaces** — how the system exchanges power, data, fluid, air, signal, force, or commands.
-4. **Control logic** — how the system is commanded, monitored, degraded, isolated, or reset.
-5. **Maintenance boundary** — what a technician can inspect, test, remove, install, or replace.
-6. **Evidence boundary** — which requirements, tests, inspections, and records prove compliance.
+**Communications:** CH-A (active) communicates to aircraft via: ARINC 429 (TLA, N1 target, discrete engine state) and AFDX (CMS health data, ECAM thrust data, FMS speed schedule). CH-B shadows CH-A I/O and is ready to command immediately on CH-A failure. After crossover, CH-B becomes commanding and CH-A becomes monitoring.
 
 ---
 
-## 6. Functional Breakdown ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §4 Functional Breakdown
 
-| Ref | Function | Description | Primary Interface | Status |
-|---:|---|---|---|---|
-| [F-001](#f-001) | <a id="f-001"></a>Define FADEC architecture and dual-channel design | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-002](#f-002) | <a id="f-002"></a>Specify software assurance level (DO-178C DAL) | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-003](#f-003) | <a id="f-003"></a>Document FADEC power supply and redundancy | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-004](#f-004) | <a id="f-004"></a>Monitoring | Captures status, failures, degradation, and maintenance data. | [CMS / BITE](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [F-005](#f-005) | <a id="f-005"></a>Traceability | Links architecture, requirements, evidence, and S1000D content. | [CSDB / DMRL / BREX](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| ID | Name | Description | Lead Division |
+|---|---|---|---|
+| F-001 | EEC CH-A processor and I/O | Primary command processor; 32-bit RISC; full actuator output authority | Q-GREENTECH |
+| F-002 | EEC CH-B processor and I/O | Shadow processor; monitors CH-A; ready for 20 ms crossover | Q-MECHANICS |
+| F-003 | EEC NVM (EDF + fault log) | Stores engine model data file and last 500 fault events | Q-MECHANICS |
+| F-004 | EEC cooling channel | Passive RAM-air; fan case 3 o'clock mounting; internal temp sensor | Q-AIR |
+| F-005 | AFDX end-system (EEC) | Provides ARINC 664 P7 connectivity to aircraft network | Q-INDUSTRY |
 
 ---
 
-## 7. Mermaid — System Context Diagram
-
-<a id="diagram-system-context"></a>
+## §5 System Context — Mermaid Diagram
 
 ```mermaid
 flowchart LR
-    A[Aircraft-Level Function] --> B[067 Engine Controls]
-    B --> C[Power Interface]
-    B --> D[Data / Control Interface]
-    B --> E[Mechanical / Fluid / Air Interface]
-    B --> F[Monitoring and Diagnostics]
-    F --> G[Central Maintenance System]
-    G --> H[S1000D / CSDB Evidence]
+    FAN_CASE[Engine Fan Case 3 o'clock mount] --> EEC[EEC ARINC 600 6MCU]
+    EEC --> CHA[CH-A Active processor]
+    EEC --> CHB[CH-B Standby processor]
+    CHA --> ARINC429[ARINC 429 TLA input]
+    CHA --> AFDX_EEC[AFDX to CMS/ECAM/FMS]
+    CHA --> ACTUATORS[Actuator Outputs FMV/VSV/VBV/IGN]
+    CHB -. "crossover 20 ms" .-> ACTUATORS
+    RAM_AIR[RAM Air Fan Case] --> COOLING[EEC Cooling Channel]
+    COOLING --> TEMP_SENSOR[Internal Temp Sensor → FADEC Advisory]
 ```
-
-***[Diagram 1](#diagram-system-context) — System context diagram for FADEC and Electronic Engine Control. Related sections: [Interfaces](#10-interfaces), [Monitoring and Diagnostics](#12-monitoring-and-diagnostics), [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping).***
 
 ---
 
-## 8. Mermaid — Internal Functional Architecture
-
-<a id="diagram-internal-functional-architecture"></a>
+## §6 Internal Architecture — Mermaid Diagram
 
 ```mermaid
 flowchart TB
-    SYS[067-010 FADEC and Electronic Engine Control] --> F1[Define FADEC architecture and dual-channel design]
-    SYS --> F2[Specify software assurance level (DO-178C DAL)]
-    SYS --> CTRL[Control Logic]
-    SYS --> MON[Monitoring and Diagnostics]
-    SYS --> MAINT[Maintenance Boundary]
-    CTRL --> IMA[IMA / Controller Interface]
-    MON --> CMS[CMS / BITE]
-    MAINT --> CSDB[S1000D Data Modules]
+    PSU_A[Power Supply CH-A 28V DC Bus 1] --> PROC_A[CH-A RISC Processor]
+    PSU_B[Power Supply CH-B 28V DC Bus 2] --> PROC_B[CH-B RISC Processor]
+    PROC_A --> NVM_A[NVM-A EDF + Fault Log]
+    PROC_B --> NVM_B[NVM-B EDF + Fault Log]
+    PROC_A --> ARINC_A[ARINC 429 I/O CH-A]
+    PROC_A --> AFDX_A[AFDX End-System CH-A]
+    PROC_A --> ANALOG_A[Analogue Sensor Inputs CH-A]
+    PROC_B --> ANALOG_B[Analogue Sensor Inputs CH-B]
+    PROC_A --> DISCRETE_OUT[Discrete Outputs FMV/VSV/VBV/IGN]
+    PROC_B -. "standby" .-> DISCRETE_OUT
 ```
 
-***[Diagram 2](#diagram-internal-functional-architecture) — Internal functional architecture. Related sections: [Functional Breakdown](#6-functional-breakdown), [Maintenance Concept](#13-maintenance-concept), [Footprints](#15-footprints).***
-
 ---
 
-## 9. Mermaid — Lifecycle Traceability
+## §7 Components and LRUs
 
-<a id="diagram-lifecycle-traceability"></a>
-
-```mermaid
-flowchart LR
-    LC02[LC02 Requirements] --> LC03[LC03 Architecture]
-    LC03 --> LC05[LC05 Detailed Design]
-    LC05 --> LC06[LC06 Verification Planning]
-    LC06 --> LC10[LC10 Certification / Approval]
-    LC10 --> LC11[LC11 Operation]
-    LC11 --> LC12[LC12 Maintenance / Support]
-
-    LC03 --> CSDB[S1000D / CSDB]
-    LC05 --> DMRL[DMRL]
-    LC06 --> EVID[Evidence Records]
-    LC12 --> FEEDBACK[In-Service Feedback]
-    FEEDBACK --> LC13[LC13 Upgrade / Modification]
-```
-
-***[Diagram 3](#diagram-lifecycle-traceability) — Lifecycle traceability from requirements to maintenance feedback. Related sections: [Verification and Validation](#17-verification-and-validation), [References](#20-references), [Open Issues](#21-open-issues).***
-
----
-
-## 10. Interfaces ![TBD](https://img.shields.io/badge/TBD-red)
-
-| Interface Type | Connected System | Description | Evidence Required | Status |
-|---|---|---|---|---|
-| Electrical power | [ATA 24 Power](TBD) | TBD — power supply interface. | [Wiring / load analysis](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data / control | [FADEC / CMS / IMA](TBD) | TBD — command and monitoring interface. | [ICD / data dictionary](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mechanical | [Structure / installation zone](TBD) | TBD — mounting, access, or load path. | [Installation drawing](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Fluid / air / thermal | [Adjacent propulsion system](TBD) | TBD — flow, pressure, temperature, or thermal interface. | [Test report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance | [CSDB / IETP](TBD) | TBD — technician-facing access and procedure boundary. | [DMRL / BREX](#14-s1000d--csdb-mapping) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 11. Operating Modes ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-| Mode | Description | Entry Condition | Exit Condition | Status |
-|---|---|---|---|---|
-| [Normal](#mode-normal) | <a id="mode-normal"></a>System operates within nominal limits. | Aircraft powered and system enabled. | Shutdown, fault, or mode change. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Degraded](#mode-degraded) | <a id="mode-degraded"></a>System operates with reduced function or redundancy. | Fault detected or partial loss of function. | Recovery, isolation, or maintenance action. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Maintenance](#mode-maintenance) | <a id="mode-maintenance"></a>System is configured for inspection, test, removal, installation, or servicing. | Authorized maintenance action. | Maintenance close-up and operational check. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Failure / Safe State](#mode-failure-safe-state) | <a id="mode-failure-safe-state"></a>System enters protective state to prevent unsafe operation. | Fault threshold exceeded. | Reset, repair, replacement, or dispatch decision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 12. Monitoring and Diagnostics ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The system shall provide sufficient monitoring to support safe operation, maintenance troubleshooting, and lifecycle evidence capture.
-
-Monitoring may include:
-
-- status indication;
-- fault detection;
-- [BITE](#glossary-bite) results;
-- sensor plausibility checks;
-- degraded-mode reporting;
-- maintenance messages;
-- event recording;
-- configuration status;
-- software or hardware part-number reporting where applicable.
-
-Diagnostic data shall be mapped to the relevant [S1000D / CSDB](#14-s1000d--csdb-mapping) fault isolation and maintenance data modules.
-
----
-
-## 13. Maintenance Concept ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The maintenance concept shall support modular inspection, fault isolation, removal, installation, and return-to-service verification.
-
-Maintenance content should be structured around:
-
-- access requirements;
-- safety precautions;
-- isolation conditions;
-- required tools and test equipment;
-- inspection criteria;
-- functional test criteria;
-- fault isolation logic;
-- replacement boundaries;
-- close-up and return-to-service checks.
-
-Maintenance procedures shall remain provisional until validated against the applicable [DMRL](#glossary-dmrl), [BREX](#glossary-brex), and task validation records.
-
----
-
-## 14. S1000D / CSDB Mapping ![TBD](https://img.shields.io/badge/TBD-red)
-
-| S1000D Element | Controlled Value | Status |
-|---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System code | `067` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Sub-system code | `0` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Sub-sub-system code | `10` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Assy code | `00A` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Info code | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| Item location code | `D` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| DMC prefix | [`DMC-AMPEL360E-EWTW-067-010`](TBD) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### Recommended Data Module Set
-
-| Info code | Data module purpose | Suggested filename | Status |
-|---:|---|---|---|
-| [040](#dm-040) | <a id="dm-040"></a>Descriptive information | [`DMC-AMPEL360E-EWTW-067-010-040A-D_System-Description.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [300](#dm-300) | <a id="dm-300"></a>Examination / inspection / check | [`DMC-AMPEL360E-EWTW-067-010-300A-D_Inspection.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [400](#dm-400) | <a id="dm-400"></a>Fault isolation | [`DMC-AMPEL360E-EWTW-067-010-400A-D_Fault-Isolation.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [520](#dm-520) | <a id="dm-520"></a>Remove / disassemble | [`DMC-AMPEL360E-EWTW-067-010-520A-D_Remove.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [720](#dm-720) | <a id="dm-720"></a>Install / assemble / connect | [`DMC-AMPEL360E-EWTW-067-010-720A-D_Install.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [941](#dm-941) | <a id="dm-941"></a>Illustrated parts data | [`DMC-AMPEL360E-EWTW-067-010-941A-D_Illustrated-Parts-Data.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 15. Footprints ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-### 15.1 Physical Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Installation zone | TBD — aircraft zone or compartment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Access panels | TBD — relevant access points. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mounting provisions | TBD — rack, bracket, panel, structural attachment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Clearance envelope | TBD — required removal / installation clearance. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cooling / ventilation | TBD — thermal management interface. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Drainage / leak path | TBD — if applicable. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.2 Electrical / Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Power supply | TBD — voltage / phase / bus source. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Protection | TBD — circuit breaker / SSPC / fuse / electronic protection. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data buses | TBD — ARINC / AFDX / CAN / discrete / optical / other. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Connectors | TBD — connector families or interface references. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Bonding / grounding | TBD — bonding and grounding provision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| EMC / EMI controls | TBD — shielding, segregation, filtering. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.3 Maintenance Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Access level | Line / base / shop | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Replaceable unit | LRU / SRU / assembly / panel | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Removal time | Estimated or controlled maintenance interval | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required tools | Standard / special tools | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required GSE | Ground support equipment | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Return-to-service check | Operational / functional / BITE check | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.4 Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Configuration records | Part number, serial number, software load, effectivity | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Evidence records | Test, inspection, compliance, review records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| CSDB records | DMCs, ICNs, BREX, applicability | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance data | Fault history, BITE, removal/installation records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cybersecurity records | Access, load authorization, integrity checks | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 16. Safety and Certification Considerations ![TBD](https://img.shields.io/badge/TBD-red)
-
-The system shall be assessed according to its aircraft-level function, failure effects, operational criticality, and integration dependencies.
-
-The certification and safety analysis shall consider:
-
-- functional hazard assessment;
-- failure modes and effects;
-- common-cause failures;
-- degraded-mode behavior;
-- latent failures;
-- maintenance-induced failures;
-- incorrect installation;
-- incorrect configuration;
-- loss of indication or misleading indication;
-- software and hardware assurance levels where applicable;
-- environmental qualification;
-- electromagnetic compatibility;
-- continued airworthiness impact.
-
-Final safety classification shall remain **TBD** ![TBD](https://img.shields.io/badge/TBD-red) until reviewed against the applicable [FHA](#glossary-fha), [PSSA](#glossary-pssa), [SSA](#glossary-ssa), and certification basis.
-
----
-
-## 17. Verification and Validation ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-Verification shall demonstrate that the system satisfies its requirements under nominal, degraded, maintenance, and failure conditions.
-
-| Verification Method | Description | Evidence | Status |
-|---|---|---|---|
-| [Analysis](#verification-analysis) | <a id="verification-analysis"></a>Engineering calculation, modelling, simulation, or safety analysis. | [Analysis report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Inspection](#verification-inspection) | <a id="verification-inspection"></a>Physical or visual verification of installation, marking, routing, or condition. | [Inspection record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Test](#verification-test) | <a id="verification-test"></a>Functional, environmental, integration, or system test. | [Test report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Demonstration](#verification-demonstration) | <a id="verification-demonstration"></a>Operational demonstration under controlled conditions. | [Demonstration record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Similarity](#verification-similarity) | <a id="verification-similarity"></a>Justified reuse of existing certified design evidence. | [Similarity report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 18. Glossary of Terms and Acronyms
-
-| Term / Acronym | Meaning | Link | Status |
-|---|---|---|---|
-| <a id="glossary-ampel360e"></a>AMPEL360e | Electrified aircraft programme family used as the programme example. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-atlas"></a>ATLAS | Aircraft Top Level Architecture Schema/System. | [ATLAS 000-099](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-bite"></a>BITE | Built-In Test Equipment. | [Monitoring and Diagnostics](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-brex"></a>BREX | Business Rules Exchange; S1000D rule set used to validate data-module content. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ccb"></a>CCB | Configuration Control Board. | [Governance](../../../../../Governance/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-csdb"></a>CSDB | Common Source DataBase. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmc"></a>DMC | Data Module Code. | [S1000D DMC Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmrl"></a>DMRL | Data Module Requirement List. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ewtw"></a>eWTW | Electric Wide Tube-and-Wing. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fadec"></a>FADEC | Full Authority Digital Engine Control. | [Engine Controls](../067_Engine-Controls/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fha"></a>FHA | Functional Hazard Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-lru"></a>LRU | Line Replaceable Unit. | [Maintenance Concept](#13-maintenance-concept) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-pssa"></a>PSSA | Preliminary System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-s1000d"></a>S1000D | International specification for technical publications using a common source database. | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-sns"></a>SNS | Standard Numbering System. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-ssa"></a>SSA | System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-tbd"></a>TBD | To Be Determined. | [Open Issues](#21-open-issues) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-
----
-
-## 19. Citations ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Citation | Use | Link | Status |
-|---|---|---|---|---|
-| [CIT-001](#cit-001) | <a id="cit-001"></a>`S1000D Issue 5.0, Part I — Introduction and overview.` | Architecture / terminology | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-002](#cit-002) | <a id="cit-002"></a>`EASA CS-25, Amendment 27 — Airworthiness Standards: Large Aeroplanes.` | Certification basis | [EASA](https://www.easa.europa.eu/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-003](#cit-003) | <a id="cit-003"></a>`AMPEL360e Programme Architecture Baseline, Rev TBD.` | Programme-specific requirement | [Programme baseline](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [CIT-004](#cit-004) | <a id="cit-004"></a>`ATA iSpec 2200, Chapter 67 — Engine Controls.` | ATA reference | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [CIT-005](#cit-005) | <a id="cit-005"></a>`DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment.` | Environmental qualification | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 20. References ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Document | Identifier | Revision | Status | Link |
-|---|---|---|---:|---|---|
-| [REF-001](#ref-001) | <a id="ref-001"></a>Q+ATLANTIDE ATLAS master index | `QATL-ATLAS-000-099` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../) |
-| [REF-002](#ref-002) | <a id="ref-002"></a>AMPEL360e programme architecture baseline | `AMP360E-ARCH-BASELINE` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) |
-| [REF-003](#ref-003) | <a id="ref-003"></a>060-069 Propulsión Tradicional section index | `QATL-ATLAS-060-069` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../) |
-| [REF-004](#ref-004) | <a id="ref-004"></a>067 Engine Controls subsection index | `QATL-ATLAS-060-069-067` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../) |
-| [REF-005](#ref-005) | <a id="ref-005"></a>S1000D project BREX | `BREX-AMPEL360E-EWTW` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-| [REF-ATA](#ref-ata) | <a id="ref-ata"></a>ATA iSpec 2200 — Chapter 67 | `ATA-ISPEC-2200-67` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-
----
-
-## 21. Open Issues
-
-| ID | Issue | Owner | Status | Badge | Link |
+| Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| [OI-001](#oi-001) | <a id="oi-001"></a>Confirm final system boundary for FADEC and Electronic Engine Control. | System expert | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Architecture Description](#5-architecture-description) |
-| [OI-002](#oi-002) | <a id="oi-002"></a>Complete S1000D SNS allocation for 067-010. | Q-DATAGOV | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) |
-| [OI-003](#oi-003) | <a id="oi-003"></a>Confirm certification basis and safety classification. | Certification lead | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Safety and Certification](#16-safety-and-certification-considerations) |
-| [OI-004](#oi-004) | <a id="oi-004"></a>Confirm maintenance task allocation in DMRL. | Tech pubs lead | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [Maintenance Concept](#13-maintenance-concept) |
+| EEC (complete LRU) | EEC-LRU-PN-TBD | 2 (one per engine) | Fan case 3 o'clock | On condition / software update per SB | ARINC 600 6MCU; ~7 kg; DO-178C DAL A + DO-254 |
+| EDF (Engine Data File) | EDF-SN-XXXXXXX | 1 per engine | EEC NVM | Update at each borescope or OEM trigger | Serial-number-specific; performance calibration |
+| EEC Mounting Bracket | BKT-EEC-PN-TBD | 2 (one per engine) | Fan case 3 o'clock | Inspect C-check | Anti-vibration mounts; torque per AMM |
+| EEC Cooling Inlet Screen | SCREEN-EEC-PN-TBD | 2 (one per engine) | EEC housing RAM-air inlet | Inspect A-check | Prevents FOD in cooling channel |
+| EEC Harness Connector (fan case) | CONN-EEC-PN-TBD | 2 (one per engine) | Fan case breakout | Visual inspect C-check | Fire-rated; hermetically sealed |
 
 ---
 
-## 22. Status Legend
+## §8 Interfaces
 
-| Badge | Meaning | Use |
-|---|---|---|
-| ![TBD](https://img.shields.io/badge/TBD-red) | To Be Determined | Required value, source, boundary, interface, requirement, or evidence is not yet determined. |
-| ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | To Be Completed | Section exists but content is intentionally incomplete. |
-| ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) | Draft | Content exists but is not yet reviewed, frozen, or baselined. |
-| ![DONE](https://img.shields.io/badge/DONE-brightgreen) | Done | Content has been reviewed and is complete for the current baseline. |
-
----
-
-## 23. Change Log
-
-| Revision | Date | Author | Change | Link | Status |
-|---|---|---|---|---|---|
-| [0.1.0](#chg-010) | <a id="chg-010"></a>2026-05-11 | Q+ Team / Amedeo Pelliccia + AI | Initial programme-controlled scaffold. | [Document root](#atlas-060-069--section-06--subsection-067--010--fadec-and-electronic-engine-control) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Interface Type | Connected System | Protocol / Medium | Data / Function |
+|---|---|---|---|
+| ATA 24 Electrical Power | Dual 28 V DC buses | Hardwired | Independent power to CH-A and CH-B |
+| ATA 22 FMS | Flight Management System | AFDX | N1 target from auto-thrust; thrust mode |
+| ATA 31 ECAM | Electronic displays | AFDX | N1, N2, EGT, FF, engine state |
+| ATA 45 CMS | Central Maintenance System | AFDX | BITE faults, event log, EDF status |
+| ATA 64 HMU | Hydromechanical Unit | ARINC 429 / discrete | FMV position command and feedback |
 
 ---
 
-> Programme-controlled scaffold. Content is subject to [BREX](#glossary-brex), [SNS](#glossary-sns), applicability, [DMRL](#glossary-dmrl), evidence review, and [CCB](#glossary-ccb) freeze before controlled release.
+## §9 Operating Modes
 
-> **To be reviewed by system expert.**
+| Mode | Trigger | System State | Actions / Consequences |
+|---|---|---|---|
+| Power-on self-test | EEC powered | CH-A and CH-B run BITE | BITE results to CMS; faults flagged before engine start |
+| Normal operation CH-A commanding | Aircraft in service | CH-A commanding; CH-B shadowing | Full authority fuel/geometry; all limits active |
+| CH-A to CH-B crossover | CH-A fault detected | CH-B commands within 20 ms | ECAM advisory FADEC CH-B active; operations continue |
+| EDF update (post-borescope) | Maintenance action | EEC connected to LOADMASTER | New EDF loaded to NVM; BITE confirms integrity |
+| EEC replacement | LRU swap | New EEC installed | EDF and SWPN loaded before first engine run |
+
+---
+
+## §10 Performance and Budgets ![DRAFT]
+
+| Parameter | Requirement | Target / Design Value | Status |
+|---|---|---|---|
+| EEC frame rate | ≥ 40 Hz | 50 Hz (20 ms) | ![TBD] |
+| CH-A to CH-B crossover | ≤ 20 ms | 15 ms | ![TBD] |
+| EEC operating temp range | −55 °C to +95 °C (internal) | Qualified per DO-160G Cat E | ![TBD] |
+| NVM fault log capacity | ≥ 200 events | 500 events | ![TBD] |
+| EEC BITE coverage | ≥ 90 % | ≥ 92 % | ![TBD] |
+
+---
+
+## §11 Safety, Redundancy and Fault Tolerance
+
+- Dual-channel EEC with independent power supplies: no single hardware failure can simultaneously disable both channels.
+- All EEC outputs have current monitoring; stuck-at failures detected in one frame.
+- EEC NVM is non-volatile: EDF and fault log survive power interruption and EEC removal.
+- EEC enclosure is sealed against engine-zone fluids (fuel, oil, hydraulic fluid per DO-160G Sect 11).
+
+---
+
+## §12 Maintenance and Diagnostics
+
+| Task | Interval | Access | Special Tools |
+|---|---|---|---|
+| EEC cooling inlet screen inspect/clean | A-check | Engine fan case external | Mirror and cleaning brush |
+| FADEC BITE download | A-check | ACARS or CMS terminal | CMS terminal |
+| EEC harness visual inspection | C-check | Fan case to pylon harness | Inspection mirror |
+| EEC LRU replacement + EDF/SWPN load | On condition | Fan case 4-bolt EEC mount | FADEC LOADMASTER laptop + AFDX cable |
+
+---
+
+## §13 Footprint — Physical, Electrical, Maintenance, Data ![TBD]
+
+| Footprint Type | Parameter | Value | Notes |
+|---|---|---|---|
+| Physical | EEC mass | ~7 kg | ARINC 600 6MCU |
+| Physical | EEC dimensions | ARINC 600 6MCU | Standard avionics form factor |
+| Electrical | EEC power per channel | ~50 W | 28 V DC |
+| Maintenance | EEC swap + EDF load time | ~2 h | Fan case access; no engine run required before EDF load |
+| Data | AFDX — EEC to CMS | ![TBD] | Per AFDX bus load analysis |
+
+---
+
+## §14 Safety and Certification References ![DRAFT]
+
+| Standard / Document | Title | Issuing Body | Applicability |
+|---|---|---|---|
+| DO-178C | Software Considerations | RTCA | EEC software DAL A |
+| DO-254 | Electronic Hardware Design Assurance | RTCA | EEC complex hardware (FPGA, ASIC) |
+| EASA CS-E §150 | FADEC systems | EASA | Full-authority EEC certification |
+| DO-160G | Environmental Conditions | RTCA | EEC fan case environment qualification |
+| ARINC 600 | Electronic Equipment Cases | ARINC | EEC form factor standard |
+
+---
+
+## §15 V&V Approach ![TBD]
+
+| Phase | Method | Acceptance Criterion | Status |
+|---|---|---|---|
+| Design | DO-178C Plan for Software Aspects of Certification (PSAC) | PSAC approved by EASA | ![TBD] |
+| Integration | Iron bird — EEC to aircraft system test | All AFDX/ARINC 429 parameters correct | ![TBD] |
+| Qualification | DO-160G — fan case environment test | EEC passes all applicable sections | ![TBD] |
+| Certification | EASA CS-E §150 compliance | EEC type acceptance by EASA | ![TBD] |
+
+---
+
+## §16 Glossary
+
+| Term | Definition |
+|---|---|
+| **EEC** | Electronic Engine Controller — the FADEC hardware unit. |
+| **EDF** | Engine Data File — serial-number-specific performance calibration data stored in EEC NVM. |
+| **SWPN** | Software Part Number — identifies the approved executable loaded in the EEC. |
+| **NVM** | Non-Volatile Memory — retains data through power-off. |
+| **DAL A** | Design Assurance Level A — highest criticality level per DO-178C/DO-254. |
+| **ARINC 600** | Standard defining avionics enclosure sizes and connector types. |
+| **6MCU** | 6 Modular Concept Unit — specific ARINC 600 box size for EEC. |
+| **LOADMASTER** | FADEC ground software tool for loading EDF and SWPN into EEC NVM. |
+| **Crossover** | Channel switch from CH-A to CH-B commanding authority. |
+| **Shadow controller** | CH-B continuously mirrors CH-A I/O and is ready to take over instantly. |
+
+---
+
+## §17 Open Issues
+
+| ID | Description | Owner | Target |
+|---|---|---|---|
+| OI-067-010-001 | Select FADEC OEM and confirm EEC hardware specification (CH-A/B crossover time, NVM capacity) | Q-MECHANICS | 2026-Q3 |
+| OI-067-010-002 | Confirm EDF update trigger events with engine OEM (borescope findings → EDF revision criteria) | Q-AIR | 2026-Q4 |
+
+---
+
+## §18 Status Legend
+
+| Badge | Meaning |
+|---|---|
+| `![DRAFT]` | Section is drafted but not yet reviewed |
+| `![TBD]` | Content not yet started — to be defined |
+| `![To Be Completed]` | Partially complete — needs additional content |
+| `![APPROVED]` | Reviewed and formally approved |
+
+---
+
+## §19 Related Documents (Siblings in this Subsection)
+
+- [067-000](./067-000-Engine-Controls-General.md)
+- [067-020](./067-020-Throttle-Lever-and-Power-Command-Interfaces.md)
+- [067-030](./067-030-Engine-Actuators-and-Servo-Control.md)
+- [067-040](./067-040-Engine-Control-Sensors-and-Feedback.md)
+- [067-050](./067-050-Engine-Control-Modes-and-Degraded-Operation.md)
+- [067-060](./067-060-Engine-Control-Software-and-Configuration.md)
+- [067-070](./067-070-Engine-Control-Test-and-Maintenance.md)
+- [067-080](./067-080-Engine-Controls-Monitoring-Diagnostics-and-Control-Interfaces.md)
+- [067-090](./067-090-S1000D-CSDB-Mapping-and-Traceability.md)
+
+---
+
+## §20 Change Log
+
+| Rev | Date | Author | Description |
+|---|---|---|---|
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |

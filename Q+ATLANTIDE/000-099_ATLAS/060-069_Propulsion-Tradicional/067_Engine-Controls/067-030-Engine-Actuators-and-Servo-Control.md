@@ -1,468 +1,273 @@
 ---
-document_id: "QATL-ATLAS-1000-ATLAS-060-069-06-067-030-ENGINE-ACTUATORS-AND-SERVO-CONTROL"
-title: "ATLAS 060-069 · 06.067.030 — Engine Actuators and Servo Control"
+document_id: "QATL-ATLAS-1000-ATLAS-060-069-067-030-ENGINE-ACTUATORS-AND-SERVO-CONTROL"
 register: ATLAS-1000
-parent_baseline: Q+ATLANTIDE
-parent_baseline_doc: ../../../../../organization/Q+ATLANTIDE.md
-parent_architecture_doc: ../../../README.md
-parent_section_doc: ../../README.md
-parent_subsection_doc: ../README.md
-architecture_code: ATLAS
-architecture_name: "Aircraft Top Level Architecture Schema/System"
-master_range: "000–099"
-code_range: "060-069"
-section: "06"
-section_title: "Propulsión Tradicional"
+title: "Engine Actuators and Servo Control"
+ata: "ATA 67"
+sns: "067-030-00"
 subsection: "067"
-subsection_title: "Engine Controls"
-subsubject: "030"
-subsubject_title: "Engine Actuators and Servo Control"
-subsubject_file: "067-030-Engine-Actuators-and-Servo-Control.md"
-subsubject_link: "./067-030-Engine-Actuators-and-Servo-Control.md"
+subsubject_code: "030"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
-orb_function_support: [ORB-PMO, ORB-LEG]
-governance_class: baseline
-version: 1.0.0
 status: active
-language: en
-s1000d_applicability: "S1000D-CSDB-compatible"
-ata_reference: "ATA 67"
-created: "2026-05-11"
-updated: "2026-05-11"
-review_status: "to-be-reviewed-by-system-expert"
+governance_class: baseline
+revision: "0.1"
+date: "2026-05-11"
+parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
+parent_architecture_doc: "../../../README.md"
+parent_section_doc: "../../README.md"
+parent_subsection_doc: "../README.md"
+parent_subsubject_doc: "./README.md"
+s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-030"
 ---
 
-![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-![TBD](https://img.shields.io/badge/TBD-red)
-![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+# Engine Actuators and Servo Control
 
-# ATLAS 060-069 · Section 06 · Subsection 067 · 030 — Engine Actuators and Servo Control
-
-## 0. Hyperlink Policy
-
-All linkable content in this file shall be expressed as Markdown links where a stable target exists.
-
-Use:
-
-- relative links for repository-internal content;
-- anchor links for headings, figures, diagrams, glossary terms, citations, references, open issues, and lifecycle sections;
-- stable external links only for public standards or authoritative sources;
-- `TBD` or `<relative-link-or-TBD>` where no stable target exists.
-
-Do not invent links.
-
-Every table containing a document, path, code, reference, acronym, figure, diagram, lifecycle phase, Q-Division, ORB-Function, DMC, BREX, DMRL, evidence record, or issue shall include either a direct link or an explicit `TBD` target.
+![Status: DRAFT](https://img.shields.io/badge/Status-DRAFT-yellow)
+![Register: ATLAS-1000](https://img.shields.io/badge/Register-ATLAS--1000-blue)
+![ATA: ATA 67](https://img.shields.io/badge/ATA-67-green)
+![Governance: baseline](https://img.shields.io/badge/Governance-baseline-lightgrey)
+![Q-Division: Q-GREENTECH](https://img.shields.io/badge/Q--Division-Q--GREENTECH-brightgreen)
 
 ---
 
-## 1. Purpose
+## §0 Hyperlink Policy
 
-This document defines the controlled technical scope for **Engine Actuators and Servo Control** (`067-030`) within the [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) / [ATLAS 000-099](../../../) architecture branch, section [060-069 Propulsión Tradicional](../../).
+> All hyperlinks in this document are **relative** (five directory levels: `../../../../../`).
+> Absolute URLs are forbidden.
 
-The objective is to provide a deterministic, [S1000D](https://s1000d.org/)-compatible technical baseline covering the engine control actuator architecture, electrohydraulic and electromechanical actuator provisions, and servo loop control definition.
+---
+## §1 Purpose
 
-This file belongs to:
+This document covers the engine actuators commanded by the FADEC on the AMPEL360E eWTW: the Variable Stator Vane (VSV) actuators (stages 1–4), the Variable Bypass Valve (VBV) actuator, and the High-Pressure Compressor Active Clearance Control (HP-ACC) valve. The Fuel Metering Valve (FMV) is the primary fuel actuator and is described in ATA 64; this document covers geometry actuators only.
 
-[`Q+ATLANTIDE/000-099_ATLAS/060-069_Propulsion-Tradicional/067_Engine-Controls/067-030-Engine-Actuators-and-Servo-Control.md`](./)
+All actuators receive position commands from the FADEC EEC via torque motor or step-motor driver outputs. Each actuator provides position feedback to the FADEC via LVDT (Linear Variable Differential Transformer) or potentiometer sensors, forming a closed servo loop inside the FADEC control frame.
 
 ---
 
-## 2. Applicability
+## §2 Applicability
 
-This document applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme and the **eWTW** configuration.
-
-| Applicability Item | Value | Status |
-|---|---|---|
-| Programme | [AMPEL360e Wide Tube-and-Wing Family](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Architecture register | [Q+ATLANTIDE](../../../../../Q+ATLANTIDE/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATLAS band | [000-099_ATLAS](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Section | [060-069 Propulsión Tradicional](../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Subsection | [067 Engine Controls](../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| ATA reference | [ATA 67](#ref-ata) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| S1000D compatibility | [S1000D-CSDB-compatible](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Lifecycle use | [LC03](../../../../../Governance/Lifecycle/LC03-Architecture-Definition.md) / [LC05](../../../../../Governance/Lifecycle/LC05-Detailed-Design.md) / [LC06](../../../../../Governance/Lifecycle/LC06-Verification-Planning.md) / [LC11](../../../../../Governance/Lifecycle/LC11-Operation.md) / [LC12](../../../../../Governance/Lifecycle/LC12-Maintenance-Support.md) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
+| Parameter | Value |
+|---|---|
+| Aircraft Program | AMPEL360E eWTW |
+| ATA reference | ATA 67-030 — Engine Actuators and Servo Control |
+| Certification basis | EASA CS-E Amdt 5 / DO-160G |
+| S1000D SNS | 067-030-00 |
 
 ---
 
-## 3. System / Function Overview
+## §3 Functional Description ![DRAFT]
 
-The **Engine Actuators and Servo Control** node covers the engine control actuator architecture, electrohydraulic and electromechanical actuator provisions, and servo loop control definition.
+**VSV Actuators (stages 1–4):** Four stages of variable stator vanes are scheduled by FADEC as a function of N2 corrected speed and aircraft Mach number. The VSV actuating ring is driven by a hydraulic servo powered from the Fuel Hydromechanical Unit (HMU, ATA 64) oil supply — the HMU fuel pressure provides the hydraulic source for VSV servo motion. FADEC commands the VSV servo valve torque motor and reads LVDT feedback; closed-loop accuracy ±0.5°.
 
-For the [AMPEL360e](#glossary-ampel360e) configuration, this node shall be treated as part of a full-electric, medium-range, approximately 100-passenger aircraft architecture. Where conventional aircraft assumptions rely on engine bleed, hydraulic supply, pneumatic supply, or legacy equipment, the AMPEL360e implementation shall be explicitly reviewed for electric, distributed, or digitally controlled alternatives.
+**VBV Actuator:** The Variable Bypass Valve diverts LP compressor air overboard during low-power transients to prevent stall. The VBV ring actuator is also HMU fuel-pressure driven, FADEC-commanded and LVDT-monitored.
 
-This document does not freeze the final certified design. It establishes a controlled scaffold for downstream engineering, [S1000D](#glossary-s1000d) data-module planning, [CSDB](#glossary-csdb) integration, and evidence capture.
-
----
-
-## 4. Scope
-
-### 4.1 Included
-
-This document includes:
-- Define actuator types used in engine control functions
-- Specify servo control loop architecture
-- Document redundancy and fail-safe actuator provisions
-- Define actuator maintenance and test requirements
-- Map to S1000D maintenance DMs
-
-### 4.2 Excluded
-
-This document excludes:
-
-- supplier-proprietary internal design data unless released to the programme baseline;
-- final certification compliance statements;
-- detailed maintenance procedures unless assigned by the [DMRL](#glossary-dmrl);
-- final illustrated parts data unless released through the [CSDB](#glossary-csdb);
-- production-level configuration until [CCB](#glossary-ccb) freeze.
+**HP-ACC Valve:** The HP Active Clearance Control valve modulates turbine tip clearance by directing cooling air to the HP turbine casing. This is an electric valve (28 V DC motor) commanded by FADEC; feedback is a position discrete. Closed at takeoff and climb; opens at cruise to reduce blade-tip clearance and improve thermal efficiency.
 
 ---
 
-## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
+## §4 Functional Breakdown
 
-The **Engine Actuators and Servo Control** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries.
-
-At architecture level, the system shall be described in terms of:
-
-1. **Function** — what the system does.
-2. **Equipment** — which [LRUs](#glossary-lru), assemblies, panels, modules, or components implement the function.
-3. **Interfaces** — how the system exchanges power, data, fluid, air, signal, force, or commands.
-4. **Control logic** — how the system is commanded, monitored, degraded, isolated, or reset.
-5. **Maintenance boundary** — what a technician can inspect, test, remove, install, or replace.
-6. **Evidence boundary** — which requirements, tests, inspections, and records prove compliance.
+| ID | Name | Description | Lead Division |
+|---|---|---|---|
+| F-001 | VSV servo actuator (stages 1–4) | HMU fuel-pressure driven; FADEC torque motor command; LVDT feedback | Q-GREENTECH |
+| F-002 | VBV actuator | HMU fuel-pressure driven; FADEC command; LVDT feedback | Q-MECHANICS |
+| F-003 | HP-ACC valve | 28 V DC electric motor; FADEC position discrete command | Q-AIR |
+| F-004 | VSV position closed loop | FADEC inner servo loop 20 ms; accuracy ±0.5° | Q-MECHANICS |
+| F-005 | Actuator BITE | FADEC monitors LVDT reasonableness; stuck/runaway detection | Q-INDUSTRY |
 
 ---
 
-## 6. Functional Breakdown ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Function | Description | Primary Interface | Status |
-|---:|---|---|---|---|
-| [F-001](#f-001) | <a id="f-001"></a>Define actuator types used in engine control functions | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-002](#f-002) | <a id="f-002"></a>Specify servo control loop architecture | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-003](#f-003) | <a id="f-003"></a>Document redundancy and fail-safe actuator provisions | TBD — to be completed. | [Interface](#10-interfaces) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [F-004](#f-004) | <a id="f-004"></a>Monitoring | Captures status, failures, degradation, and maintenance data. | [CMS / BITE](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [F-005](#f-005) | <a id="f-005"></a>Traceability | Links architecture, requirements, evidence, and S1000D content. | [CSDB / DMRL / BREX](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-
----
-
-## 7. Mermaid — System Context Diagram
-
-<a id="diagram-system-context"></a>
+## §5 System Context — Mermaid Diagram
 
 ```mermaid
 flowchart LR
-    A[Aircraft-Level Function] --> B[067 Engine Controls]
-    B --> C[Power Interface]
-    B --> D[Data / Control Interface]
-    B --> E[Mechanical / Fluid / Air Interface]
-    B --> F[Monitoring and Diagnostics]
-    F --> G[Central Maintenance System]
-    G --> H[S1000D / CSDB Evidence]
+    FADEC[FADEC EEC] --> VSV_TM[VSV Torque Motor CH-A/B]
+    FADEC --> VBV_TM[VBV Torque Motor CH-A/B]
+    FADEC --> HPACC_CMD[HP-ACC Valve Command]
+    VSV_TM --> VSV_SERVO[VSV Servo + Actuation Ring]
+    VBV_TM --> VBV_SERVO[VBV Servo + Actuation Ring]
+    HPACC_CMD --> HPACC_VALVE[HP-ACC Electric Valve]
+    VSV_SERVO --> VSV_LVDT[VSV LVDT Feedback]
+    VBV_SERVO --> VBV_LVDT[VBV LVDT Feedback]
+    HPACC_VALVE --> HPACC_DISCO[HP-ACC Position Discrete]
+    VSV_LVDT & VBV_LVDT & HPACC_DISCO --> FADEC
+    HMU[HMU Fuel Pressure ATA 64] --> VSV_SERVO
+    HMU --> VBV_SERVO
 ```
-
-***[Diagram 1](#diagram-system-context) — System context diagram for Engine Actuators and Servo Control. Related sections: [Interfaces](#10-interfaces), [Monitoring and Diagnostics](#12-monitoring-and-diagnostics), [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping).***
 
 ---
 
-## 8. Mermaid — Internal Functional Architecture
-
-<a id="diagram-internal-functional-architecture"></a>
+## §6 Internal Architecture — Mermaid Diagram
 
 ```mermaid
 flowchart TB
-    SYS[067-030 Engine Actuators and Servo Control] --> F1[Define actuator types used in engine control functions]
-    SYS --> F2[Specify servo control loop architecture]
-    SYS --> CTRL[Control Logic]
-    SYS --> MON[Monitoring and Diagnostics]
-    SYS --> MAINT[Maintenance Boundary]
-    CTRL --> IMA[IMA / Controller Interface]
-    MON --> CMS[CMS / BITE]
-    MAINT --> CSDB[S1000D Data Modules]
+    N2_MACH[N2 corrected + Mach] --> VSV_SCHED[VSV Schedule Map EDF]
+    VSV_SCHED --> VSV_CMD[VSV Angle Demand]
+    VSV_CMD --> SERVO_ERR[Servo Error = Demand - LVDT]
+    SERVO_ERR --> TM_DRIVE[Torque Motor Drive Current]
+    TM_DRIVE --> VSV_ACT[VSV Actuator Physical]
+    VSV_ACT --> VSV_LVDT_FB[LVDT Position Feedback]
+    VSV_LVDT_FB --> SERVO_ERR
+    STUCK_DET[Stuck Actuator Detection FADEC BITE] --> FAULT_LOG[Fault Log CMS]
 ```
 
-***[Diagram 2](#diagram-internal-functional-architecture) — Internal functional architecture. Related sections: [Functional Breakdown](#6-functional-breakdown), [Maintenance Concept](#13-maintenance-concept), [Footprints](#15-footprints).***
-
 ---
 
-## 9. Mermaid — Lifecycle Traceability
+## §7 Components and LRUs
 
-<a id="diagram-lifecycle-traceability"></a>
-
-```mermaid
-flowchart LR
-    LC02[LC02 Requirements] --> LC03[LC03 Architecture]
-    LC03 --> LC05[LC05 Detailed Design]
-    LC05 --> LC06[LC06 Verification Planning]
-    LC06 --> LC10[LC10 Certification / Approval]
-    LC10 --> LC11[LC11 Operation]
-    LC11 --> LC12[LC12 Maintenance / Support]
-
-    LC03 --> CSDB[S1000D / CSDB]
-    LC05 --> DMRL[DMRL]
-    LC06 --> EVID[Evidence Records]
-    LC12 --> FEEDBACK[In-Service Feedback]
-    FEEDBACK --> LC13[LC13 Upgrade / Modification]
-```
-
-***[Diagram 3](#diagram-lifecycle-traceability) — Lifecycle traceability from requirements to maintenance feedback. Related sections: [Verification and Validation](#17-verification-and-validation), [References](#20-references), [Open Issues](#21-open-issues).***
-
----
-
-## 10. Interfaces ![TBD](https://img.shields.io/badge/TBD-red)
-
-| Interface Type | Connected System | Description | Evidence Required | Status |
-|---|---|---|---|---|
-| Electrical power | [ATA 24 Power](TBD) | TBD — power supply interface. | [Wiring / load analysis](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data / control | [FADEC / CMS / IMA](TBD) | TBD — command and monitoring interface. | [ICD / data dictionary](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mechanical | [Structure / installation zone](TBD) | TBD — mounting, access, or load path. | [Installation drawing](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Fluid / air / thermal | [Adjacent propulsion system](TBD) | TBD — flow, pressure, temperature, or thermal interface. | [Test report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance | [CSDB / IETP](TBD) | TBD — technician-facing access and procedure boundary. | [DMRL / BREX](#14-s1000d--csdb-mapping) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 11. Operating Modes ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-| Mode | Description | Entry Condition | Exit Condition | Status |
-|---|---|---|---|---|
-| [Normal](#mode-normal) | <a id="mode-normal"></a>System operates within nominal limits. | Aircraft powered and system enabled. | Shutdown, fault, or mode change. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Degraded](#mode-degraded) | <a id="mode-degraded"></a>System operates with reduced function or redundancy. | Fault detected or partial loss of function. | Recovery, isolation, or maintenance action. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Maintenance](#mode-maintenance) | <a id="mode-maintenance"></a>System is configured for inspection, test, removal, installation, or servicing. | Authorized maintenance action. | Maintenance close-up and operational check. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [Failure / Safe State](#mode-failure-safe-state) | <a id="mode-failure-safe-state"></a>System enters protective state to prevent unsafe operation. | Fault threshold exceeded. | Reset, repair, replacement, or dispatch decision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 12. Monitoring and Diagnostics ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The system shall provide sufficient monitoring to support safe operation, maintenance troubleshooting, and lifecycle evidence capture.
-
-Monitoring may include:
-
-- status indication;
-- fault detection;
-- [BITE](#glossary-bite) results;
-- sensor plausibility checks;
-- degraded-mode reporting;
-- maintenance messages;
-- event recording;
-- configuration status;
-- software or hardware part-number reporting where applicable.
-
-Diagnostic data shall be mapped to the relevant [S1000D / CSDB](#14-s1000d--csdb-mapping) fault isolation and maintenance data modules.
-
----
-
-## 13. Maintenance Concept ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-The maintenance concept shall support modular inspection, fault isolation, removal, installation, and return-to-service verification.
-
-Maintenance content should be structured around:
-
-- access requirements;
-- safety precautions;
-- isolation conditions;
-- required tools and test equipment;
-- inspection criteria;
-- functional test criteria;
-- fault isolation logic;
-- replacement boundaries;
-- close-up and return-to-service checks.
-
-Maintenance procedures shall remain provisional until validated against the applicable [DMRL](#glossary-dmrl), [BREX](#glossary-brex), and task validation records.
-
----
-
-## 14. S1000D / CSDB Mapping ![TBD](https://img.shields.io/badge/TBD-red)
-
-| S1000D Element | Controlled Value | Status |
-|---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System code | `067` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Sub-system code | `0` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Sub-sub-system code | `30` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Assy code | `00A` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Info code | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| Item location code | `D` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| DMC prefix | [`DMC-AMPEL360E-EWTW-067-030`](TBD) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### Recommended Data Module Set
-
-| Info code | Data module purpose | Suggested filename | Status |
-|---:|---|---|---|
-| [040](#dm-040) | <a id="dm-040"></a>Descriptive information | [`DMC-AMPEL360E-EWTW-067-030-040A-D_System-Description.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [300](#dm-300) | <a id="dm-300"></a>Examination / inspection / check | [`DMC-AMPEL360E-EWTW-067-030-300A-D_Inspection.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [400](#dm-400) | <a id="dm-400"></a>Fault isolation | [`DMC-AMPEL360E-EWTW-067-030-400A-D_Fault-Isolation.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [520](#dm-520) | <a id="dm-520"></a>Remove / disassemble | [`DMC-AMPEL360E-EWTW-067-030-520A-D_Remove.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [720](#dm-720) | <a id="dm-720"></a>Install / assemble / connect | [`DMC-AMPEL360E-EWTW-067-030-720A-D_Install.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [941](#dm-941) | <a id="dm-941"></a>Illustrated parts data | [`DMC-AMPEL360E-EWTW-067-030-941A-D_Illustrated-Parts-Data.xml`](TBD) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-
----
-
-## 15. Footprints ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-### 15.1 Physical Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Installation zone | TBD — aircraft zone or compartment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Access panels | TBD — relevant access points. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Mounting provisions | TBD — rack, bracket, panel, structural attachment. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Clearance envelope | TBD — required removal / installation clearance. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cooling / ventilation | TBD — thermal management interface. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Drainage / leak path | TBD — if applicable. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.2 Electrical / Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Power supply | TBD — voltage / phase / bus source. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Protection | TBD — circuit breaker / SSPC / fuse / electronic protection. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Data buses | TBD — ARINC / AFDX / CAN / discrete / optical / other. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Connectors | TBD — connector families or interface references. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Bonding / grounding | TBD — bonding and grounding provision. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| EMC / EMI controls | TBD — shielding, segregation, filtering. | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.3 Maintenance Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Access level | Line / base / shop | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Replaceable unit | LRU / SRU / assembly / panel | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Removal time | Estimated or controlled maintenance interval | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required tools | Standard / special tools | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Required GSE | Ground support equipment | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Return-to-service check | Operational / functional / BITE check | ![TBD](https://img.shields.io/badge/TBD-red) |
-
-### 15.4 Data Footprint
-
-| Footprint Item | Description | Status |
-|---|---|---|
-| Configuration records | Part number, serial number, software load, effectivity | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Evidence records | Test, inspection, compliance, review records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| CSDB records | DMCs, ICNs, BREX, applicability | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Maintenance data | Fault history, BITE, removal/installation records | ![TBD](https://img.shields.io/badge/TBD-red) |
-| Cybersecurity records | Access, load authorization, integrity checks | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 16. Safety and Certification Considerations ![TBD](https://img.shields.io/badge/TBD-red)
-
-The system shall be assessed according to its aircraft-level function, failure effects, operational criticality, and integration dependencies.
-
-The certification and safety analysis shall consider:
-
-- functional hazard assessment;
-- failure modes and effects;
-- common-cause failures;
-- degraded-mode behavior;
-- latent failures;
-- maintenance-induced failures;
-- incorrect installation;
-- incorrect configuration;
-- loss of indication or misleading indication;
-- software and hardware assurance levels where applicable;
-- environmental qualification;
-- electromagnetic compatibility;
-- continued airworthiness impact.
-
-Final safety classification shall remain **TBD** ![TBD](https://img.shields.io/badge/TBD-red) until reviewed against the applicable [FHA](#glossary-fha), [PSSA](#glossary-pssa), [SSA](#glossary-ssa), and certification basis.
-
----
-
-## 17. Verification and Validation ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
-
-Verification shall demonstrate that the system satisfies its requirements under nominal, degraded, maintenance, and failure conditions.
-
-| Verification Method | Description | Evidence | Status |
-|---|---|---|---|
-| [Analysis](#verification-analysis) | <a id="verification-analysis"></a>Engineering calculation, modelling, simulation, or safety analysis. | [Analysis report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Inspection](#verification-inspection) | <a id="verification-inspection"></a>Physical or visual verification of installation, marking, routing, or condition. | [Inspection record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Test](#verification-test) | <a id="verification-test"></a>Functional, environmental, integration, or system test. | [Test report](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Demonstration](#verification-demonstration) | <a id="verification-demonstration"></a>Operational demonstration under controlled conditions. | [Demonstration record](#20-references) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [Similarity](#verification-similarity) | <a id="verification-similarity"></a>Justified reuse of existing certified design evidence. | [Similarity report](#20-references) | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 18. Glossary of Terms and Acronyms
-
-| Term / Acronym | Meaning | Link | Status |
-|---|---|---|---|
-| <a id="glossary-ampel360e"></a>AMPEL360e | Electrified aircraft programme family used as the programme example. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-atlas"></a>ATLAS | Aircraft Top Level Architecture Schema/System. | [ATLAS 000-099](../../../) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-bite"></a>BITE | Built-In Test Equipment. | [Monitoring and Diagnostics](#12-monitoring-and-diagnostics) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-brex"></a>BREX | Business Rules Exchange; S1000D rule set used to validate data-module content. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ccb"></a>CCB | Configuration Control Board. | [Governance](../../../../../Governance/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-csdb"></a>CSDB | Common Source DataBase. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmc"></a>DMC | Data Module Code. | [S1000D DMC Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-dmrl"></a>DMRL | Data Module Requirement List. | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <a id="glossary-ewtw"></a>eWTW | Electric Wide Tube-and-Wing. | [Programme](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fadec"></a>FADEC | Full Authority Digital Engine Control. | [Engine Controls](../067_Engine-Controls/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-fha"></a>FHA | Functional Hazard Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-lru"></a>LRU | Line Replaceable Unit. | [Maintenance Concept](#13-maintenance-concept) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-pssa"></a>PSSA | Preliminary System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-s1000d"></a>S1000D | International specification for technical publications using a common source database. | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-sns"></a>SNS | Standard Numbering System. | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| <a id="glossary-ssa"></a>SSA | System Safety Assessment. | [Safety and Certification](#16-safety-and-certification-considerations) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| <a id="glossary-tbd"></a>TBD | To Be Determined. | [Open Issues](#21-open-issues) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-
----
-
-## 19. Citations ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Citation | Use | Link | Status |
-|---|---|---|---|---|
-| [CIT-001](#cit-001) | <a id="cit-001"></a>`S1000D Issue 5.0, Part I — Introduction and overview.` | Architecture / terminology | [S1000D](https://s1000d.org/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-002](#cit-002) | <a id="cit-002"></a>`EASA CS-25, Amendment 27 — Airworthiness Standards: Large Aeroplanes.` | Certification basis | [EASA](https://www.easa.europa.eu/) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| [CIT-003](#cit-003) | <a id="cit-003"></a>`AMPEL360e Programme Architecture Baseline, Rev TBD.` | Programme-specific requirement | [Programme baseline](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
-| [CIT-004](#cit-004) | <a id="cit-004"></a>`ATA iSpec 2200, Chapter 67 — Engine Controls.` | ATA reference | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-| [CIT-005](#cit-005) | <a id="cit-005"></a>`DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment.` | Environmental qualification | TBD | ![TBD](https://img.shields.io/badge/TBD-red) |
-
----
-
-## 20. References ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
-
-| Ref | Document | Identifier | Revision | Status | Link |
-|---|---|---|---:|---|---|
-| [REF-001](#ref-001) | <a id="ref-001"></a>Q+ATLANTIDE ATLAS master index | `QATL-ATLAS-000-099` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../) |
-| [REF-002](#ref-002) | <a id="ref-002"></a>AMPEL360e programme architecture baseline | `AMP360E-ARCH-BASELINE` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) |
-| [REF-003](#ref-003) | <a id="ref-003"></a>060-069 Propulsión Tradicional section index | `QATL-ATLAS-060-069` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../../) |
-| [REF-004](#ref-004) | <a id="ref-004"></a>067 Engine Controls subsection index | `QATL-ATLAS-060-069-067` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Open](../) |
-| [REF-005](#ref-005) | <a id="ref-005"></a>S1000D project BREX | `BREX-AMPEL360E-EWTW` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-| [REF-ATA](#ref-ata) | <a id="ref-ata"></a>ATA iSpec 2200 — Chapter 67 | `ATA-ISPEC-2200-67` | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | TBD |
-
----
-
-## 21. Open Issues
-
-| ID | Issue | Owner | Status | Badge | Link |
+| Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| [OI-001](#oi-001) | <a id="oi-001"></a>Confirm final system boundary for Engine Actuators and Servo Control. | System expert | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Architecture Description](#5-architecture-description) |
-| [OI-002](#oi-002) | <a id="oi-002"></a>Complete S1000D SNS allocation for 067-030. | Q-DATAGOV | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [S1000D / CSDB Mapping](#14-s1000d--csdb-mapping) |
-| [OI-003](#oi-003) | <a id="oi-003"></a>Confirm certification basis and safety classification. | Certification lead | TBD | ![TBD](https://img.shields.io/badge/TBD-red) | [Safety and Certification](#16-safety-and-certification-considerations) |
-| [OI-004](#oi-004) | <a id="oi-004"></a>Confirm maintenance task allocation in DMRL. | Tech pubs lead | To Be Completed | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | [Maintenance Concept](#13-maintenance-concept) |
+| VSV Actuator Assembly (stages 1–4) | VSV-ACT-PN-TBD | 4 (per engine) | HP compressor case | Functional check C-check; replace on LVDT fault | HMU fuel-pressure driven; FADEC torque motor |
+| VBV Actuator Assembly | VBV-ACT-PN-TBD | 1 (per engine) | LP compressor case | Functional check C-check | Same servo architecture as VSV |
+| HP-ACC Electric Valve | HPACC-VALVE-PN-TBD | 1 (per engine) | HP turbine casing | Replace on fault (on-condition) | 28 V DC motor; FADEC discrete command |
+| VSV LVDT Sensor | LVDT-VSV-PN-TBD | 4 (per engine) | VSV actuation ring | Replace on fault | Dual-redundant per stage; FADEC best-select |
+| VBV LVDT Sensor | LVDT-VBV-PN-TBD | 1 (per engine) | VBV ring | Replace on fault | Single LVDT; fault → FADEC uses schedule |
 
 ---
 
-## 22. Status Legend
+## §8 Interfaces
 
-| Badge | Meaning | Use |
+| Interface Type | Connected System | Protocol / Medium | Data / Function |
+|---|---|---|---|
+| ATA 64 HMU | Hydromechanical Unit | Fuel pressure servo circuit | Servo power for VSV and VBV actuators |
+| ATA 24 Electrical Power | 28 V DC | Hardwired | HP-ACC valve motor power |
+| ATA 45 CMS | Central Maintenance System | AFDX (via FADEC) | Actuator BITE faults, LVDT health |
+| ATA 31 ECAM | Engine display | AFDX (via FADEC) | Actuator fault indication (maintenance page) |
+| FADEC EEC | Internal control | Torque motor drive + LVDT input | Closed-loop servo control |
+
+---
+
+## §9 Operating Modes
+
+| Mode | Trigger | System State | Actions / Consequences |
+|---|---|---|---|
+| Normal schedule | Engine running | VSV, VBV, HP-ACC per schedule | All actuators at schedule positions |
+| VSV LVDT fault (one sensor) | LVDT signal lost on one stage | FADEC uses remaining dual LVDT; advisory | Dispatch per MEL; schedule maintained |
+| VBV LVDT fault | VBV LVDT signal lost | FADEC uses open-loop schedule (N2 only) | Advisory; stall protection slightly reduced |
+| HP-ACC stuck open | HP-ACC position discrete fault | FADEC logs fault; no thrust effect | EGT may be slightly elevated at cruise |
+| Actuator runaway | LVDT exceeds schedule limit | FADEC cuts torque motor drive; default | FADEC holds last good position; fault logged |
+
+---
+
+## §10 Performance and Budgets ![DRAFT]
+
+| Parameter | Requirement | Target / Design Value | Status |
+|---|---|---|---|
+| VSV position accuracy (closed loop) | ±0.5° | ±0.3° | ![TBD] |
+| VSV servo response (step to 90 %) | ≤ 200 ms | 150 ms | ![TBD] |
+| VBV response (full open) | ≤ 500 ms | 300 ms | ![TBD] |
+| HP-ACC valve position time | ≤ 2 s full travel | 1.5 s | ![TBD] |
+| FADEC BITE actuator coverage | ≥ 90 % | ≥ 92 % | ![TBD] |
+
+---
+
+## §11 Safety, Redundancy and Fault Tolerance
+
+- Dual LVDT on each VSV stage: single failure does not affect schedule; FADEC best-select.
+- VSV/VBV runaway detection (LVDT vs commanded position divergence) prevents blade-tip rub.
+- HP-ACC stuck-closed: worst case is elevated blade-tip clearance and slight EGT increase — acceptable safety state.
+- HMU fuel pressure provides robust servo power without electrical actuator; VSV position maintained passively if servo valve fails (last position held by hydraulic lock).
+
+---
+
+## §12 Maintenance and Diagnostics
+
+| Task | Interval | Access | Special Tools |
+|---|---|---|---|
+| VSV actuation ring sweep test (FADEC GSE) | C-check | Engine access stand | FADEC GSE terminal |
+| VBV functional test (full open/close) | C-check | Engine access stand | FADEC GSE terminal |
+| HP-ACC valve position discrete check | C-check | FADEC GSE command | FADEC GSE terminal |
+| LVDT signal calibration check | C-check | FADEC GSE | Calibrated angle reference tool |
+
+---
+
+## §13 Footprint ![TBD]
+
+| Footprint Type | Parameter | Value |
 |---|---|---|
-| ![TBD](https://img.shields.io/badge/TBD-red) | To Be Determined | Required value, source, boundary, interface, requirement, or evidence is not yet determined. |
-| ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) | To Be Completed | Section exists but content is intentionally incomplete. |
-| ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) | Draft | Content exists but is not yet reviewed, frozen, or baselined. |
-| ![DONE](https://img.shields.io/badge/DONE-brightgreen) | Done | Content has been reviewed and is complete for the current baseline. |
+| Physical | VSV actuator mass (each stage) | ![TBD] |
+| Electrical | HP-ACC valve power | ~10 W at 28 V DC |
+| Maintenance | VSV sweep test time | ~20 min per engine |
+| Data | LVDT health parameter stream | Per FADEC AFDX allocation |
 
 ---
 
-## 23. Change Log
+## §14 Safety and Certification References ![DRAFT]
 
-| Revision | Date | Author | Change | Link | Status |
-|---|---|---|---|---|---|
-| [0.1.0](#chg-010) | <a id="chg-010"></a>2026-05-11 | Q+ Team / Amedeo Pelliccia + AI | Initial programme-controlled scaffold. | [Document root](#atlas-060-069--section-06--subsection-067--030--engine-actuators-and-servo-control) | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Standard / Document | Title | Issuing Body | Applicability |
+|---|---|---|---|
+| EASA CS-E §810 | Engine compressor variable geometry | EASA | VSV/VBV actuator requirements |
+| DO-160G | Environmental Conditions | RTCA | Actuator engine environment qualification |
+| SAE AIR1168/4 | Engine Bleed Air Systems | SAE International | VBV overboard bleed interface |
+| ATA iSpec 2200 | Chapter 67 | ATA | Chapter scope |
+| EASA CS-E §850 | Turbine clearance control | EASA | HP-ACC system requirements |
 
 ---
 
-> Programme-controlled scaffold. Content is subject to [BREX](#glossary-brex), [SNS](#glossary-sns), applicability, [DMRL](#glossary-dmrl), evidence review, and [CCB](#glossary-ccb) freeze before controlled release.
+## §15 V&V Approach ![TBD]
 
-> **To be reviewed by system expert.**
+| Phase | Method | Acceptance Criterion | Status |
+|---|---|---|---|
+| Design | Servo loop analysis | VSV accuracy ±0.5°; response ≤ 200 ms | ![TBD] |
+| Integration | Engine test cell — actuator sweep | All actuators move per FADEC schedule | ![TBD] |
+| Qualification | DO-160G — engine case environment | Actuators survive temperature/vibration | ![TBD] |
+| Certification | CS-E §810/§850 compliance | VSV/VBV stall-free; HP-ACC clearance benefit | ![TBD] |
+
+---
+
+## §16 Glossary
+
+| Term | Definition |
+|---|---|
+| **VSV** | Variable Stator Vane — adjustable compressor stage geometry. |
+| **VBV** | Variable Bypass Valve — overboard bleed for LP compressor stall protection. |
+| **HP-ACC** | High-Pressure Active Clearance Control — reduces turbine tip clearance at cruise. |
+| **LVDT** | Linear Variable Differential Transformer — linear position sensor. |
+| **Torque motor** | Small electromagnetic actuator converting FADEC current command to servo valve position. |
+| **Servo valve** | Fluidic valve controlling fuel pressure to actuator; commanded by torque motor. |
+| **Runaway** | Actuator moving beyond commanded position — FADEC detects via LVDT vs demand divergence. |
+| **HMU** | Hydromechanical Unit (ATA 64) — provides fuel-pressure servo power for VSV/VBV. |
+| **Best-select** | FADEC choosing more credible of dual LVDT signals. |
+| **HP turbine casing** | Engine casing surrounding HP turbine rotor; cooled by HP-ACC to tighten blade-tip clearance. |
+
+---
+
+## §17 Open Issues
+
+| ID | Description | Owner | Target |
+|---|---|---|---|
+| OI-067-030-001 | Confirm VSV stage count and actuation ring design with engine OEM | Q-MECHANICS | 2026-Q3 |
+| OI-067-030-002 | Define HP-ACC schedule (cruise open vs altitude threshold) | Q-AIR | 2026-Q4 |
+
+---
+
+## §18 Status Legend
+
+| Badge | Meaning |
+|---|---|
+| `![DRAFT]` | Section is drafted but not yet reviewed |
+| `![TBD]` | Content not yet started — to be defined |
+| `![To Be Completed]` | Partially complete — needs additional content |
+| `![APPROVED]` | Reviewed and formally approved |
+
+---
+
+## §19 Related Documents (Siblings in this Subsection)
+
+- [067-000](./067-000-Engine-Controls-General.md)
+- [067-010](./067-010-FADEC-and-Electronic-Engine-Control.md)
+- [067-020](./067-020-Throttle-Lever-and-Power-Command-Interfaces.md)
+- [067-040](./067-040-Engine-Control-Sensors-and-Feedback.md)
+- [067-050](./067-050-Engine-Control-Modes-and-Degraded-Operation.md)
+- [067-060](./067-060-Engine-Control-Software-and-Configuration.md)
+- [067-070](./067-070-Engine-Control-Test-and-Maintenance.md)
+- [067-080](./067-080-Engine-Controls-Monitoring-Diagnostics-and-Control-Interfaces.md)
+- [067-090](./067-090-S1000D-CSDB-Mapping-and-Traceability.md)
+
+---
+
+## §20 Change Log
+
+| Rev | Date | Author | Description |
+|---|---|---|---|
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
