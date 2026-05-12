@@ -54,18 +54,18 @@ organization:
   semantic_expansion: "Peace-and-Love incorporated"
 ---
 
-<div align="center">
-
 # 🌈 Q+
 
 ```text
 ██████╗        
-██╔═══██╗  ██╗  
-██║   ██║██████╗
-██║▄▄ ██║╚═██╔═╝
-╚██████╔╝  ╚═╝  
- ╚══▀▀═╝
-   ╚══▀▀═╝
+██╔═══██╗  ██╗     Q+
+██║   ██║██████╗   ──────────────────────────
+██║▄▄ ██║╚═██╔═╝   for all Queer People.
+╚██████╔╝  ╚═╝     and Quantum.
+ ╚══▀▀═╝        
+   ╚▀▀═╝        
+    ╚▀═╝         
+     ╚═╝╝
 ```
 
 # Q+ — **For All Queer People and Quantum**
@@ -78,7 +78,6 @@ organization:
 ![Human Dignity](https://img.shields.io/badge/Human_Dignity-FFB000?style=for-the-badge)
 ![Q+ATLANTIDE1000](https://img.shields.io/badge/Q%2BATLANTIDE1000-000--999-black?style=for-the-badge)
 
-</div>
 
 ---
 
