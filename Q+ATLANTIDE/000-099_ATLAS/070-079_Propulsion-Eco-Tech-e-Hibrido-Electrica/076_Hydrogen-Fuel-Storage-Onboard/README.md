@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,24 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `076` *Hydrogen Fuel Storage — Onboard*.
+- Populates the subsubject namespace `00`–`99` of subsection `076` *Hydrogen Fuel Storage — Onboard*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the AMPEL360E eWTW cryogenic LH₂ onboard storage system.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Hydrogen Fuel Storage — Onboard General | [076-000-Hydrogen-Fuel-Storage-Onboard-General.md](./076-000-Hydrogen-Fuel-Storage-Onboard-General.md) | active |
+| 10 | LH₂ Tank Architecture | [076-010-LH2-Tank-Architecture.md](./076-010-LH2-Tank-Architecture.md) | active |
+| 20 | Cryogenic Tank Insulation and Supports | [076-020-Cryogenic-Tank-Insulation-and-Supports.md](./076-020-Cryogenic-Tank-Insulation-and-Supports.md) | active |
+| 30 | Tank Pressure Control and Venting | [076-030-Tank-Pressure-Control-and-Venting.md](./076-030-Tank-Pressure-Control-and-Venting.md) | active |
+| 40 | Boil-Off Management | [076-040-Boil-Off-Management.md](./076-040-Boil-Off-Management.md) | active |
+| 50 | Hydrogen Quantity Indication and Sensing | [076-050-Hydrogen-Quantity-Indication-and-Sensing.md](./076-050-Hydrogen-Quantity-Indication-and-Sensing.md) | active |
+| 60 | Hydrogen Storage Safety Zones and Leak Detection | [076-060-Hydrogen-Storage-Safety-Zones-and-Leak-Detection.md](./076-060-Hydrogen-Storage-Safety-Zones-and-Leak-Detection.md) | active |
+| 70 | Hydrogen Storage Service and Maintenance | [076-070-Hydrogen-Storage-Service-and-Maintenance.md](./076-070-Hydrogen-Storage-Service-and-Maintenance.md) | active |
+| 80 | Hydrogen Storage Monitoring, Diagnostics and Control Interfaces | [076-080-Hydrogen-Storage-Monitoring-Diagnostics-and-Control-Interfaces.md](./076-080-Hydrogen-Storage-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D / CSDB Mapping and Traceability | [076-090-S1000D-CSDB-Mapping-and-Traceability.md](./076-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `070-079` |
 | Section | `07` — Propulsión Eco-Tech e Híbrido-Eléctrica |
 | Subsection | `076` — Hydrogen Fuel Storage — Onboard |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN, ORB-CSR |
