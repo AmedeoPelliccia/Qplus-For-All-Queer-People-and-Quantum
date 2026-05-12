@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Hybrid-Electric Architecture Overview — General | [070-000](./070-000-Hybrid-Electric-Architecture-Overview-General.md) | active |
+| 10 | Propulsion System Topology | [070-010](./070-010-Propulsion-System-Topology.md) | active |
+| 20 | Electric and Thermal Propulsion Allocation | [070-020](./070-020-Electric-and-Thermal-Propulsion-Allocation.md) | active |
+| 30 | Hybrid-Electric Operating Modes | [070-030](./070-030-Hybrid-Electric-Operating-Modes.md) | active |
+| 40 | Propulsion Redundancy and Degraded Modes | [070-040](./070-040-Propulsion-Redundancy-and-Degraded-Modes.md) | active |
+| 50 | Propulsion Energy Flow Architecture | [070-050](./070-050-Propulsion-Energy-Flow-Architecture.md) | active |
+| 60 | Propulsion Safety and Isolation Zones | [070-060](./070-060-Propulsion-Safety-and-Isolation-Zones.md) | active |
+| 70 | Propulsion Integration and Airframe Interfaces | [070-070](./070-070-Propulsion-Integration-and-Airframe-Interfaces.md) | active |
+| 80 | Hybrid-Electric Monitoring, Diagnostics and Control Interfaces | [070-080](./070-080-Hybrid-Electric-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D / CSDB Mapping and Traceability | [070-090](./070-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `070-079` |
 | Section | `07` — Propulsión Eco-Tech e Híbrido-Eléctrica |
 | Subsection | `070` — Hybrid-Electric Architecture Overview |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (10 subsubjects populated) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN, ORB-CSR |
