@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Battery Energy Storage — General | [072-000-Battery-Energy-Storage-General.md](072-000-Battery-Energy-Storage-General.md) | active |
+| 10 | Battery Cell and Module Design | [072-010-Battery-Cell-and-Module-Design.md](072-010-Battery-Cell-and-Module-Design.md) | active |
+| 20 | Battery Pack Architecture | [072-020-Battery-Pack-Architecture.md](072-020-Battery-Pack-Architecture.md) | active |
+| 30 | Battery Management System (BMS) | [072-030-Battery-Management-System-BMS.md](072-030-Battery-Management-System-BMS.md) | active |
+| 40 | Battery Thermal Management | [072-040-Battery-Thermal-Management.md](072-040-Battery-Thermal-Management.md) | active |
+| 50 | HV Contactors and Protection | [072-050-HV-Contactors-and-Protection.md](072-050-HV-Contactors-and-Protection.md) | active |
+| 60 | Battery State Estimation | [072-060-Battery-State-Estimation.md](072-060-Battery-State-Estimation.md) | active |
+| 70 | Battery Safety and Thermal Runaway Protection | [072-070-Battery-Safety-and-Thermal-Runaway-Protection.md](072-070-Battery-Safety-and-Thermal-Runaway-Protection.md) | active |
+| 80 | Battery Charging and Ground Support | [072-080-Battery-Charging-and-Ground-Support.md](072-080-Battery-Charging-and-Ground-Support.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [072-090-S1000D-CSDB-Mapping-and-Traceability.md](072-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
