@@ -1,0 +1,46 @@
+---
+document_id: DMC-AMPEL360PLUS-Q10-109-010-00A-README
+title: "STA to S1000D SNS Mapping — S1000D Info Code Structure"
+dmc_base: "DMC-AMPEL360PLUS-Q10-109-010-00A"
+programme: "AMPEL360-PLUS-Spacecraft-Q10"
+chapter: "STA 109 — STA Traceability, S1000D CSDB and Evidence"
+topic: "STA to S1000D SNS Mapping"
+disassembly_code_variant: "00A"
+status: "draft / scaffold"
+standard: "S1000D Issue 4.2"
+owner: "Amedeo Pelliccia / Q+"
+primary_language: "en"
+created: 2026-05-12
+no_aaa_rule: true
+---
+
+# STA to S1000D SNS Mapping — S1000D Info Code Structure
+
+## Data Module Base
+
+`DMC-AMPEL360PLUS-Q10-109-010-00A`
+
+## Info Code Breakdown
+
+| Folder | Info Code | Description |
+| ------ | --------- | ----------- |
+| `040_descriptive/` | 040 | System Description |
+| `100_operation/` | 100 | Operation |
+| `300_examinations-tests-and-checks/` | 300, 310 | General Inspection / Operational Check |
+| `400_fault-reports-and-isolation-procedures/` | 400, 420 | Fault Reporting / Fault Isolation |
+| `900_data-module-management/` | 900 | Data Module Management |
+| `940_provisioning-data/` | 940 | Provisioning Data |
+| `941_illustrated-parts-data/` | 941 | Illustrated Parts Data |
+
+## Status
+
+```yaml
+status:
+  maturity: "draft / scaffold"
+  content_ready: false
+  next_steps:
+    - "author XML content per S1000D Issue 4.2"
+    - "validate against BREX-STA-109-v1"
+    - "link ICN and illustrations"
+    - "add to DMRL"
+```
