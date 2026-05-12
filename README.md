@@ -92,23 +92,10 @@ document:
 ---
 ---
 
-# 🌈 Q+
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/8f4ce4bb-bd5e-45bc-943c-d430536261fb" />
 
 
-```text
- ██████╗
-██╔═══██╗  ██╗     Q+
-██║   ██║██████╗   ──────────────────────────
-██║▄▄ ██║╚═██╔═╝   for all Queer People.
-╚██████╔╝  ╚═╝     and Quantum.
- ╚══▀▀═╝
-    ╚▀▀═╝
-      ╚▀═╝
-        ╚═╝
-          ╚═╝
-```
-
-### **For All Queer People. And Quantum**
+## **For All Queer People. And Quantum**
 
 **Corporate / organizational umbrella for quantum, aerospace, democratic governance, open technical knowledge, and human dignity.**
 
