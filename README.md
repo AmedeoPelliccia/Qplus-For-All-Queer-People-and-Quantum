@@ -2,56 +2,18 @@
 repository:
   owner: "AmedeoPelliccia"
   name: "Qplus-For-All-Queer-People-and-Quantum"
-  title: "Q+ — For All Queer People and Quantum"
+  title: "Q+ : For All Queer People. And Quantum"
   short_name: "Q+"
   role: "corporate / organizational umbrella"
   distinction:
-    Q+: "organization / corporation / public title"
-    Q+ATLANTIDE: "architecture-taxonomy ecosystem"
-    Q+ATLANTIDE1000: "controlled 000–999 identification framework"
+    "Q+": "organization / corporation / public title"
+    "Q+ATLANTIDE": "architecture-taxonomy ecosystem. Acronym stands for Quantum + Aerospace Top Level Architectures and Novel Technologies Identification and Data Ecosystem."
+    "Q+ATLANTIDE1000": "controlled 000–999 identification schema"
 
-document:
-  document_id: "GAIA-QAO-ORG-MAIN-README"
-  title: "Q+ — For All Queer People and Quantum"
-  subtitle: "Strategic Framework for Sustainable European Aerospace Leadership & Quantum Integration"
-  dedication: "Dem&PeL.inc_Democracies-and-Peace-and-Loving"
-  version: "2.4.0"
-  status: "Draft → Stakeholder Review"
-  primary_language: "multilingual"
-  spanish_parallel: "README_ES.md"
-  owner: "Office of the CEO / Amedeo Pelliccia"
-  created: "2025-07-23"
-  last_updated: "2026-04-26"
-  next_review: "2026-10-26"
-  classification: "Consortium Confidential – Approved Stakeholders Only"
-
-baseline_dependencies:
-  - "Q+ATLANTIDE1000 v1.0.0"
-  - "Q+ATLANTIDE v1.0.0"
-  - "GAI-A-AMAR-AGGIX Architecture"
-  - "UTCS v1.1"
-  - "DEGF v1.0"
-
-canonical_hierarchy:
-  - "Q+ATLANTIDE1000 = Architecture Bands"
-  - "Band = Master range"
-  - "Master range contains Code ranges"
-  - "Code range contains Sections"
-  - "Section contains Subjects"
-  - "Subject contains Subsections"
-  - "Subsection contains Subsubjects"
-
-governance:
-  principle: "inclusive_democracy"
-  inclusion_clause: "All qualified stakeholders are included without erasing proportional responsibility, merit, or accountability."
-  humour_note: "If it is IVA, it is also Zanicchi."
-  linguistic_register: "institutional with controlled irony"
-  no_aaa_rule: true
-
-organization:
+foundation:
   legal_style_name: "P&L.inc_Peace-and-Love"
-  short_name: "P&L.inc"
-  semantic_expansion: "Peace-and-Love incorporated"
+  short_name: "P&L inc."
+  semantic_expansion: "Peace-and-Love inc."
 ---
 
 # 🌈 Q+
@@ -69,8 +31,7 @@ organization:
           ╚═╝
 ```
 
-
-# Q+ — **For All Queer People and Quantum**
+### **For All Queer People. And Quantum**
 
 **Corporate / organizational umbrella for quantum, aerospace, democratic governance, open technical knowledge, and human dignity.**
 
@@ -81,8 +42,8 @@ organization:
 ![Q+ATLANTIDE1000](https://img.shields.io/badge/Q%2BATLANTIDE1000-000--999-black?style=for-the-badge)
 
 
----
 
+---
 ## Document Control
 
 | Field | Value |
@@ -97,7 +58,7 @@ organization:
 | **Last Updated** | `2026-04-26` |
 | **Next Review** | `2026-10-26` |
 | **Classification** | `Consortium Confidential – Approved Stakeholders Only` |
-| **Baseline Dependencies** | `Q+ATLANTIDE1000 v1.0.0`, `Q+ATLANTIDE v1.0.0`, ``, `UTCS v14`, `` |
+| **Baseline Dependencies** | `Q+ATLANTIDE1000 v1.0.0`, `Q+ATLANTIDE v1.0.0`, `GAI-A-AMAR-AGGIX`, `UTCS v1.1`, `DEGF v1.0` |
 
 ---
 
@@ -203,7 +164,7 @@ is generative and regenerative, but: algorithms only if accountable.
 |---|---:|---|---|
 | 2.4.0 | 2026-04-26 | Root README normalized to Q+ATLANTIDE1000 hierarchy: Architecture Bands → Master ranges → Code ranges → Sections → Subjects → Subsections → Subsubjects. Deprecated “sub-range” as controlled hierarchy term. Replaced Q-SCIRES with Q-HORIZON. Reinforced No-AAA Rule. | Q+ Team/Amedeo Pelliccia + AI |
 | 2.3.0 | 2025-07-24 | Full organizational rewrite: flattened hierarchy, multi-level TOC, TRL demarcation, Annex F/G extraction, financial unit normalization, KPI/Risk/Compliance/Financial alignment, DEGF v1.0 integration. | Q+ Team/Amedeo Pelliccia + AI |
-| 2.2.0 | 2026-04-26 | Aligned README with coded `organization/` and `Q+ATLANTIDE/` repository structure. | Q+ Team/Amedeo Pelliccia + AI |
+| 2.2.0 | 2025-04-26 | Aligned README with coded `organization/` and `Q+ATLANTIDE/` repository structure. | Q+ Team/Amedeo Pelliccia + AI |
 | 2.0.0 | 2025-07-23 | Initial master baseline. | Q+ Team/Amedeo Pelliccia + AI |
 
 ---
@@ -364,7 +325,7 @@ programme interfaces / Q+ATLAS1000
 
 ---
 
-# 3. Q+ATLANTIDE programme 
+# 3. Q+ATLANTIDE1000 Architecture Bands
 
 | Segment | Expansion          | Meaning                                                                          |
 | ------- | ------------------ | -------------------------------------------------------------------------------- |
@@ -620,7 +581,7 @@ Kindness, Determinism, Legality, Loyalty, Fairness, Justice, Imparzialità Empat
 | Fairness (Ethical Mark) | Equal treatment, absence of unjustified bias or discrimination, proportionality of burdens and benefits, accessibility (language, ability, region), and equitable participation; comparable cases are treated comparably and differences are justified, documented and reviewable. | Bias and disparate-impact evaluation under CP-2 (datasets, models, decision systems); accessibility and inclusion review under ORB-LEG / Q-DATAGOV; participation and representation checks at gates; Auditorial / Control review of fairness evidence. | None. Stricter fairness criteria may be added; never weakened. Detected unfairness suspends release until remediated. |
 | Justice (Ethical Mark) | Due process, right to be heard, proportional remedy, fair distribution of risk and reward, redress for harm, and consistency between stated rules and applied decisions; published procedures for contestation and appeal. | Documented appeal/contestation paths owned by Judicial / Oversight; harm and remedy register; consistency audits comparing stated rules to actual decisions under the Auditorial / Control branch; whistleblower and grievance channels under ORB-LEG. | None. Stricter justice guarantees (e.g. shorter response times, broader standing) may be added; never weakened. |
 | Imparzialità Empatica (Ethical Mark) | Synthesis of impartial rule-application and empathic understanding of context: rules are applied without favouritism, partiality or arbitrariness, while the decision actively considers each party's perspective, vulnerability, capability and circumstances; impartial in form, empathic in substance. | Decision-making templates that require both an impartiality check (consistency, absence of conflict-of-interest, comparable treatment of comparable cases) and an empathy check (stakeholder perspective, accessibility, affected vulnerable groups); review under Q-DATAGOV / ORB-LEG; CP-1 training in empathic impartiality for adjudicators and operators; CP-2 enforcement in automated decisions; Auditorial / Control sampling of decisions for both axes. | None. Stricter empathic-impartiality criteria (e.g. mandatory perspective-taking artefacts, panel diversity) may be added; never weakened. |
-| Invulnerability (Security Mark) | Designed resilience against attack, tampering, coercion, compromise and single-point failures: defence-in-depth, least privilege, zero-trust boundaries, segregation of duties, redundancy and diversity, integrity protection (signing, attestation, immutable evidence), graceful degradation, verifiable backup and recovery, and protection against insider, supply-chain and physical threats. Safety-of-life functions remain dual-controlled and never become a single point of compromise. | Threat-modelling and security architecture review at every gate under Q-CYBERSEC / ORB-LEG; SBOM, signed artefacts and provenance under CP-2; least-privilege and zero-trust enforcement; red-team / penetration testing and chaos/resilience exercises; incident-response plan and verified recovery drills; Auditorial / Control attestation of security and resilience posture; coordinated disclosure channel. | None. Stricter invulnerability controls (e.g. higher assurance levels, stronger redundancy, broader threat model) may be added; never weakened. Discovered vulnerabilities trigger remediation under defined SLAs and, where safety-relevant, Judicial / Oversight review. |
+| Invulnerability (Security Mark) | Designed resilience against attack, tampering, coercion, compromise and single-point failures: defence-in-depth, least privilege, zero-trust boundaries, segregation of duties, redundancy and diversity, integrity protection (signing, attestation, immutable evidence), graceful degradation, verifiable backup and recovery, and protection against insider, supply-chain and physical threats. Safety-of-life functions remain dual-controlled and never become a single point of compromise. | Threat-modelling and security architecture review at every gate under Q-DATAGOV / ORB-LEG; SBOM, signed artefacts and provenance under CP-2; least-privilege and zero-trust enforcement; red-team / penetration testing and chaos/resilience exercises; incident-response plan and verified recovery drills; Auditorial / Control attestation of security and resilience posture; coordinated disclosure channel. | None. Stricter invulnerability controls (e.g. higher assurance levels, stronger redundancy, broader threat model) may be added; never weakened. Discovered vulnerabilities trigger remediation under defined SLAs and, where safety-relevant, Judicial / Oversight review. |
 | Activist Rights (Civic Mark) | Recognition and active protection of dissent, organising, whistleblowing, peaceful protest, conscientious objection, refusal of complicity in unlawful or unethical acts, and right to seek redress — for stakeholders, workers, users and affected communities. No retaliation, surveillance, deplatforming, blacklisting, SLAPP-style litigation, NDA misuse or career penalty for good-faith exercise of these rights; anonymous and identified channels both supported; protections extend to externals raising concerns about the enterprise's products or operations. | Whistleblower and grievance channels with anti-retaliation guarantees under ORB-LEG and Judicial / Oversight; conscientious-objection procedures under CP-1; ban on surveillance of lawful organising and on NDAs that suppress reporting of illegality, safety risks or rights violations; Auditorial / Control review of retaliation indicators (terminations, transfers, access revocations correlated with reports); coordinated disclosure and bug-bounty paired with safe-harbour for security researchers. | None. Stricter activist-rights protections (e.g. broader anti-retaliation scope, shorter response SLAs, expanded standing for community advocates) may be added; never weakened. Any retaliation is itself a breach and triggers Judicial / Oversight review. |
 | Workers' Rights (Labour Mark) | Every worker — direct, contractor, sub-contractor, agency, intern, platform/gig and supply-chain — is entitled to: freedom of association and collective bargaining; freedom from forced, bonded and child labour; non-discrimination, equal opportunity and equal pay for work of equal value; safe and healthy workplaces (physical, psychological and digital); fair living wage with on-time, traceable payment; regulated working hours, paid rest, leave, parental and care rights; privacy, dignity and limits on workplace and algorithmic surveillance; transparent, contestable algorithmic management decisions (assignment, evaluation, discipline, dismissal); right to information, training, reskilling and skills portability when automation reshapes work; protection from harassment, mobbing and reprisals; right to disconnect outside working hours; meaningful voice in decisions affecting work and workplace health. | Labour-rights baseline anchored on ILO core conventions, applicable national labour law and the EU/UN business-and-human-rights framework, enforced via ORB-LEG; works councils / worker-representation bodies and recognised trade-union dialogue under CP-1; supplier code of conduct with audited human-rights and labour-rights due diligence (incl. forced/child labour, wage and hours) across the supply chain under CP-2; algorithmic management transparency, impact assessment and contestation paths under Q-DATAGOV; pay-equity audits, health-and-safety management system and worker grievance channels with anti-retaliation guarantees; Auditorial / Control attestation of labour-rights posture and supply-chain compliance. | None. Stricter workers'-rights protections (e.g. higher floor wage, shorter hours, stronger surveillance limits, broader supply-chain due diligence) may be added; never weakened. Verified violations (especially forced labour, child labour, wage theft, unsafe conditions or union-busting) trigger immediate remediation and Judicial / Oversight review, and may suspend the offending operation or supplier. |
 | Rights of People with Addictions (Health & Dignity Mark) | Addiction (substance-use disorders and recognised behavioural addictions) is treated as a health condition. Affected people retain full rights and dignity, with: non-discrimination in hiring, retention, promotion, services and access; confidentiality of health and treatment information (no unnecessary disclosure, no sale or sharing of such data); right to evidence-based treatment, harm-reduction options and recovery support; reasonable workplace accommodations (e.g. flexible scheduling for treatment, protected medical leave, return-to-work plans); ban on coercive or punitive testing beyond what is strictly necessary for safety-critical roles and proportionate, lawful and transparent; non-stigmatising language and imagery in all communications and training; and a design prohibition on products, services, models or business practices that knowingly exploit addictive vulnerabilities (dark patterns, predatory engagement loops, micro-transactions targeted at vulnerable users, advertising targeted at people in recovery). | Health-condition recognition and accommodation procedures under ORB-LEG and Q-DATAGOV (privacy of health data); Employee Assistance Programme and harm-reduction-aware support under CP-1; design and product reviews under CP-2 to detect and block addictive dark patterns, exploitative engagement metrics and targeting of vulnerable populations; safety-critical testing programmes proportionate, transparent, with right to representation and appeal; partnerships with public-health and recovery organisations; Auditorial / Control review of accommodation outcomes and product-design audits; whistleblower channel for stigma, discrimination or exploitative-design concerns. | None. Stricter protections (e.g. broader accommodation, deeper product-design audits, stricter limits on engagement metrics) may be added; never weakened. Discrimination, breach of health-data confidentiality, exploitation of addictive vulnerabilities or punitive non-safety testing trigger immediate remediation and Judicial / Oversight review. |
@@ -650,8 +611,8 @@ Crossing Powers are not branches; they are **cross-cutting edges** that traverse
 
 | # | Crossing Power | Mode | Corporate Equivalent | Authority | Unifies |
 |---|---|---|---|---|---|
-| 1 | Education & Training (Unity) | Supporting · human-led | Corporate Academy & TMC (Training Master Class) — under Q-SCIRES / ORB-HR with Q-DATAGOV curriculum governance | Charter and ethics literacy; mandatory induction and recurrent training for all branches; certification of competencies (safety, compliance, audit, leadership); curriculum stewardship; cross-branch knowledge exchange; learning records and revocation of certifications when standards are breached | Legislative · Executive · Judicial/Oversight · Auditorial/Control |
-| 2 | Automation (Supervised Execution) | Supporting · supervised | Office of Automation & Digital Operations — under Q-DATAGOV with Q-SCIRES (MLOps), Q-HPC (compute) and ORB-LEG (assurance); always under a designated human supervisor from the relevant branch | Workflow, decision-support and robotic/process automation across branches; MLOps and model lifecycle governance; human-in-the-loop and human-on-the-loop controls; explainability, bias and safety evaluations; deterministic audit trails of automated actions; emergency stop and rollback; deployment gating against Education & Training certifications | Legislative · Executive · Judicial/Oversight · Auditorial/Control |
+| 1 | Education & Training (Unity) | Supporting · human-led | Corporate Academy & TMC (Training Master Class) — under Q-HORIZON / ORB-HR with Q-DATAGOV curriculum governance | Charter and ethics literacy; mandatory induction and recurrent training for all branches; certification of competencies (safety, compliance, audit, leadership); curriculum stewardship; cross-branch knowledge exchange; learning records and revocation of certifications when standards are breached | Legislative · Executive · Judicial/Oversight · Auditorial/Control |
+| 2 | Automation (Supervised Execution) | Supporting · supervised | Office of Automation & Digital Operations — under Q-DATAGOV with Q-HORIZON (MLOps), Q-HPC (compute) and ORB-LEG (assurance); always under a designated human supervisor from the relevant branch | Workflow, decision-support and robotic/process automation across branches; MLOps and model lifecycle governance; human-in-the-loop and human-on-the-loop controls; explainability, bias and safety evaluations; deterministic audit trails of automated actions; emergency stop and rollback; deployment gating against Education & Training certifications | Legislative · Executive · Judicial/Oversight · Auditorial/Control |
 
 **Operating principles**
 
@@ -1319,4 +1280,3 @@ Includes:
 **© 2025–2026 Amedeo Pelliccia — P&L.inc_Peace-and-Love / GAIA-QAO ADVENT Framework**  
 *Ideal structure for frictionless quantum-aerospace integration and European leadership in advanced sustainable aviation.*  
 *Aligned with Q+ATLANTIDE1000 hierarchy, S1000D/CSDB technical-publication logic, aerospace lifecycle governance, democratic enterprise governance and No-AAA baseline control.*
-````

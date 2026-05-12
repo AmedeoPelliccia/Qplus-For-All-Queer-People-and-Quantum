@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | SAF and Drop-In Compatibility General | [078-000-SAF-and-Drop-In-Compatibility-General.md](078-000-SAF-and-Drop-In-Compatibility-General.md) | active |
+| 10 | SAF Fuel Compatibility Basis | [078-010-SAF-Fuel-Compatibility-Basis.md](078-010-SAF-Fuel-Compatibility-Basis.md) | active |
+| 20 | Drop-In Fuel Material Compatibility | [078-020-Drop-In-Fuel-Material-Compatibility.md](078-020-Drop-In-Fuel-Material-Compatibility.md) | active |
+| 30 | Fuel Quality, Contamination and Traceability | [078-030-Fuel-Quality-Contamination-and-Traceability.md](078-030-Fuel-Quality-Contamination-and-Traceability.md) | active |
+| 40 | SAF Storage, Handling and Servicing | [078-040-SAF-Storage-Handling-and-Servicing.md](078-040-SAF-Storage-Handling-and-Servicing.md) | active |
+| 50 | Combustion, Emissions and Performance Effects | [078-050-Combustion-Emissions-and-Performance-Effects.md](078-050-Combustion-Emissions-and-Performance-Effects.md) | active |
+| 60 | SAF Certification and Operational Limits | [078-060-SAF-Certification-and-Operational-Limits.md](078-060-SAF-Certification-and-Operational-Limits.md) | active |
+| 70 | SAF System Inspection, Test and Maintenance | [078-070-SAF-System-Inspection-Test-and-Maintenance.md](078-070-SAF-System-Inspection-Test-and-Maintenance.md) | active |
+| 80 | SAF Monitoring, Diagnostics and Control Interfaces | [078-080-SAF-Monitoring-Diagnostics-and-Control-Interfaces.md](078-080-SAF-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [078-090-S1000D-CSDB-Mapping-and-Traceability.md](078-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `070-079` |
 | Section | `07` — Propulsión Eco-Tech e Híbrido-Eléctrica |
 | Subsection | `078` — SAF and Drop-In Compatibility |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN, ORB-CSR |
