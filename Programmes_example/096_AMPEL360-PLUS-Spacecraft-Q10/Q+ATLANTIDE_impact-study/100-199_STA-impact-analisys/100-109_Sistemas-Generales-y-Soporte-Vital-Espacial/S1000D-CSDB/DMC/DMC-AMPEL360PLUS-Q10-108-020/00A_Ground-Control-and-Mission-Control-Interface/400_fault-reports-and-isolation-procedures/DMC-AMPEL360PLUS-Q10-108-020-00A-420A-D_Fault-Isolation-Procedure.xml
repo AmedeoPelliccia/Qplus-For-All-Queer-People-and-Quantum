@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  S1000D Data Module Stub
+  DMC: DMC-AMPEL360PLUS-Q10-108-020-00A-420A-D
+  Info Code: 420 — Fault Isolation Procedure
+  Topic: Ground Control and Mission Control Interface
+  Programme: AMPEL360-PLUS Spacecraft Q10
+  Status: scaffold / placeholder
+  Standard: S1000D Issue 4.2
+  Note: Replace this stub with validated S1000D XML content.
+-->
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360PLUS" systemDiffCode="Q10"
+                systemCode="108" subSystemCode="0"
+                subSubSystemCode="2" assyCode="00"
+                disassyCode="A" disassyCodeVariant="00" infoCode="420"
+                infoCodeVariant="A" itemLocationCode="D"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+        <language languageIsoCode="en" countryIsoCode="US"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="12"/>
+        <dmTitle>
+          <techName>Ground Control and Mission Control Interface</techName>
+          <infoName>Fault Isolation Procedure</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL">
+        <enterpriseName>AMPEL / Q+</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL">
+        <enterpriseName>AMPEL / Q+</enterpriseName>
+      </originator>
+      <applic>
+        <displayText><simplePara>AMPEL360PLUS-Q10 All Configurations</simplePara></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360PLUS" systemDiffCode="Q10"
+                    systemCode="108" subSystemCode="0" subSubSystemCode="0"
+                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
+                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <!-- TODO: Author Fault Isolation Procedure content for Ground Control and Mission Control Interface per S1000D Issue 4.2 -->
+  </content>
+</dmodule>
