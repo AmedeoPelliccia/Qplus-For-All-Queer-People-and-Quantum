@@ -19,7 +19,7 @@ support_q_divisions: [Q-HORIZON, Q-HPC, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG, ORB-FIN]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,24 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `082` *Plasma and Ionic Propulsion Concepts*.
+- Populates the subsubject namespace `00`–`99` of subsection `082` *Plasma and Ionic Propulsion Concepts*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the AMPEL360E eWTW Plasma and Ionic Propulsion Concepts system (PPPU dual-channel DAL C, 8 thruster nodes: 4 HET + 4 GIE, xenon propellant, DBD plasma actuators, Hall-effect and gridded ion engine physics, high-voltage interfaces, plume interaction and EMC constraints, AFDX ARINC 664 P7, S1000D 28 DMs, BREX-082-v1).
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Plasma and Ionic Propulsion Concepts — General | [082-000-Plasma-and-Ionic-Propulsion-Concepts-General.md](./082-000-Plasma-and-Ionic-Propulsion-Concepts-General.md) | active |
+| 10 | Plasma Propulsion Baseline and Scope | [082-010-Plasma-Propulsion-Baseline-and-Scope.md](./082-010-Plasma-Propulsion-Baseline-and-Scope.md) | active |
+| 20 | Ionic Propulsion Concepts and Operating Principles | [082-020-Ionic-Propulsion-Concepts-and-Operating-Principles.md](./082-020-Ionic-Propulsion-Concepts-and-Operating-Principles.md) | active |
+| 30 | Electric Field and Magnetic Field Acceleration Mechanisms | [082-030-Electric-Field-and-Magnetic-Field-Acceleration-Mechanisms.md](./082-030-Electric-Field-and-Magnetic-Field-Acceleration-Mechanisms.md) | active |
+| 40 | Propellant Ionization and Plasma Generation | [082-040-Propellant-Ionization-and-Plasma-Generation.md](./082-040-Propellant-Ionization-and-Plasma-Generation.md) | active |
+| 50 | Thruster Chamber, Grid and Electrode Interfaces | [082-050-Thruster-Chamber-Grid-and-Electrode-Interfaces.md](./082-050-Thruster-Chamber-Grid-and-Electrode-Interfaces.md) | active |
+| 60 | Power Processing and High-Voltage Interfaces | [082-060-Power-Processing-and-High-Voltage-Interfaces.md](./082-060-Power-Processing-and-High-Voltage-Interfaces.md) | active |
+| 70 | Thermal, EMC and Plume Interaction Constraints | [082-070-Thermal-EMC-and-Plume-Interaction-Constraints.md](./082-070-Thermal-EMC-and-Plume-Interaction-Constraints.md) | active |
+| 80 | Plasma/Ionic Monitoring, Diagnostics and Control Interfaces | [082-080-Plasma-Ionic-Monitoring-Diagnostics-and-Control-Interfaces.md](./082-080-Plasma-Ionic-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D / CSDB Mapping and Traceability | [082-090-S1000D-CSDB-Mapping-and-Traceability.md](./082-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `080-089` |
 | Section | `08` — Propulsión Alternativa & Cuántica |
 | Subsection | `082` — Plasma and Ionic Propulsion Concepts |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-HPC, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG, ORB-FIN |
