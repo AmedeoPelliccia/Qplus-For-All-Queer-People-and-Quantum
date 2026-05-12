@@ -48,7 +48,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0076-090"
 
 This document maps the ATLAS ATA 28 (LH₂) subsubject 076 structure to S1000D Data Module Codes (DMCs) and defines the Data Module Requirement List (DMRL) and Business Rules eXchange (BREX) constraints for the AMPEL360E eWTW Hydrogen Fuel Storage — Onboard Common Source DataBase (CSDB).
 
-ATA 076 DMRL for AMPEL360E eWTW: **36 data modules**. DMC pattern: `AMPEL360E-EWTW-076-{NNN}-00A-EN-US`. BREX document: `AMPEL360E-BREX-076-v1`, enforcing three domain-specific constraints specific to cryogenic hydrogen storage systems as described in §3.
+ATA 076 DMRL for AMPEL360E eWTW: **36 data modules**. DMC pattern: `AMPEL360E-EWTW-076-{NNN}-00A-EN-US`. BREX document: `AMPEL360E-BREX-076-v1`, enforcing three domain-specific cryogenic hydrogen storage constraints as described in §3.
 
 This document is owned by Q-DATAGOV and reviewed at each CSDB milestone (DMRL baseline, DMRL first issue, DMRL final). It is the authoritative traceability record linking ATLAS ATA 076 documents to the S1000D technical publication set, including the Aircraft Maintenance Manual (AMM), Component Maintenance Manual (CMM), and Interactive Electronic Technical Publication (IETP).
 

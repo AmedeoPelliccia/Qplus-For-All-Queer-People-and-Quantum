@@ -89,7 +89,15 @@ Replacement of cryogenic solenoid valves requires tank isolation (LOTO), warm-up
 PRVs are removed from the tank nozzle manifold (tank isolation required; no warm-up needed — PRV can be removed cryogenically if using appropriate tools) and sent to a certified test rig for set-point verification. Replacement PRVs (calibrated) are installed while the originals are being tested.
 
 **Six-year overhaul (MLI, tank hydrostatic test):**
-Full overhaul requires tank removal from the aircraft, transport to a cryogenic workshop, GN₂ warm-up and purge, hydrostatic proof test, MLI and VCS inspection/replacement, outer jacket vacuum measurement and re-evacuation if needed, and re-certification before reinstallation. Duration: approximately 6 weeks per tank (2 tanks may be done sequentially or in parallel at a facility with sufficient capacity).
+Full overhaul requires the following steps:
+- Remove tank from the aircraft and transport to a certified cryogenic workshop.
+- Perform GN₂ warm-up and purge of the inner vessel.
+- Conduct hydrostatic proof test at 1.5× MAWP per EN 13458-2.
+- Inspect and, if necessary, replace MLI blanket stack and VCS assembly.
+- Measure outer jacket vacuum level; re-evacuate via the re-evacuation port if vacuum exceeds the design limit.
+- Re-certify the inner vessel and outer jacket before reinstallation.
+
+Duration: approximately 6 weeks per tank (2 tanks may be done sequentially or in parallel at a facility with sufficient capacity).
 
 ---
 
