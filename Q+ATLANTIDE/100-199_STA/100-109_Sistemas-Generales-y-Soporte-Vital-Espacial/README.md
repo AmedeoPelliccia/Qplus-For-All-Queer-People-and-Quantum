@@ -43,6 +43,12 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 | `101` | Habitabilidad | [`./101_Habitabilidad/`](./101_Habitabilidad/) | reserved |
 | `102` | Soporte Vital ECLSS | [`./102_Soporte-Vital-ECLSS/`](./102_Soporte-Vital-ECLSS/) | reserved |
 | `103` | Seguridad de Misión | [`./103_Seguridad-de-Mision/`](./103_Seguridad-de-Mision/) | reserved |
+| `104` | Gestión Térmica y Control Ambiental | [`./104_Gestion-Termica-y-Control-Ambiental/`](./104_Gestion-Termica-y-Control-Ambiental/) | active |
+| `105` | Presurización y Atmósfera Interna | [`./105_Presurizacion-y-Atmosfera-Interna/`](./105_Presurizacion-y-Atmosfera-Interna/) | active |
+| `106` | Salud Tripulación y Factores Humanos | [`./106_Salud-Tripulacion-y-Factores-Humanos/`](./106_Salud-Tripulacion-y-Factores-Humanos/) | active |
+| `107` | Supervivencia, Emergencia y Aborto | [`./107_Supervivencia-Emergencia-y-Aborto/`](./107_Supervivencia-Emergencia-y-Aborto/) | active |
+| `108` | Interfaces de Operación Tripulación y Tierra | [`./108_Interfaces-de-Operacion-Tripulacion-y-Tierra/`](./108_Interfaces-de-Operacion-Tripulacion-y-Tierra/) | active |
+| `109` | Trazabilidad S1000D, CSDB y Evidencia | [`./109_Trazabilidad-S1000D-CSDB-y-Evidencia/`](./109_Trazabilidad-S1000D-CSDB-y-Evidencia/) | active |
 
 ## 4. Interfaces Diagram
 
@@ -58,6 +64,12 @@ flowchart TB
         SUB_101["101 — Habitability"]:::sub
         SUB_102["102 — Life Support ECLSS"]:::sub
         SUB_103["103 — Mission Safety"]:::sub
+        SUB_104["104 — Thermal Control"]:::sub
+        SUB_105["105 — Pressurization"]:::sub
+        SUB_106["106 — Crew Health"]:::sub
+        SUB_107["107 — Emergency/Abort"]:::sub
+        SUB_108["108 — Operations Interfaces"]:::sub
+        SUB_109["109 — S1000D/CSDB/Evidence"]:::sub
     end
     SEC --> SUBS
 
@@ -73,6 +85,12 @@ flowchart TB
     SUBS --> SUB_101
     SUBS --> SUB_102
     SUBS --> SUB_103
+    SUBS --> SUB_104
+    SUBS --> SUB_105
+    SUBS --> SUB_106
+    SUBS --> SUB_107
+    SUBS --> SUB_108
+    SUBS --> SUB_109
 
     classDef parent fill:#1f3a93,stroke:#0b1d4a,color:#fff
     classDef sec fill:#2c82c9,stroke:#0b1d4a,color:#fff
@@ -92,7 +110,7 @@ flowchart TB
 | Master range | `100–199` |
 | Code range | `100-109` |
 | Section | `00` — Sistemas Generales y Soporte Vital Espacial |
-| Subsections | 4 reserved |
+| Subsections | 10 active (100–103 reserved; 104–109 active) |
 | Primary Q-Division | Q-SPACE[^qdiv] |
 | Support Q-Divisions | Q-DATAGOV, Q-HORIZON |
 | ORB support | ORB-PMO, ORB-LEG |
