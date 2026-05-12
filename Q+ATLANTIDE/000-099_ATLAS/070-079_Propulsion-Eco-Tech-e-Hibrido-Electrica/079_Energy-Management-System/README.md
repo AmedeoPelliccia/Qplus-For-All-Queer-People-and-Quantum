@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Energy Management System General | [079-000-Energy-Management-System-General.md](./079-000-Energy-Management-System-General.md) | active |
+| 10 | Energy Management Architecture | [079-010-Energy-Management-Architecture.md](./079-010-Energy-Management-Architecture.md) | active |
+| 20 | Power Demand Prediction and Allocation | [079-020-Power-Demand-Prediction-and-Allocation.md](./079-020-Power-Demand-Prediction-and-Allocation.md) | active |
+| 30 | Energy Source Prioritization and Load Shedding | [079-030-Energy-Source-Prioritization-and-Load-Shedding.md](./079-030-Energy-Source-Prioritization-and-Load-Shedding.md) | active |
+| 40 | Propulsion and ECS Energy Coordination | [079-040-Propulsion-and-ECS-Energy-Coordination.md](./079-040-Propulsion-and-ECS-Energy-Coordination.md) | active |
+| 50 | Energy Degraded Modes and Reconfiguration | [079-050-Energy-Degraded-Modes-and-Reconfiguration.md](./079-050-Energy-Degraded-Modes-and-Reconfiguration.md) | active |
+| 60 | Energy Management Software and Configuration | [079-060-Energy-Management-Software-and-Configuration.md](./079-060-Energy-Management-Software-and-Configuration.md) | active |
+| 70 | Energy Management Test and Maintenance | [079-070-Energy-Management-Test-and-Maintenance.md](./079-070-Energy-Management-Test-and-Maintenance.md) | active |
+| 80 | Energy Management Monitoring, Diagnostics and Control Interfaces | [079-080-Energy-Management-Monitoring-Diagnostics-and-Control-Interfaces.md](./079-080-Energy-Management-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [079-090-S1000D-CSDB-Mapping-and-Traceability.md](./079-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `070-079` |
 | Section | `07` — Propulsión Eco-Tech e Híbrido-Eléctrica |
 | Subsection | `079` — Energy Management System |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`90` (active) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN, ORB-CSR |
