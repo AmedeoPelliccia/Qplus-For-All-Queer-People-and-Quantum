@@ -1,7 +1,7 @@
 ---
 repository:
-  owner: AmedeoPelliccia
-  name: Qplus-For-All-Queer-People-and-Quantum
+  owner: "AmedeoPelliccia"
+  name: "Qplus-For-All-Queer-People-and-Quantum"
   title: "Q+ — For All Queer People and Quantum"
   short_name: "Q+"
   role: "corporate / organizational umbrella"
@@ -9,53 +9,28 @@ repository:
     Q+: "organization / corporation / public title"
     Q+ATLANTIDE: "architecture-taxonomy ecosystem"
     Q+ATLANTIDE1000: "controlled 000–999 identification framework"
----
 
-# 🌈 Q+
-
-```text
- ██████╗     
-██╔═══██╗    ██║
-██║   ██║ ██████╗
-██║▄▄ ██║ ╚═██╔═╝
-╚██████╔╝   ╚═╝
- ╚══▀▀═╝
-```
-
-# Q+ — **For All Queer People and Quantum**
-
----
-
-document_id: GAIA-QAO-ORG-MAIN-README.md
-
-dedicas: "Dem&PeL.inc_Democracies-and-Peace-and-Loving"
-
-subtitle: "Strategic Framework for Sustainable European Aerospace Leadership & Quantum Integration"
-
-version: 1.0.0
-
-status: "Draft → Stakeholder Review"
-
-primary_language: mix
-
-spanish_parallel: leédme.md
-
-owner: "Office of the CEO / Amedeo Pelliccia"
-
-created: 2026-04-30
-
-last_updated: 2026-04-26
-
-next_review: 2026-10-26
-
-classification: "Consortium Confidential – Approved Stakeholders Only"
+document:
+  document_id: "GAIA-QAO-ORG-MAIN-README"
+  title: "Q+ — For All Queer People and Quantum"
+  subtitle: "Strategic Framework for Sustainable European Aerospace Leadership & Quantum Integration"
+  dedication: "Dem&PeL.inc_Democracies-and-Peace-and-Loving"
+  version: "2.4.0"
+  status: "Draft → Stakeholder Review"
+  primary_language: "multilingual"
+  spanish_parallel: "README_ES.md"
+  owner: "Office of the CEO / Amedeo Pelliccia"
+  created: "2025-07-23"
+  last_updated: "2026-04-26"
+  next_review: "2026-10-26"
+  classification: "Consortium Confidential – Approved Stakeholders Only"
 
 baseline_dependencies:
-  - Q+ATLANTIDE1000 v1.0.0
-  - Q+ATLANTIDE v1.0.0
-  - GAI-A-AMAR-AGGIX Architecture
-  - UTCS v1.1
-  - DEGF v1.0
+  - "Q+ATLANTIDE1000 v1.0.0"
+  - "Q+ATLANTIDE v1.0.0"
+  - "GAI-A-AMAR-AGGIX Architecture"
+  - "UTCS v1.1"
+  - "DEGF v1.0"
 
 canonical_hierarchy:
   - "Q+ATLANTIDE1000 = Architecture Bands"
@@ -66,20 +41,43 @@ canonical_hierarchy:
   - "Subject contains Subsections"
   - "Subsection contains Subsubjects"
 
-governance_principles: "inclusive_democracy"
-
-  inclusion_clause: "All qualified stakeholders are included without erasing proportional responsibility, merit, or accountability."ç
-  
+governance:
+  principle: "inclusive_democracy"
+  inclusion_clause: "All qualified stakeholders are included without erasing proportional responsibility, merit, or accountability."
   humour_note: "If it is IVA, it is also Zanicchi."
-  
   linguistic_register: "institutional with controlled irony"
-
-no_aaa_rule: true
+  no_aaa_rule: true
 
 organization:
   legal_style_name: "P&L.inc_Peace-and-Love"
   short_name: "P&L.inc"
   semantic_expansion: "Peace-and-Love incorporated"
+---
+
+<div align="center">
+
+# 🌈 Q+
+
+```text
+ ██████╗     ██╗
+██╔═══██╗    ██║
+██║   ██║ ██████╗
+██║▄▄ ██║ ╚═██╔═╝
+╚██████╔╝   ╚═╝
+ ╚══▀▀═╝
+```
+
+# Q+ — **For All Queer People and Quantum**
+
+**Corporate / organizational umbrella for quantum, aerospace, democratic governance, open technical knowledge, and human dignity.**
+
+![Quantum](https://img.shields.io/badge/Quantum-6A0DAD?style=for-the-badge)
+![Aerospace](https://img.shields.io/badge/Aerospace-0057B8?style=for-the-badge)
+![Open Knowledge](https://img.shields.io/badge/Open_Knowledge-00A36C?style=for-the-badge)
+![Human Dignity](https://img.shields.io/badge/Human_Dignity-FFB000?style=for-the-badge)
+![Q+ATLANTIDE1000](https://img.shields.io/badge/Q%2BATLANTIDE1000-000--999-black?style=for-the-badge)
+
+</div>
 
 ---
 
