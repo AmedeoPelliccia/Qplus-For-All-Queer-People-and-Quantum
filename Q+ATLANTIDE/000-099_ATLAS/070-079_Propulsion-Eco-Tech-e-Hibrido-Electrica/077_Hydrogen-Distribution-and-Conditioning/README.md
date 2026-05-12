@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,24 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `077` *Hydrogen Distribution and Conditioning*.
+- Populates the subsubject namespace `00`–`99` of subsection `077` *Hydrogen Distribution and Conditioning*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the AMPEL360E eWTW hydrogen distribution and conditioning system (HDCMU DAL B, cryogenic LH₂ feed, vaporizers, GH₂ regulators, leak detection, purge/vent, S1000D 28 DMs, BREX-077-v1).
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Hydrogen Distribution and Conditioning — General | [077-000-Hydrogen-Distribution-and-Conditioning-General.md](./077-000-Hydrogen-Distribution-and-Conditioning-General.md) | active |
+| 10 | Hydrogen Feed Lines and Manifolds | [077-010-Hydrogen-Feed-Lines-and-Manifolds.md](./077-010-Hydrogen-Feed-Lines-and-Manifolds.md) | active |
+| 20 | Hydrogen Pumps, Compressors and Conditioning | [077-020-Hydrogen-Pumps-Compressors-and-Conditioning.md](./077-020-Hydrogen-Pumps-Compressors-and-Conditioning.md) | active |
+| 30 | Hydrogen Valves, Regulators and Shutoff | [077-030-Hydrogen-Valves-Regulators-and-Shutoff.md](./077-030-Hydrogen-Valves-Regulators-and-Shutoff.md) | active |
+| 40 | Heat Exchangers and Vaporizers | [077-040-Heat-Exchangers-and-Vaporizers.md](./077-040-Heat-Exchangers-and-Vaporizers.md) | active |
+| 50 | Purge, Vent and Drain Interfaces | [077-050-Purge-Vent-and-Drain-Interfaces.md](./077-050-Purge-Vent-and-Drain-Interfaces.md) | active |
+| 60 | Hydrogen Leak Detection and Isolation | [077-060-Hydrogen-Leak-Detection-and-Isolation.md](./077-060-Hydrogen-Leak-Detection-and-Isolation.md) | active |
+| 70 | Hydrogen Distribution Service, Test and Maintenance | [077-070-Hydrogen-Distribution-Service-Test-and-Maintenance.md](./077-070-Hydrogen-Distribution-Service-Test-and-Maintenance.md) | active |
+| 80 | Hydrogen Distribution Monitoring, Diagnostics and Control Interfaces | [077-080-Hydrogen-Distribution-Monitoring-Diagnostics-and-Control-Interfaces.md](./077-080-Hydrogen-Distribution-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D / CSDB Mapping and Traceability | [077-090-S1000D-CSDB-Mapping-and-Traceability.md](./077-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `070-079` |
 | Section | `07` — Propulsión Eco-Tech e Híbrido-Eléctrica |
 | Subsection | `077` — Hydrogen Distribution and Conditioning |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN, ORB-CSR |
