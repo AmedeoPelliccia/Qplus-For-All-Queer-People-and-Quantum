@@ -5,18 +5,95 @@ repository:
   title: "Q+ : For All Queer People. And Quantum"
   short_name: "Q+"
   role: "corporate / organizational umbrella"
-  distinction:
+
+brand:
+  public_mark: "Q+"
+  controlled_title: "Q+ : For All Queer People. And Quantum"
+  semantic_statement: "For All Queer People. And Quantum."
+  primary_meaning:
     "Q+": "organization / corporation / public title"
-    "Q+ATLANTIDE": "architecture-taxonomy ecosystem. Acronym stands for Quantum + Aerospace Top Level Architectures and Novel Technologies Identification and Data Ecosystem."
-    "Q+ATLANTIDE1000": "controlled 000–999 identification schema"
+    "Queer People": "human dignity, inclusion, civic protection, non-erasure"
+    "Quantum": "quantum technologies, quantum governance, quantum-aerospace future"
+
+  architecture:
+    short_public_mark: "Q+"
+    aerospace_abbreviation: "Q+A"
+    future_full_brand: "Q+AEROSPACE"
+    semantic_expansion: "Quantum + Aerospace"
+    hierarchy:
+      - "Q+ = public mark / organizational umbrella"
+      - "Q+A = Quantum + Aerospace abbreviation"
+      - "Q+AEROSPACE = future full aerospace brand"
+      - "Quantum + Aerospace = semantic expansion"
+
+  positioning:
+    category: "quantum-aerospace governance and architecture framework"
+    strategic_role: "democratic quantum-aerospace counterweight to private orbital hegemony"
+    not_positioned_as: "anti-SpaceX"
+    positioned_as: "open, accountable, humane, European, quantum-aerospace architecture"
 
 foundation:
   legal_style_name: "P&L.inc_Peace-and-Love"
   short_name: "P&L inc."
   semantic_expansion: "Peace-and-Love inc."
+  dedication: "Dem&PeL.inc_Democracies-and-Peace-and-Loving"
+
+distinction:
+  "Q+": "organization / corporation / public title / public mark"
+  "Q+A": "Quantum + Aerospace abbreviation; technical-commercial shorthand"
+  "Q+AEROSPACE": "future full aerospace brand for Quantum + Aerospace"
+  "Q+ATLANTIDE": "architecture-taxonomy ecosystem. Acronym stands for Quantum + Aerospace Top Level Architectures and Novel Technologies Identification and Data Ecosystem."
+  "Q+ATLANTIDE1000": "controlled 000–999 identification schema"
+
+q_atlantide:
+  full_name: "Quantum + Aerospace Top Level Architectures and Novel Technologies Identification and Data Ecosystem"
+  short_name: "Q+ATLANTIDE"
+  schema_name: "Q+ATLANTIDE1000"
+  schema_range: "000–999"
+  role: "controlled architecture-taxonomy ecosystem"
+  hierarchy:
+    - "Q+ATLANTIDE1000 = Architecture Bands"
+    - "Band = Master range"
+    - "Master range contains Code ranges"
+    - "Code range contains Sections"
+    - "Section contains Subjects"
+    - "Subject contains Subsections"
+    - "Subsection contains Subsubjects"
+
+governance:
+  principle: "inclusive_democracy"
+  inclusion_clause: "All qualified stakeholders are included without erasing proportional responsibility, merit, or accountability."
+  linguistic_register: "institutional with controlled irony"
+  humour_note: "If it is IVA, it is also Zanicchi."
+  no_aaa_rule: true
+
+technical_alignment:
+  domains:
+    - "quantum"
+    - "aerospace"
+    - "space systems"
+    - "digital technical publications"
+    - "S1000D / CSDB"
+    - "AI / neural networks"
+    - "democratic enterprise governance"
+    - "open technical knowledge"
+  lifecycle_model: "LC01–LC14"
+  publication_model: "S1000D / CSDB"
+  evidence_model: "deterministic, auditable, lifecycle-gated"
+
+document:
+  document_id: "QPLUS-ROOT-README"
+  filename: "README.md"
+  version: "1.0.0"
+  status: "Draft → Stakeholder Review"
+  primary_language: "multilingual"
+  owner: "Office of the CEO / Amedeo Pelliccia"
+  classification: "Open technical / strategic brand baseline"
+---
 ---
 
 # 🌈 Q+
+
 
 ```text
  ██████╗
