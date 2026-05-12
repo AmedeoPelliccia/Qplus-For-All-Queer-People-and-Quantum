@@ -6,52 +6,14 @@ repository:
   short_name: "Q+"
   role: "corporate / organizational umbrella"
   distinction:
-    Q+: "organization / corporation / public title"
-    Q+ATLANTIDE: "architecture-taxonomy ecosystem"
-    Q+ATLANTIDE1000: "controlled 000–999 identification framework"
+    "Q+": "organization / corporation / public title"
+    "Q+ATLANTIDE": "architecture-taxonomy ecosystem. Acronym stands for Quantum + Aerospace Top Level Architectures and Novel Technologies Identification and Data Ecosystem."
+    "Q+ATLANTIDE1000": "controlled 000–999 identification schema"
 
-document:
-  document_id: "GAIA-QAO-ORG-MAIN-README"
-  title: "Q+ — For All Queer People and Quantum"
-  subtitle: "Strategic Framework for Sustainable European Aerospace Leadership & Quantum Integration"
-  dedication: "Dem&PeL.inc_Democracies-and-Peace-and-Loving"
-  version: "2.4.0"
-  status: "Draft → Stakeholder Review"
-  primary_language: "multilingual"
-  spanish_parallel: "README_ES.md"
-  owner: "Office of the CEO / Amedeo Pelliccia"
-  created: "2025-07-23"
-  last_updated: "2026-04-26"
-  next_review: "2026-10-26"
-  classification: "Consortium Confidential – Approved Stakeholders Only"
-
-baseline_dependencies:
-  - "Q+ATLANTIDE1000 v1.0.0"
-  - "Q+ATLANTIDE v1.0.0"
-  - "GAI-A-AMAR-AGGIX Architecture"
-  - "UTCS v1.1"
-  - "DEGF v1.0"
-
-canonical_hierarchy:
-  - "Q+ATLANTIDE1000 = Architecture Bands"
-  - "Band = Master range"
-  - "Master range contains Code ranges"
-  - "Code range contains Sections"
-  - "Section contains Subjects"
-  - "Subject contains Subsections"
-  - "Subsection contains Subsubjects"
-
-governance:
-  principle: "inclusive_democracy"
-  inclusion_clause: "All qualified stakeholders are included without erasing proportional responsibility, merit, or accountability."
-  humour_note: "If it is IVA, it is also Zanicchi."
-  linguistic_register: "institutional with controlled irony"
-  no_aaa_rule: true
-
-organization:
+foundation:
   legal_style_name: "P&L.inc_Peace-and-Love"
-  short_name: "P&L.inc"
-  semantic_expansion: "Peace-and-Love incorporated"
+  short_name: "P&L inc."
+  semantic_expansion: "Peace-and-Love inc."
 ---
 
 # 🌈 Q+
@@ -69,8 +31,7 @@ organization:
           ╚═╝
 ```
 
-
-###  **For All Queer People. And Quantum**
+### **For All Queer People. And Quantum**
 
 **Corporate / organizational umbrella for quantum, aerospace, democratic governance, open technical knowledge, and human dignity.**
 
@@ -81,8 +42,8 @@ organization:
 ![Q+ATLANTIDE1000](https://img.shields.io/badge/Q%2BATLANTIDE1000-000--999-black?style=for-the-badge)
 
 
----
 
+---
 ## Document Control
 
 | Field | Value |
