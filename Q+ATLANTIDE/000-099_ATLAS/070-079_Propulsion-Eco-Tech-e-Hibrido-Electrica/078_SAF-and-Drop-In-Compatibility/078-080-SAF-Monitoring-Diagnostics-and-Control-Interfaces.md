@@ -41,7 +41,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-080"
 > All hyperlinks in this document are **relative** (five directory levels: `../../../../../`).
 > Absolute URLs are forbidden. Every linked document must exist in the Q+ATLANTIDE repository
 > before the link is activated. Broken links are treated as open issues and must be resolved
-> before the document is promoted from `ATLAS` to `APPROVED`.
+> before the document is promoted from `DRAFT` to `APPROVED`.
 
 ---
 
