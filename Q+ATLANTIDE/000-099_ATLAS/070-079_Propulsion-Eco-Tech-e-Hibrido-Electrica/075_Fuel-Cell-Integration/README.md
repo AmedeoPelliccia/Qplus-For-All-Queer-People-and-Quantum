@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -41,7 +41,16 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 000 | Fuel Cell Integration General | [075-000](./075-000-Fuel-Cell-Integration-General.md) | active |
+| 010 | Fuel Cell Stack Architecture | [075-010](./075-010-Fuel-Cell-Stack-Architecture.md) | active |
+| 020 | Balance of Plant — Air, Hydrogen and Cooling | [075-020](./075-020-Balance-of-Plant-Air-Hydrogen-and-Cooling.md) | active |
+| 030 | Fuel Cell Power Conditioning | [075-030](./075-030-Fuel-Cell-Power-Conditioning.md) | active |
+| 040 | Water Management and Purge Interfaces | [075-040](./075-040-Water-Management-and-Purge-Interfaces.md) | active |
+| 050 | Fuel Cell Safety, Isolation and Venting | [075-050](./075-050-Fuel-Cell-Safety-Isolation-and-Venting.md) | active |
+| 060 | Fuel Cell Control and Operating Modes | [075-060](./075-060-Fuel-Cell-Control-and-Operating-Modes.md) | active |
+| 070 | Fuel Cell Service, Test and Maintenance | [075-070](./075-070-Fuel-Cell-Service-Test-and-Maintenance.md) | active |
+| 080 | Fuel Cell Monitoring, Diagnostics and Control Interfaces | [075-080](./075-080-Fuel-Cell-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 090 | S1000D CSDB Mapping and Traceability | [075-090](./075-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
