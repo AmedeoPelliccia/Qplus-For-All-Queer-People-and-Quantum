@@ -19,7 +19,7 @@ support_q_divisions: [Q-HORIZON, Q-HPC, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG, ORB-FIN]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -35,13 +35,22 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 - Reserves the subsubject namespace `00`–`99` of subsection `084` *Hybrid Architectures — Beyond Gen-2*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- The Overview and all detailed subsubjects (`00`–`90`) have been populated in the current baseline release.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Hybrid Architectures Beyond Gen-2 — General | [084-000-Hybrid-Architectures-Beyond-Gen-2-General.md](084-000-Hybrid-Architectures-Beyond-Gen-2-General.md) | active |
+| 10 | Beyond-Gen-2 Baseline and Scope | [084-010-Beyond-Gen-2-Baseline-and-Scope.md](084-010-Beyond-Gen-2-Baseline-and-Scope.md) | active |
+| 20 | Advanced Hybrid Propulsion Topology | [084-020-Advanced-Hybrid-Propulsion-Topology.md](084-020-Advanced-Hybrid-Propulsion-Topology.md) | active |
+| 30 | Multi-Source Energy Architecture | [084-030-Multi-Source-Energy-Architecture.md](084-030-Multi-Source-Energy-Architecture.md) | active |
+| 40 | Fuel-Cell Battery Turbine and Advanced Source Coupling | [084-040-Fuel-Cell-Battery-Turbine-and-Advanced-Source-Coupling.md](084-040-Fuel-Cell-Battery-Turbine-and-Advanced-Source-Coupling.md) | active |
+| 50 | Hybrid Propulsion Control and Mode Management | [084-050-Hybrid-Propulsion-Control-and-Mode-Management.md](084-050-Hybrid-Propulsion-Control-and-Mode-Management.md) | active |
+| 60 | Degraded Modes Redundancy and Reconfiguration | [084-060-Degraded-Modes-Redundancy-and-Reconfiguration.md](084-060-Degraded-Modes-Redundancy-and-Reconfiguration.md) | active |
+| 70 | Airframe Integration Thermal and Safety Constraints | [084-070-Airframe-Integration-Thermal-and-Safety-Constraints.md](084-070-Airframe-Integration-Thermal-and-Safety-Constraints.md) | active |
+| 80 | Beyond-Gen-2 Monitoring Diagnostics and Control Interfaces | [084-080-Beyond-Gen-2-Monitoring-Diagnostics-and-Control-Interfaces.md](084-080-Beyond-Gen-2-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [084-090-S1000D-CSDB-Mapping-and-Traceability.md](084-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
