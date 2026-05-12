@@ -19,7 +19,7 @@ support_q_divisions: [Q-HORIZON, Q-HPC, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG, ORB-FIN]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,24 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `080` *Quantum Sensing for Propulsion*.
+- Populates the subsubject namespace `00`–`99` of subsection `080` *Quantum Sensing for Propulsion*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the AMPEL360E eWTW Quantum Sensing for Propulsion system (QSPU dual-channel DAL B, 46 quantum sensor nodes, atom interferometers, NV-center sensors, SQUIDs, Josephson junction thermometers, optomechanical pressure sensors, quantum sensor fusion QE-EKF, QML health index, AFDX ARINC 664 P7, S1000D 32 DMs, BREX-080-v1).
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Quantum Sensing for Propulsion — General | [080-000-Quantum-Sensing-for-Propulsion-General.md](./080-000-Quantum-Sensing-for-Propulsion-General.md) | active |
+| 10 | Quantum Sensor Architecture for Propulsion | [080-010-Quantum-Sensor-Architecture-for-Propulsion.md](./080-010-Quantum-Sensor-Architecture-for-Propulsion.md) | active |
+| 20 | Quantum Inertial and Vibration Sensing | [080-020-Quantum-Inertial-and-Vibration-Sensing.md](./080-020-Quantum-Inertial-and-Vibration-Sensing.md) | active |
+| 30 | Quantum Magnetic and Electromagnetic Sensing | [080-030-Quantum-Magnetic-and-Electromagnetic-Sensing.md](./080-030-Quantum-Magnetic-and-Electromagnetic-Sensing.md) | active |
+| 40 | Quantum Thermal and Cryogenic Sensing | [080-040-Quantum-Thermal-and-Cryogenic-Sensing.md](./080-040-Quantum-Thermal-and-Cryogenic-Sensing.md) | active |
+| 50 | Quantum Pressure, Flow and Combustion Sensing | [080-050-Quantum-Pressure-Flow-and-Combustion-Sensing.md](./080-050-Quantum-Pressure-Flow-and-Combustion-Sensing.md) | active |
+| 60 | Quantum Sensor Fusion and Propulsion State Estimation | [080-060-Quantum-Sensor-Fusion-and-Propulsion-State-Estimation.md](./080-060-Quantum-Sensor-Fusion-and-Propulsion-State-Estimation.md) | active |
+| 70 | Quantum Sensing Integration with Propulsion Control | [080-070-Quantum-Sensing-Integration-with-Propulsion-Control.md](./080-070-Quantum-Sensing-Integration-with-Propulsion-Control.md) | active |
+| 80 | Quantum Sensing Monitoring, Diagnostics and Control Interfaces | [080-080-Quantum-Sensing-Monitoring-Diagnostics-and-Control-Interfaces.md](./080-080-Quantum-Sensing-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D / CSDB Mapping and Traceability | [080-090-S1000D-CSDB-Mapping-and-Traceability.md](./080-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `080-089` |
 | Section | `08` — Propulsión Alternativa & Cuántica |
 | Subsection | `080` — Quantum Sensing for Propulsion |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-HPC, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG, ORB-FIN |
