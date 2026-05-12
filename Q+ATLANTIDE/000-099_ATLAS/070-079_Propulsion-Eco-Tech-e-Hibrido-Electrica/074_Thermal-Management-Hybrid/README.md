@@ -19,7 +19,7 @@ support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 orb_function_support: [ORB-PMO, ORB-FIN, ORB-CSR]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -33,15 +33,22 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `074` *Thermal Management — Hybrid*.
-- Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- Populates the subsubject namespace `00`–`99` of subsection `074` *Thermal Management — Hybrid* with ten subsubject documents covering general overview, propulsion thermal architecture, liquid cooling loops and pumps, heat exchangers and cold plates, motor/inverter/battery cooling interfaces, thermal control valves and regulation, overtemperature and fire-zone thermal isolation, thermal system service and maintenance, monitoring/diagnostics/control interfaces, and S1000D / CSDB mapping.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Thermal Management Hybrid General | [074-000-Thermal-Management-Hybrid-General.md](./074-000-Thermal-Management-Hybrid-General.md) | active |
+| 10 | Propulsion Thermal Architecture | [074-010-Propulsion-Thermal-Architecture.md](./074-010-Propulsion-Thermal-Architecture.md) | active |
+| 20 | Liquid Cooling Loops and Pumps | [074-020-Liquid-Cooling-Loops-and-Pumps.md](./074-020-Liquid-Cooling-Loops-and-Pumps.md) | active |
+| 30 | Heat Exchangers Cold Plates and Radiators | [074-030-Heat-Exchangers-Cold-Plates-and-Radiators.md](./074-030-Heat-Exchangers-Cold-Plates-and-Radiators.md) | active |
+| 40 | Motor Inverter and Battery Cooling Interfaces | [074-040-Motor-Inverter-and-Battery-Cooling-Interfaces.md](./074-040-Motor-Inverter-and-Battery-Cooling-Interfaces.md) | active |
+| 50 | Thermal Control Valves and Regulation | [074-050-Thermal-Control-Valves-and-Regulation.md](./074-050-Thermal-Control-Valves-and-Regulation.md) | active |
+| 60 | Overtemperature and Fire Zone Thermal Isolation | [074-060-Overtemperature-and-Fire-Zone-Thermal-Isolation.md](./074-060-Overtemperature-and-Fire-Zone-Thermal-Isolation.md) | active |
+| 70 | Thermal System Service and Maintenance | [074-070-Thermal-System-Service-and-Maintenance.md](./074-070-Thermal-System-Service-and-Maintenance.md) | active |
+| 80 | Thermal Management Monitoring Diagnostics and Control Interfaces | [074-080-Thermal-Management-Monitoring-Diagnostics-and-Control-Interfaces.md](./074-080-Thermal-Management-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D / CSDB Mapping and Traceability | [074-090-S1000D-CSDB-Mapping-and-Traceability.md](./074-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +59,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `070-079` |
 | Section | `07` — Propulsión Eco-Tech e Híbrido-Eléctrica |
 | Subsection | `074` — Thermal Management — Hybrid |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN, ORB-CSR |
