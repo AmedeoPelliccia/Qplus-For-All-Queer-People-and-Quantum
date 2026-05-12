@@ -2,7 +2,7 @@
 repository:
   owner: "AmedeoPelliccia"
   name: "Qplus-For-All-Queer-People-and-Quantum"
-  title: "Q+ — For All Queer People and Quantum"
+  title: "Q+ : For All Queer People. And Quantum"
   short_name: "Q+"
   role: "corporate / organizational umbrella"
   distinction:
@@ -70,7 +70,7 @@ organization:
 ```
 
 
-# Q+ — **For All Queer People and Quantum**
+###  **For All Queer People. And Quantum**
 
 **Corporate / organizational umbrella for quantum, aerospace, democratic governance, open technical knowledge, and human dignity.**
 
