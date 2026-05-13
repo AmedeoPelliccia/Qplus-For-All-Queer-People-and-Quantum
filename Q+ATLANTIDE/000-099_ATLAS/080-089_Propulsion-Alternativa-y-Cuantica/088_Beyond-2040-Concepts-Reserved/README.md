@@ -18,8 +18,8 @@ primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-HORIZON, Q-HPC, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG, ORB-FIN]
 governance_class: baseline
-version: 1.0.0
-status: reserved
+version: 1.1.0
+status: active
 language: en
 ---
 
@@ -33,15 +33,24 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `088` *Beyond-2040 Concepts (Reserved)*.
+- Documents the **B2CR (Beyond-2040 Concepts Reserved)** propulsion research namespace for the AMPEL360E eWTW programme, covering the Beyond-2040 Concept Management Unit (B2CMU) governance framework, a 23-concept post-conventional propulsion catalogue (B2C-F100–F600 families), extended TRL assessment methodology, physics claim validation protocol (B2CMU-REV-001), energy source and conversion analysis, airframe integration constraints, safety/ethics governance, and BMN monitoring architecture.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- All ten subsubject documents (`00`–`90`) are now populated and active.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Beyond-2040 Concepts Reserved — General | [088-000-Beyond-2040-Concepts-Reserved-General.md](088-000-Beyond-2040-Concepts-Reserved-General.md) | active |
+| 10 | Beyond-2040 Scope and Controlled Reservation | [088-010-Beyond-2040-Scope-and-Controlled-Reservation.md](088-010-Beyond-2040-Scope-and-Controlled-Reservation.md) | active |
+| 20 | Post-Conventional Propulsion Concept Catalogue | [088-020-Post-Conventional-Propulsion-Concept-Catalogue.md](088-020-Post-Conventional-Propulsion-Concept-Catalogue.md) | active |
+| 30 | TRL Readiness and Maturity Assessment | [088-030-TRL-Readiness-and-Maturity-Assessment.md](088-030-TRL-Readiness-and-Maturity-Assessment.md) | active |
+| 40 | Physics Boundary and Claim Validation | [088-040-Physics-Boundary-and-Claim-Validation.md](088-040-Physics-Boundary-and-Claim-Validation.md) | active |
+| 50 | Energy Source and Conversion Concepts | [088-050-Energy-Source-and-Conversion-Concepts.md](088-050-Energy-Source-and-Conversion-Concepts.md) | active |
+| 60 | Airframe Integration and Mission Compatibility | [088-060-Airframe-Integration-and-Mission-Compatibility.md](088-060-Airframe-Integration-and-Mission-Compatibility.md) | active |
+| 70 | Safety, Certification and Ethical Use Constraints | [088-070-Safety-Certification-and-Ethical-Use-Constraints.md](088-070-Safety-Certification-and-Ethical-Use-Constraints.md) | active |
+| 80 | Beyond-2040 Monitoring, Diagnostics and Control Interfaces | [088-080-Beyond-2040-Monitoring-Diagnostics-and-Control-Interfaces.md](088-080-Beyond-2040-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [088-090-S1000D-CSDB-Mapping-and-Traceability.md](088-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `080-089` |
 | Section | `08` — Propulsión Alternativa & Cuántica |
 | Subsection | `088` — Beyond-2040 Concepts (Reserved) |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active — 10 documents) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-HPC, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG, ORB-FIN |
@@ -62,10 +71,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
+| DMRL | BREX-088-v1; 30 Data Modules |
+| S1000D SNS pattern | `088-{NNN}-00` |
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GREENTECH` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GREENTECH` and `governance_class = baseline` from the parent ATLAS section.
 
 ## 5. References & Citations
 
