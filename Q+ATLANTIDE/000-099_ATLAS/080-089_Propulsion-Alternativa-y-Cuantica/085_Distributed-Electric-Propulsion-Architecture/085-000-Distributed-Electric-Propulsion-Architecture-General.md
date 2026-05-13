@@ -103,7 +103,7 @@ The **DEPCU**, qualified to DAL B (DO-178C software / DO-254 hardware), operates
 flowchart LR
     BGHA[BGHA Bus\nHVDC 800 V\nATLAS-084] -->|HVDC 800 V| DEPBU[DEP Power Bus\nHVDC 800 V\nBTB-P1…P4]
     DEPBU -->|HVDC 800 V| MDU1[MDU-1\nP1 Over-Wing Port\n500 kW]
-    DEPBU -->|HVDC 800 V| MDU2[MDU-2\nP1 Over-Wing Stbd\n500 kW]
+    DEPBU -->|HVDC 800 V| MDU2[MDU-2\nP2 Over-Wing Stbd\n500 kW]
     DEPBU -->|HVDC 800 V| MDU3[MDU-3\nAft-Fuse Port\n500 kW]
     DEPBU -->|HVDC 800 V| MDU4[MDU-4\nAft-Fuse Stbd\n500 kW]
     MDU1 -->|3-phase AC| PMSM1[PMSM-1\nP1 Fan]

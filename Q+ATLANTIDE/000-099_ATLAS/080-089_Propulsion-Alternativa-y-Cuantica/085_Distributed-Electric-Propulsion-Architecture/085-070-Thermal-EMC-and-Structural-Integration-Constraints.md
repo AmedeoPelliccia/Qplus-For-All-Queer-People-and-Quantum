@@ -92,7 +92,7 @@ flowchart LR
 | MDU cold plate heat rejection | 10 kW max per MDU (at 98 % efficiency, 500 kW) | Total 40 kW |
 | PMSM housing heat rejection | 8 kW max per PMSM (at 96 % efficiency, 500 kW) | Total 32 kW |
 | Total DEP-TML heat rejection | 72 kW | At full TOGA power |
-| DEP-RAHX ram air inlet area | 0.18 m² | Flush flush NACA scoop; aft fuselage |
+| DEP-RAHX ram air inlet area | 0.18 m² | Flush NACA scoop; aft fuselage |
 | DEP-RAHX effectiveness | ≥ 0.75 | At cruise, 30 g/s ram air |
 
 ---
