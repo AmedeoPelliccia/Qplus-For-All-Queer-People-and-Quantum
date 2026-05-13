@@ -145,7 +145,7 @@ All research and development activities under the B2CR namespace are governed by
 
 | B2C-ID | Concept | DU Risk | Classification |
 |---|---|---|---|
-| B2C-F301 | Ground Laser Ablation | DU-3 | ITAR Class II (high-power laser) |
+| B2C-F301 | Ground-Based Laser Ablation Assist | DU-3 | ITAR Class II (high-power laser) |
 | B2C-F302 | Microwave Power Beaming | DU-2 | EAR 99 (receiver side); transmitter may be DU-3 |
 | B2C-F304 | Laser-Thermal Atmospheric | DU-3 | ITAR Class II |
 | B2C-F202 | FRC Fusion | DU-2 | ITAR Class I (nuclear; NRC review) |

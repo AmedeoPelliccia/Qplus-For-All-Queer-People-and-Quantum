@@ -95,7 +95,7 @@ Each B2CR concept is assessed annually by the Q-HPC TRL Assessment Panel, compos
 - Q-STRUCTURES integration reviewer (1 member)
 - Q-GREENTECH programme representative (observer, non-voting)
 
-The panel uses the **B2CMU-TRL-088 Evidence Checklist** as the primary assessment instrument. Each level transition requires a majority vote (3 of 4 voting members).
+The panel uses the **B2CMU-TRL-088 Evidence Checklist** as the primary assessment instrument. Each level transition requires a majority vote (2 of 3 voting members).
 
 ### 4.2 Evidence Hierarchy
 
@@ -136,7 +136,7 @@ flowchart TD
 | B2C-F101 | Asymmetric EM Cavity | TRL 0+ | MRL 1 | 0 | Q1 2027 |
 | B2C-F102 | Mach Effect Thruster | TRL 3 | MRL 2 | +1 | Q1 2027 |
 | B2C-F103 | Quantum Vacuum Plasma | TRL 0 | MRL 1 | 0 | Q1 2027 |
-| B2C-F104 | Casimir Micro-Thruster | TRL 2 | MRL 2 | 0 | Q1 2027 |
+| B2C-F104 | Casimir Effect Micro-Thruster | TRL 1 | MRL 1 | 0 | Q1 2027 |
 | B2C-F201 | Micro D-T Fusion | TRL 3 | MRL 2 | +1 | Q1 2027 |
 | B2C-F202 | FRC Reactor | TRL 4 | MRL 3 | +1 | Special gate 2026 |
 | B2C-F203 | Muon-Catalysed Fusion | TRL 2 | MRL 1 | 0 | Q1 2027 |

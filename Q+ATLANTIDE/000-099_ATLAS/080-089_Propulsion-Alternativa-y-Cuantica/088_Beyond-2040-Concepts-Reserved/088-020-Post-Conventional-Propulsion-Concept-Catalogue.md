@@ -72,7 +72,7 @@ The catalogue organises admitted concepts into the six technology families defin
 | B2C-F101 | Asymmetric EM Cavity (RF) | RF standing wave in asymmetric resonant cavity produces net thrust via radiation pressure imbalance | 2 | B2C-WATCH | Contested | Shawyer (2006); NASA White (2016, retracted); Tajmar et al. (2021, null result) |
 | B2C-F102 | Mach Effect Thruster (MET) | Oscillating mass energy creates spacetime Mach transients; piezo-stack implementation | 3 | B2C-ACTIVE | Contested | Woodward (2012 book); Fearn & Woodward (2014); AIAA-2018-4867 |
 | B2C-F103 | Quantum Vacuum Plasma Thruster | Claimed vacuum-fluctuation asymmetric reflection thrust; deep-vacuum experiment | 1 | B2C-WATCH | Contested | Putnam (2014); numerous null results in literature |
-| B2C-F104 | Casimir Effect Micro-Thruster | Casimir pressure gradient across nano-structured plate array; nano-scale geometry | 2 | B2C-WATCH | Partially valid (Casimir confirmed; thrust extraction contested) | Rodriguez et al. (2011); Chen & Mohideen (2020) |
+| B2C-F104 | Casimir Effect Micro-Thruster | Casimir pressure gradient across nano-structured plate array; nano-scale geometry | 1 | B2C-WATCH | Partially valid (Casimir force confirmed; thrust extraction mechanism contested) | Rodriguez et al. (2011); Chen & Mohideen (2020) |
 
 **B2CMU Notes (F100 Family):** All F100 concepts require replication by a minimum of two independent laboratories with null-result uncertainty characterisation before status promotion. Current null-result weight is high. F102 (MET) shows the most consistent non-null experimental signal; Q-HORIZON to commission independent replication in 2027.
 
