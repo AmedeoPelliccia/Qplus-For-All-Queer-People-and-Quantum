@@ -8,20 +8,24 @@ repository:
 
 brand:
   public_mark: "Q+"
+  spoken_name: "Q Plus"
+  code_alias: "QP"
   controlled_title: "Q+ : For All Queer People. And Quantum"
   semantic_statement: "For All Queer People. And Quantum."
   primary_meaning:
-    "Q+": "organization / corporation / public title"
+    "Q+": "organization / corporation / public title / public mark"
     "Queer People": "human dignity, inclusion, civic protection, non-erasure"
     "Quantum": "quantum technologies, quantum governance, quantum-aerospace future"
 
   architecture:
     short_public_mark: "Q+"
+    ascii_safe_alias: "QP"
     aerospace_abbreviation: "Q+A"
     future_full_brand: "Q+AEROSPACE"
     semantic_expansion: "Quantum + Aerospace"
     hierarchy:
       - "Q+ = public mark / organizational umbrella"
+      - "QP = ASCII-safe code alias for Q+"
       - "Q+A = Quantum + Aerospace abbreviation"
       - "Q+AEROSPACE = future full aerospace brand"
       - "Quantum + Aerospace = semantic expansion"
@@ -40,6 +44,7 @@ foundation:
 
 distinction:
   "Q+": "organization / corporation / public title / public mark"
+  "QP": "ASCII-safe alphanumeric alias of Q+ for paths, IDs, repositories, and code systems"
   "Q+A": "Quantum + Aerospace abbreviation; technical-commercial shorthand"
   "Q+AEROSPACE": "future full aerospace brand for Quantum + Aerospace"
   "Q+ATLANTIDE": "architecture-taxonomy ecosystem. Acronym stands for Quantum + Aerospace Top Level Architectures and Novel Technologies Identification and Data Ecosystem."
@@ -50,15 +55,14 @@ q_atlantide:
   short_name: "Q+ATLANTIDE"
   schema_name: "Q+ATLANTIDE1000"
   schema_range: "000–999"
-  role: "controlled architecture-taxonomy ecosystem"
+  role: "controlled architecture-taxonomy ecosystem / Libro Unico delle Tecnologie"
   hierarchy:
-    - "Q+ATLANTIDE1000 = Architecture Bands"
-    - "Band = Master range"
-    - "Master range contains Code ranges"
-    - "Code range contains Sections"
-    - "Section contains Subjects"
-    - "Subject contains Subsections"
-    - "Subsection contains Subsubjects"
+    - "Q+ATLANTIDE1000 = full controlled 000–999 architecture taxonomy"
+    - "Architecture Band / Master Range = one 100-code architecture band, e.g. 000-099_ATLAS"
+    - "Code Range = one 10-code block inside a master range, e.g. 010-019_Manejo-en-Tierra-Servicio"
+    - "Node / Subject Folder = controlled architecture node inside a code range, e.g. 010_Ground-handling"
+    - "Markdown File Set = controlled node-level files, e.g. 010-000-Ground-Handling-Overview.md"
+    - "Programme DMC Mapping = programme-specific S1000D/CSDB implementation of applicable taxonomy nodes"
 
 governance:
   principle: "inclusive_democracy"
@@ -90,10 +94,10 @@ document:
   owner: "Office of the CEO / Amedeo Pelliccia"
   classification: "Open technical / strategic brand baseline"
 ---
----
 
-<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/8f4ce4bb-bd5e-45bc-943c-d430536261fb" />
+<img width="1254" height="1254" alt="Q+ logo" src="https://github.com/user-attachments/assets/8f4ce4bb-bd5e-45bc-943c-d430536261fb" />
 
+# Q+ : For All Queer People. And Quantum
 
 ## **For All Queer People. And Quantum**
 
@@ -105,24 +109,19 @@ document:
 ![Human Dignity](https://img.shields.io/badge/Human_Dignity-FFB000?style=for-the-badge)
 ![Q+ATLANTIDE1000](https://img.shields.io/badge/Q%2BATLANTIDE1000-000--999-black?style=for-the-badge)
 
-
-
 ---
+
 ## Document Control
 
 | Field | Value |
 |---|---|
-| **Document ID** | `GAIA-QAO-ORG-MASTER-README` |
-| **Version** | `2.4.0` |
+| **Document ID** | `QPLUS-ROOT-README` |
+| **Version** | `1.0.0` |
 | **Status** | `Draft → Stakeholder Review` |
-| **Primary Language** | English |
-| **Spanish Parallel** | `README_ES.md` |
+| **Primary Language** | Multilingual |
 | **Owner** | `Office of the CEO / Amedeo Pelliccia` |
-| **Created** | `2025-07-23` |
-| **Last Updated** | `2026-04-26` |
-| **Next Review** | `2026-10-26` |
-| **Classification** | `Consortium Confidential – Approved Stakeholders Only` |
-| **Baseline Dependencies** | `Q+ATLANTIDE1000 v1.0.0`, `Q+ATLANTIDE v1.0.0`, `GAI-A-AMAR-AGGIX`, `UTCS v1.1`, `DEGF v1.0` |
+| **Classification** | `Open technical / strategic brand baseline` |
+| **Baseline Dependencies** | `Q+ATLANTIDE1000`, `Q+ATLANTIDE`, `IDEALE-ESG`, `LC01–LC14`, `S1000D / CSDB`, `DEGF v1.0` |
 
 ---
 
@@ -146,13 +145,11 @@ flowchart TD
     A --> C["CA: Chained Algorithms"]
     A --> D["status: controlled_acronym"]
     A --> E["doctrine: No more wars. Regeneration now."]
-```
+````
 
 ### 2. Authorization Semantics
 
-SICO does not assert that current industry is sustainable. It means competitive
-industrial operations are admissible only if they are sustainable: sustainability
-is not a descriptive label, but an authorization condition.
+SICO does not assert that current industry is sustainable. It means competitive industrial operations are admissible only if they are sustainable. Sustainability is not a descriptive label; it is an authorization condition.
 
 ```mermaid
 flowchart LR
@@ -165,13 +162,13 @@ flowchart LR
 
 ### 3. Semantic Expansion
 
-| Element | Meaning |
-|---|---|
-| **S** | Sustainable: no externalización del daño hacia el más débil |
-| **I** | Industrial: producción de energía, materiales y sus logísticas |
-| **C** | Competitive: mejora sistémica sin guerras, muertes, heridos y destrucción |
-| **O** | Operations: ejecución en tiempo casi real, no discurso |
-| **CA** | Chained Algorithms: algoritmos encadenados, auditables, gobernados y entonces extraíbles; minerías digitales las complicadas |
+| Element | Meaning                                                                      |
+| ------- | ---------------------------------------------------------------------------- |
+| **S**   | Sustainable: no externalization of harm toward the weakest actor             |
+| **I**   | Industrial: production of energy, materials, systems, and logistics          |
+| **C**   | Competitive: systemic improvement without war, death, injury, or destruction |
+| **O**   | Operations: near-real-time execution, not only discourse                     |
+| **CA**  | Chained Algorithms: auditable, governed, accountable algorithmic chains      |
 
 ### 4. Chained Algorithm Governance
 
@@ -188,10 +185,7 @@ flowchart LR
 
 ### 5. Canonical Python Import
 
-The canonical SICO.CA model lives under `scripts/sicoca/`. From the repository
-root, make `scripts/` importable (for example, `PYTHONPATH=scripts`) before
-using the public import; pytest already applies this path through
-`pyproject.toml`.
+The canonical SICO.CA model lives under `scripts/sicoca/`. From the repository root, make `scripts/` importable, for example with `PYTHONPATH=scripts`, before using the public import. Pytest may apply this path through `pyproject.toml`.
 
 ```python
 from sicoca import SICOCA
@@ -204,32 +198,28 @@ assert SICOCA.expansion_for("ca").label == "Chained Algorithms"
 
 **Formula:** SICO.CA = Sustainable Industrial Competitive Operations through Chained Algorithms
 
-**Short line:** SICO.CA: industry only if sustainable; competition not only if it
-is generative and regenerative, but: algorithms only if accountable.
+**Short line:** SICO.CA: industry only if sustainable; competition only if generative and regenerative; algorithms only if accountable.
 
 ---
 
 ## Approvals
 
-| Role | Name | Signature | Date |
-|---|---|---|---|
-| CEO | ___________________ |  |  |
-| Board Chair | ___________________ |  |  |
-| General Counsel | ___________________ |  |  |
-| CTO / Technical Authority | ___________________ |  |  |
-| Q-Division Council Representative | ___________________ |  |  |
-| ORB-Function Council Representative | ___________________ |  |  |
+| Role                                | Name                | Signature | Date |
+| ----------------------------------- | ------------------- | --------- | ---- |
+| CEO                                 | ___________________ |           |      |
+| Board Chair                         | ___________________ |           |      |
+| General Counsel                     | ___________________ |           |      |
+| CTO / Technical Authority           | ___________________ |           |      |
+| Q-Division Council Representative   | ___________________ |           |      |
+| ORB-Function Council Representative | ___________________ |           |      |
 
 ---
 
 ## Change Log
 
-| Version | Date | Changes | Author |
-|---|---:|---|---|
-| 2.4.0 | 2026-04-26 | Root README normalized to Q+ATLANTIDE1000 hierarchy: Architecture Bands → Master ranges → Code ranges → Sections → Subjects → Subsections → Subsubjects. Deprecated “sub-range” as controlled hierarchy term. Replaced Q-SCIRES with Q-HORIZON. Reinforced No-AAA Rule. | Q+ Team/Amedeo Pelliccia + AI |
-| 2.3.0 | 2025-07-24 | Full organizational rewrite: flattened hierarchy, multi-level TOC, TRL demarcation, Annex F/G extraction, financial unit normalization, KPI/Risk/Compliance/Financial alignment, DEGF v1.0 integration. | Q+ Team/Amedeo Pelliccia + AI |
-| 2.2.0 | 2025-04-26 | Aligned README with coded `organization/` and `Q+ATLANTIDE/` repository structure. | Q+ Team/Amedeo Pelliccia + AI |
-| 2.0.0 | 2025-07-23 | Initial master baseline. | Q+ Team/Amedeo Pelliccia + AI |
+| Version |       Date | Changes                                                                                                                                                                                                                                                                                                            | Author                          |
+| ------- | ---------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
+| 1.0.0   | 2026-05-13 | Root README rewritten as Q+ strategic brand and Q+ATLANTIDE governance baseline. Corrected Q+ATLANTIDE hierarchy to match the actual repository structure: Architecture Band / Master Range → Code Range → Node / Subject Folder → Markdown File Set → Programme DMC Mapping. Reinforced No-AAA Rule and QP alias. | Q+ Team / Amedeo Pelliccia + AI |
 
 ---
 
@@ -237,28 +227,28 @@ is generative and regenerative, but: algorithms only if accountable.
 
 ## Core Framework
 
-1. [Purpose & Strategic Vision](#1-purpose--strategic-vision)  
-2. [Canonical Architecture Governance](#2-canonical-architecture-governance)  
-3. [Q+ATLANTIDE1000 Architecture Bands](#3-qatlantide1000-architecture-bands)  
-4. [Repository Structure Alignment](#4-repository-structure-alignment)  
-5. [Democratic Enterprise Governance Framework](#5-democratic-enterprise-governance-framework)  
-6. [Technical Divisions — Q-Divisions](#6-technical-divisions--q-divisions)  
-7. [Enterprise Functions — ORB-Functions](#7-enterprise-functions--orb-functions)  
-8. [Phased Development Strategy](#8-phased-development-strategy)  
-9. [Integrated Operating Model](#9-integrated-operating-model)  
-10. [Talent & Competency Management](#10-talent--competency-management)  
-11. [Quality & Safety Management System](#11-quality--safety-management-system)  
-12. [Regulatory Compliance Framework](#12-regulatory-compliance-framework)  
-13. [Key Performance Indicators](#13-key-performance-indicators)  
-14. [Master Roadmap & Phase Gates](#14-master-roadmap--phase-gates)  
-15. [Financial Management & Budgeting](#15-financial-management--budgeting)  
-16. [Strategic Risk Management](#16-strategic-risk-management)  
-17. [Strategic Communications Plan](#17-strategic-communications-plan)  
-18. [Implementation Roadmap](#18-implementation-roadmap)  
-19. [Annexes](#19-annexes)  
-20. [Quick Navigation & Coded Paths](#20-quick-navigation--coded-paths)  
-21. [Footprint](#21-footprint)  
-22. [References](#22-references)  
+1. [Purpose & Strategic Vision](#1-purpose--strategic-vision)
+2. [Canonical Architecture Governance](#2-canonical-architecture-governance)
+3. [Q+ATLANTIDE1000 Architecture Bands](#3-qatlantide1000-architecture-bands)
+4. [Repository Structure Alignment](#4-repository-structure-alignment)
+5. [Democratic Enterprise Governance Framework](#5-democratic-enterprise-governance-framework)
+6. [Technical Divisions — Q-Divisions](#6-technical-divisions--q-divisions)
+7. [Enterprise Functions — ORB-Functions](#7-enterprise-functions--orb-functions)
+8. [Phased Development Strategy](#8-phased-development-strategy)
+9. [Integrated Operating Model](#9-integrated-operating-model)
+10. [Talent & Competency Management](#10-talent--competency-management)
+11. [Quality & Safety Management System](#11-quality--safety-management-system)
+12. [Regulatory Compliance Framework](#12-regulatory-compliance-framework)
+13. [Key Performance Indicators](#13-key-performance-indicators)
+14. [Master Roadmap & Phase Gates](#14-master-roadmap--phase-gates)
+15. [Financial Management & Budgeting](#15-financial-management--budgeting)
+16. [Strategic Risk Management](#16-strategic-risk-management)
+17. [Strategic Communications Plan](#17-strategic-communications-plan)
+18. [Implementation Roadmap](#18-implementation-roadmap)
+19. [Annexes](#19-annexes)
+20. [Quick Navigation & Coded Paths](#20-quick-navigation--coded-paths)
+21. [Footprint](#21-footprint)
+22. [References](#22-references)
 
 ---
 
@@ -266,45 +256,52 @@ is generative and regenerative, but: algorithms only if accountable.
 
 ## 1.1 Mission
 
-**P&L.inc_Peace-and-Love / GAIA-QAO ADVENT** is an idealized strategic structure for the integration of sustainable aviation, advanced aerospace architectures, quantum-enabled engineering, democratic enterprise governance, and European industrial sovereignty.
+**Q+** is an idealized strategic structure for sustainable aviation, advanced aerospace architectures, quantum-enabled engineering, democratic enterprise governance, and European industrial sovereignty.
 
-Its mission is to develop, govern, certify and industrialize a new generation of aerospace systems through:
+Its mission is to create a controlled industrial architecture for developing, governing, certifying, and industrializing next-generation aerospace systems.
 
-- sustainable aircraft architectures;
-- space and orbital infrastructure;
-- digital twins and lifecycle evidence systems;
-- quantum and AI-assisted optimization;
-- S1000D / CSDB technical-publication readiness;
-- safety-first aerospace governance;
-- European industrial participation;
-- transparent stakeholder-oriented governance.
+Q+ connects:
+
+* sustainable aircraft architectures;
+* space and orbital infrastructure;
+* digital twins and lifecycle evidence systems;
+* quantum- and AI-assisted optimization;
+* S1000D / CSDB technical-publication readiness;
+* safety-first aerospace governance;
+* European industrial participation;
+* transparent stakeholder governance.
+
+Q+ is not only a brand or repository structure. It is a governance model for making aerospace technology traceable, certifiable, reusable, and accountable across its full lifecycle.
 
 ## 1.2 Vision
 
-To establish a European-led aerospace and quantum-industrial framework capable of delivering **safe, sustainable, certifiable and socially accountable aerospace products** across the full lifecycle: concept, requirements, architecture, certification, production, operation, support, maintenance, retirement and circularity.
+To establish a European-led aerospace and quantum-industrial framework for delivering **safe, sustainable, certifiable, and socially accountable aerospace products** across the full lifecycle: concept, requirements, architecture, certification, production, operation, support, maintenance, retirement, and circularity.
+
+Q+ exists to make advanced aerospace technology **traceable, governable, reusable, certifiable, and accountable**.
 
 ## 1.3 Core Values
 
-| Value | Operational Meaning |
-|---|---|
-| **Safety First** | Airworthiness, human safety and regulatory compliance are non-negotiable. |
-| **Realistic Ambition** | Advanced objectives are decomposed into gated, auditable, achievable work packages. |
-| **Technical Sovereignty** | Critical data, models, configurations, evidence and industrial capacity remain under controlled governance. |
-| **Sustainability by Design** | Environmental performance is designed into architecture, supply chain, production and operations. |
-| **Traceability** | Every decision must map to requirements, evidence, authority and lifecycle gate. |
-| **Democratic Enterprise Governance** | Stakeholders participate through structured rights, responsibilities and controlled decision mechanisms. |
-| **No-AAA Rule** | “AAA” is not a valid domain, division, architecture, interface or enterprise function. |
+| Value                                | Operational Meaning                                                                                                                   |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Safety First**                     | Airworthiness, human safety, system safety, and regulatory compliance are non-negotiable.                                             |
+| **Realistic Ambition**               | Advanced objectives are decomposed into gated, auditable, achievable work packages.                                                   |
+| **Technical Sovereignty**            | Critical data, models, configurations, evidence, supply chains, and industrial capacity remain under controlled governance.           |
+| **Sustainability by Design**         | Environmental performance is designed into architecture, supply chain, production, operations, maintenance, and end-of-life recovery. |
+| **Traceability**                     | Every decision maps to requirements, evidence, authority, configuration, lifecycle gate, and accountable ownership.                   |
+| **Democratic Enterprise Governance** | Stakeholders participate through structured rights, responsibilities, and controlled decision mechanisms.                             |
+| **Certification Readiness**          | Outputs are structured for verification, validation, audit, authority review, and certification support from the beginning.           |
+| **No-AAA Rule**                      | `AAA` is not a valid domain, division, architecture, interface, enterprise function, or taxonomy element.                             |
 
 ## 1.4 Strategic Objectives
 
-| Horizon | Objective | Target |
-|---|---|---|
-| 2025–2030 | Establish baseline governance, Q-Divisions, ORB-Functions and architecture-band register | Q+ATLANTIDE1000 operational baseline |
-| 2025–2038 | Develop Gen 1 sustainable commercial aircraft programme | AMPEL360e EIS target |
-| 2026–2040 | Mature hydrogen / BWB technology demonstrators | AMPEL-BWB-H2 TRL maturation |
-| 2030–2045 | Establish digital-thread, S1000D/CSDB and PLM governance across programmes | Full lifecycle traceability |
-| 2035+ | Deploy non-critical quantum-enabled optimization and sensing capabilities | Certifiable integration path |
-| 2040+ | Consolidate European aerospace industrial leadership | Supplier ecosystem, jobs, IP portfolio |
+| Horizon   | Objective                                                                                                                          | Target                                                                |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| 2025–2030 | Establish baseline governance, Q-Divisions, ORB-Functions, lifecycle gates, and the architecture-band register                     | Q+ATLANTIDE1000 operational baseline                                  |
+| 2025–2038 | Develop the Gen 1 sustainable commercial aircraft programme                                                                        | AMPEL360e EIS target                                                  |
+| 2026–2040 | Mature hydrogen, BWB, hybrid-electric, and safety-critical demonstrator technologies                                               | AMPEL360 BWB-H₂ demonstrator TRL maturation                           |
+| 2030–2045 | Establish digital-thread, S1000D/CSDB, PLM, evidence-chain, and Digital Product Passport governance across programmes              | Full lifecycle traceability                                           |
+| 2035+     | Deploy non-critical quantum-enabled optimization, sensing, simulation, and assurance support capabilities                          | Certifiable integration path                                          |
+| 2040+     | Consolidate European aerospace industrial leadership through controlled supply chains, industrial participation, and IP governance | Supplier ecosystem, skilled jobs, reusable evidence, and IP portfolio |
 
 ---
 
@@ -313,43 +310,43 @@ To establish a European-led aerospace and quantum-industrial framework capable o
 ## 2.1 Canonical Hierarchy
 
 ```text
-Q+ATLANTIDE1000 = Architecture Bands
+Q+ATLANTIDE1000
+└── Architecture Band / Master Range
+    └── Code Range
+        └── Node / Subject Folder
+            └── Markdown File Set
+                └── Numbered Item / Topic
 
-Band = Master range
-
-Master range contains Code ranges
-
-Code range contains Sections
-
-Section contains Subjects
-
-Subject contains Subsections
-
-Subsection contains Subsubjects
+Programme impact studies then map applicable nodes/items to:
+S1000D-CSDB/DMC/
 ```
 
 ## 2.2 Hierarchy Table
 
-| Level | Definition | Format | Example |
-|---|---|---:|---|
-| Architecture Bands | Full controlled taxonomy | `000–999` | Q+ATLANTIDE1000 |
-| Band / Master range | One architecture band | `000–099` | ATLAS |
-| Code range | Internal 10-code block inside a master range | `000–009` | Información General y Servicio |
-| Section | Two-digit section inside a code range | `00` | Información General y Servicio |
-| Subject | Two-digit subject inside a section | `00` | General Information |
-| Subsection | Two-digit subdivision inside a subject | `10` | Identificación |
-| Subsubject | Two-digit subdivision inside a subsection | `00` | Overview |
+| Level                            | Definition                                                       |                                Format | Example                                                                                |
+| -------------------------------- | ---------------------------------------------------------------- | ------------------------------------: | -------------------------------------------------------------------------------------- |
+| Q+ATLANTIDE1000                  | Full controlled architecture taxonomy                            |                             `000–999` | `Q+ATLANTIDE1000`                                                                      |
+| Architecture Band / Master Range | One 100-code architecture band                                   |                             `000–099` | `000-099_ATLAS` — Aircraft Top Level Architecture Schema/System                        |
+| Code Range                       | Internal 10-code block inside a master range                     |                             `000–009` | `000-009_Informacion-General-y-Servicio`                                               |
+| Node / Subject Folder            | Controlled architecture node inside a code range                 |      `000`, `001`, `010`, `021`, etc. | `000_Identificacion`, `010_Ground-handling`, `021_Air-Conditioning-and-Pressurization` |
+| Markdown File Set                | Controlled files inside a node folder                            | `<node>-<item>-<Controlled-Title>.md` | `010-000-Ground-Handling-Overview.md`                                                  |
+| Item / Topic                     | Numbered content item inside a node                              |             `000`, `001`, `002`, etc. | `000` = Overview, `001` = Scope and Definitions                                        |
+| Programme DMC Mapping            | Programme-specific S1000D/CSDB implementation of a taxonomy node |       `DMC-<PROGRAMME>-<node>-<item>` | `DMC-AMPEL360E-EWTW-021-060`                                                           |
 
 ## 2.3 Example Hierarchy
 
 ```text
-Q+ATLANTIDE1000
-└── ATLAS — 000–099
-    └── 000–009
-        └── Section 00 — Información General y Servicio
-            └── Subject 00 — General Information
-                └── Subsection 10 — Identificación
-                    └── Subsubject 00 — Overview
+Q+ATLANTIDE/
+└── 000-099_ATLAS/
+    └── 010-019_Manejo-en-Tierra-Servicio/
+        └── 010_Ground-handling/
+            ├── README.md
+            ├── 010-000-Ground-Handling-Overview.md
+            ├── 010-001-Ground-Handling-Scope-and-Definitions.md
+            ├── 010-002-Ground-Handling-Roles-Authorizations-and-Responsibilities.md
+            ├── 010-003-Ground-Handling-Safety-Zones-Hazards-and-Exclusion-Areas.md
+            ├── 010-004-Ground-Support-Equipment-Interfaces.md
+            └── 010-005-Ground-Handling-Documentation-Logs-and-Traceability.md
 ```
 
 ## 2.4 Naming Rule
@@ -358,38 +355,32 @@ The term **sub-range** is deprecated as a controlled hierarchy level.
 
 Use:
 
-| Deprecated | Correct |
-|---|---|
-| Sub-range | Code range |
-| Sub-range block | Code range / Section |
-| Sub-range table | Architecture table |
-| Sub-range breakdown | Code range → Section → Subject breakdown |
+| Deprecated          | Correct                                                |
+| ------------------- | ------------------------------------------------------ |
+| Sub-range           | Code Range                                             |
+| Sub-range block     | Code Range                                             |
+| Sub-range table     | Architecture table                                     |
+| Sub-range breakdown | Code Range → Node / Subject Folder → Markdown File Set |
 
 ## 2.5 Identifier Order
 
 All architecture tables shall order identifiers as:
 
 ```text
-Architecture → Master range → Code range → Section → Subject → Subsection → Subsubject
+Architecture → Architecture Band / Master Range → Code Range → Node / Subject Folder → Markdown File Set → Item / Topic
 ```
 
-## 2.6 No-AAA Rule
-
-Use:
+Programme implementation may then add:
 
 ```text
-Programme / Q+ATLANTIDE
-```
-
-or:
-
-```text
-programme interfaces / Q+ATLAS1000
+Programme → Impact Study → S1000D-CSDB → DMC → XML / ICN / BREX / Applicability / Evidence
 ```
 
 ---
 
 # 3. Q+ATLANTIDE1000 Architecture Bands
+
+## 3.1 Controlled Expansion
 
 | Segment | Expansion          | Meaning                                                                          |
 | ------- | ------------------ | -------------------------------------------------------------------------------- |
@@ -404,6 +395,26 @@ programme interfaces / Q+ATLAS1000
 | **D**   | **Data**           | Structured data, metadata, evidence, CSDB / PLM                                  |
 | **E**   | **Ecosystem**      | Complete classification and governance ecosystem                                 |
 
+## 3.2 Libro Unico delle Tecnologie
+
+**Q+ATLANTIDE** is the **Libro Unico delle Tecnologie**: a controlled, versioned, and traceable technical encyclopedia for architectures, systems, technologies, evidence, governance, lifecycle knowledge, and programme applicability across aerospace, space, defence, digital, energy, materials, cybersecurity, and quantum domains.
+
+Its function is to provide a common identification grammar through the `Q+ATLANTIDE1000` schema, connecting taxonomy, programme impact studies, PBS/WBS structures, Q-Divisions, ORB-Functions, lifecycle gates, S1000D/CSDB data modules, evidence records, and Digital Product Passport logic.
+
+## 3.3 Architecture Band Register
+
+|      Band | Controlled Name                                         | Scope                                                           |
+| --------: | ------------------------------------------------------- | --------------------------------------------------------------- |
+| `000–099` | `ATLAS` — Aircraft Top Level Architecture Schema/System | New commercial aircraft architectures                           |
+| `100–199` | `STA` — Space Technology Architecture                   | Space systems, spacecraft, orbital infrastructure               |
+| `200–299` | Defence Technology Architecture                         | Defence and dual-use boundary architecture                      |
+| `300–399` | Digital Twin / Cloud / Edge / AI                        | Digital thread, AI, cloud, edge, data platforms                 |
+| `400–499` | Energy / Propulsion                                     | Energy systems, propulsion architectures, thermal systems       |
+| `500–599` | Materials / Bio / Nano                                  | Advanced materials, bio, nano, circular materials               |
+| `600–699` | Ground Automation                                       | Ground operations, automation, robotics, logistics              |
+| `700–799` | Aerial City / UAM                                       | Urban air mobility and aerial-city systems                      |
+| `800–899` | Cybersecurity                                           | Cybersecurity, PQC, resilience, secure architectures            |
+| `900–999` | Quantum / Sentient Agency                               | Quantum computing, sensing, communication, agency architecture  |  
 
 ## 3.1 Master Architecture Table
 
