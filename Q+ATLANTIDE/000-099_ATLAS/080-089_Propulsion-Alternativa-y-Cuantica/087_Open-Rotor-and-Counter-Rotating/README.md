@@ -18,8 +18,8 @@ primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-HORIZON, Q-HPC, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG, ORB-FIN]
 governance_class: baseline
-version: 1.0.0
-status: reserved
+version: 1.1.0
+status: active
 language: en
 ---
 
@@ -33,15 +33,24 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `087` *Open Rotor and Counter-Rotating*.
+- Documents the **ORCR (Open Rotor and Counter-Rotating)** propulsor subsystem for the AMPEL360E eWTW, covering the contra-rotating unducted fan (CRUF) configuration with 12-blade Forward Rotor (FR), 10-blade Aft Rotor (AR), Differential Planetary Gearbox (DPGB), and Open-Rotor Supervisory Control Unit (ORSCU DAL B).
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- All ten subsubject documents (`00`–`90`) are now populated and active.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | Open Rotor and Counter-Rotating — General | [087-000-Open-Rotor-and-Counter-Rotating-General.md](087-000-Open-Rotor-and-Counter-Rotating-General.md) | active |
+| 10 | Open Rotor Baseline and Scope | [087-010-Open-Rotor-Baseline-and-Scope.md](087-010-Open-Rotor-Baseline-and-Scope.md) | active |
+| 20 | Counter-Rotating Propulsor Architecture | [087-020-Counter-Rotating-Propulsor-Architecture.md](087-020-Counter-Rotating-Propulsor-Architecture.md) | active |
+| 30 | Rotor Blade Design and Aeroacoustics | [087-030-Rotor-Blade-Design-and-Aeroacoustics.md](087-030-Rotor-Blade-Design-and-Aeroacoustics.md) | active |
+| 40 | Gearbox Drive and Torque-Transfer Interfaces | [087-040-Gearbox-Drive-and-Torque-Transfer-Interfaces.md](087-040-Gearbox-Drive-and-Torque-Transfer-Interfaces.md) | active |
+| 50 | Propulsor Airframe Integration and Clearance Zones | [087-050-Propulsor-Airframe-Integration-and-Clearance-Zones.md](087-050-Propulsor-Airframe-Integration-and-Clearance-Zones.md) | active |
+| 60 | Noise, Vibration and Cabin Comfort Constraints | [087-060-Noise-Vibration-and-Cabin-Comfort-Constraints.md](087-060-Noise-Vibration-and-Cabin-Comfort-Constraints.md) | active |
+| 70 | Safety, Containment and Blade-Off Risk Management | [087-070-Safety-Containment-and-Blade-Off-Risk-Management.md](087-070-Safety-Containment-and-Blade-Off-Risk-Management.md) | active |
+| 80 | Open Rotor Monitoring, Diagnostics and Control Interfaces | [087-080-Open-Rotor-Monitoring-Diagnostics-and-Control-Interfaces.md](087-080-Open-Rotor-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [087-090-S1000D-CSDB-Mapping-and-Traceability.md](087-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `080-089` |
 | Section | `08` — Propulsión Alternativa & Cuántica |
 | Subsection | `087` — Open Rotor and Counter-Rotating |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active — 10 documents) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-HPC, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG, ORB-FIN |
@@ -62,10 +71,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |
 | Parent baseline | [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md) |
+| DMRL | BREX-087-v1; 30 Data Modules |
+| S1000D SNS pattern | `087-{NNN}-00` |
 
 ## Governance
 
-Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GREENTECH` and `governance_class = baseline` from the parent ATLAS section. Extensions added under `00`–`99` shall preserve those header fields and reuse the footnote set declared here.
+Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE.md)[^baseline]. All subsubjects under this subsection inherit `architecture_code = ATLAS`, `primary_q_division = Q-GREENTECH` and `governance_class = baseline` from the parent ATLAS section.
 
 ## 5. References & Citations
 
