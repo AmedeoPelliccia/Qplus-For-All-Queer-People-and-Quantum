@@ -45,12 +45,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Scope and Access Boundaries | [`001_Scope-and-Access-Boundaries.md`](./001_Scope-and-Access-Boundaries.md) | active |
-| 02 | Access Doors, Hatches and Panels | [`002_Access-Doors-Hatches-and-Panels.md`](./002_Access-Doors-Hatches-and-Panels.md) | active |
-| 03 | Access Equipment — Stands, Platforms and Ladders | [`003_Access-Equipment-Stands-Platforms-and-Ladders.md`](./003_Access-Equipment-Stands-Platforms-and-Ladders.md) | active |
-| 04 | Cabin, Cargo and Compartment Access | [`004_Cabin-Cargo-and-Compartment-Access.md`](./004_Cabin-Cargo-and-Compartment-Access.md) | active |
-| 05 | Access Control, Authorizations and Records | [`005_Access-Control-Authorizations-and-Records.md`](./005_Access-Control-Authorizations-and-Records.md) | active |
+| 00 | Overview | [`012-000-Access-Overview.md`](./012-000-Access-Overview.md) | active |
+| 01 | Scope and Access Boundaries | [`012-001-Access-Scope-and-Boundaries.md`](./012-001-Access-Scope-and-Boundaries.md) | active |
+| 02 | Access Doors, Hatches and Panels | [`012-002-Access-Doors-Hatches-and-Panels.md`](./012-002-Access-Doors-Hatches-and-Panels.md) | active |
+| 03 | Access Equipment — Stands, Platforms and Ladders | [`012-003-Access-Equipment-Stands-Platforms-and-Ladders.md`](./012-003-Access-Equipment-Stands-Platforms-and-Ladders.md) | active |
+| 04 | Cabin, Cargo and Compartment Access | [`012-004-Cabin-Cargo-and-Compartment-Access.md`](./012-004-Cabin-Cargo-and-Compartment-Access.md) | active |
+| 05 | Access Control, Authorizations and Records | [`012-005-Access-Control-Authorizations-and-Records.md`](./012-005-Access-Control-Authorizations-and-Records.md) | active |
 
 ## 4. Footprint
 

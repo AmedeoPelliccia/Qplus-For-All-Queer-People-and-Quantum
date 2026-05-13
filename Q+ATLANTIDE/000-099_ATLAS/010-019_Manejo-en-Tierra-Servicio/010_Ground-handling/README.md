@@ -41,12 +41,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 01 | Scope and Definitions | [`001_Scope-and-Definitions.md`](./001_Scope-and-Definitions.md) | active |
-| 02 | Roles, Authorizations and Responsibilities | [`002_Roles-Authorizations-and-Responsibilities.md`](./002_Roles-Authorizations-and-Responsibilities.md) | active |
-| 03 | Safety Zones, Hazards and Exclusion Areas | [`003_Safety-Zones-Hazards-and-Exclusion-Areas.md`](./003_Safety-Zones-Hazards-and-Exclusion-Areas.md) | active |
-| 04 | Ground Support Equipment Interfaces | [`004_Ground-Support-Equipment-Interfaces.md`](./004_Ground-Support-Equipment-Interfaces.md) | active |
-| 05 | Documentation, Logs and Traceability | [`005_Documentation-Logs-and-Traceability.md`](./005_Documentation-Logs-and-Traceability.md) | active |
+| 00 | Overview | [`010-000-Ground-Handling-Overview.md`](./010-000-Ground-Handling-Overview.md) | active |
+| 01 | Scope and Definitions | [`010-001-Ground-Handling-Scope-and-Definitions.md`](./010-001-Ground-Handling-Scope-and-Definitions.md) | active |
+| 02 | Roles, Authorizations and Responsibilities | [`010-002-Ground-Handling-Roles-Authorizations-and-Responsibilities.md`](./010-002-Ground-Handling-Roles-Authorizations-and-Responsibilities.md) | active |
+| 03 | Safety Zones, Hazards and Exclusion Areas | [`010-003-Ground-Handling-Safety-Zones-Hazards-and-Exclusion-Areas.md`](./010-003-Ground-Handling-Safety-Zones-Hazards-and-Exclusion-Areas.md) | active |
+| 04 | Ground Support Equipment Interfaces | [`010-004-Ground-Support-Equipment-Interfaces.md`](./010-004-Ground-Support-Equipment-Interfaces.md) | active |
+| 05 | Documentation, Logs and Traceability | [`010-005-Ground-Handling-Documentation-Logs-and-Traceability.md`](./010-005-Ground-Handling-Documentation-Logs-and-Traceability.md) | active |
 
 ## 4. Footprint
 
