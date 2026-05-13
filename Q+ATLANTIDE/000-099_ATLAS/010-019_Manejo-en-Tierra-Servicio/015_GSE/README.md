@@ -36,23 +36,23 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 - Covers the subsubject namespace `000`–`005` of subsection `015` *Ground Support Equipment*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - Subsubjects `000`–`005` are populated in this baseline release:
-  - `000_Overview.md` — subsection scope, boundary rules, position in ATLAS, content map
-  - `001_Scope-and-GSE-Boundaries.md` — taxonomy boundary definitions; what is/is not GSE within ATLAS
-  - `002_GSE-Catalog-and-Compatibility-Matrix.md` — authorised GSE list per AMPEL360 variant with compatibility ratings
-  - `003_Powered-and-Non-Powered-GSE.md` — classification of GSE by power source; operational requirements per class
-  - `004_GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md` — physical and electrical interfaces between GSE and aircraft
-  - `005_GSE-Maintenance-Calibration-and-Records.md` — maintenance intervals, calibration schedules, and traceability records
+  - `015-000-GSE-Overview.md` — subsection scope, boundary rules, position in ATLAS, content map
+  - `015-001-GSE-Scope-and-Boundaries.md` — taxonomy boundary definitions; what is/is not GSE within ATLAS
+  - `015-002-GSE-Catalog-and-Compatibility-Matrix.md` — authorised GSE list per AMPEL360 variant with compatibility ratings
+  - `015-003-Powered-and-Non-Powered-GSE.md` — classification of GSE by power source; operational requirements per class
+  - `015-004-GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md` — physical and electrical interfaces between GSE and aircraft
+  - `015-005-GSE-Maintenance-Calibration-and-Records.md` — maintenance intervals, calibration schedules, and traceability records
 
 ## 3. Subsubject Index
 
 | NNN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 001 | Scope and GSE Boundaries | [`001_Scope-and-GSE-Boundaries.md`](./001_Scope-and-GSE-Boundaries.md) | active |
-| 002 | GSE Catalog and Compatibility Matrix | [`002_GSE-Catalog-and-Compatibility-Matrix.md`](./002_GSE-Catalog-and-Compatibility-Matrix.md) | active |
-| 003 | Powered and Non-Powered GSE | [`003_Powered-and-Non-Powered-GSE.md`](./003_Powered-and-Non-Powered-GSE.md) | active |
-| 004 | GSE Interfaces, Couplings and Aircraft-Side Connections | [`004_GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md`](./004_GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md) | active |
-| 005 | GSE Maintenance, Calibration and Records | [`005_GSE-Maintenance-Calibration-and-Records.md`](./005_GSE-Maintenance-Calibration-and-Records.md) | active |
+| 000 | Overview | [`015-000-GSE-Overview.md`](./015-000-GSE-Overview.md) | active |
+| 001 | Scope and GSE Boundaries | [`015-001-GSE-Scope-and-Boundaries.md`](./015-001-GSE-Scope-and-Boundaries.md) | active |
+| 002 | GSE Catalog and Compatibility Matrix | [`015-002-GSE-Catalog-and-Compatibility-Matrix.md`](./015-002-GSE-Catalog-and-Compatibility-Matrix.md) | active |
+| 003 | Powered and Non-Powered GSE | [`015-003-Powered-and-Non-Powered-GSE.md`](./015-003-Powered-and-Non-Powered-GSE.md) | active |
+| 004 | GSE Interfaces, Couplings and Aircraft-Side Connections | [`015-004-GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md`](./015-004-GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md) | active |
+| 005 | GSE Maintenance, Calibration and Records | [`015-005-GSE-Maintenance-Calibration-and-Records.md`](./015-005-GSE-Maintenance-Calibration-and-Records.md) | active |
 
 ## 4. Footprint
 

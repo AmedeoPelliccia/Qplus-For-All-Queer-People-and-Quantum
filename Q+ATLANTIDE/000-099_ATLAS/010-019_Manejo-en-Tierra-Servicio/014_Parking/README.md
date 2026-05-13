@@ -41,12 +41,12 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 | 00N | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 001 | Scope and Parking Boundaries | [`001_Scope-and-Parking-Boundaries.md`](./001_Scope-and-Parking-Boundaries.md) | active |
-| 002 | Parking Configurations and Stand Types | [`002_Parking-Configurations-and-Stand-Types.md`](./002_Parking-Configurations-and-Stand-Types.md) | active |
-| 003 | Mooring, Tie-Down and Wind Protection | [`003_Mooring-Tie-Down-and-Wind-Protection.md`](./003_Mooring-Tie-Down-and-Wind-Protection.md) | active |
-| 004 | Short-Term Parking and Turnaround Configurations | [`004_Short-Term-Parking-and-Turnaround-Configurations.md`](./004_Short-Term-Parking-and-Turnaround-Configurations.md) | active |
-| 005 | Parking Records, Inspections and Return to Service | [`005_Parking-Records-Inspections-and-Return-to-Service.md`](./005_Parking-Records-Inspections-and-Return-to-Service.md) | active |
+| 000 | Overview | [`014-000-Parking-Overview.md`](./014-000-Parking-Overview.md) | active |
+| 001 | Scope and Parking Boundaries | [`014-001-Parking-Scope-and-Boundaries.md`](./014-001-Parking-Scope-and-Boundaries.md) | active |
+| 002 | Parking Configurations and Stand Types | [`014-002-Parking-Configurations-and-Stand-Types.md`](./014-002-Parking-Configurations-and-Stand-Types.md) | active |
+| 003 | Mooring, Tie-Down and Wind Protection | [`014-003-Mooring-Tie-Down-and-Wind-Protection.md`](./014-003-Mooring-Tie-Down-and-Wind-Protection.md) | active |
+| 004 | Short-Term Parking and Turnaround Configurations | [`014-004-Short-Term-Parking-and-Turnaround-Configurations.md`](./014-004-Short-Term-Parking-and-Turnaround-Configurations.md) | active |
+| 005 | Parking Records, Inspections and Return to Service | [`014-005-Parking-Records-Inspections-and-Return-to-Service.md`](./014-005-Parking-Records-Inspections-and-Return-to-Service.md) | active |
 
 ## 4. Footprint
 
@@ -77,7 +77,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 | Version | Date | Author | Notes |
 |---|---|---|---|
 | 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial reserve — subsection index only, all subsubjects `to be populated`. |
-| 1.1.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Baseline release — `000_Overview.md` + subsubjects `001`–`005` populated; subsubject index updated; namespace updated to reflect populated range. |
+| 1.1.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Baseline release — `014-000-Parking-Overview.md` + subsubjects `001`–`005` populated; subsubject index updated; namespace updated to reflect populated range. |
 
 ## 5. References & Citations
 

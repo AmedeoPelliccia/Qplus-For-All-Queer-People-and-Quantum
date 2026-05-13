@@ -40,25 +40,25 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 - Populates subsubjects `000`–`006` of subsection `016` *Lifting, Shoring and Jacking Procedures*; reserves `007`–`099` for future extension.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - Subsubjects populated in this baseline release:
-  - `000_Overview.md` — procedures overview, jack-point map summary, safety prerequisites
-  - `001_Scope-and-Lifting-Shoring-Jacking-Boundaries.md` — applicability, variant sensitivities, boundary rules
-  - `002_Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md` — approved jack points by variant, structural fittings, load limits
-  - `003_Jacking-Procedures-and-Sequencing.md` — step-level jacking sequence, safety-collar usage, emergency lower
-  - `004_Shoring-and-Structural-Support-Procedures.md` — shoring rigs, placement, load-path analysis
-  - `005_Leveling-Weighing-and-Reference-Datum-Procedures.md` — datum, leveling procedure, weighing procedure, CG calculation
-  - `006_Lifting-Shoring-Jacking-Records-and-Traceability.md` — sign-off forms, ATLASREC entries, audit trail requirements
+  - `016-000-Lifting-Shoring-Jacking-Procedures-Overview.md` — procedures overview, jack-point map summary, safety prerequisites
+  - `016-001-Lifting-Shoring-Jacking-Scope-and-Boundaries.md` — applicability, variant sensitivities, boundary rules
+  - `016-002-Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md` — approved jack points by variant, structural fittings, load limits
+  - `016-003-Jacking-Procedures-and-Sequencing.md` — step-level jacking sequence, safety-collar usage, emergency lower
+  - `016-004-Shoring-and-Structural-Support-Procedures.md` — shoring rigs, placement, load-path analysis
+  - `016-005-Leveling-Weighing-and-Reference-Datum-Procedures.md` — datum, leveling procedure, weighing procedure, CG calculation
+  - `016-006-Lifting-Shoring-Jacking-Records-and-Traceability.md` — sign-off forms, ATLASREC entries, audit trail requirements
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 000 | Overview | [`000_Overview.md`](./000_Overview.md) | active |
-| 001 | Scope and Lifting, Shoring & Jacking Boundaries | [`001_Scope-and-Lifting-Shoring-Jacking-Boundaries.md`](./001_Scope-and-Lifting-Shoring-Jacking-Boundaries.md) | active |
-| 002 | Jack Points, Load Limits and Aircraft-Side Interfaces | [`002_Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md`](./002_Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md) | active |
-| 003 | Jacking Procedures and Sequencing | [`003_Jacking-Procedures-and-Sequencing.md`](./003_Jacking-Procedures-and-Sequencing.md) | active |
-| 004 | Shoring and Structural Support Procedures | [`004_Shoring-and-Structural-Support-Procedures.md`](./004_Shoring-and-Structural-Support-Procedures.md) | active |
-| 005 | Leveling, Weighing and Reference Datum Procedures | [`005_Leveling-Weighing-and-Reference-Datum-Procedures.md`](./005_Leveling-Weighing-and-Reference-Datum-Procedures.md) | active |
-| 006 | Lifting, Shoring and Jacking Records and Traceability | [`006_Lifting-Shoring-Jacking-Records-and-Traceability.md`](./006_Lifting-Shoring-Jacking-Records-and-Traceability.md) | active |
+| 000 | Overview | [`016-000-Lifting-Shoring-Jacking-Procedures-Overview.md`](./016-000-Lifting-Shoring-Jacking-Procedures-Overview.md) | active |
+| 001 | Scope and Lifting, Shoring & Jacking Boundaries | [`016-001-Lifting-Shoring-Jacking-Scope-and-Boundaries.md`](./016-001-Lifting-Shoring-Jacking-Scope-and-Boundaries.md) | active |
+| 002 | Jack Points, Load Limits and Aircraft-Side Interfaces | [`016-002-Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md`](./016-002-Jack-Points-Load-Limits-and-Aircraft-Side-Interfaces.md) | active |
+| 003 | Jacking Procedures and Sequencing | [`016-003-Jacking-Procedures-and-Sequencing.md`](./016-003-Jacking-Procedures-and-Sequencing.md) | active |
+| 004 | Shoring and Structural Support Procedures | [`016-004-Shoring-and-Structural-Support-Procedures.md`](./016-004-Shoring-and-Structural-Support-Procedures.md) | active |
+| 005 | Leveling, Weighing and Reference Datum Procedures | [`016-005-Leveling-Weighing-and-Reference-Datum-Procedures.md`](./016-005-Leveling-Weighing-and-Reference-Datum-Procedures.md) | active |
+| 006 | Lifting, Shoring and Jacking Records and Traceability | [`016-006-Lifting-Shoring-Jacking-Records-and-Traceability.md`](./016-006-Lifting-Shoring-Jacking-Records-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -91,7 +91,7 @@ Governed by [`organization/Q+ATLANTIDE.md`](../../../../organization/Q+ATLANTIDE
 | Version | Date | Author | Notes |
 |---|---|---|---|
 | 1.0.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Initial reserve — subsection index only; all subsubjects `to be populated`. |
-| 1.1.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Baseline release — `000_Overview.md` + subsubjects `001`–`006` populated; subsubject index updated; Scope section revised to reflect populated content. |
+| 1.1.0 | 2026-05-07 | Q+ Team/Amedeo Pelliccia + AI | Baseline release — `016-000-Lifting-Shoring-Jacking-Procedures-Overview.md` + subsubjects `001`–`006` populated; subsubject index updated; Scope section revised to reflect populated content. |
 
 ## 7. References & Citations
 
