@@ -19,7 +19,7 @@ support_q_divisions: [Q-HORIZON, Q-HPC, Q-STRUCTURES]
 orb_function_support: [ORB-PMO, ORB-LEG, ORB-FIN]
 governance_class: baseline
 version: 1.0.0
-status: reserved
+status: active
 language: en
 ---
 
@@ -35,13 +35,22 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 - Reserves the subsubject namespace `00`–`99` of subsection `086` *Boundary Layer Ingestion Propulsion*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
+- The Overview and detailed subsubjects (`00`–`99`) are fully populated in this baseline release. Ten subsubject documents (086-000 through 086-090) cover the complete BLI Propulsion scope for the AMPEL360E eWTW.
 
 ## 3. Subsubject Index
 
 | NN | Title | Document | Status |
 |---:|---|---|---|
-| 00 | Overview | _to be populated_ | reserved |
+| 00 | General | [086-000-Boundary-Layer-Ingestion-Propulsion-General.md](086-000-Boundary-Layer-Ingestion-Propulsion-General.md) | active |
+| 10 | BLI Baseline and Scope | [086-010-BLI-Baseline-and-Scope.md](086-010-BLI-Baseline-and-Scope.md) | active |
+| 20 | Boundary Layer Capture and Inlet Architecture | [086-020-Boundary-Layer-Capture-and-Inlet-Architecture.md](086-020-Boundary-Layer-Capture-and-Inlet-Architecture.md) | active |
+| 30 | Fan-Propulsor and Distortion Tolerance | [086-030-Fan-Propulsor-and-Distortion-Tolerance.md](086-030-Fan-Propulsor-and-Distortion-Tolerance.md) | active |
+| 40 | Aero-Propulsive Coupling and Airframe Integration | [086-040-Aero-Propulsive-Coupling-and-Airframe-Integration.md](086-040-Aero-Propulsive-Coupling-and-Airframe-Integration.md) | active |
+| 50 | Inlet Distortion Stability and Control Logic | [086-050-Inlet-Distortion-Stability-and-Control-Logic.md](086-050-Inlet-Distortion-Stability-and-Control-Logic.md) | active |
+| 60 | Noise, Vibration and Aeroelastic Constraints | [086-060-Noise-Vibration-and-Aeroelastic-Constraints.md](086-060-Noise-Vibration-and-Aeroelastic-Constraints.md) | active |
+| 70 | Thermal, Structural and Maintenance Integration | [086-070-Thermal-Structural-and-Maintenance-Integration.md](086-070-Thermal-Structural-and-Maintenance-Integration.md) | active |
+| 80 | BLI Monitoring, Diagnostics and Control Interfaces | [086-080-BLI-Monitoring-Diagnostics-and-Control-Interfaces.md](086-080-BLI-Monitoring-Diagnostics-and-Control-Interfaces.md) | active |
+| 90 | S1000D CSDB Mapping and Traceability | [086-090-S1000D-CSDB-Mapping-and-Traceability.md](086-090-S1000D-CSDB-Mapping-and-Traceability.md) | active |
 
 ## 4. Footprint
 
@@ -52,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Code range | `080-089` |
 | Section | `08` — Propulsión Alternativa & Cuántica |
 | Subsection | `086` — Boundary Layer Ingestion Propulsion |
-| Subsubject namespace | `00`–`99` (reserved) |
+| Subsubject namespace | `00`–`99` (active — 10 subsubjects) |
 | Primary Q-Division | Q-GREENTECH[^qdiv] |
 | Support Q-Divisions | Q-HORIZON, Q-HPC, Q-STRUCTURES |
 | ORB support | ORB-PMO, ORB-LEG, ORB-FIN |
