@@ -22,11 +22,12 @@ no_aaa_rule: true
 
 ## Info Code Breakdown
 
-| Folder | Info Code | Description |
-| ------ | --------- | ----------- |
-| `040_descriptive/` | 040 | System Description |
-| `300_examinations-tests-and-checks/` | 300, 320 | General Inspection / Functional Test |
-| `400_fault-reports-and-isolation-procedures/` | 420 | Fault Isolation |
+| Folder | Info Codes | Description |
+| ------ | ---------- | ----------- |
+| `040_descriptive/` | 040–049 | System Description through Traceability and CSDB Mapping |
+| `300_examinations-tests-and-checks/` | 300–306, 310–317, 320–325, 330–331 | Inspection, Operational Check, Functional Test, Performance |
+| `400_fault-reports-and-isolation-procedures/` | 400–408, 410–415, 420–424 | Fault Symptoms, Fault Assessment, Fault Isolation |
+| `500_disconnect-remove-and-disassembly-procedures/` | 500–509, 510–512, 520–523, 530–531 | Disconnect, Access, Remove, Disassembly |
 
 ## Status
 
