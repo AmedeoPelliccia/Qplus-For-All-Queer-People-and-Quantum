@@ -22,10 +22,10 @@ no_aaa_rule: true
 
 ## Info Code Breakdown
 
-| Folder | Info Code | Description |
-| ------ | --------- | ----------- |
-| `040_descriptive/` | 040 | System Description |
-| `100_operation/` | 100 | Operation |
+| Folder | Info Codes | Description |
+| ------ | ---------- | ----------- |
+| `040_descriptive/` | 040, 041–049 | System Description + Architecture / Functional / Interface / Energy Flow / Hybrid Mode / Redundancy / Safety / Maintenance / Traceability Descriptions |
+| `100_operation/` | 100, 101–109 | Operation + Normal Concept / Start-Up / Mode Selection / Energy Mgmt / Load Sharing / Degraded Mode / Crew Indications / Ground Ops / Limitations |
 | `300_examinations-tests-and-checks/` | 300, 310 | General Inspection / Operational Check |
 | `400_fault-reports-and-isolation-procedures/` | 400, 420 | Fault Reporting / Fault Isolation |
 | `900_data-module-management/` | 900 | Data Module Management |

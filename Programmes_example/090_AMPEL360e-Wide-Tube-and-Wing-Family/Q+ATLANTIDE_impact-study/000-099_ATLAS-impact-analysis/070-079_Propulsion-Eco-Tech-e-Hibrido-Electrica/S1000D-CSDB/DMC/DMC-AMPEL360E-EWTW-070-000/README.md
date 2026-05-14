@@ -34,7 +34,7 @@ updated: 2026-05-14
 
 | DMC Base | Info Codes Present | Status |
 |---|---|---|
-| DMC-AMPEL360E-EWTW-070-000-00A | 040, 100, 300, 310, 400, 420, 900, 940, 941 | scaffold |
+| DMC-AMPEL360E-EWTW-070-000-00A | 040–049, 100–109, 300, 310, 400, 420, 900, 940, 941 | scaffold |
 | DMC-AMPEL360E-EWTW-070-000-01A | 040, 100, 310, 420 | scaffold |
 | DMC-AMPEL360E-EWTW-070-000-02A | 040, 100, 300, 320, 420 | scaffold |
 | DMC-AMPEL360E-EWTW-070-000-03A | 040, 300, 320, 420 | scaffold |
