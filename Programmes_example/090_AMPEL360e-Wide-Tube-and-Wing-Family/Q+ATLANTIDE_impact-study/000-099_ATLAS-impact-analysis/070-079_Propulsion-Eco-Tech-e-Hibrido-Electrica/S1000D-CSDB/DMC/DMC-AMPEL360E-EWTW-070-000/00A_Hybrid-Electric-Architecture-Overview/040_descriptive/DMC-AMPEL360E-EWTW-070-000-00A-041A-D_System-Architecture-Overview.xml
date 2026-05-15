@@ -8,21 +8,41 @@
   Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
   Status: scaffold / placeholder
   Standard: S1000D Issue 4.2
-  Note: Replace this stub with validated S1000D XML content.
+  Note: Replace this scaffold with validated S1000D XML content before CSDB release.
+
+  Suggested repository path:
+  Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/
+  Q+ATLANTIDE_impact-study/
+  000-099_ATLAS-impact-analysis/
+  070-079_Propulsion-Eco-Tech-e-Hibrido-Electrica/
+  S1000D-CSDB/DMC/
+  DMC-AMPEL360E-EWTW-070-000/
+  00A_Hybrid-Electric-Architecture-Overview/
+  040_descriptive/
+  DMC-AMPEL360E-EWTW-070-000-00A-041A-D_System-Architecture-Overview.xml
 -->
 <dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                systemCode="070" subSystemCode="0"
-                subSubSystemCode="0" assyCode="00"
-                disassyCode="A" disassyCodeVariant="00" infoCode="041"
-                infoCodeVariant="A" itemLocationCode="D"/>
+        <dmCode
+          modelIdentCode="AMPEL360E"
+          systemDiffCode="EWTW"
+          systemCode="070"
+          subSystemCode="0"
+          subSubSystemCode="0"
+          assyCode="00"
+          disassyCode="00"
+          disassyCodeVariant="A"
+          infoCode="041"
+          infoCodeVariant="A"
+          itemLocationCode="D"/>
         <issueInfo issueNumber="001" inWork="00"/>
         <language languageIsoCode="en" countryIsoCode="US"/>
       </dmIdent>
+
       <dmAddressItems>
         <issueDate year="2026" month="05" day="14"/>
         <dmTitle>
@@ -31,33 +51,235 @@
         </dmTitle>
       </dmAddressItems>
     </dmAddress>
+
     <dmStatus issueType="new">
       <security securityClassification="01"/>
+
       <responsiblePartnerCompany enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </responsiblePartnerCompany>
+
       <originator enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </originator>
+
       <applic>
-        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+        <displayText>
+          <simplePara>AMPEL360E eWTW All Configurations</simplePara>
+        </displayText>
       </applic>
+
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
-                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
-                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+            <dmCode
+              modelIdentCode="AMPEL360E"
+              systemDiffCode="EWTW"
+              systemCode="070"
+              subSystemCode="0"
+              subSubSystemCode="0"
+              assyCode="00"
+              disassyCode="00"
+              disassyCodeVariant="A"
+              infoCode="022"
+              infoCodeVariant="A"
+              itemLocationCode="D"/>
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
+
       <qualityAssurance>
         <unverified/>
       </qualityAssurance>
     </dmStatus>
   </identAndStatusSection>
+
   <content>
-    <!-- TODO: Author System Architecture Overview content for Hybrid Electric Architecture Overview per S1000D Issue 4.2 -->
+    <description>
+
+      <levelledPara>
+        <title>General</title>
+        <para>
+          This data module gives the system architecture overview for the
+          Hybrid Electric Architecture Overview applicable to the AMPEL360E
+          Wide Tube-and-Wing Family baseline.
+        </para>
+        <para>
+          The module identifies the top-level architectural arrangement,
+          functional layers, principal system interfaces, control boundaries,
+          monitoring provisions, and traceability context for ATLAS 070-000 /
+          00A.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Architecture Scope</title>
+        <para>
+          The hybrid-electric architecture includes the aircraft-level
+          arrangement of energy conversion, electrical power distribution,
+          propulsion drive equipment, thermal management, control and
+          monitoring functions, maintenance interfaces, and degraded-mode
+          coordination logic.
+        </para>
+        <para>
+          This module is architecture-descriptive only. It does not provide
+          removal, installation, servicing, operational, or troubleshooting
+          procedures. Those subjects shall be defined in the applicable
+          procedural, servicing, fault isolation, and test data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Architectural Layers</title>
+        <para>
+          The system architecture is organized into the following controlled
+          functional layers:
+        </para>
+        <randomList>
+          <listItem>
+            <para>Energy source and conversion layer.</para>
+          </listItem>
+          <listItem>
+            <para>Electrical distribution and protection layer.</para>
+          </listItem>
+          <listItem>
+            <para>Propulsion drive and actuation layer.</para>
+          </listItem>
+          <listItem>
+            <para>Thermal management and heat rejection layer.</para>
+          </listItem>
+          <listItem>
+            <para>Control, monitoring, indication, and recording layer.</para>
+          </listItem>
+          <listItem>
+            <para>Maintenance, diagnostics, and ground support interface layer.</para>
+          </listItem>
+        </randomList>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Source and Conversion Layer</title>
+        <para>
+          The energy source and conversion layer provides the controlled supply
+          of propulsion energy to the hybrid-electric architecture. Depending on
+          the applicable programme configuration, this layer may include energy
+          storage equipment, fuel-cell or other conversion equipment, auxiliary
+          buffering equipment, contactors, isolation devices, and energy
+          conditioning functions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Electrical Distribution and Protection Layer</title>
+        <para>
+          The electrical distribution and protection layer routes electrical
+          power between the energy conversion equipment, propulsion drive
+          equipment, aircraft electrical loads, and applicable auxiliary
+          systems. This layer includes protection, isolation, switching,
+          monitoring, and fault containment functions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Propulsion Drive Layer</title>
+        <para>
+          The propulsion drive layer converts controlled electrical power into
+          propulsive mechanical output. It includes motor drive equipment,
+          electric machines, associated control electronics, local sensors,
+          protection functions, and interfaces to the propulsion control system.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Thermal Management Layer</title>
+        <para>
+          The thermal management layer maintains the temperature of
+          hybrid-electric equipment within defined operating limits. It includes
+          heat acquisition, transfer, rejection, monitoring, and control
+          functions associated with energy conversion equipment, electrical
+          distribution equipment, propulsion drive equipment, and applicable
+          aircraft thermal interfaces.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Control and Monitoring Layer</title>
+        <para>
+          The control and monitoring layer coordinates system operating modes,
+          supervises limits, records health data, provides crew and maintenance
+          indications, and supports protective responses to abnormal conditions.
+          This layer interfaces with aircraft-level control, indication,
+          recording, central maintenance, and diagnostic systems.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Maintenance and Ground Support Layer</title>
+        <para>
+          The maintenance and ground support layer provides access to diagnostic
+          information, configuration data, built-in-test results, fault records,
+          maintenance messages, and controlled ground support interfaces. The
+          detailed maintenance logic shall be defined in the applicable
+          maintenance, fault isolation, and test data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Major Interfaces</title>
+        <para>
+          The hybrid-electric architecture has controlled interfaces with the
+          aircraft electrical power system, propulsion control system, cockpit
+          indication and recording systems, central maintenance system, thermal
+          management system, ground support equipment, and applicable aircraft
+          safety and protection functions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Operating Mode Architecture</title>
+        <para>
+          The architecture supports normal, monitored, limited, degraded, and
+          safe-state operating modes. Mode transition conditions, protective
+          thresholds, flight crew indications, dispatch effects, and maintenance
+          consequences shall be specified in the applicable control, operational,
+          fault isolation, and maintenance data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Degraded-Mode Philosophy</title>
+        <para>
+          The degraded-mode architecture shall prevent single equipment faults
+          from causing uncontrolled propagation across propulsion, electrical,
+          thermal, or control boundaries. Fault containment, isolation,
+          monitoring, and maintenance reporting provisions shall be validated
+          against the applicable system safety and certification baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Traceability Context</title>
+        <para>
+          This data module belongs to the ATLAS 070-079 Propulsion Eco-Tech and
+          Hybrid-Electric branch. It supports deterministic traceability between
+          architecture definition, system interface definition, S1000D CSDB
+          publication artefacts, verification evidence, and lifecycle governance
+          records.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Authoring Status</title>
+        <para>
+          This issue is an unverified scaffold. The content shall be completed,
+          reviewed, and validated against the applicable BREX data module,
+          business rules, applicability model, terminology rules, programme
+          configuration baseline, and safety assessment evidence before CSDB
+          release.
+        </para>
+      </levelledPara>
+
+    </description>
   </content>
-</dmodule>
+
+</dmodule>e>
