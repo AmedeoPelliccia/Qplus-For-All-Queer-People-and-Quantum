@@ -8,21 +8,41 @@
   Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
   Status: scaffold / placeholder
   Standard: S1000D Issue 4.2
-  Note: Replace this stub with validated S1000D XML content.
+  Note: Replace this scaffold with validated S1000D XML content before CSDB release.
+
+  Suggested repository path:
+  Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/
+  Q+ATLANTIDE_impact-study/
+  000-099_ATLAS-impact-analysis/
+  070-079_Propulsion-Eco-Tech-e-Hibrido-Electrica/
+  S1000D-CSDB/DMC/
+  DMC-AMPEL360E-EWTW-070-000/
+  00A_Hybrid-Electric-Architecture-Overview/
+  040_descriptive/
+  DMC-AMPEL360E-EWTW-070-000-00A-042A-D_Functional-Description.xml
 -->
 <dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                systemCode="070" subSystemCode="0"
-                subSubSystemCode="0" assyCode="00"
-                disassyCode="A" disassyCodeVariant="00" infoCode="042"
-                infoCodeVariant="A" itemLocationCode="D"/>
+        <dmCode
+          modelIdentCode="AMPEL360E"
+          systemDiffCode="EWTW"
+          systemCode="070"
+          subSystemCode="0"
+          subSubSystemCode="0"
+          assyCode="00"
+          disassyCode="00"
+          disassyCodeVariant="A"
+          infoCode="042"
+          infoCodeVariant="A"
+          itemLocationCode="D"/>
         <issueInfo issueNumber="001" inWork="00"/>
         <language languageIsoCode="en" countryIsoCode="US"/>
       </dmIdent>
+
       <dmAddressItems>
         <issueDate year="2026" month="05" day="14"/>
         <dmTitle>
@@ -31,33 +51,288 @@
         </dmTitle>
       </dmAddressItems>
     </dmAddress>
+
     <dmStatus issueType="new">
       <security securityClassification="01"/>
+
       <responsiblePartnerCompany enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </responsiblePartnerCompany>
+
       <originator enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </originator>
+
       <applic>
-        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+        <displayText>
+          <simplePara>AMPEL360E eWTW All Configurations</simplePara>
+        </displayText>
       </applic>
+
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
-                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
-                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+            <dmCode
+              modelIdentCode="AMPEL360E"
+              systemDiffCode="EWTW"
+              systemCode="070"
+              subSystemCode="0"
+              subSubSystemCode="0"
+              assyCode="00"
+              disassyCode="00"
+              disassyCodeVariant="A"
+              infoCode="022"
+              infoCodeVariant="A"
+              itemLocationCode="D"/>
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
+
       <qualityAssurance>
         <unverified/>
       </qualityAssurance>
     </dmStatus>
   </identAndStatusSection>
+
   <content>
-    <!-- TODO: Author Functional Description content for Hybrid Electric Architecture Overview per S1000D Issue 4.2 -->
+    <description>
+
+      <levelledPara>
+        <title>General</title>
+        <para>
+          This data module gives the functional description for the Hybrid
+          Electric Architecture Overview applicable to the AMPEL360E Wide
+          Tube-and-Wing Family baseline.
+        </para>
+        <para>
+          The module describes the top-level functions performed by the
+          hybrid-electric architecture, the functional relationships between
+          major layers, the principal operating states, and the controlled
+          functional boundaries applicable to ATLAS 070-000 / 00A.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Functional Scope</title>
+        <para>
+          The hybrid-electric architecture provides controlled propulsion-energy
+          management, electrical power conversion and distribution, propulsion
+          drive coordination, thermal-limit management, system monitoring,
+          degraded-mode response, maintenance reporting, and ground support
+          interfacing.
+        </para>
+        <para>
+          This module is descriptive only. It does not provide maintenance
+          procedures, servicing instructions, fault isolation tasks, operational
+          checklists, or test procedures. Those subjects shall be defined in the
+          applicable task, fault, test, and servicing data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Primary Functions</title>
+        <para>
+          The architecture performs the following primary functions:
+        </para>
+        <randomList>
+          <listItem>
+            <para>Receive and validate aircraft-level propulsion-energy demand.</para>
+          </listItem>
+          <listItem>
+            <para>Manage energy source availability and conversion readiness.</para>
+          </listItem>
+          <listItem>
+            <para>Condition, route, isolate, and protect electrical power paths.</para>
+          </listItem>
+          <listItem>
+            <para>Command and supervise propulsion drive equipment.</para>
+          </listItem>
+          <listItem>
+            <para>Maintain electrical and thermal equipment within defined limits.</para>
+          </listItem>
+          <listItem>
+            <para>Monitor system health, configuration, and operating state.</para>
+          </listItem>
+          <listItem>
+            <para>Detect abnormal conditions and initiate protective responses.</para>
+          </listItem>
+          <listItem>
+            <para>Generate crew indications, maintenance messages, and diagnostic records.</para>
+          </listItem>
+        </randomList>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Management Function</title>
+        <para>
+          The energy management function coordinates available propulsion energy
+          with aircraft-level demand, system operating limits, equipment
+          availability, thermal capacity, and degraded-mode constraints.
+        </para>
+        <para>
+          This function supports controlled allocation of energy between
+          conversion equipment, storage or buffer elements, propulsion drive
+          equipment, and applicable auxiliary loads. The detailed allocation
+          logic shall be defined by the applicable control and system design
+          data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Electrical Power Function</title>
+        <para>
+          The electrical power function conditions and distributes electrical
+          power to the propulsion drive equipment and associated hybrid-electric
+          loads. It provides switching, isolation, protection, current and
+          voltage monitoring, and fault containment at the controlled
+          architecture boundaries.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Propulsion Drive Function</title>
+        <para>
+          The propulsion drive function converts controlled electrical power
+          into commanded propulsive output. It coordinates electric-machine
+          operation, drive electronics, local sensors, protection functions,
+          and interfaces to the propulsion control system.
+        </para>
+        <para>
+          The function shall maintain controlled response to command inputs,
+          equipment limits, detected faults, and system-level operating mode
+          transitions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Thermal Management Function</title>
+        <para>
+          The thermal management function removes, transports, rejects, or
+          redistributes heat generated by energy conversion equipment,
+          electrical distribution equipment, propulsion drive equipment, and
+          associated control electronics.
+        </para>
+        <para>
+          This function supports equipment protection, availability management,
+          degraded-mode operation, and maintenance reporting when thermal limits
+          are approached or exceeded.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Control Coordination Function</title>
+        <para>
+          The control coordination function manages state transitions between
+          normal, monitored, limited, degraded, and safe-state operation. It
+          arbitrates commands, validates system readiness, supervises protection
+          thresholds, and coordinates responses across propulsion, electrical,
+          thermal, and maintenance reporting functions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Monitoring and Recording Function</title>
+        <para>
+          The monitoring and recording function collects equipment status,
+          operating parameters, fault indications, configuration data, and
+          diagnostic information from the hybrid-electric architecture.
+        </para>
+        <para>
+          The function provides data to crew indication, aircraft recording,
+          central maintenance, diagnostic, and ground support systems as
+          applicable to the aircraft configuration.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Protection Function</title>
+        <para>
+          The protection function prevents uncontrolled propagation of faults
+          across the hybrid-electric architecture. It supports detection,
+          isolation, limitation, shutdown, safe-state transition, and maintenance
+          reporting for abnormal electrical, thermal, propulsion-drive, or
+          control conditions.
+        </para>
+        <para>
+          Protection thresholds, response times, inhibit conditions, and
+          reset logic shall be controlled by the applicable system safety,
+          certification, control, and maintenance data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Degraded-Mode Function</title>
+        <para>
+          The degraded-mode function maintains a controlled operating condition
+          after detected equipment degradation, partial loss of function, or
+          limited system availability. The function shall support continued safe
+          operation, controlled load reduction, dispatch limitation, or safe-state
+          transition as defined by the certified configuration.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Maintenance Reporting Function</title>
+        <para>
+          The maintenance reporting function generates maintenance messages,
+          fault records, built-in-test results, configuration status, and
+          diagnostic data for use by maintenance personnel and support systems.
+        </para>
+        <para>
+          Fault isolation logic, maintenance message mapping, corrective action
+          references, and return-to-service checks shall be specified in the
+          applicable fault isolation and maintenance data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Ground Support Function</title>
+        <para>
+          The ground support function provides controlled access to diagnostic,
+          configuration, test, and maintenance support interfaces. Ground support
+          interactions shall preserve system safety, electrical isolation,
+          data integrity, and configuration traceability.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Functional Boundaries</title>
+        <para>
+          The functional boundary of this architecture is limited to the
+          hybrid-electric propulsion-energy management, electrical distribution,
+          propulsion drive, thermal management, monitoring, and maintenance
+          support functions associated with ATLAS 070-000 / 00A.
+        </para>
+        <para>
+          Aircraft-level flight control laws, cockpit procedures, detailed
+          dispatch policy, hydrogen system detail design, and detailed
+          certification means of compliance are outside the scope of this data
+          module unless explicitly referenced by the approved programme baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Traceability Context</title>
+        <para>
+          This data module supports traceability between top-level functional
+          architecture, S1000D CSDB descriptive content, system interface
+          definition, maintenance reporting logic, verification evidence, and
+          lifecycle governance records.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Authoring Status</title>
+        <para>
+          This issue is an unverified scaffold. The content shall be completed,
+          reviewed, and validated against the applicable BREX data module,
+          business rules, applicability model, terminology rules, programme
+          configuration baseline, safety assessment evidence, and verification
+          records before CSDB release.
+        </para>
+      </levelledPara>
+
+    </description>
   </content>
-</dmodule>
+
+</dmodule>>
