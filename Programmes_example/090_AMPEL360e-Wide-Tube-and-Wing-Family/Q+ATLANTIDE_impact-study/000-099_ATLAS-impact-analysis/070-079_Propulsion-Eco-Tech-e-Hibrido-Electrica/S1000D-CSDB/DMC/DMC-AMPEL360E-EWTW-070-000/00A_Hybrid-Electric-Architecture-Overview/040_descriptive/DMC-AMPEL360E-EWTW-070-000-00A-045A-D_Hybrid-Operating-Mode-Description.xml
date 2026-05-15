@@ -8,21 +8,30 @@
   Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
   Status: scaffold / placeholder
   Standard: S1000D Issue 4.2
-  Note: Replace this stub with validated S1000D XML content.
+  Note: Replace this scaffold with validated S1000D XML content before CSDB release.
 -->
 <dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                systemCode="070" subSystemCode="0"
-                subSubSystemCode="0" assyCode="00"
-                disassyCode="A" disassyCodeVariant="00" infoCode="045"
-                infoCodeVariant="A" itemLocationCode="D"/>
+        <dmCode
+          modelIdentCode="AMPEL360E"
+          systemDiffCode="EWTW"
+          systemCode="070"
+          subSystemCode="0"
+          subSubSystemCode="0"
+          assyCode="00"
+          disassyCode="00"
+          disassyCodeVariant="A"
+          infoCode="045"
+          infoCodeVariant="A"
+          itemLocationCode="D"/>
         <issueInfo issueNumber="001" inWork="00"/>
         <language languageIsoCode="en" countryIsoCode="US"/>
       </dmIdent>
+
       <dmAddressItems>
         <issueDate year="2026" month="05" day="14"/>
         <dmTitle>
@@ -31,33 +40,442 @@
         </dmTitle>
       </dmAddressItems>
     </dmAddress>
+
     <dmStatus issueType="new">
       <security securityClassification="01"/>
+
       <responsiblePartnerCompany enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </responsiblePartnerCompany>
+
       <originator enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </originator>
+
       <applic>
-        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+        <displayText>
+          <simplePara>AMPEL360E eWTW All Configurations</simplePara>
+        </displayText>
       </applic>
+
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
-                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
-                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+            <dmCode
+              modelIdentCode="AMPEL360E"
+              systemDiffCode="EWTW"
+              systemCode="070"
+              subSystemCode="0"
+              subSubSystemCode="0"
+              assyCode="00"
+              disassyCode="00"
+              disassyCodeVariant="A"
+              infoCode="022"
+              infoCodeVariant="A"
+              itemLocationCode="D"/>
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
+
       <qualityAssurance>
         <unverified/>
       </qualityAssurance>
     </dmStatus>
   </identAndStatusSection>
+
   <content>
-    <!-- TODO: Author Hybrid Operating Mode Description content for Hybrid Electric Architecture Overview per S1000D Issue 4.2 -->
+    <description>
+
+      <levelledPara>
+        <title>General</title>
+        <para>
+          This data module gives the hybrid operating mode description for the
+          Hybrid Electric Architecture Overview applicable to the AMPEL360E Wide
+          Tube-and-Wing Family baseline.
+        </para>
+        <para>
+          The module describes the top-level operating modes, transition logic,
+          limitation principles, degraded-mode behaviour, safe-state philosophy,
+          crew indication context, and maintenance reporting context associated
+          with ATLAS 070-000 / 00A.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Operating Mode Scope</title>
+        <para>
+          The operating mode scope includes the controlled states used by the
+          hybrid-electric architecture to manage energy availability, electrical
+          distribution, propulsion drive operation, thermal capacity, protection
+          functions, monitoring, maintenance reporting, and safe-state response.
+        </para>
+        <para>
+          This module is descriptive only. It does not define final flight crew
+          procedures, dispatch policy, minimum equipment list logic, certified
+          mode transition thresholds, or detailed control laws. Those items
+          shall be controlled by the applicable operations, certification,
+          safety, control, and maintenance baselines.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Principal Operating Modes</title>
+        <para>
+          The hybrid-electric architecture uses the following principal
+          operating modes:
+        </para>
+        <randomList>
+          <listItem>
+            <para>Off mode.</para>
+          </listItem>
+          <listItem>
+            <para>Standby mode.</para>
+          </listItem>
+          <listItem>
+            <para>Initialization mode.</para>
+          </listItem>
+          <listItem>
+            <para>Normal mode.</para>
+          </listItem>
+          <listItem>
+            <para>Monitored mode.</para>
+          </listItem>
+          <listItem>
+            <para>Limited mode.</para>
+          </listItem>
+          <listItem>
+            <para>Degraded mode.</para>
+          </listItem>
+          <listItem>
+            <para>Ground service mode.</para>
+          </listItem>
+          <listItem>
+            <para>Maintenance mode.</para>
+          </listItem>
+          <listItem>
+            <para>Safe-state mode.</para>
+          </listItem>
+        </randomList>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Off Mode</title>
+        <para>
+          Off mode is the condition in which the hybrid-electric propulsion
+          architecture is not available for propulsion-energy transfer. Main
+          propulsion energy paths are isolated or de-energized in accordance
+          with the approved configuration.
+        </para>
+        <para>
+          Residual energy, stored energy, control power, and maintenance access
+          conditions shall be managed in accordance with the applicable safety,
+          servicing, and maintenance procedures.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Standby Mode</title>
+        <para>
+          Standby mode is the condition in which selected control, monitoring,
+          diagnostic, or support functions are available, but propulsion-energy
+          flow is not commanded through the main propulsion path.
+        </para>
+        <para>
+          Standby mode supports readiness monitoring, configuration checks,
+          pre-operational status reporting, and controlled transition to
+          initialization mode or safe-state mode.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Initialization Mode</title>
+        <para>
+          Initialization mode prepares the hybrid-electric architecture for
+          normal operation. The system verifies configuration status, equipment
+          availability, isolation state, thermal capacity, protection status,
+          control communication, and monitoring function availability.
+        </para>
+        <para>
+          Initialization shall complete only when the applicable readiness
+          criteria are satisfied. Failed readiness checks shall generate the
+          applicable indication, maintenance message, diagnostic record, or
+          inhibition condition.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Normal Mode</title>
+        <para>
+          Normal mode is the operating condition in which energy source,
+          conversion, electrical distribution, propulsion drive, thermal
+          management, control, and monitoring functions operate within nominal
+          architecture limits.
+        </para>
+        <para>
+          In normal mode, commanded propulsion demand is accepted and processed
+          within approved equipment limits, thermal limits, protection limits,
+          and aircraft-level operating constraints.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Monitored Mode</title>
+        <para>
+          Monitored mode is the condition in which the architecture remains
+          available but one or more parameters, equipment states, or diagnostic
+          trends require increased supervision.
+        </para>
+        <para>
+          Monitored mode may be entered after detection of a minor abnormal
+          condition, reduced margin, intermittent status change, or maintenance
+          trend. The mode does not necessarily reduce available propulsion
+          function, but it shall increase reporting or surveillance as defined
+          by the approved baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Limited Mode</title>
+        <para>
+          Limited mode is the condition in which available propulsion energy,
+          power, torque, thermal capacity, or system function is intentionally
+          restricted to maintain operation within safe and controlled limits.
+        </para>
+        <para>
+          Limited mode may be caused by reduced energy availability, reduced
+          thermal capacity, protection coordination, degraded equipment status,
+          or command authority limitation. The limitation shall be reported to
+          the applicable indication, recording, maintenance, and diagnostic
+          functions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Degraded Mode</title>
+        <para>
+          Degraded mode is the condition in which the hybrid-electric
+          architecture continues controlled operation after partial loss of
+          function, equipment degradation, monitoring degradation, or detected
+          abnormal condition.
+        </para>
+        <para>
+          Degraded mode shall prevent uncontrolled fault propagation across
+          energy source, electrical distribution, propulsion drive, thermal,
+          control, and monitoring boundaries. Degraded operation may require
+          reduced function, load shedding, increased reporting, dispatch
+          limitation, or transition to safe-state mode.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Ground Service Mode</title>
+        <para>
+          Ground service mode supports ground-based servicing, inspection,
+          configuration checks, energy path preparation, controlled diagnostic
+          activities, and support equipment interaction when permitted by the
+          approved aircraft configuration.
+        </para>
+        <para>
+          Ground service mode shall preserve electrical safety, energy
+          isolation, protection status, data integrity, configuration control,
+          and maintenance traceability.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Maintenance Mode</title>
+        <para>
+          Maintenance mode supports controlled access to diagnostic information,
+          built-in-test functions, configuration data, maintenance messages,
+          equipment status, and ground support interfaces.
+        </para>
+        <para>
+          Maintenance mode shall inhibit unsafe propulsion-energy transfer
+          unless specifically authorized by an approved test or maintenance
+          procedure. Maintenance access shall remain configuration-controlled
+          and traceable.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Safe-State Mode</title>
+        <para>
+          Safe-state mode is the condition in which the architecture commands
+          or maintains a controlled state intended to prevent unsafe energy
+          transfer, uncontrolled propulsion output, thermal exceedance,
+          electrical fault propagation, or uncontrolled system behaviour.
+        </para>
+        <para>
+          Safe-state mode may include energy isolation, controlled shutdown,
+          load removal, protection trip retention, degraded monitoring,
+          maintenance message generation, and locked inhibition of further
+          operation until approved recovery conditions are satisfied.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Mode Transition Philosophy</title>
+        <para>
+          Mode transitions shall be deterministic, traceable, and controlled by
+          validated transition criteria. A transition shall occur only when the
+          applicable command validity, equipment status, protection status,
+          thermal status, energy availability, and monitoring criteria are
+          satisfied.
+        </para>
+        <para>
+          Invalid, incomplete, conflicting, or unsafe transition conditions shall
+          be rejected, inhibited, or redirected to a controlled limited,
+          degraded, or safe-state condition as defined by the approved system
+          baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Mode Transition Inputs</title>
+        <para>
+          Operating mode transition inputs may include aircraft-level command
+          requests, propulsion demand, source availability, conversion status,
+          electrical protection status, thermal capacity, equipment health,
+          sensor validity, communication status, maintenance status, and
+          detected abnormal conditions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Mode Transition Outputs</title>
+        <para>
+          Operating mode transition outputs may include propulsion availability
+          status, energy path enablement, contactor or isolation state,
+          permitted power level, limitation state, crew indication, maintenance
+          message, diagnostic record, protection status, and ground support
+          access status.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Protection Effects on Operating Mode</title>
+        <para>
+          Protection functions may command or inhibit operating mode changes
+          when abnormal electrical, thermal, propulsion-drive, control,
+          monitoring, or communication conditions are detected.
+        </para>
+        <para>
+          Protection effects may include load limitation, energy path isolation,
+          drive inhibition, thermal limitation, controlled shutdown, safe-state
+          transition, maintenance reporting, and retention of fault data for
+          subsequent investigation.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Thermal Effects on Operating Mode</title>
+        <para>
+          Reduced thermal capacity or thermal exceedance may cause transition
+          from normal mode to monitored, limited, degraded, or safe-state mode.
+          Thermal status shall be considered when allocating propulsion power,
+          permitting continued operation, or authorizing recovery.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Availability Effects on Operating Mode</title>
+        <para>
+          Reduced energy source availability, conversion limitation, buffering
+          limitation, or electrical distribution limitation may restrict the
+          operating mode available to the architecture.
+        </para>
+        <para>
+          The system shall report energy availability status and shall inhibit
+          operating modes that require energy levels, conversion capability, or
+          distribution capacity that are not available.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Crew Indication Context</title>
+        <para>
+          Operating mode status, limitation status, degraded status, and
+          safe-state status shall be made available to the applicable crew
+          indication and recording functions as required by the approved aircraft
+          configuration.
+        </para>
+        <para>
+          Detailed alerting logic, message text, crew action logic, and
+          operational procedures are outside the scope of this data module and
+          shall be controlled by the applicable operations and certification
+          baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Maintenance Reporting Context</title>
+        <para>
+          Operating mode changes, inhibited transitions, protection events,
+          degraded function, safe-state entry, and failed readiness checks shall
+          generate maintenance or diagnostic records as required by the approved
+          maintenance reporting baseline.
+        </para>
+        <para>
+          Corrective action references, fault isolation logic, dispatch effects,
+          and return-to-service tests shall be defined in the applicable fault
+          isolation and maintenance data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Recovery Philosophy</title>
+        <para>
+          Recovery from limited, degraded, maintenance, or safe-state mode shall
+          occur only when approved reset, inspection, readiness, or maintenance
+          criteria are satisfied.
+        </para>
+        <para>
+          Automatic recovery, crew-commanded recovery, maintenance-commanded
+          recovery, and ground-support recovery shall be separately controlled
+          by the approved system safety, control, operations, and maintenance
+          baselines.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Operating Mode Boundaries</title>
+        <para>
+          This data module defines operating modes at architecture level only.
+          It does not allocate certified thresholds, final annunciation text,
+          failure probabilities, time limits, dispatch categories, control-law
+          parameters, or maintenance task intervals.
+        </para>
+        <para>
+          Those values shall be defined in controlled engineering datasets,
+          safety assessment records, operational documentation, maintenance
+          procedures, verification plans, and certification evidence.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Traceability Context</title>
+        <para>
+          This data module supports deterministic traceability between
+          architecture-level operating mode definition, control logic,
+          protection logic, S1000D CSDB descriptive content, maintenance
+          reporting, safety assessment evidence, verification evidence, and
+          lifecycle governance records.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Authoring Status</title>
+        <para>
+          This issue is an unverified scaffold. The content shall be completed,
+          reviewed, and validated against the applicable BREX data module,
+          business rules, applicability model, terminology rules, operating mode
+          baseline, control baseline, interface control baseline, programme
+          configuration baseline, safety assessment evidence, and verification
+          records before CSDB release.
+        </para>
+      </levelledPara>
+
+    </description>
   </content>
+
 </dmodule>
