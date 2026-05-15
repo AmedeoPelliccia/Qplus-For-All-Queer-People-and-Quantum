@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  S1000D Data Module Stub
+  DMC: DMC-AMPEL360E-EWTW-070-000-04A-742A-D_Continuity-Insulation-and-Bonding-Verification
+  Info Code: 742 — Continuity Insulation and Bonding Verification
+  Topic: Hybrid Propulsion Control and Mode Management
+  Section: ATLAS 070-000 / 04A
+  Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+  Status: scaffold / placeholder
+  Standard: S1000D Issue 4.2
+  Note: Replace this stub with validated S1000D XML content.
+-->
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/proc.xsd">
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
+                systemCode="070" subSystemCode="0"
+                subSubSystemCode="0" assyCode="04"
+                disassyCode="A" disassyCodeVariant="00" infoCode="742"
+                infoCodeVariant="A" itemLocationCode="D"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+        <language languageIsoCode="en" countryIsoCode="US"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="15"/>
+        <dmTitle>
+          <techName>Hybrid Propulsion Control and Mode Management</techName>
+          <infoName>Continuity Insulation and Bonding Verification</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL">
+        <enterpriseName>AMPEL / Q+</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL">
+        <enterpriseName>AMPEL / Q+</enterpriseName>
+      </originator>
+      <applic>
+        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
+                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
+                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
+                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <!-- TODO: Author Continuity Insulation and Bonding Verification content for Hybrid Propulsion Control and Mode Management per S1000D Issue 4.2 -->
+  </content>
+</dmodule>
