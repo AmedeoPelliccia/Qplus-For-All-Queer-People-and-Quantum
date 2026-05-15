@@ -8,21 +8,30 @@
   Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
   Status: scaffold / placeholder
   Standard: S1000D Issue 4.2
-  Note: Replace this stub with validated S1000D XML content.
+  Note: Replace this scaffold with validated S1000D XML content before CSDB release.
 -->
 <dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                systemCode="070" subSystemCode="0"
-                subSubSystemCode="0" assyCode="00"
-                disassyCode="A" disassyCodeVariant="00" infoCode="040"
-                infoCodeVariant="A" itemLocationCode="D"/>
+        <dmCode
+          modelIdentCode="AMPEL360E"
+          systemDiffCode="EWTW"
+          systemCode="070"
+          subSystemCode="0"
+          subSubSystemCode="0"
+          assyCode="00"
+          disassyCode="00"
+          disassyCodeVariant="A"
+          infoCode="040"
+          infoCodeVariant="A"
+          itemLocationCode="D"/>
         <issueInfo issueNumber="001" inWork="00"/>
         <language languageIsoCode="en" countryIsoCode="US"/>
       </dmIdent>
+
       <dmAddressItems>
         <issueDate year="2026" month="05" day="14"/>
         <dmTitle>
@@ -31,33 +40,133 @@
         </dmTitle>
       </dmAddressItems>
     </dmAddress>
+
     <dmStatus issueType="new">
       <security securityClassification="01"/>
+
       <responsiblePartnerCompany enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </responsiblePartnerCompany>
+
       <originator enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </originator>
+
       <applic>
-        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+        <displayText>
+          <simplePara>AMPEL360E eWTW All Configurations</simplePara>
+        </displayText>
       </applic>
+
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
-                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
-                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+            <dmCode
+              modelIdentCode="AMPEL360E"
+              systemDiffCode="EWTW"
+              systemCode="070"
+              subSystemCode="0"
+              subSubSystemCode="0"
+              assyCode="00"
+              disassyCode="00"
+              disassyCodeVariant="A"
+              infoCode="022"
+              infoCodeVariant="A"
+              itemLocationCode="D"/>
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
+
       <qualityAssurance>
         <unverified/>
       </qualityAssurance>
     </dmStatus>
   </identAndStatusSection>
+
   <content>
-    <!-- TODO: Author System Description content for Hybrid Electric Architecture Overview per S1000D Issue 4.2 -->
+    <description>
+      <levelledPara>
+        <title>General</title>
+        <para>
+          This data module gives the system description for the hybrid-electric
+          architecture overview applicable to the AMPEL360E Wide Tube-and-Wing
+          Family baseline. The module identifies the architecture boundary,
+          principal functions, major interfaces, and controlled traceability
+          context for ATLAS 070-000 / 00A.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Architecture Boundary</title>
+        <para>
+          The hybrid-electric architecture overview covers the top-level
+          arrangement of the propulsion energy conversion, electrical power
+          distribution, thermal management, control, monitoring, and degraded-mode
+          coordination functions associated with the AMPEL360E eWTW propulsion
+          architecture.
+        </para>
+        <para>
+          This module does not define detailed maintenance procedures, fault
+          isolation logic, removal and installation steps, or functional test
+          procedures. Those subjects are controlled by the applicable procedural,
+          fault, and test data modules in the same S1000D-CSDB branch.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Principal Functions</title>
+        <para>
+          The architecture provides controlled conversion and distribution of
+          propulsion energy, coordination of hybrid-electric operating modes,
+          supervision of electrical and thermal limits, and interface control
+          between propulsion equipment, aircraft-level power systems, monitoring
+          systems, and maintenance support systems.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Major System Interfaces</title>
+        <para>
+          The architecture interfaces with the aircraft electrical power system,
+          propulsion control system, energy storage or energy conversion
+          equipment, thermal management system, cockpit indication and recording
+          functions, central maintenance functions, and applicable ground support
+          and diagnostic interfaces.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Operating Modes</title>
+        <para>
+          The architecture supports normal, monitored, limited, and degraded
+          operating modes. Mode transition logic, protection thresholds, crew
+          indication, dispatch implications, and maintenance reporting shall be
+          defined in the applicable control, monitoring, fault isolation, and
+          operational data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Traceability Context</title>
+        <para>
+          This data module is part of the ATLAS 070-079 Propulsion Eco-Tech and
+          Hybrid-Electric branch. It is intended to support deterministic
+          traceability between architecture definition, S1000D publication
+          artefacts, system interfaces, verification evidence, and lifecycle
+          governance records.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Authoring Status</title>
+        <para>
+          This issue is an unverified scaffold. The content shall be reviewed,
+          completed, and validated against the applicable BREX, business rules,
+          applicability model, terminology rules, and programme configuration
+          baseline before publication or CSDB release.
+        </para>
+      </levelledPara>
+    </description>
   </content>
+
 </dmodule>
