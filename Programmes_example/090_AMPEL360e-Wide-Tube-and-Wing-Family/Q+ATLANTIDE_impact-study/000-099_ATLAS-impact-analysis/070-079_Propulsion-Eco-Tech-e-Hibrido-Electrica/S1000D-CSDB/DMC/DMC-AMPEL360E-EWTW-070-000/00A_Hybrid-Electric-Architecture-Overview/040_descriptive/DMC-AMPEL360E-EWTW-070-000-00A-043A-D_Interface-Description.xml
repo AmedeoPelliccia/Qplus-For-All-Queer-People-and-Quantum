@@ -8,21 +8,30 @@
   Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
   Status: scaffold / placeholder
   Standard: S1000D Issue 4.2
-  Note: Replace this stub with validated S1000D XML content.
+  Note: Replace this scaffold with validated S1000D XML content before CSDB release.
 -->
 <dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                systemCode="070" subSystemCode="0"
-                subSubSystemCode="0" assyCode="00"
-                disassyCode="A" disassyCodeVariant="00" infoCode="043"
-                infoCodeVariant="A" itemLocationCode="D"/>
+        <dmCode
+          modelIdentCode="AMPEL360E"
+          systemDiffCode="EWTW"
+          systemCode="070"
+          subSystemCode="0"
+          subSubSystemCode="0"
+          assyCode="00"
+          disassyCode="00"
+          disassyCodeVariant="A"
+          infoCode="043"
+          infoCodeVariant="A"
+          itemLocationCode="D"/>
         <issueInfo issueNumber="001" inWork="00"/>
         <language languageIsoCode="en" countryIsoCode="US"/>
       </dmIdent>
+
       <dmAddressItems>
         <issueDate year="2026" month="05" day="14"/>
         <dmTitle>
@@ -31,33 +40,335 @@
         </dmTitle>
       </dmAddressItems>
     </dmAddress>
+
     <dmStatus issueType="new">
       <security securityClassification="01"/>
+
       <responsiblePartnerCompany enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </responsiblePartnerCompany>
+
       <originator enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </originator>
+
       <applic>
-        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+        <displayText>
+          <simplePara>AMPEL360E eWTW All Configurations</simplePara>
+        </displayText>
       </applic>
+
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
-                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
-                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+            <dmCode
+              modelIdentCode="AMPEL360E"
+              systemDiffCode="EWTW"
+              systemCode="070"
+              subSystemCode="0"
+              subSubSystemCode="0"
+              assyCode="00"
+              disassyCode="00"
+              disassyCodeVariant="A"
+              infoCode="022"
+              infoCodeVariant="A"
+              itemLocationCode="D"/>
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
+
       <qualityAssurance>
         <unverified/>
       </qualityAssurance>
     </dmStatus>
   </identAndStatusSection>
+
   <content>
-    <!-- TODO: Author Interface Description content for Hybrid Electric Architecture Overview per S1000D Issue 4.2 -->
+    <description>
+
+      <levelledPara>
+        <title>General</title>
+        <para>
+          This data module gives the interface description for the Hybrid
+          Electric Architecture Overview applicable to the AMPEL360E Wide
+          Tube-and-Wing Family baseline.
+        </para>
+        <para>
+          The module identifies the principal physical, electrical, thermal,
+          control, monitoring, maintenance, and ground support interfaces
+          associated with ATLAS 070-000 / 00A.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Interface Scope</title>
+        <para>
+          The interface scope includes the controlled boundaries between the
+          hybrid-electric architecture and adjacent aircraft systems,
+          subsystems, support equipment, diagnostic functions, and publication
+          artefacts.
+        </para>
+        <para>
+          This data module is descriptive only. It does not define detailed
+          interface control drawings, wiring lists, connector pin allocations,
+          software interface control documents, qualification procedures, or
+          maintenance tasks. Those items shall be controlled by the applicable
+          engineering, interface control, procedural, test, and fault isolation
+          data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Principal Interface Categories</title>
+        <para>
+          The hybrid-electric architecture has the following principal interface
+          categories:
+        </para>
+        <randomList>
+          <listItem>
+            <para>Aircraft-level propulsion command interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Energy source and energy conversion interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Electrical power distribution and protection interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Propulsion drive and electric-machine interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Thermal management and heat rejection interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Control, monitoring, indication, and recording interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Central maintenance and diagnostic interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Ground support and service interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Installation, mounting, access, and structural support interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Safety, isolation, and protection interfaces.</para>
+          </listItem>
+        </randomList>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Aircraft-Level Propulsion Command Interface</title>
+        <para>
+          The aircraft-level propulsion command interface transfers commanded
+          propulsion demand, operating mode requests, inhibit conditions,
+          availability status, and protective limitation signals between the
+          aircraft control functions and the hybrid-electric architecture.
+        </para>
+        <para>
+          Command validity, authority allocation, failure response, and
+          transition logic shall be defined by the approved aircraft control and
+          propulsion control baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Source and Conversion Interface</title>
+        <para>
+          The energy source and conversion interface connects the
+          hybrid-electric architecture to the applicable energy storage,
+          conversion, conditioning, buffering, and isolation equipment.
+        </para>
+        <para>
+          This interface includes readiness status, power availability, energy
+          flow limits, protective trip status, isolation state, configuration
+          status, and maintenance reporting provisions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Electrical Power Distribution Interface</title>
+        <para>
+          The electrical power distribution interface routes controlled
+          electrical power between energy conversion equipment, propulsion drive
+          equipment, auxiliary hybrid-electric loads, protection equipment, and
+          aircraft-level electrical systems.
+        </para>
+        <para>
+          Interface control shall include voltage class, current limits,
+          switching logic, protection coordination, fault containment,
+          isolation state, and applicable electrical safety provisions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Propulsion Drive Interface</title>
+        <para>
+          The propulsion drive interface connects the power distribution layer
+          to the motor drive equipment, electric machines, local sensors,
+          protection devices, cooling provisions, and propulsion control
+          functions.
+        </para>
+        <para>
+          This interface supports commanded torque or power delivery, motor
+          status reporting, drive limitation, abnormal condition reporting, and
+          controlled transition to limited, degraded, or safe-state operation.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Thermal Management Interface</title>
+        <para>
+          The thermal management interface transfers thermal loads, temperature
+          data, coolant or heat-transfer status, heat rejection capacity,
+          operating limits, and degradation information between hybrid-electric
+          equipment and the aircraft thermal management functions.
+        </para>
+        <para>
+          Thermal interface control shall support equipment protection,
+          availability management, operating mode limitation, and maintenance
+          reporting when thermal capacity is reduced or exceeded.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Control and Monitoring Interface</title>
+        <para>
+          The control and monitoring interface exchanges operating state,
+          command validation, sensor data, equipment status, protection status,
+          configuration data, and health-monitoring data between the
+          hybrid-electric architecture and aircraft-level control and monitoring
+          systems.
+        </para>
+        <para>
+          The interface shall preserve deterministic state reporting,
+          unambiguous mode indication, controlled fault propagation, and
+          traceable diagnostic event recording.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Cockpit Indication and Recording Interface</title>
+        <para>
+          The cockpit indication and recording interface provides the flight
+          crew and recording systems with controlled information related to
+          hybrid-electric system availability, operating mode, limitation state,
+          abnormal condition status, and applicable advisory or warning data.
+        </para>
+        <para>
+          The detailed display logic, alerting logic, crew action logic, and
+          recording requirements shall be controlled by the applicable aircraft
+          indication, recording, operations, and certification baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Central Maintenance Interface</title>
+        <para>
+          The central maintenance interface transfers fault messages,
+          built-in-test results, configuration status, maintenance event data,
+          diagnostic records, and corrective-action references between the
+          hybrid-electric architecture and the aircraft maintenance systems.
+        </para>
+        <para>
+          Fault code mapping, maintenance message priority, dispatch effect,
+          and return-to-service logic shall be defined in the applicable fault
+          isolation, maintenance, and operational data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Ground Support Interface</title>
+        <para>
+          The ground support interface provides controlled access for
+          maintenance diagnostics, software or configuration checks, test
+          initiation, data download, and service support activities.
+        </para>
+        <para>
+          Ground support access shall preserve electrical safety, system
+          isolation, configuration control, cyber/data integrity, and
+          maintenance traceability.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Installation and Structural Interface</title>
+        <para>
+          The installation and structural interface includes mounting points,
+          equipment access zones, cable and conduit routing, cooling interface
+          provisions, equipment clearance, maintainability access, and
+          aircraft-level installation constraints.
+        </para>
+        <para>
+          Structural load paths, vibration limits, access requirements, and
+          environmental constraints shall be controlled by the applicable
+          installation, structures, and equipment qualification baselines.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Safety and Isolation Interface</title>
+        <para>
+          The safety and isolation interface supports controlled isolation,
+          interlock status, protective shutdown, fault containment, inhibit
+          logic, safe-state transition, and maintenance safety provisions.
+        </para>
+        <para>
+          Isolation states and protective responses shall be validated against
+          the approved safety assessment, certification basis, maintenance
+          procedures, and applicable operational constraints.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Interface Control Philosophy</title>
+        <para>
+          Each interface shall have a controlled source, destination, function,
+          signal or power class, operating state dependency, failure effect,
+          maintenance implication, and traceability reference.
+        </para>
+        <para>
+          Interface changes shall be configuration-controlled and assessed for
+          impact on safety, certification, maintainability, S1000D publication
+          content, verification evidence, and lifecycle governance records.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Interface Boundaries</title>
+        <para>
+          This data module describes interface boundaries at architecture level.
+          It does not allocate final connector identifiers, wire numbers,
+          software message identifiers, installation drawing references, or test
+          limits unless those values are provided by an approved engineering
+          baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Traceability Context</title>
+        <para>
+          This data module supports deterministic traceability between
+          architecture-level interface definition, S1000D CSDB descriptive
+          content, interface control records, maintenance reporting logic,
+          safety assessment evidence, verification evidence, and lifecycle
+          governance records.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Authoring Status</title>
+        <para>
+          This issue is an unverified scaffold. The content shall be completed,
+          reviewed, and validated against the applicable BREX data module,
+          business rules, applicability model, terminology rules, interface
+          control baseline, programme configuration baseline, safety assessment
+          evidence, and verification records before CSDB release.
+        </para>
+      </levelledPara>
+
+    </description>
   </content>
+
 </dmodule>
