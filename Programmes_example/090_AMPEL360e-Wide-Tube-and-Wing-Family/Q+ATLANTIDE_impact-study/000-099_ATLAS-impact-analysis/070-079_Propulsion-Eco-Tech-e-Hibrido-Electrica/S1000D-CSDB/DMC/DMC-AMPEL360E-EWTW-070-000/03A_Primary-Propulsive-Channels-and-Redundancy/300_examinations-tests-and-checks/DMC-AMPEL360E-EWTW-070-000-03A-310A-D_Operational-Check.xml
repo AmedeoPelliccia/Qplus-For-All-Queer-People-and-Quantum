@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  S1000D Data Module Stub
+  DMC: DMC-AMPEL360E-EWTW-070-000-03A-310A-D_Operational-Check
+  Info Code: 310 — Operational Check
+  Topic: Primary Propulsive Channels and Redundancy
+  Section: ATLAS 070-000 / 03A
+  Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
+  Status: scaffold / placeholder
+  Standard: S1000D Issue 4.2
+  Note: Replace this stub with validated S1000D XML content.
+-->
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+  <identAndStatusSection>
+    <dmAddress>
+      <dmIdent>
+        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
+                systemCode="070" subSystemCode="0"
+                subSubSystemCode="0" assyCode="03"
+                disassyCode="A" disassyCodeVariant="00" infoCode="310"
+                infoCodeVariant="A" itemLocationCode="D"/>
+        <issueInfo issueNumber="001" inWork="00"/>
+        <language languageIsoCode="en" countryIsoCode="US"/>
+      </dmIdent>
+      <dmAddressItems>
+        <issueDate year="2026" month="05" day="14"/>
+        <dmTitle>
+          <techName>Primary Propulsive Channels and Redundancy</techName>
+          <infoName>Operational Check</infoName>
+        </dmTitle>
+      </dmAddressItems>
+    </dmAddress>
+    <dmStatus issueType="new">
+      <security securityClassification="01"/>
+      <responsiblePartnerCompany enterpriseCode="AMPEL">
+        <enterpriseName>AMPEL / Q+</enterpriseName>
+      </responsiblePartnerCompany>
+      <originator enterpriseCode="AMPEL">
+        <enterpriseName>AMPEL / Q+</enterpriseName>
+      </originator>
+      <applic>
+        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+      </applic>
+      <brexDmRef>
+        <dmRef>
+          <dmRefIdent>
+            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
+                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
+                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
+                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+          </dmRefIdent>
+        </dmRef>
+      </brexDmRef>
+      <qualityAssurance>
+        <unverified/>
+      </qualityAssurance>
+    </dmStatus>
+  </identAndStatusSection>
+  <content>
+    <!-- TODO: Author Operational Check content for Primary Propulsive Channels and Redundancy per S1000D Issue 4.2 -->
+  </content>
+</dmodule>

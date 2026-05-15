@@ -1,0 +1,46 @@
+---
+document_id: DMC-AMPEL360E-EWTW-070-000-00A-README
+title: "Hybrid Electric Architecture Overview — S1000D Info Code Structure"
+dmc_base: "DMC-AMPEL360E-EWTW-070-000-00A"
+programme: "AMPEL360e-Wide-Tube-and-Wing-Family"
+chapter: "ATLAS 070 — Hybrid-Electric Propulsion Architecture"
+topic: "Hybrid Electric Architecture Overview"
+disassembly_code_variant: "00A"
+status: "draft / scaffold"
+standard: "S1000D Issue 4.2"
+owner: "Amedeo Pelliccia / Q+"
+primary_language: "en"
+created: 2026-05-14
+no_aaa_rule: true
+---
+
+# Hybrid Electric Architecture Overview — S1000D Info Code Structure
+
+## Data Module Base
+
+`DMC-AMPEL360E-EWTW-070-000-00A`
+
+## Info Code Breakdown
+
+| Folder | Info Codes | Description |
+| ------ | ---------- | ----------- |
+| `040_descriptive/` | 040, 041–049 | System Description + Architecture / Functional / Interface / Energy Flow / Hybrid Mode / Redundancy / Safety / Maintenance / Traceability Descriptions |
+| `100_operation/` | 100, 101–109 | Operation + Normal Concept / Start-Up / Mode Selection / Energy Mgmt / Load Sharing / Degraded Mode / Crew Indications / Ground Ops / Limitations |
+| `300_examinations-tests-and-checks/` | 300, 310 | General Inspection / Operational Check |
+| `400_fault-reports-and-isolation-procedures/` | 400, 420 | Fault Reporting / Fault Isolation |
+| `900_data-module-management/` | 900 | Data Module Management |
+| `940_provisioning-data/` | 940 | Provisioning Data |
+| `941_illustrated-parts-data/` | 941 | Illustrated Parts Data |
+
+## Status
+
+```yaml
+status:
+  maturity: "draft / scaffold"
+  content_ready: false
+  next_steps:
+    - "author XML content per S1000D Issue 4.2"
+    - "validate against BREX-EWTW-070-v1"
+    - "link ICN and illustrations"
+    - "add to DMRL"
+```
