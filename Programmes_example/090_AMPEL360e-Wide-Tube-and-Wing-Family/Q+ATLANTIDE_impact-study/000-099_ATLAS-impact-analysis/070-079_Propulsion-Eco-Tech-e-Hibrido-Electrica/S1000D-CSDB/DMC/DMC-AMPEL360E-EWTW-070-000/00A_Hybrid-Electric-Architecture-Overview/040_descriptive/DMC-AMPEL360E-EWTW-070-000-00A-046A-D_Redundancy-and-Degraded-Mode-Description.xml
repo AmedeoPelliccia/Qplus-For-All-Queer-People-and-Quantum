@@ -8,21 +8,30 @@
   Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
   Status: scaffold / placeholder
   Standard: S1000D Issue 4.2
-  Note: Replace this stub with validated S1000D XML content.
+  Note: Replace this scaffold with validated S1000D XML content before CSDB release.
 -->
 <dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                systemCode="070" subSystemCode="0"
-                subSubSystemCode="0" assyCode="00"
-                disassyCode="A" disassyCodeVariant="00" infoCode="046"
-                infoCodeVariant="A" itemLocationCode="D"/>
+        <dmCode
+          modelIdentCode="AMPEL360E"
+          systemDiffCode="EWTW"
+          systemCode="070"
+          subSystemCode="0"
+          subSubSystemCode="0"
+          assyCode="00"
+          disassyCode="00"
+          disassyCodeVariant="A"
+          infoCode="046"
+          infoCodeVariant="A"
+          itemLocationCode="D"/>
         <issueInfo issueNumber="001" inWork="00"/>
         <language languageIsoCode="en" countryIsoCode="US"/>
       </dmIdent>
+
       <dmAddressItems>
         <issueDate year="2026" month="05" day="14"/>
         <dmTitle>
@@ -31,33 +40,432 @@
         </dmTitle>
       </dmAddressItems>
     </dmAddress>
+
     <dmStatus issueType="new">
       <security securityClassification="01"/>
+
       <responsiblePartnerCompany enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </responsiblePartnerCompany>
+
       <originator enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </originator>
+
       <applic>
-        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+        <displayText>
+          <simplePara>AMPEL360E eWTW All Configurations</simplePara>
+        </displayText>
       </applic>
+
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
-                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
-                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+            <dmCode
+              modelIdentCode="AMPEL360E"
+              systemDiffCode="EWTW"
+              systemCode="070"
+              subSystemCode="0"
+              subSubSystemCode="0"
+              assyCode="00"
+              disassyCode="00"
+              disassyCodeVariant="A"
+              infoCode="022"
+              infoCodeVariant="A"
+              itemLocationCode="D"/>
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
+
       <qualityAssurance>
         <unverified/>
       </qualityAssurance>
     </dmStatus>
   </identAndStatusSection>
+
   <content>
-    <!-- TODO: Author Redundancy and Degraded Mode Description content for Hybrid Electric Architecture Overview per S1000D Issue 4.2 -->
+    <description>
+
+      <levelledPara>
+        <title>General</title>
+        <para>
+          This data module gives the redundancy and degraded mode description
+          for the Hybrid Electric Architecture Overview applicable to the
+          AMPEL360E Wide Tube-and-Wing Family baseline.
+        </para>
+        <para>
+          The module describes the top-level redundancy philosophy, degraded
+          operation principles, fault containment boundaries, availability
+          management, safe-state transition logic, maintenance reporting
+          context, and traceability context associated with ATLAS 070-000 / 00A.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Redundancy and Degraded Mode Scope</title>
+        <para>
+          The scope includes redundancy and degraded operation at architecture
+          level for energy source interfaces, energy conversion equipment,
+          electrical distribution paths, propulsion drive equipment, thermal
+          management functions, control and monitoring functions, protection
+          functions, and maintenance reporting interfaces.
+        </para>
+        <para>
+          This data module is descriptive only. It does not define final system
+          safety probabilities, dispatch categories, minimum equipment list
+          provisions, certified failure thresholds, equipment qualification
+          values, or detailed recovery procedures. Those items shall be
+          controlled by the applicable safety, certification, operations,
+          engineering, and maintenance baselines.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Redundancy Philosophy</title>
+        <para>
+          The redundancy philosophy is intended to maintain controlled
+          hybrid-electric system behaviour after single equipment faults,
+          partial loss of function, degraded monitoring, reduced thermal
+          capacity, or reduced energy availability.
+        </para>
+        <para>
+          Redundancy shall prevent uncontrolled propagation of faults across
+          energy, electrical, propulsion drive, thermal, control, monitoring,
+          and maintenance reporting boundaries.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Principal Redundancy Areas</title>
+        <para>
+          The hybrid-electric architecture may include redundancy provisions in
+          the following areas:
+        </para>
+        <randomList>
+          <listItem>
+            <para>Energy source availability and isolation monitoring.</para>
+          </listItem>
+          <listItem>
+            <para>Energy conversion equipment availability.</para>
+          </listItem>
+          <listItem>
+            <para>Electrical distribution and protection paths.</para>
+          </listItem>
+          <listItem>
+            <para>Propulsion drive channels and local protection functions.</para>
+          </listItem>
+          <listItem>
+            <para>Thermal management and heat rejection capacity.</para>
+          </listItem>
+          <listItem>
+            <para>Control, monitoring, sensor, and communication functions.</para>
+          </listItem>
+          <listItem>
+            <para>Maintenance reporting and diagnostic data paths.</para>
+          </listItem>
+          <listItem>
+            <para>Safe-state command and inhibition functions.</para>
+          </listItem>
+        </randomList>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Source Redundancy</title>
+        <para>
+          Energy source redundancy addresses the ability of the architecture to
+          detect reduced source availability, isolate an affected source path,
+          inhibit unavailable energy paths, and maintain controlled system
+          behaviour with the remaining approved energy availability.
+        </para>
+        <para>
+          Energy source redundancy does not imply continued full propulsion
+          performance after source degradation unless explicitly authorized by
+          the certified programme configuration.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Conversion Redundancy</title>
+        <para>
+          Energy conversion redundancy addresses the ability to detect loss,
+          limitation, or degradation of conversion equipment and to maintain a
+          controlled operating condition through alternate conversion capacity,
+          load limitation, equipment isolation, or safe-state transition.
+        </para>
+        <para>
+          Conversion degradation shall be reported to the applicable control,
+          indication, recording, diagnostic, and maintenance reporting
+          functions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Electrical Distribution Redundancy</title>
+        <para>
+          Electrical distribution redundancy addresses controlled routing,
+          switching, protection, and isolation of electrical power paths after a
+          detected abnormal condition.
+        </para>
+        <para>
+          Distribution redundancy may include alternate feeds, segmented power
+          paths, independent protection zones, contactor state monitoring,
+          isolation logic, and fault containment boundaries as defined by the
+          approved architecture baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Propulsion Drive Redundancy</title>
+        <para>
+          Propulsion drive redundancy addresses the ability of the architecture
+          to maintain controlled propulsive behaviour after degradation of drive
+          electronics, electric machines, local sensors, local protection
+          functions, or drive communication paths.
+        </para>
+        <para>
+          Drive degradation may cause power limitation, channel isolation,
+          increased monitoring, maintenance message generation, dispatch
+          limitation, or transition to degraded or safe-state mode.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Thermal Management Redundancy</title>
+        <para>
+          Thermal management redundancy addresses the ability to maintain
+          equipment temperatures within controlled limits after reduced cooling
+          capacity, degraded heat transfer, reduced heat rejection, sensor
+          degradation, or loss of a thermal control function.
+        </para>
+        <para>
+          Reduced thermal redundancy may require propulsion energy limitation,
+          increased thermal monitoring, load reduction, degraded-mode operation,
+          or safe-state transition.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Control and Monitoring Redundancy</title>
+        <para>
+          Control and monitoring redundancy addresses the availability of valid
+          command paths, sensor data, operating state data, protection status,
+          communication paths, and diagnostic records required to maintain
+          deterministic system behaviour.
+        </para>
+        <para>
+          Loss of monitoring confidence shall be treated as a degradation when
+          the system can no longer confirm required operating limits, isolation
+          states, protection states, or equipment availability.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Protection Redundancy</title>
+        <para>
+          Protection redundancy addresses the ability to detect, isolate,
+          limit, or shut down abnormal energy, electrical, thermal, propulsion
+          drive, control, or communication conditions.
+        </para>
+        <para>
+          Protection functions shall support fault containment, safe-state
+          transition, inhibited restart, maintenance message generation, and
+          retained diagnostic evidence as required by the approved safety
+          baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Degraded Mode Philosophy</title>
+        <para>
+          Degraded mode is a controlled operating condition entered after
+          partial loss of function, reduced redundancy, reduced energy
+          availability, reduced thermal capacity, equipment limitation,
+          monitoring degradation, or detected abnormal condition.
+        </para>
+        <para>
+          Degraded mode shall maintain deterministic behaviour, prevent
+          uncontrolled fault propagation, and make the reduced system state
+          available to crew indication, recording, maintenance, and diagnostic
+          functions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Degraded Mode Entry Conditions</title>
+        <para>
+          Degraded mode may be entered after detection of one or more of the
+          following conditions:
+        </para>
+        <randomList>
+          <listItem>
+            <para>Loss or limitation of an energy source path.</para>
+          </listItem>
+          <listItem>
+            <para>Loss or limitation of energy conversion equipment.</para>
+          </listItem>
+          <listItem>
+            <para>Electrical distribution fault or protection trip.</para>
+          </listItem>
+          <listItem>
+            <para>Propulsion drive channel degradation.</para>
+          </listItem>
+          <listItem>
+            <para>Reduced thermal management capacity.</para>
+          </listItem>
+          <listItem>
+            <para>Sensor, control, monitoring, or communication degradation.</para>
+          </listItem>
+          <listItem>
+            <para>Maintenance-detected configuration or readiness mismatch.</para>
+          </listItem>
+          <listItem>
+            <para>Detected abnormal condition requiring controlled limitation.</para>
+          </listItem>
+        </randomList>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Degraded Mode Behaviour</title>
+        <para>
+          In degraded mode, the architecture may continue operation with
+          reduced power, reduced propulsion availability, restricted energy
+          paths, reduced thermal capacity, increased monitoring, limited control
+          authority, or inhibited operating modes.
+        </para>
+        <para>
+          Degraded mode behaviour shall remain predictable, bounded, traceable,
+          and consistent with the approved safety assessment and certification
+          baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Fault Containment Boundaries</title>
+        <para>
+          Fault containment boundaries shall prevent local abnormal conditions
+          from causing uncontrolled effects across adjacent energy, electrical,
+          thermal, propulsion drive, control, or monitoring functions.
+        </para>
+        <para>
+          Fault containment may include electrical isolation, load limitation,
+          channel shutdown, thermal limitation, command inhibition, safe-state
+          transition, maintenance reporting, and retained fault recording.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Load Shedding and Power Limitation</title>
+        <para>
+          Load shedding and power limitation functions may reduce propulsion
+          energy demand, auxiliary load demand, or equipment operating level to
+          maintain system operation within safe and controlled limits.
+        </para>
+        <para>
+          Load shedding priorities, power limits, recovery criteria, and crew
+          indication requirements shall be defined by the approved system
+          control, safety, operations, and certification baselines.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Safe-State Transition</title>
+        <para>
+          Safe-state transition is commanded when the architecture can no
+          longer maintain controlled operation within the approved degraded
+          operating envelope.
+        </para>
+        <para>
+          Safe-state transition may include energy path isolation, propulsion
+          drive inhibition, protective shutdown, retained protection trip
+          status, inhibited restart, maintenance message generation, and
+          diagnostic data retention.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Recovery from Degraded Mode</title>
+        <para>
+          Recovery from degraded mode shall occur only when the applicable
+          readiness checks, reset conditions, inspection results, maintenance
+          actions, or ground support checks have satisfied the approved recovery
+          criteria.
+        </para>
+        <para>
+          Automatic recovery, crew-commanded recovery, maintenance-commanded
+          recovery, and ground-support recovery shall be separately controlled
+          by the approved safety, control, operations, and maintenance
+          baselines.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Crew Indication Context</title>
+        <para>
+          Redundancy loss, degraded function, limited operation, inhibited
+          transition, safe-state entry, and recovery status shall be made
+          available to the applicable crew indication and recording functions as
+          required by the approved aircraft configuration.
+        </para>
+        <para>
+          Detailed alerting logic, annunciation text, crew action logic, and
+          operational procedures are outside the scope of this data module.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Maintenance Reporting Context</title>
+        <para>
+          Redundancy loss, degraded operation, protection events, failed
+          readiness checks, inhibited transitions, safe-state entries, and
+          recovery attempts shall generate maintenance or diagnostic records as
+          required by the approved maintenance reporting baseline.
+        </para>
+        <para>
+          Fault isolation logic, corrective action references, dispatch effects,
+          and return-to-service checks shall be specified in the applicable
+          fault isolation and maintenance data modules.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Redundancy and Degraded Mode Boundaries</title>
+        <para>
+          This data module describes redundancy and degraded mode principles at
+          architecture level only. It does not allocate certified redundancy
+          levels, final failure probabilities, dispatch categories, time limits,
+          equipment ratings, annunciation text, or maintenance task intervals.
+        </para>
+        <para>
+          Those values shall be defined in controlled engineering datasets,
+          safety assessment records, operational documentation, maintenance
+          procedures, verification plans, and certification evidence.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Traceability Context</title>
+        <para>
+          This data module supports deterministic traceability between
+          architecture-level redundancy definition, degraded-mode logic,
+          protection logic, S1000D CSDB descriptive content, maintenance
+          reporting, safety assessment evidence, verification evidence, and
+          lifecycle governance records.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Authoring Status</title>
+        <para>
+          This issue is an unverified scaffold. The content shall be completed,
+          reviewed, and validated against the applicable BREX data module,
+          business rules, applicability model, terminology rules, redundancy
+          baseline, degraded-mode baseline, control baseline, interface control
+          baseline, programme configuration baseline, safety assessment
+          evidence, and verification records before CSDB release.
+        </para>
+      </levelledPara>
+
+    </description>
   </content>
+
 </dmodule>
