@@ -8,21 +8,30 @@
   Programme: AMPEL360e Wide Tube-and-Wing Family (eWTW)
   Status: scaffold / placeholder
   Standard: S1000D Issue 4.2
-  Note: Replace this stub with validated S1000D XML content.
+  Note: Replace this scaffold with validated S1000D XML content before CSDB release.
 -->
 <dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000DIssue4.2/xml_schema_flat/descript.xsd">
+
   <identAndStatusSection>
     <dmAddress>
       <dmIdent>
-        <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                systemCode="070" subSystemCode="0"
-                subSubSystemCode="0" assyCode="00"
-                disassyCode="A" disassyCodeVariant="00" infoCode="044"
-                infoCodeVariant="A" itemLocationCode="D"/>
+        <dmCode
+          modelIdentCode="AMPEL360E"
+          systemDiffCode="EWTW"
+          systemCode="070"
+          subSystemCode="0"
+          subSubSystemCode="0"
+          assyCode="00"
+          disassyCode="00"
+          disassyCodeVariant="A"
+          infoCode="044"
+          infoCodeVariant="A"
+          itemLocationCode="D"/>
         <issueInfo issueNumber="001" inWork="00"/>
         <language languageIsoCode="en" countryIsoCode="US"/>
       </dmIdent>
+
       <dmAddressItems>
         <issueDate year="2026" month="05" day="14"/>
         <dmTitle>
@@ -31,33 +40,333 @@
         </dmTitle>
       </dmAddressItems>
     </dmAddress>
+
     <dmStatus issueType="new">
       <security securityClassification="01"/>
+
       <responsiblePartnerCompany enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </responsiblePartnerCompany>
+
       <originator enterpriseCode="AMPEL">
         <enterpriseName>AMPEL / Q+</enterpriseName>
       </originator>
+
       <applic>
-        <displayText><simplePara>AMPEL360E eWTW All Configurations</simplePara></displayText>
+        <displayText>
+          <simplePara>AMPEL360E eWTW All Configurations</simplePara>
+        </displayText>
       </applic>
+
       <brexDmRef>
         <dmRef>
           <dmRefIdent>
-            <dmCode modelIdentCode="AMPEL360E" systemDiffCode="EWTW"
-                    systemCode="070" subSystemCode="0" subSubSystemCode="0"
-                    assyCode="00" disassyCode="A" disassyCodeVariant="00"
-                    infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+            <dmCode
+              modelIdentCode="AMPEL360E"
+              systemDiffCode="EWTW"
+              systemCode="070"
+              subSystemCode="0"
+              subSubSystemCode="0"
+              assyCode="00"
+              disassyCode="00"
+              disassyCodeVariant="A"
+              infoCode="022"
+              infoCodeVariant="A"
+              itemLocationCode="D"/>
           </dmRefIdent>
         </dmRef>
       </brexDmRef>
+
       <qualityAssurance>
         <unverified/>
       </qualityAssurance>
     </dmStatus>
   </identAndStatusSection>
+
   <content>
-    <!-- TODO: Author Energy Flow Description content for Hybrid Electric Architecture Overview per S1000D Issue 4.2 -->
+    <description>
+
+      <levelledPara>
+        <title>General</title>
+        <para>
+          This data module gives the energy flow description for the Hybrid
+          Electric Architecture Overview applicable to the AMPEL360E Wide
+          Tube-and-Wing Family baseline.
+        </para>
+        <para>
+          The module describes the top-level energy paths, conversion stages,
+          distribution paths, thermal energy removal paths, monitoring points,
+          and protection boundaries associated with ATLAS 070-000 / 00A.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Flow Scope</title>
+        <para>
+          The energy flow scope includes the controlled movement of energy from
+          the aircraft-level energy source or conversion equipment through the
+          hybrid-electric power architecture to the propulsion drive equipment
+          and associated support functions.
+        </para>
+        <para>
+          This module is descriptive only. It does not define final load
+          calculations, detailed wiring schedules, equipment ratings, protection
+          settings, thermal sizing, or certified performance limits. Those
+          values shall be controlled by the applicable engineering, safety,
+          certification, and verification baselines.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Principal Energy Flow Paths</title>
+        <para>
+          The hybrid-electric architecture contains the following principal
+          energy flow paths:
+        </para>
+        <randomList>
+          <listItem>
+            <para>Primary energy source to energy conversion equipment.</para>
+          </listItem>
+          <listItem>
+            <para>Energy conversion equipment to electrical conditioning equipment.</para>
+          </listItem>
+          <listItem>
+            <para>Electrical conditioning equipment to distribution and protection equipment.</para>
+          </listItem>
+          <listItem>
+            <para>Distribution and protection equipment to propulsion drive equipment.</para>
+          </listItem>
+          <listItem>
+            <para>Propulsion drive equipment to electric machines or propulsive devices.</para>
+          </listItem>
+          <listItem>
+            <para>Electrical and conversion losses to thermal management equipment.</para>
+          </listItem>
+          <listItem>
+            <para>Thermal management equipment to heat rejection or redistribution interfaces.</para>
+          </listItem>
+          <listItem>
+            <para>Monitoring and diagnostic data flow to aircraft indication, recording, and maintenance systems.</para>
+          </listItem>
+        </randomList>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Primary Energy Input</title>
+        <para>
+          The primary energy input function supplies available energy to the
+          hybrid-electric architecture in accordance with the applicable aircraft
+          configuration. The energy source may be connected to conversion,
+          conditioning, buffering, isolation, and protection equipment before
+          energy is made available to the propulsion power path.
+        </para>
+        <para>
+          Energy input availability, source readiness, isolation state, and
+          protective status shall be monitored and reported to the applicable
+          control, indication, and maintenance functions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Conversion Flow</title>
+        <para>
+          The energy conversion flow transforms source energy into controlled
+          electrical power suitable for the hybrid-electric propulsion
+          architecture. The conversion stage may include conversion equipment,
+          control electronics, contactors, protection devices, sensors, and
+          local cooling provisions.
+        </para>
+        <para>
+          Conversion flow shall remain within the operating limits defined by
+          the approved system configuration, equipment qualification baseline,
+          thermal capacity, and safety assessment evidence.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Electrical Conditioning Flow</title>
+        <para>
+          The electrical conditioning flow stabilizes, regulates, or adapts
+          electrical power before distribution to propulsion and associated
+          hybrid-electric loads. This flow may include voltage control, current
+          limitation, filtering, switching, isolation, and protection functions.
+        </para>
+        <para>
+          Conditioning functions shall support controlled response to transient
+          demand, abnormal electrical conditions, degraded equipment
+          availability, and commanded mode transitions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Distribution and Protection Flow</title>
+        <para>
+          The distribution and protection flow routes controlled electrical
+          energy from the conditioning equipment to the propulsion drive
+          equipment and applicable auxiliary hybrid-electric loads.
+        </para>
+        <para>
+          The distribution path shall include controlled switching, isolation,
+          fault containment, protection coordination, status monitoring, and
+          maintenance reporting provisions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Propulsion Drive Energy Flow</title>
+        <para>
+          The propulsion drive energy flow transfers controlled electrical power
+          to motor drive equipment and electric machines. The drive equipment
+          converts the electrical energy into commanded mechanical or propulsive
+          output in accordance with aircraft-level propulsion demand and local
+          equipment limits.
+        </para>
+        <para>
+          The propulsion drive energy flow shall be monitored for availability,
+          commanded output, limitation state, protection status, and abnormal
+          operating conditions.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Auxiliary and Buffer Energy Flow</title>
+        <para>
+          Auxiliary and buffer energy flow supports transient management,
+          equipment protection, control power supply, limited non-mission
+          buffering, and safe transition between operating states where
+          applicable to the approved configuration.
+        </para>
+        <para>
+          Buffer energy shall not be treated as the primary mission energy
+          source unless explicitly authorized by the certified programme
+          baseline.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Thermal Energy Flow</title>
+        <para>
+          Thermal energy flow is generated by conversion losses, electrical
+          distribution losses, drive equipment losses, control electronics, and
+          associated auxiliary equipment.
+        </para>
+        <para>
+          The thermal management function collects, transports, rejects, or
+          redistributes this thermal energy to maintain equipment operation
+          within defined temperature limits.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Heat Rejection Flow</title>
+        <para>
+          Heat rejection flow transfers thermal energy from hybrid-electric
+          equipment to the applicable aircraft heat rejection or redistribution
+          interfaces. The available heat rejection capacity may limit propulsion
+          energy flow, equipment availability, or operating mode.
+        </para>
+        <para>
+          Reduced thermal capacity shall be reported to the control and
+          maintenance functions and may cause limitation, degraded operation, or
+          safe-state transition.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Flow Monitoring</title>
+        <para>
+          Energy flow monitoring provides controlled measurement or status
+          reporting for source availability, conversion status, voltage, current,
+          power, temperature, isolation state, protection state, and equipment
+          health.
+        </para>
+        <para>
+          Monitoring data shall support flight crew indication, aircraft
+          recording, central maintenance reporting, diagnostics, fault
+          isolation, verification evidence, and lifecycle traceability.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Abnormal Energy Flow Conditions</title>
+        <para>
+          Abnormal energy flow conditions include loss of source availability,
+          conversion limitation, over-current, over-voltage, under-voltage,
+          isolation fault, thermal exceedance, drive limitation, protection
+          trip, communication loss, or degraded monitoring capability.
+        </para>
+        <para>
+          Abnormal conditions shall be detected, isolated, limited, reported,
+          and managed in accordance with the approved control, safety,
+          certification, and maintenance baselines.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Flow Protection Philosophy</title>
+        <para>
+          The protection philosophy shall prevent uncontrolled propagation of
+          electrical, thermal, or control faults through the hybrid-electric
+          energy path.
+        </para>
+        <para>
+          Protection functions shall support controlled isolation, load
+          limitation, protective shutdown, safe-state transition, maintenance
+          message generation, and traceable fault recording.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Operating Mode Effects on Energy Flow</title>
+        <para>
+          The energy flow path changes according to operating mode. Normal mode
+          permits controlled energy flow within nominal limits. Monitored mode
+          increases supervision or reporting. Limited mode restricts available
+          power or load allocation. Degraded mode maintains controlled operation
+          with reduced function. Safe-state mode isolates or removes energy flow
+          as required to preserve safety.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Energy Flow Boundaries</title>
+        <para>
+          This data module describes energy flow at architecture level only.
+          It does not allocate final power ratings, cable sizing, protection
+          thresholds, cooling capacities, heat exchanger ratings, dispatch
+          limits, or certified performance values.
+        </para>
+        <para>
+          Those values shall be defined in controlled engineering datasets,
+          interface control records, verification plans, equipment
+          qualification data, and certification evidence.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Traceability Context</title>
+        <para>
+          This data module supports deterministic traceability between
+          architecture-level energy flow definition, hybrid-electric system
+          interfaces, S1000D CSDB descriptive content, safety assessment
+          evidence, verification evidence, maintenance reporting, and lifecycle
+          governance records.
+        </para>
+      </levelledPara>
+
+      <levelledPara>
+        <title>Authoring Status</title>
+        <para>
+          This issue is an unverified scaffold. The content shall be completed,
+          reviewed, and validated against the applicable BREX data module,
+          business rules, applicability model, terminology rules, energy flow
+          baseline, interface control baseline, programme configuration
+          baseline, safety assessment evidence, and verification records before
+          CSDB release.
+        </para>
+      </levelledPara>
+
+    </description>
   </content>
+
 </dmodule>
