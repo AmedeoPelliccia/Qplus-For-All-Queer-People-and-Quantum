@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0089-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-089-020-PROPULSION-PERFORMANCE-OPTIMIZATION-MODELS
      ATLAS-089 (Propulsion AI Optimization Hooks) · Propulsion Performance Optimization Models
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propulsion Performance Optimization Models
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-020"
 
 ## §1 Purpose
 
-ATLAS subsubject 089-020 defines the Propulsion Performance Optimization Engine (PPOE) — the real-time neural-network inference module that computes the optimal thrust-split between the ORCR, DEP fans (P1–P4), and BLI propulsors for any given flight condition. It covers the RL policy network architecture, the FPGA inference pipeline, the training methodology, the input/output data contract, and the performance validation framework.
+This document defines the agnostic ATLAS standard-level architecture context for `Propulsion Performance Optimization Models`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 PPOE Architecture Overview
 
 The PPOE is a **Reinforcement Learning (RL) inference engine** implemented as a stationary policy (trained offline; no online learning in flight). The policy network is a 4-layer fully-connected neural network (input → 256 → 128 → 64 → output) with ReLU activations, quantized to INT8 for FPGA deployment. Inference is executed on a dedicated Xilinx Versal AI Core FPGA module inside the AIOCU chassis.
@@ -100,7 +103,7 @@ The PPOE is a **Reinforcement Learning (RL) inference engine** implemented as a 
 
 ### 3.1 Simulation Environment
 
-The PPOE RL policy is trained in a **high-fidelity propulsion system simulator** (AMPEL360E-PSim v2.3), combining:
+The PPOE RL policy is trained in a **high-fidelity propulsion system simulator** ([PROGRAMME-AIRCRAFT]-PSim v2.3), combining:
 - 6-DOF flight dynamics model (validated against wind-tunnel data)
 - ORCR aerodynamic and thermodynamic model (CFD-derived look-up tables)
 - DEP fan electrical and aerodynamic sub-models (from ATLAS-085)
@@ -126,7 +129,7 @@ R = w₁·Δη_prop + w₂·(−ΔE_total) + w₃·(−ΔT_asymmetry) + w₄·(�
 
 | Dataset | Size | Source |
 |---|---|---|
-| PSim training episodes | 500 000 episodes × 2 h mission | AMPEL360E-PSim v2.3 |
+| PSim training episodes | 500 000 episodes × 2 h mission | [PROGRAMME-AIRCRAFT]-PSim v2.3 |
 | Real-flight data augmentation | 200 h (iron-bird HIL) | Iron-bird test rig Phase 1 |
 | Edge-case scenarios | 50 000 episodes (degraded propulsor, extreme OAT) | Scripted scenario injection |
 

@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 016 · Subsubject 001 — Scope and Lifting, Shoring & Jacking Boundaries
@@ -66,7 +68,7 @@ The following operations are explicitly **out of scope** for subsection `016_`:
 
 Jacking, shoring, and leveling procedures are **variant-dependent**. The applicable variant must be confirmed via the Configuration Baseline [`../../000-009_Informacion-General-y-Servicio/001_Configuracion/`](../../000-009_Informacion-General-y-Servicio/001_Configuracion/) before executing any procedure in this subsection.
 
-| AMPEL360 variant family | Jack-point differences | Weighing considerations |
+| [PROGRAMME-AIRCRAFT] variant family | Jack-point differences | Weighing considerations |
 |---|---|---|
 | Gen 1 (tube-and-wing, Jet-A/SAF) | Three-point configuration: fwd fuselage, two main gear beam jack points | Standard dry-weight weighing; fuel drained or measured |
 | Gen 2 (BWB-H2 demonstrator) | Potentially four-point configuration; lower fuselage profile may require specialised jack adapters | LH₂ tanks must be purged and inerted before weighing; residual cryogen accounted for in empty-weight calculation |

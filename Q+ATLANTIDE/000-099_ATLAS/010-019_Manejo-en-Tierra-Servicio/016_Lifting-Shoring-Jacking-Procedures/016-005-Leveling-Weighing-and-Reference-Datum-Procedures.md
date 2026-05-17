@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 016 · Subsubject 005 — Leveling, Weighing and Reference Datum Procedures
@@ -50,7 +52,7 @@ Defines the procedures for **leveling** the aircraft to its prescribed reference
 
 ### 2.2 Reference datum
 
-The **reference datum** is a fixed imaginary vertical plane from which all horizontal distances are measured for centre-of-gravity (CG) calculations. For AMPEL360:
+The **reference datum** is a fixed imaginary vertical plane from which all horizontal distances are measured for centre-of-gravity (CG) calculations. For [PROGRAMME-AIRCRAFT]:
 
 - The datum is defined in the AMM, ATA chapter 8 / Weight and Balance Manual.
 - Horizontal distances (arms) are measured in millimetres aft of the datum (positive aft) or forward of the datum (negative forward).

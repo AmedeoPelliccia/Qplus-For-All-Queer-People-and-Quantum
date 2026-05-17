@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Navigation Monitoring, Diagnostics and Control Interfaces"
 file_name: "034-080-Navigation-Monitoring-Diagnostics-and-Control-Interfaces.md"
 sns_reference: "034-80"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-80"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-80"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "Navigation Monitoring"
@@ -90,10 +90,12 @@ keywords:
   - "Navigation Database"
   - "Crew Alerts"
   - "Ground Maintenance"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-080 — Navigation Monitoring, Diagnostics and Control Interfaces
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -105,41 +107,20 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Navigation System monitoring, diagnostics, and control interface subsystem (ATA 034-080) for the AMPEL360e eWTW aircraft. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `034-080 — Navigation Monitoring, Diagnostics and Control Interfaces`.
 
-1. **Centralized Maintenance Computer (CMC) / On-Board Maintenance System (OMS) integration**: All ATA 34 navigation LRUs report BITE fault data to the CMC. This section defines the consolidated CMC navigation fault reporting architecture, including IRU drift faults, DADC cross-compare faults, GNSS RAIM alerts, TCAS fault status, TAWS database currency, and WXR transceiver faults.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-2. **ECAM Navigation Page and Crew Alerts**: The Electronic Centralized Aircraft Monitoring (ECAM) provides the crew with real-time navigation system status, cautions, and warnings. The navigation-specific ECAM page and the crew alert hierarchy for all ATA 34 abnormal conditions are defined here.
-
-3. **MCDU Navigation Control Pages**: The Multipurpose Control and Display Unit (MCDU) provides crew access to IRS position displays, GNSS status, RAIM prediction, VOR/ILS tuning, and other navigation configuration functions. The MCDU page set for navigation monitoring is defined here.
-
-4. **Ground Maintenance Test**: The ground-selectable navigation system test via CMC (including BITE self-test, DADC comparison test, IRS alignment confirmation, GNSS cold-start test, TCAS test, and TAWS scenario test).
-
-5. **ARINC 615A Navigation Database Update**: The data loading process for the AIRAC navigation database (FMS, GNSS approaches, TAWS terrain database) via the ARINC 615A data loading protocol.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 034-080 — Navigation Monitoring, Diagnostics and Control Interfaces |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| CMC / OMS | Centralized Maintenance Computer — ATA 45; OMS per DO-297 TBD |
-| ECAM | Electronic Centralized Aircraft Monitoring — ATA 31 |
-| MCDU | Multipurpose Control and Display Unit — ATA 22 / ATA 34 navigation pages |
-| BITE Coverage | All ATA 34 LRUs: DADC ×2, IRU ×3, MMR ×2, DME ×2, GNSS ×2, TCAS, TAWS, WXR, FMGC |
-| Data Loading | ARINC 615A — navigation DB, GNSS approach DB, TAWS terrain DB |
-| AIRAC Cycle | 28-day standard; ±1 day tolerance per airline TBD |
-| Databus | AFDX (ARINC 664 Pt 7); ARINC 429 |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-80 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### CMC / OMS Navigation Fault Reporting
@@ -221,7 +202,7 @@ Post-update verification: The MCDU NAV DB page confirms the new database effecti
 - **CMC architecture**: The CMC is the central repository for all maintenance data. ATA 34 LRUs transmit BITE fault words to the CMC over AFDX. The CMC aggregates, correlates, and archives fault data. The CMC generates the post-flight maintenance report listing all ATA 34 faults detected during the flight.
 - **ECAM / CMC boundary**: The ECAM provides real-time crew-visible status (navigation normal / degraded / failed). The CMC provides maintenance-level diagnostic data (fault code; LRU identity; troubleshooting link). ECAM advisory codes link to CMC fault codes via a cross-reference table (TBD — CMC message catalog).
 - **MCDU navigation pages**: The MCDU is the primary crew interface for navigation system configuration and monitoring (as opposed to ECAM which provides alerting). MCDU navigation pages allow the crew to monitor IRS alignment, verify GNSS status, check RAIM, and manage WXR settings.
-- **ARINC 615A data loading**: ARINC 615A defines the protocol for aircraft data loading. The eWTW uses AFDX as the high-speed data loading network. An airline ground data loading system (GSE laptop or airline server via ACARS / ATSU TBD) connects to the aircraft ARINC 615A server (hosted in CMC or dedicated DLCS — TBD). Database loading is inhibited in flight (or restricted to non-essential databases TBD).
+- **ARINC 615A data loading**: ARINC 615A defines the protocol for aircraft data loading. The [PROGRAMME-VARIANT] uses AFDX as the high-speed data loading network. An airline ground data loading system (GSE laptop or airline server via ACARS / ATSU TBD) connects to the aircraft ARINC 615A server (hosted in CMC or dedicated DLCS — TBD). Database loading is inhibited in flight (or restricted to non-essential databases TBD).
 - **RAIM prediction**: The FMGC RAIM prediction function (MCDU RAIM PRED page) allows the crew or dispatcher to predict GNSS RAIM availability at the destination airport, at the expected arrival time, for the applicable approach procedure. RAIM prediction is a pre-flight dispatch tool required for certain GNSS-only approaches.
 
 ---
@@ -377,7 +358,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-80 | Navigation Monitoring, Diagnostics and Control Interfaces | DMC-AMPEL360E-EWTW-034-80 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-80 | Navigation Monitoring, Diagnostics and Control Interfaces | DMC-<PROGRAMME>-<VARIANT>-034-80 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Recommended DM Set for 034-80
 

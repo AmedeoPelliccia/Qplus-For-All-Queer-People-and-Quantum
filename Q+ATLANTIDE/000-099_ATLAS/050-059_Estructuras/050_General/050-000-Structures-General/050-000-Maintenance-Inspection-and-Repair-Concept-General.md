@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Maintenance, Inspection and Repair Concept General
 
 ## 1. Purpose
 
-Establishes the **structural maintenance and inspection concept** for the AMPEL360 eWTW: MSG-3 process application, inspection programme structure, repair classification, and the Structural Repair Manual (SRM) data module architecture within the S1000D CSDB.
+Establishes the **structural maintenance and inspection concept** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: MSG-3 process application, inspection programme structure, repair classification, and the Structural Repair Manual (SRM) data module architecture within the S1000D CSDB.
 
 ## 2. Scope
 
 ### 2.1 Maintenance Programme Development Process
 
-The AMPEL360 structural maintenance programme is developed via:
+The [PROGRAMME-AIRCRAFT] structural maintenance programme is developed via:
 
 1. **MSG-3 Level 1 analysis** — identification of SSIs (Structurally Significant Items).
 2. **MSG-3 Level 2 analysis** — identification of PSEs and fatigue-critical detail.

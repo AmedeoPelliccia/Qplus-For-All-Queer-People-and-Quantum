@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 014 · Subsubject 002 — Parking Configurations and Stand Types
 
 ## 1. Purpose
 
-Defines the **approved parking configurations** and **stand type categories** applicable to AMPEL360 aircraft variants. This subsubject specifies the geometric, operational, and equipment requirements for each stand type, including nose orientation, wing-tip clearance envelopes, apron markings, and visual guidance system (VGS) requirements.
+Defines the **approved parking configurations** and **stand type categories** applicable to [PROGRAMME-AIRCRAFT] aircraft variants. This subsubject specifies the geometric, operational, and equipment requirements for each stand type, including nose orientation, wing-tip clearance envelopes, apron markings, and visual guidance system (VGS) requirements.
 
 > **Scope boundary:** This subsubject covers stand type selection and configuration. Chock placement and GPU connection procedures are in `014-004-Short-Term-Parking-and-Turnaround-Configurations.md`. Mooring and tie-down are in `014-003-Mooring-Tie-Down-and-Wind-Protection.md`.
 
@@ -37,7 +39,7 @@ Defines the **approved parking configurations** and **stand type categories** ap
 
 ### 2.1 Parking configuration types
 
-AMPEL360 aircraft may be parked in the following approved configurations:
+[PROGRAMME-AIRCRAFT] aircraft may be parked in the following approved configurations:
 
 | Configuration | Description | Typical application |
 |---|---|---|
@@ -51,13 +53,13 @@ AMPEL360 aircraft may be parked in the following approved configurations:
 
 Stand suitability depends on aircraft geometry. Prior to assigning a stand, the following parameters must be verified against the applicable variant:
 
-| Parameter | AMPEL360 (Gen 1, tube-and-wing) | AMPEL360 BWB-H2 (Gen 2) |
+| Parameter | [PROGRAMME-AIRCRAFT] (Gen 1, tube-and-wing) | [PROGRAMME-AIRCRAFT] BWB-H2 (Gen 2) |
 |---|---|---|
 | Wing span | Per approved Type Certificate Data Sheet (TCDS) | Wider span; higher ICAO ARC category requirement |
 | Fuselage length | Per TCDS | Longer; stand depth must be verified |
 | Tail height | Per TCDS | Verify against hangar door clearance if bay parking |
 | LH₂ stand requirement | Not applicable | Only LH₂-capable stands approved; see EPTA `460-469_` |
-| Electric taxi | AMPEL360e variants: power-on taxi-in procedure applies | Not applicable (Gen 2) |
+| Electric taxi | [PROGRAMME-AIRCRAFT] variants: power-on taxi-in procedure applies | Not applicable (Gen 2) |
 
 **[All variants]** Wing-tip and tail clearance to adjacent aircraft, buildings, and equipment must meet the minima specified in ICAO Doc 9137[^icao9137] and the applicable Aerodrome Operating Procedures (AOP). No waiver to clearance minima is permitted without a formal apron risk assessment.
 
@@ -65,7 +67,7 @@ Stand suitability depends on aircraft geometry. Prior to assigning a stand, the 
 
 #### 2.3.1 Apron markings
 
-All stands approved for AMPEL360 operations shall carry the following markings painted or otherwise permanently affixed on the apron surface:
+All stands approved for [PROGRAMME-AIRCRAFT] operations shall carry the following markings painted or otherwise permanently affixed on the apron surface:
 
 | Marking | Purpose |
 |---|---|
@@ -89,9 +91,9 @@ Where installed, a **Visual Docking Guidance System (VDGS)** or **Marshalling Ai
 
 ### 2.4 Configuration selection procedure
 
-The following sequence shall be followed when selecting a parking configuration for an arriving or repositioning AMPEL360 aircraft:
+The following sequence shall be followed when selecting a parking configuration for an arriving or repositioning [PROGRAMME-AIRCRAFT] aircraft:
 
-1. **Confirm variant** — identify the AMPEL360 variant and resolve ICAO ARC category and LH₂/electric-taxi requirements.
+1. **Confirm variant** — identify the [PROGRAMME-AIRCRAFT] variant and resolve ICAO ARC category and LH₂/electric-taxi requirements.
 2. **Check stand availability** — confirm stand allocation from the Apron Management Unit (AMU) or equivalent.
 3. **Verify stand dimensions** — confirm stand box width, depth, and clearance envelope accommodate the variant using the stand layout drawing or VDGS aircraft type library.
 4. **Confirm markings and guidance** — verify that lead-in line, stop bar, and chock position indicators for the applicable aircraft type are legible and not obscured.

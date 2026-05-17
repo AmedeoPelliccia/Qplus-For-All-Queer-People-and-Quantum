@@ -16,14 +16,16 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0081-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
-<!-- ATLAS-081-060 | Emissions Formation and Reduction Modeling | AMPEL360E eWTW | ATLAS-1000
-     Aircraft: AMPEL360E eWTW | Register: ATLAS-1000 | Section: 080-089 | Subsection: 081-060
+<!-- ATLAS-081-060 | Emissions Formation and Reduction Modeling | programme-defined aircraft type | ATLAS-1000
+     Aircraft: programme-defined aircraft type | Register: ATLAS-1000 | Section: 080-089 | Subsection: 081-060
      BREX: BREX-081-v1 | Controller: QOCMU (DAL B, dual-channel) | QPU: 12-qubit trapped-ion
      Primary Q-Division: Q-GREENTECH | Status: DRAFT v0.1 | Date: 2026-05-12
-     S1000D DMC: DMC-AMPEL360E-EWTW-0081-060-00A-040A-EN-US
+     S1000D DMC: DMC-<PROGRAMME>-<VARIANT>-0081-060-00A-040A-EN-US
      Related DMs: DM-081-019 (Descriptive), DM-081-020 (Calibration), DM-081-021 (EMS Interface) -->
 
 # Emissions Formation and Reduction Modeling
@@ -50,53 +52,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-060"
 
 ## §1 Purpose
 
-This document describes the **quantum-enhanced emissions formation and reduction modeling** system
-implemented within the QOCMU for the AMPEL360E eWTW multi-fuel annular combustor. It covers the
-predictive modeling of the following regulated and monitored pollutant species:
+This document defines the agnostic ATLAS standard-level architecture context for `Emissions Formation and Reduction Modeling`.
 
-- **NOx** (nitrogen oxides): thermal NOx via the extended Zeldovich mechanism; prompt NOx via the
-  Fenimore CH + N₂ pathway; fuel NOx from nitrogen-bearing SAF intermediates.
-- **CO** (carbon monoxide): primary zone CO formation and dilution zone burnout via quantum-enhanced
-  Westbrook-Dryer kinetics.
-- **UHC** (unburned hydrocarbons): low-temperature quench zone formation at near-wall and film
-  cooling regions.
-- **Soot**: two-equation quantum Monte Carlo model using pyrene (A4) inception pathway, surface
-  growth via HACA mechanism, and OH/O oxidation.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Emissions predictions serve two operational purposes:
-
-1. **Real-time EMS feed** — QOCMU outputs per-species emission indices (g/kg fuel) at 1 Hz to the
-   Emissions Monitoring System (ATLAS 079) via AFDX VL-081-07, enabling continuous in-flight
-   greenhouse gas and regulated pollutant accounting per ICAO CORSIA and EU ETS requirements.
-
-2. **ICAO CAEP/8 compliance prediction** — QOCMU models all four ICAO LTO cycle points (taxi/idle,
-   take-off, climb-out, approach) and predicts the CAEP/8 NOx dp/Foo compliance margin prior to
-   each flight, validated against test bench data loaded in PLT-081-001.
-
-**Emission targets:** NOx ≤ CAEP/8 – 30% (i.e., ≤ 0.70 × CAEP/8 limit); CO ≤ 100 mg/kN;
-soot ≤ 0.5 SN (smoke number); UHC ≤ 20 mg/kN at all LTO cycle operating points.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute              | Value                                                          |
-|------------------------|----------------------------------------------------------------|
-| **Aircraft**           | AMPEL360E eWTW (all production variants)                      |
-| **Engine**             | Q-TURBOFAN-Hyb-01 (multi-fuel annular combustor)              |
-| **Register**           | ATLAS-1000                                                    |
-| **Section**            | 080-089 Propulsion Alternativa y Cuántica                     |
-| **Subsection**         | 081 Quantum-Optimized Combustion Models                       |
-| **Sub-subject**        | 060 Emissions Formation and Reduction Modeling                |
-| **BREX**               | BREX-081-v1                                                   |
-| **Fuel Types**         | Jet-A; SAF (HEFA/FT/ATJ, up to 100% blend); GH₂              |
-| **Emissions Regulated**| NOx (thermal + prompt + fuel); CO; UHC; soot (SN); CO₂ (ETS) |
-| **Governing System**   | QOCMU (DAL B, dual-channel A/B, ARINC 653)                    |
-| **EMS Interface**      | ATLAS 079 via AFDX VL-081-07 at 1 Hz                          |
-| **S1000D DMC**         | DMC-AMPEL360E-EWTW-0081-060-00A-040A-EN-US                   |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `081` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 Quantum-Enhanced Emissions Modeling Architecture

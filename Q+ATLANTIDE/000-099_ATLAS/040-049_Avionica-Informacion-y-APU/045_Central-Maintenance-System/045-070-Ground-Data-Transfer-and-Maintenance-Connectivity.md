@@ -31,6 +31,8 @@ ata_reference: "ATA 45.070 — Ground Data Transfer and Maintenance Connectivity
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 070 — Ground Data Transfer and Maintenance Connectivity
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the ground data transfer and maintenance connectivity architecture of the CMS for the AMPEL360E eWTW aircraft. It covers Gatelink (ARINC 631-3, 802.11ax), wired Ethernet (AISG connector), SATCOM AHM uplink, data transfer priority queuing, and the security framework (TLS 1.3, X.509 mutual auth, ACARS PKI, IPSG firewall).
+This document defines the ground data transfer and maintenance connectivity architecture of the CMS for the programme-defined aircraft type. It covers Gatelink (ARINC 631-3, 802.11ax), wired Ethernet (AISG connector), SATCOM AHM uplink, data transfer priority queuing, and the security framework (TLS 1.3, X.509 mutual auth, ACARS PKI, IPSG firewall).
 
 Key governance areas:
 - Gatelink (ARINC 631-3): 802.11ax Wi-Fi 6 to airline MRO ground network.
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45.070 — Ground Data Transfer and Maintenance Connectivity |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL C |
 | Applicable Standards | ARINC 631-3; ARINC 842; IEEE 802.11ax; TLS 1.3; ISO 60512-99; DO-160G |
@@ -346,7 +348,7 @@ graph LR
 | [R2] | ATLAS 045-040 — Maintenance Data Recording and History | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 045-080 — CMS Monitoring, Diagnostics and Control Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 023 — Communications (SATCOM SDU interface) | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R5] | AMPEL360E eWTW Network Security Architecture Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R5] | programme-defined aircraft type Network Security Architecture Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

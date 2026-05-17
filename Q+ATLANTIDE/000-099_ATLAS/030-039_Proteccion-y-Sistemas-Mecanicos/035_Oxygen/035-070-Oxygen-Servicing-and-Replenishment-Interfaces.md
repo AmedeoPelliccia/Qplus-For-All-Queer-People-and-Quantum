@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Oxygen Servicing and Replenishment Interfaces"
 file_name: "035-070-Oxygen-Servicing-and-Replenishment-Interfaces.md"
 sns_reference: "035-70"
-dmc_prefix: "DMC-AMPEL360E-EWTW-035-70"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-035-70"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 35"
   - "Oxygen"
@@ -88,10 +88,12 @@ keywords:
   - "PBE shelf life"
   - "COG LRU replacement"
   - "GSE"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 035-070 — Oxygen Servicing and Replenishment Interfaces
-### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,36 +105,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Oxygen Servicing and Replenishment Interfaces (ATA 35-70) for the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It defines the ground service interfaces for crew oxygen cylinder replenishment, COPV cylinder inspection and hydrostatic test intervals, COG (chemical oxygen generator) unit replacement, and portable breathing equipment (PBE) lifecycle management including shelf-life tracking.
+This document defines the agnostic ATLAS standard-level architecture context for `035-070 — Oxygen Servicing and Replenishment Interfaces`.
 
-There is no software loadable media or ARINC 615A upload applicable to the oxygen system; therefore no software servicing interface is required. All servicing interfaces are mechanical (exterior fill valve) or manual replacement of line-replaceable units (COG, PBE).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 035-70 — Oxygen Servicing and Replenishment Interfaces |
-| Crew O₂ Replenishment | External high-pressure fill valve on fuselage skin TBD |
-| GSE | High-pressure oxygen servicing cart (approx. 2200 psi) |
-| Fill Pressure | 1800/1850 psi (crew cylinder) — TBD |
-| COPV Hydrostatic Test | 5-year interval TBD (per DOT/EN 1800 or equivalent) |
-| COG Replacement | LRU replacement at expiry or post-deployment |
-| COG Shelf Life | 8–12 years TBD (sodium chlorate formulation) |
-| PBE Shelf Life | 15 years TBD (TSO-C116) |
-| ARINC 615A | Not applicable — no software in oxygen system |
-| Certification Basis | CS-25.1441; 49 CFR / EN pressure vessel regulations |
-| S1000D SNS | 035-70 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-Oxygen system servicing on the AMPEL360e eWTW encompasses three distinct activities: (1) crew cylinder high-pressure replenishment via an external filler valve and GSE cart; (2) COPV cylinder periodic inspection and hydrostatic test at 5-year or TBD regulatory intervals; and (3) LRU replacement of COG units (passenger oxygen) and PBE units (portable equipment) when deployed or when their storage life expires.
+Oxygen system servicing on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] encompasses three distinct activities: (1) crew cylinder high-pressure replenishment via an external filler valve and GSE cart; (2) COPV cylinder periodic inspection and hydrostatic test at 5-year or TBD regulatory intervals; and (3) LRU replacement of COG units (passenger oxygen) and PBE units (portable equipment) when deployed or when their storage life expires.
 
 The crew oxygen cylinder is a COPV (Composite Overwrapped Pressure Vessel) or equivalent (TBD). It is filled through an external quick-disconnect fill valve accessible from the aircraft exterior, typically near a service panel at the fuselage belly or side. Filling uses a high-pressure oxygen cart capable of delivering aviation-grade (Grade A or equivalent) oxygen to the working pressure TBD. A pressure relief fitting on the fill connection protects the cylinder from overfill. The fill valve incorporates a check valve to prevent back-flow from the cylinder.
 
@@ -307,7 +296,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 035-70 | Oxygen Servicing and Replenishment Interfaces | DMC-AMPEL360E-EWTW-035-70 | 300, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-70 | Oxygen Servicing and Replenishment Interfaces | DMC-<PROGRAMME>-<VARIANT>-035-70 | 300, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Data Module Breakdown — 035-70
 
@@ -381,7 +370,7 @@ flowchart LR
 
 | Term | Definition |
 |---|---|
-| CGA 540 | Compressed Gas Association fitting standard for oxygen (common GSE coupling) — specific coupling standard for eWTW TBD |
+| CGA 540 | Compressed Gas Association fitting standard for oxygen (common GSE coupling) — specific coupling standard for [PROGRAMME-VARIANT] TBD |
 | COPV | Composite Overwrapped Pressure Vessel — lightweight high-pressure cylinder using carbon fibre overwrap over a liner |
 | COG | Chemical Oxygen Generator — sodium chlorate canister generating O₂ by exothermic chemical reaction on activation |
 | GSE | Ground Support Equipment — in this context, the high-pressure oxygen servicing cart used for cylinder replenishment |
@@ -429,7 +418,7 @@ flowchart LR
 | OI-035-70-003 | COG shelf life — confirm 8–12 years vs. specific manufacturer data; review impact on maintenance burden for 20-year aircraft service life (multiple COG replacements expected) | Q-AIR / Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-035-70-004 | PBE shelf life — confirm 15 years vs. specific TSO-C116 supplier data; review per-aircraft PBE quantity to optimise fleet-wide replacement intervals | Q-AIR / Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-035-70-005 | Ground servicing inhibit implementation — confirm mechanism for suppressing low-pressure CAS during cylinder replenishment (weight-on-wheels, maintenance panel, CMC command) | Q-AIR / Q-DATAGOV | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-035-70-006 | O₂ purity standard — confirm MIL-PRF-27210 Grade A as applicable purity standard for eWTW or alternative European standard (EN ISO 7866 TBD) | Q-AIR / Q-GREENTECH | Low | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-70-006 | O₂ purity standard — confirm MIL-PRF-27210 Grade A as applicable purity standard for [PROGRAMME-VARIANT] or alternative European standard (EN ISO 7866 TBD) | Q-AIR / Q-GREENTECH | Low | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ---
 

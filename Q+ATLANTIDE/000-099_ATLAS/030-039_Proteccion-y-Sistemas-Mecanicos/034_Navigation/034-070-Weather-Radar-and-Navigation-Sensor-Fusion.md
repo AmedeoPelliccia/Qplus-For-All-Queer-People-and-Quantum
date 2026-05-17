@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Weather Radar and Navigation Sensor Fusion"
 file_name: "034-070-Weather-Radar-and-Navigation-Sensor-Fusion.md"
 sns_reference: "034-70"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-70"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-70"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "Weather Radar"
@@ -94,10 +94,12 @@ keywords:
   - "CFRP Radome"
   - "Turbulence"
   - "Windshear"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-070 — Weather Radar and Navigation Sensor Fusion
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -109,39 +111,20 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document covers two closely related ATA 034-070 functions for the AMPEL360e eWTW aircraft:
+This document defines the agnostic ATLAS standard-level architecture context for `034-070 — Weather Radar and Navigation Sensor Fusion`.
 
-1. **Weather Radar (WXR)**: The airborne X-band pulse/coherent weather radar system, including the radar transceiver, antenna, CFRP nose radome interface, and the weather display outputs (ND weather overlay). Functions include precipitation detection, turbulence detection, and windshear alerting (predictive forward-looking).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-2. **Navigation Sensor Fusion**: The FMS/FMGC Kalman filter-based position estimation system that fuses data from multiple navigation sensors (IRS, GNSS, DME-DME, VOR-DME) to produce the best-estimate aircraft position and associated navigation integrity metrics (RNP, ANP). This section also covers RAIM and future ARAIM technology.
-
-The two functions are grouped because the weather radar's predictive windshear function provides navigation-relevant alerting, and sensor fusion is the synthesis function that integrates all navigation sensor data from ATA 34 subsections 010–060 into the FMGC navigation solution.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 034-070 — Weather Radar and Navigation Sensor Fusion |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| WXR Type | X-band coherent pulse weather radar |
-| WXR Frequency | 9.3–9.5 GHz (X-band) |
-| WXR Range | 320 NM weather; 40 NM turbulence; TBD NM predictive windshear |
-| Radome | CFRP nose radome — RF performance TBD |
-| Sensor Fusion | FMS/FMGC Kalman filter: IRS + GNSS + DME-DME + VOR-DME |
-| RNP Output | ANP (Actual Navigation Performance) from fusion filter |
-| RAIM | GNSS receiver RAIM (034-040); fusion RAIM — TBD |
-| ARAIM | ARAIM capability — TBD (future growth) |
-| Databus | AFDX (ARINC 664 Pt 7); ARINC 429 |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-70 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### Weather Radar
@@ -201,7 +184,7 @@ The Kalman filter weights each sensor's contribution based on the estimated sens
 
 ## §5 Architecture Description
 
-- **WXR radome interface**: The nose radome must be transparent to X-band (9.3–9.5 GHz). Traditional fibreglass radomes have excellent X-band RF transparency (insertion loss < 1 dB). CFRP (carbon fibre reinforced polymer) is conductive at RF frequencies and exhibits high X-band insertion loss. The eWTW nose radome must therefore be manufactured from a non-conductive material (fibreglass, quartz, or hybrid CFRP/glass layup TBD) to achieve adequate WXR performance. This is a critical open issue.
+- **WXR radome interface**: The nose radome must be transparent to X-band (9.3–9.5 GHz). Traditional fibreglass radomes have excellent X-band RF transparency (insertion loss < 1 dB). CFRP (carbon fibre reinforced polymer) is conductive at RF frequencies and exhibits high X-band insertion loss. The [PROGRAMME-VARIANT] nose radome must therefore be manufactured from a non-conductive material (fibreglass, quartz, or hybrid CFRP/glass layup TBD) to achieve adequate WXR performance. This is a critical open issue.
 - **WXR antenna stabilization**: The WXR antenna is gyro-stabilized (using attitude reference from IRS) to maintain horizontal scanning despite aircraft pitch and roll. Stabilization accuracy: TBD degrees.
 - **Sensor fusion — architecture**: The FMGC hosts the Kalman filter position estimator. The filter is a multi-sensor blended navigation algorithm that ingests inertial, GNSS, and radio-navigation measurements and produces a fused position estimate with associated uncertainty (covariance) at the FMGC computation rate (TBD Hz). The filter uses known sensor error models (IRU drift, GNSS ionosphere TBD, DME transponder delay, VOR site bearing error) to weight the measurements optimally.
 - **Sensor fusion — DME-DME**: When two or more DME stations are in range, the FMGC computes a DME-DME position fix using the time-distance geometry. DME-DME is the most accurate radio navigation positioning method in the absence of GNSS. The FMGC uses the navigation database (AIRAC) to identify available DME stations and compute geometry factors (GDOP TBD).
@@ -358,7 +341,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-70 | Weather Radar and Navigation Sensor Fusion | DMC-AMPEL360E-EWTW-034-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-70 | Weather Radar and Navigation Sensor Fusion | DMC-<PROGRAMME>-<VARIANT>-034-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Recommended DM Set for 034-70
 
@@ -435,10 +418,10 @@ flowchart LR
 | Term | Definition |
 |---|---|
 | ANP | Actual Navigation Performance — the estimated 95th percentile position error as computed by the FMGC sensor fusion filter |
-| ARAIM | Advanced Receiver Autonomous Integrity Monitoring — dual-constellation GNSS integrity monitoring for approach operations; TBD for eWTW |
-| CFRP | Carbon Fibre Reinforced Polymer — the composite material used extensively in eWTW structure, including the nose radome TBD |
+| ARAIM | Advanced Receiver Autonomous Integrity Monitoring — dual-constellation GNSS integrity monitoring for approach operations; TBD for [PROGRAMME-VARIANT] |
+| CFRP | Carbon Fibre Reinforced Polymer — the composite material used extensively in [PROGRAMME-VARIANT] structure, including the nose radome TBD |
 | DME-DME | Positioning using two or more DME ranges (ρ-ρ); typically the most accurate radio-navigation positioning method in high-density DME environments |
-| FMGC | Flight Management and Guidance Computer — hosts the Kalman filter navigation sensor fusion algorithm for the eWTW |
+| FMGC | Flight Management and Guidance Computer — hosts the Kalman filter navigation sensor fusion algorithm for the [PROGRAMME-VARIANT] |
 | Kalman Filter | A recursive state estimation algorithm that optimally fuses multiple sensor measurements with different error characteristics and noise models |
 | Predictive Windshear | Forward-looking windshear detection using WXR Doppler signatures; provides alerting before aircraft enters the windshear region |
 | RAIM | Receiver Autonomous Integrity Monitoring — GNSS receiver-based integrity method using redundant satellite geometry to detect position errors |

@@ -6,10 +6,10 @@ subsubject: "030"
 subsubject_title: "Water Heaters and Service Interfaces"
 file_name: "038-030-Water-Heaters-and-Service-Interfaces.md"
 sns_reference: "038-03"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-03"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-038-03"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -79,7 +79,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 38"
   - "Water and Waste"
@@ -92,10 +92,12 @@ keywords:
   - "ground pre-heat"
   - "anti-scald"
   - "Legionella"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 038-030 — Water Heaters and Service Interfaces
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -105,43 +107,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-03-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-038-03-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document describes the **Water Heaters and Service Interfaces** subsystem of ATA 38 for the **AMPEL360e eWTW**. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `038-030 — Water Heaters and Service Interfaces`.
 
-1. The Electric Water Heater (EWH) units — type (instant or storage), quantity, power, thermostat settings, and installation locations at each galley and lavatory.
-2. The Thermostatic Mixing Valve (TMV) at each hot water outlet — anti-scald protection.
-3. Hot water service interfaces: galley faucets, lavatory faucets, hot water connections.
-4. Cold water bypass at mixing valves — faucet mixing.
-5. EWH drain valves for maintenance.
-6. Ground pre-heat capability via Ground Power Unit (GPU).
-7. EWH monitoring and fault alerts.
-8. Power supply: galley power bus interface.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants (unless noted) |
-| ATA Chapter/Subsubject | 38-030 — Water Heaters and Service Interfaces |
-| Document Tier | Level 2 — SDD |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Parent Document | [038-000](./038-000-Water-and-Waste-General.md) / [038-010](./038-010-Potable-Water-System.md) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
-### 3.1 EWH Architecture on the eWTW
+### 3.1 EWH Architecture on the [PROGRAMME-VARIANT]
 
-The eWTW uses fully electric water heating — no engine bleed, no APU steam, no heat exchanger from the pneumatic system. Each service point (galley, lavatory) has a dedicated Electric Water Heater (EWH) receiving cold water from the potable water distribution header and delivering hot water locally.
+The [PROGRAMME-VARIANT] uses fully electric water heating — no engine bleed, no APU steam, no heat exchanger from the pneumatic system. Each service point (galley, lavatory) has a dedicated Electric Water Heater (EWH) receiving cold water from the potable water distribution header and delivering hot water locally.
 
 | Parameter | Value |
 |---|---|
@@ -396,13 +386,13 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description — water heaters | DMC-AMPEL360E-EWTW-038-03-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| EWH description (general) | DMC-AMPEL360E-EWTW-038-03-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EWH removal | DMC-AMPEL360E-EWTW-038-03-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EWH installation | DMC-AMPEL360E-EWTW-038-03-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EWH tank flush (storage type) | DMC-AMPEL360E-EWTW-038-03-10A-810A-A | 810 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| TMV removal | DMC-AMPEL360E-EWTW-038-03-20A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — water heaters | DMC-AMPEL360E-EWTW-038-03-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description — water heaters | DMC-<PROGRAMME>-<VARIANT>-038-03-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| EWH description (general) | DMC-<PROGRAMME>-<VARIANT>-038-03-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWH removal | DMC-<PROGRAMME>-<VARIANT>-038-03-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWH installation | DMC-<PROGRAMME>-<VARIANT>-038-03-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWH tank flush (storage type) | DMC-<PROGRAMME>-<VARIANT>-038-03-10A-810A-A | 810 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| TMV removal | DMC-<PROGRAMME>-<VARIANT>-038-03-20A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — water heaters | DMC-<PROGRAMME>-<VARIANT>-038-03-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 

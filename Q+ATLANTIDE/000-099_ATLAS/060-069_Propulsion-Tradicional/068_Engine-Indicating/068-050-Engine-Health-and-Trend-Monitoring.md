@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0068-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0068-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Engine Health and Trend Monitoring
@@ -30,20 +32,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0068-050"
 
 ## §1 Purpose
 
-Specifies the Engine Health Monitoring (EHM) and trend analysis capability for the AMPEL360E eWTW. EHM provides predictive maintenance data by tracking long-term parameter trends, detecting performance deterioration, and alerting ground maintenance teams before in-flight anomalies develop.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine Health and Trend Monitoring`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 68-050 |
-| S1000D SNS | 068-050-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `068` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 EHM Monitored Parameters ![DRAFT]
 
 | Parameter | Trend Metric | Alert Threshold | Action |
@@ -112,4 +114,4 @@ EHM data is compatible with industry-standard engine health monitoring platforms
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — AMPEL360E eWTW contextualization |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — programme-defined aircraft type contextualization |

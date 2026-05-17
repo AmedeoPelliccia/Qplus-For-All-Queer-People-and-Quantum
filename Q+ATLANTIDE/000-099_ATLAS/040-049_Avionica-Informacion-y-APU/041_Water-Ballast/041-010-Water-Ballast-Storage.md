@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 010 — Water Ballast Storage
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document defines the storage architecture for the Water Ballast system on the AMPEL360E eWTW aircraft. It specifies the tank configuration, material selection, structural attachment, volume/mass sizing, venting provisions, and internal anti-slosh design for both the Forward Ballast Tank (FBT) and Aft Ballast Tank (ABT).
+This document defines the storage architecture for the Water Ballast system on the programme-defined aircraft type. It specifies the tank configuration, material selection, structural attachment, volume/mass sizing, venting provisions, and internal anti-slosh design for both the Forward Ballast Tank (FBT) and Aft Ballast Tank (ABT).
 
 Tank design must satisfy contradictory requirements: low empty mass (to minimise structural weight penalty), high structural efficiency under pressurised and inertial loads, and resistance to the corrosive, microbiological, and freeze-thaw environments encountered across the operational flight envelope. Both rigid HDPE and flexible bladder-tank architectures are assessed; the baseline selection is rigid HDPE for structural predictability and low maintenance.
 
@@ -50,11 +52,11 @@ Environmental qualification of all tank assemblies, including mounting hardware 
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41-10 — Water Ballast Storage |
 | Standards | CS-25 Amd 27, DO-160G §4/6/8, ISO 15750, ARP4754B |
 | Dev Assurance | DAL C (structural/containment); DAL B for quantity sensing |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | Max Operating Pressure | 0.35 bar gauge (gravity + pump head) |
 
 ---
@@ -94,7 +96,7 @@ Anti-slosh baffles of 6 mm HDPE partition each tank into three equal chambers co
 
 **Anti-Slosh Design.** Three transverse baffles per tank divide the internal volume into four equal chambers. Calibrated orifice diameter is 80 mm, providing adequate inter-chamber flow at transfer rates up to 30 kg/min while restricting sloshing. Baffle attachment uses HDPE fusion bonding; joint strength verified to 150% of ultimate slosh load.
 
-**Structural Attachment.** Six titanium (Ti-6Al-4V) mounting brackets per tank, with 3 on each longitudinal rail. Brackets are bolted to airframe frames via NAS standard bolts with wet installation per AMPEL360E structural repair manual. Elastomeric vibration isolators (Shore 60A) between bracket and tank flange reduce high-frequency vibration transmission.
+**Structural Attachment.** Six titanium (Ti-6Al-4V) mounting brackets per tank, with 3 on each longitudinal rail. Brackets are bolted to airframe frames via NAS standard bolts with wet installation per [PROGRAMME-AIRCRAFT] structural repair manual. Elastomeric vibration isolators (Shore 60A) between bracket and tank flange reduce high-frequency vibration transmission.
 
 **Material Compatibility.** HDPE-XL is compatible with deionised water, potable water (NSF/ANSI 61 compliant), and dilute biocide solutions (150 ppm chlorine equivalent). All metallic fittings are 316L stainless steel. EPDM seals are used on all connections; PTFE thread tape is prohibited (FOD risk); Loctite 243 threadlocker is used on all fitting bosses.
 
@@ -255,7 +257,7 @@ Verification Evidence"]
 - Vent-line blockage detected by differential pressure across hydrophobic filter; alarm threshold 0.02 bar differential.
 - External tank surface visual inspection criteria defined in AMM: crazing, surface cracks >10 mm, or discolouration to be reported.
 - Structural bracket torque-check values recorded at each C-check; out-of-tolerance torque values trigger NDT inspection of bracket attachment holes.
-- Water quality sample port on FBT fill boss enables microbiological sampling per AMPEL360E maintenance schedule.
+- Water quality sample port on FBT fill boss enables microbiological sampling per [PROGRAMME-AIRCRAFT] maintenance schedule.
 
 ---
 
@@ -275,12 +277,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-010-00A-040A-A | 040 | Water Ballast Storage Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-010-00A-300A-A | 300 | Water Ballast Storage Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-010-00A-400A-A | 400 | Water Ballast Storage BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-010-00A-520A-A | 520 | Water Ballast Storage Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-010-00A-941A-A | 941 | Water Ballast Storage Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-010-00A-720A-A | 720 | Water Ballast Storage SW Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-010-00A-040A-A | 040 | Water Ballast Storage Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-010-00A-300A-A | 300 | Water Ballast Storage Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-010-00A-400A-A | 400 | Water Ballast Storage BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-010-00A-520A-A | 520 | Water Ballast Storage Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-010-00A-941A-A | 941 | Water Ballast Storage Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-010-00A-720A-A | 720 | Water Ballast Storage SW Description |
 
 ### Recommended Data Module Set
 
@@ -384,7 +386,7 @@ Verification Evidence"]
 | <a id="ref-iso175"></a>ISO 175 | ISO 175:2010 — Plastics; Methods of Test for Effects of Immersion in Liquid | HDPE-XL material compatibility test | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Structural load certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for [PROGRAMME-AIRCRAFT] | Structural load certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -393,8 +395,8 @@ Verification Evidence"]
 | Ref | Document | Identifier | Revision | Status | Link |
 |-----|---------|-----------|---------|--------|------|
 | R-001 | Water Ballast General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
-| R-002 | AMPEL360E Structural Design Manual | AMPEL360E-SDM-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| R-003 | WB Tank Material Trade Study | AMPEL360E-TS-041-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-002 | [PROGRAMME-AIRCRAFT] Structural Design Manual | [PROGRAMME-AIRCRAFT]-SDM-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-003 | WB Tank Material Trade Study | [PROGRAMME-AIRCRAFT]-TS-041-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

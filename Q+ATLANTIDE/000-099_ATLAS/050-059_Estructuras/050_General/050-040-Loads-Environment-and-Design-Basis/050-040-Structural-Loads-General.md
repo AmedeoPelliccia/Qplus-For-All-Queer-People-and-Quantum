@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Structural Loads General
 
 ## 1. Purpose
 
-Defines the **general structural loads framework** for the AMPEL360 eWTW: the classification taxonomy of all load types, the principles for load combination, the load sources mapped to structural components, and the governing regulatory references that control each load category.
+Defines the **general structural loads framework** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: the classification taxonomy of all load types, the principles for load combination, the load sources mapped to structural components, and the governing regulatory references that control each load category.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-Structural loads on the AMPEL360 eWTW arise from aerodynamic, inertial, propulsive, pressurisation, thermal, and ground-handling sources. All loads are classified as either *external* (directly specified by CS-25 or the design basis) or *internal* (derived by structural analysis from external inputs). Load combinations follow CS-25.301 and the programme-specific load combination matrix LCM-AMPEL360-001.
+Structural loads on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] arise from aerodynamic, inertial, propulsive, pressurisation, thermal, and ground-handling sources. All loads are classified as either *external* (directly specified by CS-25 or the design basis) or *internal* (derived by structural analysis from external inputs). Load combinations follow CS-25.301 and the programme-specific load combination matrix LCM-[PROGRAMME-AIRCRAFT]-001.
 
 Loads are further classified by probability of occurrence: *limit loads* (probable in service), *ultimate loads* (limit × 1.5 safety factor), and *proof loads* (for pressurised components). Each classification dictates the allowable structural response and margin-of-safety criteria.
 
@@ -87,6 +89,6 @@ graph LR
 | CS-25.301 | Loads — general |
 | CS-25.303 | Factor of safety |
 | CS-25.305 | Strength and deformation |
-| LCM-AMPEL360-001 | Load Combination Matrix (programme document) |
+| LCM-[PROGRAMME-AIRCRAFT]-001 | Load Combination Matrix (programme document) |
 | [`./README.md`](./README.md) | Subsubject 040 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

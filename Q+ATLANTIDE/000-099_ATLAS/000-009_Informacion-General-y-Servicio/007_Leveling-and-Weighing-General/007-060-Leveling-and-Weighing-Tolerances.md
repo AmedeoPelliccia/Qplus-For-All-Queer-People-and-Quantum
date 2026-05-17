@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 08"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Defines the controlled tolerances for leveling and weighing operations on the AMPEL360E eWTW. Covers acceptable level tolerance at each reference point, weighing accuracy requirements, CG tolerance limits, and the acceptance or rejection criteria for the Official Weighing Record.
+Defines the controlled tolerances for leveling and weighing operations on the programme-defined aircraft type. Covers acceptable level tolerance at each reference point, weighing accuracy requirements, CG tolerance limits, and the acceptance or rejection criteria for the Official Weighing Record.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 08 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,7 +72,7 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Leveling and Weighing Tolerances** node specifies the acceptable error bands for leveling (inclinometer) and weighing (load cell) measurements on the AMPEL360E eWTW, and the corrective actions when limits are exceeded. Leveling tolerances (measuring against WL 0): pitch deviation ≤ ±0.10° (combined LR1/LR2); roll deviation ≤ ±0.10° (LR3 port − starboard). If pitch deviation exceeds ±0.10° but is ≤ ±0.30°, a correction table (T1 in AMM 08-10) applies a geometric arm correction factor to the weighing data. If deviation exceeds ±0.30°, re-level before weighing.
+The **Leveling and Weighing Tolerances** node specifies the acceptable error bands for leveling (inclinometer) and weighing (load cell) measurements on the programme-defined aircraft type, and the corrective actions when limits are exceeded. Leveling tolerances (measuring against WL 0): pitch deviation ≤ ±0.10° (combined LR1/LR2); roll deviation ≤ ±0.10° (LR3 port − starboard). If pitch deviation exceeds ±0.10° but is ≤ ±0.30°, a correction table (T1 in AMM 08-10) applies a geometric arm correction factor to the weighing data. If deviation exceeds ±0.30°, re-level before weighing.
 
 Weighing tolerances: individual load-cell channel repeatability ≤ 0.05% of reading (3-sigma, over 30 s); total weight repeatability ≤ 0.10% between consecutive measurements; absolute accuracy ≤ ±0.3% of certified MTOW when using calibrated platform scales. If two consecutive weighing passes disagree by >0.3% of gross weight, the operation must be suspended, calibration of the weighing equipment checked, and the operation repeated. Environmental exclusions: weighing not permitted if hangar ambient temperature changes >5 °C during the measurement window; wind speed inside hangar exceeds 5 m/s (10 kts); or vibration from adjacent maintenance activities (e.g., engine run) is present. All out-of-tolerance events are recorded in the WMMS-LW event log and flagged for quality review.
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the leveling and weighing tolerances scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Leveling and Weighing Tolerances** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Leveling and Weighing Tolerances** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `007` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `060` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-007-060` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-007-060` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

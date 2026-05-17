@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 015 · Subsubject 004 — GSE Interfaces, Couplings and Aircraft-Side Connections
 
 ## 1. Purpose
 
-Defines and documents the **physical, electrical, and pneumatic interfaces** between Ground Support Equipment (GSE) and AMPEL360 aircraft variants — covering connector types, coupling specifications, aircraft-side service panel locations, and interface compatibility requirements. This subsubject is the normative reference for any GSE item listed in the catalog (`002_`) whose interface is identified with a cross-reference to `004_`[^baseline].
+Defines and documents the **physical, electrical, and pneumatic interfaces** between Ground Support Equipment (GSE) and [PROGRAMME-AIRCRAFT] aircraft variants — covering connector types, coupling specifications, aircraft-side service panel locations, and interface compatibility requirements. This subsubject is the normative reference for any GSE item listed in the catalog (`002_`) whose interface is identified with a cross-reference to `004_`[^baseline].
 
 ## 2. Scope
 
@@ -37,7 +39,7 @@ Defines and documents the **physical, electrical, and pneumatic interfaces** bet
 
 #### 2.1.1 Aircraft-side connection points
 
-AMPEL360 aircraft are equipped with external power receptacles conforming to:
+[PROGRAMME-AIRCRAFT] aircraft are equipped with external power receptacles conforming to:
 
 - **28 V DC ground power** — MIL-DTL-83527 compatible receptacle (nose section, ground service panel).
 - **115 V AC / 400 Hz ground power** — NATO STANAG 3456 / ISO 461 compatible receptacle (lower fuselage, forward ground service panel).
@@ -76,7 +78,7 @@ AMPEL360 aircraft are equipped with external power receptacles conforming to:
 | Panel location | Lower fuselage, right side, forward of wing leading edge |
 | Temperature limit | Delivered air temperature ≤ 260 °C at aircraft port |
 | Interlock | Starter valve opens only on flight deck command; ASU must reach pressure before valve opens |
-| Gen 2 note | AMPEL360 BWB-H2 Gen 2 electric start variant may not require ASU; confirm active engine start architecture via configuration management before connecting |
+| Gen 2 note | [PROGRAMME-AIRCRAFT] BWB-H2 Gen 2 electric start variant may not require ASU; confirm active engine start architecture via configuration management before connecting |
 
 ### 2.3 Passenger/Crew Boarding Interface
 
@@ -84,7 +86,7 @@ AMPEL360 aircraft are equipped with external power receptacles conforming to:
 
 Door sill heights are variant-specific. The following are reference values for interface planning:
 
-| Door | AMPEL360e Gen 1 (sill height, AGL) | AMPEL360 BWB-H2 Gen 2 (sill height, AGL) |
+| Door | [PROGRAMME-AIRCRAFT] Gen 1 (sill height, AGL) | [PROGRAMME-AIRCRAFT] BWB-H2 Gen 2 (sill height, AGL) |
 |---|---|---|
 | Forward passenger door (L1) | 3.2 m | 3.5 m |
 | Rear passenger door (L2) | 3.1 m | 3.4 m |
@@ -102,7 +104,7 @@ Door sill heights are variant-specific. The following are reference values for i
 
 #### 2.4.1 Cargo loader deck height and door dimensions
 
-| Parameter | AMPEL360e Gen 1 | AMPEL360 BWB-H2 Gen 2 |
+| Parameter | [PROGRAMME-AIRCRAFT] Gen 1 | [PROGRAMME-AIRCRAFT] BWB-H2 Gen 2 |
 |---|---|---|
 | Forward cargo door width | 1.73 m | 1.73 m |
 | Forward cargo door height | 1.22 m | 1.40 m |
@@ -133,8 +135,8 @@ Colour coding and port labelling are per IATA IGOM[^iata_igom] and ATA iSpec 220
 | Field | Value |
 |---|---|
 | Applicable GSE | GSE-015-018 (tow tractor), GSE-015-019 (towbarless), GSE-015-020 (towbar) |
-| Towbar pin diameter | 50 mm (AMPEL360e Gen 1) |
-| Towbar pin diameter | 57 mm (AMPEL360 BWB-H2 Gen 2) |
+| Towbar pin diameter | 50 mm ([PROGRAMME-AIRCRAFT] Gen 1) |
+| Towbar pin diameter | 57 mm ([PROGRAMME-AIRCRAFT] BWB-H2 Gen 2) |
 | Shear pin rating | Towbar shear pin rated for aircraft MZFW tow load; replace after any overload event |
 | Steering limit | Maximum nose-wheel deflection during towing: ±72° (Gen 1), ±65° (Gen 2); exceed limit only with bypass pin engaged |
 | Bypass pin | Required for towing; removes nose-gear steering actuator from load path; inserted before tow connection |
@@ -165,7 +167,7 @@ Cross-contamination prevention: all fluid replenishment couplings use incompatib
 
 ```mermaid
 flowchart LR
-    FUSE["AMPEL360<br/>Fuselage (side view)"]:::plane
+    FUSE["[PROGRAMME-AIRCRAFT]<br/>Fuselage (side view)"]:::plane
 
     subgraph FWD["Forward zone"]
         GPU_P["AC/DC Ground Power<br/>(left side)"]:::panel
@@ -224,7 +226,7 @@ flowchart LR
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `015` — Ground Support Equipment |
 | Subsubject | `004` — GSE Interfaces, Couplings and Aircraft-Side Connections |
-| Variants covered | AMPEL360e Gen 1 (Jet-A/SAF), AMPEL360 BWB-H2 Gen 2 (LH₂) |
+| Variants covered | [PROGRAMME-AIRCRAFT] Gen 1 (Jet-A/SAF), [PROGRAMME-AIRCRAFT] BWB-H2 Gen 2 (LH₂) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |
 | ORB support | ORB-PMO, ORB-FIN |

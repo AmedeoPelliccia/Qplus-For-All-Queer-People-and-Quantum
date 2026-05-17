@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — Primary Structural Architecture
 
 ## 1. Purpose
 
-Describes the **primary structural architecture** of the AMPEL360 eWTW: the PSE network, principal load paths, key structural elements, and their architectural arrangement across the airframe.
+Describes the **primary structural architecture** of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: the PSE network, principal load paths, key structural elements, and their architectural arrangement across the airframe.
 
 ## 2. Scope
 
 ### 2.1 Primary Load Paths
 
-The AMPEL360 primary structural architecture is built around four principal load paths:
+The [PROGRAMME-AIRCRAFT] primary structural architecture is built around four principal load paths:
 
 | Load path | Description | Key PSEs |
 |---|---|---|
@@ -61,7 +63,7 @@ graph TD
 
 ### 2.3 Key Design Features
 
-| Feature | AMPEL360 specific |
+| Feature | [PROGRAMME-AIRCRAFT] specific |
 |---|---|
 | Wing-fuselage joint | WFIJ — 4-bolt carbon/titanium joint; multi-load-path |
 | Fuselage barrel | 6-barrel all-CFRP semi-monocoque; integral tear-straps |

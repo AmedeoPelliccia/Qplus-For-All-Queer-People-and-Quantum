@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Structural Zones and Major Assemblies
 
 ## 1. Purpose
 
-Defines the **structural zone map** and **major assembly list** for the AMPEL360 eWTW, providing the reference coordinate system, zone identifiers, and major assembly part-number families used across all structural documentation.
+Defines the **structural zone map** and **major assembly list** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], providing the reference coordinate system, zone identifiers, and major assembly part-number families used across all structural documentation.
 
 ## 2. Scope
 

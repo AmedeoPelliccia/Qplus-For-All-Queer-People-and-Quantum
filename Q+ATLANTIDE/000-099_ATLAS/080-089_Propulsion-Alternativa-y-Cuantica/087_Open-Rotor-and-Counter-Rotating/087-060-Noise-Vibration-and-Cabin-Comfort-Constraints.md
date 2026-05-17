@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-060-NOISE-VIBRATION-AND-CABIN-COMFORT-CONSTRAINTS
      ATLAS-087 (Open Rotor and Counter-Rotating) · Noise, Vibration and Cabin Comfort Constraints
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Noise, Vibration and Cabin Comfort Constraints
@@ -44,13 +46,14 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-060"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-060 defines the noise and vibration requirements, far-field noise budget, interior cabin NVH (Noise, Vibration, and Harshness) constraints, and design mitigations for the AMPEL360E eWTW ORCR propulsor. It establishes compliance metrics against ICAO Annex 16 Chapter 14, EU EC 598/2014, and interior SPL targets per aircraft passenger comfort standards.
+This document defines the agnostic ATLAS standard-level architecture context for `Noise, Vibration and Cabin Comfort Constraints`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Far-Field Noise Certification Targets
 
-| Measurement Point | ICAO Ch14 Limit (EPNdB) | AMPEL360E Design Target | Margin |
+| Measurement Point | ICAO Ch14 Limit (EPNdB) | [PROGRAMME-AIRCRAFT] Design Target | Margin |
 |---|---|---|---|
 | Take-off (TOGA, 6 500 m downtrack) | 88.0 | 84.5 | −3.5 EPNdB |
 | Sideline (450 m offset, max-noise point) | 98.0 | 94.5 | −3.5 EPNdB |

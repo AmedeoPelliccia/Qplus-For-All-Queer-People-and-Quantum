@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 040 — Avionics Networks and Data Communication
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the AMPEL360E avionics data communication network architecture including AFDX/ARINC 664 Part 7 switched Ethernet, Virtual Link (VL) configuration, Bandwidth Allocation Gap (BAG) scheduling, legacy ARINC 429 bridge interfaces, dual-redundant network topology, end-system configuration, and network integrity monitoring. It establishes the deterministic communication fabric interconnecting all IMA cabinets, hosted applications, and aircraft systems.
+This document defines the [PROGRAMME-AIRCRAFT] avionics data communication network architecture including AFDX/ARINC 664 Part 7 switched Ethernet, Virtual Link (VL) configuration, Bandwidth Allocation Gap (BAG) scheduling, legacy ARINC 429 bridge interfaces, dual-redundant network topology, end-system configuration, and network integrity monitoring. It establishes the deterministic communication fabric interconnecting all IMA cabinets, hosted applications, and aircraft systems.
 
 ---
 
@@ -46,18 +48,18 @@ This document defines the AMPEL360E avionics data communication network architec
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28 |
 | Applicable Standards | ARINC 664 Part 7; ARINC 664 Part 2; ARINC 429; DO-160G; IEEE 802.3 100BASE-TX |
 | Design Assurance Level | AFDX End-System: DAL A; Switches: DAL B; ARINC 429 bridge: DAL B |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E avionics network implements ARINC 664 Part 7 (AFDX) as the primary avionics data bus. The network comprises:
+The [PROGRAMME-AIRCRAFT] avionics network implements ARINC 664 Part 7 (AFDX) as the primary avionics data bus. The network comprises:
 
 - **Two fully redundant networks (Network A and Network B):** Each is a switched 100 Mbps full-duplex Ethernet network. All critical end-systems are connected to both networks. Data is simultaneously transmitted on both; receiving end-systems perform integrity checking and select the valid frame.
 - **AFDX Switches:** Four switches per network (eight total) arranged in a spine-leaf topology. Switches are non-blocking 100 Mbps with configurable VL filter tables.
@@ -89,7 +91,7 @@ The AMPEL360E avionics network implements ARINC 664 Part 7 (AFDX) as the primary
 
 ## 5. Architecture Description
 
-**AFDX Topology:** The AMPEL360E AFDX network uses a two-tier spine-leaf architecture. Two spine switches (SW-SPINE-A1, SW-SPINE-A2 on Network A; duplicated on Network B) provide high-availability interconnect. Eight leaf switches (four per network) connect to end-system clusters. This topology provides ≤2-hop path between any two end-systems.
+**AFDX Topology:** The [PROGRAMME-AIRCRAFT] AFDX network uses a two-tier spine-leaf architecture. Two spine switches (SW-SPINE-A1, SW-SPINE-A2 on Network A; duplicated on Network B) provide high-availability interconnect. Eight leaf switches (four per network) connect to end-system clusters. This topology provides ≤2-hop path between any two end-systems.
 
 **VL Traffic Shaping:** Each end-system enforces VL bandwidth contracts at transmission. A VL with BAG=8 ms may transmit at most one frame of ≤max_frame_size every 8 ms. Violation attempts are blocked by the ES and logged. This ensures the theoretical maximum network utilisation does not exceed 65% on any link, providing headroom for burst management.
 
@@ -356,9 +358,9 @@ graph LR
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
 | REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-02 | AMPEL360E AFDX Network Design Description | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | AMPEL360E VL Configuration Database | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | AMPEL360E ARINC 429 Bridge Translation Tables | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-02 | [PROGRAMME-AIRCRAFT] AFDX Network Design Description | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] VL Configuration Database | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] ARINC 429 Bridge Translation Tables | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

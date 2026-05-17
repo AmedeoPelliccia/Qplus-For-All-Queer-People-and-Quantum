@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0060-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-060-040-PROPELLER-ROTOR-REPAIR-AND-BALANCING
      ATA 60 · Propeller/Rotor Repair and Balancing
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propeller/Rotor Repair and Balancing
@@ -47,26 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-040"
 
 ## §1 Purpose
 
-This document defines the controlled repair classification system, approved repair schemes, and static/dynamic balancing requirements for propeller and rotor assemblies. Repair and balance decisions are safety-critical: an improperly repaired blade or an unbalanced propeller can produce aeromechanical excitation loads that damage the engine, airframe, and flight controls.
+This document defines the agnostic ATLAS standard-level architecture context for `Propeller/Rotor Repair and Balancing`.
 
-On the AMPEL360E eWTW, composite blade repair authority is split between line-level cosmetic repair (scratch and gel-coat damage), base-level structural repair (small leading-edge erosion filling, cosmetic disbond), and shop-level major repair (spar cap damage, root fitting repair). Each repair level requires specific material qualification, inspector certification, and engineering approval before application.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 60-040 — Repair and Balancing |
-| Repair classification | AMPEL360E SRM-060 Chapter 20 |
-| Balance standard | ISO 1940-1 Grade G1.0 for propeller assemblies |
-| Repair authority | Q-MECHANICS Engineering — Concession/repair approval |
-| Composite repair material | AMPEL360E-CFS-001 approved repair patch system |
-| S1000D SNS | 060-040-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `060` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Repair classification uses a three-tier system:
@@ -133,7 +129,7 @@ flowchart TB
 |---|---|---|---|---|---|
 | Dynamic balance machine (propeller-rated) | ISO 1940-1 qualified machine | 1 per MRO shop | Balance bay | Annual calibration + ISO cert | TBD |
 | Static balance fixture (blade moment arm) | Drawing-specific fixture | Per blade type | Shop fixture store | Annual inspection | TBD |
-| CFRP patch repair kit (Class 2) | AMPEL360E-CFS-001 repair system | Per batch | Controlled store −18 °C | Shelf life per PS | TBD |
+| CFRP patch repair kit (Class 2) | [PROGRAMME-AIRCRAFT]-CFS-001 repair system | Per batch | Controlled store −18 °C | Shelf life per PS | TBD |
 | Balance weight set (hub pocket weights) | Per hub drawing | Per hub | Assembly parts store | Part number controlled | TBD |
 | Surface profile gauge (erosion depth) | Calibrated depth micrometer | Per repair team | Repair bay | Annual calibration | TBD |
 
@@ -212,8 +208,8 @@ flowchart TB
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
 | ISO 1940-1 | Mechanical Vibration — Balance quality requirements for rotors in a constant (rigid) state | ISO | Dynamic balance quality grade G1.0 |
-| AMPEL360E SRM-060 | Structural Repair Manual — Chapter 60 Propeller/Rotor | AMPEL360E programme | Damage classification and repair schemes |
-| AMPEL360E-CFS-001 | Carbon Fibre System specification — repair patch system | AMPEL360E programme | CFRP repair material qualification |
+| [PROGRAMME-AIRCRAFT] SRM-060 | Structural Repair Manual — Chapter 60 Propeller/Rotor | [PROGRAMME-AIRCRAFT] programme | Damage classification and repair schemes |
+| [PROGRAMME-AIRCRAFT]-CFS-001 | Carbon Fibre System specification — repair patch system | [PROGRAMME-AIRCRAFT] programme | CFRP repair material qualification |
 | ATA iSpec 2200 | Chapter 60 — Propeller Standard Practices | Air Transport Association | Repair practice scope |
 | SAE AS7506 | Maintenance Processes and Procedures for Aircraft Propellers | SAE International | Repair philosophy reference |
 
@@ -251,8 +247,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-060-040-001 | Define ADL erosion limits for AMPEL360E CFRP blade leading edge (pending erosion coupon test campaign) | Q-MECHANICS / Q-AIR | 2026-Q4 |
-| OI-060-040-002 | Confirm maximum balance weight mass per pocket for AMPEL360E hub design | Q-MECHANICS / propeller supplier | 2026-Q3 |
+| OI-060-040-001 | Define ADL erosion limits for [PROGRAMME-AIRCRAFT] CFRP blade leading edge (pending erosion coupon test campaign) | Q-MECHANICS / Q-AIR | 2026-Q4 |
+| OI-060-040-002 | Confirm maximum balance weight mass per pocket for [PROGRAMME-AIRCRAFT] hub design | Q-MECHANICS / propeller supplier | 2026-Q3 |
 | OI-060-040-003 | Develop Class 2 repair scheme for carbon-spar blade root region (new repair type, no precedent) | Q-MECHANICS engineering | 2027-Q1 |
 
 ---
@@ -286,4 +282,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0069-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0069-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Oil Storage and Distribution
@@ -30,20 +32,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0069-020"
 
 ## §1 Purpose
 
-Specifies the oil tank, supply pump, and distribution network for the AMPEL360E eWTW turbofan dry-sump oil system. Synthetic oil (MIL-PRF-23699) is stored in a gearbox-mounted tank and distributed under pressure to all bearing sumps.
+This document defines the agnostic ATLAS standard-level architecture context for `Oil Storage and Distribution`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 69-020 |
-| S1000D SNS | 069-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `069` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Oil System Architecture ![DRAFT]
 
 | Component | Specification | Location |
@@ -113,4 +115,4 @@ flowchart LR
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — AMPEL360E eWTW contextualization |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — programme-defined aircraft type contextualization |

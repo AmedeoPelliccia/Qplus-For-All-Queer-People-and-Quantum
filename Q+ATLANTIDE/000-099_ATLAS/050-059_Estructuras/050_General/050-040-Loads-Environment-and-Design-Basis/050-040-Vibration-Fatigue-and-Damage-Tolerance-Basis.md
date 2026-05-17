@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Vibration, Fatigue and Damage Tolerance Basis
 
 ## 1. Purpose
 
-Establishes the **vibration, fatigue, and damage-tolerance (DT) basis** for the AMPEL360 eWTW structural programme per CS-25.571, defining the fatigue spectrum, damage-tolerant design philosophy for Principal Structural Elements (PSEs), inspection threshold and interval derivation methodology, and the WFD/MSD assessment approach.
+Establishes the **vibration, fatigue, and damage-tolerance (DT) basis** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural programme per CS-25.571, defining the fatigue spectrum, damage-tolerant design philosophy for Principal Structural Elements (PSEs), inspection threshold and interval derivation methodology, and the WFD/MSD assessment approach.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-CS-25.571 requires that transport-category aircraft structures be evaluated for fatigue and damage tolerance. For the AMPEL360 eWTW, all PSEs are designed to be damage-tolerant: cracks must be detectable before reaching critical length, and residual strength must be maintained throughout the inspection interval. Safe-life design is reserved for a limited set of landing-gear primary elements where DT analysis is impractical.
+CS-25.571 requires that transport-category aircraft structures be evaluated for fatigue and damage tolerance. For the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], all PSEs are designed to be damage-tolerant: cracks must be detectable before reaching critical length, and residual strength must be maintained throughout the inspection interval. Safe-life design is reserved for a limited set of landing-gear primary elements where DT analysis is impractical.
 
 The distributed-electric-propulsion configuration introduces vibration environments dominated by rotor blade-passage frequencies, which are significantly higher in frequency than turbofan fan-blade-passage tones. This necessitates high-cycle acoustic fatigue analysis for nacelle attachment frames and fairing panels adjacent to the DEP pods. The design service goal (DSG) is 90,000 flight cycles / 180,000 flight hours.
 

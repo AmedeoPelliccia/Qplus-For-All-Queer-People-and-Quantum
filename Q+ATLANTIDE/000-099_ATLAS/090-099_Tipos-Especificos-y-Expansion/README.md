@@ -19,13 +19,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 090-099 · Section 09 — Tipos Específicos & Expansión
 
 ## 1. Purpose
 
-Section-level index for *Tipos Específicos & Expansión* (`090-099`) within the ATLAS band. Variantes y demostradores AMPEL360 (tube-and-wing, BWB, H₂, MRTT, eVTOL, Sky-Cleaner) y registro de identificación de tipo.
+Section-level index for *Tipos Específicos & Expansión* (`090-099`) within the ATLAS band. Variantes y demostradores [PROGRAMME-AIRCRAFT] (tube-and-wing, BWB, H₂, MRTT, eVTOL, Sky-Cleaner) y registro de identificación de tipo.
 
 This section is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001]. Bands classify technologies, Q-Divisions provide technical authority and ORB-Functions provide enterprise support[^n002].
 
@@ -39,12 +41,12 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 | Code | Title | Folder | Status |
 |---:|---|---|---|
-| `090` | AMPEL360e Tube-and-Wing Family | [`090_AMPEL360e-Tube-and-Wing-Family/`](./090_AMPEL360e-Tube-and-Wing-Family/) | active |
-| `091` | AMPEL360 BWB Q100-Q250 | [`091_AMPEL360-BWB-Q100-Q250/`](./091_AMPEL360-BWB-Q100-Q250/) | active |
-| `092` | AMPEL360 BWB H₂ Demonstrator | [`092_AMPEL360-BWB-H2-Demonstrator/`](./092_AMPEL360-BWB-H2-Demonstrator/) | active |
-| `093` | AMPEL360 Q300 MRTT Tanker/Transport | [`093_AMPEL360-Q300-MRTT-Tanker-Transport/`](./093_AMPEL360-Q300-MRTT-Tanker-Transport/) | active |
-| `094` | AMPEL360 City eVTOL — UAM | [`094_AMPEL360-City-eVTOL-UAM/`](./094_AMPEL360-City-eVTOL-UAM/) | active |
-| `095` | AMPEL360 Sky-Cleaner — Environmental | [`095_AMPEL360-Sky-Cleaner-Environmental/`](./095_AMPEL360-Sky-Cleaner-Environmental/) | active |
+| `090` | [PROGRAMME-AIRCRAFT] Tube-and-Wing Family | [`090_[PROGRAMME-AIRCRAFT]-Tube-and-Wing-Family/`](./090_[PROGRAMME-AIRCRAFT]-Tube-and-Wing-Family/) | active |
+| `091` | [PROGRAMME-AIRCRAFT] BWB Q100-Q250 | [`091_[PROGRAMME-AIRCRAFT]-BWB-Q100-Q250/`](./091_[PROGRAMME-AIRCRAFT]-BWB-Q100-Q250/) | active |
+| `092` | [PROGRAMME-AIRCRAFT] BWB H₂ Demonstrator | [`092_[PROGRAMME-AIRCRAFT]-BWB-H2-Demonstrator/`](./092_[PROGRAMME-AIRCRAFT]-BWB-H2-Demonstrator/) | active |
+| `093` | [PROGRAMME-AIRCRAFT] Q300 MRTT Tanker/Transport | [`093_[PROGRAMME-AIRCRAFT]-Q300-MRTT-Tanker-Transport/`](./093_[PROGRAMME-AIRCRAFT]-Q300-MRTT-Tanker-Transport/) | active |
+| `094` | [PROGRAMME-AIRCRAFT] City eVTOL — UAM | [`094_[PROGRAMME-AIRCRAFT]-City-eVTOL-UAM/`](./094_[PROGRAMME-AIRCRAFT]-City-eVTOL-UAM/) | active |
+| `095` | [PROGRAMME-AIRCRAFT] Sky-Cleaner — Environmental | [`095_[PROGRAMME-AIRCRAFT]-Sky-Cleaner-Environmental/`](./095_[PROGRAMME-AIRCRAFT]-Sky-Cleaner-Environmental/) | active |
 | `096` | Type-Specific Variant Catalog | [`096_Type-Specific-Variant-Catalog/`](./096_Type-Specific-Variant-Catalog/) | active |
 | `097` | Expansion — Reserved Future Programs | [`097_Expansion-Reserved-Future-Programs/`](./097_Expansion-Reserved-Future-Programs/) | active |
 | `098` | Cross-Type Common Architectures | [`098_Cross-Type-Common-Architectures/`](./098_Cross-Type-Common-Architectures/) | active |
@@ -60,12 +62,12 @@ flowchart TB
 
     subgraph SUBS["Subsections"]
         direction LR
-        SUB_090["090 — AMPEL360e Tube-and-Wing Family"]:::sub
-        SUB_091["091 — AMPEL360 BWB Q100-Q250"]:::sub
-        SUB_092["092 — AMPEL360 BWB H₂ Demonstrator"]:::sub
-        SUB_093["093 — AMPEL360 Q300 MRTT Tanker/Transport"]:::sub
-        SUB_094["094 — AMPEL360 City eVTOL — UAM"]:::sub
-        SUB_095["095 — AMPEL360 Sky-Cleaner — Environmental"]:::sub
+        SUB_090["090 — [PROGRAMME-AIRCRAFT] Tube-and-Wing Family"]:::sub
+        SUB_091["091 — [PROGRAMME-AIRCRAFT] BWB Q100-Q250"]:::sub
+        SUB_092["092 — [PROGRAMME-AIRCRAFT] BWB H₂ Demonstrator"]:::sub
+        SUB_093["093 — [PROGRAMME-AIRCRAFT] Q300 MRTT Tanker/Transport"]:::sub
+        SUB_094["094 — [PROGRAMME-AIRCRAFT] City eVTOL — UAM"]:::sub
+        SUB_095["095 — [PROGRAMME-AIRCRAFT] Sky-Cleaner — Environmental"]:::sub
         SUB_096["096 — Type-Specific Variant Catalog"]:::sub
         SUB_097["097 — Expansion — Reserved Future Programs"]:::sub
         SUB_098["098 — Cross-Type Common Architectures"]:::sub

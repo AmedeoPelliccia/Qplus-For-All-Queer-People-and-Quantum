@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0084-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-084-050-HYBRID-PROPULSION-CONTROL-AND-MODE-MANAGEMENT
      ATLAS-084 (Hybrid Architectures — Beyond Gen-2) · Hybrid Propulsion Control and Mode Management
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Hybrid Propulsion Control and Mode Management
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-050"
 
 ## §1 Purpose
 
-ATLAS subsubject 084-050 defines the BGSCU control architecture, the Quantum Approximate Optimisation Algorithm (QAOA) Model Predictive Control (MPC) scheduler, the classical fallback control law, the 8-mode state machine, and the BGSCU-to-subsystem communication protocols. This is the authoritative control design baseline from which BGSCU software requirements and hardware interface specifications are derived.
+This document defines the agnostic ATLAS standard-level architecture context for `Hybrid Propulsion Control and Mode Management`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-084 — 084-050 Hybrid Propulsion Control and Mode Management |
-| Certification Basis | DO-178C DAL B (BGSCU software); DO-254 DAL B (BGSCU hardware); ARINC 653 |
-| S1000D SNS | 084-050-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `084` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 BGSCU Architecture
 
 The Beyond-Gen-2 Supervisory Control Unit (BGSCU) is a dual-lane, hot-standby controller qualified to DO-178C DAL B (software) and DO-254 DAL B (hardware). Each lane runs on an independent processor module (COTS COTS-P7 space-grade derivative, 2.4 GHz quad-core) with ARINC 653 OS partitioning to separate flight-critical control partitions from research/monitoring partitions.

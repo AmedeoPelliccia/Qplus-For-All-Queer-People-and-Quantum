@@ -31,6 +31,8 @@ ata_reference: "ATA 49 — Airborne Auxiliary Power"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 020 — APU Air Inlet and Exhaust
@@ -43,13 +45,13 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-This document defines the APU air inlet and exhaust system on the **AMPEL360E eWTW** aircraft. The system comprises three functional domains: the electrically actuated inlet door, the passive blow-in pressure relief doors, the electrically heated inlet anti-ice system (with no bleed air — a critical distinction for the eWTW architecture), and the exhaust gas path through the fixed exhaust nozzle to the tail cone thermal management system (TMS).
+This document defines the APU air inlet and exhaust system on the **programme-defined aircraft type** aircraft. The system comprises three functional domains: the electrically actuated inlet door, the passive blow-in pressure relief doors, the electrically heated inlet anti-ice system (with no bleed air — a critical distinction for the [PROGRAMME-VARIANT] architecture), and the exhaust gas path through the fixed exhaust nozzle to the tail cone thermal management system (TMS).
 
 The APU inlet door is actuated by a single Electro-Mechanical Actuator (EMA) driven by the APCU. Door position is sensed by a dual-redundant Rotary Variable Differential Transformer (RVDT) pair mounted on the door hinge assembly. The APCU cross-compares both RVDT signals; a divergence exceeding 2° triggers an EMA fault flag. The inlet door is required to be in the OPEN position before the APU start sequence may proceed; APCU inhibits the start command until both RVDTs confirm the fully-open position.
 
 Two passive blow-in doors are installed on the APU nacelle lower surface. These doors are spring-loaded to the closed position and open automatically when the inlet differential pressure exceeds −40 kPa (i.e., compressor suction creates a low-pressure zone inside the nacelle). The blow-in doors supplement inlet airflow during ground operation with low wind velocity and cross-wind conditions, preventing compressor stall due to inlet flow distortion.
 
-The inlet anti-ice system uses embedded electrical resistance heating elements in the inlet lip and inlet duct wall, consuming approximately 2 kW at maximum power. This is a fundamental departure from conventional APU installations that use hot bleed air from the compressor for inlet anti-ice. On the eWTW, no bleed air is available from the APU; the electric heaters are powered from the aircraft battery bus during ground pre-heat or from the APU generator bus once APU generation is online. Anti-ice activation is commanded by the APCU when Total Air Temperature (TAT) falls below +5 °C and visible moisture is sensed (icing condition per CS-25 Appendix C).
+The inlet anti-ice system uses embedded electrical resistance heating elements in the inlet lip and inlet duct wall, consuming approximately 2 kW at maximum power. This is a fundamental departure from conventional APU installations that use hot bleed air from the compressor for inlet anti-ice. On the [PROGRAMME-VARIANT], no bleed air is available from the APU; the electric heaters are powered from the aircraft battery bus during ground pre-heat or from the APU generator bus once APU generation is online. Anti-ice activation is commanded by the APCU when Total Air Temperature (TAT) falls below +5 °C and visible moisture is sensed (icing condition per CS-25 Appendix C).
 
 The exhaust nozzle is a fixed-geometry convergent nozzle fabricated from Inconel 625 (candidate material), capable of withstanding continuous EGT up to 950 °C and short-term excursions to 1 000 °C. The exhaust gas is directed aft through a tail cone thermal management system that includes a ram-air-cooled heat exchanger to reduce the nacelle skin temperature in the exhaust zone to within structural material limits.
 
@@ -59,11 +61,11 @@ The exhaust nozzle is a fixed-geometry convergent nozzle fabricated from Inconel
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | Subsystem | APU Air Inlet and Exhaust |
 | Inlet door actuation | EMA (electric), single actuator, dual RVDT position sensing |
-| Inlet anti-ice method | Electric resistance heating, no bleed air (eWTW bleed-less design) |
+| Inlet anti-ice method | Electric resistance heating, no bleed air ([PROGRAMME-VARIANT] bleed-less design) |
 | Anti-ice power consumption | ~2 kW maximum, thermostatically regulated |
 | Blow-in door open differential pressure | < −40 kPa inlet differential (passive spring-loaded) |
 | Exhaust nozzle material | Inconel 625 (candidate) — CS-25 §25.1181 fire zone compliant |

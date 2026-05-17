@@ -6,10 +6,10 @@ subsubject: "030"
 subsubject_title: "Radio Navigation"
 file_name: "034-030-Radio-Navigation.md"
 sns_reference: "034-30"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-30"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-30"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "VOR"
@@ -89,10 +89,12 @@ keywords:
   - "Radio Navigation"
   - "CS-25.1203"
   - "DO-195"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-030 — Radio Navigation
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -104,38 +106,23 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Radio Navigation subsystem (ATA 034-030) of the AMPEL360e eWTW aircraft. It covers the dual Multi-Mode Receivers (MMRs) integrating ILS, VOR, and GPS approach modes; the dual Distance Measuring Equipment (DME) receivers; the Marker Beacon receiver (TBD — possibly suppressed as legacy equipment); and the Automatic Direction Finder (ADF — TBD on eWTW).
+This document defines the agnostic ATLAS standard-level architecture context for `034-030 — Radio Navigation`.
 
-The AMPEL360e eWTW uses dual MMR units (MMR-1 and MMR-2), each a single LRU integrating ILS Localizer, ILS Glideslope, VOR, and GPS approach receiving functions. This integration reduces weight and LRU count compared to separate ILS, VOR, and GPS approach receivers while maintaining dual-channel redundancy. DME receivers (dual) provide slant range to ground DME stations used by the FMS for DME-DME position updating. Frequency management and mode selection are performed from the MCDU/FMS.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Key applicable regulations: CS-25.1203 (Instrument Landing System), CS-25.1205 (VOR Indicator), DO-195 (ILS), EUROCAE ED-22B (VOR/ILS).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 034-030 — Radio Navigation |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| MMR Units | 2 (dual — MMR-1 and MMR-2); each integrates ILS + VOR + GPS approach |
-| DME Units | 2 (dual — DME-1 and DME-2) |
-| Marker Beacon | TBD — legacy; may be suppressed on eWTW |
-| ADF | TBD — may be suppressed on eWTW |
-| ILS Category | Cat I (baseline); Cat II/III TBD |
-| Output Bus | ARINC 429 (high speed) |
-| Frequency Management | Via MCDU / FMS (automatic or manual tuning) |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-30 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The Radio Navigation subsystem provides the AMPEL360e eWTW with ground-based radio navigation capability for en-route navigation (VOR bearing, DME slant range) and precision approach (ILS localizer and glideslope). These radio navigation sources are fed to the FMGC navigation filter alongside IRS and GNSS data to provide a robust, multi-sensor navigation solution with continuity even during GNSS outages.
+The Radio Navigation subsystem provides the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] with ground-based radio navigation capability for en-route navigation (VOR bearing, DME slant range) and precision approach (ILS localizer and glideslope). These radio navigation sources are fed to the FMGC navigation filter alongside IRS and GNSS data to provide a robust, multi-sensor navigation solution with continuity even during GNSS outages.
 
 **VOR (VHF Omnidirectional Range)**: Provides magnetic bearing TO/FROM a VOR ground station. Each MMR receives VOR signals in the VHF band (108.0–117.95 MHz) and decodes the bearing using the 30 Hz AM/FM reference and variable phase comparison. VOR bearing is used by the FMS for VOR-DME position updates and for display on the Navigation Display (ND).
 
@@ -145,9 +132,9 @@ The Radio Navigation subsystem provides the AMPEL360e eWTW with ground-based rad
 
 **GPS Approach mode in MMR**: The MMR includes an internal GNSS receiver channel for GPS approach operations (LNAV, LNAV/VNAV, LPV). This supplements the standalone GNSS receivers (034-040) with an approach-dedicated channel.
 
-**Marker Beacon (TBD)**: The 75 MHz outer, middle, and inner marker beacons provide fixed-point crossing alerts during ILS approaches. This is a legacy system being phased out; fitment on eWTW is TBD.
+**Marker Beacon (TBD)**: The 75 MHz outer, middle, and inner marker beacons provide fixed-point crossing alerts during ILS approaches. This is a legacy system being phased out; fitment on [PROGRAMME-VARIANT] is TBD.
 
-**ADF (TBD)**: The Automatic Direction Finder provides relative bearing to NDB (Non-Directional Beacon) ground stations. ADF is legacy equipment being phased out of modern airspace; fitment on eWTW is TBD.
+**ADF (TBD)**: The Automatic Direction Finder provides relative bearing to NDB (Non-Directional Beacon) ground stations. ADF is legacy equipment being phased out of modern airspace; fitment on [PROGRAMME-VARIANT] is TBD.
 
 ---
 
@@ -183,8 +170,8 @@ The Radio Navigation subsystem provides the AMPEL360e eWTW with ground-based rad
 - **Automatic frequency management**: The FMS manages VOR, ILS, and DME frequency tuning automatically based on the active flight plan route, approach selected in the FMS, and geographic position. Manual override is available via MCDU. This automatic tuning reduces crew workload significantly compared to manual radio navigation procedures.
 - **ILS Category I baseline**: The MMR ILS function is qualified for Cat I ILS approaches (DH ≥ 200 ft, RVR ≥ 550 m). Cat II (DH ≥ 100 ft) and Cat III (DH < 100 ft or no DH) capability depends on autopilot certification level (ATA 22) — TBD.
 - **Composite fuselage RF antennas**: The all-CFRP composite fuselage presents challenges for antenna installation. VOR, ILS, and DME antennas are typically installed in or on the fuselage. RF transparency of the CFRP skin must be evaluated for each antenna position (open issue). Alternative: antenna ground plane inserts or discrete dielectric panels.
-- **Marker Beacon decision**: Marker beacons are legacy ICAO SARPs infrastructure being progressively decommissioned. The eWTW Marker Beacon receiver fitment decision depends on airline customer requirements and route network regulatory requirements (TBD).
-- **ADF decision**: Non-Directional Beacon (NDB) / ADF infrastructure is being decommissioned globally. eWTW ADF fitment is TBD.
+- **Marker Beacon decision**: Marker beacons are legacy ICAO SARPs infrastructure being progressively decommissioned. The [PROGRAMME-VARIANT] Marker Beacon receiver fitment decision depends on airline customer requirements and route network regulatory requirements (TBD).
+- **ADF decision**: Non-Directional Beacon (NDB) / ADF infrastructure is being decommissioned globally. [PROGRAMME-VARIANT] ADF fitment is TBD.
 
 ---
 
@@ -325,7 +312,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-30 | Radio Navigation | DMC-AMPEL360E-EWTW-034-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-30 | Radio Navigation | DMC-<PROGRAMME>-<VARIANT>-034-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Recommended DM Set for 034-30
 
@@ -411,7 +398,7 @@ flowchart LR
 | GS | Glideslope — the ILS vertical guidance element; operates in UHF band (329–335 MHz); provides descent path angle (typically 3°) guidance |
 | ILS | Instrument Landing System — precision radio navigation system providing lateral (LOC) and vertical (GS) approach guidance to runway threshold |
 | LOC | Localizer — the ILS lateral guidance element; operates in VHF band (108.1–111.95 MHz); provides runway centreline alignment |
-| Marker Beacon | Ground transmitter (75 MHz) indicating fixed distance from runway threshold: Outer Marker (OM), Middle Marker (MM), Inner Marker (IM); legacy, TBD on eWTW |
+| Marker Beacon | Ground transmitter (75 MHz) indicating fixed distance from runway threshold: Outer Marker (OM), Middle Marker (MM), Inner Marker (IM); legacy, TBD on [PROGRAMME-VARIANT] |
 | MMR | Multi-Mode Receiver — a single LRU integrating ILS Localizer, ILS Glideslope, VOR, and GPS approach receiving functions |
 | NDB | Non-Directional Beacon — a ground navigation aid transmitting an omnidirectional radio signal for ADF bearing; legacy infrastructure |
 | VOR | VHF Omnidirectional Range — a VHF radio navigation system providing magnetic bearing from the aircraft to the VOR ground station |
@@ -456,8 +443,8 @@ flowchart LR
 |---|---|---|---|---|
 | OI-030-001 | Composite fuselage RF transparency — VOR, LOC, GS, DME antenna performance on CFRP fuselage; groundplane and insertion loss assessment required | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-030-002 | Cat II / Cat III ILS decision — confirm MMR qualification level for Cat II/III; dependency on autopilot certification (ATA 22) and ground facility availability | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-030-003 | Marker Beacon fitment — confirm whether MB receiver and antenna are required on eWTW baseline given global MB decommissioning trend; airline customer survey needed | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-030-004 | ADF fitment — confirm whether ADF is required on eWTW; majority of modern airspace no longer requires ADF; regulatory survey needed | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-030-003 | Marker Beacon fitment — confirm whether MB receiver and antenna are required on [PROGRAMME-VARIANT] baseline given global MB decommissioning trend; airline customer survey needed | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-030-004 | ADF fitment — confirm whether ADF is required on [PROGRAMME-VARIANT]; majority of modern airspace no longer requires ADF; regulatory survey needed | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-030-005 | MEMS vs. FOG IRS technology decision | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-030-006 | GBAS fitment decision | Q-AIR / ORB-PMO | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-030-007 | ADS-B In fitment decision | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |

@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0064-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-064-060-FUEL-HEATING-AND-THERMAL-MANAGEMENT
      ATA 64 · Fuel Heating and Thermal Management
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Heating and Thermal Management
@@ -47,24 +49,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-060"
 
 ## §1 Purpose
 
-The AMPEL360E eWTW eliminates the engine bleed-air fuel heater and uses only the engine Fuel/Oil Heat Exchanger (FOHE) for thermal management. The FOHE warms cold fuel to prevent wax crystal formation and icing, while simultaneously cooling engine lube oil. An additional electrically heated fuel inlet (EHFI) protects the LP pump inlet at extreme cold-soak conditions.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Heating and Thermal Management`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-060 — Fuel Heating and Thermal Management |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-060-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `064` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The AMPEL360E eWTW eliminates the engine bleed-air fuel heater and uses only the engine Fuel/Oil Heat Exchanger (FOHE) for thermal management. The FOHE warms cold fuel to prevent wax crystal formation and icing, while simultaneously cooling engine lube oil. An additional electrically heated fuel inlet (EHFI) protects the LP pump inlet at extreme cold-soak conditions.
+The programme-defined aircraft type eliminates the engine bleed-air fuel heater and uses only the engine Fuel/Oil Heat Exchanger (FOHE) for thermal management. The FOHE warms cold fuel to prevent wax crystal formation and icing, while simultaneously cooling engine lube oil. An additional electrically heated fuel inlet (EHFI) protects the LP pump inlet at extreme cold-soak conditions.
 
 ---
 
@@ -212,7 +213,7 @@ flowchart TB
 | **Cold-soak** | Condition where aircraft (and fuel system) is exposed to extreme cold temperatures over a long period. |
 | **SAF thermal stability** | Thermal stability of SAF blends at high temperature in fuel wetted components; must meet ASTM D7566 Annex A limits. |
 | **Oil thermal management** | Maintaining engine oil temperature within operating limits; critical for bearing and gearbox lubrication effectiveness. |
-| **Bleed-less heating** | No hot engine bleed air used for fuel heating; replaced by FOHE and EHFI on AMPEL360E eWTW. |
+| **Bleed-less heating** | No hot engine bleed air used for fuel heating; replaced by FOHE and EHFI on programme-defined aircraft type. |
 | **LP circuit** | Low-pressure fuel circuit between aircraft boost pump outlet and HP pump inlet. |
 
 ---
@@ -255,4 +256,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

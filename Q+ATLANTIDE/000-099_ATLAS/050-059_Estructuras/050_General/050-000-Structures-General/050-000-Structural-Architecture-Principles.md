@@ -25,25 +25,27 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Structural Architecture Principles
 
 ## 1. Purpose
 
-Establishes the **governing structural architecture principles** for the AMPEL360 eWTW: design philosophy, material strategy, redundancy concept, fail-safe and damage-tolerance approaches, and digital-twin integration.
+Establishes the **governing structural architecture principles** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: design philosophy, material strategy, redundancy concept, fail-safe and damage-tolerance approaches, and digital-twin integration.
 
 ## 2. Scope
 
 ### 2.1 Design Philosophy
 
-The AMPEL360 eWTW structural architecture is governed by four top-level principles:
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural architecture is governed by four top-level principles:
 
 | Principle | Description |
 |---|---|
 | **Damage Tolerance First** | All primary structure designed to CS-25.571 DT criteria; safe-life reserved for landing gear and fasteners only. |
 | **All-Composite Preference** | CFRP primary structure for weight efficiency; metallic joints only at high-load discrete fittings (WFIJ, pylon, HTP/VTP attach). |
-| **Electric-Loads Ready** | Structural design basis includes EMA actuator side-loads, HVDC cable tray loads, and battery bay floor loads specific to the eWTW electric architecture. |
+| **Electric-Loads Ready** | Structural design basis includes EMA actuator side-loads, HVDC cable tray loads, and battery bay floor loads specific to the [PROGRAMME-VARIANT] electric architecture. |
 | **Digital Thread Integration** | All structural data (CAD, FEM, allowables, test results) linked via the Digital Structural Twin (DST) for real-time fleet health monitoring. |
 
 ### 2.2 Material Strategy

@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0085-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-085-020-DISTRIBUTED-PROPULSOR-LAYOUT-AND-TOPOLOGY
      ATLAS-085 (Distributed Electric Propulsion Architecture) · Distributed Propulsor Layout and Topology
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Distributed Propulsor Layout and Topology
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-020"
 
 ## §1 Purpose
 
-ATLAS subsubject 085-020 defines the physical layout and aerodynamic topology of the four DEPA propulsors on the AMPEL360E eWTW airframe. It specifies nacelle station locations, fan face geometry, BLI duct inlet dimensions, fan bypass ratio targets, tip clearance, thrust vector orientation, and nacelle structural envelope. It also establishes the propulsive topology diagram and the interaction zones between propulsor stations.
+This document defines the agnostic ATLAS standard-level architecture context for `Distributed Propulsor Layout and Topology`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-085 — 085-020 Distributed Propulsor Layout and Topology |
-| Certification Basis | CS-25.571; CS-25.903; CS-25.1093 |
-| S1000D SNS | 085-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `085` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Propulsor Station Locations
 
 | Propulsor | Station ID | Airframe Location | Fuselage Station (FS) | Buttock Line (BL) | Waterline (WL) | Notes |
@@ -107,7 +108,7 @@ ATLAS subsubject 085-020 defines the physical layout and aerodynamic topology of
 
 ```mermaid
 flowchart TD
-    FUSE[AMPEL360E eWTW Fuselage]
+    FUSE[programme-defined aircraft type Fuselage]
     FUSE -->|BL ingestion| P1[P1 — Over-Wing Port\nFS 450 / BL −3200\n500 kW PMSM-1]
     FUSE -->|BL ingestion| P2[P2 — Over-Wing Stbd\nFS 450 / BL +3200\n500 kW PMSM-2]
     FUSE -->|BL ingestion| P3[P3 — Aft-Fuse Port\nFS 1640 / BL −820\n500 kW PMSM-3]

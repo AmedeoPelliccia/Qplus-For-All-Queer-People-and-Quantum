@@ -12,6 +12,8 @@ support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-AIR]
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 040 — Emergency Energy Storage Interface
@@ -32,11 +34,11 @@ This document defines the design, specification, safety, and qualification requi
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Reference | ATA 43.040 — Emergency Energy Storage Interface |
 | Applicable Standards | DO-160G; IEC 62619 (safety LiFePO4); DO-254; DO-178C; CS-25 §25.1309; AS5698 |
 | Design Assurance Level | BMS Software: DAL B; BMS Hardware: DAL B |
-| Configuration | AMPEL360E Build Standard 1.0+ |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0+ |
 
 ---
 
@@ -338,7 +340,7 @@ graph LR
 |--------|----------|---------|--------|
 | REF-043-04-01 | ESPS General (043-000) | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-043-04-02 | MPPT PCU (043-030) | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-043-04-03 | AMPEL360E Emergency Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-043-04-03 | [PROGRAMME-AIRCRAFT] Emergency Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

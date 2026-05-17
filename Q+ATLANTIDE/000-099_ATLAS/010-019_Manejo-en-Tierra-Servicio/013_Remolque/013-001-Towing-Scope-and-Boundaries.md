@@ -23,6 +23,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 013 · Subsubject 001 — Scope and Towing Boundaries
@@ -55,8 +57,8 @@ All of the above operations require:
 
 | Variant | Nose-gear geometry | Towbar series | TBL compatibility | Notes |
 |---|---|---|---|---|
-| AMPEL360e (Gen 1) | Standard nose-gear, Jet-A / SAF propulsion | Series A (type-specific) | Yes — approved TBL list in AMM chapter 9 | Electric taxi interlock not fitted |
-| AMPEL360-BWB (Gen 2) | BWB nose-gear geometry | Series B (type-specific) | Yes — separate approved TBL list | Electric taxi interlock: must be in TOWING mode before bypass pin insertion |
+| [PROGRAMME-AIRCRAFT] (Gen 1) | Standard nose-gear, Jet-A / SAF propulsion | Series A (type-specific) | Yes — approved TBL list in AMM chapter 9 | Electric taxi interlock not fitted |
+| [PROGRAMME-AIRCRAFT]-BWB (Gen 2) | BWB nose-gear geometry | Series B (type-specific) | Yes — separate approved TBL list | Electric taxi interlock: must be in TOWING mode before bypass pin insertion |
 | Hybrid / interim variants | Per active Configuration Baseline | Per Configuration Baseline | Per Configuration Baseline | Resolve variant via [`../../000-009_Informacion-General-y-Servicio/001_Configuracion/`](../../000-009_Informacion-General-y-Servicio/001_Configuracion/) |
 
 > **Variant resolution rule:** The applicable towbar series, tug type, and bypass pin part number are variant-dependent. **Always resolve the active Configuration Baseline before commencing any tow operation.**

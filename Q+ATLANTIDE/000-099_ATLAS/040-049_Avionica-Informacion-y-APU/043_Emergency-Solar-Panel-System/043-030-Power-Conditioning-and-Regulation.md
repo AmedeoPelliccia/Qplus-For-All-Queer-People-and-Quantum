@@ -12,6 +12,8 @@ support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-AIR]
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 030 — Power Conditioning and Regulation
@@ -24,7 +26,7 @@ Internal cross-references use relative Markdown links. External citations marked
 
 ## 1. Purpose
 
-This document defines the design, specification, safety, and qualification requirements for the Maximum Power Point Tracking (MPPT) power conditioning and voltage regulation subsystem of the AMPEL360E ESPS. The power conditioner extracts maximum available power from the GaAs PV array, converts it to a regulated 28 V DC bus output, and interfaces with the aircraft Emergency Power Distribution Centre (EPDC) and LiFePO4 buffer battery.
+This document defines the design, specification, safety, and qualification requirements for the Maximum Power Point Tracking (MPPT) power conditioning and voltage regulation subsystem of the [PROGRAMME-AIRCRAFT] ESPS. The power conditioner extracts maximum available power from the GaAs PV array, converts it to a regulated 28 V DC bus output, and interfaces with the aircraft Emergency Power Distribution Centre (EPDC) and LiFePO4 buffer battery.
 
 ---
 
@@ -32,11 +34,11 @@ This document defines the design, specification, safety, and qualification requi
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Reference | ATA 43.030 — Power Conditioning and Regulation |
 | Applicable Standards | DO-160G §21 (EMI); DO-254; DO-178C; MIL-STD-704F (28 V DC power quality) |
 | Design Assurance Level | MPPT Control Software: DAL B; Hardware: DAL B |
-| Configuration | AMPEL360E Build Standard 1.0+ |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0+ |
 
 ---
 

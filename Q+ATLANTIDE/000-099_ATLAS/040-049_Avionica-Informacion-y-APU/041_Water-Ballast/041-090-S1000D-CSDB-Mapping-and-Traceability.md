@@ -25,8 +25,9 @@ orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
 status: active
-scope: agnostic-standard
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 090 — S1000D/CSDB Mapping and Traceability
@@ -39,36 +40,34 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document provides the complete S1000D Issue 5.0 Data Module Code (DMC) structure, Data Module Requirements List (DMRL), Business Rules Exchange (BREX) constraints, and CS-25 traceability matrix for the entire ATA 41 Water Ballast subject range (SNS 041-000 through 041-090) on the <PROGRAMME> aircraft. It is the authoritative CSDB configuration reference for the WB technical publication set.
+This document provides the complete S1000D Issue 5.0 Data Module Code (DMC) structure, Data Module Requirements List (DMRL), Business Rules Exchange (BREX) constraints, and CS-25 traceability matrix for the entire ATA 41 Water Ballast subject range (SNS 041-000 through 041-090) on the programme-defined aircraft type. It is the authoritative CSDB configuration reference for the WB technical publication set.
 
-The S1000D publication structure defined here covers all six publication types required for an ATA 41 system: Aircraft Maintenance Manual (AMM), Fault Isolation Manual (FIM), Troubleshooting Manual (TSM), Software Reference Manual (SRM), Illustrated Parts Data (IPD), and Wiring Manual (WM). The DMC coding scheme follows the <MODEL> Model Identification Code (MIC), System Differentiation Code (SDC), and Sub-System / Sub-Sub-System (SNS) hierarchy defined in the programme BREX document.
+The S1000D publication structure defined here covers all six publication types required for an ATA 41 system: Aircraft Maintenance Manual (AMM), Fault Isolation Manual (FIM), Troubleshooting Manual (TSM), Software Reference Manual (SRM), Illustrated Parts Data (IPD), and Wiring Manual (WM). The DMC coding scheme follows the [PROGRAMME-AIRCRAFT] Model Identification Code (MIC), System Differentiation Code (SDC), and Sub-System / Sub-Sub-System (SNS) hierarchy defined in the [PROGRAMME-AIRCRAFT] BREX document.
 
 The CS-25 traceability matrix in §5 maps each top-level regulatory paragraph to the ATLAS 041 document and CSDB data module responsible for demonstrating compliance, providing the audit trail required by EASA and FAA during type certification.
 
 ---
 
-> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
-
 ## 2. Applicability
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | <PROGRAMME> (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41 — Water Ballast (all SNS) |
 | Standards | S1000D Issue 5.0, ATA iSpec 2200, ARINC 767, CS-25 Amd 27 |
 | Dev Assurance | N/A (documentation framework) |
-| Applicability Code | <MODEL>-<SYSTEMDIFF>-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | S1000D Issue | Issue 5.0 (2016) |
 
 ---
 
 ## 3. System / Function Overview
 
-The <PROGRAMME> CSDB follows the S1000D Issue 5.0 data model with a Model Identification Code (MIC) of `<MODEL>`, a System Differentiation Code (SDC) of `<PROGRAMME-SHORT>`, and an SNS base of `041` for all Water Ballast data modules. Data modules are identified by their full DMC: `DMC-<MODEL>-<SYSTEMDIFF>-041-{SNS}-{DI}-{Info Code}{Variant}-{Issue Code}`.
+The [PROGRAMME-AIRCRAFT] CSDB follows the S1000D Issue 5.0 data model with a Model Identification Code (MIC) of `[PROGRAMME-AIRCRAFT]`, a System Differentiation Code (SDC) of `[PROGRAMME-VARIANT]`, and an SNS base of `041` for all Water Ballast data modules. Data modules are identified by their full DMC: `DMC-<PROGRAMME>-<VARIANT>-041-{SNS}-{DI}-{Info Code}{Variant}-{Issue Code}`.
 
-The DMRL for ATA 41 contains 60 data modules across six publication types for the ten SNS subjects (000 through 090). The BREX document (BREX-<MODEL>-001) constrains allowed Info Codes, issue codes, and applicability annotation syntax for all programme data modules; deviations from the BREX must be approved by Q-DATAGOV via an Engineering Change Request.
+The DMRL for ATA 41 contains 60 data modules across six publication types for the ten SNS subjects (000 through 090). The BREX document ([PROGRAMME-AIRCRAFT]-BREX-001) constrains allowed Info Codes, issue codes, and applicability annotation syntax for all [PROGRAMME-AIRCRAFT] data modules; deviations from the BREX must be approved by Q-DATAGOV via an Engineering Change Request.
 
-CSDB applicability management uses the S1000D Common Source Database applicability cross-reference table (CRT) to associate each data module with the aircraft variant codes <MODEL>-<SYSTEMDIFF>-STD (standard), <MODEL>-<SYSTEMDIFF>-HGW (high gross weight), and <MODEL>-<SYSTEMDIFF>-LRC (long range cruise) as appropriate for WB system differences between variants.
+CSDB applicability management uses the S1000D Common Source Database applicability cross-reference table (CRT) to associate each data module with the aircraft variant codes [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-STD (standard), [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-HGW (high gross weight), and [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-LRC (long range cruise) as appropriate for WB system differences between variants.
 
 ---
 
@@ -92,10 +91,10 @@ CSDB applicability management uses the S1000D Common Source Database applicabili
 ## 5. Architecture Description
 
 **DMC Structure.** The DMC for every ATA 41 WB data module follows the pattern:
-`DMC-<MODEL>-<SYSTEMDIFF>-041-{SNS}-00A-{InfoCode}A-A`
-where: MIC=<MODEL>, SDC=<PROGRAMME-SHORT>, SNS=041, Sub-SNS={000..090}, Disassembly Code=00, Disassembly Variant=A, Info Code={3 digits}, Info Code Variant=A, Item Location Code=A.
+`DMC-<PROGRAMME>-<VARIANT>-041-{SNS}-00A-{InfoCode}A-A`
+where: MIC=[PROGRAMME-AIRCRAFT], SDC=[PROGRAMME-VARIANT], SNS=041, Sub-SNS={000..090}, Disassembly Code=00, Disassembly Variant=A, Info Code={3 digits}, Info Code Variant=A, Item Location Code=A.
 
-**BREX Constraints.** The programme BREX document (BREX-<MODEL>-001) defines: allowed Info Codes for ATA 41 (040, 300, 400, 520, 720, 941); mandatory applic annotation using `applicRefId`; prohibition of free-text applicability strings; required use of `cautionRef` elements for all safety-critical maintenance steps; and mandated use of the programme standard parts catalogue (`IPC-<MODEL>-<SYSTEMDIFF>-041`) for IPD data modules.
+**BREX Constraints.** The [PROGRAMME-AIRCRAFT] BREX document ([PROGRAMME-AIRCRAFT]-BREX-001) defines: allowed Info Codes for ATA 41 (040, 300, 400, 520, 720, 941); mandatory applic annotation using `applicRefId`; prohibition of free-text applicability strings; required use of `cautionRef` elements for all safety-critical maintenance steps; and mandated use of the [PROGRAMME-AIRCRAFT] standard parts catalogue (`IPC-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-041`) for IPD data modules.
 
 **CS-25 Traceability.** The traceability matrix maps CS-25 paragraphs to the ATLAS 041 document that defines compliance means and to the primary DMC providing the compliance evidence. Each matrix entry has a compliance method code: A (analysis), T (test), I (inspection), R (review of design).
 
@@ -111,7 +110,7 @@ where: MIC=<MODEL>, SDC=<PROGRAMME-SHORT>, SNS=041, Sub-SNS={000..090}, Disassem
 | F-090-02 | DMC Coding | Assign and control unique DMCs per BREX for all WB data modules | Q-DATAGOV | N/A |
 | F-090-03 | CS-25 Traceability | Map each CS-25 paragraph to responsible ATLAS document and DMC | Q-DATAGOV | N/A |
 | F-090-04 | Applicability Management | Assign CRT applicability codes to each DMC per variant | Q-DATAGOV | N/A |
-| F-090-05 | BREX Compliance | Verify all ATA 41 data modules conform to programme BREX | Q-DATAGOV | N/A |
+| F-090-05 | BREX Compliance | Verify all ATA 41 data modules conform to [PROGRAMME-AIRCRAFT] BREX | Q-DATAGOV | N/A |
 
 ---
 
@@ -127,7 +126,7 @@ Documents
     CSDB["CSDB
 (S1000D Issue 5.0)"]
     BREX["BREX
-BREX-<MODEL>-001"]
+[PROGRAMME-AIRCRAFT]-BREX-001"]
     CRT["CRT
 Applicability Table"]
     AMM["AMM
@@ -283,12 +282,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-<MODEL>-<SYSTEMDIFF>-041-090-00A-040A-A | 040 | S1000D/CSDB Mapping Description |
-| Maintenance Procedures | DMC-<MODEL>-<SYSTEMDIFF>-041-090-00A-300A-A | 300 | S1000D Mapping Fault Isolation |
-| BITE/Test | DMC-<MODEL>-<SYSTEMDIFF>-041-090-00A-400A-A | 400 | S1000D Mapping BITE Procedures |
-| Wiring Data | DMC-<MODEL>-<SYSTEMDIFF>-041-090-00A-520A-A | 520 | S1000D Mapping Wiring and Connector Data |
-| IPD | DMC-<MODEL>-<SYSTEMDIFF>-041-090-00A-941A-A | 941 | S1000D Mapping Illustrated Parts |
-| Software Desc | DMC-<MODEL>-<SYSTEMDIFF>-041-090-00A-720A-A | 720 | S1000D Mapping SW Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-090-00A-040A-A | 040 | S1000D/CSDB Mapping Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-090-00A-300A-A | 300 | S1000D Mapping Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-090-00A-400A-A | 400 | S1000D Mapping BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-090-00A-520A-A | 520 | S1000D Mapping Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-090-00A-941A-A | 941 | S1000D Mapping Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-090-00A-720A-A | 720 | S1000D Mapping SW Description |
 
 ### Recommended Data Module Set
 
@@ -374,8 +373,8 @@ Verification Evidence"]
 | <a id="glossary-dmrl"></a>DMRL | Data Module Requirements List; master list of required data modules for a project | [§1](#1-purpose) |
 | <a id="glossary-fim"></a>FIM | Fault Isolation Manual; publication type for fault isolation procedures | [§3](#3-system--function-overview) |
 | <a id="glossary-ipd"></a>IPD | Illustrated Parts Data; S1000D publication type for parts catalogues | [§3](#3-system--function-overview) |
-| <a id="glossary-mic"></a>MIC | Model Identification Code; first element of S1000D DMC (<MODEL>) | [§3](#3-system--function-overview) |
-| <a id="glossary-sdc"></a>SDC | System Differentiation Code; second DMC element (<PROGRAMME-SHORT> for electric wide-body twin-wing) | [§3](#3-system--function-overview) |
+| <a id="glossary-mic"></a>MIC | Model Identification Code; first element of S1000D DMC ([PROGRAMME-AIRCRAFT]) | [§3](#3-system--function-overview) |
+| <a id="glossary-sdc"></a>SDC | System Differentiation Code; second DMC element ([PROGRAMME-VARIANT] for electric wide-body twin-wing) | [§3](#3-system--function-overview) |
 | <a id="glossary-srm"></a>SRM | Software Reference Manual; publication type for software descriptions | [§3](#3-system--function-overview) |
 | <a id="glossary-tsm"></a>TSM | Troubleshooting Manual; publication type for system troubleshooting | [§3](#3-system--function-overview) |
 | <a id="glossary-wm"></a>WM | Wiring Manual; publication type for electrical wiring data | [§3](#3-system--function-overview) |
@@ -391,8 +390,8 @@ Verification Evidence"]
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | AMM/FIM/IPD structure and ATA chapter coding | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-arinc767"></a>ARINC 767 | ARINC 767 — Electronic Documentation Standard | AMT electronic publication delivery | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-easa-amc21a101"></a>EASA-AMC21A | EASA AMC 21A.101 — Certification Specifications Compliance Documentation | CS-25 traceability matrix requirement | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for <MODEL> | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-brex"></a>BREX-<MODEL> | <MODEL> Business Rules Exchange Document (BREX-<MODEL>-001) | Project BREX constraints | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for [PROGRAMME-AIRCRAFT] | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-brex"></a>[PROGRAMME-AIRCRAFT]-BREX | [PROGRAMME-AIRCRAFT] Business Rules Exchange Document ([PROGRAMME-AIRCRAFT]-BREX-001) | Project BREX constraints | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -402,7 +401,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | Q+ATLANTIDE ATLAS README | QATL-ATLAS-README | Rev 1.0 | Active | [README](../README.md) |
-| R-003 | programme BREX Document | BREX-<MODEL>-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-003 | [PROGRAMME-AIRCRAFT] BREX Document | [PROGRAMME-AIRCRAFT]-BREX-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -410,7 +409,7 @@ Verification Evidence"]
 
 | ID | Issue | Owner | Status | Link |
 |----|-------|-------|--------|------|
-| OI-090-01 | BREX document (BREX-<MODEL>-001) not yet formally issued; draft under Q-DATAGOV review | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-090-01 | BREX document ([PROGRAMME-AIRCRAFT]-BREX-001) not yet formally issued; draft under Q-DATAGOV review | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-090-02 | CRT variant codes for HGW and LRC variants not yet defined; pending aircraft variant freeze | Q-AIR | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-090-03 | AFM supplement format approval process with EASA to be initiated at CDR | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 

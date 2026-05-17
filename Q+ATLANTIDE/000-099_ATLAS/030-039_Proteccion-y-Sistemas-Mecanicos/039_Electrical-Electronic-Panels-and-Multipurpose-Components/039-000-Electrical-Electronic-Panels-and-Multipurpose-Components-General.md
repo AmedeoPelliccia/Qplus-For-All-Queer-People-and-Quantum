@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Electrical/Electronic Panels and Multipurpose Components — General"
 file_name: "039-000-Electrical-Electronic-Panels-and-Multipurpose-Components-General.md"
 sns_reference: "039-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "Electrical Panels"
@@ -93,11 +93,13 @@ keywords:
   - "CBP"
   - "IMA"
   - "AFDX"
-  - "eWTW all-electric"
+  - "[PROGRAMME-VARIANT] all-electric"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-000 — Electrical/Electronic Panels and Multipurpose Components — General
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,52 +109,33 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, DO-160G, DO-178C, DO-254, ARINC standards) are cited by document identifier only; no live external URLs are embedded because regulatory and standards document URLs are subject to change without notice. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-039-XX-YYYY-A`. Traceability links to the CSDB are maintained in §14. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work in progress or planned content respectively.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, DO-160G, DO-178C, DO-254, ARINC standards) are cited by document identifier only; no live external URLs are embedded because regulatory and standards document URLs are subject to change without notice. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-039-XX-YYYY-A`. Traceability links to the CSDB are maintained in §14. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work in progress or planned content respectively.
 
 ---
 
 ## §1 Purpose
 
-This document provides the top-level general overview of **ATA Chapter 39 — Electrical/Electronic Panels and Multipurpose Components** as applied to the **AMPEL360e eWTW** (~100-passenger, fully electric, medium-range) aircraft. It establishes:
+This document defines the agnostic ATLAS standard-level architecture context for `039-000 — Electrical/Electronic Panels and Multipurpose Components — General`.
 
-1. The overall panel and rack architecture of the eWTW: Main Instrument Panel (MIP/P1), Centre Pedestal (P5), Overhead Panel (OHP/P6), aft E/E bay with IMA racks, Circuit Breaker Panels (CBPs), and Power Distribution Units (PDUs)/SSPCs.
-2. The all-electric significance of ATA 39: the eWTW carries no traditional hydraulic switch panels; instead, all panel real estate is occupied by electric thrust management, electric motor actuator controls, and high-current 270 VDC distribution management.
-3. The IMA (Integrated Modular Avionics) philosophy reducing LRU count and enabling software-upgradeable hosted functions.
-4. The AFDX (ARINC 664 Part 7) data backbone connecting panels to IMA modules.
-5. The document hierarchy for ATA 39 covering subsubjects 039-000 through 039-090.
-6. The applicable certification basis (CS-25.1301, CS-25.1309, CS-25.1353, DO-160G, DO-178C, DO-254, ARINC standards).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document is authoritative for system boundary definition and interfaces for all lower-level ATA 39 documents.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants (unless noted) |
-| ATA Chapter | 39 — Electrical/Electronic Panels and Multipurpose Components |
-| Document Tier | Level 2 — System Description Document (SDD) |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Preceding Document | Scaffold Rev 0.0 |
-
-This document applies to all panels, racks, switching assemblies, circuit breaker panels, power distribution units, avionics racks, and multipurpose component modules aboard the AMPEL360e eWTW. Adjacent ATA boundaries:
-- Electrical power generation and distribution buses: **ATA 24**
-- Avionics system software functions hosted in IMA: **ATA 42**
-- Central Maintenance Computer (CMC) and BITE functions: **ATA 45**
-- Cockpit display systems (as a function): **ATA 31**
-- Communication systems housed in E/E bay racks: **ATA 23**
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
-### 3.1 eWTW ATA 39 Philosophy
+### 3.1 [PROGRAMME-VARIANT] ATA 39 Philosophy
 
-The AMPEL360e eWTW adopts a fully electric architecture. This has several direct consequences for ATA 39 panels and multipurpose components:
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] adopts a fully electric architecture. This has several direct consequences for ATA 39 panels and multipurpose components:
 
-| Feature | Conventional Aircraft | eWTW Solution |
+| Feature | Conventional Aircraft | [PROGRAMME-VARIANT] Solution |
 |---|---|---|
 | Hydraulic control switches on OHP | Multiple hydraulic pump, system A/B switches | Absent — replaced by EMA control switches and ECS electric compressor switches |
 | APU generator switches | APU generator control unit switch | Retained (if APU fitted) or replaced by ground power only <img src="https://img.shields.io/badge/TBD-red"> |
@@ -221,7 +204,7 @@ The AMPEL360e eWTW adopts a fully electric architecture. This has several direct
 
 ### 5.1 Panel Architecture Overview
 
-The eWTW cockpit is a glass cockpit with three primary panel zones feeding into a centralised IMA architecture via AFDX:
+The [PROGRAMME-VARIANT] cockpit is a glass cockpit with three primary panel zones feeding into a centralised IMA architecture via AFDX:
 
 **Zone 1 — Pilot Interface Panels (P1, P5, P6):**
 All switch states (IPBS signals, rotary selector positions, guarded switch states) are wired to discrete I/O interfaces or directly to AFDX-connected panel controller modules. No direct hard-wiring of switches to actuated equipment is used for non-critical functions; critical functions (e.g. fire extinguisher discharge) retain direct hardwired loops.
@@ -434,9 +417,9 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description (this document) | DMC-AMPEL360E-EWTW-039-00-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Fault isolation — ATA 39 general | DMC-AMPEL360E-EWTW-039-00-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Inspection — ATA 39 general | DMC-AMPEL360E-EWTW-039-00-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description (this document) | DMC-<PROGRAMME>-<VARIANT>-039-00-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| Fault isolation — ATA 39 general | DMC-<PROGRAMME>-<VARIANT>-039-00-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Inspection — ATA 39 general | DMC-<PROGRAMME>-<VARIANT>-039-00-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL mapping in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -524,7 +507,7 @@ Full DMRL mapping in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md
 | MCDU | Multifunction Control Display Unit — crew-operated alphanumeric display and keyboard unit for FMS data entry |
 | EFIS | Electronic Flight Instrument System — suite of electronic primary flight displays (PFD) and multifunction displays (MFD) |
 | ECAM | Electronic Centralised Aircraft Monitor (or equivalent) — systems monitoring display showing engine parameters and system synoptics |
-| ETMS | Electric Thrust Management System — the eWTW all-electric equivalent of the FADEC/thrust management function; panel on P5 |
+| ETMS | Electric Thrust Management System — the [PROGRAMME-VARIANT] all-electric equivalent of the FADEC/thrust management function; panel on P5 |
 | CMC | Central Maintenance Computer — ATA 45 system collecting BITE, fault, and health data from all aircraft systems |
 | BITE | Built-In Test Equipment — self-test capability embedded in aircraft LRUs/LRMs for fault detection and isolation |
 | EWD | Engine/Warning Display — the upper ECAM screen showing engine parameters and system alerts |
@@ -590,5 +573,5 @@ Full DMRL mapping in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW ATA 39 context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] ATA 39 context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

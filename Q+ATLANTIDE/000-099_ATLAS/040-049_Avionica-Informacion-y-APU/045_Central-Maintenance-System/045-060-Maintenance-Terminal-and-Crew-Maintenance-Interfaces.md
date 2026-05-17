@@ -31,6 +31,8 @@ ata_reference: "ATA 45.060 — Maintenance Terminal and Crew Maintenance Interfa
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 060 — Maintenance Terminal and Crew Maintenance Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the maintenance terminal and crew maintenance interface architecture of the CMS for the AMPEL360E eWTW aircraft. It covers the Cockpit Maintenance Panel (CMP), Maintenance Access Terminal (MAT), Cabin Maintenance Panel, and the eWTW-specific Crew Tablet App — including network topology, screen hierarchy, security, and human factors compliance.
+This document defines the maintenance terminal and crew maintenance interface architecture of the CMS for the programme-defined aircraft type. It covers the Cockpit Maintenance Panel (CMP), Maintenance Access Terminal (MAT), Cabin Maintenance Panel, and the [PROGRAMME-VARIANT]-specific Crew Tablet App — including network topology, screen hierarchy, security, and human factors compliance.
 
 Key governance areas:
 - CMP: 15-inch touch display, FAA-accepted AMC 25.1302 HF standard.
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45.060 — Maintenance Terminal and Crew Maintenance Interfaces |
 | Certification Basis | CS-25 Amendment 28; AMC 25.1302; DO-160G |
 | Applicable Standards | ARINC 429; IEEE 802.11ax (Wi-Fi 6); TLS 1.3; LDAP; IP67 |
@@ -69,7 +71,7 @@ Key governance areas:
 
 ## 3. Functional Description
 
-The AMPEL360E eWTW provides four maintenance interface points:
+The programme-defined aircraft type provides four maintenance interface points:
 
 **1. Cockpit Maintenance Panel (CMP-1)**: A 15-inch touch display installed in the cockpit overhead maintenance panel position. Connected to CMS via a dedicated maintenance bus (ARINC 429 + 1000Base-T Ethernet). Human factors qualified per AMC 25.1302: minimum font 12 pt, contrast ratio > 4.5:1, anti-glare coating, sunlight readability > 700 cd/m². Provides full CMS functionality: fault list, BITE status, IBIT/MBIT initiation, data export, maintenance log.
 
@@ -77,7 +79,7 @@ The AMPEL360E eWTW provides four maintenance interface points:
 
 **3. Cabin Maintenance Panel**: A secondary read-only display at the forward attendant station (ATA 44 interface). Displays current fault status, PBIT/CBIT summary, and CMDB capacity. No interactive capability; for cabin crew situational awareness only.
 
-**4. Crew Tablet App (eWTW programme-controlled)**: A native iOS/Android application for walk-around BITE checks. Connects to CMS via the maintenance Wi-Fi 6 access point (secured SSID "CMS-MAINT-{tail}") using TLS 1.3 + LDAP SSO. DO-160G EMC tested. Displays BITE status, fault list, and maintenance actions. No IBIT/MBIT initiation capability (read-only + BITE status).
+**4. Crew Tablet App ([PROGRAMME-VARIANT] programme-controlled)**: A native iOS/Android application for walk-around BITE checks. Connects to CMS via the maintenance Wi-Fi 6 access point (secured SSID "CMS-MAINT-{tail}") using TLS 1.3 + LDAP SSO. DO-160G EMC tested. Displays BITE status, fault list, and maintenance actions. No IBIT/MBIT initiation capability (read-only + BITE status).
 
 ### Diagram 1: Terminal Network Topology
 
@@ -120,7 +122,7 @@ The MAT is a rugged commercial-off-the-shelf (COTS) tablet base with airworthine
 graph TD
     MM["Main Menu"]
     MM --> FL["Fault List (sorted by severity/ATA chapter)"]
-    MM --> BS["BITE Status (all chapters, eWTW EMA/EMB/MPDU)"]
+    MM --> BS["BITE Status (all chapters, [PROGRAMME-VARIANT] EMA/EMB/MPDU)"]
     MM --> ML["Maintenance Log (CMDB MaintenanceActions table)"]
     MM --> ED["Export Data (Gatelink / USB-C)"]
     MM --> IT["IBIT / MBIT Initiation (ground only)"]
@@ -143,7 +145,7 @@ graph TD
 | MAT Dock (Cockpit) | Ethernet dock + 28 V DC charger (secondary) | 1 | DO-160G |
 | Cabin Maintenance Panel | Secondary read-only display (forward attendant) | 1 | DO-160G |
 | Wi-Fi 6 Access Point | 802.11ax tri-band AP (CMS-MAINT SSID) | 1 | DO-160G EMC |
-| Crew Tablet App | iOS/Android app (eWTW programme-controlled) | N/A (software) | DO-160G EMC (device) |
+| Crew Tablet App | iOS/Android app ([PROGRAMME-VARIANT] programme-controlled) | N/A (software) | DO-160G EMC (device) |
 
 ---
 
@@ -339,8 +341,8 @@ graph LR
 | [R1] | ATLAS 045-000 — Central Maintenance System General | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R2] | ATLAS 045-070 — Ground Data Transfer and Maintenance Connectivity | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 044 — Cabin Systems (Cabin Panel ATA 44 interface) | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R4] | AMPEL360E eWTW Crew Tablet App Technical Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| [R5] | AMPEL360E eWTW CMS REST API OpenAPI Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R4] | programme-defined aircraft type Crew Tablet App Technical Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R5] | programme-defined aircraft type CMS REST API OpenAPI Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

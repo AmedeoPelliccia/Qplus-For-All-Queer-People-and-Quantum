@@ -9,7 +9,6 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GREENTECH, Q-HPC, Q-INDUSTRY, Q-STRUCTURES]
 status: active
-scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-12"
@@ -17,12 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-083-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0083-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-083-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATLAS-083 (Solar-Electric Auxiliary) · S1000D / CSDB Mapping and Traceability
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -46,24 +48,25 @@ s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-083-090"
 
 ## §1 Purpose
 
-ATLAS subsubject 083-090 establishes the S1000D Data Module Requirements List (DMRL), BREX document reference and constraints, CSDB integration interfaces, ICN registry, and milestone plan for any programme implementing this ATLAS standard node Solar-Electric Auxiliary (SEA) system technical documentation. It provides the authoritative traceability table between ATLAS subsubject documents and their corresponding S1000D Data Modules (DMs) in the CSDB.
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D / CSDB Mapping and Traceability`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | (defined in programme implementation branch) |
-| ATA reference | ATLAS-083 (Solar-Electric Auxiliary) — 083-090 S1000D / CSDB Mapping and Traceability |
-| Certification basis | EASA CS-25 Amdt 27+ (research ref.); S1000D Issue 5.0; BREX-083-v1 |
-| S1000D SNS | 083-090-00 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `083` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description ![DRAFT]
 
-The SEA technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the programme CSDB under the SNS 083 schema. The Data Module Code (DMC) pattern is `DMC-<MODEL>-<SYSTEMDIFF>-083-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement. The BREX governing document is `BREX-083-v1`.
+The SEA technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB under the SNS 083 schema. The Data Module Code (DMC) pattern is `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement. The BREX governing document is `[PROGRAMME-AIRCRAFT]-BREX-083-v1`.
 
 **BREX-083-v1** enforces three domain-specific solar-electric auxiliary constraints applicable across all DM types under SNS 083:
 
@@ -79,36 +82,36 @@ The SEA technical documentation suite comprises **30 S1000D Data Modules (DMs)**
 
 | DM Number | DMC | Type | Title | ATLAS Source Doc |
 |---|---|---|---|---|
-| DM-083-001 | DMC-<MODEL>-<SYSTEMDIFF>-083-000-040A | Descriptive | SEA System General Overview | 083-000 |
-| DM-083-002 | DMC-<MODEL>-<SYSTEMDIFF>-083-000-100A | Task | SEACU System Activation Procedure | 083-000 |
-| DM-083-003 | DMC-<MODEL>-<SYSTEMDIFF>-083-000-300A | Inspection | SEACU System Periodic Inspection | 083-000 |
-| DM-083-004 | DMC-<MODEL>-<SYSTEMDIFF>-083-010-040A | Descriptive | SEA Baseline and Mission Trade Study | 083-010 |
-| DM-083-005 | DMC-<MODEL>-<SYSTEMDIFF>-083-020-040A | Descriptive | Solar Array Integration and MPPT Architecture | 083-020 |
-| DM-083-006 | DMC-<MODEL>-<SYSTEMDIFF>-083-020-300A | Inspection | PV Panel Visual and EL Imaging Inspection | 083-020 |
-| DM-083-007 | DMC-<MODEL>-<SYSTEMDIFF>-083-020-300B | Inspection | PV String Open-Circuit Voltage and Current Check | 083-020 |
-| DM-083-008 | DMC-<MODEL>-<SYSTEMDIFF>-083-020-520A | Task | PV Panel Removal and Replacement | 083-020 |
-| DM-083-009 | DMC-<MODEL>-<SYSTEMDIFF>-083-030-040A | Descriptive | Energy Storage and Buffering System Description | 083-030 |
-| DM-083-010 | DMC-<MODEL>-<SYSTEMDIFF>-083-030-100A | Task | SCAP Bank Discharge Procedure (LOTO) | 083-030 |
-| DM-083-011 | DMC-<MODEL>-<SYSTEMDIFF>-083-030-300A | Inspection | SCAP Bank Capacitance and ESR Check | 083-030 |
-| DM-083-012 | DMC-<MODEL>-<SYSTEMDIFF>-083-030-300B | Inspection | Li-Ion Battery Auxiliary Subset Inspection | 083-030 |
-| DM-083-013 | DMC-<MODEL>-<SYSTEMDIFF>-083-030-520A | Task | SCAP Bank Module Removal and Replacement | 083-030 |
-| DM-083-014 | DMC-<MODEL>-<SYSTEMDIFF>-083-040-040A | Descriptive | Power Conditioning and Distribution Architecture | 083-040 |
-| DM-083-015 | DMC-<MODEL>-<SYSTEMDIFF>-083-040-100A | Task | SEACU MPPT Converter Functional Test | 083-040 |
-| DM-083-016 | DMC-<MODEL>-<SYSTEMDIFF>-083-040-300A | Inspection | DC Cable and Connector Visual Inspection | 083-040 |
-| DM-083-017 | DMC-<MODEL>-<SYSTEMDIFF>-083-040-300B | Inspection | Insulation Resistance (HiPot) Test — DC Link | 083-040 |
-| DM-083-018 | DMC-<MODEL>-<SYSTEMDIFF>-083-040-520A | Task | MPPT Converter Module Removal and Replacement | 083-040 |
-| DM-083-019 | DMC-<MODEL>-<SYSTEMDIFF>-083-040-520B | Task | SiC Inverter LRU Removal and Replacement | 083-040 |
-| DM-083-020 | DMC-<MODEL>-<SYSTEMDIFF>-083-050-040A | Descriptive | Auxiliary Electric Propulsor Concepts | 083-050 |
-| DM-083-021 | DMC-<MODEL>-<SYSTEMDIFF>-083-050-100A | Task | BLI Propulsor Ground Run-Up Functional Test | 083-050 |
-| DM-083-022 | DMC-<MODEL>-<SYSTEMDIFF>-083-050-300A | Inspection | BLI Fan Blade and Duct Visual Inspection | 083-050 |
-| DM-083-023 | DMC-<MODEL>-<SYSTEMDIFF>-083-050-520A | Task | BLI Propulsor Motor / Fan Removal and Replacement | 083-050 |
-| DM-083-024 | DMC-<MODEL>-<SYSTEMDIFF>-083-060-040A | Descriptive | Emergency and Degraded Mode Operation | 083-060 |
-| DM-083-025 | DMC-<MODEL>-<SYSTEMDIFF>-083-070-040A | Descriptive | Airframe Integration and Structural Constraints | 083-070 |
-| DM-083-026 | DMC-<MODEL>-<SYSTEMDIFF>-083-070-300A | Inspection | PV Laminate Bond Line Inspection (Tap Test) | 083-070 |
-| DM-083-027 | DMC-<MODEL>-<SYSTEMDIFF>-083-080-040A | Descriptive | SEA Monitoring, Diagnostics and Control | 083-080 |
-| DM-083-028 | DMC-<MODEL>-<SYSTEMDIFF>-083-080-100A | Task | SEACU BITE Full Diagnostic Run (IBIT) | 083-080 |
-| DM-083-029 | DMC-<MODEL>-<SYSTEMDIFF>-083-080-300A | Inspection | SEACU BITE Functional Check (CBIT Verification) | 083-080 |
-| DM-083-030 | DMC-<MODEL>-<SYSTEMDIFF>-083-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 083-090 |
+| DM-083-001 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-000-040A | Descriptive | SEA System General Overview | 083-000 |
+| DM-083-002 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-000-100A | Task | SEACU System Activation Procedure | 083-000 |
+| DM-083-003 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-000-300A | Inspection | SEACU System Periodic Inspection | 083-000 |
+| DM-083-004 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-010-040A | Descriptive | SEA Baseline and Mission Trade Study | 083-010 |
+| DM-083-005 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-020-040A | Descriptive | Solar Array Integration and MPPT Architecture | 083-020 |
+| DM-083-006 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-020-300A | Inspection | PV Panel Visual and EL Imaging Inspection | 083-020 |
+| DM-083-007 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-020-300B | Inspection | PV String Open-Circuit Voltage and Current Check | 083-020 |
+| DM-083-008 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-020-520A | Task | PV Panel Removal and Replacement | 083-020 |
+| DM-083-009 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-030-040A | Descriptive | Energy Storage and Buffering System Description | 083-030 |
+| DM-083-010 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-030-100A | Task | SCAP Bank Discharge Procedure (LOTO) | 083-030 |
+| DM-083-011 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-030-300A | Inspection | SCAP Bank Capacitance and ESR Check | 083-030 |
+| DM-083-012 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-030-300B | Inspection | Li-Ion Battery Auxiliary Subset Inspection | 083-030 |
+| DM-083-013 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-030-520A | Task | SCAP Bank Module Removal and Replacement | 083-030 |
+| DM-083-014 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-040-040A | Descriptive | Power Conditioning and Distribution Architecture | 083-040 |
+| DM-083-015 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-040-100A | Task | SEACU MPPT Converter Functional Test | 083-040 |
+| DM-083-016 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-040-300A | Inspection | DC Cable and Connector Visual Inspection | 083-040 |
+| DM-083-017 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-040-300B | Inspection | Insulation Resistance (HiPot) Test — DC Link | 083-040 |
+| DM-083-018 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-040-520A | Task | MPPT Converter Module Removal and Replacement | 083-040 |
+| DM-083-019 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-040-520B | Task | SiC Inverter LRU Removal and Replacement | 083-040 |
+| DM-083-020 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-050-040A | Descriptive | Auxiliary Electric Propulsor Concepts | 083-050 |
+| DM-083-021 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-050-100A | Task | BLI Propulsor Ground Run-Up Functional Test | 083-050 |
+| DM-083-022 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-050-300A | Inspection | BLI Fan Blade and Duct Visual Inspection | 083-050 |
+| DM-083-023 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-050-520A | Task | BLI Propulsor Motor / Fan Removal and Replacement | 083-050 |
+| DM-083-024 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-060-040A | Descriptive | Emergency and Degraded Mode Operation | 083-060 |
+| DM-083-025 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-070-040A | Descriptive | Airframe Integration and Structural Constraints | 083-070 |
+| DM-083-026 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-070-300A | Inspection | PV Laminate Bond Line Inspection (Tap Test) | 083-070 |
+| DM-083-027 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-080-040A | Descriptive | SEA Monitoring, Diagnostics and Control | 083-080 |
+| DM-083-028 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-080-100A | Task | SEACU BITE Full Diagnostic Run (IBIT) | 083-080 |
+| DM-083-029 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-080-300A | Inspection | SEACU BITE Functional Check (CBIT Verification) | 083-080 |
+| DM-083-030 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-083-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 083-090 |
 
 ---
 
@@ -126,16 +129,16 @@ The SEA technical documentation suite comprises **30 S1000D Data Modules (DMs)**
 
 | ICN | Content Type | Used In | Description |
 |---|---|---|---|
-| ICN-083-0001 | Diagram (SVG) | DM-083-001 | SEA system top-level block diagram |
-| ICN-083-0002 | Diagram (SVG) | DM-083-005 | PV array zone layout and MPPT channel map |
-| ICN-083-0003 | Diagram (SVG) | DM-083-005 | PV panel laminate cross-section |
-| ICN-083-0004 | Diagram (SVG) | DM-083-009 | SCAP bank configuration and module layout |
-| ICN-083-0005 | Diagram (SVG) | DM-083-014 | SEACU internal power conditioning schematic |
-| ICN-083-0006 | Diagram (SVG) | DM-083-020 | BLI duct and motor installation cross-section |
-| ICN-083-0007 | Diagram (SVG) | DM-083-025 | SEA structural weight and zone layout |
-| ICN-083-0008 | Warning sign (PNG) | DM-083-008, 010, 013 | PV panel high-voltage hazard label (ISO 3864-2) |
-| ICN-083-0009 | Warning sign (PNG) | DM-083-010, 013 | SCAP high-voltage retained charge label |
-| ICN-083-0010 | Warning sign (PNG) | DM-083-021, 022, 023 | BLI fan exclusion zone label with 2 m radius |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0001 | Diagram (SVG) | DM-083-001 | SEA system top-level block diagram |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0002 | Diagram (SVG) | DM-083-005 | PV array zone layout and MPPT channel map |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0003 | Diagram (SVG) | DM-083-005 | PV panel laminate cross-section |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0004 | Diagram (SVG) | DM-083-009 | SCAP bank configuration and module layout |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0005 | Diagram (SVG) | DM-083-014 | SEACU internal power conditioning schematic |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0006 | Diagram (SVG) | DM-083-020 | BLI duct and motor installation cross-section |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0007 | Diagram (SVG) | DM-083-025 | SEA structural weight and zone layout |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0008 | Warning sign (PNG) | DM-083-008, 010, 013 | PV panel high-voltage hazard label (ISO 3864-2) |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0009 | Warning sign (PNG) | DM-083-010, 013 | SCAP high-voltage retained charge label |
+| ICN-[PROGRAMME-AIRCRAFT]-083-0010 | Warning sign (PNG) | DM-083-021, 022, 023 | BLI fan exclusion zone label with 2 m radius |
 
 ---
 
@@ -175,5 +178,5 @@ The SEA technical documentation suite comprises **30 S1000D Data Modules (DMs)**
 |---|---|---|---|
 | OI-083-090-001 | BREX-083-v1 formal review and sign-off by Q-DATAGOV and airworthiness team | Q-DATAGOV | PDR |
 | OI-083-090-002 | ICN vector artwork (SVG) for BLI duct cross-section (ICN-083-0006) — awaiting structural design freeze | Q-STRUCTURES | CDR |
-| OI-083-090-003 | CSDB SNS 083 namespace reservation in <PROGRAMME> CSDB instance | Q-DATAGOV | PDR |
+| OI-083-090-003 | CSDB SNS 083 namespace reservation in [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB instance | Q-DATAGOV | PDR |
 | OI-083-090-004 | DM-083-021 (BLI Ground Run-Up) — BREX-083-BF-01 rule verification in CSDB authoring tool | Q-DATAGOV | CDR |

@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0079-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0079-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-079-000-ENERGY-MANAGEMENT-SYSTEM-GENERAL
      ATA 79 · Energy Management System General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Energy Management System General
@@ -47,39 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0079-000"
 
 ## §1 Purpose
 
-The **Energy Management Control Unit (EMCU)** is the central intelligence for all energy flows in the AMPEL360E eWTW hybrid-electric wide-body aircraft. It orchestrates real-time power source selection, load scheduling, State-of-Charge (SoC) and State-of-Health (SoH) management of the 500 kWh NMC 811 battery pack, PEMFC power dispatch, turbofan PMSG off-take control, and thermal integration across all propulsion and airframe energy consumers.
+This document defines the agnostic ATLAS standard-level architecture context for `Energy Management System General`.
 
-The EMCU is certified to **DO-178C DAL B / DO-254 DAL B** and communicates exclusively via **AFDX ARINC 664 Part 7** dual-star topology. This document provides the top-level overview of the EMS architecture, function set, interfaces, operating modes, performance budgets, safety provisions, and maintenance philosophy.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document serves as the parent descriptive reference for the following ATA 79 subsubject documents:
-
-| SNS        | Title |
-|------------|-------|
-| 079-010-00 | Energy Management Architecture |
-| 079-020-00 | Power Demand Prediction and Allocation |
-| 079-030-00 | Energy Source Prioritization and Load Shedding |
-| 079-040-00 | Propulsion and ECS Energy Coordination |
-| 079-050-00 | Energy Degraded Modes and Reconfiguration |
-| 079-060-00 | Energy Management Software and Configuration |
-| 079-070-00 | Energy Management Test and Maintenance |
-| 079-080-00 | Energy Management Monitoring, Diagnostics and Control Interfaces |
-| 079-090-00 | S1000D CSDB Mapping and Traceability |
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Field | Value |
-|-------|-------|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATA 79-000 |
-| Certification Basis | EASA CS-25 Amendment 27+ |
-| S1000D SNS | 079-000-00 |
-| Applicable MSN | All AMPEL360E eWTW series aircraft |
-| Effectivity | From MSN 001, all production aircraft unless otherwise noted by SB |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `079` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The EMCU executes a **Model Predictive Control (MPC)** algorithm at a **50 ms cycle time**, predicting a **60-second energy demand horizon** across the aircraft's full electrical load envelope.
@@ -90,7 +73,7 @@ Three primary electrical energy sources are available to the EMCU for dispatch:
 
 | Source | Interface | Max Rated Output | Bus |
 |--------|-----------|-----------------|-----|
-| HVDC Battery (NMC 811) | BMS via AFDX | 0–400 kW (discharge) | HVDC 540 V |
+| HVDC Battery (<BATTERY-CHEMISTRY>) | BMS via AFDX | 0–400 kW (discharge) | HVDC 540 V |
 | PEMFC Module | FCCU via AFDX | 0–200 kW | HVDC 270 V |
 | Turbofan PMSG Generator | FADEC via AFDX | 0–600 kW | HVDC 540 V |
 
@@ -141,7 +124,7 @@ The EMCU MPC engine (partition P1-EMCU-CORE, DAL B):
 
 ```mermaid
 graph TD
-    BAT["🔋 BATTERY 500 kWh\n(ATA 72 — BMS DAL B)"]
+    BAT["🔋 BATTERY <ENERGY-CAPACITY>\n(ATA 72 — BMS DAL B)"]
     PEMFC["⚡ PEMFC 200 kW\n(ATA 75 — FCCU DAL B)"]
     PMSG["🔄 TURBOFAN PMSG 600 kW\n(ATA 67 — FADEC DAL A)"]
     EMCU["🖥️ EMCU\n(ATA 79 — DAL B\nMPC 50 ms)"]

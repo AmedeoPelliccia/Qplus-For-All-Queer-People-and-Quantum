@@ -6,10 +6,10 @@ subsubject: "030"
 subsubject_title: "Air Data and Sensor Ice Protection"
 file_name: "030-030-Air-Data-and-Sensor-Ice-Protection.md"
 sns_reference: "030-30"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-30"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-30"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,22 +87,24 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
   - "pitot probe"
   - "AOA vane"
   - "TAT probe"
   - "air data ice protection"
   - "probe heater"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-030 — Air Data and Sensor Ice Protection
-### AMPEL360e eWTW · ATA 30-30 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-30 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -114,28 +116,23 @@ All hyperlinks in this document are **relative links** unless pointing to a publ
 
 ## §1 Purpose
 
-This document defines the Air Data and Sensor Ice Protection system for the **AMPEL360e eWTW** — covering the electrothermal heating of all air data sensing probes and sensors whose contamination by ice accretion would degrade or cause erroneous air data outputs to the flight management, autopilot, and crew indication systems. The probes covered include: pitot tubes (Captain, First Officer, Standby), static ports (Captain, First Officer), Angle-of-Attack (AOA) vanes (Captain, First Officer), Total Air Temperature (TAT) probes (Captain, Standby), and ice detector probes. The applicable regulatory requirements are CS-25.1325 (airspeed indicating system), CS-25.1419 (ice protection), and FAR 25.1325. Probe heater integrity is safety-critical as loss of air data in icing conditions represents a Hazardous or Catastrophic failure condition.
+This document defines the agnostic ATLAS standard-level architecture context for `030-030 — Air Data and Sensor Ice Protection`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Sub-chapter | 30-30 — Air Data and Sensor Ice Protection |
-| Probes Protected | Pitot tubes ×3, static ports (each side), AOA vanes ×2, TAT probes ×2, ice detector ×2 |
-| Heater Controller | Probe Heater Controller (PHC) — dedicated LRU |
-| Power Source | 28 V DC Essential Bus (probe heaters — always-on safety function) |
-| Ground Heating | Pitot and AOA heaters energised at ground (low power) when aircraft powered |
-| Certification Basis | CS-25.1325; CS-25.1419; FAR 25.1325; AC 25-12 |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-Air data sensor heating is one of the highest-criticality electrothermal functions on any commercial aircraft. The pitot tube provides airspeed data to the Air Data and Inertial Reference Unit (ADIRU) and from there to the Primary Flight Display, Flight Management Computer, autopilot, and overspeed protection. Loss of a pitot tube to ice blockage — particularly a simultaneous loss of multiple probes — has been the causal factor in several Class A accidents. On the eWTW, with no bleed-air heating available for probe anti-icing, all probes rely entirely on electrothermal resistive heaters integral to the probe body. The heaters are connected to the 28 V DC Essential Bus so that they cannot be shed during electrical load-shedding events. Probe heaters are the only ATA 30 subsystem that is energised continuously whenever the aircraft is electrically powered — even before engine or APU start — and must not be inhibited on the ground except by a deliberate maintenance action.
+Air data sensor heating is one of the highest-criticality electrothermal functions on any commercial aircraft. The pitot tube provides airspeed data to the Air Data and Inertial Reference Unit (ADIRU) and from there to the Primary Flight Display, Flight Management Computer, autopilot, and overspeed protection. Loss of a pitot tube to ice blockage — particularly a simultaneous loss of multiple probes — has been the causal factor in several Class A accidents. On the [PROGRAMME-VARIANT], with no bleed-air heating available for probe anti-icing, all probes rely entirely on electrothermal resistive heaters integral to the probe body. The heaters are connected to the 28 V DC Essential Bus so that they cannot be shed during electrical load-shedding events. Probe heaters are the only ATA 30 subsystem that is energised continuously whenever the aircraft is electrically powered — even before engine or APU start — and must not be inhibited on the ground except by a deliberate maintenance action.
 
 The Probe Heater Controller (PHC) is a dedicated avionics LRU that monitors the current drawn by each probe heater circuit and computes the heater element resistance from the measured current and known bus voltage. The PHC compares computed resistance against the production acceptance baseline and raises a fault flag if the deviation exceeds ±15%, indicating element degradation, partial failure, or an open circuit. The PHC provides current monitoring data to the IPMC (via ARINC 429), which generates ECAM warnings and routes fault data to the CMC. On the ground, probe heaters operate at a reduced power level (typically 50% of flight power) to limit surface temperature and prevent burns to ground personnel working near the probe — personnel awareness notices and heater-on lighting are required in the aircraft ground-operation documentation. In flight, probe heaters operate at full power regardless of detected icing conditions, because rime ice can accrete on probes even at temperatures well above the standard icing envelope (e.g., during high humidity cold-soak conditions).
 
@@ -308,11 +305,11 @@ The PHC provides individual circuit monitoring for all thirteen probe heater cha
 
 | Info Code | Title | DMC | Status |
 |---|---|---|---|
-| 040 | System Description — Air Data and Sensor Probe Heating | DMC-AMPEL360E-EWTW-030-30-040-A | Draft scaffold |
-| 300 | Inspection — Probe Heater Resistance Check | DMC-AMPEL360E-EWTW-030-30-300-A | Not started |
-| 400 | Fault Isolation — PHC Circuit Faults (Open/Short/Degraded) | DMC-AMPEL360E-EWTW-030-30-400-A | Not started |
-| 520 | Remove — Pitot Tube Assembly | DMC-AMPEL360E-EWTW-030-30-520-A | Not started |
-| 720 | Install — Pitot Tube Assembly | DMC-AMPEL360E-EWTW-030-30-720-A | Not started |
+| 040 | System Description — Air Data and Sensor Probe Heating | DMC-<PROGRAMME>-<VARIANT>-030-30-040-A | Draft scaffold |
+| 300 | Inspection — Probe Heater Resistance Check | DMC-<PROGRAMME>-<VARIANT>-030-30-300-A | Not started |
+| 400 | Fault Isolation — PHC Circuit Faults (Open/Short/Degraded) | DMC-<PROGRAMME>-<VARIANT>-030-30-400-A | Not started |
+| 520 | Remove — Pitot Tube Assembly | DMC-<PROGRAMME>-<VARIANT>-030-30-520-A | Not started |
+| 720 | Install — Pitot Tube Assembly | DMC-<PROGRAMME>-<VARIANT>-030-30-720-A | Not started |
 
 ---
 
@@ -393,7 +390,7 @@ PHC BITE data includes per-circuit resistance history, fault event timestamps, a
 | CIT-002 | CS-25.1419 — Ice Protection | Amendment 27 | Probe heaters as part of overall ice protection system certification |
 | CIT-003 | FAR 25.1325 — Airspeed Indicating System | Amendment 25-147 | US counterpart; dual-authority compliance |
 | CIT-004 | AC 25-12 — Airspeed Indicating System Calibration | Rev — | Guidance on pitot/static system probe ice protection compliance demonstration |
-| CIT-005 | AMPEL360e eWTW Air Data Probe Heating Specification | TBD — programme document | Programme-level probe heater power requirements, PHC architecture, and redundancy requirements |
+| CIT-005 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Air Data Probe Heating Specification | TBD — programme document | Programme-level probe heater power requirements, PHC architecture, and redundancy requirements |
 
 ---
 
@@ -415,7 +412,7 @@ PHC BITE data includes per-circuit resistance history, fault event timestamps, a
 | OI ID | Issue | Owner | Target Resolution | Status |
 |---|---|---|---|---|
 | OI-001 | Probe heater power levels (W) for pitot, AOA, TAT not yet calculated; thermal analysis required to determine minimum power for Appendix C compliance | Q-MECHANICS | LC05 Detailed Design | Open |
-| OI-002 | TAT probe self-heating correction algorithm not yet defined for eWTW ADIRU software; requires calibration data from probe qualification tests | ATA 34 / Q-AIR | LC05 Detailed Design | Open |
+| OI-002 | TAT probe self-heating correction algorithm not yet defined for [PROGRAMME-VARIANT] ADIRU software; requires calibration data from probe qualification tests | ATA 34 / Q-AIR | LC05 Detailed Design | Open |
 | OI-003 | Standby pitot bus routing to Battery Bus not yet confirmed; wire harness separation from Essential Bus routes requires structural routing study | ATA 24 / Q-STRUCTURES | LC05 Detailed Design | Open |
 | OI-004 | PHC DAL assignment (preliminary DAL B for pitot heater monitoring) requires FHA confirmation — FHA not yet initiated | ORB-PMO / Safety | LC06 Verification Planning | Open |
 

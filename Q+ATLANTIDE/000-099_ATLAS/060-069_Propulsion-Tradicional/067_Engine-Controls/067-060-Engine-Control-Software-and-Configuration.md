@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0067-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Engine Control Software and Configuration
@@ -38,21 +40,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-060"
 ---
 ## §1 Purpose
 
-This document defines the FADEC software architecture, DO-178C DAL A lifecycle artifacts, and configuration management practices for the AMPEL360E eWTW engine control software. The EEC executable (SWPN) and the Engine Data File (EDF) are both subject to EASA Part 21 approval before being loaded to any in-service EEC.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine Control Software and Configuration`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 67-060 — Engine Control Software and Configuration |
-| Certification basis | DO-178C DAL A / DO-254 / EASA CS-E §150 |
-| S1000D SNS | 067-060-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `067` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Software architecture:**
@@ -264,4 +265,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

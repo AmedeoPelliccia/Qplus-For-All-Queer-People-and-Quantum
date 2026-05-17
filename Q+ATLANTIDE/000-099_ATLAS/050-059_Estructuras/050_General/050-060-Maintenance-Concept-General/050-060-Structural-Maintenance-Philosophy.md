@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.060 — Structural Maintenance Philosophy
 
 ## 1. Purpose
 
-Defines the **structural maintenance philosophy** underpinning the AMPEL360 eWTW maintenance programme: the decision principles for MSG-3 task analysis, the damage-tolerant versus safe-life design philosophy for each structural category, and the overarching goals of maintaining airworthiness while minimising unnecessary maintenance burden.
+Defines the **structural maintenance philosophy** underpinning the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] maintenance programme: the decision principles for MSG-3 task analysis, the damage-tolerant versus safe-life design philosophy for each structural category, and the overarching goals of maintaining airworthiness while minimising unnecessary maintenance burden.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW structural maintenance philosophy is governed by three principles: *detect before critical* (damage-tolerant PSEs must be inspectable with adequate margin before any flaw reaches critical size); *minimum necessary intervention* (maintenance tasks are justified only where failure consequences or probability meet MSG-3 criteria); and *data-driven escalation* (inspection intervals may be escalated or de-escalated based on fleet finding rates fed back through the Ageing Aircraft Programme).
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural maintenance philosophy is governed by three principles: *detect before critical* (damage-tolerant PSEs must be inspectable with adequate margin before any flaw reaches critical size); *minimum necessary intervention* (maintenance tasks are justified only where failure consequences or probability meet MSG-3 criteria); and *data-driven escalation* (inspection intervals may be escalated or de-escalated based on fleet finding rates fed back through the Ageing Aircraft Programme).
 
 These principles are operationalised through the MSG-3 Working Group (MRBWG) process, which produces the Maintenance Planning Document (MPD) and the Maintenance Review Board Document (MRBD) submitted to EASA for approval. The philosophy explicitly rejects scheduled replacement of damage-tolerant primary structure unless DTA demonstrates impracticality of inspection access.
 

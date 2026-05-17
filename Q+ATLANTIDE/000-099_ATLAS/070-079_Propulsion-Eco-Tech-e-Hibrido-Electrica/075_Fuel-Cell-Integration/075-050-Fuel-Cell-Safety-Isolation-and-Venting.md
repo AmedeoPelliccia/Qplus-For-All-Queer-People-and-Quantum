@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-050-FUEL-CELL-SAFETY-ISOLATION-AND-VENTING
      ATA 75 · Fuel Cell Safety, Isolation and Venting
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Cell Safety, Isolation and Venting
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-050"
 
 ## §1 Purpose
 
-This document defines the safety, isolation, and venting architecture for the AMPEL360E eWTW Fuel Cell Module. The primary hazard associated with PEMFC systems is hydrogen — a colourless, odourless, highly flammable gas with a Lower Flammable Limit (LFL) of 4 % v/v in air and a Lower Explosive Limit (LEL) equivalent. This document describes all layers of protection preventing H2 accumulation, providing positive isolation of the H2 supply, detecting H2 leakage, and safely venting any release to atmosphere away from ignition sources.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Cell Safety, Isolation and Venting`.
 
-The safety architecture implements a defence-in-depth approach: (1) passive containment through double-walled H2 supply lines with an annulus continuously purged with N2; (2) automated H2 detection with dual-threshold alarms at 1 % LEL (caution) and 25 % LEL (emergency shutdown); (3) dual fail-safe normally-closed solenoid isolation valves in series (SIV-075-A/B); (4) a manual isolation valve (MIV-075) in the H2 supply line; (5) a pressure relief valve (PRV-075) protecting the BoP H2 circuit from regulator over-pressure; and (6) continuous FCM bay ventilation at ≥6 ACH discharging to the upper aft fuselage vent mast, ensuring H2 cannot accumulate even in the event of a slow continuous leak.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-050 — Fuel Cell Safety, Isolation and Venting |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-050-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **H2 Supply Isolation**: The H2 supply from ATA 76 cryogenic tanks enters the FCM bay through a double-walled SS316L supply line. The outer annulus carries a small continuous N2 purge flow (0.5 L/min) that would carry any inner-wall H2 leak directly to a safe vent path, preventing accumulation. Dual solenoid isolation valves SIV-075-A (upstream) and SIV-075-B (downstream) are spring-return normally-closed and require active electrical energisation to remain open. Loss of electrical power, FCCU shutdown command, or H2 detection emergency signal causes both SIVs to spring-close within <200 ms, cutting off H2 supply to the FCM stacks. A manual isolation valve MIV-075, accessible from the FCM bay access panel with a quarter-turn lockable handle, provides an additional manual isolation layer for maintenance access.

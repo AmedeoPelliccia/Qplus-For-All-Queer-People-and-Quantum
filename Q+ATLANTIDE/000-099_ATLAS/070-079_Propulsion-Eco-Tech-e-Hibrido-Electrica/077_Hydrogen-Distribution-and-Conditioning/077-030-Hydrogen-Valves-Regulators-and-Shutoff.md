@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0077-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0077-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-077-030-HYDROGEN-VALVES-REGULATORS-AND-SHUTOFF
      ATA 28 (GH₂/LH₂ Distribution) · Hydrogen Valves, Regulators and Shutoff
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Hydrogen Valves, Regulators and Shutoff
@@ -46,21 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0077-030"
 
 ## §1 Purpose
 
-This document specifies all isolation shutoff valves (SOVs), pressure regulators, pressure relief valves (PRVs), check valves, and ancillary flow-control valves in the AMPEL360E eWTW Hydrogen Distribution and Conditioning (HDC) system. It covers valve architecture, actuation philosophy, set-point definitions, safety classification, and interface requirements for both the cryogenic (LH₂) and warm gaseous (GH₂) segments of the HDC flow path.
+This document defines the agnostic ATLAS standard-level architecture context for `Hydrogen Valves, Regulators and Shutoff`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 28 (GH₂/LH₂ Distribution) — 077-030 Hydrogen Valves, Regulators and Shutoff |
-| Certification basis | EASA CS-25 Amdt 27+; CSH-2; IEC 60079 ATEX Group IIC T4; DO-160G Env. Cat. |
-| S1000D SNS | 077-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `077` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 All HDC valves are **normally closed (NC)** — the safe/power-loss state is isolation of hydrogen from the distribution system. Valves are opened by HDCMU command via 28 V DC solenoid actuation (primary) or electro-mechanical servo actuator (pressure regulators). The HDCMU monitors valve position via integral feedback switches (open/closed micro-switches); miscompare between commanded and feedback position generates a BITE fault within 2 s.

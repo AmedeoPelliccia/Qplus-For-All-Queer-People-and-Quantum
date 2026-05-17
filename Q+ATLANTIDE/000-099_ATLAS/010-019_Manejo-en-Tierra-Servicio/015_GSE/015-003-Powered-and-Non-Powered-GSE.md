@@ -23,6 +23,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 015 · Subsubject 003 — Powered and Non-Powered GSE
@@ -69,7 +71,7 @@ Before deploying any Powered GSE to an aircraft stand, the following checks shal
 
 #### 2.2.3 Emission zone compliance
 
-Airport-specific Low Emission Zone (LEZ) rules may prohibit or restrict ICE-powered GSE in certain ramp areas or terminal zones. The standard compliance path for AMPEL360 operations:
+Airport-specific Low Emission Zone (LEZ) rules may prohibit or restrict ICE-powered GSE in certain ramp areas or terminal zones. The standard compliance path for [PROGRAMME-AIRCRAFT] operations:
 
 | GSE power type | Typical LEZ status | Mitigation |
 |---|---|---|

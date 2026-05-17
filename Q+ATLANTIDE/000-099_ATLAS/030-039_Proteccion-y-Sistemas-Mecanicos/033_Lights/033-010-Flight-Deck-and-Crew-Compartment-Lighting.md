@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Flight Deck and Crew Compartment Lighting"
 file_name: "033-010-Flight-Deck-and-Crew-Compartment-Lighting.md"
 sns_reference: "033-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,7 +75,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "Lights"
@@ -87,10 +87,12 @@ keywords:
   - "chart light"
   - "glareshield"
   - "PWM"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-010 — Flight Deck and Crew Compartment Lighting
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -102,33 +104,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Flight Deck and Crew Compartment Lighting subsystem (ATA 033-10) of the AMPEL360e eWTW aircraft. It covers all lighting functions within the flight deck envelope: overhead panel integral backlighting, glareshield lighting, chart/map lighting, dome light, flood lighting, stowage compartment illumination, and emergency flashlight provisions. The document also addresses Night Vision Imaging System (NVIS) compatibility requirements, dimming architecture via the Zone SSLC, power interface, and CMC/ECAM integration.
+This document defines the agnostic ATLAS standard-level architecture context for `033-010 — Flight Deck and Crew Compartment Lighting`.
 
-The flight deck lighting system is designed to support pilot visual performance across the full range of ambient light conditions — from bright daylight operations through to dark night approaches — while minimising pilot visual fatigue and supporting optimal EFIS display readability. All flight deck light sources are LED.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 033-10 — Flight Deck and Crew Compartment Lighting |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Lighting Technology | 100% LED — integral panel backlighting, dome, chart, flood |
-| Dimming | SSLC Zone — Flight Deck; PWM 0–100% |
-| NVIS Compatibility | Optional fitment — TBD (see §21) |
-| Colour Temperature | 3000 K – 6500 K adjustable (TBD confirmation) |
-| Colour Rendering Index | Ra > 80 target |
-| Certification Basis | CS-25 Subpart D; DO-293; MIL-L-85762A (if NVIS) |
-| S1000D SNS | 033-10 |
-| Applicability Code | ALL |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The flight deck lighting system of the AMPEL360e eWTW provides illumination for: (1) the main instrument overhead panel (integral backlighting of all placards and legends), (2) the glareshield, (3) chart/map lighting at each pilot station, (4) a central dome light for general ambient illumination, (5) storm/flood lighting (wide-area illumination for high-workload phases), (6) stowage compartment lighting (crew bags, manuals), and (7) emergency flashlight stowage provisions with pilot-accessible brackets.
+The flight deck lighting system of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] provides illumination for: (1) the main instrument overhead panel (integral backlighting of all placards and legends), (2) the glareshield, (3) chart/map lighting at each pilot station, (4) a central dome light for general ambient illumination, (5) storm/flood lighting (wide-area illumination for high-workload phases), (6) stowage compartment lighting (crew bags, manuals), and (7) emergency flashlight stowage provisions with pilot-accessible brackets.
 
 All dimming is performed by the Flight Deck Zone SSLC, which receives PWM set-point commands from crew rotary dimmer controls on the overhead lighting panel and from the Master SSLC over AFDX. The Zone SSLC drives individual LED driver circuits for each light group (panel, glareshield, chart, dome, flood). An auto-dim function interfaces with the EFIS/ECAM system: when a high-priority caution or warning message is displayed on the primary flight display (PFD), the SSLC receives a discrete signal from the Flight Warning Computer (FWC) via ARINC 429 and can auto-dim ambient lighting to improve message legibility (TBD — implementation details pending FWC interface definition).
 
@@ -309,7 +301,7 @@ No scheduled lamp replacement is planned. Corrective maintenance is triggered by
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-10 | Flight Deck and Crew Compartment Lighting | DMC-AMPEL360E-EWTW-033-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-10 | Flight Deck and Crew Compartment Lighting | DMC-<PROGRAMME>-<VARIANT>-033-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Planned Data Modules
 
@@ -429,7 +421,7 @@ No scheduled lamp replacement is planned. Corrective maintenance is triggered by
 
 | Issue ID | Description | Owner | Priority | Status |
 |---|---|---|---|---|
-| OI-033-10-001 | NVIS fitment decision — confirm whether NVG-compatible mode is required for baseline eWTW; drives Zone SSLC-FD hardware design and MIL-L-85762A test programme | Q-MECHANICS / Programme | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-033-10-001 | NVIS fitment decision — confirm whether NVG-compatible mode is required for baseline [PROGRAMME-VARIANT]; drives Zone SSLC-FD hardware design and MIL-L-85762A test programme | Q-MECHANICS / Programme | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-033-10-002 | CCT range confirmation — validate 3000 K–6500 K achievable with selected LED module supplier within cost and weight; confirm crew dimmer encoder type (analogue vs. digital) | Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-033-10-003 | FWC auto-dim ICD — define ARINC 429 label/word for FWC alert discrete; confirm implementation with ATA 31 team | Q-MECHANICS / ATA 31 | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-033-10-004 | Minimum lux level at minimum dimmer setting — agree regulatory minimum with EASA per CS-25.771 compliance plan | Q-MECHANICS / ORB-LEG | High | <img src="https://img.shields.io/badge/TBD-red"> |

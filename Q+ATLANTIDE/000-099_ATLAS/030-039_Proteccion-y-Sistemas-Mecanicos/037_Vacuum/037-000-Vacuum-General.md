@@ -6,9 +6,9 @@ subsubject: "000"
 subsubject_title: "Vacuum — General"
 file_name: "037-000-Vacuum-General.md"
 sns_reference: "037-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-00"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-00"
 ata_chapter: 37
-aircraft: "AMPEL360e eWTW"
+aircraft: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
 project: "Q+ATLANTIDE"
 status: "DRAFT"
 keywords:
@@ -19,7 +19,7 @@ keywords:
   - "VWS"
   - "Vacuum Waste System"
   - "CS-25.1438"
-  - "eWTW"
+  - "[PROGRAMME-VARIANT]"
   - "no-gyro-vacuum"
   - "lavatory"
   - "VRV"
@@ -30,10 +30,12 @@ created: "2025-07-14"
 revised: "2025-07-14"
 revision: "0.1"
 author: "Q+ATLANTIDE ATLAS Working Group"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-000 — Vacuum — General
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1 — 2025-07-14  
@@ -43,42 +45,26 @@ author: "Q+ATLANTIDE ATLAS Working Group"
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, AMC) are cited by document identifier only; no live URLs are embedded because regulatory document URLs are subject to change without notice. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-037-XX-YYYY-A`. Traceability links to CSDB are maintained in §14. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, AMC) are cited by document identifier only; no live URLs are embedded because regulatory document URLs are subject to change without notice. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-037-XX-YYYY-A`. Traceability links to CSDB are maintained in §14. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document provides the general overview and system-level description of ATA Chapter 37 — Vacuum — as applied to the **AMPEL360e eWTW** (Electric Wide-body Twin-engine Widebody) aircraft. It establishes:
+This document defines the agnostic ATLAS standard-level architecture context for `037-000 — Vacuum — General`.
 
-1. The rationale for the elimination of conventional vacuum-driven gyroscopic instruments on the eWTW.
-2. The residual role of vacuum in the aircraft: the **Vacuum Waste System (VWS)** serving lavatory toilets.
-3. The top-level architecture of the **Electric Vacuum Generator (EVG)** and its integration with ATA 38 (Water and Waste).
-4. Certification basis under CS-25.1438 and related articles.
-5. The document hierarchy for ATA 37, covering subsubjects 037-000 through 037-090.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document is authoritative for system boundary definition and interfaces for all lower-level ATA 37 documents.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants (unless noted) |
-| ATA Chapter | 37 — Vacuum |
-| Document Tier | Level 2 — System Description Document (SDD) |
-| Effectivity | MSN 0001 onwards (TBD) |
-| Preceding Document | QATL-ATLAS-000099-ATLAS-030039-037-000 Rev 0.0 (scaffold) |
-
-This document applies to all systems that produce, distribute, regulate, or consume vacuum pressure aboard the AMPEL360e eWTW. It explicitly excludes vacuum associated with:
-- Pneumatic actuation (ATA 36)
-- Cabin pressurisation differential (ATA 21)
-- Fuel venting suction (ATA 28)
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Conventional Aircraft Context
@@ -89,15 +75,15 @@ In conventional transport aircraft, ATA 37 covers two primary vacuum application
 2. **Vacuum autopilot servos** — used on older aircraft types for autopilot actuation where hydraulic/electric actuators were not fitted.
 3. **Vacuum waste systems** — galley/lavatory suction toilets on newer-generation narrow/widebodies.
 
-### 3.2 eWTW Vacuum Philosophy
+### 3.2 [PROGRAMME-VARIANT] Vacuum Philosophy
 
-The AMPEL360e eWTW departs from this convention in two critical respects:
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] departs from this convention in two critical respects:
 
-| Conventional Use | eWTW Status | Reason |
+| Conventional Use | [PROGRAMME-VARIANT] Status | Reason |
 |---|---|---|
 | Vacuum gyroscopic instruments | **ELIMINATED** | ADIRU/IRS (ATA 34) provides all attitude and heading data digitally; no mechanical gyros fitted |
 | Vacuum autopilot servos | **ELIMINATED** | Full fly-by-wire (FBW) with electric actuators (ATA 27); no vacuum-powered control surfaces |
-| Vacuum waste system (toilets) | **RETAINED** | Primary and only use of ATA 37 on eWTW |
+| Vacuum waste system (toilets) | **RETAINED** | Primary and only use of ATA 37 on [PROGRAMME-VARIANT] |
 
 The elimination of vacuum gyroscopes removes a significant maintenance burden (pump replacement, filter changes, suction gauge calibration) and eliminates a failure mode that has historically caused spatial disorientation accidents when vacuum supply failed undetected.
 
@@ -153,7 +139,7 @@ The VWS uses differential pressure (cabin pressure above ambient inside waste li
 
 ### 5.1 System Architecture Summary
 
-The ATA 37 Vacuum system on the eWTW consists of a single-purpose subsystem: the Vacuum Waste System (VWS). There is no multi-purpose vacuum bus serving instruments or autopilot.
+The ATA 37 Vacuum system on the [PROGRAMME-VARIANT] consists of a single-purpose subsystem: the Vacuum Waste System (VWS). There is no multi-purpose vacuum bus serving instruments or autopilot.
 
 ```
 [AC Bus (ATA 24)] ──────► [EVG Motor Controller]
@@ -354,13 +340,13 @@ flowchart LR
 
 | DMC Code | Title | Infocode |
 |---|---|---|
-| DMC-AMPEL360E-EWTW-037-00-00-00A-040A-D | ATA 37 General Description | 040 (Description) |
-| DMC-AMPEL360E-EWTW-037-00-00-00A-200A-D | ATA 37 Maintenance Practices | 200 (Maintenance) |
-| DMC-AMPEL360E-EWTW-037-00-00-00A-520A-D | ATA 37 Fault Isolation | 520 (Fault Isolation) |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-040A-D | Vacuum Sources Description | 040 |
-| DMC-AMPEL360E-EWTW-037-20-00-00A-040A-D | Vacuum Distribution Description | 040 |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-040A-D | Vacuum Regulation Description | 040 |
-| DMC-AMPEL360E-EWTW-037-40-00-00A-040A-D | Pumps, Valves, Lines Description | 040 |
+| DMC-<PROGRAMME>-<VARIANT>-037-00-00-00A-040A-D | ATA 37 General Description | 040 (Description) |
+| DMC-<PROGRAMME>-<VARIANT>-037-00-00-00A-200A-D | ATA 37 Maintenance Practices | 200 (Maintenance) |
+| DMC-<PROGRAMME>-<VARIANT>-037-00-00-00A-520A-D | ATA 37 Fault Isolation | 520 (Fault Isolation) |
+| DMC-<PROGRAMME>-<VARIANT>-037-10-00-00A-040A-D | Vacuum Sources Description | 040 |
+| DMC-<PROGRAMME>-<VARIANT>-037-20-00-00A-040A-D | Vacuum Distribution Description | 040 |
+| DMC-<PROGRAMME>-<VARIANT>-037-30-00-00A-040A-D | Vacuum Regulation Description | 040 |
+| DMC-<PROGRAMME>-<VARIANT>-037-40-00-00A-040A-D | Pumps, Valves, Lines Description | 040 |
 
 CSDB publication target: <img src="https://img.shields.io/badge/TBD-red">
 
@@ -393,7 +379,7 @@ CSDB publication target: <img src="https://img.shields.io/badge/TBD-red">
 
 ### 16.2 Eliminated Hazards (vs. Conventional ATA 37)
 
-| Conventional Hazard | eWTW Status | Reason |
+| Conventional Hazard | [PROGRAMME-VARIANT] Status | Reason |
 |---|---|---|
 | Vacuum gyro failure → spatial disorientation | **ELIMINATED** | No vacuum gyros; ADIRU/IRS provides attitude data (ATA 34) |
 | Vacuum pump oil contamination of instruments | **ELIMINATED** | No instrument vacuum supply |
@@ -442,7 +428,7 @@ CSDB publication target: <img src="https://img.shields.io/badge/TBD-red">
 | EVG | Electric Vacuum Generator — motor-driven vacuum pump |
 | FBW | Fly-By-Wire — electric flight control system eliminating need for vacuum autopilot servos |
 | Freeze protection | Heating of waste lines to prevent freezing at altitude (ATA 30 interface) |
-| Gyroscopic instruments | Attitude/heading instruments driven by vacuum suction — **eliminated on eWTW** |
+| Gyroscopic instruments | Attitude/heading instruments driven by vacuum suction — **eliminated on [PROGRAMME-VARIANT]** |
 | IRS | Inertial Reference System |
 | Manifold | Common distribution tube connecting EVG to all toilet branch lines |
 | MEL | Minimum Equipment List |
@@ -465,7 +451,7 @@ CSDB publication target: <img src="https://img.shields.io/badge/TBD-red">
 4. EASA AMC 25.831 — Acceptable Means of Compliance for Ventilation.
 5. ATA iSpec 2200 Chapter 37 — Vacuum (reference chapter definition).
 6. S1000D Issue 5.0 — International Specification for Technical Publications.
-7. AMPEL360e eWTW System Requirements Document (SRD-eWTW-037) — <img src="https://img.shields.io/badge/TBD-red">
+7. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] System Requirements Document (SRD-[PROGRAMME-VARIANT]-037) — <img src="https://img.shields.io/badge/TBD-red">
 
 ---
 
@@ -480,7 +466,7 @@ CSDB publication target: <img src="https://img.shields.io/badge/TBD-red">
 | QATL-ATLAS-000099-ATLAS-030039-038-000 | Water and Waste — General (ATA 38) | <img src="https://img.shields.io/badge/TBD-red"> |
 | QATL-ATLAS-000099-ATLAS-030039-024-000 | Electrical Power — General (ATA 24) | <img src="https://img.shields.io/badge/TBD-red"> |
 | QATL-ATLAS-000099-ATLAS-030039-034-000 | Navigation — General (ATA 34, ADIRU) | <img src="https://img.shields.io/badge/TBD-red"> |
-| AMM-AMPEL360E-037 | Aircraft Maintenance Manual Chapter 37 | <img src="https://img.shields.io/badge/TBD-red"> |
+| AMM-[PROGRAMME-AIRCRAFT]-037 | Aircraft Maintenance Manual Chapter 37 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ---
 

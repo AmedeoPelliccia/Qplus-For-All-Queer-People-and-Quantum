@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Leak Detection and Overheat Protection"
 file_name: "036-050-Leak-Detection-and-Overheat-Protection.md"
 sns_reference: "036-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-50"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-50"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -88,10 +88,12 @@ keywords:
   - "bleed-less"
   - "no OHT required"
   - "CS-25.1438"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-050 — Leak Detection and Overheat Protection
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,41 +105,25 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the leak detection and overheat protection provisions of the AMPEL360e eWTW residual pneumatic circuit (ATA 36-050).
+This document defines the agnostic ATLAS standard-level architecture context for `036-050 — Leak Detection and Overheat Protection`.
 
-**Fundamental eWTW architectural statement for ATA 36-050:**
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-> **Overheat (OHT) sensors are NOT required for ATA 36 on the eWTW.** On conventional bleed-air aircraft, OHT sensing loops (thermistor cables or pneumatic sensing tubes routed adjacent to bleed air ducts) detect duct rupture by sensing the high-temperature air escaping from fractured hot-bleed ductwork. This is a primary safety function on bleed-air aircraft. Since the eWTW carries NO hot bleed air in ATA 36 — only low-pressure, near-ambient-temperature compressed air from the EAC — there is no hot-air duct rupture hazard and no thermal overheat detection requirement for ATA 36.
-
-**Leak detection on eWTW ATA 36** is accomplished entirely through **pressure differential monitoring** using the existing pressure transducers on the EAC outlet and distribution manifold. A sustained pressure loss (pressure decay) detected by CMC logic indicates a leak. No dedicated OHT hardware is installed in ATA 36.
-
-Zone fire and smoke protection for the aircraft is provided by ATA 26, which is independent of ATA 36.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 036-050 — Leak Detection and Overheat Protection |
-| OHT Sensors | **NOT REQUIRED** — bleed-less architecture; no hot bleed air |
-| OHT Sensing Loops | **NOT INSTALLED** |
-| Thermal Insulation Blankets | **NOT REQUIRED** |
-| Leak Detection Method | Pressure differential monitoring via existing transducers |
-| Pressure Transducers | EAC outlet + manifold (ATA 36-010/020) |
-| CMC Fault Logic | Pressure decay = leak flag |
-| Fire / Smoke Detection | ATA 26 (zone sensors — independent of ATA 36) |
-| Certification Basis | CS-25.1438; CS-25.1309; CS-25.207 (not applicable — see §3) |
-| S1000D SNS | 036-50 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-### 3.1 Conventional OHT vs. eWTW Approach
+### 3.1 Conventional OHT vs. [PROGRAMME-VARIANT] Approach
 
-| Feature | Conventional Bleed-Air Aircraft | eWTW |
+| Feature | Conventional Bleed-Air Aircraft | [PROGRAMME-VARIANT] |
 |---|---|---|
 | OHT sensing loops | Thermistor or pneumatic tube loops alongside bleed ducts | **Not installed** |
 | OHT detection | Detects hot air escaping from duct rupture (200–500°C) | **Not required** — no hot air |
@@ -147,7 +133,7 @@ Zone fire and smoke protection for the aircraft is provided by ATA 26, which is 
 | Leak detection method | OHT loop: temperature rise from escaped hot air | Pressure decay: sustained pressure loss below threshold |
 | Smoke detection (zone) | ATA 26 (independent) | ATA 26 (independent — same) |
 
-### 3.2 eWTW Leak Detection Approach
+### 3.2 [PROGRAMME-VARIANT] Leak Detection Approach
 
 The residual pneumatic circuit (if retained) uses **pressure-based leak detection**:
 
@@ -158,7 +144,7 @@ The residual pneumatic circuit (if retained) uses **pressure-based leak detectio
 
 ### 3.3 CS-25.207 (Stall Warning) Note
 
-CS-25.207 (stall warning) is **not applicable** to ATA 36 on the eWTW. This regulatory paragraph does not govern pneumatic leak detection. It is cited here only to clarify that it does not apply, as it is sometimes cited in ATA 36 references for conventional aircraft bleed-air stall warning pitot-static interfaces.
+CS-25.207 (stall warning) is **not applicable** to ATA 36 on the [PROGRAMME-VARIANT]. This regulatory paragraph does not govern pneumatic leak detection. It is cited here only to clarify that it does not apply, as it is sometimes cited in ATA 36 references for conventional aircraft bleed-air stall warning pitot-static interfaces.
 
 ---
 
@@ -210,7 +196,7 @@ EAC Running → Manifold Pressure Transducer (×2) → CMC Pressure Logic
 
 ### 5.3 Why No OHT Is Required — Rationale
 
-| Hazard | Conventional Aircraft | eWTW |
+| Hazard | Conventional Aircraft | [PROGRAMME-VARIANT] |
 |---|---|---|
 | Hot bleed air duct rupture | Yes — 200–500°C air escaping into structure; fire risk; injury risk | **N/A** — no bleed; EAC air ≈ ambient temp |
 | Duct burn-through | Yes — titanium ducts at high temp | **N/A** — aluminium/SS tubing at low temp |
@@ -322,7 +308,7 @@ flowchart LR
     LC11["LC11\nIn-Service\nPressure Monitoring"] --> LC12
     LC12["LC12\nLeak Test\nAMM Procedure"]
 
-    NOTE["OHT Eliminated\nfrom eWTW scope\nat LC03"]
+    NOTE["OHT Eliminated\nfrom [PROGRAMME-VARIANT] scope\nat LC03"]
     LC03 --- NOTE
 ```
 
@@ -392,9 +378,9 @@ Leak detection is fully automatic via CMC pressure monitoring. No crew action re
 
 | DM Code (planned) | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-50-00A-040A-A | 040 | ATA 36-050 — Leak Detection and Overheat Protection — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-50-00A-300A-A | 300 | ATA 36-050 — Pressure Transducer Inspection / Calibration Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-50-00A-400A-A | 400 | ATA 36-050 — Leak Detection Fault Isolation (CMC Logic Fault) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-50-00A-040A-A | 040 | ATA 36-050 — Leak Detection and Overheat Protection — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-50-00A-300A-A | 300 | ATA 36-050 — Pressure Transducer Inspection / Calibration Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-50-00A-400A-A | 400 | ATA 36-050 — Leak Detection Fault Isolation (CMC Logic Fault) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -451,11 +437,11 @@ The primary safety concern for ATA 36-050 is an **undetected leak** causing cons
 
 | Term | Definition |
 |---|---|
-| OHT | Overheat sensor / sensing loop — used on conventional bleed-air aircraft to detect duct rupture by sensing escaped hot air; **not required on eWTW ATA 36** |
+| OHT | Overheat sensor / sensing loop — used on conventional bleed-air aircraft to detect duct rupture by sensing escaped hot air; **not required on [PROGRAMME-VARIANT] ATA 36** |
 | Pressure decay | Progressive reduction in circuit pressure over time, indicating a leak in the pneumatic circuit |
 | P_low | Lower pressure threshold below which a leak is suspected (CMC logic parameter — TBD) |
 | T_detect | Detection delay time — duration P < P_low must persist before CMC flags an alert (filters transients — TBD) |
-| Leak detection | Identification of pneumatic circuit leaks via pressure monitoring (pressure-based method on eWTW) |
+| Leak detection | Identification of pneumatic circuit leaks via pressure monitoring (pressure-based method on [PROGRAMME-VARIANT]) |
 | Bleed-less architecture | No engine compressor bleed air; no hot air duct overheat hazard in ATA 36 |
 | CMC | Central Maintenance Computer — contains leak detection logic |
 | CAS | Crew Alerting System |

@@ -21,13 +21,15 @@ governance_class: baseline
 version: 1.1.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 013 — Remolque
 
 ## 1. Purpose
 
-Subsection-level index for *Remolque* (`013`) within ATLAS `010-019` — *Manejo en Tierra & Servicio* — Towing and pushback operations for AMPEL360 aircraft variants on the apron and maintenance areas. This subsection provides the **operational procedure layer** (Level 2) for towing; the introductory orientation is at [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md).
+Subsection-level index for *Remolque* (`013`) within ATLAS `010-019` — *Manejo en Tierra & Servicio* — Towing and pushback operations for [PROGRAMME-AIRCRAFT] aircraft variants on the apron and maintenance areas. This subsection provides the **operational procedure layer** (Level 2) for towing; the introductory orientation is at [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md).
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 

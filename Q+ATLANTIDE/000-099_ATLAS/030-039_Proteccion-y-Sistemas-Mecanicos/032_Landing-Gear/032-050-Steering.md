@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Steering"
 file_name: "032-050-Steering.md"
 sns_reference: "032-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-50"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-032-50"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "ATA 32"
   - "Steering"
   - "NWS"
@@ -98,10 +98,12 @@ keywords:
   - "free-castor"
   - "differential braking"
   - "auto-centering"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 032-050 — Steering
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,32 +115,20 @@ All internal links use relative paths. External regulatory references use anchor
 
 ## §1 Purpose
 
-This document describes the Nose-Wheel Steering (NWS) system of the AMPEL360e eWTW. The NWS system provides directional control of the aircraft during ground operations (taxiing, take-off roll, and landing roll). On eWTW, nose-wheel steering is achieved by an electric motor actuator integral to the upper NLG leg, commanded by the BSCU (IMA-hosted). This replaces the hydraulic steering actuator and hydraulic steering metering valve found in conventional transport-category aircraft.
+This document defines the agnostic ATLAS standard-level architecture context for `032-050 — Steering`.
 
-The steering system has two input channels: (1) the tiller, providing full steering authority of ±70° to the pilots (Captain tiller on left side, First Officer tiller on right side — both connected to BSCU, priority logic TBD); and (2) the rudder pedals, providing limited steering authority of ±5° through a separate transducer channel in the BSCU. The rudder pedal channel provides directional control during the take-off and landing rolls at higher speeds where large tiller angles would be dangerous.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-On NWS fault, the BSCU commands free-castor mode (NWS motor unpowered). In free-castor mode, directional control is achieved by differential braking via the BSCU, which asymmetrically commands the EMBs on each MLG bogie to yaw the aircraft. The NWS system auto-centres the nose wheel to the straight-ahead position when the NLG is retracted (centering cam, described in 032-020).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 032-050 — Steering |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Steering Type | Electric NWS actuator — brushless DC motor, integral to NLG upper leg |
-| Tiller Authority | ±70° nose-wheel angle |
-| Rudder Pedal Authority | ±5° nose-wheel angle (limited) |
-| Controller | BSCU — IMA-hosted software function |
-| Backup Steering | Differential braking (BSCU) on NWS fault |
-| Certification Basis | CS-25.499 (EASA), FAR Part 25.499 (FAA) |
-| SNS Reference | 032-50 |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The NWS system comprises: (1) the NWS electric actuator (brushless DC motor + gear reduction + torque-limited output shaft integral to NLG upper leg, driving the NLG steering axis); (2) the Captain and FO tiller assemblies (each with a rotary transducer providing electrical steering demand to BSCU); (3) the rudder pedal transducers (dedicated channels in the BSCU for rudder pedal position input, separate from the flight control system rudder channel); (4) the BSCU NWS steering function (closed-loop position control of NWS actuator; tiller-to-pedal priority logic; fault detection; free-castor mode commanding); and (5) the NWS position sensor (on the NLG steering axis, providing actual nose-wheel angle feedback to BSCU).
@@ -329,7 +319,7 @@ NWS actuator performance degradation (increasing position error or current draw)
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 032-50 | Steering | DMC-AMPEL360E-EWTW-032-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-50 | Steering | DMC-<PROGRAMME>-<VARIANT>-032-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 

@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0064-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-064-030-FUEL-FILTRATION-AND-MONITORING
      ATA 64 · Fuel Filtration and Monitoring
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Filtration and Monitoring
@@ -47,24 +49,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-030"
 
 ## §1 Purpose
 
-Fuel filtration protects the HMU, fuel nozzles, and FOHE from particulate contamination. The AMPEL360E eWTW engine fuel system includes a primary filter at HMU inlet and a secondary filter in the LP circuit. A differential pressure (DP) switch on the primary filter triggers a CMS alert when the filter approaches bypass threshold.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Filtration and Monitoring`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-030 — Fuel Filtration and Monitoring |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `064` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-Fuel filtration protects the HMU, fuel nozzles, and FOHE from particulate contamination. The AMPEL360E eWTW engine fuel system includes a primary filter at HMU inlet and a secondary filter in the LP circuit. A differential pressure (DP) switch on the primary filter triggers a CMS alert when the filter approaches bypass threshold.
+Fuel filtration protects the HMU, fuel nozzles, and FOHE from particulate contamination. The programme-defined aircraft type engine fuel system includes a primary filter at HMU inlet and a secondary filter in the LP circuit. A differential pressure (DP) switch on the primary filter triggers a CMS alert when the filter approaches bypass threshold.
 
 ---
 
@@ -255,4 +256,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

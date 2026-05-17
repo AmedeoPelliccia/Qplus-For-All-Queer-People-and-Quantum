@@ -31,6 +31,8 @@ ata_reference: "ATA 44.070 — Cabin Crew Interfaces"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 070 — Cabin Crew Interfaces and Service Functions
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the Cabin Crew Interfaces and Service Functions for the AMPEL360E eWTW aircraft. Cabin crew interfaces are the physical and software means by which cabin crew control, monitor, and manage all ATA 44 cabin systems. They include: Forward Attendant Panel (FAP), Aft Attendant Panel (AAP), Galley Control Panels (GCPs), the CIS interphone handset at each station, and the integrated cabin crew tablet application (Crew Tablet App).
+This document defines the Cabin Crew Interfaces and Service Functions for the programme-defined aircraft type. Cabin crew interfaces are the physical and software means by which cabin crew control, monitor, and manage all ATA 44 cabin systems. They include: Forward Attendant Panel (FAP), Aft Attendant Panel (AAP), Galley Control Panels (GCPs), the CIS interphone handset at each station, and the integrated cabin crew tablet application (Crew Tablet App).
 
 Key governance areas:
 - FAP and AAP hardware design (touchscreen, controls, displays).
@@ -60,7 +62,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44.070 — Cabin Crew Interfaces |
 | Certification Basis | CS-25 §25.1302 (Installed Systems); AMC 25.1302 |
 | Applicable Standards | AMC 25.1302; CS-25 §25.1523; DO-160G; ARINC 628 |

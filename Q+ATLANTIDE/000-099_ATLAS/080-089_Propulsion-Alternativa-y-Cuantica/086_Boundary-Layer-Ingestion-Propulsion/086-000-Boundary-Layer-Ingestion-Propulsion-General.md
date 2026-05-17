@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0086-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-086-000-BOUNDARY-LAYER-INGESTION-PROPULSION-GENERAL
      ATLAS-086 (Boundary Layer Ingestion Propulsion) · General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Boundary Layer Ingestion Propulsion — General
@@ -46,28 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 086-000 is the **apex reference** for the Boundary Layer Ingestion (BLI) Propulsion subsection of the AMPEL360E eWTW. It establishes the overall system description, functional decomposition, interface catalogue, operating mode inventory, and certification constraints applicable across the full BLI scope. All subordinate subsubject documents (086-010 through 086-090) are governed by, and must be consistent with, this general baseline document.
+This document defines the agnostic ATLAS standard-level architecture context for `Boundary Layer Ingestion Propulsion — General`.
 
-BLI propulsion re-energises the fuselage wake by ingesting the low-momentum boundary layer air into aft-mounted electrically driven fan-propulsors, reducing net momentum drag and improving overall propulsive efficiency. The AMPEL360E eWTW employs **two BLI propulsor assemblies** integrated into the aft fuselage, each driven by a **120 kW Permanent-Magnet Synchronous Motor (PMSM)** fed from the HVDC 270 V bus (ATLAS-073). System supervision is managed by the **BLI Control Unit (BLICU)**, qualified to DO-178C DAL C / DO-254 DAL C with dual-channel architecture.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-086 (Boundary Layer Ingestion Propulsion) |
-| Certification Basis | DO-178C DAL C (BLICU software); DO-254 DAL C (BLICU hardware); DO-160G (environmental); EASA CS-25 Amendment 27+ |
-| S1000D SNS | 086-000-00 |
-| DMRL Reference | BREX-086-v1; 30 Data Modules |
-| Effectivity | All AMPEL360E eWTW aircraft from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `086` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description
 
-The AMPEL360E eWTW **BLI Propulsion System** consists of two aft-fuselage propulsor assemblies that ingest the aircraft boundary layer through shaped S-duct inlets and re-accelerate the ingested flow via distortion-tolerant variable-speed fans:
+The programme-defined aircraft type **BLI Propulsion System** consists of two aft-fuselage propulsor assemblies that ingest the aircraft boundary layer through shaped S-duct inlets and re-accelerate the ingested flow via distortion-tolerant variable-speed fans:
 
 1. **BLI Propulsor Assemblies (BLI-PA-1, BLI-PA-2):** Each propulsor assembly integrates a 1.15 m diameter distortion-tolerant fan stage driven by a 120 kW PMSM through a gearless direct-drive arrangement. The fan operating speed range is 3 000–6 500 RPM; variable-frequency drive (VFD) enables continuous speed modulation to match boundary layer ingestion demand. Fan blades are designed to tolerate inlet distortion indices (DC60) up to 0.35 without stall.
 

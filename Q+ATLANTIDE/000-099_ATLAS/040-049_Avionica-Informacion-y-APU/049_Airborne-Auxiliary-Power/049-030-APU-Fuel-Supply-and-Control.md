@@ -31,6 +31,8 @@ ata_reference: "ATA 49 — Airborne Auxiliary Power"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 030 — APU Fuel Supply and Control
@@ -43,11 +45,11 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-This document defines the APU fuel supply and control system for the **AMPEL360E eWTW** aircraft. The fuel supply path originates at the ATA 28 centre tank pick-up point, passes through a dedicated APU low-pressure (LP) electric fuel pump, through the APU Fuel Shutoff Valve (AFSOV — fail-safe, normally closed), through a combined fuel filter and water separator, then through the electronic Fuel Control Unit (FCU) which meters fuel flow to the annular combustor nozzle distribution manifold.
+This document defines the APU fuel supply and control system for the **programme-defined aircraft type** aircraft. The fuel supply path originates at the ATA 28 centre tank pick-up point, passes through a dedicated APU low-pressure (LP) electric fuel pump, through the APU Fuel Shutoff Valve (AFSOV — fail-safe, normally closed), through a combined fuel filter and water separator, then through the electronic Fuel Control Unit (FCU) which meters fuel flow to the annular combustor nozzle distribution manifold.
 
 The AFSOV is the primary safety element of the fuel system. It is a spring-return, electric-hold-open valve: electrical power holds it open; loss of power at any time (commanded or failure) causes the spring to return it to the closed position within 0.5 seconds, stopping fuel flow to the APU. This fail-safe design is a fundamental requirement for CS-25 §25.1185 compliance, ensuring no post-crash or post-failure fuel flow to the APU fire zone.
 
-Fuel compatibility on the AMPEL360E eWTW extends to Sustainable Aviation Fuel (SAF) blends up to 50 % by volume, per ASTM D7566 Annex A (HEFA-SPK) and Annex B (FT-SPK). All fuel wetted components — AFSOV seals, FCU internal passages, filter media, and combustor nozzle metallurgy — are qualified for SAF compatibility under the approved fuel specifications. The Fuel Quantity Management System (FQMS) from ATA 28 provides the APCU with a centre tank quantity signal, enabling APCU to generate an "APU FUEL LOW" advisory when APU-dedicated fuel quantity falls below 200 kg estimated APU-only endurance.
+Fuel compatibility on the programme-defined aircraft type extends to Sustainable Aviation Fuel (SAF) blends up to 50 % by volume, per ASTM D7566 Annex A (HEFA-SPK) and Annex B (FT-SPK). All fuel wetted components — AFSOV seals, FCU internal passages, filter media, and combustor nozzle metallurgy — are qualified for SAF compatibility under the approved fuel specifications. The Fuel Quantity Management System (FQMS) from ATA 28 provides the APCU with a centre tank quantity signal, enabling APCU to generate an "APU FUEL LOW" advisory when APU-dedicated fuel quantity falls below 200 kg estimated APU-only endurance.
 
 The Pressure Relief Valve (PRV) in the fuel manifold downstream of the AFSOV protects the FCU and combustor nozzles from over-pressure in the event of a FCU metering valve jam or manifold blockage. The PRV opens at 120 % of maximum fuel system operating pressure, routing excess fuel back to the LP pump inlet via a return line.
 
@@ -57,7 +59,7 @@ The Pressure Relief Valve (PRV) in the fuel manifold downstream of the AFSOV pro
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | Fuel source | ATA 28 centre tank dedicated APU pick-up |
 | Fuel type | Jet-A / Jet-A-1 / SAF ASTM D7566 Annex A and B (up to 50 % SAF blend) |

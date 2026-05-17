@@ -6,10 +6,10 @@ subsubject: "020"
 subsubject_title: "Pneumatic Air Distribution"
 file_name: "036-020-Pneumatic-Air-Distribution.md"
 sns_reference: "036-20"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-20"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-20"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -88,10 +88,12 @@ keywords:
   - "check valve"
   - "bleed-less"
   - "CS-25.1438"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-020 — Pneumatic Air Distribution
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,31 +105,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the pneumatic air distribution system for the AMPEL360e eWTW residual pneumatic circuit (ATA 36-020). It covers the main air filter, pressure accumulator, distribution manifold, supply lines to consumers, and associated check valves.
+This document defines the agnostic ATLAS standard-level architecture context for `036-020 — Pneumatic Air Distribution`.
 
-**Key eWTW difference from conventional aircraft**: On conventional bleed-air aircraft, the ATA 36 distribution system handles high-temperature (up to 200–500°C), high-pressure (up to 60 psi) bleed air, requiring titanium or stainless-steel ducts with thermal insulation blankets, high-temperature seals, flexible joints for thermal expansion, and overheat detection loops. **None of these are required on the eWTW.** The residual pneumatic distribution system (if retained) carries low-pressure (estimated 3–50 psi), near-ambient-temperature compressed air, allowing use of lightweight aluminium or PTFE-lined tubing, standard elastomeric seals, and eliminating the need for thermal management or OHT sensors in ATA 36.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 036-020 — Pneumatic Air Distribution |
-| Bleed Air Distribution | **Not applicable** — bleed-less architecture |
-| Distribution Medium | Low-pressure, near-ambient-temperature compressed air (from EAC) |
-| Working Pressure | <img src="https://img.shields.io/badge/TBD-red"> (estimated 3–50 psi) |
-| Working Temperature | Near-ambient (EAC compression adds modest heat — TBD) |
-| Tubing Material | <img src="https://img.shields.io/badge/TBD-red"> (aluminium alloy, stainless steel, or PTFE-lined) |
-| Manifold Material | <img src="https://img.shields.io/badge/TBD-red"> |
-| Accumulator Volume | <img src="https://img.shields.io/badge/TBD-red"> |
-| Consumers Served | Door seals, potable water tank (TBD) |
-| Certification Basis | CS-25.1438; CS-25.1301/1309 |
-| S1000D SNS | 036-20 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 Distribution Architecture Overview
@@ -139,9 +130,9 @@ The ATA 36-020 distribution system receives conditioned low-pressure air from th
 4. **Consumer Supply Lines** — individual small-bore tubing runs to each consumer (door seals, water tank)
 5. **Check Valves (NRV)** — prevent cross-flow between consumer branches and backflow into manifold
 
-### 3.2 eWTW vs. Conventional Distribution Comparison
+### 3.2 [PROGRAMME-VARIANT] vs. Conventional Distribution Comparison
 
-| Feature | Conventional (bleed) | eWTW |
+| Feature | Conventional (bleed) | [PROGRAMME-VARIANT] |
 |---|---|---|
 | Duct temperature | Up to 500°C (bleed) | Near-ambient (<50°C est.) |
 | Duct pressure | 40–60 psi typical bleed | 3–50 psi (TBD) |
@@ -393,9 +384,9 @@ flowchart LR
 
 | DM Code (planned) | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-20-00A-040A-A | 040 | ATA 36-020 — Air Distribution — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-20-00A-300A-A | 300 | ATA 36-020 — Filter / Accumulator / Manifold Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-20-00A-400A-A | 400 | ATA 36-020 — Pressure Loss Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-20-00A-040A-A | 040 | ATA 36-020 — Air Distribution — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-20-00A-300A-A | 300 | ATA 36-020 — Filter / Accumulator / Manifold Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-20-00A-400A-A | 400 | ATA 36-020 — Pressure Loss Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -421,7 +412,7 @@ flowchart LR
 | Pressure vessels | CS-25.1438 + authority rules | Accumulator | Proof pressure = 1.5× working TBD |
 | Tubing and fittings | CS-25.1435 (hydraulic by analogy) | By analogy | Formal applicability TBD with authority |
 | Bonding and grounding | CS-25.1353 | Tubing bonding jumpers | Static dissipation in composite fuselage |
-| Hot air hazard | N/A | **Not applicable** | eWTW — low-temp air only; no bleed-air fire/burn hazard |
+| Hot air hazard | N/A | **Not applicable** | [PROGRAMME-VARIANT] — low-temp air only; no bleed-air fire/burn hazard |
 
 ### 16.1 Failure Effects
 | Failure | Effect | Classification |
@@ -460,7 +451,7 @@ flowchart LR
 | PRV | Pressure Relief Valve — overpressure protection, vents excess pressure to atmosphere |
 | SOV | Shutoff Valve — electrically controlled valve to each consumer branch (ATA 36-030/040) |
 | Working pressure | Nominal operating pressure of residual pneumatic circuit (TBD, estimated 3–50 psi) |
-| OHT | Overheat sensor — not required on eWTW (no hot bleed air in distribution) |
+| OHT | Overheat sensor — not required on [PROGRAMME-VARIANT] (no hot bleed air in distribution) |
 | Bleed-less architecture | No engine bleed air; all functions electrically supplied |
 | PTFE | Polytetrafluoroethylene — tube liner material for chemical resistance and low friction |
 | Bonding jumper | Electrical bonding strap ensuring metallic continuity across tubing joints for static discharge |

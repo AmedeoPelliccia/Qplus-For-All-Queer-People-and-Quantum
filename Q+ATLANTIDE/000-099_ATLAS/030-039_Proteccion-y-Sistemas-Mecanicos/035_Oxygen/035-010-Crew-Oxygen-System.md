@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Crew Oxygen System"
 file_name: "035-010-Crew-Oxygen-System.md"
 sns_reference: "035-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-035-10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-035-10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 35"
   - "Oxygen"
@@ -88,10 +88,12 @@ keywords:
   - "PRV"
   - "CS-25.1441"
   - "CS-25.1447"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 035-010 — Crew Oxygen System
-### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,32 +105,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Crew Oxygen System (ATA 35-10) as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It defines the architecture, components, functional operation, interfaces, certification compliance, and maintenance concept of the high-pressure gaseous oxygen system providing supplemental and emergency breathing oxygen to the flight deck crew (2 pilots and 1 observer, TBD).
+This document defines the agnostic ATLAS standard-level architecture context for `035-010 — Crew Oxygen System`.
 
-The crew oxygen system must supply sufficient oxygen to allow the flight crew to maintain normal cognitive and physical function during any depressurisation event or emergency descent, and to perform smoke/fume protection during in-flight fire or fume events. The system must meet CS-25.1441 supply duration requirements, CS-25.1443 flow rate requirements, and CS-25.1447 quick-donning mask donning time requirements (one-handed within 5 seconds).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 035-10 — Crew Oxygen System |
-| Crew Positions | Pilot 1 (Captain), Pilot 2 (First Officer), Observer TBD |
-| Cylinder Type | COPV (Composite Overwrap Pressure Vessel) TBD vs. steel/aluminium |
-| Cylinder Pressure | 1800 psi or 1850 psi nominal (TBD) |
-| Regulator Type | Diluter-demand with 100% O₂ and pressure-demand emergency modes |
-| Mask Type | Quick-Donning Mask (QDM) — full-face or oro-nasal (TBD) |
-| Supply Duration | 15–20 min at 12 km cruise altitude (TBD) |
-| Isolation Valve | Electric solenoid TBD vs. manual |
-| Certification Basis | CS-25.1441, CS-25.1443, CS-25.1447, CS-25.1449, CS-25.1451, CS-25.1453 |
-| S1000D SNS | 035-10 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The crew oxygen system provides high-pressure gaseous oxygen stored in one or more COPV cylinders in the avionics bay or flight deck rear area. Oxygen flows from the cylinder(s) through a pressure reducing valve (PRV), an electric solenoid isolation valve (TBD), and stainless or titanium anti-static distribution tubing to diluter-demand regulators at each flight deck crew station.
@@ -170,7 +160,7 @@ Cylinder pressure is monitored by dual redundant pressure transducers. Crew O₂
 - **Electric solenoid isolation valve**: Normally open (fail-open TBD) electric solenoid valve allows crew or automated system to isolate crew oxygen supply. Integration with CPCS/ECS failure logic TBD. Manual override capability required.
 - **Diluter-demand regulators**: One per crew station. Regulator automatically adjusts O₂/air ratio as a function of cabin altitude. Crew selects 100% or emergency pressure-demand mode via regulator-mounted selector. Regulator outlet connects to QDM mask via quick-disconnect coupling.
 - **QDM masks**: Stored in stowage box at each crew station. One-handed donning within 5 seconds. Full-face or oro-nasal type (TBD). Integrated microphone for ATA 23 voice communications. Mask harness (net type) for secure fit.
-- **eWTW-specific considerations**: No hydraulic lines adjacent to O₂ tubing (fully electric architecture eliminates hydraulic fire risk near O₂ system). COPV structural bracket interface with CFRP fuselage TBD. Electric solenoid valve failure mode analysis (fail-open preferred for crew safety — TBD).
+- **[PROGRAMME-VARIANT]-specific considerations**: No hydraulic lines adjacent to O₂ tubing (fully electric architecture eliminates hydraulic fire risk near O₂ system). COPV structural bracket interface with CFRP fuselage TBD. Electric solenoid valve failure mode analysis (fail-open preferred for crew safety — TBD).
 
 ---
 
@@ -322,7 +312,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 035-10 | Crew Oxygen System | DMC-AMPEL360E-EWTW-035-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-10 | Crew Oxygen System | DMC-<PROGRAMME>-<VARIANT>-035-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Data Module Breakdown — 035-10
 
@@ -374,7 +364,7 @@ flowchart LR
 | CS-25.1447 | EASA CS-25 Subpart K | Crew QDM donning — one-handed within 5 seconds | QDM donning time test demonstration with crew representative | <img src="https://img.shields.io/badge/TBD-red"> |
 | CS-25.1449 | EASA CS-25 Subpart K | Means for determining O₂ supply quantity | Dual pressure transducers; gas-law quantity on ECAM | <img src="https://img.shields.io/badge/TBD-red"> |
 | CS-25.1451 | EASA CS-25 Subpart K | Fire protection — O₂ system materials | Fire-resistant tubing and fittings qualification | <img src="https://img.shields.io/badge/TBD-red"> |
-| CS-25.1453 | EASA CS-25 Subpart K | Protection from damage — no fuel/hydraulic proximity | eWTW: no hydraulics — verify O₂ tubing routing segregation from fuel lines | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1453 | EASA CS-25 Subpart K | Protection from damage — no fuel/hydraulic proximity | [PROGRAMME-VARIANT]: no hydraulics — verify O₂ tubing routing segregation from fuel lines | <img src="https://img.shields.io/badge/TBD-red"> |
 | DO-160G | RTCA | Environmental qualification | All crew O₂ LRUs (transducers, solenoid valve, regulators) | <img src="https://img.shields.io/badge/TBD-red"> |
 | CS-25.858 | EASA CS-25 | Smoke detection cross-reference — PBE and crew O₂ coordination | Emergency smoke procedure uses crew O₂ pressure-demand mode | <img src="https://img.shields.io/badge/TBD-red"> |
 

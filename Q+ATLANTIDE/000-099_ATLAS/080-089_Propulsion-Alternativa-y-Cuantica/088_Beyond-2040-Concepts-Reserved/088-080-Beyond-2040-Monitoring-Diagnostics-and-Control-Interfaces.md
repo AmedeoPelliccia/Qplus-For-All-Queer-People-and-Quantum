@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0088-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-088-080-BEYOND-2040-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATLAS-088 (Beyond-2040 Concepts Reserved) · Beyond-2040 Monitoring, Diagnostics and Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Beyond-2040 Monitoring, Diagnostics and Control Interfaces
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-080"
 
 ## §1 Purpose
 
-ATLAS subsubject 088-080 defines the **monitoring, diagnostics, and control interface architecture** for Beyond-2040 Concepts Reserved (B2CR) propulsion technologies. It specifies the sensing paradigms, data acquisition frameworks, control loop concepts, BITE (Built-In Test Equipment) strategies, and AFDX/ARINC interface patterns that would be applicable to B2CR concepts integrated into the AMPEL360E eWTW or future derivative platforms. These are necessarily at a notional/prototype level consistent with the TRL 3–5 status of the leading B2CR concepts.
+This document defines the agnostic ATLAS standard-level architecture context for `Beyond-2040 Monitoring, Diagnostics and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Monitoring Architecture Concept
 
 ### 2.1 B2CR Monitoring Node (BMN) Concept

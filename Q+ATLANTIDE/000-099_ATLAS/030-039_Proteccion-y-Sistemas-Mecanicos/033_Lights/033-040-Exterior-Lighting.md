@@ -6,10 +6,10 @@ subsubject: "040"
 subsubject_title: "Exterior Lighting"
 file_name: "033-040-Exterior-Lighting.md"
 sns_reference: "033-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-40"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-40"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,7 +75,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "Exterior Lighting"
@@ -91,10 +91,12 @@ keywords:
   - "CS-25.1383"
   - "CS-25.1387"
   - "CS-25.1401"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-040 — Exterior Lighting
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -106,31 +108,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Exterior Lighting subsystem (ATA 033-40) of the AMPEL360e eWTW aircraft. It covers all externally mounted LED lighting systems that provide aircraft visibility to other traffic and to the crew during ground and flight operations: navigation/position lights, anti-collision strobe lights, steady red/white anti-collision beacons, landing lights (retractable, wing root), runway turnoff lights (NLG pod, fixed), taxi light (NLG forward), wing inspection lights, tail logo lights, and tail cone service lights.
+This document defines the agnostic ATLAS standard-level architecture context for `033-040 — Exterior Lighting`.
 
-All exterior lights use LED technology and are powered from the 28 VDC essential bus. Applicable regulations include CS-25.1383, CS-25.1385, CS-25.1387, and CS-25.1401. All LED exterior light assemblies are qualified per RTCA DO-293 Minimum Performance Standard for LED Aircraft Lighting Equipment.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 033-40 — Exterior Lighting |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Lighting Technology | 100% LED — all exterior light assemblies |
-| Power Bus | 28 VDC essential bus |
-| Control | Crew overhead EXTL panel discrete switches + automated logic |
-| Certification Basis | CS-25.1383, CS-25.1385, CS-25.1387, CS-25.1401; DO-293; DO-160G |
-| S1000D SNS | 033-40 |
-| Applicability Code | ALL |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The exterior lighting system of the AMPEL360e eWTW provides all lights required for aircraft conspicuity, navigation, and ground manoeuvring illumination. The system is controlled from the crew overhead EXTL (Exterior Lights) panel. Each exterior light group has a dedicated switch or pushbutton on the EXTL panel. Some exterior lights also have automated logic: landing lights arm automatically on gear extension; taxi light activates automatically with WoW on ground and thrust lever above idle (TBD — automation logic pending detailed design review).
+The exterior lighting system of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] provides all lights required for aircraft conspicuity, navigation, and ground manoeuvring illumination. The system is controlled from the crew overhead EXTL (Exterior Lights) panel. Each exterior light group has a dedicated switch or pushbutton on the EXTL panel. Some exterior lights also have automated logic: landing lights arm automatically on gear extension; taxi light activates automatically with WoW on ground and thrust lever above idle (TBD — automation logic pending detailed design review).
 
 Exterior light assemblies are solid-state LED units with no moving parts except for the landing light retraction mechanism (actuated by a small electric motor when the landing light is deployed or stowed). All LED assemblies have a designed service life of TBD hours, targeting >50,000 hours MTBF.
 
@@ -336,7 +330,7 @@ No scheduled replacement — corrective only based on CMC fault report or crew M
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-40 | Exterior Lighting | DMC-AMPEL360E-EWTW-033-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-40 | Exterior Lighting | DMC-<PROGRAMME>-<VARIANT>-033-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Planned Data Modules
 
@@ -419,7 +413,7 @@ No scheduled replacement — corrective only based on CMC fault report or crew M
 | Beacon | Steady-flash red LED on upper and lower fuselage; provides 360° vertical visibility for collision avoidance; must be on whenever engines are running |
 | DO-293 | RTCA Minimum Performance Standard for LED Aircraft Lighting Equipment — the qualification standard for all exterior LED light assemblies; defines photometric intensity, colour, and environmental test requirements |
 | Effective intensity | A measure of flash lamp conspicuity accounting for flash duration and human visual response; used for strobe light qualification per CS-25.1401 |
-| Landing light | High-intensity white LED floodlight providing forward illumination during approach and landing operations; retractable on eWTW (wing root location) |
+| Landing light | High-intensity white LED floodlight providing forward illumination during approach and landing operations; retractable on [PROGRAMME-VARIANT] (wing root location) |
 | Logo light | LED luminaire illuminating the airline livery on the tail fin; operational and marketing function; no regulatory requirement |
 | Navigation / position light | Red (port), green (starboard), and white (tail) lights indicating the aircraft's orientation and course of travel to other pilots; mandatory per CS-25.1385 |
 | Runway turnoff light | Wide-angle forward LED light mounted on the NLG pod illuminating the taxiway path during turns after landing — angled port or starboard relative to aircraft axis |

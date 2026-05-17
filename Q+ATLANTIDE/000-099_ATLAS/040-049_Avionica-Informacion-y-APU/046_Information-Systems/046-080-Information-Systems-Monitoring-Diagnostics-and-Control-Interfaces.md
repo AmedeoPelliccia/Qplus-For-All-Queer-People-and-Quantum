@@ -31,6 +31,8 @@ ata_reference: "ATA 46.080 — Information Systems Monitoring, Diagnostics and C
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 080 — Information Systems Monitoring, Diagnostics and Control Interfaces
@@ -45,7 +47,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46.080 — Information Systems Monitoring, Diagnostics and Control Interfaces (ISDCI) defines the health monitoring, BITE, prognostics, and fault detection architecture for all ATA 46 information systems on the AMPEL360E eWTW. This covers the Aircraft Health Monitoring — Information Systems (AHM-IS) partition on the IMA, Built-In Test Equipment (BITE) for AIM, OIS, and IETP, SMART NVMe health monitoring for all AIM NAS storage devices, and the PHM/FDIR (Prognostics and Health Management / Fault Detection, Isolation and Recovery) framework.
+ATA 46.080 — Information Systems Monitoring, Diagnostics and Control Interfaces (ISDCI) defines the health monitoring, BITE, prognostics, and fault detection architecture for all ATA 46 information systems on the programme-defined aircraft type. This covers the Aircraft Health Monitoring — Information Systems (AHM-IS) partition on the IMA, Built-In Test Equipment (BITE) for AIM, OIS, and IETP, SMART NVMe health monitoring for all AIM NAS storage devices, and the PHM/FDIR (Prognostics and Health Management / Fault Detection, Isolation and Recovery) framework.
 
 Key governance areas:
 - **AHM-IS**: A dedicated ARINC 653 software partition on the IMA (Integrated Modular Avionics) that collects health status from all ATA 46 subsystems and correlates faults; provides the information system health summary to CMS (ATA 45).
@@ -61,7 +63,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46.080 — Information Systems Monitoring, Diagnostics and Control Interfaces |
 | Certification Basis | CS-25 Amendment 28 (advisory only); DO-178C DAL D (AHM-IS) |
 | Applicable Standards | ARINC 653 (IMA partition); ARINC 664 P7; DO-160G; ARINC 429; S1000D Issue 5.0 |
@@ -227,7 +229,7 @@ stateDiagram-v2
 - **AHM-IS partition**: ARINC 653 partition on IMA; DO-178C DAL D (advisory health monitoring); PSAC required.
 - **BITE standards**: BITE function on each ATA 46 LRU follows ARINC 604 BITE format; standardised fault code schema.
 - **SMART polling agent**: Software agent on AIM and IFE servers; polls NVMe SMART via NVMe-CLI interface; escalates to AHM-IS via AFDX.
-- **PHM model parameters**: Coefficients for RUL model (NVMe wear, fan bearing vibration, BITE fault rate) loaded from AMPEL360E eWTW PHM configuration file; version-controlled.
+- **PHM model parameters**: Coefficients for RUL model (NVMe wear, fan bearing vibration, BITE fault rate) loaded from programme-defined aircraft type PHM configuration file; version-controlled.
 - **Health summary format**: AHM-IS health summary to CMS uses ARINC 604 fault code blocks; one block per ATA 46 subsystem (046-010 through 046-070).
 - **FDIR rules**: FDIR decision table (AIM-A fail → promote AIM-B; OIS fail → restart OIS partition) version-controlled in AHM-IS configuration.
 
@@ -285,7 +287,7 @@ stateDiagram-v2
 
 | Term | Acronym | Definition |
 |------|---------|------------|
-| Aircraft Health Monitoring — Information Systems | AHM-IS | The ARINC 653 software partition on the IMA dedicated to collecting, correlating, and reporting health status for all ATA 46 information system LRUs on the AMPEL360E eWTW |
+| Aircraft Health Monitoring — Information Systems | AHM-IS | The ARINC 653 software partition on the IMA dedicated to collecting, correlating, and reporting health status for all ATA 46 information system LRUs on the programme-defined aircraft type |
 | Built-In Test Equipment | BITE | A diagnostic function embedded in each ATA 46 LRU that performs power-on self-test (POST) and cyclic health checks; results reported to AHM-IS via AFDX |
 | Self-Monitoring, Analysis and Reporting Technology | SMART | A firmware-level monitoring system in each NVMe solid-state drive reporting wear levelling, reallocated sectors, temperature, and remaining life; polled by AHM-IS every 15 min |
 | Prognostics and Health Management | PHM | The AHM-IS subsystem that builds trend models for ATA 46 LRU remaining useful life (RUL) using SMART and BITE data history over multiple flight cycles |
@@ -332,7 +334,7 @@ stateDiagram-v2
 
 | Issue ID | Description | Owner | Status |
 |----------|-------------|-------|--------|
-| IS-046-080-001 | AHM-IS PHM RUL model coefficients not yet calibrated on AMPEL360E eWTW prototype (insufficient flight test data) | Q-HPC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| IS-046-080-001 | AHM-IS PHM RUL model coefficients not yet calibrated on programme-defined aircraft type prototype (insufficient flight test data) | Q-HPC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | IS-046-080-002 | FDIR failover time (AIM-A → AIM-B < 30 s) not yet validated by integration test | Q-AIR | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | IS-046-080-003 | AHM-IS PSAC (Plan for Software Aspects of Certification) not yet submitted to EASA for DAL D review | Q-DATAGOV | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | IS-046-080-004 | SMART NVMe polling agent compatibility with IFE server NVMe model not yet verified | Q-HPC | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
@@ -363,8 +365,8 @@ stateDiagram-v2
 | [R2] | ATLAS 046-010 — Aircraft Information Management | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 046-020 — Operational Data Systems | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 045-000 — Central Maintenance System General | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R5] | AMPEL360E eWTW IMA Architecture Design Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| [R6] | AMPEL360E eWTW PHM Model Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R5] | programme-defined aircraft type IMA Architecture Design Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R6] | programme-defined aircraft type PHM Model Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -384,4 +386,4 @@ This document is classified `to-be-reviewed-by-system-expert` and `governance_cl
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for AMPEL360E eWTW Information Systems Monitoring, Diagnostics and Control Interfaces; governance_class: programme-controlled-diagnostics-extension |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for programme-defined aircraft type Information Systems Monitoring, Diagnostics and Control Interfaces; governance_class: programme-controlled-diagnostics-extension |

@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 06"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Defines the maintenance work zones and personnel access requirements for the AMPEL360E eWTW. Covers docking platform requirements, maintenance stand positions, fall-arrest anchor point zones, HVDC isolation interlocks for maintenance access, and the minimum maintenance area floor footprint for line maintenance.
+Defines the maintenance work zones and personnel access requirements for the programme-defined aircraft type. Covers docking platform requirements, maintenance stand positions, fall-arrest anchor point zones, HVDC isolation interlocks for maintenance access, and the minimum maintenance area floor footprint for line maintenance.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 06 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,9 +72,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Maintenance Areas and Work-Zones** node defines the required maintenance workspace envelopes around the AMPEL360E eWTW for scheduled and unscheduled maintenance tasks. Maintenance docking layouts (MDL) are defined for three configurations: (A) Line maintenance — flat apron, no docking, standard maintenance stands (max height 4.5 m); (B) Base maintenance — hangar docking, six-point dock with bridge to forward, mid, and aft fuselage, plus wing-root and nacelle stands; (C) Heavy maintenance — full strip dock including empennage access and lower-lobe battery bay pit access.
+The **Maintenance Areas and Work-Zones** node defines the required maintenance workspace envelopes around the programme-defined aircraft type for scheduled and unscheduled maintenance tasks. Maintenance docking layouts (MDL) are defined for three configurations: (A) Line maintenance — flat apron, no docking, standard maintenance stands (max height 4.5 m); (B) Base maintenance — hangar docking, six-point dock with bridge to forward, mid, and aft fuselage, plus wing-root and nacelle stands; (C) Heavy maintenance — full strip dock including empennage access and lower-lobe battery bay pit access.
 
-For the eWTW, specific work-zone exclusions apply during HVDC energised maintenance: a 3 m exclusion radius around the HVDC Ground Power receptacle and EPCU panels. Work-zone safety boundaries are marked on the maintenance dock layout drawings and referenced in the AMM Chapter 20 (Standard Practices — Airframe). Overhead crane and hoist exclusion zones for battery pack removal are defined by the battery bay access hatch dimensions (approximately 1.2 m × 0.8 m per panel) and the battery module extraction envelope (trolley height 1.4 m minimum below belly). All maintenance area requirements feed directly into the MPD task time standards and tooling lists.
+For the [PROGRAMME-VARIANT], specific work-zone exclusions apply during HVDC energised maintenance: a 3 m exclusion radius around the HVDC Ground Power receptacle and EPCU panels. Work-zone safety boundaries are marked on the maintenance dock layout drawings and referenced in the AMM Chapter 20 (Standard Practices — Airframe). Overhead crane and hoist exclusion zones for battery pack removal are defined by the battery bay access hatch dimensions (approximately 1.2 m × 0.8 m per panel) and the battery module extraction envelope (trolley height 1.4 m minimum below belly). All maintenance area requirements feed directly into the MPD task time standards and tooling lists.
 
 ---
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the maintenance areas and work-zones scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Maintenance Areas and Work-Zones** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Maintenance Areas and Work-Zones** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `005` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `050` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-005-050` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-005-050` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

@@ -31,6 +31,8 @@ ata_reference: "ATA 49 — Airborne Auxiliary Power"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 060 — APU Control, Indication and Warning
@@ -43,11 +45,11 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-This document defines the crew interface for APU operation on the **AMPEL360E eWTW** aircraft, covering three primary domains: (1) the APU overhead panel on the flight deck providing direct crew control via MASTER SW, START pushbutton, and GEN pushbutton; (2) the ECAM APU synoptic page displaying continuous APU parameters (N%, EGT °C, oil pressure psi, generator load kVA, fuel flow kg/h, inlet door status, and APCU channel status); and (3) the Crew Alerting System (CAS) providing colour-coded alerts for APU fire, fault, over-EGT, and generator status.
+This document defines the crew interface for APU operation on the **programme-defined aircraft type** aircraft, covering three primary domains: (1) the APU overhead panel on the flight deck providing direct crew control via MASTER SW, START pushbutton, and GEN pushbutton; (2) the ECAM APU synoptic page displaying continuous APU parameters (N%, EGT °C, oil pressure psi, generator load kVA, fuel flow kg/h, inlet door status, and APCU channel status); and (3) the Crew Alerting System (CAS) providing colour-coded alerts for APU fire, fault, over-EGT, and generator status.
 
 All APCU-to-ECAM data transmission uses ARINC 429 label-encoded messages consolidated via an AFDX (ARINC 664 Part 7) network concentrator to the ECAM Display Management Computer (DMC). The DMC processes incoming APU data streams and renders the APU synoptic page on the appropriate ECAM Display Unit (DU) at 4 Hz refresh. The ECAM APU synoptic page is automatically displayed whenever the APU MASTER SW is in the ON position, ensuring crew awareness of APU status throughout ground operations and in-flight APU start.
 
-The APCU overhead panel sub-panel is located in Cockpit Zone F4 (aft overhead), consistent with Airbus-style overhead panel conventions adopted by the AMPEL360E eWTW. Panel layout and legend text conform to CS-25.1302 (flight crew interface requirements) and the AMPEL360E Human Factors Design Standard (HFDS-001). All APU-related CAS messages conform to CS-25.1322 (warning, caution, advisory classification) and are integrated into the aircraft-wide ECAM Centralized Crew Alerting System (CCAS).
+The APCU overhead panel sub-panel is located in Cockpit Zone F4 (aft overhead), consistent with Airbus-style overhead panel conventions adopted by the programme-defined aircraft type. Panel layout and legend text conform to CS-25.1302 (flight crew interface requirements) and the [PROGRAMME-AIRCRAFT] Human Factors Design Standard (HFDS-001). All APU-related CAS messages conform to CS-25.1322 (warning, caution, advisory classification) and are integrated into the aircraft-wide ECAM Centralized Crew Alerting System (CCAS).
 
 The Central Maintenance System (CMS, ATA 45) provides a dedicated APU maintenance page accessible via the MCDU in maintenance mode. This page presents PBIT/CBIT results, fault code history, PHM indicators, ignition cycle counters, and software version information, enabling maintenance technicians to diagnose APU faults without specialised external test equipment in most cases.
 
@@ -57,7 +59,7 @@ The Central Maintenance System (CMS, ATA 45) provides a dedicated APU maintenanc
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | Overhead panel location | Cockpit Zone F4 — aft overhead, left of centre |
 | ECAM interface protocol | ARINC 429 via AFDX concentrator to ECAM DMC |
@@ -288,7 +290,7 @@ stateDiagram-v2
 
 ## §13. Human Factors and Crew Interface
 
-- **Consistent with ECAM style guide**: All APU synoptic page elements conform to the AMPEL360E ECAM Style Guide (ECAM-SG-001); no unique APU-specific interface conventions are introduced, minimising crew learning burden.
+- **Consistent with ECAM style guide**: All APU synoptic page elements conform to the [PROGRAMME-AIRCRAFT] ECAM Style Guide (ECAM-SG-001); no unique APU-specific interface conventions are introduced, minimising crew learning burden.
 - **Colour-coded parameter arcs**: EGT tape includes yellow caution arc (850–950 °C) and red warning arc (> 950 °C); N% tape includes green normal range (99–101 %) and red overspeed range (> 115 %); crews receive pre-attentive visual warning before parameter reaches limit.
 - **Start phase text overlay**: Phase text (MOTOR / IGNITION / LIGHT-OFF / ACCEL / AVAIL) reduces crew interpretation of N% alone during start, which is particularly useful for crews less familiar with gas turbine start behaviour.
 - **Single crew action for normal start**: A normal APU start requires only two crew actions: MASTER SW ON → wait for PBIT → START pb. The GCU automatically closes the AGC when conditions are met; no "GEN" pb action is required for routine generation. This minimises crew workload during high-activity periods (e.g., pre-departure ground preparation).

@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — Serial Number Block and Production Effectivity
 
 ## 1. Purpose
 
-Defines the **serial-number block and production effectivity** framework for AMPEL360 eWTW structural documentation, specifying how production lots are bounded, how structural changes are introduced at defined serial-number break points, and how these effectivities are encoded in the CSDB and maintenance manuals.
+Defines the **serial-number block and production effectivity** framework for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural documentation, specifying how production lots are bounded, how structural changes are introduced at defined serial-number break points, and how these effectivities are encoded in the CSDB and maintenance manuals.
 
 ## 2. Scope
 
@@ -81,6 +83,6 @@ flowchart TD
 |---|---|
 | S1000D Issue 5.0 | Effectivity annotation — serial-number ranges |
 | ATA iSpec 2200 | Serial-number effectivity management |
-| PDCM-AMPEL360-001 | Product Definition and Configuration Management Plan |
+| PDCM-[PROGRAMME-AIRCRAFT]-001 | Product Definition and Configuration Management Plan |
 | [`./README.md`](./README.md) | Subsubject 050 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

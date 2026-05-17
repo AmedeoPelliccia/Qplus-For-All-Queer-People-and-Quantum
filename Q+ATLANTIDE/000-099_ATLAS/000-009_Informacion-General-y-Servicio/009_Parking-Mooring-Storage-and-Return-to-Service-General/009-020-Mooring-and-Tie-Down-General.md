@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Defines the aircraft mooring and tie-down procedures for the AMPEL360E eWTW. Covers mooring point locations, tie-down chain and strap specifications, minimum tie-down configuration for wind speeds up to 65 knots (line maintenance) and 100 knots (storm mooring), and the approved tie-down GSE part numbers.
+Defines the aircraft mooring and tie-down procedures for the programme-defined aircraft type. Covers mooring point locations, tie-down chain and strap specifications, minimum tie-down configuration for wind speeds up to 65 knots (line maintenance) and 100 knots (storm mooring), and the approved tie-down GSE part numbers.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 10 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,7 +72,7 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Mooring and Tie Down General** node specifies the tiedown points, rated loads, chain/strap configuration, and mooring procedures for the AMPEL360E eWTW in adverse weather conditions. Tiedown points: (A) forward fuselage tiedown lug (FTL-001, FS 340, CL, rated ±150 kN downward/forward); (B) aft fuselage tiedown lug (ATL-001, FS 1820, CL, rated ±150 kN); (C) four wing tiedown points (WTL-001 through WTL-004, at each engine pylon lower attach, rated ±200 kN each); (D) nose gear tiedown lug (NTL-002, separate from tow lug, rated ±80 kN). All tiedown fittings are inspected per AMM 09-20 before use.
+The **Mooring and Tie Down General** node specifies the tiedown points, rated loads, chain/strap configuration, and mooring procedures for the programme-defined aircraft type in adverse weather conditions. Tiedown points: (A) forward fuselage tiedown lug (FTL-001, FS 340, CL, rated ±150 kN downward/forward); (B) aft fuselage tiedown lug (ATL-001, FS 1820, CL, rated ±150 kN); (C) four wing tiedown points (WTL-001 through WTL-004, at each engine pylon lower attach, rated ±200 kN each); (D) nose gear tiedown lug (NTL-002, separate from tow lug, rated ±80 kN). All tiedown fittings are inspected per AMM 09-20 before use.
 
 Approved tiedown hardware: chain Q-CHAIN-001 (Grade 100, 13 mm, MBL 160 kN, with load-binder Q-BIND-001); strap Q-STRAP-001 (polyester, 50 mm × 10 m, MBL 100 kN, with ratchet Q-RATCH-001). Maximum certified wind speed for outdoor mooring: 75 kt (139 km/h) with all six tiedown points connected; 100 kt with additional belly-band straps per SOP Q-MOORING-SOP-001. For crosswind mooring, wing tiedown loads are asymmetric — refer to GMMS mooring load calculator (input: tail number, wind speed, wind direction → output: per-point required chain tension). ENWTD must be in park mode (confirmed by GMMS), EPB set, and chocks installed at all four main gear positions before tiedown chains are attached.
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the mooring and tie down general scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Mooring and Tie Down General** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Mooring and Tie Down General** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `009` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `020` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-009-020` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-009-020` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

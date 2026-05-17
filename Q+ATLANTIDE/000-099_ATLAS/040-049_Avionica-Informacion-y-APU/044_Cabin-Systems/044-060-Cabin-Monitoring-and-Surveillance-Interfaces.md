@@ -31,6 +31,8 @@ ata_reference: "ATA 44.060 — Cabin Monitoring and Surveillance"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 060 — Cabin Monitoring and Surveillance Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the Cabin Monitoring and Surveillance interfaces for the AMPEL360E eWTW aircraft. This subsystem encompasses: Cabin Video Surveillance System (CVSS/CCTV), lavatory and galley smoke detection relay (from ATA 26), cabin air quality monitoring (CO₂, humidity, particulates), and cabin temperature zone sensing (supplementary to ECS ATA 21).
+This document defines the Cabin Monitoring and Surveillance interfaces for the programme-defined aircraft type. This subsystem encompasses: Cabin Video Surveillance System (CVSS/CCTV), lavatory and galley smoke detection relay (from ATA 26), cabin air quality monitoring (CO₂, humidity, particulates), and cabin temperature zone sensing (supplementary to ECS ATA 21).
 
 Key governance areas:
 - CCTV camera architecture (quantity, placement, resolution, recording).
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44.060 — Cabin Monitoring and Surveillance |
 | Certification Basis | CS-25 §25.854 (Lavatory Smoke Detection) |
 | Applicable Standards | CS-25 §25.854; DO-160G; EU GDPR (operational compliance) |
@@ -328,7 +330,7 @@ graph LR
 |--------|----------|---------|--------|
 | REF-044-06-01 | Cabin Systems General (044-000) | 1.0 | Active |
 | REF-044-06-02 | Cabin Core Network (044-010) | 1.0 | Active |
-| REF-044-06-03 | AMPEL360E Fire Protection (ATA 26) Smoke Detection System | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-06-03 | [PROGRAMME-AIRCRAFT] Fire Protection (ATA 26) Smoke Detection System | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

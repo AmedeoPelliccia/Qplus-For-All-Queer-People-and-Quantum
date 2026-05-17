@@ -24,13 +24,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 016 · Subsubject 002 — Jack Points, Load Limits and Aircraft-Side Interfaces
 
 ## 1. Purpose
 
-Defines the **approved jack-point locations**, their structural interfaces, maximum allowable load values, and jack-pad adapter requirements for each AMPEL360 variant family. This subsubject is the authoritative ATLAS-layer reference for jack-point data; the governing source remains the AMM, ATA chapter 7.
+Defines the **approved jack-point locations**, their structural interfaces, maximum allowable load values, and jack-pad adapter requirements for each [PROGRAMME-AIRCRAFT] variant family. This subsubject is the authoritative ATLAS-layer reference for jack-point data; the governing source remains the AMM, ATA chapter 7.
 
 > **Warning:** Jack-point data in this file is a traceability and programmatic reference. Always verify against the current issue of the applicable AMM before performing any jacking operation. Aircraft modifications may add, remove, or relocate jack points.
 
@@ -116,7 +118,7 @@ Record the pre-jacking structural interface inspection on the work order per `01
 
 ```mermaid
 flowchart TB
-    subgraph AC["AMPEL360 Gen 1 — Underside View (schematic)"]
+    subgraph AC["[PROGRAMME-AIRCRAFT] Gen 1 — Underside View (schematic)"]
         direction LR
         NLG["Nose Landing Gear<br/>JP-FWD-C ←"]:::jp
         MLG_L["Main Gear — Left<br/>JP-MLG-L ←"]:::jp

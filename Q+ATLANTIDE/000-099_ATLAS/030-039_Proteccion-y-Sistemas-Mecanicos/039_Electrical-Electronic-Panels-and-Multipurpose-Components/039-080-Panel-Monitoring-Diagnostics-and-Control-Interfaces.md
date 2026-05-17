@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Panel Monitoring, Diagnostics, and Control Interfaces"
 file_name: "039-080-Panel-Monitoring-Diagnostics-and-Control-Interfaces.md"
 sns_reference: "039-80"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-80"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-80"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "panel BITE"
@@ -93,10 +93,12 @@ keywords:
   - "fault isolation"
   - "LED health"
   - "relay wear"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-080 — Panel Monitoring, Diagnostics, and Control Interfaces
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -106,41 +108,26 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links. Regulatory references cited by identifier. DMC cross-references follow `DMC-AMPEL360E-EWTW-039-80-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
+All cross-references use relative Markdown links. Regulatory references cited by identifier. DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-039-80-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
 
 ---
 
 ## §1 Purpose
 
-This document describes **Panel Monitoring, Diagnostics, and Control Interfaces** (subsubject 039-080) of the AMPEL360e eWTW. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `039-080 — Panel Monitoring, Diagnostics, and Control Interfaces`.
 
-1. Panel BITE: continuity test, backlight sensor, SSCB trip log.
-2. CMC integration (ATA 45): AFDX pathway from panel RDCU to CMC.
-3. Maintenance terminal interface: SSCB reset (ground-only), backlight brightness setting, CB group status interrogation.
-4. Fault isolation philosophy: fault localised to panel level, then LRU level.
-5. SSCB wear prognostics: trip count, energy per trip, temperature exceedance logging.
-6. Relay / contactor contact wear monitoring: operation count vs. design limit.
-7. LED lamp hours: LED driver accumulated ON-time logging.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter / Subsubject | 39 — 039-080 Panel Monitoring, Diagnostics, and Control Interfaces |
-| Document Tier | Level 3 — Component/Assembly Description |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-
-Covers BITE architecture for all ATA 39 panels and modules; interface to ATA 45 CMC; and maintenance terminal operations. Excludes:
-- IMA software BITE (→ ATA 42)
-- CMC software architecture (→ ATA 45)
-- Display unit self-test (→ 039-060 / ATA 31)
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Panel BITE Architecture
@@ -413,12 +400,12 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| Panel monitoring / diagnostics description | DMC-AMPEL360E-EWTW-039-80-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| MBIT procedure | DMC-AMPEL360E-EWTW-039-80-10A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| SSCB trip log read | DMC-AMPEL360E-EWTW-039-80-20A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| SSCB remote reset | DMC-AMPEL360E-EWTW-039-80-30A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — panel | DMC-AMPEL360E-EWTW-039-80-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| CMC integration description | DMC-AMPEL360E-EWTW-039-80-40A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Panel monitoring / diagnostics description | DMC-<PROGRAMME>-<VARIANT>-039-80-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| MBIT procedure | DMC-<PROGRAMME>-<VARIANT>-039-80-10A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| SSCB trip log read | DMC-<PROGRAMME>-<VARIANT>-039-80-20A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| SSCB remote reset | DMC-<PROGRAMME>-<VARIANT>-039-80-30A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — panel | DMC-<PROGRAMME>-<VARIANT>-039-80-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| CMC integration description | DMC-<PROGRAMME>-<VARIANT>-039-80-40A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -543,5 +530,5 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW BITE and diagnostics context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] BITE and diagnostics context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

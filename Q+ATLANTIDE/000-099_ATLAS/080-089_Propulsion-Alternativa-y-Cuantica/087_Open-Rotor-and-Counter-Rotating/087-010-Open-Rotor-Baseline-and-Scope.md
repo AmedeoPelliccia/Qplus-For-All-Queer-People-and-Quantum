@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-010-OPEN-ROTOR-BASELINE-AND-SCOPE
      ATLAS-087 (Open Rotor and Counter-Rotating) · Open Rotor Baseline and Scope
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Open Rotor Baseline and Scope
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-010"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-010 defines the technology baseline and mission scope for the Open Rotor and Counter-Rotating (ORCR) propulsor selected for the AMPEL360E eWTW. It records the trade study results that led to the contra-rotating unducted fan (CRUF) configuration selection, the Technology Readiness Level (TRL) status of each major subsystem, and the mission performance trade space.
+This document defines the agnostic ATLAS standard-level architecture context for `Open Rotor Baseline and Scope`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Technology Baseline
 
 | Technology Option | By-Pass Ratio | η_prop (M 0.78) | Noise vs. Ch14 | TRL (2026) | Decision |

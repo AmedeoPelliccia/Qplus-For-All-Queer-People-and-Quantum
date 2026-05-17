@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0088-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-088-020-POST-CONVENTIONAL-PROPULSION-CONCEPT-CATALOGUE
      ATLAS-088 (Beyond-2040 Concepts Reserved) · Post-Conventional Propulsion Concept Catalogue
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Post-Conventional Propulsion Concept Catalogue
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-020"
 
 ## §1 Purpose
 
-ATLAS subsubject 088-020 provides the authoritative **Post-Conventional Propulsion Concept Catalogue** for the Beyond-2040 Concepts Reserved (B2CR) namespace. Each concept is assigned a unique B2C identifier, described in terms of its claimed physical mechanism, current TRL, admission status, and primary reference. The catalogue is a living document updated at each B2CMU annual review cycle.
+This document defines the agnostic ATLAS standard-level architecture context for `Post-Conventional Propulsion Concept Catalogue`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Catalogue Overview
 
 The catalogue organises admitted concepts into the six technology families defined in 088-000 §3. For each concept the following fields are recorded:

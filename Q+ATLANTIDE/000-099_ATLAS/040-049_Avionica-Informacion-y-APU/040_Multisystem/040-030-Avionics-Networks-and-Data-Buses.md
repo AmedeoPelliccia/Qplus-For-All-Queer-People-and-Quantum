@@ -53,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 030 — Avionics Networks and Data Buses
@@ -68,7 +70,7 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md) 
 
 ## 1. Purpose
 
-This document defines the avionics network and data bus architecture for the AMPEL360E aircraft. It covers AFDX (ARINC 664 Part 7) virtual link architecture, bandwidth allocation groups (BAG), end-system configuration, legacy buses (ARINC 429, MIL-STD-1553), network redundancy schemes, switch topology, traffic shaping, and bandwidth allocation. It is the primary reference for network architects, avionics integration engineers, and certification authorities.
+This document defines the avionics network and data bus architecture for the [PROGRAMME-AIRCRAFT] aircraft. It covers AFDX (ARINC 664 Part 7) virtual link architecture, bandwidth allocation groups (BAG), end-system configuration, legacy buses (ARINC 429, MIL-STD-1553), network redundancy schemes, switch topology, traffic shaping, and bandwidth allocation. It is the primary reference for network architects, avionics integration engineers, and certification authorities.
 
 ---
 
@@ -76,7 +78,7 @@ This document defines the avionics network and data bus architecture for the AMP
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | Primary Network Standard | [ARINC 664 Part 7](#ref-arinc-664) (AFDX) |
 | Legacy Bus Standards | [ARINC 429](#ref-arinc-429), [MIL-STD-1553B](#ref-1553) |
@@ -87,7 +89,7 @@ This document defines the avionics network and data bus architecture for the AMP
 
 ## 3. System / Function Overview
 
-The AMPEL360E avionics network uses a dual-redundant AFDX fabric (Network A and Network B) composed of AFDX switches interconnecting IMA Cabinets, avionics LRUs, displays, and maintenance terminals. Virtual Links (VLs) provide deterministic, unidirectional, latency-bounded data paths between end-systems. Legacy ARINC 429 buses serve sensors and actuators not yet migrated to AFDX. MIL-STD-1553B serves specific military-grade subsystems. All networks are fully redundant; end-systems select active network based on reception.
+The [PROGRAMME-AIRCRAFT] avionics network uses a dual-redundant AFDX fabric (Network A and Network B) composed of AFDX switches interconnecting IMA Cabinets, avionics LRUs, displays, and maintenance terminals. Virtual Links (VLs) provide deterministic, unidirectional, latency-bounded data paths between end-systems. Legacy ARINC 429 buses serve sensors and actuators not yet migrated to AFDX. MIL-STD-1553B serves specific military-grade subsystems. All networks are fully redundant; end-systems select active network based on reception.
 
 ---
 
@@ -253,12 +255,12 @@ graph LR
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-040-030-00A-040A-A | 040 | Avionics Network Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-040-030-00A-300A-A | 300 | AFDX Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-040-030-00A-400A-A | 400 | Network BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-040-030-00A-520A-A | 520 | Network Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-040-030-00A-941A-A | 941 | Network LRU Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-040-030-00A-720A-A | 720 | NDF and Switch Configuration |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-040-030-00A-040A-A | 040 | Avionics Network Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-040-030-00A-300A-A | 300 | AFDX Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-040-030-00A-400A-A | 400 | Network BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-040-030-00A-520A-A | 520 | Network Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-040-030-00A-941A-A | 941 | Network LRU Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-040-030-00A-720A-A | 720 | NDF and Switch Configuration |
 
 ### Recommended Data Module Set
 

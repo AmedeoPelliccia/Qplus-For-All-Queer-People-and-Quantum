@@ -25,6 +25,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.030 — Structure to Sensor and Monitoring Interfaces
@@ -40,7 +42,7 @@ Defines the structural accommodation requirements for SHM sensors including FBG 
 > This document will cover:
 > - Interface description and load transfer mechanism
 > - Applicable ICDs and load cases (CS-25 reference)
-> - eWTW-specific requirements and constraints
+> - [PROGRAMME-VARIANT]-specific requirements and constraints
 > - Evidence of compliance pathway
 
 ## 3. Footprint

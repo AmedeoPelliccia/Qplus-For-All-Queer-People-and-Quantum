@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Battery Safety and Thermal Runaway Protection
@@ -33,15 +35,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-070"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document defines the safety architecture and thermal runaway (TR) protection measures for the AMPEL360E eWTW battery system, covering detection methods, suppression interfaces, cell-to-cell propagation prevention, venting design, crew alerting, and LOTO procedures.
 
+This document defines the agnostic ATLAS standard-level architecture context for `Battery Safety and Thermal Runaway Protection`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
 
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-Thermal runaway (TR) is the primary catastrophic hazard for lithium-ion battery systems. The AMPEL360E battery safety architecture applies a three-barrier defence-in-depth strategy: prevention, detection and suppression, and containment.
+Thermal runaway (TR) is the primary catastrophic hazard for lithium-ion battery systems. The [PROGRAMME-AIRCRAFT] battery safety architecture applies a three-barrier defence-in-depth strategy: prevention, detection and suppression, and containment.
 
 **Prevention** is achieved through the BMS protection functions (OVP, UVP, OCP, OTP) that maintain each cell within its safe operating area (SOA), and through the thermal management system that maintains cell temperature within the 20–30°C target range. Additionally, cell-to-cell mechanical compression and module-level containment housings rated to prevent single-cell TR propagation per IEC 62619 are applied.
 
@@ -136,11 +146,11 @@ graph LR
 ## §12 Maintenance and Diagnostics
 | Task | Interval | Tool | Reference |
 |---|---|---|---|
-| Gas sensor calibration | 1000 FH / Annual | Gas calibration kit | AMM 072-70-01 |
-| Suppression canister pressure check | A-Check | Pressure gauge | AMM 072-70-02 |
-| Suppression canister replacement | Per manufacturer life / on actuation | None (LRU swap) | AMM 072-70-03 |
-| Fire panel switch functional test | A-Check | GSE-FIRE-TEST-072 | AMM 072-70-04 |
-| Bay vent path inspection | C-Check | Visual / borescope | AMM 072-70-05 |
+| Gas sensor calibration | 1000 FH / Annual | Gas calibration kit | AMM [NODE]-[TASK] |
+| Suppression canister pressure check | A-Check | Pressure gauge | AMM [NODE]-[TASK] |
+| Suppression canister replacement | Per manufacturer life / on actuation | None (LRU swap) | AMM [NODE]-[TASK] |
+| Fire panel switch functional test | A-Check | GSE-FIRE-TEST-072 | AMM [NODE]-[TASK] |
+| Bay vent path inspection | C-Check | Visual / borescope | AMM [NODE]-[TASK] |
 | LOTO procedure training | Per personnel certification | — | OMM 072-70-06 |
 
 ## §13 Footprint

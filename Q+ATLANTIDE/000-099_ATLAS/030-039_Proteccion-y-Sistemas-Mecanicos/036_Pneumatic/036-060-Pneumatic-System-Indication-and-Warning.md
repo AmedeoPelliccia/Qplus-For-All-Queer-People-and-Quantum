@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Pneumatic System Indication and Warning"
 file_name: "036-060-Pneumatic-System-Indication-and-Warning.md"
 sns_reference: "036-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-60"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-60"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -90,10 +90,12 @@ keywords:
   - "bleed-less"
   - "AFDX"
   - "CS-25.1438"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-060 — Pneumatic System Indication and Warning
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -105,36 +107,25 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the cockpit indication and warning provisions for the AMPEL360e eWTW residual pneumatic system (ATA 36-060). It covers ECAM system page content, CAS alert definitions, cockpit switch/panel provisions, and the interface between ATA 36 and the ECAM/CAS display system (ATA 31).
+This document defines the agnostic ATLAS standard-level architecture context for `036-060 — Pneumatic System Indication and Warning`.
 
-**Key eWTW architectural note for ATA 36-060**: On conventional bleed-air aircraft, the PNEUMATIC ECAM page is one of the most complex and frequently referenced system pages, displaying bleed valve positions, cross-bleed isolation valve state, pre-cooler temperatures, HP/LP bleed selections, anti-ice bleed supply, engine bleed ON/OFF for each engine, and multiple alert types (BLEED OVHT, BLEED LEAK, X-BLEED, ENG BLEED FAULT). **None of these apply to the eWTW.** The eWTW ATA 36 indication set is minimal — limited to EAC status, manifold pressure (if circuit retained), and two CAS alerts. There is **no bleed valve indication, no cross-bleed valve indication, no pre-cooler temperature, no engine bleed selection** on the eWTW PNEUMATIC page (if a page is warranted at all — TBD).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 036-060 — Pneumatic System Indication and Warning |
-| ECAM Page: Pneumatic | Minimal — TBD if dedicated page warranted (very simple system) |
-| CAS Alerts | 2 primary: "PNEU EAC FAULT" (amber), "PNEU LO PR" (amber) |
-| Bleed valve indications | **None** — not applicable |
-| Cross-bleed valve indication | **None** — not applicable |
-| Pre-cooler temperature indication | **None** — not applicable |
-| Engine bleed ON/OFF indication | **None** — not applicable |
-| AFDX Interface | ATA 36 CMC → ECAM via AFDX bus (ATA 31) |
-| Ground indication | Maintenance terminal readout (ATA 45) |
-| Certification Basis | CS-25.1438; CS-25.1301/1309; CS-25.1321 (Arrangement/visibility) |
-| S1000D SNS | 036-60 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-### 3.1 eWTW Pneumatic Indication Architecture
+### 3.1 [PROGRAMME-VARIANT] Pneumatic Indication Architecture
 
-The ATA 36 indication and warning system for the eWTW provides:
+The ATA 36 indication and warning system for the [PROGRAMME-VARIANT] provides:
 
 1. **Crew Alerting System (CAS) alerts** — two primary alerts via ECAM CAS window:
    - `PNEU EAC FAULT` (amber) — EAC motor fault, controller fault, or overcurrent
@@ -152,9 +143,9 @@ The ATA 36 indication and warning system for the eWTW provides:
    - CMC fault log for ATA 36
    - Ground test mode activation
 
-### 3.2 Indications NOT Present on eWTW (vs. Conventional)
+### 3.2 Indications NOT Present on [PROGRAMME-VARIANT] (vs. Conventional)
 
-| Indication | Conventional Aircraft | eWTW |
+| Indication | Conventional Aircraft | [PROGRAMME-VARIANT] |
 |---|---|---|
 | ENG 1 BLEED ON/OFF | Yes (both engines) | **None** — no bleed |
 | CROSS BLEED OPEN/CLOSED | Yes | **None** — no cross-bleed |
@@ -215,7 +206,7 @@ PNEUMATIC                               [ATA 36]
   │                      [SOV DS]─ Door Seals│
   │                      [SOV WT]─ Water Tank│
   └──────────────────────────────────────────┘
-NOTE: This eWTW has no engine bleed air.
+NOTE: This [PROGRAMME-VARIANT] has no engine bleed air.
       ATA 36 = residual low-pressure circuit only.
 ─────────────────────────────────────────────────
 ```
@@ -280,7 +271,7 @@ flowchart LR
     subgraph CREW["Crew Interface"]
         COCKPIT["Cockpit Panel\nEAC ON/OFF switch\n(TBD)"]
     end
-    subgraph NONE["Not Present on eWTW"]
+    subgraph NONE["Not Present on [PROGRAMME-VARIANT]"]
         BLEED_IND["Bleed Valve Ind.\n(N/A)"]
         XBLEED["Cross-Bleed Ind.\n(N/A)"]
         OVHT["BLEED OVHT\n(N/A)"]
@@ -411,9 +402,9 @@ Via ATA 45 maintenance terminal:
 
 | DM Code (planned) | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-60-00A-040A-A | 040 | ATA 36-060 — Pneumatic Indication and Warning — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-60-00A-300A-A | 300 | ATA 36-060 — CAS Alert Functional Test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-60-00A-400A-A | 400 | ATA 36-060 — ECAM Indication Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-60-00A-040A-A | 040 | ATA 36-060 — Pneumatic Indication and Warning — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-60-00A-300A-A | 300 | ATA 36-060 — CAS Alert Functional Test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-60-00A-400A-A | 400 | ATA 36-060 — ECAM Indication Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -436,7 +427,7 @@ Via ATA 45 maintenance terminal:
 | Flight crew alerting | CS-25.1309 + AMC | Full | Alert priority, colour, logic per CS-25.1322 |
 | Display arrangement | CS-25.1321 | Full | ECAM page layout and readability |
 | Systems and installations | CS-25.1309 | Full | Alert logic failure modes |
-| No bleed indications | N/A | Confirmed | eWTW ECAM does not include bleed valve or OHT indications |
+| No bleed indications | N/A | Confirmed | [PROGRAMME-VARIANT] ECAM does not include bleed valve or OHT indications |
 
 ---
 
@@ -524,4 +515,4 @@ Via ATA 45 maintenance terminal:
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE scaffold generator | Initial full-template scaffold — all sections present; minimal eWTW indication set documented |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE scaffold generator | Initial full-template scaffold — all sections present; minimal [PROGRAMME-VARIANT] indication set documented |

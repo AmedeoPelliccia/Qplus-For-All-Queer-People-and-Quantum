@@ -66,6 +66,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 000 — Multisystem General
@@ -297,26 +299,26 @@ Maintenance procedures shall remain provisional until validated against the appl
 
 | S1000D Element | Controlled Value |
 |---|---|
-| Model ident code | `AMPEL360E` |
-| System diff code | `EWTW` |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` |
+| System diff code | `[PROGRAMME-VARIANT]` |
 | System code | `040` |
 | Sub-system code | `0` |
 | Sub-sub-system code | `00` |
 | Assy code | `00A` |
 | Info code | `040 / 300 / 400 / 520 / 720 / 941` |
 | Item location code | `D` |
-| DMC prefix | `DMC-AMPEL360E-EWTW-040` |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-040` |
 
 ### Recommended Data Module Set
 
 | Info code | Data module purpose | Suggested filename |
 |---:|---|---|
-| [040](#dm-040) | <a id="dm-040"></a>Descriptive information | `DMC-AMPEL360E-EWTW-040-000-00A-040A-D_System-Description.xml` |
-| [300](#dm-300) | <a id="dm-300"></a>Examination / inspection / check | `DMC-AMPEL360E-EWTW-040-000-00A-300A-D_Inspection.xml` |
-| [400](#dm-400) | <a id="dm-400"></a>Fault isolation | `DMC-AMPEL360E-EWTW-040-000-00A-400A-D_Fault-Isolation.xml` |
-| [520](#dm-520) | <a id="dm-520"></a>Remove / disassemble | `DMC-AMPEL360E-EWTW-040-000-00A-520A-D_Remove.xml` |
-| [720](#dm-720) | <a id="dm-720"></a>Install / assemble / connect | `DMC-AMPEL360E-EWTW-040-000-00A-720A-D_Install.xml` |
-| [941](#dm-941) | <a id="dm-941"></a>Illustrated parts data | `DMC-AMPEL360E-EWTW-040-000-00A-941A-D_Illustrated-Parts-Data.xml` |
+| [040](#dm-040) | <a id="dm-040"></a>Descriptive information | `DMC-<PROGRAMME>-<VARIANT>-040-000-00A-040A-D_System-Description.xml` |
+| [300](#dm-300) | <a id="dm-300"></a>Examination / inspection / check | `DMC-<PROGRAMME>-<VARIANT>-040-000-00A-300A-D_Inspection.xml` |
+| [400](#dm-400) | <a id="dm-400"></a>Fault isolation | `DMC-<PROGRAMME>-<VARIANT>-040-000-00A-400A-D_Fault-Isolation.xml` |
+| [520](#dm-520) | <a id="dm-520"></a>Remove / disassemble | `DMC-<PROGRAMME>-<VARIANT>-040-000-00A-520A-D_Remove.xml` |
+| [720](#dm-720) | <a id="dm-720"></a>Install / assemble / connect | `DMC-<PROGRAMME>-<VARIANT>-040-000-00A-720A-D_Install.xml` |
+| [941](#dm-941) | <a id="dm-941"></a>Illustrated parts data | `DMC-<PROGRAMME>-<VARIANT>-040-000-00A-941A-D_Illustrated-Parts-Data.xml` |
 
 ---
 
@@ -456,7 +458,7 @@ Final safety classification shall remain <img src="https://img.shields.io/badge/
 |---|---|---|---|---|
 | [OI-001](#oi-001) | <a id="oi-001"></a>Confirm whether ATLAS 040 and ATLAS 042 should remain separated between general multisystem and IMA-specific content. | Q-DATAGOV | Open | [Functional Breakdown](#6-functional-breakdown) |
 | [OI-002](#oi-002) | <a id="oi-002"></a>Confirm final repository targets for external standards references. | ORB-LEG | Open | [References](#20-references) |
-| [OI-003](#oi-003) | <a id="oi-003"></a>Confirm AMPEL360e-specific applicability for hosted avionics functions. | Q-AIR | Open | [Scope](#4-scope) |
+| [OI-003](#oi-003) | <a id="oi-003"></a>Confirm [PROGRAMME-AIRCRAFT]-specific applicability for hosted avionics functions. | Q-AIR | Open | [Scope](#4-scope) |
 | [OI-004](#oi-004) | <a id="oi-004"></a>Confirm S1000D DMRL allocation for ATLAS 040 multisystem documents. | Q-DATAGOV | Open | [Glossary — DMRL](#glossary-dmrl) |
 
 ---

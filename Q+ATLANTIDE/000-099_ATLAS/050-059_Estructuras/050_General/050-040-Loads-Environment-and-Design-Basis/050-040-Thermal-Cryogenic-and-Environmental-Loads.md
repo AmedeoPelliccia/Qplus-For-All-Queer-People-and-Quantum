@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Thermal, Cryogenic and Environmental Loads
 
 ## 1. Purpose
 
-Defines the **thermal, cryogenic, and environmental loads** that the AMPEL360 eWTW structure must accommodate: temperature gradients from the LH₂ propulsion system, kinetic heating at high Mach conditions, atmospheric icing, acoustic loads, lightning, and HIRF; and their structural implications for material properties, allowables, and fatigue life.
+Defines the **thermal, cryogenic, and environmental loads** that the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structure must accommodate: temperature gradients from the LH₂ propulsion system, kinetic heating at high Mach conditions, atmospheric icing, acoustic loads, lightning, and HIRF; and their structural implications for material properties, allowables, and fatigue life.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW presents a uniquely wide thermal operating range. LH₂ fuel storage at −253 °C (20 K) generates cryogenic gradients in tank-attachment fittings, internal bulkheads, and adjacent frames — requiring cryogenically rated CFRP and metallic material specifications. At the opposite extreme, APU bay skin reaches +85 °C during extended ground operations, and leading-edge de-icing systems cycle between −55 °C (cruise) and +120 °C. These gradients impose thermally induced strains that are combined with mechanical loads in the sizing analyses.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] presents a uniquely wide thermal operating range. LH₂ fuel storage at −253 °C (20 K) generates cryogenic gradients in tank-attachment fittings, internal bulkheads, and adjacent frames — requiring cryogenically rated CFRP and metallic material specifications. At the opposite extreme, APU bay skin reaches +85 °C during extended ground operations, and leading-edge de-icing systems cycle between −55 °C (cruise) and +120 °C. These gradients impose thermally induced strains that are combined with mechanical loads in the sizing analyses.
 
 Environmental loads also encompass: acoustic fatigue from distributed-propulsion noise (≥ 165 dB OASPL near nacelle fairings); lightning direct-effects zoning per CS-25.581; and HIRF susceptibility per CS-25.1317.
 
@@ -87,6 +89,6 @@ graph TD
 | CS-25.581 | Lightning protection |
 | CS-25.1317 | HIRF protection |
 | AC 20-107B | Composite aircraft structure — environmental effects |
-| SC-AMPEL360-LH2-001 | Special Condition — cryogenic structural effects |
+| SC-[PROGRAMME-AIRCRAFT]-LH2-001 | Special Condition — cryogenic structural effects |
 | [`./README.md`](./README.md) | Subsubject 040 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

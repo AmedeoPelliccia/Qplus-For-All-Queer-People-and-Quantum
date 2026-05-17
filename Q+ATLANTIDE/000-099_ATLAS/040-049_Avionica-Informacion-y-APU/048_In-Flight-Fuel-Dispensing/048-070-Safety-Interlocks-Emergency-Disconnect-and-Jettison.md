@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 070 — Safety Interlocks Emergency Disconnect and Jettison
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document specifies the **safety interlocks, emergency disconnect mechanisms, and fuel jettison system** for the In-Flight Fuel Dispensing (IFFD) system on the AMPEL360E eWTW aircraft per ATA 48. These functions are the primary safety barriers preventing catastrophic outcomes from IFFD failures during aerial refuelling operations.
+This document specifies the **safety interlocks, emergency disconnect mechanisms, and fuel jettison system** for the In-Flight Fuel Dispensing (IFFD) system on the programme-defined aircraft type per ATA 48. These functions are the primary safety barriers preventing catastrophic outcomes from IFFD failures during aerial refuelling operations.
 
 The Emergency Disconnect Unit (EDU) provides a dual-path disconnect mechanism: a primary dual-coil electric actuator (< 100 ms activation) and a pyrotechnic backup (single-shot, also < 100 ms). The jettison path provides an overboard fuel vent in a non-engine, non-ignition-source zone, compliant with CS-25 §25.975. Four independent auto-trigger conditions activate emergency disconnect: manual crew switch, coupling structural overload sensor, IFFDCU dual-channel fault agreement, and radio altimeter < 100 ft.
 
@@ -55,7 +57,7 @@ Weight-on-wheels (WOW) inhibits IFFD activation on the ground, and a separate WO
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | EDU Primary Path | Dual-coil electric actuator — < 100 ms |
 | EDU Backup Path | Pyrotechnic (single-shot) — < 100 ms |
@@ -441,4 +443,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD safety interlocks, EDU and jettison for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD safety interlocks, EDU and jettison for programme-defined aircraft type |

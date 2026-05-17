@@ -53,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 050 — Shared Avionics Resources and Services
@@ -68,7 +70,7 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md).
 
 ## 1. Purpose
 
-This document defines the shared avionics resources and services architecture for the AMPEL360E. It covers the shared BITE bus, shared power distribution, shared cooling management, shared timing reference, resource arbitration, and service APIs exposed to hosted applications. Environmental qualification references [DO-160G](#ref-do-160g). It is the primary reference for avionics system architects, power and thermal engineers, and hosted application developers.
+This document defines the shared avionics resources and services architecture for the [PROGRAMME-AIRCRAFT]. It covers the shared BITE bus, shared power distribution, shared cooling management, shared timing reference, resource arbitration, and service APIs exposed to hosted applications. Environmental qualification references [DO-160G](#ref-do-160g). It is the primary reference for avionics system architects, power and thermal engineers, and hosted application developers.
 
 ---
 
@@ -76,7 +78,7 @@ This document defines the shared avionics resources and services architecture fo
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | Environmental Standard | [DO-160G](#ref-do-160g) |
 | Development Assurance | [DO-178C](#ref-do-178c), [DO-254](#ref-do-254) |
@@ -263,12 +265,12 @@ graph LR
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-040-050-00A-040A-A | 040 | Shared Resources Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-040-050-00A-300A-A | 300 | Shared Resources Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-040-050-00A-400A-A | 400 | BITE and Test Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-040-050-00A-520A-A | 520 | Power and BITE Bus Wiring |
-| IPD | DMC-AMPEL360E-EWTW-040-050-00A-941A-A | 941 | Shared Resources LRU Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-040-050-00A-720A-A | 720 | Service API and Supervisor SW |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-040-050-00A-040A-A | 040 | Shared Resources Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-040-050-00A-300A-A | 300 | Shared Resources Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-040-050-00A-400A-A | 400 | BITE and Test Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-040-050-00A-520A-A | 520 | Power and BITE Bus Wiring |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-040-050-00A-941A-A | 941 | Shared Resources LRU Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-040-050-00A-720A-A | 720 | Service API and Supervisor SW |
 
 ### Recommended Data Module Set
 

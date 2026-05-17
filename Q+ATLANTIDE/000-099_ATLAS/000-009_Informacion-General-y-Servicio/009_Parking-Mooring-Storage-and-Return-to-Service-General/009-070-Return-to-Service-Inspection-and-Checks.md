@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Defines the return-to-service inspection and check requirements for the AMPEL360E eWTW after storage or extended parking. Covers the removal of all covers and blanking plates, HVDC battery state-of-health check, operational check of all flight-critical systems, logbook reconciliation, and the release-to-service sign-off by a certified maintenance engineer.
+Defines the return-to-service inspection and check requirements for the programme-defined aircraft type after storage or extended parking. Covers the removal of all covers and blanking plates, HVDC battery state-of-health check, operational check of all flight-critical systems, logbook reconciliation, and the release-to-service sign-off by a certified maintenance engineer.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 10 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,7 +72,7 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Return to Service Inspection and Checks** node defines the inspection, functional check, and ground test sequence required to return the AMPEL360E eWTW to airworthy status after any storage period. The PSMM Storage Exit Checklist (Q-PSMM-SEC-001) is the primary governing document for all return-to-service activities; it is generated electronically on the GMMS tablet, prefilled with aircraft tail number, storage duration, and last-recorded system states. The checklist gates are: (A) visual inspection (all external surfaces, covers removed, doors closed, landing gear downlocked, no FOD, no corrosion beyond limits); (B) system power-up BIT (Battery Built-In Test: PSMM initiates automatic 20-min BIT for HVDC bus, BMS, all PDUs, then FADEC self-test, then avionics self-test — "ALL BIT PASS" required before proceeding); (C) electric actuation functional test (ENWS full steering sweep, EBAU full braking cycle on each wheel, ELFCS full control surface sweep — confirmed by GMMS position feedback); (D) engine ground run (both engines started per AMM 71-00 start procedure; idle power run 15 min; N1/N2/EGT/FF within limits per EIS); (E) flight deck check (ECAM all systems green, no deferred defects on the DMI, ACARS test transmission complete).
+The **Return to Service Inspection and Checks** node defines the inspection, functional check, and ground test sequence required to return the programme-defined aircraft type to airworthy status after any storage period. The PSMM Storage Exit Checklist (Q-PSMM-SEC-001) is the primary governing document for all return-to-service activities; it is generated electronically on the GMMS tablet, prefilled with aircraft tail number, storage duration, and last-recorded system states. The checklist gates are: (A) visual inspection (all external surfaces, covers removed, doors closed, landing gear downlocked, no FOD, no corrosion beyond limits); (B) system power-up BIT (Battery Built-In Test: PSMM initiates automatic 20-min BIT for HVDC bus, BMS, all PDUs, then FADEC self-test, then avionics self-test — "ALL BIT PASS" required before proceeding); (C) electric actuation functional test (ENWS full steering sweep, EBAU full braking cycle on each wheel, ELFCS full control surface sweep — confirmed by GMMS position feedback); (D) engine ground run (both engines started per AMM 71-00 start procedure; idle power run 15 min; N1/N2/EGT/FF within limits per EIS); (E) flight deck check (ECAM all systems green, no deferred defects on the DMI, ACARS test transmission complete).
 
 Post-storage airworthiness release: the licensed AME (Aircraft Maintenance Engineer) signs the CRS (Certificate of Release to Service) using the GAIA-QA digital signing portal, which automatically updates the CSDB technical log and triggers PSMM "flight mode" activation. Total minimum return-to-service time from LTS: 12 h (two AME team). From short-term storage: 4 h. All return-to-service records are retained in the CSDB under Part-M §M.A.306.
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the return to service inspection and checks scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Return to Service Inspection and Checks** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Return to Service Inspection and Checks** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `009` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `070` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-009-070` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-009-070` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

@@ -24,13 +24,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 016 · Subsubject 003 — Jacking Procedures and Sequencing
 
 ## 1. Purpose
 
-Provides the **step-level jacking procedure** for AMPEL360 aircraft, covering full-aircraft three-point lifts, single-gear lifts, level monitoring, safety-collar engagement, and the emergency-lower procedure. This subsubject is the primary procedural reference for all jacking operations performed under subsection `016_`.
+Provides the **step-level jacking procedure** for [PROGRAMME-AIRCRAFT] aircraft, covering full-aircraft three-point lifts, single-gear lifts, level monitoring, safety-collar engagement, and the emergency-lower procedure. This subsubject is the primary procedural reference for all jacking operations performed under subsection `016_`.
 
 > **Governing source:** All steps in this document are derived from the applicable AMM, ATA chapter 7. Where this document conflicts with the current AMM issue, the AMM governs. Raise a discrepancy report and do not proceed until resolved.
 

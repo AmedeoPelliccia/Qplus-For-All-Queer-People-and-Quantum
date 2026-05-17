@@ -6,10 +6,10 @@ subsubject: "030"
 subsubject_title: "Pressure Regulation and Shutoff"
 file_name: "036-030-Pressure-Regulation-and-Shutoff.md"
 sns_reference: "036-30"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-30"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-30"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -88,10 +88,12 @@ keywords:
   - "pressure regulator"
   - "bleed-less"
   - "CS-25.1438"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-030 — Pressure Regulation and Shutoff
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,33 +105,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the pressure regulation and shutoff provisions of the AMPEL360e eWTW residual pneumatic circuit (ATA 36-030). It covers the pressure regulator (downstream of EAC/filter), the pressure relief valve (PRV), and the consumer branch shutoff valves (SOVs).
+This document defines the agnostic ATLAS standard-level architecture context for `036-030 — Pressure Regulation and Shutoff`.
 
-**eWTW context**: On conventional bleed-air aircraft, the pressure regulation function is complex — modulating bleed valves, pre-coolers, and HP/LP switching valves manage high-temperature bleed air at varying engine power settings. On the eWTW, the EAC provides near-constant-pressure output (controlled by the EAC motor controller), and the regulator is a simple downstream pressure-reducing valve maintaining the circuit working pressure. There is no bleed valve, no pre-cooler regulation valve, and no cross-bleed isolation valve.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-**Important cross-reference note**: ATA 36 SOVs on the eWTW do **NOT** supply wing anti-ice (ATA 30 uses electrothermal EWAI) and do **NOT** supply cabin pressurisation (ATA 21 uses EDCs). The only SOVs in ATA 36 control flow to door seals and potable water tank (TBD).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 036-030 — Pressure Regulation and Shutoff |
-| Pressure Regulator Set-Point | <img src="https://img.shields.io/badge/TBD-red"> psi |
-| PRV Set-Point | <img src="https://img.shields.io/badge/TBD-red"> psi (> regulator set-point) |
-| SOV Type | Electric solenoid, normally closed |
-| SOV Quantity | <img src="https://img.shields.io/badge/TBD-red"> (1 per consumer branch — TBD) |
-| SOV Actuation | 28 VDC solenoid (TBD) |
-| Manual Override | <img src="https://img.shields.io/badge/TBD-red"> |
-| Anti-Ice Supply | **None** — ATA 30 not supplied by ATA 36 on eWTW |
-| ECS Supply | **None** — ATA 21 not supplied by ATA 36 on eWTW |
-| Certification Basis | CS-25.1438; CS-25.1301/1309 |
-| S1000D SNS | 036-30 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 Pressure Regulator
@@ -153,14 +142,14 @@ Consumer branch SOVs are **normally closed, electrically actuated solenoid valve
 
 SOV control: commanded by CMC or ECS/aircraft management system (interface TBD). Manual override (mechanical — TBD per CS-25 maintenance access requirements).
 
-### 3.4 Cross-Reference: What ATA 36 SOVs Do NOT Supply on eWTW
+### 3.4 Cross-Reference: What ATA 36 SOVs Do NOT Supply on [PROGRAMME-VARIANT]
 
-| Function | Conventional Aircraft | eWTW |
+| Function | Conventional Aircraft | [PROGRAMME-VARIANT] |
 |---|---|---|
 | Wing anti-ice | SOV supplies bleed to ATA 30 | **N/A** — ATA 30 electrothermal; no ATA 36 SOV |
 | Engine anti-ice | SOV supplies bleed to ATA 30 | **N/A** — electric; no ATA 36 SOV |
 | Cabin pressurisation | Bleed SOV to ATA 21 packs | **N/A** — EDC; no ATA 36 SOV |
-| Hydraulic reservoir | Bleed SOV to hydraulic res. | **N/A** — no hydraulics on eWTW |
+| Hydraulic reservoir | Bleed SOV to hydraulic res. | **N/A** — no hydraulics on [PROGRAMME-VARIANT] |
 | Cross-bleed | Cross-bleed isolation SOV | **N/A** — no bleed architecture |
 
 ---
@@ -183,7 +172,7 @@ SOV control: commanded by CMC or ECS/aircraft management system (interface TBD).
 - Bleed valves (not applicable)
 - Pre-cooler (not applicable)
 - Cross-bleed isolation valve (not applicable)
-- Anti-ice SOVs (not applicable — no bleed anti-ice on eWTW)
+- Anti-ice SOVs (not applicable — no bleed anti-ice on [PROGRAMME-VARIANT])
 
 ---
 
@@ -353,8 +342,8 @@ flowchart LR
 | CMC / aircraft management | ATA 45 | SOV open/close commands, position feedback, fault flags | ATA 36-030 ↔ ATA 45 |
 | Electrical power | ATA 24 | 28 VDC for SOV solenoids | ATA 24 → ATA 36-030 |
 | PRV vent | Airframe | PRV discharge to exterior or enclosure | ATA 36-030 → Airframe |
-| Wing anti-ice | ATA 30 | **No interface** — ATA 36 does NOT supply ATA 30 on eWTW | None |
-| ECS pressurisation | ATA 21 | **No interface** — ATA 36 does NOT supply ATA 21 on eWTW | None |
+| Wing anti-ice | ATA 30 | **No interface** — ATA 36 does NOT supply ATA 30 on [PROGRAMME-VARIANT] | None |
+| ECS pressurisation | ATA 21 | **No interface** — ATA 36 does NOT supply ATA 21 on [PROGRAMME-VARIANT] | None |
 
 ---
 
@@ -393,7 +382,7 @@ flowchart LR
 - **PRV inspection**: visual for evidence of leakage (staining at vent); verify no spurious opening in service
 
 ### 13.2 Base / Heavy Maintenance
-- **SOV removal and installation**: S1000D DM DMC-AMPEL360E-EWTW-036-30-520/720 (TBD); isolate circuit; lockout EAC; depressurise; remove and reinstall SOV; functional test post-install
+- **SOV removal and installation**: S1000D DM DMC-<PROGRAMME>-<VARIANT>-036-30-520/720 (TBD); isolate circuit; lockout EAC; depressurise; remove and reinstall SOV; functional test post-install
 - **Regulator removal and installation**: S1000D DM TBD; set-point verification post-install
 - **PRV removal and inspection**: spring inspection; re-seating test on test bench (set-point verification TBD psi ± TBD %)
 
@@ -408,11 +397,11 @@ flowchart LR
 
 | DM Code (planned) | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-30-00A-040A-A | 040 | ATA 36-030 — Pressure Regulation and Shutoff — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-30-00A-300A-A | 300 | ATA 36-030 — Regulator / SOV / PRV Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-30-00A-520A-A | 520 | ATA 36-030 — SOV Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-30-00A-720A-A | 720 | ATA 36-030 — SOV Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-30-00A-400A-A | 400 | ATA 36-030 — Regulator / SOV Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-30-00A-040A-A | 040 | ATA 36-030 — Pressure Regulation and Shutoff — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-30-00A-300A-A | 300 | ATA 36-030 — Regulator / SOV / PRV Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-30-00A-520A-A | 520 | ATA 36-030 — SOV Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-30-00A-720A-A | 720 | ATA 36-030 — SOV Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-30-00A-400A-A | 400 | ATA 36-030 — Regulator / SOV Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -438,7 +427,7 @@ flowchart LR
 | Environmental qualification | DO-160G | All components | Temperature, vibration, humidity |
 | Fail-safe design | CS-25.1309 + design standard | SOV normally closed | De-energised = closed = safe (no unintended pressurisation) |
 | Manual override | CS-25 maintenance access | SOV | Maintenance access and lockout provisions TBD |
-| Anti-ice supply clarification | N/A | **Not applicable** — no ATA 36 → ATA 30 interface on eWTW | Explicit non-interface documented |
+| Anti-ice supply clarification | N/A | **Not applicable** — no ATA 36 → ATA 30 interface on [PROGRAMME-VARIANT] | Explicit non-interface documented |
 
 ### 16.1 Critical Safety Note
 The SOV fail-safe position (normally closed) ensures that on loss of electrical power, all consumer branches are isolated. This prevents unintended pressurisation of door seals or water tank in unpowered states. However, it also means door seals are not inflated on electrical failure — impact on sealing to be assessed in FMECA (OI-036-010).
@@ -468,7 +457,7 @@ The SOV fail-safe position (normally closed) ensures that on loss of electrical 
 | PRV | Pressure Relief Valve — passive mechanical device venting to atmosphere at set overpressure threshold |
 | Pressure regulator | Pressure-reducing valve maintaining constant downstream pressure regardless of upstream variation |
 | Set-point | Nominal operating pressure at which regulator maintains downstream circuit (TBD psi) |
-| Fail-safe position | De-energised (unpowered) position of SOV — closed on eWTW |
+| Fail-safe position | De-energised (unpowered) position of SOV — closed on [PROGRAMME-VARIANT] |
 | NC solenoid | Normally Closed solenoid valve — closed when de-energised; opens when energised |
 | NRV | Non-Return Valve — check valve; see ATA 36-020 |
 | EAC | Electric Air Compressor — see ATA 36-010 |
@@ -476,7 +465,7 @@ The SOV fail-safe position (normally closed) ensures that on loss of electrical 
 | ECAM | Electronic Centralised Aircraft Monitor |
 | CAS | Crew Alerting System |
 | Bleed-less architecture | No engine compressor bleed air; all functions electrically supplied |
-| EWAI | Electrothermal Wing Anti-Ice — ATA 30; not supplied by ATA 36 on eWTW |
+| EWAI | Electrothermal Wing Anti-Ice — ATA 30; not supplied by ATA 36 on [PROGRAMME-VARIANT] |
 | EDC | Electric Driven Compressor — ATA 21 ECS source; not part of ATA 36 |
 | CS-25.1438 | EASA certification requirement for pneumatic systems |
 | DO-160G | RTCA environmental qualification standard |

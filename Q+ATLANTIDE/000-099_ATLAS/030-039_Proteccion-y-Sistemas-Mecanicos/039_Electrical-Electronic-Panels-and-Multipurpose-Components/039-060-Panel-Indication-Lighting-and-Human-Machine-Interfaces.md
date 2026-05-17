@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Panel Indication, Lighting, and Human-Machine Interfaces"
 file_name: "039-060-Panel-Indication-Lighting-and-Human-Machine-Interfaces.md"
 sns_reference: "039-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-60"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-60"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "HMI"
@@ -94,10 +94,12 @@ keywords:
   - "annunciator"
   - "EWD"
   - "panel lighting"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-060 — Panel Indication, Lighting, and Human-Machine Interfaces
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,46 +109,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links. Regulatory references cited by identifier. DMC cross-references follow `DMC-AMPEL360E-EWTW-039-60-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
+All cross-references use relative Markdown links. Regulatory references cited by identifier. DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-039-60-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
 
 ---
 
 ## §1 Purpose
 
-This document describes **Panel Indication, Lighting, and Human-Machine Interfaces** (subsubject 039-060) of the AMPEL360e eWTW. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `039-060 — Panel Indication, Lighting, and Human-Machine Interfaces`.
 
-1. LED-backlit push-button (IPBS) legend indication: white/amber/green colour convention.
-2. EFIS: dual Primary Flight Display (PFD) and Multi-Function Display (MFD) per crew station.
-3. ECAM equivalent: Engine/Warning Display (EWD) and Systems Display (SD).
-4. MCDU (Multifunction Control Display Unit): dual, FMS primary interface.
-5. Panel flood lighting: LED strip, white (normal) / red (emergency) TBD.
-6. ECAM layout: TBD (dedicated screens vs. multi-function window on MFD).
-7. Cursor Control Device (CCD): optional trackball for MFD TBD.
-8. Annunciator colour convention: AECMA standard.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter / Subsubject | 39 — 039-060 Panel Indication, Lighting, and HMI |
-| Document Tier | Level 3 — Component/Assembly Description |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-
-Includes all cockpit display units (PFD, MFD, EWD, SD), MCDU units, panel LED backlighting systems, and panel flood lighting. Excludes:
-- EFIS display content (function hosted in ATA 31/42)
-- Cabin lighting (ATA 33)
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Display Suite Architecture
 
-The eWTW cockpit display suite (OLED/LCD TBD — OI-039-003) comprises:
+The [PROGRAMME-VARIANT] cockpit display suite (OLED/LCD TBD — OI-039-003) comprises:
 
 | Display | Count | Location | Function |
 |---|---|---|---|
@@ -408,12 +395,12 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| HMI / indication description | DMC-AMPEL360E-EWTW-039-60-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Display unit removal | DMC-AMPEL360E-EWTW-039-60-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Display unit installation | DMC-AMPEL360E-EWTW-039-60-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| MCDU removal / installation | DMC-AMPEL360E-EWTW-039-60-20A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — displays | DMC-AMPEL360E-EWTW-039-60-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| LED brightness check | DMC-AMPEL360E-EWTW-039-60-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| HMI / indication description | DMC-<PROGRAMME>-<VARIANT>-039-60-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| Display unit removal | DMC-<PROGRAMME>-<VARIANT>-039-60-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Display unit installation | DMC-<PROGRAMME>-<VARIANT>-039-60-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| MCDU removal / installation | DMC-<PROGRAMME>-<VARIANT>-039-60-20A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — displays | DMC-<PROGRAMME>-<VARIANT>-039-60-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| LED brightness check | DMC-<PROGRAMME>-<VARIANT>-039-60-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -491,7 +478,7 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 | Contrast ratio | Ratio of luminance of bright to dark areas in a display; must meet minimum standard for readability |
 | DO-178C | Software assurance standard; DAL A for critical flight display functions |
 | DO-254 | Hardware assurance for display processing hardware |
-| ETMS | Electric Thrust Management System — eWTW all-electric thrust management; parameters shown on EWD |
+| ETMS | Electric Thrust Management System — [PROGRAMME-VARIANT] all-electric thrust management; parameters shown on EWD |
 
 ---
 
@@ -545,5 +532,5 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW HMI context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] HMI context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

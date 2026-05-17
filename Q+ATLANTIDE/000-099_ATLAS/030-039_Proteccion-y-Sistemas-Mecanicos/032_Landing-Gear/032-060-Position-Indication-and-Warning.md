@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Position Indication and Warning"
 file_name: "032-060-Position-Indication-and-Warning.md"
 sns_reference: "032-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-60"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-032-60"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "ATA 32"
   - "Position Indication"
   - "Gear Warning"
@@ -99,10 +99,12 @@ keywords:
   - "gear not down"
   - "green light"
   - "WoW"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 032-060 — Position Indication and Warning
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -114,32 +116,20 @@ All internal links use relative paths. External regulatory references use anchor
 
 ## §1 Purpose
 
-This document describes the Landing Gear Position Indication and Warning system of the AMPEL360e eWTW. The system provides the flight crew with accurate, unambiguous information about the position of each landing gear and its associated doors, and generates appropriate alerts when the landing gear is not in the correct position for the phase of flight.
+This document defines the agnostic ATLAS standard-level architecture context for `032-060 — Position Indication and Warning`.
 
-On eWTW, gear position indication is driven by the LGCIU (IMA-hosted), which processes proximity switch signals from all gear legs and gear bay doors. Position data is output by the LGCIU to the IMA, ECAM, and Flight Warning Computer (FWC) via AFDX. The cockpit gear indicator panel displays the gear handle position and three gear-position lights (one per gear leg: green = down and locked, red = in transit or unsafe, blank = up and locked). An ECAM gear synoptic page provides a graphical representation of each gear leg and door position.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The FWC generates a "GEAR NOT DOWN" aural warning at low altitude (based on radio altimeter input and flap position logic) if any gear is not in the down-and-locked state. The GPWS/TAWS system (ATA 34) uses the WoW discrete from the LGCIU as an input to its ground proximity alerting logic. This document covers the indication and warning elements; proximity switch hardware is covered by 032-010, 032-020, and 032-030.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 032-060 — Position Indication and Warning |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Gear Legs Monitored | 3 (Port MLG, Stbd MLG, NLG) |
-| Position States per Leg | Down-and-Locked (green); In-Transit (red); Up-and-Locked (blank) |
-| Door Position States | Open; Closed (per door, monitored by LGCIU) |
-| Warning Logic | FWC — gear not down at low altitude; GPWS WoW input |
-| Controller | LGCIU — IMA-hosted |
-| Certification Basis | CS-25.729(d), CS-25.1303, CS-25.1322 |
-| SNS Reference | 032-60 |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The position indication system processes signals from proximity switches on each gear leg and gear bay doors. For each gear leg, the proximity switch suite includes: (1) Downlock switch — confirms gear in fully extended and locked position; (2) Uplock switch — confirms gear in fully retracted and locked position; (3) Gear-in-transit inferred state — any condition where neither uplock nor downlock switch is active; (4) Door-open switch; (5) Door-closed switch; and (6) WoW switch (primary and redundant) — confirms weight on wheels. All switch signals are received by the LGCIU, which applies logic to determine the current gear position state.
@@ -328,7 +318,7 @@ Scheduled maintenance: WoW switch inspection for corrosion and mechanical securi
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 032-60 | Position Indication and Warning | DMC-AMPEL360E-EWTW-032-60 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-60 | Position Indication and Warning | DMC-<PROGRAMME>-<VARIANT>-032-60 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 

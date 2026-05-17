@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0083-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-083-040-POWER-CONDITIONING-AND-DISTRIBUTION-INTERFACES
      ATLAS-083 (Solar-Electric Auxiliary) · Power Conditioning and Distribution
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Power Conditioning and Distribution Interfaces
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-040"
 
 ## §1 Purpose
 
-ATLAS subsubject 083-040 defines the power conditioning and distribution architecture within the SEACU, covering the MPPT converter stages, bidirectional DC/DC converters, SiC propulsor inverters, the HVDC 270 V bus tie, solid-state power controllers (SSPCs), protection schemes, EMC filtering, ground fault detection, and cable sizing for the Solar-Electric Auxiliary system.
+This document defines the agnostic ATLAS standard-level architecture context for `Power Conditioning and Distribution Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-083 — 083-040 Power Conditioning and Distribution |
-| Certification basis | EASA CS-25 Amdt 27+; DO-160G (EMC); IEC 62109-1 (PV converter safety); MIL-STD-461G (conducted emissions) |
-| S1000D SNS | 083-040-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `083` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 SEACU Internal Power Architecture
 
 ```
@@ -111,7 +112,7 @@ HVDC 270 V Bus ─────── ↕ Bidirectional Bus Tie Converter ──�
 | Parameter | Value |
 |---|---|
 | Topology | Isolated bidirectional LLC resonant converter |
-| Battery port | 520–740 V DC (NMC 811 SoC 20–90 %) |
+| Battery port | 520–740 V DC (<BATTERY-CHEMISTRY> SoC 20–90 %) |
 | DC link / HVDC 270 V bus port | 270 V DC (isolated; ratio 2.7:1) |
 | Rated continuous power | 40 kW (charge and discharge) |
 | Peak power | 80 kW for ≤ 10 s |

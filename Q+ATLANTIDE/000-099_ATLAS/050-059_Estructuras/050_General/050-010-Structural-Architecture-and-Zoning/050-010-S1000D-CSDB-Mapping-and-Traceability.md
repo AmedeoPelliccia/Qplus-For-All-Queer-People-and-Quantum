@@ -25,6 +25,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — S1000D CSDB Mapping and Traceability
@@ -40,7 +42,7 @@ Defines the S1000D **Data Module Code (DMC) mapping** for structural architectur
 Zone architecture data modules use systemCode `050` (General) with subSystemCode `01` (Architecture and Zoning):
 
 ```
-DMC-AMPEL360-A-050-01-{assyCode}-{disassyCode}{variant}-{infoCode}{variant}-A_EN-US
+DMC-<PROGRAMME>-A-050-01-{assyCode}-{disassyCode}{variant}-{infoCode}{variant}-A_EN-US
 ```
 
 ### 2.2 Zone DM Allocation
@@ -57,10 +59,10 @@ DMC-AMPEL360-A-050-01-{assyCode}-{disassyCode}{variant}-{infoCode}{variant}-A_EN
 
 | ATLAS document | CSDB DM |
 |---|---|
-| This file (S1000D mapping) | `DMC-AMPEL360-A-050-0100-00A-040A-A` |
-| `050-010-Aircraft-Structural-Zone-Definition.md` | `DMC-AMPEL360-A-050-0100-00A-040A-A` |
-| `050-010-Fuselage-Wing-and-Center-Body-Zoning.md` | `DMC-AMPEL360-A-050-0110-00A-040A-A` + `DMC-AMPEL360-A-050-0120-00A-040A-A` |
-| `050-010-Structural-Zone-Coding-and-Designator-Rules.md` | `DMC-AMPEL360-A-050-0140-00A-040A-A` |
+| This file (S1000D mapping) | `DMC-<PROGRAMME>-A-050-0100-00A-040A-A` |
+| `050-010-Aircraft-Structural-Zone-Definition.md` | `DMC-<PROGRAMME>-A-050-0100-00A-040A-A` |
+| `050-010-Fuselage-Wing-and-Center-Body-Zoning.md` | `DMC-<PROGRAMME>-A-050-0110-00A-040A-A` + `DMC-<PROGRAMME>-A-050-0120-00A-040A-A` |
+| `050-010-Structural-Zone-Coding-and-Designator-Rules.md` | `DMC-<PROGRAMME>-A-050-0140-00A-040A-A` |
 
 ## 3. Footprint
 

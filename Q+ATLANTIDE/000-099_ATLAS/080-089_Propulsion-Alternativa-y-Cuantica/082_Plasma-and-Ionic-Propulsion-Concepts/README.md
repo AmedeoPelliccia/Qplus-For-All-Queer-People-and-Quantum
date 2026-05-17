@@ -21,6 +21,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 080-089 · Section 08 · Subsection 082 — Plasma and Ionic Propulsion Concepts
@@ -35,7 +37,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 - Populates the subsubject namespace `00`–`99` of subsection `082` *Plasma and Ionic Propulsion Concepts*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the AMPEL360E eWTW Plasma and Ionic Propulsion Concepts system (PPPU dual-channel DAL C, 8 thruster nodes: 4 HET + 4 GIE, xenon propellant, DBD plasma actuators, Hall-effect and gridded ion engine physics, high-voltage interfaces, plume interaction and EMC constraints, AFDX ARINC 664 P7, S1000D 28 DMs, BREX-082-v1).
+- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the programme-defined aircraft type Plasma and Ionic Propulsion Concepts system (PPPU dual-channel DAL C, 8 thruster nodes: 4 HET + 4 GIE, xenon propellant, DBD plasma actuators, Hall-effect and gridded ion engine physics, high-voltage interfaces, plume interaction and EMC constraints, AFDX ARINC 664 P7, S1000D 28 DMs, BREX-082-v1).
 
 ## 3. Subsubject Index
 

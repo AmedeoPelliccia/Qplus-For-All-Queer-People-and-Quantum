@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Ice and Rain Monitoring, Diagnostics, and Control Interfaces"
 file_name: "030-080-Ice-and-Rain-Monitoring-Diagnostics-and-Control-Interfaces.md"
 sns_reference: "030-80"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-80"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-80"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,22 +87,24 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
   - "BITE"
   - "CMC"
   - "ECAM"
   - "diagnostics"
   - "overheat detection"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-080 — Ice and Rain Monitoring, Diagnostics, and Control Interfaces
-### AMPEL360e eWTW · ATA 30-80 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-80 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -114,32 +116,25 @@ All hyperlinks in this document are **relative links** unless pointing to a publ
 
 ## §1 Purpose
 
-This document defines the comprehensive BITE (Built-In Test Equipment) coverage, fault detection logic, ECAM crew alerting, CMC/CMS interface, post-flight reporting, overheat protection monitoring, and maintenance fault isolation architecture for the complete ATA 30 Ice and Rain Protection system of the **AMPEL360e eWTW**. Because the eWTW ice protection system is entirely electrothermal — with no bleed-air systems — the health of every heater zone, circuit, and controller is determinable through electrical measurement. This document describes how the IPMC, WIPS controller, EIPC, PHC, WHC, and THC collectively form a comprehensive monitoring and diagnostics layer that protects the composite airframe, provides crew situational awareness, and supports efficient fault isolation to LRU level at line maintenance.
+This document defines the agnostic ATLAS standard-level architecture context for `030-080 — Ice and Rain Monitoring, Diagnostics, and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Sub-chapter | 30-80 — Ice and Rain Monitoring, Diagnostics, and Control Interfaces |
-| Coverage | All ATA 30 heater zones and associated controllers (WIPS, EIP, probe heaters, windshield, drains, ice detectors) |
-| Primary BITE Host | IPMC — centralised BITE aggregation from all sub-controllers |
-| CMC Interface | ATA 45 — Central Maintenance Computer |
-| ECAM Interface | ATA 31 — Indicating and Recording |
-| Overheat Protection | Hardware-latching per zone; software monitoring in IPMC |
-| Fault Code Structure | ATA 30-[zone]-[fault type]-[severity] — programme-defined prefix |
-| Certification Basis | CS-25.1309; FAR 25.1309; ARP 4754A; ARP 4761 |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The ATA 30 monitoring and diagnostics architecture for the eWTW is built on the principle that every electrothermal heater element in the ice protection system must be continuously monitored, its health reported to the crew within seconds of a fault occurring, and the fault logged to the CMC with sufficient detail to isolate the failed LRU without additional test equipment. The IPMC is the primary BITE aggregation point; it collects heater circuit health reports from the WIPS controller (wing zones 1–12), EIPC (engine inlet lip and spinner heaters per nacelle), PHC (all thirteen probe heater circuits), WHC (Captain and F/O windshield panels), and THC (drain mast and service-point heaters). The IPMC classifies each fault by type (open circuit, short circuit, overheat, current deviation, temperature sensor invalid) and severity (safety-critical, airworthiness-significant, maintenance-required), and routes the appropriate ECAM message and CMC fault code.
+The ATA 30 monitoring and diagnostics architecture for the [PROGRAMME-VARIANT] is built on the principle that every electrothermal heater element in the ice protection system must be continuously monitored, its health reported to the crew within seconds of a fault occurring, and the fault logged to the CMC with sufficient detail to isolate the failed LRU without additional test equipment. The IPMC is the primary BITE aggregation point; it collects heater circuit health reports from the WIPS controller (wing zones 1–12), EIPC (engine inlet lip and spinner heaters per nacelle), PHC (all thirteen probe heater circuits), WHC (Captain and F/O windshield panels), and THC (drain mast and service-point heaters). The IPMC classifies each fault by type (open circuit, short circuit, overheat, current deviation, temperature sensor invalid) and severity (safety-critical, airworthiness-significant, maintenance-required), and routes the appropriate ECAM message and CMC fault code.
 
-Overheat protection is a particularly important diagnostic function given the CFRP composite structure of the eWTW wing leading edge and nacelle inlet cowl. The WIPS controller hardware-latches each zone contactor on temperature exceedance; the IPMC independently monitors zone temperature telemetry and generates an OVERHEAT WARNING on ECAM if any zone temperature rises above the first (software) threshold. The hardware latch activates at a higher second threshold. This dual-threshold architecture means that the IPMC software has the first opportunity to detect an overheat trend and alert the crew before the hardware latch activates and cuts the zone. If the hardware latch activates, the IPMC detects the zone going off (loss of current despite an activate command) and logs an OVERHEAT LATCH event to CMC, distinguishing it from a simple open-circuit fault and triggering a maintenance investigation before zone re-energisation.
+Overheat protection is a particularly important diagnostic function given the CFRP composite structure of the [PROGRAMME-VARIANT] wing leading edge and nacelle inlet cowl. The WIPS controller hardware-latches each zone contactor on temperature exceedance; the IPMC independently monitors zone temperature telemetry and generates an OVERHEAT WARNING on ECAM if any zone temperature rises above the first (software) threshold. The hardware latch activates at a higher second threshold. This dual-threshold architecture means that the IPMC software has the first opportunity to detect an overheat trend and alert the crew before the hardware latch activates and cuts the zone. If the hardware latch activates, the IPMC detects the zone going off (loss of current despite an activate command) and logs an OVERHEAT LATCH event to CMC, distinguishing it from a simple open-circuit fault and triggering a maintenance investigation before zone re-energisation.
 
 ---
 
@@ -311,8 +306,8 @@ The IPMC BITE architecture provides four layers of diagnostic capability:
 
 | Info Code | Title | DMC | Status |
 |---|---|---|---|
-| 040 | System Description — ATA 30 Monitoring and Diagnostics | DMC-AMPEL360E-EWTW-030-80-040-A | Draft scaffold |
-| 400 | Fault Isolation — IPMC BITE and Heater Zone Faults | DMC-AMPEL360E-EWTW-030-80-400-A | Not started |
+| 040 | System Description — ATA 30 Monitoring and Diagnostics | DMC-<PROGRAMME>-<VARIANT>-030-80-040-A | Draft scaffold |
+| 400 | Fault Isolation — IPMC BITE and Heater Zone Faults | DMC-<PROGRAMME>-<VARIANT>-030-80-400-A | Not started |
 
 ---
 
@@ -376,7 +371,7 @@ ATA 30 CMC data: fault event log (minimum 1,000 FH retention), zone temperature 
 | Central Maintenance System | CMS | The overall maintenance information system encompassing the CMC, Portable Maintenance Device (PMD) interface, and ground station connectivity |
 | ECAM | — | Electronic Centralised Aircraft Monitor; the crew alerting and system status display system (ATA 31) presenting ATA 30 ice protection status and fault messages |
 | Fault Code | — | A structured identifier generated by the IPMC BITE on fault detection; contains subsubject, zone identifier, fault type, and severity to direct maintenance fault isolation |
-| Heater Zone Monitoring | — | The per-circuit monitoring of current, temperature, and contactor state for each electrothermal heating zone in the eWTW ice protection system |
+| Heater Zone Monitoring | — | The per-circuit monitoring of current, temperature, and contactor state for each electrothermal heating zone in the [PROGRAMME-VARIANT] ice protection system |
 | Open-Circuit Fault | OC | A fault in which electrical continuity of the heater element is lost (element fracture, connector break, or SSPC failure); detected as near-zero current on a commanded-ON circuit |
 | Short-Circuit Fault | SC | A fault in which the heater element insulation fails, causing a low-resistance path to structure or between conductors; detected as over-current |
 | Overheat Detection | OHT | The detection of a heater zone temperature above a defined threshold; triggers software advisory at Threshold 1 and hardware-latching cutout at Threshold 2 |
@@ -392,7 +387,7 @@ ATA 30 CMC data: fault event log (minimum 1,000 FH retention), zone temperature 
 | CIT-002 | FAR 25.1309 — Equipment, Systems, and Installations | Amendment 25-147 | US counterpart; dual-authority compliance |
 | CIT-003 | SAE ARP 4754A — Guidelines for Development of Civil Aircraft and Systems | Rev A | Development assurance for IPMC BITE and monitoring system at DAL B |
 | CIT-004 | SAE ARP 4761 — Guidelines and Methods for Conducting the Safety Assessment Process | Rev A | FHA and SSA methodology for ATA 30 monitoring system failure conditions |
-| CIT-005 | AMPEL360e eWTW BITE and Diagnostics Specification | TBD — programme document | Programme-level BITE coverage requirements, fault code structure, and PFR content definition |
+| CIT-005 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] BITE and Diagnostics Specification | TBD — programme document | Programme-level BITE coverage requirements, fault code structure, and PFR content definition |
 
 ---
 

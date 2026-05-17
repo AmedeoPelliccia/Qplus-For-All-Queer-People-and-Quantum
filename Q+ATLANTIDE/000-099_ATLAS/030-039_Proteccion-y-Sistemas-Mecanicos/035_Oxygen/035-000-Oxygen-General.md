@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Oxygen — General"
 file_name: "035-000-Oxygen-General.md"
 sns_reference: "035-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-035-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-035-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 35"
   - "Oxygen"
@@ -88,10 +88,12 @@ keywords:
   - "CS-25"
   - "crew oxygen"
   - "passenger oxygen"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 035-000 — Oxygen — General
-### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,37 +105,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document provides the top-level general description of ATA 35 — Oxygen — as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It establishes the scope, architectural philosophy, and functional decomposition of all oxygen systems across nine subsubjects (035-010 through 035-090).
+This document defines the agnostic ATLAS standard-level architecture context for `035-000 — Oxygen — General`.
 
-The AMPEL360e eWTW oxygen architecture comprises two primary subsystems and one ancillary category: (A) **Crew High-Pressure Gaseous Oxygen System** — high-pressure cylinder(s) with quick-donning masks (QDM) and diluter-demand regulators for the flight deck crew; (B) **Passenger Chemical Oxygen Generator (COG) System** — chemical oxygen generators pre-loaded in each passenger service unit (PSU) overhead panel, deployed automatically at cabin altitude > 14,000 ft or manually by the crew; and (C) **Portable Breathing Equipment (PBE)** — self-contained chemical PBE units and medical supplemental oxygen for cabin crew and first aid. There is no liquid oxygen (LOX) system on the AMPEL360e eWTW.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The fully electric architecture introduces specific design considerations: no bleed air is available for pressurisation, eliminating one cross-contamination failure mode; crew oxygen shutoff valve design (electric solenoid versus manual, TBD) must integrate with ECS/CPCS failure logic; and composite overwrap pressure vessel (COPV) compatibility with the CFRP fuselage structural integration requires engineering assessment. Primary Q-Division is Q-AIR; supporting Q-Divisions are Q-MECHANICS (mechanical installation), Q-DATAGOV (CSDB publication), and Q-GREENTECH (environmental compliance).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter | 35 — Oxygen |
-| Aircraft Variant | eWTW-100 (baseline) |
-| Propulsion | Full-electric (no bleed air; no hydraulic actuation) |
-| Crew Oxygen | High-pressure gaseous O₂, COPV cylinder(s) TBD, 1800/1850 psi nominal |
-| Passenger Oxygen | Chemical oxygen generators (COG) in PSU overhead panels |
-| Portable Oxygen | PBE (protective breathing equipment) + medical O₂ cylinder |
-| LOX System | None — not applicable to commercial transport |
-| Certification Basis | CS-25 Subpart K §25.1441–§25.1453; DO-160G |
-| S1000D Issue | 5.0 |
-| SNS Reference | 035-00 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-ATA 35 on the AMPEL360e eWTW encompasses all systems providing supplemental and emergency oxygen to the flight crew, passengers, and cabin crew. The architecture is stratified into three functional subsystems:
+ATA 35 on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] encompasses all systems providing supplemental and emergency oxygen to the flight crew, passengers, and cabin crew. The architecture is stratified into three functional subsystems:
 
 1. **Crew Oxygen System**: High-pressure gaseous oxygen stored in one or more COPV cylinders in the avionics bay / flight deck area. Distributed via stainless or titanium tubing through a pressure reducing valve (PRV) to diluter-demand regulators at each flight deck station. Quick-donning masks (QDM) enable one-handed donning within 5 seconds (CS-25.1447). Emergency 100% oxygen mode and pressure-demand mode available.
 
@@ -141,7 +129,7 @@ ATA 35 on the AMPEL360e eWTW encompasses all systems providing supplemental and 
 
 3. **Portable Oxygen Equipment**: Self-contained chemical PBE units for cabin crew for smoke/fire scenarios; medical supplemental oxygen cylinder for first-aid. Quantity and stowage locations per CS-25.1441 and authority requirements (TBD).
 
-eWTW-specific design considerations include: COPV cylinder structural integration with composite fuselage frames (TBD); COG thermal protection within composite PSU panels (TBD); electric solenoid crew O₂ shutoff valve integration with ECS/CPCS logic; no LOX and no OBOGS.
+[PROGRAMME-VARIANT]-specific design considerations include: COPV cylinder structural integration with composite fuselage frames (TBD); COG thermal protection within composite PSU panels (TBD); electric solenoid crew O₂ shutoff valve integration with ECS/CPCS logic; no LOX and no OBOGS.
 
 ---
 
@@ -178,7 +166,7 @@ eWTW-specific design considerations include: COPV cylinder structural integratio
 - **Crew oxygen architecture**: One (or two — TBD) high-pressure COPV cylinder(s) stowed in avionics bay or behind flight deck rear panel. Cylinder feeds a PRV that reduces system pressure to regulator supply pressure. Electric solenoid isolation valve (TBD vs. manual) allows crew shutoff. Distribution tubing routes to diluter-demand regulator at each crew station (2 pilots + 1 observer TBD). Regulator provides normal diluted O₂ / 100% O₂ / emergency pressure-demand modes. QDM enables 5-second one-handed donning per CS-25.1447.
 - **Passenger COG architecture**: COG units are self-contained line-replaceable units (LRU) pre-installed in PSU overhead panels at manufacture or before flight. No high-pressure oxygen distribution lines in cabin. Auto-deployment signal from CPCS (ATA 21) cabin altitude output. Lanyard pull on mask donning mechanically activates COG chlorate candle reaction. Heat shield required in composite PSU panel (TBD design).
 - **Portable oxygen**: PBE units stowed at cabin crew stations (forward, aft) and galley positions. Medical O₂ cylinder stowed per authority requirement (location TBD). All portable units are self-contained — no interface to fixed oxygen distribution.
-- **No LOX, no OBOGS**: The eWTW does not carry liquid oxygen or an on-board oxygen generation system. Gaseous O₂ and chemical COG are the sole oxygen sources.
+- **No LOX, no OBOGS**: The [PROGRAMME-VARIANT] does not carry liquid oxygen or an on-board oxygen generation system. Gaseous O₂ and chemical COG are the sole oxygen sources.
 - **Monitoring and diagnostics**: Crew cylinder pressure monitored by redundant pressure transducers. Data transmitted via ARINC 429 or AFDX (TBD) to ECAM/CAS. COG deployment flags per zone (if wired — TBD) transmitted to CMC. Ground maintenance via CMC maintenance terminal.
 
 ---
@@ -203,7 +191,7 @@ eWTW-specific design considerations include: COPV cylinder structural integratio
 
 ```mermaid
 flowchart LR
-    AC[AMPEL360e eWTW Aircraft] --> ATA35[ATA 35 — Oxygen]
+    AC[[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Aircraft] --> ATA35[ATA 35 — Oxygen]
     ATA35 --> SUB010[035-010 Crew Oxygen System]
     ATA35 --> SUB020[035-020 Passenger Oxygen System]
     ATA35 --> SUB030[035-030 Portable Oxygen Equipment]
@@ -337,16 +325,16 @@ ATA 35 LRUs are designed for efficient line and base maintenance:
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 035-00 | Oxygen — General | DMC-AMPEL360E-EWTW-035-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-10 | Crew Oxygen System | DMC-AMPEL360E-EWTW-035-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-20 | Passenger Oxygen System | DMC-AMPEL360E-EWTW-035-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-30 | Portable Oxygen Equipment | DMC-AMPEL360E-EWTW-035-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-40 | Oxygen Storage and Distribution | DMC-AMPEL360E-EWTW-035-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-50 | Masks, Regulators, and Dispensing Units | DMC-AMPEL360E-EWTW-035-50 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-60 | Oxygen Pressure Indication and Warning | DMC-AMPEL360E-EWTW-035-60 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-70 | Oxygen Servicing and Replenishment Interfaces | DMC-AMPEL360E-EWTW-035-70 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-80 | Oxygen Monitoring, Diagnostics, and Control Interfaces | DMC-AMPEL360E-EWTW-035-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 035-90 | S1000D CSDB Mapping and Traceability | DMC-AMPEL360E-EWTW-035-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-00 | Oxygen — General | DMC-<PROGRAMME>-<VARIANT>-035-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-10 | Crew Oxygen System | DMC-<PROGRAMME>-<VARIANT>-035-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-20 | Passenger Oxygen System | DMC-<PROGRAMME>-<VARIANT>-035-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-30 | Portable Oxygen Equipment | DMC-<PROGRAMME>-<VARIANT>-035-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-40 | Oxygen Storage and Distribution | DMC-<PROGRAMME>-<VARIANT>-035-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-50 | Masks, Regulators, and Dispensing Units | DMC-<PROGRAMME>-<VARIANT>-035-50 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-60 | Oxygen Pressure Indication and Warning | DMC-<PROGRAMME>-<VARIANT>-035-60 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-70 | Oxygen Servicing and Replenishment Interfaces | DMC-<PROGRAMME>-<VARIANT>-035-70 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-80 | Oxygen Monitoring, Diagnostics, and Control Interfaces | DMC-<PROGRAMME>-<VARIANT>-035-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-90 | S1000D CSDB Mapping and Traceability | DMC-<PROGRAMME>-<VARIANT>-035-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 
@@ -405,7 +393,7 @@ ATA 35 LRUs are designed for efficient line and base maintenance:
 | CS-25.1447 | EASA CS-25 Subpart K | Equipment standards — crew quick-donning mask; 5-second one-handed donning requirement | QDM qualification test; 5-second donning demonstration by crew | <img src="https://img.shields.io/badge/TBD-red"> |
 | CS-25.1449 | EASA CS-25 Subpart K | Means for determining supply quantity — pressure gauges or other approved means | Redundant pressure transducers; gas-law quantity indication on ECAM | <img src="https://img.shields.io/badge/TBD-red"> |
 | CS-25.1451 | EASA CS-25 Subpart K | Fire protection for oxygen equipment — materials; oxygen system fire resistance | Material qualification; fire resistance testing of tubing and fittings | <img src="https://img.shields.io/badge/TBD-red"> |
-| CS-25.1453 | EASA CS-25 Subpart K | Protection of oxygen equipment from damage — routing, protection from fuel, hydraulic, heat | Segregated routing; no hydraulic lines near O₂ tubing (eWTW: no hydraulics — verify) | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1453 | EASA CS-25 Subpart K | Protection of oxygen equipment from damage — routing, protection from fuel, hydraulic, heat | Segregated routing; no hydraulic lines near O₂ tubing ([PROGRAMME-VARIANT]: no hydraulics — verify) | <img src="https://img.shields.io/badge/TBD-red"> |
 | DO-160G | RTCA | Environmental conditions and test procedures for airborne equipment | All O₂ system LRUs environmental qualification | <img src="https://img.shields.io/badge/TBD-red"> |
 | CS-25.858 | EASA CS-25 | Cargo compartment smoke detection — cross-reference for PBE requirement | PBE quantity and location per smoke detection zones; CS-25.858 compliance | <img src="https://img.shields.io/badge/TBD-red"> |
 
@@ -441,7 +429,7 @@ ATA 35 LRUs are designed for efficient line and base maintenance:
 | continuous-flow mask | An oxygen mask that delivers a continuous stream of oxygen regardless of breathing cycle; used in passenger COG systems |
 | DO-160G | RTCA document: Environmental Conditions and Test Procedures for Airborne Equipment — qualification standard for temperature, vibration, humidity, EMC, etc. |
 | ECAM | Electronic Centralised Aircraft Monitor — the aircraft systems monitoring and alerting display system (ATA 31 interface) |
-| LOX | Liquid Oxygen — cryogenically stored oxygen; not used on the AMPEL360e eWTW or on modern commercial transport aircraft |
+| LOX | Liquid Oxygen — cryogenically stored oxygen; not used on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] or on modern commercial transport aircraft |
 | LRU | Line Replaceable Unit — a component designed for rapid replacement at line maintenance without special workshop facilities |
 | PBE | Portable Breathing Equipment — a self-contained smoke hood / chemical oxygen unit used by cabin crew during smoke or toxic fume events; minimum 15 min duration |
 | PRV | Pressure Reducing Valve — reduces high-pressure cylinder output to regulator supply pressure |
@@ -462,7 +450,7 @@ ATA 35 LRUs are designed for efficient line and base maintenance:
 | CIT-035-004 | ASD-STAN | S1000D Issue 5.0 | S1000D CSDB mapping standard for ATA 35 |
 | CIT-035-005 | FAA | TSO-C78 — Chemical Oxygen Generators | COG qualification standard (FAA reference for CS-25.1445) |
 | CIT-035-006 | FAA | TSO-C89 — Oxygen Regulators (demand) | Diluter-demand regulator qualification standard |
-| CIT-035-007 | FAA | TSO-C99 — Portable Oxygen Concentrators | Reference — not applicable (no POC on eWTW) |
+| CIT-035-007 | FAA | TSO-C99 — Portable Oxygen Concentrators | Reference — not applicable (no POC on [PROGRAMME-VARIANT]) |
 | CIT-035-008 | EASA | AMC 25.1441 — Oxygen system general requirements | Advisory material for oxygen system design and certification |
 
 ---

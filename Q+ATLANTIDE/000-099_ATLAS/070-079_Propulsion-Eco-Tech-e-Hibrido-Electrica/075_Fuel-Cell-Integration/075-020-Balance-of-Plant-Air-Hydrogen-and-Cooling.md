@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-020-BALANCE-OF-PLANT-AIR-HYDROGEN-AND-COOLING
      ATA 75 · Balance of Plant — Air, Hydrogen and Cooling
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Balance of Plant — Air, Hydrogen and Cooling
@@ -47,25 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-020"
 
 ## §1 Purpose
 
-This document defines the Balance of Plant (BoP) subsystems for the AMPEL360E eWTW Fuel Cell Module, covering three primary domains: cathode air supply, hydrogen fuel supply, and stack thermal management. The BoP is the collection of ancillary components that support the PEMFC stack cluster in maintaining optimal electrochemical operating conditions at all power levels and environmental conditions.
+This document defines the agnostic ATLAS standard-level architecture context for `Balance of Plant — Air, Hydrogen and Cooling`.
 
-The cathode air subsystem comprises the BoP Air Compressor (ABoP-C), a twin-spool electric scroll compressor delivering 0.15–0.35 kg/s of compressed, humidified air to the cathode manifolds at 1.5–2.5 bar. The hydrogen fuel subsystem includes dual-redundant pressure regulators (PR-075-A/B) reducing cryogenic tank pressure (~350 bar from ATA 76) to stack inlet pressure (2.0–2.5 bar) through a particulate filter and flow control valve. The thermal management subsystem employs dual DI water pumps (DWP-A/B) circulating deionised water through bipolar plate cooling channels and a ventral fuselage plate heat exchanger (HEX-075) rejecting up to 60 kW of waste heat.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-All three BoP subsystems are controlled by the FCCU using closed-loop algorithms: cathode air flow is regulated by ABoP-C speed control; H2 supply pressure is maintained by proportional pressure regulation; and coolant temperature is controlled by DWP speed modulation and FCPC load-following. The FCCU monitors all BoP sensor data and generates AFDX health reports to CMS at 100 ms intervals.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-020 — Balance of Plant Air, Hydrogen and Cooling |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Cathode Air Supply**: The ABoP-C is a twin-spool electric scroll compressor drawing from the aircraft's ram air inlet (ATA 66). It delivers cathode air at a mass flow rate of 0.15–0.35 kg/s depending on power demand, compressed to 1.5–2.5 bar. Air passes through an inline particulate filter (PF-CAT-075), then through the membrane humidifier (MH-075) which adds moisture recovered from cathode exhaust to maintain inlet relative humidity ≥70 % RH. A cathode air flow sensor (CFS-075) and pressure transducer (PT-CAT-075) provide closed-loop feedback to the FCCU. A bypass valve (BV-CAT-075) allows air flow diversion during stack warm-up below 60 °C.

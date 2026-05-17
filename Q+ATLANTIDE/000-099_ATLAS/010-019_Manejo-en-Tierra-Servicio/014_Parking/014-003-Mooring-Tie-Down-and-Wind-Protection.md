@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 014 · Subsubject 003 — Mooring, Tie-Down and Wind Protection
 
 ## 1. Purpose
 
-Defines the **step-level procedures** for mooring (tie-down) AMPEL360 aircraft against wind loads, including approved tie-down point locations, rig configuration, gust lock application, and control surface lock-out. This subsubject covers the transition from normal parking to **wind-protection state** and the conditions that require it.
+Defines the **step-level procedures** for mooring (tie-down) [PROGRAMME-AIRCRAFT] aircraft against wind loads, including approved tie-down point locations, rig configuration, gust lock application, and control surface lock-out. This subsubject covers the transition from normal parking to **wind-protection state** and the conditions that require it.
 
 > **Scope boundary:** Conceptual definitions of mooring, gust locks, and storage states are in [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/003_Mooring-Storage-and-Return-to-Service.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/003_Mooring-Storage-and-Return-to-Service.md) (Level 1). This subsubject provides the **operational procedure** (Level 2). Long-term storage preservation (> 90 days) is in the AMM.
 
@@ -51,7 +53,7 @@ Mooring shall be applied when **any one** of the following conditions is met:
 
 ### 2.2 Approved tie-down points
 
-Tie-down forces shall be applied **only at approved hard-points** designed to accept rated tie-down loads. Approved locations for AMPEL360 variants are specified in the GHM and AMM Chapter 10. The following are the canonical tie-down point categories:
+Tie-down forces shall be applied **only at approved hard-points** designed to accept rated tie-down loads. Approved locations for [PROGRAMME-AIRCRAFT] variants are specified in the GHM and AMM Chapter 10. The following are the canonical tie-down point categories:
 
 | Location | Point type | Notes |
 |---|---|---|

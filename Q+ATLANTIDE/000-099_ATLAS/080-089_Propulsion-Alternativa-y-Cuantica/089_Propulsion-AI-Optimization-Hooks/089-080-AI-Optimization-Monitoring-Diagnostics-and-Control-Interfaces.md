@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0089-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-089-080-AI-OPTIMIZATION-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATLAS-089 (Propulsion AI Optimization Hooks) · AI Optimization Monitoring, Diagnostics and Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # AI Optimization Monitoring, Diagnostics and Control Interfaces
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-080"
 
 ## §1 Purpose
 
-ATLAS subsubject 089-080 defines the monitoring, diagnostics, and control interface architecture for the AMPEL360E eWTW PAIO system. It covers the AIOCU BITE architecture (power-up, continuous, and maintenance tiers), the AI explainability logging framework, the AFDX virtual link network topology, the cockpit synoptic display, and the ground support equipment interface.
+This document defines the agnostic ATLAS standard-level architecture context for `AI Optimization Monitoring, Diagnostics and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 AIOCU BITE Architecture
 
 The AIOCU implements a three-tier BITE system:

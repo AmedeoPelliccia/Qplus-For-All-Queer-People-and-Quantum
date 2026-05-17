@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · Section 05 · Subsection 050 · Subsubject 050 — Applicability and Effectivity
@@ -32,7 +34,7 @@ language: en
 
 Subsubject-level index for *Applicability and Effectivity* (`050`) within subsection `050` *General* of ATLAS `050-059` — *Estructuras*.
 
-This subsubject defines the rules, data structures, and governance processes used to manage programme applicability and aircraft effectivity for all AMPEL360 eWTW structural documentation: from serial-number block assignments through retrofit and service-bulletin effectivity to S1000D CSDB traceability.
+This subsubject defines the rules, data structures, and governance processes used to manage programme applicability and aircraft effectivity for all [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural documentation: from serial-number block assignments through retrofit and service-bulletin effectivity to S1000D CSDB traceability.
 
 ## 2. Document Index
 

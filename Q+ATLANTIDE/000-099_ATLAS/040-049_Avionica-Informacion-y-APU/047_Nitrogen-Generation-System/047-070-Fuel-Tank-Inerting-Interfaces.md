@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 070 — Fuel Tank Inerting Interfaces
@@ -43,9 +45,9 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the Fuel Tank Inerting Interfaces sub-system of ATA 47 NGS for the AMPEL360E eWTW. This sub-system covers the physical and functional interface between the NGS (ATA 47) and the Fuel System (ATA 28), including NEA feed points into each fuel tank, TOMS sensor installation in tank access panels, sparge tube routing inside tank structures, and coordination with the fuel vent system during NEA fill.
+This document defines the Fuel Tank Inerting Interfaces sub-system of ATA 47 NGS for the programme-defined aircraft type. This sub-system covers the physical and functional interface between the NGS (ATA 47) and the Fuel System (ATA 28), including NEA feed points into each fuel tank, TOMS sensor installation in tank access panels, sparge tube routing inside tank structures, and coordination with the fuel vent system during NEA fill.
 
-The AMPEL360E eWTW is an all-electric aircraft with **no engine bleed-air**, eliminating the thermal interactions between engine bleed ducting and fuel tanks that are present on conventional aircraft. The NGS interfaces with three fuel tank groups: inner wing tanks, outer wing tanks, and a center fuselage tank. A future eWTW variant may include LH₂ (Liquid Hydrogen) tanks; this document notes the interface requirement but defers LH₂ NGS interface design to that variant's programme phase.
+The programme-defined aircraft type is an all-electric aircraft with **no engine bleed-air**, eliminating the thermal interactions between engine bleed ducting and fuel tanks that are present on conventional aircraft. The NGS interfaces with three fuel tank groups: inner wing tanks, outer wing tanks, and a center fuselage tank. A future [PROGRAMME-VARIANT] variant may include LH₂ (Liquid Hydrogen) tanks; this document notes the interface requirement but defers LH₂ NGS interface design to that variant's programme phase.
 
 Key governance areas:
 - NEA feed points (access panel / duct penetration) per tank group.
@@ -53,7 +55,7 @@ Key governance areas:
 - NEA sparge tube routing inside each tank ullage (ATA 28 structural interface).
 - Fuel vent system coordination during NGS inerting (pressure equalisation).
 - NEA injection pressure limit: < 2 psig differential above tank ullage pressure.
-- No fuel heating from engine bleed (eWTW specific — no thermal NGS-fuel interaction).
+- No fuel heating from engine bleed ([PROGRAMME-VARIANT] specific — no thermal NGS-fuel interaction).
 - LH₂ variant NGS interface: deferred (flagged TBD in §3.1).
 - Primary Q-Division: Q-AIR; Support: Q-MECHANICS.
 
@@ -63,7 +65,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter / Sub-subject | ATA 47.070 — Fuel Tank Inerting Interfaces |
 | Peer ATA Chapter | ATA 28 — Fuel System |
 | Certification Basis | CS-25 Amendment 28; FAR 25.981; SFAR 88 |
@@ -127,11 +129,11 @@ graph TD
 
 ## §4. System Architecture
 
-The structural interface design between the NGS ducts and the ATA 28 fuel tank structures is a critical airworthiness interface. All tank penetrations are designed as sealed fittings maintaining the fuel tank structural pressure envelope and providing fuel vapour containment. Design requirements for the penetration fittings are governed by CS-25 §25.963 (Fuel Tanks — General) and the AMPEL360E eWTW fuel system structural design authority (Q-MECHANICS / structures).
+The structural interface design between the NGS ducts and the ATA 28 fuel tank structures is a critical airworthiness interface. All tank penetrations are designed as sealed fittings maintaining the fuel tank structural pressure envelope and providing fuel vapour containment. Design requirements for the penetration fittings are governed by CS-25 §25.963 (Fuel Tanks — General) and the programme-defined aircraft type fuel system structural design authority (Q-MECHANICS / structures).
 
 The fuel vent system (ATA 28 vent sub-system) operates passively; no active commands from the NGS are sent to vent valves. The NGS NEA flow rate is bounded to ensure that the rate of O₂ displacement in the ullage does not exceed the vent system capacity, preventing tank over-pressure. The maximum NEA injection rate per tank is set below the vent system relief flow rate by a margin of at least 20% (exact values TBD pending ATA 28 vent sizing).
 
-On the eWTW, there is **no fuel heating from engine bleed**: conventional aircraft use bleed air for fuel system de-icing via fuel heater heat exchangers, creating a thermal coupling between the NGS air supply and fuel temperature. The eWTW eliminates this coupling entirely, simplifying the NGS-ATA 28 interface.
+On the [PROGRAMME-VARIANT], there is **no fuel heating from engine bleed**: conventional aircraft use bleed air for fuel system de-icing via fuel heater heat exchangers, creating a thermal coupling between the NGS air supply and fuel temperature. The [PROGRAMME-VARIANT] eliminates this coupling entirely, simplifying the NGS-ATA 28 interface.
 
 ### Diagram 2: Fuel Tank NGS Interface Data and Signal Flow
 
@@ -226,10 +228,10 @@ stateDiagram-v2
 - **Fuel vapour containment**: All NEA feed penetrations are sealed fittings; fuel vapour cannot migrate along NEA ducts toward the NGS bay or distribution system.
 - **Check valves on NEA branches**: CCVs prevent fuel vapour from entering NEA manifold during pressure transients (e.g., wing flex during manoeuvres).
 - **Injection pressure limit**: PRV and FCV combination ensures NEA injection pressure does not exceed structural differential limit of fuel tank (< 2 psig).
-- **No bleed-air thermal interaction**: eWTW all-electric architecture eliminates hot bleed-air proximity to fuel tanks, removing a conventional aircraft fire risk mode.
+- **No bleed-air thermal interaction**: [PROGRAMME-VARIANT] all-electric architecture eliminates hot bleed-air proximity to fuel tanks, removing a conventional aircraft fire risk mode.
 - **Vent system compatibility**: NGS NEA flow rate is bounded below vent system relief capacity, preventing tank over-pressurisation.
 - **TOMS probe sealing**: Dual-seal elastomer boss prevents fuel vapour from leaking into the TOMS sensor signal path or NGS control circuitry.
-- **LH₂ variant deferred**: LH₂ fuel tank inerting requirements (H₂ concentration limits, cryogenic temperatures) are materially different; design is deferred to maintain focus on Jet-A eWTW baseline.
+- **LH₂ variant deferred**: LH₂ fuel tank inerting requirements (H₂ concentration limits, cryogenic temperatures) are materially different; design is deferred to maintain focus on Jet-A [PROGRAMME-VARIANT] baseline.
 
 ---
 
@@ -253,7 +255,7 @@ stateDiagram-v2
 - ATA 28 ICD (Interface Control Document) defines permissible NGS duct penetration locations and structural fitting requirements; version-controlled jointly by Q-AIR and Q-MECHANICS.
 - TOMS probe part number and seal type recorded in aircraft technical log at each replacement.
 - Fuel tank inerting time data (from TOMS) recorded in QAR for analysis and inerting effectiveness validation.
-- eWTW-specific configuration flag in NGSCU: `BLEF=TRUE` (no bleed), `LH2_VARIANT=FALSE` (Jet-A baseline).
+- [PROGRAMME-VARIANT]-specific configuration flag in NGSCU: `BLEF=TRUE` (no bleed), `LH2_VARIANT=FALSE` (Jet-A baseline).
 
 ---
 
@@ -316,7 +318,7 @@ stateDiagram-v2
 | Sparge tube | — | Perforated titanium tube inside tank ullage distributing NEA uniformly to prevent O₂ pockets |
 | Tank ullage | — | Gas space above the fuel surface in a fuel tank; target for NEA inerting |
 | Vent valve | — | Passive ATA 28 component venting tank ullage gas overboard during fuel burn and inerting fill |
-| Liquid Hydrogen | LH₂ | Cryogenic fuel for future eWTW variant; NGS interface requirements deferred |
+| Liquid Hydrogen | LH₂ | Cryogenic fuel for future [PROGRAMME-VARIANT] variant; NGS interface requirements deferred |
 | NEA | — | Nitrogen-Enriched Air (~95% N₂); injected into tank ullage to displace O₂ |
 | Inerting | — | Process of reducing ullage O₂ below the flammability limit (< 9% by volume) via NEA injection |
 | TOMS | — | Tank Oxygen Monitoring System; O₂ sensor probe in each fuel tank ullage |

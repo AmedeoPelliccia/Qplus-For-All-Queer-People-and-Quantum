@@ -16,14 +16,16 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0081-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
-<!-- ATLAS-081-070 | Hybrid Classical-Quantum Simulation Workflow | AMPEL360E eWTW | ATLAS-1000
-     Aircraft: AMPEL360E eWTW | Register: ATLAS-1000 | Section: 080-089 | Subsection: 081-070
+<!-- ATLAS-081-070 | Hybrid Classical-Quantum Simulation Workflow | programme-defined aircraft type | ATLAS-1000
+     Aircraft: programme-defined aircraft type | Register: ATLAS-1000 | Section: 080-089 | Subsection: 081-070
      BREX: BREX-081-v1 | Controller: QOCMU (DAL B, dual-channel) | QPU: 12-qubit trapped-ion
      Primary Q-Division: Q-HPC | Status: DRAFT v0.1 | Date: 2026-05-12
-     S1000D DMC: DMC-AMPEL360E-EWTW-0081-070-00A-040A-EN-US
+     S1000D DMC: DMC-<PROGRAMME>-<VARIANT>-0081-070-00A-040A-EN-US
      Related DMs: DM-081-022 (Descriptive), DM-081-023 (In-Flight Validation), DM-081-024 (Fallback Test) -->
 
 # Hybrid Classical-Quantum Simulation Workflow
@@ -50,44 +52,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-070"
 
 ## §1 Purpose
 
-This document defines the **integrated hybrid classical-quantum simulation workflow architecture**
-for the QOCM system of the AMPEL360E eWTW, describing:
+This document defines the agnostic ATLAS standard-level architecture context for `Hybrid Classical-Quantum Simulation Workflow`.
 
-1. **Ground Simulation Mode** — Full three-dimensional LES (Large Eddy Simulation) CFD with quantum
-   kinetics (QCKS), reaction pathway optimization (QRPO), and turbulence-combustion coupling (QTCC)
-   executed on the GAIA HPC cluster in collaboration with the embedded QPU environment, producing
-   the PLT-081-001 LUT and FADEC staging schedule files.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-2. **In-Flight Real-Time Mode** — Onboard QOCMU executes the reduced quantum-enhanced combustion
-   model at 20 Hz FADEC update and 0.5/2 Hz staging update using the pre-loaded PLT-081-001 LUT.
-
-3. **Classical Fallback Mode** — Triggered by QOCMU fault conditions; FADEC operates on stored
-   classical staging tables without real-time quantum update.
-
-The document also specifies the **Quantum Task Queue (QTQ-081)** orchestration layer, the PLT-081-001
-file transfer protocol (GAIA HPC to QOCMU NVMe), FADEC data exchange protocol, QPU decoherence
-recovery procedures, and hybrid workflow validation criteria.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute              | Value                                                             |
-|------------------------|-------------------------------------------------------------------|
-| **Aircraft**           | AMPEL360E eWTW (all production variants)                         |
-| **Engine**             | Q-TURBOFAN-Hyb-01 (multi-fuel annular combustor)                 |
-| **Register**           | ATLAS-1000                                                       |
-| **Section**            | 080-089 Propulsion Alternativa y Cuántica                        |
-| **Subsection**         | 081 Quantum-Optimized Combustion Models                          |
-| **Sub-subject**        | 070 Hybrid Classical-Quantum Simulation Workflow                 |
-| **BREX**               | BREX-081-v1                                                      |
-| **Ground Platform**    | GAIA HPC Cluster (Q-HPC cloud infrastructure)                    |
-| **Onboard Platform**   | QOCMU — 12-qubit trapped-ion QPU + Intel Xeon CPU + 64 GB DDR5  |
-| **FADEC Interface**    | ATA 73 via AFDX VL-081-03/04/08                                   |
-| **S1000D DMC**         | DMC-AMPEL360E-EWTW-0081-070-00A-040A-EN-US                      |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `081` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 Three-Tier Hybrid Workflow Architecture

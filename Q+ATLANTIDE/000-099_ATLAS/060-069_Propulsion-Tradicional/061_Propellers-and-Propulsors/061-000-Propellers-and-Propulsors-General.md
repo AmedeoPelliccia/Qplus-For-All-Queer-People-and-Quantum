@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0061-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-061-000-PROPELLERS-AND-PROPULSORS-GENERAL
      ATA 61 · Propellers and Propulsors General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propellers and Propulsors General
@@ -47,29 +49,26 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-000"
 
 ## §1 Purpose
 
-This document establishes the general scope, design baseline, and top-level architecture for the propeller and propulsor systems on the AMPEL360E eWTW aircraft. ATA Chapter 61 covers all rotating propulsor assemblies that deliver thrust directly to the air mass through blade action, including fixed-pitch, variable-pitch, and ducted configurations.
+This document defines the agnostic ATLAS standard-level architecture context for `Propellers and Propulsors General`.
 
-For the AMPEL360E eWTW, the baseline propulsion system uses high-bypass turbofan engines; however, the programme architecture includes provisions for distributed electric propulsor modules on the wing trailing edge. This chapter covers both conventional propeller-based propulsors (if used in a turboprop or propfan study) and any supplementary electric ducted fans integrated with the eWTW design. The overarching design requirement is that all propulsor assemblies must be certifiable to EASA CS-25 and must interface cleanly with the all-electric FADEC/ECU architecture of the AMPEL360E.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 61-000 — Propellers and Propulsors General |
-| Certification basis | EASA CS-25 Amendment 27+ |
-| S1000D SNS | 061-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `061` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The ATA 61 architecture defines three propulsor configuration classes for the AMPEL360E:
+The ATA 61 architecture defines three propulsor configuration classes for the [PROGRAMME-AIRCRAFT]:
 1. **Class A — Turbofan nacelle propulsor** (high-bypass, engine-driven, primary thrust).
 2. **Class B — Supplementary electric ducted fan** (wing-integrated, HVDC-driven from ATA 24).
-3. **Class C — Propeller/propulsor study variant** (turboprop or open rotor, not baselined for eWTW but architecturally accommodated in ATA 61 SNS).
+3. **Class C — Propeller/propulsor study variant** (turboprop or open rotor, not baselined for [PROGRAMME-VARIANT] but architecturally accommodated in ATA 61 SNS).
 The General document establishes the common design intent, applicable standards, and interface constraints that apply equally to all three classes.
 
 ---
@@ -113,7 +112,7 @@ flowchart TB
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
 | Turbofan nacelle propulsor (Class A) | High-bypass turbofan — OEM TBD | 2 | Wing-mounted under-wing nacelles | On-condition / engine overhaul cycle | TBD |
-| Supplementary electric ducted fan (Class B) | AMPEL360E-EDF-001 — TBD | TBD | Wing trailing edge TE-2 stations | On-condition / EDF maintenance cycle | TBD |
+| Supplementary electric ducted fan (Class B) | [PROGRAMME-AIRCRAFT]-EDF-001 — TBD | TBD | Wing trailing edge TE-2 stations | On-condition / EDF maintenance cycle | TBD |
 | Propulsor nacelle structure | Programme drawing — nacelle OEM | 2 | Wing nacelle attachment | Periodic inspection per SRM | TBD |
 
 ---
@@ -211,12 +210,12 @@ flowchart TB
 | **TCDS** | Type Certificate Data Sheet — the official document issued by a regulatory authority summarising the type certificate conditions. |
 | **High-bypass turbofan** | Turbofan engine with a bypass ratio > 5:1, providing high propulsive efficiency at subsonic cruise speeds. |
 | **Propulsor** | Generic term for any device that produces thrust by accelerating a fluid; includes propellers, fans, and ducted fans. |
-| **Class A propulsor** | Turbofan nacelle propulsor — the primary thrust-producing unit on the AMPEL360E eWTW. |
+| **Class A propulsor** | Turbofan nacelle propulsor — the primary thrust-producing unit on the programme-defined aircraft type. |
 | **Class B propulsor** | Supplementary electric ducted fan — wing-integrated, HVDC-powered fan for supplementary thrust. |
 | **Bypass ratio** | Ratio of the mass flow through the fan bypass duct to the mass flow through the core of a turbofan engine. |
 | **ATA 61** | Aircraft maintenance chapter covering propellers, propulsors, and associated systems. |
 | **CS-25 §25.901** | EASA standard requiring powerplant installations to be safe under all likely operating conditions. |
-| **CCB** | Configuration Control Board — the authority governing configuration changes to the AMPEL360E baseline. |
+| **CCB** | Configuration Control Board — the authority governing configuration changes to the [PROGRAMME-AIRCRAFT] baseline. |
 
 ---
 
@@ -258,4 +257,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

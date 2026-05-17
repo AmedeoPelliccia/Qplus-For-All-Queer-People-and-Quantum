@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 000 — Emergency Solar Panel System General
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document establishes the top-level concept, functional allocation, architectural rationale, safety philosophy, and compliance framework for the Emergency Solar Panel System (ESPS) of the AMPEL360E eWTW aircraft. The ESPS provides a supplementary emergency electrical power source activated automatically on loss of all engine-driven generators, supplementing the Ram Air Turbine (RAT) and emergency batteries to extend safe flight and landing capability.
+This document establishes the top-level concept, functional allocation, architectural rationale, safety philosophy, and compliance framework for the Emergency Solar Panel System (ESPS) of the programme-defined aircraft type. The ESPS provides a supplementary emergency electrical power source activated automatically on loss of all engine-driven generators, supplementing the Ram Air Turbine (RAT) and emergency batteries to extend safe flight and landing capability.
 
 Key governance areas:
 - ESPS system boundaries, power generation capacity, and deployment philosophy.
@@ -53,18 +55,18 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 43 (ATLAS 043) — Emergency Solar Panel System |
 | Certification Basis | CS-25 Amendment 28; CS-25 §25.1309; DO-160G |
 | Applicable Standards | DO-160G; DO-254; DO-178C; ARP4754B; IEC 61215 (PV qualification) |
 | Design Assurance Level | System: DAL B; Deployment control: DAL B; PV cells: DAL C |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E ESPS is a deployable photovoltaic array integrated on the upper wing surface. Under normal flight conditions, the solar panels are stowed flush with the wing skin. On detection of total generator loss (all engine-driven generators and APU generator failed), the ESPS automatically deploys within 30 seconds, exposing the GaAs triple-junction photovoltaic array to ambient sunlight.
+The [PROGRAMME-AIRCRAFT] ESPS is a deployable photovoltaic array integrated on the upper wing surface. Under normal flight conditions, the solar panels are stowed flush with the wing skin. On detection of total generator loss (all engine-driven generators and APU generator failed), the ESPS automatically deploys within 30 seconds, exposing the GaAs triple-junction photovoltaic array to ambient sunlight.
 
 Key system parameters:
 - **Peak power output:** 8 kW at AM1.5 solar irradiance (1000 W/m²), full array deployed.
@@ -367,10 +369,10 @@ graph LR
 
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
-| REF-043-01 | AMPEL360E Emergency Power Architecture | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-043-01 | [PROGRAMME-AIRCRAFT] Emergency Power Architecture | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-043-02 | ATLAS 043 README — ESPS Subsection Index | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-043-03 | AMPEL360E Functional Hazard Assessment — ESPS | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-043-04 | AMPEL360E ESPS Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-043-03 | [PROGRAMME-AIRCRAFT] Functional Hazard Assessment — ESPS | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-043-04 | [PROGRAMME-AIRCRAFT] ESPS Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

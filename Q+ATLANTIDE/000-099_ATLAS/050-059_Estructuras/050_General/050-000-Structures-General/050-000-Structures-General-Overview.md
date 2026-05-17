@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Structures General Overview
 
 ## 1. Purpose
 
-Provides the **programme-level overview** of the AMPEL360 eWTW structural system: its design objectives, regulatory context (CS-25 / FAR 25), the electric-WetThroughWing (eWTW) structural philosophy, and the relationship between the structural architecture and the Q+ATLANTIDE digital thread.
+Provides the **programme-level overview** of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural system: its design objectives, regulatory context (CS-25 / FAR 25), the electric-WetThroughWing ([PROGRAMME-VARIANT]) structural philosophy, and the relationship between the structural architecture and the Q+ATLANTIDE digital thread.
 
 This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline].
 
@@ -39,7 +41,7 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ### 2.1 Programme Structural Context
 
-The AMPEL360 eWTW is a wide-body civil transport aircraft featuring a blended-wing/conventional fuselage hybrid ("WetThroughWing") configuration. The primary structural concept is:
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] is a wide-body civil transport aircraft featuring a blended-wing/conventional fuselage hybrid ("WetThroughWing") configuration. The primary structural concept is:
 
 - **All-composite primary structure** (CFRP fuselage barrel, CFRP wing box, CFRP empennage) with metallic fittings at high-load interfaces.
 - **Electric-only power and propulsion** — no engine-bleed structural loads on pylon; all EMA actuator attachment loads included in structural design basis.
@@ -54,7 +56,7 @@ The AMPEL360 eWTW is a wide-body civil transport aircraft featuring a blended-wi
 | FAR 25 Subpart C | US market certification mirror |
 | CS-25 Appendix K | Composite structure special conditions |
 | DO-326A / ED-202A | Airworthiness security — cyber-physical structural monitoring |
-| EASA SC-VTOL (informative) | eWTW novel configuration structural aspects |
+| EASA SC-VTOL (informative) | [PROGRAMME-VARIANT] novel configuration structural aspects |
 
 ### 2.3 Structural Document Hierarchy
 

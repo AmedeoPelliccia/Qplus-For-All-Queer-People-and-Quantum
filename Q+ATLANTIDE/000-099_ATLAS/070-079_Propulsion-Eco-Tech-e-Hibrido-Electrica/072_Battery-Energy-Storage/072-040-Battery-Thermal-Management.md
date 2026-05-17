@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Battery Thermal Management
@@ -33,15 +35,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-040"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document defines the thermal management architecture for the AMPEL360E eWTW battery system, covering the glycol-water cooling loop design, heating provisions, thermal control valve logic, and interfaces with the aircraft thermal management system (TMS).
 
+This document defines the agnostic ATLAS standard-level architecture context for `Battery Thermal Management`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
 
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-The AMPEL360E battery thermal management system maintains each cell within the target operating temperature range of 20–30°C during discharge and 10–35°C during ground charging. A dedicated glycol-water (50/50 EG/water) coolant loop serves each battery pack, with coolant supplied by an electrically driven pump at a flow rate of up to 20 L/min per bay. The coolant circulates through the base cooling plates of each module, extracting up to 30 kW of heat per bay under peak discharge conditions.
+The [PROGRAMME-AIRCRAFT] battery thermal management system maintains each cell within the target operating temperature range of 20–30°C during discharge and 10–35°C during ground charging. A dedicated glycol-water (50/50 EG/water) coolant loop serves each battery pack, with coolant supplied by an electrically driven pump at a flow rate of up to 20 L/min per bay. The coolant circulates through the base cooling plates of each module, extracting up to 30 kW of heat per bay under peak discharge conditions.
 
 Hot coolant from the battery loop is routed to a battery heat exchanger (BTHX) where heat is rejected to the aircraft ram-air circuit or to a dedicated radiator depending on ground/flight mode. Coolant temperature is regulated by a three-way thermal control valve (TCV) that blends bypass flow to maintain the target battery inlet temperature of 22°C ±3°C. An electric heater element (400 W per bay) provides pre-conditioning capability for cold-soak scenarios, activated by the BMS when cell temperature falls below 10°C before charging or high-rate discharge.
 
@@ -132,7 +142,7 @@ graph LR
 
 ## §11 Safety, Redundancy and Fault Tolerance
 - T2 alarm (45°C) activates current derating before approaching cell thermal limits, providing graduated response.
-- T3 alarm (55°C) commands immediate contactor open; contactors rated for 800V interruption under full current.
+- T3 alarm (55°C) commands immediate contactor open; contactors rated for <NOMINAL-VOLTAGE> interruption under full current.
 - Coolant loss detection via flow meter; loss of flow triggers T2-equivalent derate within one BMS monitoring cycle (100 ms).
 - Heater element has over-temperature fuse to prevent runaway heating if coolant flow is lost.
 - Glycol-water coolant is non-flammable and compatible with battery bay materials; leak containment tray provided.
@@ -140,12 +150,12 @@ graph LR
 ## §12 Maintenance and Diagnostics
 | Task | Interval | Tool | Reference |
 |---|---|---|---|
-| Coolant concentration and pH check | 1000 FH / Annual | Coolant refractometer | AMM 072-40-01 |
-| Coolant level check and top-up | A-Check | Visual gauge | AMM 072-40-02 |
-| Pump flow rate test | 500 FH | GSE flow bench | AMM 072-40-03 |
-| TCV functional check | B-Check | GSE-BMS-DIAG-01 | AMM 072-40-04 |
-| BTHX external fin inspection and cleaning | C-Check | Foam cleaner kit | AMM 072-40-05 |
-| Pre-heater element resistance check | Annual | DMM | AMM 072-40-06 |
+| Coolant concentration and pH check | 1000 FH / Annual | Coolant refractometer | AMM [NODE]-[TASK] |
+| Coolant level check and top-up | A-Check | Visual gauge | AMM [NODE]-[TASK] |
+| Pump flow rate test | 500 FH | GSE flow bench | AMM [NODE]-[TASK] |
+| TCV functional check | B-Check | GSE-BMS-DIAG-01 | AMM [NODE]-[TASK] |
+| BTHX external fin inspection and cleaning | C-Check | Foam cleaner kit | AMM [NODE]-[TASK] |
+| Pre-heater element resistance check | Annual | DMM | AMM [NODE]-[TASK] |
 
 ## §13 Footprint
 | Metric | Value |

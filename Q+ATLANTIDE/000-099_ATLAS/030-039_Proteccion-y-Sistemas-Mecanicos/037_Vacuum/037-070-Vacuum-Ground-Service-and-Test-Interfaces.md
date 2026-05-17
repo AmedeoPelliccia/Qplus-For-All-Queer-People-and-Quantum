@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Vacuum Ground Service and Test Interfaces"
 file_name: "037-070-Vacuum-Ground-Service-and-Test-Interfaces.md"
 sns_reference: "037-70"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-70"
-programme: "AMPEL360e eWTW"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "AMPEL360e-eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-70"
+programme: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE ATLAS"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "030-039 Protection and Mechanical Systems"
@@ -43,10 +43,12 @@ review_status: "PENDING"
 lifecycle_phase: "LC02 — System Definition"
 traceability: ["CS-25.1438", "CS-25.1301", "CS-25.1309", "AMC 25.831"]
 keywords: ["ATA 37", "Vacuum", "ground service", "waste drain", "lavatory service", "vacuum test", "VRV test", "leak test", "service panel"]
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-070 — Vacuum Ground Service and Test Interfaces
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">
 **Revision:** 0.1.0 | **Created:** 2025-07-14 | **Updated:** 2025-07-14
@@ -61,26 +63,20 @@ All links in this document are relative within the Q+ATLANTIDE ATLAS repository 
 
 ## §1 Purpose
 
-This document defines the **ground service and ground test interfaces** for the ATA 37 Vacuum System on the AMPEL360e eWTW. It covers the waste drain ground service procedure, the ground service panel design concept, the vacuum system ground test sequence (including VRV pop-test and vacuum decay leak test), and the interfaces between the aircraft vacuum system and ground support equipment (GSE).
+This document defines the agnostic ATLAS standard-level architecture context for `037-070 — Vacuum Ground Service and Test Interfaces`.
 
-**Key focus:** Efficient turn-around lavatory servicing and maintainable vacuum system integrity verification on the ground.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
-|------|-------|
-| Aircraft Programme | AMPEL360e eWTW |
-| ATA Chapter | 37 — Vacuum |
-| Subsubject | 037-70 — Ground Service and Test Interfaces |
-| Certification Basis | CS-25 Amendment 27 (TBD) |
-| Applicable Standards | CS-25.1438, CS-25.1301, CS-25.1309 |
-| Revision Status | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Configuration | ~100-pax single-aisle electric |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 Ground Service Operations Summary
@@ -392,12 +388,12 @@ During ground test, the following are recorded in CMC:
 
 | DM Code | Info Code | Title | Status |
 |---------|-----------|-------|--------|
-| DMC-AMPEL360E-EWTW-037-70-00-00A-040A-A | 040 | Ground Service and Test — Description | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-300A-A | 300 | Vacuum System Functional Test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-300B-A | 300 | Vacuum Decay Leak Test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-300C-A | 300 | VRV Pop-Test Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-400A-A | 400 | Vacuum System Fault Isolation (Ground) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-300D-A | 300 | Waste Drain and Line Rinse Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-70-00-00A-040A-A | 040 | Ground Service and Test — Description | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-70-00-00A-300A-A | 300 | Vacuum System Functional Test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-70-00-00A-300B-A | 300 | Vacuum Decay Leak Test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-70-00-00A-300C-A | 300 | VRV Pop-Test Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-70-00-00A-400A-A | 400 | Vacuum System Fault Isolation (Ground) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-70-00-00A-300D-A | 300 | Waste Drain and Line Rinse Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -451,7 +447,7 @@ During ground test, the following are recorded in CMC:
 
 | Term | Definition |
 |------|-----------|
-| ADIRU | Air Data Inertial Reference Unit — solid-state; no vacuum connection on eWTW |
+| ADIRU | Air Data Inertial Reference Unit — solid-state; no vacuum connection on [PROGRAMME-VARIANT] |
 | ATA 37 | Air Transport Association chapter for Vacuum systems |
 | CMC | Central Maintenance Computer |
 | CS-25.1438 | EASA CS for vacuum/pneumatic plumbing integrity |
@@ -461,7 +457,7 @@ During ground test, the following are recorded in CMC:
 | GPU | Ground Power Unit — provides 115 VAC / 400 Hz (TBD) for ground testing |
 | GSE | Ground Support Equipment — lavatory service truck, GPU, test equipment |
 | GSP | Ground Service Panel — integrated panel providing all ground service access points |
-| Gyroscopic instruments | Vacuum-driven AI, DI, TC — **eliminated on eWTW** |
+| Gyroscopic instruments | Vacuum-driven AI, DI, TC — **eliminated on [PROGRAMME-VARIANT]** |
 | Manifold | Vacuum distribution header |
 | NRV | Non-Return Valve |
 | Odour filter | Activated carbon filter — replacement interval per OI-037-006 |
@@ -523,5 +519,5 @@ During ground test, the following are recorded in CMC:
 | 0.1.0 | 2025-07-14 | AI-assisted scaffold | Initial scaffold — §0–§22 populated; ground service and test procedures defined as concept; all acceptance criteria TBD |
 
 ---
-*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-070 Ground Service and Test Interfaces — AMPEL360e eWTW*
+*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-070 Ground Service and Test Interfaces — [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]*
 *Classification: UNCLASSIFIED — ENGINEERING SCAFFOLD*

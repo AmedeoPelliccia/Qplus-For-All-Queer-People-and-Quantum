@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 000 — Integrated Modular Avionics General
@@ -38,13 +40,13 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document establishes the top-level description, functional allocation, architectural rationale, and compliance framework for the Integrated Modular Avionics (IMA) system of the AMPEL360E eWTW aircraft. The IMA architecture consolidates previously federated Line Replaceable Units (LRUs) into shared computing platforms hosting multiple avionics functions under rigorous partitioning, enabling significant reductions in weight, volume, power consumption, and maintenance burden.
+This document establishes the top-level description, functional allocation, architectural rationale, and compliance framework for the Integrated Modular Avionics (IMA) system of the programme-defined aircraft type. The IMA architecture consolidates previously federated Line Replaceable Units (LRUs) into shared computing platforms hosting multiple avionics functions under rigorous partitioning, enabling significant reductions in weight, volume, power consumption, and maintenance burden.
 
 The document governs:
 - IMA system boundaries, hosted application catalogue, and DAL allocations per ARP4754B.
 - Compliance approach for DO-297, DO-178C, DO-254, and CS-25 AMC 25-11B.
 - Interface conventions between IMA platform and hosted applications.
-- Safety goals and validation evidence framework for the AMPEL360E IMA deployment.
+- Safety goals and validation evidence framework for the [PROGRAMME-AIRCRAFT] IMA deployment.
 
 ---
 
@@ -52,22 +54,22 @@ The document governs:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28; AMC 25-11B; AMC 20-152A |
 | Applicable Standards | DO-297; DO-178C; DO-254; DO-160G; ARP4754B; ARINC 653; ARINC 664 |
 | Design Assurance Level | Platform: DAL B; Hosted apps: DAL A–C per function |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E IMA system implements a modular avionics architecture consistent with DO-297 guidance. Two redundant IMA cabinets (IMA-CAB-LEFT, IMA-CAB-RIGHT) are installed in the avionics bay. Each cabinet houses General-Purpose Processing Modules (GPPMs) and I/O Line Replaceable Modules (LRMs) interconnected via a dual-redundant AFDX (ARINC 664 Part 7) network.
+The [PROGRAMME-AIRCRAFT] IMA system implements a modular avionics architecture consistent with DO-297 guidance. Two redundant IMA cabinets (IMA-CAB-LEFT, IMA-CAB-RIGHT) are installed in the avionics bay. Each cabinet houses General-Purpose Processing Modules (GPPMs) and I/O Line Replaceable Modules (LRMs) interconnected via a dual-redundant AFDX (ARINC 664 Part 7) network.
 
 Hosted applications span Flight Management (FMS), Flight Warning (FWS), Air Data/Inertial Reference (ADIRU functions), Cabin Management, and Aircraft Health Monitoring. Each application partition is isolated spatially and temporally per ARINC 653 Part 1. The IMA platform is qualified to DO-297 and provides the hosting environment; each hosted application is independently accepted per DO-178C (software) and DO-254 (hardware).
 
-The federated vs IMA trade study conducted during AMPEL360E concept phase demonstrated a 23% reduction in avionics LRU count, 18% reduction in avionics bay weight, and 31% reduction in avionics harness mass compared to an equivalent federated baseline.
+The federated vs IMA trade study conducted during [PROGRAMME-AIRCRAFT] concept phase demonstrated a 23% reduction in avionics LRU count, 18% reduction in avionics bay weight, and 31% reduction in avionics harness mass compared to an equivalent federated baseline.
 
 ---
 
@@ -96,7 +98,7 @@ The federated vs IMA trade study conducted during AMPEL360E concept phase demons
 
 ## 5. Architecture Description
 
-The AMPEL360E IMA architecture follows a two-cabinet, dual-channel topology. Each IMA cabinet contains:
+The [PROGRAMME-AIRCRAFT] IMA architecture follows a two-cabinet, dual-channel topology. Each IMA cabinet contains:
 
 **Processing Layer:** Four GPPMs per cabinet (8 total), each hosting a dual-core processor with ECC RAM and hardware memory protection units. Processing redundancy is achieved through active-active and active-standby partition configurations depending on DAL requirements.
 
@@ -383,10 +385,10 @@ graph LR
 
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
-| REF-042-01 | AMPEL360E System Architecture Description | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-01 | [PROGRAMME-AIRCRAFT] System Architecture Description | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-042-02 | ATLAS 042 README — IMA Subsection Index | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-042-03 | IMA Platform Service Agreement (PSA) | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | AMPEL360E Functional Hazard Assessment — ATA 42 | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] Functional Hazard Assessment — ATA 42 | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

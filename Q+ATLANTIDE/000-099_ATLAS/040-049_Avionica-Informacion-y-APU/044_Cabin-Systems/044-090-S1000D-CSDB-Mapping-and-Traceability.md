@@ -25,7 +25,6 @@ orb_function_support: [ORB-DAT, ORB-CSDB]
 governance_class: programme-controlled-publication-and-traceability-extension
 version: 1.0.0
 status: active
-scope: agnostic-standard
 language: en
 status_note: "programme-controlled-publication-and-traceability-extension"
 s1000d_applicability: "S1000D-CSDB-compatible"
@@ -33,6 +32,8 @@ ata_reference: "ATA 44.090 — S1000D CSDB Mapping"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 090 — S1000D CSDB Mapping and Traceability
@@ -45,7 +46,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document provides the complete S1000D CSDB mapping, Data Module Requirements List (DMRL), and traceability matrix for any programme implementing this ATLAS standard node ATA 44 Cabin Systems. It defines the Data Module Code (DMC) schema for all ATA 44 Data Modules, maps each Q+ATLANTIDE subsubject file (044-000 through 044-080) to its corresponding S1000D DMC, and provides the traceability chain from certification requirements to CSDB publication.
+This document provides the complete S1000D CSDB mapping, Data Module Requirements List (DMRL), and traceability matrix for the programme-defined aircraft type ATA 44 Cabin Systems. It defines the Data Module Code (DMC) schema for all ATA 44 Data Modules, maps each Q+ATLANTIDE subsubject file (044-000 through 044-080) to its corresponding S1000D DMC, and provides the traceability chain from certification requirements to CSDB publication.
 
 Key governance areas:
 - DMC schema and SNS mapping for ATA 44.
@@ -61,11 +62,11 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Programme | (defined in programme implementation branch) |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44 — Cabin Systems |
 | S1000D Issue | Issue 5.0 |
 | CAGE Code | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| Model Identification Code | <MODEL> |
+| Model Identification Code | [PROGRAMME-AIRCRAFT] |
 | Publication Type | Interactive Electronic Technical Manual (IETM) / IETP |
 | S1000D SNS | 044-090 |
 
@@ -73,15 +74,15 @@ Key governance areas:
 
 ## 3. DMC Schema for ATA 44
 
-The Data Module Code (DMC) schema for <PROGRAMME> ATA 44 follows the S1000D Issue 5.0 SNS structure:
+The Data Module Code (DMC) schema for programme-defined aircraft type ATA 44 follows the S1000D Issue 5.0 SNS structure:
 
 ```
-DMC-<MODEL>-<SYSTEMDIFF>-044-{SNS-subsection}-{SNS-unit}-{Variant}{Info-code}{Item-location-code}
+DMC-<PROGRAMME>-<VARIANT>-044-{SNS-subsection}-{SNS-unit}-{Variant}{Info-code}{Item-location-code}
 ```
 
 | Field | Value |
 |-------|-------|
-| Model ID | <MODEL>-<SYSTEMDIFF> |
+| Model ID | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] |
 | System | 044 |
 | Sub-system/variant | 00..70 (per subsubject) |
 | Unit/assembly | 00 |
@@ -120,15 +121,15 @@ CSDB/
 └── 040-049_Avionica-Informacion-y-APU/
     └── 044_Cabin-Systems/
         └── DMC/
-            ├── DMC-<MODEL>-<SYSTEMDIFF>-044-00-00-00AAA-040A-D/  (General)
-            ├── DMC-<MODEL>-<SYSTEMDIFF>-044-10-00-00AAA-040A-D/  (CDN)
-            ├── DMC-<MODEL>-<SYSTEMDIFF>-044-20-00-00AAA-040A-D/  (CMS)
-            ├── DMC-<MODEL>-<SYSTEMDIFF>-044-30-00-00AAA-040A-D/  (PSU)
-            ├── DMC-<MODEL>-<SYSTEMDIFF>-044-40-00-00AAA-040A-D/  (CIA)
-            ├── DMC-<MODEL>-<SYSTEMDIFF>-044-50-00-00AAA-040A-D/  (IFEC)
-            ├── DMC-<MODEL>-<SYSTEMDIFF>-044-60-00-00AAA-040A-D/  (Surveillance)
-            ├── DMC-<MODEL>-<SYSTEMDIFF>-044-70-00-00AAA-040A-D/  (Crew)
-            └── DMC-<MODEL>-<SYSTEMDIFF>-044-80-00-00AAA-040A-D/  (Monitoring)
+            ├── DMC-<PROGRAMME>-<VARIANT>-044-00-00-00AAA-040A-D/  (General)
+            ├── DMC-<PROGRAMME>-<VARIANT>-044-10-00-00AAA-040A-D/  (CDN)
+            ├── DMC-<PROGRAMME>-<VARIANT>-044-20-00-00AAA-040A-D/  (CMS)
+            ├── DMC-<PROGRAMME>-<VARIANT>-044-30-00-00AAA-040A-D/  (PSU)
+            ├── DMC-<PROGRAMME>-<VARIANT>-044-40-00-00AAA-040A-D/  (CIA)
+            ├── DMC-<PROGRAMME>-<VARIANT>-044-50-00-00AAA-040A-D/  (IFEC)
+            ├── DMC-<PROGRAMME>-<VARIANT>-044-60-00-00AAA-040A-D/  (Surveillance)
+            ├── DMC-<PROGRAMME>-<VARIANT>-044-70-00-00AAA-040A-D/  (Crew)
+            └── DMC-<PROGRAMME>-<VARIANT>-044-80-00-00AAA-040A-D/  (Monitoring)
 ```
 
 Each DMC folder contains: a Descriptive DM (040A) as the primary authoritative DM, plus satellite DMs for maintenance procedures (720A), fault isolation (920A), and illustrated parts (941A) as applicable.
@@ -186,7 +187,7 @@ Each DMC folder contains: a Descriptive DM (040A) as the primary authoritative D
 
 ```mermaid
 graph TD
-    ATA44["ATA 44 Cabin Systems\n<PROGRAMME> CSDB"]
+    ATA44["ATA 44 Cabin Systems\nprogramme-defined aircraft type CSDB"]
     G000["044-000\nGeneral\n(000 + 040 + C00)"]
     G010["044-010\nCDN\n(040 + 520 + 720 + 920)"]
     G020["044-020\nCMS\n(040 + 520 + 720 + 920)"]
@@ -271,7 +272,7 @@ graph LR
 
 - **DMRL Change Control:** Any change to an ATA 44 subsubject file triggers a DMRL review; changed DMs require revision increment and CSDB re-upload.
 - **CSDB Version Tracking:** Each DM has an issue number and date in the CSDB; Q+ATLANTIDE version field must match CSDB DM issue number.
-- **Applicability Management:** DMs are marked with applicability annotation (<MODEL>-<SYSTEMDIFF> only at programme launch; future variants to be added).
+- **Applicability Management:** DMs are marked with applicability annotation ([PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] only at programme launch; future variants to be added).
 
 ---
 
@@ -358,8 +359,8 @@ graph LR
 |--------|----------|---------|--------|
 | REF-044-09-01 | Cabin Systems General (044-000) | 1.0 | Active |
 | REF-044-09-02 | Q+ATLANTIDE template.md | 1.0 | Active |
-| REF-044-09-03 | <PROGRAMME> CSDB Programme Plan | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-044-09-04 | <MODEL> Technical Publications Specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-09-03 | [PROGRAMME-AIRCRAFT] CSDB Programme Plan | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-09-04 | [PROGRAMME-AIRCRAFT] Technical Publications Specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -367,7 +368,7 @@ graph LR
 
 | Issue ID | Description | Owner | Status |
 |----------|-------------|-------|--------|
-| OI-044-09-01 | CAGE code allocation for <PROGRAMME> pending registration | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-044-09-01 | CAGE code allocation for [PROGRAMME-AIRCRAFT] programme pending registration | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-044-09-02 | CSDB platform selection (Flatirons CSDB / Oberon S1000D) pending programme decision | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-044-09-03 | IETM viewer delivery format (S1000D IETP vs proprietary viewer) to be agreed with launch customer | Q-INDUSTRY | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-044-09-04 | DM authoring tool selection and XML schema validation toolchain to be established | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

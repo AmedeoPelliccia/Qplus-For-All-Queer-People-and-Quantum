@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 014 · Subsubject 005 — Parking Records, Inspections and Return to Service
 
 ## 1. Purpose
 
-Defines the **record-keeping requirements**, **periodic inspection procedures**, and **return-to-service (RTS) checklist** for AMPEL360 aircraft transitioning from any parking state back to an airworthy operational status. This subsubject closes the parking loop: it follows the securing procedures in `003_` and `004_` and governs the documented release of the aircraft for the next departure.
+Defines the **record-keeping requirements**, **periodic inspection procedures**, and **return-to-service (RTS) checklist** for [PROGRAMME-AIRCRAFT] aircraft transitioning from any parking state back to an airworthy operational status. This subsubject closes the parking loop: it follows the securing procedures in `003_` and `004_` and governs the documented release of the aircraft for the next departure.
 
 > **Scope boundary:** Conceptual RTS definitions (storage types, inspection phases, documentation sign-off) are in [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/003_Mooring-Storage-and-Return-to-Service.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/003_Mooring-Storage-and-Return-to-Service.md) (Level 1). This subsubject provides the **operational procedure** (Level 2) for turnaround, overnight, and extended parking RTS. Long-term storage RTS (> 90 days) is governed by the AMM.
 
@@ -37,13 +39,13 @@ Defines the **record-keeping requirements**, **periodic inspection procedures**,
 
 ### 2.1 Parking State Record
 
-The **Parking State Record** (PSR) is the primary document for tracking the parking configuration of an AMPEL360 aircraft during any parking event. A PSR shall be opened at the beginning of each parking event and closed when the aircraft departs the stand.
+The **Parking State Record** (PSR) is the primary document for tracking the parking configuration of an [PROGRAMME-AIRCRAFT] aircraft during any parking event. A PSR shall be opened at the beginning of each parking event and closed when the aircraft departs the stand.
 
 Minimum PSR fields:
 
 | Field | Content |
 |---|---|
-| Aircraft registration | AMPEL360 variant and registration (tail number) |
+| Aircraft registration | [PROGRAMME-AIRCRAFT] variant and registration (tail number) |
 | Stand identifier | Aerodrome and stand number (e.g., `LPT / C12`) |
 | Parking state | Turnaround / Overnight / Extended / Mooring-rig active |
 | Date/time in | UTC date and time chocks were inserted |

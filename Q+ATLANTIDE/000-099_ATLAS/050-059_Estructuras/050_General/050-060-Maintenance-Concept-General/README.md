@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · Section 05 · Subsection 050 · Subsubject 060 — Maintenance Concept General
@@ -32,7 +34,7 @@ language: en
 
 Subsubject-level index for *Maintenance Concept General* (`060`) within subsection `050` *General* of ATLAS `050-059` — *Estructuras*.
 
-This subsubject defines the overarching structural maintenance philosophy, line/base/depot boundaries, access and safety conditions, inspection intervals, repair decision logic, LRU/SRU replacement boundaries, GSE requirements, and return-to-service criteria applicable to all AMPEL360 eWTW structural systems.
+This subsubject defines the overarching structural maintenance philosophy, line/base/depot boundaries, access and safety conditions, inspection intervals, repair decision logic, LRU/SRU replacement boundaries, GSE requirements, and return-to-service criteria applicable to all [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural systems.
 
 ## 2. Document Index
 

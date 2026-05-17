@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0088-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-088-070-SAFETY-CERTIFICATION-AND-ETHICAL-USE-CONSTRAINTS
      ATLAS-088 (Beyond-2040 Concepts Reserved) · Safety, Certification and Ethical Use Constraints
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Safety, Certification and Ethical Use Constraints
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-070"
 
 ## §1 Purpose
 
-ATLAS subsubject 088-070 defines the **safety, certification pathway, and ethical use constraint framework** applicable to all B2CR propulsion concepts. It establishes the novel hazard taxonomy (categories not addressed in existing CS-25/CS-P/CS-E), the regulatory engagement strategy for unprecedented technologies, and the B2CMU Ethics Charter governing dual-use, environmental, and human-rights constraints on B2CR concept development.
+This document defines the agnostic ATLAS standard-level architecture context for `Safety, Certification and Ethical Use Constraints`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Novel Hazard Taxonomy
 
 The following hazard categories are defined specifically for B2CR concepts and supplement the standard CS-25 hazard classification:
@@ -97,7 +100,7 @@ Before any B2CR concept is promoted from B2C-ACTIVE to B2C-PROMOTE, the followin
 
 ### 4.1 Regulatory Engagement Strategy
 
-For B2CR concepts with no established certification basis, the AMPEL360E eWTW programme will engage EASA and FAA via the following pathway:
+For B2CR concepts with no established certification basis, the programme-defined aircraft type programme will engage EASA and FAA via the following pathway:
 
 | Stage | Action | EASA Tool | FAA Tool | B2CMU Lead |
 |---|---|---|---|---|

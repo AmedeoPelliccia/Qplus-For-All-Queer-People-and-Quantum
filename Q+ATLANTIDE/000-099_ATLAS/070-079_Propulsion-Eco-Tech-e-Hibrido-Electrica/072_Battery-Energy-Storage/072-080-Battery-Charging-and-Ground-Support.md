@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Battery Charging and Ground Support
@@ -33,17 +35,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-080"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document defines the ground charging architecture, procedures, and ground support equipment (GSE) requirements for the AMPEL360E eWTW battery system, covering DC fast charging, AC charging, regenerative energy acceptance, cell balancing, and turnaround time requirements.
 
+This document defines the agnostic ATLAS standard-level architecture context for `Battery Charging and Ground Support`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
 
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-The AMPEL360E supports two ground charging modes: DC fast charging via a dedicated Ground Support Equipment (GSE) DC charger, and AC charging via an on-board charger (OBC) connected to standard airport AC ground power. In both cases, charge power flows through the Battery Interface Unit (BIU) which performs voltage conversion and current regulation under BMS supervision.
+The [PROGRAMME-AIRCRAFT] supports two ground charging modes: DC fast charging via a dedicated Ground Support Equipment (GSE) DC charger, and AC charging via an on-board charger (OBC) connected to standard airport AC ground power. In both cases, charge power flows through the Battery Interface Unit (BIU) which performs voltage conversion and current regulation under BMS supervision.
 
-**DC Fast Charging** uses a GSE-provided DC source at up to 800 V / 350 kW (per pack, 700 kW total aircraft), connected to the aircraft via a high-power DC connector on each wing root. The BMS negotiates charge parameters with the GSE via a CAN FD communication link (CCS2 / CHAdeMO-equivalent protocol adapted for aviation). Charge current is regulated to maintain cell temperature within the 10–35°C target range; above 35°C, charge current is derated. The BMS controls the charging contactors and terminates charge when target SoC (default 95%) or cell balance threshold is reached.
+**DC Fast Charging** uses a GSE-provided DC source at up to <NOMINAL-VOLTAGE> / 350 kW (per pack, 700 kW total aircraft), connected to the aircraft via a high-power DC connector on each wing root. The BMS negotiates charge parameters with the GSE via a CAN FD communication link (CCS2 / CHAdeMO-equivalent protocol adapted for aviation). Charge current is regulated to maintain cell temperature within the 10–35°C target range; above 35°C, charge current is derated. The BMS controls the charging contactors and terminates charge when target SoC (default 95%) or cell balance threshold is reached.
 
 **AC Charging** uses standard 400 Hz or 50/60 Hz AC ground power (115/200V 3-phase) fed into the on-board charger which converts to DC at up to 100 kW total. This mode is used for overnight top-up or maintenance charging. The OBC includes active power factor correction (PFC) and galvanic isolation.
 
@@ -64,7 +74,7 @@ The AMPEL360E supports two ground charging modes: DC fast charging via a dedicat
 ## §5 System Context
 ```mermaid
 graph TD
-    GSE_DC[DC Fast Charger GSE 350kW] -->|800V DC| DC_PORT[Wing Root DC Connector]
+    GSE_DC[DC Fast Charger GSE 350kW] -->|<NOMINAL-VOLTAGE> DC| DC_PORT[Wing Root DC Connector]
     DC_PORT -->|via BIU| BMS_CHG[BMS Charge Controller]
     AC_GND[AC Ground Power 115/200V] -->|3-phase| OBC[On-Board Charger 100kW]
     OBC -->|DC regulated| BMS_CHG
@@ -81,7 +91,7 @@ graph LR
     subgraph CHARGE_PATH[Charge Path - One Pack]
         DC_CON[DC Connector] --> CHG_CONT[Charge Contactor]
         CHG_CONT --> BIU_CHG[BIU Charge Regulator]
-        BIU_CHG --> PACK_CHG[Pack Charging Bus ~800V]
+        BIU_CHG --> PACK_CHG[Pack Charging Bus ~<NOMINAL-VOLTAGE>]
     end
     BMS_CC[BMS Charge Controller] --> CHG_CONT
     BMS_CC --> BIU_CHG
@@ -92,16 +102,16 @@ graph LR
 ## §7 Components and LRUs
 | LRU ID | Name | P/N | Qty | Location |
 |---|---|---|---|---|
-| LRU-072-080-01 | Wing Root DC Charge Connector | CONN-DC-800V-072 | 2 | Wing root (1 per bay) |
+| LRU-072-080-01 | Wing Root DC Charge Connector | CONN-DC-<NOMINAL-VOLTAGE>-072 | 2 | Wing root (1 per bay) |
 | LRU-072-080-02 | On-Board Charger (OBC) | OBC-AC-100KW-072 | 1 | Avionics/equipment bay |
-| LRU-072-080-03 | Charge Path Contactor | CONT-CHG-800V | 2 | Pack charge path |
+| LRU-072-080-03 | Charge Path Contactor | CONT-CHG-<NOMINAL-VOLTAGE> | 2 | Pack charge path |
 | LRU-072-080-04 | BIU Charge Regulator Module | BIU-CHG-350KW | 2 | Wing root |
 | LRU-072-080-05 | CSC Balancing Resistor Array | BAL-RES-CSC-072 | 56 | One per module (within CSC) |
 
 ## §8 Interfaces
 | Interface | Source | Destination | Protocol | Notes |
 |---|---|---|---|---|
-| IF-072-080-01 | GSE DC Charger | Wing Root DC Connector | 800V DC power | Up to 350 kW per bay |
+| IF-072-080-01 | GSE DC Charger | Wing Root DC Connector | <NOMINAL-VOLTAGE> DC power | Up to 350 kW per bay |
 | IF-072-080-02 | GSE DC Charger | BMS | CAN FD | Charge negotiation (current, voltage, SoC target) |
 | IF-072-080-03 | OBC | BIU | DC regulated | AC-to-DC conversion |
 | IF-072-080-04 | BMS | Charge Contactor | 28V discrete | Open/close control |
@@ -138,11 +148,11 @@ graph LR
 ## §12 Maintenance and Diagnostics
 | Task | Interval | Tool | Reference |
 |---|---|---|---|
-| DC connector inspection (contacts, seals) | A-Check | Visual; contact gauge | AMM 072-80-01 |
-| OBC output voltage and current calibration | 2000 FH | DC calibration bench | CMM 072-80-02 |
-| Charge contactor contact resistance | 1000 FH | DLRO | AMM 072-80-03 |
-| Cell balance verification (post-charge ΔV log) | Per-flight (automatic ACMS) | ACMS ground station | AMM 072-80-04 |
-| GSE communication protocol test | B-Check | GSE emulator + laptop | AMM 072-80-05 |
+| DC connector inspection (contacts, seals) | A-Check | Visual; contact gauge | AMM [NODE]-[TASK] |
+| OBC output voltage and current calibration | 2000 FH | DC calibration bench | CMM [NODE]-[TASK] |
+| Charge contactor contact resistance | 1000 FH | DLRO | AMM [NODE]-[TASK] |
+| Cell balance verification (post-charge ΔV log) | Per-flight (automatic ACMS) | ACMS ground station | AMM [NODE]-[TASK] |
+| GSE communication protocol test | B-Check | GSE emulator + laptop | AMM [NODE]-[TASK] |
 
 ## §13 Footprint
 | Metric | Value |

@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0063-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0063-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-063-010-ENGINE-CORE-ARCHITECTURE
      ATA 63 · Engine Core Architecture
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Engine Core Architecture
@@ -47,21 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0063-010"
 
 ## §1 Purpose
 
-Two-spool turbofan core architecture provides module-based maintenance with defined split lines at fan/LPC module, HPC module, combustor+HPT module, and LPT module. Bearing frame positions (fan frame, HPC front frame, turbine rear frame) define the structural load path from rotor to stator and to the engine mounts.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine Core Architecture`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 63-010 — Engine Core Architecture |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 063-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `063` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Two-spool turbofan core architecture provides module-based maintenance with defined split lines at fan/LPC module, HPC module, combustor+HPT module, and LPT module. Bearing frame positions (fan frame, HPC front frame, turbine rear frame) define the structural load path from rotor to stator and to the engine mounts.
@@ -255,4 +256,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

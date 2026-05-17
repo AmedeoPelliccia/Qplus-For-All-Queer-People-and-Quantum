@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0089-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-089-000-PROPULSION-AI-OPTIMIZATION-HOOKS-GENERAL
      ATLAS-089 (Propulsion AI Optimization Hooks) · General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propulsion AI Optimization Hooks — General
@@ -46,28 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 089-000 is the **apex reference** for the Propulsion AI Optimization Hooks (PAIO) subsection of the AMPEL360E eWTW. It establishes the overall system description, functional decomposition, interface catalogue, operating mode inventory, and certification constraints applicable across the full PAIO scope. All subordinate subsubject documents (089-010 through 089-090) are governed by, and must be consistent with, this general baseline document.
+This document defines the agnostic ATLAS standard-level architecture context for `Propulsion AI Optimization Hooks — General`.
 
-The PAIO architecture provides **closed-loop AI-driven optimization** of the AMPEL360E eWTW propulsion ensemble — encompassing the Distributed Electric Propulsion (DEP, ATLAS-085), Boundary-Layer Ingestion fans (BLI, ATLAS-086), Open-Rotor and Counter-Rotating propulsor (ORCR, ATLAS-087), the Energy Management System (EMS, ATLAS-079), and the quantum-enhanced sensor network (ATLAS-080). The AI Optimization Control Unit (AIOCU), qualified to DAL B, executes multi-objective optimization loops at 20 ms cycle time, balancing propulsive efficiency, fuel/energy consumption, thermal load, propulsor health, and noise — subject to hard safety boundaries enforced by a separate, non-AI safety monitor.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-089 (Propulsion AI Optimization Hooks) |
-| Certification Basis | EASA CS-25 Amendment 27+; DO-178C DAL B (AIOCU software); DO-254 DAL B (AIOCU hardware); DO-160G (environmental); EASA AI Roadmap v2.0; EUROCAE ED-324 (AI/ML airworthiness) |
-| S1000D SNS | 089-000-00 |
-| DMRL Reference | BREX-089-v1; 30 Data Modules |
-| Effectivity | All AMPEL360E eWTW aircraft from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `089` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description
 
-The AMPEL360E eWTW **Propulsion AI Optimization Hooks (PAIO)** system provides a unified AI-driven optimization layer that interfaces with every propulsion subsystem through standardized data hooks. The PAIO comprises the following major subsystems:
+The programme-defined aircraft type **Propulsion AI Optimization Hooks (PAIO)** system provides a unified AI-driven optimization layer that interfaces with every propulsion subsystem through standardized data hooks. The PAIO comprises the following major subsystems:
 
 1. **AI Optimization Control Unit (AIOCU):** Dual-channel DAL B controller (Channel A — active; Channel B — hot standby) executing multi-objective optimization algorithms at a 20 ms control cycle. The AIOCU hosts three optimization engines: a Reinforcement Learning (RL) Policy Network for cruise efficiency, a Model Predictive Control (MPC) layer for energy dispatch, and a Quantum-Assisted Optimization Algorithm (QAOA) kernel (16-qubit QPU interface, 100 ms update) for mission-profile macro-optimization. AIOCU interfaces with the FADEC (ATA 73), EMS (ATLAS-079), and AWMS (ATA 31) via AFDX ARINC 664 P7 virtual links.
 

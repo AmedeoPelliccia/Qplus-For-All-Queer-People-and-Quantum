@@ -6,10 +6,10 @@ subsubject: "030"
 subsubject_title: "Extension and Retraction"
 file_name: "032-030-Extension-and-Retraction.md"
 sns_reference: "032-30"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-30"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-032-30"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "ATA 32"
   - "Extension and Retraction"
   - "LGCIU"
@@ -98,10 +98,12 @@ keywords:
   - "gear handle"
   - "uplock"
   - "downlock"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 032-030 — Extension and Retraction
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,31 +115,20 @@ All internal links use relative paths. External regulatory references use anchor
 
 ## §1 Purpose
 
-This document describes the Landing Gear Extension and Retraction System (LGERS) of the AMPEL360e eWTW. The LGERS encompasses the LGCIU sequencing logic (IMA-hosted), all Electromechanical Actuator (EMA) actuation for gear travel and door operation, the cockpit gear handle, the normal retraction and extension sequences, and the emergency extension provision.
+This document defines the agnostic ATLAS standard-level architecture context for `032-030 — Extension and Retraction`.
 
-On the eWTW, the complete absence of hydraulic power means all gear and door actuation is electric. The LGCIU function (hosted in the IMA) is the primary sequence controller. It receives the cockpit gear handle position as a discrete input, processes proximity switch signals from all gear and door positions, and commands EMA actuators in the correct sequence for each gear leg and its associated doors. The LGCIU is designed to a Design Assurance Level (DAL) commensurate with the safety assessment outcome (TBD; preliminary assessment DAL B for gear extension function).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Emergency extension is provided by a gravity free-fall system independent of the LGCIU. On selection of the emergency gear extension mode (dedicated cockpit control TBD — guarded switch or separate handle), the LGCIU commands all EMA power supplies off and releases the uplock hooks via dedicated electric releases. Gear and doors then fall under gravity, assisted by aerodynamic drag; downlocks latch passively on reaching the fully extended position.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 032-030 — Extension and Retraction |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Gear Configuration | 3 legs: 2× MLG + 1× NLG; each with EMA and door EMA |
-| Normal Actuation | EMA per gear leg + EMA per door assembly |
-| Emergency | Gravity free-fall; passive downlocking |
-| Controller | LGCIU — IMA-hosted software function |
-| Certification Basis | CS-25.729 (retracting mechanisms) |
-| SNS Reference | 032-30 |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The LGERS provides two distinct modes of gear operation: Normal and Emergency.
@@ -331,7 +322,7 @@ For towing purposes, the ground crew must engage the main gear uplock manually p
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 032-30 | Extension and Retraction | DMC-AMPEL360E-EWTW-032-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-30 | Extension and Retraction | DMC-<PROGRAMME>-<VARIANT>-032-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 

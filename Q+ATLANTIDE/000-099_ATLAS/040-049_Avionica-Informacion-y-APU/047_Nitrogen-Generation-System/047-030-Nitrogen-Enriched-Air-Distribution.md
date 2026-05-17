@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 030 — Nitrogen Enriched Air Distribution
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the Nitrogen Enriched Air (NEA) Distribution sub-system of ATA 47 NGS for the AMPEL360E eWTW. The NEA Distribution sub-system collects NEA output from both ASM banks, regulates line pressure to 12–18 psig, and delivers it to the fuel tank ullage spaces via sparge tubes through dedicated Flow Control Valves (FCVs) per tank branch (inner, outer, and center tanks).
+This document defines the Nitrogen Enriched Air (NEA) Distribution sub-system of ATA 47 NGS for the programme-defined aircraft type. The NEA Distribution sub-system collects NEA output from both ASM banks, regulates line pressure to 12–18 psig, and delivers it to the fuel tank ullage spaces via sparge tubes through dedicated Flow Control Valves (FCVs) per tank branch (inner, outer, and center tanks).
 
 The Tank Oxygen Monitoring System (TOMS) sensors installed in each tank ullage provide real-time O₂ concentration feedback to the NGSCU, which modulates the FCVs in a closed-loop control scheme to maintain ullage O₂ below 9% by volume (the TOMS inerting threshold). NEA injection pressure must not exceed the fuel tank structural differential pressure limit (< 2 psig above ullage pressure).
 
@@ -62,7 +64,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter / Sub-subject | ATA 47.030 — NEA Distribution |
 | Certification Basis | CS-25 Amendment 28; FAR 25.981 |
 | Applicable Standards | DO-160G; S1000D Issue 5.0; ARINC 664 P7 |

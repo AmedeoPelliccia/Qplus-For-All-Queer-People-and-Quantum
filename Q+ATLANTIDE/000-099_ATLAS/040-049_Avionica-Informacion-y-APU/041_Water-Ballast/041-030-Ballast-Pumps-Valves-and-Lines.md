@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 030 — Ballast Pumps, Valves and Lines
@@ -50,11 +52,11 @@ Environmental qualification of all components conforms to DO-160G Section 8 (hum
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41-30 — Ballast Pumps, Valves and Lines |
 | Standards | CS-25 Amd 27, DO-160G §8/14, MIL-PRF-8564 (hoses) |
 | Dev Assurance | DAL C (pump/valve hardware); DAL D (trace heating) |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | Pump Rated Flow | 30 L/min at 1.0 bar differential |
 
 ---
@@ -277,12 +279,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-030-00A-040A-A | 040 | Ballast Pumps, Valves and Lines Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-030-00A-300A-A | 300 | Ballast Pumps Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-030-00A-400A-A | 400 | Ballast Pumps BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-030-00A-520A-A | 520 | Ballast Pumps Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-030-00A-941A-A | 941 | Ballast Pumps Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-030-00A-720A-A | 720 | Ballast Pumps SW Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-030-00A-040A-A | 040 | Ballast Pumps, Valves and Lines Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-030-00A-300A-A | 300 | Ballast Pumps Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-030-00A-400A-A | 400 | Ballast Pumps BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-030-00A-520A-A | 520 | Ballast Pumps Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-030-00A-941A-A | 941 | Ballast Pumps Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-030-00A-720A-A | 720 | Ballast Pumps SW Description |
 
 ### Recommended Data Module Set
 
@@ -384,7 +386,7 @@ Verification Evidence"]
 | <a id="ref-mil-prf-8564"></a>MIL-PRF-8564 | MIL-PRF-8564 — Hose Assemblies, Rubber, Hydraulic | PTFE-lined hose specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet [PROGRAMME-AIRCRAFT] | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -394,7 +396,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Distribution (041-020) | QATL-ATLAS-041-020 | Rev 1.0 | Active | [041-020](./041-020-Water-Ballast-Distribution-and-Transfer.md) |
-| R-003 | AMPEL360E Equipment List | AMPEL360E-EL-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-003 | [PROGRAMME-AIRCRAFT] Equipment List | [PROGRAMME-AIRCRAFT]-EL-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

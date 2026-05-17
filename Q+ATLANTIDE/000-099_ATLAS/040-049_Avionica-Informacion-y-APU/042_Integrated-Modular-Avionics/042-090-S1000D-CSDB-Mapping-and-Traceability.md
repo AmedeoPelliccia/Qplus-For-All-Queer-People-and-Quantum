@@ -25,8 +25,9 @@ orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
 status: active
-scope: agnostic-standard
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 090 — S1000D CSDB Mapping and Traceability
@@ -47,18 +48,18 @@ This document defines the S1000D Issue 5.0 Data Module Code (DMC) scheme, Data M
 
 | Attribute | Value |
 |-----------|-------|
-| Programme | (defined in programme implementation branch) |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28 |
 | Applicable Standards | S1000D Issue 5.0; ATA iSpec 2200; ASD-STE100; DO-297; DO-178C; DO-254 |
 | Documentation Class | Maintenance and Technical Publication |
-| Configuration | (defined in programme implementation branch) |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The Q+ATLANTIDE CSDB is an S1000D Issue 5.0-compliant Common Source Database managing all technical documentation for the programme. For the IMA subsection (SNS 042-000 through 042-090), the CSDB contains Data Modules spanning:
+The Q+ATLANTIDE CSDB is an S1000D Issue 5.0-compliant Common Source Database managing all technical documentation for the [PROGRAMME-AIRCRAFT]. For the IMA subsection (SNS 042-000 through 042-090), the CSDB contains Data Modules spanning:
 
 - **AMM (Aircraft Maintenance Manual):** System descriptions, procedures, BITE, and fault isolation.
 - **FIM (Fault Isolation Manual):** Fault code index, isolation trees, and corrective actions.
@@ -68,7 +69,7 @@ The Q+ATLANTIDE CSDB is an S1000D Issue 5.0-compliant Common Source Database man
 
 The DMC scheme for IMA follows the pattern: `QATL-A-042-{SNS2}-{SNS3}-{SNS4}AAA-{ICN}-A` where SNS2=subsection (042), SNS3=sub-subject (00–09), SNS4=subject (00), and ICN defines the information code (040A=description, 520A=procedure, 920A=fault isolation, 941A=IPD).
 
-The DMRL lists all approved DMs for ATLAS 042, with effective status, publication type, and traceability to programme design documents. BREX compliance is enforced by the CSDB tool chain; all DMs must pass BREX validation before publication.
+The DMRL lists all approved DMs for ATLAS 042, with effective status, publication type, and traceability to [PROGRAMME-AIRCRAFT] design documents. BREX compliance is enforced by the CSDB tool chain; all DMs must pass BREX validation before publication.
 
 ---
 
@@ -93,9 +94,9 @@ The DMRL lists all approved DMs for ATLAS 042, with effective status, publicatio
 
 ## 5. Architecture Description
 
-**DMC Scheme:** The <MODEL> DMC structure follows S1000D Issue 5.0 Chapter 7.4. Model Identification Code (MIC): QATL; System Difference Code (SDC): A; SNS: 042-{sub}-{subject}-{variant}; Information Code (IC): per ATA iSpec 2200 mapping; Item Location Code (ILC): A. Full DMC example: `QATL-A-042-00-00-00AAA-040A-A` = IMA General, System Description.
+**DMC Scheme:** The [PROGRAMME-AIRCRAFT] DMC structure follows S1000D Issue 5.0 Chapter 7.4. Model Identification Code (MIC): QATL; System Difference Code (SDC): A; SNS: 042-{sub}-{subject}-{variant}; Information Code (IC): per ATA iSpec 2200 mapping; Item Location Code (ILC): A. Full DMC example: `QATL-A-042-00-00-00AAA-040A-A` = IMA General, System Description.
 
-**BREX:** The programme BREX file defines: permitted SNS values for ATLAS 042, required metadata elements (applicability, language, issue date, security classification), prohibited information codes per publication type, and permitted markup elements. BREX validation is mandatory before DM acceptance into CSDB.
+**BREX:** The [PROGRAMME-AIRCRAFT] BREX file defines: permitted SNS values for ATLAS 042, required metadata elements (applicability, language, issue date, security classification), prohibited information codes per publication type, and permitted markup elements. BREX validation is mandatory before DM acceptance into CSDB.
 
 **Traceability Matrix:** Each DM is linked in the traceability matrix to: (a) source design document (ATLAS 042-xxx files in this repository); (b) regulatory requirement (CS-25 paragraph); (c) V&V evidence item (VV-042-xxx reference). Traceability is bi-directional and maintained in a dedicated CSDB traceability data module.
 
@@ -109,7 +110,7 @@ The DMRL lists all approved DMs for ATLAS 042, with effective status, publicatio
 |-------------|---------------|-------------|-----|-------|
 | F-042-01 | DMC Scheme Management | Maintain and control the ATLAS 042 DMC scheme; issue new DMCs per DMRL additions; ensure uniqueness across CSDB | N/A | Q-DATAGOV |
 | F-042-02 | DMRL Maintenance | Maintain the DMRL for SNS 042-000 to 042-090; track DM status (draft/review/approved/obsolete); update effectivity per build standard change | N/A | Q-DATAGOV |
-| F-042-03 | BREX Compliance | Validate all ATLAS 042 DMs against programme BREX before acceptance; maintain BREX rule set as IMA design evolves | N/A | Q-DATAGOV |
+| F-042-03 | BREX Compliance | Validate all ATLAS 042 DMs against [PROGRAMME-AIRCRAFT] BREX before acceptance; maintain BREX rule set as IMA design evolves | N/A | Q-DATAGOV |
 | F-042-04 | Cross-Document Traceability | Maintain bi-directional traceability matrix linking DMs to design documents, requirements, and V&V evidence; update at each design change | N/A | Q-DATAGOV |
 | F-042-05 | Publication Configuration | Define and maintain AMM/FIM/IPD/TSM/SRM PCOs for ATLAS 042; generate publications from CSDB per release schedule | N/A | Q-DATAGOV |
 
@@ -357,9 +358,9 @@ graph LR
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
 | REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-02 | <PROGRAMME> CSDB Business Rules | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | <PROGRAMME> DMRL Master | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | <PROGRAMME> Traceability Matrix — ATA 42 | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-02 | [PROGRAMME-AIRCRAFT] CSDB Business Rules | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] DMRL Master | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] Traceability Matrix — ATA 42 | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

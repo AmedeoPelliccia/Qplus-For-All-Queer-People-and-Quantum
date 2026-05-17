@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — Tertiary Structural Architecture
 
 ## 1. Purpose
 
-Describes the **tertiary structural architecture** of the AMPEL360 eWTW: TSE inventory, on-condition maintenance basis, and the architectural boundary between secondary and tertiary structure.
+Describes the **tertiary structural architecture** of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: TSE inventory, on-condition maintenance basis, and the architectural boundary between secondary and tertiary structure.
 
 ## 2. Scope
 

@@ -25,15 +25,16 @@ orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
 status: active
-scope: agnostic-standard
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 49 — Airborne Auxiliary Power"
 s1000d_schema: "S1000D Issue 5.0"
-brex_file: "BREX-049-v1"
+brex_file: "[PROGRAMME-AIRCRAFT]-BREX-049-v1"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 090 — S1000D CSDB Mapping and Traceability
@@ -46,17 +47,17 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-This document defines the **S1000D Data Module Reference List (DMRL)** and **Common Source Data Base (CSDB) mapping** for the entire ATA 49 Airborne Auxiliary Power documentation set of the **<PROGRAMME>** aircraft. It maps all ATLAS 049 subsubject documents (049-000 through 049-080) to their corresponding S1000D Data Module Codes (DMCs), defines the System/Sub-system/Sub-sub-system/Unit (SNS) breakdown applicable to ATA 49, specifies the BREX (Business Rules eXchange) constraints governing ATA 49 data modules, and provides a regulatory traceability matrix linking CS-25 airworthiness requirements to specific Data Modules (DMs) within the CSDB.
+This document defines the **S1000D Data Module Reference List (DMRL)** and **Common Source Data Base (CSDB) mapping** for the entire ATA 49 Airborne Auxiliary Power documentation set of the **programme-defined aircraft type** aircraft. It maps all ATLAS 049 subsubject documents (049-000 through 049-080) to their corresponding S1000D Data Module Codes (DMCs), defines the System/Sub-system/Sub-sub-system/Unit (SNS) breakdown applicable to ATA 49, specifies the BREX (Business Rules eXchange) constraints governing ATA 49 data modules, and provides a regulatory traceability matrix linking CS-25 airworthiness requirements to specific Data Modules (DMs) within the CSDB.
 
-The S1000D DMC scheme adopted for any programme implementing this ATLAS standard node APU documentation uses the format:
+The S1000D DMC scheme adopted for the programme-defined aircraft type APU documentation uses the format:
 
 ```
-<MODEL>-<SYSTEMDIFF>-049-{NNN}-00A-EN-US
+[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-{NNN}-00A-EN-US
 ```
 
 Where `{NNN}` is the three-digit subsubject code (000, 010, 020, ... 080), `00A` is the information code / variant / applicability code, `EN` is the language code, and `US` is the country code. Data modules are authored in S1000D Issue 5.0 XML schema. The CSDB is hosted in the Q-DATAGOV CSDB platform and all 049 DMs are submitted via the CSDB submission workflow defined in Q-DATAGOV governance procedure GP-CSDB-001.
 
-The Business Rules eXchange file `BREX-049-v1` enforces three domain-specific constraints: (1) no data module shall reference pneumatic bleed air as an APU output (enforcing the bleed-less design constraint); (2) no data module shall reference hydraulic actuators in the APU system (no hydraulics on this aircraft); (3) all fire suppression references shall specify HFC-125 as the agent type. BREX validation is performed on all 049 DM submissions as a mandatory CSDB ingestion gate.
+The Business Rules eXchange file `[PROGRAMME-AIRCRAFT]-BREX-049-v1` enforces three domain-specific constraints: (1) no data module shall reference pneumatic bleed air as an APU output (enforcing the bleed-less design constraint); (2) no data module shall reference hydraulic actuators in the APU system (no hydraulics on this aircraft); (3) all fire suppression references shall specify HFC-125 as the agent type. BREX validation is performed on all 049 DM submissions as a mandatory CSDB ingestion gate.
 
 The DMRL covers **36 Data Modules** distributed across 9 SNS nodes (one per subsubject), covering description, operation, maintenance, fault isolation, and parts data for each subsubject.
 
@@ -66,17 +67,17 @@ The DMRL covers **36 Data Modules** distributed across 9 SNS nodes (one per subs
 
 | Parameter | Value |
 |---|---|
-| Programme | (defined in programme implementation branch) |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | S1000D Issue | Issue 5.0 |
-| BREX file | BREX-049-v1 |
+| BREX file | [PROGRAMME-AIRCRAFT]-BREX-049-v1 |
 | CSDB platform | Q-DATAGOV CSDB (GP-CSDB-001) |
 | DMRL total | 36 Data Modules across 9 SNS nodes |
-| DMC scheme | <MODEL>-<SYSTEMDIFF>-049-{NNN}-00A-EN-US |
+| DMC scheme | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-{NNN}-00A-EN-US |
 | SNS breakdown | 9 nodes — 049-000 through 049-080 |
 | Language | EN-US |
 | BREX key constraints | No bleed air DMs, no hydraulic DMs, HFC-125 mandatory for fire suppression |
-| ICN prefix | ICN-<MODEL>-<SYSTEMDIFF>-049 |
+| ICN prefix | ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049 |
 | S1000D SNS | 049-090-00 (S1000D CSDB Mapping and Traceability) |
 
 ---
@@ -87,9 +88,9 @@ The S1000D CSDB mapping for ATA 49 provides a structured, standards-compliant te
 
 1. **Assigns a unique DMC to every authoring unit**: Each ATLAS 049 subsubject document maps to 4 Data Modules (description DM, operation DM, maintenance DM, fault isolation DM), with one parts data DM at the ATA 49 top level; 36 DMs total.
 2. **Defines the SNS hierarchy**: The SNS breakdown mirrors the ATA 49 chapter structure, with `049-000` as the general/top-level SNS node and `049-010` through `049-080` as sub-system nodes.
-3. **Enforces BREX constraints**: The BREX file BREX-049-v1 is referenced in all 049 DM XML headers; CSDB validation software (Q-DATAGOV CSDB validator v3.2) runs BREX rule checks on all 049 DM submissions and rejects submissions that violate the no-bleed, no-hydraulic, or HFC-125 constraints.
+3. **Enforces BREX constraints**: The BREX file [PROGRAMME-AIRCRAFT]-BREX-049-v1 is referenced in all 049 DM XML headers; CSDB validation software (Q-DATAGOV CSDB validator v3.2) runs BREX rule checks on all 049 DM submissions and rejects submissions that violate the no-bleed, no-hydraulic, or HFC-125 constraints.
 4. **Provides regulatory traceability**: A CS-25 requirement-to-DM traceability matrix is maintained in this document, enabling EASA to identify which specific Data Module provides the design description for each applicable regulation.
-5. **Governs applicability annotations**: All 049 DMs use S1000D applicability attributes to identify which aircraft variant (<MODEL>-<SYSTEMDIFF>) and aircraft serial number blocks the data applies to; applicability annotations are validated by the CSDB validator against the product definition (PDL file <MODEL>-PDL-v1).
+5. **Governs applicability annotations**: All 049 DMs use S1000D applicability attributes to identify which aircraft variant ([PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]) and aircraft serial number blocks the data applies to; applicability annotations are validated by the CSDB validator against the product definition (PDL file [PROGRAMME-AIRCRAFT]-PDL-v1).
 
 ### §3.1 SNS Node Breakdown
 
@@ -112,9 +113,9 @@ The S1000D CSDB mapping for ATA 49 provides a structured, standards-compliant te
 graph TD
     ATLAS_049["ATLAS 049 Documents 10 subsubjects"] --> DMC_GEN["DMC Set per SNS node - 4 DMs per node"]
     DMC_GEN --> CSDB["Q-DATAGOV CSDB"]
-    BREX["BREX-049-v1"] --> CSDB_VAL["CSDB Validator v3.2"]
+    BREX["[PROGRAMME-AIRCRAFT]-BREX-049-v1"] --> CSDB_VAL["CSDB Validator v3.2"]
     CSDB_VAL --> CSDB
-    PDL["<MODEL>-PDL-v1 Product Definition"] --> CSDB_VAL
+    PDL["[PROGRAMME-AIRCRAFT]-PDL-v1 Product Definition"] --> CSDB_VAL
     CSDB --> DM_DESC["Description DM - 00A"]
     CSDB --> DM_OPS["Operation DM - 00B"]
     CSDB --> DM_MAINT["Maintenance DM - 00C"]
@@ -139,16 +140,16 @@ The CSDB mapping architecture is defined by the Data Module Reference List (DMRL
 | Maintenance (MAINT) | 00C | Scheduled maintenance tasks, intervals, tools |
 | Fault Isolation (FI) | 00D | Fault isolation trees, CAS message list, MCDU fault codes |
 
-The parts data for ATA 49 is consolidated in a single parts DM at the top SNS level (049-000), referencing ICN-coded parts illustrations for each LRU. ICN codes follow the pattern `ICN-<MODEL>-<SYSTEMDIFF>-049-{NNN}-{SEQUENCE}-AA`.
+The parts data for ATA 49 is consolidated in a single parts DM at the top SNS level (049-000), referencing ICN-coded parts illustrations for each LRU. ICN codes follow the pattern `ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-{NNN}-{SEQUENCE}-AA`.
 
-BREX file `BREX-049-v1` enforces the following rules (BREX rule ID: BREX-049-001 through BREX-049-005):
+BREX file `[PROGRAMME-AIRCRAFT]-BREX-049-v1` enforces the following rules (BREX rule ID: BREX-049-001 through BREX-049-005):
 
 | BREX Rule ID | Constraint | Rationale |
 |---|---|---|
 | BREX-049-001 | `<bleedAir>` elements prohibited | APU has no bleed air output — bleed-less design |
-| BREX-049-002 | `<hydraulicActuator>` elements prohibited | No hydraulic system on <PROGRAMME> |
+| BREX-049-002 | `<hydraulicActuator>` elements prohibited | No hydraulic system on programme-defined aircraft type |
 | BREX-049-003 | Fire suppression agent must be `HFC-125` | Standard fire bottle type for this aircraft |
-| BREX-049-004 | All DMs must carry `applicRefId="<MODEL>-<SYSTEMDIFF>"` | Aircraft variant applicability |
+| BREX-049-004 | All DMs must carry `applicRefId="[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]"` | Aircraft variant applicability |
 | BREX-049-005 | `<pneumaticOutput>` elements prohibited | APU electric-only — no pneumatic output |
 
 ### Diagram 2: DMRL Structure and DMC Scheme
@@ -164,8 +165,8 @@ graph LR
     DMRL --> SNS060["SNS 049-060 Control Indication - 4 DMs"]
     DMRL --> SNS070["SNS 049-070 Fire Protection - 4 DMs"]
     DMRL --> SNS080["SNS 049-080 Monitoring - 4 DMs"]
-    SNS000 --> DMC_SCHEMA["DMC: <MODEL>-<SYSTEMDIFF>-049-000-00A-EN-US through 00D"]
-    SNS080 --> DMC_SCHEMA_END["DMC: <MODEL>-<SYSTEMDIFF>-049-080-00A-EN-US through 00D"]
+    SNS000 --> DMC_SCHEMA["DMC: [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-000-00A-EN-US through 00D"]
+    SNS080 --> DMC_SCHEMA_END["DMC: [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-080-00A-EN-US through 00D"]
 ```
 
 ---
@@ -176,15 +177,15 @@ graph LR
 
 | SNS Node | Subsubject Title | DMC Root | DM Count | CSDB Submission Status |
 |---|---|---|---|---|
-| 049-000 | Airborne Auxiliary Power — General | `DMC-<MODEL>-<SYSTEMDIFF>-049-000-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| 049-010 | APU Architecture | `DMC-<MODEL>-<SYSTEMDIFF>-049-010-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| 049-020 | APU Air Inlet and Exhaust | `DMC-<MODEL>-<SYSTEMDIFF>-049-020-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| 049-030 | APU Fuel Supply and Control | `DMC-<MODEL>-<SYSTEMDIFF>-049-030-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| 049-040 | APU Ignition, Starting and Generation | `DMC-<MODEL>-<SYSTEMDIFF>-049-040-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| 049-050 | APU Load Interfaces | `DMC-<MODEL>-<SYSTEMDIFF>-049-050-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| 049-060 | APU Control, Indication and Warning | `DMC-<MODEL>-<SYSTEMDIFF>-049-060-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| 049-070 | APU Fire Protection | `DMC-<MODEL>-<SYSTEMDIFF>-049-070-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| 049-080 | APU Monitoring and Diagnostics | `DMC-<MODEL>-<SYSTEMDIFF>-049-080-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-000 | Airborne Auxiliary Power — General | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-000-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-010 | APU Architecture | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-010-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-020 | APU Air Inlet and Exhaust | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-020-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-030 | APU Fuel Supply and Control | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-030-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-040 | APU Ignition, Starting and Generation | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-040-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-050 | APU Load Interfaces | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-050-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-060 | APU Control, Indication and Warning | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-060-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-070 | APU Fire Protection | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| 049-080 | APU Monitoring and Diagnostics | `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-080-00x-EN-US` | 4 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -194,7 +195,7 @@ graph LR
 |---|---|---|---|
 | CSDB DMRL to S1000D authoring tool | S1000D XML editor | CSDB API | DM checkout / check-in / status |
 | BREX validator to CSDB | Q-DATAGOV CSDB validator v3.2 | CSDB submission API | BREX validation pass/fail per DM |
-| PDL to CSDB validator | <MODEL>-PDL-v1 product definition | CSDB internal | Aircraft applicability check |
+| PDL to CSDB validator | [PROGRAMME-AIRCRAFT]-PDL-v1 product definition | CSDB internal | Aircraft applicability check |
 | DMRL to AMM publication builder | Publication management tool | CSDB API | DM selection for AMM ATA 49 |
 | DMRL to FIM builder | Fault Isolation Manual builder | CSDB API | 00D (FI) DMs for ATA 49 FIM |
 | DMRL to IPC builder | Illustrated Parts Catalog builder | CSDB API | Parts DM + ICN illustrations |
@@ -262,16 +263,16 @@ This matrix maps CS-25 airworthiness requirements applicable to ATA 49 to the sp
 
 | CS-25 Regulation | Requirement Summary | ATA 49 DM | SNS Node | Compliance Notes |
 |---|---|---|---|---|
-| CS-25.1181 | Fire protection zones | <MODEL>-<SYSTEMDIFF>-049-070-00A-EN-US | 049-070 | Fire zone boundary definition DM |
-| CS-25.1191 | Firewalls | <MODEL>-<SYSTEMDIFF>-049-070-00A-EN-US | 049-070 | Firewall material specification |
-| CS-25.1195 | Fire extinguishing systems | <MODEL>-<SYSTEMDIFF>-049-070-00A-EN-US | 049-070 | HFC-125 bottle agent quantity |
-| CS-25.1203 | Fire detector systems | <MODEL>-<SYSTEMDIFF>-049-070-00A-EN-US | 049-070 | Thermistor 2oo2 logic |
-| CS-25.1309 | System safety assessment | <MODEL>-<SYSTEMDIFF>-049-000-00A-EN-US | 049-000 | APU overall SSA reference |
-| CS-25.1302 | Flight crew interface | <MODEL>-<SYSTEMDIFF>-049-060-00A-EN-US | 049-060 | Overhead panel and ECAM design |
-| CS-25.1322 | Warning, caution, advisory | <MODEL>-<SYSTEMDIFF>-049-060-00A-EN-US | 049-060 | CAS message classification |
-| CS-25.1185 | Flammable fluid fire protection | <MODEL>-<SYSTEMDIFF>-049-030-00A-EN-US | 049-030 | Fuel line routing and AFSOV |
-| CS-25.1438 | Pneumatic systems (non-applicable) | <MODEL>-<SYSTEMDIFF>-049-050-00A-EN-US | 049-050 | MoC 0 — no pneumatic output |
-| CS-25.1351 | Electrical systems and equipment | <MODEL>-<SYSTEMDIFF>-049-050-00A-EN-US | 049-050 | HVDC bus and AGC interface |
+| CS-25.1181 | Fire protection zones | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00A-EN-US | 049-070 | Fire zone boundary definition DM |
+| CS-25.1191 | Firewalls | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00A-EN-US | 049-070 | Firewall material specification |
+| CS-25.1195 | Fire extinguishing systems | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00A-EN-US | 049-070 | HFC-125 bottle agent quantity |
+| CS-25.1203 | Fire detector systems | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00A-EN-US | 049-070 | Thermistor 2oo2 logic |
+| CS-25.1309 | System safety assessment | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-000-00A-EN-US | 049-000 | APU overall SSA reference |
+| CS-25.1302 | Flight crew interface | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-060-00A-EN-US | 049-060 | Overhead panel and ECAM design |
+| CS-25.1322 | Warning, caution, advisory | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-060-00A-EN-US | 049-060 | CAS message classification |
+| CS-25.1185 | Flammable fluid fire protection | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-030-00A-EN-US | 049-030 | Fuel line routing and AFSOV |
+| CS-25.1438 | Pneumatic systems (non-applicable) | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-050-00A-EN-US | 049-050 | MoC 0 — no pneumatic output |
+| CS-25.1351 | Electrical systems and equipment | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-050-00A-EN-US | 049-050 | HVDC bus and AGC interface |
 
 ---
 
@@ -282,7 +283,7 @@ This matrix maps CS-25 airworthiness requirements applicable to ATA 49 to the sp
 | Task | Interval | Owner | Tools Required |
 |---|---|---|---|
 | DMRL review and update | On each document change | Q-DATAGOV | CSDB DMRL editor |
-| BREX file update (BREX-049-v1) | On aircraft design change affecting BREX constraints | Q-DATAGOV / Q-AIR | BREX XML editor |
+| BREX file update ([PROGRAMME-AIRCRAFT]-BREX-049-v1) | On aircraft design change affecting BREX constraints | Q-DATAGOV / Q-AIR | BREX XML editor |
 | CSDB submission status review | Monthly | Q-DATAGOV | CSDB dashboard |
 | Regulatory traceability matrix update | On CS-25 requirement change or DM scope change | Q-DATAGOV / Q-AIR | DMRL traceability tool |
 | PDL applicability review | On aircraft variant change | Q-DATAGOV | PDL editor |
@@ -296,11 +297,11 @@ This matrix maps CS-25 airworthiness requirements applicable to ATA 49 to the sp
 
 ## §11. Configuration and Software
 
-- **S1000D Issue 5.0 schema**: All 049 DMs are authored against S1000D Issue 5.0 XML schema; schema version is locked for any programme implementing this ATLAS standard node program; a formal program change is required to upgrade to a future S1000D issue.
-- **BREX file versioning**: `BREX-049-v1` is version-controlled in the CSDB; BREX file changes require Q-DATAGOV CSDB CM approval and re-validation of all previously accepted 049 DMs.
-- **DMC scheme configuration**: The DMC prefix `<MODEL>-<SYSTEMDIFF>` is registered in the CSDB code registry; changes to the code prefix require S1000D code registration update and DMC migration across all existing DMs.
-- **PDL product definition**: `<MODEL>-PDL-v1` defines the aircraft applicability model used by the CSDB validator; aircraft serial number ranges, variant codes, and configuration effectivity data are maintained in the PDL.
-- **ICN numbering**: ICN numbers follow the pattern `ICN-<MODEL>-<SYSTEMDIFF>-049-{NNN}-{SEQ}-AA` where `{SEQ}` is a four-digit sequence number; ICN allocation is managed by the Q-DATAGOV ICN registry tool to prevent duplicates.
+- **S1000D Issue 5.0 schema**: All 049 DMs are authored against S1000D Issue 5.0 XML schema; schema version is locked for the programme-defined aircraft type program; a formal program change is required to upgrade to a future S1000D issue.
+- **BREX file versioning**: `[PROGRAMME-AIRCRAFT]-BREX-049-v1` is version-controlled in the CSDB; BREX file changes require Q-DATAGOV CSDB CM approval and re-validation of all previously accepted 049 DMs.
+- **DMC scheme configuration**: The DMC prefix `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]` is registered in the CSDB code registry; changes to the code prefix require S1000D code registration update and DMC migration across all existing DMs.
+- **PDL product definition**: `[PROGRAMME-AIRCRAFT]-PDL-v1` defines the aircraft applicability model used by the CSDB validator; aircraft serial number ranges, variant codes, and configuration effectivity data are maintained in the PDL.
+- **ICN numbering**: ICN numbers follow the pattern `ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-{NNN}-{SEQ}-AA` where `{SEQ}` is a four-digit sequence number; ICN allocation is managed by the Q-DATAGOV ICN registry tool to prevent duplicates.
 - **CSDB validator version**: Q-DATAGOV CSDB validator v3.2 is the current qualified version for BREX, applicability, and schema validation; version changes require Q-DATAGOV IT change management and re-validation.
 - **Publication build configuration**: The ATA 49 AMM, FIM, and IPC publication configurations are defined in the CSDB publication manager; publication filters select DMs by SNS node, info code, and applicability.
 
@@ -325,42 +326,42 @@ This matrix maps CS-25 airworthiness requirements applicable to ATA 49 to the sp
 
 | DMC | SNS Node | Info Code | DM Type | Title |
 |---|---|---|---|---|
-| <MODEL>-<SYSTEMDIFF>-049-000-00A-EN-US | 049-000 | DESC | Description | APU General — System Description |
-| <MODEL>-<SYSTEMDIFF>-049-000-00B-EN-US | 049-000 | OPS | Operation | APU General — Operating Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-000-00C-EN-US | 049-000 | MAINT | Maintenance | APU General — Scheduled Maintenance |
-| <MODEL>-<SYSTEMDIFF>-049-000-00D-EN-US | 049-000 | FI | Fault Isolation | APU General — Top-level FI |
-| <MODEL>-<SYSTEMDIFF>-049-010-00A-EN-US | 049-010 | DESC | Description | APU Architecture — System Description |
-| <MODEL>-<SYSTEMDIFF>-049-010-00B-EN-US | 049-010 | OPS | Operation | APU Architecture — APCU Operating Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-010-00C-EN-US | 049-010 | MAINT | Maintenance | APU Architecture — APCU Maintenance |
-| <MODEL>-<SYSTEMDIFF>-049-010-00D-EN-US | 049-010 | FI | Fault Isolation | APU Architecture — APCU Fault Isolation |
-| <MODEL>-<SYSTEMDIFF>-049-020-00A-EN-US | 049-020 | DESC | Description | APU Inlet Exhaust — System Description |
-| <MODEL>-<SYSTEMDIFF>-049-020-00B-EN-US | 049-020 | OPS | Operation | APU Inlet Exhaust — Operating Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-020-00C-EN-US | 049-020 | MAINT | Maintenance | APU Inlet Exhaust — EMA Maintenance |
-| <MODEL>-<SYSTEMDIFF>-049-020-00D-EN-US | 049-020 | FI | Fault Isolation | APU Inlet Exhaust — Door Fault Isolation |
-| <MODEL>-<SYSTEMDIFF>-049-030-00A-EN-US | 049-030 | DESC | Description | APU Fuel Supply — System Description |
-| <MODEL>-<SYSTEMDIFF>-049-030-00B-EN-US | 049-030 | OPS | Operation | APU Fuel Supply — Operating Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-030-00C-EN-US | 049-030 | MAINT | Maintenance | APU Fuel Supply — AFSOV/Pump Maintenance |
-| <MODEL>-<SYSTEMDIFF>-049-030-00D-EN-US | 049-030 | FI | Fault Isolation | APU Fuel Supply — Fuel System FI |
-| <MODEL>-<SYSTEMDIFF>-049-040-00A-EN-US | 049-040 | DESC | Description | APU Ignition and Generation — Description |
-| <MODEL>-<SYSTEMDIFF>-049-040-00B-EN-US | 049-040 | OPS | Operation | APU Ignition and Generation — Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-040-00C-EN-US | 049-040 | MAINT | Maintenance | APU Ignition and Generation — Maintenance |
-| <MODEL>-<SYSTEMDIFF>-049-040-00D-EN-US | 049-040 | FI | Fault Isolation | APU Ignition and Generation — FI |
-| <MODEL>-<SYSTEMDIFF>-049-050-00A-EN-US | 049-050 | DESC | Description | APU Load Interfaces — System Description |
-| <MODEL>-<SYSTEMDIFF>-049-050-00B-EN-US | 049-050 | OPS | Operation | APU Load Interfaces — Operating Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-050-00C-EN-US | 049-050 | MAINT | Maintenance | APU Load Interfaces — AGC/ATRU Maintenance |
-| <MODEL>-<SYSTEMDIFF>-049-050-00D-EN-US | 049-050 | FI | Fault Isolation | APU Load Interfaces — Electrical FI |
-| <MODEL>-<SYSTEMDIFF>-049-060-00A-EN-US | 049-060 | DESC | Description | APU Control Indication — System Description |
-| <MODEL>-<SYSTEMDIFF>-049-060-00B-EN-US | 049-060 | OPS | Operation | APU Control Indication — ECAM Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-060-00C-EN-US | 049-060 | MAINT | Maintenance | APU Control Indication — Panel Maintenance |
-| <MODEL>-<SYSTEMDIFF>-049-060-00D-EN-US | 049-060 | FI | Fault Isolation | APU Control Indication — CAS FI |
-| <MODEL>-<SYSTEMDIFF>-049-070-00A-EN-US | 049-070 | DESC | Description | APU Fire Protection — System Description |
-| <MODEL>-<SYSTEMDIFF>-049-070-00B-EN-US | 049-070 | OPS | Operation | APU Fire Protection — Fire Response Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-070-00C-EN-US | 049-070 | MAINT | Maintenance | APU Fire Protection — Fire Loop Maintenance |
-| <MODEL>-<SYSTEMDIFF>-049-070-00D-EN-US | 049-070 | FI | Fault Isolation | APU Fire Protection — Fire System FI |
-| <MODEL>-<SYSTEMDIFF>-049-080-00A-EN-US | 049-080 | DESC | Description | APU Monitoring Diagnostics — Description |
-| <MODEL>-<SYSTEMDIFF>-049-080-00B-EN-US | 049-080 | OPS | Operation | APU Monitoring Diagnostics — PBIT Procedures |
-| <MODEL>-<SYSTEMDIFF>-049-080-00C-EN-US | 049-080 | MAINT | Maintenance | APU Monitoring Diagnostics — MEMS/PHM |
-| <MODEL>-<SYSTEMDIFF>-049-080-00D-EN-US | 049-080 | FI | Fault Isolation | APU Monitoring Diagnostics — FI |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-000-00A-EN-US | 049-000 | DESC | Description | APU General — System Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-000-00B-EN-US | 049-000 | OPS | Operation | APU General — Operating Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-000-00C-EN-US | 049-000 | MAINT | Maintenance | APU General — Scheduled Maintenance |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-000-00D-EN-US | 049-000 | FI | Fault Isolation | APU General — Top-level FI |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-010-00A-EN-US | 049-010 | DESC | Description | APU Architecture — System Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-010-00B-EN-US | 049-010 | OPS | Operation | APU Architecture — APCU Operating Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-010-00C-EN-US | 049-010 | MAINT | Maintenance | APU Architecture — APCU Maintenance |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-010-00D-EN-US | 049-010 | FI | Fault Isolation | APU Architecture — APCU Fault Isolation |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-020-00A-EN-US | 049-020 | DESC | Description | APU Inlet Exhaust — System Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-020-00B-EN-US | 049-020 | OPS | Operation | APU Inlet Exhaust — Operating Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-020-00C-EN-US | 049-020 | MAINT | Maintenance | APU Inlet Exhaust — EMA Maintenance |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-020-00D-EN-US | 049-020 | FI | Fault Isolation | APU Inlet Exhaust — Door Fault Isolation |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-030-00A-EN-US | 049-030 | DESC | Description | APU Fuel Supply — System Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-030-00B-EN-US | 049-030 | OPS | Operation | APU Fuel Supply — Operating Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-030-00C-EN-US | 049-030 | MAINT | Maintenance | APU Fuel Supply — AFSOV/Pump Maintenance |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-030-00D-EN-US | 049-030 | FI | Fault Isolation | APU Fuel Supply — Fuel System FI |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-040-00A-EN-US | 049-040 | DESC | Description | APU Ignition and Generation — Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-040-00B-EN-US | 049-040 | OPS | Operation | APU Ignition and Generation — Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-040-00C-EN-US | 049-040 | MAINT | Maintenance | APU Ignition and Generation — Maintenance |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-040-00D-EN-US | 049-040 | FI | Fault Isolation | APU Ignition and Generation — FI |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-050-00A-EN-US | 049-050 | DESC | Description | APU Load Interfaces — System Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-050-00B-EN-US | 049-050 | OPS | Operation | APU Load Interfaces — Operating Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-050-00C-EN-US | 049-050 | MAINT | Maintenance | APU Load Interfaces — AGC/ATRU Maintenance |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-050-00D-EN-US | 049-050 | FI | Fault Isolation | APU Load Interfaces — Electrical FI |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-060-00A-EN-US | 049-060 | DESC | Description | APU Control Indication — System Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-060-00B-EN-US | 049-060 | OPS | Operation | APU Control Indication — ECAM Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-060-00C-EN-US | 049-060 | MAINT | Maintenance | APU Control Indication — Panel Maintenance |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-060-00D-EN-US | 049-060 | FI | Fault Isolation | APU Control Indication — CAS FI |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00A-EN-US | 049-070 | DESC | Description | APU Fire Protection — System Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00B-EN-US | 049-070 | OPS | Operation | APU Fire Protection — Fire Response Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00C-EN-US | 049-070 | MAINT | Maintenance | APU Fire Protection — Fire Loop Maintenance |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-070-00D-EN-US | 049-070 | FI | Fault Isolation | APU Fire Protection — Fire System FI |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-080-00A-EN-US | 049-080 | DESC | Description | APU Monitoring Diagnostics — Description |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-080-00B-EN-US | 049-080 | OPS | Operation | APU Monitoring Diagnostics — PBIT Procedures |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-080-00C-EN-US | 049-080 | MAINT | Maintenance | APU Monitoring Diagnostics — MEMS/PHM |
+| [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-049-080-00D-EN-US | 049-080 | FI | Fault Isolation | APU Monitoring Diagnostics — FI |
 
 ---
 
@@ -373,7 +374,7 @@ This matrix maps CS-25 airworthiness requirements applicable to ATA 49 to the sp
 | BREX validation test — fire agent check | Submit DM with agent ≠ HFC-125 | CSDB rejects with BREX-049-003 violation | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | BREX validation pass test | Submit conformant DM | CSDB accepts DM | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | DMRL completeness check | Count all DMs in CSDB by SNS node | 36 DMs present, 4 per node | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| Applicability annotation check | PDL validation of all 049 DMs | All DMs carry <MODEL>-<SYSTEMDIFF> applicability | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Applicability annotation check | PDL validation of all 049 DMs | All DMs carry [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] applicability | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Publication build test (AMM) | Build ATA 49 section from CSDB | All DESC and MAINT DMs appear in AMM | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Publication build test (FIM) | Build ATA 49 FIM from CSDB | All FI (00D) DMs appear in FIM | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Regulatory traceability check | Manual matrix review vs CS-25 | All 10 CS-25 requirements mapped to DM | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
@@ -396,14 +397,14 @@ This matrix maps CS-25 airworthiness requirements applicable to ATA 49 to the sp
 ## §16. Certification Evidence
 
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> DMRL baseline document — 36 DMs listed, SNS mapping complete
-- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> BREX file BREX-049-v1 — formal release in CSDB
+- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> BREX file [PROGRAMME-AIRCRAFT]-BREX-049-v1 — formal release in CSDB
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> CSDB validator v3.2 qualification report — BREX rule validation confirmed
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> Regulatory traceability matrix — CS-25 to DM mapping complete
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> Publication build test report — AMM, FIM, IPC ATA 49 builds verified
-- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> CSDB DM applicability check report — all 049 DMs carry <MODEL>-<SYSTEMDIFF>
+- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> CSDB DM applicability check report — all 049 DMs carry [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> S1000D Issue 5.0 schema conformance report — all 049 DMs schema-valid
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> ICN registry list — all ICNs for ATA 49 IPC allocated
-- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> PDL <MODEL>-PDL-v1 applicability model release
+- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> PDL [PROGRAMME-AIRCRAFT]-PDL-v1 applicability model release
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> CSDB archive and retention plan — EASA Part 21 compliance
 
 ---
@@ -413,8 +414,8 @@ This matrix maps CS-25 airworthiness requirements applicable to ATA 49 to the sp
 | ID | Description | Owner | Target | Status |
 |---|---|---|---|---|
 | OI-049-090-001 | Complete CSDB submission of all 36 DMs (currently ATLAS markdown source — DMs pending XML authoring) | Q-DATAGOV | 2027-Q1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
-| OI-049-090-002 | Formally release BREX file BREX-049-v1 in CSDB | Q-DATAGOV | 2026-Q3 | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
-| OI-049-090-003 | Complete PDL <MODEL>-PDL-v1 with <MODEL>-<SYSTEMDIFF> applicability model | Q-DATAGOV | 2026-Q4 | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
+| OI-049-090-002 | Formally release BREX file [PROGRAMME-AIRCRAFT]-BREX-049-v1 in CSDB | Q-DATAGOV | 2026-Q3 | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
+| OI-049-090-003 | Complete PDL [PROGRAMME-AIRCRAFT]-PDL-v1 with [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] applicability model | Q-DATAGOV | 2026-Q4 | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 | OI-049-090-004 | Allocate ICN numbers for all ATA 49 IPC LRU illustrations | Q-DATAGOV | 2026-Q4 | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 | OI-049-090-005 | Finalise regulatory traceability matrix with EASA reviewer input | Q-AIR / Q-DATAGOV | 2027-Q1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 
@@ -431,7 +432,7 @@ This matrix maps CS-25 airworthiness requirements applicable to ATA 49 to the sp
 | CSDB | Common Source Data Base — the central repository holding all S1000D data modules, ICNs, and publication configurations |
 | ICN | Information Control Number — unique identifier for an illustration or graphic file referenced from an S1000D data module |
 | Applicability annotation | S1000D XML attribute tagging a data module or element as applicable to a specific aircraft variant, serial number, or configuration |
-| S1000D | International specification for technical publications (ASD/AIA/ATA) — current issue 5.0 governs <PROGRAMME> documentation |
+| S1000D | International specification for technical publications (ASD/AIA/ATA) — current issue 5.0 governs programme-defined aircraft type documentation |
 | DM | Data Module — the fundamental authoring unit in S1000D; each DM covers a single topic (description, operation, maintenance, or FI) |
 | CSDB submission workflow | The formal process (GP-CSDB-001) for submitting, validating, reviewing, approving, and releasing data modules to the CSDB |
 

@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Flight Deck Indicating and Control Panels"
 file_name: "031-010-Flight-Deck-Indicating-and-Control-Panels.md"
 sns_reference: "031-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -100,10 +100,12 @@ keywords:
   - "glareshield"
   - "overhead panel"
   - "OHP"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-010 — Flight Deck Indicating and Control Panels
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -115,30 +117,20 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Flight Deck Indicating and Control Panels for the AMPEL360e eWTW aircraft, covering all display units, control panels, and annunciator systems installed on the main instrument panel (glare-shield area), overhead panel (OHP), and centre pedestal. The scope includes the Primary Flight Display (PFD), Navigation Display (ND), upper and lower ECAM/EICAS-type multifunction displays, the Mode Control Panel / Flight Control Unit (MCP/FCU), and the Overhead Panel (OHP) touch module with integrated annunciator logic.
+This document defines the agnostic ATLAS standard-level architecture context for `031-010 — Flight Deck Indicating and Control Panels`.
 
-The eWTW flight deck employs a fully digital glass-cockpit philosophy with no electromechanical primary instruments on the main instrument panel. Six active LCD AMLCD display units constitute the primary flight deck display system: two PFDs (one per pilot), two NDs (one per pilot), and two MFD/ECAM displays (upper and lower). This layout is driven from Display Management Computers (DMC) via a high-integrity digital data network. Display brightness is managed automatically via ambient-light sensors, with manual override available.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-A key eWTW-specific design feature is the integration of electric propulsion status on the ECAM system pages. Battery State of Charge, motor torque and speed, inverter temperatures, and propulsion mode selection are all presented on dedicated ECAM synoptic pages, visible on the lower MFD. The Overhead Panel incorporates a touch-sensitive LCD module for systems management, eliminating a large proportion of conventional discrete push-button switches. The final decision between touch-OHP and conventional push-button OHP remains pending the human factors study (see Open Issues).
-
-The applicable regulations include CS-25.1301 (function and installation), CS-25.1303 (mandatory flight and navigation instruments), and CS-25.1321 (arrangement and visibility — pilot must be able to see all primary instruments from normal seated position without excessive head movement).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter / Subsubject | 31-10 — Flight Deck Indicating and Control Panels |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D SNS | 031-10 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-10 |
-| Effectivity | All MSN from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The flight deck display and control panel system provides the crew with all information necessary to operate the aircraft safely in all phases of flight. PFDs present the primary flight parameters (attitude direction indicator / ADI, airspeed indicator / ASI, altitude, vertical speed, flight director commands, ILS deviations, and auto-flight mode annunciations) in a standardised format compliant with CS-25.1303. The Navigation Displays present the horizontal situation (moving map, programmed route, traffic, terrain, and weather overlay).
@@ -328,12 +320,12 @@ Display units are Line Replaceable Units (LRU) with quick-release panel mounting
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-10 | Flight Deck Indicating & Control Panels | DMC-AMPEL360E-EWTW-031-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-10-01 | PFD Display Units | DMC-AMPEL360E-EWTW-031-10-01 | 040, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-10-02 | ND Display Units | DMC-AMPEL360E-EWTW-031-10-02 | 040, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-10-03 | MFD/ECAM Display Units | DMC-AMPEL360E-EWTW-031-10-03 | 040, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-10-04 | MCP/FCU Panel | DMC-AMPEL360E-EWTW-031-10-04 | 040, 300, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-10-05 | Overhead Panel Module | DMC-AMPEL360E-EWTW-031-10-05 | 040, 300, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-10 | Flight Deck Indicating & Control Panels | DMC-<PROGRAMME>-<VARIANT>-031-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-10-01 | PFD Display Units | DMC-<PROGRAMME>-<VARIANT>-031-10-01 | 040, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-10-02 | ND Display Units | DMC-<PROGRAMME>-<VARIANT>-031-10-02 | 040, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-10-03 | MFD/ECAM Display Units | DMC-<PROGRAMME>-<VARIANT>-031-10-03 | 040, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-10-04 | MCP/FCU Panel | DMC-<PROGRAMME>-<VARIANT>-031-10-04 | 040, 300, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-10-05 | Overhead Panel Module | DMC-<PROGRAMME>-<VARIANT>-031-10-05 | 040, 300, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-10)
 
@@ -411,7 +403,7 @@ Display units are Line Replaceable Units (LRU) with quick-release panel mounting
 | Electronic Centralised Aircraft Monitor | ECAM | System monitoring display and crew alerting format |
 | Engine Indication and Crew Alerting System | EICAS | Boeing-style equivalent to ECAM |
 | Display Management Computer | DMC | Computer that drives and manages cockpit display units |
-| Active Matrix Liquid Crystal Display | AMLCD | Display technology used for all eWTW cockpit displays |
+| Active Matrix Liquid Crystal Display | AMLCD | Display technology used for all [PROGRAMME-VARIANT] cockpit displays |
 | Annunciator | — | Discrete indicator light (or touch icon) that informs crew of a system state |
 | Reversionary Mode | — | Backup display configuration activated automatically when a primary display unit or DMC fails |
 | Display Control Panel | DCP | Panel allowing crew to select display source and adjust brightness |

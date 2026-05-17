@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0064-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-064-020-FUEL-PUMPING-AND-PRESSURISATION
      ATA 64 · Fuel Pumping and Pressurisation
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Pumping and Pressurisation
@@ -47,21 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-020"
 
 ## §1 Purpose
 
-Engine fuel pumping comprises the AGB-driven LP pump (suction boost) and HP pump (main pressure). The LP pump prevents HP pump cavitation by ensuring adequate inlet pressure across the aircraft flight envelope, including high-altitude low-temperature SAF operation. A boost pump in the aircraft fuel tank (ATA 28) also supplements the LP pump at high-altitude low-pressure conditions.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Pumping and Pressurisation`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-020 — Fuel Pumping and Pressurisation |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `064` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Engine fuel pumping comprises the AGB-driven LP pump (suction boost) and HP pump (main pressure). The LP pump prevents HP pump cavitation by ensuring adequate inlet pressure across the aircraft flight envelope, including high-altitude low-temperature SAF operation. A boost pump in the aircraft fuel tank (ATA 28) also supplements the LP pump at high-altitude low-pressure conditions.
@@ -206,7 +207,7 @@ flowchart TB
 |---|---|
 | **LP pump** | Low-Pressure pump — boosts suction pressure for HP pump; prevents cavitation. |
 | **HP pump** | High-Pressure gear pump — the primary fuel pressurisation device providing HMU metering pressure. |
-| **FOHE** | Fuel/Oil Heat Exchanger — heats cold fuel and cools engine oil simultaneously; no bleed-air heat exchanger needed on AMPEL360E. |
+| **FOHE** | Fuel/Oil Heat Exchanger — heats cold fuel and cools engine oil simultaneously; no bleed-air heat exchanger needed on [PROGRAMME-AIRCRAFT]. |
 | **Cavitation** | Formation of vapour bubbles in a pump inlet due to low pressure; causes erosion and loss of pump performance. |
 | **Boost pump (ATA 28)** | Aircraft tank boost pump providing positive suction pressure to engine LP pump at high altitude. |
 | **Gear pump** | A positive-displacement pump using meshing gears to transfer fluid; used for HP fuel pumping for its pressure-handling capability. |
@@ -255,4 +256,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

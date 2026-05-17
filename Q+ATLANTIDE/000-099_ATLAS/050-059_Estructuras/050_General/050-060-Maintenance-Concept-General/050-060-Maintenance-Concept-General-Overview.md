@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.060 — Maintenance Concept General Overview
 
 ## 1. Purpose
 
-Provides the programme-level overview of the **structural maintenance concept** for the AMPEL360 eWTW: the governing philosophy (MSG-3 damage-tolerant), the maintenance level boundaries (line/base/depot), and the key inputs that shape structural maintenance tasks, inspection intervals, and repair decision logic throughout the aircraft lifecycle.
+Provides the programme-level overview of the **structural maintenance concept** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: the governing philosophy (MSG-3 damage-tolerant), the maintenance level boundaries (line/base/depot), and the key inputs that shape structural maintenance tasks, inspection intervals, and repair decision logic throughout the aircraft lifecycle.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW structural maintenance concept is built on the MSG-3 Revision 3 methodology, ensuring that all structural inspection and maintenance tasks are derived from, and traceable to, the damage-tolerance analysis (DTA) for each Principal Structural Element. The design service goal (DSG) of 90,000 flight cycles / 180,000 flight hours sets the outer boundary of the maintenance programme; WFD/MSD assessments extend or govern the programme beyond the DSG where applicable.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural maintenance concept is built on the MSG-3 Revision 3 methodology, ensuring that all structural inspection and maintenance tasks are derived from, and traceable to, the damage-tolerance analysis (DTA) for each Principal Structural Element. The design service goal (DSG) of 90,000 flight cycles / 180,000 flight hours sets the outer boundary of the maintenance programme; WFD/MSD assessments extend or govern the programme beyond the DSG where applicable.
 
 The introduction of CFRP primary structure and LH₂ cryogenic fuel systems requires novel inspection techniques — including thermographic imaging for delamination detection and hydrogen-embrittlement monitoring at tank attachment fittings — beyond those used in conventional aluminium primary-structure programmes.
 
@@ -86,6 +88,6 @@ graph TD
 |---|---|
 | CS-25.571 | Damage-tolerance and fatigue evaluation |
 | MSG-3 Rev 3 | Airline/Manufacturer Maintenance Programme Development |
-| MRBD-AMPEL360-001 | Maintenance Review Board Document |
+| MRBD-[PROGRAMME-AIRCRAFT]-001 | Maintenance Review Board Document |
 | [`./README.md`](./README.md) | Subsubject 060 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

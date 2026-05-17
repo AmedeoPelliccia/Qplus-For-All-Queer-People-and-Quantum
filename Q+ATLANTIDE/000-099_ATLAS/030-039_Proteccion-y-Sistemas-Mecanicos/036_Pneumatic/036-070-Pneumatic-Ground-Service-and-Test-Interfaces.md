@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Pneumatic Ground Service and Test Interfaces"
 file_name: "036-070-Pneumatic-Ground-Service-and-Test-Interfaces.md"
 sns_reference: "036-70"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-70"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-70"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -88,10 +88,12 @@ keywords:
   - "pressure decay test"
   - "GSE"
   - "CS-25.1438"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-070 — Pneumatic Ground Service and Test Interfaces
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,34 +105,25 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the ground service and test interfaces for the AMPEL360e eWTW residual pneumatic circuit (ATA 36-070). It covers the external ground pneumatic connector, ground test procedures (EAC functional test, regulator set-point verification, SOV function test, system leak test, ground connector coupling test, manifold pressure indication accuracy check), and the Ground Support Equipment (GSE) interface.
+This document defines the agnostic ATLAS standard-level architecture context for `036-070 — Pneumatic Ground Service and Test Interfaces`.
 
-**eWTW context**: The ground service scope for ATA 36 on the eWTW is significantly reduced compared to conventional bleed-air aircraft. Conventional aircraft require extensive ground bleed testing (engine start for bleed supply, cross-bleed checks, pack valve tests, pre-cooler temperature measurements). On the eWTW, all ground tests can be performed with external electrical power (GPU), using the on-board EAC or an external pneumatic cart (if ground connector retained). No engine operation is required for ATA 36 ground testing.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 036-070 — Ground Service and Test Interfaces |
-| Engine operation for ATA 36 test | **Not required** — EAC powered by GPU |
-| Ground pneumatic connector | <img src="https://img.shields.io/badge/TBD-red"> (retained or eliminated — see OI-036-005) |
-| Ground connector type | <img src="https://img.shields.io/badge/TBD-red"> (standard aircraft pneumatic quick-disconnect TBD) |
-| Ground connector location | Lower fuselage panel — <img src="https://img.shields.io/badge/TBD-red"> |
-| Test pressure (leak test) | <img src="https://img.shields.io/badge/TBD-red"> psi (circuit working pressure) |
-| GSE required | Ground pneumatic cart (if connector retained) and/or calibrated pressure gauge |
-| Certification Basis | CS-25.1438; CS-25.1301/1309 |
-| S1000D SNS | 036-70 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 Ground Service Operations
 
-Ground service operations for ATA 36 on the eWTW include:
+Ground service operations for ATA 36 on the [PROGRAMME-VARIANT] include:
 
 | Operation | Method | Frequency |
 |---|---|---|
@@ -169,7 +162,7 @@ If the ground pneumatic connector is retained (OI-036-005 TBD), it provides:
 - EAC component detail (ATA 36-010)
 - SOV component detail (ATA 36-030/040)
 - In-flight test procedures (covered in ATA 36-080)
-- Engine operation (not required for ATA 36 ground test on eWTW)
+- Engine operation (not required for ATA 36 ground test on [PROGRAMME-VARIANT])
 - High-pressure ground cart for bleed air (not applicable)
 
 ---
@@ -386,11 +379,11 @@ Ground test monitoring is via the maintenance terminal (ATA 45). All test result
 
 | Test | Interval | Reference DM |
 |---|---|---|
-| System leak test (pressure decay) | TBD (e.g., A-check or on-condition) | DMC-AMPEL360E-EWTW-036-70-300 |
-| Manifold pressure calibration | TBD | DMC-AMPEL360E-EWTW-036-70-300 |
-| SOV function test | TBD | DMC-AMPEL360E-EWTW-036-70-300 |
-| EAC BITE | On power-up (automatic) + TBD scheduled | DMC-AMPEL360E-EWTW-036-70-400 |
-| Ground connector inspection | TBD | DMC-AMPEL360E-EWTW-036-70-300 |
+| System leak test (pressure decay) | TBD (e.g., A-check or on-condition) | DMC-<PROGRAMME>-<VARIANT>-036-70-300 |
+| Manifold pressure calibration | TBD | DMC-<PROGRAMME>-<VARIANT>-036-70-300 |
+| SOV function test | TBD | DMC-<PROGRAMME>-<VARIANT>-036-70-300 |
+| EAC BITE | On power-up (automatic) + TBD scheduled | DMC-<PROGRAMME>-<VARIANT>-036-70-400 |
+| Ground connector inspection | TBD | DMC-<PROGRAMME>-<VARIANT>-036-70-300 |
 
 ---
 
@@ -398,11 +391,11 @@ Ground test monitoring is via the maintenance terminal (ATA 45). All test result
 
 | DM Code (planned) | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-70-00A-040A-A | 040 | ATA 36-070 — Ground Service and Test Interfaces — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-70-00A-300A-A | 300 | ATA 36-070 — System Leak Test (Pressure Decay) Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-70-00A-300B-A | 300 | ATA 36-070 — SOV Function Test Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-70-00A-300C-A | 300 | ATA 36-070 — Regulator Set-Point Verification | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-70-00A-400A-A | 400 | ATA 36-070 — Ground Test Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-70-00A-040A-A | 040 | ATA 36-070 — Ground Service and Test Interfaces — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-70-00A-300A-A | 300 | ATA 36-070 — System Leak Test (Pressure Decay) Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-70-00A-300B-A | 300 | ATA 36-070 — SOV Function Test Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-70-00A-300C-A | 300 | ATA 36-070 — Regulator Set-Point Verification | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-70-00A-400A-A | 400 | ATA 36-070 — Ground Test Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -425,7 +418,7 @@ Ground test monitoring is via the maintenance terminal (ATA 45). All test result
 | Ground safety | Company ground test safety standards | Mandatory | Lockout/tagout of EAC before tubing work; WOW interlock |
 | Max test pressure | CS-25.1438 | Circuit must not exceed proof pressure during test | Test pressure ≤ working pressure (not a proof test unless noted) |
 | Ground personnel safety | Company HSE standards | Low-pressure circuit — low injury risk from ATA 36 (no hot air) | |
-| Engine operation | **Not required** | eWTW — EAC powered by GPU for all ATA 36 ground tests | Significant safety benefit (no jet blast during test) |
+| Engine operation | **Not required** | [PROGRAMME-VARIANT] — EAC powered by GPU for all ATA 36 ground tests | Significant safety benefit (no jet blast during test) |
 
 ### 16.1 Safety Notes
 - All ground pneumatic tests require WOW (weight-on-wheels) confirmation
@@ -480,7 +473,7 @@ Ground test monitoring is via the maintenance terminal (ATA 45). All test result
 3. RTCA DO-160G — Environmental Conditions and Test Procedures
 4. S1000D Issue 5.0
 5. ATA iSpec 2200 — ATA 36 Pneumatic / Ground Service
-6. AMPEL360e eWTW Maintenance Programme — TBD
+6. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Maintenance Programme — TBD
 
 ---
 

@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0082-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-082-010-PLASMA-PROPULSION-BASELINE-AND-SCOPE
      ATLAS-082 (Plasma and Ionic Propulsion Concepts) · Plasma Propulsion Baseline and Scope
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Plasma Propulsion Baseline and Scope
@@ -44,24 +46,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-010"
 
 ## §1 Purpose
 
-ATLAS subsubject 082-010 defines the propulsion baseline, mission trade space, performance targets, and technology selection rationale for the Plasma and Ionic Propulsion Concepts (PIPC) programme on the AMPEL360E eWTW. It establishes the thrust budget, specific impulse (Isp) objectives, propellant allocation, and power envelope from which all detailed design subsubjects (082-020 through 082-080) are derived.
+This document defines the agnostic ATLAS standard-level architecture context for `Plasma Propulsion Baseline and Scope`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-082 — 082-010 Plasma Propulsion Baseline and Scope |
-| Certification basis | EASA CS-25 Amdt 27+ (research ref.); DO-178C DAL C |
-| S1000D SNS | 082-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `082` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Mission Trade Space
 
-The PIPC programme targets three distinct mission roles for the AMPEL360E eWTW research platform:
+The PIPC programme targets three distinct mission roles for the programme-defined aircraft type research platform:
 
 **Role A — Drag-Reduction Plasma Actuation (DRPA):** Dielectric barrier discharge (DBD) plasma actuators distributed along the wing leading edge and nacelle lip generate ionic wind and boundary layer energisation, delaying flow separation and reducing skin-friction drag by an estimated 3–7 % under cruise conditions (M 0.78, FL 350). This role requires low power (< 2 kW total) and does not consume propellant.
 
@@ -78,7 +79,7 @@ The PIPC programme targets three distinct mission roles for the AMPEL360E eWTW r
 | Gridded Ion Engine (GIE) | C (research) | 10–250 mN | 2 500–5 000 s | 0.5–3 kW | Xe |
 | MPD Thruster (future) | TBD | 0.5–5 N | 1 000–8 000 s | 50–200 kW | Xe / H₂ |
 
-MPD thrusters are noted as a **future concept** pending HVDC power budget expansion (requires > 50 kW, currently not available on AMPEL360E eWTW HVDC 270 V bus at research phase).
+MPD thrusters are noted as a **future concept** pending HVDC power budget expansion (requires > 50 kW, currently not available on programme-defined aircraft type HVDC 270 V bus at research phase).
 
 ---
 

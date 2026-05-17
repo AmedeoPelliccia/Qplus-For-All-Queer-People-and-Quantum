@@ -25,6 +25,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — S1000D CSDB Mapping and Traceability
@@ -37,7 +39,7 @@ Defines the **S1000D data module code (DMC) mapping and CSDB traceability** for 
 
 ### 2.1 Context
 
-The AMPEL360 eWTW technical publication system is built on S1000D Issue 5.0. All structural design-basis data modules reside in the Common Source Data Base (CSDB) under the project identifier `AMPEL360`. The DMC scheme follows the structure: `DMC-AMPEL360-A-050-040-00AA-{infoCode}-{infoCodeVariant}-{itemLocationCode}`. Design-basis descriptive data modules (infoCode `040`) capture the load definitions and environmental envelopes; procedural data modules are not applicable to this pure design-basis content.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] technical publication system is built on S1000D Issue 5.0. All structural design-basis data modules reside in the Common Source Data Base (CSDB) under the project identifier `[PROGRAMME-AIRCRAFT]`. The DMC scheme follows the structure: `DMC-<PROGRAMME>-A-050-040-00AA-{infoCode}-{infoCodeVariant}-{itemLocationCode}`. Design-basis descriptive data modules (infoCode `040`) capture the load definitions and environmental envelopes; procedural data modules are not applicable to this pure design-basis content.
 
 Traceability between ATLAS documents and S1000D DMCs is maintained through the Loads and Loads Requirements Register (LLRR), which provides a bidirectional index from ATLAS document IDs to DMC codes and vice versa.
 
@@ -59,15 +61,15 @@ flowchart LR
 
 | ATLAS Document | DMC (abbreviated) | Info Code | Status |
 |---|---|---|---|
-| Loads-Environment-Overview | `DMC-AMPEL360-A-050-040-00AA-040A-A` | 040 — Description | draft |
-| Structural-Loads-General | `DMC-AMPEL360-A-050-040-01AA-040A-A` | 040 — Description | draft |
-| Limit-and-Ultimate-Load-Defs | `DMC-AMPEL360-A-050-040-02AA-040A-A` | 040 — Description | draft |
-| Flight-and-Maneuver-Loads | `DMC-AMPEL360-A-050-040-03AA-040A-A` | 040 — Description | draft |
-| Ground-and-Landing-Loads | `DMC-AMPEL360-A-050-040-04AA-040A-A` | 040 — Description | draft |
-| Pressurization-Loads | `DMC-AMPEL360-A-050-040-05AA-040A-A` | 040 — Description | draft |
-| Thermal-Cryogenic-Loads | `DMC-AMPEL360-A-050-040-06AA-040A-A` | 040 — Description | draft |
-| Vibration-Fatigue-DT-Basis | `DMC-AMPEL360-A-050-040-07AA-040A-A` | 040 — Description | draft |
-| Design-Allowables-Margins | `DMC-AMPEL360-A-050-040-08AA-040A-A` | 040 — Description | draft |
+| Loads-Environment-Overview | `DMC-<PROGRAMME>-A-050-040-00AA-040A-A` | 040 — Description | draft |
+| Structural-Loads-General | `DMC-<PROGRAMME>-A-050-040-01AA-040A-A` | 040 — Description | draft |
+| Limit-and-Ultimate-Load-Defs | `DMC-<PROGRAMME>-A-050-040-02AA-040A-A` | 040 — Description | draft |
+| Flight-and-Maneuver-Loads | `DMC-<PROGRAMME>-A-050-040-03AA-040A-A` | 040 — Description | draft |
+| Ground-and-Landing-Loads | `DMC-<PROGRAMME>-A-050-040-04AA-040A-A` | 040 — Description | draft |
+| Pressurization-Loads | `DMC-<PROGRAMME>-A-050-040-05AA-040A-A` | 040 — Description | draft |
+| Thermal-Cryogenic-Loads | `DMC-<PROGRAMME>-A-050-040-06AA-040A-A` | 040 — Description | draft |
+| Vibration-Fatigue-DT-Basis | `DMC-<PROGRAMME>-A-050-040-07AA-040A-A` | 040 — Description | draft |
+| Design-Allowables-Margins | `DMC-<PROGRAMME>-A-050-040-08AA-040A-A` | 040 — Description | draft |
 
 ## 3. Footprint
 

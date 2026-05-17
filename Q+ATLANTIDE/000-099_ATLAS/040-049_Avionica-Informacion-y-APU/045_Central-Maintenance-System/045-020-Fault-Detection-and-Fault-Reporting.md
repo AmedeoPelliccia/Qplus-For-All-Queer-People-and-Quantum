@@ -31,6 +31,8 @@ ata_reference: "ATA 45.020 — Fault Detection and Fault Reporting"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 020 — Fault Detection and Fault Reporting
@@ -43,13 +45,13 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the fault detection and fault reporting architecture of the CMS for the AMPEL360E eWTW aircraft. It specifies source data streams, detection methods (BITE, CBIT, PBIT), fault code taxonomy, severity classification, ACARS automatic uplink logic, and the eWTW-specific ML-based anomaly flagging extension.
+This document defines the fault detection and fault reporting architecture of the CMS for the programme-defined aircraft type. It specifies source data streams, detection methods (BITE, CBIT, PBIT), fault code taxonomy, severity classification, ACARS automatic uplink logic, and the [PROGRAMME-VARIANT]-specific ML-based anomaly flagging extension.
 
 Key governance areas:
 - Two-tier fault detection: LRU BITE self-detection and CMS parameter monitoring.
 - Fault code taxonomy aligned to ATA MSG-3 chapter/section/subject scheme.
 - ACARS automatic uplink for AOG/critical faults (< 60 s latency).
-- ML anomaly engine (eWTW programme-controlled extension).
+- ML anomaly engine ([PROGRAMME-VARIANT] programme-controlled extension).
 - Fault confirmation logic: 3 consecutive CBIT cycles.
 
 ---
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45.020 — Fault Detection and Fault Reporting |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL C |
 | Applicable Standards | ARINC 664 P7; ATA MSG-3; ARINC 429; DO-160G |
@@ -75,7 +77,7 @@ Fault detection within the CMS operates on two primary tiers and one extended ti
 
 **Tier 2 — CMS parameter monitoring**: The Parameter Monitor Application (PMA) continuously monitors AFDX-published data parameters from all subscriber LRUs. Out-of-range, frozen, or invalid parameter conditions are flagged as CMS-originated faults distinct from BITE reports.
 
-**Tier 3 (eWTW programme-controlled) — ML anomaly flagging**: A random forest ML model, retrained quarterly by the OEM on fleet data, analyses parameter trends to flag pre-fault conditions. Model confidence threshold: > 85% before flagging advisory. ML advisories are advisory-only and do not trigger maintenance actions without technician confirmation.
+**Tier 3 ([PROGRAMME-VARIANT] programme-controlled) — ML anomaly flagging**: A random forest ML model, retrained quarterly by the OEM on fleet data, analyses parameter trends to flag pre-fault conditions. Model confidence threshold: > 85% before flagging advisory. ML advisories are advisory-only and do not trigger maintenance actions without technician confirmation.
 
 Fault codes follow the ATA MSG-3 chapter/section/subject scheme, mapped to the ATA 45 fault code taxonomy. All faults are stored in the CMDB with timestamp, phase of flight, and affected LRU.
 
@@ -87,7 +89,7 @@ Automatic ACARS fault message uplink occurs within 60 s for AOG or CRITICAL seve
 graph TD
     LRUBITE["LRU BITE (all ATA chapters)"] -->|AFDX BITE VLAN| FC["CMS Fault Collector (BITE Interface Module)"]
     PMA["Parameter Monitor Application (Tier 2)"] -->|AFDX data stream| FC
-    ML["ML Anomaly Engine (Tier 3, eWTW)"] -->|advisory flag| FC
+    ML["ML Anomaly Engine (Tier 3, [PROGRAMME-VARIANT])"] -->|advisory flag| FC
     FC --> FF["Fault Filter (deduplicate, confirm 3× CBIT)"]
     FF --> FDB["Fault Database (CMDB)"]
     FDB --> CMC["CMC Maintenance Report (CMP/MAT)"]
@@ -139,7 +141,7 @@ graph LR
 | Parameter Monitor Application (PMA) | Monitors AFDX data parameters for out-of-range conditions | CCU-A/B (SW) |
 | Fault Database Manager (FDM) | Manages CMDB write operations and fault status tracking | CCU-A/B (SW) |
 | ACARS Gateway Interface | Formats and queues fault messages for ACARS uplink | CCU-A/B (SW) |
-| ML Anomaly Engine (eWTW) | Random forest model for pre-fault anomaly detection | CCU-A/B (SW, prog-ctrl) |
+| ML Anomaly Engine ([PROGRAMME-VARIANT]) | Random forest model for pre-fault anomaly detection | CCU-A/B (SW, prog-ctrl) |
 
 ### Diagram 3: ACARS Fault Uplink Flow
 
@@ -332,7 +334,7 @@ graph TD
 | [R2] | ATLAS 045-030 — Fault Isolation and Troubleshooting Logic | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 045-070 — Ground Data Transfer and Maintenance Connectivity | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 045-080 — CMS Monitoring, Diagnostics and Control Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R5] | AMPEL360E eWTW FMEA/FMECA Report | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R5] | programme-defined aircraft type FMEA/FMECA Report | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

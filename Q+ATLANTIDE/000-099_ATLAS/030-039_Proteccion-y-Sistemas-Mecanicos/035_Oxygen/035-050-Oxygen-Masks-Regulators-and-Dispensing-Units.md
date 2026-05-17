@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Oxygen Masks, Regulators, and Dispensing Units"
 file_name: "035-050-Oxygen-Masks-Regulators-and-Dispensing-Units.md"
 sns_reference: "035-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-035-50"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-035-50"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 35"
   - "Oxygen"
@@ -87,10 +87,12 @@ keywords:
   - "continuous-flow mask"
   - "PSU dispensing unit"
   - "CS-25.1447"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 035-050 — Oxygen Masks, Regulators, and Dispensing Units
-### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -102,34 +104,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Oxygen Masks, Regulators, and Dispensing Units (ATA 35-50) as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It covers the crew quick-donning masks (QDM) and diluter-demand regulators at flight deck stations, the passenger continuous-flow masks dispensed from PSU overhead panels, the PSU dispensing unit mechanism, and the portable PBE integrated mask/hood assembly. It also describes the oxygen mask microphone interface with the communications system (ATA 23).
+This document defines the agnostic ATLAS standard-level architecture context for `035-050 — Oxygen Masks, Regulators, and Dispensing Units`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 035-50 — Oxygen Masks, Regulators, and Dispensing Units |
-| Crew Mask Type | Quick-Donning Mask (QDM) — full-face or oro-nasal (TBD) |
-| Crew Regulator Type | Diluter-demand with 100% O₂ and pressure-demand modes |
-| Crew Stations | Pilot 1, Pilot 2, Observer (TBD) |
-| Pax Mask Type | Continuous-flow oro-nasal mask |
-| Pax Mask Count | 3–4 per PSU COG unit (over-provision per CS-25.1447) |
-| Pax Mask Tubing | Flexible lightweight — length TBD (sufficient for seated adult) |
-| PBE Mask | Integrated hood — part of PBE unit (see 035-030) |
-| Donning Time | Crew QDM: ≤ 5 sec one-handed (CS-25.1447) |
-| Certification Basis | CS-25.1443, CS-25.1445, CS-25.1447 |
-| S1000D SNS | 035-50 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-Three categories of oxygen mask and regulator equipment are fitted to the AMPEL360e eWTW:
+Three categories of oxygen mask and regulator equipment are fitted to the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]:
 
 **Category 1 — Crew QDM and Diluter-Demand Regulator**: At each flight deck crew station, a quick-donning mask (QDM) is stowed in a readily accessible stowage box. The QDM is connected via a quick-disconnect hose to a diluter-demand regulator. The regulator provides altitude-compensated oxygen/air mixture in normal mode, 100% oxygen on crew selection, and positive-pressure oxygen in emergency/pressure-demand mode. The QDM must be donned one-handed within 5 seconds per CS-25.1447. The mask incorporates an integrated microphone for voice communications (ATA 23 interface). Full-face or oro-nasal QDM type: TBD.
 
@@ -310,7 +301,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 035-50 | Masks, Regulators, and Dispensing Units | DMC-AMPEL360E-EWTW-035-50 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-50 | Masks, Regulators, and Dispensing Units | DMC-<PROGRAMME>-<VARIANT>-035-50 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Data Module Breakdown — 035-50
 
@@ -392,7 +383,7 @@ flowchart LR
 | diluter-demand regulator | Crew oxygen regulator that delivers an altitude-compensated mixture of oxygen and cabin air; selectable 100% O₂ and pressure-demand modes |
 | exhalation valve | A one-way valve in the crew mask that vents exhaled gas to cabin air, preventing CO₂ build-up in the mask |
 | microphone | Integrated electret or dynamic microphone in the crew QDM mask, allowing voice communications via the ATA 23 audio management system |
-| oro-nasal mask | A mask covering only the nose and mouth (not the eyes); used for both crew and passenger masks on the eWTW |
+| oro-nasal mask | A mask covering only the nose and mouth (not the eyes); used for both crew and passenger masks on the [PROGRAMME-VARIANT] |
 | over-provision | CS-25.1447 requirement for 10% more masks than the number of seat occupants per dispensing unit |
 | pressure-demand regulator | Emergency mode of the diluter-demand regulator; delivers positive-pressure oxygen to prevent smoke/fume inhalation |
 | PSU dispensing unit | The mechanism within the PSU overhead panel that holds mask bags and releases them on COG deployment; includes door, tubing, and tee connectors |

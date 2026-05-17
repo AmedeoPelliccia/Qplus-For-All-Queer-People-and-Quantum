@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-060-FUEL-CELL-CONTROL-AND-OPERATING-MODES
      ATA 75 · Fuel Cell Control and Operating Modes
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Cell Control and Operating Modes
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-060"
 
 ## §1 Purpose
 
-This document defines the Fuel Cell Control Unit (FCCU) architecture, control algorithms, and FCM operating mode state machine for the AMPEL360E eWTW. The FCCU is a dual-channel DO-178C DAL B / DO-254 DAL B digital controller that provides closed-loop management of all FCM functions: stoichiometry control, thermal management, cell voltage monitoring, power output regulation, BoP actuation, safety monitoring, fault detection and isolation (FDI), and AFDX health reporting to CMS.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Cell Control and Operating Modes`.
 
-The FCCU receives power demand commands from the Energy Management System (EMS, ATA 73) via AFDX at 20 ms intervals, and responds by modulating the FCPC phase-shift command (1 kHz fibre-optic) and all BoP actuators to deliver the requested power while maintaining stack temperature, pressure, and stoichiometry within safe operating limits. The FCCU implements a hierarchical control structure: an outer power management loop, inner thermal and stoichiometry loops, a cell voltage supervision loop, and a safety/FDI layer with the highest priority.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-060 — Fuel Cell Control and Operating Modes |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-060-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **FCCU Hardware Architecture**: The FCCU is a 3U VPX format dual-channel controller housed in the EE bay. Channel A is the primary active channel; Channel B is in hot standby with continuous cross-channel monitoring at 10 ms intervals. Both channels receive all sensor inputs in parallel. Channel B monitors Channel A outputs; discrepancy >threshold for >50 ms causes Channel B to assume control and log a Channel A fault. Each channel contains a PowerPC safety-processor running FCCU application software (DO-178C DAL B), a DO-254 DAL B FPGA implementing hardware safety monitors (OCP, CVM threshold, temperature limits), dual ARINC 429 transceivers, fibre-optic FCPC link, and discrete I/O for BoP actuators.

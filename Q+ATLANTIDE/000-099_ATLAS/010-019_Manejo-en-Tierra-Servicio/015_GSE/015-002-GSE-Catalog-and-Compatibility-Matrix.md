@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 015 · Subsubject 002 — GSE Catalog and Compatibility Matrix
 
 ## 1. Purpose
 
-Provides the **authorised GSE catalog** for AMPEL360 aircraft variants and the associated **compatibility matrix** that maps each GSE item to the variant(s) for which it is approved. This document is the normative source for GSE selection during turnaround planning, maintenance scheduling, and hangar equipment procurement within the Q+ATLANTIDE baseline[^baseline].
+Provides the **authorised GSE catalog** for [PROGRAMME-AIRCRAFT] aircraft variants and the associated **compatibility matrix** that maps each GSE item to the variant(s) for which it is approved. This document is the normative source for GSE selection during turnaround planning, maintenance scheduling, and hangar equipment procurement within the Q+ATLANTIDE baseline[^baseline].
 
 ## 2. Scope
 
@@ -43,7 +45,7 @@ Each GSE entry in this catalog records the minimum identity fields required for 
 | Category | Functional category per `003_` classification |
 | Description | Common name and functional description |
 | Power class | Powered / Non-Powered (per `003_`) |
-| Compatibility | Compatibility rating per AMPEL360 variant (see §2.3) |
+| Compatibility | Compatibility rating per [PROGRAMME-AIRCRAFT] variant (see §2.3) |
 | Interface ref | Cross-reference to `004_` for physical interface specification |
 | Calibration req. | Whether calibration is required (Yes/No); interval if Yes |
 | Standards | Applicable industry standards |
@@ -71,7 +73,7 @@ Each GSE entry in this catalog records the minimum identity fields required for 
 | GSE-015-017 | Aircraft protection | Safety cone set | Non-Powered | — | No |
 | GSE-015-018 | Tow equipment | Conventional tow tractor (towbar-equipped) | Powered | `004_` §2.6 | No (cross-ref `013_Remolque/`) |
 | GSE-015-019 | Tow equipment | Towbarless tractor | Powered | `004_` §2.6 | No (cross-ref `013_Remolque/`) |
-| GSE-015-020 | Tow equipment | Nose-gear towbar (AMPEL360-specific) | Non-Powered | `004_` §2.6 | Yes — 12 months |
+| GSE-015-020 | Tow equipment | Nose-gear towbar ([PROGRAMME-AIRCRAFT]-specific) | Non-Powered | `004_` §2.6 | Yes — 12 months |
 | GSE-015-021 | Fluid replenishment | Hydraulic fluid replenishment cart | Non-Powered | `004_` §2.7 | Yes — 6 months (cross-ref `011_Servicing/`) |
 | GSE-015-022 | Fluid replenishment | Nitrogen servicing cart | Non-Powered | `004_` §2.7 | Yes — 6 months |
 | GSE-015-023 | Fluid replenishment | Oxygen replenishment unit | Non-Powered | `004_` §2.7 | Yes — 6 months |
@@ -89,7 +91,7 @@ Compatibility ratings:
 - **N/A** — Not applicable to this variant
 - **R** — Reserved; approval pending
 
-| GSE-ID | AMPEL360e Gen 1 (Jet-A/SAF) | AMPEL360 BWB-H2 Gen 2 (LH₂) | Remarks |
+| GSE-ID | [PROGRAMME-AIRCRAFT] Gen 1 (Jet-A/SAF) | [PROGRAMME-AIRCRAFT] BWB-H2 Gen 2 (LH₂) | Remarks |
 |---|---|---|---|
 | GSE-015-001 | A | A | GPU voltage/frequency spec per `004_` §2.1 |
 | GSE-015-002 | A | A | |
@@ -157,7 +159,7 @@ flowchart TD
 | Section | `01` — Manejo en Tierra & Servicio |
 | Subsection | `015` — Ground Support Equipment |
 | Subsubject | `002` — GSE Catalog and Compatibility Matrix |
-| Variants covered | AMPEL360e Gen 1 (Jet-A/SAF), AMPEL360 BWB-H2 Gen 2 (LH₂) |
+| Variants covered | [PROGRAMME-AIRCRAFT] Gen 1 (Jet-A/SAF), [PROGRAMME-AIRCRAFT] BWB-H2 Gen 2 (LH₂) |
 | Catalog entries | 28 (GSE-015-001 through GSE-015-028) |
 | Primary Q-Division | Q-GROUND[^qdiv] |
 | Support Q-Divisions | Q-MECHANICS, Q-INDUSTRY |

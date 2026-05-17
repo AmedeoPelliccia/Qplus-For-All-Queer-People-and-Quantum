@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 010 — IMA Cabinets and Core Modules
@@ -38,10 +40,10 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document defines the physical cabinet architecture, structural mounting provisions, backplane interconnect design, EMI/EMC shielding strategy, and thermal management approach for the AMPEL360E IMA cabinets and their constituent Line Replaceable Modules (LRMs). It establishes the mechanical and electrical framework within which all IMA computing, I/O, and power supply modules are housed and interconnected.
+This document defines the physical cabinet architecture, structural mounting provisions, backplane interconnect design, EMI/EMC shielding strategy, and thermal management approach for the [PROGRAMME-AIRCRAFT] IMA cabinets and their constituent Line Replaceable Modules (LRMs). It establishes the mechanical and electrical framework within which all IMA computing, I/O, and power supply modules are housed and interconnected.
 
 The document governs:
-- ARINC 600 cabinet mechanical and electrical specifications for the AMPEL360E IMA installation.
+- ARINC 600 cabinet mechanical and electrical specifications for the [PROGRAMME-AIRCRAFT] IMA installation.
 - Backplane signal routing architecture, connector standards, and signal segregation rules.
 - EMI/EMC compliance approach per DO-160G Section 20 (Emission) and Section 19 (Susceptibility).
 - Thermal management design including cold-wall conduction and convective airflow provisions.
@@ -53,18 +55,18 @@ The document governs:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28; DO-160G Issue G |
 | Applicable Standards | ARINC 600; ARINC 404A; MIL-HDBK-5400; MIL-STD-810H; DO-160G |
 | Design Assurance Level | Cabinet Structure: DAL C; Backplane: DAL B; LRM Interface: DAL B |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E IMA installation comprises two physically independent cabinets designated IMA-CAB-LEFT and IMA-CAB-RIGHT installed in the forward avionics bay. Each cabinet is an ARINC 600 Form Factor 2 (FF2) enclosure accommodating up to 12 LRM slots on a single mid-plane backplane.
+The [PROGRAMME-AIRCRAFT] IMA installation comprises two physically independent cabinets designated IMA-CAB-LEFT and IMA-CAB-RIGHT installed in the forward avionics bay. Each cabinet is an ARINC 600 Form Factor 2 (FF2) enclosure accommodating up to 12 LRM slots on a single mid-plane backplane.
 
 The cabinet backplane provides:
 - High-speed differential serial interconnects between GPPM and I/O LRMs (PCIe Gen3 ×4 lanes per slot).
@@ -371,9 +373,9 @@ graph LR
 
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
-| REF-042-01 | AMPEL360E IMA Cabinet Interface Control Document | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-01 | [PROGRAMME-AIRCRAFT] IMA Cabinet Interface Control Document | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-042-02 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | AMPEL360E Avionics Bay Structural Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] Avionics Bay Structural Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-042-04 | IMA Cabinet Thermal Analysis Report | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---

@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 013 · Subsubject 005 — Towing Records, Incidents and Traceability
 
 ## 1. Purpose
 
-Defines the records, incident categories, reporting thresholds, and traceability requirements for all AMPEL360 towing operations. Every completed tow — routine or incident-related — must generate a documented record that is traceable to the aircraft registration, Configuration Baseline, and the authorising personnel.
+Defines the records, incident categories, reporting thresholds, and traceability requirements for all [PROGRAMME-AIRCRAFT] towing operations. Every completed tow — routine or incident-related — must generate a documented record that is traceable to the aircraft registration, Configuration Baseline, and the authorising personnel.
 
 > **Scope boundary:** This file covers documentation and reporting requirements. The procedure steps that generate these records are in [`013-003-Towing-Procedures-Pushback-and-Maneuvering.md`](./013-003-Towing-Procedures-Pushback-and-Maneuvering.md). The limits that, when exceeded, trigger incident entries are in [`013-004-Towing-Limits-Loads-and-Steering-Constraints.md`](./013-004-Towing-Limits-Loads-and-Steering-Constraints.md).
 
@@ -44,7 +46,7 @@ A **Towing Order** must be issued and signed before any tow operation commences.
 | Field | Description |
 |---|---|
 | Aircraft registration | Full registration of the aircraft to be towed |
-| Active variant | AMPEL360e / AMPEL360-BWB / other (resolved from Configuration Baseline) |
+| Active variant | [PROGRAMME-AIRCRAFT] / [PROGRAMME-AIRCRAFT]-BWB / other (resolved from Configuration Baseline) |
 | Date and time (planned) | ISO 8601 date-time: YYYY-MM-DDTHH:MM |
 | Origin position | Stand, bay, or area from which the aircraft will be towed |
 | Destination position | Stand, bay, or area to which the aircraft will be towed |

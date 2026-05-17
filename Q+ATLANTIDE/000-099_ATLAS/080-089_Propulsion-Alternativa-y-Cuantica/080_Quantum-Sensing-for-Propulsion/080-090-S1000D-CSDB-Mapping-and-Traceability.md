@@ -9,7 +9,6 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-HPC, Q-GREENTECH, Q-AIR, Q-MECHANICS]
 status: active
-scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-12"
@@ -17,12 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-080-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0080-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-080-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATLAS-080 (Quantum Sensing for Propulsion) · S1000D / CSDB Mapping and Traceability
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -46,24 +48,25 @@ s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-080-090"
 
 ## §1 Purpose
 
-ATLAS subsubject 080-090 establishes the S1000D Data Module Requirements List (DMRL), BREX document reference and constraints, CSDB integration interfaces, ICN registry, and milestone plan for any programme implementing this ATLAS standard node Quantum Sensing for Propulsion (QSP) system technical documentation. It provides the authoritative traceability table between ATLAS subsubject documents and their corresponding S1000D Data Modules (DMs) in the CSDB.
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D / CSDB Mapping and Traceability`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | (defined in programme implementation branch) |
-| ATA reference | ATLAS-080 (Quantum Sensing for Propulsion) — 080-090 S1000D / CSDB Mapping and Traceability |
-| Certification basis | EASA CS-25 Amdt 27+; S1000D Issue 5.0; BREX-080-v1 |
-| S1000D SNS | 080-090-00 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `080` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description ![DRAFT]
 
-The QSP technical documentation suite comprises **32 S1000D Data Modules (DMs)** registered in the programme CSDB under the SNS 080 schema. The Data Module Code (DMC) pattern is `DMC-<MODEL>-<SYSTEMDIFF>-080-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement. The BREX governing document is `BREX-080-v1`.
+The QSP technical documentation suite comprises **32 S1000D Data Modules (DMs)** registered in the [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB under the SNS 080 schema. The Data Module Code (DMC) pattern is `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement. The BREX governing document is `[PROGRAMME-AIRCRAFT]-BREX-080-v1`.
 
 **BREX-080-v1** enforces three domain-specific quantum sensing constraints that apply across all DM types under SNS 080:
 
@@ -79,38 +82,38 @@ The QSP technical documentation suite comprises **32 S1000D Data Modules (DMs)**
 
 | DM Number | DMC | Type | Title | ATLAS Source Doc |
 |---|---|---|---|---|
-| DM-080-001 | DMC-<MODEL>-<SYSTEMDIFF>-080-000-00A-040A-EN-US | 040 Descriptive | QSP General — System Overview | 080-000 |
-| DM-080-002 | DMC-<MODEL>-<SYSTEMDIFF>-080-000-00A-100A-EN-US | 100 Procedural | QSP System Activation / Deactivation | 080-000 |
-| DM-080-003 | DMC-<MODEL>-<SYSTEMDIFF>-080-010-00A-040A-EN-US | 040 Descriptive | Quantum Sensor Architecture — Description | 080-010 |
-| DM-080-004 | DMC-<MODEL>-<SYSTEMDIFF>-080-010-00A-300A-EN-US | 300 Inspection | QSPU LRU Visual and Electrical Inspection | 080-010 |
-| DM-080-005 | DMC-<MODEL>-<SYSTEMDIFF>-080-020-00A-040A-EN-US | 040 Descriptive | Quantum Inertial and Vibration Sensing — Description | 080-020 |
-| DM-080-006 | DMC-<MODEL>-<SYSTEMDIFF>-080-020-00A-100A-EN-US | 100 Procedural | AI-IMU BITE Self-Test Procedure | 080-020 |
-| DM-080-007 | DMC-<MODEL>-<SYSTEMDIFF>-080-020-00A-300A-EN-US | 300 Inspection | NV Vibrometer Probe Inspection and Alignment Check | 080-020 |
-| DM-080-008 | DMC-<MODEL>-<SYSTEMDIFF>-080-020-00A-520A-EN-US | 520 Removal/Replace | AI-IMU Module Removal and Replacement | 080-020 |
-| DM-080-009 | DMC-<MODEL>-<SYSTEMDIFF>-080-030-00A-040A-EN-US | 040 Descriptive | Quantum Magnetic and EM Sensing — Description | 080-030 |
-| DM-080-010 | DMC-<MODEL>-<SYSTEMDIFF>-080-030-00A-100A-EN-US | 100 Procedural | NV Magnetometer Zero-Field Baseline Calibration | 080-030 |
-| DM-080-011 | DMC-<MODEL>-<SYSTEMDIFF>-080-030-00A-300A-EN-US | 300 Inspection | SQUID Sensor Head JT Cooler Inspection | 080-030 |
-| DM-080-012 | DMC-<MODEL>-<SYSTEMDIFF>-080-030-00A-520A-EN-US | 520 Removal/Replace | SQUID Sensor Head Removal and Replacement | 080-030 |
-| DM-080-013 | DMC-<MODEL>-<SYSTEMDIFF>-080-040-00A-040A-EN-US | 040 Descriptive | Quantum Thermal and Cryogenic Sensing — Description | 080-040 |
-| DM-080-014 | DMC-<MODEL>-<SYSTEMDIFF>-080-040-00A-100A-EN-US | 100 Procedural | JJ Thermometer Module SI-Traceability Verification | 080-040 |
-| DM-080-015 | DMC-<MODEL>-<SYSTEMDIFF>-080-040-00A-300A-EN-US | 300 Inspection | NV Thermometry Probe Optical Alignment Inspection | 080-040 |
-| DM-080-016 | DMC-<MODEL>-<SYSTEMDIFF>-080-040-00A-520A-EN-US | 520 Removal/Replace | JJT Module Removal and Replacement | 080-040 |
-| DM-080-017 | DMC-<MODEL>-<SYSTEMDIFF>-080-050-00A-040A-EN-US | 040 Descriptive | Quantum Pressure, Flow and Combustion Sensing — Description | 080-050 |
-| DM-080-018 | DMC-<MODEL>-<SYSTEMDIFF>-080-050-00A-100A-EN-US | 100 Procedural | OMPS Cavity Finesse Check and Pressure Calibration | 080-050 |
-| DM-080-019 | DMC-<MODEL>-<SYSTEMDIFF>-080-050-00A-300A-EN-US | 300 Inspection | CARS Probe Fibre Alignment and Laser Power Check | 080-050 |
-| DM-080-020 | DMC-<MODEL>-<SYSTEMDIFF>-080-050-00A-520A-EN-US | 520 Removal/Replace | AIFM Node Removal and Replacement | 080-050 |
-| DM-080-021 | DMC-<MODEL>-<SYSTEMDIFF>-080-060-00A-040A-EN-US | 040 Descriptive | Quantum Sensor Fusion and PSV — Description | 080-060 |
-| DM-080-022 | DMC-<MODEL>-<SYSTEMDIFF>-080-060-00A-100A-EN-US | 100 Procedural | QE-EKF Convergence Test and PSV Validation | 080-060 |
-| DM-080-023 | DMC-<MODEL>-<SYSTEMDIFF>-080-060-00A-300A-EN-US | 300 Inspection | QPU Coherence Time Measurement Procedure | 080-060 |
-| DM-080-024 | DMC-<MODEL>-<SYSTEMDIFF>-080-070-00A-040A-EN-US | 040 Descriptive | QSP Integration with Propulsion Control — Description | 080-070 |
-| DM-080-025 | DMC-<MODEL>-<SYSTEMDIFF>-080-070-00A-100A-EN-US | 100 Procedural | AFDX VL Integration Test — FADEC/FCCU/HDCMU | 080-070 |
-| DM-080-026 | DMC-<MODEL>-<SYSTEMDIFF>-080-070-00A-300A-EN-US | 300 Inspection | Propulsion Controller Fallback Verification Test | 080-070 |
-| DM-080-027 | DMC-<MODEL>-<SYSTEMDIFF>-080-080-00A-040A-EN-US | 040 Descriptive | QSPU Hardware Architecture and ECAM Synoptic — Description | 080-080 |
-| DM-080-028 | DMC-<MODEL>-<SYSTEMDIFF>-080-080-00A-100A-EN-US | 100 Procedural | QSPU Full BITE Run Procedure (All 11 Functions) | 080-080 |
-| DM-080-029 | DMC-<MODEL>-<SYSTEMDIFF>-080-080-00A-300A-EN-US | 300 Inspection | QSPU Channel Changeover Functional Test | 080-080 |
-| DM-080-030 | DMC-<MODEL>-<SYSTEMDIFF>-080-080-00A-520A-EN-US | 520 Removal/Replace | QSPU LRU Removal and Replacement | 080-080 |
-| DM-080-031 | DMC-<MODEL>-<SYSTEMDIFF>-080-090-00A-040A-EN-US | 040 Descriptive | S1000D/CSDB Mapping and Traceability — Description | 080-090 |
-| DM-080-032 | DMC-<MODEL>-<SYSTEMDIFF>-080-080-00A-100B-EN-US | 100 Procedural | QSPU-GSE-1 QML Model Weight Update Procedure | 080-080 |
+| DM-080-001 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-000-00A-040A-EN-US | 040 Descriptive | QSP General — System Overview | 080-000 |
+| DM-080-002 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-000-00A-100A-EN-US | 100 Procedural | QSP System Activation / Deactivation | 080-000 |
+| DM-080-003 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-010-00A-040A-EN-US | 040 Descriptive | Quantum Sensor Architecture — Description | 080-010 |
+| DM-080-004 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-010-00A-300A-EN-US | 300 Inspection | QSPU LRU Visual and Electrical Inspection | 080-010 |
+| DM-080-005 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-020-00A-040A-EN-US | 040 Descriptive | Quantum Inertial and Vibration Sensing — Description | 080-020 |
+| DM-080-006 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-020-00A-100A-EN-US | 100 Procedural | AI-IMU BITE Self-Test Procedure | 080-020 |
+| DM-080-007 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-020-00A-300A-EN-US | 300 Inspection | NV Vibrometer Probe Inspection and Alignment Check | 080-020 |
+| DM-080-008 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-020-00A-520A-EN-US | 520 Removal/Replace | AI-IMU Module Removal and Replacement | 080-020 |
+| DM-080-009 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-030-00A-040A-EN-US | 040 Descriptive | Quantum Magnetic and EM Sensing — Description | 080-030 |
+| DM-080-010 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-030-00A-100A-EN-US | 100 Procedural | NV Magnetometer Zero-Field Baseline Calibration | 080-030 |
+| DM-080-011 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-030-00A-300A-EN-US | 300 Inspection | SQUID Sensor Head JT Cooler Inspection | 080-030 |
+| DM-080-012 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-030-00A-520A-EN-US | 520 Removal/Replace | SQUID Sensor Head Removal and Replacement | 080-030 |
+| DM-080-013 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-040-00A-040A-EN-US | 040 Descriptive | Quantum Thermal and Cryogenic Sensing — Description | 080-040 |
+| DM-080-014 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-040-00A-100A-EN-US | 100 Procedural | JJ Thermometer Module SI-Traceability Verification | 080-040 |
+| DM-080-015 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-040-00A-300A-EN-US | 300 Inspection | NV Thermometry Probe Optical Alignment Inspection | 080-040 |
+| DM-080-016 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-040-00A-520A-EN-US | 520 Removal/Replace | JJT Module Removal and Replacement | 080-040 |
+| DM-080-017 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-050-00A-040A-EN-US | 040 Descriptive | Quantum Pressure, Flow and Combustion Sensing — Description | 080-050 |
+| DM-080-018 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-050-00A-100A-EN-US | 100 Procedural | OMPS Cavity Finesse Check and Pressure Calibration | 080-050 |
+| DM-080-019 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-050-00A-300A-EN-US | 300 Inspection | CARS Probe Fibre Alignment and Laser Power Check | 080-050 |
+| DM-080-020 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-050-00A-520A-EN-US | 520 Removal/Replace | AIFM Node Removal and Replacement | 080-050 |
+| DM-080-021 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-060-00A-040A-EN-US | 040 Descriptive | Quantum Sensor Fusion and PSV — Description | 080-060 |
+| DM-080-022 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-060-00A-100A-EN-US | 100 Procedural | QE-EKF Convergence Test and PSV Validation | 080-060 |
+| DM-080-023 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-060-00A-300A-EN-US | 300 Inspection | QPU Coherence Time Measurement Procedure | 080-060 |
+| DM-080-024 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-070-00A-040A-EN-US | 040 Descriptive | QSP Integration with Propulsion Control — Description | 080-070 |
+| DM-080-025 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-070-00A-100A-EN-US | 100 Procedural | AFDX VL Integration Test — FADEC/FCCU/HDCMU | 080-070 |
+| DM-080-026 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-070-00A-300A-EN-US | 300 Inspection | Propulsion Controller Fallback Verification Test | 080-070 |
+| DM-080-027 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-080-00A-040A-EN-US | 040 Descriptive | QSPU Hardware Architecture and ECAM Synoptic — Description | 080-080 |
+| DM-080-028 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-080-00A-100A-EN-US | 100 Procedural | QSPU Full BITE Run Procedure (All 11 Functions) | 080-080 |
+| DM-080-029 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-080-00A-300A-EN-US | 300 Inspection | QSPU Channel Changeover Functional Test | 080-080 |
+| DM-080-030 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-080-00A-520A-EN-US | 520 Removal/Replace | QSPU LRU Removal and Replacement | 080-080 |
+| DM-080-031 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-090-00A-040A-EN-US | 040 Descriptive | S1000D/CSDB Mapping and Traceability — Description | 080-090 |
+| DM-080-032 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-080-080-00A-100B-EN-US | 100 Procedural | QSPU-GSE-1 QML Model Weight Update Procedure | 080-080 |
 
 ---
 
@@ -119,8 +122,8 @@ The QSP technical documentation suite comprises **32 S1000D Data Modules (DMs)**
 ```mermaid
 flowchart LR
     ATLAS_DOCS[ATLAS 080 Subsubject Docs\n000 · 010 · 020 · 030 · 040\n050 · 060 · 070 · 080 · 090]
-    ATLAS_DOCS -->|DMRL mapping| CSDB[<PROGRAMME> CSDB\n32 Data Modules\nSNS 080]
-    BREX[BREX-080-v1\n3 quantum-specific rules\nCoherence · PPE · RF isolation] -->|Governs all DMs| CSDB
+    ATLAS_DOCS -->|DMRL mapping| CSDB[[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB\n32 Data Modules\nSNS 080]
+    BREX[[PROGRAMME-AIRCRAFT]-BREX-080-v1\n3 quantum-specific rules\nCoherence · PPE · RF isolation] -->|Governs all DMs| CSDB
     CSDB -->|Cross-ref| CSDB077[ATLAS 077 CSDB\nHDCMU DMs]
     CSDB -->|Cross-ref| CSDB075[ATLAS 075 CSDB\nFCCU / PEMFC DMs]
     CSDB -->|Cross-ref| CSDB071[ATLAS 071 CSDB\nMotor/Drive DMs]
@@ -158,7 +161,7 @@ flowchart LR
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| CSDB Host Server (<PROGRAMME>) | CSDB-SERVER-TBD | — | Ground infrastructure | Annual CSDB export and integrity check | S1000D Issue 5.0 CSDB; 32 DMs registered under SNS 080 |
+| CSDB Host Server ([PROGRAMME-AIRCRAFT] programme) | CSDB-SERVER-TBD | — | Ground infrastructure | Annual CSDB export and integrity check | S1000D Issue 5.0 CSDB; 32 DMs registered under SNS 080 |
 | BREX-080-v1 Validator | BREX-VAL-TBD | — | CSDB toolchain | Updated per BREX amendment | Validates DM authoring compliance to 3 quantum-specific rules |
 | IETP Renderer — ATA 080 | IETP-TBD | — | Ground / MRO workstation | Per IETP software update | Electronic Tech Publication renderer; linked to CSDB |
 
@@ -173,7 +176,7 @@ flowchart LR
 | ATLAS 075 CSDB | FCCU / PEMFC documentation CSDB | CSDB cross-reference link | DM cross-references for FCCU/QSPU interfaces |
 | ATLAS 071 CSDB | Motor/Drive Systems CSDB | CSDB cross-reference link | DM cross-references for MCU/QSPU interfaces |
 | ATA 45 CMS | Central Maintenance System CSDB | CSDB cross-reference link | BITE DM cross-references |
-| BREX validator | BREX-080-v1 validation tool | CSDB toolchain | Enforce 3 quantum constraints on all SNS 080 DMs |
+| BREX validator | [PROGRAMME-AIRCRAFT]-BREX-080-v1 validation tool | CSDB toolchain | Enforce 3 quantum constraints on all SNS 080 DMs |
 | IETP renderer | ATA 080 IETP | IETP export | Electronic maintenance publication output |
 | QML model CM | QSPU-GSE-1 software CM system | Version-controlled file repository | QML model weight files; CM-controlled; linked to DM-080-032 |
 
@@ -210,7 +213,7 @@ flowchart LR
 
 ## §11 Safety and Airworthiness Considerations
 
-The three BREX-080-v1 domain-specific rules exist because the quantum sensor technologies in the QSP system introduce maintenance hazards and risks of data quality corruption that are not covered by the existing generic programme BREX (BREX-001-v3). These rules are classified as **safety-significant BREX constraints**: failure to comply with the quantum coherence pre-verification rule could result in QSPU logging spurious fault codes during maintenance (which can invalidate a subsequent BITE pass), which is a data integrity hazard for airworthiness decision-making. Failure to apply the cryogenic PPE rule exposes maintenance technicians to immediate cryogenic tissue injury from the 4.2 K SQUID/QPU surfaces. Failure to confirm the RF/EM environment can cause quantum sensor decoherence during calibration, resulting in incorrect calibration data being stored in the QSPU, which is a latent airworthiness hazard.
+The three BREX-080-v1 domain-specific rules exist because the quantum sensor technologies in the QSP system introduce maintenance hazards and risks of data quality corruption that are not covered by the existing generic [PROGRAMME-AIRCRAFT] BREX (BREX-001-v3). These rules are classified as **safety-significant BREX constraints**: failure to comply with the quantum coherence pre-verification rule could result in QSPU logging spurious fault codes during maintenance (which can invalidate a subsequent BITE pass), which is a data integrity hazard for airworthiness decision-making. Failure to apply the cryogenic PPE rule exposes maintenance technicians to immediate cryogenic tissue injury from the 4.2 K SQUID/QPU surfaces. Failure to confirm the RF/EM environment can cause quantum sensor decoherence during calibration, resulting in incorrect calibration data being stored in the QSPU, which is a latent airworthiness hazard.
 
 All three BREX rules are therefore mandatory and non-deferrable, enforced both by the BREX validator tool and by the Q-DATAGOV review process before any DM is promoted to APPROVED status in the CSDB.
 

@@ -12,6 +12,8 @@ support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-AIR]
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 020 — Deployment and Retraction Mechanisms
@@ -24,7 +26,7 @@ Internal cross-references use relative Markdown links. External regulatory citat
 
 ## 1. Purpose
 
-This document defines the design, specification, qualification, and safety requirements for the electromechanical deployment and retraction mechanisms of the AMPEL360E Emergency Solar Panel System (ESPS). The deployment mechanism must reliably deploy the PV array within 30 seconds of generator loss detection and retract it on command, maintaining the deployed position against aerodynamic loads throughout the emergency flight phase.
+This document defines the design, specification, qualification, and safety requirements for the electromechanical deployment and retraction mechanisms of the [PROGRAMME-AIRCRAFT] Emergency Solar Panel System (ESPS). The deployment mechanism must reliably deploy the PV array within 30 seconds of generator loss detection and retract it on command, maintaining the deployed position against aerodynamic loads throughout the emergency flight phase.
 
 ---
 
@@ -32,11 +34,11 @@ This document defines the design, specification, qualification, and safety requi
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Reference | ATA 43.020 — Deployment and Retraction Mechanisms |
 | Applicable Standards | DO-160G; DO-254; ARP4754B; CS-25 §25.1309; CS-25 §25.629 |
 | Design Assurance Level | EMA Control Electronics: DAL B; Mechanical: DAL C |
-| Configuration | AMPEL360E Build Standard 1.0+ |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0+ |
 
 ---
 
@@ -336,8 +338,8 @@ graph LR
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
 | REF-043-02-01 | ESPS General (043-000) | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-043-02-02 | AMPEL360E Emergency Bus Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-043-02-03 | AMPEL360E ESPS Aeroelastic Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-043-02-02 | [PROGRAMME-AIRCRAFT] Emergency Bus Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-043-02-03 | [PROGRAMME-AIRCRAFT] ESPS Aeroelastic Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

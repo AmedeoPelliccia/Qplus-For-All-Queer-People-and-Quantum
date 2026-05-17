@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0066-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Compressor Inlet and Outlet Interfaces
@@ -39,23 +41,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-030"
 
 ## §1 Purpose
 
-This document defines the inlet and outlet duct interfaces of the main Electric Air Compressors (EAC-A and EAC-B) on the AMPEL360E eWTW. It covers the RAM air intake location and geometry, inlet filtering, anti-icing of the inlet lip, outlet duct routing to the ECS distribution manifold, outlet check valves, and duct pressure/temperature ratings.
+This document defines the agnostic ATLAS standard-level architecture context for `Compressor Inlet and Outlet Interfaces`.
 
-Unlike a conventional engine bleed system where the compressor interface is at the engine fan case, the EAC inlets are located on the aircraft fuselage belly fairing forward section. This location provides clean low-turbulence RAM recovery air at all flight phases and minimises duct length to the ECS packs.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 66-030 — Compressor Inlet and Outlet Interfaces |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 066-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `066` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Inlet:** Each EAC uses a NACA flush intake on the lower fuselage forward section (station approximately FS 450). The inlet lip is electrically heated (electrothermal anti-ice, EAI) to prevent ice accretion at altitudes up to FL410 and OAT down to −55 °C. Inlet air passes through a high-efficiency particulate filter before entering the EAC scroll. A differential pressure sensor monitors filter condition; ACCU triggers a maintenance advisory when ΔP across filter exceeds 1.5 kPa.
@@ -273,4 +272,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

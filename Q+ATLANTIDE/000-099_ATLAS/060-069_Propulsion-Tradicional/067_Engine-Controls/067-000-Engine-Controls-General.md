@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0067-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Engine Controls General
@@ -41,25 +43,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-000"
 
 ## §1 Purpose
 
-ATA Chapter 67 covers the Engine Controls system of the AMPEL360E eWTW. The sole authority for engine management is the **Full-Authority Digital Engine Control (FADEC)**, implemented as a dual-channel Electronic Engine Controller (EEC) per engine, certified to DO-178C DAL A.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine Controls General`.
 
-On the AMPEL360E eWTW, the FADEC is responsible for: fuel metering via the Fuel Metering Valve (FMV, ATA 64); variable geometry scheduling (VSV stages 1–4 and VBV, ATA 67); ignition sequencing (ATA 65); N1/N2 overspeed protection; engine start and shutdown logic; and in-flight relight management. There is **no mechanical reversion** from FADEC — the architecture is full-authority-only, justified by the DAL A software assurance and dual-channel hardware.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The absence of engine bleed off-takes (ATA 66 EAC architecture) simplifies FADEC logic: there are no HP/LP bleed valve commands, no pre-cooler control, and no cross-bleed valve management. FADEC communicates with cockpit via ARINC 429 (throttle resolver) and AFDX (FMS, ECAM, CMS).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 67-000 — Engine Controls General |
-| Certification basis | EASA CS-E Amdt 5 + CS-25 Amdt 27+ / DO-178C DAL A |
-| S1000D SNS | 067-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `067` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The FADEC EEC is mounted on the engine fan case, passively cooled by ram air through a dedicated cooling channel in the EEC enclosure. The EEC contains two independent channels (CH-A and CH-B) on separate circuit boards sharing a common housing. Each channel has its own power supply (28 V DC from independent aircraft buses), its own processor, its own sensor inputs, and its own output drivers for actuators. CH-A is the commanding channel; CH-B is a hot-standby shadow controller that assumes authority within one FADEC frame (20 ms) on CH-A fault.
@@ -239,7 +236,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-067-000-001 | Confirm FADEC OEM and EEC part number for AMPEL360E eWTW engine selection | Q-MECHANICS | 2026-Q3 |
+| OI-067-000-001 | Confirm FADEC OEM and EEC part number for programme-defined aircraft type engine selection | Q-MECHANICS | 2026-Q3 |
 | OI-067-000-002 | Complete FADEC System Safety Assessment (SSA) including all actuator failure modes | Q-AIR / safety | 2027-Q1 |
 
 ---
@@ -273,4 +270,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

@@ -31,6 +31,8 @@ ata_reference: "ATA 46.050 — Crew Information and Flight Operations Data"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 050 — Crew Information and Flight Operations Data
@@ -43,14 +45,14 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46.050 — Crew Information and Flight Operations Data (CIFOD) defines the systems and data flows that provide flight crew with all pre-flight, in-flight, and post-flight information relevant to flight operations on the AMPEL360E eWTW. This covers the EFB Class 3 dual-tablet installation, NavDB AIRAC 28-day update cycle, Jeppesen chart management, Operational Flight Plan (OFP) loading, SIGMET/PIREP weather data feed, and the battery SoC/SoH pre-flight energy planning tool.
+ATA 46.050 — Crew Information and Flight Operations Data (CIFOD) defines the systems and data flows that provide flight crew with all pre-flight, in-flight, and post-flight information relevant to flight operations on the programme-defined aircraft type. This covers the EFB Class 3 dual-tablet installation, NavDB AIRAC 28-day update cycle, Jeppesen chart management, Operational Flight Plan (OFP) loading, SIGMET/PIREP weather data feed, and the battery SoC/SoH pre-flight energy planning tool.
 
 Key governance areas:
 - EFB Class 3 dual tablets (EFB-A, EFB-B): pilot and co-pilot; Class 3 per AC 120-76D.
 - NavDB: Navigation Database (ARINC 424 format), AIRAC 28-day update cycle; loaded via Gatelink or ARINC 849 USB dataloader.
 - OFP loading: Operational Flight Plan received via ACARS/SATCOM or loaded from Gatelink; available on EFB and displayed on MCDU/MFD.
 - SIGMET/PIREP: Weather data (SIGMET, PIREP, TAF, METAR) pushed to EFB via ACARS/VDL/SATCOM.
-- Battery energy planning tool: eWTW-specific EFB application computing range in kWh/km and minimum reserve SoC for alternate; replaces conventional fuel load tool (kg/h).
+- Battery energy planning tool: [PROGRAMME-VARIANT]-specific EFB application computing range in kWh/km and minimum reserve SoC for alternate; replaces conventional fuel load tool (kg/h).
 - Primary Q-Division: Q-DATAGOV; Support: Q-AIR, Q-SPACE, Q-HPC.
 
 ---
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46.050 — Crew Information and Flight Operations Data |
 | Certification Basis | CS-25 Amendment 28; AC 120-76D (EFB Class 3) |
 | Applicable Standards | ARINC 424 (NavDB); ARINC 429; ARINC 664 P7; DO-160G; S1000D Issue 5.0 |
@@ -76,7 +78,7 @@ The CIFOD subsystem provides real-time flight operations information to the flig
 2. **Jeppesen chart management**: Georeferenced approach, SID, STAR charts loaded via Gatelink; auto-updated at gate; displayed on EFB in approach context.
 3. **OFP loading**: Operational Flight Plan received via ACARS (ground pre-departure) or manually loaded from Gatelink USB; OFP data (route, alternates, fuel/energy reserve) displayed on EFB and cross-linked to FMS.
 4. **SIGMET/PIREP/TAF/METAR**: Weather uplinks via ACARS/VDL Mode 2/SATCOM pushed to EFB weather overlay; crew reviewed pre-departure and in-flight.
-5. **Battery energy planning tool (eWTW-specific)**: EFB application computing kWh consumption per flight segment based on route, wind, weight, altitude; computes minimum departure SoC for destination + alternate + final reserve (10% SoC); interfaces with AIDMS battery SoH feed.
+5. **Battery energy planning tool ([PROGRAMME-VARIANT]-specific)**: EFB application computing kWh consumption per flight segment based on route, wind, weight, altitude; computes minimum departure SoC for destination + alternate + final reserve (10% SoC); interfaces with AIDMS battery SoH feed.
 
 ### Diagram 1: CIFOD Functional Hierarchy
 
@@ -89,7 +91,7 @@ graph TD
     CIFOD --> JEPPESEN["Jeppesen Chart Manager\n(Georeferenced charts)"]
     CIFOD --> OFP["OFP Loader\n(ACARS / Gatelink)"]
     CIFOD --> WX["Weather Data\n(SIGMET/PIREP/METAR/TAF)"]
-    CIFOD --> BAT_PLAN["Battery Energy Planning\n(kWh/km — eWTW specific)"]
+    CIFOD --> BAT_PLAN["Battery Energy Planning\n(kWh/km — [PROGRAMME-VARIANT] specific)"]
     BAT_PLAN --> AIDMS["AIDMS Battery SoH\n(ATA 46.010)"]
     BAT_PLAN --> FMS["FMS Route Data\n(ATA 22)"]
 ```
@@ -198,7 +200,7 @@ stateDiagram-v2
 - **OFP cross-check**: OFP loaded on EFB is not a source for FMS; crew manually cross-loads OFP data into FMS; EFB OFP is advisory only (not credited for navigation).
 - **Battery energy planning advisory-only**: Energy plan on EFB does not command aircraft systems; pilots use energy plan as decision-support; authoritative SoC displayed on EICAS.
 - **ACARS weather advisory**: SIGMET/PIREP on EFB is advisory; dispatch weather release remains the authority for flight release decisions.
-- **eWTW energy reserve**: Battery planning tool enforces 10% SoC final reserve as a non-alterable parameter; crew cannot reduce final reserve below regulatory minimum.
+- **[PROGRAMME-VARIANT] energy reserve**: Battery planning tool enforces 10% SoC final reserve as a non-alterable parameter; crew cannot reduce final reserve below regulatory minimum.
 
 ---
 
@@ -220,7 +222,7 @@ stateDiagram-v2
 - **EFB platform**: Qualified EFB Class 3 platform software per AC 120-76D; operator-specific qualification documentation required.
 - **NavDB application**: ARINC 424 NavDB checker + activator; validates cycle dates and format before NAS hand-off to FMS NavDB updater.
 - **Jeppesen chart app**: Georeferenced plates loaded per route; auto-context switching based on FMS active waypoint via AFDX advisory link.
-- **Battery energy planning app**: eWTW-specific; coefficients: kWh/nm as function of GW, altitude, wind, ISA deviation; SoH degradation factor from AIDMS; minimum reserve = 10% SoC unalterable.
+- **Battery energy planning app**: [PROGRAMME-VARIANT]-specific; coefficients: kWh/nm as function of GW, altitude, wind, ISA deviation; SoH degradation factor from AIDMS; minimum reserve = 10% SoC unalterable.
 - **OFP application**: Receives ACARS-uplinked OFP XML; displays route, alternates, fuel/energy block, NOTAM summary.
 - **Software update**: All EFB apps updated via Gatelink (TLS 1.3); integrity SHA-256 per application package.
 
@@ -272,7 +274,7 @@ stateDiagram-v2
 | Environmental qualification | DO-160G | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Navigation database standard | ARINC 424 | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | Datalink communications | EUROCAE ED-228A (CPDLC) | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| Energy reserve (eWTW) | Regulatory TBD (eWTW-specific CS-23/25 amendment) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Energy reserve ([PROGRAMME-VARIANT]) | Regulatory TBD ([PROGRAMME-VARIANT]-specific CS-23/25 amendment) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -280,16 +282,16 @@ stateDiagram-v2
 
 | Term | Acronym | Definition |
 |------|---------|------------|
-| Electronic Flight Bag | EFB | Class 3 (installed) tablet computer on the AMPEL360E eWTW flight deck providing crew with NavDB, charts, OFP, weather, and battery energy planning applications per AC 120-76D |
+| Electronic Flight Bag | EFB | Class 3 (installed) tablet computer on the programme-defined aircraft type flight deck providing crew with NavDB, charts, OFP, weather, and battery energy planning applications per AC 120-76D |
 | Navigation Database | NavDB | ARINC 424-format database of waypoints, airways, procedures, and navaids loaded on EFB and FMS; updated every AIRAC 28-day cycle |
 | Aeronautical Information Regulation And Control | AIRAC | The ICAO/IATA standardised 28-day cycle for navigation database updates; ensures consistent NavDB data globally |
 | Operational Flight Plan | OFP | The complete flight release document including route, alternates, fuel/energy block, payload, and NOTAM summary; loaded on EFB via ACARS or Gatelink |
 | Significant Meteorological Information | SIGMET | An en-route weather advisory issued by meteorological watch offices (MWO) for severe weather phenomena; displayed as overlay on EFB route map |
 | Pilot Report | PIREP | In-flight weather observation reported by pilots via ACARS/VHF and displayed on EFB weather overlay to supplement SIGMET/TAF |
 | Terminal Aerodrome Forecast | TAF | A concise statement of the expected meteorological conditions at an aerodrome over a specified period; displayed on EFB for departure and destination/alternate |
-| Battery State of Charge | SoC | The ratio of remaining usable energy to nominal battery capacity (0–100%); primary parameter in eWTW energy planning and displayed on EICAS and EFB |
+| Battery State of Charge | SoC | The ratio of remaining usable energy to nominal battery capacity (0–100%); primary parameter in [PROGRAMME-VARIANT] energy planning and displayed on EICAS and EFB |
 | State of Health | SoH | The long-term degradation metric of the battery pack (0–100%); used by EFB battery energy planning tool to adjust range estimates based on actual capacity reduction |
-| Energy Planning Model | EPM | The eWTW-specific EFB application computing kWh consumption per route segment as a function of GW, altitude, wind, and ISA deviation, with SoH degradation correction |
+| Energy Planning Model | EPM | The [PROGRAMME-VARIANT]-specific EFB application computing kWh consumption per route segment as a function of GW, altitude, wind, and ISA deviation, with SoH degradation correction |
 
 ---
 
@@ -328,7 +330,7 @@ stateDiagram-v2
 
 | Issue ID | Description | Owner | Status |
 |----------|-------------|-------|--------|
-| IS-046-050-001 | Battery energy planning model coefficients (kWh/nm vs GW/altitude/wind) not yet calibrated on AMPEL360E eWTW prototype | Q-AIR | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| IS-046-050-001 | Battery energy planning model coefficients (kWh/nm vs GW/altitude/wind) not yet calibrated on programme-defined aircraft type prototype | Q-AIR | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | IS-046-050-002 | Regulatory minimum energy reserve (10% SoC) pending EASA/FAA rulemaking for electric aircraft | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | IS-046-050-003 | EFB Class 3 hardware supplier not yet selected (EFB-A/EFB-B specification TBD) | Q-HPC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | IS-046-050-004 | CPDLC integration on EFB (ED-228A) to be validated end-to-end with ATSU | Q-SPACE | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
@@ -360,7 +362,7 @@ stateDiagram-v2
 | [R3] | ATLAS 046-030 — Airline Information and Communication Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 046-010 — Aircraft Information Management | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R5] | FAA AC 120-76D EFB Authorization | Current revision | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R6] | AMPEL360E eWTW Battery Energy Planning Model Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R6] | programme-defined aircraft type Battery Energy Planning Model Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -369,7 +371,7 @@ stateDiagram-v2
 This document is classified `to-be-reviewed-by-system-expert`. The review process requires:
 
 1. **Flight Operations / EFB System Expert**: Validates EFB Class 3 installation architecture, NavDB update workflow, OFP loading process, and compliance with AC 120-76D.
-2. **eWTW Energy Systems Expert**: Reviews battery energy planning model, 10% SoC reserve policy, kWh/nm coefficient approach, and SoH degradation factor methodology.
+2. **[PROGRAMME-VARIANT] Energy Systems Expert**: Reviews battery energy planning model, 10% SoC reserve policy, kWh/nm coefficient approach, and SoH degradation factor methodology.
 3. **EASA/FAA Regulatory Review**: CS-25 EFB installation approval items and energy reserve regulatory basis (open issue IS-046-050-002) to be resolved before baseline freeze.
 
 `review_status` must be updated to `reviewed` upon completion of the designated system expert review.
@@ -380,4 +382,4 @@ This document is classified `to-be-reviewed-by-system-expert`. The review proces
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for AMPEL360E eWTW Crew Information and Flight Operations Data |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for programme-defined aircraft type Crew Information and Flight Operations Data |

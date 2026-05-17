@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0081-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-081-010-COMBUSTION-MODELING-BASELINE-AND-SCOPE
      ATLAS-081 (Quantum-Optimized Combustion Models) · Combustion Modeling Baseline and Scope
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Combustion Modeling Baseline and Scope
@@ -46,58 +48,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-010"
 
 ## §1 Purpose
 
-This document establishes the **combustion modeling baseline and scope** for the ATLAS-081
-Quantum-Optimized Combustion Models subsystem. It serves the following functions:
+This document defines the agnostic ATLAS standard-level architecture context for `Combustion Modeling Baseline and Scope`.
 
-1. **Classical baseline documentation**: Surveys the validated classical combustion simulation
-   methods currently applied within FADEC and engine design tools, providing the reference
-   against which quantum augmentation improvements are measured.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-2. **Limitations analysis**: Identifies specific quantified shortcomings of classical methods
-   (NOx prediction error, ODE stiffness, turbulence-chemistry interaction underprediction)
-   that motivate the quantum augmentation investment.
-
-3. **Quantum augmentation scope definition**: Precisely delineates which aspects of combustion
-   modeling are within scope for quantum augmentation by QCKS, QRPO, and QTCC, and which
-   aspects remain in the classical domain.
-
-4. **Modeling fidelity requirements**: Establishes acceptance criteria (quantitative accuracy
-   targets, update rates, operating envelope) that all quantum-augmented combustion models
-   must satisfy before integration into the certified FADEC interface.
-
-5. **Validation target dataset management**: Defines the ground truth data sources (ICAO LTO
-   test cell measurements, high-altitude combustor rig data, DNS flame databases) against
-   which QOCMU model accuracy is verified.
-
-This document is subordinate to the ATLAS-081 General baseline (081-000) and supersedes any
-informal modeling scope statements in engine design memoranda.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-081 (Quantum-Optimized Combustion Models) — Combustion Modeling Baseline and Scope |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; IEEE P2995; S1000D SNS 081-010-00 |
-| S1000D SNS | 081-010-00 |
-| Combustor type | Annular, lean direct injection (LDI), 20 fuel injectors |
-| Fuel types in scope | Jet-A (ASTM D1655), SAF HEFA/FT/ATJ (ASTM D7566), GH₂ (EASA SC-H₂) |
-| Operating pressure range | 20–45 bar (P3) |
-| Operating temperature range | 600–2 100 K (T3 to flame zone peak) |
-| Equivalence ratio range | 0.3–2.0 (staging zones combined) |
-| Fuel flow range | 0.5–2.0 kg/s |
-| Classical turbulence model | RANS k-ε (FADEC real-time); LES (design/validation) |
-| Classical chemistry | 4-step global kinetics (FADEC); GRI-Mech 3.0 (H₂); LLNL JetSurF 2.0 (Jet-A/SAF) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `081` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 Classical Combustion Modeling Baseline
 
-The AMPEL360E eWTW turbofan combustor classical modeling stack is organized in three tiers
+The programme-defined aircraft type turbofan combustor classical modeling stack is organized in three tiers
 by fidelity and computational cost:
 
 #### Tier 1 — Real-Time (FADEC Embedded, ≤ 2 ms cycle)
@@ -188,11 +157,11 @@ the minimal-NOx pathway subset at each operating point, achieving 8–12% NOx re
 | Hot streaks / thermal distortion at HPT entry | Requires CHT coupling beyond 081 scope | ATA 72 design |
 | Atomization and spray modeling | Sub-millimeter physics; not addressable at 12 qubits | Classical CFD (design phase) |
 | Combustion instability / thermo-acoustic oscillations | Acoustic coupling; different physics regime | ATA 73 damper design |
-| Afterburner / augmentor | Not fitted to AMPEL360E eWTW | N/A |
+| Afterburner / augmentor | Not fitted to programme-defined aircraft type | N/A |
 
 ### 3.4 Combustor Geometry Baseline
 
-The AMPEL360E eWTW main combustor is an **annular lean direct injection (LDI)** design:
+The programme-defined aircraft type main combustor is an **annular lean direct injection (LDI)** design:
 
 | Parameter | Value |
 |---|---|

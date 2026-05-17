@@ -31,6 +31,8 @@ ata_reference: "ATA 44.050 — In-Flight Entertainment and Connectivity"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 050 — In-Flight Entertainment and Connectivity Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the In-Flight Entertainment (IFE) and Connectivity interfaces for the AMPEL360E eWTW aircraft. The IFEC system provides: seat-back IFE screens with on-demand content, cabin Wi-Fi (802.11ax) and broadband satellite connectivity (Ka-band SATCOM), USB-C seat power, and the Gatelink operational data link at gate.
+This document defines the In-Flight Entertainment (IFE) and Connectivity interfaces for the programme-defined aircraft type. The IFEC system provides: seat-back IFE screens with on-demand content, cabin Wi-Fi (802.11ax) and broadband satellite connectivity (Ka-band SATCOM), USB-C seat power, and the Gatelink operational data link at gate.
 
 Key governance areas:
 - In-Seat Entertainment and Power (ISEP) unit hardware.
@@ -61,7 +63,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44.050 — In-Flight Entertainment and Connectivity |
 | Certification Basis | CS-25 §25.853 (flammability); CS-25 §25.1309 (equipment safety) |
 | Applicable Standards | FCC Part 15/25; ETSI EN 302 908; DO-160G; IEEE 802.11ax (Wi-Fi 6); ARINC 628 |
@@ -116,7 +118,7 @@ The IFEC system consists of three integrated subsystems:
 
 ## 5. Architecture Description
 
-ISEP units are PoE++ powered via CDN VLAN 20; each ISEP streams content from the content server at up to 15 Mbit/s per screen. The SATCOM ESA antenna is controlled by the Ka-band modem in the forward avionics bay; the modem delivers a 200 Mbit/s aggregate IP pipe to the SATCOM gateway function running on the CDN. SATCOM capacity is dynamically shared: 60 % passenger connectivity, 40 % operational (ACARS high-bandwidth, QAR download). Wi-Fi access points create 2 SSIDs per AP: "AMPEL360E-PAX" (passenger, 100 Mbit/s shared) and "AMPEL360E-OPS" (airline operational, 10 Mbit/s dedicated). Gatelink activates automatically when aircraft is on ground and a certified Gatelink ground station is detected; it supports content loading at up to 1 Gbit/s Wi-Fi.
+ISEP units are PoE++ powered via CDN VLAN 20; each ISEP streams content from the content server at up to 15 Mbit/s per screen. The SATCOM ESA antenna is controlled by the Ka-band modem in the forward avionics bay; the modem delivers a 200 Mbit/s aggregate IP pipe to the SATCOM gateway function running on the CDN. SATCOM capacity is dynamically shared: 60 % passenger connectivity, 40 % operational (ACARS high-bandwidth, QAR download). Wi-Fi access points create 2 SSIDs per AP: "[PROGRAMME-AIRCRAFT]-PAX" (passenger, 100 Mbit/s shared) and "[PROGRAMME-AIRCRAFT]-OPS" (airline operational, 10 Mbit/s dedicated). Gatelink activates automatically when aircraft is on ground and a certified Gatelink ground station is detected; it supports content loading at up to 1 Gbit/s Wi-Fi.
 
 ---
 
@@ -317,9 +319,9 @@ graph LR
 | Wi-Fi 6 | 802.11ax | Wi-Fi standard providing improved capacity and efficiency in dense passenger environments |
 | WPA3 | — | Wi-Fi Protected Access 3; current generation Wi-Fi encryption standard for passenger (personal) and airline (enterprise) SSIDs |
 | Gatelink | — | Ground-based data link (VHF/Wi-Fi) for bi-directional operational data and IFE content loading when aircraft is at gate |
-| USB Power Delivery | USB-PD | USB charging protocol enabling up to 100 W (PD 3.0: 60 W per port in eWTW implementation) |
+| USB Power Delivery | USB-PD | USB charging protocol enabling up to 100 W (PD 3.0: 60 W per port in [PROGRAMME-VARIANT] implementation) |
 | Content Server | — | Aircraft-embedded NVMe storage server pre-loaded with IFE audio-visual content; refreshed via Gatelink |
-| SSID | — | Service Set Identifier; network name broadcasted by Wi-Fi access point; eWTW has 2 SSIDs (PAX and OPS) per AP |
+| SSID | — | Service Set Identifier; network name broadcasted by Wi-Fi access point; [PROGRAMME-VARIANT] has 2 SSIDs (PAX and OPS) per AP |
 | Eb/No | — | Energy per bit to noise power spectral density ratio; measure of satellite link quality |
 
 ---
@@ -343,7 +345,7 @@ graph LR
 |--------|----------|---------|--------|
 | REF-044-05-01 | Cabin Systems General (044-000) | 1.0 | Active |
 | REF-044-05-02 | Cabin Core Network (044-010) | 1.0 | Active |
-| REF-044-05-03 | AMPEL360E IFEC Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-05-03 | [PROGRAMME-AIRCRAFT] IFEC Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

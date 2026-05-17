@@ -45,7 +45,6 @@ governance_class: "baseline"
 governance_class_link: "#ref-gov"
 version: "1.0.0"
 status: "active"
-scope: agnostic-standard
 language: "en"
 s1000d_applicability: "S1000D-CSDB-compatible"
 s1000d_reference_link: "#ref-s1000d"
@@ -54,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 090 — S1000D / CSDB Mapping and Traceability
@@ -69,17 +70,15 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md) 
 
 ## 1. Purpose
 
-This document defines the S1000D Issue 5.0 Data Module Code (DMC) structure, CSDB applicability rules, Data Module Requirements List (DMRL), Business Rules Exchange (BREX), publication types, DO-178C to Data Module (DM) traceability matrix, and SNS allocation for the programme avionics multisystem (040 subsection). It is the primary reference for technical publications engineers, CSDB administrators, and certification authorities responsible for S1000D data governance.
+This document defines the S1000D Issue 5.0 Data Module Code (DMC) structure, CSDB applicability rules, Data Module Requirements List (DMRL), Business Rules Exchange (BREX), publication types, DO-178C to Data Module (DM) traceability matrix, and SNS allocation for the [PROGRAMME-AIRCRAFT] avionics multisystem (040 subsection). It is the primary reference for technical publications engineers, CSDB administrators, and certification authorities responsible for S1000D data governance.
 
 ---
-
-> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
 
 ## 2. Applicability
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | <MODEL> (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | S1000D Issue | [S1000D Issue 5.0](#ref-s1000d) |
 | CSDB Platform | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
@@ -91,7 +90,7 @@ This document defines the S1000D Issue 5.0 Data Module Code (DMC) structure, CSD
 
 ## 3. System / Function Overview
 
-The programme S1000D data governance for the 040 Multisystem subsection provides a structured mapping between engineering design artefacts, software assurance evidence (DO-178C), and S1000D data modules stored in the Common Source Database (CSDB). The DMC structure follows S1000D Issue 5.0 conventions with the model identification code <MODEL>, system difference code <SYSTEMDIFF>, and SNS codes aligned to the 040 subsection. The DMRL is maintained as the authoritative list of all required data modules. BREX rules enforce schema constraints. Publication modules (PMC) aggregate data modules into AMM, FIM, IPD, TSM, and SRM publications. DO-178C software life cycle data items are cross-referenced to data modules via a traceability matrix.
+The [PROGRAMME-AIRCRAFT] S1000D data governance for the 040 Multisystem subsection provides a structured mapping between engineering design artefacts, software assurance evidence (DO-178C), and S1000D data modules stored in the Common Source Database (CSDB). The DMC structure follows S1000D Issue 5.0 conventions with the model identification code [PROGRAMME-AIRCRAFT], system difference code [PROGRAMME-VARIANT], and SNS codes aligned to the 040 subsection. The DMRL is maintained as the authoritative list of all required data modules. BREX rules enforce schema constraints. Publication modules (PMC) aggregate data modules into AMM, FIM, IPD, TSM, and SRM publications. DO-178C software life cycle data items are cross-referenced to data modules via a traceability matrix.
 
 ---
 
@@ -102,7 +101,7 @@ The programme S1000D data governance for the 040 Multisystem subsection provides
 - S1000D Issue 5.0 DMC structure and naming convention for SNS 040
 - CSDB applicability rules and effectivity coding
 - Data Module Requirements List (DMRL) for 040 subsection
-- Business Rules Exchange (BREX) constraints for <PROGRAMME> CSDB
+- Business Rules Exchange (BREX) constraints for [PROGRAMME-AIRCRAFT] CSDB
 - Publication types: AMM, FIM, IPD, TSM, SRM
 - DO-178C life cycle data item to DM traceability matrix
 - SNS allocation across 040-000 to 040-090
@@ -119,20 +118,20 @@ The programme S1000D data governance for the 040 Multisystem subsection provides
 ## 5. Architecture Description
 
 **DMC Structure**: Each data module for the 040 subsection follows the pattern:
-`DMC-<MODEL>-<SYSTEMDIFF>-040-{SNS3}-00A-{InfoCode}-A`
+`DMC-<PROGRAMME>-<VARIANT>-040-{SNS3}-00A-{InfoCode}-A`
 where:
-- Model Identification Code: `<MODEL>`
-- System Difference Code: `<PROGRAMME-SHORT>`
+- Model Identification Code: `[PROGRAMME-AIRCRAFT]`
+- System Difference Code: `[PROGRAMME-VARIANT]`
 - SNS: `040-{SNS3}` (e.g., 040-010, 040-060)
 - Sub-Sub-System / Sub-Sub-Assembly: `00A`
 - Information Code: per S1000D information code set (040=description, 300=FI, 310=procedure, 400=BITE, 520=wiring, 720=SW desc, 941=IPD)
 - Information Code Variant: `A`
 
-**CSDB Applicability**: Applicability is coded using the programme product attribute `AC-VAR` (aircraft variant). All 040 subsection data modules are applicable to all variants unless an applicability annotation restricts to a specific variant.
+**CSDB Applicability**: Applicability is coded using the [PROGRAMME-AIRCRAFT] product attribute `AC-VAR` (aircraft variant). All 040 subsection data modules are applicable to all variants unless an applicability annotation restricts to a specific variant.
 
 **DMRL**: The DMRL is a structured list of all required data modules for the 040 subsection, derived from the design documentation, maintenance task analysis, and DO-178C traceability requirements. The DMRL drives CSDB data module creation and status tracking.
 
-**BREX**: The programme BREX (Business Rules Exchange) document constrains allowed S1000D schema elements, attribute values, and applicability expressions within the CSDB. BREX violations are flagged during CSDB validation.
+**BREX**: The [PROGRAMME-AIRCRAFT] BREX (Business Rules Exchange) document constrains allowed S1000D schema elements, attribute values, and applicability expressions within the CSDB. BREX violations are flagged during CSDB validation.
 
 **DO-178C to DM Traceability**: Each DO-178C Plan for Software Aspects of Certification (PSAC), Software Design Description (SDD), and Software Verification Results (SVR) is linked to one or more CSDB data modules via the traceability matrix defined in this document.
 
@@ -279,12 +278,12 @@ graph LR
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description (SNS 000) | DMC-<MODEL>-<SYSTEMDIFF>-040-000-00A-040A-A | 040 | Multisystem General Description |
-| System Description (SNS 060) | DMC-<MODEL>-<SYSTEMDIFF>-040-060-00A-040A-A | 040 | Time Synchronisation Description |
-| System Description (SNS 070) | DMC-<MODEL>-<SYSTEMDIFF>-040-070-00A-040A-A | 040 | Configuration and Software Loading Description |
-| System Description (SNS 080) | DMC-<MODEL>-<SYSTEMDIFF>-040-080-00A-040A-A | 040 | Monitoring and Diagnostics Description |
-| Fault Isolation (SNS 080) | DMC-<MODEL>-<SYSTEMDIFF>-040-080-00A-300A-A | 300 | CMC Fault Isolation |
-| BREX Reference | DMC-<MODEL>-<SYSTEMDIFF>-040-090-00A-022A-A | 022 | <PROGRAMME> CSDB Business Rules |
+| System Description (SNS 000) | DMC-<PROGRAMME>-<VARIANT>-040-000-00A-040A-A | 040 | Multisystem General Description |
+| System Description (SNS 060) | DMC-<PROGRAMME>-<VARIANT>-040-060-00A-040A-A | 040 | Time Synchronisation Description |
+| System Description (SNS 070) | DMC-<PROGRAMME>-<VARIANT>-040-070-00A-040A-A | 040 | Configuration and Software Loading Description |
+| System Description (SNS 080) | DMC-<PROGRAMME>-<VARIANT>-040-080-00A-040A-A | 040 | Monitoring and Diagnostics Description |
+| Fault Isolation (SNS 080) | DMC-<PROGRAMME>-<VARIANT>-040-080-00A-300A-A | 300 | CMC Fault Isolation |
+| BREX Reference | DMC-<PROGRAMME>-<VARIANT>-040-090-00A-022A-A | 022 | [PROGRAMME-AIRCRAFT] CSDB Business Rules |
 
 ### SNS Allocation — 040 Subsection
 
@@ -413,7 +412,7 @@ graph LR
 | OI-090-01 | CSDB platform selection and hosting arrangement to be finalised | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-090-02 | BREX document to be authored and submitted for airline/authority review | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-090-03 | DO-178C traceability matrix template to be agreed with DER/certification authority | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| OI-090-04 | S1000D applicability coding scheme for <MODEL> variants to be finalised | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-090-04 | S1000D applicability coding scheme for [PROGRAMME-AIRCRAFT] variants to be finalised | Q-DATAGOV | Open | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

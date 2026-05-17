@@ -21,6 +21,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 015 — Ground Support Equipment
@@ -38,7 +40,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 - Subsubjects `000`–`005` are populated in this baseline release:
   - `015-000-GSE-Overview.md` — subsection scope, boundary rules, position in ATLAS, content map
   - `015-001-GSE-Scope-and-Boundaries.md` — taxonomy boundary definitions; what is/is not GSE within ATLAS
-  - `015-002-GSE-Catalog-and-Compatibility-Matrix.md` — authorised GSE list per AMPEL360 variant with compatibility ratings
+  - `015-002-GSE-Catalog-and-Compatibility-Matrix.md` — authorised GSE list per [PROGRAMME-AIRCRAFT] variant with compatibility ratings
   - `015-003-Powered-and-Non-Powered-GSE.md` — classification of GSE by power source; operational requirements per class
   - `015-004-GSE-Interfaces-Couplings-and-Aircraft-Side-Connections.md` — physical and electrical interfaces between GSE and aircraft
   - `015-005-GSE-Maintenance-Calibration-and-Records.md` — maintenance intervals, calibration schedules, and traceability records

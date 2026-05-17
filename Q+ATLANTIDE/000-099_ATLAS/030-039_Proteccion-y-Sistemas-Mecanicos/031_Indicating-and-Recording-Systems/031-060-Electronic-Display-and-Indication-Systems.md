@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Electronic Display and Indication Systems"
 file_name: "031-060-Electronic-Display-and-Indication-Systems.md"
 sns_reference: "031-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-60"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-60"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -99,10 +99,12 @@ keywords:
   - "symbol generator"
   - "glass cockpit"
   - "ED-14G"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-060 — Electronic Display and Indication Systems
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -114,30 +116,20 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Electronic Display and Indication Systems for the AMPEL360e eWTW aircraft, specifically the Display Management Computer (DMC), symbol generation, display unit driving electronics, and Electronic Flight Instrument System (EFIS) architecture. The DMC is the core computing element responsible for generating all cockpit display imagery — transforming raw avionics data into formatted, symbology-compliant visual presentations on the flight deck display units (PFD, ND, MFD/ECAM).
+This document defines the agnostic ATLAS standard-level architecture context for `031-060 — Electronic Display and Indication Systems`.
 
-The eWTW employs a six-display glass cockpit managed by dual or triple redundant DMCs connected to display units via a high-speed digital video interface (DisplayPort or equivalent — TBD by supplier). All display units use Active Matrix Liquid Crystal Display (AMLCD) technology, providing high brightness (minimum 1500 nit) and wide viewing angles (±60° horizontal minimum) appropriate for daylight readability and shared crew viewing. The display architecture is qualified per EUROCAE ED-14G for the applicable environmental categories.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-A fundamental safety feature of the DMC architecture is the reversionary capability. Any single DMC is capable of driving all six display units in a reversionary layout, ensuring that loss of one DMC does not result in loss of all flight information. The automatic reversionary mode is engaged within one second of detecting a DMC failure. If a single display unit fails, the DMC redistributes the failed unit's pages across the remaining display units and generates a crew caution alert.
-
-A key eWTW-specific display requirement is the presentation of electric propulsion system data. The DMC generates dedicated ECAM system pages for battery State of Charge, motor output power, inverter operating temperatures, and propulsion mode status. There are no EPR (Engine Pressure Ratio) indicators — replaced by motor power percentage and torque displays. These novel display formats require a purpose-developed display format specification not present in conventional aircraft EFIS designs.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter / Subsubject | 31-60 — Electronic Display and Indication Systems |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D SNS | 031-60 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-60 |
-| Effectivity | All MSN from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The DMC acquires data from all display data sources — ADIRU, FMS, FWC, TCAS, WXR, ILS, and propulsion controllers — via the AFDX network and ARINC 429 inputs. It processes this data through symbol generation algorithms to produce display raster images in real time. The images are transmitted to display units over high-speed video links. Each DMC is capable of simultaneously generating images for all six display positions, ensuring full reversionary capability from a single unit.
@@ -157,7 +149,7 @@ The DMC also manages display brightness in response to ambient light sensor data
 - Display unit LRU electronics (AMLCD panel, backlight driver, video input processor, ambient light sensor)
 - Reversionary mode logic (automatic switchover on DMC or DU failure)
 - Brightness control (automatic + manual DCP override)
-- Electric propulsion display format (ECAM propulsion synoptic page — novel eWTW requirement)
+- Electric propulsion display format (ECAM propulsion synoptic page — novel [PROGRAMME-VARIANT] requirement)
 - DMC BITE and display integrity monitoring
 
 ### 4.2 Excluded
@@ -323,11 +315,11 @@ Display unit replacement is tool-free at line maintenance (TBD per supplier desi
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-60 | Electronic Display and Indication Systems | DMC-AMPEL360E-EWTW-031-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-60-01 | Display Management Computer | DMC-AMPEL360E-EWTW-031-60-01 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-60-02 | Display Units (AMLCD) | DMC-AMPEL360E-EWTW-031-60-02 | 040, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-60-03 | Reversionary Mode Logic | DMC-AMPEL360E-EWTW-031-60-03 | 040, 300 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-60-04 | eWTW Propulsion Display Format | DMC-AMPEL360E-EWTW-031-60-04 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-60 | Electronic Display and Indication Systems | DMC-<PROGRAMME>-<VARIANT>-031-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-60-01 | Display Management Computer | DMC-<PROGRAMME>-<VARIANT>-031-60-01 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-60-02 | Display Units (AMLCD) | DMC-<PROGRAMME>-<VARIANT>-031-60-02 | 040, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-60-03 | Reversionary Mode Logic | DMC-<PROGRAMME>-<VARIANT>-031-60-03 | 040, 300 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-60-04 | [PROGRAMME-VARIANT] Propulsion Display Format | DMC-<PROGRAMME>-<VARIANT>-031-60-04 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-60)
 

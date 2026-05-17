@@ -53,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 060 — Time Synchronization and Data Integrity
@@ -68,7 +70,7 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md) 
 
 ## 1. Purpose
 
-This document defines the time synchronisation and data integrity architecture for the AMPEL360E avionics multisystem. It covers IEEE 1588 Precision Time Protocol (PTP) over AFDX, GPS-disciplined grandmaster clocks, OCXO holdover, time distribution accuracy, TDMA scheduling dependency, jitter requirements, synchronisation monitoring, and failure detection. It is the primary reference for avionics timing engineers, network architects, and certification authorities.
+This document defines the time synchronisation and data integrity architecture for the [PROGRAMME-AIRCRAFT] avionics multisystem. It covers IEEE 1588 Precision Time Protocol (PTP) over AFDX, GPS-disciplined grandmaster clocks, OCXO holdover, time distribution accuracy, TDMA scheduling dependency, jitter requirements, synchronisation monitoring, and failure detection. It is the primary reference for avionics timing engineers, network architects, and certification authorities.
 
 ---
 
@@ -76,7 +78,7 @@ This document defines the time synchronisation and data integrity architecture f
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | Time Protocol | [IEEE 1588-2019](#ref-ieee1588) (PTP v2.1) over AFDX |
 | GPS Standard | RTCA DO-316 / TSO-C145 |
@@ -87,7 +89,7 @@ This document defines the time synchronisation and data integrity architecture f
 
 ## 3. System / Function Overview
 
-The AMPEL360E time synchronisation architecture uses IEEE 1588 PTP over the AFDX network to distribute a common time base to all avionics end-systems. A GPS-disciplined grandmaster clock (GDGM) provides UTC-traceable time with < 100 ns accuracy to UTC. In the event of GPS signal loss, an OCXO provides holdover with < 1 µs drift over 1 hour. PTP slave clocks in each IMA module synchronise to the grandmaster; jitter at any slave is < 1 µs. The common time base enables TDMA scheduling, correlated fault logging, and data validity timestamping.
+The [PROGRAMME-AIRCRAFT] time synchronisation architecture uses IEEE 1588 PTP over the AFDX network to distribute a common time base to all avionics end-systems. A GPS-disciplined grandmaster clock (GDGM) provides UTC-traceable time with < 100 ns accuracy to UTC. In the event of GPS signal loss, an OCXO provides holdover with < 1 µs drift over 1 hour. PTP slave clocks in each IMA module synchronise to the grandmaster; jitter at any slave is < 1 µs. The common time base enables TDMA scheduling, correlated fault logging, and data validity timestamping.
 
 ---
 
@@ -257,12 +259,12 @@ graph LR
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-040-060-00A-040A-A | 040 | Time Synchronisation Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-040-060-00A-300A-A | 300 | GDGM Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-040-060-00A-400A-A | 400 | Timing BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-040-060-00A-520A-A | 520 | Timing Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-040-060-00A-941A-A | 941 | GDGM Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-040-060-00A-720A-A | 720 | PTP Stack and Servo SW Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-040-060-00A-040A-A | 040 | Time Synchronisation Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-040-060-00A-300A-A | 300 | GDGM Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-040-060-00A-400A-A | 400 | Timing BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-040-060-00A-520A-A | 520 | Timing Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-040-060-00A-941A-A | 941 | GDGM Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-040-060-00A-720A-A | 720 | PTP Stack and Servo SW Description |
 
 ### Recommended Data Module Set
 

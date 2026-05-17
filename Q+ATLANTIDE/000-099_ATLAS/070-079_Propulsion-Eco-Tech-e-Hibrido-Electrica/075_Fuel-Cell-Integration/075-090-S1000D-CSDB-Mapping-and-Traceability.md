@@ -9,7 +9,6 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
-scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-12"
@@ -18,12 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-075-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATA 75 · S1000D CSDB Mapping and Traceability
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D CSDB Mapping and Traceability
@@ -47,36 +49,31 @@ s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-075-090"
 
 ## §1 Purpose
 
-This document provides the S1000D Issue 5.0 Common Source Data Base (CSDB) mapping, Data Module Code (DMC) allocation, and bidirectional traceability between the <PROGRAMME> ATA 75 ATLAS baseline documents and their corresponding S1000D Data Modules. It is owned and maintained by Q-DATAGOV as part of the <PROGRAMME> Technical Publication governance.
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D CSDB Mapping and Traceability`.
 
-The S1000D standard defines a structured approach to technical documentation using Data Modules (DMs) as the atomic documentation unit. Each DM is identified by a unique Data Module Code (DMC) comprising the Model Identification Code (MIC), System Difference Code (SDC), Standard Numbering System (SNS), Disassembly Code (DIC), Disassembly Code Variant (DIV), Information Code (IC), Information Code Variant (ICV), and Item Location Code (ILC). For the <PROGRAMME>, the MIC is <MODEL>-<SYSTEMDIFF> and SNS codes are aligned with ATA 75 subsubject codes 075-000 through 075-090.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document also provides traceability between ATLAS baseline documents (engineering design intent), S1000D Data Modules (technical publications output), and certification documents (CS-25 compliance evidence), ensuring a coherent documentation chain from design to airworthiness and maintenance.
-
----
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | (defined in programme implementation branch) |
-| ATA reference | ATA 75-090 — S1000D CSDB Mapping and Traceability |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D Issue | Issue 5.0 |
-| S1000D SNS | 075-090-00 |
-| CSDB system | TBD — to be selected from approved CSDB tools | 
-
----
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description ![DRAFT]
 
-**S1000D DMC Naming Convention**: For the <PROGRAMME> ATA 75 subsection, the DMC structure follows: `DMC-<MODEL>-<SYSTEMDIFF>-A-{SNS}-{DIC}{DIV}-{IC}{ICV}-{ILC}` where SNS is the ATA 75 subsubject code (e.g., 0075-000), IC is the information code (e.g., 040 for Description and Operation, 520 for Fault Isolation, 710 for Functional Check), and ILC is typically A for applicability group A.
+**S1000D DMC Naming Convention**: For the programme-defined aircraft type ATA 75 subsection, the DMC structure follows: `DMC-<PROGRAMME>-<VARIANT>-A-{SNS}-{DIC}{DIV}-{IC}{ICV}-{ILC}` where SNS is the ATA 75 subsubject code (e.g., 0075-000), IC is the information code (e.g., 040 for Description and Operation, 520 for Fault Isolation, 710 for Functional Check), and ILC is typically A for applicability group A.
 
 **Data Module Types Used for ATA 75**: The following S1000D information code categories are applied to ATA 75 DMs: IC-040 (Description and Operation — D&O); IC-200 (Maintenance Procedures — general); IC-520 (Fault Isolation — FI); IC-710 (Functional Check); IC-720 (Operational Check); IC-730 (Visual Check); IC-810 (Illustrated Parts Data — IPD); IC-900 (Wiring Data Module). Each ATLAS subsubject (075-000 through 075-080) generates a family of DMs covering all these information types.
 
 **ATLAS to S1000D Traceability Matrix**: Each section of an ATLAS baseline document is traced to one or more S1000D DMs. For example, §7 Components and LRUs in each ATLAS document traces to the IC-810 IPD DM for the corresponding SNS. §12 Maintenance and Diagnostics traces to IC-200, IC-710, and IC-730 maintenance DMs. §14 Safety and Certification References traces to the ATA 75 compliance summary document.
 
-**CSDB Governance**: Q-DATAGOV maintains the CSDB instance for any programme implementing this ATLAS standard node. All S1000D DMs for ATA 75 are approved through the Q-DATAGOV Technical Publication Review Board (TPRB) prior to inclusion in the Preliminary Aircraft Maintenance Manual (pAMM) submitted to EASA for Part 145 organisation approval. DM change control is governed by a CM baseline aligned with the ATLAS baseline register.
+**CSDB Governance**: Q-DATAGOV maintains the CSDB instance for the programme-defined aircraft type. All S1000D DMs for ATA 75 are approved through the Q-DATAGOV Technical Publication Review Board (TPRB) prior to inclusion in the Preliminary Aircraft Maintenance Manual (pAMM) submitted to EASA for Part 145 organisation approval. DM change control is governed by a CM baseline aligned with the ATLAS baseline register.
 
 ---
 
@@ -116,15 +113,15 @@ flowchart LR
 ```mermaid
 flowchart TB
     subgraph DMC_FAMILY_000[SNS 075-000 DM Family]
-        DM_000_040[DMC-<MODEL>-<SYSTEMDIFF>-A-0075-000-040A-A D and O]
-        DM_000_200[DMC-<MODEL>-<SYSTEMDIFF>-A-0075-000-200A-A Maintenance]
-        DM_000_810[DMC-<MODEL>-<SYSTEMDIFF>-A-0075-000-810A-A IPD]
+        DM_000_040[DMC-<PROGRAMME>-<VARIANT>-A-0075-000-040A-A D and O]
+        DM_000_200[DMC-<PROGRAMME>-<VARIANT>-A-0075-000-200A-A Maintenance]
+        DM_000_810[DMC-<PROGRAMME>-<VARIANT>-A-0075-000-810A-A IPD]
     end
     subgraph DMC_FAMILY_010[SNS 075-010 DM Family]
-        DM_010_040[DMC-<MODEL>-<SYSTEMDIFF>-A-0075-010-040A-A D and O]
-        DM_010_520[DMC-<MODEL>-<SYSTEMDIFF>-A-0075-010-520A-A Fault Isolation]
-        DM_010_710[DMC-<MODEL>-<SYSTEMDIFF>-A-0075-010-710A-A Functional Check]
-        DM_010_810[DMC-<MODEL>-<SYSTEMDIFF>-A-0075-010-810A-A IPD]
+        DM_010_040[DMC-<PROGRAMME>-<VARIANT>-A-0075-010-040A-A D and O]
+        DM_010_520[DMC-<PROGRAMME>-<VARIANT>-A-0075-010-520A-A Fault Isolation]
+        DM_010_710[DMC-<PROGRAMME>-<VARIANT>-A-0075-010-710A-A Functional Check]
+        DM_010_810[DMC-<PROGRAMME>-<VARIANT>-A-0075-010-810A-A IPD]
     end
     subgraph CSDB_CTRL[CSDB Q-DATAGOV Governance]
         TPRB[Technical Publication Review Board]
@@ -143,39 +140,39 @@ flowchart TB
 
 | ATLAS Document | ATA SNS | S1000D DM Type | DMC | IC | Description |
 |---|---|---|---|---|---|
-| 075-000 | 075-000-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-000-040A-A | 040 | Fuel Cell Integration General — Description and Operation |
-| 075-000 | 075-000-00 | Maintenance | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-000-200A-A | 200 | Fuel Cell Integration General — Maintenance Procedures |
-| 075-000 | 075-000-00 | IPD | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-000-810A-A | 810 | Fuel Cell Integration General — Illustrated Parts Data |
-| 075-010 | 075-010-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-010-040A-A | 040 | Stack Architecture — Description and Operation |
-| 075-010 | 075-010-00 | Fault Isolation | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-010-520A-A | 520 | Stack Architecture — Fault Isolation |
-| 075-010 | 075-010-00 | Functional Check | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-010-710A-A | 710 | Stack Architecture — Functional Check (CVM balance) |
-| 075-010 | 075-010-00 | IPD | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-010-810A-A | 810 | Stack Architecture — Illustrated Parts Data |
-| 075-020 | 075-020-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-020-040A-A | 040 | BoP — Description and Operation |
-| 075-020 | 075-020-00 | Maintenance | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-020-200A-A | 200 | BoP — Maintenance Procedures |
-| 075-020 | 075-020-00 | Fault Isolation | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-020-520A-A | 520 | BoP — Fault Isolation |
-| 075-020 | 075-020-00 | IPD | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-020-810A-A | 810 | BoP — Illustrated Parts Data |
-| 075-030 | 075-030-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-030-040A-A | 040 | FCPC Power Conditioning — Description and Operation |
-| 075-030 | 075-030-00 | Functional Check | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-030-710A-A | 710 | FCPC — Functional Check (efficiency test) |
-| 075-030 | 075-030-00 | IPD | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-030-810A-A | 810 | FCPC — Illustrated Parts Data |
-| 075-040 | 075-040-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-040-040A-A | 040 | Water Management — Description and Operation |
-| 075-040 | 075-040-00 | Maintenance | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-040-200A-A | 200 | Water Management — Maintenance Procedures |
-| 075-040 | 075-040-00 | IPD | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-040-810A-A | 810 | Water Management — Illustrated Parts Data |
-| 075-050 | 075-050-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-050-040A-A | 040 | Safety and Isolation — Description and Operation |
-| 075-050 | 075-050-00 | Maintenance | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-050-200A-A | 200 | Safety and Isolation — Maintenance Procedures (LOTO) |
-| 075-050 | 075-050-00 | Fault Isolation | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-050-520A-A | 520 | Safety and Isolation — Fault Isolation |
-| 075-050 | 075-050-00 | Visual Check | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-050-730A-A | 730 | Safety and Isolation — Visual Check (HDS, SIV, PRV) |
-| 075-050 | 075-050-00 | IPD | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-050-810A-A | 810 | Safety and Isolation — Illustrated Parts Data |
-| 075-060 | 075-060-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-060-040A-A | 040 | FCCU Control — Description and Operation |
-| 075-060 | 075-060-00 | Fault Isolation | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-060-520A-A | 520 | FCCU Control — Fault Isolation |
-| 075-060 | 075-060-00 | Operational Check | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-060-720A-A | 720 | FCCU Control — Operational Check (state machine) |
-| 075-060 | 075-060-00 | IPD | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-060-810A-A | 810 | FCCU Control — Illustrated Parts Data |
-| 075-070 | 075-070-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-070-040A-A | 040 | Service and Maintenance — Description and Operation |
-| 075-070 | 075-070-00 | Maintenance | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-070-200A-A | 200 | Service and Maintenance — Scheduled Maintenance Procedures |
-| 075-070 | 075-070-00 | Functional Check | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-070-710A-A | 710 | Service and Maintenance — Post-Maintenance Functional Check |
-| 075-080 | 075-080-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-080-040A-A | 040 | Monitoring and Diagnostics — Description and Operation |
-| 075-080 | 075-080-00 | Fault Isolation | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-080-520A-A | 520 | Monitoring and Diagnostics — Fault Isolation |
-| 075-080 | 075-080-00 | Wiring Data | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-080-900A-A | 900 | Monitoring and Diagnostics — Wiring Data Module |
-| 075-090 | 075-090-00 | D&O | DMC-<MODEL>-<SYSTEMDIFF>-A-0075-090-040A-A | 040 | CSDB Mapping — Description and Operation (this document) |
+| 075-000 | 075-000-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-000-040A-A | 040 | Fuel Cell Integration General — Description and Operation |
+| 075-000 | 075-000-00 | Maintenance | DMC-<PROGRAMME>-<VARIANT>-A-0075-000-200A-A | 200 | Fuel Cell Integration General — Maintenance Procedures |
+| 075-000 | 075-000-00 | IPD | DMC-<PROGRAMME>-<VARIANT>-A-0075-000-810A-A | 810 | Fuel Cell Integration General — Illustrated Parts Data |
+| 075-010 | 075-010-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-010-040A-A | 040 | Stack Architecture — Description and Operation |
+| 075-010 | 075-010-00 | Fault Isolation | DMC-<PROGRAMME>-<VARIANT>-A-0075-010-520A-A | 520 | Stack Architecture — Fault Isolation |
+| 075-010 | 075-010-00 | Functional Check | DMC-<PROGRAMME>-<VARIANT>-A-0075-010-710A-A | 710 | Stack Architecture — Functional Check (CVM balance) |
+| 075-010 | 075-010-00 | IPD | DMC-<PROGRAMME>-<VARIANT>-A-0075-010-810A-A | 810 | Stack Architecture — Illustrated Parts Data |
+| 075-020 | 075-020-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-020-040A-A | 040 | BoP — Description and Operation |
+| 075-020 | 075-020-00 | Maintenance | DMC-<PROGRAMME>-<VARIANT>-A-0075-020-200A-A | 200 | BoP — Maintenance Procedures |
+| 075-020 | 075-020-00 | Fault Isolation | DMC-<PROGRAMME>-<VARIANT>-A-0075-020-520A-A | 520 | BoP — Fault Isolation |
+| 075-020 | 075-020-00 | IPD | DMC-<PROGRAMME>-<VARIANT>-A-0075-020-810A-A | 810 | BoP — Illustrated Parts Data |
+| 075-030 | 075-030-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-030-040A-A | 040 | FCPC Power Conditioning — Description and Operation |
+| 075-030 | 075-030-00 | Functional Check | DMC-<PROGRAMME>-<VARIANT>-A-0075-030-710A-A | 710 | FCPC — Functional Check (efficiency test) |
+| 075-030 | 075-030-00 | IPD | DMC-<PROGRAMME>-<VARIANT>-A-0075-030-810A-A | 810 | FCPC — Illustrated Parts Data |
+| 075-040 | 075-040-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-040-040A-A | 040 | Water Management — Description and Operation |
+| 075-040 | 075-040-00 | Maintenance | DMC-<PROGRAMME>-<VARIANT>-A-0075-040-200A-A | 200 | Water Management — Maintenance Procedures |
+| 075-040 | 075-040-00 | IPD | DMC-<PROGRAMME>-<VARIANT>-A-0075-040-810A-A | 810 | Water Management — Illustrated Parts Data |
+| 075-050 | 075-050-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-050-040A-A | 040 | Safety and Isolation — Description and Operation |
+| 075-050 | 075-050-00 | Maintenance | DMC-<PROGRAMME>-<VARIANT>-A-0075-050-200A-A | 200 | Safety and Isolation — Maintenance Procedures (LOTO) |
+| 075-050 | 075-050-00 | Fault Isolation | DMC-<PROGRAMME>-<VARIANT>-A-0075-050-520A-A | 520 | Safety and Isolation — Fault Isolation |
+| 075-050 | 075-050-00 | Visual Check | DMC-<PROGRAMME>-<VARIANT>-A-0075-050-730A-A | 730 | Safety and Isolation — Visual Check (HDS, SIV, PRV) |
+| 075-050 | 075-050-00 | IPD | DMC-<PROGRAMME>-<VARIANT>-A-0075-050-810A-A | 810 | Safety and Isolation — Illustrated Parts Data |
+| 075-060 | 075-060-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-060-040A-A | 040 | FCCU Control — Description and Operation |
+| 075-060 | 075-060-00 | Fault Isolation | DMC-<PROGRAMME>-<VARIANT>-A-0075-060-520A-A | 520 | FCCU Control — Fault Isolation |
+| 075-060 | 075-060-00 | Operational Check | DMC-<PROGRAMME>-<VARIANT>-A-0075-060-720A-A | 720 | FCCU Control — Operational Check (state machine) |
+| 075-060 | 075-060-00 | IPD | DMC-<PROGRAMME>-<VARIANT>-A-0075-060-810A-A | 810 | FCCU Control — Illustrated Parts Data |
+| 075-070 | 075-070-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-070-040A-A | 040 | Service and Maintenance — Description and Operation |
+| 075-070 | 075-070-00 | Maintenance | DMC-<PROGRAMME>-<VARIANT>-A-0075-070-200A-A | 200 | Service and Maintenance — Scheduled Maintenance Procedures |
+| 075-070 | 075-070-00 | Functional Check | DMC-<PROGRAMME>-<VARIANT>-A-0075-070-710A-A | 710 | Service and Maintenance — Post-Maintenance Functional Check |
+| 075-080 | 075-080-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-080-040A-A | 040 | Monitoring and Diagnostics — Description and Operation |
+| 075-080 | 075-080-00 | Fault Isolation | DMC-<PROGRAMME>-<VARIANT>-A-0075-080-520A-A | 520 | Monitoring and Diagnostics — Fault Isolation |
+| 075-080 | 075-080-00 | Wiring Data | DMC-<PROGRAMME>-<VARIANT>-A-0075-080-900A-A | 900 | Monitoring and Diagnostics — Wiring Data Module |
+| 075-090 | 075-090-00 | D&O | DMC-<PROGRAMME>-<VARIANT>-A-0075-090-040A-A | 040 | CSDB Mapping — Description and Operation (this document) |
 
 ---
 
@@ -300,7 +297,7 @@ flowchart TB
 | SNS | Standard Numbering System — S1000D system and subsystem breakdown code aligned with ATA |
 | TPRB | Technical Publication Review Board — Q-DATAGOV approval body for CSDB DMs |
 | pAMM | Preliminary Aircraft Maintenance Manual — pre-certification AMM submitted to EASA |
-| MIC | Model Identification Code — <MODEL>-<SYSTEMDIFF> for this programme |
+| MIC | Model Identification Code — [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] for this programme |
 | MOC | Means of Compliance — EASA method by which CS-25 requirement is demonstrated |
 | CMR | Certification Maintenance Requirement — mandatory maintenance task identified during certification |
 | D&O | Description and Operation — S1000D IC-040 information type |
@@ -313,7 +310,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-075-090-001 | Select and procure CSDB tool instance for <PROGRAMME> programme | Q-DATAGOV | 2026-Q3 |
+| OI-075-090-001 | Select and procure CSDB tool instance for programme-defined aircraft type programme | Q-DATAGOV | 2026-Q3 |
 | OI-075-090-002 | Establish TPRB charter and membership for ATA 75 DM reviews | Q-DATAGOV | 2026-Q4 |
 | OI-075-090-003 | Develop complete traceability matrix for ATA 75 ATLAS §1–§16 to all 34 DMs | Q-DATAGOV | 2026-Q4 |
 | OI-075-090-004 | Define CS-25 compliance paragraph to DM mapping for ATA 75 | Q-DATAGOV / Q-AIR | 2027-Q1 |

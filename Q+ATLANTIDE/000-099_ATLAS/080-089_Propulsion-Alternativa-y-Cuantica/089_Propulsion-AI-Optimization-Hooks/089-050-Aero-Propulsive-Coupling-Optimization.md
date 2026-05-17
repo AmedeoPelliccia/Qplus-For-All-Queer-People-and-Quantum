@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0089-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-089-050-AERO-PROPULSIVE-COUPLING-OPTIMIZATION
      ATLAS-089 (Propulsion AI Optimization Hooks) · Aero-Propulsive Coupling Optimization
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Aero-Propulsive Coupling Optimization
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-050"
 
 ## §1 Purpose
 
-ATLAS subsubject 089-050 defines the Aero-Propulsive Coupling Optimizer (APCO) module within the AIOCU. It covers the real-time aerodynamic state estimation pipeline, the surrogate model for drag-thrust coupling, the differential thrust strategy for yaw-control augmentation, and the interaction with the BLI boundary-layer ingestion efficiency model. APCO operates in an advisory capacity and does not command primary flight control surfaces.
+This document defines the agnostic ATLAS standard-level architecture context for `Aero-Propulsive Coupling Optimization`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Aerodynamic State Estimation
 
 APCO relies on real-time aerodynamic state from the ATLAS-080 Quantum Sensing Network:
@@ -64,7 +67,7 @@ APCO relies on real-time aerodynamic state from the ATLAS-080 Quantum Sensing Ne
 
 ### 2.1 CL–CD Surrogate Model
 
-APCO uses a CFD-trained **surrogate model** mapping the aerodynamic state vector to the current drag polar (CL vs. CD) of the complete AMPEL360E-ORCR-DEP-BLI configuration:
+APCO uses a CFD-trained **surrogate model** mapping the aerodynamic state vector to the current drag polar (CL vs. CD) of the complete [PROGRAMME-AIRCRAFT]-ORCR-DEP-BLI configuration:
 
 | Attribute | Value |
 |---|---|
@@ -72,7 +75,7 @@ APCO uses a CFD-trained **surrogate model** mapping the aerodynamic state vector
 | Inputs | CL, Mach, altitude, AoA, flap code, DEP fan wake influence parameter |
 | Outputs | CD (induced + profile + wave + interference), BLI efficiency gain ΔCD_BLI |
 | Inference latency | < 3 ms (FPGA-assisted GP prediction) |
-| Training dataset | 500 000 CFD RANS solutions (AMPEL360E eWTW complete configuration) |
+| Training dataset | 500 000 CFD RANS solutions (programme-defined aircraft type complete configuration) |
 | Validation accuracy | CD error < 3 drag counts (0.0003) RMS | 
 
 ---

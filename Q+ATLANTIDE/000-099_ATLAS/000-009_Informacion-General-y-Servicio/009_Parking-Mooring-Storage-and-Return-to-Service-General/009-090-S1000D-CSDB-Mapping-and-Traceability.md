@@ -25,13 +25,16 @@ orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
 status: active
-scope: agnostic-standard
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -47,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Maps the parking, mooring, storage and return-to-service artefacts defined in subsection 009 to S1000D CSDB data modules. Establishes DMC codes, BREX rules for procedure content, and the traceability chain from storage requirement to CSDB data module for any programme implementing this ATLAS standard node.
+Maps the parking, mooring, storage and return-to-service artefacts defined in subsection 009 to S1000D CSDB data modules. Establishes DMC codes, BREX rules for procedure content, and the traceability chain from storage requirement to CSDB data module for the programme-defined aircraft type.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** agnostic standard baseline. Programme-specific S1000D/CSDB instantiation belongs in the programme implementation branch.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -57,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | (defined in programme implementation branch) |
-| Programme short code | (defined in programme implementation branch) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 10 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -69,9 +72,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 009 Parking, Mooring, Storage, and Return to Service subsubjects and the <PROGRAMME> S1000D Data Module structure. ATLAS 009 subsubjects map to DMs under systemCode="009" (ATA 10/12 equivalent), model identification code <MODEL>, system difference code <SYSTEMDIFF>, in the Q+ATLANTIDE CSDB instance. Primary DM types: procedural DMs for parking, mooring, and storage operations (info code "520"), descriptive DMs for PSMM architecture (info code "040"), safety precautions DMs (info code "300"), fault-isolation DMs for PSMM alerts (info code "900"), preservation/depreservation task DMs (info code "720"), illustrated parts DMs for tiedown hardware (info code "941").
+The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 009 Parking, Mooring, Storage, and Return to Service subsubjects and the programme-defined aircraft type S1000D Data Module structure. ATLAS 009 subsubjects map to DMs under systemCode="009" (ATA 10/12 equivalent), model ident code [PROGRAMME-AIRCRAFT], system diff code [PROGRAMME-VARIANT], in the Q+ATLANTIDE CSDB instance. Primary DM types: procedural DMs for parking, mooring, and storage operations (info code "520"), descriptive DMs for PSMM architecture (info code "040"), safety precautions DMs (info code "300"), fault-isolation DMs for PSMM alerts (info code "900"), preservation/depreservation task DMs (info code "720"), illustrated parts DMs for tiedown hardware (info code "941").
 
-Traceability chain: ATLAS 009 parking/storage geometry and battery SoC management data → AMM Chapter 10 (Parking and Mooring) and Chapter 12 (Servicing) procedural DMs → PSMM/BMS system description DMs → preservation task DMs → return-to-service checklist DMs → CSDB aircraft technical log → AFM Limitations section (battery SoC limits). The DMRL for ATA 10/12 shall confirm <PROGRAMME-SHORT>-specific coverage: PSMM e-storage mode, traction battery SoC management during parking, TBLT cradle park interface, EPB storage lock procedure, and GAIA-QA remote monitoring interface. The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV assigns DM codes to each 009-NNN subsubject and tracks publication status. Completion of ATLAS 009 contextualisation closes the last remaining open subsubject in the 000-009_Informacion-General-y-Servicio section.
+Traceability chain: ATLAS 009 parking/storage geometry and battery SoC management data → AMM Chapter 10 (Parking and Mooring) and Chapter 12 (Servicing) procedural DMs → PSMM/BMS system description DMs → preservation task DMs → return-to-service checklist DMs → CSDB aircraft technical log → AFM Limitations section (battery SoC limits). The DMRL for ATA 10/12 shall confirm [PROGRAMME-VARIANT]-specific coverage: PSMM e-storage mode, traction battery SoC management during parking, TBLT cradle park interface, EPB storage lock procedure, and GAIA-QA remote monitoring interface. The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV assigns DM codes to each 009-NNN subsubject and tracks publication status. Completion of ATLAS 009 contextualisation closes the last remaining open subsubject in the 000-009_Informacion-General-y-Servicio section.
 
 ---
 
@@ -83,7 +86,7 @@ This document includes:
 
 - controlled definition of the s1000d csdb mapping and traceability scope;
 - architecture boundaries and interface definitions;
-- <PROGRAMME>-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -100,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **S1000D CSDB Mapping and Traceability** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the <PROGRAMME> programme.
+The **S1000D CSDB Mapping and Traceability** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -204,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `<MODEL>` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `<SYSTEMDIFF>` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `009` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `090` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-<MODEL>-<SYSTEMDIFF>-009-090` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-009-090` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -252,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| `<MODEL>` | Model identifier (to be defined per programme implementation branch). |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| <PROGRAMME-SHORT> | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

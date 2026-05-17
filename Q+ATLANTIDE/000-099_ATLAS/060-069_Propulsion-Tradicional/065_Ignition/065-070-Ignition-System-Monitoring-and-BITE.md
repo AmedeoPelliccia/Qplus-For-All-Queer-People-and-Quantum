@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0065-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0065-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-065-070-IGNITION-SYSTEM-MONITORING-AND-BITE
      ATA 65 · Ignition System Monitoring and BITE
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Ignition System Monitoring and BITE
@@ -47,21 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0065-070"
 
 ## §1 Purpose
 
-FADEC monitors the ignition system through the exciter BITE output (fault discrete), plug start-count accumulation, and ignition mode confirmation (did the commanded ignition mode actually engage?). Ignition system BITE faults are reported to CMS via the EDIU AFDX interface and generate a CMS maintenance message for ground resolution.
+This document defines the agnostic ATLAS standard-level architecture context for `Ignition System Monitoring and BITE`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 65-070 — Ignition System Monitoring and BITE |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 065-070-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `065` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 FADEC monitors the ignition system through the exciter BITE output (fault discrete), plug start-count accumulation, and ignition mode confirmation (did the commanded ignition mode actually engage?). Ignition system BITE faults are reported to CMS via the EDIU AFDX interface and generate a CMS maintenance message for ground resolution.
@@ -255,4 +256,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

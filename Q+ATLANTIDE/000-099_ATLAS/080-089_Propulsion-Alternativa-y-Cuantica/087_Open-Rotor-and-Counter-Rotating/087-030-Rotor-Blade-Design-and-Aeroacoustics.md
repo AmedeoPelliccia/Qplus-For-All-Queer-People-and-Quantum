@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-030-ROTOR-BLADE-DESIGN-AND-AEROACOUSTICS
      ATLAS-087 (Open Rotor and Counter-Rotating) · Rotor Blade Design and Aeroacoustics
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Rotor Blade Design and Aeroacoustics
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-030"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-030 defines the blade geometry, structural design, materials, aerodynamic performance, and acoustic characteristics of the Forward Rotor (FR) and Aft Rotor (AR) blades for the AMPEL360E eWTW ORCR propulsor. It establishes the noise budget allocation per rotor row and documents the acoustic design measures applied to meet ICAO Annex 16 Chapter 14 limits.
+This document defines the agnostic ATLAS standard-level architecture context for `Rotor Blade Design and Aeroacoustics`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Blade Geometry
 
 ### 2.1 Forward Rotor (FR) Blade

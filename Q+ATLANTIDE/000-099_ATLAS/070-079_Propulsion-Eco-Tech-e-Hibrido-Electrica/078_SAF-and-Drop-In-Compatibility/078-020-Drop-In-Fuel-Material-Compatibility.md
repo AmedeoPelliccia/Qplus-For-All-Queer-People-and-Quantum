@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-020-DROP-IN-FUEL-MATERIAL-COMPATIBILITY
      ATA 78 · Drop-In Fuel Material Compatibility
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Drop-In Fuel Material Compatibility
@@ -47,30 +49,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-020"
 
 ## §1 Purpose
 
-This document (078-020) defines the material compatibility requirements and verified compatibility status for all wetted components in the AMPEL360E eWTW fuel system when operating on SAF blends (up to 50 % v/v per ASTM D7566). It covers elastomers, metals, coatings, tank sealants, and associated fastener materials, and establishes the seal swell management strategy for blends with low aromatic content.
+This document defines the agnostic ATLAS standard-level architecture context for `Drop-In Fuel Material Compatibility`.
 
-"Drop-in" compatibility means that no hardware modification, replacement, or special maintenance action is required when transitioning from conventional Jet-A1 to any approved SAF blend ≤50 % v/v. This document provides the engineering basis for that claim and identifies any residual monitoring obligations (particularly elastomer swell tracking via FAMQMS cumulative exposure log).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-020 — Drop-In Fuel Material Compatibility |
-| Certification basis | EASA CS-25 §25.951, §25.963; EASA SC E-19; ASTM D7566 Table 1 |
-| S1000D SNS | 078-020-00 |
-| Wetted systems covered | ATA 28 fuel tanks; ATA 73 fuel metering; ATA 78 SAF interfaces; engine fuel lines |
-| Maximum SAF blend | 50 % v/v SAF + 50 % v/v Jet-A/Jet-A1 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 SAF streams (particularly HEFA-SPK, FT-SPK, and ATJ-SPK) are highly paraffinic and contain very low concentrations of aromatic and cycloparaffinic hydrocarbons compared with conventional Jet-A1. Aromatic hydrocarbons in jet fuel serve an important secondary function: they swell elastomeric seals and O-rings to provide a positive interference fit and prevent fuel leakage. When aromatic content drops below approximately 8 % v/v, certain nitrile (NBR) elastomers may shrink from their equilibrium dimensions, leading to seal leakage.
 
-The AMPEL360E eWTW addresses this risk through three complementary means:
+The programme-defined aircraft type addresses this risk through three complementary means:
 
 1. **Blend specification floor**: The Approved Fuel List (AFL) mandates minimum 8 % v/v aromatics in any blended fuel delivered to the aircraft (enforced at depot blending). This prevents use of 100 % neat synthetic paraffinic kerosene in the current configuration.
 2. **FAMQMS aromatics monitoring**: The NIR sensor (PN NIR-SAF-078) provides a proxy aromatics estimate from the blend ratio reading, cross-referenced against the CoA aromatics value. An advisory alert is issued if CoA aromatics fall below 8 %.

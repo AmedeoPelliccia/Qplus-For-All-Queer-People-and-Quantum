@@ -6,10 +6,10 @@ subsubject: "020"
 subsubject_title: "Engine and Inlet Ice Protection"
 file_name: "030-020-Engine-and-Inlet-Ice-Protection.md"
 sns_reference: "030-20"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-20"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-20"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,21 +87,23 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
   - "engine inlet ice protection"
   - "nacelle anti-icing"
   - "EECU"
   - "FADEC"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-020 — Engine and Inlet Ice Protection
-### AMPEL360e eWTW · ATA 30-20 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-20 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,29 +115,23 @@ All hyperlinks in this document are **relative links** unless pointing to a publ
 
 ## §1 Purpose
 
-This document defines the Engine Inlet Ice Protection (EIP) system for the **AMPEL360e eWTW** electric propulsion nacelles. Because the eWTW uses electric motors — with no gas turbine engine and therefore no compressor bleed air — all nacelle and inlet anti-icing is accomplished by **electrothermal heating elements** installed in the inlet lip and, where applicable, the spinner. This document describes the inlet lip heater design philosophy, the spinner anti-icing approach (or spinner-free design rationale), the integration with the Electric Engine Control Unit (EECU), fan blade ice shedding analysis, composite nacelle structural compatibility, and the power load management during maximum icing conditions. Applicable regulations include CS-25.1419, CS-E 790 (engine ice), and FAR 25.1419.
+This document defines the agnostic ATLAS standard-level architecture context for `030-020 — Engine and Inlet Ice Protection`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Sub-chapter | 30-20 — Engine and Inlet Ice Protection |
-| Propulsion System | Electric motor with high-bypass composite fan; NO gas turbine; NO bleed air |
-| Nacelle Configuration | Under-wing podded nacelle with composite inlet cowl and fan cowl; eWTW-100 has 2 nacelles; eWTW-200 TBD |
-| Anti-Icing Method | Electrothermal inlet lip heater; spinner heater or spinner-free design (TBD) |
-| Power Source | HVDC Bus A / Bus B (voltage TBD: 270 V DC or 540 V DC) |
-| Control | Engine Inlet Power Controller (EIPC) coordinated with EECU and IPMC |
-| Certification Basis | CS-25.1419; CS-E 790; FAR 25.1419; AC 20-147B |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The AMPEL360e eWTW electric propulsion system presents a fundamentally different ice protection challenge from a gas turbine engine. There is no compressor stage to generate hot bleed air for inlet anti-icing, and the electric fan creates no significant aerodynamic heating at the inlet lip during ground or flight operation. Ice forming on the inlet lip can accrete and eventually shed as ice slabs or fragments into the rotating fan. Unlike a turbofan engine with combustion stages downstream, an electric motor fan has no inherent ice-ingestion tolerance mechanism from heat — the fan blades must be protected from ice impact damage, and ice shedding into the fan disk must be shown to be acceptable or prevented entirely. Therefore, the eWTW adopts a **continuous anti-ice mode** for the inlet lip heater: the heater operates continuously in icing conditions, maintaining the inlet lip skin temperature above 0 °C at all times, so that no ice accretes and no shedding event can occur.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] electric propulsion system presents a fundamentally different ice protection challenge from a gas turbine engine. There is no compressor stage to generate hot bleed air for inlet anti-icing, and the electric fan creates no significant aerodynamic heating at the inlet lip during ground or flight operation. Ice forming on the inlet lip can accrete and eventually shed as ice slabs or fragments into the rotating fan. Unlike a turbofan engine with combustion stages downstream, an electric motor fan has no inherent ice-ingestion tolerance mechanism from heat — the fan blades must be protected from ice impact damage, and ice shedding into the fan disk must be shown to be acceptable or prevented entirely. Therefore, the [PROGRAMME-VARIANT] adopts a **continuous anti-ice mode** for the inlet lip heater: the heater operates continuously in icing conditions, maintaining the inlet lip skin temperature above 0 °C at all times, so that no ice accretes and no shedding event can occur.
 
 The nacelle inlet lip is fabricated from titanium alloy or aluminium (structural design TBD) and carries a circumferential electrothermal heater element bonded to the inner lip surface. The heater element is a brazed or bonded metal sheath heater, or a flexible foil element, operating at HVDC voltage directly or via a step-down converter (programme design choice TBD). The inlet lip heater is powered continuously throughout all flight phases in which icing conditions are detected or OAT is at or below +10 °C. A power demand signal from the EECU to the IPMC allows reduction of inlet heater power during specific high-demand electric motor phases (e.g., take-off at maximum thrust) if the power budget is exceeded, but only for periods not exceeding a certified duration that ensures no ice accretion occurs at the reduced power level. The inlet lip heater is not inhibited on the ground; it may be activated for ground icing operations if icing conditions exist while the aircraft is awaiting departure, subject to a maximum ground energisation time limit and personnel safety exclusion zone.
 
@@ -163,15 +159,15 @@ The nacelle inlet lip is fabricated from titanium alloy or aluminium (structural
 - Fan cowl and nacelle exterior ice protection (analysis shows no significant accretion on fan cowl exterior)
 - Engine oil system freeze protection (ATA 71/79 scope)
 - Ground de-icing of nacelle inlet with external fluid (ground operations)
-- Thrust reverser ice protection (thrust reverser not installed on eWTW — TBD)
+- Thrust reverser ice protection (thrust reverser not installed on [PROGRAMME-VARIANT] — TBD)
 
 ---
 
 ## §5 Architecture Description
 
-- **Continuous anti-ice mode — no shedding allowed:** Unlike wing WIPS which can operate in cyclic de-icing mode, the inlet lip heater operates in continuous anti-ice mode only. Any ice shed from the inlet lip that enters the fan disk could cause fan blade damage, rotor imbalance, or structural failure. The continuous anti-ice requirement drives a higher instantaneous electrical power demand for EIP compared with an equivalent bleed-air anti-ice system, but eliminates the ice ingestion risk entirely. This is the safety-critical design choice for eWTW electric propulsion.
+- **Continuous anti-ice mode — no shedding allowed:** Unlike wing WIPS which can operate in cyclic de-icing mode, the inlet lip heater operates in continuous anti-ice mode only. Any ice shed from the inlet lip that enters the fan disk could cause fan blade damage, rotor imbalance, or structural failure. The continuous anti-ice requirement drives a higher instantaneous electrical power demand for EIP compared with an equivalent bleed-air anti-ice system, but eliminates the ice ingestion risk entirely. This is the safety-critical design choice for [PROGRAMME-VARIANT] electric propulsion.
 
-- **Spinner design — two architecture options under evaluation:** Option A is a **spinner anti-icing heater**: a carbon fibre spinner with an embedded electrothermal heater element, keeping the spinner nose temperature above 0 °C in icing conditions. Option B is a **spinner-free (or recessed spinner) design**: the electric motor shaft does not protrude beyond the fan plane into the airflow, eliminating the spinner as an ice-accreting surface. Option B is under structural and aerodynamic feasibility evaluation for the eWTW. The architecture selection will be resolved at LC03 design freeze. Until then, both options are maintained in parallel in this scaffold.
+- **Spinner design — two architecture options under evaluation:** Option A is a **spinner anti-icing heater**: a carbon fibre spinner with an embedded electrothermal heater element, keeping the spinner nose temperature above 0 °C in icing conditions. Option B is a **spinner-free (or recessed spinner) design**: the electric motor shaft does not protrude beyond the fan plane into the airflow, eliminating the spinner as an ice-accreting surface. Option B is under structural and aerodynamic feasibility evaluation for the [PROGRAMME-VARIANT]. The architecture selection will be resolved at LC03 design freeze. Until then, both options are maintained in parallel in this scaffold.
 
 - **Power coordination with EECU:** The EECU monitors electric motor bus current and thermal state. During take-off at maximum power, the combined inlet lip heater + motor load may approach the instantaneous electrical generation limit. The IPMC implements a short-duration (≤30 seconds) power deferral of the inlet lip heater at take-off, reducing heater power to 50% (warm-start level) while the motor is at maximum current. Analysis must show that 30 seconds at 50% power does not allow ice to accrete to a hazardous level starting from an ice-free, pre-heated inlet lip. This analysis is required as part of the EIP safety case.
 
@@ -303,12 +299,12 @@ The EIPC provides dedicated BITE coverage for the inlet lip heater circuit and t
 
 | Info Code | Title | DMC | Status |
 |---|---|---|---|
-| 040 | System Description — Engine Inlet Ice Protection | DMC-AMPEL360E-EWTW-030-20-040-A | Draft scaffold |
-| 300 | Inspection — Inlet Lip Heater Resistance and Bond Check | DMC-AMPEL360E-EWTW-030-20-300-A | Not started |
-| 400 | Fault Isolation — EIPC and Inlet Lip Heater Faults | DMC-AMPEL360E-EWTW-030-20-400-A | Not started |
-| 520 | Remove — Inlet Lip Heater Element | DMC-AMPEL360E-EWTW-030-20-520-A | Not started |
-| 720 | Install — Inlet Lip Heater Element | DMC-AMPEL360E-EWTW-030-20-720-A | Not started |
-| 941 | Illustrated Parts Data — Engine Inlet Ice Protection | DMC-AMPEL360E-EWTW-030-20-941-A | Not started |
+| 040 | System Description — Engine Inlet Ice Protection | DMC-<PROGRAMME>-<VARIANT>-030-20-040-A | Draft scaffold |
+| 300 | Inspection — Inlet Lip Heater Resistance and Bond Check | DMC-<PROGRAMME>-<VARIANT>-030-20-300-A | Not started |
+| 400 | Fault Isolation — EIPC and Inlet Lip Heater Faults | DMC-<PROGRAMME>-<VARIANT>-030-20-400-A | Not started |
+| 520 | Remove — Inlet Lip Heater Element | DMC-<PROGRAMME>-<VARIANT>-030-20-520-A | Not started |
+| 720 | Install — Inlet Lip Heater Element | DMC-<PROGRAMME>-<VARIANT>-030-20-720-A | Not started |
+| 941 | Illustrated Parts Data — Engine Inlet Ice Protection | DMC-<PROGRAMME>-<VARIANT>-030-20-941-A | Not started |
 
 ---
 
@@ -368,7 +364,7 @@ EIPC BITE data, heater temperature log, current history, and fault events retain
 | Term | Acronym | Definition |
 |---|---|---|
 | Electric Engine Control Unit | EECU | The control computer managing the electric motor drive system of each propulsion nacelle; equivalent to FADEC in a gas turbine context |
-| Engine Inlet Ice Protection | EIP | The electrothermal system protecting the nacelle inlet lip and spinner from ice accretion on the eWTW |
+| Engine Inlet Ice Protection | EIP | The electrothermal system protecting the nacelle inlet lip and spinner from ice accretion on the [PROGRAMME-VARIANT] |
 | Engine Inlet Power Controller | EIPC | The avionics LRU that switches and monitors electrical power to the inlet lip heater and spinner heater for each nacelle |
 | Fan Blade Ice Shedding | — | The event in which ice accreted on a rotating fan blade leading edge is released due to centrifugal force, aerodynamic forces, or heater activation; the shed ice may impact downstream components |
 | Ice Ingestion Risk | — | The probability and consequence of shed ice from the inlet lip or spinner entering the fan disk and causing blade damage or rotor imbalance |
@@ -387,7 +383,7 @@ EIPC BITE data, heater temperature log, current history, and fault events retain
 | CIT-002 | CS-E 790 — Engine Ice Protection | EASA CS-E Issue 1 Amdt 4 | Engine ice protection requirements applicable to electric propulsion inlet and fan design |
 | CIT-003 | RTCA DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment | Edition G | Environmental qualification of EIPC LRU |
 | CIT-004 | AC 20-147B — Turbojet, Turboprop, Turboshaft, and Turbofan Engine Induction System Icing and Ice Ingestion | Rev B | Ice ingestion assessment methodology; ice shedding analysis guidance applicable to electric propulsion |
-| CIT-005 | AMPEL360e eWTW Engine Inlet Ice Protection System Specification | TBD — programme document | Programme-level EIP power density, heater design, and EECU coordination requirements |
+| CIT-005 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Engine Inlet Ice Protection System Specification | TBD — programme document | Programme-level EIP power density, heater design, and EECU coordination requirements |
 
 ---
 

@@ -25,6 +25,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.020 — Primary Structure Classification
@@ -40,7 +42,7 @@ Defines the Primary Structural Element (PSE) classification criteria, the PSE ma
 > This document will cover:
 > - Classification rules and criteria
 > - Applicable CS-25 / MSG-3 requirements
-> - Programme-specific AMPEL360 eWTW constraints
+> - Programme-specific [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] constraints
 > - Interface with adjacent subsubject documents
 
 ## 3. Footprint

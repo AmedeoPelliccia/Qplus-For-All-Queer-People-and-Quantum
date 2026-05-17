@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0084-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-084-070-AIRFRAME-INTEGRATION-THERMAL-AND-SAFETY-CONSTRAINTS
      ATLAS-084 (Hybrid Architectures — Beyond Gen-2) · Airframe Integration Thermal and Safety Constraints
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Airframe Integration Thermal and Safety Constraints
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-070"
 
 ## §1 Purpose
 
-ATLAS subsubject 084-070 defines the physical installation layout of all BGHA major components within the AMPEL360E eWTW airframe, the BGHA Thermal Management Loop (BGHA-TML) design, HVDC 800 V safety zone requirements, hydrogen ATEX zone boundaries, weight and balance impact of BGHA components, and structural interface requirements for BGHA component mounts and supports.
+This document defines the agnostic ATLAS standard-level architecture context for `Airframe Integration Thermal and Safety Constraints`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-084 — 084-070 Airframe Integration Thermal and Safety Constraints |
-| Certification Basis | EASA CS-25 Amdt 27+; IEC 60479-1; ATEX 94/9/EC; DO-160G |
-| S1000D SNS | 084-070-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `084` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 BGHA Installation Layout
 
 | Component | Location | Structural Interface | Access Panel | ATEX Zone |
@@ -99,13 +100,13 @@ The BGHA-TML is a dedicated EGW (40/60 ethylene-glycol/water) liquid cooling loo
 
 ---
 
-## §5 HVDC 800 V Safety Zones
+## §5 HVDC <NOMINAL-VOLTAGE> Safety Zones
 
-All components, cables, and connectors carrying HVDC 800 V are designated **HV Zone 84** under the AMPEL360E eWTW electrical safety plan. The following rules apply to all work in or near HV Zone 84:
+All components, cables, and connectors carrying HVDC <NOMINAL-VOLTAGE> are designated **HV Zone 84** under the programme-defined aircraft type electrical safety plan. The following rules apply to all work in or near HV Zone 84:
 
 1. **LOTO procedure:** BGSCU must be commanded to STANDBY mode via GSE; Bus-800 must show < 50 V on HV Zone 84 indicator before any physical access.
 2. **Discharge hold-off:** After BGSCU STANDBY command, a minimum of 60 s must elapse (Bus-800 capacitor bleed discharge via bleed resistors) before touching any Bus-800 cable or connector.
-3. **HiPot test interval:** Every C-check, all HVDC 800 V cables must pass HiPot test at 1 500 V DC for 1 min (dielectric withstand); any failure requires cable replacement.
+3. **HiPot test interval:** Every C-check, all HVDC <NOMINAL-VOLTAGE> cables must pass HiPot test at 1 500 V DC for 1 min (dielectric withstand); any failure requires cable replacement.
 4. **PPE:** Certified Class 4 HV gloves (1 000 V AC / 1 500 V DC rated); face shield; non-conductive footwear.
 5. **Warning labels:** ISO 3864-2 Class B HV warning labels on all BDCC panels, BTB enclosures, Bus-800 busbars, and HVDC cable conduits.
 
@@ -163,7 +164,7 @@ Ventilation: Dedicated bay ventilation fan (600 m³/h) must be operational befor
 |---|---|---|---|
 | BGHA-TML coolant to FCSS | FCSS stack coolant circuit | Physical EGW piping + CAN temp | Coolant flow and temperature |
 | BGHA-TML to ATLAS-074 TMS | ATLAS-074 RAHX manifold | Physical EGW piping | Heat rejection to ram-air |
-| HVDC cables to Bus-800 | All BDCCs; ATRUs | HVDC 800 V shielded cable | Power distribution |
+| HVDC cables to Bus-800 | All BDCCs; ATRUs | HVDC <NOMINAL-VOLTAGE> shielded cable | Power distribution |
 | H₂ feed to FCSS | ATLAS-077 LH₂ distribution | LH₂ cryo feed line | LH₂ flow to FCSS manifold |
 
 ---

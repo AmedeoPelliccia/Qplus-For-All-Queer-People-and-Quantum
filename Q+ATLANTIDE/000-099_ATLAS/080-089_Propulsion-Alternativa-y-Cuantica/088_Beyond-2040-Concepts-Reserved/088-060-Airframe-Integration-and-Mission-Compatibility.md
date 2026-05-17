@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0088-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-088-060-AIRFRAME-INTEGRATION-AND-MISSION-COMPATIBILITY
      ATLAS-088 (Beyond-2040 Concepts Reserved) · Airframe Integration and Mission Compatibility
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Airframe Integration and Mission Compatibility
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-060"
 
 ## §1 Purpose
 
-ATLAS subsubject 088-060 defines the **airframe integration constraints and mission compatibility assessment framework** for Beyond-2040 Concepts Reserved (B2CR) propulsion technologies. It establishes mass, volume, thermal, structural, electromagnetic, and mission-envelope budgets that any B2CR concept must satisfy to be considered compatible with integration into the AMPEL360E eWTW airframe or a derivative platform. Integration studies conducted under this document are notional (pre-CDR) and are updated as concepts advance through the TRL gate process.
+This document defines the agnostic ATLAS standard-level architecture context for `Airframe Integration and Mission Compatibility`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Airframe Integration Budget Framework
 
 ### 2.1 Mass Budget Allocation
@@ -86,11 +89,11 @@ ATLAS subsubject 088-060 defines the **airframe integration constraints and miss
 
 ### 3.1 Mission Performance Requirements
 
-All B2CR concepts integrated into the AMPEL360E eWTW must demonstrate compatibility with the following baseline mission envelope:
+All B2CR concepts integrated into the programme-defined aircraft type must demonstrate compatibility with the following baseline mission envelope:
 
 | Parameter | Requirement | Notes |
 |---|---|---|
-| Design range | ≥ 2 000 NM | Full AMPEL360E eWTW design mission |
+| Design range | ≥ 2 000 NM | Full programme-defined aircraft type design mission |
 | Cruise Mach | 0.78 ± 0.02 | Driven by wing aero-optimisation |
 | Cruise altitude | FL 310 – FL 390 | Must account for air density effect on concepts using atmospheric air |
 | MTOW | ≤ 82 000 kg | B2CR growth gate per §2.1 |
@@ -115,7 +118,7 @@ All B2CR concepts integrated into the AMPEL360E eWTW must demonstrate compatibil
 
 ### 4.1 Primary Structure Interface
 
-All B2CR hardware installed on the AMPEL360E eWTW must interface with primary structure only at **qualified hard-points** (wing pylon stations, fuselage frame stations, empennage attachment frames). No B2CR installation may:
+All B2CR hardware installed on the programme-defined aircraft type must interface with primary structure only at **qualified hard-points** (wing pylon stations, fuselage frame stations, empennage attachment frames). No B2CR installation may:
 
 - Breach a pressure-vessel boundary without a qualified penetration fitting.
 - Introduce a load path that exceeds the primary structural DLL/DUL without a structural substantiation report.
@@ -123,7 +126,7 @@ All B2CR hardware installed on the AMPEL360E eWTW must interface with primary st
 
 ### 4.2 Reversibility Requirement
 
-All B2CR concept installations must be **fully reversible** without permanent structural modification to the AMPEL360E eWTW primary airframe, per CS-25 Amendment 27+ modification classification guidance. This constraint ensures that failed or superseded B2CR concepts can be removed and replaced with conventional propulsion without aircraft retirement.
+All B2CR concept installations must be **fully reversible** without permanent structural modification to the programme-defined aircraft type primary airframe, per CS-25 Amendment 27+ modification classification guidance. This constraint ensures that failed or superseded B2CR concepts can be removed and replaced with conventional propulsion without aircraft retirement.
 
 ### 4.3 Ground Clearance
 
@@ -148,7 +151,7 @@ All novel propulsion installations at fuselage pylon or under-wing stations must
 
 ## §6 Integration Concept Diagrams
 
-### 6.1 B2CR Integration Zones on AMPEL360E eWTW
+### 6.1 B2CR Integration Zones on programme-defined aircraft type
 
 ```mermaid
 flowchart LR
@@ -168,7 +171,7 @@ flowchart LR
         LASER[Laser-Thermal HX\nB2C-F304]
     end
     DORSAL -.->|MW power| UNDERFLOOR
-    UNDERFLOOR -->|HVDC 800 V| AFT_P
+    UNDERFLOOR -->|HVDC <NOMINAL-VOLTAGE>| AFT_P
     AFT_P -->|Thrust| PROP[Net Propulsive Thrust]
     EAD_L -->|Body force| PROP
     LASER -->|Hot gas| PROP

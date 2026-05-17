@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Lights Monitoring, Diagnostics and Control Interfaces"
 file_name: "033-080-Lights-Monitoring-Diagnostics-and-Control-Interfaces.md"
 sns_reference: "033-80"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-80"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-80"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -73,7 +73,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "BITE"
@@ -86,10 +86,12 @@ keywords:
   - "ground test"
   - "lights diagnostics"
   - "OMS"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-080 — Lights Monitoring, Diagnostics and Control Interfaces
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -101,29 +103,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Lights Monitoring, Diagnostics, and Control Interfaces subsystem (ATA 033-80) of the AMPEL360e eWTW aircraft. It covers the complete monitoring and diagnostic architecture for all ATA 33 lighting: collection of zone health data from all SSLCs (ATA 033-70), ECAM LIGHTS page non-normal procedures, ELU battery State of Charge (SOC) and State of Health (SOH) monitoring, CMC-commanded ground test sequences, and BITE fault isolation to LRU level.
+This document defines the agnostic ATLAS standard-level architecture context for `033-080 — Lights Monitoring, Diagnostics and Control Interfaces`.
 
-This subsystem defines the OMS (On-board Maintenance System) data available for ATA 33 lighting — the interface between the SSLC system and the CMC/OMS that enables both in-flight crew awareness of lighting faults and post-flight maintenance action. All ATA 33 BITE fault data converges here before being distributed to the ECAM (for crew awareness) and to the OMS (for maintenance records).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 033-80 — Lights Monitoring, Diagnostics and Control Interfaces |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Monitoring Source | All SSLCs (ATA 033-70): Master SSLC + 4 Zone SSLCs + ELUs (ATA 033-50) |
-| ECAM Display | ECAM LIGHTS page — zone health summary; exterior light status; advisory messages |
-| ELU Monitoring | SOC (%), SOH (%), ELU self-test result (PASS/FAIL) |
-| Ground Test | CMC-commanded: zone lamp test; ELU activation test; BITE query |
-| Fault Isolation | BITE to LRU level: Master SSLC, Zone SSLC, individual LED driver channel, ELU |
-| S1000D SNS | 033-80 |
-| Applicability Code | ALL |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The ATA 033-80 subsystem is the monitoring and diagnostics hub for ATA 33. It aggregates fault data from all lighting LRUs (Master SSLC, four Zone SSLCs, four ELUs) and distributes it to the crew (via ECAM) and to maintenance (via CMC/OMS). It also provides the command interface for ground test of all lighting functions.
@@ -322,7 +315,7 @@ MEL troubleshooting aids: the AMM 33-80 section provides a fault isolation tree 
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-80 | Lights Monitoring, Diagnostics and Control Interfaces | DMC-AMPEL360E-EWTW-033-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-80 | Lights Monitoring, Diagnostics and Control Interfaces | DMC-<PROGRAMME>-<VARIANT>-033-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Planned Data Modules
 

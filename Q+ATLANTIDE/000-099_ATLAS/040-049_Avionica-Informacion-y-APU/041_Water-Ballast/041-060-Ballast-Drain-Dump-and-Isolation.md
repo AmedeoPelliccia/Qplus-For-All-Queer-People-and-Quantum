@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 060 — Ballast Drain, Dump and Isolation
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document defines the drain, dump, and isolation functions of the Water Ballast system on the AMPEL360E eWTW. It covers the emergency dump system for rapid jettison of ballast water, the maintenance drain function for complete tank emptying on the ground, tank and line isolation valve logic, and the fail-safe isolation modes activated on loss of BCC or detection of a leakage fault.
+This document defines the drain, dump, and isolation functions of the Water Ballast system on the programme-defined aircraft type. It covers the emergency dump system for rapid jettison of ballast water, the maintenance drain function for complete tank emptying on the ground, tank and line isolation valve logic, and the fail-safe isolation modes activated on loss of BCC or detection of a leakage fault.
 
 The emergency dump capability allows the crew to rapidly displace up to 800 kg of water in less than 8 minutes (target rate ≥ 100 kg/min through the dump port) to recover CG or reduce aircraft weight in an abnormal CG divergence scenario. Dump operations are subject to ICAO Annex 16 Environmental Protection constraints: dumping is only permitted above an approved altitude (FL100 minimum) and at approved locations per ICAO Doc 9137. The dump rate and trajectory are designed to disperse water into fine droplets (nozzle aperture < 3 mm) to ensure complete evaporation before ground level.
 
@@ -50,11 +52,11 @@ Maintenance drain valves allow both tanks to be fully emptied to a ground collec
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41-60 — Ballast Drain, Dump and Isolation |
 | Standards | CS-25 Amd 27, ICAO Annex 16 Vol I, DO-160G §8 |
 | Dev Assurance | DAL C (dump/drain hardware); DAL B (isolation logic) |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | Emergency Dump Rate | ≥ 100 kg/min (both tanks combined) |
 
 ---
@@ -286,12 +288,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-060-00A-040A-A | 040 | Ballast Drain, Dump and Isolation Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-060-00A-300A-A | 300 | Ballast Drain/Dump Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-060-00A-400A-A | 400 | Ballast Drain/Dump BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-060-00A-520A-A | 520 | Ballast Drain/Dump Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-060-00A-941A-A | 941 | Ballast Drain/Dump Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-060-00A-720A-A | 720 | Ballast Drain/Dump SW Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-060-00A-040A-A | 040 | Ballast Drain, Dump and Isolation Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-060-00A-300A-A | 300 | Ballast Drain/Dump Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-060-00A-400A-A | 400 | Ballast Drain/Dump BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-060-00A-520A-A | 520 | Ballast Drain/Dump Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-060-00A-941A-A | 941 | Ballast Drain/Dump Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-060-00A-720A-A | 720 | Ballast Drain/Dump SW Description |
 
 ### Recommended Data Module Set
 
@@ -394,7 +396,7 @@ Verification Evidence"]
 | <a id="ref-easa-cm"></a>EASA-CM | EASA CM-21.A-002 — Water Ballast Environmental Impact | Environmental compliance guidance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet [PROGRAMME-AIRCRAFT] | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

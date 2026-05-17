@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.060 — Access Preparation and Safety Conditions
 
 ## 1. Purpose
 
-Defines the **access preparation and safety conditions** required before commencing structural maintenance tasks on the AMPEL360 eWTW, covering aircraft de-energisation, LH₂ system safe-state procedures, structure support and shoring requirements, electrical bonding, and the mandatory safety checks before opening structural access panels or removing structural elements.
+Defines the **access preparation and safety conditions** required before commencing structural maintenance tasks on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], covering aircraft de-energisation, LH₂ system safe-state procedures, structure support and shoring requirements, electrical bonding, and the mandatory safety checks before opening structural access panels or removing structural elements.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW introduces novel access preparation requirements compared to conventional jet aircraft, primarily due to the LH₂ fuel system. Before any structural work in proximity to LH₂ plumbing, tanks, or fittings, the LH₂ system must be fully defuelled, purged with inert gas, and verified by calibrated hydrogen-detection equipment to be below the lower explosive limit (LEL). Structure support and shoring requirements are defined for each major access zone to prevent unintended load redistribution during panel or component removal.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] introduces novel access preparation requirements compared to conventional jet aircraft, primarily due to the LH₂ fuel system. Before any structural work in proximity to LH₂ plumbing, tanks, or fittings, the LH₂ system must be fully defuelled, purged with inert gas, and verified by calibrated hydrogen-detection equipment to be below the lower explosive limit (LEL). Structure support and shoring requirements are defined for each major access zone to prevent unintended load redistribution during panel or component removal.
 
 Standard electrical de-energisation requirements (master power off, ground cart removed, circuit breakers set) apply before opening any panel affecting electrical bonding of structural elements. All high-voltage DEP bus bars in proximity to structural access points must be individually verified de-energised.
 
@@ -84,8 +86,8 @@ sequenceDiagram
 | Ref | Document |
 |---|---|
 | CS-25.869 | Fire protection — ventilation |
-| AMM-AMPEL360-050-00-10 | Aircraft Maintenance Manual — General Safety Precautions |
-| SC-AMPEL360-LH2-002 | Special Condition — LH₂ ground handling safety |
+| AMM-[PROGRAMME-AIRCRAFT]-050-00-10 | Aircraft Maintenance Manual — General Safety Precautions |
+| SC-[PROGRAMME-AIRCRAFT]-LH2-002 | Special Condition — LH₂ ground handling safety |
 | EASA Part-145 | Approved maintenance organisation procedures |
 | [`./README.md`](./README.md) | Subsubject 060 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

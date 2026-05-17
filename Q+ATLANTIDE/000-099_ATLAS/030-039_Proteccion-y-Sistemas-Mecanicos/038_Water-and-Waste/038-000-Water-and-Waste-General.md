@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Water and Waste — General"
 file_name: "038-000-Water-and-Waste-General.md"
 sns_reference: "038-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-038-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -79,7 +79,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 38"
   - "Water and Waste"
@@ -90,10 +90,12 @@ keywords:
   - "EWP"
   - "EWH"
   - "general overview"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 038-000 — Water and Waste — General
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -103,51 +105,33 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, AMC, WHO, FAA) are cited by document identifier only; no live external URLs are embedded because regulatory document URLs are subject to change without notice. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-XX-YYYY-A`. Traceability links to the CSDB are maintained in §14. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work in progress or planned content respectively.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, AMC, WHO, FAA) are cited by document identifier only; no live external URLs are embedded because regulatory document URLs are subject to change without notice. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-038-XX-YYYY-A`. Traceability links to the CSDB are maintained in §14. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work in progress or planned content respectively.
 
 ---
 
 ## §1 Purpose
 
-This document provides the top-level general overview of **ATA Chapter 38 — Water and Waste** as applied to the **AMPEL360e eWTW** (~100-passenger, fully electric, medium-range) aircraft. It establishes:
+This document defines the agnostic ATLAS standard-level architecture context for `038-000 — Water and Waste — General`.
 
-1. The architecture and philosophy of the fully electric Potable Water System (PWS) — no engine bleed, no APU steam heating, electrically pressurised and heated.
-2. The grey water drainage system — gravity drain to electrically heated mast drain nozzles.
-3. The Vacuum Waste System (VWS) as the toilet/lavatory waste collection and storage subsystem, interfacing with ATA 37 (vacuum generation).
-4. System boundaries between ATA 38 and adjacent ATA chapters (ATA 37, ATA 21, ATA 24, ATA 25, ATA 36).
-5. The applicable certification basis (CS-25, WHO, FAA Part 121 Appendix A).
-6. The document hierarchy for ATA 38, covering subsubjects 038-000 through 038-090.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document is authoritative for system boundary definition and interfaces for all lower-level ATA 38 documents.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants (unless noted) |
-| ATA Chapter | 38 — Water and Waste |
-| Document Tier | Level 2 — System Description Document (SDD) |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Preceding Document | Scaffold Rev 0.0 |
-
-This document applies to all systems that store, distribute, heat, or drain water and that collect, store, or service toilet waste aboard the AMPEL360e eWTW. It explicitly excludes:
-- Cabin humidity and condensate management (ATA 21)
-- Vacuum generation equipment (ATA 37)
-- Toilet bowl assemblies and seat mechanisms (ATA 25)
-- Galley cooling equipment drains unless routed into the ATA 38 grey drain network
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
-### 3.1 eWTW ATA 38 Philosophy
+### 3.1 [PROGRAMME-VARIANT] ATA 38 Philosophy
 
-The AMPEL360e eWTW adopts a fully electric water and waste management philosophy — no engine bleed air, no APU-derived heat, no pneumatic tank pressurisation from a traditional bleed source. All water heating, tank pressurisation, freeze protection, and grey-drain nozzle heating are achieved by electrical means.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] adopts a fully electric water and waste management philosophy — no engine bleed air, no APU-derived heat, no pneumatic tank pressurisation from a traditional bleed source. All water heating, tank pressurisation, freeze protection, and grey-drain nozzle heating are achieved by electrical means.
 
-| Function | Conventional Aircraft | eWTW Solution |
+| Function | Conventional Aircraft | [PROGRAMME-VARIANT] Solution |
 |---|---|---|
 | Tank pressurisation | Bleed air from pneumatic manifold (ATA 36) | Electric Air Compressor (EAC) low-pressure air OR electric pump with bladder <img src="https://img.shields.io/badge/TBD-red"> |
 | Water heating | Boiler fed by APU steam / bleed heat exchange | Electric Water Heaters (EWH), instant or storage type |
@@ -157,7 +141,7 @@ The AMPEL360e eWTW adopts a fully electric water and waste management philosophy
 
 ### 3.2 Subsystem Summary
 
-ATA 38 on the eWTW is divided into two main loops:
+ATA 38 on the [PROGRAMME-VARIANT] is divided into two main loops:
 
 **Clean Loop (Potable Water System — PWS):**
 - Water tank (composite, pressurised) → Electric Water Pump (EWP) → UV sterilisation unit → activated carbon pre-filter → distribution lines → galleys and lavatories → Electric Water Heaters (EWH) at point of use.
@@ -462,9 +446,9 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description (this document) | DMC-AMPEL360E-EWTW-038-00-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Fault isolation — ATA 38 general | DMC-AMPEL360E-EWTW-038-00-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Inspection — ATA 38 general | DMC-AMPEL360E-EWTW-038-00-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description (this document) | DMC-<PROGRAMME>-<VARIANT>-038-00-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| Fault isolation — ATA 38 general | DMC-<PROGRAMME>-<VARIANT>-038-00-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Inspection — ATA 38 general | DMC-<PROGRAMME>-<VARIANT>-038-00-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL mapping in [038-090](./038-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -606,5 +590,5 @@ Full DMRL mapping in [038-090](./038-090-S1000D-CSDB-Mapping-and-Traceability.md
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW ATA 38 context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] ATA 38 context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

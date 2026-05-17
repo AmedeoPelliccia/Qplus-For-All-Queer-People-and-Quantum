@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — Aircraft Structural Zone Definition
 
 ## 1. Purpose
 
-Defines the **structural zone taxonomy** for the AMPEL360 eWTW, establishing top-level zone identifiers, their geometric extents, structural classification, and the mapping to ATA/S1000D zone codes.
+Defines the **structural zone taxonomy** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], establishing top-level zone identifiers, their geometric extents, structural classification, and the mapping to ATA/S1000D zone codes.
 
 ## 2. Scope
 
@@ -60,7 +62,7 @@ Structural zones use a three-digit identifier in the range `Z100`–`Z900`. The 
 | Z600 | — | — | WS 0–4,500 | per wing contour |
 | Z700 | — | — | WS 4,500–16,000 | per wing contour |
 
-(Full zone table in Design Basis Document DBD-AMPEL360-STRUCT-001 §3.)
+(Full zone table in Design Basis Document DBD-[PROGRAMME-AIRCRAFT]-STRUCT-001 §3.)
 
 ### 2.3 Zone Classification Attributes
 

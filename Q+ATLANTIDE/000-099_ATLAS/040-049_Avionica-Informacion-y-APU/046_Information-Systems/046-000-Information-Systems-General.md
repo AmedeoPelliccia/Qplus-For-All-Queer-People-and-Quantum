@@ -31,6 +31,8 @@ ata_reference: "ATA 46 — Information Systems"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 000 — Information Systems General
@@ -43,12 +45,12 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46 — Information Systems (IS) defines the architecture, functionality, and integration of all on-board information management and data services for the AMPEL360E eWTW all-electric wide-twin-wing aircraft. The AMPEL360E eWTW operates with no hydraulic system and no bleed-air architecture; all information systems interface directly with electric propulsion health monitoring, battery state management, and electric flight-control actuation diagnostics.
+ATA 46 — Information Systems (IS) defines the architecture, functionality, and integration of all on-board information management and data services for the programme-defined aircraft type all-electric wide-twin-wing aircraft. The programme-defined aircraft type operates with no hydraulic system and no bleed-air architecture; all information systems interface directly with electric propulsion health monitoring, battery state management, and electric flight-control actuation diagnostics.
 
 Key governance areas:
 - Overall AIDMS (Aircraft Information and Data Management System) architecture and redundancy strategy.
 - Five functional domains: Aircraft Information Management, Operational Data, Airline Communications, Electronic Documentation, and Crew Information.
-- eWTW-specific data flows: battery State-of-Charge (SoC) and State-of-Health (SoH) reporting, electric motor bus (EMB) data, and EMA telemetry integrated into information data streams.
+- [PROGRAMME-VARIANT]-specific data flows: battery State-of-Charge (SoC) and State-of-Health (SoH) reporting, electric motor bus (EMB) data, and EMA telemetry integrated into information data streams.
 - Regulatory basis: CS-25 Amendment 28, DO-178C DAL D, DO-160G, ARINC 664 P7, ARINC 429, ARINC 628, ARINC 631.
 - Primary Q-Division: Q-DATAGOV; Support: Q-AIR, Q-SPACE, Q-HPC.
 
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46 — Information Systems |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL D |
 | Applicable Standards | ARINC 664 P7; ARINC 429; ARINC 628; ARINC 631-4; DO-160G; S1000D Issue 5.0 |
@@ -69,10 +71,10 @@ Key governance areas:
 
 ## §3. Functional Description
 
-The AMPEL360E eWTW Information Systems are centred on the Aircraft Information and Data Management System (AIDMS), implemented as dual redundant AIM servers (AIM-A and AIM-B) operating in hot-standby mode on the AFDX (ARINC 664 P7) network. The AIDMS provides five functional domains:
+The programme-defined aircraft type Information Systems are centred on the Aircraft Information and Data Management System (AIDMS), implemented as dual redundant AIM servers (AIM-A and AIM-B) operating in hot-standby mode on the AFDX (ARINC 664 P7) network. The AIDMS provides five functional domains:
 
 1. **Aircraft Information Management (AIM)** — Core data aggregation, storage, and distribution of flight operations and maintenance data.
-2. **Operational Data Systems (ODS)** — Real-time flight performance computation, weather, NOTAM, and eWTW battery energy planning.
+2. **Operational Data Systems (ODS)** — Real-time flight performance computation, weather, NOTAM, and [PROGRAMME-VARIANT] battery energy planning.
 3. **Airline Information and Communication Interfaces (AICI)** — ACARS, VDL Mode 2, SATCOM, Gatelink ground connectivity, OOOI reporting.
 4. **Electronic Documentation and IETP Interfaces (EDII)** — S1000D IETP viewer, AMM/IPC/FIM onboard access, CSDB synchronisation.
 5. **Crew Information and Flight Operations Data (CIFOD)** — EFB Class 3, NavDB, aeronautical charts, OFP loading.
@@ -203,7 +205,7 @@ stateDiagram-v2
 - **Gatelink air-gap from AFDX**: Firewall enforces strict separation between Gatelink (ground network) and AFDX (avionics network); no direct routing path.
 - **CDN air-gap from AFDX**: ARINC 628 Cabin Data Network segregated from AFDX by data diode/gateway; avionics data only flows one-way into CDN.
 - **DO-178C DAL D**: AIM software qualified at Design Assurance Level D — information and advisory functions only, not safety-critical.
-- **eWTW battery data integrity**: Battery SoC/SoH data relayed from ATA 24 battery management via AFDX is validated with CRC-32 on each message frame.
+- **[PROGRAMME-VARIANT] battery data integrity**: Battery SoC/SoH data relayed from ATA 24 battery management via AFDX is validated with CRC-32 on each message frame.
 
 ---
 
@@ -229,7 +231,7 @@ stateDiagram-v2
 - **Update mechanism**: Software loaded via Gatelink (IEEE 802.11ax, TLS 1.3 encrypted, PKI certificate-authenticated) at gate during GROUND-UPDATE mode; fallback USB-C service panel.
 - **Data integrity**: All software loads verified with SHA-256 hash before installation; maintenance authorisation via airline LDAP.
 - **Version management**: Software part numbers tracked in CMDB (ATA 45); configuration baseline per ARINC 849 Digital Dataloader specification.
-- **eWTW-specific partitions**: Dedicated AIM partition for battery SoC/SoH data consolidation and eWTW energy planning data feeds.
+- **[PROGRAMME-VARIANT]-specific partitions**: Dedicated AIM partition for battery SoC/SoH data consolidation and [PROGRAMME-VARIANT] energy planning data feeds.
 
 ---
 
@@ -254,7 +256,7 @@ stateDiagram-v2
 - Font minimum 12 pt on EFB and IETP viewer; contrast ratio > 4.5:1 per AMC 25.1302.
 - Colour coding: Cyan = information/advisory; Amber = IS degraded (not safety-critical); Green = IS nominal; White = ground-only status.
 - Ground access (IETP, AMM, FIM) via MAT (Maintenance Access Terminal, ATA 45) or EFB — no dual-duty with flight-deck functions during flight.
-- eWTW battery SoC pre-flight display integrated into EFB energy planning page; crew awareness training required per EASA OEB.
+- [PROGRAMME-VARIANT] battery SoC pre-flight display integrated into EFB energy planning page; crew awareness training required per EASA OEB.
 
 ---
 
@@ -292,10 +294,10 @@ stateDiagram-v2
 | Term | Acronym | Definition |
 |------|---------|------------|
 | Aircraft Information Management | AIM | The centralised on-board system that aggregates, stores, and distributes operational, maintenance, and cabin data across the AFDX network |
-| Aircraft Information and Data Management System | AIDMS | The top-level integrated information system for the AMPEL360E eWTW, encompassing AIM servers, OIS, EFB, IETP, ACARS, and Gatelink subsystems |
-| Electronic Flight Bag | EFB | A Class 3 ruggedised computing device installed in the cockpit providing crew access to NavDB, charts, OFP, NOTAMs, and eWTW energy planning |
+| Aircraft Information and Data Management System | AIDMS | The top-level integrated information system for the programme-defined aircraft type, encompassing AIM servers, OIS, EFB, IETP, ACARS, and Gatelink subsystems |
+| Electronic Flight Bag | EFB | A Class 3 ruggedised computing device installed in the cockpit providing crew access to NavDB, charts, OFP, NOTAMs, and [PROGRAMME-VARIANT] energy planning |
 | Interactive Electronic Technical Publication | IETP | A structured, hyperlinked digital maintenance and operations manual rendered per S1000D Issue 5.0 and accessible on the MAT or EFB |
-| Operational Information System | OIS | The on-board server providing real-time performance computation, weight and balance, NOTAM integration, and weather data for the AMPEL360E eWTW |
+| Operational Information System | OIS | The on-board server providing real-time performance computation, weight and balance, NOTAM integration, and weather data for the programme-defined aircraft type |
 | Electronic Flight Publication | EFP | Any digital publication (chart, regulation, manual) made available to the crew or maintenance personnel via the onboard information system |
 | Aircraft Communications Addressing and Reporting System | ACARS | A digital datalink protocol operating over VHF (VDL Mode 2) or SATCOM for airline operational communications, position reporting, and data exchange |
 | Quick Access Recorder | QAR | An onboard flight data recorder variant storing 512 parameters at up to 8 Hz on a removable NVMe medium for post-flight analysis by the airline |
@@ -384,7 +386,7 @@ stateDiagram-v2
 | [R5] | ATLAS 046-020 — Operational Data Systems | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R6] | ATLAS 046-030 — Airline Information and Communication Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R7] | ATLAS 046-090 — S1000D CSDB Mapping and Traceability | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R8] | AMPEL360E eWTW System Architecture Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R8] | programme-defined aircraft type System Architecture Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

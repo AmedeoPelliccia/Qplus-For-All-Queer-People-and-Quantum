@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · Section 05 · Subsection 050 · Subsubject 030 — Structural Interfaces General
@@ -32,7 +34,7 @@ language: en
 
 Subsubject-level index for *Structural Interfaces General* (`030`) within subsection `050` *General* of ATLAS `050-059` — *Estructuras*.
 
-This subsubject covers the top-level structural interface matrix, ICD governance, and interface documents for all airframe-to-systems structural attachment and boundary interfaces across the AMPEL360 eWTW.
+This subsubject covers the top-level structural interface matrix, ICD governance, and interface documents for all airframe-to-systems structural attachment and boundary interfaces across the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT].
 
 ## 2. Document Index
 

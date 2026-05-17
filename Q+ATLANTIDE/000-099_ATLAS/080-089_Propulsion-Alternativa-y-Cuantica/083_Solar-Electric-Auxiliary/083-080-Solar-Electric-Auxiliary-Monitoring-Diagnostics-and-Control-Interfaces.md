@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0083-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-083-080-SOLAR-ELECTRIC-AUXILIARY-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATLAS-083 (Solar-Electric Auxiliary) · Monitoring, Diagnostics and Control
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Solar-Electric Auxiliary — Monitoring, Diagnostics and Control Interfaces
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-080"
 
 ## §1 Purpose
 
-ATLAS subsubject 083-080 defines the SEACU BITE architecture, monitored parameters, AFDX virtual link allocation, CMS fault code table, EPMS research telemetry, FDR parameter list, control loop overview (MPPT P&O algorithm, SCAP charge control, motor FOC), and maintenance ground support interface for the Solar-Electric Auxiliary system.
+This document defines the agnostic ATLAS standard-level architecture context for `Solar-Electric Auxiliary — Monitoring, Diagnostics and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-083 — 083-080 Monitoring, Diagnostics and Control Interfaces |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL C; ARINC 664 P7; ARINC 429 (advisory outputs) |
-| S1000D SNS | 083-080-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `083` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 SEACU BITE Architecture
 
 ### 3.1 BITE Modes
@@ -145,7 +146,7 @@ ATLAS subsubject 083-080 defines the SEACU BITE architecture, monitored paramete
 
 ## §7 FDR / QAR Parameters
 
-Per ICAO Annex 6 extended research parameter list for AMPEL360E eWTW flight test:
+Per ICAO Annex 6 extended research parameter list for programme-defined aircraft type flight test:
 
 | Parameter | Resolution | Range |
 |---|---|---|
@@ -202,5 +203,5 @@ Per ICAO Annex 6 extended research parameter list for AMPEL360E eWTW flight test
 |---|---|---|---|
 | OI-083-080-001 | MPPT P&O step size tuning under simulated cloud shadow profile — HIL test | Q-HPC | PDR |
 | OI-083-080-002 | AFDX VL-083-04 (10 Hz EPMS) bandwidth allocation review — conflict with ATLAS 084 EPMS VLs | Q-HPC | CDR |
-| OI-083-080-003 | CMS fault code integration with AMPEL360E ECAM display layout — crew advisory format approval | Q-HORIZON | CDR |
+| OI-083-080-003 | CMS fault code integration with [PROGRAMME-AIRCRAFT] ECAM display layout — crew advisory format approval | Q-HORIZON | CDR |
 | OI-083-080-004 | FDR parameter recording format and ICAO Annex 6 research extension documentation | Q-HORIZON | Phase 2 |

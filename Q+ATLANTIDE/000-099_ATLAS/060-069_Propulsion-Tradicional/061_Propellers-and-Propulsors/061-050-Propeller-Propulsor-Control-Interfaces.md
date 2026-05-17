@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0061-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-061-050-PROPELLER-PROPULSOR-CONTROL-INTERFACES
      ATA 61 · Propeller/Propulsor Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propeller/Propulsor Control Interfaces
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-050"
 
 ## §1 Purpose
 
-This document defines the command, feedback, and monitoring interfaces between propeller/propulsor systems and the aircraft propulsion control architecture. Correct interface definition is essential to ensure that FADEC thrust commands are faithfully translated to propeller pitch and speed responses, and that propulsor health data is correctly reported to CMS and ECAM for crew awareness and maintenance action.
+This document defines the agnostic ATLAS standard-level architecture context for `Propeller/Propulsor Control Interfaces`.
 
-The AMPEL360E eWTW propulsion control interface follows a hierarchical architecture: Thrust Lever Angle (TLA) from the cockpit → FADEC → PECU/EPCU → actuator → blade. Feedback runs in reverse: blade angle sensor → PECU → FADEC → ECAM. Monitoring runs in parallel: PECU health data → CMS (ATA 45) → maintenance terminal.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 61-050 — Propeller/Propulsor Control Interfaces |
-| Certification basis | EASA CS-25 Amendment 27+ |
-| S1000D SNS | 061-050-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `061` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The control interface hierarchy comprises:
@@ -270,4 +269,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

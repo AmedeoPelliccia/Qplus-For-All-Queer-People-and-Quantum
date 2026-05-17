@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 000 — In-Flight Fuel Dispensing General
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 48 — In-Flight Fuel Dispensing (IFFD) defines the architecture, functionality, and integration of the on-board aerial refuelling system for the AMPEL360E eWTW all-electric wide-twin-wing aircraft. The AMPEL360E eWTW operates with **no hydraulic system** and **no engine bleed-air**; all IFFD actuation is provided by electric actuators and electric-driven fuel transfer pumps.
+ATA 48 — In-Flight Fuel Dispensing (IFFD) defines the architecture, functionality, and integration of the on-board aerial refuelling system for the programme-defined aircraft type all-electric wide-twin-wing aircraft. The programme-defined aircraft type operates with **no hydraulic system** and **no engine bleed-air**; all IFFD actuation is provided by electric actuators and electric-driven fuel transfer pumps.
 
 The IFFD system enables the aircraft to operate as a **receiver** (standard configuration — refuelling from a tanker via probe-drogue) or as a **tanker** (optional configuration — dispensing fuel to a receiver via hose-drogue or boom). The In-Flight Fuel Dispensing Control Unit (IFFDCU) is a dual-channel unit qualified to DO-178C DAL B, reflecting the higher safety criticality of aerial refuelling operations compared to ground systems.
 
@@ -62,7 +64,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | Certification Basis | CS-25 Amendment 28; FAR 25.975; SFAR 88; MIL-STD-1760 (tanker option) |
 | Applicable Standards | DO-178C DAL B; DO-160G; S1000D Issue 5.0; ARINC 664 P7; ARINC 429 |
@@ -76,7 +78,7 @@ Key governance areas:
 
 ## §3. Functional Description
 
-The AMPEL360E eWTW In-Flight Fuel Dispensing system provides a fully electric aerial refuelling capability for both receiver and tanker roles. Unlike conventional tanker/receiver aircraft that rely on hydraulic actuation for probe extension, hose-reel deployment, and coupling mechanisms, the AMPEL360E eWTW replaces all hydraulic actuators with electromechanical actuators (EMA) and electrically-driven fuel transfer boost pumps.
+The programme-defined aircraft type In-Flight Fuel Dispensing system provides a fully electric aerial refuelling capability for both receiver and tanker roles. Unlike conventional tanker/receiver aircraft that rely on hydraulic actuation for probe extension, hose-reel deployment, and coupling mechanisms, the programme-defined aircraft type replaces all hydraulic actuators with electromechanical actuators (EMA) and electrically-driven fuel transfer boost pumps.
 
 In **Receiver Mode**, the retractable refuelling probe extends forward of the nose section via an EMA telescoping mechanism. The probe alignment system uses LIDAR and camera-aided guidance to assist the crew in locating the tanker drogue basket. Once engaged, the IFFDCU manages fuel flow via the Electric Boost Pumps on the tanker side (flow path), controlling the fuel inlet isolation valve and distributing received fuel to the selected onboard tanks. A Coriolis-type flow meter measures the mass flow rate in real time.
 
@@ -265,7 +267,7 @@ stateDiagram-v2
 - Dual-channel software architecture: Channel A and Channel B run identical certified software builds on dissimilar hardware partitions (different processor families to guard common-cause).
 - PHM prognostic module embedded in IFFDCU firmware; probe actuator, hose-reel, and pump degradation models updated via DLCS ground uplink.
 - Loadable Software Parts (LSP) managed per DO-200B; IFFDCU configuration data loaded via AFDX DLCS interface.
-- Aircraft-specific IFFD configuration file (eWTW variant — receiver standard / tanker option) loaded at aircraft delivery and tracked in aircraft technical log.
+- Aircraft-specific IFFD configuration file ([PROGRAMME-VARIANT] variant — receiver standard / tanker option) loaded at aircraft delivery and tracked in aircraft technical log.
 - Tanker mode capability enabled/disabled via a controlled aircraft configuration pin and software enable flag in the IFFDCU configuration data module.
 
 ---
@@ -435,4 +437,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — ATA 48 IFFD General overview for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — ATA 48 IFFD General overview for programme-defined aircraft type |

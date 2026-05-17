@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 07"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Establishes the general framework for lifting, shoring, and jacking operations on the AMPEL360E eWTW. Defines the safety philosophy, controlled load limits, GSE interface requirements, and the documentation structure for all lifting, shoring, and jacking procedures within the Q+ATLANTIDE ATLAS-1000 register.
+Establishes the general framework for lifting, shoring, and jacking operations on the programme-defined aircraft type. Defines the safety philosophy, controlled load limits, GSE interface requirements, and the documentation structure for all lifting, shoring, and jacking procedures within the Q+ATLANTIDE ATLAS-1000 register.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 07 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,9 +72,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Lifting Shoring and Jacking General** node establishes the overarching principles, safety constraints, and GSE interface requirements for all lifting, shoring, and jacking operations on the AMPEL360E eWTW. The eWTW configuration introduces specific constraints relative to conventional aircraft: the wide-tube fuselage cross-section (OD ≈ 4.14 m) and the centre lower-lobe HVDC battery bay require dedicated structural hard-points to avoid transmitting jack loads through the battery enclosure; the under-wing motor-drive nacelles have separate jacking provisions from the engine pylons. All jacking and lifting operations must be preceded by an HVDC system de-energise sequence (battery contactors open, EPCU isolated, ground bonding applied) documented in AMM Chapter 20.
+The **Lifting Shoring and Jacking General** node establishes the overarching principles, safety constraints, and GSE interface requirements for all lifting, shoring, and jacking operations on the programme-defined aircraft type. The [PROGRAMME-VARIANT] configuration introduces specific constraints relative to conventional aircraft: the wide-tube fuselage cross-section (OD ≈ 4.14 m) and the centre lower-lobe HVDC battery bay require dedicated structural hard-points to avoid transmitting jack loads through the battery enclosure; the under-wing motor-drive nacelles have separate jacking provisions from the engine pylons. All jacking and lifting operations must be preceded by an HVDC system de-energise sequence (battery contactors open, EPCU isolated, ground bonding applied) documented in AMM Chapter 20.
 
-Lifting, shoring, and jacking on the eWTW use a standardised 3-point jack system (forward fuselage jack point + two wing-root jack points) capable of a combined maximum jacking load of ≈ 75 000 kg. A fourth optional tail-support jack point is provided for partial-aircraft configurations (e.g., nose gear replacement). All jack points include load cells interfaced to the Wireless Maintenance Monitoring System (WMMS) to ensure load symmetry is maintained within ±5% during any jacking cycle. The applicable GSE part numbers, load limits, and safety interlocks are defined in the AMM 07 (Lifting and Shoring) chapter, which draws its dimensional and structural basis from this ATLAS 006 node.
+Lifting, shoring, and jacking on the [PROGRAMME-VARIANT] use a standardised 3-point jack system (forward fuselage jack point + two wing-root jack points) capable of a combined maximum jacking load of ≈ 75 000 kg. A fourth optional tail-support jack point is provided for partial-aircraft configurations (e.g., nose gear replacement). All jack points include load cells interfaced to the Wireless Maintenance Monitoring System (WMMS) to ensure load symmetry is maintained within ±5% during any jacking cycle. The applicable GSE part numbers, load limits, and safety interlocks are defined in the AMM 07 (Lifting and Shoring) chapter, which draws its dimensional and structural basis from this ATLAS 006 node.
 
 ---
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the lifting shoring and jacking general scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Lifting Shoring and Jacking General** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Lifting Shoring and Jacking General** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `006` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `000` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-006-000` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-006-000` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

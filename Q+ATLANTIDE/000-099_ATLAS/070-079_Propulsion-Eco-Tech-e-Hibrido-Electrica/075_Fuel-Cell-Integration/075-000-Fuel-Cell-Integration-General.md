@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-000-FUEL-CELL-INTEGRATION-GENERAL
      ATA 75 · Fuel Cell Integration General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Cell Integration General
@@ -47,25 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-000"
 
 ## §1 Purpose
 
-The AMPEL360E eWTW integrates a 200 kW Proton Exchange Membrane Fuel Cell (PEMFC) system as an auxiliary power source providing supplemental electrical power and ground/emergency power. The Fuel Cell Module (FCM) comprises a cluster of four 50 kW PEMFC stacks managed by a dual-channel Fuel Cell Control Unit (FCCU) certified to DO-178C DAL B and DO-254 DAL B.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Cell Integration General`.
 
-The FCM delivers power to the HVDC 270 V primary bus (ATA 73) via the Fuel Cell Power Converter (FCPC). Cryogenic hydrogen stored in ATA 76 tanks serves as the fuel, while ambient air supplied by the Environmental Air Compressor (EAC, ATA 66) acts as the oxidant. By-product water from the cathode reaction is managed by the ATA 75 water management subsystem. The FCM is physically located in the rear fuselage pressurised bay.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document (075-000) establishes the general scope, top-level architecture, and cross-references for the entire ATA 75 Fuel Cell Integration subsection of the AMPEL360E eWTW ATLAS baseline. It is the parent reference for all subsubjects 075-010 through 075-090.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-000 — Fuel Cell Integration General |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The PEMFC stack cluster generates electrical power through electrochemical oxidation of hydrogen at the anode and reduction of oxygen at the cathode, producing water as the only by-product. Four 50 kW stacks are operated in parallel on a common DC busbar (100–125 V), which feeds the FCPC for voltage conversion to 270 V HVDC. The FCCU governs stoichiometry, thermal management, cell voltage monitoring, fault detection, and reporting.
@@ -260,7 +257,7 @@ flowchart TB
 | BoP | Balance of Plant — all ancillary systems supporting PEMFC stack operation |
 | MEA | Membrane Electrode Assembly — the core electrochemical component of each cell (anode GDL + catalyst + Nafion + catalyst + cathode GDL) |
 | CVM | Cell Voltage Monitor — per-cell voltage measurement unit (400 channels per stack) |
-| HVDC | High-Voltage Direct Current — 270 V DC power bus standard on AMPEL360E eWTW |
+| HVDC | High-Voltage Direct Current — 270 V DC power bus standard on programme-defined aircraft type |
 | DAL | Design Assurance Level — per DO-178C/DO-254; DAL B = ≤10⁻⁷/h failure probability |
 | LOTO | Lockout/Tagout — safety isolation procedure mandatory before FCM bay access |
 | H2 LEL | Hydrogen Lower Explosive Limit — 4 % v/v in air (alarm thresholds: 1 % and 25 % of LEL) |

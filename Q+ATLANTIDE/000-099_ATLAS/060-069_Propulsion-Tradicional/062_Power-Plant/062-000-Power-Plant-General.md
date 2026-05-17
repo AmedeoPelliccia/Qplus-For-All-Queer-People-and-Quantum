@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0062-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0062-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-062-000-POWER-PLANT-GENERAL
      ATA 62 · Power Plant General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Power Plant General
@@ -47,22 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0062-000"
 
 ## §1 Purpose
 
-The Power Plant (ATA 62) chapter defines the installed propulsion system at the nacelle/aircraft level — the engine plus all the structural, fluid, electrical, and control interfaces that connect it to the airframe. This is distinct from ATA 72–80 which define the engine as a standalone product.
+This document defines the agnostic ATLAS standard-level architecture context for `Power Plant General`.
 
-For the AMPEL360E eWTW, two high-bypass turbofan engines are installed on under-wing pylons. Each power plant encompasses: the engine nacelle structure, engine mounting system, air intake and exhaust interfaces, fire zone, fuel supply connections, bleed-less pneumatic provisions (none on eWTW — air supply is EAC-only), and all engine-to-airframe LRU interfaces. The installed thrust class is TBD pending engine OEM selection.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 62-000 — Power Plant General |
-| S1000D SNS | 062-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `062` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The power plant general document establishes:
@@ -220,8 +220,8 @@ flowchart TB
 | **Fan cowl** | Hinged panels forming the outer nacelle covering around the engine fan case; provides maintenance access to engine accessories. |
 | **CS-25 §25.1181** | EASA standard defining the areas that must be designated as fire zones and the material requirements for those zones. |
 | **Nacelle** | The aerodynamic pod enclosing the engine; includes inlet, fan cowl, thrust reverser, and exhaust nozzle sections. |
-| **Bleed-less** | Design philosophy of the AMPEL360E eWTW: no engine bleed air for pneumatic systems; all pneumatic needs met by Electric Air Compressors (EAC). |
-| **EAC** | Electric Air Compressor — electrically powered compressor providing pressurised air for cabin conditioning; replaces engine bleed on eWTW. |
+| **Bleed-less** | Design philosophy of the programme-defined aircraft type: no engine bleed air for pneumatic systems; all pneumatic needs met by Electric Air Compressors (EAC). |
+| **EAC** | Electric Air Compressor — electrically powered compressor providing pressurised air for cabin conditioning; replaces engine bleed on [PROGRAMME-VARIANT]. |
 
 ---
 
@@ -229,7 +229,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-062-000-001 | Confirm engine OEM selection and TCDS reference number for AMPEL360E eWTW | Q-AIR / procurement | 2026-Q3 |
+| OI-062-000-001 | Confirm engine OEM selection and TCDS reference number for programme-defined aircraft type | Q-AIR / procurement | 2026-Q3 |
 | OI-062-000-002 | Define QEC split plane design in coordination with engine OEM and nacelle supplier | Q-MECHANICS / nacelle OEM | 2026-Q4 |
 
 ---
@@ -263,4 +263,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

@@ -31,6 +31,8 @@ ata_reference: "ATA 45.030 — Fault Isolation and Troubleshooting Logic"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 030 — Fault Isolation and Troubleshooting Logic
@@ -43,13 +45,13 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the fault isolation and troubleshooting logic architecture of the CMS for the AMPEL360E eWTW aircraft. It specifies the Fault Isolation Manual (FIM) decision-tree engine, confidence scoring methodology, cross-system fault correlation, and eWTW-specific electric propulsion fault isolation procedures for EMA, EMB, and MPDU faults.
+This document defines the fault isolation and troubleshooting logic architecture of the CMS for the programme-defined aircraft type. It specifies the Fault Isolation Manual (FIM) decision-tree engine, confidence scoring methodology, cross-system fault correlation, and [PROGRAMME-VARIANT]-specific electric propulsion fault isolation procedures for EMA, EMB, and MPDU faults.
 
 Key governance areas:
 - FIM decision-tree engine architecture (MSG-3 XML encoded trees).
 - Confidence scoring: 0–100% scale; > 70% required for action recommendation.
 - Cross-system correlator: 5 Hz correlation across active ATA chapter fault codes.
-- eWTW-specific: EMA, EMB, MPDU fault isolation trees.
+- [PROGRAMME-VARIANT]-specific: EMA, EMB, MPDU fault isolation trees.
 - Coverage: ATA 21, 22, 24, 27, 28, 31, 32, 34, 42, 44, 45.
 
 ---
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45.030 — Fault Isolation and Troubleshooting Logic |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL C |
 | Applicable Standards | ATA MSG-3; ARINC 664 P7; DO-160G |
@@ -80,7 +82,7 @@ The Fault Isolation Manual (FIM) decision-tree engine is hosted on the CCU and e
 
 The primary fault hypothesis must exceed **70% confidence** before a maintenance action recommendation is issued to the CMC display.
 
-eWTW-specific fault isolation trees cover:
+[PROGRAMME-VARIANT]-specific fault isolation trees cover:
 - **EMA faults**: Electro-Mechanical Actuator over-temperature, torque fault, position feedback loss.
 - **EMB faults**: Electric Motor Bus over-voltage, under-voltage, phase-loss.
 - **MPDU faults**: Main Power Distribution Unit circuit-breaker trip, bus voltage deviation.
@@ -138,7 +140,7 @@ graph LR
 | FIM Decision Tree Engine (FDTE) | Executes XML decision trees; produces isolation hypotheses | CCU-A/B (SW, DAL C) |
 | Confidence Scoring Module (CSM) | Weighted evidence scoring for each hypothesis | CCU-A/B (SW, DAL C) |
 | Cross-System Correlator (CSC) | 5 Hz cross-ATA-chapter fault correlation | CCU-A/B (SW, DAL C) |
-| EMA/EMB/MPDU Fault Tree Module | eWTW-specific electric propulsion FIM trees | CCU-A/B (SW, DAL C) |
+| EMA/EMB/MPDU Fault Tree Module | [PROGRAMME-VARIANT]-specific electric propulsion FIM trees | CCU-A/B (SW, DAL C) |
 | Isolation Report Generator (IRG) | Formats isolation report for CMC/MAT display | CCU-A/B (SW, DAL C) |
 
 ---
@@ -198,7 +200,7 @@ graph TD
 | Confidence threshold for action | > 70% | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | Cross-system correlator rate | 5 Hz | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | FIM database (total trees) | TBD (est. 2000+ per fleet) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| EMA/EMB/MPDU fault trees | TBD (eWTW programme) | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
+| EMA/EMB/MPDU fault trees | TBD ([PROGRAMME-VARIANT] programme) | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 
 ---
 
@@ -234,7 +236,7 @@ All FIM components are software modules hosted on CCU-A/B. Power and cooling bud
 - **FIM XML database**: OEM-controlled; versioned; SHA-256 signed; loaded read-only from MDSU.
 - **FIM database update**: Delivered via OEM software distribution, loaded via Gatelink or USB-C with authorisation check.
 - **Confidence score algorithm**: Algorithm version-controlled; changes require DAL C re-qualification.
-- **eWTW FIM trees**: Developed by OEM; reviewed by Q-MECHANICS and Q-DATAGOV; programme-controlled release.
+- **[PROGRAMME-VARIANT] FIM trees**: Developed by OEM; reviewed by Q-MECHANICS and Q-DATAGOV; programme-controlled release.
 
 ---
 
@@ -256,7 +258,7 @@ All FIM components are software modules hosted on CCU-A/B. Power and cooling bud
 | FIM database currency check | OEM release cycle | AMM ATA 45-12-02 |
 | Isolation report audit | Post-maintenance event | CMC report review |
 | Cross-system correlator log review | 1000 FH | AMM ATA 45-30-02 |
-| eWTW EMA/EMB/MPDU FIM tree review | Programme schedule | AMM ATA 45-30-03 |
+| [PROGRAMME-VARIANT] EMA/EMB/MPDU FIM tree review | Programme schedule | AMM ATA 45-30-03 |
 
 ---
 
@@ -267,7 +269,7 @@ All FIM components are software modules hosted on CCU-A/B. Power and cooling bud
 | FIM software assurance | DO-178C DAL C | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | MSG-3 maintenance logic | ATA MSG-3 Rev 2015 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | Isolation recommendation (advisory only) | CS-25 AMC 25.1309 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| eWTW fault trees (EMA/EMB/MPDU) | Programme-controlled | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
+| [PROGRAMME-VARIANT] fault trees (EMA/EMB/MPDU) | Programme-controlled | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 
 ---
 
@@ -285,7 +287,7 @@ All FIM components are software modules hosted on CCU-A/B. Power and cooling bud
 | ESG Dimension | Initiative | Status |
 |---------------|------------|--------|
 | Unnecessary removals reduction | 70% confidence gate reduces "no-fault-found" LRU removals | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| eWTW-specific isolation | EMA/EMB/MPDU fault trees prevent generalised troubleshooting | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
+| [PROGRAMME-VARIANT]-specific isolation | EMA/EMB/MPDU fault trees prevent generalised troubleshooting | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 | Common-cause detection | Cross-system correlator prevents multiple LRU removals for single fault | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 
 ---
@@ -298,9 +300,9 @@ All FIM components are software modules hosted on CCU-A/B. Power and cooling bud
 | FIN | Fault Isolation Number — unique identifier for a fault entry in the FIM database |
 | LRU | Line-Replaceable Unit — a modular component removable and replaceable on the flight line |
 | ATA | Air Transport Association — organisation defining aviation maintenance standards |
-| EMA | Electro-Mechanical Actuator — electrically driven flight control actuator (eWTW-specific) |
-| EMB | Electric Motor Bus — electrical bus supplying propulsion and actuation motors (eWTW-specific) |
-| MPDU | Main Power Distribution Unit — primary electrical power distribution unit (eWTW-specific) |
+| EMA | Electro-Mechanical Actuator — electrically driven flight control actuator ([PROGRAMME-VARIANT]-specific) |
+| EMB | Electric Motor Bus — electrical bus supplying propulsion and actuation motors ([PROGRAMME-VARIANT]-specific) |
+| MPDU | Main Power Distribution Unit — primary electrical power distribution unit ([PROGRAMME-VARIANT]-specific) |
 | AHM | Aircraft Health Monitoring — ground-based fleet health and prognostics service |
 | MTBF | Mean Time Between Failures — reliability metric for LRU failure rate |
 | MTTR | Mean Time To Repair — maintenance metric for average time to restore an LRU to service |
@@ -326,8 +328,8 @@ All FIM components are software modules hosted on CCU-A/B. Power and cooling bud
 | [R1] | ATLAS 045-000 — Central Maintenance System General | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R2] | ATLAS 045-020 — Fault Detection and Fault Reporting | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 045-060 — Maintenance Terminal and Crew Maintenance Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R4] | AMPEL360E eWTW EMA Fault Mode Library | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| [R5] | AMPEL360E eWTW MPDU Fault Mode Library | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R4] | programme-defined aircraft type EMA Fault Mode Library | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R5] | programme-defined aircraft type MPDU Fault Mode Library | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

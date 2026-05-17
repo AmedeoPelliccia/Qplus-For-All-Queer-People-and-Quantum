@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-050-COMBUSTION-EMISSIONS-AND-PERFORMANCE-EFFECTS
      ATA 78 · Combustion, Emissions and Performance Effects
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Combustion, Emissions and Performance Effects
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-050"
 
 ## §1 Purpose
 
-This document (078-050) characterises the combustion behaviour, exhaust emissions profile, and engine performance effects of SAF blends (ASTM D7566 ≤50 % v/v) on the AMPEL360E eWTW turbofan engine. It provides the engineering basis for the CO₂ lifecycle reduction claims, quantifies reductions in non-volatile particulate matter (nvPM) emissions, assesses NOx impacts, and establishes the specific fuel consumption (SFC) correction for the lower heating value (LHV) of SAF blends. It also describes the FAMQMS (PN FAMQMS-078) real-time CO₂ equivalent saved calculation function.
+This document defines the agnostic ATLAS standard-level architecture context for `Combustion, Emissions and Performance Effects`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-050 — Combustion, Emissions and Performance Effects |
-| Certification basis | EASA CS-25; ICAO Annex 16 Vol II (NOx/smoke); ICAO Annex 16 Vol IV (CORSIA) |
-| S1000D SNS | 078-050-00 |
-| Applicable standards | ICAO Annex 16 Vol II; SAE ARP1179; SAE ARP6997; ASTM D7566 |
-| Key metric | CO₂ lifecycle reduction up to 80 % (HEFA waste-fat feedstock, 100 % neat); ~40 % at 50 % blend |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **CO₂ lifecycle reduction**: The primary motivation for SAF adoption is the well-to-wake CO₂ lifecycle reduction compared with conventional Jet-A1. Lifecycle (well-to-wake) emissions are calculated per the ICAO CORSIA methodology (ICAO Document 9501). For HEFA-SPK from waste fats and oils (Annex A1), lifecycle GHG intensity is approximately 15–20 gCO₂eq/MJ compared with ~89 gCO₂eq/MJ for conventional Jet-A1 — a reduction of ~78 %. For FT-SPK from municipal solid waste (Annex A2), lifecycle GHG intensity is approximately 10–30 gCO₂eq/MJ (~67–89 % reduction). At 50 % blend, the reduction is approximately proportional: ~40 % for HEFA-SPK, ~35 % for FT-SPK at 50 % blend, compared with 100 % Jet-A1.

@@ -26,13 +26,14 @@ governance_class: programme-controlled-publication-and-traceability-extension
 status_note: "programme-controlled-publication-and-traceability-extension"
 version: 1.0.0
 status: active
-scope: agnostic-standard
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 45.090 — S1000D CSDB Mapping and Traceability"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 090 — S1000D CSDB Mapping and Traceability
@@ -51,7 +52,7 @@ This document defines the S1000D Issue 5.0 CSDB (Common Source Data Base) mappin
 
 Key governance areas:
 - Full DMRL for ATA 45: 36 Data Modules across 9 SNS nodes.
-- DMC schema: `DMC-<MODEL>-<SYSTEMDIFF>-045-{NNN}-00A-{InfoCode}`.
+- DMC schema: `DMC-<PROGRAMME>-<VARIANT>-045-{NNN}-00A-{InfoCode}`.
 - Information codes: 040 (descriptive), 520 (troubleshooting), 720 (removal/installation procedures).
 - Traceability matrix: each Q+ATL subsubject file → DMC → certification requirement.
 - CAGE code: <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> (pending programme registration).
@@ -62,7 +63,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Programme | (defined in programme implementation branch) |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45.090 — S1000D CSDB Mapping and Traceability |
 | S1000D Issue | Issue 5.0 |
 | Governance Class | Programme-Controlled Publication and Traceability Extension |
@@ -78,10 +79,10 @@ The S1000D CSDB for ATA 45 is structured per S1000D Issue 5.0 with the following
 
 **SNS structure**: The System/Subsystem/Sub-subsystem (SNS) numbering follows the ATA chapter structure: system 045, subsystems 000–080 (9 nodes). Each SNS node generates multiple data modules based on the content type required.
 
-**DMC naming schema**: `DMC-<MODEL>-<SYSTEMDIFF>-045-{NNN}-00A-{InfoCode}-A`
+**DMC naming schema**: `DMC-<PROGRAMME>-<VARIANT>-045-{NNN}-00A-{InfoCode}-A`
 
 Where:
-- `<MODEL>-<SYSTEMDIFF>` = Model Identification Code.
+- `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]` = Model Identification Code.
 - `045` = System code (ATA 45).
 - `{NNN}` = Subsystem/unit (000, 010, 020, … 080).
 - `00A` = Disassembly code group 00, variant A.
@@ -121,7 +122,7 @@ graph TD
 
 ### CSDB Platform Architecture
 
-The S1000D CSDB for <PROGRAMME> ATA 45 shall be hosted on a programme-selected CSDB platform (tool TBD). The CSDB shall support:
+The S1000D CSDB for programme-defined aircraft type ATA 45 shall be hosted on a programme-selected CSDB platform (tool TBD). The CSDB shall support:
 - S1000D Issue 5.0 schema validation.
 - Applicability management (per aircraft tail number, configuration).
 - Change-management workflow (review, approve, publish).
@@ -133,7 +134,7 @@ The traceability matrix links each Q+ATLANTIDE Markdown source file to one or mo
 ### DMC Naming Schema Detail
 
 ```
-DMC - <MODEL>-<SYSTEMDIFF> - 045 - {NNN} - 00A - {InfoCode} - A
+DMC - [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] - 045 - {NNN} - 00A - {InfoCode} - A
       |                 |     |       |      |             |
       Model ID          Sys   Sub     Disas  InfoCode      Location
                               code    code
@@ -144,7 +145,7 @@ DMC - <MODEL>-<SYSTEMDIFF> - 045 - {NNN} - 00A - {InfoCode} - A
 ```mermaid
 graph LR
     DMC["DMC (Data Module Code)"]
-    DMC --> MID["Model ID: <MODEL>-<SYSTEMDIFF>"]
+    DMC --> MID["Model ID: [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]"]
     DMC --> SYS["System code: 045 (ATA 45)"]
     DMC --> SUB["Subsystem: NNN (000–090)"]
     DMC --> DAS["Disassembly code: 00A"]
@@ -348,8 +349,8 @@ The CSDB platform is a ground-based server system with standard data-centre powe
 |--------|----------|---------|--------|
 | [R1] | ATLAS 045-000 — Central Maintenance System General | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R2] | ATLAS 045-010 through 045-080 (all subsubjects) | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R3] | <PROGRAMME> Programme CSDB Platform Selection Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| [R4] | <PROGRAMME> CAGE Code Registration | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R3] | programme-defined aircraft type Programme CSDB Platform Selection Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R4] | programme-defined aircraft type CAGE Code Registration | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | [R5] | Q+ATLANTIDE Baseline Document | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 
 ---
@@ -360,42 +361,42 @@ The CSDB platform is a ground-based server system with standard data-centre powe
 
 | DM No. | DMC | Title | Info Code | SNS | Q+ATL Source | Priority |
 |--------|-----|-------|-----------|-----|--------------|----------|
-| 1 | DMC-<MODEL>-<SYSTEMDIFF>-045-000-00A-000A-A | CMS Overview | 000A | 045-000 | 045-000-Central-Maintenance-System-General.md | High |
-| 2 | DMC-<MODEL>-<SYSTEMDIFF>-045-000-00A-040A-A | CMS General Description | 040A | 045-000 | 045-000-Central-Maintenance-System-General.md | High |
-| 3 | DMC-<MODEL>-<SYSTEMDIFF>-045-000-00A-520A-A | CMS General Troubleshooting | 520A | 045-000 | 045-000-Central-Maintenance-System-General.md | High |
-| 4 | DMC-<MODEL>-<SYSTEMDIFF>-045-000-00A-C00A-A | CMS Glossary | C00A | 045-000 | 045-000-Central-Maintenance-System-General.md | Medium |
-| 5 | DMC-<MODEL>-<SYSTEMDIFF>-045-010-00A-040A-A | Computing and Core Processing Description | 040A | 045-010 | 045-010-Maintenance-Computing-and-Core-Processing.md | High |
-| 6 | DMC-<MODEL>-<SYSTEMDIFF>-045-010-00A-520A-A | Computing and Core Processing Troubleshooting | 520A | 045-010 | 045-010-Maintenance-Computing-and-Core-Processing.md | High |
-| 7 | DMC-<MODEL>-<SYSTEMDIFF>-045-010-00A-720A-A | CCU Removal/Installation | 720A | 045-010 | 045-010-Maintenance-Computing-and-Core-Processing.md | High |
-| 8 | DMC-<MODEL>-<SYSTEMDIFF>-045-020-00A-040A-A | Fault Detection Description | 040A | 045-020 | 045-020-Fault-Detection-and-Fault-Reporting.md | High |
-| 9 | DMC-<MODEL>-<SYSTEMDIFF>-045-020-00A-520A-A | Fault Detection Troubleshooting | 520A | 045-020 | 045-020-Fault-Detection-and-Fault-Reporting.md | High |
-| 10 | DMC-<MODEL>-<SYSTEMDIFF>-045-020-00A-720A-A | BITE Interface Module Procedures | 720A | 045-020 | 045-020-Fault-Detection-and-Fault-Reporting.md | Medium |
-| 11 | DMC-<MODEL>-<SYSTEMDIFF>-045-020-00A-920A-A | Fault Detection Fault Isolation | 920A | 045-020 | 045-020-Fault-Detection-and-Fault-Reporting.md | High |
-| 12 | DMC-<MODEL>-<SYSTEMDIFF>-045-030-00A-040A-A | Fault Isolation Logic Description | 040A | 045-030 | 045-030-Fault-Isolation-and-Troubleshooting-Logic.md | High |
-| 13 | DMC-<MODEL>-<SYSTEMDIFF>-045-030-00A-520A-A | FIM Troubleshooting | 520A | 045-030 | 045-030-Fault-Isolation-and-Troubleshooting-Logic.md | High |
-| 14 | DMC-<MODEL>-<SYSTEMDIFF>-045-030-00A-720A-A | FIM Database Update Procedures | 720A | 045-030 | 045-030-Fault-Isolation-and-Troubleshooting-Logic.md | Medium |
-| 15 | DMC-<MODEL>-<SYSTEMDIFF>-045-030-00A-920A-A | FIM Fault Isolation Procedures | 920A | 045-030 | 045-030-Fault-Isolation-and-Troubleshooting-Logic.md | High |
-| 16 | DMC-<MODEL>-<SYSTEMDIFF>-045-040-00A-040A-A | Data Recording and History Description | 040A | 045-040 | 045-040-Maintenance-Data-Recording-and-History.md | High |
-| 17 | DMC-<MODEL>-<SYSTEMDIFF>-045-040-00A-520A-A | CMDB Troubleshooting | 520A | 045-040 | 045-040-Maintenance-Data-Recording-and-History.md | High |
-| 18 | DMC-<MODEL>-<SYSTEMDIFF>-045-040-00A-720A-A | MDSU Removal/Installation | 720A | 045-040 | 045-040-Maintenance-Data-Recording-and-History.md | High |
-| 19 | DMC-<MODEL>-<SYSTEMDIFF>-045-050-00A-040A-A | BITE Interfaces Description | 040A | 045-050 | 045-050-BITE-Interfaces-and-System-Test-Coordination.md | High |
-| 20 | DMC-<MODEL>-<SYSTEMDIFF>-045-050-00A-520A-A | BITE Interfaces Troubleshooting | 520A | 045-050 | 045-050-BITE-Interfaces-and-System-Test-Coordination.md | High |
-| 21 | DMC-<MODEL>-<SYSTEMDIFF>-045-050-00A-720A-A | BITE Subscriber Registry Update Procedures | 720A | 045-050 | 045-050-BITE-Interfaces-and-System-Test-Coordination.md | Medium |
-| 22 | DMC-<MODEL>-<SYSTEMDIFF>-045-050-00A-920A-A | IBIT/MBIT Fault Isolation Procedures | 920A | 045-050 | 045-050-BITE-Interfaces-and-System-Test-Coordination.md | High |
-| 23 | DMC-<MODEL>-<SYSTEMDIFF>-045-060-00A-040A-A | Maintenance Terminal Description | 040A | 045-060 | 045-060-Maintenance-Terminal-and-Crew-Maintenance-Interfaces.md | High |
-| 24 | DMC-<MODEL>-<SYSTEMDIFF>-045-060-00A-520A-A | CMP/MAT Troubleshooting | 520A | 045-060 | 045-060-Maintenance-Terminal-and-Crew-Maintenance-Interfaces.md | High |
-| 25 | DMC-<MODEL>-<SYSTEMDIFF>-045-060-00A-720A-A | CMP Removal/Installation | 720A | 045-060 | 045-060-Maintenance-Terminal-and-Crew-Maintenance-Interfaces.md | High |
-| 26 | DMC-<MODEL>-<SYSTEMDIFF>-045-060-00A-920A-A | CMP/MAT Fault Isolation | 920A | 045-060 | 045-060-Maintenance-Terminal-and-Crew-Maintenance-Interfaces.md | Medium |
-| 27 | DMC-<MODEL>-<SYSTEMDIFF>-045-070-00A-040A-A | Ground Data Transfer Description | 040A | 045-070 | 045-070-Ground-Data-Transfer-and-Maintenance-Connectivity.md | High |
-| 28 | DMC-<MODEL>-<SYSTEMDIFF>-045-070-00A-520A-A | Gatelink/SATCOM Troubleshooting | 520A | 045-070 | 045-070-Ground-Data-Transfer-and-Maintenance-Connectivity.md | High |
-| 29 | DMC-<MODEL>-<SYSTEMDIFF>-045-070-00A-720A-A | GRU Removal/Installation | 720A | 045-070 | 045-070-Ground-Data-Transfer-and-Maintenance-Connectivity.md | High |
-| 30 | DMC-<MODEL>-<SYSTEMDIFF>-045-080-00A-040A-A | CMS Monitoring Description | 040A | 045-080 | 045-080-CMS-Monitoring-Diagnostics-and-Control-Interfaces.md | Medium |
-| 31 | DMC-<MODEL>-<SYSTEMDIFF>-045-080-00A-520A-A | CHM/PHM Troubleshooting | 520A | 045-080 | 045-080-CMS-Monitoring-Diagnostics-and-Control-Interfaces.md | Medium |
-| 32 | DMC-<MODEL>-<SYSTEMDIFF>-045-080-00A-720A-A | PHM Model Update Procedures | 720A | 045-080 | 045-080-CMS-Monitoring-Diagnostics-and-Control-Interfaces.md | Low |
-| 33 | DMC-<MODEL>-<SYSTEMDIFF>-045-080-00A-920A-A | CHM Fault Isolation | 920A | 045-080 | 045-080-CMS-Monitoring-Diagnostics-and-Control-Interfaces.md | Medium |
-| 34 | DMC-<MODEL>-<SYSTEMDIFF>-045-090-00A-000A-A | S1000D Mapping Overview | 000A | 045-090 | 045-090-S1000D-CSDB-Mapping-and-Traceability.md | Low |
-| 35 | DMC-<MODEL>-<SYSTEMDIFF>-045-090-00A-040A-A | DMRL and Traceability Description | 040A | 045-090 | 045-090-S1000D-CSDB-Mapping-and-Traceability.md | Low |
-| 36 | DMC-<MODEL>-<SYSTEMDIFF>-045-090-00A-C00A-A | CSDB Glossary | C00A | 045-090 | 045-090-S1000D-CSDB-Mapping-and-Traceability.md | Low |
+| 1 | DMC-<PROGRAMME>-<VARIANT>-045-000-00A-000A-A | CMS Overview | 000A | 045-000 | 045-000-Central-Maintenance-System-General.md | High |
+| 2 | DMC-<PROGRAMME>-<VARIANT>-045-000-00A-040A-A | CMS General Description | 040A | 045-000 | 045-000-Central-Maintenance-System-General.md | High |
+| 3 | DMC-<PROGRAMME>-<VARIANT>-045-000-00A-520A-A | CMS General Troubleshooting | 520A | 045-000 | 045-000-Central-Maintenance-System-General.md | High |
+| 4 | DMC-<PROGRAMME>-<VARIANT>-045-000-00A-C00A-A | CMS Glossary | C00A | 045-000 | 045-000-Central-Maintenance-System-General.md | Medium |
+| 5 | DMC-<PROGRAMME>-<VARIANT>-045-010-00A-040A-A | Computing and Core Processing Description | 040A | 045-010 | 045-010-Maintenance-Computing-and-Core-Processing.md | High |
+| 6 | DMC-<PROGRAMME>-<VARIANT>-045-010-00A-520A-A | Computing and Core Processing Troubleshooting | 520A | 045-010 | 045-010-Maintenance-Computing-and-Core-Processing.md | High |
+| 7 | DMC-<PROGRAMME>-<VARIANT>-045-010-00A-720A-A | CCU Removal/Installation | 720A | 045-010 | 045-010-Maintenance-Computing-and-Core-Processing.md | High |
+| 8 | DMC-<PROGRAMME>-<VARIANT>-045-020-00A-040A-A | Fault Detection Description | 040A | 045-020 | 045-020-Fault-Detection-and-Fault-Reporting.md | High |
+| 9 | DMC-<PROGRAMME>-<VARIANT>-045-020-00A-520A-A | Fault Detection Troubleshooting | 520A | 045-020 | 045-020-Fault-Detection-and-Fault-Reporting.md | High |
+| 10 | DMC-<PROGRAMME>-<VARIANT>-045-020-00A-720A-A | BITE Interface Module Procedures | 720A | 045-020 | 045-020-Fault-Detection-and-Fault-Reporting.md | Medium |
+| 11 | DMC-<PROGRAMME>-<VARIANT>-045-020-00A-920A-A | Fault Detection Fault Isolation | 920A | 045-020 | 045-020-Fault-Detection-and-Fault-Reporting.md | High |
+| 12 | DMC-<PROGRAMME>-<VARIANT>-045-030-00A-040A-A | Fault Isolation Logic Description | 040A | 045-030 | 045-030-Fault-Isolation-and-Troubleshooting-Logic.md | High |
+| 13 | DMC-<PROGRAMME>-<VARIANT>-045-030-00A-520A-A | FIM Troubleshooting | 520A | 045-030 | 045-030-Fault-Isolation-and-Troubleshooting-Logic.md | High |
+| 14 | DMC-<PROGRAMME>-<VARIANT>-045-030-00A-720A-A | FIM Database Update Procedures | 720A | 045-030 | 045-030-Fault-Isolation-and-Troubleshooting-Logic.md | Medium |
+| 15 | DMC-<PROGRAMME>-<VARIANT>-045-030-00A-920A-A | FIM Fault Isolation Procedures | 920A | 045-030 | 045-030-Fault-Isolation-and-Troubleshooting-Logic.md | High |
+| 16 | DMC-<PROGRAMME>-<VARIANT>-045-040-00A-040A-A | Data Recording and History Description | 040A | 045-040 | 045-040-Maintenance-Data-Recording-and-History.md | High |
+| 17 | DMC-<PROGRAMME>-<VARIANT>-045-040-00A-520A-A | CMDB Troubleshooting | 520A | 045-040 | 045-040-Maintenance-Data-Recording-and-History.md | High |
+| 18 | DMC-<PROGRAMME>-<VARIANT>-045-040-00A-720A-A | MDSU Removal/Installation | 720A | 045-040 | 045-040-Maintenance-Data-Recording-and-History.md | High |
+| 19 | DMC-<PROGRAMME>-<VARIANT>-045-050-00A-040A-A | BITE Interfaces Description | 040A | 045-050 | 045-050-BITE-Interfaces-and-System-Test-Coordination.md | High |
+| 20 | DMC-<PROGRAMME>-<VARIANT>-045-050-00A-520A-A | BITE Interfaces Troubleshooting | 520A | 045-050 | 045-050-BITE-Interfaces-and-System-Test-Coordination.md | High |
+| 21 | DMC-<PROGRAMME>-<VARIANT>-045-050-00A-720A-A | BITE Subscriber Registry Update Procedures | 720A | 045-050 | 045-050-BITE-Interfaces-and-System-Test-Coordination.md | Medium |
+| 22 | DMC-<PROGRAMME>-<VARIANT>-045-050-00A-920A-A | IBIT/MBIT Fault Isolation Procedures | 920A | 045-050 | 045-050-BITE-Interfaces-and-System-Test-Coordination.md | High |
+| 23 | DMC-<PROGRAMME>-<VARIANT>-045-060-00A-040A-A | Maintenance Terminal Description | 040A | 045-060 | 045-060-Maintenance-Terminal-and-Crew-Maintenance-Interfaces.md | High |
+| 24 | DMC-<PROGRAMME>-<VARIANT>-045-060-00A-520A-A | CMP/MAT Troubleshooting | 520A | 045-060 | 045-060-Maintenance-Terminal-and-Crew-Maintenance-Interfaces.md | High |
+| 25 | DMC-<PROGRAMME>-<VARIANT>-045-060-00A-720A-A | CMP Removal/Installation | 720A | 045-060 | 045-060-Maintenance-Terminal-and-Crew-Maintenance-Interfaces.md | High |
+| 26 | DMC-<PROGRAMME>-<VARIANT>-045-060-00A-920A-A | CMP/MAT Fault Isolation | 920A | 045-060 | 045-060-Maintenance-Terminal-and-Crew-Maintenance-Interfaces.md | Medium |
+| 27 | DMC-<PROGRAMME>-<VARIANT>-045-070-00A-040A-A | Ground Data Transfer Description | 040A | 045-070 | 045-070-Ground-Data-Transfer-and-Maintenance-Connectivity.md | High |
+| 28 | DMC-<PROGRAMME>-<VARIANT>-045-070-00A-520A-A | Gatelink/SATCOM Troubleshooting | 520A | 045-070 | 045-070-Ground-Data-Transfer-and-Maintenance-Connectivity.md | High |
+| 29 | DMC-<PROGRAMME>-<VARIANT>-045-070-00A-720A-A | GRU Removal/Installation | 720A | 045-070 | 045-070-Ground-Data-Transfer-and-Maintenance-Connectivity.md | High |
+| 30 | DMC-<PROGRAMME>-<VARIANT>-045-080-00A-040A-A | CMS Monitoring Description | 040A | 045-080 | 045-080-CMS-Monitoring-Diagnostics-and-Control-Interfaces.md | Medium |
+| 31 | DMC-<PROGRAMME>-<VARIANT>-045-080-00A-520A-A | CHM/PHM Troubleshooting | 520A | 045-080 | 045-080-CMS-Monitoring-Diagnostics-and-Control-Interfaces.md | Medium |
+| 32 | DMC-<PROGRAMME>-<VARIANT>-045-080-00A-720A-A | PHM Model Update Procedures | 720A | 045-080 | 045-080-CMS-Monitoring-Diagnostics-and-Control-Interfaces.md | Low |
+| 33 | DMC-<PROGRAMME>-<VARIANT>-045-080-00A-920A-A | CHM Fault Isolation | 920A | 045-080 | 045-080-CMS-Monitoring-Diagnostics-and-Control-Interfaces.md | Medium |
+| 34 | DMC-<PROGRAMME>-<VARIANT>-045-090-00A-000A-A | S1000D Mapping Overview | 000A | 045-090 | 045-090-S1000D-CSDB-Mapping-and-Traceability.md | Low |
+| 35 | DMC-<PROGRAMME>-<VARIANT>-045-090-00A-040A-A | DMRL and Traceability Description | 040A | 045-090 | 045-090-S1000D-CSDB-Mapping-and-Traceability.md | Low |
+| 36 | DMC-<PROGRAMME>-<VARIANT>-045-090-00A-C00A-A | CSDB Glossary | C00A | 045-090 | 045-090-S1000D-CSDB-Mapping-and-Traceability.md | Low |
 
 ### Traceability Summary
 

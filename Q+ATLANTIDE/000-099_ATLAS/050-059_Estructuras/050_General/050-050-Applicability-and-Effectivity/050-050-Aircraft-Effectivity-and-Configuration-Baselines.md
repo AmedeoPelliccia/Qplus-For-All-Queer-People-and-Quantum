@@ -25,6 +25,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — Aircraft Effectivity and Configuration Baselines
@@ -37,7 +39,7 @@ Defines the **aircraft effectivity and configuration baselines** used to bound t
 
 ### 2.1 Context
 
-A structural configuration baseline (SCB) is a formally controlled snapshot of the AMPEL360 eWTW structural definition at a given programme phase or production lot boundary. SCBs are issued at first-flight, type-certification, entry-into-service, and after each major structural modification campaign. All structural ATLAS documents carry a `baseline_ref` indicating the SCB under which their content was validated.
+A structural configuration baseline (SCB) is a formally controlled snapshot of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural definition at a given programme phase or production lot boundary. SCBs are issued at first-flight, type-certification, entry-into-service, and after each major structural modification campaign. All structural ATLAS documents carry a `baseline_ref` indicating the SCB under which their content was validated.
 
 Effectivity within an SCB is further resolved by the PDCM master aircraft register, which maps each aircraft serial number (SN) to the SCB applicable at delivery and records all subsequent SB incorporations. Maintenance documentation applicability is filtered against the current SCB + SB-incorporation state of the specific aircraft.
 
@@ -81,6 +83,6 @@ stateDiagram-v2
 |---|---|
 | S1000D Issue 5.0 | Configuration baseline management |
 | ATA iSpec 2200 | Aircraft effectivity chapter |
-| PDCM-AMPEL360-001 | Product Definition and Configuration Management Plan |
+| PDCM-[PROGRAMME-AIRCRAFT]-001 | Product Definition and Configuration Management Plan |
 | [`./README.md`](./README.md) | Subsubject 050 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

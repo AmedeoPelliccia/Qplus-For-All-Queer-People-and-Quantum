@@ -25,6 +25,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Structural Scope and Boundaries
@@ -39,7 +41,7 @@ Defines the **precise taxonomic scope** of the ATLAS `050-059` *Estructuras* sec
 
 For the purposes of this section, **structure** is defined as:
 
-> *Any primary, secondary, or tertiary load-bearing element of the AMPEL360 airframe whose integrity is required for continued safe flight and landing, ground operations, or structural fire containment.*
+> *Any primary, secondary, or tertiary load-bearing element of the [PROGRAMME-AIRCRAFT] airframe whose integrity is required for continued safe flight and landing, ground operations, or structural fire containment.*
 
 This encompasses:
 

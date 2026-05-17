@@ -31,6 +31,8 @@ ata_reference: "ATA 44.040 — Cabin Information and Announcement"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 040 — Cabin Information and Announcement Systems
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the Cabin Information and Announcement (CIA) systems for the AMPEL360E eWTW aircraft. CIA encompasses the Passenger Address (PA) audio system, Cabin Intercommunication System (CIS) for crew-to-crew and crew-to-cockpit communication, and Passenger Information Displays (PIDs) for visual cabin status information.
+This document defines the Cabin Information and Announcement (CIA) systems for the programme-defined aircraft type. CIA encompasses the Passenger Address (PA) audio system, Cabin Intercommunication System (CIS) for crew-to-crew and crew-to-cockpit communication, and Passenger Information Displays (PIDs) for visual cabin status information.
 
 Key governance areas:
 - PA amplifier and loudspeaker architecture (zone-based, 8 cabin zones).
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44.040 — Cabin Information and Announcement |
 | Certification Basis | CS-25 §25.1423 (Crew Interphone); CS-25 §25.1329 |
 | Applicable Standards | CS-25 §25.1423; DO-160G; ARINC 628 CDN |
@@ -321,7 +323,7 @@ graph LR
 |--------|----------|---------|--------|
 | REF-044-04-01 | Cabin Systems General (044-000) | 1.0 | Active |
 | REF-044-04-02 | Cabin Core Network (044-010) | 1.0 | Active |
-| REF-044-04-03 | AMPEL360E CIA Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-04-03 | [PROGRAMME-AIRCRAFT] CIA Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

@@ -21,6 +21,8 @@ governance_class: baseline
 version: 1.1.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 080-089 · Section 08 · Subsection 088 — Beyond-2040 Concepts (Reserved)
@@ -33,7 +35,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Documents the **B2CR (Beyond-2040 Concepts Reserved)** propulsion research namespace for the AMPEL360E eWTW programme, covering the Beyond-2040 Concept Management Unit (B2CMU) governance framework, a 23-concept post-conventional propulsion catalogue (B2C-F100–F600 families), extended TRL assessment methodology, physics claim validation protocol (B2CMU-REV-001), energy source and conversion analysis, airframe integration constraints, safety/ethics governance, and BMN monitoring architecture.
+- Documents the **B2CR (Beyond-2040 Concepts Reserved)** propulsion research namespace for the programme-defined aircraft type programme, covering the Beyond-2040 Concept Management Unit (B2CMU) governance framework, a 23-concept post-conventional propulsion catalogue (B2C-F100–F600 families), extended TRL assessment methodology, physics claim validation protocol (B2CMU-REV-001), energy source and conversion analysis, airframe integration constraints, safety/ethics governance, and BMN monitoring architecture.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - All ten subsubject documents (`00`–`90`) are now populated and active.
 

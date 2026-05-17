@@ -6,10 +6,10 @@ subsubject: "030"
 subsubject_title: "Relay, Contactor, and Power Distribution Panels"
 file_name: "039-030-Relay-Contactor-and-Power-Distribution-Panels.md"
 sns_reference: "039-30"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-30"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-30"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "PDU"
@@ -94,10 +94,12 @@ keywords:
   - "contactor"
   - "load shedding"
   - "270 VDC"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-030 — Relay, Contactor, and Power Distribution Panels
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,45 +109,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links. Regulatory references are cited by identifier. DMC cross-references follow `DMC-AMPEL360E-EWTW-039-30-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
+All cross-references use relative Markdown links. Regulatory references are cited by identifier. DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-039-30-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
 
 ---
 
 ## §1 Purpose
 
-This document describes **Relay, Contactor, and Power Distribution Panels** (subsubject 039-030) of the AMPEL360e eWTW. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `039-030 — Relay, Contactor, and Power Distribution Panels`.
 
-1. Power Distribution Units (PDUs): PDU-1 (left main), PDU-2 (right main), PDU-3 (essential), PDU-4 (emergency) — converting and distributing bus power to load groups.
-2. Solid-State Power Controllers (SSPCs): electronic load management controllers within each PDU providing programmable overcurrent, current sensing, and AFDX health reporting.
-3. Bus Tie Contactors (BTCs): BTC-L and BTC-R enabling cross-feed between main buses.
-4. High-voltage relay contactors: battery isolation and HVDC bus switching (ATA 24 interface).
-5. DC motor contactors for ECS electric compressor and galley/ECS high-power loads.
-6. Load-shed logic: SSPC programmable trip thresholds supporting degraded power state load management.
-7. Relay reliability and AFDX interface for PDU health data to CMC.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter / Subsubject | 39 — 039-030 Relay, Contactor, and Power Distribution Panels |
-| Document Tier | Level 3 — Component/Assembly Description |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-
-Includes all PDU assemblies, SSPC modules, BTCs, battery isolation contactors, and motor contactors. Excludes:
-- Electrical power generation and main bus architecture: → ATA 24
-- Circuit breaker panels (upstream protection): → 039-020
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Power Distribution Architecture
 
-The eWTW power distribution architecture comprises four bus tiers:
+The [PROGRAMME-VARIANT] power distribution architecture comprises four bus tiers:
 
 | Bus | PDU | Voltage | Priority | Powered By |
 |---|---|---|---|---|
@@ -408,11 +396,11 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| PDU system description | DMC-AMPEL360E-EWTW-039-30-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| PDU replacement | DMC-AMPEL360E-EWTW-039-30-00A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| BTC functional test | DMC-AMPEL360E-EWTW-039-30-01A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| SSPC configuration procedure | DMC-AMPEL360E-EWTW-039-30-00A-920A-A | 920 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — PDU | DMC-AMPEL360E-EWTW-039-30-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| PDU system description | DMC-<PROGRAMME>-<VARIANT>-039-30-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| PDU replacement | DMC-<PROGRAMME>-<VARIANT>-039-30-00A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| BTC functional test | DMC-<PROGRAMME>-<VARIANT>-039-30-01A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| SSPC configuration procedure | DMC-<PROGRAMME>-<VARIANT>-039-30-00A-920A-A | 920 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — PDU | DMC-<PROGRAMME>-<VARIANT>-039-30-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -482,7 +470,7 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 | Cross-feed | Condition where one generator supplies both main buses via closed BTC |
 | Arc suppression | Mechanism or device limiting electrical arc when DC contactor opens under load |
 | ELA | Electrical Load Analysis — document listing all aircraft loads, bus assignments, and load demands |
-| HVDC | High Voltage DC — 270 VDC bus used in eWTW all-electric architecture |
+| HVDC | High Voltage DC — 270 VDC bus used in [PROGRAMME-VARIANT] all-electric architecture |
 | IFE | In-Flight Entertainment — passenger entertainment system (non-essential load, shed first) |
 | Position feedback relay | Small relay in BTC that monitors contact position and provides a discrete signal confirming open/closed state |
 | AFDX | Avionics Full-Duplex Switched Ethernet (ARINC 664 Part 7) — data bus for PDU health reporting |
@@ -534,5 +522,5 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW PDU/SSPC/BTC context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] PDU/SSPC/BTC context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

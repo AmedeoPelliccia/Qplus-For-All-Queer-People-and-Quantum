@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 040 — Ballast Quantity Indication and Mass Properties
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document defines the sensing, computation, and indication architecture for Water Ballast quantity measurement and mass-properties determination on the AMPEL360E eWTW. It specifies the capacitive level sensor primary system, the ultrasonic level sensor secondary system, the load cell auxiliary mass measurement inputs, and the Water Ballast Management System (WBMS) software that fuses these inputs to compute water mass and CG moment arm contributions in real time.
+This document defines the sensing, computation, and indication architecture for Water Ballast quantity measurement and mass-properties determination on the programme-defined aircraft type. It specifies the capacitive level sensor primary system, the ultrasonic level sensor secondary system, the load cell auxiliary mass measurement inputs, and the Water Ballast Management System (WBMS) software that fuses these inputs to compute water mass and CG moment arm contributions in real time.
 
 Accurate quantity indication is a safety-critical function: the BCC CG computation depends on a maximum sensor error of ±0.5% full scale (±2 kg per tank) to maintain CG within the certified envelope. The dual-sensor architecture (capacitive primary + ultrasonic secondary) provides the measurement integrity needed to support DAL B software in the BCC. Sensor outputs are transmitted to the BCC via ARINC 429 high-speed bus; computed mass and CG data are re-broadcast on AFDX to FCMC and EICAS.
 
@@ -50,11 +52,11 @@ Crew indication provides a ballast quantity page on the SD (System Display) in t
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41-40 — Ballast Quantity Indication |
 | Standards | CS-25 Amd 27, DO-178C (DAL B SW), DO-160G §7/8 |
 | Dev Assurance | DAL B (WBMS software); DAL C (sensor hardware) |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | Measurement Accuracy | ±0.5% full scale (±2 kg per 400 kg tank) |
 
 ---
@@ -280,12 +282,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-040-00A-040A-A | 040 | Ballast Quantity Indication Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-040-00A-300A-A | 300 | Ballast Quantity Indication Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-040-00A-400A-A | 400 | Ballast Quantity BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-040-00A-520A-A | 520 | Ballast Quantity Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-040-00A-941A-A | 941 | Ballast Quantity Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-040-00A-720A-A | 720 | WBMS Software Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-040-00A-040A-A | 040 | Ballast Quantity Indication Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-040-00A-300A-A | 300 | Ballast Quantity Indication Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-040-00A-400A-A | 400 | Ballast Quantity BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-040-00A-520A-A | 520 | Ballast Quantity Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-040-00A-941A-A | 941 | Ballast Quantity Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-040-00A-720A-A | 720 | WBMS Software Description |
 
 ### Recommended Data Module Set
 
@@ -388,7 +390,7 @@ Verification Evidence"]
 | <a id="ref-arp4754b"></a>ARP4754B | SAE ARP4754B | DAL assignment | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet [PROGRAMME-AIRCRAFT] | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -398,7 +400,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Control (041-050) | QATL-ATLAS-041-050 | Rev 1.0 | Active | [041-050](./041-050-Ballast-Control-and-Automatic-Trim-Interfaces.md) |
-| R-003 | WBMS Software Requirements Spec | AMPEL360E-SRS-041-SW-040 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-003 | WBMS Software Requirements Spec | [PROGRAMME-AIRCRAFT]-SRS-041-SW-040 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

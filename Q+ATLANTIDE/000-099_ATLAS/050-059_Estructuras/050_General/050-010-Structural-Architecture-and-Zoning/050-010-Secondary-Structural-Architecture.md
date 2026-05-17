@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — Secondary Structural Architecture
 
 ## 1. Purpose
 
-Describes the **secondary structural architecture** of the AMPEL360 eWTW: SSE inventory, architectural arrangement, failure-effect classification, and MSG-3 maintenance basis.
+Describes the **secondary structural architecture** of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: SSE inventory, architectural arrangement, failure-effect classification, and MSG-3 maintenance basis.
 
 ## 2. Scope
 

@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — Structural Variant and Model Applicability
 
 ## 1. Purpose
 
-Defines how structural documentation applicability is scoped to specific **AMPEL360 eWTW variants and model types**, cataloguing the structural differences between the baseline and derivative variants and the rules for selecting the applicable repair schemes, inspection limits, and structural data modules for each model.
+Defines how structural documentation applicability is scoped to specific **[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] variants and model types**, cataloguing the structural differences between the baseline and derivative variants and the rules for selecting the applicable repair schemes, inspection limits, and structural data modules for each model.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW family is planned to include the baseline medium-haul variant, an extended-range (ER) variant with a strengthened centre-wing box and additional LH₂ tank capacity, and a potential freighter (F) derivative. Each variant introduces structural differences that affect applicable inspection thresholds, repair allowances, and structural limits. These differences are captured in the Structural Variant Difference Register (SVDR), which maps each structural zone and PSE to the variants for which it applies.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] family is planned to include the baseline medium-haul variant, an extended-range (ER) variant with a strengthened centre-wing box and additional LH₂ tank capacity, and a potential freighter (F) derivative. Each variant introduces structural differences that affect applicable inspection thresholds, repair allowances, and structural limits. These differences are captured in the Structural Variant Difference Register (SVDR), which maps each structural zone and PSE to the variants for which it applies.
 
 Model applicability in the CSDB is encoded using S1000D product attributes and product attribute values, allowing a single publication to deliver variant-specific content to the appropriate operator fleet without maintaining entirely separate document sets.
 
@@ -46,10 +48,10 @@ Model applicability in the CSDB is encoded using S1000D product attributes and p
 ```mermaid
 flowchart LR
     A[Structural Task or Data Module] --> B{Variant Applicability?}
-    B -->|Common to all variants| C[Tag: ALL-AMPEL360]
-    B -->|Baseline only| D[Tag: AMPEL360-BL]
-    B -->|ER variant only| E[Tag: AMPEL360-ER]
-    B -->|Freighter only| F[Tag: AMPEL360-F]
+    B -->|Common to all variants| C[Tag: ALL-[PROGRAMME-AIRCRAFT]]
+    B -->|Baseline only| D[Tag: [PROGRAMME-AIRCRAFT]-BL]
+    B -->|ER variant only| E[Tag: [PROGRAMME-AIRCRAFT]-ER]
+    B -->|Freighter only| F[Tag: [PROGRAMME-AIRCRAFT]-F]
     C --> G[CSDB Product Attribute Filter]
     D --> G
     E --> G
@@ -82,6 +84,6 @@ flowchart LR
 | Ref | Document |
 |---|---|
 | S1000D Issue 5.0 | Product attribute applicability |
-| SVDR-AMPEL360-001 | Structural Variant Difference Register |
+| SVDR-[PROGRAMME-AIRCRAFT]-001 | Structural Variant Difference Register |
 | [`./README.md`](./README.md) | Subsubject 050 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

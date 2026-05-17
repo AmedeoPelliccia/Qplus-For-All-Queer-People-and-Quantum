@@ -25,21 +25,23 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Pressurization and Pressure Differential Loads
 
 ## 1. Purpose
 
-Defines the **pressurisation and pressure-differential loads** for the AMPEL360 eWTW fuselage and tank attachment structures, including the maximum differential pressure, proof and burst pressure criteria, combined pressurisation-plus-bending load cases, and fatigue contributions from pressurisation cycling.
+Defines the **pressurisation and pressure-differential loads** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] fuselage and tank attachment structures, including the maximum differential pressure, proof and burst pressure criteria, combined pressurisation-plus-bending load cases, and fatigue contributions from pressurisation cycling.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW cabin is pressurised to maintain a 6,000 ft cabin altitude at the aircraft's maximum operating altitude of FL 410. This produces a maximum differential pressure (ΔP_max) of 65.0 kPa at operational conditions. The design relief valve setting provides an upper bound of 68.5 kPa. Combined with fuselage bending loads, the pressurisation cases drive skin thickness and frame pitch in the constant-section fuselage barrel.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] cabin is pressurised to maintain a 6,000 ft cabin altitude at the aircraft's maximum operating altitude of FL 410. This produces a maximum differential pressure (ΔP_max) of 65.0 kPa at operational conditions. The design relief valve setting provides an upper bound of 68.5 kPa. Combined with fuselage bending loads, the pressurisation cases drive skin thickness and frame pitch in the constant-section fuselage barrel.
 
-The LH₂ fuel tanks operate at internal overpressure (ullage management) and must also withstand a negative differential (sloshing and cryogenic shrinkage) addressed by Special Condition SC-AMPEL360-LH2-001. Pressurisation cycling contributes the dominant fatigue mechanism for the fuselage skin and is tracked against the design service goal (DSG) of 90,000 flight cycles.
+The LH₂ fuel tanks operate at internal overpressure (ullage management) and must also withstand a negative differential (sloshing and cryogenic shrinkage) addressed by Special Condition SC-[PROGRAMME-AIRCRAFT]-LH2-001. Pressurisation cycling contributes the dominant fatigue mechanism for the fuselage skin and is tracked against the design service goal (DSG) of 90,000 flight cycles.
 
 ### 2.2 Pressurisation Load Cycle
 
@@ -83,6 +85,6 @@ sequenceDiagram
 | CS-25.365 | Pressurised compartment loads |
 | CS-25.571 | Fatigue evaluation — pressurisation cycling |
 | AMC 25.365 | Compliance methods for pressurised structure |
-| SC-AMPEL360-LH2-001 | Special Condition — LH₂ tank pressurisation |
+| SC-[PROGRAMME-AIRCRAFT]-LH2-001 | Special Condition — LH₂ tank pressurisation |
 | [`./README.md`](./README.md) | Subsubject 040 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

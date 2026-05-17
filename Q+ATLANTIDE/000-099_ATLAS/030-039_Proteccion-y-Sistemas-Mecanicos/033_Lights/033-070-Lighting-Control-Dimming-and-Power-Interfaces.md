@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Lighting Control, Dimming and Power Interfaces"
 file_name: "033-070-Lighting-Control-Dimming-and-Power-Interfaces.md"
 sns_reference: "033-70"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-70"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-70"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -73,7 +73,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "SSLC"
@@ -85,10 +85,12 @@ keywords:
   - "115 VAC"
   - "ELU"
   - "lighting control architecture"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-070 — Lighting Control, Dimming and Power Interfaces
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -100,34 +102,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Lighting Control, Dimming, and Power Interfaces subsystem (ATA 033-70) of the AMPEL360e eWTW aircraft. It is the central control architecture document for all ATA 33 lighting, defining the Solid-State Lighting Controller (SSLC) system: one Master SSLC plus four Zone SSLCs, all interconnected via AFDX and driving the LED lighting loads distributed throughout the aircraft.
+This document defines the agnostic ATLAS standard-level architecture context for `033-070 — Lighting Control, Dimming and Power Interfaces`.
 
-The 033-70 subsystem encompasses PWM dimming control (0–100% for all dimmable zones), power distribution interfaces (28 VDC essential bus for flight deck and exterior lights; 115 VAC cabin bus for cabin LED drivers; ELU-independent 28 VDC for emergency lighting), and the AFDX command/status bus between SSLCs and higher-level systems (CMC, CMS, FWC).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Understanding this subsystem is prerequisite to understanding all other ATA 33 subsystems, as they all depend on the SSLC architecture for control, dimming, and fault reporting.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 033-70 — Lighting Control, Dimming and Power Interfaces |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Control System | Master SSLC + 4 Zone SSLCs |
-| Interconnect | AFDX (master–zone; zone–CMC; zone–CMS) |
-| Dimming | PWM 0–100% (all dimmable zones); on/off for non-dimmable |
-| Power Sources | 28 VDC essential bus (FD + exterior); 115 VAC cabin bus (cabin LED drivers); ELU 28 VDC (emergency, independent) |
-| BITE | Per-SSLC driver fault, short-circuit, open-LED-string detection; reported over AFDX to CMC |
-| S1000D SNS | 033-70 |
-| Applicability Code | ALL |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The SSLC architecture on the AMPEL360e eWTW replaces conventional relay-and-rheostat dimmer panels and incandescent light systems. A single Master SSLC (located in the avionics bay — TBD final location) acts as the system manager: it receives high-level lighting commands from the FWC (Flight Warning Computer for auto-dim and flight-phase logic), the CMS (Cabin Management System for cabin scene presets), and the CMC (Central Maintenance Computer for ground test and fault queries). The Master SSLC translates these commands into per-zone lighting profiles and transmits zone commands over AFDX to the four Zone SSLCs.
+The SSLC architecture on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] replaces conventional relay-and-rheostat dimmer panels and incandescent light systems. A single Master SSLC (located in the avionics bay — TBD final location) acts as the system manager: it receives high-level lighting commands from the FWC (Flight Warning Computer for auto-dim and flight-phase logic), the CMS (Cabin Management System for cabin scene presets), and the CMC (Central Maintenance Computer for ground test and fault queries). The Master SSLC translates these commands into per-zone lighting profiles and transmits zone commands over AFDX to the four Zone SSLCs.
 
 Zone SSLCs are distributed throughout the aircraft (forward, mid, aft zones for the cabin; one dedicated flight-deck/exterior zone). Each Zone SSLC directly drives the LED loads in its zone using PWM-controlled LED driver circuits (0–100% duty cycle at TBD kHz frequency). Zone SSLCs also perform local current monitoring on each LED driver output for BITE (short-circuit, open-LED-string, over-temperature detection). BITE faults are reported back to the Master SSLC over AFDX and onward to the CMC.
 
@@ -329,7 +320,7 @@ No periodic calibration of SSLC dimming is planned. Should cabin luminance drift
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-70 | Lighting Control, Dimming and Power Interfaces | DMC-AMPEL360E-EWTW-033-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-70 | Lighting Control, Dimming and Power Interfaces | DMC-<PROGRAMME>-<VARIANT>-033-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Planned Data Modules
 
@@ -403,7 +394,7 @@ No periodic calibration of SSLC dimming is planned. Should cabin luminance drift
 | AFDX VL | AFDX Virtual Link — a defined, bandwidth-allocated, one-to-one or one-to-many communication channel on the AFDX network; each SSLC command and status path uses dedicated VLs |
 | DO-254 | RTCA DO-254 — Design Assurance Guidance for Airborne Electronic Hardware; applies to complex electronic hardware (FPGAs, ASICs) used in SSLC if applicable |
 | Master SSLC | The top-level Solid-State Lighting Controller LRU; the system manager that translates high-level lighting commands from FWC, CMS, and CMC into per-zone lighting profiles and distributes them to Zone SSLCs |
-| PWM | Pulse-Width Modulation — a dimming technique where the LED is switched on and off at high frequency; the duty cycle (% on-time) determines perceived brightness; the AMPEL360e uses 0–100% PWM for all dimmable zones |
+| PWM | Pulse-Width Modulation — a dimming technique where the LED is switched on and off at high frequency; the duty cycle (% on-time) determines perceived brightness; the [PROGRAMME-AIRCRAFT] uses 0–100% PWM for all dimmable zones |
 | SSLC | Solid-State Lighting Controller — an electronic LRU that manages LED lighting circuits using semiconductor drivers (no mechanical relays or rheostats); provides dimming, fault detection, and AFDX connectivity |
 | Zone SSLC | A satellite Solid-State Lighting Controller assigned to a specific zone of the aircraft (FD, FWD, MID, AFT); drives the LED loads in its zone per commands received from the Master SSLC over AFDX |
 

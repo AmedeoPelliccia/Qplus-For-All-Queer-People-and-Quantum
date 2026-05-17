@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Design Allowables and Margins General
 
 ## 1. Purpose
 
-Defines the **design allowables and margin-of-safety (MS) framework** for the AMPEL360 eWTW structural programme: how material property allowables (A-basis and B-basis) are established for metallic and composite materials, how environmental knockdown factors are applied, and how MS is calculated and reported for each structural element and load case.
+Defines the **design allowables and margin-of-safety (MS) framework** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural programme: how material property allowables (A-basis and B-basis) are established for metallic and composite materials, how environmental knockdown factors are applied, and how MS is calculated and reported for each structural element and load case.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-Material allowables are statistical properties derived from coupon test databases conforming to MMPDS (metallic materials) or CMH-17 (composite materials). For the AMPEL360 eWTW, B-basis allowables are used for primary structure with multiple load paths; A-basis allowables are required for single-load-path (fail-unsafe) elements. Environmental knockdown factors (ETW, CTD, ETD) are applied to composite allowables to account for moisture absorption and temperature effects across the operating range.
+Material allowables are statistical properties derived from coupon test databases conforming to MMPDS (metallic materials) or CMH-17 (composite materials). For the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], B-basis allowables are used for primary structure with multiple load paths; A-basis allowables are required for single-load-path (fail-unsafe) elements. Environmental knockdown factors (ETW, CTD, ETD) are applied to composite allowables to account for moisture absorption and temperature effects across the operating range.
 
 The minimum acceptable margin of safety at ultimate load is MS ≥ 0.0. A positive programme-level design margin of MS ≥ +0.05 is maintained at the preliminary sizing stage to absorb model uncertainties and manufacturing variability. Final-substantiation analyses may carry MS ≥ 0.0 following refined FE analysis and physical test correlation.
 

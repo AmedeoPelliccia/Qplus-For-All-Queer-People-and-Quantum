@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 030 — Fuel Transfer Pumps Valves and Manifolds
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document details the **electric fuel transfer pumps, valves, and manifold assembly** for the In-Flight Fuel Dispensing (IFFD) system on the AMPEL360E eWTW aircraft per ATA 48. All fuel actuation within the IFFD circuit is electric — no hydraulic pumps or hydraulically actuated valves are used.
+This document details the **electric fuel transfer pumps, valves, and manifold assembly** for the In-Flight Fuel Dispensing (IFFD) system on the programme-defined aircraft type per ATA 48. All fuel actuation within the IFFD circuit is electric — no hydraulic pumps or hydraulically actuated valves are used.
 
 The IFFD fuel circuit comprises two Electric Boost Pumps (EBP-IFFD-A and EBP-IFFD-B) powered from the 270 V DC bus, a cross-feed manifold assembly with motorised ball valves, Fuel Inlet Isolation Valves (FIV), an override/jettison valve, a Pressure Limiting Valve (PLV), a Coriolis-type flow meter, and check valves at each tank entry. The IFFDCU governs pump speed, valve state, and flow path configuration in each operational mode.
 
@@ -53,7 +55,7 @@ The IFFD fuel circuit comprises two Electric Boost Pumps (EBP-IFFD-A and EBP-IFF
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | Actuation Architecture | All-electric — no hydraulic pumps or valves |
 | EBP Power Bus | 270 V DC (ATA 24) |
@@ -410,4 +412,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD pumps, valves and manifolds for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD pumps, valves and manifolds for programme-defined aircraft type |

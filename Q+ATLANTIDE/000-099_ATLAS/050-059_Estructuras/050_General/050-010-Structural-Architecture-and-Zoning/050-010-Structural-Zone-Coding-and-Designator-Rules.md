@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — Structural Zone Coding and Designator Rules
 
 ## 1. Purpose
 
-Establishes the **structural zone coding conventions and designator rules** for the AMPEL360 programme, ensuring consistent zone identification across all structural data modules, drawings, stress reports, and maintenance documentation.
+Establishes the **structural zone coding conventions and designator rules** for the [PROGRAMME-AIRCRAFT] programme, ensuring consistent zone identification across all structural data modules, drawings, stress reports, and maintenance documentation.
 
 ## 2. Scope
 
@@ -73,7 +75,7 @@ Where:
 
 ### 2.4 Zone Code Registry
 
-The master Zone Code Registry is maintained in the PLM system (Siemens Teamcenter) under document number `AMPEL360-STR-ZCR-001`. A read-only export is published to the Q+ATLANTIDE CSDB at each major lifecycle gate.
+The master Zone Code Registry is maintained in the PLM system (Siemens Teamcenter) under document number `[PROGRAMME-AIRCRAFT]-STR-ZCR-001`. A read-only export is published to the Q+ATLANTIDE CSDB at each major lifecycle gate.
 
 ## 3. Footprint
 
@@ -88,5 +90,5 @@ The master Zone Code Registry is maintained in the PLM system (Siemens Teamcente
 
 | Ref | Document |
 |---|---|
-| AMPEL360-STR-ZCR-001 | Zone Code Registry (PLM Teamcenter) |
+| [PROGRAMME-AIRCRAFT]-STR-ZCR-001 | Zone Code Registry (PLM Teamcenter) |
 | [`./README.md`](./README.md) | Subsubject index |

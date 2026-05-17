@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-070-SAF-SYSTEM-INSPECTION-TEST-AND-MAINTENANCE
      ATA 78 · SAF System Inspection, Test and Maintenance
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # SAF System Inspection, Test and Maintenance
@@ -47,26 +49,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-070"
 
 ## §1 Purpose
 
-This document (078-070) defines the SAF-specific inspection, test, and maintenance programme for the AMPEL360E eWTW. It establishes maintenance task requirements, inspection intervals, and special procedures associated with SAF blend operation that supplement or modify the standard ATA 28 (Fuel System) maintenance programme. The key driver for SAF-specific maintenance is the progressive monitoring of elastomeric seal condition and tank sealant integrity as a function of cumulative SAF exposure, as tracked by the FAMQMS (PN FAMQMS-078) cumulative exposure log.
+This document defines the agnostic ATLAS standard-level architecture context for `SAF System Inspection, Test and Maintenance`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-070 — SAF System Inspection, Test and Maintenance |
-| Certification basis | EASA CS-25; EASA SC E-19; AMM Task Cards 078-070-01 through 078-070-10 |
-| S1000D SNS | 078-070-00 |
-| Maintenance planning | MSG-3 analysis basis; on-condition items flagged by FAMQMS |
-| First SAF refuelling event | Triggers initial inspection and FAMQMS log initialisation |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The SAF maintenance programme for the AMPEL360E eWTW is built on the principle that SAF blends ≤50 % v/v are materially compatible with all fuel system components (see 078-020), but that the slightly different chemical environment (lower aromatics, different sulphur profile, potentially different trace contaminant behaviour) warrants additional monitoring during the initial in-service period and at defined exposure milestones.
+The SAF maintenance programme for the programme-defined aircraft type is built on the principle that SAF blends ≤50 % v/v are materially compatible with all fuel system components (see 078-020), but that the slightly different chemical environment (lower aromatics, different sulphur profile, potentially different trace contaminant behaviour) warrants additional monitoring during the initial in-service period and at defined exposure milestones.
 
 **First SAF refuelling event (AMM 078-070-01)**: At the aircraft's first ever SAF refuelling event, the following initial tasks are required:
 - Visual inspection of all drain manifold elastomeric seals (PN ORS-NBR-078 series) — confirm no pre-existing degradation before SAF exposure begins.

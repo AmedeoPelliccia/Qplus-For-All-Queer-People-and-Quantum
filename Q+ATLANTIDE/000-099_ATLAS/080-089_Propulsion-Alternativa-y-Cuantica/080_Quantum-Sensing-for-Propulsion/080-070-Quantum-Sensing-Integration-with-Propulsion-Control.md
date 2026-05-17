@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0080-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-080-070-QUANTUM-SENSING-INTEGRATION-WITH-PROPULSION-CONTROL
      ATLAS-080 (Quantum Sensing for Propulsion) · Quantum Sensing Integration with Propulsion Control
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum Sensing Integration with Propulsion Control
@@ -46,21 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-070"
 
 ## §1 Purpose
 
-ATLAS subsubject 080-070 defines the integration architecture, data interfaces, and control loop augmentation between the QSPU Propulsion State Vector (PSV) and the AMPEL360E eWTW propulsion control hierarchy: FADEC (ATA 73), Fuel Cell Control Unit (FCCU, ATLAS 075), Hydrogen Distribution and Conditioning Monitoring Unit (HDCMU, ATLAS 077), Motor Control Unit (MCU, ATLAS 071), Thermal Management Controller (TMC, ATLAS 074), and Power Distribution Control Unit (PDCU, ATLAS 073). This document defines the advisory-only integration paradigm, fallback logic, and the boundary between DAL B quantum sensing augmentation and DAL A primary control chains.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum Sensing Integration with Propulsion Control`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-080 (Quantum Sensing for Propulsion) — 080-070 Integration with Propulsion Control |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; SAE ARP4754A; ARINC 664 P7 |
-| S1000D SNS | 080-070-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `080` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The QSPU Propulsion State Vector (PSV) is distributed to six propulsion control systems over the AFDX ARINC 664 P7 network. The core integration principle is **advisory and augmentation only at DAL B**: no receiving controller requires QSPU data for its primary control authority. Each controller retains its own independent DAL A classical sensor chain (FADEC N1/N2 tachometers; HDCMU Coriolis flow meters; MCU Hall-effect current sensors; TMC PT-100 RTDs) as the authoritative sensor source. QSPU PSV data is consumed as a supplementary high-fidelity input that augments the classical EHM/trend algorithms, improves control loop precision, or provides earlier detection of degradation than the classical sensors allow. A QSPU fault results in all receiving controllers automatically reverting to their classical sensor sets within 100 ms without any operator action.

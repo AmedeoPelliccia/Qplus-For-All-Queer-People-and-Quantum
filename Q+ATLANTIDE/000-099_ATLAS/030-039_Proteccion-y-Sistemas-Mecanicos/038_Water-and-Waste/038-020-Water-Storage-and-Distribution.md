@@ -6,10 +6,10 @@ subsubject: "020"
 subsubject_title: "Water Storage and Distribution"
 file_name: "038-020-Water-Storage-and-Distribution.md"
 sns_reference: "038-02"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-02"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-038-02"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -79,7 +79,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 38"
   - "Water and Waste"
@@ -92,10 +92,12 @@ keywords:
   - "NRV"
   - "pressure regulator"
   - "capacitive level sensor"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 038-020 — Water Storage and Distribution
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -105,37 +107,26 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-02-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-038-02-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document describes the **Water Storage and Distribution** subsystem of ATA 38 for the **AMPEL360e eWTW**. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `038-020 — Water Storage and Distribution`.
 
-1. The potable water tank: material options, capacity, structural integration, working pressure, and accessories.
-2. The Electric Water Pump (EWP): design, performance requirements, installation, and redundancy.
-3. The cold water distribution piping network: tube material, routing, insulation, clamping, and low-point drains.
-4. The pressurisation system: EAC (Option A) or bladder/pump (Option B).
-5. Tank accessories: level sensor, pressure sensor, fill valve, overfill valve, vent, drain valve.
-6. Pressure regulation at tank outlet.
-7. Freeze protection: trace heating on cold-zone distribution lines, THC controller.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants (unless noted) |
-| ATA Chapter/Subsubject | 38-020 — Water Storage and Distribution |
-| Document Tier | Level 2 — SDD |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Parent Document | [038-000](./038-000-Water-and-Waste-General.md) / [038-010](./038-010-Potable-Water-System.md) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Potable Water Tank
@@ -441,13 +432,13 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description — storage & dist | DMC-AMPEL360E-EWTW-038-02-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Potable water tank description | DMC-AMPEL360E-EWTW-038-02-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Tank removal | DMC-AMPEL360E-EWTW-038-02-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EWP description | DMC-AMPEL360E-EWTW-038-02-20A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EWP removal | DMC-AMPEL360E-EWTW-038-02-20A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — storage & distribution | DMC-AMPEL360E-EWTW-038-02-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Trace heater inspection | DMC-AMPEL360E-EWTW-038-02-30A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description — storage & dist | DMC-<PROGRAMME>-<VARIANT>-038-02-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| Potable water tank description | DMC-<PROGRAMME>-<VARIANT>-038-02-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Tank removal | DMC-<PROGRAMME>-<VARIANT>-038-02-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWP description | DMC-<PROGRAMME>-<VARIANT>-038-02-20A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWP removal | DMC-<PROGRAMME>-<VARIANT>-038-02-20A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — storage & distribution | DMC-<PROGRAMME>-<VARIANT>-038-02-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Trace heater inspection | DMC-<PROGRAMME>-<VARIANT>-038-02-30A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 

@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.030 — Airframe to Systems Structural Interfaces
 
 ## 1. Purpose
 
-Establishes the framework for all airframe-to-systems structural interfaces across the AMPEL360 eWTW including classification methodology ICD references and load requirement summary.
+Establishes the framework for all airframe-to-systems structural interfaces across the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] including classification methodology ICD references and load requirement summary.
 
 ## 2. Scope
 
@@ -40,7 +42,7 @@ Establishes the framework for all airframe-to-systems structural interfaces acro
 > This document will cover:
 > - Interface description and load transfer mechanism
 > - Applicable ICDs and load cases (CS-25 reference)
-> - eWTW-specific requirements and constraints
+> - [PROGRAMME-VARIANT]-specific requirements and constraints
 > - Evidence of compliance pathway
 
 ## 3. Footprint

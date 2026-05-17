@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.060 — Structural LRU, SRU and Assembly Replacement Boundaries
 
 ## 1. Purpose
 
-Defines the **Line Replaceable Unit (LRU), Shop Replaceable Unit (SRU), and structural assembly replacement boundaries** for the AMPEL360 eWTW, identifying which structural components are designed for removal and replacement at line or base maintenance, and which require depot-level disassembly or permanent bonded/fastened repair schemes.
+Defines the **Line Replaceable Unit (LRU), Shop Replaceable Unit (SRU), and structural assembly replacement boundaries** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], identifying which structural components are designed for removal and replacement at line or base maintenance, and which require depot-level disassembly or permanent bonded/fastened repair schemes.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW structural design maximises replaceability of access panels, secondary fairings, and modular structural attachments to minimise aircraft on-ground (AOG) time. Primary structural elements (wing spar, centre-wing box, main frames) are not LRUs — they are repaired in-situ via SRM or MRA schemes. However, the LH₂ tank assembly is designed as a depot-replaceable unit due to cryogenic seal integrity requirements, and the modular DEP nacelle attachment frames are base-maintainable LRU-level assemblies.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural design maximises replaceability of access panels, secondary fairings, and modular structural attachments to minimise aircraft on-ground (AOG) time. Primary structural elements (wing spar, centre-wing box, main frames) are not LRUs — they are repaired in-situ via SRM or MRA schemes. However, the LH₂ tank assembly is designed as a depot-replaceable unit due to cryogenic seal integrity requirements, and the modular DEP nacelle attachment frames are base-maintainable LRU-level assemblies.
 
 The LRU/SRU classification defines the spares inventory requirements, the RSPL (Recommended Spare Parts List), and the skill and tooling requirements at each maintenance level. It also drives the S1000D data module scope (procedure DMs for LRU removal/installation vs. repair DMs for non-replaceable structure).
 
@@ -81,8 +83,8 @@ flowchart LR
 | Ref | Document |
 |---|---|
 | ATA iSpec 2200 | LRU and SRU classification |
-| AMM-AMPEL360-050 | Aircraft Maintenance Manual — Structures |
-| RSPL-AMPEL360-001 | Recommended Spare Parts List |
-| SRM-AMPEL360-050 | Structural Repair Manual |
+| AMM-[PROGRAMME-AIRCRAFT]-050 | Aircraft Maintenance Manual — Structures |
+| RSPL-[PROGRAMME-AIRCRAFT]-001 | Recommended Spare Parts List |
+| SRM-[PROGRAMME-AIRCRAFT]-050 | Structural Repair Manual |
 | [`./README.md`](./README.md) | Subsubject 060 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

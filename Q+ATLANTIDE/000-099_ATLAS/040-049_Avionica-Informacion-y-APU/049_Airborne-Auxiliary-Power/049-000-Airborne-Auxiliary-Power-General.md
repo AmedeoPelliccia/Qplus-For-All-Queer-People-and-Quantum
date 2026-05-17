@@ -31,6 +31,8 @@ ata_reference: "ATA 49 — Airborne Auxiliary Power"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 000 — Airborne Auxiliary Power General
@@ -43,11 +45,11 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-This document establishes the general scope, governing standards, and top-level architecture context for **ATA Chapter 49 — Airborne Auxiliary Power** as implemented on the **AMPEL360E eWTW** (electric wide-body twin-wing) aircraft. The AMPEL360E eWTW is a fully bleed-less, all-electric commercial transport aircraft; consequently, the APU in this architecture departs fundamentally from conventional APU implementations that supply both pneumatic and electrical power.
+This document establishes the general scope, governing standards, and top-level architecture context for **ATA Chapter 49 — Airborne Auxiliary Power** as implemented on the **programme-defined aircraft type** (electric wide-body twin-wing) aircraft. The programme-defined aircraft type is a fully bleed-less, all-electric commercial transport aircraft; consequently, the APU in this architecture departs fundamentally from conventional APU implementations that supply both pneumatic and electrical power.
 
-On the AMPEL360E eWTW, the APU is a **conventional small gas turbine** unit retrofitted for electric-output-only operation. Its sole operational purpose is to provide **emergency and ground electrical power** (~150 kVA) to the aircraft's High-Voltage Direct Current (HVDC) distribution bus when the main engine generators are unavailable. The APU does **not** supply bleed air for engine starting, environmental control, or any pneumatic load. Engine starting is accomplished via wing-mounted Electric Motor Starters fed from ground power or the APU generator. Cabin pre-conditioning on the ground is provided by an Electric Air Compressor (EAC) powered through the APU generator contactor (AGC) or ground power.
+On the programme-defined aircraft type, the APU is a **conventional small gas turbine** unit retrofitted for electric-output-only operation. Its sole operational purpose is to provide **emergency and ground electrical power** (~150 kVA) to the aircraft's High-Voltage Direct Current (HVDC) distribution bus when the main engine generators are unavailable. The APU does **not** supply bleed air for engine starting, environmental control, or any pneumatic load. Engine starting is accomplished via wing-mounted Electric Motor Starters fed from ground power or the APU generator. Cabin pre-conditioning on the ground is provided by an Electric Air Compressor (EAC) powered through the APU generator contactor (AGC) or ground power.
 
-ATA Chapter 49 on the AMPEL360E eWTW is organised into ten subsubjects (000 through 090), each addressing a distinct functional domain: general overview (this document), system architecture, air inlet and exhaust, fuel supply and control, ignition starting and generation, pneumatic/electrical load interfaces, control/indication/warning, fire protection and safety interlocks, monitoring and diagnostics, and S1000D CSDB mapping. All ten documents are co-governed by Q-AIR as primary Q-Division, with Q-MECHANICS, Q-DATAGOV, Q-GREENTECH, and Q-HPC in support roles.
+ATA Chapter 49 on the programme-defined aircraft type is organised into ten subsubjects (000 through 090), each addressing a distinct functional domain: general overview (this document), system architecture, air inlet and exhaust, fuel supply and control, ignition starting and generation, pneumatic/electrical load interfaces, control/indication/warning, fire protection and safety interlocks, monitoring and diagnostics, and S1000D CSDB mapping. All ten documents are co-governed by Q-AIR as primary Q-Division, with Q-MECHANICS, Q-DATAGOV, Q-GREENTECH, and Q-HPC in support roles.
 
 The APU Control Unit (APCU) is a dual-channel, DO-178C **DAL C** computer that governs all APU operational modes, interfaces with the aircraft Electronic Centralized Aircraft Monitor (ECAM) via ARINC 664 Part 7 (AFDX), and coordinates with the Central Maintenance System (CMS, ATA 45). Regulatory compliance follows EASA **CS-25 §25.1181** (APU fire zone), **§25.1185** (fuel fire zones), and **§25.1195** (fire extinguishing systems), supplemented by the **EASA CS-APU** airworthiness standards for auxiliary power units.
 
@@ -59,7 +61,7 @@ This document is the normative entry point for all ATA 49 content in the Q+ATLAN
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | Certification Basis | EASA CS-25 (Amendment 27+), CS-APU Issue 1 |
 | Applicable Standards | CS-25 §25.1181, §25.1185, §25.1195; DO-178C (DAL C); DO-160G; SAE AS6858 |
@@ -74,7 +76,7 @@ This document is the normative entry point for all ATA 49 content in the Q+ATLAN
 
 ## §3. Functional Description
 
-The APU system on the AMPEL360E eWTW comprises a gas turbine core (compressor–combustor–turbine), an integrated Motor Starter/Generator (MSG), an APU Fuel Shutoff Valve (AFSOV), a dual-element thermistor fire detection loop, a single-shot HFC-125 fire bottle, and the APCU dual-channel control computer. Together these components constitute a self-contained power unit capable of autonomous start, governed speed operation, and safe automatic or commanded shutdown.
+The APU system on the programme-defined aircraft type comprises a gas turbine core (compressor–combustor–turbine), an integrated Motor Starter/Generator (MSG), an APU Fuel Shutoff Valve (AFSOV), a dual-element thermistor fire detection loop, a single-shot HFC-125 fire bottle, and the APCU dual-channel control computer. Together these components constitute a self-contained power unit capable of autonomous start, governed speed operation, and safe automatic or commanded shutdown.
 
 In the normal ground operational scenario, the APU is started by energising the MSG as an electric motor (fed from ground power or aircraft battery) while simultaneously engaging the dual-channel ignition exciter. Once the gas turbine reaches self-sustaining speed (approximately 50 % N), the ignition system is de-energised and MSG transitions to generator mode. The APCU monitors Exhaust Gas Temperature (EGT), spool speed (N), oil pressure, oil temperature, and vibration throughout all phases. Upon reaching governed speed (100 % N ± 1 %), the Generator Control Unit (GCU) closes the APU Generator Contactor (AGC) and the APU's electrical output is connected to the aircraft HVDC bus.
 
@@ -287,7 +289,7 @@ stateDiagram-v2
 ## §13. Human Factors and Crew Interface
 
 - **Overhead panel layout**: The APU MASTER switch and START pushbutton are located on the overhead panel in Cockpit Zone F4 (aft overhead); their positions and legends conform to EASA CS-25.1302 and Human Factors Design Standard (HFDS).
-- **ECAM APU synoptic**: The ECAM APU synoptic page presents N%, EGT, oil pressure, generator load, fuel flow, and door status in a format consistent with AMPEL360E ECAM style guide (ECAM-SG-001); no unique crew training is required beyond standard ECAM familiarisation.
+- **ECAM APU synoptic**: The ECAM APU synoptic page presents N%, EGT, oil pressure, generator load, fuel flow, and door status in a format consistent with [PROGRAMME-AIRCRAFT] ECAM style guide (ECAM-SG-001); no unique crew training is required beyond standard ECAM familiarisation.
 - **CAS message hierarchy**: APU-related Crew Alerting System (CAS) messages are classified into WARNING (red — APU FIRE), CAUTION (amber — APU FAULT, APU OVER EGT), and ADVISORY (cyan — APU GEN OFF); displayed consistently with ATA 31 CAS design standards.
 - **Ground crew interface**: APU control is accessible from the ground via a dedicated External Ground Power panel with APU start inhibit when ground power is connected, preventing dual-source conflict.
 - **Maintenance access**: APU compartment access doors are colour-coded yellow per aircraft exterior marking standard; access requires two persons per maintenance manual safety requirement.

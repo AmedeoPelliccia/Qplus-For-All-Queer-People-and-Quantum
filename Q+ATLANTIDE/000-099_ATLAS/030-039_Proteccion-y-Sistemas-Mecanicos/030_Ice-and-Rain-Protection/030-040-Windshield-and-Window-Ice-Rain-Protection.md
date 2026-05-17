@@ -6,10 +6,10 @@ subsubject: "040"
 subsubject_title: "Windshield and Window Ice/Rain Protection"
 file_name: "030-040-Windshield-and-Window-Ice-Rain-Protection.md"
 sns_reference: "030-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-40"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-40"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,22 +87,24 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
   - "windshield heating"
   - "ITO conductive film"
   - "WHC"
   - "windshield wiper"
   - "rain protection"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-040 — Windshield and Window Ice/Rain Protection
-### AMPEL360e eWTW · ATA 30-40 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-40 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -114,30 +116,23 @@ All hyperlinks in this document are **relative links** unless pointing to a publ
 
 ## §1 Purpose
 
-This document defines the Windshield and Window Ice and Rain Protection system for the **AMPEL360e eWTW** flight deck. Crew forward visibility is a fundamental airworthiness and operational requirement. The eWTW provides windshield ice and rain protection through two independent functions: (1) **electrothermal heating** of the windshield panels using a transparent Indium Tin Oxide (ITO) or equivalent conductive film heater, managed by the Windshield Heat Controller (WHC), and (2) **mechanical wiper systems** for rain removal on the ground and at low-to-medium airspeeds in flight. The system satisfies CS-25.773 (crew visibility requirements) and CS-25.775 (windshield design). This document describes the WHC architecture, ITO film heater design, temperature control and overheat protection, wiper motor and drive design, defog and anti-ice modes, and the bird-strike qualification requirements for the heated windshield assembly.
+This document defines the agnostic ATLAS standard-level architecture context for `030-040 — Windshield and Window Ice/Rain Protection`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Sub-chapter | 30-40 — Windshield and Window Ice/Rain Protection |
-| Windshield Panels | Captain (Port) and First Officer (Starboard) main windshield panels |
-| Side Window Heating | Cockpit side windows — anti-fogging capability (TBD if active or passive) |
-| Heating Technology | Transparent ITO (Indium Tin Oxide) conductive film or equivalent |
-| Heater Controller | Windshield Heat Controller (WHC) — one per windshield panel, or dual-channel WHC |
-| Wiper System | Electromechanical wiper motor, arm, and blade — Captain and F/O |
-| Power Source | WHC: 115 V AC or 28 V DC (TBD); Wiper motor: 28 V DC |
-| Certification Basis | CS-25.773; CS-25.775; FAR 25.773; AC 25.773-1 |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The eWTW flight deck windshield anti-icing and defog system uses a transparent conductive oxide film (ITO or equivalent) applied between the outer structural glass ply and the inner interlayer of the windshield laminate. When energised, the conductive film acts as a uniform area heater, raising the outer glass surface temperature to prevent ice formation (anti-ice mode) or removing condensation and mist from the inner glass surface (defog mode). The WHC manages the heater power to maintain a target temperature set-point appropriate for the operating condition: a higher set-point in icing conditions to keep the outer surface above 0 °C, and a lower set-point in defog mode to dissipate condensation without thermal shock risk to the laminate. The WHC receives ambient temperature data from the TAT/OAT channel and airspeed from the ADIRU to select the appropriate set-point schedule.
+The [PROGRAMME-VARIANT] flight deck windshield anti-icing and defog system uses a transparent conductive oxide film (ITO or equivalent) applied between the outer structural glass ply and the inner interlayer of the windshield laminate. When energised, the conductive film acts as a uniform area heater, raising the outer glass surface temperature to prevent ice formation (anti-ice mode) or removing condensation and mist from the inner glass surface (defog mode). The WHC manages the heater power to maintain a target temperature set-point appropriate for the operating condition: a higher set-point in icing conditions to keep the outer surface above 0 °C, and a lower set-point in defog mode to dissipate condensation without thermal shock risk to the laminate. The WHC receives ambient temperature data from the TAT/OAT channel and airspeed from the ADIRU to select the appropriate set-point schedule.
 
 The windshield wiper system provides mechanical rain removal during ground taxi, approach, and low-speed segments. Each windshield panel has an independent wiper motor and arm/blade assembly. The wiper is driven by a 28 V DC permanent-magnet motor with a crank mechanism converting rotary motor output to oscillating wiper arm motion. Three speeds are available: intermittent (approximately 20 cycles/minute), low (approximately 40 cycles/minute), and high (approximately 60 cycles/minute — TBD). The wiper system includes an aerodynamic speed interlock that prevents wiper operation above a maximum airspeed limit (approximately VMO/2 or 250 KIAS — TBD) to prevent wiper arm aerodynamic lift-off, which would damage the blade, arm, or windshield. At airspeeds above the wiper speed limit, aerodynamic pressure and the heated windshield surface are sufficient to manage rain without wipers. The wiper park position (stowed at base of travel) is maintained by a position sensor that commands the motor to stop at the park switch signal rather than mid-swing.
 
@@ -164,7 +159,7 @@ The windshield wiper system provides mechanical rain removal during ground taxi,
 
 - Side window heating (heating TBD — see §3 note; passive anti-fog coating considered as alternative)
 - Observer and sliding side window panels (ATA 56 structural scope)
-- Rain sensing automation (not planned for eWTW baseline — wiper is manually controlled by crew)
+- Rain sensing automation (not planned for [PROGRAMME-VARIANT] baseline — wiper is manually controlled by crew)
 - External windshield cleaning or polishing (ground operations)
 - Windshield structural repair after bird strike (ATA 56 structural repair manual)
 
@@ -312,12 +307,12 @@ flowchart LR
 
 | Info Code | Title | DMC | Status |
 |---|---|---|---|
-| 040 | System Description — Windshield Heat and Wiper System | DMC-AMPEL360E-EWTW-030-40-040-A | Draft scaffold |
-| 300 | Inspection — Windshield Heater Film Resistance and Visual | DMC-AMPEL360E-EWTW-030-40-300-A | Not started |
-| 400 | Fault Isolation — WHC and Wiper Motor Faults | DMC-AMPEL360E-EWTW-030-40-400-A | Not started |
-| 520 | Remove — Windshield Panel Assembly | DMC-AMPEL360E-EWTW-030-40-520-A | Not started |
-| 720 | Install — Windshield Panel Assembly | DMC-AMPEL360E-EWTW-030-40-720-A | Not started |
-| 941 | Illustrated Parts Data — Windshield Heat and Wiper | DMC-AMPEL360E-EWTW-030-40-941-A | Not started |
+| 040 | System Description — Windshield Heat and Wiper System | DMC-<PROGRAMME>-<VARIANT>-030-40-040-A | Draft scaffold |
+| 300 | Inspection — Windshield Heater Film Resistance and Visual | DMC-<PROGRAMME>-<VARIANT>-030-40-300-A | Not started |
+| 400 | Fault Isolation — WHC and Wiper Motor Faults | DMC-<PROGRAMME>-<VARIANT>-030-40-400-A | Not started |
+| 520 | Remove — Windshield Panel Assembly | DMC-<PROGRAMME>-<VARIANT>-030-40-520-A | Not started |
+| 720 | Install — Windshield Panel Assembly | DMC-<PROGRAMME>-<VARIANT>-030-40-720-A | Not started |
+| 941 | Illustrated Parts Data — Windshield Heat and Wiper | DMC-<PROGRAMME>-<VARIANT>-030-40-941-A | Not started |
 
 ---
 
@@ -381,7 +376,7 @@ WHC temperature history, heater current log, wiper motor current log, and BITE f
 | Windshield Heat Controller | WHC | The avionics LRU managing ITO film heater energisation, temperature set-point control, and overheat protection for both windshield panels |
 | Defog Mode | — | A reduced-power heater mode targeting the inner glass surface temperature to dissipate condensation without applying full anti-ice power |
 | Windshield Wiper | — | An electromechanical assembly consisting of motor, drive crank, articulated arm, and rubber blade, sweeping the windshield outer surface to remove rain and water |
-| Rain Repellent | — | A chemical hydrophobic fluid applied to the windshield outer surface to cause water droplets to bead and roll off; applicability to eWTW not yet determined |
+| Rain Repellent | — | A chemical hydrophobic fluid applied to the windshield outer surface to cause water droplets to bead and roll off; applicability to [PROGRAMME-VARIANT] not yet determined |
 | Thermal Shock | — | Stress induced in glass laminate by a rapid temperature gradient caused by heater activation from cold-soak conditions; managed by WHC ramp-rate limiting |
 | Bird-Strike Heated Windshield | — | A windshield assembly qualified to CS-25.775 bird-strike requirements with the ITO conductive film and bus bars installed; the film must not degrade bird-strike performance |
 | Anti-Fogging | — | Prevention of condensation on the inner windshield surface; addressed by defog mode heating or passive hydrophilic coating |
@@ -396,7 +391,7 @@ WHC temperature history, heater current log, wiper motor current log, and BITE f
 | CIT-002 | CS-25.775 — Windshield and Windows | Amendment 27 | Bird-strike qualification for heated windshield; structural and optical requirements |
 | CIT-003 | FAR 25.773 — Pilot Compartment View | Amendment 25-147 | US counterpart; dual-authority compliance |
 | CIT-004 | AC 25.773-1 — Pilot Compartment View | Rev — | Guidance on windshield heating compliance methodology |
-| CIT-005 | AMPEL360e eWTW Windshield Heat and Wiper System Specification | TBD — programme document | Programme-level ITO film power density, WHC architecture, and wiper qualification requirements |
+| CIT-005 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Windshield Heat and Wiper System Specification | TBD — programme document | Programme-level ITO film power density, WHC architecture, and wiper qualification requirements |
 
 ---
 

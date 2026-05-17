@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.030 — Structural Interfaces General Overview
 
 ## 1. Purpose
 
-Provides the programme-level overview of the AMPEL360 eWTW **structural interface framework**: the top-level interface matrix, ICD governance process, and interface classification scheme covering all airframe-to-systems attachment and boundary interfaces.
+Provides the programme-level overview of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] **structural interface framework**: the top-level interface matrix, ICD governance process, and interface classification scheme covering all airframe-to-systems attachment and boundary interfaces.
 
 ## 2. Scope
 
@@ -58,9 +60,9 @@ graph LR
     STRUCT --> SHM[SHM Sensors IL2 INT-SH-001]
 ```
 
-### 2.3 eWTW-Specific Interface Features
+### 2.3 [PROGRAMME-VARIANT]-Specific Interface Features
 
-| Interface group | eWTW-specific requirement |
+| Interface group | [PROGRAMME-VARIANT]-specific requirement |
 |---|---|
 | Propulsion | Electric motor axial/torque loads — no gas thrust mount needed; pylon designed for electric drive reaction |
 | EWIS | Large HVDC cable routes (±270 V DC, 400 A) require dedicated structural tie-points and bonding straps |

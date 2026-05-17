@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0080-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-080-010-QUANTUM-SENSOR-ARCHITECTURE-FOR-PROPULSION
      ATLAS-080 (Quantum Sensing for Propulsion) · Quantum Sensor Architecture for Propulsion
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum Sensor Architecture for Propulsion
@@ -46,24 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-010"
 
 ## §1 Purpose
 
-ATLAS subsubject 080-010 defines the physical and logical architecture of the Quantum Sensing for Propulsion (QSP) sensor network: the number, type, and placement of sensor nodes; the four sensor family groupings; the QSPU dual-channel hub LRU; and the AFDX virtual link (VL) topology. This document provides the architectural baseline from which all detailed sensor family documents (080-020 through 080-060) are derived.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum Sensor Architecture for Propulsion`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-080 (Quantum Sensing for Propulsion) — 080-010 Quantum Sensor Architecture |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; ARINC 664 P7; IEEE P2995 |
-| S1000D SNS | 080-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `080` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The QSP sensor network of the AMPEL360E eWTW consists of **46 quantum sensor nodes** distributed across four network zones: the **Propulsion Zone (PZ)** covering the turbofan nacelles (N1/N2 shaft dynamics, blade tip clearance); the **Electric Drive Zone (EDZ)** covering motor/generator stators and rotor assemblies; the **Hydrogen Zone (HZ)** covering LH₂/GH₂ distribution lines and cryogenic propulsion interfaces; and the **Combustion Zone (CZ)** covering the turbofan combustor and turbine hot section. Each zone is a logical grouping of sensor nodes sharing a common environmental envelope and maintenance access class.
+The QSP sensor network of the programme-defined aircraft type consists of **46 quantum sensor nodes** distributed across four network zones: the **Propulsion Zone (PZ)** covering the turbofan nacelles (N1/N2 shaft dynamics, blade tip clearance); the **Electric Drive Zone (EDZ)** covering motor/generator stators and rotor assemblies; the **Hydrogen Zone (HZ)** covering LH₂/GH₂ distribution lines and cryogenic propulsion interfaces; and the **Combustion Zone (CZ)** covering the turbofan combustor and turbine hot section. Each zone is a logical grouping of sensor nodes sharing a common environmental envelope and maintenance access class.
 
 The **Quantum Sensing Processing Unit (QSPU)** is a 4-MCU EE bay rack unit forming the centralised processing hub for all 46 nodes. The QSPU is dual-channel (CHA active / CHB hot-standby) with automatic channel changeover in < 50 ms upon CHA fault detection. Each channel contains a 64-bit safety-grade RISC-V CPU, an Artix-7 FPGA for quantum sensor signal demodulation, a 5-qubit trapped-ion QPU module (4.2 K cooled by Stirling cryocooler, 10 × 10 × 5 cm), and 256 GB NVM. The QSPU is qualified to DO-178C DAL B (software) and DO-254 DAL B (hardware).
 

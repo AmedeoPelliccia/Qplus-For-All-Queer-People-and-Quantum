@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 020 — Processing Modules and Computing Resources
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document specifies the General-Purpose Processing Module (GPPM) and Core Processing I/O Module (CPIOM) architecture used in the AMPEL360E IMA system. It defines processing resource allocation, memory architecture, hardware redundancy strategies including Triple Modular Redundancy (TMR), FPGA safety configuration, and performance budgeting across hosted partitions. Compliance with DO-254 DAL A hardware assurance requirements is established for safety-critical processing elements.
+This document specifies the General-Purpose Processing Module (GPPM) and Core Processing I/O Module (CPIOM) architecture used in the [PROGRAMME-AIRCRAFT] IMA system. It defines processing resource allocation, memory architecture, hardware redundancy strategies including Triple Modular Redundancy (TMR), FPGA safety configuration, and performance budgeting across hosted partitions. Compliance with DO-254 DAL A hardware assurance requirements is established for safety-critical processing elements.
 
 Key governance areas:
 - GPPM and CPIOM hardware architecture and DO-254 qualification evidence structure.
@@ -53,18 +55,18 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28 |
 | Applicable Standards | DO-254 Issue C; DO-297; ARP4754B; JEDEC JESD89A (SEU) |
 | Design Assurance Level | GPPM Hardware: DAL A; FPGA functions: DAL A; Memory EDAC: DAL A |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-Each AMPEL360E IMA cabinet houses four GPPMs. Each GPPM is a dual-core avionics processor module qualified to DO-254 DAL A providing:
+Each [PROGRAMME-AIRCRAFT] IMA cabinet houses four GPPMs. Each GPPM is a dual-core avionics processor module qualified to DO-254 DAL A providing:
 
 - **Primary Processor:** Dual-core 64-bit RISC processor at 1.5 GHz per core (target 3000 MIPS aggregate per GPPM). Deterministic instruction cache (fixed mapping, no speculative prefetch) to ensure WCET analysability.
 - **Safety FPGA:** Co-resident safety FPGA implementing hardware memory protection, watchdog timer, and TMR voter functions. FPGA configured from authenticated bitstream stored in write-protected OTP flash.
@@ -99,7 +101,7 @@ CPIOM modules provide combined processing and direct I/O capability for lower-la
 
 ## 5. Architecture Description
 
-**Processor Core:** The AMPEL360E GPPM employs a dual-core deterministic RISC processor with separate instruction and data caches (32 kB each, direct-mapped). Speculative execution is disabled to prevent non-deterministic cache miss behaviour that would invalidate WCET analysis. Inter-core communication uses shared L2 cache with hardware coherency disabled; partitions accessing L2 are allocated non-overlapping cache sets via the ARINC 653 cache colouring mechanism.
+**Processor Core:** The [PROGRAMME-AIRCRAFT] GPPM employs a dual-core deterministic RISC processor with separate instruction and data caches (32 kB each, direct-mapped). Speculative execution is disabled to prevent non-deterministic cache miss behaviour that would invalidate WCET analysis. Inter-core communication uses shared L2 cache with hardware coherency disabled; partitions accessing L2 are allocated non-overlapping cache sets via the ARINC 653 cache colouring mechanism.
 
 **Multi-Core Interference Mitigation:** Following DO-297 §3.3 guidance, interference channels identified include shared L2 cache, memory bus arbitration, and PCIe DMA controller contention. Mitigations are: (1) cache colouring assigning unique cache sets per partition; (2) memory bus time-division multiplexing enforced by FPGA memory arbiter; (3) DMA transfers restricted to partition-allocated time windows in the ARINC 653 major frame.
 
@@ -367,8 +369,8 @@ graph LR
 |--------|----------|---------|--------|
 | REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-042-02 | 042-030 Partitioning and Hosted Applications | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | AMPEL360E IMA GPPM Hardware Design Description | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | AMPEL360E IMA Multi-Core Interference Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] IMA GPPM Hardware Design Description | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] IMA Multi-Core Interference Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Limit and Ultimate Load Definitions
 
 ## 1. Purpose
 
-Defines **limit loads** and **ultimate loads** for the AMPEL360 eWTW structural programme, establishes the safety factors and design criteria mandated by CS-25 Subpart C, and specifies the acceptance criteria for structural demonstrations at each load level.
+Defines **limit loads** and **ultimate loads** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural programme, establishes the safety factors and design criteria mandated by CS-25 Subpart C, and specifies the acceptance criteria for structural demonstrations at each load level.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-CS-25.301 defines *limit loads* as the maximum loads expected in service; the structure must support limit loads without detrimental permanent deformation. CS-25.303 mandates a safety factor of 1.5 applied to limit loads to obtain *ultimate loads*, which the structure must sustain without failure for at least three seconds. For the AMPEL360 eWTW, additional programme-specific safety factors are applied where novel materials (CFRP laminates, metal-matrix composites) or novel load types (cryogenic cycling, hydrogen embrittlement) create elevated uncertainty in analytical models.
+CS-25.301 defines *limit loads* as the maximum loads expected in service; the structure must support limit loads without detrimental permanent deformation. CS-25.303 mandates a safety factor of 1.5 applied to limit loads to obtain *ultimate loads*, which the structure must sustain without failure for at least three seconds. For the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], additional programme-specific safety factors are applied where novel materials (CFRP laminates, metal-matrix composites) or novel load types (cryogenic cycling, hydrogen embrittlement) create elevated uncertainty in analytical models.
 
 Proof loads (1.0 × limit) apply to pressurised vessels and tank attachment fittings; these are verified by pressurisation proof tests during ground testing.
 

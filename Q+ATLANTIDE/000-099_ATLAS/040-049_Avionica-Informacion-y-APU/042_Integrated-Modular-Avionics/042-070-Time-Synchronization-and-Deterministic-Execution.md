@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 070 — Time Synchronization and Deterministic Execution
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links within Q+ATLANTIDE CSD
 
 ## 1. Purpose
 
-This document defines the time synchronization architecture, IEEE 1588 Precision Time Protocol (PTP) implementation, GPS-disciplined Oven-Controlled Crystal Oscillator (OCXO) holdover capability, Time Division Multiple Access (TDMA) schedule enforcement, and jitter monitoring for the AMPEL360E IMA system. Accurate and coherent time reference across all IMA partitions and AFDX end-systems is foundational to deterministic data exchange and fault correlation.
+This document defines the time synchronization architecture, IEEE 1588 Precision Time Protocol (PTP) implementation, GPS-disciplined Oven-Controlled Crystal Oscillator (OCXO) holdover capability, Time Division Multiple Access (TDMA) schedule enforcement, and jitter monitoring for the [PROGRAMME-AIRCRAFT] IMA system. Accurate and coherent time reference across all IMA partitions and AFDX end-systems is foundational to deterministic data exchange and fault correlation.
 
 ---
 
@@ -46,18 +48,18 @@ This document defines the time synchronization architecture, IEEE 1588 Precision
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28 |
 | Applicable Standards | IEEE 1588-2019 (PTP v2.1); ARINC 664 Part 7; DO-160G; GNSS ICD-GPS-200D |
 | Design Assurance Level | Time synchronization: DAL B; OCXO: DAL C |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E IMA time reference architecture uses IEEE 1588 Precision Time Protocol (PTP) to distribute a common time base across all AFDX end-systems and IMA modules. A GPS-disciplined OCXO in the dedicated Time Reference Unit (TRU) acts as the PTP Grandmaster Clock, traceable to International Atomic Time (TAI).
+The [PROGRAMME-AIRCRAFT] IMA time reference architecture uses IEEE 1588 Precision Time Protocol (PTP) to distribute a common time base across all AFDX end-systems and IMA modules. A GPS-disciplined OCXO in the dedicated Time Reference Unit (TRU) acts as the PTP Grandmaster Clock, traceable to International Atomic Time (TAI).
 
 The TRU maintains GPS lock for primary synchronisation. On GPS loss, the OCXO holdover function maintains time accuracy within ±1 µs per hour for up to 4 hours, sufficient for longest expected GPS outage in normal operations. All IMA modules act as PTP Slaves, synchronising to the Grandmaster within ±100 ns under normal conditions.
 
@@ -348,8 +350,8 @@ graph LR
 |--------|----------|---------|--------|
 | REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-042-02 | 042-040 Avionics Networks | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | AMPEL360E TRU Interface Control Document | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | AMPEL360E IMA Timing Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] TRU Interface Control Document | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] IMA Timing Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -357,7 +359,7 @@ graph LR
 
 | Issue ID | Description | Owner | Status |
 |----------|-------------|-------|--------|
-| OI-042-01 | GNSS anti-spoofing capability (authentication signal) to be evaluated for AMPEL360E | Q-HPC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-042-01 | GNSS anti-spoofing capability (authentication signal) to be evaluated for [PROGRAMME-AIRCRAFT] | Q-HPC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-042-02 | IRS cross-validation for PTP holdover accuracy assessment methodology to be defined | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-042-03 | OCXO vendor qualification testing schedule to be aligned with IMA platform PDR | Q-HPC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 

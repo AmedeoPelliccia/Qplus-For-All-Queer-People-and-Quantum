@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-010-SAF-FUEL-COMPATIBILITY-BASIS
      ATA 78 · SAF Fuel Compatibility Basis
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # SAF Fuel Compatibility Basis
@@ -47,32 +49,27 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-010"
 
 ## §1 Purpose
 
-This document (078-010) defines the fuel chemistry qualification basis for Sustainable Aviation Fuel (SAF) compatibility on the AMPEL360E eWTW turbofan engine and fuel system. It establishes the ASTM D7566 qualification pathways, critical fuel property requirements, blend ratio limits, and the process by which novel SAF candidates may be evaluated for future approval.
+This document defines the agnostic ATLAS standard-level architecture context for `SAF Fuel Compatibility Basis`.
 
-The AMPEL360E eWTW is designed to accept blends of conventional Jet-A1 (ASTM D1655 / DEF STAN 91-091) with approved SAF streams from any of the five currently approved ASTM D7566 annexes. The Engine OEM Fuel Specification EOFS-001 is the controlling document for the turbofan engine combustor; all SAF blends must conform to EOFS-001 as well as ASTM D7566 Table 1. The FAMQMS LRU (PN FAMQMS-078) provides real-time blend ratio monitoring that confirms conformance during every flight.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-010 — SAF Fuel Compatibility Basis |
-| Certification basis | EASA CS-25 Amdt 27+; EASA SC E-19; ASTM D7566 Ed. 2023 |
-| S1000D SNS | 078-010-00 |
-| Approved ASTM annexes | A1 (HEFA-SPK), A2 (FT-SPK), A3 (ATJ-SPK), A4 (SIP), A5 (DHC-SPK) |
-| Applicable engine spec | Engine OEM Fuel Specification EOFS-001, Rev C |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ASTM D7566 defines the qualification framework for SAF blended with conventional Jet-A/Jet-A1 as aviation turbine fuel. The standard mandates that each approved neat SAF stream (Annex A1–A5) must individually meet a defined set of hydrocarbon composition and physical property requirements before blending. After blending at the approved maximum ratio (currently 10–50 % v/v depending on annex), the blend must also meet ASTM D1655 / ASTM D7566 Table 1 full-specification properties as if it were conventional Jet-A.
 
-The ASTM D4054 fast-track evaluation process provides a pathway for novel SAF candidates not yet qualified under any annex. D4054 requires graduated testing from Tier 1 (fuel property screening) through Tier 4 (rig and engine testing) before an applicant can petition for inclusion as a new D7566 annex. The AMPEL360E OEM participates in the Aviation Fuel Quality Requirements for Jointly Operated Systems (AFQRJOS) committee review for D4054 candidate fuels.
+The ASTM D4054 fast-track evaluation process provides a pathway for novel SAF candidates not yet qualified under any annex. D4054 requires graduated testing from Tier 1 (fuel property screening) through Tier 4 (rig and engine testing) before an applicant can petition for inclusion as a new D7566 annex. The [PROGRAMME-AIRCRAFT] OEM participates in the Aviation Fuel Quality Requirements for Jointly Operated Systems (AFQRJOS) committee review for D4054 candidate fuels.
 
-Critical fuel properties governing compatibility with the AMPEL360E combustor and fuel system are listed in §10 (Performance and Budgets). Key parameters include:
+Critical fuel properties governing compatibility with the [PROGRAMME-AIRCRAFT] combustor and fuel system are listed in §10 (Performance and Budgets). Key parameters include:
 
 - **Flash point**: Minimum 38 °C (safety; D93 Pensky-Martens closed cup) — all SAF blends comply by specification.
 - **Freeze point**: Maximum −47 °C (D7153 — cold soak operability at altitude) — pure HEFA-SPK can have higher freeze points; blending with Jet-A1 restores compliance.
@@ -230,7 +227,7 @@ flowchart TB
 | ASTM D4054-22 | Standard Practice for Qualification and Approval of New Aviation Turbine Fuels and Fuel Additives | ASTM International | Novel SAF pathway evaluation |
 | ASTM D1655-23 | Standard Specification for Aviation Turbine Fuels | ASTM International | Conventional Jet-A/A1 baseline properties |
 | EASA SC E-19 | Special Condition: Sustainable Aviation Fuels for Turbine Engines | EASA | SAF combustor and fuel system certification |
-| EOFS-001 Rev C | Engine OEM Fuel Specification — AMPEL360E Turbofan | Engine OEM (TBD) | Combustor and FMU fuel property requirements |
+| EOFS-001 Rev C | Engine OEM Fuel Specification — [PROGRAMME-AIRCRAFT] Turbofan | Engine OEM (TBD) | Combustor and FMU fuel property requirements |
 | AFQRJOS Issue 30 | Aviation Fuel Quality Requirements for Jointly Operated Systems | EI/IATA | Minimum fuel quality for jointly operated systems |
 | SAE ARP1533B | Procedure for the Analysis and Evaluation of Gaseous Emissions from Aircraft Engines | SAE International | Engine emissions under SAF operation |
 
@@ -273,7 +270,7 @@ flowchart TB
 | ID | Description | Owner | Target |
 |---|---|---|---|
 | OI-078-010-001 | Confirm EOFS-001 Rev C acceptance criteria for ATJ-SPK Annex A3 at 50 % blend | Q-GREENTECH / Engine OEM | 2026-Q4 |
-| OI-078-010-002 | Agree with ASTM on timeline for 100 % neat SAF ballot and AMPEL360E participation | Q-AIR | 2027-Q1 |
+| OI-078-010-002 | Agree with ASTM on timeline for 100 % neat SAF ballot and [PROGRAMME-AIRCRAFT] participation | Q-AIR | 2027-Q1 |
 | OI-078-010-003 | Validate NIR sensor (NIR-SAF-078) accuracy against GC reference for SIP (Annex A4) blend | Q-HPC | 2026-Q4 |
 | OI-078-010-004 | Define lubricity improver (LIA-078) addition procedure in AMM task card | Q-MECHANICS | 2026-Q4 |
 

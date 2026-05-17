@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0064-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-064-000-ENGINE-FUEL-AND-CONTROL-GENERAL
      ATA 64 · Engine Fuel and Control General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Engine Fuel and Control General
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-000"
 
 ## §1 Purpose
 
-ATA Chapter 64 defines the architecture of the engine fuel metering and control system — from the aircraft fuel supply at the QEC interface to the combustor fuel nozzles. On the AMPEL360E eWTW, the fuel system is bleed-less; all aircraft pneumatic needs are met by the Electric Air Compressor (EAC), not by compressor bleed. This eliminates the conventional bleed-air-cooled fuel heat exchanger and significantly simplifies the fuel-side heat management.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine Fuel and Control General`.
 
-The AMPEL360E eWTW is designed for 100 % Sustainable Aviation Fuel (SAF, ASTM D7566 Annex A) compatibility, requiring all fuel-wetted materials, sealants, and nozzle orifice geometry to accommodate the full range of SAF aromatic content and lubricity characteristics from day-one certification.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-000 — Engine Fuel and Control General |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `064` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The ATA 64 system architecture includes:
@@ -218,7 +217,7 @@ flowchart TB
 | **LP pump** | Low-Pressure engine-driven pump; boosts suction pressure for HP pump; prevents HP pump cavitation. |
 | **HP pump** | High-Pressure gear pump; produces main metering pressure; displacement-type. |
 | **Fuel burn-off** | The use of fuel flow as the primary working fluid (power and heat transfer) in the fuel control system. |
-| **Bleed-less** | No engine compressor bleed air used for aircraft systems on AMPEL360E eWTW. |
+| **Bleed-less** | No engine compressor bleed air used for aircraft systems on programme-defined aircraft type. |
 | **AGB** | Accessory Gearbox — engine-driven gearbox mounting LP pump, HP pump, HMU, and other accessories. |
 | **Lean-burn nozzle** | Fuel nozzle designed for lean combustion; pilot circuit at low power, main circuit added at higher power. |
 | **Metering valve** | The variable-orifice valve in the HMU that controls fuel flow rate to the nozzles. |
@@ -263,4 +262,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

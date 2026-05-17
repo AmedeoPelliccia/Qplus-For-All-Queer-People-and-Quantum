@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0080-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-080-040-QUANTUM-THERMAL-AND-CRYOGENIC-SENSING
      ATLAS-080 (Quantum Sensing for Propulsion) · Quantum Thermal and Cryogenic Sensing
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum Thermal and Cryogenic Sensing
@@ -46,21 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-040"
 
 ## §1 Purpose
 
-ATLAS subsubject 080-040 covers Josephson Junction (JJ) thermometers and NV-center thermometry systems deployed across the AMPEL360E eWTW propulsion thermal envelope, spanning the full range from 4 K (HTS motor windings and LH₂ cryogenic system) to 1 800 K (turbine hot section and combustion zone). These quantum thermometry technologies provide measurement accuracy 5–50× better than classical thermocouple or pyrometric instruments across their respective ranges, enabling unprecedented turbine blade temperature mapping, cryogenic system safety monitoring, and fuel cell MEA thermal management.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum Thermal and Cryogenic Sensing`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-080 (Quantum Sensing for Propulsion) — 080-040 Quantum Thermal and Cryogenic Sensing |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; IEEE P2995 |
-| S1000D SNS | 080-040-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `080` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Josephson Junction (JJ) thermometers** operate on the principle of Johnson-Nyquist noise thermometry: the spectral density of thermal voltage noise across a resistor is directly proportional to absolute temperature, with the proportionality constant involving only fundamental physical constants (Boltzmann constant k_B, resistance R). In the JJ implementation, the noise is measured relative to the precisely known Josephson voltage standard (Josephson constant K_J = 2e/h), providing temperature measurements traceable to the SI Kelvin definition without calibration against a reference thermometer. The range is 4–300 K with accuracy **±0.1 mK** — approximately 500× better than a Pt-100 RTD in this range. Four JJ thermometer modules are installed: two in the LH₂ feed zone (monitoring ullage gas temperature at 20 K and feed line Seg-1 at 20–30 K), one in the cryo motor winding zone (monitoring HTS winding temperature < 10 K), and one monitoring the FC coolant return loop (60–90 °C with mK accuracy for efficiency optimisation). Elimination of unreliable platinum resistance wire in LH₂ zones simplifies ATEX compliance significantly.

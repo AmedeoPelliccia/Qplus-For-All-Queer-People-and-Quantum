@@ -31,6 +31,8 @@ ata_reference: "ATA 44 — Cabin Systems"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 000 — Cabin Systems General
@@ -43,11 +45,11 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document provides the general system description, design philosophy, and architectural overview of the Cabin Systems (ATA 44) for the AMPEL360E eWTW aircraft. ATA 44 encompasses all passenger- and cabin-crew-facing systems that contribute to the cabin environment, passenger service, cabin management, information delivery, in-flight entertainment, surveillance, and crew-cabin interfaces.
+This document provides the general system description, design philosophy, and architectural overview of the Cabin Systems (ATA 44) for the programme-defined aircraft type. ATA 44 encompasses all passenger- and cabin-crew-facing systems that contribute to the cabin environment, passenger service, cabin management, information delivery, in-flight entertainment, surveillance, and crew-cabin interfaces.
 
 Key governance areas:
 - Cabin Systems overall architecture and subsystem hierarchy.
-- AMPEL360E cabin design philosophy (full electric, sustainable, connected).
+- [PROGRAMME-AIRCRAFT] cabin design philosophy (full electric, sustainable, connected).
 - Regulatory basis for cabin systems (CS-25 §25.1381–§25.1419; ETSI; FCC).
 - Interface map to airframe, environmental control (ATA 21), electrical (ATA 24), avionics (ATA 31/34), and structure.
 - Primary and support Q-Division assignments.
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44 — Cabin Systems |
 | Certification Basis | CS-25 Amendment 28; CS-25 §25.1381–§25.1419 |
 | Applicable Standards | ETSI EN 302 908; FCC Part 15/25; RTCA DO-160G; ARINC 628; ARINC 664 |
@@ -69,7 +71,7 @@ Key governance areas:
 
 ## 3. System / Function Overview
 
-The Cabin Systems of the AMPEL360E eWTW are designed around a fully connected, electrically powered cabin integrating:
+The Cabin Systems of the programme-defined aircraft type are designed around a fully connected, electrically powered cabin integrating:
 
 - **Cabin Core Network (CCN):** IP/Ethernet-based cabin data network backbone (ARINC 628 CDN) interconnecting all cabin subsystems.
 - **Cabin Management System (CMS):** Central software platform managing lighting, temperature, IFE, PSU, and crew interfaces.
@@ -79,7 +81,7 @@ The Cabin Systems of the AMPEL360E eWTW are designed around a fully connected, e
 - **Cabin Monitoring and Surveillance (CMS2):** CCTV, smoke detection relay, cabin air quality sensors.
 - **Cabin Crew Interfaces (CCI):** Forward/aft attendant panels, galley control panels, door management.
 
-The eWTW cabin integrates sustainability-focused features including LED lighting (100%), USB-C/USB-A seat power (no 115 V AC seat power outlets), SAF compatibility labelling displays, and real-time cabin CO₂/humidity monitoring.
+The [PROGRAMME-VARIANT] cabin integrates sustainability-focused features including LED lighting (100%), USB-C/USB-A seat power (no 115 V AC seat power outlets), SAF compatibility labelling displays, and real-time cabin CO₂/humidity monitoring.
 
 ---
 
@@ -106,7 +108,7 @@ The eWTW cabin integrates sustainability-focused features including LED lighting
 
 ## 5. Architecture Description
 
-The AMPEL360E Cabin Systems are built on the **Cabin Data Network (CDN)**, an ARINC 628-compliant IP/Ethernet backbone (100 Mbit/s full duplex) with a ring topology for high availability. The CDN connects:
+The [PROGRAMME-AIRCRAFT] Cabin Systems are built on the **Cabin Data Network (CDN)**, an ARINC 628-compliant IP/Ethernet backbone (100 Mbit/s full duplex) with a ring topology for high availability. The CDN connects:
 
 - Cabin Management System server (CMS-A and CMS-B redundant pair in avionics bay).
 - Passenger In-seat Entertainment/Power units (ISEP units, 1 per 2 seats).
@@ -352,9 +354,9 @@ graph LR
 
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
-| REF-044-00-01 | AMPEL360E Cabin Systems Design Specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-00-01 | [PROGRAMME-AIRCRAFT] Cabin Systems Design Specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-044-00-02 | Q+ATLANTIDE template.md | 1.0 | Active |
-| REF-044-00-03 | AMPEL360E Cabin Layout Drawing | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-00-03 | [PROGRAMME-AIRCRAFT] Cabin Layout Drawing | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

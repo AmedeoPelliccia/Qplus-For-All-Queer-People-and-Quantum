@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 080 — IMA Monitoring, Diagnostics and Control Interfaces
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links within Q+ATLANTIDE CSD
 
 ## 1. Purpose
 
-This document defines the Built-In Test Equipment (BITE) architecture, Central Maintenance Computer (CMC) integration, Aircraft Condition Monitoring System (ACMS) data provision, ARINC 767 maintenance bus interface, Prognostic Health Management (PHM) data collection, fault isolation procedures, and Aircraft Maintenance Terminal (AMT) interface for the AMPEL360E IMA system. It establishes the complete monitoring and diagnostics framework enabling efficient on-condition maintenance.
+This document defines the Built-In Test Equipment (BITE) architecture, Central Maintenance Computer (CMC) integration, Aircraft Condition Monitoring System (ACMS) data provision, ARINC 767 maintenance bus interface, Prognostic Health Management (PHM) data collection, fault isolation procedures, and Aircraft Maintenance Terminal (AMT) interface for the [PROGRAMME-AIRCRAFT] IMA system. It establishes the complete monitoring and diagnostics framework enabling efficient on-condition maintenance.
 
 ---
 
@@ -46,18 +48,18 @@ This document defines the Built-In Test Equipment (BITE) architecture, Central M
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28 |
 | Applicable Standards | ARINC 429; ARINC 767; ARINC 604A; DO-160G; ATA MSG-3 |
 | Design Assurance Level | BITE: DAL B; PHM: DAL C; CMC interface: DAL B |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E IMA BITE architecture provides three complementary test modes:
+The [PROGRAMME-AIRCRAFT] IMA BITE architecture provides three complementary test modes:
 
 - **Power-Up BITE (PUBIT):** Executed at each power-on within the first 90 s; validates hardware integrity before hosted applications start.
 - **Continuous Monitoring BITE (CMBIT):** Runtime monitoring of all IMA subsystems at defined rates; generates fault records and CMC reports.
@@ -356,9 +358,9 @@ graph LR
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
 | REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-02 | AMPEL360E CMC Interface Control Document | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | AMPEL360E BITE Coverage Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | AMPEL360E PHM System Concept | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-02 | [PROGRAMME-AIRCRAFT] CMC Interface Control Document | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] BITE Coverage Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] PHM System Concept | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -366,7 +368,7 @@ graph LR
 
 | Issue ID | Description | Owner | Status |
 |----------|-------------|-------|--------|
-| OI-042-01 | PHM model training data availability from first AMPEL360E aircraft to be planned | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| OI-042-01 | PHM model training data availability from first [PROGRAMME-AIRCRAFT] aircraft to be planned | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-042-02 | IBIT execution time budget for expanded test suite may exceed 8 min; optimisation required | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | OI-042-03 | False alarm rate target (≤1%) to be validated against FMEA before first flight test | Q-AIR | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 

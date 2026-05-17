@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.060 — Repair Decision Logic and Escalation Rules
 
 ## 1. Purpose
 
-Defines the **repair decision logic and escalation rules** for AMPEL360 eWTW structural damage findings: the decision path from damage discovery through allowable-damage assessment, SRM pre-approved repair selection, and escalation to a Manufacturer Repair Approval (MRA) or engineering disposition when SRM coverage is exceeded.
+Defines the **repair decision logic and escalation rules** for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural damage findings: the decision path from damage discovery through allowable-damage assessment, SRM pre-approved repair selection, and escalation to a Manufacturer Repair Approval (MRA) or engineering disposition when SRM coverage is exceeded.
 
 ## 2. Scope
 
@@ -83,8 +85,8 @@ flowchart TD
 | Ref | Document |
 |---|---|
 | CS-25.571 | Structural residual strength requirements |
-| SRM-AMPEL360-050 | Structural Repair Manual — Chapter 050 |
+| SRM-[PROGRAMME-AIRCRAFT]-050 | Structural Repair Manual — Chapter 050 |
 | EASA Part-145 | Approved Maintenance Organisation — release to service |
-| SED-PROC-AMPEL360-001 | Structural Engineering Disposition Procedure |
+| SED-PROC-[PROGRAMME-AIRCRAFT]-001 | Structural Engineering Disposition Procedure |
 | [`./README.md`](./README.md) | Subsubject 060 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

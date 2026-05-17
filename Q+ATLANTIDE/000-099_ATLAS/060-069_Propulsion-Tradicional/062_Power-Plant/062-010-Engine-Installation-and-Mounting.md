@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0062-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0062-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-062-010-ENGINE-INSTALLATION-AND-MOUNTING
      ATA 62 · Engine Installation and Mounting
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Engine Installation and Mounting
@@ -47,20 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0062-010"
 
 ## §1 Purpose
 
-This document defines the controlled procedure for engine installation on the AMPEL360E eWTW, the torque schedules and shim selection for engine mount links, the engine build-up with QEC components, and the return-to-service ground-run checks. Engine installation is a safety-critical maintenance action: an incorrectly installed engine mount link can separate in flight.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine Installation and Mounting`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 62-010 — Engine Installation and Mounting |
-| S1000D SNS | 062-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `062` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Engine installation follows a four-phase sequence:
@@ -223,8 +225,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-062-010-001 | Define mount link shim calculation procedure for AMPEL360E pylon/engine interface tolerances | Q-MECHANICS / nacelle OEM | 2026-Q4 |
-| OI-062-010-002 | Confirm engine installation crane SWL requirements for AMPEL360E engine mass | Q-MECHANICS / facilities | 2026-Q3 |
+| OI-062-010-001 | Define mount link shim calculation procedure for [PROGRAMME-AIRCRAFT] pylon/engine interface tolerances | Q-MECHANICS / nacelle OEM | 2026-Q4 |
+| OI-062-010-002 | Confirm engine installation crane SWL requirements for [PROGRAMME-AIRCRAFT] engine mass | Q-MECHANICS / facilities | 2026-Q3 |
 
 ---
 
@@ -257,4 +259,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

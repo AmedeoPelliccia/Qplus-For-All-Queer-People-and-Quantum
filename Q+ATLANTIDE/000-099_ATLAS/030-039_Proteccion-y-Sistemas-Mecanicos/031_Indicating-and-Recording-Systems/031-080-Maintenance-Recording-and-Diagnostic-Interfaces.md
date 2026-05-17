@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Maintenance Recording and Diagnostic Interfaces"
 file_name: "031-080-Maintenance-Recording-and-Diagnostic-Interfaces.md"
 sns_reference: "031-80"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-80"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-80"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -100,10 +100,12 @@ keywords:
   - "fault history"
   - "maintenance diagnostics"
   - "ATA 45 boundary"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-080 — Maintenance Recording and Diagnostic Interfaces
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -115,28 +117,20 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document defines the Maintenance Recording and Diagnostic Interface functions for the AMPEL360e eWTW aircraft. These functions collectively constitute the onboard maintenance system that records, consolidates, and provides access to aircraft Built-In Test Equipment (BITE) data from all avionic and system LRUs, enabling efficient line and base maintenance diagnostics and reducing aircraft on-ground time.
+This document defines the agnostic ATLAS standard-level architecture context for `031-080 — Maintenance Recording and Diagnostic Interfaces`.
 
-The central element is the Central Maintenance Computer (CMC), also referred to as the On-board Maintenance System (OMS) in some conventions. The CMC collects BITE fault messages from all contributing systems via ARINC 429 buses and AFDX, correlates faults to identify root-cause LRUs, stores a fault history for a configurable duration, and presents consolidated maintenance information at the Maintenance Access Terminal (MAT) in the flight deck and at the ground maintenance panel. The CMC also controls the software loading process via ARINC 615A and manages the configuration record of all LRUs.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-**ATA 31 vs ATA 45 Boundary — Open Issue**: There is an unresolved programme boundary decision regarding whether the CMC/OMS is attributed to ATA 31 (Indicating and Recording) or ATA 45 (Central Maintenance System). Current ATA iSpec 2200 and most airline MEL structures place the CMC under ATA 45. However, the eWTW IMA architecture may result in the CMC being a software function within the IMA platform, which is primarily governed under ATA 31. This boundary must be resolved at programme level. Pending resolution, this document covers the CMC/OMS under ATA 31-80 as a recording and diagnostic interface function, with the understanding that a separate ATA 45 document may supersede or cross-reference this content.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter / Subsubject | 31-80 — Maintenance Recording and Diagnostic Interfaces |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D SNS | 031-80 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-80 |
-| Effectivity | All MSN from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The CMC performs the following primary functions:
@@ -183,7 +177,7 @@ The CMC performs the following primary functions:
 
 - **CMC implementation**: IMA-hosted (preferred) or standalone ARINC 600 LRU in avionics bay (3 MCU typical); pending ATA 31 vs ATA 45 boundary decision
 - **BITE data collection**: ARINC 429 label 355 (fault words) from all contributing LRUs; AFDX for IMA-hosted system faults; 100% electrical system fault collection via HVDC bus manager and battery management system
-- **Fault correlation database**: compiled from eWTW FMEA/FMECA outputs; approved as part of CMC software; defines single-fault and multi-fault correlation trees for all system combinations
+- **Fault correlation database**: compiled from [PROGRAMME-VARIANT] FMEA/FMECA outputs; approved as part of CMC software; defines single-fault and multi-fault correlation trees for all system combinations
 - **Fault history NVM**: minimum 500 events; minimum 30 flight-leg records; circular overwrite when full; protected against power loss
 - **Maintenance Access Terminal**: dedicated display in flight deck (lower centre pedestal or P5 maintenance panel); accessible only when WOW (weight on wheels) signal active; password protected (TBD: access control method)
 - **ARINC 615A data loader**: CMC acts as data loader host on AFDX network; supports all standard ARINC 615A load types (full image, partial update, config data)
@@ -311,7 +305,7 @@ flowchart LR
 
 The CMC continuously monitors its own health via an internal BITE function. A CMC failure is reported as a maintenance memo on the ECAM/EICAS system. BITE data collection continues on a best-effort basis even if the CMC data correlator fails; raw fault messages are preserved in a direct-record buffer to prevent data loss during a partial CMC failure.
 
-For the eWTW electric propulsion system, the CMC provides a dedicated maintenance view of battery fault history, motor controller alarms, and inverter thermal events. This propulsion-specific maintenance view is accessible at the MAT under a dedicated menu. The propulsion maintenance data is critical for battery warranty management, and the CMC provides configurable export of propulsion fault data in CSV or ARINC 620 format for transmission via ACARS (via ACMS interface).
+For the [PROGRAMME-VARIANT] electric propulsion system, the CMC provides a dedicated maintenance view of battery fault history, motor controller alarms, and inverter thermal events. This propulsion-specific maintenance view is accessible at the MAT under a dedicated menu. The propulsion maintenance data is critical for battery warranty management, and the CMC provides configurable export of propulsion fault data in CSV or ARINC 620 format for transmission via ACARS (via ACMS interface).
 
 ---
 
@@ -329,11 +323,11 @@ Fault history review: maintenance crew accesses MAT on ground; filters by ATA ch
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-80 | Maintenance Recording and Diagnostic Interfaces | DMC-AMPEL360E-EWTW-031-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-80-01 | CMC / OMS Software Function | DMC-AMPEL360E-EWTW-031-80-01 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-80-02 | ARINC 615A Software Loading | DMC-AMPEL360E-EWTW-031-80-02 | 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-80-03 | Propulsion Maintenance Integration | DMC-AMPEL360E-EWTW-031-80-03 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-80-04 | AGDL Ground Interface | DMC-AMPEL360E-EWTW-031-80-04 | 040, 300 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-80 | Maintenance Recording and Diagnostic Interfaces | DMC-<PROGRAMME>-<VARIANT>-031-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-80-01 | CMC / OMS Software Function | DMC-<PROGRAMME>-<VARIANT>-031-80-01 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-80-02 | ARINC 615A Software Loading | DMC-<PROGRAMME>-<VARIANT>-031-80-02 | 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-80-03 | Propulsion Maintenance Integration | DMC-<PROGRAMME>-<VARIANT>-031-80-03 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-80-04 | AGDL Ground Interface | DMC-<PROGRAMME>-<VARIANT>-031-80-04 | 040, 300 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-80)
 

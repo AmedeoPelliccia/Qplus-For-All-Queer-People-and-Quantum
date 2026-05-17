@@ -31,6 +31,8 @@ ata_reference: "ATA 46.070 — Ground Data Transfer and Connectivity"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 070 — Ground Data Transfer and Connectivity
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46.070 — Ground Data Transfer and Connectivity (GDTC) defines the systems, interfaces, and security architecture that manage all data transfer between the AMPEL360E eWTW and ground infrastructure during aircraft-on-ground phases. This covers the Gatelink Wi-Fi router (IEEE 802.11ax), USB-C service panel (10 Gbit/s), TLS 1.3 PKI infrastructure, automatic OOOI-triggered data transfers, and the battery SoH export to MRO systems.
+ATA 46.070 — Ground Data Transfer and Connectivity (GDTC) defines the systems, interfaces, and security architecture that manage all data transfer between the programme-defined aircraft type and ground infrastructure during aircraft-on-ground phases. This covers the Gatelink Wi-Fi router (IEEE 802.11ax), USB-C service panel (10 Gbit/s), TLS 1.3 PKI infrastructure, automatic OOOI-triggered data transfers, and the battery SoH export to MRO systems.
 
 Key governance areas:
 - **Gatelink (ARINC 631-4)**: IEEE 802.11ax Wi-Fi router in fuselage nose and tail; connects aircraft to airline ground infrastructure during gate turns; multiple segregated VLANs.
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46.070 — Ground Data Transfer and Connectivity |
 | Certification Basis | CS-25 Amendment 28; EASA AMC 20-42 (network security) |
 | Applicable Standards | ARINC 631-4 (Gatelink); IEEE 802.11ax; DO-160G; TLS 1.3 (RFC 8446); S1000D Issue 5.0 |
@@ -70,7 +72,7 @@ Key governance areas:
 
 ## §3. Functional Description
 
-The GDTC subsystem manages bidirectional data transfers between the AMPEL360E eWTW and the airline ground infrastructure when the aircraft is on ground. All transfers are secured with TLS 1.3 using PKI certificates; transfers are VLAN-segregated by data type and system.
+The GDTC subsystem manages bidirectional data transfers between the programme-defined aircraft type and the airline ground infrastructure when the aircraft is on ground. All transfers are secured with TLS 1.3 using PKI certificates; transfers are VLAN-segregated by data type and system.
 
 VLAN architecture:
 - **VLAN 10 — Avionics/Maintenance**: CSDB delta sync; CMS fault data; software updates; NavDB; IETP publications; QAR data push.
@@ -290,15 +292,15 @@ stateDiagram-v2
 
 | Term | Acronym | Definition |
 |------|---------|------------|
-| Gatelink | GL | The ARINC 631-4 wireless ground data link system on the AMPEL360E eWTW using IEEE 802.11ax (Wi-Fi 6) radios in the fuselage nose and tail for high-speed bi-directional data transfer during gate turns |
+| Gatelink | GL | The ARINC 631-4 wireless ground data link system on the programme-defined aircraft type using IEEE 802.11ax (Wi-Fi 6) radios in the fuselage nose and tail for high-speed bi-directional data transfer during gate turns |
 | Transport Layer Security 1.3 | TLS 1.3 | The IETF RFC 8446 cryptographic protocol securing all Gatelink and USB-C data transfers with mutual certificate-based authentication and AES-256-GCM encryption |
-| Public Key Infrastructure | PKI | The airline-operated certificate authority (CA) issuing and managing TLS 1.3 X.509 certificates for the AMPEL360E eWTW and airline ground servers |
-| Online Certificate Status Protocol | OCSP | The protocol used by the AMPEL360E eWTW PKI Certificate Manager to check real-time certificate revocation status against the airline PKI CA before each Gatelink session |
+| Public Key Infrastructure | PKI | The airline-operated certificate authority (CA) issuing and managing TLS 1.3 X.509 certificates for the programme-defined aircraft type and airline ground servers |
+| Online Certificate Status Protocol | OCSP | The protocol used by the programme-defined aircraft type PKI Certificate Manager to check real-time certificate revocation status against the airline PKI CA before each Gatelink session |
 | Virtual Local Area Network | VLAN | An IEEE 802.1Q-tagged logical network segment within the Gatelink infrastructure, used to segregate data streams by type (avionics, battery/MRO, cabin/IFE, passenger Wi-Fi) |
 | Quick Access Recorder | QAR | The flight data recorder (ATA 46.010) providing 512 parameters at up to 8 Hz for FDM analysis; QAR data automatically pushed to airline FDM server via Gatelink VLAN 10 after each flight |
 | Computerised Maintenance Management System | CMMS | The airline MRO IT system that receives battery SoH telemetry exported via Gatelink VLAN 20; uses the data to schedule predictive battery maintenance |
 | Out-Off-On-In | OOOI | The four gate events (pushback, wheels-up, wheels-down, gate arrival) that trigger OOOI Automation Engine sequences, including Gatelink transfer initiation on OOOI In |
-| Universal Serial Bus Type-C | USB-C | The 10 Gbit/s (USB 3.2 Gen 2×2) wired interface on the AMPEL360E eWTW avionics bay service panel; maintenance-only; software-locked in flight |
+| Universal Serial Bus Type-C | USB-C | The 10 Gbit/s (USB 3.2 Gen 2×2) wired interface on the programme-defined aircraft type avionics bay service panel; maintenance-only; software-locked in flight |
 | State of Health | SoH | The long-term battery capacity degradation metric (0–100%) exported per battery module per flight to the MRO CMMS for predictive maintenance scheduling |
 
 ---
@@ -369,8 +371,8 @@ stateDiagram-v2
 | [R2] | ATLAS 046-010 — Aircraft Information Management | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 046-040 — Electronic Documentation and IETP Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 046-060 — Cabin and Passenger Information Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R5] | AMPEL360E eWTW Network Security ICD | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| [R6] | AMPEL360E eWTW PKI Infrastructure Design | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R5] | programme-defined aircraft type Network Security ICD | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R6] | programme-defined aircraft type PKI Infrastructure Design | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -390,4 +392,4 @@ This document is classified `to-be-reviewed-by-system-expert`. The review proces
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for AMPEL360E eWTW Ground Data Transfer and Connectivity |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for programme-defined aircraft type Ground Data Transfer and Connectivity |

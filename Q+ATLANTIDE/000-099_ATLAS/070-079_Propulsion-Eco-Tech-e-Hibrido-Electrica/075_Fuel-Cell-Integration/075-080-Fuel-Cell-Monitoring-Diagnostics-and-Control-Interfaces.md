@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-080-FUEL-CELL-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATA 75 · Fuel Cell Monitoring, Diagnostics and Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Cell Monitoring, Diagnostics and Control Interfaces
@@ -47,25 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-080"
 
 ## §1 Purpose
 
-This document defines the monitoring, diagnostics, and control interface architecture of the AMPEL360E eWTW Fuel Cell Module. The FCM generates over 200 distinct measured parameters at update rates from 10 ms (FCCU control loops) to 1 s (slowly-varying quantities), all of which are collected, aggregated, and transmitted by the FCCU to the Central Maintenance System (CMS, ATA 45), Central Monitoring System, and flight deck ECAM (ATA 31) via AFDX ARINC 664 P7.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Cell Monitoring, Diagnostics and Control Interfaces`.
 
-The monitoring architecture is designed to support three roles: (1) **Flight crew awareness** — real-time FCM status, power output, and caution/warning indications on ECAM FC synoptic page; (2) **On-board diagnostics** — FCCU BITE logs and CMS health trend analysis enabling on-condition maintenance decisions at A-check and C-check; (3) **Ground maintenance diagnostics** — full-resolution parameter download via ARINC 429 GSE port for troubleshooting and CVM trend analysis.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The FCCU also provides bi-directional control interfaces: it receives power demand commands from the EMS (ATA 73) and FCCU mode commands from the cockpit FC control panel (ATA 31), and it sends actuator commands to all FCM subsystems. This document covers the complete sensor list, data rates, bus architecture, ECAM page definition, BITE structure, and GSE interface.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-080 — Fuel Cell Monitoring, Diagnostics and Control Interfaces |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-080-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Sensor Network**: The FCM sensor network comprises 45 individual sensors grouped into five categories: (1) Electrical — 8 voltage and current transducers (stack cluster voltage, FCPC input/output V/I, SSPC-FC-01 current); (2) Thermal — 16 Pt100 RTD stack inlet/outlet temperature sensors (4 stacks × 2 locations × 2 pairs for redundancy); (3) Electrochemical — 1,600 CVM cell voltage channels (4 stacks × 400 cells at 100 ms); (4) Fluid — 8 flow, pressure, and level sensors (MFS-H2-075, CFS-075, LVS-WA-075, PT-CAT-075, PT-H2-075, PT-COOL-075 × 4 stack inlet/outlet); (5) Safety — 4 HDS-075 H2 detectors and GCA-075 gas composition analyser.

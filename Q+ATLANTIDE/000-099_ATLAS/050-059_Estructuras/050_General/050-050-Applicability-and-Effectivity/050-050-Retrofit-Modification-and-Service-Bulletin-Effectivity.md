@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — Retrofit, Modification and Service Bulletin Effectivity
 
 ## 1. Purpose
 
-Defines the **retrofit, modification, and service-bulletin (SB) effectivity** framework for AMPEL360 eWTW structural documentation, specifying how post-delivery structural changes are tracked, how SB incorporation state affects applicable maintenance limits and inspection thresholds, and how CSDB applicability annotations are updated post-SB.
+Defines the **retrofit, modification, and service-bulletin (SB) effectivity** framework for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural documentation, specifying how post-delivery structural changes are tracked, how SB incorporation state affects applicable maintenance limits and inspection thresholds, and how CSDB applicability annotations are updated post-SB.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-Once an AMPEL360 aircraft enters service, its structural configuration evolves through the incorporation of service bulletins, airworthiness directives (ADs), and operator-requested modifications. Each incorporated SB changes the structural definition of the affected aircraft, which in turn changes the applicability of structural maintenance tasks, repair schemes, and inspection limits. The AMPEL360 CSDB maintains a parallel document state for pre- and post-SB configurations, allowing publication outputs to reflect the actual aircraft configuration.
+Once an [PROGRAMME-AIRCRAFT] aircraft enters service, its structural configuration evolves through the incorporation of service bulletins, airworthiness directives (ADs), and operator-requested modifications. Each incorporated SB changes the structural definition of the affected aircraft, which in turn changes the applicability of structural maintenance tasks, repair schemes, and inspection limits. The [PROGRAMME-AIRCRAFT] CSDB maintains a parallel document state for pre- and post-SB configurations, allowing publication outputs to reflect the actual aircraft configuration.
 
 Mandatory SBs triggered by AD actions are tracked in the AD Compliance Register (ADCR), which is cross-referenced against the PDCM to determine current aircraft structural state. Optional SBs are tracked per aircraft in the operator's own configuration management system, with the CSDB providing the filtering logic.
 
@@ -80,6 +82,6 @@ flowchart TD
 |---|---|
 | S1000D Issue 5.0 | Applicability annotations for SB incorporation |
 | CS-25 Subpart D | Airworthiness Directives process |
-| ADCR-AMPEL360-001 | AD Compliance Register |
+| ADCR-[PROGRAMME-AIRCRAFT]-001 | AD Compliance Register |
 | [`./README.md`](./README.md) | Subsubject 050 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

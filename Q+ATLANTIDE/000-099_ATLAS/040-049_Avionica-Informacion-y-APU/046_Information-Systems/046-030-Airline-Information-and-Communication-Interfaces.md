@@ -31,6 +31,8 @@ ata_reference: "ATA 46.030 — Airline Information and Communication Interfaces"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 030 — Airline Information and Communication Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46.030 — Airline Information and Communication Interfaces (AICI) defines the data communications infrastructure between the AMPEL360E eWTW aircraft and the airline's ground network. This encompasses ACARS airline operational communications (AOC and ATC messaging), SATCOM Ku-band backup, Gatelink ARINC 631-4 ground wireless connectivity, OOOI automatic event reporting, and ATN/FANS-1/A oceanic datalink.
+ATA 46.030 — Airline Information and Communication Interfaces (AICI) defines the data communications infrastructure between the programme-defined aircraft type and the airline's ground network. This encompasses ACARS airline operational communications (AOC and ATC messaging), SATCOM Ku-band backup, Gatelink ARINC 631-4 ground wireless connectivity, OOOI automatic event reporting, and ATN/FANS-1/A oceanic datalink.
 
 Key governance areas:
 - ACARS AOC messaging: departure/arrival reports, load confirmations, technical defect reports, battery SoH data.
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46.030 — Airline Information and Communication Interfaces |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL D; FAA FANS-1/A LOA |
 | Applicable Standards | ARINC 618; ARINC 631-4; ARINC 429; ICAO Doc 9705 (ATN); DO-160G; S1000D Issue 5.0 |
@@ -70,9 +72,9 @@ Key governance areas:
 
 ## §3. Functional Description
 
-The AICI subsystem provides the full suite of airline ground communications for the AMPEL360E eWTW. The Communications Management Unit (CMU) is the central router for all airborne datalink messages, selecting between VHF VDL Mode 2 (primary) and SATCOM Ku-band (backup) depending on coverage availability.
+The AICI subsystem provides the full suite of airline ground communications for the programme-defined aircraft type. The Communications Management Unit (CMU) is the central router for all airborne datalink messages, selecting between VHF VDL Mode 2 (primary) and SATCOM Ku-band (backup) depending on coverage availability.
 
-eWTW-specific ACARS data:
+[PROGRAMME-VARIANT]-specific ACARS data:
 - **Battery SoH uplink**: After each flight, AIM packages battery SoH cycle count, degradation percentage, and thermal history into an ACARS AOC message uploaded to the airline's MRO system via Gatelink (automatic) or SATCOM.
 - **Electric motor bus (EMB) health**: OIS generates an AOC message with EMB current, torque, and temperature summary for airline fleet management.
 - **Energy consumption record**: kWh/km operational energy record transmitted as an ACARS AOC "fuel report" equivalent at top-of-climb, top-of-descent, and OOOI events.
@@ -390,4 +392,4 @@ This document is classified `to-be-reviewed-by-system-expert`. The review proces
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for AMPEL360E eWTW Airline Information and Communication Interfaces |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for programme-defined aircraft type Airline Information and Communication Interfaces |

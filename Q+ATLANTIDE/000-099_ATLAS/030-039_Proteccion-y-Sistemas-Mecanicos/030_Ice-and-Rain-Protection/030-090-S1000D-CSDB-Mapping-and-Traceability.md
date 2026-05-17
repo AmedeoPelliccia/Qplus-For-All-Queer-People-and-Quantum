@@ -6,8 +6,10 @@ subsubject: "090"
 subsubject_title: "S1000D CSDB Mapping and Traceability"
 file_name: "030-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "030-90"
-dmc_prefix: "DMC-<MODEL>-<SYSTEMDIFF>-030-90"
-programme_link: "../../../../../<programme-implementation-branch>
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-90"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -41,7 +43,6 @@ orb_functions:
     link: "../../../../../ORB-Functions/ORB-LEG/"
 classification: "open-technical-scaffold"
 status: "programme-controlled-scaffold"
-scope: agnostic-standard
 revision: "0.1.0"
 created: "2026-05-09"
 updated: "2026-05-09"
@@ -74,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "<programme-implementation-branch>
-  programme_path_link: "../../../../../<programme-implementation-branch>
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -86,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
@@ -98,10 +99,12 @@ keywords:
   - "ICN"
   - "pub module"
   - "traceability"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-090 — S1000D CSDB Mapping and Traceability
-### <PROGRAMME> · ATA 30-90 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-90 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,31 +116,25 @@ All hyperlinks in this document are **relative links** unless pointing to a publ
 
 ## §1 Purpose
 
-This document defines the **S1000D Issue 5.0 CSDB mapping** for the complete ATA 30 Ice and Rain Protection system of the <PROGRAMME>, covering all nine subsubjects (030-00 through 030-80). It establishes the SNS (System / Subsystem / Subsubsystem Designation) allocation table, the recommended Data Module (DM) set per subsubject, the Document Master Requirements List (DMRL) planning status for each subsubject, the BREX (Business Rules EXchange) rules applicable to ATA 30 content, ICN (Illustration Control Number) guidance for ATA 30 figures, applicability coding structure, and the Pub Module concept for ATA 30 crew and maintenance publications. This document provides the authoritative traceability linkage between the Q+ATLANTIDE ATLAS scaffold documents and the future production S1000D CSDB under the <PROGRAMME> programme.
+This document defines the agnostic ATLAS standard-level architecture context for `030-090 — S1000D CSDB Mapping and Traceability`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | <PROGRAMME> (<PROGRAMME-SHORT>) |
-| ATA Sub-chapter | 30-90 — S1000D CSDB Mapping and Traceability |
-| S1000D Issue | Issue 5.0 |
-| BREX Reference | BREX-<MODEL>-<SYSTEMDIFF> (TBD — not yet released) |
-| DMRL Reference | DMRL-ATA030-<MODEL>-<SYSTEMDIFF> (TBD — not yet frozen) |
-| SNS Coverage | 030-00 through 030-80 (all 9 ATA 30 subsubjects) |
-| CSDB System | TBD — programme CSDB tool not yet selected |
-| Certification Basis | Not applicable (documentation management document) |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 System / Function Overview
 
-S1000D is the international specification for technical publications for civil and military products and equipment. For the <PROGRAMME> programme, all technical publications for systems within the scope of ATA iSpec 2200 — including ATA 30 Ice and Rain Protection — will be authored as S1000D Issue 5.0 Data Modules (DMs) and stored in a programme CSDB. The SNS (System / Subsystem / Subsubsystem) allocation is the foundation of the CSDB structure: it defines the four-part numerical identifier used in all DMCs (Data Module Codes) for the programme. For ATA 30, the SNS is structured as `030-[SS]-[SSS]` where `030` is the ATA 30 system code, `SS` is the two-digit subsubject code (00 through 80), and `SSS` is a three-digit optional detail code (normally `000` at the subsubject level).
+S1000D is the international specification for technical publications for civil and military products and equipment. For the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] programme, all technical publications for systems within the scope of ATA iSpec 2200 — including ATA 30 Ice and Rain Protection — will be authored as S1000D Issue 5.0 Data Modules (DMs) and stored in a programme CSDB. The SNS (System / Subsystem / Subsubsystem) allocation is the foundation of the CSDB structure: it defines the four-part numerical identifier used in all DMCs (Data Module Codes) for the programme. For ATA 30, the SNS is structured as `030-[SS]-[SSS]` where `030` is the ATA 30 system code, `SS` is the two-digit subsubject code (00 through 80), and `SSS` is a three-digit optional detail code (normally `000` at the subsubject level).
 
 The DMRL is the master list of all DMs required for the programme across all ATAs. The ATA 30 section of the DMRL specifies, for each subsubject, the set of DMs required (by information code — e.g., 040 for descriptive, 300 for procedural, 400 for fault isolation, 520 for maintenance practices, 720 for removal and installation), their authoring status, their S1000D applicability code, and the target delivery milestone (lifecycle phase). The BREX defines the business rules that constrain the XML structure, attribute values, and narrative conventions applicable to all ATA 30 DMs in the programme CSDB. BREX validation is a mandatory step before any DM is accepted into the CSDB.
 
@@ -166,11 +163,11 @@ The DMRL is the master list of all DMs required for the programme across all ATA
 
 ## §5 Architecture Description
 
-- **DMC structure:** The <PROGRAMME> DMC follows the S1000D Issue 5.0 pattern: `DMC-[MI]-[SNS]-[DI]-[LI]-[IC]-[ICN]` where MI is the Model Identification Code (`<MODEL>-<SYSTEMDIFF>`), SNS is the four-part numerical code derived from ATA 30 (`030-SS-000-A`), DI is the disassembly code (typically `00` for system-level), LI is the disassembly code variant (typically `A`), IC is the information code (040, 300, 400, etc.), and ICN is the information code variant (typically `A`). Example: `DMC-<MODEL>-<SYSTEMDIFF>-030-10-00-00A-040A-A` = Wing Ice Protection descriptive DM.
+- **DMC structure:** The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] DMC follows the S1000D Issue 5.0 pattern: `DMC-[MI]-[SNS]-[DI]-[LI]-[IC]-[ICN]` where MI is the Model Identification Code (`[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]`), SNS is the four-part numerical code derived from ATA 30 (`030-SS-000-A`), DI is the disassembly code (typically `00` for system-level), LI is the disassembly code variant (typically `A`), IC is the information code (040, 300, 400, etc.), and ICN is the information code variant (typically `A`). Example: `DMC-<PROGRAMME>-<VARIANT>-030-10-00-00A-040A-A` = Wing Ice Protection descriptive DM.
 
-- **BREX constraints for ATA 30:** The programme BREX (TBD, not yet released) will enforce: (a) single-leading-pipe table format in provisional authoring (transitioning to S1000D `<table>` XML in CSDB); (b) prohibition of generic placeholder text in any DM accepted to the CSDB (all TBD items must be resolved before CSDB acceptance); (c) use of programme-approved applicability attributes (effectivity by model variant `<PROGRAMME-SHORT>-`, `<PROGRAMME-SHORT>-`, etc.); (d) use of ICN format `ICN-<MODEL>-<SYSTEMDIFF>-030-[SS]-[NNN]-[format]`; (e) mandatory `<dmStatus>` workflow from `draft` → `inReview` → `reviewed` → `approved`; (f) `<applic>` coding for all variant-specific content (e.g., spinner Option A vs Option B).
+- **BREX constraints for ATA 30:** The programme BREX (TBD, not yet released) will enforce: (a) single-leading-pipe table format in provisional authoring (transitioning to S1000D `<table>` XML in CSDB); (b) prohibition of generic placeholder text in any DM accepted to the CSDB (all TBD items must be resolved before CSDB acceptance); (c) use of programme-approved applicability attributes (effectivity by model variant `[PROGRAMME-VARIANT]-100`, `[PROGRAMME-VARIANT]-200`, etc.); (d) use of ICN format `ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-[SS]-[NNN]-[format]`; (e) mandatory `<dmStatus>` workflow from `draft` → `inReview` → `reviewed` → `approved`; (f) `<applic>` coding for all variant-specific content (e.g., spinner Option A vs Option B).
 
-- **Applicability coding:** The <PROGRAMME-SHORT> applicability model uses aircraft model variant as the primary effectivity discriminator. Two model variants are currently planned: `<PROGRAMME-SHORT>-` (baseline, ~180 seats) and `<PROGRAMME-SHORT>-` (stretch, ~220 seats). ATA 30 content common to both variants uses `<applic>` `ALL`. Variant-specific content (e.g., differences in nacelle count, any wing geometry differences) uses `<applic>` `<PROGRAMME-SHORT>-` or `<applic>` `<PROGRAMME-SHORT>-`. At scaffold status, all ATA 30 content is authored as `ALL` pending variant design confirmation.
+- **Applicability coding:** The [PROGRAMME-VARIANT] applicability model uses aircraft model variant as the primary effectivity discriminator. Two model variants are currently planned: `[PROGRAMME-VARIANT]-100` (baseline, ~180 seats) and `[PROGRAMME-VARIANT]-200` (stretch, ~220 seats). ATA 30 content common to both variants uses `<applic>` `ALL`. Variant-specific content (e.g., differences in nacelle count, any wing geometry differences) uses `<applic>` `[PROGRAMME-VARIANT]-100` or `<applic>` `[PROGRAMME-VARIANT]-200`. At scaffold status, all ATA 30 content is authored as `ALL` pending variant design confirmation.
 
 - **Pub Module concept:** The ATA 30 DMs will be assembled into the following Pub Modules: (1) AMM Chapter 30 — Aircraft Maintenance Manual chapter, containing all maintenance, fault isolation, and servicing DMs for ATA 30; (2) FCOM Chapter 30 — Flight Crew Operating Manual chapter, containing system description and abnormal/emergency procedure DMs; (3) TSM Chapter 30 — Troubleshooting Manual chapter, containing fault isolation DMs derived from IPMC fault codes; (4) IPC Chapter 30 — Illustrated Parts Catalog chapter (ATA 04 / S1000D spare parts data — out of scope for this document). Pub Module assembly rules are defined in the programme BREX.
 
@@ -329,16 +326,16 @@ For each ATA 30 subsubject, the following information-code-based DM set is recom
 
 ## §14 BREX Rules for ATA 30 Content
 
-The following BREX rules apply specifically to ATA 30 content in the programme CSDB. Full BREX is defined in BREX-<MODEL>-<SYSTEMDIFF> (TBD).
+The following BREX rules apply specifically to ATA 30 content in the programme CSDB. Full BREX is defined in BREX-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] (TBD).
 
 | Rule ID | Rule Description | ATA 30 Context |
 |---|---|---|
-| BREX-030-001 | No bleed-air references permitted in ATA 30 DMs | The <PROGRAMME-SHORT> has no engine bleed air; any DM referencing bleed air will fail BREX validation |
+| BREX-030-001 | No bleed-air references permitted in ATA 30 DMs | The [PROGRAMME-VARIANT] has no engine bleed air; any DM referencing bleed air will fail BREX validation |
 | BREX-030-002 | All heater power levels shall be stated with units (W or kW) and bus source | Required for safety and certification traceability in descriptive DMs |
 | BREX-030-003 | Heater zone identifiers shall follow programme naming convention: WING-Ln-Zn (left), WING-Rn-Zn (right), EIP-NAC-n, PROBE-[function], WHC-[side], THC-[location] | Zone naming consistency across all ATA 30 DMs |
 | BREX-030-004 | All TBD values in DMs accepted to CSDB must be resolved; TBD tokens are prohibited in approved DMs | TBD allowed in scaffold documents; prohibited in CSDB-accepted DMs |
 | BREX-030-005 | Mermaid diagram syntax not permitted in S1000D DMs; all diagrams must be converted to ICN-referenced figures in accepted S1000D XML | Mermaid used in scaffold only; ICN-based SVG/raster required in CSDB |
-| BREX-030-006 | Applicability coding `<applic>` required for all variant-specific content; baseline `ALL` for content common to both <PROGRAMME-SHORT>- and <PROGRAMME-SHORT>- | Variant design not yet confirmed; all content currently coded `ALL` |
+| BREX-030-006 | Applicability coding `<applic>` required for all variant-specific content; baseline `ALL` for content common to both [PROGRAMME-VARIANT]-100 and [PROGRAMME-VARIANT]-200 | Variant design not yet confirmed; all content currently coded `ALL` |
 | BREX-030-007 | Table format: S1000D `<table>` XML in CSDB; single-leading-pipe markdown in scaffold phase only | Scaffold uses markdown tables; CSDB uses S1000D CALS table XML |
 
 ---
@@ -347,15 +344,15 @@ The following BREX rules apply specifically to ATA 30 content in the programme C
 
 | ICN Pattern | Format | Content | Assigned By |
 |---|---|---|---|
-| ICN-<MODEL>-<SYSTEMDIFF>-030-00-001-[format] | SVG preferred / raster PNG fallback | ATA 30 system architecture overview / zone map | Tech Pubs lead |
-| ICN-<MODEL>-<SYSTEMDIFF>-030-10-[NNN]-[format] | SVG | Wing ice protection zone layout, heater mat geometry | Q-STRUCTURES / Design |
-| ICN-<MODEL>-<SYSTEMDIFF>-030-20-[NNN]-[format] | SVG | Engine inlet lip heater geometry, spinner configuration | Q-MECHANICS |
-| ICN-<MODEL>-<SYSTEMDIFF>-030-30-[NNN]-[format] | SVG | Probe locations on aircraft skin; PHC wiring schematic | Q-MECHANICS |
-| ICN-<MODEL>-<SYSTEMDIFF>-030-40-[NNN]-[format] | SVG | Windshield heater panel cross-section (ITO layers) | Q-STRUCTURES |
-| ICN-<MODEL>-<SYSTEMDIFF>-030-50-[NNN]-[format] | SVG | Drain mast locations; fuel vent heater installation | Q-MECHANICS |
-| ICN-<MODEL>-<SYSTEMDIFF>-030-60-[NNN]-[format] | SVG | Wiper system installation, arm travel arc | Q-MECHANICS |
-| ICN-<MODEL>-<SYSTEMDIFF>-030-70-[NNN]-[format] | SVG | IPMC architecture block diagram; ice detector locations | Q-MECHANICS |
-| ICN-<MODEL>-<SYSTEMDIFF>-030-80-[NNN]-[format] | SVG | BITE aggregation architecture; ECAM page schematic | Q-MECHANICS |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-00-001-[format] | SVG preferred / raster PNG fallback | ATA 30 system architecture overview / zone map | Tech Pubs lead |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-10-[NNN]-[format] | SVG | Wing ice protection zone layout, heater mat geometry | Q-STRUCTURES / Design |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-20-[NNN]-[format] | SVG | Engine inlet lip heater geometry, spinner configuration | Q-MECHANICS |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-30-[NNN]-[format] | SVG | Probe locations on aircraft skin; PHC wiring schematic | Q-MECHANICS |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-40-[NNN]-[format] | SVG | Windshield heater panel cross-section (ITO layers) | Q-STRUCTURES |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-50-[NNN]-[format] | SVG | Drain mast locations; fuel vent heater installation | Q-MECHANICS |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-60-[NNN]-[format] | SVG | Wiper system installation, arm travel arc | Q-MECHANICS |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-70-[NNN]-[format] | SVG | IPMC architecture block diagram; ice detector locations | Q-MECHANICS |
+| ICN-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-030-80-[NNN]-[format] | SVG | BITE aggregation architecture; ECAM page schematic | Q-MECHANICS |
 
 ICN assignments are TBD at scaffold phase; all ICN numbers above are placeholder patterns. The ICN custodian will assign production ICN numbers at LC05 when design drawings are released.
 
@@ -365,8 +362,8 @@ ICN assignments are TBD at scaffold phase; all ICN numbers above are placeholder
 
 | Code | Model Variant | Description | ATA 30 Applicability |
 |---|---|---|---|
-| <PROGRAMME-SHORT>- | Baseline (180-seat) | Nominal wing span, standard nacelle count | Baseline WIPS zone count; all systems as described in scaffold documents |
-| <PROGRAMME-SHORT>- | Stretch (220-seat) | Extended fuselage, wing and empennage TBD | Any additional nacelle count or wing zone differences to be coded `<PROGRAMME-SHORT>-` |
+| [PROGRAMME-VARIANT]-100 | Baseline (180-seat) | Nominal wing span, standard nacelle count | Baseline WIPS zone count; all systems as described in scaffold documents |
+| [PROGRAMME-VARIANT]-200 | Stretch (220-seat) | Extended fuselage, wing and empennage TBD | Any additional nacelle count or wing zone differences to be coded `[PROGRAMME-VARIANT]-200` |
 | ALL | Both variants | Content applicable to all variants | All scaffold content currently coded `ALL` pending variant confirmation |
 
 ---
@@ -375,7 +372,7 @@ ICN assignments are TBD at scaffold phase; all ICN numbers above are placeholder
 
 | V&V Method | ID | Description | Applicable Functions | Status |
 |---|---|---|---|---|
-| BREX Validation Run | VV-090-001 | Each DM submitted to CSDB is validated against BREX-<MODEL>-<SYSTEMDIFF>; BREX validation report archived as evidence | F-003 | Not started |
+| BREX Validation Run | VV-090-001 | Each DM submitted to CSDB is validated against BREX-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]; BREX validation report archived as evidence | F-003 | Not started |
 | DMRL Review | VV-090-002 | Programme-level DMRL review at LC05 gate: all required DMs for ATA 30 present, authoring status updated, delivery milestones confirmed | F-002 | Not started |
 | SNS Consistency Check | VV-090-003 | Cross-reference between ATA iSpec 2200 chapter 30 breakdown and programme SNS allocation; confirm no missing or duplicated SNS codes | F-001 | Not started |
 | ICN Completeness Review | VV-090-004 | At DM issue for each subsubject: all referenced ICNs are assigned production numbers, figures are delivered, and ICN metadata in CSDB is complete | F-004 | Not started |
@@ -404,11 +401,11 @@ ICN assignments are TBD at scaffold phase; all ICN numbers above are placeholder
 
 | Ref ID | Document | Version | Relevance |
 |---|---|---|---|
-| CIT-001 | S1000D — International Specification for Technical Publications | Issue 5.0 | Foundation specification for DM structure, DMC format, BREX, ICN, and CSDB architecture for all <PROGRAMME> technical publications |
+| CIT-001 | S1000D — International Specification for Technical Publications | Issue 5.0 | Foundation specification for DM structure, DMC format, BREX, ICN, and CSDB architecture for all [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] technical publications |
 | CIT-002 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | Current issue | ATA chapter / subchapter breakdown providing the SNS code source for all ATA 30 DMRL entries |
-| CIT-003 | BREX-<MODEL>-<SYSTEMDIFF> | TBD — programme document | Programme-specific Business Rules EXchange document defining CSDB authoring and validation rules for <PROGRAMME> |
+| CIT-003 | BREX-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] | TBD — programme document | Programme-specific Business Rules EXchange document defining CSDB authoring and validation rules for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] |
 | CIT-004 | ASD SX001D — S1000D North American Civil Aviation Business Rules | Current issue | Supplementary business rules for civil aviation S1000D projects; informs BREX development |
-| CIT-005 | <PROGRAMME> DMRL — ATA 030 Section | TBD — programme document | The authoritative programme DMRL for ATA 30; defines required DMs, delivery milestones, and authoring assignments |
+| CIT-005 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] DMRL — ATA 030 Section | TBD — programme document | The authoritative programme DMRL for ATA 30; defines required DMs, delivery milestones, and authoring assignments |
 
 ---
 
@@ -430,8 +427,8 @@ ICN assignments are TBD at scaffold phase; all ICN numbers above are placeholder
 | OI ID | Issue | Owner | Target Resolution | Status |
 |---|---|---|---|---|
 | OI-001 | Programme CSDB tool not yet selected; DMRL cannot be loaded or validated until tool selection at LC03 | ORB-PMO | LC03 Architecture freeze | Open |
-| OI-002 | BREX-<MODEL>-<SYSTEMDIFF> not yet authored; BREX rules listed in this document are preliminary scaffold-level guidance only; formal BREX must be authored and validated against S1000D Issue 5.0 schema before CSDB acceptance | Tech Pubs lead | LC05 | Open |
-| OI-003 | <PROGRAMME-SHORT>- vs <PROGRAMME-SHORT>- variant differences not yet defined; applicability coding for variant-specific ATA 30 content cannot be finalised; all content currently coded `ALL` | Q-MECHANICS / Programme | LC05 | Open |
+| OI-002 | BREX-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] not yet authored; BREX rules listed in this document are preliminary scaffold-level guidance only; formal BREX must be authored and validated against S1000D Issue 5.0 schema before CSDB acceptance | Tech Pubs lead | LC05 | Open |
+| OI-003 | [PROGRAMME-VARIANT]-100 vs [PROGRAMME-VARIANT]-200 variant differences not yet defined; applicability coding for variant-specific ATA 30 content cannot be finalised; all content currently coded `ALL` | Q-MECHANICS / Programme | LC05 | Open |
 | OI-004 | ICN assignment for all ATA 30 figures not yet initiated; ICN numbers listed in this document are placeholder patterns only; production ICN assignment requires design drawing release | ICN custodian / Q-MECHANICS | LC05 | Open |
 
 ---

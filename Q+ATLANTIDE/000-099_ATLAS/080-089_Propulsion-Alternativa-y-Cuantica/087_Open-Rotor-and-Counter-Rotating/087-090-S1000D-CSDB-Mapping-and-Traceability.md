@@ -9,7 +9,6 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GREENTECH, Q-HPC, Q-INDUSTRY, Q-STRUCTURES]
 status: active
-scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-13"
@@ -17,12 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-087-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATLAS-087 (Open Rotor and Counter-Rotating) · S1000D CSDB Mapping and Traceability
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D CSDB Mapping and Traceability
@@ -44,30 +46,27 @@ s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-087-090"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-090 establishes the S1000D Data Module Requirements List (DMRL), the BREX-087-v1 rule set, the ICN (Illustration Control Number) registry, the CSDB publication milestones, and the traceability matrix mapping all ten ORCR subsubject documents to their corresponding S1000D Data Modules (DMs). It is the authoritative reference for the ORCR technical publication deliverables and governs the structure of the programme CSDB entries under SNS 087.
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D CSDB Mapping and Traceability`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | (defined in programme implementation branch) |
-| ATA Reference | ATLAS-087 (Open Rotor and Counter-Rotating) — 087-090 S1000D/CSDB Mapping and Traceability |
-| S1000D Version | Issue 5.0 |
-| BREX | BREX-087-v1 |
-| Total DMs in DMRL | 30 |
-| DMC Pattern | `DMC-<MODEL>-<SYSTEMDIFF>-087-{NNN}-00A-{TYPE}-EN-US` |
-| Certification Basis | S1000D Issue 5.0; BREX-087-v1; EASA CS-25 Amdt 27+ (research ref.) |
-| S1000D SNS | 087-090-00 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `087` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description
 
-The ORCR technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the programme CSDB under the SNS 087 schema. The Data Module Code (DMC) pattern is `DMC-<MODEL>-<SYSTEMDIFF>-087-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
+The ORCR technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB under the SNS 087 schema. The Data Module Code (DMC) pattern is `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
 
-The governing BREX document is `BREX-087-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 087:
+The governing BREX document is `[PROGRAMME-AIRCRAFT]-BREX-087-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 087:
 
 **BREX-087-ROT-01 — Rotating Equipment Lock-Out Rule:**
 All maintenance DMs of type 100 (task), 300 (inspection), and 520 (removal/replacement) that require physical access within the blade-tip sweep zone must include as the first mandatory step the ORCR LOTO procedure ORCR-LOTO-087:
@@ -89,36 +88,36 @@ All DMs for tasks that require opening of nacelle cowls or removal of pylon fair
 
 | DM Number | DMC | Type | Title | ATLAS Source |
 |---|---|---|---|---|
-| DM-087-001 | DMC-<MODEL>-<SYSTEMDIFF>-087-000-040A | Descriptive | ORCR System General Overview | 087-000 |
-| DM-087-002 | DMC-<MODEL>-<SYSTEMDIFF>-087-000-100A | Task | ORSCU System Activation and Ground Check Procedure | 087-000 |
-| DM-087-003 | DMC-<MODEL>-<SYSTEMDIFF>-087-000-300A | Inspection | ORSCU System Periodic BITE Inspection | 087-000 |
-| DM-087-004 | DMC-<MODEL>-<SYSTEMDIFF>-087-010-040A | Descriptive | Open Rotor Baseline and Scope | 087-010 |
-| DM-087-005 | DMC-<MODEL>-<SYSTEMDIFF>-087-020-040A | Descriptive | Counter-Rotating Propulsor Architecture | 087-020 |
-| DM-087-006 | DMC-<MODEL>-<SYSTEMDIFF>-087-020-300A | Inspection | DPGB Gear Train Functional Check | 087-020 |
-| DM-087-007 | DMC-<MODEL>-<SYSTEMDIFF>-087-030-040A | Descriptive | Rotor Blade Design and Aeroacoustics | 087-030 |
-| DM-087-008 | DMC-<MODEL>-<SYSTEMDIFF>-087-030-300A | Inspection | FR Blade Visual and Erosion Inspection | 087-030 |
-| DM-087-009 | DMC-<MODEL>-<SYSTEMDIFF>-087-030-300B | Inspection | AR Blade NDI (Tap Test and Ultrasound) Inspection | 087-030 |
-| DM-087-010 | DMC-<MODEL>-<SYSTEMDIFF>-087-030-520A | Task | FR Blade LRU Removal and Replacement | 087-030 |
-| DM-087-011 | DMC-<MODEL>-<SYSTEMDIFF>-087-030-520B | Task | AR Blade LRU Removal and Replacement | 087-030 |
-| DM-087-012 | DMC-<MODEL>-<SYSTEMDIFF>-087-040-040A | Descriptive | Gearbox Drive and Torque-Transfer Interfaces | 087-040 |
-| DM-087-013 | DMC-<MODEL>-<SYSTEMDIFF>-087-040-100A | Task | DPGB Oil Level Check and Top-Up Procedure | 087-040 |
-| DM-087-014 | DMC-<MODEL>-<SYSTEMDIFF>-087-040-100B | Task | DPGB Oil Filter Replacement Procedure | 087-040 |
-| DM-087-015 | DMC-<MODEL>-<SYSTEMDIFF>-087-040-300A | Inspection | DPGB Chip Detector Inspection | 087-040 |
-| DM-087-016 | DMC-<MODEL>-<SYSTEMDIFF>-087-040-520A | Task | DPGB Assembly Removal and Replacement | 087-040 |
-| DM-087-017 | DMC-<MODEL>-<SYSTEMDIFF>-087-050-040A | Descriptive | Propulsor Airframe Integration and Clearance Zones | 087-050 |
-| DM-087-018 | DMC-<MODEL>-<SYSTEMDIFF>-087-050-300A | Inspection | BOCS Structural Inspection (Visual + Thermography) | 087-050 |
-| DM-087-019 | DMC-<MODEL>-<SYSTEMDIFF>-087-060-040A | Descriptive | Noise, Vibration and Cabin Comfort Constraints | 087-060 |
-| DM-087-020 | DMC-<MODEL>-<SYSTEMDIFF>-087-060-100A | Task | ANC System Ground Test and Verification Procedure | 087-060 |
-| DM-087-021 | DMC-<MODEL>-<SYSTEMDIFF>-087-060-300A | Inspection | Tuned Vibration Absorber (TVA) Inspection and Retuning | 087-060 |
-| DM-087-022 | DMC-<MODEL>-<SYSTEMDIFF>-087-070-040A | Descriptive | Safety, Containment and Blade-Off Risk Management | 087-070 |
-| DM-087-023 | DMC-<MODEL>-<SYSTEMDIFF>-087-070-100A | Task | ORCR LOTO Procedure (ORCR-LOTO-087) | 087-070 |
-| DM-087-024 | DMC-<MODEL>-<SYSTEMDIFF>-087-070-300A | Inspection | BOCS Post-Event Inspection (After Bird Strike or Hard Landing) | 087-070 |
-| DM-087-025 | DMC-<MODEL>-<SYSTEMDIFF>-087-070-520A | Task | BOCS Panel Removal and Replacement | 087-070 |
-| DM-087-026 | DMC-<MODEL>-<SYSTEMDIFF>-087-080-040A | Descriptive | ORCR Monitoring, Diagnostics and Control Interfaces | 087-080 |
-| DM-087-027 | DMC-<MODEL>-<SYSTEMDIFF>-087-080-100A | Task | ORSCU Software Load Procedure | 087-080 |
-| DM-087-028 | DMC-<MODEL>-<SYSTEMDIFF>-087-080-300A | Inspection | ORSCU BITE Full Diagnostic Run | 087-080 |
-| DM-087-029 | DMC-<MODEL>-<SYSTEMDIFF>-087-080-520A | Task | ORSCU LRU Removal and Replacement | 087-080 |
-| DM-087-030 | DMC-<MODEL>-<SYSTEMDIFF>-087-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 087-090 |
+| DM-087-001 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-000-040A | Descriptive | ORCR System General Overview | 087-000 |
+| DM-087-002 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-000-100A | Task | ORSCU System Activation and Ground Check Procedure | 087-000 |
+| DM-087-003 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-000-300A | Inspection | ORSCU System Periodic BITE Inspection | 087-000 |
+| DM-087-004 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-010-040A | Descriptive | Open Rotor Baseline and Scope | 087-010 |
+| DM-087-005 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-020-040A | Descriptive | Counter-Rotating Propulsor Architecture | 087-020 |
+| DM-087-006 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-020-300A | Inspection | DPGB Gear Train Functional Check | 087-020 |
+| DM-087-007 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-030-040A | Descriptive | Rotor Blade Design and Aeroacoustics | 087-030 |
+| DM-087-008 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-030-300A | Inspection | FR Blade Visual and Erosion Inspection | 087-030 |
+| DM-087-009 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-030-300B | Inspection | AR Blade NDI (Tap Test and Ultrasound) Inspection | 087-030 |
+| DM-087-010 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-030-520A | Task | FR Blade LRU Removal and Replacement | 087-030 |
+| DM-087-011 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-030-520B | Task | AR Blade LRU Removal and Replacement | 087-030 |
+| DM-087-012 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-040-040A | Descriptive | Gearbox Drive and Torque-Transfer Interfaces | 087-040 |
+| DM-087-013 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-040-100A | Task | DPGB Oil Level Check and Top-Up Procedure | 087-040 |
+| DM-087-014 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-040-100B | Task | DPGB Oil Filter Replacement Procedure | 087-040 |
+| DM-087-015 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-040-300A | Inspection | DPGB Chip Detector Inspection | 087-040 |
+| DM-087-016 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-040-520A | Task | DPGB Assembly Removal and Replacement | 087-040 |
+| DM-087-017 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-050-040A | Descriptive | Propulsor Airframe Integration and Clearance Zones | 087-050 |
+| DM-087-018 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-050-300A | Inspection | BOCS Structural Inspection (Visual + Thermography) | 087-050 |
+| DM-087-019 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-060-040A | Descriptive | Noise, Vibration and Cabin Comfort Constraints | 087-060 |
+| DM-087-020 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-060-100A | Task | ANC System Ground Test and Verification Procedure | 087-060 |
+| DM-087-021 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-060-300A | Inspection | Tuned Vibration Absorber (TVA) Inspection and Retuning | 087-060 |
+| DM-087-022 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-070-040A | Descriptive | Safety, Containment and Blade-Off Risk Management | 087-070 |
+| DM-087-023 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-070-100A | Task | ORCR LOTO Procedure (ORCR-LOTO-087) | 087-070 |
+| DM-087-024 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-070-300A | Inspection | BOCS Post-Event Inspection (After Bird Strike or Hard Landing) | 087-070 |
+| DM-087-025 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-070-520A | Task | BOCS Panel Removal and Replacement | 087-070 |
+| DM-087-026 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-080-040A | Descriptive | ORCR Monitoring, Diagnostics and Control Interfaces | 087-080 |
+| DM-087-027 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-080-100A | Task | ORSCU Software Load Procedure | 087-080 |
+| DM-087-028 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-080-300A | Inspection | ORSCU BITE Full Diagnostic Run | 087-080 |
+| DM-087-029 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-080-520A | Task | ORSCU LRU Removal and Replacement | 087-080 |
+| DM-087-030 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-087-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 087-090 |
 
 ---
 
@@ -136,15 +135,15 @@ All DMs for tasks that require opening of nacelle cowls or removal of pylon fair
 
 | ICN | Content Type | Used In DM | Description |
 |---|---|---|---|
-| ICN-087-0001 | Diagram (SVG) | DM-087-001 | ORCR system top-level block diagram |
-| ICN-087-0002 | Diagram (SVG) | DM-087-005 | Counter-rotating propulsor topology — FR/AR/DPGB |
-| ICN-087-0003 | Diagram (SVG) | DM-087-007 | FR and AR blade planform geometry (scimitar) |
-| ICN-087-0004 | Diagram (SVG) | DM-087-012 | DPGB oil system schematic |
-| ICN-087-0005 | Diagram (SVG) | DM-087-017 | Pylon station clearance zone drawing |
-| ICN-087-0006 | Diagram (SVG) | DM-087-022 | BOCS arc coverage and blade-off trajectory zones |
-| ICN-087-0007 | Diagram (SVG) | DM-087-026 | ORSCU AFDX network topology |
-| ICN-087-0008 | Warning sign (PNG) | DM-087-002, 010, 011, 023, 029 | Rotating machinery hazard label (ISO 11684) |
-| ICN-087-0009 | Warning sign (PNG) | DM-087-013, 014, 015, 016 | DPGB hot surfaces / oil hazard label |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0001 | Diagram (SVG) | DM-087-001 | ORCR system top-level block diagram |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0002 | Diagram (SVG) | DM-087-005 | Counter-rotating propulsor topology — FR/AR/DPGB |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0003 | Diagram (SVG) | DM-087-007 | FR and AR blade planform geometry (scimitar) |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0004 | Diagram (SVG) | DM-087-012 | DPGB oil system schematic |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0005 | Diagram (SVG) | DM-087-017 | Pylon station clearance zone drawing |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0006 | Diagram (SVG) | DM-087-022 | BOCS arc coverage and blade-off trajectory zones |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0007 | Diagram (SVG) | DM-087-026 | ORSCU AFDX network topology |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0008 | Warning sign (PNG) | DM-087-002, 010, 011, 023, 029 | Rotating machinery hazard label (ISO 11684) |
+| ICN-[PROGRAMME-AIRCRAFT]-087-0009 | Warning sign (PNG) | DM-087-013, 014, 015, 016 | DPGB hot surfaces / oil hazard label |
 
 ---
 
@@ -184,5 +183,5 @@ All DMs for tasks that require opening of nacelle cowls or removal of pylon fair
 |---|---|---|---|
 | OI-087-090-001 | BREX-087-v1 formal review and sign-off by Q-DATAGOV and airworthiness team | Q-DATAGOV | PDR |
 | OI-087-090-002 | ICN-087-0006 (blade-off trajectory zones) — artwork pending 087-070 CDR freeze | Q-STRUCTURES | CDR |
-| OI-087-090-003 | CSDB SNS 087 namespace reservation in <PROGRAMME> CSDB instance | Q-DATAGOV | PDR |
+| OI-087-090-003 | CSDB SNS 087 namespace reservation in [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB instance | Q-DATAGOV | PDR |
 | OI-087-090-004 | DM-087-016 (DPGB removal) — off-wing procedure (120 h depot) — confirm MEL DDPB dispatch condition | Q-DATAGOV | CDR |

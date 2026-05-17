@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — Structural Architecture and Zoning Overview
 
 ## 1. Purpose
 
-Provides the programme-level overview of the AMPEL360 eWTW **structural architecture and zoning framework**: how structural zones are defined, how they relate to the aircraft coordinate system, and how zone-based documentation supports maintenance, inspection, and S1000D data module production.
+Provides the programme-level overview of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] **structural architecture and zoning framework**: how structural zones are defined, how they relate to the aircraft coordinate system, and how zone-based documentation supports maintenance, inspection, and S1000D data module production.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW structural architecture follows a three-tier hierarchy (primary/secondary/tertiary) with an overlay zone-code system that:
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural architecture follows a three-tier hierarchy (primary/secondary/tertiary) with an overlay zone-code system that:
 - Enables unambiguous zone-referenced inspection tasks in S1000D data modules.
 - Supports damage-tolerance zone categorisation per CS-25.571.
 - Provides the address space for SHM sensor placement and FBG/PWAS node referencing.

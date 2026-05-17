@@ -25,6 +25,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — S1000D CSDB Mapping and Traceability
@@ -37,10 +39,10 @@ Defines the **S1000D Data Module Code (DMC) schema** and CSDB traceability mappi
 
 ### 2.1 DMC Schema for Estructuras
 
-S1000D DMCs for AMPEL360 structural data modules follow the schema:
+S1000D DMCs for [PROGRAMME-AIRCRAFT] structural data modules follow the schema:
 
 ```
-DMC-AMPEL360-{modelIdentCode}-{systemCode}-{subSystemCode}{subSubSystemCode}-{assyCode}-{disassyCode}{disassyCodeVariant}-{infoCode}{infoCodeVariant}-{itemLocationCode}
+DMC-[PROGRAMME-AIRCRAFT]-{modelIdentCode}-{systemCode}-{subSystemCode}{subSubSystemCode}-{assyCode}-{disassyCode}{disassyCodeVariant}-{infoCode}{infoCodeVariant}-{itemLocationCode}
 ```
 
 For `050-059` structural chapters:
@@ -59,7 +61,7 @@ For `050-059` structural chapters:
 
 | Applicability document | Structural use |
 |---|---|
-| **ACT** (Applicability Cross-reference Table) | Maps structural DMs to aircraft serial number families (eWTW Gen 1 / Gen 2 / freighter) |
+| **ACT** (Applicability Cross-reference Table) | Maps structural DMs to aircraft serial number families ([PROGRAMME-VARIANT] Gen 1 / Gen 2 / freighter) |
 | **PCT** (Product Cross-reference Table) | Maps structural DMs to wing type, fuselage variant, and door arrangement |
 | **CCT** (Conditions Cross-reference Table) | Maps structural repair DMs to damage size/type conditions |
 
@@ -80,7 +82,7 @@ graph LR
 
 | Identifier | Value |
 |---|---|
-| Model ident code | `AMPEL360` |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` |
 | CAGE code | TBD |
 | SNS system code family | `050`–`059` |
 | CSDB instance | Q+ATLANTIDE CSDB v1.0 |

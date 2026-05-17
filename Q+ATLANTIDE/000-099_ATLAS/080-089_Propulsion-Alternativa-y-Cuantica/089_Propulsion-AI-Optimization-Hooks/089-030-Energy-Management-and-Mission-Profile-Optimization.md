@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0089-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-089-030-ENERGY-MANAGEMENT-AND-MISSION-PROFILE-OPTIMIZATION
      ATLAS-089 (Propulsion AI Optimization Hooks) · Energy Management and Mission Profile Optimization
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Energy Management and Mission Profile Optimization
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-030"
 
 ## §1 Purpose
 
-ATLAS subsubject 089-030 defines the Energy Management Optimization Module (EMOM) and the Quantum-Assisted Optimization Algorithm (QAOA) kernel for macro-level mission-profile energy planning. It covers the Model Predictive Control (MPC) design, battery State-of-Charge (SoC) trajectory planning, fuel-cell power dispatch, PMSG regenerative capacity integration, and the QAOA 16-qubit optimization circuit used for pre-flight mission energy planning.
+This document defines the agnostic ATLAS standard-level architecture context for `Energy Management and Mission Profile Optimization`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 EMOM — MPC Design
 
 The EMOM implements a **receding-horizon MPC** with the following parameters:
@@ -63,7 +66,7 @@ The EMOM implements a **receding-horizon MPC** with the following parameters:
 
 ### 2.1 State Equations
 
-The MPC state model employs a linearized, flight-phase-scheduled model of the AMPEL360E eWTW hybrid energy system:
+The MPC state model employs a linearized, flight-phase-scheduled model of the programme-defined aircraft type hybrid energy system:
 
 | State | Symbol | Dynamics |
 |---|---|---|

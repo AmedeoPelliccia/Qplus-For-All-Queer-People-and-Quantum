@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0084-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-084-000-HYBRID-ARCHITECTURES-BEYOND-GEN-2-GENERAL
      ATLAS-084 (Hybrid Architectures — Beyond Gen-2) · General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Hybrid Architectures Beyond Gen-2 — General
@@ -46,38 +48,33 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 084-000 is the **apex reference** for the Beyond-Gen-2 Hybrid Architecture (BGHA) subsection of the AMPEL360E eWTW. It establishes the overall system description, functional decomposition, interface catalogue, operating mode inventory, and certification constraints applicable across the full BGHA scope. All subordinate subsubject documents (084-010 through 084-090) are governed by, and must be consistent with, this general baseline document.
+This document defines the agnostic ATLAS standard-level architecture context for `Hybrid Architectures Beyond Gen-2 — General`.
 
-The BGHA represents a step-change beyond the Gen-2 hybrid-electric systems described in ATLAS 070-079. By integrating a solid-state battery pack (SSBP), a proton-exchange membrane fuel cell stack (FCSS), a variable-cycle gas turbine (VCGT), and a supercapacitor energy buffer (SCEB) onto a common HVDC 800 V backbone managed by the Beyond-Gen-2 Supervisory Control Unit (BGSCU), the BGHA achieves a total installed propulsion power of approximately 4 400 kW with quantum-optimised energy dispatch at a 20 ms control cycle.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-084 (Hybrid Architectures — Beyond Gen-2) |
-| Certification Basis | DO-178C DAL B (BGSCU software); DO-254 DAL B (BGSCU hardware); DO-160G (environmental); EASA CS-25 Amendment 27+ |
-| S1000D SNS | 084-000-00 |
-| DMRL Reference | BREX-084-v1; 32 Data Modules |
-| Effectivity | All AMPEL360E eWTW aircraft from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `084` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description
 
-The AMPEL360E eWTW **Beyond-Gen-2 Hybrid Architecture (BGHA)** integrates four energy sources onto a common HVDC 800 V bus:
+The programme-defined aircraft type **Beyond-Gen-2 Hybrid Architecture (BGHA)** integrates four energy sources onto a common HVDC <NOMINAL-VOLTAGE> bus:
 
-1. **Solid-State Battery Pack (SSBP):** Two packs of 400 kWh each (total 800 kWh) using NMC/SSE (Nickel-Manganese-Cobalt / Solid-State Electrolyte) chemistry, interfaced to the 800 V bus through bidirectional DC-DC converters (BDCCs). The SSBP provides high-energy sustained discharge for climb and cruise phases and accepts regenerative energy during descent.
+1. **Solid-State Battery Pack (SSBP):** Two packs of 400 kWh each (total 800 kWh) using NMC/SSE (Nickel-Manganese-Cobalt / Solid-State Electrolyte) chemistry, interfaced to the <NOMINAL-VOLTAGE> bus through bidirectional DC-DC converters (BDCCs). The SSBP provides high-energy sustained discharge for climb and cruise phases and accepts regenerative energy during descent.
 
 2. **PEMFC Stack (FCSS):** Eight 50 kW proton-exchange membrane fuel cell stacks (total 400 kW) drawing liquid hydrogen (LH₂) from the ATLAS-076 cryogenic storage via the ATLAS-077 hydrogen distribution and conditioning system. The FCSS is the primary zero-emission power source for cruise operations.
 
-3. **Variable-Cycle Gas Turbine (VCGT):** Two SAF/LH₂ bi-fuel turbines with shaft off-takes of 1 200 kW each (total 2 400 kW electrical), feeding the HVDC 800 V bus via auto-transformer rectifier units (ATRUs). The VCGT provides reserve power, rapid response during transient demand, and sustains operations when hydrogen supply is constrained.
+3. **Variable-Cycle Gas Turbine (VCGT):** Two SAF/LH₂ bi-fuel turbines with shaft off-takes of 1 200 kW each (total 2 400 kW electrical), feeding the HVDC <NOMINAL-VOLTAGE> bus via auto-transformer rectifier units (ATRUs). The VCGT provides reserve power, rapid response during transient demand, and sustains operations when hydrogen supply is constrained.
 
 4. **Supercapacitor Energy Buffer (SCEB):** 80 kWh / 2 MW peak pulse capability for transient power injection (STOL boost, emergency go-around, regenerative braking spikes). The SCEB responds within 500 ms.
 
-The **BGSCU**, qualified to DAL B (DO-178C software / DO-254 hardware), operates with a dual-lane ARINC 653 partitioned architecture on separate processing modules. A 16-qubit QAOA quantum processing unit (QPU) executes the Model Predictive Control (MPC) scheduler at a 20 ms cycle to minimise fuel burn and maximise energy recovery. The BGSCU drives four 500 kW permanent-magnet synchronous motor (PMSM) fan sets (coordinated with ATLAS-085) through HVDC 800 V power electronics.
+The **BGSCU**, qualified to DAL B (DO-178C software / DO-254 hardware), operates with a dual-lane ARINC 653 partitioned architecture on separate processing modules. A 16-qubit QAOA quantum processing unit (QPU) executes the Model Predictive Control (MPC) scheduler at a 20 ms cycle to minimise fuel burn and maximise energy recovery. The BGSCU drives four 500 kW permanent-magnet synchronous motor (PMSM) fan sets (coordinated with ATLAS-085) through HVDC <NOMINAL-VOLTAGE> power electronics.
 
 ---
 
@@ -87,12 +84,12 @@ The **BGSCU**, qualified to DAL B (DO-178C software / DO-254 hardware), operates
 |---|---|---|---|
 | F-001 | BGHA General / Overview | System scope, architecture baseline, DMRL, governing standards | Q-GREENTECH |
 | F-002 | Beyond-Gen-2 Baseline and Scope | Gen-1/Gen-2/BGHA comparison, TRL status, mission trade space | Q-GREENTECH |
-| F-003 | Advanced Hybrid Propulsion Topology | Series-parallel tri-brid topology, HVDC 800 V bus, BDCC architecture | Q-HORIZON |
+| F-003 | Advanced Hybrid Propulsion Topology | Series-parallel tri-brid topology, HVDC <NOMINAL-VOLTAGE> bus, BDCC architecture | Q-HORIZON |
 | F-004 | Multi-Source Energy Architecture | SSBP, FCSS, VCGT, SCEB descriptions, dispatch priority, SoC/SoH | Q-HPC |
 | F-005 | Source Coupling Interfaces | FCSS/SSBP/VCGT/SCEB power conditioning and cross-protection | Q-INDUSTRY |
 | F-006 | Control and Mode Management | BGSCU dual-lane DAL B, QAOA MPC 16-qubit, 8-mode state machine | Q-GREENTECH |
 | F-007 | Degraded Modes and Redundancy | 6 degraded modes, FMEA top-10, MEL cross-reference | Q-GREENTECH |
-| F-008 | Airframe Integration, Thermal, Safety | BGHA-TML cooling loop, HVDC 800V safety zones, H₂ ATEX | Q-STRUCTURES |
+| F-008 | Airframe Integration, Thermal, Safety | BGHA-TML cooling loop, HVDC <NOMINAL-VOLTAGE> safety zones, H₂ ATEX | Q-STRUCTURES |
 
 ---
 
@@ -100,11 +97,11 @@ The **BGSCU**, qualified to DAL B (DO-178C software / DO-254 hardware), operates
 
 ```mermaid
 flowchart LR
-    SSBP[SSBP\n2×400 kWh NMC/SSE\nHVDC 800 V BDCC] -->|HVDC 800 V| BUS
-    FCSS[FCSS\n8×50 kW PEMFC\nLH₂ from ATLAS-077] -->|HVDC 800 V| BUS
-    VCGT[VCGT\n2×1200 kW SAF/LH₂\nATRU] -->|HVDC 800 V| BUS
-    SCEB[SCEB\n80 kWh / 2 MW pulse\nBi-dir converter] -->|HVDC 800 V| BUS
-    BUS[HVDC 800 V\nPrimary Bus] --> BGSCU
+    SSBP[SSBP\n2×400 kWh NMC/SSE\nHVDC <NOMINAL-VOLTAGE> BDCC] -->|HVDC <NOMINAL-VOLTAGE>| BUS
+    FCSS[FCSS\n8×50 kW PEMFC\nLH₂ from ATLAS-077] -->|HVDC <NOMINAL-VOLTAGE>| BUS
+    VCGT[VCGT\n2×1200 kW SAF/LH₂\nATRU] -->|HVDC <NOMINAL-VOLTAGE>| BUS
+    SCEB[SCEB\n80 kWh / 2 MW pulse\nBi-dir converter] -->|HVDC <NOMINAL-VOLTAGE>| BUS
+    BUS[HVDC <NOMINAL-VOLTAGE>\nPrimary Bus] --> BGSCU
     BGSCU[BGSCU\nDual-Lane DAL B\n16-qubit QAOA QPU\n20 ms MPC] --> PMSM[4 × 500 kW PMSM\nFan Sets — ATLAS-085]
     BGSCU -->|AFDX VL-084-01| FADEC[FADEC\nATA 73]
     BGSCU -->|AFDX VL-084-02| CMS[CMS\nATA 45]
@@ -139,7 +136,7 @@ flowchart TB
 | VCGT | VCGT-PN-TBD | 2 | Under-wing pylon | Per VCGT CMM; A-check ground run | SAF/LH₂ bi-fuel; 1 200 kW shaft off-take each |
 | SCEB Module | SCEB-PN-TBD | 1 | Mid-fuselage rack | C-check capacitance check; 10-year ESVT | 80 kWh / 2 MW; bi-directional converter integral |
 | BGHA-TML Pump | TML-PUMP-TBD | 2 | Aft bay (redundant pair) | A-check flow check; 4 000 h replace | EGW coolant loop; 15 L/min each |
-| ATRU (VCGT-to-HVDC 800 V) | ATRU-PN-TBD | 2 | VCGT nacelle (1 per engine) | C-check insulation check | Variable-frequency AC → HVDC 800 V |
+| ATRU (VCGT-to-HVDC <NOMINAL-VOLTAGE>) | ATRU-PN-TBD | 2 | VCGT nacelle (1 per engine) | C-check insulation check | Variable-frequency AC → HVDC <NOMINAL-VOLTAGE> |
 
 ---
 
@@ -147,10 +144,10 @@ flowchart TB
 
 | Interface Type | Connected System | Protocol / Medium | Data / Function |
 |---|---|---|---|
-| Primary Power — SSBP | SSBP packs × 2 | HVDC 800 V BDCC | 800 kWh energy; peak 1 600 kW discharge |
-| Primary Power — FCSS | PEMFC stacks (ATLAS-075 heritage) | HVDC 800 V boost converter | 400 kW continuous |
-| Primary Power — VCGT | Variable-cycle turbines × 2 | HVDC 800 V ATRU | 2 400 kW combined |
-| Pulse Power — SCEB | Supercapacitor buffer | HVDC 800 V bi-dir converter | 80 kWh / 2 MW; < 500 ms response |
+| Primary Power — SSBP | SSBP packs × 2 | HVDC <NOMINAL-VOLTAGE> BDCC | 800 kWh energy; peak 1 600 kW discharge |
+| Primary Power — FCSS | PEMFC stacks (ATLAS-075 heritage) | HVDC <NOMINAL-VOLTAGE> boost converter | 400 kW continuous |
+| Primary Power — VCGT | Variable-cycle turbines × 2 | HVDC <NOMINAL-VOLTAGE> ATRU | 2 400 kW combined |
+| Pulse Power — SCEB | Supercapacitor buffer | HVDC <NOMINAL-VOLTAGE> bi-dir converter | 80 kWh / 2 MW; < 500 ms response |
 | FADEC Advisory | FADEC — ATA 73 | AFDX ARINC 664 P7 VL-084-01 | BGHA power demand advisory; mode status |
 | CMS / Maintenance | CMS — ATA 45 | AFDX ARINC 664 P7 VL-084-02 | BGSCU BITE faults; LRU health; energy logs |
 | Research Monitor | EPMS | AFDX ARINC 664 P7 VL-084-03 | Full 50 Hz telemetry; QPU optimizer state |
@@ -180,7 +177,7 @@ flowchart TB
 | Parameter | Requirement | Target / Design Value | Status |
 |---|---|---|---|
 | Total installed propulsion power | ≥ 4 000 kW | 4 400 kW (4×500 kW PMSM + VCGT reserve) | TBD |
-| HVDC bus voltage | 800 V ± 2 % | 800 V regulated | TBD |
+| HVDC bus voltage | <NOMINAL-VOLTAGE> ± 2 % | <NOMINAL-VOLTAGE> regulated | TBD |
 | SSBP total energy | ≥ 700 kWh | 800 kWh (2×400 kWh) | TBD |
 | FCSS continuous power | ≥ 350 kW | 400 kW (8×50 kW) | TBD |
 | VCGT electrical shaft off-take | ≥ 2 000 kW combined | 2 400 kW (2×1 200 kW) | TBD |
@@ -198,7 +195,7 @@ flowchart TB
 
 | Constraint | Requirement Source | Description |
 |---|---|---|
-| HVDC 800 V Personnel Safety | IEC 60479-1; CS-25 AMC 1309 | All HVDC 800 V rails isolated by double-pole SSPC with mechanical guard; LOTO mandatory before access; HiPot test 1 500 V DC at each C-check |
+| HVDC <NOMINAL-VOLTAGE> Personnel Safety | IEC 60479-1; CS-25 AMC 1309 | All HVDC <NOMINAL-VOLTAGE> rails isolated by double-pole SSPC with mechanical guard; LOTO mandatory before access; HiPot test 1 500 V DC at each C-check |
 | H₂ ATEX Zone | CS-25.1193; ATEX 94/9/EC | FCSS and LH₂ feed zones classified ATEX Zone 2; O₂ monitoring mandatory; ventilation before entry |
 | BGSCU Partitioning | DO-178C DAL B; ARINC 653 | Software partitions must not share memory domains; each lane runs independent RTOS partition; QPU module isolated from flight-critical partition |
 | Quantum MPC Fallback | CS-25.1309 (no single-point failure) | QPU failure must not degrade primary propulsion authority; classical rule-based fallback activates within 50 ms |
@@ -213,7 +210,7 @@ flowchart TB
 |---|---|---|
 | ATLAS-084 README | QATL-ATLAS-1000-ATLAS-080-089-08-084-README | Subsection index; status updated to active |
 | ATLAS-070 Gen-2 Overview | QATL-...-070-000-... | Gen-2 hybrid-electric architecture baseline |
-| ATLAS-073 Power Distribution | QATL-...-073-000-... | HVDC 270 V heritage bus; BGHA 800 V is up-rated |
+| ATLAS-073 Power Distribution | QATL-...-073-000-... | HVDC 270 V heritage bus; BGHA <NOMINAL-VOLTAGE> is up-rated |
 | ATLAS-074 TMS | QATL-...-074-000-... | Thermal management integration |
 | ATLAS-075 Fuel Cell | QATL-...-075-000-... | PEMFC heritage for FCSS |
 | ATLAS-076 H₂ Storage | QATL-...-076-000-... | LH₂ cryogenic storage for FCSS |
@@ -226,7 +223,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-084-001 | HVDC 800 V bus certification path (EASA STC or advisory material) | Q-INDUSTRY | PDR |
+| OI-084-001 | HVDC <NOMINAL-VOLTAGE> bus certification path (EASA STC or advisory material) | Q-INDUSTRY | PDR |
 | OI-084-002 | QPU coherence maintenance in airborne environment (vibration, EMI) | Q-HPC | CDR |
 | OI-084-003 | SSBP NMC/SSE fire test certification under CS-25.1353 | Q-STRUCTURES | Phase 2 |
 | OI-084-004 | VCGT LH₂ bi-fuel STC scope definition and test plan | Q-GREENTECH | PDR |

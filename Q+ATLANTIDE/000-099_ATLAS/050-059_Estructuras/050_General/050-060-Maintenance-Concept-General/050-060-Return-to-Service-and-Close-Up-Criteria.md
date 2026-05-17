@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.060 — Return-to-Service and Close-Up Criteria
 
 ## 1. Purpose
 
-Defines the **return-to-service (RTS) and close-up criteria** for AMPEL360 eWTW structural maintenance tasks: the mandatory inspections, functional tests, and certifications that must be completed and recorded before the aircraft may be released to service following structural work, including the specific RTS requirements following LH₂-system-adjacent structural access.
+Defines the **return-to-service (RTS) and close-up criteria** for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural maintenance tasks: the mandatory inspections, functional tests, and certifications that must be completed and recorded before the aircraft may be released to service following structural work, including the specific RTS requirements following LH₂-system-adjacent structural access.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-Return-to-service following structural maintenance on the AMPEL360 eWTW involves a multi-stage close-up process. Standard close-up includes: torque verification of all re-installed structural fasteners; FOD (foreign object debris) inspection of all opened structural bays; restoration of all electrical bonding connections; and verification that all access panels are correctly re-installed and latched. Where structural repairs have been performed, an independent inspection (I-level check) by a certifying engineer is mandatory before close-up.
+Return-to-service following structural maintenance on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] involves a multi-stage close-up process. Standard close-up includes: torque verification of all re-installed structural fasteners; FOD (foreign object debris) inspection of all opened structural bays; restoration of all electrical bonding connections; and verification that all access panels are correctly re-installed and latched. Where structural repairs have been performed, an independent inspection (I-level check) by a certifying engineer is mandatory before close-up.
 
 For any work in LH₂-adjacent structural zones, additional RTS steps are mandatory: H₂ system integrity check (pressure test of the LH₂ plumbing disturbed or adjacent to the work area); H₂ detector sweep of the work zone; and confirmation that all cryogenic seals have been renewed per the AMM.
 
@@ -90,7 +92,7 @@ flowchart TD
 |---|---|
 | EASA Part-66 | Aircraft maintenance licence — certifying engineer |
 | EASA Part-145 | Approved maintenance organisation — release to service |
-| AMM-AMPEL360-050-00-20 | Close-up and RTS procedures — General |
-| SC-AMPEL360-LH2-002 | Special Condition — LH₂ RTS integrity requirements |
+| AMM-[PROGRAMME-AIRCRAFT]-050-00-20 | Close-up and RTS procedures — General |
+| SC-[PROGRAMME-AIRCRAFT]-LH2-002 | Special Condition — LH₂ RTS integrity requirements |
 | [`./README.md`](./README.md) | Subsubject 060 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

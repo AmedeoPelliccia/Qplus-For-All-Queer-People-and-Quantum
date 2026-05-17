@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 013 · Subsubject 000 — Overview
 
 ## 1. Purpose
 
-Overview entry-point for *Remolque* (`013`) — the third subsection of Code range `010-019` (*Manejo en Tierra & Servicio*). This subsubject maps the operational scope of all towing and pushback procedures applicable to AMPEL360 aircraft variants, introduces the subsubject structure of `013_`, and declares the boundary between this procedure subsection and the introductory-orientation layer in `000-009`.
+Overview entry-point for *Remolque* (`013`) — the third subsection of Code range `010-019` (*Manejo en Tierra & Servicio*). This subsubject maps the operational scope of all towing and pushback procedures applicable to [PROGRAMME-AIRCRAFT] aircraft variants, introduces the subsubject structure of `013_`, and declares the boundary between this procedure subsection and the introductory-orientation layer in `000-009`.
 
 This subsubject is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline].
 
@@ -77,7 +79,7 @@ Subsubjects `001`–`005` provide the procedure-level detail for towing operatio
 
 ### 2.4 Variant applicability
 
-Towing procedures in this subsection apply to AMPEL360 aircraft variants. Variant-specific differences (e.g., nose-gear geometry differences between AMPEL360e and BWB variants, electric taxi system interlock for Gen 2) are flagged within each subsubject. Contributors must resolve the applicable variant via the Configuration Baseline ([`../../000-009_Informacion-General-y-Servicio/001_Configuracion/`](../../000-009_Informacion-General-y-Servicio/001_Configuracion/)) before issuing a tow order.
+Towing procedures in this subsection apply to [PROGRAMME-AIRCRAFT] aircraft variants. Variant-specific differences (e.g., nose-gear geometry differences between [PROGRAMME-AIRCRAFT] and BWB variants, electric taxi system interlock for Gen 2) are flagged within each subsubject. Contributors must resolve the applicable variant via the Configuration Baseline ([`../../000-009_Informacion-General-y-Servicio/001_Configuracion/`](../../000-009_Informacion-General-y-Servicio/001_Configuracion/)) before issuing a tow order.
 
 ## 3. Diagram — Subsection Structure and Cross-Section Interfaces
 

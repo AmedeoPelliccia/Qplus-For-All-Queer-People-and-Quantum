@@ -24,13 +24,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 016 · Subsubject 004 — Shoring and Structural Support Procedures
 
 ## 1. Purpose
 
-Defines the **shoring and structural support procedures** for AMPEL360 aircraft — the placement, loading, and removal of temporary structural props, shoring rigs, and support beams used when a primary structural member is removed, damaged, or temporarily weakened during maintenance or repair. Shoring is an **engineering-authorised action**; no shoring may be installed without a written Engineering Order (EO) or maintenance instruction referencing the applicable SRM (Structural Repair Manual).
+Defines the **shoring and structural support procedures** for [PROGRAMME-AIRCRAFT] aircraft — the placement, loading, and removal of temporary structural props, shoring rigs, and support beams used when a primary structural member is removed, damaged, or temporarily weakened during maintenance or repair. Shoring is an **engineering-authorised action**; no shoring may be installed without a written Engineering Order (EO) or maintenance instruction referencing the applicable SRM (Structural Repair Manual).
 
 > **Governing sources:** SRM (Structural Repair Manual) governs shoring configurations for specific structural damage scenarios. AMM, ATA chapter 7 governs general shoring provisions. ATLAS `016_004_` is the programmatic decomposition and traceability reference.
 

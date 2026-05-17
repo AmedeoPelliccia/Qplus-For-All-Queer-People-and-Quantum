@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 06"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Documents the ground clearance envelope and swept area diagrams for the AMPEL360E eWTW, covering nose clearance, engine / propulsor clearance (for electric propulsor pods), wingtip clearance, and tail clearance under all operating conditions. Used for airport gate compatibility and towing route planning.
+Documents the ground clearance envelope and swept area diagrams for the programme-defined aircraft type, covering nose clearance, engine / propulsor clearance (for electric propulsor pods), wingtip clearance, and tail clearance under all operating conditions. Used for airport gate compatibility and towing route planning.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 06 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,9 +72,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Ground Clearance and Swept Areas** node specifies the minimum ground clearances and swept envelope dimensions applicable to the AMPEL360E eWTW during ground manoeuvring. Critical clearances (provisional): propulsor nacelle-to-ground clearance ≈ 0.42 m (engine-out, MLG compressed); wing tip-to-ground ≈ 6.2 m (level ground, nominal); belly-to-ground ≈ 0.52 m (maximum payload, MLG static). These values shall be validated against the structural loads model and the MLG stroke/oleo compression data at Type Design freeze.
+The **Ground Clearance and Swept Areas** node specifies the minimum ground clearances and swept envelope dimensions applicable to the programme-defined aircraft type during ground manoeuvring. Critical clearances (provisional): propulsor nacelle-to-ground clearance ≈ 0.42 m (engine-out, MLG compressed); wing tip-to-ground ≈ 6.2 m (level ground, nominal); belly-to-ground ≈ 0.52 m (maximum payload, MLG static). These values shall be validated against the structural loads model and the MLG stroke/oleo compression data at Type Design freeze.
 
-Swept areas during nose-wheel steering (NWS) turning are larger than a conventional aircraft of similar span due to the under-wing motor-drive nacelle fairings: the nacelle trailing-edge describes a swept arc of approximately 2.3 m larger radius than the wing trailing-edge. Gate planners and marshalling procedures must account for the eWTW nacelle swept envelope, which is specified in the eWTW Airport Compatibility Report (ACR). Minimum pavement turning radius, wingtip clearance on standard Code C taxiways, and bridge docking envelope are documented in the ACR and cross-referenced to this ATLAS 005-040 node.
+Swept areas during nose-wheel steering (NWS) turning are larger than a conventional aircraft of similar span due to the under-wing motor-drive nacelle fairings: the nacelle trailing-edge describes a swept arc of approximately 2.3 m larger radius than the wing trailing-edge. Gate planners and marshalling procedures must account for the [PROGRAMME-VARIANT] nacelle swept envelope, which is specified in the [PROGRAMME-VARIANT] Airport Compatibility Report (ACR). Minimum pavement turning radius, wingtip clearance on standard Code C taxiways, and bridge docking envelope are documented in the ACR and cross-referenced to this ATLAS 005-040 node.
 
 ---
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the ground clearance and swept areas scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Ground Clearance and Swept Areas** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Ground Clearance and Swept Areas** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `005` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `040` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-005-040` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-005-040` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

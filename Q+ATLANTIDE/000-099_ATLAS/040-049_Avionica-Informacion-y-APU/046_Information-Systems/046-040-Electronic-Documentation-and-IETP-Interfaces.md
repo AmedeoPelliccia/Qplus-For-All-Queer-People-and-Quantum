@@ -31,6 +31,8 @@ ata_reference: "ATA 46.040 — Electronic Documentation and IETP Interfaces"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 040 — Electronic Documentation and IETP Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46.040 — Electronic Documentation and IETP Interfaces (EDII) defines the onboard interactive electronic technical publication system for the AMPEL360E eWTW. This covers the IETP viewer application, the onboard AMM/IPC/FIM library, CSDB synchronisation via Gatelink, BREX validation, and ICN graphic management — all compliant with S1000D Issue 5.0.
+ATA 46.040 — Electronic Documentation and IETP Interfaces (EDII) defines the onboard interactive electronic technical publication system for the programme-defined aircraft type. This covers the IETP viewer application, the onboard AMM/IPC/FIM library, CSDB synchronisation via Gatelink, BREX validation, and ICN graphic management — all compliant with S1000D Issue 5.0.
 
 Key governance areas:
 - IETP viewer: S1000D Issue 5.0 SGML/XML rendering engine on AIM server (software partition) and MAT/EFB display.
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46.040 — Electronic Documentation and IETP Interfaces |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL D |
 | Applicable Standards | S1000D Issue 5.0; ARINC 631-4; DO-160G; ARINC 664 P7 |
@@ -77,7 +79,7 @@ S1000D data modules available onboard:
 - **IPC**: Illustrated Parts Catalogue — part numbers, effectivity, and exploded diagrams for all LRUs.
 - **FIM**: Fault Isolation Manual — linked from CMS fault reports (ATA 45) via AFDX VL; one-click FIM navigation from CMS fault code.
 - **OMM / QRH**: Quick Reference Handbook supplements accessible on EFB.
-- **IETP coverage for eWTW**: Dedicated data modules for electric motor bus (EMB) removal/installation, battery module R/I, EMA actuation system troubleshooting — not present in conventional aircraft documentation.
+- **IETP coverage for [PROGRAMME-VARIANT]**: Dedicated data modules for electric motor bus (EMB) removal/installation, battery module R/I, EMA actuation system troubleshooting — not present in conventional aircraft documentation.
 
 CSDB synchronisation:
 - Automatic CSDB sync triggered on OOOI "In" event when Gatelink is active.
@@ -225,7 +227,7 @@ stateDiagram-v2
 - **Update mechanism**: IETP viewer software update via Gatelink (TLS 1.3, PKI); integrity SHA-256.
 - **CSDB manifest**: SHA-256 hash per data module; stored in AIM NAS as signed XML manifest; used for delta sync comparison.
 - **BREX enforcement**: BREX profile version-controlled; must match airline CSDB BREX before any delta sync proceeds.
-- **eWTW DM set**: Dedicated AMPEL360E eWTW data modules for EMB, battery, and EMA procedures maintained in CSDB under chapter 046 SNS nodes.
+- **[PROGRAMME-VARIANT] DM set**: Dedicated programme-defined aircraft type data modules for EMB, battery, and EMA procedures maintained in CSDB under chapter 046 SNS nodes.
 
 ---
 
@@ -282,8 +284,8 @@ stateDiagram-v2
 
 | Term | Acronym | Definition |
 |------|---------|------------|
-| Interactive Electronic Technical Publication | IETP | A structured, hyperlinked, S1000D-compliant digital maintenance manual rendered by the IETP viewer on MAT or EFB for the AMPEL360E eWTW |
-| Aircraft Maintenance Manual | AMM | The primary S1000D data module set documenting all maintenance procedures for all ATA chapters of the AMPEL360E eWTW |
+| Interactive Electronic Technical Publication | IETP | A structured, hyperlinked, S1000D-compliant digital maintenance manual rendered by the IETP viewer on MAT or EFB for the programme-defined aircraft type |
+| Aircraft Maintenance Manual | AMM | The primary S1000D data module set documenting all maintenance procedures for all ATA chapters of the programme-defined aircraft type |
 | Illustrated Parts Catalogue | IPC | The S1000D data module set providing part numbers, quantity, effectivity, and exploded-view graphics for all LRUs and assemblies |
 | Fault Isolation Manual | FIM | The S1000D data module set containing MSG-3 decision trees for fault isolation; accessed via CMS deep-link from ATA 45 fault reports |
 | International Specification for Technical Publications | S1000D | The international aerospace standard (Issue 5.0) specifying the structure, format, and management of technical documentation using a common source database (CSDB) |
@@ -331,8 +333,8 @@ stateDiagram-v2
 | Issue ID | Description | Owner | Status |
 |----------|-------------|-------|--------|
 | IS-046-040-001 | CSDB delta sync < 30 min requirement not validated with full 50 GB CSDB on Wi-Fi 6 bandwidth | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| IS-046-040-002 | eWTW-specific DM set (EMB, battery, EMA) content not yet authored in CSDB | Q-AIR | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| IS-046-040-003 | BREX profile for AMPEL360E eWTW not yet finalised with OEM technical publications team | Q-DATAGOV | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
+| IS-046-040-002 | [PROGRAMME-VARIANT]-specific DM set (EMB, battery, EMA) content not yet authored in CSDB | Q-AIR | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| IS-046-040-003 | BREX profile for programme-defined aircraft type not yet finalised with OEM technical publications team | Q-DATAGOV | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | IS-046-040-004 | FIM deep-link API from CMS (ATA 45) not yet integrated in CMS software build 2.1 | Q-HPC | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 
 ---
@@ -362,7 +364,7 @@ stateDiagram-v2
 | [R3] | ATLAS 045-060 — Maintenance Terminal and Crew Maintenance Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 046-090 — S1000D CSDB Mapping and Traceability | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R5] | ATLAS 046-070 — Ground Data Transfer and Connectivity | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R6] | AMPEL360E eWTW CSDB BREX Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R6] | programme-defined aircraft type CSDB BREX Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -372,7 +374,7 @@ This document is classified `to-be-reviewed-by-system-expert`. The review proces
 
 1. **S1000D / Technical Publications Expert**: Validates IETP viewer S1000D Issue 5.0 conformance, BREX profile design, delta sync architecture, and ICN management.
 2. **Q-DATAGOV Review**: Confirms CSDB data governance, SHA-256 integrity chain, and IETP viewer software DAL consistency with DO-178C PSAC.
-3. **EASA/FAA Regulatory Review**: CS-25 items in §15 and BREX/CSDB conformance reviewed before publication baseline is frozen. Open issues in §18 (especially eWTW DM set) must be resolved.
+3. **EASA/FAA Regulatory Review**: CS-25 items in §15 and BREX/CSDB conformance reviewed before publication baseline is frozen. Open issues in §18 (especially [PROGRAMME-VARIANT] DM set) must be resolved.
 
 `review_status` must be updated to `reviewed` upon completion of the designated system expert review.
 
@@ -382,4 +384,4 @@ This document is classified `to-be-reviewed-by-system-expert`. The review proces
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for AMPEL360E eWTW Electronic Documentation and IETP Interfaces |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for programme-defined aircraft type Electronic Documentation and IETP Interfaces |

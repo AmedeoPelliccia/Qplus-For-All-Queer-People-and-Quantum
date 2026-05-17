@@ -23,6 +23,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 014 · Subsubject 001 — Scope and Parking Boundaries
@@ -39,8 +41,8 @@ Defines the **regulatory scope**, **spatial boundaries**, and **stand identifica
 
 The parking procedures in `014_Parking/` apply to:
 
-- All **AMPEL360 variants** (Gen 1 tube-and-wing and Gen 2 BWB-H2) parked at any airfield where an applicable Ground Handling Manual (GHM) or Airside Operations Agreement is in force.
-- All **stand types** at which AMPEL360 aircraft are positioned under programme authority: gate stands, remote stands, maintenance bays, and ferry-flight or acceptance-test positions.
+- All **[PROGRAMME-AIRCRAFT] variants** (Gen 1 tube-and-wing and Gen 2 BWB-H2) parked at any airfield where an applicable Ground Handling Manual (GHM) or Airside Operations Agreement is in force.
+- All **stand types** at which [PROGRAMME-AIRCRAFT] aircraft are positioned under programme authority: gate stands, remote stands, maintenance bays, and ferry-flight or acceptance-test positions.
 - All **parking states** from turnaround (minutes) through overnight, extended (days to weeks), and long-term storage positions, up to the handover boundary with the Aircraft Maintenance Manual (AMM) for preservation procedures exceeding 90 days.
 
 The following are **excluded** from this subsection:
@@ -68,7 +70,7 @@ Key spatial boundaries:
 
 ### 2.3 Stand identification and numbering
 
-Stands are identified by a **stand number or alphanumeric code** allocated by the aerodrome operator. AMPEL360 programme stand-allocation records must cross-reference:
+Stands are identified by a **stand number or alphanumeric code** allocated by the aerodrome operator. [PROGRAMME-AIRCRAFT] programme stand-allocation records must cross-reference:
 
 - Aerodrome stand identifier (e.g., `C12`, `R04`).
 - Stand type category (see `014-002-Parking-Configurations-and-Stand-Types.md`).
@@ -77,7 +79,7 @@ Stands are identified by a **stand number or alphanumeric code** allocated by th
 
 ### 2.4 Applicable regulations and standards
 
-Parking operations for AMPEL360 are bounded by the following regulatory and industry frameworks:
+Parking operations for [PROGRAMME-AIRCRAFT] are bounded by the following regulatory and industry frameworks:
 
 | Standard | Scope |
 |---|---|
@@ -86,13 +88,13 @@ Parking operations for AMPEL360 are bounded by the following regulatory and indu
 | ATA chapter 10 (Parking and Mooring)[^ataspec100] | Conventional ATA reference for parking and mooring procedures |
 | EASA CS-25 / applicable type certificate | Wing-tip and tail clearance minima by aircraft category |
 | Aerodrome Operating Procedures (AOP) | Site-specific stand rules, taxi speed limits, exclusion zones |
-| AMPEL360 Ground Handling Manual (GHM) | Programme-specific stop positions, chock part numbers, GPU type |
+| [PROGRAMME-AIRCRAFT] Ground Handling Manual (GHM) | Programme-specific stop positions, chock part numbers, GPU type |
 
 ### 2.5 Applicability by variant
 
-All subsubjects within `014_Parking/` are applicable to all current AMPEL360 variants unless marked with an explicit applicability statement. Variant-specific notes use the following convention:
+All subsubjects within `014_Parking/` are applicable to all current [PROGRAMME-AIRCRAFT] variants unless marked with an explicit applicability statement. Variant-specific notes use the following convention:
 
-> **[AMPEL360e only]** — applies to Gen 1 tube-and-wing with electric taxi system only.
+> **[[PROGRAMME-AIRCRAFT] only]** — applies to Gen 1 tube-and-wing with electric taxi system only.
 > **[BWB-H2 only]** — applies to Gen 2 BWB-H2 hydrogen-propulsion demonstrator only.
 > **[All variants]** — applies regardless of propulsion architecture.
 
