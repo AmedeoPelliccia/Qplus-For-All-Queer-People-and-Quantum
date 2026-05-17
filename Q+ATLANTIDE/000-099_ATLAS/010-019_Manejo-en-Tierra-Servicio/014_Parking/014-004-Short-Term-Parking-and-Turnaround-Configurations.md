@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 014 · Subsubject 004 — Short-Term Parking and Turnaround Configurations
 
 ## 1. Purpose
 
-Defines the **step-level procedures** for short-term parking (turnaround and overnight configurations) of AMPEL360 aircraft at gate and remote stands. This subsubject covers chock placement, ground power unit (GPU) connection and disconnection, pitot and static cover fitting, equipment safety-perimeter establishment, and the approved sequence for transitioning the aircraft from an in-flight configuration to a parked-and-secured state.
+Defines the **step-level procedures** for short-term parking (turnaround and overnight configurations) of [PROGRAMME-AIRCRAFT] aircraft at gate and remote stands. This subsubject covers chock placement, ground power unit (GPU) connection and disconnection, pitot and static cover fitting, equipment safety-perimeter establishment, and the approved sequence for transitioning the aircraft from an in-flight configuration to a parked-and-secured state.
 
 > **Scope boundary:** This subsubject covers normal short-term and overnight parking. Mooring and wind-protection procedures are in `014-003-Mooring-Tie-Down-and-Wind-Protection.md`. Records and return-to-service inspection are in `014-005-Parking-Records-Inspections-and-Return-to-Service.md`. GSE vehicle positioning is in `015_GSE/`.
 
@@ -77,7 +79,7 @@ Chocks shall be placed at **approved positions** as follows:
 #### 2.4.1 GPU connection
 
 1. Position the GPU or fixed-ground-power (FGP) cart at the approved equipment-restraint line (see `014-001-Parking-Scope-and-Boundaries.md` §2.2). Do not approach the aircraft with the GPU until engines are shutdown and inlet/exhaust hazards are clear.
-2. Verify GPU output voltage and frequency match the aircraft external power specification (AMPEL360 standard: 115 V AC / 400 Hz, or 28 V DC for ground support — per GHM; verify by variant).
+2. Verify GPU output voltage and frequency match the aircraft external power specification ([PROGRAMME-AIRCRAFT] standard: 115 V AC / 400 Hz, or 28 V DC for ground support — per GHM; verify by variant).
 3. Inspect external power receptacle on the aircraft for damage or contamination.
 4. Insert GPU connector; confirm connector locked.
 5. Power-on GPU; verify EXTERNAL POWER AVAILABLE light illuminates on the aircraft flight deck (if flight crew present) or at the ground power panel.
@@ -117,7 +119,7 @@ Covers protect sensors, inlets, and systems during parking. The following cover 
 
 ### 2.7 Overnight parking configuration checklist
 
-The following represents the minimum parking configuration for an AMPEL360 aircraft overnight:
+The following represents the minimum parking configuration for an [PROGRAMME-AIRCRAFT] aircraft overnight:
 
 - [x] Wheel chocks — main gear (port and starboard, fore and aft) and nose gear — IN
 - [x] Parking brake — SET

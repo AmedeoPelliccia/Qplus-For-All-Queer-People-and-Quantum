@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Defines the environmental protection measures required during AMPEL360E eWTW storage operations. Covers heat and UV protection (covers and blanking plates), contamination control for engine and APU inlets and exhausts, static pressure port protection, pitot probe protection, and the controlled cockpit cover installation procedure.
+Defines the environmental protection measures required during programme-defined aircraft type storage operations. Covers heat and UV protection (covers and blanking plates), contamination control for engine and APU inlets and exhausts, static pressure port protection, pitot probe protection, and the controlled cockpit cover installation procedure.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 10 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,7 +72,7 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Environmental Protection During Storage** node details the environmental hazard categories, protection materials, and monitoring requirements for maintaining the AMPEL360E eWTW airworthiness during storage in various climatic conditions. The eWTW introduces specific environmental protection requirements due to its high-voltage systems and composite-intensive structure. Hazard categories and protections: (A) moisture/humidity — all open electrical connectors protected by desiccant bags and moisture-barrier covers; HVDC connector ports covered with IP67-rated protective caps; composite fuselage and wing panels inspected for disbond/delamination per NDT periodic schedule; (B) solar UV — all windshield and cabin windows covered with Q-WIN-COVER-001 (aluminised Mylar); composite fairings inspected per 90-day UV exposure schedule; (C) salt/corrosive atmosphere (maritime storage) — additional corrosion inhibitor wax Q-CORR-WAX-001 applied to all exposed aluminium surfaces every 30 days; steel fasteners in the nacelle zone receive a CPC (corrosion preventive compound) coat; (D) sand/dust — all engine inlets, APU inlet, pitot ports, and ECS outlets sealed with foam plugs in addition to standard covers; (E) cold temperature (<−20 °C) — battery thermal management system maintains BMS at ≥−10 °C via GPU-supplied heater; landing gear shock absorber nitrogen re-charge to cold-temperature schedule per AMM 32-10.
+The **Environmental Protection During Storage** node details the environmental hazard categories, protection materials, and monitoring requirements for maintaining the programme-defined aircraft type airworthiness during storage in various climatic conditions. The [PROGRAMME-VARIANT] introduces specific environmental protection requirements due to its high-voltage systems and composite-intensive structure. Hazard categories and protections: (A) moisture/humidity — all open electrical connectors protected by desiccant bags and moisture-barrier covers; HVDC connector ports covered with IP67-rated protective caps; composite fuselage and wing panels inspected for disbond/delamination per NDT periodic schedule; (B) solar UV — all windshield and cabin windows covered with Q-WIN-COVER-001 (aluminised Mylar); composite fairings inspected per 90-day UV exposure schedule; (C) salt/corrosive atmosphere (maritime storage) — additional corrosion inhibitor wax Q-CORR-WAX-001 applied to all exposed aluminium surfaces every 30 days; steel fasteners in the nacelle zone receive a CPC (corrosion preventive compound) coat; (D) sand/dust — all engine inlets, APU inlet, pitot ports, and ECS outlets sealed with foam plugs in addition to standard covers; (E) cold temperature (<−20 °C) — battery thermal management system maintains BMS at ≥−10 °C via GPU-supplied heater; landing gear shock absorber nitrogen re-charge to cold-temperature schedule per AMM 32-10.
 
 Environmental data logging: PSMM records ambient temperature and humidity (from aircraft OAT sensor and interior RH sensor) continuously during storage; alerts sent to GAIA-QA if humidity >85% RH or temperature <−40 °C or >70 °C for >1 h. Environmental log is part of the post-storage return-to-service record.
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the environmental protection during storage scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Environmental Protection During Storage** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Environmental Protection During Storage** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `009` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `050` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-009-050` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-009-050` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

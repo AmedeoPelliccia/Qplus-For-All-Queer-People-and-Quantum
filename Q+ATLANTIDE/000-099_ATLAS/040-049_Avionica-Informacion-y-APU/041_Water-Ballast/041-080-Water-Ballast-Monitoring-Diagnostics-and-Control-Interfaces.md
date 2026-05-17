@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 080 — Water Ballast Monitoring, Diagnostics and Control Interfaces
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document defines the Built-In Test Equipment (BITE) architecture, Central Maintenance Computer (CMC) integration, Aircraft Condition Monitoring System (ACMS) interfaces, leak detection architecture, Prognostic Health Management (PHM) capabilities, Avionics Maintenance Terminal (AMT) interface, and maintenance message coding for the Water Ballast system on the AMPEL360E eWTW.
+This document defines the Built-In Test Equipment (BITE) architecture, Central Maintenance Computer (CMC) integration, Aircraft Condition Monitoring System (ACMS) interfaces, leak detection architecture, Prognostic Health Management (PHM) capabilities, Avionics Maintenance Terminal (AMT) interface, and maintenance message coding for the Water Ballast system on the programme-defined aircraft type.
 
 The WB BITE architecture is designed to achieve a fault detection coverage of ≥ 99% of the defined fault list, with a fault isolation rate (to LRU level) of ≥ 95%. These rates, together with a false alarm rate < 1%, are required to support a 12-month on-wing target for all WB LRUs. BITE faults are transmitted to the CMC via ARINC 429 in real time and to the AMT via ARINC 767 on ground.
 
@@ -50,18 +52,18 @@ The PHM module within the BCC uses sensor trend data (pump current, valve travel
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41-80 — WB Monitoring and Diagnostics |
 | Standards | ARINC 767, ARINC 780, DO-178C DAL C (BITE SW), ARINC 429 |
 | Dev Assurance | DAL C (BITE software); DAL D (PHM software) |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | BITE Fault Coverage | ≥ 99% detection; ≥ 95% LRU-level isolation; < 1% false alarms |
 
 ---
 
 ## 3. System / Function Overview
 
-The WB BITE is hosted as a software partition (DAL C) within the BCC, running a 500 ms diagnostic cycle covering all sensors, actuators, communications links, and software partitions. Each monitored parameter is compared to a defined validity envelope; out-of-envelope readings are classified as warnings (advisory) or faults (maintenance action required) per the WB Fault Taxonomy (AMPEL360E-FT-041).
+The WB BITE is hosted as a software partition (DAL C) within the BCC, running a 500 ms diagnostic cycle covering all sensors, actuators, communications links, and software partitions. Each monitored parameter is compared to a defined validity envelope; out-of-envelope readings are classified as warnings (advisory) or faults (maintenance action required) per the WB Fault Taxonomy ([PROGRAMME-AIRCRAFT]-FT-041).
 
 CMC integration uses a dedicated ARINC 429 high-speed channel from the BCC to the CMC. Fault messages follow the ARINC 780 format with ATA MSG coding under ATA Chapter 41. Each message includes: fault code, timestamp, fault class (warning/fault), LRU identifier, and recommended maintenance action (RMA) code. The CMC stores up to 500 messages in its short-term fault history, accessible via the cockpit Maintenance Access Terminal (MAT) or the AMT.
 
@@ -91,7 +93,7 @@ The ACMS receives periodic health reports from the BCC via AFDX (once per flight
 
 ## 5. Architecture Description
 
-**BITE Partition.** The BITE partition (DAL C, 500 ms period) monitors: BCC processor health (dual watchdog), ARINC 653 partition health, AFDX VL-041 frame rate and integrity, ARINC 429 channel activity, all discrete I/O states vs commanded states, level sensor validity (rate-of-change plausibility), flow meter calibration status, and PTC heater continuity. A 10-level fault priority scheme maps each fault to an EICAS message level (advisory, caution, or warning) per AMPEL360E Alert Philosophy Document.
+**BITE Partition.** The BITE partition (DAL C, 500 ms period) monitors: BCC processor health (dual watchdog), ARINC 653 partition health, AFDX VL-041 frame rate and integrity, ARINC 429 channel activity, all discrete I/O states vs commanded states, level sensor validity (rate-of-change plausibility), flow meter calibration status, and PTC heater continuity. A 10-level fault priority scheme maps each fault to an EICAS message level (advisory, caution, or warning) per [PROGRAMME-AIRCRAFT] Alert Philosophy Document.
 
 **CMC Interface.** BCC transmits on ARINC 429 Label 350 (octal) for WB fault messages. Message rate: on-detection (event-driven) plus a 60-second keep-alive heartbeat. CMC de-duplicates repeated faults and presents the first-occurrence and last-occurrence timestamps. CMC also polls the BCC NVM for extended fault history on ground via AMT trigger.
 
@@ -268,7 +270,7 @@ Verification Evidence"]
 | CMC fault history download | A-check (on-condition) | MAT in cockpit | MAT keyboard |
 | AMT full BITE sequence | C-check | Forward EE bay AMT port | AMT laptop + ARINC 767 cable |
 | PHM trend report review | Monthly (fleet level) | MOC ACARS reports | MOC MIS system |
-| Fault injection test (BITE coverage audit) | 8 000 FH | Ground with test equipment | Fault injection rig (AMPEL360E-FIR-041) |
+| Fault injection test (BITE coverage audit) | 8 000 FH | Ground with test equipment | Fault injection rig ([PROGRAMME-AIRCRAFT]-FIR-041) |
 
 ---
 
@@ -276,12 +278,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-080-00A-040A-A | 040 | WB Monitoring and Diagnostics Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-080-00A-300A-A | 300 | WB BITE Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-080-00A-400A-A | 400 | WB BITE Test Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-080-00A-520A-A | 520 | WB BITE Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-080-00A-941A-A | 941 | WB BITE Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-080-00A-720A-A | 720 | WB BITE and PHM Software Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-080-00A-040A-A | 040 | WB Monitoring and Diagnostics Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-080-00A-300A-A | 300 | WB BITE Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-080-00A-400A-A | 400 | WB BITE Test Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-080-00A-520A-A | 520 | WB BITE Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-080-00A-941A-A | 941 | WB BITE Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-080-00A-720A-A | 720 | WB BITE and PHM Software Description |
 
 ### Recommended Data Module Set
 
@@ -337,7 +339,7 @@ Verification Evidence"]
 - DO-178C DAL C for BITE software; statement of compliance to all DAL C objectives required for EASA STC.
 - ARINC 780 fault message format ensures CMC compatibility with airline standard maintenance systems; deviation from format requires airline MIS adaptation.
 - PHM advisories are non-mandatory (informational only); no airworthiness decision is automated based on PHM output; human maintainer remains in the loop.
-- False alarm rate < 1 per 1 000 FH required per AMPEL360E system-level BITE specification; false alarms affecting crew (EICAS) subject to additional review.
+- False alarm rate < 1 per 1 000 FH required per [PROGRAMME-AIRCRAFT] system-level BITE specification; false alarms affecting crew (EICAS) subject to additional review.
 - Leak detection DP threshold (0.05 bar) validated by fluid dynamics analysis; set to minimise false alarms from pump pulsation while detecting leaks of ≥ 5 L/min.
 - ACARS downlink data classified as maintenance (non-safety) data; encrypted per ARINC 724B but not subject to DO-178C software assurance.
 
@@ -385,7 +387,7 @@ Verification Evidence"]
 | <a id="ref-arinc724b"></a>ARINC 724B | ARINC 724B — Aircraft Communications Addressing and Reporting System | ACARS downlink | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet [PROGRAMME-AIRCRAFT] | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -395,7 +397,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Control (041-050) | QATL-ATLAS-041-050 | Rev 1.0 | Active | [041-050](./041-050-Ballast-Control-and-Automatic-Trim-Interfaces.md) |
-| R-003 | WB Fault Taxonomy | AMPEL360E-FT-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-003 | WB Fault Taxonomy | [PROGRAMME-AIRCRAFT]-FT-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

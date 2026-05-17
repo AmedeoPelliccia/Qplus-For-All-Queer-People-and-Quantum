@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-010-FUEL-CELL-STACK-ARCHITECTURE
      ATA 75 · Fuel Cell Stack Architecture
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Cell Stack Architecture
@@ -47,25 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-010"
 
 ## §1 Purpose
 
-This document describes the internal architecture of the four PEMFC stack assemblies that compose the FCM cluster on the AMPEL360E eWTW. Each stack consists of 400 individual fuel cells arranged in series, each cell operating at a rated voltage of 0.7 V and drawing a rated current that yields 50 kW per stack. The active electrode area is 400 cm², with a Nafion-117 proton exchange membrane electrolyte and graphite-composite bipolar plates featuring integrated gas distribution and cooling channels.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Cell Stack Architecture`.
 
-The four stacks (SA-075-A through SA-075-D) are connected in parallel via a common copper DC busbar producing 100–125 V at the cluster output. Each stack operates within a temperature band of 60–80 °C and a pressure range of 1.5–2.5 bar. A Cell Voltage Monitor (CVM) samples all 400 cell voltages at 100 ms intervals per stack, providing real-time per-cell health data to the FCCU.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Individual stack isolation is provided by dedicated SSPC contactors (SSPC-STA through SSPC-STD) commanded by the FCCU. This architecture allows the FCM to continue operating in a degraded mode if any single stack must be isolated due to cell under-voltage, over-temperature, or other fault conditions, limiting output to 150 kW (3 stacks), 100 kW (2 stacks), or 50 kW (1 stack).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-010 — Fuel Cell Stack Architecture |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Each PEMFC stack cell consists of an anode Gas Diffusion Layer (GDL), anode catalyst layer, Nafion-117 membrane, cathode catalyst layer, and cathode GDL — collectively the Membrane Electrode Assembly (MEA). H2 is oxidised at the anode (2H₂ → 4H⁺ + 4e⁻), protons migrate through the membrane, and O2 is reduced at the cathode (O2 + 4H⁺ + 4e⁻ → 2H₂O). Graphite-composite bipolar plates provide gas flow channels, electrical conduction between cells, and cooling channel passages for deionised water coolant flow. Stack assemblies are held in compression by tie rods and end plates at a calibrated torque of 4–5 Nm per bolt to maintain MEA contact pressure.

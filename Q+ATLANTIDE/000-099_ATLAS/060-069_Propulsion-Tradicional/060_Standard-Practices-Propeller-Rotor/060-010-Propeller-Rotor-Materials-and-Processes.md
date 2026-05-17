@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0060-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-060-010-PROPELLER-ROTOR-MATERIALS-AND-PROCESSES
      ATA 60 · Propeller/Rotor Materials and Processes
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propeller/Rotor Materials and Processes
@@ -47,33 +49,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-010"
 
 ## §1 Purpose
 
-This document defines the controlled material specifications, qualification requirements, and manufacturing process standards for all propeller and rotor components used on or evaluated for the AMPEL360E eWTW programme. Materials selection directly governs structural integrity, fatigue life, corrosion resistance, and repairability.
+This document defines the agnostic ATLAS standard-level architecture context for `Propeller/Rotor Materials and Processes`.
 
-The AMPEL360E eWTW propulsion architecture prioritises low-weight, high-strength materials compatible with sustainable aviation fuel (SAF) environments and with electrically driven or hybrid propulsors that may include carbon-fibre composite (CFC) blades, titanium hub alloys, and aluminium-lithium spinner skins. All materials must be listed on the AMPEL360E Approved Materials Register (AMR-060) maintained by Q-INDUSTRY.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Process controls for bonding, machining, surface treatment, and corrosion protection are defined in this document and must be implemented through documented process specifications (PS) issued under the Q-INDUSTRY quality management system.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 60 — Standard Practices Propeller/Rotor |
-| Materials register | AMR-060 — AMPEL360E Approved Materials Register |
-| Composite specification | AMPEL360E-CFS-001 (carbon fibre prepreg) |
-| Metallic specification | AMS 4928 (Ti-6Al-4V), AMS 2024 (Al alloy hub) |
-| Corrosion protection | AMS-C-81562 (epoxy primer), AMS 2480 (hard anodize) |
-| S1000D SNS | 060-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `060` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Material and process controls for propeller/rotor components span four technology families:
 
-1. **Carbon-fibre composite blades** — pre-preg UD and woven CFRP with toughened epoxy resin matrix; blade skins, spar caps, and root fittings. Qualification per AMPEL360E-CFS-001 including coupon test and panel test campaigns.
+1. **Carbon-fibre composite blades** — pre-preg UD and woven CFRP with toughened epoxy resin matrix; blade skins, spar caps, and root fittings. Qualification per [PROGRAMME-AIRCRAFT]-CFS-001 including coupon test and panel test campaigns.
 2. **Titanium alloy hubs** — Ti-6Al-4V ELI (AMS 4928) for blade retention hubs; requires 100 % ultrasonic inspection of billet before machining and magnetic-particle inspection of finished bore.
 3. **Aluminium alloy spinners** — 7075-T73 or 2024-T42 sheet metal; hard-anodise (AMS 2480) and epoxy primer (AMS-C-81562) corrosion protection system.
 4. **Adhesive and sealant systems** — controlled by the Adhesive Process Specification APS-060 which defines surface preparation, mix ratio, pot life, and cure cycle for all structural bonding operations.
@@ -84,7 +78,7 @@ Material and process controls for propeller/rotor components span four technolog
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | Composite Material Qualification | Qualify CFRP blade materials through coupon, element, and panel test programme per AMPEL360E-CFS-001. | Q-INDUSTRY / Q-MECHANICS |
+| F-001 | Composite Material Qualification | Qualify CFRP blade materials through coupon, element, and panel test programme per [PROGRAMME-AIRCRAFT]-CFS-001. | Q-INDUSTRY / Q-MECHANICS |
 | F-002 | Metallic Material Certification | Certify titanium and aluminium alloys against AMS specifications; 100 % UT of hub billet. | Q-INDUSTRY / NDT authority |
 | F-003 | Surface Treatment Control | Implement and audit anodising, priming, and coating processes per approved process specifications. | Q-INDUSTRY |
 | F-004 | Adhesive Process Control | Define and control bonding process including surface prep, mixing, application, and cure monitoring. | Q-MECHANICS / Q-INDUSTRY |
@@ -135,7 +129,7 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| CFRP blade pre-preg (UD spar cap) | AMPEL360E-CFS-001 Grade A | Per blade | Controlled store (−18 °C) | Lot qualification per batch | TBD |
+| CFRP blade pre-preg (UD spar cap) | [PROGRAMME-AIRCRAFT]-CFS-001 Grade A | Per blade | Controlled store (−18 °C) | Lot qualification per batch | TBD |
 | Ti-6Al-4V hub billet (AMS 4928) | AMS 4928 / ASTM B265 | Per hub | Certified metals store | 100 % UT before machining | TBD |
 | 7075-T73 spinner sheet (AMS 2024) | AMS 2024 | Per spinner | Sheet metal store | Visual + dimensional on receipt | TBD |
 | Epoxy primer (AMS-C-81562) | Approved supplier list | Per batch | Controlled store (temp/humidity) | Shelf life per PS | TBD |
@@ -246,7 +240,7 @@ flowchart TB
 | **Lap shear strength** | Standard measure of adhesive bond strength; load applied parallel to the bond plane on a standard test coupon. |
 | **AMS-C-81562** | Aerospace Material Specification for epoxy polyamide primer used in corrosion protection systems. |
 | **AMS 2480** | Aerospace Material Specification for hard anodic coating on aluminium alloys. |
-| **AMR-060** | AMPEL360E Approved Materials Register for ATA 60 propeller/rotor materials. |
+| **AMR-060** | [PROGRAMME-AIRCRAFT] Approved Materials Register for ATA 60 propeller/rotor materials. |
 | **NDT Procedure Card** | Controlled document defining the approved NDT method, equipment, settings, and acceptance criteria for a specific component. |
 | **Concession** | Formal engineering approval allowing use of material or component that deviates from nominal specification within defined limits. |
 
@@ -291,4 +285,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

@@ -25,29 +25,31 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — Programme Applicability Rules
 
 ## 1. Purpose
 
-Defines the **programme-level applicability rules** governing how AMPEL360 eWTW structural documents, tasks, and limits are scoped to the overall programme: the applicability hierarchy, authoring conventions, and the change-control process that updates applicability when a new derivative or major modification enters the programme.
+Defines the **programme-level applicability rules** governing how [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural documents, tasks, and limits are scoped to the overall programme: the applicability hierarchy, authoring conventions, and the change-control process that updates applicability when a new derivative or major modification enters the programme.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-Programme applicability is the highest-level applicability layer, encompassing all aircraft types within the AMPEL360 family. A document or task tagged with programme-level applicability applies to every AMPEL360 aircraft unless overridden by a more specific model, variant, or serial-number effectivity. Programme applicability rules are owned by the Programme Office and reviewed at each programme milestone (PDR, CDR, TRR).
+Programme applicability is the highest-level applicability layer, encompassing all aircraft types within the [PROGRAMME-AIRCRAFT] family. A document or task tagged with programme-level applicability applies to every [PROGRAMME-AIRCRAFT] aircraft unless overridden by a more specific model, variant, or serial-number effectivity. Programme applicability rules are owned by the Programme Office and reviewed at each programme milestone (PDR, CDR, TRR).
 
-Authoring rules specify that every structural ATLAS document must declare an `applicability` field in its YAML frontmatter, and every S1000D data module must carry a corresponding `<applic>` element populated from the PDCM. Documents with programme-wide scope use the token `ALL-AMPEL360` as their applicability code.
+Authoring rules specify that every structural ATLAS document must declare an `applicability` field in its YAML frontmatter, and every S1000D data module must carry a corresponding `<applic>` element populated from the PDCM. Documents with programme-wide scope use the token `ALL-[PROGRAMME-AIRCRAFT]` as their applicability code.
 
 ### 2.2 Programme Applicability Resolution
 
 ```mermaid
 flowchart TD
     A[Document Authoring] --> B{Applicability Level?}
-    B -->|Programme-wide| C[Tag: ALL-AMPEL360]
-    B -->|Model-specific| D[Tag: AMPEL360-ER or AMPEL360-F etc]
+    B -->|Programme-wide| C[Tag: ALL-[PROGRAMME-AIRCRAFT]]
+    B -->|Model-specific| D[Tag: [PROGRAMME-AIRCRAFT]-ER or [PROGRAMME-AIRCRAFT]-F etc]
     B -->|SN-block| E[Tag: SN 001-150 etc]
     C --> F[PDCM Programme Register]
     D --> F
@@ -60,9 +62,9 @@ flowchart TD
 
 | Level | Code Pattern | Description | Override Lower? |
 |---|---|---|---|
-| Programme | `ALL-AMPEL360` | All variants and serial numbers | No (highest scope) |
-| Type | `AMPEL360-{type}` | Specific model type (baseline, ER, F) | Yes (narrows) |
-| Configuration | `AMPEL360-{type}-C{n}` | Configuration baseline | Yes |
+| Programme | `ALL-[PROGRAMME-AIRCRAFT]` | All variants and serial numbers | No (highest scope) |
+| Type | `[PROGRAMME-AIRCRAFT]-{type}` | Specific model type (baseline, ER, F) | Yes (narrows) |
+| Configuration | `[PROGRAMME-AIRCRAFT]-{type}-C{n}` | Configuration baseline | Yes |
 | Serial block | `SN-{from}-{to}` | Production block | Yes |
 | Post-SB | `POST-SB-{number}` | Aircraft incorporating specific SB | Yes |
 
@@ -82,6 +84,6 @@ flowchart TD
 |---|---|
 | S1000D Issue 5.0 | Applicability filtering and CSDB authoring |
 | ATA iSpec 2200 | Chapter 5 — effectivity management |
-| PDCM-AMPEL360-001 | Product Definition and Configuration Management Plan |
+| PDCM-[PROGRAMME-AIRCRAFT]-001 | Product Definition and Configuration Management Plan |
 | [`./README.md`](./README.md) | Subsubject 050 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

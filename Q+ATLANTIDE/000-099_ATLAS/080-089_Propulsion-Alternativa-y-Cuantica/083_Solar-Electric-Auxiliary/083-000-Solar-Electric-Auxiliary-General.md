@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0083-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-083-000-SOLAR-ELECTRIC-AUXILIARY-GENERAL
      ATLAS-083 (Solar-Electric Auxiliary) · General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Solar-Electric Auxiliary — General
@@ -46,32 +48,27 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 083-000 establishes the general scope, top-level architecture, and governing standards for the Solar-Electric Auxiliary (SEA) system of the AMPEL360E eWTW. This document is the apex reference for all subordinate subsubject documents (083-010 through 083-090).
+This document defines the agnostic ATLAS standard-level architecture context for `Solar-Electric Auxiliary — General`.
 
-The AMPEL360E eWTW integrates a **Solar-Electric Auxiliary (SEA)** system that harvests photovoltaic (PV) energy from conformal GaAs triple-junction solar arrays embedded in the upper fuselage and wing skin surfaces. The harvested energy supplements the aircraft HVDC 270 V main bus for auxiliary propulsion purposes — driving boundary-layer-ingestion (BLI) fan propulsors and distributed leading-edge fans — and provides an emergency power reserve independent of the main turbofan generator chain.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-All subsubject documents (083-010 through 083-090) are subordinate to this general baseline and inherit its governance class, Q-Division authority, and S1000D CSDB affiliation.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-083 (Solar-Electric Auxiliary) — 083-000 General |
-| Certification basis | EASA CS-25 Amdt 27+ (research ref.); DO-178C DAL C (concept phase); DO-254 DAL C; DO-160G (environmental); IEC 62109-1 (PV power converter safety) |
-| S1000D SNS | 083-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `083` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The AMPEL360E eWTW **Solar-Electric Auxiliary (SEA)** system comprises four integrated subsystems:
+The programme-defined aircraft type **Solar-Electric Auxiliary (SEA)** system comprises four integrated subsystems:
 
 1. **Photovoltaic (PV) Solar Array** — GaAs triple-junction cells laminated into CFRP skin panels covering the upper fuselage crown (8 m²), wing upper skin (14 m²), and winglet panels (2 m²), yielding a total active area of **24 m²**. At FL350 in clear sky conditions, incident irradiance reaches 1 350 W/m² and the array delivers a **peak harvest of 120 kW** at standard test condition (STC) efficiency of 31 %. Six independent maximum-power-point tracking (MPPT) converters (20 kW each) extract maximum power from each array zone, compensating for partial shading, cell temperature variation, and incidence angle changes during manoeuvre.
 
-2. **Dual-Tier Energy Storage Subsystem** — A **supercapacitor bank (SCAP)** of 100 kJ / 400 F / 700 V handles fast transient buffering (±200 kW peak for up to 0.5 s), absorbing propulsor start surges and regenerative capture peaks. A **50 kWh Li-Ion auxiliary battery subset** (NMC 811, dedicated BMS channel, subset of the ATLAS 072 main battery pack) provides sustained auxiliary power during cloud occlusion, night operation, or emergency scenarios.
+2. **Dual-Tier Energy Storage Subsystem** — A **supercapacitor bank (SCAP)** of 100 kJ / 400 F / 700 V handles fast transient buffering (±200 kW peak for up to 0.5 s), absorbing propulsor start surges and regenerative capture peaks. A **50 kWh Li-Ion auxiliary battery subset** (<BATTERY-CHEMISTRY>, dedicated BMS channel, subset of the ATLAS 072 main battery pack) provides sustained auxiliary power during cloud occlusion, night operation, or emergency scenarios.
 
 3. **Solar-Electric Auxiliary Controller Unit (SEACU)** — A dual-channel controller (DO-178C DAL C / DO-254 DAL C) located in the forward avionics bay (4-MCU). The SEACU hosts six MPPT algorithms, power flow arbitration between PV, SCAP and battery, bidirectional DC/DC interfaces to the HVDC 270 V main bus (ATLAS 073), and propulsor inverter command outputs. Channel A is active; Channel B is hot-standby with automatic 100 ms changeover. The SEACU publishes the full system state to the CMS (ATA 45) and Energy Management System (ATLAS 079) via AFDX ARINC 664 P7.
 
@@ -105,7 +102,7 @@ flowchart LR
     PV[PV Solar Array\n24 m² GaAs TJ\n120 kW peak] -->|40–120 V DC| MPPT[6× MPPT Converters\n20 kW each\nBoost topology]
     MPPT -->|700 V DC link| SEACU
     SCAP[Supercapacitor Bank\n100 kJ / 400 F / 700 V] <-->|Fast buffer ±200 kW| SEACU[SEACU\nDual-Channel DAL C\nChannel A Active]
-    BAT[Li-Ion Auxiliary Battery\n50 kWh NMC 811] <-->|Sustained supply| SEACU
+    BAT[Li-Ion Auxiliary Battery\n50 kWh <BATTERY-CHEMISTRY>] <-->|Sustained supply| SEACU
     SEACU -->|3-phase AC 700 V| PROP[BLI Propulsor Nodes\n2–4 × 15–40 kW PMSM]
     SEACU <-->|±80 kW HVDC 270 V| HVDC[HVDC 270 V Bus\nATLAS 073]
     SEACU -->|BITE / Faults AFDX VL-083-01| CMS[CMS ATA 45]
@@ -143,7 +140,7 @@ flowchart TB
 | GaAs Triple-Junction PV Panel — Winglet | PVWL-PN-TBD | 4 | Winglet surfaces (2 m²) | B-check visual; C-check EL imaging | — |
 | MPPT Converter Module | MPPTM-PN-TBD | 6 | Forward equipment bay | A-check functional test; C-check full | 20 kW each; boost topology; 40–120 V → 700 V |
 | Supercapacitor Bank (SCAP) | SCAP-PN-TBD | 1 | Under-floor centre bay | 2 500 h capacitance check; C-check full | 100 kJ; 400 F; 700 V; >1 M cycle life |
-| Li-Ion Auxiliary Battery Subset | LIAB-PN-TBD | 1 | Aft equipment bay | Per ATLAS 072 BMS schedule | 50 kWh NMC 811; dedicated BMS channel; Novec 1230 TR suppression |
+| Li-Ion Auxiliary Battery Subset | LIAB-PN-TBD | 1 | Aft equipment bay | Per ATLAS 072 BMS schedule | 50 kWh <BATTERY-CHEMISTRY>; dedicated BMS channel; Novec 1230 TR suppression |
 | BLI Propulsor Node (PMSM + Fan) | BLIP-PN-TBD | 2–4 | Aft fuselage BLI duct | 2 500 h bearing inspection; C-check full | 15–40 kW PMSM; direct drive; folding stator vanes |
 | SiC Propulsor Inverter | SIPCI-PN-TBD | 4 | Adjacent to SEACU bay | C-check thermal paste; HiPot 1 500 V | 50 kW; SiC MOSFET; 700 V DC → 3-phase AC |
 | DC Link Capacitor Bank | DCLC-PN-TBD | 1 | SEACU bay | C-check ESR check | 700 V; 5 mF film capacitor |
@@ -191,7 +188,7 @@ flowchart TB
 | MPPT efficiency | ≥ 97 % | 98 % target | ![TBD] |
 | SCAP energy | ≥ 80 kJ | 100 kJ / 400 F / 700 V | ![TBD] |
 | SCAP peak power | ≥ 150 kW / 0.5 s | 200 kW / 0.5 s | ![TBD] |
-| Li-Ion battery subset capacity | ≥ 40 kWh | 50 kWh NMC 811 | ![TBD] |
+| Li-Ion battery subset capacity | ≥ 40 kWh | 50 kWh <BATTERY-CHEMISTRY> | ![TBD] |
 | HVDC 270 V bus tie power | ±50 kW min | ±80 kW bidirectional | ![TBD] |
 | BLI propulsor count | 2–4 | 2 (growth to 4) | ![TBD] |
 | BLI propulsor power per node | 15–40 kW | 40 kW per node | ![TBD] |

@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 000 — Nitrogen Generation System General
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 47 — Nitrogen Generation System (NGS) defines the architecture, functionality, and integration of the on-board inert gas generation system for the AMPEL360E eWTW all-electric wide-twin-wing aircraft. The AMPEL360E eWTW operates with **no hydraulic system** and **no bleed-air**; all NGS air supply is provided by Electric Air Compressors (EAC — no engine bleed).
+ATA 47 — Nitrogen Generation System (NGS) defines the architecture, functionality, and integration of the on-board inert gas generation system for the programme-defined aircraft type all-electric wide-twin-wing aircraft. The programme-defined aircraft type operates with **no hydraulic system** and **no bleed-air**; all NGS air supply is provided by Electric Air Compressors (EAC — no engine bleed).
 
 The NGS reduces fuel tank flammability by delivering Nitrogen-Enriched Air (NEA) to fuel tank ullages, maintaining oxygen concentration below 9% by volume (TOMS threshold) per CS-25 §25.981 and SFAR 88. Oxygen-Enriched Air (OEA), the by-product of the air separation process, is safely vented overboard. The Nitrogen Generation System Control Unit (NGSCU) is a dual-channel unit qualified to DO-178C DAL C.
 
@@ -62,7 +64,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 47 — Nitrogen Generation System |
 | Certification Basis | CS-25 Amendment 28; FAR 25.981; SFAR 88 |
 | Applicable Standards | DO-178C DAL C; DO-160G; S1000D Issue 5.0; ARINC 664 P7; MIL-STD-704F |
@@ -74,7 +76,7 @@ Key governance areas:
 
 ## §3. Functional Description
 
-The AMPEL360E eWTW Nitrogen Generation System is centred on two redundant Air Separation Module (ASM) banks fed exclusively by Electric Air Compressors (EAC), eliminating the engine bleed-air dependency found on conventional aircraft. Compressed air is conditioned through particulate filters and moisture separators before entering the hollow-fiber membrane ASMs, which separate the airstream into Nitrogen-Enriched Air (NEA, ~95% N₂) delivered to fuel tank ullages, and Oxygen-Enriched Air (OEA, ~40–45% O₂) vented overboard.
+The programme-defined aircraft type Nitrogen Generation System is centred on two redundant Air Separation Module (ASM) banks fed exclusively by Electric Air Compressors (EAC), eliminating the engine bleed-air dependency found on conventional aircraft. Compressed air is conditioned through particulate filters and moisture separators before entering the hollow-fiber membrane ASMs, which separate the airstream into Nitrogen-Enriched Air (NEA, ~95% N₂) delivered to fuel tank ullages, and Oxygen-Enriched Air (OEA, ~40–45% O₂) vented overboard.
 
 The dual-channel NGSCU provides closed-loop control, continuously monitoring O₂ concentration in each tank via TOMS sensors and modulating Flow Control Valves (FCVs) to maintain ullage O₂ below 9% by volume. If Channel A fails, Channel B assumes control within 3 seconds. Fault data is transmitted to ATA 45 CMS via AFDX for maintenance access and QAR recording.
 
@@ -247,8 +249,8 @@ stateDiagram-v2
 - Dual-channel software architecture: Channel A and Channel B run identical software builds on dissimilar hardware partitions.
 - PHM prognostic module embedded in NGSCU firmware; ASM degradation model updated via DLCS ground uplink.
 - Loadable software parts (LSP) managed per DO-200B; NGSCU configuration data loaded via AFDX DLCS interface.
-- Aircraft-specific NGS configuration file (eWTW variant, no bleed-air flag set) loaded at aircraft delivery and tracked in aircraft technical log.
-- BREX profile for S1000D publications: BREX-AMPEL360E-EWTW-047-v1.0.0.
+- Aircraft-specific NGS configuration file ([PROGRAMME-VARIANT] variant, no bleed-air flag set) loaded at aircraft delivery and tracked in aircraft technical log.
+- BREX profile for S1000D publications: BREX-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-047-v1.0.0.
 
 ---
 
@@ -319,7 +321,7 @@ stateDiagram-v2
 | Air Separation Module | ASM | Hollow-fiber membrane device that separates compressed air into NEA and OEA streams |
 | NGS Control Unit | NGSCU | Dual-channel avionics LRU controlling NGS valves and monitoring TOMS data; DO-178C DAL C |
 | Tank Oxygen Monitoring System | TOMS | Set of O₂ concentration sensors (one per fuel tank) providing real-time ullage O₂ data to NGSCU |
-| Electric Air Compressor | EAC | Electrically driven compressor (ATA 36) supplying compressed air to NGS; replaces engine bleed in eWTW |
+| Electric Air Compressor | EAC | Electrically driven compressor (ATA 36) supplying compressed air to NGS; replaces engine bleed in [PROGRAMME-VARIANT] |
 | Flow Control Valve | FCV | Electrically actuated valve modulating NEA flow to individual fuel tank branches |
 | Pressure Regulating Valve | PRV | Valve maintaining NEA distribution pressure within 12–18 psig downstream of ASM |
 | Special Federal Aviation Regulation | SFAR | SFAR 88 mandates fuel system safety improvements including ignition prevention in fuel tank venting systems |
@@ -368,7 +370,7 @@ stateDiagram-v2
 | NGS-OI-002 | TOMS sensor qualification test report not yet available | Q-MECHANICS | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | NGS-OI-003 | EAC compressed air delivery pressure and temperature during climb needs CFD verification | Q-AIR | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 | NGS-OI-004 | OEA vent port location and aerodynamic interaction study in progress | Q-AIR | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
-| NGS-OI-005 | LH₂ variant NGS interface requirements (future eWTW variant) — deferred | Q-GREENTECH | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| NGS-OI-005 | LH₂ variant NGS interface requirements (future [PROGRAMME-VARIANT] variant) — deferred | Q-GREENTECH | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

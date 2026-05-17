@@ -6,10 +6,10 @@ subsubject: "030"
 subsubject_title: "Recording Systems"
 file_name: "031-030-Recording-Systems.md"
 sns_reference: "031-30"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-30"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-30"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -99,10 +99,12 @@ keywords:
   - "DFDR"
   - "crash-survivable"
   - "ICAO Annex 6"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-030 — Recording Systems
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -114,31 +116,20 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Recording Systems for the AMPEL360e eWTW aircraft, covering the Combined Flight Data Recorder / Cockpit Voice Recorder (CVFDR), the Quick Access Recorder (QAR), and associated recording infrastructure. The recording suite constitutes a mandatory safety-critical installation required by ICAO Annex 6, CS-25.1457 (CVR), and CS-25.1459 (FDR), and provides the primary means of accident investigation data.
+This document defines the agnostic ATLAS standard-level architecture context for `031-030 — Recording Systems`.
 
-The eWTW baseline configuration uses a single combined CVFDR unit, which integrates both the FDR and CVR functions in one crash-survivable LRU. This approach reduces system weight, installation footprint, and connector count while providing full compliance with both recorder requirements from a single aft-fuselage-mounted unit. The CVFDR is qualified to EUROCAE ED-112A (Minimum Operational Performance Specification for Crash Protected Airborne Recorder Systems), which defines survivability requirements including crash impact (3400 g), fire (1100°C, 60 min), seawater immersion (6000 m, 30 days), and static crush (22.25 kN).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-In addition to the crash-survivable CVFDR, a solid-state Quick Access Recorder (QAR) is installed in the avionics bay. The QAR receives the same ARINC 717 data stream as the CVFDR but is not crash-survivable. Its primary purpose is to provide the airline with easy access to flight data for flight operations quality assurance (FOQA), trend monitoring, and operational analysis without requiring physical removal of the CVFDR. QAR data is accessed via ARINC 615A or wireless AGDL ground interface.
-
-A critical eWTW-specific consideration is the extension of the mandatory FDR parameter set (CS-25.1459 Appendix M, minimum 88 parameters) to include electric propulsion parameters not present in conventional aircraft FDR datasets. These include battery State of Charge, motor torque and speed, inverter operating state, and thermal management system temperatures. The complete supplementary parameter list is not yet defined (see Open Issues) and requires coordination with ATA 71 (Propulsion) and ATA 80 (Starting).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter / Subsubject | 31-30 — Recording Systems |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D SNS | 031-30 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-30 |
-| ICAO Applicability | Annex 6 Part I (international commercial air transport) |
-| Effectivity | All MSN from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The CVFDR is mounted in the aft fuselage pressure zone, specifically positioned to maximise survivability in post-crash scenarios. The aft fuselage location is chosen because accident statistics show it is the most commonly intact structure in survivable impact accidents. The recorder is attached via quick-release mounting (to allow post-accident retrieval) and is equipped with an Underwater Locator Beacon (ULB) that activates automatically upon water immersion. The ULB emits an acoustic pulse at 37.5 kHz detectable at depths up to 6000 m for a minimum of 30 days.
@@ -314,11 +305,11 @@ A mandatory periodic test of the complete recording chain (DFDAU to CVFDR and QA
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-30 | Recording Systems | DMC-AMPEL360E-EWTW-031-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-30-01 | CVFDR LRU | DMC-AMPEL360E-EWTW-031-30-01 | 040, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-30-02 | QAR LRU | DMC-AMPEL360E-EWTW-031-30-02 | 040, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-30-03 | ULB | DMC-AMPEL360E-EWTW-031-30-03 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-30-04 | Cockpit Area Microphone | DMC-AMPEL360E-EWTW-031-30-04 | 040, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30 | Recording Systems | DMC-<PROGRAMME>-<VARIANT>-031-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30-01 | CVFDR LRU | DMC-<PROGRAMME>-<VARIANT>-031-30-01 | 040, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30-02 | QAR LRU | DMC-<PROGRAMME>-<VARIANT>-031-30-02 | 040, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30-03 | ULB | DMC-<PROGRAMME>-<VARIANT>-031-30-03 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30-04 | Cockpit Area Microphone | DMC-<PROGRAMME>-<VARIANT>-031-30-04 | 040, 400, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-30)
 
@@ -394,7 +385,7 @@ A mandatory periodic test of the complete recording chain (DFDAU to CVFDR and QA
 | Digital Flight Data Recorder | DFDR | Alternative designation for a solid-state FDR (as opposed to magnetic tape DFDR) |
 | Quick Access Recorder | QAR | Non-crash-survivable recorder providing easy access to flight data for operational monitoring |
 | ARINC 717 | — | Standard serial digital bus used to transmit flight data from DFDAU to FDR (Harvard biphase, 1024 or 2048 wps) |
-| ARINC 767 | — | Alternative/enhanced FDR data standard (may apply for future eWTW FDR if very high parameter counts required) |
+| ARINC 767 | — | Alternative/enhanced FDR data standard (may apply for future [PROGRAMME-VARIANT] FDR if very high parameter counts required) |
 | Crash-Survivable Memory Unit | CSMU | The internal protected memory module within the CVFDR that must survive crash conditions |
 | Underwater Locator Beacon | ULB | Acoustic pinger activated by water immersion, emitting 37.5 kHz signal for post-crash location |
 | Bulk Erase | — | Function to erase all CVR audio content; restricted to ground, engines off; cannot be performed in flight |

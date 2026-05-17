@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0082-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-082-040-PROPELLANT-IONIZATION-AND-PLASMA-GENERATION
      ATLAS-082 (Plasma and Ionic Propulsion Concepts) · Propellant Ionization and Plasma Generation
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propellant Ionization and Plasma Generation
@@ -44,26 +46,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-040"
 
 ## §1 Purpose
 
-ATLAS subsubject 082-040 covers the propellant selection, storage, feed system, ionisation mechanisms, and plasma generation methods used in the AMPEL360E eWTW PIPC programme. It addresses xenon and krypton propellant properties, discharge chamber ionisation techniques (electron bombardment and radiofrequency), hollow cathode neutraliser design, and the plasma parameter targets that drive thruster performance.
+This document defines the agnostic ATLAS standard-level architecture context for `Propellant Ionization and Plasma Generation`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-082 — 082-040 Propellant Ionization and Plasma Generation |
-| Certification basis | EASA CS-25 Amdt 27+ (research ref.); ATEX Directive 2014/34/EU (Xe pressure zone) |
-| S1000D SNS | 082-040-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `082` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Propellant Selection
 
 ### 3.1 Primary Propellant: Xenon (Xe)
 
-Xenon is the baseline propellant for the AMPEL360E eWTW PIPC programme for the following reasons:
+Xenon is the baseline propellant for the programme-defined aircraft type PIPC programme for the following reasons:
 
 | Property | Value | Significance |
 |---|---|---|

@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Automatic Data Reporting and Aircraft Condition Monitoring"
 file_name: "031-070-Automatic-Data-Reporting-and-Aircraft-Condition-Monitoring.md"
 sns_reference: "031-70"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-70"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-70"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -100,10 +100,12 @@ keywords:
   - "datalink"
   - "SATCOM"
   - "trend monitoring"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-070 — Automatic Data Reporting and Aircraft Condition Monitoring
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -115,37 +117,27 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Aircraft Condition Monitoring System (ACMS) and its associated automatic data reporting functions, including ACARS (Aircraft Communication Addressing and Reporting System) datalink, for the AMPEL360e eWTW aircraft. The ACMS provides airlines with a sophisticated tool for monitoring aircraft health, detecting parameter exceedances, performing trend analysis, and generating automatic pre-notification of maintenance requirements — all without requiring physical access to the aircraft between flights.
+This document defines the agnostic ATLAS standard-level architecture context for `031-070 — Automatic Data Reporting and Aircraft Condition Monitoring`.
 
-The eWTW ACMS is implemented as a software function (IMA-hosted or standalone LRU — TBD per LC03 trade) that acquires data from the DFDAU ARINC 717 stream and supplementary ARINC 429 / AFDX data buses. It stores acquired data in solid-state memory and generates periodic and event-triggered reports in ARINC 620 message format for transmission via the ACARS datalink. The ACARS datalink is provided by the aircraft's VHF data radio (ATA 23) or, when out of VHF range, by the SATCOM link.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-A defining feature of the eWTW ACMS is its extension to cover electric propulsion condition monitoring. Conventional ACMS systems focus on gas turbine engine parameters (EGT trend, vibration, oil consumption). The eWTW ACMS must address: battery State of Charge and degradation trend, battery thermal performance (charge/discharge efficiency vs temperature), motor winding temperature trend, inverter efficiency degradation, and regenerative braking energy recovery performance. These novel parameters require purpose-developed ACMS algorithms and exceedance thresholds in close coordination with ATA 71 (Propulsion) engineering.
-
-The ACMS also provides the data foundation for the airline's Flight Operations Quality Assurance (FOQA) programme. In-flight exceedance detection (hard landing, over-speed, over-G, battery over-temperature) triggers automatic ACARS reports to the airline operations centre, enabling rapid maintenance assessment and dispatch decisions without waiting for QAR data download.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter / Subsubject | 31-70 — Automatic Data Reporting and Aircraft Condition Monitoring |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D SNS | 031-70 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-70 |
-| Effectivity | All MSN from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The ACMS continuously monitors a defined set of aircraft parameters at sampling rates appropriate for trend analysis and exceedance detection. The parameter set for ACMS is typically broader and at higher sample rates than the mandatory FDR parameter set: while the FDR records 1024–2048 words per second on a continuous loop, the ACMS may selectively record specific parameters at higher rates (e.g., 4–8 samples per second for battery current and voltage) during critical flight phases. Data is stored in a large solid-state storage module and is managed by the ACMS software with configurable storage policies.
 
 ACARS datalink integration allows the ACMS to transmit short structured reports in near-real-time during flight. These reports — formatted per ARINC 620 — include: periodic position/engine health reports (sent every 15–30 minutes), exceedance reports (transmitted within seconds of threshold crossing), end-of-flight reports (transmitted at engine shutdown or parking), and maintenance pre-notification messages (alerting ground maintenance to observed faults before aircraft arrival). The ACARS reports are received by the airline's ground maintenance system, which feeds into the maintenance planning and aircraft monitoring infrastructure.
 
-For the eWTW, the ACMS datalink via VHF and SATCOM enables the airline to monitor battery degradation over the fleet, optimise charging profiles, detect early motor controller anomalies, and manage warranty claims against propulsion system suppliers. This predictive maintenance capability is essential for managing the high capital cost of the battery and propulsion system.
+For the [PROGRAMME-VARIANT], the ACMS datalink via VHF and SATCOM enables the airline to monitor battery degradation over the fleet, optimise charging profiles, detect early motor controller anomalies, and manage warranty claims against propulsion system suppliers. This predictive maintenance capability is essential for managing the high capital cost of the battery and propulsion system.
 
 ---
 
@@ -313,10 +305,10 @@ Routine maintenance includes periodic ACMS data quality check (comparing ACMS re
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-70 | Automatic Data Reporting and ACMS | DMC-AMPEL360E-EWTW-031-70 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-70-01 | ACMS Software Function | DMC-AMPEL360E-EWTW-031-70-01 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-70-02 | ACARS Datalink Interface | DMC-AMPEL360E-EWTW-031-70-02 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-70-03 | Electric Propulsion ACMS Monitoring | DMC-AMPEL360E-EWTW-031-70-03 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-70 | Automatic Data Reporting and ACMS | DMC-<PROGRAMME>-<VARIANT>-031-70 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-70-01 | ACMS Software Function | DMC-<PROGRAMME>-<VARIANT>-031-70-01 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-70-02 | ACARS Datalink Interface | DMC-<PROGRAMME>-<VARIANT>-031-70-02 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-70-03 | Electric Propulsion ACMS Monitoring | DMC-<PROGRAMME>-<VARIANT>-031-70-03 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-70)
 

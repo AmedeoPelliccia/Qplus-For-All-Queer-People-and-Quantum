@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Loads, Environment and Design Basis Overview
 
 ## 1. Purpose
 
-Provides the programme-level overview of the **loads, environment, and design basis** framework for the AMPEL360 eWTW structural programme: how loads are categorised, how environmental envelopes are defined, and how the design basis feeds structural sizing, certification evidence, and S1000D documentation production.
+Provides the programme-level overview of the **loads, environment, and design basis** framework for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural programme: how loads are categorised, how environmental envelopes are defined, and how the design basis feeds structural sizing, certification evidence, and S1000D documentation production.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW structural programme must satisfy CS-25 Subpart C external-load requirements while also accounting for novel cryogenic loads arising from the LH₂ propulsion system and elevated acoustic/vibration loads from distributed electric open-rotor propulsion. The design basis document DBD-AMPEL360-STRUCT-001 aggregates all governing load cases and environmental envelopes into a single controlled source for structural sizing.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural programme must satisfy CS-25 Subpart C external-load requirements while also accounting for novel cryogenic loads arising from the LH₂ propulsion system and elevated acoustic/vibration loads from distributed electric open-rotor propulsion. The design basis document DBD-[PROGRAMME-AIRCRAFT]-STRUCT-001 aggregates all governing load cases and environmental envelopes into a single controlled source for structural sizing.
 
 Key load categories include: CS-25 flight and ground external loads; pressurisation differential loads; thermal and cryogenic gradient loads; vibration and acoustic fatigue loads; and lightning/HIRF electromagnetic loads. Each category feeds the damage-tolerance and fatigue analysis chain governed by CS-25.571.
 
@@ -45,7 +47,7 @@ Key load categories include: CS-25 flight and ground external loads; pressurisat
 
 ```mermaid
 graph TD
-    A[Design Basis DBD-AMPEL360-STRUCT-001] --> B[External Loads]
+    A[Design Basis DBD-[PROGRAMME-AIRCRAFT]-STRUCT-001] --> B[External Loads]
     A --> C[Environmental Loads]
     A --> D[Fatigue and DT Basis]
     B --> B1[Flight Loads CS-25.301]

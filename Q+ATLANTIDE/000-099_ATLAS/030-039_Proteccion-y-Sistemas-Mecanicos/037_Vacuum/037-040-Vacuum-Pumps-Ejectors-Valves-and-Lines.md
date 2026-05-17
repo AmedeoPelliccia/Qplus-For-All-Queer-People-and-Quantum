@@ -6,9 +6,9 @@ subsubject: "040"
 subsubject_title: "Vacuum Pumps, Ejectors, Valves, and Lines"
 file_name: "037-040-Vacuum-Pumps-Ejectors-Valves-and-Lines.md"
 sns_reference: "037-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-40"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-40"
 ata_chapter: 37
-aircraft: "AMPEL360e eWTW"
+aircraft: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
 project: "Q+ATLANTIDE"
 status: "DRAFT"
 keywords:
@@ -28,10 +28,12 @@ created: "2025-07-14"
 revised: "2025-07-14"
 revision: "0.1"
 author: "Q+ATLANTIDE ATLAS Working Group"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-040 — Vacuum Pumps, Ejectors, Valves, and Lines
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1 — 2025-07-14  
@@ -41,37 +43,26 @@ author: "Q+ATLANTIDE ATLAS Working Group"
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-AMPEL360E-EWTW-037-40-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline.
+All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-037-40-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline.
 
 ---
 
 ## §1 Purpose
 
-This document provides the consolidated component-level description of all vacuum pumps, ejectors (and their deliberate absence), valves, and lines that make up the AMPEL360e eWTW Vacuum Waste System (VWS). It serves as the primary hardware reference for all ATA 37 physical components.
+This document defines the agnostic ATLAS standard-level architecture context for `037-040 — Vacuum Pumps, Ejectors, Valves, and Lines`.
 
-Objectives:
-1. Describe the EVG as a vacuum pump — pump type, construction, and performance parameters.
-2. Explicitly document the absence of ejectors and justify this on the basis of eWTW architecture.
-3. Describe the EFV (Electric Flush Valve) — the primary consumer-side valve.
-4. Describe the NRV (Non-Return Valve) at each toilet connection.
-5. Describe the VRV (Vacuum Relief Valve) and SOV (Shutoff Valve) at component level.
-6. Describe vacuum lines (manifold and branches), separators, and odour filters.
-7. Provide a complete component inventory table.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| ATA Chapter / Subsubject | 37-040 — Vacuum Pumps, Ejectors, Valves, and Lines |
-| Document Tier | Level 3 — Subsystem Description |
-| Effectivity | MSN 0001 onwards (TBD) |
-| Parent Document | QATL-ATLAS-000099-ATLAS-030039-037-000 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Component Inventory Table
@@ -81,7 +72,7 @@ Objectives:
 | 1 | Electric Vacuum Generator (EVG) | 2 TBD | Rotary vane or diaphragm pump | Vacuum source | <img src="https://img.shields.io/badge/TBD-red"> |
 | 2 | EVG Motor Controller (EVGMC) | 2 TBD | Brushless DC or AC induction controller | Motor speed / regulation | <img src="https://img.shields.io/badge/TBD-red"> |
 | 3 | EVG Outlet Check Valve | 2 TBD | Spring-loaded, SS / PTFE | Backflow prevention through idle EVG | <img src="https://img.shields.io/badge/TBD-red"> |
-| 4 | Ejector (bleed-air type) | 0 | **NOT FITTED** | N/A — no bleed air on eWTW | N/A |
+| 4 | Ejector (bleed-air type) | 0 | **NOT FITTED** | N/A — no bleed air on [PROGRAMME-VARIANT] | N/A |
 | 5 | Shutoff Valve (SOV) | 1 TBD | N/O solenoid, SS, FKM | EVG isolation | <img src="https://img.shields.io/badge/TBD-red"> |
 | 6 | Vacuum Relief Valve (VRV) | 1 TBD | Spring-loaded mechanical, SS / PTFE | Over-vacuum protection | <img src="https://img.shields.io/badge/TBD-red"> |
 | 7 | Electric Flush Valve (EFV) | TBD (1 per toilet) | Solenoid, SS, FKM | Initiates flush cycle | <img src="https://img.shields.io/badge/TBD-red"> |
@@ -123,7 +114,7 @@ All ATA 37 physical hardware components listed in §3.1 items 1–14.
 
 ### 5.1 EVG — Electric Vacuum Generator (Pump)
 
-The EVG is a motor-driven vacuum pump. It is the only vacuum generating device on the eWTW (no engine-driven pumps, no ejectors).
+The EVG is a motor-driven vacuum pump. It is the only vacuum generating device on the [PROGRAMME-VARIANT] (no engine-driven pumps, no ejectors).
 
 **Pump type options under evaluation:** <img src="https://img.shields.io/badge/TBD-red">
 
@@ -148,12 +139,12 @@ The EVG is a motor-driven vacuum pump. It is the only vacuum generating device o
 
 ### 5.2 Ejectors — NOT FITTED
 
-Bleed-air ejectors (venturi-type vacuum generators using engine bleed motive flow) are **NOT fitted** on the eWTW. Rationale:
+Bleed-air ejectors (venturi-type vacuum generators using engine bleed motive flow) are **NOT fitted** on the [PROGRAMME-VARIANT]. Rationale:
 
-- The eWTW is a **fully electric architecture** with **no engine bleed air extraction**. Engines have no bleed ports. There is no pneumatic manifold (ATA 36 is not applicable in the conventional bleed sense).
+- The [PROGRAMME-VARIANT] is a **fully electric architecture** with **no engine bleed air extraction**. Engines have no bleed ports. There is no pneumatic manifold (ATA 36 is not applicable in the conventional bleed sense).
 - Without a motive bleed air flow, ejectors cannot function.
 - Even if a pneumatic source were available, ejectors would be architecturally inappropriate as they require continuous motive flow, reducing efficiency.
-- Electric motor-driven EVGs are simpler, controllable, and appropriate for the eWTW all-electric philosophy.
+- Electric motor-driven EVGs are simpler, controllable, and appropriate for the [PROGRAMME-VARIANT] all-electric philosophy.
 
 **This section is retained as a placeholder to explicitly document and justify the non-fitment of ejectors**, preventing future re-evaluation without awareness of this decision.
 
@@ -448,13 +439,13 @@ flowchart LR
 
 | DMC Code | Title | Infocode | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-037-40-00-00A-040A-D | Pumps, Valves, Lines Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-01-00A-040A-D | EVG Description (Pump type detail) | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-02-00A-040A-D | EFV Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-03-00A-040A-D | NRV, VRV, SOV Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-00-00A-200A-D | EFV and NRV R&I | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-00-00A-300A-D | Separator and Odour Filter Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-00-00A-520A-D | Component Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-40-00-00A-040A-D | Pumps, Valves, Lines Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-40-01-00A-040A-D | EVG Description (Pump type detail) | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-40-02-00A-040A-D | EFV Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-40-03-00A-040A-D | NRV, VRV, SOV Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-40-00-00A-200A-D | EFV and NRV R&I | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-40-00-00A-300A-D | Separator and Odour Filter Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-40-00-00A-520A-D | Component Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -489,7 +480,7 @@ flowchart LR
 
 ### 16.2 No Ejector Safety Note
 
-The absence of bleed-air ejectors eliminates a historic failure mode in which loss of bleed air supply caused simultaneous loss of vacuum waste system on aircraft types using ejectors as vacuum source. The eWTW EVG is independent of the propulsion system — an engine failure does not affect the VWS (provided AC Bus is maintained from remaining engine generator or APU).
+The absence of bleed-air ejectors eliminates a historic failure mode in which loss of bleed air supply caused simultaneous loss of vacuum waste system on aircraft types using ejectors as vacuum source. The [PROGRAMME-VARIANT] EVG is independent of the propulsion system — an engine failure does not affect the VWS (provided AC Bus is maintained from remaining engine generator or APU).
 
 ### 16.3 EFV Stuck-Open Failure Analysis
 
@@ -528,9 +519,9 @@ Saturated or missing odour filter → odourous air released to cabin or ambient.
 | Brushless DC motor | Electronically commutated DC motor; preferred for EVG due to controllability and low maintenance |
 | Diaphragm pump | Oil-free vacuum pump using a flexible diaphragm; lower vacuum capability than rotary vane |
 | EFV | Electric Flush Valve — N/C solenoid valve initiating toilet flush cycle |
-| Ejector | Venturi-type vacuum generator using motive gas flow — **NOT FITTED on eWTW** |
+| Ejector | Venturi-type vacuum generator using motive gas flow — **NOT FITTED on [PROGRAMME-VARIANT]** |
 | FKM | Fluorocarbon elastomer (Viton) — chemical-resistant seat material for solenoid valves |
-| Motive flow | High-pressure fluid (bleed air or liquid) that drives an ejector — absent on eWTW |
+| Motive flow | High-pressure fluid (bleed air or liquid) that drives an ejector — absent on [PROGRAMME-VARIANT] |
 | N/C | Normally Closed — EFV default state (de-energised = closed) |
 | N/O | Normally Open — SOV default state (de-energised = open) |
 | NRV | Non-Return Valve — spring disc check valve preventing backflow at toilet connection |
@@ -553,7 +544,7 @@ Saturated or missing odour filter → odourous air released to cabin or ambient.
 4. EASA CS-25 Amendment 27 — CS-25.869 "Fire Protection."
 5. ATA iSpec 2200 Chapter 37 — Vacuum.
 6. S1000D Issue 5.0 — International Specification for Technical Publications.
-7. AMPEL360e eWTW SRD-eWTW-037 (Component section) — <img src="https://img.shields.io/badge/TBD-red">
+7. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] SRD-[PROGRAMME-VARIANT]-037 (Component section) — <img src="https://img.shields.io/badge/TBD-red">
 8. EVG Supplier Specification — <img src="https://img.shields.io/badge/TBD-red"> (OI-037-001)
 9. EFV Supplier Specification — <img src="https://img.shields.io/badge/TBD-red">
 10. Odour Filter Supplier Specification — <img src="https://img.shields.io/badge/TBD-red"> (OI-037-006)
@@ -570,7 +561,7 @@ Saturated or missing odour filter → odourous air released to cabin or ambient.
 | QATL-ATLAS-000099-ATLAS-030039-037-030 | Vacuum Regulation and Shutoff — VRV, SOV |
 | QATL-ATLAS-000099-ATLAS-030039-025-000 | Cabin Equipment and Furnishings — ATA 25 (toilet units) |
 | QATL-ATLAS-000099-ATLAS-030039-038-000 | Water and Waste General — ATA 38 |
-| AMM-AMPEL360E-037-40 | Aircraft Maintenance Manual Chapter 37-40 |
+| AMM-[PROGRAMME-AIRCRAFT]-037-40 | Aircraft Maintenance Manual Chapter 37-40 |
 
 ---
 

@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — Access, Maintenance and Inspection Zones
 
 ## 1. Purpose
 
-Defines the **access, maintenance, and inspection (AMI) zone** layout for the AMPEL360 eWTW, mapping structural zones to their applicable inspection access method, access panel locations, and inspection check level.
+Defines the **access, maintenance, and inspection (AMI) zone** layout for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], mapping structural zones to their applicable inspection access method, access panel locations, and inspection check level.
 
 ## 2. Scope
 

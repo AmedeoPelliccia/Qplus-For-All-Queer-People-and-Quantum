@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 030 — Partitioning and Hosted Applications
@@ -38,10 +40,10 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the ARINC 653 partitioning framework, APEX API services, hosted application catalogue, and IMA Platform Qualification approach for the AMPEL360E IMA system. It establishes the evidence boundary between the Platform (IMA integrator responsibility) and Hosted Applications (individual application supplier responsibility), consistent with DO-297 guidance and EASA AMC 20-152A.
+This document defines the ARINC 653 partitioning framework, APEX API services, hosted application catalogue, and IMA Platform Qualification approach for the [PROGRAMME-AIRCRAFT] IMA system. It establishes the evidence boundary between the Platform (IMA integrator responsibility) and Hosted Applications (individual application supplier responsibility), consistent with DO-297 guidance and EASA AMC 20-152A.
 
 The document governs:
-- ARINC 653 Part 1 spatial and temporal partitioning implementation on AMPEL360E GPPM platform.
+- ARINC 653 Part 1 spatial and temporal partitioning implementation on [PROGRAMME-AIRCRAFT] GPPM platform.
 - APEX API (Application Executive) service provision for inter-partition communication (sampling ports, queuing ports, blackboards).
 - Mixed-DAL (A/B/C) hosted application co-residency isolation evidence.
 - IMA Platform Qualification Plan (PQP) structure and Hosted Application Acceptance (HAA) process.
@@ -53,18 +55,18 @@ The document governs:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28; AMC 20-152A |
 | Applicable Standards | ARINC 653 Part 1/2/3; DO-297; DO-178C; DO-254; ARP4754B |
 | Design Assurance Level | RTOS Platform: DAL B; Mixed hosted apps: DAL A–C |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E IMA platform RTOS implements ARINC 653 Part 1 services on each GPPM. The partition configuration is defined in an XML configuration file (the ARINC 653 System Integration File, SIF) loaded at power-up. The SIF specifies partition memory regions, time windows (minor/major frame), port definitions, and HM table entries.
+The [PROGRAMME-AIRCRAFT] IMA platform RTOS implements ARINC 653 Part 1 services on each GPPM. The partition configuration is defined in an XML configuration file (the ARINC 653 System Integration File, SIF) loaded at power-up. The SIF specifies partition memory regions, time windows (minor/major frame), port definitions, and HM table entries.
 
 **Spatial Partitioning:** Each partition receives an exclusive memory region enforced by the hardware MPU (FPGA-implemented) and software MMU. Any partition attempt to access another partition's memory causes an immediate partition-level HM action (partition restart) without affecting other partitions.
 
@@ -104,7 +106,7 @@ The AMPEL360E IMA platform RTOS implements ARINC 653 Part 1 services on each GPP
 
 **HM Table Hierarchy:** The ARINC 653 HM table has three levels: (1) Process-level: process fault → process restart; (2) Partition-level: partition fault → partition restart; (3) System-level: system fault → module reset. Recovery escalates through levels if lower-level recovery fails within the recovery time budget.
 
-**Hosted Application Catalogue (AMPEL360E Build Standard 1.0):**
+**Hosted Application Catalogue ([PROGRAMME-AIRCRAFT] Build Standard 1.0):**
 - FMS/FMGC (DAL B, GPPM-L1): Flight management and guidance computation.
 - FWS/FWC (DAL A, GPPM-L2 + TMR): Flight warning computation.
 - ADIRU Pre-Processing (DAL A, GPPM-L1 + GPPM-R1): Air data/inertial pre-processing.
@@ -370,8 +372,8 @@ graph LR
 |--------|----------|---------|--------|
 | REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-042-02 | 042-020 Processing Modules | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | AMPEL360E IMA Platform Qualification Plan (PQP) | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | AMPEL360E Hosted Application Acceptance Checklist | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] IMA Platform Qualification Plan (PQP) | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] Hosted Application Acceptance Checklist | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

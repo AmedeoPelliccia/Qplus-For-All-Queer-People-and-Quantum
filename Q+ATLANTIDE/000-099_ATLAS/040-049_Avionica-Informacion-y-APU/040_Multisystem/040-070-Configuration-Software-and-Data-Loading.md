@@ -53,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 070 — Configuration, Software and Data Loading
@@ -68,7 +70,7 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md) 
 
 ## 1. Purpose
 
-This document defines the configuration, software and data loading architecture for the AMPEL360E avionics multisystem. It covers ARINC 615A data loading over AFDX, DO-200B data integrity controls, the software configuration index (SCI), operational load control procedures, post-load verification, rollback mechanisms, ACARS-triggered loading, and compliance with EASA AMC 20-21. It is the primary reference for software loading engineers, avionics configuration managers, and certification authorities.
+This document defines the configuration, software and data loading architecture for the [PROGRAMME-AIRCRAFT] avionics multisystem. It covers ARINC 615A data loading over AFDX, DO-200B data integrity controls, the software configuration index (SCI), operational load control procedures, post-load verification, rollback mechanisms, ACARS-triggered loading, and compliance with EASA AMC 20-21. It is the primary reference for software loading engineers, avionics configuration managers, and certification authorities.
 
 ---
 
@@ -76,7 +78,7 @@ This document defines the configuration, software and data loading architecture 
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | Loading Protocol | ARINC 615A over AFDX |
 | Data Integrity Standard | [DO-200B](#ref-do-200b) |
@@ -88,7 +90,7 @@ This document defines the configuration, software and data loading architecture 
 
 ## 3. System / Function Overview
 
-The AMPEL360E software and data loading architecture uses ARINC 615A as the ground-to-avionics data transfer protocol over the AFDX network. A dedicated Operational Load Control (OLC) function manages load sequencing, target identification, and post-load verification. DO-200B-compliant data integrity checks (CRC-32 and hash validation) are applied to all loadable software parts (LSP) and loadable data parts (LDP). The Software Configuration Index (SCI) records the configuration state of all hosted partitions following each loading event. ACARS-triggered loading allows remote-initiated updates from ground operations via the ACMS data link. Rollback to a previously certified configuration is supported for any failed loading event.
+The [PROGRAMME-AIRCRAFT] software and data loading architecture uses ARINC 615A as the ground-to-avionics data transfer protocol over the AFDX network. A dedicated Operational Load Control (OLC) function manages load sequencing, target identification, and post-load verification. DO-200B-compliant data integrity checks (CRC-32 and hash validation) are applied to all loadable software parts (LSP) and loadable data parts (LDP). The Software Configuration Index (SCI) records the configuration state of all hosted partitions following each loading event. ACARS-triggered loading allows remote-initiated updates from ground operations via the ACMS data link. Rollback to a previously certified configuration is supported for any failed loading event.
 
 ---
 
@@ -276,12 +278,12 @@ graph LR
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-040-070-00A-040A-A | 040 | Configuration and Software Loading Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-040-070-00A-300A-A | 300 | Software Load Fault Isolation |
-| Loading Procedures | DMC-AMPEL360E-EWTW-040-070-00A-310A-A | 310 | ARINC 615A Ground Data Loading Procedure |
-| BITE/Test | DMC-AMPEL360E-EWTW-040-070-00A-400A-A | 400 | OLC BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-040-070-00A-520A-A | 520 | AIP Wiring and Connector Data |
-| Software Desc | DMC-AMPEL360E-EWTW-040-070-00A-720A-A | 720 | OLC and SCI Software Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-040-070-00A-040A-A | 040 | Configuration and Software Loading Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-040-070-00A-300A-A | 300 | Software Load Fault Isolation |
+| Loading Procedures | DMC-<PROGRAMME>-<VARIANT>-040-070-00A-310A-A | 310 | ARINC 615A Ground Data Loading Procedure |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-040-070-00A-400A-A | 400 | OLC BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-040-070-00A-520A-A | 520 | AIP Wiring and Connector Data |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-040-070-00A-720A-A | 720 | OLC and SCI Software Description |
 
 ### Recommended Data Module Set
 

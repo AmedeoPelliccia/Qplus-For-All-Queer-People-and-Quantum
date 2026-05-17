@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0085-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-085-000-DISTRIBUTED-ELECTRIC-PROPULSION-ARCHITECTURE-GENERAL
      ATLAS-085 (Distributed Electric Propulsion Architecture) · General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Distributed Electric Propulsion Architecture — General
@@ -46,28 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 085-000 is the **apex reference** for the Distributed Electric Propulsion Architecture (DEPA) subsection of the AMPEL360E eWTW. It establishes the overall system description, functional decomposition, interface catalogue, operating mode inventory, and certification constraints applicable across the full DEPA scope. All subordinate subsubject documents (085-010 through 085-090) are governed by, and must be consistent with, this general baseline document.
+This document defines the agnostic ATLAS standard-level architecture context for `Distributed Electric Propulsion Architecture — General`.
 
-The DEPA distributes propulsive thrust across four boundary-layer-ingestion (BLI) fan propulsors arranged symmetrically on the AMPEL360E eWTW airframe: two over-wing root units (P1 — port, P2 — starboard) and two aft-fuselage units (P3 — port, P4 — starboard). Each propulsor is driven by a dedicated 500 kW permanent-magnet synchronous motor (PMSM) and motor drive unit (MDU), all fed from the HVDC 800 V bus provided by the Beyond-Gen-2 Hybrid Architecture (BGHA, ATLAS-084). The Distributed Electric Propulsion Control Unit (DEPCU), qualified to DAL B (DO-178C software / DO-254 hardware), operates as a dual-lane ARINC 653 partitioned controller that receives thrust demand from FADEC (ATA 73) and issues torque setpoints to each MDU at a 10 ms control cycle to maintain aero-propulsive coupling targets while satisfying BLI efficiency and asymmetric thrust management requirements.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-085 (Distributed Electric Propulsion Architecture) |
-| Certification Basis | DO-178C DAL B (DEPCU software); DO-254 DAL B (DEPCU hardware); DO-160G (environmental); EASA CS-25 Amendment 27+ |
-| S1000D SNS | 085-000-00 |
-| DMRL Reference | BREX-085-v1; 30 Data Modules |
-| Effectivity | All AMPEL360E eWTW aircraft from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `085` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description
 
-The AMPEL360E eWTW **Distributed Electric Propulsion Architecture (DEPA)** comprises four HVDC-fed BLI fan propulsors driven by individual 500 kW PMSMs:
+The programme-defined aircraft type **Distributed Electric Propulsion Architecture (DEPA)** comprises four HVDC-fed BLI fan propulsors driven by individual 500 kW PMSMs:
 
 1. **Propulsor P1 — Over-Wing Root Port:** 500 kW PMSM with co-located MDU (MDU-1), mounted at the port wing-root leading edge in a flush-nacelle BLI duct. P1 ingests the port fuselage boundary layer, reducing effective inlet drag and improving propulsive efficiency.
 
@@ -89,7 +86,7 @@ The **DEPCU**, qualified to DAL B (DO-178C software / DO-254 hardware), operates
 | F-002 | DEP Baseline and Scope | Technology comparison, TRL status, design targets, mission roles | Q-GREENTECH |
 | F-003 | Distributed Propulsor Layout and Topology | P1–P4 locations, BLI duct geometry, nacelle envelope, thrust vector | Q-HORIZON |
 | F-004 | Electric Motor and Drive Allocation | PMSM specs, MDU architecture, torque control bandwidth, thermal limits | Q-INDUSTRY |
-| F-005 | Power Distribution and Energy Management Interfaces | HVDC 800 V feed from BGHA, per-propulsor BTBs, power budgets | Q-INDUSTRY |
+| F-005 | Power Distribution and Energy Management Interfaces | HVDC <NOMINAL-VOLTAGE> feed from BGHA, per-propulsor BTBs, power budgets | Q-INDUSTRY |
 | F-006 | Propulsor Airframe Integration and Aero-Propulsive Coupling | BLI interaction, fan-wake impingement, trim drag, aero-propulsive gain model | Q-STRUCTURES |
 | F-007 | Redundancy, Fault Tolerance and Degraded Modes | 5 DMs, FMEA top-10, MEL cross-reference, DEPCU reconfiguration logic | Q-GREENTECH |
 | F-008 | Thermal, EMC and Structural Integration Constraints | DEP-TML cooling loops, EMC filtering, PMSM structural mounts, vibration | Q-STRUCTURES |
@@ -101,11 +98,11 @@ The **DEPCU**, qualified to DAL B (DO-178C software / DO-254 hardware), operates
 
 ```mermaid
 flowchart LR
-    BGHA[BGHA Bus\nHVDC 800 V\nATLAS-084] -->|HVDC 800 V| DEPBU[DEP Power Bus\nHVDC 800 V\nBTB-P1…P4]
-    DEPBU -->|HVDC 800 V| MDU1[MDU-1\nP1 Over-Wing Port\n500 kW]
-    DEPBU -->|HVDC 800 V| MDU2[MDU-2\nP2 Over-Wing Stbd\n500 kW]
-    DEPBU -->|HVDC 800 V| MDU3[MDU-3\nAft-Fuse Port\n500 kW]
-    DEPBU -->|HVDC 800 V| MDU4[MDU-4\nAft-Fuse Stbd\n500 kW]
+    BGHA[BGHA Bus\nHVDC <NOMINAL-VOLTAGE>\nATLAS-084] -->|HVDC <NOMINAL-VOLTAGE>| DEPBU[DEP Power Bus\nHVDC <NOMINAL-VOLTAGE>\nBTB-P1…P4]
+    DEPBU -->|HVDC <NOMINAL-VOLTAGE>| MDU1[MDU-1\nP1 Over-Wing Port\n500 kW]
+    DEPBU -->|HVDC <NOMINAL-VOLTAGE>| MDU2[MDU-2\nP2 Over-Wing Stbd\n500 kW]
+    DEPBU -->|HVDC <NOMINAL-VOLTAGE>| MDU3[MDU-3\nAft-Fuse Port\n500 kW]
+    DEPBU -->|HVDC <NOMINAL-VOLTAGE>| MDU4[MDU-4\nAft-Fuse Stbd\n500 kW]
     MDU1 -->|3-phase AC| PMSM1[PMSM-1\nP1 Fan]
     MDU2 -->|3-phase AC| PMSM2[PMSM-2\nP2 Fan]
     MDU3 -->|3-phase AC| PMSM3[PMSM-3\nP3 Fan]
@@ -141,15 +138,15 @@ flowchart TB
 | Component | Part Number | Qty | Location | Maint. Interval | Notes |
 |---|---|---|---|---|---|
 | DEPCU (Dual-Lane) | DEPCU-PN-TBD | 1 | Forward avionics bay (4-MCU) | Software update per SB; C-check BITE | DO-178C DAL B; DO-254 DAL B; ARINC 653 |
-| PMSM-1 (P1) | PMSM-500-PN-TBD | 1 | Port over-wing root nacelle | A-check vibration; 6 000 h winding inspect | 500 kW; 6 000 RPM; HVDC 800 V fed via MDU-1 |
+| PMSM-1 (P1) | PMSM-500-PN-TBD | 1 | Port over-wing root nacelle | A-check vibration; 6 000 h winding inspect | 500 kW; 6 000 RPM; HVDC <NOMINAL-VOLTAGE> fed via MDU-1 |
 | PMSM-2 (P2) | PMSM-500-PN-TBD | 1 | Starboard over-wing root nacelle | As PMSM-1 (mirror) | Mirror of P1 |
 | PMSM-3 (P3) | PMSM-500-PN-TBD | 1 | Aft-fuselage port nacelle | A-check vibration; 6 000 h winding inspect | Highest BLI gain; ~12 % drag reduction |
 | PMSM-4 (P4) | PMSM-500-PN-TBD | 1 | Aft-fuselage starboard nacelle | As PMSM-3 (mirror) | Mirror of P3 |
-| MDU-1 | MDU-500-PN-TBD | 1 | P1 nacelle (co-located) | C-check insulation; 4 000 h gate drive inspect | 500 kW IGBT inverter; HVDC 800 V → 3-phase AC |
+| MDU-1 | MDU-500-PN-TBD | 1 | P1 nacelle (co-located) | C-check insulation; 4 000 h gate drive inspect | 500 kW IGBT inverter; HVDC <NOMINAL-VOLTAGE> → 3-phase AC |
 | MDU-2 | MDU-500-PN-TBD | 1 | P2 nacelle (co-located) | As MDU-1 | Mirror of MDU-1 |
 | MDU-3 | MDU-500-PN-TBD | 1 | P3 nacelle (co-located) | As MDU-1 | Aft station; longer HVDC cable run |
 | MDU-4 | MDU-500-PN-TBD | 1 | P4 nacelle (co-located) | As MDU-3 | Mirror of MDU-3 |
-| BTB-P1…P4 (Bus Tie Breakers) | BTB-HV-PN-TBD | 4 | Forward power distribution panel | C-check functional test | HVDC 800 V; open/close per DEPCU command |
+| BTB-P1…P4 (Bus Tie Breakers) | BTB-HV-PN-TBD | 4 | Forward power distribution panel | C-check functional test | HVDC <NOMINAL-VOLTAGE>; open/close per DEPCU command |
 | DEP-TML Pump (pair) | TML-DEP-PUMP-TBD | 2 | Aft avionics bay (redundant) | A-check flow; 4 000 h replace | EGW coolant; 12 L/min each; serves MDU-1…4 |
 
 ---
@@ -158,7 +155,7 @@ flowchart TB
 
 | Interface Type | Connected System | Protocol / Medium | Data / Function |
 |---|---|---|---|
-| Primary Power — DEP Bus | BGHA HVDC 800 V Bus (ATLAS-084) | HVDC 800 V cable | 4 × 500 kW propulsor feed |
+| Primary Power — DEP Bus | BGHA HVDC <NOMINAL-VOLTAGE> Bus (ATLAS-084) | HVDC <NOMINAL-VOLTAGE> cable | 4 × 500 kW propulsor feed |
 | Propulsor BTBs (×4) | BTB-P1…P4 | Hardwired discrete | Open/close command; position feedback |
 | Thrust Demand | FADEC — ATA 73 | AFDX ARINC 664 P7 VL-085-01 | Total DEP thrust demand; phase (T/O, climb, cruise, idle) |
 | Per-Propulsor Torque | MDU-1…MDU-4 | CAN ISO 11898 redundant | Torque setpoints; speed feedback; fault flags |
@@ -191,7 +188,7 @@ flowchart TB
 |---|---|---|---|
 | Total DEP installed power | ≥ 1 800 kW | 2 000 kW (4 × 500 kW) | TBD |
 | Per-propulsor power | ≥ 450 kW | 500 kW | TBD |
-| HVDC bus voltage (DEP rail) | 800 V ± 2 % | 800 V regulated from BGHA bus | TBD |
+| HVDC bus voltage (DEP rail) | <NOMINAL-VOLTAGE> ± 2 % | <NOMINAL-VOLTAGE> regulated from BGHA bus | TBD |
 | BLI drag reduction (aft propulsors, cruise) | ≥ 8 % | 12 % (P3+P4 combined) | TBD |
 | DEPCU torque command cycle | ≤ 10 ms | 10 ms | TBD |
 | Asymmetric thrust correction bandwidth | ≤ 100 ms | 50 ms | TBD |
@@ -206,7 +203,7 @@ flowchart TB
 
 | Constraint | Requirement Source | Description |
 |---|---|---|
-| HVDC 800 V Personnel Safety | IEC 60479-1; CS-25 AMC 1309 | All HVDC 800 V feeds to MDUs isolated by BTB with mechanical guard; LOTO mandatory before nacelle access; HiPot test 1 500 V DC at each C-check |
+| HVDC <NOMINAL-VOLTAGE> Personnel Safety | IEC 60479-1; CS-25 AMC 1309 | All HVDC <NOMINAL-VOLTAGE> feeds to MDUs isolated by BTB with mechanical guard; LOTO mandatory before nacelle access; HiPot test 1 500 V DC at each C-check |
 | DEPCU Partitioning | DO-178C DAL B; ARINC 653 | Software partitions must not share memory domains; each lane runs independent RTOS partition; asymmetric compensator function is DAL B isolated |
 | Asymmetric Thrust | CS-25.143; CS-25.147 | Loss of any single propulsor must not create uncontrollable yaw; DEPCU compensates within 50 ms; FMS notified |
 | BLI Structural Interface | CS-25.571 (damage tolerance) | BLI nacelle fan-blade-off event must be contained within the nacelle without structural failure of the wing root or fuselage skin |
@@ -221,9 +218,9 @@ flowchart TB
 |---|---|---|
 | ATLAS-085 README | QATL-ATLAS-1000-ATLAS-080-089-08-085-README | Subsection index; status updated to active |
 | ATLAS-071 Electric Motor and Drive Systems | QATL-...-071-000-... | Gen-2 PMSM/MDU heritage; 085 scales to 500 kW per unit |
-| ATLAS-073 Power Distribution MV-HV | QATL-...-073-000-... | HVDC 270/540 V heritage; 085 uses BGHA HVDC 800 V bus |
+| ATLAS-073 Power Distribution MV-HV | QATL-...-073-000-... | HVDC 270/540 V heritage; 085 uses BGHA HVDC <NOMINAL-VOLTAGE> bus |
 | ATLAS-074 Thermal Management Hybrid | QATL-...-074-000-... | DEP-TML cooling loop integrated with TMS |
-| ATLAS-084 Beyond-Gen-2 Hybrid | QATL-...-084-000-... | BGHA provides HVDC 800 V bus and BGSCU supervisory control |
+| ATLAS-084 Beyond-Gen-2 Hybrid | QATL-...-084-000-... | BGHA provides HVDC <NOMINAL-VOLTAGE> bus and BGSCU supervisory control |
 | ATLAS-086 BLI Propulsion | QATL-...-086-000-... | BLI aerodynamic interaction details; cross-reference for duct geometry |
 
 ---
@@ -232,7 +229,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-085-001 | HVDC 800 V per-propulsor BTB certification (EASA STC path) | Q-INDUSTRY | PDR |
+| OI-085-001 | HVDC <NOMINAL-VOLTAGE> per-propulsor BTB certification (EASA STC path) | Q-INDUSTRY | PDR |
 | OI-085-002 | BLI fan-blade-off containment analysis (P3, P4 aft fuselage station) | Q-STRUCTURES | CDR |
 | OI-085-003 | Asymmetric thrust CS-25.147 compliance demonstration plan | Q-GREENTECH | PDR |
 | OI-085-004 | MDU IGBT switching frequency EMC impact on avionics bay (DO-160G) | Q-INDUSTRY | CDR |

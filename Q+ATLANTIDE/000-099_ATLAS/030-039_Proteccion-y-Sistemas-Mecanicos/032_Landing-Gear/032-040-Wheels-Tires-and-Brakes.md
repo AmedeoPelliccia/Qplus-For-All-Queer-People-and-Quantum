@@ -6,10 +6,10 @@ subsubject: "040"
 subsubject_title: "Wheels, Tires, and Brakes"
 file_name: "032-040-Wheels-Tires-and-Brakes.md"
 sns_reference: "032-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-40"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-032-40"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "ATA 32"
   - "Wheels"
   - "Tyres"
@@ -100,10 +100,12 @@ keywords:
   - "TPIS"
   - "wheel speed sensor"
   - "RTO"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 032-040 — Wheels, Tires, and Brakes
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -115,31 +117,20 @@ All internal links use relative paths. External regulatory references use anchor
 
 ## §1 Purpose
 
-This document describes the Wheels, Tyres, and Brakes subsystem of the AMPEL360e eWTW. The eWTW uses Electromechanical Brakes (EMBs) on all four main wheels, controlled by the Brake and Steering Control Unit (BSCU) hosted in the IMA platform. This is a key architectural departure from conventional aircraft that use hydraulic disc brakes with hydraulic pressure-modulating valves for antiskid control.
+This document defines the agnostic ATLAS standard-level architecture context for `032-040 — Wheels, Tires, and Brakes`.
 
-The braking system provides: normal braking from pilot pedal input, antiskid protection (preventing wheel lock-up on contaminated or wet runways), multiple autobrake deceleration presets for landing and Rejected Take-Off (RTO) scenarios, and parking brake (EMB electric latch). Tyre Pressure Indication (TPIS) is provided for all six wheels (4 main + 2 nose) via wireless transmitters on each hub and a cockpit display on the ECAM systems page.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The eWTW has no nose-wheel brakes. All braking force is applied at the four main wheels. The BSCU independently controls each EMB, enabling individual wheel antiskid modulation and differential braking for ground steering augmentation (see ATA 32-050 for differential braking as backup steering).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 032-040 — Wheels, Tires, and Brakes |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Braked Wheels | 4 (MLG only — 2 per MLG bogie) |
-| Brake Type | Electromechanical Brake (EMB) — electric motor ball-screw clamp |
-| Brake Controller | BSCU — IMA-hosted software function |
-| TPIS | All 6 wheels (4 main + 2 nose) — wireless transmitters |
-| Certification Basis | CS-25.735 (EASA), FAR Part 25.735 (FAA) |
-| SNS Reference | 032-40 |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The Wheels, Tyres, and Brakes subsystem includes all wheel assemblies, tyre assemblies, EMB actuator units, wheel speed sensors, TPIS transmitters and receivers, the BSCU software function (IMA-hosted), the cockpit brake pedal transducers, the autobrake control panel, and the parking brake switch.
@@ -182,11 +173,11 @@ The Wheels, Tyres, and Brakes subsystem includes all wheel assemblies, tyre asse
 
 - **BSCU IMA-hosted**: The BSCU is a software partition within IMA; no standalone LRU. DAL TBD pending FHA (braking is safety-critical; preliminary assessment DAL B or C depending on antiskid failure mode effects).
 - **Independent channel per wheel**: The BSCU controls each EMB independently. A fault in one EMB or its channel does not affect braking on the other three wheels. The BSCU isolates a faulty channel and continues operation on the remaining wheels.
-- **No hydraulic accumulator**: Conventional aircraft use a hydraulic accumulator for brake application in case of hydraulic system failure. On eWTW, the equivalent is the EMB electric latch (for parking) and dedicated essential bus power for the BSCU (enabling continued braking on essential bus in case of main bus failure).
+- **No hydraulic accumulator**: Conventional aircraft use a hydraulic accumulator for brake application in case of hydraulic system failure. On [PROGRAMME-VARIANT], the equivalent is the EMB electric latch (for parking) and dedicated essential bus power for the BSCU (enabling continued braking on essential bus in case of main bus failure).
 - **Antiskid wheel-by-wheel**: Each of the four main wheels has an independent antiskid channel. The algorithm uses individual wheel speed sensors compared to aircraft reference speed.
 - **Autobrake deceleration targets**: Deceleration levels for landing: typically LOW (≈1.2 m/s²), MED (≈1.7 m/s²), HIGH (≈2.5 m/s²); RTO (maximum) level activates maximum EMB current with antiskid. Exact deceleration values TBD per programme performance analysis.
 - **Brake disc material**: Carbon vs steel disc pack — decision TBD. Carbon offers lower mass but requires minimum operating temperature for effectiveness; steel is simpler for first entry into service.
-- **Brake energy budget**: The maximum brake energy absorbed at RTO (maximum take-off weight, maximum take-off speed, all brakes applied, no thrust reversal — no thrust reversers on eWTW as electric motors can provide regenerative braking — TBD) defines the thermal sizing of each EMB disc pack.
+- **Brake energy budget**: The maximum brake energy absorbed at RTO (maximum take-off weight, maximum take-off speed, all brakes applied, no thrust reversal — no thrust reversers on [PROGRAMME-VARIANT] as electric motors can provide regenerative braking — TBD) defines the thermal sizing of each EMB disc pack.
 - **Tyre fuse plugs**: Wheel fusible plugs deflate tyres at a set temperature to prevent tyre explosion in the event of brake overheat. Design requirement per CS-25.735.
 
 ---
@@ -342,7 +333,7 @@ Periodic BSCU function test: antiskid and autobrake self-test is available via C
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 032-40 | Wheels, Tyres, and Brakes | DMC-AMPEL360E-EWTW-032-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-40 | Wheels, Tyres, and Brakes | DMC-<PROGRAMME>-<VARIANT>-032-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 
@@ -423,7 +414,7 @@ Periodic BSCU function test: antiskid and autobrake self-test is available via C
 | EMB | Electromechanical Brake — electric motor-driven ball-screw clamping mechanism replacing hydraulic disc brakes |
 | Fusible plug | A heat-sensitive plug in the wheel rim that melts at a set temperature to deflate the tyre and prevent explosive failure due to brake overheat |
 | Parking brake | BSCU function commanding maximum EMB clamp with electric latch; maintains braking without continuous power |
-| Regenerative braking | Potential use of electric motor back-EMF to recover kinetic energy during deceleration; applicability on eWTW TBD |
+| Regenerative braking | Potential use of electric motor back-EMF to recover kinetic energy during deceleration; applicability on [PROGRAMME-VARIANT] TBD |
 | RTO | Rejected Take-Off — aborted take-off from above V1; worst-case brake thermal sizing condition |
 | Slip ratio | (Aircraft speed − Wheel peripheral speed) / Aircraft speed; antiskid algorithm maintains slip ratio in optimal braking range |
 | TPIS | Tyre Pressure Indication System — wireless sensors on wheel hubs transmitting pressure and temperature to cockpit and CMC |

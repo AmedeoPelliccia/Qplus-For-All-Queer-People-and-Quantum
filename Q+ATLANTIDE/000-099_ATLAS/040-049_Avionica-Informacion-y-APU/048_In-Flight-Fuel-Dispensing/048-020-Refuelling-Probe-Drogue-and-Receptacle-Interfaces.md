@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 020 — Refuelling Probe-Drogue and Receptacle Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document specifies the **refuelling probe, drogue, and receptacle interfaces** for the AMPEL360E eWTW aircraft in Receiver Mode under ATA 48. The retractable refuelling probe is the primary receiver-side coupling mechanism, housed in the nose section of the aircraft and actuated by an Electromechanical Actuator (EMA) — no hydraulic cylinder is used. The probe interfaces with a standard NATO-type drogue basket on the dispensing tanker.
+This document specifies the **refuelling probe, drogue, and receptacle interfaces** for the programme-defined aircraft type in Receiver Mode under ATA 48. The retractable refuelling probe is the primary receiver-side coupling mechanism, housed in the nose section of the aircraft and actuated by an Electromechanical Actuator (EMA) — no hydraulic cylinder is used. The probe interfaces with a standard NATO-type drogue basket on the dispensing tanker.
 
 Probe extension and retraction are guided by a LIDAR/camera-aided alignment system to assist crew positioning relative to the tanker drogue. Position sensing uses a Rotary Variable Differential Transducer (RVDT) for stow/deploy state reporting. Seal integrity is monitored continuously during engagement to detect leakage. The ATA 28 fuel path isolation valve prevents contamination of the main fuel system before probe engagement and after disconnection.
 
@@ -53,7 +55,7 @@ Probe extension and retraction are guided by a LIDAR/camera-aided alignment syst
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | Configuration | Receiver Mode (standard) |
 | Probe Type | Retractable, telescoping, electrically actuated |
@@ -402,4 +404,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — Probe-drogue and receptacle interfaces for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — Probe-drogue and receptacle interfaces for programme-defined aircraft type |

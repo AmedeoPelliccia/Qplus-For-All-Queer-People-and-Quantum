@@ -31,6 +31,8 @@ ata_reference: "ATA 49 — Airborne Auxiliary Power"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 040 — APU Ignition, Starting and Generation
@@ -43,7 +45,7 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-This document defines the APU ignition, starting, and electrical generation system on the **AMPEL360E eWTW** aircraft. The system encompasses three sequential operational phases that together transform the APU from an unpowered state to a full electrical generator supplying 150 kVA to the aircraft HVDC bus.
+This document defines the APU ignition, starting, and electrical generation system on the **programme-defined aircraft type** aircraft. The system encompasses three sequential operational phases that together transform the APU from an unpowered state to a full electrical generator supplying 150 kVA to the aircraft HVDC bus.
 
 The Motor Starter/Generator (MSG) is the centrepiece of this system: a dual-mode electrical machine mounted on the APU accessory gearbox output shaft. During the start phase, the MSG operates as an electric motor consuming up to 30 kW from the aircraft 28 V DC battery bus or external ground power, providing motoring torque to spin up the Gas Turbine Core (GTC) from rest to light-off speed. During the run phase, the MSG operates as a high-output AC generator feeding the APU Transformer Rectifier Unit (ATRU) to produce 270 V HVDC output.
 
@@ -59,7 +61,7 @@ Electrical generation output is frequency-wild three-phase AC (frequency proport
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | Start motor power | ≤ 30 kW from aircraft battery bus or ground power |
 | Light-off speed | ≈ 15 % N (GTC acceleration phase) |
@@ -365,7 +367,7 @@ stateDiagram-v2
 | N% | APU spool speed expressed as percentage of rated governed speed (100 % = design point RPM) |
 | PCU | Power Conditioning Unit — generic term for power electronics converting raw generator output to regulated bus voltage |
 | GCU | Generator Control Unit — independent unit managing MSG field excitation and AGC close/open logic |
-| HVDC | High-Voltage Direct Current — 270 V DC bus used on the AMPEL360E eWTW for primary electrical distribution |
+| HVDC | High-Voltage Direct Current — 270 V DC bus used on the programme-defined aircraft type for primary electrical distribution |
 | AGC | APU Generator Contactor — high-voltage DC contactor connecting ATRU output to aircraft HVDC bus |
 | Light-off | The moment of sustained combustion establishment in the APU combustor; confirmed by positive EGT gradient |
 | Load Control Unit | Generic term for the combination of AGC and GCU functions managing connection and protection of APU generator output |

@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · Section 05 · Subsection 050 · Subsubject 010 — Structural Architecture and Zoning
@@ -32,7 +34,7 @@ language: en
 
 Subsubject-level index for *Structural Architecture and Zoning* (`010`) within subsection `050` *General* of ATLAS `050-059` — *Estructuras*.
 
-This subsubject defines the AMPEL360 eWTW structural zone taxonomy, the primary/secondary/tertiary architectural layers, and the zone coding rules used throughout the structural document set.
+This subsubject defines the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural zone taxonomy, the primary/secondary/tertiary architectural layers, and the zone coding rules used throughout the structural document set.
 
 ## 2. Document Index
 

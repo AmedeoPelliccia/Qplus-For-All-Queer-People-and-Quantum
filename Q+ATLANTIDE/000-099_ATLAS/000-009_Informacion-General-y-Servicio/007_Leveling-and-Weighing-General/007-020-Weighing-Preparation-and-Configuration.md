@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 08"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Defines the controlled aircraft configuration and preparation requirements before weighing the AMPEL360E eWTW. Covers ballast requirements, fuel state, fluid state, equipment loading, door and panel configuration, and the controlled weighing condition used for the Official Weighing Record.
+Defines the controlled aircraft configuration and preparation requirements before weighing the programme-defined aircraft type. Covers ballast requirements, fuel state, fluid state, equipment loading, door and panel configuration, and the controlled weighing condition used for the Official Weighing Record.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 08 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,9 +72,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Weighing Preparation and Configuration** node defines the mandatory pre-weighing checks, configuration standards, and documentation requirements for the AMPEL360E eWTW. The aircraft must be in the defined "weighing configuration" before any load-cell readings are accepted. This configuration is: (1) fuel quantity set to an agreed datum (typically zero fuel weight with dry tanks, or a defined calibration quantity per Wing Tank Fuel Quantity System calibration); (2) HVDC battery SoC recorded and normalised using the Battery Management System (BMS) charge-to-mass conversion table (P/N Q-BMS-MASSCAL-001) to establish the standard-condition battery mass; (3) hydraulic reservoirs drained (the eWTW has no hydraulic system; this step is N/A); (4) all loose equipment removed from cabin, cargo, and cockpit; (5) all doors and panels closed and latched; (6) landing gear extended and locked.
+The **Weighing Preparation and Configuration** node defines the mandatory pre-weighing checks, configuration standards, and documentation requirements for the programme-defined aircraft type. The aircraft must be in the defined "weighing configuration" before any load-cell readings are accepted. This configuration is: (1) fuel quantity set to an agreed datum (typically zero fuel weight with dry tanks, or a defined calibration quantity per Wing Tank Fuel Quantity System calibration); (2) HVDC battery SoC recorded and normalised using the Battery Management System (BMS) charge-to-mass conversion table (P/N Q-BMS-MASSCAL-001) to establish the standard-condition battery mass; (3) hydraulic reservoirs drained (the [PROGRAMME-VARIANT] has no hydraulic system; this step is N/A); (4) all loose equipment removed from cabin, cargo, and cockpit; (5) all doors and panels closed and latched; (6) landing gear extended and locked.
 
-Specific to the eWTW: the HVDC main bus must be de-energised before load-cell connections are made, to avoid instrument noise from power electronics. The battery mass correction (ΔM_bat = actual SoC − reference SoC) × mass-per-SoC-unit is applied to the raw weighing result before reporting the certified Operating Empty Weight (OEW). Weighing preparation is documented on a pre-weighing checklist (form Q-WB-CHECK-001) and countersigned by a LAME B1 and the quality representative before the operation begins.
+Specific to the [PROGRAMME-VARIANT]: the HVDC main bus must be de-energised before load-cell connections are made, to avoid instrument noise from power electronics. The battery mass correction (ΔM_bat = actual SoC − reference SoC) × mass-per-SoC-unit is applied to the raw weighing result before reporting the certified Operating Empty Weight (OEW). Weighing preparation is documented on a pre-weighing checklist (form Q-WB-CHECK-001) and countersigned by a LAME B1 and the quality representative before the operation begins.
 
 ---
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the weighing preparation and configuration scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Weighing Preparation and Configuration** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Weighing Preparation and Configuration** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `007` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `020` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-007-020` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-007-020` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

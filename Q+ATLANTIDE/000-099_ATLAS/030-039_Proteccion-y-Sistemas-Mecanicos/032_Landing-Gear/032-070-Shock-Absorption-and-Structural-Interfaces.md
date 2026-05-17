@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Shock Absorption and Structural Interfaces"
 file_name: "032-070-Shock-Absorption-and-Structural-Interfaces.md"
 sns_reference: "032-70"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-70"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-032-70"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "ATA 32"
   - "Shock Absorber"
   - "oleo-pneumatic"
@@ -100,10 +100,12 @@ keywords:
   - "tipping line"
   - "gear geometry"
   - "clearance"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 032-070 — Shock Absorption and Structural Interfaces
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -115,31 +117,20 @@ All internal links use relative paths. External regulatory references use anchor
 
 ## §1 Purpose
 
-This document describes the shock absorption systems (MLG and NLG oleo-pneumatic shock absorbers) and the structural interfaces between the landing gear assemblies and the airframe. It covers the load transfer paths from the gear to the wing box (MLG) and forward fuselage keel (NLG), the gear geometry and clearance analysis, tipping line assessment, and all structural provisions in the gear bays.
+This document defines the agnostic ATLAS standard-level architecture context for `032-070 — Shock Absorption and Structural Interfaces`.
 
-The shock absorbers are the primary energy-absorbing devices during landing impact, converting the aircraft's vertical kinetic energy at touchdown into internal work (fluid flow through orifices, nitrogen gas compression, and heat). Correct shock absorber sizing and airframe attachment design are essential for meeting CS-25.473 landing load conditions and CS-25.723 shock absorber drop test requirements. The CFRP gear beam (MLG) introduces composite-specific structural interface considerations not present in conventional metallic gear designs.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The structural interfaces covered in this document are mechanical (physical load paths) and are separate from electrical/data interfaces, which are covered in their respective subsystem documents (032-010, 032-020, 032-030, 032-060, 032-080).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 032-070 — Shock Absorption and Structural Interfaces |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| MLG Shock Absorber | Oleo-pneumatic, 2× (one per MLG leg) |
-| NLG Shock Absorber | Oleo-pneumatic, 1× |
-| MLG Structural Attachment | Wing-box rear spar (primary trunnion) + keel beam (drag brace) |
-| NLG Structural Attachment | Forward fuselage keel beam (trunnion) + side-stay fuselage attachment |
-| Certification Basis | CS-25.473, CS-25.479, CS-25.481, CS-25.723 |
-| SNS Reference | 032-70 |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 **Shock Absorbers**: Each MLG and the NLG is equipped with an oleo-pneumatic shock absorber. The absorber consists of an outer cylinder (structural member, fixed to the gear beam/leg) and an inner cylinder (translating member, carrying the axle and wheels). The gas (nitrogen) is separated from the hydraulic fluid (MIL-PRF-5606 or equivalent — TBD) by a floating piston or metered orifice. During compression (landing impact), hydraulic fluid is forced through a metered orifice from the inner to the outer cylinder, dissipating energy as heat. The nitrogen gas acts as a spring, absorbing elastic energy. The shock absorber stroke and nitrogen charge pressure are sized per CS-25.473 landing load requirements and CS-25.479 level landing conditions.
@@ -322,7 +313,7 @@ Metallic fittings (trunnion pivot, drag brace): standard metallic NDT (dye penet
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 032-70 | Shock Absorption and Structural Interfaces | DMC-AMPEL360E-EWTW-032-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-70 | Shock Absorption and Structural Interfaces | DMC-<PROGRAMME>-<VARIANT>-032-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 

@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0068-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0068-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Engine Indicating — S1000D CSDB Mapping and Traceability
@@ -30,35 +32,34 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0068-090"
 
 ## §1 Purpose
 
-Provides the S1000D Data Module Code (DMC) mapping for all ATA 68 Engine Indicating content on the AMPEL360E eWTW and establishes traceability between ATLAS subsubject documents and S1000D CSDB data modules.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine Indicating — S1000D CSDB Mapping and Traceability`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 68-090 |
-| S1000D SNS | 068-090-00 |
-| S1000D Issue | 5.0 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `068` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 DMC Mapping Table
 
 | ATLAS Document | Title | S1000D DMC | InfoCode | Status |
 |---|---|---|---|---|
-| 068-000 | Engine Indicating General | DMC-AMPEL360E-EWTW-0068-000-A-040A-A | 040A — Description | ![TBD] |
-| 068-010 | Engine Parameter Indication | DMC-AMPEL360E-EWTW-0068-010-A-040A-A | 040A | ![TBD] |
-| 068-020 | Engine Warning and Caution | DMC-AMPEL360E-EWTW-0068-020-A-040A-A | 040A | ![TBD] |
-| 068-030 | Engine Sensors and Transducers | DMC-AMPEL360E-EWTW-0068-030-A-040A-A | 040A | ![TBD] |
-| 068-040 | Engine Data Concentrators | DMC-AMPEL360E-EWTW-0068-040-A-040A-A | 040A | ![TBD] |
-| 068-050 | Engine Health and Trend Monitoring | DMC-AMPEL360E-EWTW-0068-050-A-040A-A | 040A | ![TBD] |
-| 068-060 | Engine Display and Crew Interface | DMC-AMPEL360E-EWTW-0068-060-A-040A-A | 040A | ![TBD] |
-| 068-070 | Test and Maintenance | DMC-AMPEL360E-EWTW-0068-070-A-520-A | 520 — Removal/Installation | ![TBD] |
-| 068-080 | Monitoring, Diagnostics, Interfaces | DMC-AMPEL360E-EWTW-0068-080-A-040A-A | 040A | ![TBD] |
-| 068-090 | S1000D CSDB Mapping | DMC-AMPEL360E-EWTW-0068-090-A-040A-A | 040A | This document |
+| 068-000 | Engine Indicating General | DMC-<PROGRAMME>-<VARIANT>-0068-000-A-040A-A | 040A — Description | ![TBD] |
+| 068-010 | Engine Parameter Indication | DMC-<PROGRAMME>-<VARIANT>-0068-010-A-040A-A | 040A | ![TBD] |
+| 068-020 | Engine Warning and Caution | DMC-<PROGRAMME>-<VARIANT>-0068-020-A-040A-A | 040A | ![TBD] |
+| 068-030 | Engine Sensors and Transducers | DMC-<PROGRAMME>-<VARIANT>-0068-030-A-040A-A | 040A | ![TBD] |
+| 068-040 | Engine Data Concentrators | DMC-<PROGRAMME>-<VARIANT>-0068-040-A-040A-A | 040A | ![TBD] |
+| 068-050 | Engine Health and Trend Monitoring | DMC-<PROGRAMME>-<VARIANT>-0068-050-A-040A-A | 040A | ![TBD] |
+| 068-060 | Engine Display and Crew Interface | DMC-<PROGRAMME>-<VARIANT>-0068-060-A-040A-A | 040A | ![TBD] |
+| 068-070 | Test and Maintenance | DMC-<PROGRAMME>-<VARIANT>-0068-070-A-520-A | 520 — Removal/Installation | ![TBD] |
+| 068-080 | Monitoring, Diagnostics, Interfaces | DMC-<PROGRAMME>-<VARIANT>-0068-080-A-040A-A | 040A | ![TBD] |
+| 068-090 | S1000D CSDB Mapping | DMC-<PROGRAMME>-<VARIANT>-0068-090-A-040A-A | 040A | This document |
 
 ---
 
@@ -69,7 +70,7 @@ systemCode:    068     (Engine Indicating)
 subSystemCode: 0       (General)
 subSubSys:     00      (General overview)
 assyCode:      00      (Top assembly)
-disassyCode:   A       (Variant A — AMPEL360E eWTW)
+disassyCode:   A       (Variant A — programme-defined aircraft type)
 infoCode:      040A    (Description)
 ```
 
@@ -78,8 +79,8 @@ infoCode:      040A    (Description)
 ## §5 CSDB Publication Applicability
 
 All ATA 68 data modules are applicable to:
-- **Aircraft Type:** AMPEL360E eWTW
-- **Series:** All series (A1, A2 per AMPEL360E variant definition)
+- **Aircraft Type:** programme-defined aircraft type
+- **Series:** All series (A1, A2 per [PROGRAMME-AIRCRAFT] variant definition)
 - **Effectivity:** MSN 001 onwards
 
 ---
@@ -96,4 +97,4 @@ All ATA 68 data modules are applicable to:
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — AMPEL360E eWTW contextualization |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — programme-defined aircraft type contextualization |

@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 016 · Subsubject 000 — Overview
@@ -32,7 +34,7 @@ language: en
 
 Overview entry-point for *Lifting, Shoring and Jacking Procedures* (`016`) — the sixth subsection of Code range `010-019` (*Manejo en Tierra & Servicio*), which is the **second Code range of the ATLAS master range** (`000–099`).
 
-This subsubject introduces the procedural scope, jack-point map summary, safety prerequisites, and document structure for all operations that raise, stabilise, or level an AMPEL360 aircraft during maintenance. It is the **Level 2 — Procedure** counterpart to the introductory orientation in [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/005_Lifting-Shoring-and-Jacking-Basics.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/005_Lifting-Shoring-and-Jacking-Basics.md)[^basics].
+This subsubject introduces the procedural scope, jack-point map summary, safety prerequisites, and document structure for all operations that raise, stabilise, or level an [PROGRAMME-AIRCRAFT] aircraft during maintenance. It is the **Level 2 — Procedure** counterpart to the introductory orientation in [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/005_Lifting-Shoring-and-Jacking-Basics.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/005_Lifting-Shoring-and-Jacking-Basics.md)[^basics].
 
 > **Conventional ATA reference:** ATA chapter 7 (Lifting and Shoring) and ATA chapter 8 (Leveling and Weighing). ATLAS `016_` is the programmatic equivalent within the `010-019` Code range.
 
@@ -104,7 +106,7 @@ flowchart TB
 
     OV --> SS016
 
-    subgraph JACK["AMPEL360 Jack Points (summary)"]
+    subgraph JACK["[PROGRAMME-AIRCRAFT] Jack Points (summary)"]
         direction LR
         FWD["Fwd fuselage<br/>jack point (×1)"]:::jp
         MAIN["Main gear beam<br/>jack points (×2)"]:::jp

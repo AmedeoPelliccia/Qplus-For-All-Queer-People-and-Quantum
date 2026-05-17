@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.060 — Line, Base and Depot Maintenance Boundaries
 
 ## 1. Purpose
 
-Defines the **line, base, and depot maintenance level boundaries** for AMPEL360 eWTW structural tasks: which tasks may be accomplished at line (transit/overnight), which require base-maintenance access and tooling, and which require full depot-level disassembly — ensuring that structural maintenance activities are assigned to the capability level at which they can be safely and effectively performed.
+Defines the **line, base, and depot maintenance level boundaries** for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural tasks: which tasks may be accomplished at line (transit/overnight), which require base-maintenance access and tooling, and which require full depot-level disassembly — ensuring that structural maintenance activities are assigned to the capability level at which they can be safely and effectively performed.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-Maintenance level boundaries for structural tasks are driven by three factors: access complexity (how many panels, fairings, or structural covers must be removed); tooling and equipment requirements (standard vs. special tooling, calibrated NDT equipment); and skill and certification requirements (level 2 NDT certification, composite repair authorisation). The AMPEL360 eWTW's high composite content means that many structural inspections require thermographic or HFEC equipment available only at certified base-maintenance facilities.
+Maintenance level boundaries for structural tasks are driven by three factors: access complexity (how many panels, fairings, or structural covers must be removed); tooling and equipment requirements (standard vs. special tooling, calibrated NDT equipment); and skill and certification requirements (level 2 NDT certification, composite repair authorisation). The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]'s high composite content means that many structural inspections require thermographic or HFEC equipment available only at certified base-maintenance facilities.
 
 Line-maintenance structural tasks are typically limited to visual walk-around checks, minor damage assessment against ADL tables, and opportunistic visual access via already-open doors. Depot-level tasks include wing-spar HFEC inspections requiring full wing-panel removal, LH₂ tank attach-fitting inspections, and major repairs requiring autoclave cure capability.
 

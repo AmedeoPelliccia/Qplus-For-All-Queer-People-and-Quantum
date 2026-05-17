@@ -53,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 080 — Multisystem Monitoring, Diagnostics and Control Interfaces
@@ -68,7 +70,7 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md) 
 
 ## 1. Purpose
 
-This document defines the multisystem monitoring, diagnostics and control interface architecture for the AMPEL360E avionics multisystem. It covers the IMA Built-In Test Equipment (BITE) architecture, Central Maintenance Computer (CMC) integration, Aircraft Condition Monitoring System (ACMS), ARINC 767 maintenance messages, Prognostic Health Management (PHM), fault isolation procedures, and the Avionics Maintenance Terminal (AMT). It is the primary reference for avionics maintenance engineers, health management architects, and certification authorities.
+This document defines the multisystem monitoring, diagnostics and control interface architecture for the [PROGRAMME-AIRCRAFT] avionics multisystem. It covers the IMA Built-In Test Equipment (BITE) architecture, Central Maintenance Computer (CMC) integration, Aircraft Condition Monitoring System (ACMS), ARINC 767 maintenance messages, Prognostic Health Management (PHM), fault isolation procedures, and the Avionics Maintenance Terminal (AMT). It is the primary reference for avionics maintenance engineers, health management architects, and certification authorities.
 
 ---
 
@@ -76,7 +78,7 @@ This document defines the multisystem monitoring, diagnostics and control interf
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | Maintenance Protocol | [ARINC 767](#ref-arinc767) — Health and Usage Monitoring |
 | CMC Standard | [ARINC 604A](#ref-arinc604a) |
@@ -87,7 +89,7 @@ This document defines the multisystem monitoring, diagnostics and control interf
 
 ## 3. System / Function Overview
 
-The AMPEL360E multisystem monitoring architecture integrates IMA BITE, the CMC, and the ACMS into a coherent health management framework. IMA partitions execute continuous BITE functions, reporting faults via ARINC 664 management VLs to the CMC. The CMC correlates fault messages from all avionics LRUs, executes fault isolation logic, generates maintenance messages per ARINC 767, and presents consolidated fault information on the Avionics Maintenance Terminal (AMT). The ACMS collects parametric data from hosted applications, applies PHM algorithms, and transmits trend reports to ground operations via ACARS. PHM enables predictive maintenance by detecting degradation trends before functional failure.
+The [PROGRAMME-AIRCRAFT] multisystem monitoring architecture integrates IMA BITE, the CMC, and the ACMS into a coherent health management framework. IMA partitions execute continuous BITE functions, reporting faults via ARINC 664 management VLs to the CMC. The CMC correlates fault messages from all avionics LRUs, executes fault isolation logic, generates maintenance messages per ARINC 767, and presents consolidated fault information on the Avionics Maintenance Terminal (AMT). The ACMS collects parametric data from hosted applications, applies PHM algorithms, and transmits trend reports to ground operations via ACARS. PHM enables predictive maintenance by detecting degradation trends before functional failure.
 
 ---
 
@@ -267,12 +269,12 @@ graph LR
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-040-080-00A-040A-A | 040 | Monitoring and Diagnostics System Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-040-080-00A-300A-A | 300 | CMC Fault Isolation Procedures |
-| BITE/Test | DMC-AMPEL360E-EWTW-040-080-00A-400A-A | 400 | IBIT Procedures and BITE Results Interpretation |
-| Wiring Data | DMC-AMPEL360E-EWTW-040-080-00A-520A-A | 520 | CMC/AMT Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-040-080-00A-941A-A | 941 | CMC and AMT Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-040-080-00A-720A-A | 720 | CMC and ACMS Software Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-040-080-00A-040A-A | 040 | Monitoring and Diagnostics System Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-040-080-00A-300A-A | 300 | CMC Fault Isolation Procedures |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-040-080-00A-400A-A | 400 | IBIT Procedures and BITE Results Interpretation |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-040-080-00A-520A-A | 520 | CMC/AMT Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-040-080-00A-941A-A | 941 | CMC and AMT Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-040-080-00A-720A-A | 720 | CMC and ACMS Software Description |
 
 ### Recommended Data Module Set
 

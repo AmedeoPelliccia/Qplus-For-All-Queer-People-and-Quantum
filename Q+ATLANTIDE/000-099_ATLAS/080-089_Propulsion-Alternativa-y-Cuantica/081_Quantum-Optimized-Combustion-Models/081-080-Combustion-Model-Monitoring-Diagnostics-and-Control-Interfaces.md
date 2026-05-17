@@ -16,14 +16,16 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0081-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
-<!-- ATLAS-081-080 | Combustion Model Monitoring, Diagnostics and Control Interfaces | AMPEL360E eWTW | ATLAS-1000
-     Aircraft: AMPEL360E eWTW | Register: ATLAS-1000 | Section: 080-089 | Subsection: 081-080
+<!-- ATLAS-081-080 | Combustion Model Monitoring, Diagnostics and Control Interfaces | programme-defined aircraft type | ATLAS-1000
+     Aircraft: programme-defined aircraft type | Register: ATLAS-1000 | Section: 080-089 | Subsection: 081-080
      BREX: BREX-081-v1 | Controller: QOCMU (DAL B, dual-channel) | QPU: 12-qubit trapped-ion
      Primary Q-Division: Q-HPC | Status: DRAFT v0.1 | Date: 2026-05-12
-     S1000D DMC: DMC-AMPEL360E-EWTW-0081-080-00A-040A-EN-US
+     S1000D DMC: DMC-<PROGRAMME>-<VARIANT>-0081-080-00A-040A-EN-US
      Related DMs: DM-081-025 (HW Desc), DM-081-026 (BITE Procedure), DM-081-027 (Channel Test),
                   DM-081-028 (QOCMU R/R), DM-081-029 (GSE-081 PLT Update) -->
 
@@ -51,42 +53,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-080"
 
 ## §1 Purpose
 
-This document provides the detailed definition of the **QOCMU hardware architecture**, **ARINC 653
-software partition structure**, **Built-In Test Equipment (BITE) function table**, **ECAM PROP QOCM
-synoptic page**, **AFDX virtual link (VL) allocation table**, and **GSE-081 maintenance interface**
-for the AMPEL360E eWTW Quantum Optimized Combustion Modeling Unit.
+This document defines the agnostic ATLAS standard-level architecture context for `Combustion Model Monitoring, Diagnostics and Control Interfaces`.
 
-The QOCMU is the central LRU for the QOCM system (ATLAS 081). It implements all four partitions
-(QCKS P1, QRPO P2, QTCC P3, BITE/Comms P4) on a dual-channel (A/B hot standby) avionics computer,
-co-located with the 12-qubit trapped-ion QPU co-processor module. This document defines the
-monitoring, diagnostics, and control interface baseline for all QOCM subsystem documents (081-010
-through 081-070) that depend on the QOCMU hardware and software platform.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute              | Value                                                              |
-|------------------------|--------------------------------------------------------------------|
-| **Aircraft**           | AMPEL360E eWTW (all production variants)                          |
-| **Register**           | ATLAS-1000                                                        |
-| **Section**            | 080-089 Propulsion Alternativa y Cuántica                         |
-| **Subsection**         | 081 Quantum-Optimized Combustion Models                           |
-| **Sub-subject**        | 080 Combustion Model Monitoring, Diagnostics and Control Interfaces|
-| **BREX**               | BREX-081-v1                                                       |
-| **LRU**                | QOCMU — Part No. QOCMU-001-TBD                                    |
-| **QPU Module**         | QPU-TI-12Q-001 (trapped-ion, 12 qubit, housed in QOCMU)           |
-| **DAL**                | DAL B (dual-channel A/B; ARINC 653 partitioned)                   |
-| **Power**              | HVDC 270 V, 1.2 kW nominal, 1.8 kW peak (transient QAOA burst)   |
-| **S1000D DMC**         | DMC-AMPEL360E-EWTW-0081-080-00A-040A-EN-US                       |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `081` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 QOCMU Hardware Architecture
 
-The QOCMU occupies **8 ATR MCU slots** in the AMPEL360E eWTW avionics EE bay (position 4A, rack 2).
+The QOCMU occupies **8 ATR MCU slots** in the programme-defined aircraft type avionics EE bay (position 4A, rack 2).
 The unit is structured as a single LRU with two independent processing channels (CHA and CHB) in
 **hot standby** configuration — both channels are powered and computing simultaneously; only CHA
 drives the AFDX output VLs under normal operation. CHA-to-CHB changeover occurs within ≤ 50 ms

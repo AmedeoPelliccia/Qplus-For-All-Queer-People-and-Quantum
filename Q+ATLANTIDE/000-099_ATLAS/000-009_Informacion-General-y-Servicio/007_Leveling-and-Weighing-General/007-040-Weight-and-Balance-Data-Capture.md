@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 08"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Defines the controlled data capture process for weight and balance measurements on the AMPEL360E eWTW. Covers load cell reading procedures, tare weight subtraction, actual aircraft weight calculation, centre of gravity calculation, and the controlled acceptance criteria for weight and balance measurements.
+Defines the controlled data capture process for weight and balance measurements on the programme-defined aircraft type. Covers load cell reading procedures, tare weight subtraction, actual aircraft weight calculation, centre of gravity calculation, and the controlled acceptance criteria for weight and balance measurements.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 08 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,7 +72,7 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Weight and Balance Data Capture** node defines the data acquisition process, data quality checks, and reporting format for all weighing events on the AMPEL360E eWTW. Once the aircraft is in the certified weighing configuration (007-020), the WMMS-LW module initiates a 30-second steady-state data capture window across all load cell channels, sampling at 10 Hz. Data quality checks applied automatically: coefficient of variation across the 300-sample window ≤ 0.1% per channel; total weight ≥ 70% of standard MTOW (plausibility check); load cell cross-check sum within ±0.3% of previous certified OEW (if available).
+The **Weight and Balance Data Capture** node defines the data acquisition process, data quality checks, and reporting format for all weighing events on the programme-defined aircraft type. Once the aircraft is in the certified weighing configuration (007-020), the WMMS-LW module initiates a 30-second steady-state data capture window across all load cell channels, sampling at 10 Hz. Data quality checks applied automatically: coefficient of variation across the 300-sample window ≤ 0.1% per channel; total weight ≥ 70% of standard MTOW (plausibility check); load cell cross-check sum within ±0.3% of previous certified OEW (if available).
 
 The WMMS-LW module computes: (i) measured gross weight (GW) = sum of all gear leg loads; (ii) corrected OEW = GW − fuel mass (from FQMS) − battery SoC correction − standard operational items mass; (iii) longitudinal C-of-G = (nose load × nose arm + main load × main arm) / GW, expressed as percentage of MAC (Mean Aerodynamic Chord); (iv) lateral C-of-G offset = (port main − starboard main) × (main track / 2) / GW. All results, raw data, and metadata are exported as a structured S1000D maintenance DM (info code "200") and archived in the CSDB. A signed Weighing Report (Q-WB-REPORT-001) is generated automatically from the WMMS-LW export and must be countersigned by a LAME B1.
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the weight and balance data capture scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Weight and Balance Data Capture** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Weight and Balance Data Capture** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `007` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `040` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-007-040` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-007-040` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

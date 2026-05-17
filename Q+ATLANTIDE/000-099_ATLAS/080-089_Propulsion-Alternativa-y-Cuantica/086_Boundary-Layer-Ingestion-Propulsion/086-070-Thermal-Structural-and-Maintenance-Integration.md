@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0086-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-086-070-THERMAL-STRUCTURAL-AND-MAINTENANCE-INTEGRATION
      ATLAS-086 (Boundary Layer Ingestion Propulsion) · Thermal, Structural and Maintenance Integration
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Thermal, Structural and Maintenance Integration
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-070"
 
 ## §1 Purpose
 
-ATLAS subsubject 086-070 defines the thermal management requirements for the BLI PMSM and MCU-086, the structural integration of BLI components into the aft fuselage, the maintenance access provisions, and the LRU replacement intervals.
+This document defines the agnostic ATLAS standard-level architecture context for `Thermal, Structural and Maintenance Integration`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Thermal Management
 
 ### 2.1 PMSM Cooling Architecture

@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — Inspection Applicability and Threshold Rules
 
 ## 1. Purpose
 
-Defines the **inspection applicability and threshold rules** for AMPEL360 eWTW structural inspections: how inspection thresholds and intervals are scoped to specific aircraft variants, serial-number blocks, and SB-incorporation states, and how threshold extensions or reductions are governed when configuration changes affect fatigue and damage-tolerance analyses.
+Defines the **inspection applicability and threshold rules** for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural inspections: how inspection thresholds and intervals are scoped to specific aircraft variants, serial-number blocks, and SB-incorporation states, and how threshold extensions or reductions are governed when configuration changes affect fatigue and damage-tolerance analyses.
 
 ## 2. Scope
 
@@ -81,6 +83,6 @@ flowchart TD
 |---|---|
 | CS-25.571 | Damage-tolerance and inspection threshold derivation |
 | MSG-3 Rev 3 | Structural task development and threshold logic |
-| MRBD-AMPEL360-001 | Maintenance Review Board Document |
+| MRBD-[PROGRAMME-AIRCRAFT]-001 | Maintenance Review Board Document |
 | [`./README.md`](./README.md) | Subsubject 050 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Water and Waste Monitoring, Diagnostics and Control Interfaces"
 file_name: "038-080-Water-and-Waste-Monitoring-Diagnostics-and-Control-Interfaces.md"
 sns_reference: "038-08"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-08"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-038-08"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -79,7 +79,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 38"
   - "Water and Waste"
@@ -93,10 +93,12 @@ keywords:
   - "AFDX"
   - "ARINC 429"
   - "control interfaces"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 038-080 — Water and Waste Monitoring, Diagnostics and Control Interfaces
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -106,37 +108,26 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-08-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-038-08-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document describes the **Water and Waste Monitoring, Diagnostics and Control Interfaces** of ATA 38 for the **AMPEL360e eWTW**. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `038-080 — Water and Waste Monitoring, Diagnostics and Control Interfaces`.
 
-1. CMC/OMS parameter table: all ATA 38 sensors, actuators, and controllers reported to the Central Maintenance Computer.
-2. BITE (Built-In Test Equipment): power-up self-tests and in-service monitoring for EWP, EWH, mast heaters (EMH), UV unit, and sensors.
-3. Maintenance terminal commands: manual test and override commands via the maintenance access terminal.
-4. Data bus interfaces: AFDX (ARINC 664) or ARINC 429 TBD — bus allocation, message rates, label assignments.
-5. THC freeze protection control logic: temperature threshold monitoring and trace heater activation.
-6. Service event logging: fill, drain, flush cycle and fault data with timestamp.
-7. ECAM/CAS interface: ATA 38 parameter transmission to ECAM and CAS.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter/Subsubject | 038-080 — Monitoring, Diagnostics and Control Interfaces |
-| Document Tier | Level 2 — SDD |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Parent Document | [038-000](./038-000-Water-and-Waste-General.md) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Monitoring Architecture Overview
@@ -487,13 +478,13 @@ Threshold temperatures and hysteresis band are <img src="https://img.shields.io/
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description — monitoring and control | DMC-AMPEL360E-EWTW-038-08-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| BITE description | DMC-AMPEL360E-EWTW-038-08-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| THC freeze protection description | DMC-AMPEL360E-EWTW-038-08-20A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Maintenance terminal commands | DMC-AMPEL360E-EWTW-038-08-30A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — monitoring system | DMC-AMPEL360E-EWTW-038-08-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| BITE power-up procedure | DMC-AMPEL360E-EWTW-038-08-10A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| CMC parameter list | DMC-AMPEL360E-EWTW-038-08-40A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description — monitoring and control | DMC-<PROGRAMME>-<VARIANT>-038-08-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| BITE description | DMC-<PROGRAMME>-<VARIANT>-038-08-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| THC freeze protection description | DMC-<PROGRAMME>-<VARIANT>-038-08-20A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Maintenance terminal commands | DMC-<PROGRAMME>-<VARIANT>-038-08-30A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — monitoring system | DMC-<PROGRAMME>-<VARIANT>-038-08-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| BITE power-up procedure | DMC-<PROGRAMME>-<VARIANT>-038-08-10A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| CMC parameter list | DMC-<PROGRAMME>-<VARIANT>-038-08-40A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 

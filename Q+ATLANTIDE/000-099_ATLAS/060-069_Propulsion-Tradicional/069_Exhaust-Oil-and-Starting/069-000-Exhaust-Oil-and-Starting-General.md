@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0069-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0069-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-069-000-EXHAUST-OIL-AND-STARTING-GENERAL
      ATA 69 · Exhaust, Oil and Starting General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Exhaust, Oil and Starting General
@@ -47,33 +49,24 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0069-000"
 
 ## §1 Purpose
 
-ATA Chapter 69 covers the Exhaust System, Engine Oil System, and Engine Starting System of the AMPEL360E eWTW. These three subsystems are grouped together in ATA 69 and collectively represent the tail-end of the power-plant lifecycle: exhaust gas discharge from the turbofan, turbofan lubrication by the engine oil circuit, and the electro-mechanical starting sequence that accelerates the core to self-sustaining idle.
+This document defines the agnostic ATLAS standard-level architecture context for `Exhaust, Oil and Starting General`.
 
-On the AMPEL360E eWTW the ATA 69 architecture reflects the bleed-less all-electric design:
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-- **Exhaust system (ATA 69-010):** Fixed convergent-divergent exhaust nozzle; no thrust reverser on the eWTW baseline; acoustic treatment lined inner duct; mixer nozzle for core and bypass streams.
-- **Oil system (ATA 69-020 to 069-040):** Full-authority dry-sump oil system with titanium-alloy scavenge pump; synthetic oil MIL-PRF-23699; air–oil heat exchanger (AOHE) and fuel–oil heat exchanger (FOHE, ATA 64); oil tank capacity approx. 12 L; FADEC-monitored oil health (ATA 68-050).
-- **Starting system (ATA 69-050 to 069-060):** All-electric starter using the Permanent-Magnet Starter-Generator (PMSG) integrated on the HPC shaft. The PMSG operates in motor mode during start, powered by the HVDC 270 V bus via the Start Power Electronic Controller (SPEC). No separate pneumatic starter or dedicated starter cartridge.
-
-This document establishes the top-level scope and architecture for ATA 69. All subsubject documents (069-010 through 069-090) are subordinate to this baseline.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 69-000 — Exhaust, Oil and Starting General |
-| Certification basis | EASA CS-25 Amdt 27+; CS-E Amdt 6 |
-| S1000D SNS | 069-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `069` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### Exhaust System
-The AMPEL360E eWTW turbofan exhausts through a fixed convergent nozzle (no active variable area nozzle on baseline). The exhaust duct incorporates acoustic absorptive liners on the inner annulus to meet ICAO Annex 16 Chapter 14 noise targets. An integrated fan/core mixer nozzle minimises the jet noise signature. The exhaust system is fabricated from Inconel 625 and titanium alloy panels; all joints are flanged and sealed for gas-tightness per CS-E §E 500.
+The programme-defined aircraft type turbofan exhausts through a fixed convergent nozzle (no active variable area nozzle on baseline). The exhaust duct incorporates acoustic absorptive liners on the inner annulus to meet ICAO Annex 16 Chapter 14 noise targets. An integrated fan/core mixer nozzle minimises the jet noise signature. The exhaust system is fabricated from Inconel 625 and titanium alloy panels; all joints are flanged and sealed for gas-tightness per CS-E §E 500.
 
 ### Oil System
 The engine dry-sump oil system maintains lubrication and cooling of all rotating bearing assemblies and gearbox. The oil is drawn from the tank by the main pressure pump (gear-type), distributed to all bearing sumps, and returned by the scavenge pump system. Air is separated by the oil de-aerator, and excess heat rejected through the FOHE (fuel–oil heat exchanger, ATA 64) and the AOHE (air–oil heat exchanger, ram-air cooled). Oil state (pressure, temperature, quantity) is monitored continuously by the FADEC and reported to ECAM. A magnetic plug in the scavenge circuit provides chip detection.
@@ -240,7 +233,7 @@ flowchart TB
 | EASA CS-25 §25.1185 | Flammable fluids | EASA | Oil system fire zone drainage |
 | DO-178C | Software Considerations in Airborne Systems | RTCA | SPEC software DO-178C DAL B |
 | DO-160G | Environmental Conditions and Test Procedures | RTCA | SPEC and PMSG environmental qualification |
-| ICAO Annex 16 Ch. 14 | Aircraft Noise — Chapter 14 | ICAO | Exhaust noise targets for AMPEL360E eWTW |
+| ICAO Annex 16 Ch. 14 | Aircraft Noise — Chapter 14 | ICAO | Exhaust noise targets for programme-defined aircraft type |
 
 ---
 
@@ -310,4 +303,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

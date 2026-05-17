@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · Section 05 · Subsection 050 · Subsubject 020 — Structural Classification and Boundaries
@@ -32,7 +34,7 @@ language: en
 
 Subsubject-level index for *Structural Classification and Boundaries* (`020`) within subsection `050` *General* of ATLAS `050-059` — *Estructuras*.
 
-This subsubject defines the classification framework for all AMPEL360 structural elements and establishes the geometric and functional boundaries between structure types.
+This subsubject defines the classification framework for all [PROGRAMME-AIRCRAFT] structural elements and establishes the geometric and functional boundaries between structure types.
 
 ## 2. Document Index
 

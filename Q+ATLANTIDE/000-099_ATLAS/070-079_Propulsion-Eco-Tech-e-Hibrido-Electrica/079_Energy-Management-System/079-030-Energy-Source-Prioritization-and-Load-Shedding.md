@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0079-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0079-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-079-030-ENERGY-SOURCE-PRIORITIZATION-AND-LOAD-SHEDDING
      ATA 79 · Energy Source Prioritization and Load Shedding
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Energy Source Prioritization and Load Shedding
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0079-030"
 
 ## §1 Purpose
 
-This document defines the **energy source prioritization logic** and the **three-tier load shedding protocol** for the AMPEL360E eWTW Energy Management System. It specifies the source dispatch priority stack (turbofan PMSG → PEMFC → battery), the conditions under which each load class is shed, hysteresis logic to prevent oscillation, regenerative energy capture coordination during descent, and crew advisory generation through the ECAM system.
+This document defines the agnostic ATLAS standard-level architecture context for `Energy Source Prioritization and Load Shedding`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Field | Value |
-|-------|-------|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATA 79-030 |
-| Certification Basis | EASA CS-25 Amendment 27+, DO-178C DAL B |
-| S1000D SNS | 079-030-00 |
-| Applicable MSN | All AMPEL360E eWTW series aircraft |
-| Effectivity | From MSN 001 |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `079` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 Source Priority Stack
@@ -74,7 +73,7 @@ The EMCU dispatches available electrical energy from three sources in a defined 
 |----------|--------|-----------|-----------|---------------|
 | 1 (Primary) | Turbofan PMSG | 0–600 kW | FADEC (ATA 67) via AFDX | 100 ms response |
 | 2 (Secondary) | PEMFC | 0–200 kW | FCCU (ATA 75) via AFDX | 500 ms warm-up to rated |
-| 3 (Tertiary) | Battery (NMC 811) | 0–400 kW discharge | BMS (ATA 72) via AFDX | < 50 ms response |
+| 3 (Tertiary) | Battery (<BATTERY-CHEMISTRY>) | 0–400 kW discharge | BMS (ATA 72) via AFDX | < 50 ms response |
 
 **Priority dispatch logic:**
 1. EMCU first requests maximum available PMSG off-take from FADEC (not to exceed engine structural limits).

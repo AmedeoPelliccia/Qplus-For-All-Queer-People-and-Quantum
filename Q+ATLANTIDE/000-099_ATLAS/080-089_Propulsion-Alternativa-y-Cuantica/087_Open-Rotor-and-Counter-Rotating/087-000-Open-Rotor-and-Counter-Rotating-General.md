@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-000-OPEN-ROTOR-AND-COUNTER-ROTATING-GENERAL
      ATLAS-087 (Open Rotor and Counter-Rotating) · General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Open Rotor and Counter-Rotating — General
@@ -46,28 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-000 is the **apex reference** for the Open Rotor and Counter-Rotating (ORCR) propulsor subsection of the AMPEL360E eWTW. It establishes the overall system description, functional decomposition, interface catalogue, operating mode inventory, and certification constraints applicable across the full ORCR scope. All subordinate subsubject documents (087-010 through 087-090) are governed by, and must be consistent with, this general baseline document.
+This document defines the agnostic ATLAS standard-level architecture context for `Open Rotor and Counter-Rotating — General`.
 
-The ORCR propulsor architecture adopts an **unducted contra-rotating fan (UCRF)** configuration driven through a differential planetary gearbox (DPGB) from the low-pressure turbine shaft of the core engine. The two contra-rotating rotor rows — Forward Rotor (FR) and Aft Rotor (AR) — recover swirl energy that would otherwise be lost in a conventional single-rotation open-rotor concept, yielding a theoretical propulsive efficiency improvement of 8–12 % over turbofan equivalents at M 0.72–0.78 cruise. The Open-Rotor Supervisory Control Unit (ORSCU), qualified to DAL B, manages blade pitch, rotor speed, and torque balance in real time via a dual-channel digital pitch controller (DPC) with a 10 ms control loop.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-087 (Open Rotor and Counter-Rotating) |
-| Certification Basis | EASA CS-25 Amendment 27+; DO-178C DAL B (ORSCU software); DO-254 DAL B (ORSCU hardware); DO-160G (environmental); FAR 36 / ICAO Annex 16 (noise) |
-| S1000D SNS | 087-000-00 |
-| DMRL Reference | BREX-087-v1; 30 Data Modules |
-| Effectivity | All AMPEL360E eWTW aircraft from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `087` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description
 
-The AMPEL360E eWTW **Open Rotor and Counter-Rotating (ORCR)** propulsor is an unducted contra-rotating fan module integrated at the aft fuselage pylon stations (P-AFT-PORT and P-AFT-STBD). The ORCR comprises the following major subsystems:
+The programme-defined aircraft type **Open Rotor and Counter-Rotating (ORCR)** propulsor is an unducted contra-rotating fan module integrated at the aft fuselage pylon stations (P-AFT-PORT and P-AFT-STBD). The ORCR comprises the following major subsystems:
 
 1. **Forward Rotor (FR):** 12 variable-pitch composite blades (FR-BLD-01…12) of titanium/CFRP hybrid spar construction, tip radius 2.0 m, design rotational speed 850 rpm at take-off. Blade pitch is controlled by the ORSCU in the range −5° to +85° (feather) via electro-hydraulic pitch actuators (EHPAs).
 

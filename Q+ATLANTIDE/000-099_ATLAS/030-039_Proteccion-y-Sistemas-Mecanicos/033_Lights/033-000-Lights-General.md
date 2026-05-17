@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Lights — General"
 file_name: "033-000-Lights-General.md"
 sns_reference: "033-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,7 +75,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "Lights"
@@ -85,10 +85,12 @@ keywords:
   - "AFDX"
   - "CS-25.812"
   - "DO-293"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-000 — Lights — General
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -100,38 +102,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document provides the top-level general description of ATA 33 — Lights — as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) full-electric aircraft. It establishes the scope, architectural philosophy, and functional decomposition of all lighting systems across nine subsubjects (033-010 through 033-090).
+This document defines the agnostic ATLAS standard-level architecture context for `033-000 — Lights — General`.
 
-The defining characteristic of the AMPEL360e eWTW lighting architecture is the exclusive use of Light Emitting Diode (LED) technology throughout the aircraft — interior and exterior — with no incandescent, halogen, fluorescent, or discharge lamp technology employed. All cabin and flight-deck dimming is managed by Solid-State Lighting Controllers (SSLCs) using Pulse Width Modulation (PWM) control, communicating over AFDX (ARINC 664 Part 7) and ARINC 429 data buses. Emergency lighting is powered by independent Lithium Iron Phosphate (LiFePO4) battery packs mounted in dedicated Emergency Lighting Units (ELUs), fully isolated from the main aircraft electrical power system, providing a minimum 10-minute illumination duration per CS-25.812.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Three primary lighting zones are defined: (1) Flight Deck and Crew Compartment, (2) Passenger Cabin and Cabin Amenities, and (3) Exterior. Cargo and service compartment lighting, emergency lighting, signage lighting, and control/monitoring systems form dedicated subsubjects within ATA 33.
-
-Key applicable regulations: CS-25.811 (Emergency exit marking), CS-25.812 (Emergency lighting), CS-25.1383 (Landing lights), CS-25.1385 (Position lights — installation), CS-25.1387 (Position lights — colour and intensity), CS-25.1401 (Anti-collision light system), and DO-293 (Minimum Performance Standard for LED Aircraft Lighting Equipment).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter | 33 — Lights |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER (extended range) |
-| Propulsion | Full-electric (no hydraulic system; no bleed air system) |
-| Lighting Technology | 100% LED throughout — interior and exterior |
-| Dimming Architecture | Solid-State Lighting Controller (SSLC) — digital PWM over AFDX |
-| Emergency Lighting Power | Independent LiFePO4 battery packs (ELUs), isolated from main buses |
-| Certification Basis | CS-25 (EASA); FAR Part 25 (FAA bilateral); DO-293; DO-160G |
-| S1000D Issue | 5.0 |
-| SNS Reference | 033-00 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-ATA 33 on the AMPEL360e eWTW encompasses all systems responsible for illuminating the flight deck, passenger cabin, cargo and service compartments, exterior surfaces and positions, emergency escape paths, and passenger information signage. The lighting system contributes directly to flight safety (exterior visibility lights, emergency lighting), crew situational awareness (flight deck instruments and charts), passenger comfort (cabin mood and reading lights), ground operations (exterior working lights), and regulatory compliance (anti-collision, navigation position, and exit marking).
+ATA 33 on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] encompasses all systems responsible for illuminating the flight deck, passenger cabin, cargo and service compartments, exterior surfaces and positions, emergency escape paths, and passenger information signage. The lighting system contributes directly to flight safety (exterior visibility lights, emergency lighting), crew situational awareness (flight deck instruments and charts), passenger comfort (cabin mood and reading lights), ground operations (exterior working lights), and regulatory compliance (anti-collision, navigation position, and exit marking).
 
 The SSLC architecture consists of a Master SSLC and up to four Zone SSLCs (flight deck, forward cabin, mid cabin, aft cabin). Each Zone SSLC drives LED dimmer modules in its zone, accepts PWM commands over AFDX from the Cabin Management System (CMS) or crew overhead panel, and reports zone health and fault data back to the Central Maintenance Computer (CMC) over the maintenance AFDX bus.
 
@@ -190,7 +177,7 @@ Exterior lights — navigation/position lights, anti-collision strobes, landing 
 | F-006 | Signage and Information Lighting | Fasten Seat Belts, No Smoking, Return to Seat signs; LED backlit panels; crew and automatic FMS control; CS-25.791 and ICAO Annex 6 symbology | 033-060 |
 | F-007 | Lighting Control, Dimming, and Power Interfaces | Master SSLC and Zone SSLC architecture; PWM dimming 0–100%; AFDX/ARINC 429 bus; 28 VDC and 115 VAC power interfaces; ELU independent supply | 033-070 |
 | F-008 | Lights Monitoring, Diagnostics, and Control Interfaces | SSLC BITE; CMC fault reporting; ECAM LIGHTS advisory page; ELU battery SOC/SOH monitoring; ground maintenance test mode | 033-080 |
-| F-009 | S1000D CSDB Mapping and Traceability | SNS allocation; DMC codes; DMRL; BREX; publication hierarchy for ATA 33 in eWTW CSDB | 033-090 |
+| F-009 | S1000D CSDB Mapping and Traceability | SNS allocation; DMC codes; DMRL; BREX; publication hierarchy for ATA 33 in [PROGRAMME-VARIANT] CSDB | 033-090 |
 
 ---
 
@@ -198,7 +185,7 @@ Exterior lights — navigation/position lights, anti-collision strobes, landing 
 
 ```mermaid
 flowchart LR
-    AC[AMPEL360e eWTW Aircraft] --> ATA33[ATA 33 — Lights]
+    AC[[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Aircraft] --> ATA33[ATA 33 — Lights]
     ATA33 --> SUB010[033-010 Flight Deck Lighting]
     ATA33 --> SUB020[033-020 Passenger Cabin Lighting]
     ATA33 --> SUB030[033-030 Cargo & Service Lighting]
@@ -326,16 +313,16 @@ Floor proximity LED/photo-luminescent strip inspection is a scheduled cabin inte
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-00 | General | DMC-AMPEL360E-EWTW-033-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-10 | Flight Deck and Crew Compartment Lighting | DMC-AMPEL360E-EWTW-033-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-20 | Passenger Cabin Lighting | DMC-AMPEL360E-EWTW-033-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-30 | Cargo and Service Compartment Lighting | DMC-AMPEL360E-EWTW-033-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-40 | Exterior Lighting | DMC-AMPEL360E-EWTW-033-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-50 | Emergency Lighting | DMC-AMPEL360E-EWTW-033-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-60 | Signage and Information Lighting | DMC-AMPEL360E-EWTW-033-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-70 | Lighting Control, Dimming, and Power Interfaces | DMC-AMPEL360E-EWTW-033-70 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-80 | Lights Monitoring, Diagnostics, and Control Interfaces | DMC-AMPEL360E-EWTW-033-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-90 | S1000D CSDB Mapping and Traceability | DMC-AMPEL360E-EWTW-033-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-00 | General | DMC-<PROGRAMME>-<VARIANT>-033-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-10 | Flight Deck and Crew Compartment Lighting | DMC-<PROGRAMME>-<VARIANT>-033-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-20 | Passenger Cabin Lighting | DMC-<PROGRAMME>-<VARIANT>-033-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-30 | Cargo and Service Compartment Lighting | DMC-<PROGRAMME>-<VARIANT>-033-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-40 | Exterior Lighting | DMC-<PROGRAMME>-<VARIANT>-033-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-50 | Emergency Lighting | DMC-<PROGRAMME>-<VARIANT>-033-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-60 | Signage and Information Lighting | DMC-<PROGRAMME>-<VARIANT>-033-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-70 | Lighting Control, Dimming, and Power Interfaces | DMC-<PROGRAMME>-<VARIANT>-033-70 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-80 | Lights Monitoring, Diagnostics, and Control Interfaces | DMC-<PROGRAMME>-<VARIANT>-033-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-90 | S1000D CSDB Mapping and Traceability | DMC-<PROGRAMME>-<VARIANT>-033-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 
@@ -421,9 +408,9 @@ Floor proximity LED/photo-luminescent strip inspection is a scheduled cabin inte
 | CCT | Correlated Colour Temperature — a measure in Kelvin (K) of the warmth or coolness of white light; cabin LEDs target adjustable CCT from approximately 2700K (warm white) to 6500K (cool white) |
 | CMS | Cabin Management System — the integrated system controlling cabin functions including lighting scene presets; ATA 44 hosted |
 | CRI | Colour Rendering Index — a measure (0–100) of how accurately a light source renders the colours of objects compared to natural daylight; regulatory and comfort minimum for cabin lighting TBD (target Ra > 80) |
-| DO-293 | RTCA Minimum Performance Standard for LED Aircraft Lighting Equipment — the primary qualification standard for all exterior LED light assemblies on the eWTW |
+| DO-293 | RTCA Minimum Performance Standard for LED Aircraft Lighting Equipment — the primary qualification standard for all exterior LED light assemblies on the [PROGRAMME-VARIANT] |
 | ELU | Emergency Lighting Unit — a self-contained unit comprising LiFePO4 battery, charging circuit, LED driver, and auto-activation logic; provides independent emergency illumination per CS-25.812 |
-| LED | Light Emitting Diode — a semiconductor light source used exclusively throughout the eWTW lighting system; advantages include long service life, low power consumption, and vibration resistance |
+| LED | Light Emitting Diode — a semiconductor light source used exclusively throughout the [PROGRAMME-VARIANT] lighting system; advantages include long service life, low power consumption, and vibration resistance |
 | LiFePO4 | Lithium Iron Phosphate — the battery chemistry used in ELU battery packs; chosen for safety (thermal stability), cycle life, and regulatory acceptance |
 | LCU | Lighting Control Unit — a zone-level unit (also referred to as SSLC in this document) managing LED drivers and PWM dimming for an assigned lighting zone |
 | lux | SI unit of illuminance — lumens per square metre (lm/m²); used to specify minimum and target illuminance levels for cargo holds, work areas, and emergency escape paths |
@@ -432,7 +419,7 @@ Floor proximity LED/photo-luminescent strip inspection is a scheduled cabin inte
 | PWM | Pulse Width Modulation — a dimming technique where LED brightness is controlled by varying the duty cycle (on-time fraction) of a fixed-frequency drive signal; preferred for LED dimming to maintain colour temperature across the dimming range |
 | SOC | State of Charge — the remaining capacity of the ELU battery expressed as a percentage of full charge |
 | SOH | State of Health — a measure of ELU battery capacity relative to its original rated capacity; used to determine replacement threshold |
-| SSLC | Solid-State Lighting Controller — the primary lighting control unit managing PWM dimming commands, AFDX communications, and BITE for an assigned lighting zone on the eWTW |
+| SSLC | Solid-State Lighting Controller — the primary lighting control unit managing PWM dimming commands, AFDX communications, and BITE for an assigned lighting zone on the [PROGRAMME-VARIANT] |
 
 ---
 
@@ -473,7 +460,7 @@ Floor proximity LED/photo-luminescent strip inspection is a scheduled cabin inte
 
 | Issue ID | Description | Owner | Priority | Status |
 |---|---|---|---|---|
-| OI-033-001 | NVIS fitment decision — confirm whether NVIS-compatible flight deck lighting is required for eWTW baseline or optional fitment | Q-MECHANICS / Programme | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-033-001 | NVIS fitment decision — confirm whether NVIS-compatible flight deck lighting is required for [PROGRAMME-VARIANT] baseline or optional fitment | Q-MECHANICS / Programme | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-033-002 | ELU battery chemistry confirmation — LiFePO4 baseline assumed; validate against EASA regulatory acceptance, weight budget, and cycle life | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-033-003 | Floor proximity lighting hybrid solution — confirm LED strips + photo-luminescent hybrid vs. pure LED solution; regulatory acceptance from EASA required | Q-MECHANICS / ORB-LEG | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-033-004 | Cargo hold lux levels — define minimum illuminance targets (lux) for main cargo and bulk cargo holds; align with airline operational requirements | Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |

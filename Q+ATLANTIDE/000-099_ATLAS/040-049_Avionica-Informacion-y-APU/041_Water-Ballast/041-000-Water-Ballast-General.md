@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 000 — Water Ballast General
@@ -38,9 +40,9 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document establishes the general framework for the Water Ballast (WB) system on the AMPEL360E electric wide-body twin-wing (eWTW) aircraft. It defines the system boundary, regulatory basis, design philosophy, and top-level functional allocation that govern all subordinate water ballast subsystem documents within the ATLAS 041 subject range (041-000 through 041-090).
+This document establishes the general framework for the Water Ballast (WB) system on the [PROGRAMME-AIRCRAFT] electric wide-body twin-wing ([PROGRAMME-VARIANT]) aircraft. It defines the system boundary, regulatory basis, design philosophy, and top-level functional allocation that govern all subordinate water ballast subsystem documents within the ATLAS 041 subject range (041-000 through 041-090).
 
-The Water Ballast system provides active centre-of-gravity (CG) management by transferring a controlled water mass between fore and aft ballast tanks. On the AMPEL360E eWTW, where the distributed propulsion architecture and hydrogen/battery hybrid energy storage create a variable mass distribution across the flight envelope, precise CG control is safety-critical for handling-qualities compliance with CS-25 Amendment 27 §25.143 and §25.171 through §25.181.
+The Water Ballast system provides active centre-of-gravity (CG) management by transferring a controlled water mass between fore and aft ballast tanks. On the programme-defined aircraft type, where the distributed propulsion architecture and hydrogen/battery hybrid energy storage create a variable mass distribution across the flight envelope, precise CG control is safety-critical for handling-qualities compliance with CS-25 Amendment 27 §25.143 and §25.171 through §25.181.
 
 The top-level design is governed by CS-25 §25.1583 (operating limitations), FAR Part 25 §25.785 (seats, berths, safety belts), and the EASA certification basis agreed in the Type Certificate Data Sheet (TCDS). Environmental qualification of all wetted and electronic components complies with DO-160G. Weight and balance documentation for line operations conforms to EASA Part-CAT OPS requirements and IATA AHM 560.
 
@@ -50,11 +52,11 @@ The top-level design is governed by CS-25 §25.1583 (operating limitations), FAR
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41 — Water Ballast |
 | Standards | CS-25 Amd 27, FAR Part 25, DO-160G, S1000D Issue 5.0, ARP4754B |
 | Dev Assurance | ARP4754B System Level DAL B (CG control function) |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | Weight Impact | Max ballast water mass 800 kg (fore + aft tanks combined) |
 
 ---
@@ -279,12 +281,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-000-00A-040A-A | 040 | Water Ballast General Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-000-00A-300A-A | 300 | Water Ballast General Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-000-00A-400A-A | 400 | Water Ballast General BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-000-00A-520A-A | 520 | Water Ballast General Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-000-00A-941A-A | 941 | Water Ballast General Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-000-00A-720A-A | 720 | Water Ballast General SW Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-000-00A-040A-A | 040 | Water Ballast General Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-000-00A-300A-A | 300 | Water Ballast General Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-000-00A-400A-A | 400 | Water Ballast General BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-000-00A-520A-A | 520 | Water Ballast General Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-000-00A-941A-A | 941 | Water Ballast General Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-000-00A-720A-A | 720 | Water Ballast General SW Description |
 
 ### Recommended Data Module Set
 
@@ -369,7 +371,7 @@ Verification Evidence"]
 | <a id="glossary-bcc"></a>BCC | Ballast Control Computer — DAL B avionics unit executing CG computation and transfer control law | [§5](#5-architecture-description) |
 | <a id="glossary-cg"></a>CG | Centre of Gravity — the point at which the aircraft weight acts; expressed as % MAC | [§3](#3-system--function-overview) |
 | <a id="glossary-dal"></a>DAL | Development Assurance Level — assigned per ARP4754B; governs rigour of design and verification process | [§6](#6-functional-breakdown) |
-| <a id="glossary-ewtw"></a>eWTW | Electric Wide-body Twin-Wing — the AMPEL360E airframe configuration with distributed electric propulsion on twin wing structures | [§1](#1-purpose) |
+| <a id="glossary-ewtw"></a>[PROGRAMME-VARIANT] | Electric Wide-body Twin-Wing — the [PROGRAMME-AIRCRAFT] airframe configuration with distributed electric propulsion on twin wing structures | [§1](#1-purpose) |
 | <a id="glossary-fbt"></a>FBT | Forward Ballast Tank — the forward water ballast tank located beneath the forward cargo hold | [§3](#3-system--function-overview) |
 | <a id="glossary-fcmc"></a>FCMC | Flight Control Management Computer — primary avionics computer managing flight envelope and receiving CG trim demand from BCC | [§10](#10-interfaces) |
 | <a id="glossary-mac"></a>MAC | Mean Aerodynamic Chord — the reference chord length used to express CG position as a percentage | [§3](#3-system--function-overview) |
@@ -390,7 +392,7 @@ Verification Evidence"]
 | <a id="ref-arp4761a"></a>ARP4761A | SAE ARP4761A — Guidelines and Methods for the Safety Assessment Process | FMEA and FTA methodology | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 — International Specification for Technical Publications | CSDB data module coding and publication structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 — Information Standards for Aviation Maintenance | AMM/FIM/IPD structure and ATA chapter coding | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for AMPEL360E | Certification basis and approved AFM limitations | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet for [PROGRAMME-AIRCRAFT] | Certification basis and approved AFM limitations | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -398,8 +400,8 @@ Verification Evidence"]
 
 | Ref | Document | Identifier | Revision | Status | Link |
 |-----|---------|-----------|---------|--------|------|
-| R-001 | AMPEL360E System Architecture Document | AMPEL360E-SAD-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| R-002 | Water Ballast System Requirements Specification | AMPEL360E-SRS-041-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-001 | [PROGRAMME-AIRCRAFT] System Architecture Document | [PROGRAMME-AIRCRAFT]-SAD-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-002 | Water Ballast System Requirements Specification | [PROGRAMME-AIRCRAFT]-SRS-041-001 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | R-003 | Q+ATLANTIDE ATLAS Framework README | QATL-ATLAS-README | Rev 1.0 | Active | [README](../README.md) |
 
 ---

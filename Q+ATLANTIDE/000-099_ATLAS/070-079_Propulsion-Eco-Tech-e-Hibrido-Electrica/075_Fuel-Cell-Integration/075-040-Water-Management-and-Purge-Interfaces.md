@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-040-WATER-MANAGEMENT-AND-PURGE-INTERFACES
      ATA 75 · Water Management and Purge Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Water Management and Purge Interfaces
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-040"
 
 ## §1 Purpose
 
-This document describes the water management and purge interface subsystems of the AMPEL360E eWTW Fuel Cell Module. The PEMFC electrochemical reaction produces water at the cathode at a rate of approximately 0.9 g/s per 50 kW stack at rated power, totalling approximately 3.6 g/s from the full 200 kW four-stack cluster. This product water must be efficiently separated, stored, partially recycled for membrane humidification, and the remainder drained overboard, while preventing flooding of cathode channels and membrane drying — both of which degrade stack performance.
+This document defines the agnostic ATLAS standard-level architecture context for `Water Management and Purge Interfaces`.
 
-The water management subsystem consists of a water separator (WST-075) collecting product water from the cathode exhaust manifold, a water accumulator (WA-075) providing a 2 L buffer reservoir, a water drain valve (WDV-075) for overboard drainage, and the membrane humidifier (MH-075) which uses cathode exhaust moisture to humidify incoming cathode air. The purge subsystem provides anode and cathode N2 purge capability using the aircraft's nitrogen service (ATA 36), critical for pre-start line purging, post-shutdown membrane preservation, and long-term storage.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-040 — Water Management and Purge Interfaces |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-040-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Water Separation**: Cathode exhaust from the four stacks enters the common cathode exhaust manifold and flows through the water separator WST-075, a cyclone-type separator that uses centrifugal action to remove entrained liquid water droplets from the gas stream with >98 % liquid separation efficiency at nominal flow rates. Separated liquid water collects in the accumulator WA-075.

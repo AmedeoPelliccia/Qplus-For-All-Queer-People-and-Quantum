@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Primary, Secondary and Tertiary Structure Classification
 
 ## 1. Purpose
 
-Defines the AMPEL360 **structural classification scheme**: Primary (PSE), Secondary (SSE), and Tertiary Structure, including PSE-list, associated inspection categories, and MSG-3 classification matrix.
+Defines the [PROGRAMME-AIRCRAFT] **structural classification scheme**: Primary (PSE), Secondary (SSE), and Tertiary Structure, including PSE-list, associated inspection categories, and MSG-3 classification matrix.
 
 ## 2. Scope
 

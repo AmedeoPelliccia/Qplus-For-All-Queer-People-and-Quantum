@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 040 — Oxygen Enriched Air Exhaust and Venting
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the Oxygen Enriched Air (OEA) Exhaust and Venting sub-system of ATA 47 NGS for the AMPEL360E eWTW. OEA is the by-product of the ASM membrane separation process, containing approximately 40–45% O₂ by volume. This high-O₂ stream must be safely vented overboard to prevent accumulation of oxygen-enriched gas in any enclosed aircraft structure (cabin, bilge, equipment bays) where it could significantly increase fire risk.
+This document defines the Oxygen Enriched Air (OEA) Exhaust and Venting sub-system of ATA 47 NGS for the programme-defined aircraft type. OEA is the by-product of the ASM membrane separation process, containing approximately 40–45% O₂ by volume. This high-O₂ stream must be safely vented overboard to prevent accumulation of oxygen-enriched gas in any enclosed aircraft structure (cabin, bilge, equipment bays) where it could significantly increase fire risk.
 
 The OEA venting system routes OEA from both ASM banks via fire-resistant ducts through a flame arrestor assembly and overboard vent probe, located on the lower fuselage skin in a non-pressurised, externally vented zone. Back-pressure regulation ensures the correct transmembrane differential pressure is maintained across the ASM hollow-fiber bundles. Check valves prevent aerodynamic ram-air or reverse pressure from re-entering the aircraft structure.
 
@@ -63,7 +65,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter / Sub-subject | ATA 47.040 — OEA Exhaust and Venting |
 | Certification Basis | CS-25 Amendment 28; SFAR 88; FAR 25.981 |
 | Applicable Standards | DO-160G; S1000D Issue 5.0; CS-25 Appendix F (fire resistance) |

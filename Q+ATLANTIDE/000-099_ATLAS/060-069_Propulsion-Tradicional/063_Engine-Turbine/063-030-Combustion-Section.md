@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0063-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0063-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-063-030-COMBUSTION-SECTION
      ATA 63 · Combustion Section
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Combustion Section
@@ -47,21 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0063-030"
 
 ## §1 Purpose
 
-Single annular combustor (SAC) with lean-burn fuel injection (TAPS or multipoint). Designed for 100 % SAF compatibility from day one. Combustor liner: nickel superalloy with TBC. 20–24 fuel nozzles with dual pilot/main circuits for NOx reduction. Must meet ICAO CAEP/11 NOx limits.
+This document defines the agnostic ATLAS standard-level architecture context for `Combustion Section`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 63-030 — Combustion Section |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 063-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `063` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Single annular combustor (SAC) with lean-burn fuel injection (TAPS or multipoint). Designed for 100 % SAF compatibility from day one. Combustor liner: nickel superalloy with TBC. 20–24 fuel nozzles with dual pilot/main circuits for NOx reduction. Must meet ICAO CAEP/11 NOx limits.
@@ -204,7 +205,7 @@ flowchart TB
 
 | Term | Definition |
 |---|---|
-| **SAF** | Sustainable Aviation Fuel — ASTM D7566; 100 % compatible with AMPEL360E combustor. |
+| **SAF** | Sustainable Aviation Fuel — ASTM D7566; 100 % compatible with [PROGRAMME-AIRCRAFT] combustor. |
 | **TAPS** | Twin Annular Pre-Swirl — lean-burn fuel injection with pilot and main circuits for low NOx. |
 | **TBC** | Thermal Barrier Coating — ceramic (YSZ) on combustor liner and turbine blades. |
 | **T41** | HPT inlet total temperature — the maximum temperature in the engine gas path. |
@@ -255,4 +256,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

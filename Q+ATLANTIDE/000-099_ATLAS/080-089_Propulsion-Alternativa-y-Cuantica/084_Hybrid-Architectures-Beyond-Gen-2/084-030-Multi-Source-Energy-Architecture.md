@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0084-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-084-030-MULTI-SOURCE-ENERGY-ARCHITECTURE
      ATLAS-084 (Hybrid Architectures — Beyond Gen-2) · Multi-Source Energy Architecture
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Multi-Source Energy Architecture
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-030"
 
 ## §1 Purpose
 
-ATLAS subsubject 084-030 provides detailed characterisation of each energy source in the BGHA — the Solid-State Battery Pack (SSBP), the PEMFC Stack (FCSS), the Variable-Cycle Gas Turbine (VCGT), and the Supercapacitor Energy Buffer (SCEB) — covering electrochemical / thermodynamic properties, energy and power density, response time, lifetime, and operational constraints. It also defines the dispatch priority table and State-of-Charge / State-of-Health monitoring requirements for each source.
+This document defines the agnostic ATLAS standard-level architecture context for `Multi-Source Energy Architecture`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-084 — 084-030 Multi-Source Energy Architecture |
-| Certification Basis | EASA CS-25 Amdt 27+; DO-160G; UN 38.3 (battery transport) |
-| S1000D SNS | 084-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `084` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Source Descriptions
 
 ### 3.1 Solid-State Battery Pack (SSBP)
@@ -69,19 +70,19 @@ Two packs installed in the forward cargo bay (port and starboard). Each pack con
 
 ### 3.2 PEMFC Stack (FCSS)
 
-Eight 50 kW PEM fuel cell stacks sharing a common LH₂ feed manifold from ATLAS-077 and a common air supply via cabin-bleed-free electrochemical air compressors (EACs). The FCSS operates at stack voltage 270–310 V DC; a boost BDCC (BDCC-C) up-converts to 800 V. Stack humidification uses external membrane humidifiers. Stack coolant is EGW (ethylene glycol-water 40/60) shared with the BGHA-TML loop.
+Eight 50 kW PEM fuel cell stacks sharing a common LH₂ feed manifold from ATLAS-077 and a common air supply via cabin-bleed-free electrochemical air compressors (EACs). The FCSS operates at stack voltage 270–310 V DC; a boost BDCC (BDCC-C) up-converts to <NOMINAL-VOLTAGE>. Stack humidification uses external membrane humidifiers. Stack coolant is EGW (ethylene glycol-water 40/60) shared with the BGHA-TML loop.
 
 **Key parameters:** 400 kW continuous; 440 kW peak (10 % overload, 30 s); H₂ consumption at full load: 1.5 kg/min (LHV efficiency ~58 %); stack operating temperature 65–80 °C; stack lifetime target 15 000 h; 50 000 start/stop cycles.
 
 ### 3.3 Variable-Cycle Gas Turbine (VCGT)
 
-Two under-wing VCGTs, each capable of operating on SAF (up to 100 % HEFA blend per ASTM D7566) or LH₂ with a dedicated hydrogen combustor sector. Each VCGT drives a permanent-magnet synchronous generator (PMSG) rated 1 200 kW at 3 600 rpm nominal. Output is variable-frequency AC (360–800 Hz depending on power lever setting), rectified by ATRU to 800 V DC.
+Two under-wing VCGTs, each capable of operating on SAF (up to 100 % HEFA blend per ASTM D7566) or LH₂ with a dedicated hydrogen combustor sector. Each VCGT drives a permanent-magnet synchronous generator (PMSG) rated 1 200 kW at 3 600 rpm nominal. Output is variable-frequency AC (360–800 Hz depending on power lever setting), rectified by ATRU to <NOMINAL-VOLTAGE> DC.
 
 **Key parameters:** 1 200 kW each (2 400 kW total); fuel types: SAF 100 % or LH₂; start time: 90 s from cold; ATRU conversion efficiency ≥ 96 %; SFC (SAF): 0.38 kg/kWh; SFC (LH₂): 0.11 kg/kWh (LHV basis); VCGT lifetime: per OEM CMM (TBD hours).
 
 ### 3.4 Supercapacitor Energy Buffer (SCEB)
 
-One mid-fuselage rack unit containing electrochemical double-layer capacitors (EDLCs) assembled into a 240 V nominal pack, boosted to 800 V via BDCC-D. The SCEB accepts charge from regenerative braking (PMSM fan regen) and SSBP overflow. It discharges for STOL boost and emergency power peaks.
+One mid-fuselage rack unit containing electrochemical double-layer capacitors (EDLCs) assembled into a 240 V nominal pack, boosted to <NOMINAL-VOLTAGE> via BDCC-D. The SCEB accepts charge from regenerative braking (PMSM fan regen) and SSBP overflow. It discharges for STOL boost and emergency power peaks.
 
 **Key parameters:** 80 kWh; 2 MW peak discharge ≤ 500 ms; continuous power 200 kW; charge acceptance ≤ 2 MW; cycle life ≥ 500 000 cycles; operating temperature −40 °C to +65 °C; weight ~280 kg.
 
@@ -140,7 +141,7 @@ flowchart TB
     VCGT1[VCGT-1\n1200 kW] --> ATRU1[ATRU-1\n1200 kW]
     VCGT2[VCGT-2\n1200 kW] --> ATRU2[ATRU-2\n1200 kW]
     SCEB[SCEB\n80 kWh / 2 MW] -->|240 V| BDCC_D[BDCC-D\n±2 MW]
-    BDCC_A --> BUS[HVDC 800 V\nBus-800]
+    BDCC_A --> BUS[HVDC <NOMINAL-VOLTAGE>\nBus-800]
     BDCC_B --> BUS
     BDCC_C --> BUS
     ATRU1 --> BUS

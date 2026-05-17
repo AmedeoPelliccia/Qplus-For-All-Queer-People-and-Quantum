@@ -23,6 +23,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 015 · Subsubject 000 — Overview
@@ -31,7 +33,7 @@ language: en
 
 Overview entry-point for the *Ground Support Equipment* (`015`) subsection within ATLAS `010-019` — *Manejo en Tierra & Servicio*. This subsubject introduces the full scope, boundary rules, and content architecture of `015_GSE/` and links outward to the applicable industry standards listed in §5.
 
-Ground Support Equipment (GSE) is the complete set of specialised vehicles, tools, and apparatus used to service, maintain, and support an aircraft on the ground between flights and during maintenance periods. Within the ATLAS taxonomy, subsection `015` provides the **operational procedure layer** (Level 2) for GSE — covering catalogue, compatibility, classification, physical interfaces, and maintenance/calibration requirements for all GSE types used with AMPEL360 aircraft variants.
+Ground Support Equipment (GSE) is the complete set of specialised vehicles, tools, and apparatus used to service, maintain, and support an aircraft on the ground between flights and during maintenance periods. Within the ATLAS taxonomy, subsection `015` provides the **operational procedure layer** (Level 2) for GSE — covering catalogue, compatibility, classification, physical interfaces, and maintenance/calibration requirements for all GSE types used with [PROGRAMME-AIRCRAFT] aircraft variants.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
@@ -59,7 +61,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 |---|---|---|
 | `000` | Overview | Scope, boundary rules, position in ATLAS, content map ← this file |
 | `001` | Scope and GSE Boundaries | Taxonomy boundary definitions; what is/is not GSE within ATLAS |
-| `002` | GSE Catalog and Compatibility Matrix | Authorised GSE list per AMPEL360 variant with compatibility ratings |
+| `002` | GSE Catalog and Compatibility Matrix | Authorised GSE list per [PROGRAMME-AIRCRAFT] variant with compatibility ratings |
 | `003` | Powered and Non-Powered GSE | Classification of GSE by power source; operational requirements per class |
 | `004` | GSE Interfaces, Couplings and Aircraft-Side Connections | Physical and electrical interfaces between GSE and aircraft |
 | `005` | GSE Maintenance, Calibration and Records | Maintenance intervals, calibration schedules, and traceability records |
@@ -76,7 +78,7 @@ Tow tractors and towbarless tractor procedures belong in `013_Remolque/`. This s
 Maintenance access platforms, docking systems, and passenger boarding steps that function as access equipment are catalogued both in `012_Acceso/` (from the aircraft-access perspective) and in `015_GSE/` (from the equipment-management perspective). The `015_` catalog entry is normative for equipment identity and calibration; `012_` is normative for access procedures.
 
 **Rule GSE-04 — Variant sensitivity:**
-AMPEL360 Gen 1 (Jet-A/SAF) and Gen 2 (LH₂) variants require different GSE. LH₂-specific GSE (cryogenic fuel vehicles, boil-off capture units, electrostatic grounding kits) are flagged in the compatibility matrix (`002_`) and cross-referenced to EPTA `460-469_Propulsion-de-Hidrogeno`.
+[PROGRAMME-AIRCRAFT] Gen 1 (Jet-A/SAF) and Gen 2 (LH₂) variants require different GSE. LH₂-specific GSE (cryogenic fuel vehicles, boil-off capture units, electrostatic grounding kits) are flagged in the compatibility matrix (`002_`) and cross-referenced to EPTA `460-469_Propulsion-de-Hidrogeno`.
 
 ## 3. Diagram — GSE Subsection Map
 

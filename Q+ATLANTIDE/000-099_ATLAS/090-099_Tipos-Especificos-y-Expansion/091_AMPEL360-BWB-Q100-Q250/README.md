@@ -1,6 +1,6 @@
 ---
 document_id: QATL-ATLAS-1000-ATLAS-090-099-09-091-README
-title: "ATLAS 090-099 · 09.091 — AMPEL360 BWB Q100-Q250 (Subsection Index)"
+title: "ATLAS 090-099 · 09.091 — [PROGRAMME-AIRCRAFT] BWB Q100-Q250 (Subsection Index)"
 register: ATLAS-1000
 parent_baseline: Q+ATLANTIDE
 parent_baseline_doc: ../../../../organization/Q+ATLANTIDE.md
@@ -13,7 +13,7 @@ code_range: "090-099"
 section: "09"
 section_title: "Tipos Específicos & Expansión"
 subsection: "091"
-subsection_title: "AMPEL360 BWB Q100-Q250"
+subsection_title: "[PROGRAMME-AIRCRAFT] BWB Q100-Q250"
 primary_q_division: Q-HORIZON
 support_q_divisions: [Q-AIR, Q-STRUCTURES, Q-GREENTECH]
 orb_function_support: [ORB-PMO, ORB-MKTG]
@@ -21,19 +21,21 @@ governance_class: baseline
 version: 1.0.0
 status: reserved
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
-# ATLAS 090-099 · Section 09 · Subsection 091 — AMPEL360 BWB Q100-Q250
+# ATLAS 090-099 · Section 09 · Subsection 091 — [PROGRAMME-AIRCRAFT] BWB Q100-Q250
 
 ## 1. Purpose
 
-Subsection-level index for *AMPEL360 BWB Q100-Q250* (`091`) within ATLAS `090-099` — *Tipos Específicos & Expansión* — BWB family.
+Subsection-level index for *[PROGRAMME-AIRCRAFT] BWB Q100-Q250* (`091`) within ATLAS `090-099` — *Tipos Específicos & Expansión* — BWB family.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
 ## 2. Scope
 
-- Reserves the subsubject namespace `00`–`99` of subsection `091` *AMPEL360 BWB Q100-Q250*.
+- Reserves the subsubject namespace `00`–`99` of subsection `091` *[PROGRAMME-AIRCRAFT] BWB Q100-Q250*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - The Overview and detailed subsubjects (`00`–`99`) will be populated in subsequent baseline releases per the parent section's authorisation.
 
@@ -51,13 +53,13 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 | Master range | `000–099` |
 | Code range | `090-099` |
 | Section | `09` — Tipos Específicos & Expansión |
-| Subsection | `091` — AMPEL360 BWB Q100-Q250 |
+| Subsection | `091` — [PROGRAMME-AIRCRAFT] BWB Q100-Q250 |
 | Subsubject namespace | `00`–`99` (reserved) |
 | Primary Q-Division | Q-HORIZON[^qdiv] |
 | Support Q-Divisions | Q-AIR, Q-STRUCTURES, Q-GREENTECH |
 | ORB support | ORB-PMO, ORB-MKTG |
 | Governance class | `baseline`[^gov] |
-| Folder path | `Q+ATLANTIDE/000-099_ATLAS/090-099_Tipos-Especificos-y-Expansion/091_AMPEL360-BWB-Q100-Q250/` |
+| Folder path | `Q+ATLANTIDE/000-099_ATLAS/090-099_Tipos-Especificos-y-Expansion/091_[PROGRAMME-AIRCRAFT]-BWB-Q100-Q250/` |
 | Document | `README.md` (this file) |
 | Parent section | [`../README.md`](../README.md) |
 | Parent architecture | [`../../README.md`](../../README.md) |

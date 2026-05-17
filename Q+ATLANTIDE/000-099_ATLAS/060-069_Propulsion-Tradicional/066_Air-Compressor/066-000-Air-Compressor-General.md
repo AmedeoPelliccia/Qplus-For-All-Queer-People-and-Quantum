@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0066-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-066-000-AIR-COMPRESSOR-GENERAL
      ATA 66 · Air Compressor General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Air Compressor General
@@ -47,28 +49,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-000"
 
 ## §1 Purpose
 
-ATA Chapter 66 covers the Air Compressor system of the AMPEL360E eWTW. In a conventional bleed-air aircraft, ATA 66 describes engine-driven compressor stages extracting LP/HP bleed for pneumatic consumers. On the AMPEL360E eWTW, the architecture is fundamentally different: **all pneumatic bleed from the engine is eliminated**. Instead, two dedicated Electric Air Compressors (EAC-A and EAC-B) provide compressed air solely from electrical power, supplied by the HVDC 270 V bus.
+This document defines the agnostic ATLAS standard-level architecture context for `Air Compressor General`.
 
-The EAC system interfaces directly with the Environmental Control System (ATA 21) to supply cabin pressurization and conditioning air, and with the Nitrogen Generation System (ATA 47) for tank inerting supply. This architecture yields a measurable specific fuel consumption (SFC) improvement of approximately 3 % per engine by eliminating bleed-air extraction from the turbofan core.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document establishes the general scope, top-level architecture, and governing standards for the ATA 66 Air Compressor system on the AMPEL360E eWTW. All subsubject documents (066-010 through 066-090) are subordinate to this general baseline.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 66-000 — Air Compressor General |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 066-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `066` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The ATA 66 system on the AMPEL360E eWTW comprises two identical, cross-ship Electric Air Compressors (EAC-A and EAC-B), each a single-stage centrifugal compressor driven by a permanent-magnet synchronous motor (PMSM) rated at approximately 90 kW at design point. The EACs are controlled by the Air Compressor Control Unit (ACCU), a dual-channel digital controller qualified to DO-178C DAL C and DO-160G.
+The ATA 66 system on the programme-defined aircraft type comprises two identical, cross-ship Electric Air Compressors (EAC-A and EAC-B), each a single-stage centrifugal compressor driven by a permanent-magnet synchronous motor (PMSM) rated at approximately 90 kW at design point. The EACs are controlled by the Air Compressor Control Unit (ACCU), a dual-channel digital controller qualified to DO-178C DAL C and DO-160G.
 
 Each EAC delivers compressed air at up to 0.55 MPa gauge, with a mass flow of up to 0.8 kg/s at cruise altitude conditions. In normal operation, EAC-A and EAC-B operate in parallel, each feeding one ECS pack (ATA 21). In case of one EAC failure, the remaining unit can supply both packs at reduced flow, sufficient for single-pack operation under degraded mode.
 
@@ -283,4 +280,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

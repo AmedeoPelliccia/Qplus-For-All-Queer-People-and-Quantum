@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0067-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Engine Actuators and Servo Control
@@ -38,23 +40,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-030"
 ---
 ## §1 Purpose
 
-This document covers the engine actuators commanded by the FADEC on the AMPEL360E eWTW: the Variable Stator Vane (VSV) actuators (stages 1–4), the Variable Bypass Valve (VBV) actuator, and the High-Pressure Compressor Active Clearance Control (HP-ACC) valve. The Fuel Metering Valve (FMV) is the primary fuel actuator and is described in ATA 64; this document covers geometry actuators only.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine Actuators and Servo Control`.
 
-All actuators receive position commands from the FADEC EEC via torque motor or step-motor driver outputs. Each actuator provides position feedback to the FADEC via LVDT (Linear Variable Differential Transformer) or potentiometer sensors, forming a closed servo loop inside the FADEC control frame.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 67-030 — Engine Actuators and Servo Control |
-| Certification basis | EASA CS-E Amdt 5 / DO-160G |
-| S1000D SNS | 067-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `067` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **VSV Actuators (stages 1–4):** Four stages of variable stator vanes are scheduled by FADEC as a function of N2 corrected speed and aircraft Mach number. The VSV actuating ring is driven by a hydraulic servo powered from the Fuel Hydromechanical Unit (HMU, ATA 64) oil supply — the HMU fuel pressure provides the hydraulic source for VSV servo motion. FADEC commands the VSV servo valve torque motor and reads LVDT feedback; closed-loop accuracy ±0.5°.
@@ -270,4 +269,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

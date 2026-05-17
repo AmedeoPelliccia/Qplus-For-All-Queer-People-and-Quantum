@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0081-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-081-000-QUANTUM-OPTIMIZED-COMBUSTION-MODELS-GENERAL
      ATLAS-081 (Quantum-Optimized Combustion Models) · Quantum-Optimized Combustion Models — General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum-Optimized Combustion Models — General
@@ -46,73 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-000"
 
 ## §1 Purpose
 
-This document is the **apex reference baseline** for the entire ATLAS-081 subsection —
-*Quantum-Optimized Combustion Models (QOCM)*. It defines the scope, architecture,
-component inventory, interface register, and governance baseline for the
-**Quantum Optimized Combustion Modeling Unit (QOCMU)** integrated into the
-AMPEL360E eWTW propulsion system.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum-Optimized Combustion Models — General`.
 
-The QOCMU applies state-of-the-art quantum computing algorithms to simulate and
-continuously optimize the combustion processes within the turbofan engine (ATA 73)
-across three certified fuel types:
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-| Fuel Class | Designation | Certification Basis |
-|---|---|---|
-| Conventional kerosene | Jet-A / Jet-A1 | ASTM D1655 |
-| Sustainable Aviation Fuel | SAF (HEFA, FT, ATJ blends) | ASTM D7566 Annex A1–A5 |
-| Gaseous hydrogen | GH₂ | EASA SC-H₂ (draft 2025) |
-
-The QOCMU achieves real-time combustion optimization through three quantum-accelerated
-solver modules executing on an embedded **12-qubit trapped-ion QPU**:
-
-1. **Quantum Chemical Kinetics Solver (QCKS)** — applies Variational Quantum Eigensolver
-   (VQE) with UCCSD ansatz to compute detailed reaction rate coefficients (A, Ea, n)
-   for key combustion species with accuracy exceeding density functional theory (DFT/B3LYP)
-   by 15–30% at transition states.
-
-2. **Quantum Reaction Path Optimizer (QRPO)** — applies Quantum Approximate Optimization
-   Algorithm (QAOA) at circuit depth p = 6 to select dominant low-emission reaction pathways
-   from the full combustion mechanism graph, achieving up to 12% NOx reduction relative to
-   classical pathway selection methods.
-
-3. **Quantum Turbulence-Combustion Coupler (QTCC)** — applies quantum Monte Carlo (QMC)
-   stochastic PDE methods with quantum random walk acceleration to provide corrected
-   Large Eddy Simulation (LES) subgrid-scale (SGS) combustion closure, improving scalar
-   dissipation rate prediction by 30–40% relative to classical Smagorinsky SGS models.
-
-All solver outputs are supplied to the Full-Authority Digital Engine Control (FADEC)
-via AFDX virtual links at **20 Hz** (QCKS/QRPO) and **10 Hz** (QTCC).
-
-The QOCMU is classified **DAL B** (dual-channel, cross-monitored) in accordance with
-DO-178C and DO-254, and acts in an **advisory and augmentation role**: FADEC retains
-full authority at all times. The QOCMU is hosted in the EE bay (8 MCU form factor).
-
-All subordinate subsubject documents 081-010 through 081-090 derive their scope,
-constraints, and data item requirements from this general baseline document.
-The complete Data Module Requirements List (DMRL) for subsection 081 comprises **32 S1000D
-Data Modules** governed under BREX-081-v1.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-081 (Quantum-Optimized Combustion Models) — General |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; IEEE P2995; S1000D SNS 081-000-00 |
-| S1000D SNS | 081-000-00 |
-| BREX identifier | BREX-081-v1 |
-| Engine program | AMPEL360E Turbofan (ATA 71–79 scope) |
-| Fuel types | Jet-A, SAF (HEFA/FT/ATJ), GH₂ |
-| QPU technology | Trapped-ion, 12 qubits, 4.2 K cryocooled |
-| QOCMU DAL | DAL B (dual-channel) |
-| QOCMU host location | EE bay, 8 MCU |
-| Total S1000D DMs (subsection 081) | 32 |
-| Update cycle (FADEC) | 20 Hz (QCKS/QRPO); 10 Hz (QTCC) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `081` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 System Philosophy

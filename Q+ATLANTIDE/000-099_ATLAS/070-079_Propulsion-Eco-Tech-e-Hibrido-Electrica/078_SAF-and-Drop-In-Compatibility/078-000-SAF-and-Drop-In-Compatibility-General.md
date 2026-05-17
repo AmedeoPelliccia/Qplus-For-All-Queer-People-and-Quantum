@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-000-SAF-AND-DROP-IN-COMPATIBILITY-GENERAL
      ATA 78 · SAF and Drop-In Compatibility General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # SAF and Drop-In Compatibility General
@@ -47,32 +49,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-000"
 
 ## §1 Purpose
 
-The AMPEL360E eWTW hybrid-electric widebody turbofan is designed and certified to operate on Sustainable Aviation Fuel (SAF) blends meeting ASTM D7566 and DEF STAN 91-091 at up to 50 % v/v SAF with conventional Jet-A/Jet-A1. This document (078-000) establishes the general scope, approved SAF pathways, top-level compatibility programme architecture, and cross-references for the entire ATA 78 SAF and Drop-In Compatibility subsection of the AMPEL360E eWTW ATLAS baseline.
+This document defines the agnostic ATLAS standard-level architecture context for `SAF and Drop-In Compatibility General`.
 
-The SAF compatibility programme encompasses: fuel chemistry qualification (ASTM D7566 Annexes A1–A5), material compatibility of all wetted components, fuel quality traceability, storage and handling procedures, combustion and emissions performance characterisation, airworthiness certification, maintenance inspection intervals, and digital monitoring via the Fuel Accountability and Material Quality Monitoring System (FAMQMS — PN FAMQMS-078).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-FAMQMS is an avionics LRU (DO-178C DAL D, DO-254 DAL D) that monitors SAF blend ratio via near-infrared (NIR) spectroscopy in real time, logs every refuelling event with supplier Chain of Sustainability (CoS) data, and provides CO2 lifecycle savings estimates to the crew and ground operations. It interfaces with FADEC (ATA 67) via ARINC 429 Label 270 and with the Central Maintenance System (CMS, ATA 45) via ARINC 429.
-
-This document is the parent reference for all subsubjects 078-010 through 078-090.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-000 — SAF and Drop-In Compatibility General |
-| Certification basis | EASA CS-25 Amdt 27+; EASA SC E-19 (SAF special condition) |
-| S1000D SNS | 078-000-00 |
-| Approved SAF pathways | HEFA-SPK (A1), FT-SPK (A2), ATJ-SPK (A3), SIP (A4), DHC-SPK (A5) |
-| Maximum SAF blend | 50 % v/v SAF + 50 % v/v Jet-A/Jet-A1 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The AMPEL360E eWTW fuel system (ATA 28) consists of integral wing tanks (port and starboard) and a centre tank, feeding the conventional turbofan engine core via the fuel metering unit (FMU, ATA 73) under FADEC control (ATA 67). The SAF compatibility programme ensures that all approved SAF blends (per ASTM D7566) can be used in this fuel system without modification to the aircraft, engine, or ground handling infrastructure — the defining characteristic of a "drop-in" fuel.
+The programme-defined aircraft type fuel system (ATA 28) consists of integral wing tanks (port and starboard) and a centre tank, feeding the conventional turbofan engine core via the fuel metering unit (FMU, ATA 73) under FADEC control (ATA 67). The SAF compatibility programme ensures that all approved SAF blends (per ASTM D7566) can be used in this fuel system without modification to the aircraft, engine, or ground handling infrastructure — the defining characteristic of a "drop-in" fuel.
 
 Five approved SAF production pathways are qualified under ASTM D7566:
 
@@ -288,7 +281,7 @@ flowchart TB
 | ID | Description | Owner | Target |
 |---|---|---|---|
 | OI-078-000-001 | Define FAMQMS interface ICD with FADEC (Label 270 word format and update rate) | Q-HPC / Q-GREENTECH | 2026-Q4 |
-| OI-078-000-002 | Confirm DHC-SPK (Annex A5) qualification status and timeline for AMPEL360E approval | Q-GREENTECH | 2027-Q1 |
+| OI-078-000-002 | Confirm DHC-SPK (Annex A5) qualification status and timeline for [PROGRAMME-AIRCRAFT] approval | Q-GREENTECH | 2027-Q1 |
 | OI-078-000-003 | Establish CoS documentation workflow between fuel supplier, ground ops, and FAMQMS data logger | Q-INDUSTRY | 2026-Q4 |
 | OI-078-000-004 | Review ASTM D7566 ballot for 100 % neat SAF and update certification roadmap | Q-AIR / Safety | 2027-Q2 |
 

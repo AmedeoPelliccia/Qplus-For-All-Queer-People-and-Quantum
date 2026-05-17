@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Vacuum Consumers and System Interfaces"
 file_name: "037-050-Vacuum-Consumers-and-System-Interfaces.md"
 sns_reference: "037-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-50"
-programme: "AMPEL360e eWTW"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "AMPEL360e-eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-50"
+programme: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE ATLAS"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "030-039 Protection and Mechanical Systems"
@@ -43,10 +43,12 @@ review_status: "PENDING"
 lifecycle_phase: "LC02 — System Definition"
 traceability: ["CS-25.1438", "CS-25.1301", "CS-25.1309", "AMC 25.831"]
 keywords: ["ATA 37", "Vacuum", "consumers", "lavatory", "toilet", "EFV", "waste system", "ATA 38 interface", "ADIRU", "no gyro vacuum"]
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-050 — Vacuum Consumers and System Interfaces
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">
 **Revision:** 0.1.0 | **Created:** 2025-07-14 | **Updated:** 2025-07-14
@@ -61,32 +63,25 @@ All links in this document are relative within the Q+ATLANTIDE ATLAS repository 
 
 ## §1 Purpose
 
-This document identifies and describes all **vacuum system consumers** within the AMPEL360e eWTW aircraft and defines the **functional interfaces** between ATA 37 (Vacuum) and other ATA chapters. It establishes the system boundary between vacuum supply (ATA 37) and the downstream waste collection (ATA 38), power supply (ATA 24), monitoring (ATA 31, ATA 45), and other interfacing systems.
+This document defines the agnostic ATLAS standard-level architecture context for `037-050 — Vacuum Consumers and System Interfaces`.
 
-**Key design philosophy:** The eWTW is a fully electric aircraft. Consequently, ATA 37 is a **highly reduced chapter** compared to conventional aircraft. The only vacuum consumers are the lavatory vacuum waste toilets (~3 units). There are **no vacuum-driven gyroscopic instruments** (ATA 34 uses solid-state ADIRU/IRS) and **no vacuum autopilot servos** (ATA 22 uses full fly-by-wire electric actuation).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
-|------|-------|
-| Aircraft Programme | AMPEL360e eWTW |
-| Propulsion Concept | Fully Electric |
-| ATA Chapter | 37 — Vacuum |
-| Subsubject | 037-50 — Consumers and Interfaces |
-| Certification Basis | CS-25 Amendment 27 (TBD) |
-| Applicable Standards | CS-25.1438, CS-25.1301, CS-25.1309, AMC 25.831 |
-| Revision Status | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Configuration | ~100-pax single-aisle electric |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 Vacuum Consumer Summary
 
-The eWTW vacuum system serves **one primary consumer class**: the vacuum waste toilet system. All traditional vacuum consumers present on conventional aircraft are eliminated.
+The [PROGRAMME-VARIANT] vacuum system serves **one primary consumer class**: the vacuum waste toilet system. All traditional vacuum consumers present on conventional aircraft are eliminated.
 
 | Consumer ID | Description | ATA | Qty | Vacuum Demand | Status |
 |-------------|-------------|-----|-----|---------------|--------|
@@ -101,7 +96,7 @@ The eWTW vacuum system serves **one primary consumer class**: the vacuum waste t
 
 ### 3.2 Eliminated Consumers — Design Rationale
 
-| Eliminated Consumer | Conventional Source | eWTW Replacement | ATA |
+| Eliminated Consumer | Conventional Source | [PROGRAMME-VARIANT] Replacement | ATA |
 |--------------------|--------------------|--------------------|-----|
 | Attitude Indicator | Vacuum venturi / engine pump | ADIRU (solid-state) | 34 |
 | Directional Gyro | Vacuum engine pump | ADIRU (solid-state) | 34 |
@@ -147,9 +142,9 @@ The EVG is powered from the AC electrical bus. The EFV solenoid coils are powere
 
 ### 5.4 ATA 34 / ATA 22 Interface — NOT a vacuum interface
 
-On the eWTW, **ATA 34 is NOT a vacuum consumer**. The ADIRU provides inertial and air data reference functions entirely via solid-state sensors (ring laser gyros, accelerometers, pitot-static). No vacuum line connection exists between ATA 37 and ATA 34.
+On the [PROGRAMME-VARIANT], **ATA 34 is NOT a vacuum consumer**. The ADIRU provides inertial and air data reference functions entirely via solid-state sensors (ring laser gyros, accelerometers, pitot-static). No vacuum line connection exists between ATA 37 and ATA 34.
 
-Similarly, **ATA 22 is NOT a vacuum consumer**. The fly-by-wire flight control system uses electric actuators and no vacuum servos exist on the eWTW.
+Similarly, **ATA 22 is NOT a vacuum consumer**. The fly-by-wire flight control system uses electric actuators and no vacuum servos exist on the [PROGRAMME-VARIANT].
 
 ---
 
@@ -252,8 +247,8 @@ flowchart LR
 | IF-037-050-003 | ATA 31 | ATA 37 → ATA 31 | AFDX / ARINC 429 TBD | EVG status, manifold vacuum value, fault codes → CMC | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-037-050-004 | ATA 45 | ATA 37 → ATA 45 | Via CMC / AFDX | OMS health data, EVG run hours, fault log | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-037-050-005 | ATA 21 | Functional reference | N/A (no vacuum) | Lavatory ventilation / odour purge — ATA 21 scope; no vacuum connection | Reference only |
-| IF-037-050-006 | ATA 34 | **NO INTERFACE** | — | ADIRU is solid-state; no vacuum gyro instruments on eWTW | Eliminated |
-| IF-037-050-007 | ATA 22 | **NO INTERFACE** | — | FBW electric; no vacuum autopilot servos on eWTW | Eliminated |
+| IF-037-050-006 | ATA 34 | **NO INTERFACE** | — | ADIRU is solid-state; no vacuum gyro instruments on [PROGRAMME-VARIANT] | Eliminated |
+| IF-037-050-007 | ATA 22 | **NO INTERFACE** | — | FBW electric; no vacuum autopilot servos on [PROGRAMME-VARIANT] | Eliminated |
 | IF-037-050-008 | ATA 52 | Under review | TBD | Door seal actuation — may be ATA 36 (pneumatic) or electric; not ATA 37 | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-037-050-009 | ATA 38 | ATA 37 → ATA 38 | Physical vacuum line | Waste transport lines from EFV outlet to waste tank | Active |
 
@@ -299,11 +294,11 @@ flowchart LR
 
 | DM Code | Info Code | Title | Status |
 |---------|-----------|-------|--------|
-| DMC-AMPEL360E-EWTW-037-50-00-00A-040A-A | 040 | Vacuum Consumers and System Interfaces — Description | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-50-00-00A-300A-A | 300 | EFV Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-50-00-00A-520A-A | 520 | EFV Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-50-00-00A-720A-A | 720 | EFV Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-50-00-00A-400A-A | 400 | EFV Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-50-00-00A-040A-A | 040 | Vacuum Consumers and System Interfaces — Description | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-50-00-00A-300A-A | 300 | EFV Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-50-00-00A-520A-A | 520 | EFV Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-50-00-00A-720A-A | 720 | EFV Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-50-00-00A-400A-A | 400 | EFV Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -350,14 +345,14 @@ flowchart LR
 
 | Term | Definition |
 |------|-----------|
-| ADIRU | Air Data Inertial Reference Unit — solid-state navigation/attitude reference, replaces vacuum gyroscopes on eWTW |
+| ADIRU | Air Data Inertial Reference Unit — solid-state navigation/attitude reference, replaces vacuum gyroscopes on [PROGRAMME-VARIANT] |
 | ATA 37 | Air Transport Association chapter covering Vacuum systems |
 | CMC | Central Maintenance Computer — receives and logs system health data via AFDX |
 | CS-25.1438 | EASA Certification Specification for pressurisation and pneumatic/vacuum system plumbing |
 | EFV | Electrically actuated Flush Valve — interface boundary device between ATA 37 vacuum and ATA 38 waste |
 | EVG | Electric Vacuum Generator — motor-driven vacuum pump providing system vacuum for waste toilets |
 | Freeze protection | Thermal protection for vacuum waste lines in cold-soak conditions (OI-037-005) |
-| Gyroscopic instruments | Traditional vacuum-driven AI, DI, TC — **eliminated on eWTW** (replaced by ADIRU) |
+| Gyroscopic instruments | Traditional vacuum-driven AI, DI, TC — **eliminated on [PROGRAMME-VARIANT]** (replaced by ADIRU) |
 | Manifold | Vacuum distribution header connecting EVG output to individual toilet branch lines |
 | NRV | Non-Return Valve — prevents back-flow between toilet branches on the vacuum manifold |
 | Odour filter | Activated carbon or equivalent filter on manifold vent line (OI-037-006 for certification interval) |
@@ -418,5 +413,5 @@ flowchart LR
 | 0.1.0 | 2025-07-14 | AI-assisted scaffold | Initial scaffold — all §0–§22 sections populated; all values TBD pending OI resolution |
 
 ---
-*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-050 Consumers and System Interfaces — AMPEL360e eWTW*
+*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-050 Consumers and System Interfaces — [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]*
 *Classification: UNCLASSIFIED — ENGINEERING SCAFFOLD*

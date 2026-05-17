@@ -31,6 +31,8 @@ ata_reference: "ATA iSpec 2200"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 080 — Emergency Solar Panel Monitoring, Diagnostics and Control Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the monitoring, diagnostics, and control interface architecture for the Emergency Solar Panel System (ESPS) of the AMPEL360E eWTW aircraft. It provides a consolidated view of all data flows between the ESPS Control Unit (ECU), aircraft data networks, cockpit displays, Central Maintenance Computer (CMC), and airborne/ground monitoring systems.
+This document defines the monitoring, diagnostics, and control interface architecture for the Emergency Solar Panel System (ESPS) of the programme-defined aircraft type. It provides a consolidated view of all data flows between the ESPS Control Unit (ECU), aircraft data networks, cockpit displays, Central Maintenance Computer (CMC), and airborne/ground monitoring systems.
 
 Key governance areas:
 - ESPS ECU monitoring parameter set and ARINC 429 data word catalogue.
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 43 (ATLAS 043) — Emergency Solar Panel System |
 | Certification Basis | CS-25 Amendment 28; CS-25 §25.1322; CS-25 §25.1309 |
 | Applicable Standards | DO-178C DAL B; ARP4754B; ARINC 429; ARINC 717 |
@@ -378,10 +380,10 @@ graph LR
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
 | REF-043-08-01 | ESPS General (043-000) | 1.0 | TBD |
-| REF-043-08-02 | AMPEL360E ESPS ECU Interface Control Document (ICD) | TBD | TBD |
-| REF-043-08-03 | AMPEL360E CAS Message Catalogue | TBD | TBD |
-| REF-043-08-04 | AMPEL360E CMC Fault Code Catalogue | TBD | TBD |
-| REF-043-08-05 | AMPEL360E ARINC 429 Bus Allocation Register | TBD | TBD |
+| REF-043-08-02 | [PROGRAMME-AIRCRAFT] ESPS ECU Interface Control Document (ICD) | TBD | TBD |
+| REF-043-08-03 | [PROGRAMME-AIRCRAFT] CAS Message Catalogue | TBD | TBD |
+| REF-043-08-04 | [PROGRAMME-AIRCRAFT] CMC Fault Code Catalogue | TBD | TBD |
+| REF-043-08-05 | [PROGRAMME-AIRCRAFT] ARINC 429 Bus Allocation Register | TBD | TBD |
 
 ---
 

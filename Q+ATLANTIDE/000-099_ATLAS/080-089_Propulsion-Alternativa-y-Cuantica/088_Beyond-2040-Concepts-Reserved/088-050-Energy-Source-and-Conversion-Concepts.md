@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0088-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-088-050-ENERGY-SOURCE-AND-CONVERSION-CONCEPTS
      ATLAS-088 (Beyond-2040 Concepts Reserved) · Energy Source and Conversion Concepts
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Energy Source and Conversion Concepts
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-050"
 
 ## §1 Purpose
 
-ATLAS subsubject 088-050 catalogues the **energy source and conversion technologies** associated with B2CR propulsion concepts. For each concept family, it identifies the primary energy source, the conversion chain from stored energy to propulsive thrust, energy density targets, conversion efficiency estimates, and the principal engineering constraints that determine whether the concept is viable for airborne application in the 2040+ timeframe.
+This document defines the agnostic ATLAS standard-level architecture context for `Energy Source and Conversion Concepts`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Energy Density Landscape
 
 The following table positions B2CR energy sources against conventional references to provide context for airborne applicability:
@@ -56,7 +59,7 @@ The following table positions B2CR energy sources against conventional reference
 |---|---|---|---|---|
 | Jet fuel (Jet-A) | 43.2 | 34.7 | Reference (non-B2CR) | TRL 9 |
 | Liquid hydrogen (LH₂) | 120.0 | 8.5 | Reference (non-B2CR) | TRL 7–8 |
-| Li-ion battery (NMC 811) | 0.9 | 2.2 | Reference (non-B2CR) | TRL 9 |
+| Li-ion battery (<BATTERY-CHEMISTRY>) | 0.9 | 2.2 | Reference (non-B2CR) | TRL 9 |
 | PEMFC + LH₂ system | ~20 (system) | ~3 (system) | Reference (non-B2CR) | TRL 7 |
 | D-T fusion (theoretical max) | 3.4 × 10⁸ | — (plasma) | B2C-F201, F202 | TRL 3–4 |
 | p-B11 fusion (theoretical max) | 6.7 × 10⁸ | — (plasma) | B2C-F205 | TRL 3 |
@@ -137,7 +140,7 @@ The following table positions B2CR energy sources against conventional reference
 **Source:** On-board electrical power from BGHA hybrid energy architecture (ATLAS-084: SSBP + FCSS + VCGT).
 
 **Conversion chain:**
-1. BGHA provides HVDC 800 V to HTS motor drive inverter.
+1. BGHA provides HVDC <NOMINAL-VOLTAGE> to HTS motor drive inverter.
 2. HTS stator windings (cooled to 77 K by LN₂ supply) carry current with zero resistive loss.
 3. High-temperature SC rotor (or conventional rotor with SC stator) generates high air-gap flux density (B ≥ 5 T).
 4. Motor drives open-rotor or ducted fan for thrust.
@@ -182,5 +185,5 @@ flowchart LR
 |---|---|---|---|
 | OI-088-050-001 | Commission parametric mass budget study for B2C-F202 compact FRC reactor at 1 MW scale | Q-GREENTECH / Q-STRUCTURES | PDR |
 | OI-088-050-002 | Define LN₂ supply architecture for B2C-F501 HTS motors — interface with ATLAS-076 cryogenic infrastructure | Q-GREENTECH | CDR |
-| OI-088-050-003 | Evaluate rectenna integration on AMPEL360E eWTW dorsal fuselage (100 m² aperture constraint) for B2C-F302 | Q-STRUCTURES | PDR |
+| OI-088-050-003 | Evaluate rectenna integration on programme-defined aircraft type dorsal fuselage (100 m² aperture constraint) for B2C-F302 | Q-STRUCTURES | PDR |
 | OI-088-050-004 | Obtain independent energy-balance analysis for B2C-F205 (p-B11) at airborne ignition power levels | Q-HORIZON | CDR |

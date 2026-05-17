@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0080-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-080-060-QUANTUM-SENSOR-FUSION-AND-PROPULSION-STATE-ESTIMATION
      ATLAS-080 (Quantum Sensing for Propulsion) · Quantum Sensor Fusion and Propulsion State Estimation
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum Sensor Fusion and Propulsion State Estimation
@@ -46,21 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-060"
 
 ## §1 Purpose
 
-ATLAS subsubject 080-060 defines the multi-layer quantum sensor fusion algorithm executed by the QSPU, combining data from all 46 quantum sensor nodes across the four sensor families into a unified **Propulsion State Vector (PSV)** and a scalar **Propulsion Health Index (PHI)**. This document specifies the three processing layers — raw sensor conditioning, Quantum-Enhanced Extended Kalman Filter (QE-EKF) state estimation, and Quantum Machine Learning (QML) health index computation — and their outputs, latency targets, and PHI threshold logic.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum Sensor Fusion and Propulsion State Estimation`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-080 (Quantum Sensing for Propulsion) — 080-060 Quantum Sensor Fusion and State Estimation |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; IEEE P2995 |
-| S1000D SNS | 080-060-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `080` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Layer 1 — Raw Sensor Conditioning** is executed by the FPGA core in each QSPU channel. Layer 1 performs quantum sensor signal demodulation specific to each sensor type: lock-in demodulation and fringe-counting for atom interferometer sensors; spin-echo signal demodulation for NV-center sensors; flux-locked-loop output linearisation for SQUID sensors; Josephson noise spectral density integration for JJ thermometers; shot-noise-limited cavity resonance tracking for optomechanical sensors; and CARS spectral fitting for combustion diagnostics. Layer 1 also computes per-sensor shot-noise-limited SNR estimates and applies entanglement-enhanced multi-sensor correlation for co-located sensor pairs (where two quantum sensors of different types are installed within 10 cm of each other), exploiting quantum correlations to reduce effective measurement noise below the individual-sensor shot-noise limit. Layer 1 outputs are calibrated physical-unit sensor readings with associated uncertainty estimates.

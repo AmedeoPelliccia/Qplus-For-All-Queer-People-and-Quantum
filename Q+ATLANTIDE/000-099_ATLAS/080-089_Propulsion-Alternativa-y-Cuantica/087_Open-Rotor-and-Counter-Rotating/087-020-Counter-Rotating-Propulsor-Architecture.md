@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-020-COUNTER-ROTATING-PROPULSOR-ARCHITECTURE
      ATLAS-087 (Open Rotor and Counter-Rotating) · Counter-Rotating Propulsor Architecture
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Counter-Rotating Propulsor Architecture
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-020"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-020 documents the contra-rotating unducted fan (CRUF) propulsor topology for the AMPEL360E eWTW ORCR. It defines the speed and torque design parameters of the Forward Rotor (FR) and Aft Rotor (AR), the differential planetary gearbox (DPGB) architecture, and the rotor-row spacing that governs both aerodynamic performance and acoustic clocking.
+This document defines the agnostic ATLAS standard-level architecture context for `Counter-Rotating Propulsor Architecture`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Topology Overview
 
 The ORCR adopts a **pusher-configuration contra-rotating** layout at the aft fuselage pylon stations. In the pusher configuration the rotor rows are aft of the pylon attachment point, minimising ingestion of boundary-layer air from the fuselage and maximising clean-flow propulsive efficiency. Both rotor rows are directly driven from the LPT shaft through the DPGB.

@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0062-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0062-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-062-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
      ATA 62 · S1000D / CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -47,24 +49,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0062-090"
 
 ## §1 Purpose
 
-ATA 62 S1000D DMRL: 36 data modules. DMC scheme `AMPEL360E-EWTW-062-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-062-v1` enforces: (1) no bleed-air pneumatic interface DMs; (2) fire zone DMs must cite CS-25 §25.1181; (3) mount bolt torque DMs must cite calibrated-tool requirement. Q-DATAGOV manages CSDB; Q-MECHANICS is technical review authority.
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D / CSDB Mapping and Traceability`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 62-090 — S1000D / CSDB Mapping and Traceability |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 062-090-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `062` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-System description for S1000D / CSDB Mapping and Traceability within the AMPEL360E eWTW Power Plant architecture. See §3 Functional Description for technical detail.
+System description for S1000D / CSDB Mapping and Traceability within the programme-defined aircraft type Power Plant architecture. See §3 Functional Description for technical detail.
 
 ---
 
@@ -217,7 +218,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-062-090-001 | Finalise S1000D / CSDB Mapping and Traceability design for AMPEL360E baseline (OEM data pending) | Q-MECHANICS | 2026-Q4 |
+| OI-062-090-001 | Finalise S1000D / CSDB Mapping and Traceability design for [PROGRAMME-AIRCRAFT] baseline (OEM data pending) | Q-MECHANICS | 2026-Q4 |
 
 ---
 
@@ -250,4 +251,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

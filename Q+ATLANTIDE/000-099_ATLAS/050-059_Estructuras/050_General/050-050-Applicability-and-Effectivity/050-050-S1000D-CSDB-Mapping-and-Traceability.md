@@ -25,6 +25,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — S1000D CSDB Mapping and Traceability
@@ -39,13 +41,13 @@ Defines the **S1000D data module code (DMC) mapping and CSDB traceability** for 
 
 Subsubject `050` applicability and effectivity documents are primarily descriptive (infoCode `040`) data modules in the S1000D sense — they describe the rules and data structures governing effectivity rather than providing step-by-step maintenance procedures. The CSDB system module (infoCode `00S`) captures the applicability cross-reference table that maps PDCM effectivity tokens to S1000D `<applic>` element values, providing the authoritative lookup used by all publication-filtering tools.
 
-The AMPEL360 eWTW uses S1000D Issue 5.0 with the AMPEL360 project-specific Business Rules Decision Points (BRDPs) documented in BREX-AMPEL360-001.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] uses S1000D Issue 5.0 with the [PROGRAMME-AIRCRAFT] project-specific Business Rules Decision Points (BRDPs) documented in BREX-[PROGRAMME-AIRCRAFT]-001.
 
 ### 2.2 CSDB Applicability Traceability Flow
 
 ```mermaid
 flowchart LR
-    A[PDCM Effectivity Token e.g. POST-SB-050-001] --> B[Cross-Reference Table DMC-AMPEL360-A-00S-050-00AA-00SA-A]
+    A[PDCM Effectivity Token e.g. POST-SB-050-001] --> B[Cross-Reference Table DMC-<PROGRAMME>-A-00S-050-00AA-00SA-A]
     B --> C[S1000D applic element value]
     C --> D[CSDB data module applic annotation]
     D --> E[Publication filter query]
@@ -58,16 +60,16 @@ flowchart LR
 
 | ATLAS Document | DMC (abbreviated) | Info Code | Status |
 |---|---|---|---|
-| Applicability-Overview | `DMC-AMPEL360-A-050-050-00AA-040A-A` | 040 — Description | draft |
-| Programme-Applicability-Rules | `DMC-AMPEL360-A-050-050-01AA-040A-A` | 040 — Description | draft |
-| Aircraft-Effectivity-Config-Baselines | `DMC-AMPEL360-A-050-050-02AA-040A-A` | 040 — Description | draft |
-| Structural-Variant-Applicability | `DMC-AMPEL360-A-050-050-03AA-040A-A` | 040 — Description | draft |
-| Serial-Number-Block-Effectivity | `DMC-AMPEL360-A-050-050-04AA-040A-A` | 040 — Description | draft |
-| Retrofit-SB-Effectivity | `DMC-AMPEL360-A-050-050-05AA-040A-A` | 040 — Description | draft |
-| Inspection-Applicability-Thresholds | `DMC-AMPEL360-A-050-050-06AA-040A-A` | 040 — Description | draft |
-| Repair-Applicability-ADL | `DMC-AMPEL360-A-050-050-07AA-040A-A` | 040 — Description | draft |
-| Applicability-Governance-Change | `DMC-AMPEL360-A-050-050-08AA-040A-A` | 040 — Description | draft |
-| CSDB XRef Table | `DMC-AMPEL360-A-00S-050-00AA-00SA-A` | 00S — BREX/XRef | draft |
+| Applicability-Overview | `DMC-<PROGRAMME>-A-050-050-00AA-040A-A` | 040 — Description | draft |
+| Programme-Applicability-Rules | `DMC-<PROGRAMME>-A-050-050-01AA-040A-A` | 040 — Description | draft |
+| Aircraft-Effectivity-Config-Baselines | `DMC-<PROGRAMME>-A-050-050-02AA-040A-A` | 040 — Description | draft |
+| Structural-Variant-Applicability | `DMC-<PROGRAMME>-A-050-050-03AA-040A-A` | 040 — Description | draft |
+| Serial-Number-Block-Effectivity | `DMC-<PROGRAMME>-A-050-050-04AA-040A-A` | 040 — Description | draft |
+| Retrofit-SB-Effectivity | `DMC-<PROGRAMME>-A-050-050-05AA-040A-A` | 040 — Description | draft |
+| Inspection-Applicability-Thresholds | `DMC-<PROGRAMME>-A-050-050-06AA-040A-A` | 040 — Description | draft |
+| Repair-Applicability-ADL | `DMC-<PROGRAMME>-A-050-050-07AA-040A-A` | 040 — Description | draft |
+| Applicability-Governance-Change | `DMC-<PROGRAMME>-A-050-050-08AA-040A-A` | 040 — Description | draft |
+| CSDB XRef Table | `DMC-<PROGRAMME>-A-00S-050-00AA-00SA-A` | 00S — BREX/XRef | draft |
 
 ## 3. Footprint
 
@@ -84,7 +86,7 @@ flowchart LR
 | Ref | Document |
 |---|---|
 | S1000D Issue 5.0 | International specification for technical publications |
-| BREX-AMPEL360-001 | AMPEL360 Business Rules Exchange Object |
+| BREX-[PROGRAMME-AIRCRAFT]-001 | [PROGRAMME-AIRCRAFT] Business Rules Exchange Object |
 | ASD-STE100 | Simplified Technical English |
 | [`./README.md`](./README.md) | Subsubject 050 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0085-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-085-080-DEP-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATLAS-085 (Distributed Electric Propulsion Architecture) · DEP Monitoring Diagnostics and Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # DEP Monitoring Diagnostics and Control Interfaces
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-080"
 
 ## §1 Purpose
 
-ATLAS subsubject 085-080 defines the DEPCU Built-In Test Equipment (BITE) architecture, the cockpit synoptic MFD page for the DEP system, all AFDX virtual-link (VL) definitions for DEPCU data outputs, the ground support equipment (GSE) interface, the research telemetry interface with the EPMS (Experimental Propulsion Monitoring System), and the maintenance diagnostic download procedures.
+This document defines the agnostic ATLAS standard-level architecture context for `DEP Monitoring Diagnostics and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-085 — 085-080 DEP Monitoring Diagnostics and Control Interfaces |
-| Certification Basis | DO-178C DAL B (DEPCU BITE); DO-160G; ATA MSG-3 (maintenance task selection) |
-| S1000D SNS | 085-080-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `085` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 DEPCU BITE Architecture
 
 The DEPCU implements two levels of BITE:
@@ -151,7 +152,7 @@ The DEP synoptic page is displayed on the right-hand MFD in the ECAM stack. It s
 | BITE download | USB-C 3.2 | DEPCU-GSE-1 | Ground BITE Level 2 download; FMEM, vibration FFT, MDU event log |
 | MDU FOC calibration | USB-C 3.2 + MDU service port (nacelle) | MDU-GSE-CAL | MDU encoder offset calibration; IGBT deadtime calibration |
 | BTB functional test | Discrete test lead (DPDP BTB test port) | BTB-TEST-SET | Open/close cycle test; position feedback confirm |
-| HiPot test (HVDC cables) | HV test port (DPDP) | HIPOT-800V | 1 500 V DC HiPot per C-check; per BTB feeder individually |
+| HiPot test (HVDC cables) | HV test port (DPDP) | HIPOT-<NOMINAL-VOLTAGE> | 1 500 V DC HiPot per C-check; per BTB feeder individually |
 
 ---
 

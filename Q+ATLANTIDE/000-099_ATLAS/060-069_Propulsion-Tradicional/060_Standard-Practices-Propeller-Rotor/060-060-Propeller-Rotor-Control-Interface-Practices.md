@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0060-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-060-060-PROPELLER-ROTOR-CONTROL-INTERFACE-PRACTICES
      ATA 60 · Propeller/Rotor Control Interface Practices
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propeller/Rotor Control Interface Practices
@@ -47,26 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-060"
 
 ## §1 Purpose
 
-This document defines the controlled interface standards, rigging procedures, and verification tests for mechanical and electrical control interfaces between propeller/rotor systems and the aircraft propulsion control architecture. Incorrect rigging of pitch-change mechanisms or misconfigured electrical command signals are leading causes of propeller in-flight incidents.
+This document defines the agnostic ATLAS standard-level architecture context for `Propeller/Rotor Control Interface Practices`.
 
-On the AMPEL360E eWTW, the propulsion control interface uses the FADEC/ECU digital command architecture (ATA 67); pitch-change actuators receive digital commands via the Propeller Electronic Control Unit (PECU). This document defines the practices for verifying and setting both the mechanical range of travel and the digital signal calibration at the PECU–propeller actuator interface.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 60-060 — Control Interface Practices |
-| FADEC/PECU interface | ATA 67 Engine Controls |
-| Rigging standard | SAE AS7506 / AMM Chapter 27 rigging procedures |
-| Digital interface standard | ARINC 429 / AFDX ARINC 664 P7 |
-| Certification basis | CS-25 §25.901(b) — Installation of powerplant controls |
-| S1000D SNS | 060-060-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `060` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Control interface practices address two coupled domains:
@@ -126,7 +122,7 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| Propeller Electronic Control Unit (PECU) | AMPEL360E-PECU-001 | 1 per propulsion unit | Nacelle avionics bay | On condition / per FADEC PBIT | TBD |
+| Propeller Electronic Control Unit (PECU) | [PROGRAMME-AIRCRAFT]-PECU-001 | 1 per propulsion unit | Nacelle avionics bay | On condition / per FADEC PBIT | TBD |
 | Blade angle sensor (LVDT type) | Drawing-specific | Per blade (N blades) | Pitch change mechanism | On condition / annual calibration | TBD |
 | Pitch-change actuator (EHA type) | Drawing-specific | 1 per propulsion unit | Hub actuation zone | On condition | TBD |
 | PECU GSE interface (digital test set) | Approved GSE list | 1 per hangar | Avionics shop | Annual calibration | TBD |
@@ -245,8 +241,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-060-060-001 | Confirm ARINC 429 or AFDX interface type for PECU on AMPEL360E (PECU supplier data pending) | Q-MECHANICS / FADEC team | 2026-Q3 |
-| OI-060-060-002 | Define fail-safe pitch position for AMPEL360E propulsor (feather vs. fine pitch vs. coarse pitch) | Q-AIR / Q-GREENTECH | 2026-Q3 |
+| OI-060-060-001 | Confirm ARINC 429 or AFDX interface type for PECU on [PROGRAMME-AIRCRAFT] (PECU supplier data pending) | Q-MECHANICS / FADEC team | 2026-Q3 |
+| OI-060-060-002 | Define fail-safe pitch position for [PROGRAMME-AIRCRAFT] propulsor (feather vs. fine pitch vs. coarse pitch) | Q-AIR / Q-GREENTECH | 2026-Q3 |
 
 ---
 
@@ -279,4 +275,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

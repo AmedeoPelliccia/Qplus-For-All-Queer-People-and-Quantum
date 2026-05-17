@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Ice and Rain Protection General"
 file_name: "030-000-Ice-and-Rain-Protection-General.md"
 sns_reference: "030-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,17 +87,19 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-000 — Ice and Rain Protection General
-### AMPEL360e eWTW · ATA 30 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -109,32 +111,25 @@ All hyperlinks in this document are **relative links** unless they point to a pu
 
 ## §1 Purpose
 
-This document establishes the general framework, architectural philosophy, regulatory basis, and system boundary definitions for ATA 30 — Ice and Rain Protection — as applied to the **AMPEL360e Wide Tube-and-Wing (eWTW)** aircraft programme. It serves as the apex scaffold document for the nine subsubject files (030-010 through 030-090) and defines the authoritative vocabulary, interface references, and design constraints applicable to all ice and rain protection subsystems.
+This document defines the agnostic ATLAS standard-level architecture context for `030-000 — Ice and Rain Protection General`.
 
-The primary purpose is to define and communicate the complete **all-electric ice and rain protection architecture** of the AMPEL360e eWTW. Because this aircraft has no conventional engine or APU bleed-air system, every ice protection function is accomplished exclusively by **electrothermal** means, sourced from the aircraft's High-Voltage DC (HVDC) and 28 V DC electrical distribution networks. This document describes how that architectural choice propagates through regulatory compliance, system interface design, and maintenance philosophy.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Chapter | 30 — Ice and Rain Protection |
-| Aircraft Series | eWTW-100, eWTW-200 (as applicable) |
-| Certification Basis | CS-25 Amendment 27 / FAR 25 Amendment 25-147 |
-| Propulsion Type | Full-electric — NO engine bleed air |
-| Ice Protection Architecture | Electrothermal (all zones) |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-| Effectivity | All aircraft in the eWTW programme unless otherwise annotated |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The AMPEL360e eWTW Ice and Rain Protection system (ATA 30) covers all aircraft surfaces and components susceptible to ice accretion or rain impingement that could degrade airworthiness, flight handling, structural integrity, or crew visibility. The system encompasses: wing leading-edge anti-icing, electric propulsion inlet anti-icing, air data sensor heating, windshield heating and rain removal, drain mast and service-point heating, and a centralised ice detection and control function managed by the Ice Protection Management Computer (IPMC). Unlike conventional commercial aircraft that rely on engine bleed air for leading-edge thermal anti-icing, the eWTW draws all thermal energy directly from the aircraft's electrical generation and distribution system, eliminating bleed-air ducting, pre-coolers, and associated pressure-regulation components entirely.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Ice and Rain Protection system (ATA 30) covers all aircraft surfaces and components susceptible to ice accretion or rain impingement that could degrade airworthiness, flight handling, structural integrity, or crew visibility. The system encompasses: wing leading-edge anti-icing, electric propulsion inlet anti-icing, air data sensor heating, windshield heating and rain removal, drain mast and service-point heating, and a centralised ice detection and control function managed by the Ice Protection Management Computer (IPMC). Unlike conventional commercial aircraft that rely on engine bleed air for leading-edge thermal anti-icing, the [PROGRAMME-VARIANT] draws all thermal energy directly from the aircraft's electrical generation and distribution system, eliminating bleed-air ducting, pre-coolers, and associated pressure-regulation components entirely.
 
-The eWTW electrical ice protection architecture is inherently **zone-sequential** and **power-managed**. The IPMC arbitrates electrical load demand across all ice protection zones to remain within the instantaneous power budget allocated by ATA 24 (Electrical Power). During normal icing encounters, the IPMC activates wing heating mats in a cyclic de-icing sequence and energises engine inlet lip heaters continuously. Probe heaters for pitot tubes, static ports, AOA vanes, and TAT sensors remain energised whenever the aircraft is powered, regardless of icing conditions, to prevent accumulation of rime ice on air data sensors. The system satisfies the requirements of CS-25 Appendix C (continuous maximum and intermittent maximum icing envelopes) and CS-25 Appendix O (Supercooled Large Droplet icing), providing certified protection across the full airworthiness icing envelope.
+The [PROGRAMME-VARIANT] electrical ice protection architecture is inherently **zone-sequential** and **power-managed**. The IPMC arbitrates electrical load demand across all ice protection zones to remain within the instantaneous power budget allocated by ATA 24 (Electrical Power). During normal icing encounters, the IPMC activates wing heating mats in a cyclic de-icing sequence and energises engine inlet lip heaters continuously. Probe heaters for pitot tubes, static ports, AOA vanes, and TAT sensors remain energised whenever the aircraft is powered, regardless of icing conditions, to prevent accumulation of rime ice on air data sensors. The system satisfies the requirements of CS-25 Appendix C (continuous maximum and intermittent maximum icing envelopes) and CS-25 Appendix O (Supercooled Large Droplet icing), providing certified protection across the full airworthiness icing envelope.
 
 ---
 
@@ -161,13 +156,13 @@ The eWTW electrical ice protection architecture is inherently **zone-sequential*
 - Ground de-icing operations using external de-icing fluid (Type I/II/IV fluid) — covered by ground operations documentation
 - Cargo compartment freeze protection (covered by ATA 21 Environmental Control)
 - Structural repair of composite leading edges following in-flight ice damage (covered by ATA 54/57 Structures)
-- ATA 36 (Pneumatic) — this chapter exists only as a reference boundary stub; no pneumatic anti-icing is installed on eWTW
+- ATA 36 (Pneumatic) — this chapter exists only as a reference boundary stub; no pneumatic anti-icing is installed on [PROGRAMME-VARIANT]
 
 ---
 
 ## §5 Architecture Description
 
-- **No bleed-air dependency:** The eWTW architecture eliminates all engine and APU bleed-air pathways. Ice protection thermal energy is drawn exclusively from the HVDC bus (nominally 540 V DC or 270 V DC as programme-defined) for wing and engine inlet high-power heaters, and from the 28 V DC bus for probe heaters and auxiliary trace heaters. This removes the single-point failure mode associated with bleed-air duct rupture or precooler failure.
+- **No bleed-air dependency:** The [PROGRAMME-VARIANT] architecture eliminates all engine and APU bleed-air pathways. Ice protection thermal energy is drawn exclusively from the HVDC bus (nominally 540 V DC or 270 V DC as programme-defined) for wing and engine inlet high-power heaters, and from the 28 V DC bus for probe heaters and auxiliary trace heaters. This removes the single-point failure mode associated with bleed-air duct rupture or precooler failure.
 
 - **Centralised control via IPMC:** The Ice Protection Management Computer receives inputs from dual ice detectors, TAT/OAT sensors (via ADIRU), and crew inputs from the overhead panel. The IPMC executes zone-activation sequences, load-shedding logic in degraded electrical states, and continuous BITE monitoring. It outputs commands to zone-specific power controllers (WIPS controller, Engine Inlet Power Controller, Probe Heater Controller, WHC) via an ARINC 429 or CAN-FD databus (programme-TBD).
 
@@ -175,7 +170,7 @@ The eWTW electrical ice protection architecture is inherently **zone-sequential*
 
 - **Appendix O compliance path:** SLD (Supercooled Large Droplet) icing under CS-25 Appendix O is addressed through extended WIPS zone coverage beyond the leading edge stagnation line and a certification flight-test campaign in natural and artificial SLD conditions. The IPMC carries a dedicated SLD mode flag triggering increased heater duty cycles.
 
-- **Power budget integration with ATA 24:** The total ice protection electrical load at maximum simultaneous demand is a key input to the eWTW electrical generation sizing. The IPMC implements a power arbitration algorithm that can defer non-critical heating loads during high-demand flight phases (e.g., take-off) while maintaining safety-critical heaters always energised.
+- **Power budget integration with ATA 24:** The total ice protection electrical load at maximum simultaneous demand is a key input to the [PROGRAMME-VARIANT] electrical generation sizing. The IPMC implements a power arbitration algorithm that can defer non-critical heating loads during high-demand flight phases (e.g., take-off) while maintaining safety-critical heaters always energised.
 
 ---
 
@@ -199,7 +194,7 @@ The eWTW electrical ice protection architecture is inherently **zone-sequential*
 
 ```mermaid
 flowchart LR
-    AC[AMPEL360e Aircraft] --> ATA30[ATA 30 Ice & Rain Protection]
+    AC[[PROGRAMME-AIRCRAFT] Aircraft] --> ATA30[ATA 30 Ice & Rain Protection]
     ATA30 --> WING[Wing Ice Protection]
     ATA30 --> ENGINE[Engine/Inlet Ice Protection]
     ATA30 --> SENSORS[Air Data Sensor Heating]
@@ -308,22 +303,22 @@ Maintenance of the ATA 30 electrothermal ice protection system is designed to be
 
 | Subsubject | Title | SNS Code | DMC Prefix | Info Code Set |
 |---|---|---|---|---|
-| 030-00 | General | 030-00 | DMC-AMPEL360E-EWTW-030-00 | 040 (Desc), 941 (IPD) |
-| 030-10 | Wing Ice Protection | 030-10 | DMC-AMPEL360E-EWTW-030-10 | 040, 300, 400, 520, 720, 941 |
-| 030-20 | Engine Inlet Ice Protection | 030-20 | DMC-AMPEL360E-EWTW-030-20 | 040, 300, 400, 520, 720, 941 |
-| 030-30 | Air Data Sensor Heating | 030-30 | DMC-AMPEL360E-EWTW-030-30 | 040, 300, 400, 520, 720 |
-| 030-40 | Windshield and Window | 030-40 | DMC-AMPEL360E-EWTW-030-40 | 040, 300, 400, 520, 720, 941 |
-| 030-50 | Probe/Drain/Service Point | 030-50 | DMC-AMPEL360E-EWTW-030-50 | 040, 300, 400, 520, 720 |
-| 030-60 | Rain Removal | 030-60 | DMC-AMPEL360E-EWTW-030-60 | 040, 300, 400, 520, 720, 941 |
-| 030-70 | Ice Detection & Control | 030-70 | DMC-AMPEL360E-EWTW-030-70 | 040, 300, 400, 520, 720, 941 |
-| 030-80 | Monitoring & Diagnostics | 030-80 | DMC-AMPEL360E-EWTW-030-80 | 040, 400 |
+| 030-00 | General | 030-00 | DMC-<PROGRAMME>-<VARIANT>-030-00 | 040 (Desc), 941 (IPD) |
+| 030-10 | Wing Ice Protection | 030-10 | DMC-<PROGRAMME>-<VARIANT>-030-10 | 040, 300, 400, 520, 720, 941 |
+| 030-20 | Engine Inlet Ice Protection | 030-20 | DMC-<PROGRAMME>-<VARIANT>-030-20 | 040, 300, 400, 520, 720, 941 |
+| 030-30 | Air Data Sensor Heating | 030-30 | DMC-<PROGRAMME>-<VARIANT>-030-30 | 040, 300, 400, 520, 720 |
+| 030-40 | Windshield and Window | 030-40 | DMC-<PROGRAMME>-<VARIANT>-030-40 | 040, 300, 400, 520, 720, 941 |
+| 030-50 | Probe/Drain/Service Point | 030-50 | DMC-<PROGRAMME>-<VARIANT>-030-50 | 040, 300, 400, 520, 720 |
+| 030-60 | Rain Removal | 030-60 | DMC-<PROGRAMME>-<VARIANT>-030-60 | 040, 300, 400, 520, 720, 941 |
+| 030-70 | Ice Detection & Control | 030-70 | DMC-<PROGRAMME>-<VARIANT>-030-70 | 040, 300, 400, 520, 720, 941 |
+| 030-80 | Monitoring & Diagnostics | 030-80 | DMC-<PROGRAMME>-<VARIANT>-030-80 | 040, 400 |
 
 ### Recommended DM Set (General / 030-00)
 
 | Info Code | Title | Status |
 |---|---|---|
-| DMC-AMPEL360E-EWTW-030-00-040-A | System Description — Ice and Rain Protection General | Draft |
-| DMC-AMPEL360E-EWTW-030-00-941-A | Illustrated Parts Data — ATA 30 Top Level | Not started |
+| DMC-<PROGRAMME>-<VARIANT>-030-00-040-A | System Description — Ice and Rain Protection General | Draft |
+| DMC-<PROGRAMME>-<VARIANT>-030-00-941-A | Illustrated Parts Data — ATA 30 Top Level | Not started |
 
 ---
 
@@ -383,7 +378,7 @@ All ATA 30 fault history, BITE results, ice encounter logs, and zone activation 
 | Term | Acronym | Definition |
 |---|---|---|
 | Anti-Icing Ice Information System | AIIS | An airborne system that provides icing-condition advisory data integrating ice detector outputs, TAT, and altitude for crew situational awareness |
-| Anti-Icing Management System | AMS | The overall software and hardware system managing allocation and sequencing of ice protection resources; in eWTW, implemented within the IPMC |
+| Anti-Icing Management System | AMS | The overall software and hardware system managing allocation and sequencing of ice protection resources; in [PROGRAMME-VARIANT], implemented within the IPMC |
 | Electrothermal Anti-Icing | — | Use of electrical resistance heating elements to maintain surfaces above 0 °C to prevent ice formation |
 | Ice Accretion | — | The build-up of ice on an aircraft surface due to impingement of supercooled water droplets |
 | Icing Certification Envelope | — | The atmospheric temperature, liquid water content (LWC), and droplet size (MVD) conditions within which an aircraft must demonstrate safe operation; defined by CS-25 Appendix C and O |
@@ -391,7 +386,7 @@ All ATA 30 fault history, BITE results, ice encounter logs, and zone activation 
 | Median Volumetric Diameter | MVD | The droplet size in micrometres at which half the total liquid water volume is in smaller drops and half in larger drops; key parameter in icing envelope definition |
 | Supercooled Large Droplets | SLD | Water droplets with MVD > 50 µm remaining liquid below 0 °C; regulated by CS-25 Appendix O |
 | Total Air Temperature | TAT | The stagnation temperature measured by the TAT probe, accounting for ram-rise effects; used as an input to icing condition logic |
-| Wing Ice Protection System | WIPS | The electrothermal heating system applied to the wing leading-edge zones to prevent or remove ice accretion in the eWTW |
+| Wing Ice Protection System | WIPS | The electrothermal heating system applied to the wing leading-edge zones to prevent or remove ice accretion in the [PROGRAMME-VARIANT] |
 
 ---
 
@@ -411,8 +406,8 @@ All ATA 30 fault history, BITE results, ice encounter logs, and zone activation 
 
 | Ref ID | Title | Document Number | Notes |
 |---|---|---|---|
-| REF-001 | AMPEL360e eWTW System Requirements Document — Ice Protection | TBD | Programme-controlled; not yet released |
-| REF-002 | AMPEL360e eWTW Electrical Power Architecture | TBD | ATA 24 interface definition; relevant for power budget |
+| REF-001 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] System Requirements Document — Ice Protection | TBD | Programme-controlled; not yet released |
+| REF-002 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Electrical Power Architecture | TBD | ATA 24 interface definition; relevant for power budget |
 | REF-003 | CS-25 Appendix O — Supercooled Large Droplet Icing Conditions | CS-25 Amdt 27 | SLD icing certification requirement |
 | REF-004 | ARP 4754A — Guidelines for Development of Civil Aircraft and Systems | SAE ARP 4754A | DAL assignment and development assurance for IPMC |
 | REF-005 | ARP 4761 — Guidelines and Methods for Conducting the Safety Assessment Process | SAE ARP 4761 | FHA and SSA methodology for ATA 30 |

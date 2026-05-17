@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Oxygen Pressure Indication and Warning"
 file_name: "035-060-Oxygen-Pressure-Indication-and-Warning.md"
 sns_reference: "035-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-035-60"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-035-60"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 35"
   - "Oxygen"
@@ -87,10 +87,12 @@ keywords:
   - "O2 LO PR"
   - "pressure indication"
   - "CS-25.1449"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 035-060 — Oxygen Pressure Indication and Warning
-### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -102,32 +104,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Oxygen Pressure Indication and Warning system (ATA 35-60) as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It defines the crew oxygen cylinder pressure measurement, quantity computation, ECAM display, cockpit CAS alerts, COG deployment zone status indication, and alert inhibit logic.
+This document defines the agnostic ATLAS standard-level architecture context for `035-060 — Oxygen Pressure Indication and Warning`.
 
-Crew oxygen pressure indication is required by CS-25.1449 to enable the flight crew to determine the oxygen supply quantity at all times. On the AMPEL360e eWTW, this is provided by dual redundant pressure transducers on the crew cylinder, gas-law quantity computation, and display on the ECAM O₂ systems page with associated CAS alerts. COG deployment status (per zone, if sensor wired — TBD) is displayed as a cabin zone map on the ECAM O₂ page for crew awareness.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 035-60 — Oxygen Pressure Indication and Warning |
-| Pressure Transducers | Dual redundant (crew cylinder) |
-| Quantity Computation | Gas-law (pressure × volume / temperature) |
-| ECAM Display | O₂ systems synoptic page; pressure gauge; qty % |
-| CAS Alerts | Amber "O2 LO PR CREW" (< 50% TBD); Red "O2 CREW OFF" |
-| COG Status | Per-zone deployed flag on ECAM (if sensor wired — TBD) |
-| Data Bus | ARINC 429 / AFDX TBD |
-| Inhibit Logic | Ground servicing inhibit of low-pressure CAS (TBD) |
-| Certification Basis | CS-25.1449 |
-| S1000D SNS | 035-60 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The oxygen pressure indication and warning system monitors the crew oxygen cylinder pressure via dual redundant pressure transducers. Transducer outputs are processed by the aircraft warning computer / FWCU (flight warning computer unit). The crew O₂ quantity is computed from cylinder pressure, cylinder volume (known constant), and cylinder temperature (temperature sensor TBD) using the ideal gas law. Quantity is expressed as a percentage of full charge and displayed on the ECAM O₂ systems page.
@@ -314,7 +304,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 035-60 | Oxygen Pressure Indication and Warning | DMC-AMPEL360E-EWTW-035-60 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-60 | Oxygen Pressure Indication and Warning | DMC-<PROGRAMME>-<VARIANT>-035-60 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Data Module Breakdown — 035-60
 

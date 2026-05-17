@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Navigation — General"
 file_name: "034-000-Navigation-General.md"
 sns_reference: "034-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "Navigation"
@@ -90,10 +90,12 @@ keywords:
   - "AFDX"
   - "FMS"
   - "RNP"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-000 — Navigation — General
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -105,40 +107,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document provides the top-level general description of ATA 34 — Navigation — as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It establishes the scope, architectural philosophy, and functional decomposition of all navigation systems across nine subsubjects (034-010 through 034-090).
+This document defines the agnostic ATLAS standard-level architecture context for `034-000 — Navigation — General`.
 
-The AMPEL360e eWTW navigation architecture integrates a full suite of modern aviation navigation sensors and systems: dual Digital Air Data Computers (DADCs), triple Inertial Reference Units (IRUs) based on Fiber Optic Gyro (FOG) technology, dual Multi-Mode Receivers (MMRs) combining ILS/VOR/GPS approach, dual GNSS receivers with SBAS augmentation, TCAS II version 7.1 with Mode S / ADS-B Out transponder, Class A TAWS with predictive terrain awareness, a forward-looking X-band weather radar, and an FMS-hosted navigation sensor fusion filter integrating all these sources.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The entire navigation sensor suite communicates primarily over AFDX (ARINC 664 Part 7) for sensor-to-display and sensor-to-FMS paths, with legacy ARINC 429 retained for individual LRU interfaces. The aircraft is designed for RNP-AR approach capability and CS-ACNS / RNAV/RNP airspace requirements. Primary Q-Division is Q-AIR; support Q-Divisions are Q-HPC (navigation filter algorithms), Q-DATAGOV (navigation database management), and Q-MECHANICS (sensor installation).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter | 34 — Navigation |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER (extended range) |
-| Propulsion | Full-electric (no hydraulic actuation; no bleed air system) |
-| Air Data | Dual DADC — electrically heated pitot/static probes (no bleed) |
-| Inertial Reference | Triple IRU — FOG technology (ring laser or MEMS TBD) |
-| Radio Navigation | Dual MMR (ILS + VOR + GPS approach); DME; Marker Beacon TBD |
-| Satellite Navigation | Dual GNSS with SBAS (WAAS/EGNOS); GBAS TBD |
-| Surveillance | TCAS II v7.1; Mode S transponder; ADS-B Out (1090ES) |
-| Terrain Awareness | Class A TAWS (EGPWS) — TSO-C151c |
-| Weather Radar | X-band forward-looking weather radar (nose radome) |
-| Certification Basis | CS-25, CS-ACNS, DO-229, DO-185B, DO-161A, DO-178C, DO-254 |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-00 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-ATA 34 on the AMPEL360e eWTW encompasses all systems responsible for determining the aircraft's position, attitude, and velocity; providing situational awareness of the flight environment (air data, weather, terrain, traffic); and delivering navigation data to the Flight Management and Guidance Computer (FMGC) and cockpit displays.
+ATA 34 on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] encompasses all systems responsible for determining the aircraft's position, attitude, and velocity; providing situational awareness of the flight environment (air data, weather, terrain, traffic); and delivering navigation data to the Flight Management and Guidance Computer (FMGC) and cockpit displays.
 
 The architecture is stratified into six functional layers:
 
@@ -149,7 +134,7 @@ The architecture is stratified into six functional layers:
 5. **Traffic and Terrain Surveillance**: TCAS II provides collision avoidance; Class A TAWS provides terrain and obstacle alerting.
 6. **Navigation Fusion**: The FMS/FMGC navigation filter fuses IRS, GNSS, DME-DME, and VOR-DME data to provide the best position estimate for flight guidance and RNP/RNAV operations.
 
-The composite fuselage of the eWTW introduces unique challenges for antenna installation (RF transparency TBD) and magnetic heading sensing (ferromagnetic interference from carbon fibre reinforced polymer, TBD). These are identified as open issues.
+The composite fuselage of the [PROGRAMME-VARIANT] introduces unique challenges for antenna installation (RF transparency TBD) and magnetic heading sensing (ferromagnetic interference from carbon fibre reinforced polymer, TBD). These are identified as open issues.
 
 ---
 
@@ -162,7 +147,7 @@ The composite fuselage of the eWTW introduces unique challenges for antenna inst
 - Dual MMR: ILS (Cat I; Cat II/III TBD), VOR, GPS approach modes
 - DME (distance measuring equipment) — dual
 - Marker beacon (TBD — may be suppressed as legacy)
-- ADF (TBD — may be suppressed on eWTW)
+- ADF (TBD — may be suppressed on [PROGRAMME-VARIANT])
 - Dual GNSS receivers with L1 (L5 TBD) and SBAS (WAAS/EGNOS) augmentation
 - GBAS approach capability (TBD — optional fitment)
 - TCAS II version 7.1 with Mode S transponder and ADS-B Out (1090ES)
@@ -221,7 +206,7 @@ The composite fuselage of the eWTW introduces unique challenges for antenna inst
 
 ```mermaid
 flowchart LR
-    AC[AMPEL360e eWTW Aircraft] --> ATA34[ATA 34 — Navigation]
+    AC[[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Aircraft] --> ATA34[ATA 34 — Navigation]
     ATA34 --> SUB010[034-010 Air Data & Flight Environment]
     ATA34 --> SUB020[034-020 Inertial Reference & AHRS]
     ATA34 --> SUB030[034-030 Radio Navigation]
@@ -357,16 +342,16 @@ ATA 34 LRUs are designed for line maintenance replacement without special toolin
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-00 | Navigation — General | DMC-AMPEL360E-EWTW-034-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-10 | Flight Environment Data and Air Data Interfaces | DMC-AMPEL360E-EWTW-034-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-20 | Inertial Reference and Attitude Heading Systems | DMC-AMPEL360E-EWTW-034-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-30 | Radio Navigation | DMC-AMPEL360E-EWTW-034-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-40 | Satellite Navigation and Augmentation | DMC-AMPEL360E-EWTW-034-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-50 | Traffic Surveillance and Collision Avoidance | DMC-AMPEL360E-EWTW-034-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-60 | Terrain Awareness and Proximity Warning | DMC-AMPEL360E-EWTW-034-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-70 | Weather Radar and Navigation Sensor Fusion | DMC-AMPEL360E-EWTW-034-70 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-80 | Navigation Monitoring, Diagnostics, and Control Interfaces | DMC-AMPEL360E-EWTW-034-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 034-90 | S1000D CSDB Mapping and Traceability | DMC-AMPEL360E-EWTW-034-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-00 | Navigation — General | DMC-<PROGRAMME>-<VARIANT>-034-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-10 | Flight Environment Data and Air Data Interfaces | DMC-<PROGRAMME>-<VARIANT>-034-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-20 | Inertial Reference and Attitude Heading Systems | DMC-<PROGRAMME>-<VARIANT>-034-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-30 | Radio Navigation | DMC-<PROGRAMME>-<VARIANT>-034-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-40 | Satellite Navigation and Augmentation | DMC-<PROGRAMME>-<VARIANT>-034-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-50 | Traffic Surveillance and Collision Avoidance | DMC-<PROGRAMME>-<VARIANT>-034-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-60 | Terrain Awareness and Proximity Warning | DMC-<PROGRAMME>-<VARIANT>-034-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-70 | Weather Radar and Navigation Sensor Fusion | DMC-<PROGRAMME>-<VARIANT>-034-70 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-80 | Navigation Monitoring, Diagnostics, and Control Interfaces | DMC-<PROGRAMME>-<VARIANT>-034-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-90 | S1000D CSDB Mapping and Traceability | DMC-<PROGRAMME>-<VARIANT>-034-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 
@@ -548,7 +533,7 @@ ATA 34 LRUs are designed for line maintenance replacement without special toolin
 | OI-034-001 | Composite fuselage RF transparency — assess RF performance of CFRP fuselage for all navigation antenna installations (VOR, ILS, DME, GNSS, TCAS, radio altimeter); groundplane effects TBD | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-034-002 | MEMS vs. FOG IRS technology decision — confirm FOG (ring laser or MEMS) technology for IRU; impact on drift specification, cost, weight, and DO-254 DAL | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-034-003 | GBAS fitment decision — confirm GBAS (ground-based augmentation) as standard or optional equipment for RNP-AR approach below CAT I minima | Q-AIR / ORB-PMO | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-034-004 | ADS-B In (TIS-B/FIS-B) fitment — confirm whether ADS-B In is standard or optional equipment for eWTW baseline; CS-ACNS applicability | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-034-004 | ADS-B In (TIS-B/FIS-B) fitment — confirm whether ADS-B In is standard or optional equipment for [PROGRAMME-VARIANT] baseline; CS-ACNS applicability | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-034-005 | GNSS L5 frequency capability — confirm dual-frequency (L1/L5) GNSS receiver fitment; ARAIM compliance benefit; TSO-C145e/C146e scope | Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-034-006 | Cat II / Cat III ILS decision — confirm MMR qualification level (Cat I baseline; Cat II/III as option or standard); implications for autopilot (ATA 22) and ground infrastructure | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-034-007 | Nose radome RF performance — validate X-band weather radar RF transmission through composite CFRP nose radome; fibreglass insert or full dielectric replacement TBD | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |

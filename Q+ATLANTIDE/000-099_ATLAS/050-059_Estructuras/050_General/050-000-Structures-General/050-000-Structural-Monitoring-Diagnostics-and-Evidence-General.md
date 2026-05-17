@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Structural Monitoring, Diagnostics and Evidence General
 
 ## 1. Purpose
 
-Defines the **Structural Health Monitoring (SHM) architecture** for the AMPEL360 eWTW: sensor types, data acquisition, on-board processing, ground-station synchronisation, PHM credit, and regulatory evidence pathway under CS-25 AMC 20-29A.
+Defines the **Structural Health Monitoring (SHM) architecture** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: sensor types, data acquisition, on-board processing, ground-station synchronisation, PHM credit, and regulatory evidence pathway under CS-25 AMC 20-29A.
 
 ## 2. Scope
 

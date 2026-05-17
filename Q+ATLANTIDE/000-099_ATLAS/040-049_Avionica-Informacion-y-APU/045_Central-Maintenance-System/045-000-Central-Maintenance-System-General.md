@@ -31,6 +31,8 @@ ata_reference: "ATA 45 — Central Maintenance System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 000 — Central Maintenance System General
@@ -43,11 +45,11 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-ATA 45 — Central Maintenance System (CMS) defines the centralised fault management and maintenance information hub for the AMPEL360E eWTW aircraft. This document governs CMS architecture, redundancy strategy, inter-system interfaces, and eWTW-specific enhancements including full-electric propulsion fault coverage.
+ATA 45 — Central Maintenance System (CMS) defines the centralised fault management and maintenance information hub for the programme-defined aircraft type. This document governs CMS architecture, redundancy strategy, inter-system interfaces, and [PROGRAMME-VARIANT]-specific enhancements including full-electric propulsion fault coverage.
 
 Key governance areas:
 - CMS overall architecture and subsystem hierarchy.
-- AMPEL360E eWTW design enhancements (electric propulsion fault trees, EMA/EMB/MPDU BITE).
+- programme-defined aircraft type design enhancements (electric propulsion fault trees, EMA/EMB/MPDU BITE).
 - Regulatory basis for CMS (DO-178C, DO-254, ARINC 664, ARINC 429, CS-25).
 - Interface map to avionics (ATA 42), electrical (ATA 24), propulsion (ATA 72), and flight controls (ATA 27).
 - Primary Q-Division assignment: Q-DATAGOV; Support: Q-AIR, Q-MECHANICS, Q-INDUSTRY.
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45 — Central Maintenance System |
 | Certification Basis | CS-25 Amendment 28; DO-178C; DO-254 |
 | Applicable Standards | ARINC 664 P7; ARINC 429; ARINC 767; DO-160G; MSG-3 |
@@ -69,9 +71,9 @@ Key governance areas:
 
 ## 3. Functional Description
 
-The CMS for the AMPEL360E eWTW is built around two redundant computing units — CMS Computing Unit A (CCU-A) and CMS Computing Unit B (CCU-B) — implementing DO-178C DAL C software on DO-254 DAL C hardware. The primary data network is AFDX (ARINC 664 Part 7), with an ARINC 429 legacy bus adapter for older LRU interfaces.
+The CMS for the programme-defined aircraft type is built around two redundant computing units — CMS Computing Unit A (CCU-A) and CMS Computing Unit B (CCU-B) — implementing DO-178C DAL C software on DO-254 DAL C hardware. The primary data network is AFDX (ARINC 664 Part 7), with an ARINC 429 legacy bus adapter for older LRU interfaces.
 
-eWTW-specific enhancements relative to a conventional aircraft:
+[PROGRAMME-VARIANT]-specific enhancements relative to a conventional aircraft:
 
 - **Increased sensor count**: Full-electric propulsion introduces EMA, EMB, and MPDU sensor suites not present in conventional aircraft, expanding the BITE subscriber list by approximately 40%.
 - **Elimination of pneumatic fault classes**: No bleed-air system removes pneumatic duct rupture, pre-cooler failure, and pack over-temperature fault trees from the FIM.
@@ -91,7 +93,7 @@ graph TD
     CMS --> AHM["AHM Prognostics Engine"]
     FD --> LRU1["ATA 21/22/24 LRUs"]
     FD --> LRU2["ATA 27/32/34 LRUs"]
-    FD --> LRU3["EMA/EMB/MPDU (eWTW)"]
+    FD --> LRU3["EMA/EMB/MPDU ([PROGRAMME-VARIANT])"]
 ```
 
 ---
@@ -113,7 +115,7 @@ The CMS architecture is structured around seven primary functions executed on th
 ```mermaid
 graph LR
     LRUs["All ATA Chapter LRUs"] -->|AFDX BITE VLAN| FC["CMS Fault Collector"]
-    EMA["EMA/EMB/MPDU (eWTW)"] -->|AFDX| FC
+    EMA["EMA/EMB/MPDU ([PROGRAMME-VARIANT])"] -->|AFDX| FC
     FC --> FDB["Fault Database (CMDB)"]
     FDB --> CMC["CMC Maintenance Report"]
     FDB --> ACARS["ACARS/AHM Gateway"]
@@ -336,7 +338,7 @@ stateDiagram-v2
 | [R4] | ATLAS 045-030 — Fault Isolation and Troubleshooting Logic | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R5] | ATLAS 045-040 — Maintenance Data Recording and History | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R6] | ATLAS 045-090 — S1000D CSDB Mapping and Traceability | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R7] | AMPEL360E eWTW System Architecture Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R7] | programme-defined aircraft type System Architecture Document | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

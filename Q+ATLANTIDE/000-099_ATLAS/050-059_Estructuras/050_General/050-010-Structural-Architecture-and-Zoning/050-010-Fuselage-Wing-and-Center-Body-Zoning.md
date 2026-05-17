@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.010 — Fuselage, Wing and Centre-Body Zoning
 
 ## 1. Purpose
 
-Provides the **detailed zone map** for the AMPEL360 eWTW fuselage, wing, and centre wing-body junction, including sub-zone identifiers, station-referenced geometric boundaries, and CPCP zone assignments.
+Provides the **detailed zone map** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] fuselage, wing, and centre wing-body junction, including sub-zone identifiers, station-referenced geometric boundaries, and CPCP zone assignments.
 
 ## 2. Scope
 

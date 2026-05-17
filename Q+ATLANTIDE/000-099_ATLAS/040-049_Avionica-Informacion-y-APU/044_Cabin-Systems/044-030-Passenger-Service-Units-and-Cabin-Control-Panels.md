@@ -31,6 +31,8 @@ ata_reference: "ATA 44.030 — Passenger Service Units"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 030 — Passenger Service Units and Cabin Control Panels
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the Passenger Service Units (PSUs) and associated Cabin Control Panels for the AMPEL360E eWTW aircraft. PSUs are overhead panel units installed above each seating section providing: LED reading lights, passenger call button, ventilation nozzle, and oxygen mask housing. Cabin Control Panels (CCPs) at door stations provide local cabin control functions for cabin crew.
+This document defines the Passenger Service Units (PSUs) and associated Cabin Control Panels for the programme-defined aircraft type. PSUs are overhead panel units installed above each seating section providing: LED reading lights, passenger call button, ventilation nozzle, and oxygen mask housing. Cabin Control Panels (CCPs) at door stations provide local cabin control functions for cabin crew.
 
 Key governance areas:
 - PSU hardware design (LED, call button, nozzle, mask housing).
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44.030 — Passenger Service Units |
 | Certification Basis | CS-25 §25.1447 (O₂ mask); CS-25 §25.853 (flammability); TSO-C69 |
 | Applicable Standards | TSO-C69; DO-160G; ARINC 628 CDN; CS-25 §25.1447 |
@@ -70,7 +72,7 @@ Key governance areas:
 
 ## 3. System / Function Overview
 
-Each PSU assembly is installed in the overhead panel above 1–3 seat rows. The AMPEL360E PSU design consists of:
+Each PSU assembly is installed in the overhead panel above 1–3 seat rows. The [PROGRAMME-AIRCRAFT] PSU design consists of:
 
 - **LED Reading Light:** Individually addressable LED warm-white light (2700–5000 K, 250 lux minimum at seat tray table), dimmable in 256 steps via PSUC CDN command.
 - **Attendant Call Button:** Capacitive touch button triggering cabin crew call signal via PSUC to CMS, activating overhead call chime and crew panel call light.
@@ -326,7 +328,7 @@ graph LR
 |--------|----------|---------|--------|
 | REF-044-03-01 | Cabin Systems General (044-000) | 1.0 | Active |
 | REF-044-03-02 | Cabin Core Network (044-010) | 1.0 | Active |
-| REF-044-03-03 | AMPEL360E PSU Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-03-03 | [PROGRAMME-AIRCRAFT] PSU Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

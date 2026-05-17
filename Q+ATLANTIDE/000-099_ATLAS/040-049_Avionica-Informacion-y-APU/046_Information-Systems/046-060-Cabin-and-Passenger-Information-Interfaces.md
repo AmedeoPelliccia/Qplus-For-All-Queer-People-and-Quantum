@@ -31,6 +31,8 @@ ata_reference: "ATA 46.060 — Cabin and Passenger Information Interfaces"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 060 — Cabin and Passenger Information Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46.060 — Cabin and Passenger Information Interfaces (CPII) defines the systems and data interfaces that provide cabin crew and passengers with operational, safety, and entertainment information on the AMPEL360E eWTW. This covers the Cabin Data Network (CDN) per ARINC 628, Passenger Information Display (PID) system, Passenger Address (PA) audio system feed, In-Flight Entertainment (IFE) content server, cabin Wi-Fi (securely segregated from AFDX avionics network), and the Cabin Management System (CMS-CAB) interface.
+ATA 46.060 — Cabin and Passenger Information Interfaces (CPII) defines the systems and data interfaces that provide cabin crew and passengers with operational, safety, and entertainment information on the programme-defined aircraft type. This covers the Cabin Data Network (CDN) per ARINC 628, Passenger Information Display (PID) system, Passenger Address (PA) audio system feed, In-Flight Entertainment (IFE) content server, cabin Wi-Fi (securely segregated from AFDX avionics network), and the Cabin Management System (CMS-CAB) interface.
 
 Key governance areas:
 - **CDN (ARINC 628)**: The backbone for cabin electronic systems; segregated from avionics AFDX network by a certified domain boundary (firewall/datadiode).
@@ -60,7 +62,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46.060 — Cabin and Passenger Information Interfaces |
 | Certification Basis | CS-25 Amendment 28; CS-25 Annex I (cabin safety) |
 | Applicable Standards | ARINC 628 (CDN); IEEE 802.11ax; DO-160G; RTCA DO-160G; S1000D Issue 5.0 |
@@ -71,7 +73,7 @@ Key governance areas:
 
 ## §3. Functional Description
 
-The CPII subsystem manages all passenger-facing and cabin crew information systems. A critical design principle of the AMPEL360E eWTW CPII architecture is **strict network segregation**: the cabin CDN and passenger Wi-Fi are completely isolated from the avionics AFDX network.
+The CPII subsystem manages all passenger-facing and cabin crew information systems. A critical design principle of the programme-defined aircraft type CPII architecture is **strict network segregation**: the cabin CDN and passenger Wi-Fi are completely isolated from the avionics AFDX network.
 
 Functional components:
 1. **CDN (ARINC 628)**: Cabin Data Network; 100/1000BASE-T Ethernet within the cabin; connects PID controllers, IFE server, CMS-CAB, Wi-Fi access points, and seat power management units.
@@ -80,10 +82,10 @@ Functional components:
 4. **IFE content server**: 4 TB SSD media server on CDN; serves video, audio, and interactive content to seatback displays; content loaded at gate via Gatelink (content management network, segregated from avionics Gatelink VLAN).
 5. **Cabin Wi-Fi**: IEEE 802.11ax APs in cabin ceiling; dual-band 2.4/5 GHz; SSID segregated from maintenance and avionics SSIDs; internet backhaul via dedicated SATCOM Ku-band passenger channel.
 
-eWTW specifics:
+[PROGRAMME-VARIANT] specifics:
 - No APU: cabin pre-conditioning powered from ground power or battery; CMS-CAB manages cabin power-up sequence.
-- No hydraulic noise: eWTW cabin is quieter; reduced PA masking; IFE audio quality benefits.
-- Battery SoC in-flight progress indicator on PID moving map page (eWTW passenger information feature): optional, airline-configurable.
+- No hydraulic noise: [PROGRAMME-VARIANT] cabin is quieter; reduced PA masking; IFE audio quality benefits.
+- Battery SoC in-flight progress indicator on PID moving map page ([PROGRAMME-VARIANT] passenger information feature): optional, airline-configurable.
 
 ### Diagram 1: CPII Functional Hierarchy
 
@@ -231,7 +233,7 @@ stateDiagram-v2
 - **CDN gateway rules**: Firewall rule set defines the exact data labels (PID sign states, ETA, altitude, moving map) allowed from AFDX to CDN; no reverse path allowed; rule changes require configuration control.
 - **IFE content management**: Airline-specific content management system (CMS) manages content playlists, update packages, licensing; loaded to IFE server via Gatelink content VLAN.
 - **Wi-Fi SSID management**: Distinct SSIDs for passenger Wi-Fi (public), cabin crew maintenance (restricted), and ground maintenance (restricted); VLANs strictly separated.
-- **Battery SoC display (eWTW, airline-configurable)**: Optional PID feature displaying simplified battery SoC indicator for passenger information; driven from OIS server advisory feed via CDN gateway.
+- **Battery SoC display ([PROGRAMME-VARIANT], airline-configurable)**: Optional PID feature displaying simplified battery SoC indicator for passenger information; driven from OIS server advisory feed via CDN gateway.
 
 ---
 
@@ -253,7 +255,7 @@ stateDiagram-v2
 - **PID UX**: Overhead displays use simple symbol-based icons for safety signs; seatback displays use language-localised text per passenger PED language setting.
 - **Emergency PA priority indicator**: CIDS displays "EMERGENCY PA — COCKPIT OVERRIDE" when cockpit crew activates emergency PA; cabin crew cannot override.
 - **Wi-Fi captive portal**: Passenger Wi-Fi captive portal provides battery SoC indicator (airline-configurable) and flight status display before internet access.
-- **eWTW noise reduction benefit**: Cabin noise level lower than conventional aircraft (no engine fan noise at low speed); IFE default audio level profiles adjusted accordingly.
+- **[PROGRAMME-VARIANT] noise reduction benefit**: Cabin noise level lower than conventional aircraft (no engine fan noise at low speed); IFE default audio level profiles adjusted accordingly.
 
 ---
 
@@ -287,13 +289,13 @@ stateDiagram-v2
 
 | Term | Acronym | Definition |
 |------|---------|------------|
-| Cabin Data Network | CDN | The ARINC 628-compliant Ethernet backbone within the AMPEL360E eWTW cabin connecting PID, IFE, CMS-CAB, and Wi-Fi APs; strictly segregated from avionics AFDX |
-| Passenger Information Display | PID | Overhead and seatback displays in the AMPEL360E eWTW cabin providing safety sign states, flight status, ETA, altitude, and moving map information to passengers |
+| Cabin Data Network | CDN | The ARINC 628-compliant Ethernet backbone within the programme-defined aircraft type cabin connecting PID, IFE, CMS-CAB, and Wi-Fi APs; strictly segregated from avionics AFDX |
+| Passenger Information Display | PID | Overhead and seatback displays in the programme-defined aircraft type cabin providing safety sign states, flight status, ETA, altitude, and moving map information to passengers |
 | Cabin Intercommunication and Data System | CIDS | The cabin management system (cabin management station) that controls PA announcements, safety signs, IFE, and cabin zone management; interfaces with CDN and cockpit crew via hardwired relay |
 | In-Flight Entertainment | IFE | The onboard media system providing audio, video, and interactive content to passenger seatback displays from the 4 TB IFE content server over the CDN |
 | Passenger Address | PA | The cabin audio announcement system driven by the CIDS; cockpit crew emergency PA has highest priority and overrides cabin or IFE audio |
 | Cabin Management Station | CMS-CAB | The forward and aft galley crew control panel for the CDN; allows cabin crew to control seat belt sign, no-smoking sign, PA, and IFE modes |
-| Access Point | AP | IEEE 802.11ax dual-band wireless access point mounted in the AMPEL360E eWTW cabin ceiling; provides passenger Wi-Fi internet connectivity via dedicated SATCOM Ku-band passenger channel |
+| Access Point | AP | IEEE 802.11ax dual-band wireless access point mounted in the programme-defined aircraft type cabin ceiling; provides passenger Wi-Fi internet connectivity via dedicated SATCOM Ku-band passenger channel |
 | Cellular-in-the-Sky | SATCOM-PAX | Ku-band SATCOM channel dedicated to passenger internet backhaul; completely segregated from the avionics SATCOM (aeronautical mobile satellite service) channel |
 | CDN Gateway | CDN-GW | The certified application-layer firewall and domain boundary device between the avionics AFDX network and the cabin CDN; enforces one-way advisory data flow only |
 | Content Management System | CMS | The airline-operated ground system that manages IFE content playlists, licensing, and update packages; pushes updates to IFE server via Gatelink content VLAN at gate |
@@ -367,8 +369,8 @@ stateDiagram-v2
 | [R2] | ATLAS 046-020 — Operational Data Systems | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 046-030 — Airline Information and Communication Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 046-070 — Ground Data Transfer and Connectivity | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R5] | AMPEL360E eWTW Cabin Layout Drawing | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| [R6] | AMPEL360E eWTW CDN Network Architecture ICD | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R5] | programme-defined aircraft type Cabin Layout Drawing | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R6] | programme-defined aircraft type CDN Network Architecture ICD | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -388,4 +390,4 @@ This document is classified `to-be-reviewed-by-system-expert`. The review proces
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for AMPEL360E eWTW Cabin and Passenger Information Interfaces |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for programme-defined aircraft type Cabin and Passenger Information Interfaces |

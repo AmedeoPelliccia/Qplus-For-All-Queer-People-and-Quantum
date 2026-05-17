@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0061-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-061-030-BLADES-HUBS-AND-SPINNERS
      ATA 61 · Blades, Hubs and Spinners
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Blades, Hubs and Spinners
@@ -47,26 +49,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-030"
 
 ## §1 Purpose
 
-This document defines the design, material specification, and controlled configuration for propeller blades, hubs, and spinner assemblies. These three component types form the structural and aerodynamic core of any propulsor assembly; their design, inspection, and interchangeability are tightly controlled by the propeller Type Certificate.
+This document defines the agnostic ATLAS standard-level architecture context for `Blades, Hubs and Spinners`.
 
-For the AMPEL360E eWTW, blades are CFRP (carbon-fibre reinforced polymer) with a titanium or stainless steel leading-edge protective cap. The hub is a high-strength titanium or steel forging. The spinner is a composite or aluminium nosecone that houses the spinner dome and provides access to the pitch actuator if removal is required.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 61-030 — Blades, Hubs and Spinners |
-| Certification basis | EASA CS-25 Amendment 27+ |
-| S1000D SNS | 061-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `061` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-**Blade design**: Aerofoil profile optimised for the AMPEL360E cruise Mach number; CFRP spar-cap and shell construction; leading-edge erosion shield (titanium or nickel alloy electroform); variable-pitch root fitting with precision spar bearing.
+**Blade design**: Aerofoil profile optimised for the [PROGRAMME-AIRCRAFT] cruise Mach number; CFRP spar-cap and shell construction; leading-edge erosion shield (titanium or nickel alloy electroform); variable-pitch root fitting with precision spar bearing.
 
 **Hub design**: Titanium alloy forging; blade retention pockets with matched-pair pitch bearings; central shaft bore to engine spline; internal channel for pitch actuator oil (if hydraulic type) or signal routing (if EMA type).
 
@@ -198,7 +197,7 @@ flowchart TB
 | SAE ARP5765 | Aeronautical Design Standard — Propeller Design | SAE International | Blade and hub design guideline |
 | AMS 4928 | Titanium Alloy — Ti-6Al-4V | SAE International | Hub forging material |
 | ATA iSpec 2200 | Chapter 61 — Propellers and Propulsors | Air Transport Association | ATA chapter scope |
-| AMPEL360E APS-060 | Adhesive Process Specification — Propeller LE Cap Bonding | AMPEL360E programme | LE cap bonding process |
+| [PROGRAMME-AIRCRAFT] APS-060 | Adhesive Process Specification — Propeller LE Cap Bonding | [PROGRAMME-AIRCRAFT] programme | LE cap bonding process |
 
 ---
 
@@ -268,4 +267,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

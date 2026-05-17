@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Flight Environment Data and Air Data Interfaces"
 file_name: "034-010-Flight-Environment-Data-and-Air-Data-Interfaces.md"
 sns_reference: "034-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "DADC"
@@ -93,10 +93,12 @@ keywords:
   - "CS-25.1323"
   - "CS-25.1325"
   - "CS-25.1326"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-010 — Flight Environment Data and Air Data Interfaces
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -108,38 +110,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Flight Environment Data and Air Data subsystem (ATA 034-010) of the AMPEL360e eWTW aircraft. It covers the dual Digital Air Data Computers (DADCs), pitot/static probe system, angle-of-attack (AOA) sensors, total air temperature (TAT) probes, and their data interfaces to cockpit displays, the FMGC, and the autopilot system.
+This document defines the agnostic ATLAS standard-level architecture context for `034-010 — Flight Environment Data and Air Data Interfaces`.
 
-The eWTW uses electrically heated pitot and static probes throughout — there is no bleed-air probe heating, consistent with the all-electric architecture. Each DADC receives independent pitot and static pressure inputs and an independent TAT probe signal. Outputs are provided on ARINC 429 data buses. Cross-comparison between DADC-1 and DADC-2 is performed by the FMGC, with disagreements annunciated on the PFD and CMC.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Key applicable regulations: CS-25.1323 (Airspeed Indicating System), CS-25.1325 (Static Pressure Systems), CS-25.1326 (Pitot Heat Indication System), CS-25.1327 (Magnetic Direction Indicator — not directly applicable here but referenced for heading cross-check), and the RTCA standard for air data.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 034-010 — Flight Environment Data and Air Data Interfaces |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER (extended range) |
-| Number of DADCs | 2 (dual redundant — DADC-1 and DADC-2) |
-| Probe Heating | Electric (no bleed air) |
-| Pitot Probes | 2 (one per DADC, plus 1 standby TBD) |
-| Static Ports | 2 per side (4 total TBD — fuselage positions TBD) |
-| AOA Sensors | 2 (one per DADC channel, left and right fuselage TBD) |
-| TAT Probes | 2 (one per DADC, fuselage positions TBD) |
-| Output Bus | ARINC 429 (high speed — 100 kbps) |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-10 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The Air Data subsystem provides the AMPEL360e eWTW with accurate measurements of the surrounding flight environment — the quantities needed to determine the aircraft's airspeed state, altitude, and air temperature. These measurements are fundamental to flight safety, structural integrity, autopilot operation, and performance management.
+The Air Data subsystem provides the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] with accurate measurements of the surrounding flight environment — the quantities needed to determine the aircraft's airspeed state, altitude, and air temperature. These measurements are fundamental to flight safety, structural integrity, autopilot operation, and performance management.
 
 Each DADC (DADC-1 and DADC-2) receives:
 - **Pitot pressure (Pt)**: Measured by a forward-facing pitot probe. Stagnation pressure of the moving air mass.
@@ -345,7 +332,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-10 | Flight Environment Data and Air Data Interfaces | DMC-AMPEL360E-EWTW-034-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-10 | Flight Environment Data and Air Data Interfaces | DMC-<PROGRAMME>-<VARIANT>-034-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Recommended DM Set for 034-10
 
@@ -470,8 +457,8 @@ flowchart LR
 | Issue ID | Description | Owner | Priority | Status |
 |---|---|---|---|---|
 | OI-010-001 | Composite fuselage static port installation — assess impact of CFRP skin on static pressure measurement and position error; standard aluminium interface plate or full composite static port TBD | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-010-002 | Standby air data indicator (ISIS or equivalent) — confirm standby air data LRU identity, supplier, and interface for eWTW; DADC-3 or dedicated ISIS TBD | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-010-003 | Pitot probe standby (third probe) — confirm whether a third (standby) pitot probe is required on eWTW baseline or optional | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-010-002 | Standby air data indicator (ISIS or equivalent) — confirm standby air data LRU identity, supplier, and interface for [PROGRAMME-VARIANT]; DADC-3 or dedicated ISIS TBD | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-010-003 | Pitot probe standby (third probe) — confirm whether a third (standby) pitot probe is required on [PROGRAMME-VARIANT] baseline or optional | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-010-004 | AOA sensor heating — confirm whether AOA vane heaters are electric resistance or require alternate approach; icing certification of AOA vanes required | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-010-005 | Probe heat power budget — complete electrical load analysis for all probe heaters; interface with ATA 24 and ATA 30 for essential bus sizing | Q-MECHANICS / ATA 24 team | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-010-006 | Baro reference interface (QNH input to DADC) — define interface: dedicated ARINC 429 label from PFD bezel encoder or discrete signal TBD | Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |

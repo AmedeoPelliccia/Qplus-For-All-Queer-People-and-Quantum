@@ -6,10 +6,10 @@ subsubject: "090"
 subsubject_title: "S1000D CSDB Mapping and Traceability"
 file_name: "034-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "034-90"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-90"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-90"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "CSDB"
@@ -90,10 +90,12 @@ keywords:
   - "Publication Hierarchy"
   - "Traceability"
   - "Navigation"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-090 — S1000D CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -105,57 +107,44 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document provides the comprehensive S1000D Common Source Database (CSDB) mapping and traceability for the entire ATA 34 Navigation system chapter of the AMPEL360e eWTW programme. It maps all ATA 34 subsubjects (034-00 through 034-80) to their S1000D System/Sub-system/Sub-sub-system (SNS) codes and Data Module Codes (DMCs), defines the recommended Data Module (DM) set for each subsubject, provides the Data Module Requirements List (DMRL) planning status, and documents the Business Rules Exchange (BREX) constraints applicable to the ATA 34 CSDB module set.
+This document defines the agnostic ATLAS standard-level architecture context for `034-090 — S1000D CSDB Mapping and Traceability`.
 
-Additionally, this document covers the ARINC 615A data update procedures for navigation databases (FMS navigation database, TAWS terrain/obstacle database, GNSS approach database) and defines the ATA 34 technical publication hierarchy (Crew Operations Manual, Aircraft Maintenance Manual, Component Maintenance Manual, Illustrated Parts Catalogue, and Wiring Diagram Manual cross-references).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter | ATA 34 — Navigation |
-| Subsubjects Covered | 034-00 through 034-80 (ten subsubjects) |
-| S1000D Issue | S1000D Issue 5.0 |
-| CSDB Standard | S1000D Issue 5.0 / AECMA / ASD-STAN |
-| DMC Format | DMC-{modelIdentCode}-{systemDiffCode}-{systemCode}-{subSystemCode}{subSubSystemCode}-{assyCode}-{disassyCode}{disassyCodeVariant}-{infoCode}{infoCodeVariant}-{itemLocationCode} |
-| eWTW DMC Model ID | AMPEL360E |
-| eWTW DMC System Diff | EWTW |
-| ATA 34 System Code | 034 |
-| BREX | eWTW-BREX-034-001 (TBD) |
-| DMRL Status | All subsubjects — draft / TBD (not frozen) |
-| Publication Authority | Q-DATAGOV / Q-AIR |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-90 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 System / Function Overview
 
 ### S1000D CSDB Architecture for ATA 34
 
-The S1000D CSDB for the eWTW ATA 34 Navigation chapter comprises a set of Data Modules (DMs) that collectively describe and support all navigation subsystems. Each DM has a unique Data Module Code (DMC) that encodes the system address (ATA 34), the subsubject, the data type (info code), and the item location.
+The S1000D CSDB for the [PROGRAMME-VARIANT] ATA 34 Navigation chapter comprises a set of Data Modules (DMs) that collectively describe and support all navigation subsystems. Each DM has a unique Data Module Code (DMC) that encodes the system address (ATA 34), the subsubject, the data type (info code), and the item location.
 
 **CSDB structure for ATA 34**:
 ```
 ATA 34 Navigation (SNS 034-00 through 034-90)
-├── 034-00  Navigation — General              (DMC-AMPEL360E-EWTW-034-00-...)
-├── 034-10  Air Data                          (DMC-AMPEL360E-EWTW-034-10-...)
-├── 034-20  Inertial Reference                (DMC-AMPEL360E-EWTW-034-20-...)
-├── 034-30  Radio Navigation                  (DMC-AMPEL360E-EWTW-034-30-...)
-├── 034-40  Satellite Navigation              (DMC-AMPEL360E-EWTW-034-40-...)
-├── 034-50  Traffic Surveillance              (DMC-AMPEL360E-EWTW-034-50-...)
-├── 034-60  Terrain Awareness                 (DMC-AMPEL360E-EWTW-034-60-...)
-├── 034-70  Weather Radar & Sensor Fusion     (DMC-AMPEL360E-EWTW-034-70-...)
-├── 034-80  Navigation Monitoring             (DMC-AMPEL360E-EWTW-034-80-...)
-└── 034-90  S1000D CSDB Mapping              (DMC-AMPEL360E-EWTW-034-90-...)
+├── 034-00  Navigation — General              (DMC-<PROGRAMME>-<VARIANT>-034-00-...)
+├── 034-10  Air Data                          (DMC-<PROGRAMME>-<VARIANT>-034-10-...)
+├── 034-20  Inertial Reference                (DMC-<PROGRAMME>-<VARIANT>-034-20-...)
+├── 034-30  Radio Navigation                  (DMC-<PROGRAMME>-<VARIANT>-034-30-...)
+├── 034-40  Satellite Navigation              (DMC-<PROGRAMME>-<VARIANT>-034-40-...)
+├── 034-50  Traffic Surveillance              (DMC-<PROGRAMME>-<VARIANT>-034-50-...)
+├── 034-60  Terrain Awareness                 (DMC-<PROGRAMME>-<VARIANT>-034-60-...)
+├── 034-70  Weather Radar & Sensor Fusion     (DMC-<PROGRAMME>-<VARIANT>-034-70-...)
+├── 034-80  Navigation Monitoring             (DMC-<PROGRAMME>-<VARIANT>-034-80-...)
+└── 034-90  S1000D CSDB Mapping              (DMC-<PROGRAMME>-<VARIANT>-034-90-...)
 ```
 
-**BREX (Business Rules Exchange)**: The BREX document (eWTW-BREX-034-001 TBD) defines programme-specific rules for the ATA 34 CSDB: allowed info codes, mandatory metadata fields, prohibited markup, applicability annotation conventions, and cross-reference rules. All ATA 34 DMs must validate against the eWTW BREX before publication.
+**BREX (Business Rules Exchange)**: The BREX document ([PROGRAMME-VARIANT]-BREX-034-001 TBD) defines programme-specific rules for the ATA 34 CSDB: allowed info codes, mandatory metadata fields, prohibited markup, applicability annotation conventions, and cross-reference rules. All ATA 34 DMs must validate against the [PROGRAMME-VARIANT] BREX before publication.
 
 **DMRL (Data Module Requirements List)**: The DMRL is the master list of all planned DMs for the ATA 34 CSDB. It tracks: DMC (planned); DM title; information type; authoring status (not started / in work / review / approved); applicability code; planned delivery date. The DMRL is the configuration management tool for the technical publication deliverables.
 
@@ -170,11 +159,11 @@ ATA 34 Navigation (SNS 034-00 through 034-90)
 - BREX constraints for ATA 34 CSDB (summary — full BREX is a separate CSDB document)
 - ARINC 615A navigation database update procedures (cross-reference to 034-080)
 - ATA 34 publication hierarchy (AMM, CMM, IPB, WDM, flight manual, operations manual)
-- CSDB applicability management (variant coding: eWTW-100 vs. eWTW-100ER)
+- CSDB applicability management (variant coding: [PROGRAMME-VARIANT]-100 vs. [PROGRAMME-VARIANT]-100ER)
 - DMRL status tracking conventions
 
 ### 4.2 Excluded
-- Full BREX document content — separate CSDB BREX DM (eWTW-BREX-034-001)
+- Full BREX document content — separate CSDB BREX DM ([PROGRAMME-VARIANT]-BREX-034-001)
 - Navigation database content — ATA 22 / Q-DATAGOV
 - S1000D DM authoring (XML markup) — performed in CSDB authoring tools
 - Publication compilation (Interactive Electronic Technical Manual — IETM TBD) — separate programme activity
@@ -184,16 +173,16 @@ ATA 34 Navigation (SNS 034-00 through 034-90)
 
 ## §5 Architecture Description
 
-### S1000D Data Module Code Structure for eWTW ATA 34
+### S1000D Data Module Code Structure for [PROGRAMME-VARIANT] ATA 34
 
-The eWTW DMC format for ATA 34 navigation DMs is:
+The [PROGRAMME-VARIANT] DMC format for ATA 34 navigation DMs is:
 
 ```
-DMC-AMPEL360E-EWTW-034-{SS}-{SSS}-{AC}-{DC}{DCV}-{IC}{ICV}-{ILC}
+DMC-<PROGRAMME>-<VARIANT>-034-{SS}-{SSS}-{AC}-{DC}{DCV}-{IC}{ICV}-{ILC}
 
 Where:
-  AMPEL360E      = Model Identifier Code
-  EWTW           = System Differentiator Code
+  [PROGRAMME-AIRCRAFT]      = Model Identifier Code
+  [PROGRAMME-VARIANT]           = System Differentiator Code
   034            = ATA Chapter (Navigation)
   {SS}           = Sub-System Code (00, 10, 20, 30, 40, 50, 60, 70, 80, 90)
   {SSS}          = Sub-Sub-System Code (default 00 unless further breakdown required)
@@ -203,7 +192,7 @@ Where:
   {ILC}          = Item Location Code (A = airborne, D = ground)
 ```
 
-**Example**: `DMC-AMPEL360E-EWTW-034-10-00-00-00A-040A-A` = Air Data System Description DM for eWTW.
+**Example**: `DMC-<PROGRAMME>-<VARIANT>-034-10-00-00-00A-040A-A` = Air Data System Description DM for [PROGRAMME-VARIANT].
 
 ### Information Code Coverage for ATA 34
 
@@ -229,10 +218,10 @@ Where:
 | F-090-001 | CSDB SNS-to-DMC Mapping — All Subsubjects | Define DMC for every planned DM across 034-00 to 034-80 | Q-DATAGOV / Q-AIR |
 | F-090-002 | DMRL Planning and Status Tracking | Maintain the DMRL for all ATA 34 DMs; authoring status; delivery dates | Q-DATAGOV |
 | F-090-003 | BREX Definition — ATA 34 | Define programme BREX rules for ATA 34 DM set | Q-DATAGOV / Q-AIR |
-| F-090-004 | Applicability Management — Variant Coding | Manage eWTW-100 vs. eWTW-100ER applicability codes across all ATA 34 DMs | Q-DATAGOV |
+| F-090-004 | Applicability Management — Variant Coding | Manage [PROGRAMME-VARIANT]-100 vs. [PROGRAMME-VARIANT]-100ER applicability codes across all ATA 34 DMs | Q-DATAGOV |
 | F-090-005 | ARINC 615A DB Update — Procedure Documentation | Documenting FMGC nav DB update and TAWS terrain DB update as S1000D DMs | Q-DATAGOV / Q-AIR |
 | F-090-006 | Publication Hierarchy Definition | Define AMM / CMM / IPB / WDM structure for ATA 34 | Q-DATAGOV |
-| F-090-007 | CSDB Validation — BREX Check | Validate all ATA 34 DMs against eWTW BREX before publication | Q-DATAGOV |
+| F-090-007 | CSDB Validation — BREX Check | Validate all ATA 34 DMs against [PROGRAMME-VARIANT] BREX before publication | Q-DATAGOV |
 
 ---
 
@@ -246,7 +235,7 @@ flowchart LR
     CSDB --> IPB34[IPB — Illustrated Parts Catalogue]
     CSDB --> WDM34[WDM — Wiring Diagram Manual]
     CSDB --> FLTOPS34[Flight Operations Manual — Nav Procedures]
-    BREX[eWTW BREX-034-001] -->|Business Rules Validation| CSDB
+    BREX[[PROGRAMME-VARIANT] BREX-034-001] -->|Business Rules Validation| CSDB
     DMRL[DMRL — ATA 34 DM List] -->|Authoring Control| CSDB
     AIRAC[AIRAC Navigation DB] -->|ARINC 615A| FMGC[FMGC Nav DB]
     AIRAC -->|ARINC 615A| TAWS[TAWS Terrain DB]
@@ -314,7 +303,7 @@ flowchart LR
 | IF-090-003 | ATA 45 CMC | Publication | CMC maintenance page documentation; fault code cross-reference | ATA 45 → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-090-004 | ARINC 615A Nav DB Update | Publication | AMM data loading procedure | CSDB → AMM 34 | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-090-005 | Supplier CMM (LRU vendors) | Publication | Vendor-supplied Component Maintenance Manuals; integration into IPB | Vendors → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
-| IF-090-006 | BREX Document | CSDB rule set | Programme BREX for all eWTW DMs | BREX → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-090-006 | BREX Document | CSDB rule set | Programme BREX for all [PROGRAMME-VARIANT] DMs | BREX → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-090-007 | IETM platform (TBD) | Digital publication | CSDB DM set compiled into IETM for airline MRO | CSDB → IETM | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ---
@@ -335,9 +324,9 @@ flowchart LR
 ## §12 Monitoring and Diagnostics
 
 - **DMRL status dashboard**: Q-DATAGOV maintains a DMRL status dashboard tracking authoring progress for all ATA 34 DMs. Metrics: number of DMs planned, in work, in review, approved, total CSDB baseline size. Progress is reported at programme milestones (PDR, CDR, First Flight readiness).
-- **BREX validation**: All DMs are validated against the eWTW BREX (TBD) prior to inclusion in the CSDB baseline. BREX validation is automated in the CSDB authoring tool. Validation failures are reported to the DM author for correction.
+- **BREX validation**: All DMs are validated against the [PROGRAMME-VARIANT] BREX (TBD) prior to inclusion in the CSDB baseline. BREX validation is automated in the CSDB authoring tool. Validation failures are reported to the DM author for correction.
 - **Cross-reference integrity**: Internal CSDB cross-references (applicRefs, dmRef links between DMs) are checked for broken references after any DMRL revision. The CSDB tool performs automatic cross-reference integrity checking.
-- **Effectivity coverage**: All DMs are tagged with applicability codes (eWTW-100 and/or eWTW-100ER). Coverage analysis ensures all aircraft variants have complete DM coverage.
+- **Effectivity coverage**: All DMs are tagged with applicability codes ([PROGRAMME-VARIANT]-100 and/or [PROGRAMME-VARIANT]-100ER). Coverage analysis ensures all aircraft variants have complete DM coverage.
 
 ---
 
@@ -346,7 +335,7 @@ flowchart LR
 - **DMRL revision process**: DMRL revisions are controlled by Q-DATAGOV. Changes to the ATA 34 DM set (adding, removing, or retitling DMs) require a DMRL change notice (DCN TBD). All DCNs are tracked in the programme change management system.
 - **AMM ATA 34 revision cycle**: After initial TC release, the AMM ATA 34 chapter is revised on a cycle defined by the airline customer requirements and regulatory feedback. AIRAC-driven revisions (navigation database update procedure) may require bi-monthly or monthly updates TBD.
 - **TAWS terrain DB update documentation**: The ARINC 615A TAWS terrain DB update procedure (AMM 34-60-00-xxx) is revised when the terrain or obstacle database content changes (significant obstacle database updates, terrain database resolution changes TBD). Q-DATAGOV manages the AMM revision in coordination with the TAWS DB supplier.
-- **Supplier CMM integration**: LRU vendor CMMs (DADC, IRU, MMR, DME, GNSS, TCAS, TAWS, WXR) are reviewed and referenced in the eWTW IPB and AMM. Vendor CMM revision tracking is maintained by Q-DATAGOV in the CSDB supplier DM tracking system (TBD).
+- **Supplier CMM integration**: LRU vendor CMMs (DADC, IRU, MMR, DME, GNSS, TCAS, TAWS, WXR) are reviewed and referenced in the [PROGRAMME-VARIANT] IPB and AMM. Vendor CMM revision tracking is maintained by Q-DATAGOV in the CSDB supplier DM tracking system (TBD).
 
 ---
 
@@ -356,16 +345,16 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Applicability Code | DMRL Status | ATLAS Scaffold File |
 |---|---|---|---|---|---|
-| 034-00 | Navigation — General | DMC-AMPEL360E-EWTW-034-00 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-000-Navigation-General.md |
-| 034-10 | Air Data and Flight Environment | DMC-AMPEL360E-EWTW-034-10 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-010-Flight-Environment-Data-and-Air-Data-Interfaces.md |
-| 034-20 | Inertial Reference and AHRS | DMC-AMPEL360E-EWTW-034-20 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-020-Inertial-Reference-and-Attitude-Heading-Systems.md |
-| 034-30 | Radio Navigation | DMC-AMPEL360E-EWTW-034-30 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-030-Radio-Navigation.md |
-| 034-40 | Satellite Navigation | DMC-AMPEL360E-EWTW-034-40 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-040-Satellite-Navigation-and-Augmentation.md |
-| 034-50 | Traffic Surveillance | DMC-AMPEL360E-EWTW-034-50 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-050-Traffic-Surveillance-and-Collision-Avoidance.md |
-| 034-60 | Terrain Awareness | DMC-AMPEL360E-EWTW-034-60 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-060-Terrain-Awareness-and-Proximity-Warning.md |
-| 034-70 | Weather Radar & Sensor Fusion | DMC-AMPEL360E-EWTW-034-70 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-070-Weather-Radar-and-Navigation-Sensor-Fusion.md |
-| 034-80 | Navigation Monitoring | DMC-AMPEL360E-EWTW-034-80 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-080-Navigation-Monitoring-Diagnostics-and-Control-Interfaces.md |
-| 034-90 | S1000D CSDB Mapping | DMC-AMPEL360E-EWTW-034-90 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-090-S1000D-CSDB-Mapping-and-Traceability.md |
+| 034-00 | Navigation — General | DMC-<PROGRAMME>-<VARIANT>-034-00 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-000-Navigation-General.md |
+| 034-10 | Air Data and Flight Environment | DMC-<PROGRAMME>-<VARIANT>-034-10 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-010-Flight-Environment-Data-and-Air-Data-Interfaces.md |
+| 034-20 | Inertial Reference and AHRS | DMC-<PROGRAMME>-<VARIANT>-034-20 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-020-Inertial-Reference-and-Attitude-Heading-Systems.md |
+| 034-30 | Radio Navigation | DMC-<PROGRAMME>-<VARIANT>-034-30 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-030-Radio-Navigation.md |
+| 034-40 | Satellite Navigation | DMC-<PROGRAMME>-<VARIANT>-034-40 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-040-Satellite-Navigation-and-Augmentation.md |
+| 034-50 | Traffic Surveillance | DMC-<PROGRAMME>-<VARIANT>-034-50 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-050-Traffic-Surveillance-and-Collision-Avoidance.md |
+| 034-60 | Terrain Awareness | DMC-<PROGRAMME>-<VARIANT>-034-60 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-060-Terrain-Awareness-and-Proximity-Warning.md |
+| 034-70 | Weather Radar & Sensor Fusion | DMC-<PROGRAMME>-<VARIANT>-034-70 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-070-Weather-Radar-and-Navigation-Sensor-Fusion.md |
+| 034-80 | Navigation Monitoring | DMC-<PROGRAMME>-<VARIANT>-034-80 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-080-Navigation-Monitoring-Diagnostics-and-Control-Interfaces.md |
+| 034-90 | S1000D CSDB Mapping | DMC-<PROGRAMME>-<VARIANT>-034-90 | ALL | <img src="https://img.shields.io/badge/DRAFT-yellow"> | 034-090-S1000D-CSDB-Mapping-and-Traceability.md |
 
 ### 14.2 Recommended Full DM Set Matrix — ATA 34 (All Subsubjects × All Info Codes)
 
@@ -386,7 +375,7 @@ flowchart LR
 
 | BREX Rule ID | Rule Description | Applicability |
 |---|---|---|
-| BREX-034-001 | All ATA 34 DMs must include the `applicCrossRefTable` for eWTW-100 and eWTW-100ER | All DMs |
+| BREX-034-001 | All ATA 34 DMs must include the `applicCrossRefTable` for [PROGRAMME-VARIANT]-100 and [PROGRAMME-VARIANT]-100ER | All DMs |
 | BREX-034-002 | Info code 040 (description) is mandatory for every SNS code | All SNS codes |
 | BREX-034-003 | Info code 520 (fault isolation) DMs must reference the AMM 34 fault code table | All SNS codes with LRUs |
 | BREX-034-004 | Info code 720 (R&I) DMs must specify torque values and special tool references per AMM standard | All LRU SNS codes |
@@ -414,7 +403,7 @@ flowchart LR
 
 ### 15.4 Data Footprint
 - DMRL spreadsheet: TBD (Q-DATAGOV PLM system TBD)
-- BREX document: 1 CSDB DM (eWTW-BREX-034-001) — TBD pages
+- BREX document: 1 CSDB DM ([PROGRAMME-VARIANT]-BREX-034-001) — TBD pages
 - Applicability code database: aircraft variant configuration for effectivity coding
 
 ---
@@ -439,7 +428,7 @@ flowchart LR
 | VV-090-001 | DMRL completeness — all ATA 34 LRUs covered | DMRL review against ATA 34 system definition | All LRUs have info codes 040, 520, 720, 941 planned | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-090-002 | BREX validation — all DMs | CSDB authoring tool BREX validation | Zero BREX failures in CSDB baseline | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-090-003 | Cross-reference integrity | CSDB tool cross-reference check | Zero broken DM references | <img src="https://img.shields.io/badge/TBD-red"> |
-| VV-090-004 | Applicability coverage — eWTW-100 and eWTW-100ER | Effectivity coverage analysis | All DMs have correct applicability coding for both variants | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-090-004 | Applicability coverage — [PROGRAMME-VARIANT]-100 and [PROGRAMME-VARIANT]-100ER | Effectivity coverage analysis | All DMs have correct applicability coding for both variants | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-090-005 | AMM ATA 34 ICA completeness | Review against CS-25 §25.1529 ICA requirements | All maintenance tasks documented; special tool requirements listed | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-090-006 | ARINC 615A update procedure — documentation review | Technical review of AMM 34-60, 34-80 DB update DMs | Procedure covers AIRAC go/no-go; BREX rule BREX-034-006 satisfied | <img src="https://img.shields.io/badge/TBD-red"> |
 
@@ -501,7 +490,7 @@ flowchart LR
 | Issue ID | Description | Owner | Priority | Status |
 |---|---|---|---|---|
 | OI-090-001 | DMRL freeze milestone — define CDR date at which the ATA 34 DMRL is frozen; pre-CDR DMRL changes are frequent; post-CDR changes require DCN | Q-DATAGOV / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-090-002 | BREX document — eWTW-BREX-034-001 — not yet authored; programme BREX to be defined including all eWTW-specific rules for navigation chapter | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-090-002 | BREX document — [PROGRAMME-VARIANT]-BREX-034-001 — not yet authored; programme BREX to be defined including all [PROGRAMME-VARIANT]-specific rules for navigation chapter | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-090-003 | IETM platform selection — define IETM delivery format for airlines (S1000D IETM Type 5 TBD; PDF TBD; web-based TBD); affects DM markup requirements | Q-DATAGOV / ORB-PMO | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-090-004 | Composite fuselage RF transparency — publication impact: AMM maintenance procedures for radio altimeter antennas and navigation antennas on CFRP fuselage require specialist inspection and repair procedures TBD | Q-MECHANICS / Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-090-005 | MEMS vs. FOG IRS decision (cross-reference 034-020) — affects IRU R&I DM (720) content; torque specifications and alignment procedures differ | Q-AIR / Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |

@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Battery Cell and Module Design
@@ -33,15 +35,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-010"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document describes the NMC 811 cell specification, module assembly architecture, and cell-level monitoring design for the AMPEL360E eWTW battery system. It defines the physical and electrochemical basis of the energy storage system and serves as the primary reference for cell and module qualification activities.
 
+This document defines the agnostic ATLAS standard-level architecture context for `Battery Cell and Module Design`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
 
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-The AMPEL360E battery system uses large-format prismatic NMC 811 cells with a nominal capacity of ~100 Ah and a nominal cell voltage of 3.7 V. Each cell incorporates an integrated current interrupt device (CID) and a safety vent, providing first-level protection against overpressure events. The NMC 811 chemistry achieves approximately 250 Wh/kg at cell level, enabling the total pack to meet the 500 kWh capacity target within the available structural envelope.
+The [PROGRAMME-AIRCRAFT] battery system uses large-format prismatic <BATTERY-CHEMISTRY> cells with a nominal capacity of ~100 Ah and a nominal cell voltage of 3.7 V. Each cell incorporates an integrated current interrupt device (CID) and a safety vent, providing first-level protection against overpressure events. The <BATTERY-CHEMISTRY> chemistry achieves approximately 250 Wh/kg at cell level, enabling the total pack to meet the <ENERGY-CAPACITY> capacity target within the available structural envelope.
 
 Cells are assembled into modules of 24 cells configured in a 12S2P arrangement (12 cells in series, 2 in parallel), giving a module nominal voltage of approximately 44.4 V and a module capacity of ~8.9 kWh. Each module contains a cell supervision circuit (CSC) that measures individual cell voltages (±2 mV accuracy) and temperatures (±1°C accuracy) at 100 ms intervals. The CSC communicates with the pack-level BMS via an isolated CAN bus, providing cell-level granularity for SoC estimation and fault detection.
 
@@ -59,7 +69,7 @@ Module housings are constructed from fire-resistant aerospace aluminium alloy wi
 ## §5 System Context
 ```mermaid
 graph TD
-    CELL[NMC 811 Prismatic Cell 100Ah] -->|24 cells| MODULE[Battery Module 12S2P ~44V 8.9kWh]
+    CELL[<BATTERY-CHEMISTRY> Prismatic Cell 100Ah] -->|24 cells| MODULE[Battery Module 12S2P ~44V 8.9kWh]
     MODULE -->|CSC telemetry| BMS[BMS DAL-B]
     MODULE -->|cooling interface| COOLPLATE[Cooling Plate]
     COOLPLATE -->|glycol loop| THERMAL[Thermal Management System]
@@ -86,7 +96,7 @@ graph TD
 ## §7 Components and LRUs
 | LRU ID | Name | P/N | Qty per pack | Location |
 |---|---|---|---|---|
-| LRU-072-010-01 | NMC 811 Prismatic Cell 100 Ah | CELL-NMC811-100AH | 1344 | Within modules |
+| LRU-072-010-01 | <BATTERY-CHEMISTRY> Prismatic Cell 100 Ah | CELL-NMC811-100AH | 1344 | Within modules |
 | LRU-072-010-02 | Battery Module Assembly 12S2P | MOD-12S2P-9KWH | 56 | Per pack (28/pack) |
 | LRU-072-010-03 | Cell Supervision Circuit (CSC) | CSC-24CH-CANISO | 56 | One per module |
 | LRU-072-010-04 | Module Interconnect Busbar | BUS-MOD-LASWELD | 56 | Between modules |
@@ -129,10 +139,10 @@ graph TD
 ## §12 Maintenance and Diagnostics
 | Task | Interval | Tool | Reference |
 |---|---|---|---|
-| CSC self-test and calibration | 500 FH | GSE-BMS-DIAG-01 | CMM 072-10-03 |
-| Cell voltage balance check | 200 FH | GSE-BMS-DIAG-01 | AMM 072-10-02 |
-| Module housing visual inspection | C-Check | Visual / borescope | AMM 072-10-04 |
-| Cell impedance spectroscopy scan | 1000 FH | EIS analyser kit | CMM 072-10-05 |
+| CSC self-test and calibration | 500 FH | GSE-BMS-DIAG-01 | CMM [NODE]-[TASK] |
+| Cell voltage balance check | 200 FH | GSE-BMS-DIAG-01 | AMM [NODE]-[TASK] |
+| Module housing visual inspection | C-Check | Visual / borescope | AMM [NODE]-[TASK] |
+| Cell impedance spectroscopy scan | 1000 FH | EIS analyser kit | CMM [NODE]-[TASK] |
 
 ## §13 Footprint
 | Metric | Value |
@@ -168,7 +178,7 @@ graph TD
 | CSC | Cell Supervision Circuit — per-module cell monitoring PCB |
 | DoD | Depth of Discharge |
 | EIS | Electrochemical Impedance Spectroscopy |
-| NMC 811 | Nickel-Manganese-Cobalt 8:1:1 cathode chemistry |
+| <BATTERY-CHEMISTRY> | <BATTERY-CHEMISTRY> cathode chemistry |
 | Prismatic | Flat-sided cell format (vs. cylindrical or pouch) |
 | SOA | Safe Operating Area — voltage, current, temperature boundaries |
 | SoC | State of Charge |

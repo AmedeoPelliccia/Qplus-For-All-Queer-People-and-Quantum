@@ -21,6 +21,8 @@ governance_class: baseline
 version: 1.1.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 080-089 · Section 08 · Subsection 087 — Open Rotor and Counter-Rotating
@@ -33,7 +35,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 ## 2. Scope
 
-- Documents the **ORCR (Open Rotor and Counter-Rotating)** propulsor subsystem for the AMPEL360E eWTW, covering the contra-rotating unducted fan (CRUF) configuration with 12-blade Forward Rotor (FR), 10-blade Aft Rotor (AR), Differential Planetary Gearbox (DPGB), and Open-Rotor Supervisory Control Unit (ORSCU DAL B).
+- Documents the **ORCR (Open Rotor and Counter-Rotating)** propulsor subsystem for the programme-defined aircraft type, covering the contra-rotating unducted fan (CRUF) configuration with 12-blade Forward Rotor (FR), 10-blade Aft Rotor (AR), Differential Planetary Gearbox (DPGB), and Open-Rotor Supervisory Control Unit (ORSCU DAL B).
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
 - All ten subsubject documents (`00`–`90`) are now populated and active.
 

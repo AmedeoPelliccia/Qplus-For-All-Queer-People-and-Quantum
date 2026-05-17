@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Main Landing Gear"
 file_name: "032-010-Main-Landing-Gear.md"
 sns_reference: "032-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-032-10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "ATA 32"
   - "Main Landing Gear"
   - "MLG"
@@ -97,10 +97,12 @@ keywords:
   - "EMB"
   - "bogie"
   - "WoW"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 032-010 — Main Landing Gear
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -112,28 +114,20 @@ All internal links use relative paths. External regulatory references use anchor
 
 ## §1 Purpose
 
-This document describes the Main Landing Gear (MLG) assemblies of the AMPEL360e eWTW. Two MLG assemblies — port and starboard — are installed in symmetrical underwing belly pods. Each assembly provides structural ground support, absorbs landing impact energy via an oleo-pneumatic shock absorber, retracts inboard and aft into the gear bay via an Electromechanical Actuator (EMA), and provides braking via two Electromechanical Brakes (EMBs), one per wheel. The MLG is the primary structural element carrying the majority of the aircraft's ground reactions during landing, taxiing, and take-off roll.
+This document defines the agnostic ATLAS standard-level architecture context for `032-010 — Main Landing Gear`.
 
-The MLG CFRP gear beam is a key eWTW differentiator, offering a mass reduction over conventional steel or aluminium alloy forgings. Each bogie carries two wheels in tandem configuration (dual-wheel bogie). A Weight-on-Wheels (WoW) proximity switch assembly (primary and redundant) is fitted at each MLG leg, providing the critical ground/air discrete used by the LGCIU, BSCU, FWC, GPWS/TAWS, and multiple other aircraft systems.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 032-010 — Main Landing Gear |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| MLG Configuration | 2× assemblies (port / starboard); 2-wheel bogie each; CFRP beam |
-| Actuation | EMA for retraction/extension; EMBs for braking (2 per bogie) |
-| Wheels per MLG | 2 (tandem bogie) |
-| Certification Basis | CS-25 (EASA), FAR Part 25 |
-| SNS Reference | 032-10 |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 Each MLG assembly consists of: (1) a CFRP main gear beam forming the primary structural member; (2) an oleo-pneumatic shock absorber (outer cylinder fixed to beam, inner cylinder carrying the axle/bogie); (3) a two-wheel bogie with two main wheels in tandem; (4) an EMA for gear retraction and extension acting on the gear trunnion mechanism; (5) two EMBs, one per wheel; (6) gear door EMA actuators (inboard and outboard doors); (7) tyre pressure sensors on each wheel hub (TPIS); (8) wheel speed sensors on each wheel (for antiskid); and (9) WoW proximity switches on the shock absorber outer/inner cylinder.
@@ -320,7 +314,7 @@ CFRP gear beam inspection programme: ultrasonic C-scan and/or thermographic insp
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 032-10 | Main Landing Gear | DMC-AMPEL360E-EWTW-032-10 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-10 | Main Landing Gear | DMC-<PROGRAMME>-<VARIANT>-032-10 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 
@@ -393,7 +387,7 @@ CFRP gear beam inspection programme: ultrasonic C-scan and/or thermographic insp
 | Term | Definition |
 |---|---|
 | ACN/PCN | Aircraft Classification Number / Pavement Classification Number — method to describe aircraft undercarriage loading relative to pavement bearing strength |
-| Bogie | The undercarriage beam carrying two or more wheels in tandem; on eWTW MLG, a two-wheel tandem bogie |
+| Bogie | The undercarriage beam carrying two or more wheels in tandem; on [PROGRAMME-VARIANT] MLG, a two-wheel tandem bogie |
 | CFRP | Carbon Fibre Reinforced Polymer — composite material used for the MLG beam; high stiffness-to-weight ratio; requires composite-specific NDT |
 | Downlock | Passive mechanical device locking the gear in the extended position; disengaged by EMA during retraction |
 | DSG | Design Service Goal — the structural design life (in flight cycles and hours) of the aircraft; drives fatigue and damage tolerance programmes |

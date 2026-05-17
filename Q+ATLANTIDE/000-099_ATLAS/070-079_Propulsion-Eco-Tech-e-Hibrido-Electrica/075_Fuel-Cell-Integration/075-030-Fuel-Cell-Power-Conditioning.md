@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-030-FUEL-CELL-POWER-CONDITIONING
      ATA 75 · Fuel Cell Power Conditioning
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Cell Power Conditioning
@@ -47,25 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-030"
 
 ## §1 Purpose
 
-This document defines the Fuel Cell Power Converter (FCPC) subsystem of the AMPEL360E eWTW, which conditions the raw DC output of the PEMFC stack cluster for delivery to the aircraft HVDC 270 V primary bus. The FCPC is a 200 kW bidirectional Dual Active Bridge (DAB) DC-DC converter using Silicon Carbide (SiC) MOSFETs, converting the stack cluster output voltage of 100–125 V DC to a regulated 270 V HVDC output compliant with MIL-STD-704F and RTCA DO-160G.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Cell Power Conditioning`.
 
-The FCPC provides galvanic isolation of ≥10 MΩ between the PEMFC stack low-voltage domain and the aircraft HVDC bus, preventing ground fault propagation. It implements output current ramping (≤50 A/s) to protect the PEMFC membrane from rapid electrochemical stress. Power transfer is controlled by the FCCU via a high-speed fibre-optic isolated control link operating at 1 kHz, allowing tight integration with the FCCU stoichiometry and thermal control loops.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The FCPC includes an integrated gate driver board, a high-frequency transformer (HFT) with ferrite core operating at 100 kHz, input and output EMI filters, an output SSPC-FC-01 solid-state power controller for bus connection, and a comprehensive BITE system reporting to the FCCU via ARINC 429.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-030 — Fuel Cell Power Conditioning |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The DAB DC-DC converter topology operates with two active H-bridges — a primary-side bridge connected to the PEMFC stack cluster busbar (100–125 V input) and a secondary-side bridge connected to the HVDC 270 V bus — coupled through a high-frequency transformer operating at 100 kHz. Phase-shift modulation (PSM) between the two bridges controls the direction and magnitude of power transfer. At rated 200 kW output, the primary-side H-bridge switches at 100 kHz with SiC MOSFET devices (1,200 V, 400 A rating) providing low switching losses compared to silicon IGBTs.

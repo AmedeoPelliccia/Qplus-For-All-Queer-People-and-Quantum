@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Defines the monitoring and control interfaces available during AMPEL360E eWTW storage and preservation. Covers the remote aircraft health monitoring capability through the ground HVDC power interface, HVDC battery management system remote monitoring, and the CMS maintenance messages generated during stored aircraft health checks.
+Defines the monitoring and control interfaces available during programme-defined aircraft type storage and preservation. Covers the remote aircraft health monitoring capability through the ground HVDC power interface, HVDC battery management system remote monitoring, and the CMS maintenance messages generated during stored aircraft health checks.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 10 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,7 +72,7 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Storage Monitoring Diagnostics and Control Interfaces** node describes the PSMM (Parking and Storage Management Module) architecture and its interfaces for monitoring and managing the AMPEL360E eWTW during all ground non-operational phases. The PSMM is a DO-178C DAL D application hosted on the CPIOM-G (Ground Systems CPIOM, same LRU as the GMMS application), ARINC 664 Part 7 (AFDX) connected. PSMM supervises: (1) traction battery SoC and cell health (via CAN to BMS); (2) HVDC GPU connection status and charge current; (3) ambient temperature and relative humidity (from aircraft OAT and interior sensors); (4) tyre pressure and temperature (from TPMS, 4 × main gear + 1 × nose gear); (5) landing gear weight-on-wheels; (6) EPB engagement state (from EBAU position feedback); (7) chock detection (from capacitive ground-clearance sensors at each gear leg); (8) engine core vibration (from MEMS accelerometers on each engine mount, enabled during storage to detect anomalous ramp activity or seismic events).
+The **Storage Monitoring Diagnostics and Control Interfaces** node describes the PSMM (Parking and Storage Management Module) architecture and its interfaces for monitoring and managing the programme-defined aircraft type during all ground non-operational phases. The PSMM is a DO-178C DAL D application hosted on the CPIOM-G (Ground Systems CPIOM, same LRU as the GMMS application), ARINC 664 Part 7 (AFDX) connected. PSMM supervises: (1) traction battery SoC and cell health (via CAN to BMS); (2) HVDC GPU connection status and charge current; (3) ambient temperature and relative humidity (from aircraft OAT and interior sensors); (4) tyre pressure and temperature (from TPMS, 4 × main gear + 1 × nose gear); (5) landing gear weight-on-wheels; (6) EPB engagement state (from EBAU position feedback); (7) chock detection (from capacitive ground-clearance sensors at each gear leg); (8) engine core vibration (from MEMS accelerometers on each engine mount, enabled during storage to detect anomalous ramp activity or seismic events).
 
 PSMM operator interfaces: (1) GMMS maintenance tablet (primary, iOS/Android app, WGI/Wi-Fi link, displays live dashboard with alerts); (2) GAIA-QA web portal (remote monitoring, trend history, report generation); (3) SMS/email alert gateway (configurable alert thresholds, notifies designated maintenance controller). PSMM diagnostic features: auto-generation of daily storage health summary (PDF export); 24-month on-board data history (non-volatile EEPROM on CPIOM-G); remote FADEC storage-mode command via ACARS; and over-the-air (OTA) PSMM software update capability via WGI datalink (requires dual engineer authorisation per Q-DATAGOV OTA-SWI-001).
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the storage monitoring diagnostics and control interfaces scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Storage Monitoring Diagnostics and Control Interfaces** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Storage Monitoring Diagnostics and Control Interfaces** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `009` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `080` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-009-080` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-009-080` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

@@ -31,6 +31,8 @@ ata_reference: "ATA iSpec 2200"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 070 — Thermal, Environmental and Structural Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the thermal management, environmental qualification, and structural integration requirements for the Emergency Solar Panel System (ESPS) of the AMPEL360E eWTW aircraft. It covers panel operating temperature range, resistive panel heating for icing prevention, DO-160G environmental test categories, aerodynamic drag impact, structural attachment to wing upper surface, and flutter margin analysis per CS-25 §25.629.
+This document defines the thermal management, environmental qualification, and structural integration requirements for the Emergency Solar Panel System (ESPS) of the programme-defined aircraft type. It covers panel operating temperature range, resistive panel heating for icing prevention, DO-160G environmental test categories, aerodynamic drag impact, structural attachment to wing upper surface, and flutter margin analysis per CS-25 §25.629.
 
 Key governance areas:
 - Panel thermal management via resistive kapton heating elements.
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 43 (ATLAS 043) — Emergency Solar Panel System |
 | Certification Basis | CS-25 Amendment 28; CS-25 §25.629; CS-25 §25.571 |
 | Applicable Standards | DO-160G; CS-25 §25.629; CS-25 §25.571; CS-25 §25.631 |
@@ -334,9 +336,9 @@ graph LR
 |--------|----------|---------|--------|
 | REF-043-07-01 | ESPS General (043-000) | 1.0 | TBD |
 | REF-043-07-02 | ESPS Panel Arrays (043-010) | 1.0 | TBD |
-| REF-043-07-03 | AMPEL360E Flutter Analysis Report | TBD | TBD |
-| REF-043-07-04 | AMPEL360E Structural Loads Report | TBD | TBD |
-| REF-043-07-05 | AMPEL360E Wing Structural Design Data Package | TBD | TBD |
+| REF-043-07-03 | [PROGRAMME-AIRCRAFT] Flutter Analysis Report | TBD | TBD |
+| REF-043-07-04 | [PROGRAMME-AIRCRAFT] Structural Loads Report | TBD | TBD |
+| REF-043-07-05 | [PROGRAMME-AIRCRAFT] Wing Structural Design Data Package | TBD | TBD |
 
 ---
 

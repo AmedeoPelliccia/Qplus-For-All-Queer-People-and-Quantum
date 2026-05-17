@@ -6,10 +6,10 @@ subsubject: "020"
 subsubject_title: "Circuit Breaker and Protection Panels"
 file_name: "039-020-Circuit-Breaker-and-Protection-Panels.md"
 sns_reference: "039-20"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-20"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-20"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "Circuit Breaker Panel"
@@ -94,10 +94,12 @@ keywords:
   - "CBP-2"
   - "270 VDC"
   - "CS-25.1353"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-020 — Circuit Breaker and Protection Panels
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,45 +109,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links. External regulatory references (CS-25, DO-160G) are cited by identifier only. Internal DMC cross-references follow `DMC-AMPEL360E-EWTW-039-20-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters; <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
+All cross-references within this document use relative Markdown links. External regulatory references (CS-25, DO-160G) are cited by identifier only. Internal DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-039-20-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters; <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
 
 ---
 
 ## §1 Purpose
 
-This document describes the **Circuit Breaker and Protection Panels** (subsubject 039-020) of the AMPEL360e eWTW. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `039-020 — Circuit Breaker and Protection Panels`.
 
-1. CBP-1 (aft overhead panel — crew-accessible circuit breakers for cabin, galley, and flight deck circuits).
-2. CBP-2 (aft E/E bay — avionics and system circuit breakers).
-3. CBP-3 (forward under-floor — TBD, pending OI-039-007).
-4. Circuit breaker types: thermal-magnetic (conventional) and Solid-State Circuit Breakers (SSCBs — under evaluation, OI-039-001).
-5. Trip-free design principle and colour-coded collar convention.
-6. High-voltage DC (270 VDC) branch protection: separate HVDC contactor/fuse scheme TBD.
-7. Remote reset capability of SSCBs via maintenance terminal (ground only, per certification).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter / Subsubject | 39 — 039-020 Circuit Breaker and Protection Panels |
-| Document Tier | Level 3 — Component/Assembly Description |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-
-Includes all CBPs, CB assemblies, SSCB modules, and associated panel structures. Excludes:
-- Power distribution units and contactors (→ 039-030)
-- HVDC main bus protection (evaluated under ATA 24 / OI-039-005)
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 CBP Architecture
 
-The eWTW carries three circuit breaker panel locations:
+The [PROGRAMME-VARIANT] carries three circuit breaker panel locations:
 
 | CBP | Location | Access | Voltage Levels Served | CB Count |
 |---|---|---|---|---|
@@ -186,7 +174,7 @@ All CBP circuit breakers are identified by a colour-coded collar on the CB butto
 | Collar Colour | System (ATA Chapter) | Example |
 |---|---|---|
 | White | Lights / Cabin (ATA 33) | Cabin lighting circuits |
-| Green | Flight controls (ATA 27 / 29) | EMA control circuits (eWTW) |
+| Green | Flight controls (ATA 27 / 29) | EMA control circuits ([PROGRAMME-VARIANT]) |
 | Blue | Avionics / Instruments (ATA 31/34/42) | IMA module power |
 | Red | Fire protection (ATA 26) | Fire detection loop power |
 | Yellow | Fuel (ATA 28) | Fuel pump power |
@@ -410,12 +398,12 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| CBP description | DMC-AMPEL360E-EWTW-039-20-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| CB reset procedure | DMC-AMPEL360E-EWTW-039-20-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| CB (TM-CB) replacement | DMC-AMPEL360E-EWTW-039-20-00A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| SSCB module replacement | DMC-AMPEL360E-EWTW-039-20-01A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| SSCB log download | DMC-AMPEL360E-EWTW-039-20-00A-920A-A | 920 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — CBP | DMC-AMPEL360E-EWTW-039-20-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| CBP description | DMC-<PROGRAMME>-<VARIANT>-039-20-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| CB reset procedure | DMC-<PROGRAMME>-<VARIANT>-039-20-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| CB (TM-CB) replacement | DMC-<PROGRAMME>-<VARIANT>-039-20-00A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| SSCB module replacement | DMC-<PROGRAMME>-<VARIANT>-039-20-01A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| SSCB log download | DMC-<PROGRAMME>-<VARIANT>-039-20-00A-920A-A | 920 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — CBP | DMC-<PROGRAMME>-<VARIANT>-039-20-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -482,7 +470,7 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 | Collar | Colour-coded ring on CB button identifying ATA system group for maintenance and operations identification |
 | ELA | Electrical Load Analysis — systematic accounting of all aircraft electrical loads used to size buses, CBs, and wiring |
 | TCC | Time-Current Curve — curve defining CB trip time as a function of fault current level |
-| HVDC | High Voltage DC — the eWTW 270 VDC bus architecture (vs. conventional 28 VDC and 115 VAC) |
+| HVDC | High Voltage DC — the [PROGRAMME-VARIANT] 270 VDC bus architecture (vs. conventional 28 VDC and 115 VAC) |
 | Remote reset | Ability to close a tripped SSCB via a data bus command rather than physical manual reset; permitted on ground only |
 | WOW | Weight on Wheels — landing gear compressed sensor signal indicating aircraft is on ground |
 | Non-volatile memory | Electronic memory retaining data when power is removed — used in SSCB controller for trip log storage |
@@ -536,5 +524,5 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW CBP context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] CBP context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

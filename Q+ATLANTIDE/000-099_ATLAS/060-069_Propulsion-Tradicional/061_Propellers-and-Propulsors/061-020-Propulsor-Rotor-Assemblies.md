@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0061-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-061-020-PROPULSOR-ROTOR-ASSEMBLIES
      ATA 61 · Propulsor Rotor Assemblies
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propulsor Rotor Assemblies
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-020"
 
 ## §1 Purpose
 
-This document defines the architecture and controlled design definition for propulsor rotor assemblies, specifically ducted fan (EDF) configurations that may be integrated into the AMPEL360E eWTW supplementary propulsion system. Unlike open propellers, ducted fan assemblies include the rotor, stator, and duct casing as an integrated aeromechanical unit.
+This document defines the agnostic ATLAS standard-level architecture context for `Propulsor Rotor Assemblies`.
 
-The EDF rotor assembly for AMPEL360E Class B propulsion operates from a HVDC motor drive (ATA 24 electrical bus) and is governed by the Electric Propulsion Control Unit (EPCU) integrated in the FADEC/ECU architecture. Duct tip clearance, rotor-stator axial gap, and containment ring integrity are the primary airworthiness design parameters.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 61-020 — Propulsor Rotor Assemblies |
-| Certification basis | EASA CS-25 Amendment 27+ |
-| S1000D SNS | 061-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `061` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The EDF rotor assembly comprises:
@@ -223,7 +222,7 @@ flowchart TB
 | **Axial-flux motor** | Electric motor topology where magnetic flux runs axially; high power density; used in EDF hub integration. |
 | **EGV** | Exit Guide Vane — fixed stator vane downstream of rotor that straightens the swirling flow and recovers swirl energy. |
 | **Containment ring** | Aramid-fibre wound structure around the fan rotor plane designed to contain and arrest a released blade. |
-| **HVDC** | High Voltage Direct Current — 270 V DC electrical bus used on AMPEL360E eWTW. |
+| **HVDC** | High Voltage Direct Current — 270 V DC electrical bus used on programme-defined aircraft type. |
 | **Blade-out event** | Release of a rotor blade during operation; the containment ring must prevent debris from exiting the duct. |
 | **Derate** | Reduction of commanded power to protect a component from overload; commanded by EPCU protection logic. |
 | **Tip clearance** | Radial gap between rotor blade tip and duct inner wall; affects aerodynamic efficiency and containment design. |
@@ -269,4 +268,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

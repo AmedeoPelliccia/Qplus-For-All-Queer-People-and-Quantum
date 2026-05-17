@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Water and Waste Indication and Warning"
 file_name: "038-060-Water-and-Waste-Indication-and-Warning.md"
 sns_reference: "038-06"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-06"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-038-06"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -79,7 +79,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 38"
   - "Water and Waste"
@@ -94,10 +94,12 @@ keywords:
   - "UV FAULT"
   - "galley panel"
   - "CMC"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 038-060 — Water and Waste Indication and Warning
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,37 +109,26 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-06-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-038-06-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document describes the **Water and Waste Indication and Warning** subsystem of ATA 38 for the **AMPEL360e eWTW**. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `038-060 — Water and Waste Indication and Warning`.
 
-1. Cockpit ECAM indications: potable water quantity, waste tank fill level.
-2. Crew Alerting System (CAS) messages for ATA 38 — amber warnings, cautions, and advisories.
-3. Galley operator panel indication (optional): water quantity gauge.
-4. Lavatory indication: flush ready indicator (optional).
-5. Maintenance indications: EWP run hours, EWH energy consumption, UV lamp hours, mast heater status, CMC fault log.
-6. Signal sources: all ATA 38 sensors (level sensor, overflow sensor, temperature sensors, EWP status, EWH status, UV status, EMH status).
-7. Data bus integration: AFDX or ARINC 429 TBD.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants (unless noted) |
-| ATA Chapter/Subsubject | 038-060 — Indication and Warning |
-| Document Tier | Level 2 — SDD |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Parent Document | [038-000](./038-000-Water-and-Waste-General.md) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Indication Architecture
@@ -407,11 +398,11 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description — indication & warning | DMC-AMPEL360E-EWTW-038-06-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| CAS message list | DMC-AMPEL360E-EWTW-038-06-00A-040B-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| ECAM page description | DMC-AMPEL360E-EWTW-038-06-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — indication system | DMC-AMPEL360E-EWTW-038-06-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| BITE / ECAM test procedure | DMC-AMPEL360E-EWTW-038-06-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description — indication & warning | DMC-<PROGRAMME>-<VARIANT>-038-06-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| CAS message list | DMC-<PROGRAMME>-<VARIANT>-038-06-00A-040B-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| ECAM page description | DMC-<PROGRAMME>-<VARIANT>-038-06-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — indication system | DMC-<PROGRAMME>-<VARIANT>-038-06-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| BITE / ECAM test procedure | DMC-<PROGRAMME>-<VARIANT>-038-06-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 

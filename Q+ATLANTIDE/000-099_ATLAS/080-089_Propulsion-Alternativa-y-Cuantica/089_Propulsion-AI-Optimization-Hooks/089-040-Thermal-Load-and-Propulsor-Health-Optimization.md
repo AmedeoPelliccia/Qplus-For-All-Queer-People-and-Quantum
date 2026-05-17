@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0089-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-089-040-THERMAL-LOAD-AND-PROPULSOR-HEALTH-OPTIMIZATION
      ATLAS-089 (Propulsion AI Optimization Hooks) · Thermal Load and Propulsor Health Optimization
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Thermal Load and Propulsor Health Optimization
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-040"
 
 ## §1 Purpose
 
-ATLAS subsubject 089-040 defines the Thermal Load Balancer (TLB) and the Propulsor Health Optimization (PHO) algorithms embedded in the AIOCU. It covers the AI thermal model architecture, the sensor integration from the ATLAS-080 quantum sensing network, the load redistribution strategy for preventing thermal exceedances across the DEP/BLI motor set, and the health-state estimation models for predictive propulsor maintenance optimization.
+This document defines the agnostic ATLAS standard-level architecture context for `Thermal Load and Propulsor Health Optimization`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Thermal Sensor Integration
 
 The TLB ingests thermal data from the ATLAS-080 quantum sensing network (46 nodes) and supplementary conventional thermometry:

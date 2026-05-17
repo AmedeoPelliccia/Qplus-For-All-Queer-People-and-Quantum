@@ -31,6 +31,8 @@ ata_reference: "ATA 49 — Airborne Auxiliary Power"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 010 — Auxiliary Power Unit Architecture
@@ -43,13 +45,13 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-This document defines the architectural decomposition of the APU system on the **AMPEL360E eWTW** aircraft, with specific focus on the dual-channel APCU design, the gas turbine core (GTC) component hierarchy, the integrated Motor Starter/Generator (MSG), the AFDX communications backbone, and the Integrated Modular Avionics (IMA) partition boundary.
+This document defines the architectural decomposition of the APU system on the **programme-defined aircraft type** aircraft, with specific focus on the dual-channel APCU design, the gas turbine core (GTC) component hierarchy, the integrated Motor Starter/Generator (MSG), the AFDX communications backbone, and the Integrated Modular Avionics (IMA) partition boundary.
 
-The APU architecture on the AMPEL360E eWTW reflects a deliberate design philosophy to eliminate all pneumatic load interfaces and focus the APU solely on HVDC electrical generation. This results in a fundamentally different LRU set compared to conventional APUs: there is no pneumatic manifold, no load control valve, no pre-cooler, and no surge control valve. Instead, the architecture adds an APU Transformer Rectifier Unit (ATRU), HVDC bus tie protection logic, and enhanced GCU regulation firmware, all coordinated through the APCU's dual-channel control architecture.
+The APU architecture on the programme-defined aircraft type reflects a deliberate design philosophy to eliminate all pneumatic load interfaces and focus the APU solely on HVDC electrical generation. This results in a fundamentally different LRU set compared to conventional APUs: there is no pneumatic manifold, no load control valve, no pre-cooler, and no surge control valve. Instead, the architecture adds an APU Transformer Rectifier Unit (ATRU), HVDC bus tie protection logic, and enhanced GCU regulation firmware, all coordinated through the APCU's dual-channel control architecture.
 
 The APCU dual-channel design (Channel A active, Channel B standby) is the cornerstone of APU fault tolerance. Both channels receive identical sensor inputs simultaneously; Channel A generates all command outputs while Channel B monitors the inputs and A's outputs for discrepancies. Cross-channel comparison logic detects failures in sensor processing, actuation commands, and internal APCU self-tests (PBIT/CBIT). When a critical discrepancy is detected, Channel B assumes authority within one APCU computation cycle (< 10 ms), maintaining APU protection without interruption. The dual-channel design supports DO-178C DAL C assurance by providing architectural mitigation against common-cause failure in the software partition, supplemented by hardware diversity in the channel A and B processor implementations.
 
-The no-bleed philosophy of the AMPEL360E eWTW fundamentally simplifies the APU pneumatic interface while increasing demands on the electrical generation architecture. A conventional APU typically splits its power output between pneumatic (dominant, for engine starting and ECS) and electrical (secondary). On the eWTW, 100 % of APU useful power output is electrical — requiring higher-rating MSG and ATRU units, more sophisticated GCU voltage regulation across the full load range (0 to 150 kVA), and closer coordination with the ATA 24 electrical power management system. This architectural document traces all these implications through the LRU set, interface matrix, and performance requirements.
+The no-bleed philosophy of the programme-defined aircraft type fundamentally simplifies the APU pneumatic interface while increasing demands on the electrical generation architecture. A conventional APU typically splits its power output between pneumatic (dominant, for engine starting and ECS) and electrical (secondary). On the [PROGRAMME-VARIANT], 100 % of APU useful power output is electrical — requiring higher-rating MSG and ATRU units, more sophisticated GCU voltage regulation across the full load range (0 to 150 kVA), and closer coordination with the ATA 24 electrical power management system. This architectural document traces all these implications through the LRU set, interface matrix, and performance requirements.
 
 ---
 
@@ -57,7 +59,7 @@ The no-bleed philosophy of the AMPEL360E eWTW fundamentally simplifies the APU p
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | Architecture Layer | APU sub-system (LRU-level) |
 | IMA Platform | ARINC 653 partition host (APCU hosted on aircraft IMA cabinet) |
@@ -309,7 +311,7 @@ stateDiagram-v2
 
 - **Channel status transparency**: The ECAM APU synoptic page displays the active APCU channel (A or B) in the bottom status bar, allowing crew to identify single-channel degraded operation without consulting the MCDU maintenance page.
 - **Dual-fault aural warning**: An APCU DUAL FAULT condition generates a dedicated CCAS aural alert distinct from the APU FIRE alert, ensuring crews can distinguish between a protection system failure and an actual fire event.
-- **Maintenance page readability**: The MCDU APU maintenance page presents channel health, PBIT/CBIT results, and PHM indicators in structured plain-English format consistent with AMPEL360E HFDS; no specialist avionics knowledge is required for first-line interpretation.
+- **Maintenance page readability**: The MCDU APU maintenance page presents channel health, PBIT/CBIT results, and PHM indicators in structured plain-English format consistent with [PROGRAMME-AIRCRAFT] HFDS; no specialist avionics knowledge is required for first-line interpretation.
 - **Authority transfer indication**: Automatic channel authority transfer from A to B generates an amber ECAM advisory "APU APCU CHAN XFER" to alert crew to the degraded but functional condition without requiring immediate action.
 - **GCU load indication**: Real-time APU generator load (kVA and % capacity) is displayed on the ECAM APU synoptic, allowing crew and ground crew to monitor load sharing and avoid overload conditions during heavy electrical starts.
 - **Software load status**: Following any APCU software update, the MCDU displays a "APCU SW LOAD COMPLETE — VERIFY PBIT" prompt, ensuring crew confirms successful software installation before APU start.

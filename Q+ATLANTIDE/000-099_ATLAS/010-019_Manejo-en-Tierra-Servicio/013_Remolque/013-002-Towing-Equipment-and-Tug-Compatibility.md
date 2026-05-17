@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 013 · Subsubject 002 — Towing Equipment and Tug Compatibility
 
 ## 1. Purpose
 
-Specifies the ground support equipment used in AMPEL360 towing operations: towbar assemblies, towbarless (TBL) tug adapters, bypass pins, and ancillary equipment. Establishes the qualification and compatibility requirements that must be verified before any tow operation commences.
+Specifies the ground support equipment used in [PROGRAMME-AIRCRAFT] towing operations: towbar assemblies, towbarless (TBL) tug adapters, bypass pins, and ancillary equipment. Establishes the qualification and compatibility requirements that must be verified before any tow operation commences.
 
 > **Scope boundary:** This file covers equipment specifications and qualification criteria. The procedure for using this equipment (installation sequence, tug connection, bypass pin insertion) is in [`013-003-Towing-Procedures-Pushback-and-Maneuvering.md`](./013-003-Towing-Procedures-Pushback-and-Maneuvering.md). Load and speed limits applicable to all equipment are in [`013-004-Towing-Limits-Loads-and-Steering-Constraints.md`](./013-004-Towing-Limits-Loads-and-Steering-Constraints.md).
 
@@ -39,12 +41,12 @@ Specifies the ground support equipment used in AMPEL360 towing operations: towba
 
 A **towbar** is a rigid or semi-rigid bar that mechanically couples the tug's drawbar to the aircraft nose-gear steering collar via a towhead fitting. The towbar is type-specific; only approved towbars may be used.
 
-#### 2.1.1 Towbar series (AMPEL360)
+#### 2.1.1 Towbar series ([PROGRAMME-AIRCRAFT])
 
 | Series | Applicable variant | Towhead fitting | Shear bolt rating | Part number prefix |
 |---|---|---|---|---|
-| Series A | AMPEL360e (Gen 1) | NATO lug, nose-gear collar Type A | Per AMM chapter 9 Table 901 | See AMM chapter 9 |
-| Series B | AMPEL360-BWB (Gen 2) | BWB-specific collar Type B | Per AMM chapter 9 Table 902 | See AMM chapter 9 |
+| Series A | [PROGRAMME-AIRCRAFT] (Gen 1) | NATO lug, nose-gear collar Type A | Per AMM chapter 9 Table 901 | See AMM chapter 9 |
+| Series B | [PROGRAMME-AIRCRAFT]-BWB (Gen 2) | BWB-specific collar Type B | Per AMM chapter 9 Table 902 | See AMM chapter 9 |
 
 Key towbar features common to all series:
 - **Shear bolt**: A sacrificial bolt designed to shear at a defined overload to protect the nose gear from damage. Shear bolt must be replaced after each shear event. Shear bolt part number and torque value are in AMM chapter 9.
@@ -66,7 +68,7 @@ A **towbarless tug** cradles or clamps the nose gear directly, eliminating the t
 
 #### 2.2.1 TBL compatibility matrix
 
-| TBL tug model | AMPEL360e (Gen 1) | AMPEL360-BWB (Gen 2) | Notes |
+| TBL tug model | [PROGRAMME-AIRCRAFT] (Gen 1) | [PROGRAMME-AIRCRAFT]-BWB (Gen 2) | Notes |
 |---|---|---|---|
 | TBL Type I | Approved | Not approved | Max. tow speed: per AMM chapter 9 |
 | TBL Type II | Approved | Approved | Max. tow speed: per AMM chapter 9 |
@@ -87,7 +89,7 @@ The **bypass pin** (also called *tow pin* or *steering disconnect pin*) is a mec
 
 #### 2.3.1 Bypass pin specifications
 
-| Attribute | AMPEL360e (Gen 1) | AMPEL360-BWB (Gen 2) |
+| Attribute | [PROGRAMME-AIRCRAFT] (Gen 1) | [PROGRAMME-AIRCRAFT]-BWB (Gen 2) |
 |---|---|---|
 | Part number | Per AMM chapter 9 (PN listed in task) | Per AMM chapter 9 (PN listed in task) |
 | Installation torque | Per AMM chapter 9 | Per AMM chapter 9 |
@@ -99,7 +101,7 @@ The **bypass pin** (also called *tow pin* or *steering disconnect pin*) is a mec
 
 #### 2.3.2 Gen 2 electric taxi system interlock
 
-For AMPEL360-BWB (Gen 2) aircraft equipped with the electric taxi system, the taxi system **must be placed in TOWING mode** via the flight deck panel before the bypass pin is inserted. Failure to set TOWING mode before bypass pin insertion may result in electrical actuator damage. Refer to AMM chapter 9 Gen 2 supplement for the interlock sequence.
+For [PROGRAMME-AIRCRAFT]-BWB (Gen 2) aircraft equipped with the electric taxi system, the taxi system **must be placed in TOWING mode** via the flight deck panel before the bypass pin is inserted. Failure to set TOWING mode before bypass pin insertion may result in electrical actuator damage. Refer to AMM chapter 9 Gen 2 supplement for the interlock sequence.
 
 ### 2.4 Ancillary equipment
 

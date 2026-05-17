@@ -12,6 +12,8 @@ support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-AIR]
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 050 — Emergency Load Prioritization and Distribution
@@ -32,11 +34,11 @@ This document defines the design, logic, safety requirements, and certification 
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Reference | ATA 43.050 — Emergency Load Prioritization and Distribution |
 | Applicable Standards | CS-25 §25.1351; DO-178C DAL B; DO-254 DAL B; ARP4754B |
 | Design Assurance Level | Load Manager Software: DAL B; EPDC switching: DAL B |
-| Configuration | AMPEL360E Build Standard 1.0+ |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0+ |
 
 ---
 
@@ -334,7 +336,7 @@ graph LR
 |--------|----------|---------|--------|
 | REF-043-05-01 | ESPS General (043-000) | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | REF-043-05-02 | Emergency Energy Storage Interface (043-040) | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-043-05-03 | AMPEL360E Emergency Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-043-05-03 | [PROGRAMME-AIRCRAFT] Emergency Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

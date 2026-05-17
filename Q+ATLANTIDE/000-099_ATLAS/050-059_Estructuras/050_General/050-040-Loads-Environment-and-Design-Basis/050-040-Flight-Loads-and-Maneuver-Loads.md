@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Flight Loads and Maneuver Loads
 
 ## 1. Purpose
 
-Defines the **flight loads and maneuver loads** envelope for the AMPEL360 eWTW structural programme, covering the V-n flight envelope, symmetrical and asymmetrical maneuver cases, gust loads, and the aerodynamic load redistribution associated with distributed-propulsion failure cases.
+Defines the **flight loads and maneuver loads** envelope for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural programme, covering the V-n flight envelope, symmetrical and asymmetrical maneuver cases, gust loads, and the aerodynamic load redistribution associated with distributed-propulsion failure cases.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-CS-25.333 defines the flight maneuver and gust envelope. For the AMPEL360 eWTW, the design positive limit maneuver load factor is n_z = +2.5 g at maximum take-off weight, with a negative limit of n_z = −1.0 g. The distributed-electric-propulsion architecture introduces asymmetric thrust failure cases (partial DEP pod loss) that generate critical yaw and roll moments not present in conventional twin-engine aircraft. These are treated as maneuver load cases combined with engine-failure inertia relief per CS-25.367.
+CS-25.333 defines the flight maneuver and gust envelope. For the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], the design positive limit maneuver load factor is n_z = +2.5 g at maximum take-off weight, with a negative limit of n_z = −1.0 g. The distributed-electric-propulsion architecture introduces asymmetric thrust failure cases (partial DEP pod loss) that generate critical yaw and roll moments not present in conventional twin-engine aircraft. These are treated as maneuver load cases combined with engine-failure inertia relief per CS-25.367.
 
 Gust loads are computed via the discrete gust method (CS-25.341) and the continuous turbulence method, with the more critical case governing each structural element.
 

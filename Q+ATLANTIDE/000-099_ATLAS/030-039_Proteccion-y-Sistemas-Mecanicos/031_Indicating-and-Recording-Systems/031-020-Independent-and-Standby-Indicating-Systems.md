@@ -6,10 +6,10 @@ subsubject: "020"
 subsubject_title: "Independent and Standby Indicating Systems"
 file_name: "031-020-Independent-and-Standby-Indicating-Systems.md"
 sns_reference: "031-20"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-20"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-20"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -98,10 +98,12 @@ keywords:
   - "standby airspeed"
   - "standby altimeter"
   - "standby compass"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-020 — Independent and Standby Indicating Systems
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,37 +115,27 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Independent and Standby Indicating Systems for the AMPEL360e eWTW aircraft. The core of this subsubject is the Integrated Standby Instrument (ISI), also referred to as the Integrated Standby Instrument System (ISIS), which provides standby attitude, airspeed, and altitude independent of the main avionics bus and display system. The ISI is a regulatory mandatory item per CS-25.1307(a), which requires that standby instruments be installed and powered independently of the main avionics power bus.
+This document defines the agnostic ATLAS standard-level architecture context for `031-020 — Independent and Standby Indicating Systems`.
 
-The eWTW ISI is a self-contained electronic LRU mounted on the glareshield centre position, directly accessible to both pilots. It incorporates an independent Attitude and Heading Reference System (AHRS), independent air data sensing (connected to dedicated standby pitot and static probes), a colour LCD display, and an internal rechargeable battery providing a minimum of 30 minutes operation in the event of total aircraft electrical failure. The ISI operates continuously in parallel with the main PFDs and cross-checks its attitude data against the main ADIRU to detect potential discrepancies.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Additionally, this subsubject covers the standby magnetic compass and, if fitted, a standby radio altimeter display. The standby compass is a mandatory regulatory item (CS-25.1303(b)(1)) and is mounted in the upper windshield frame area. The standby compass must be readable from the normal seated crew position without reference to the ISI or main instruments.
-
-The independence of all standby instruments from the main avionics systems is a fundamental safety requirement. The ISI must not share pitot/static lines, power buses, or computing resources with the main ADIRU, ADC, or IMA platform. Compliance with this independence requirement is verified by analysis and ground test during the certification campaign per AMC 25.1307.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter / Subsubject | 31-20 — Independent and Standby Indicating Systems |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D SNS | 031-20 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-20 |
-| Effectivity | All MSN from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The ISI provides the last-resort flight reference for the crew in the event that all main display units and their driving computers fail. It is the only display that is powered independently of the main avionics network and can operate on battery power alone. The ISI contains its own AHRS (solid-state MEMS gyros and accelerometers), air data computer function (barometric altimeter and airspeed computation from standby pitot/static), and internal LCD display.
 
 The standby compass is a purely passive magnetic instrument, providing heading reference without any electrical power. It is subject to compass swing calibration during aircraft build and after any maintenance that may affect the magnetic environment in its vicinity. Deviation card must be posted adjacent to the compass per regulatory requirements.
 
-A standby radio altimeter display (if required by eWTW operational requirements) would be driven by a dedicated radio altimeter receiver separate from the main radio altimeter systems. The need for a dedicated standby radio altimeter display versus relying on the ISI (which does not incorporate a radio altimeter function) is subject to the safety assessment and operational requirements definition currently in progress (see Open Issues).
+A standby radio altimeter display (if required by [PROGRAMME-VARIANT] operational requirements) would be driven by a dedicated radio altimeter receiver separate from the main radio altimeter systems. The need for a dedicated standby radio altimeter display versus relying on the ISI (which does not incorporate a radio altimeter function) is subject to the safety assessment and operational requirements definition currently in progress (see Open Issues).
 
 ---
 
@@ -307,10 +299,10 @@ The standby pitot probe and static ports require periodic cleaning and check for
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-20 | Independent and Standby Indicating Systems | DMC-AMPEL360E-EWTW-031-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-20-01 | ISI LRU | DMC-AMPEL360E-EWTW-031-20-01 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-20-02 | Standby Compass | DMC-AMPEL360E-EWTW-031-20-02 | 040, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-20-03 | Standby Pitot and Static | DMC-AMPEL360E-EWTW-031-20-03 | 040, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-20 | Independent and Standby Indicating Systems | DMC-<PROGRAMME>-<VARIANT>-031-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-20-01 | ISI LRU | DMC-<PROGRAMME>-<VARIANT>-031-20-01 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-20-02 | Standby Compass | DMC-<PROGRAMME>-<VARIANT>-031-20-02 | 040, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-20-03 | Standby Pitot and Static | DMC-<PROGRAMME>-<VARIANT>-031-20-03 | 040, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-20)
 

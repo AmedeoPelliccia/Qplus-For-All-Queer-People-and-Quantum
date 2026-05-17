@@ -6,9 +6,9 @@ subsubject: "020"
 subsubject_title: "Vacuum Distribution"
 file_name: "037-020-Vacuum-Distribution.md"
 sns_reference: "037-20"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-20"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-20"
 ata_chapter: 37
-aircraft: "AMPEL360e eWTW"
+aircraft: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
 project: "Q+ATLANTIDE"
 status: "DRAFT"
 keywords:
@@ -27,10 +27,12 @@ created: "2025-07-14"
 revised: "2025-07-14"
 revision: "0.1"
 author: "Q+ATLANTIDE ATLAS Working Group"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-020 — Vacuum Distribution
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1 — 2025-07-14  
@@ -40,38 +42,26 @@ author: "Q+ATLANTIDE ATLAS Working Group"
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-AMPEL360E-EWTW-037-20-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline.
+All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-037-20-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline.
 
 ---
 
 ## §1 Purpose
 
-This document describes the vacuum distribution network for the AMPEL360e eWTW Vacuum Waste System (VWS). The distribution system connects the Electric Vacuum Generator (EVG) outlets to each toilet unit via a common manifold, branch lines, and individual non-return valves (NRVs).
+This document defines the agnostic ATLAS standard-level architecture context for `037-020 — Vacuum Distribution`.
 
-Objectives:
-1. Define the main manifold architecture, material, and routing.
-2. Define branch line sizing, material, routing, and connection types.
-3. Describe penetration sealing through the composite fuselage.
-4. Define bonding and grounding requirements for composite fuselage integration.
-5. Describe the location and function of NRVs at each toilet connection.
-6. Document open issues related to line routing, materials, and sizing.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The distribution network operates entirely in the sub-atmospheric domain (below cabin ambient pressure). It is not a pressurised system in the over-ambient sense, but the differential across the manifold walls (cabin pressure outside, vacuum inside) must be accounted for in structural design.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| ATA Chapter / Subsubject | 37-020 — Vacuum Distribution |
-| Document Tier | Level 3 — Subsystem Description |
-| Effectivity | MSN 0001 onwards (TBD) |
-| Parent Document | QATL-ATLAS-000099-ATLAS-030039-037-000 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Distribution Network Summary
@@ -158,7 +148,7 @@ One NRV is installed on each branch line immediately upstream of the toilet EFV:
 
 ### 5.4 Composite Fuselage Penetrations
 
-The eWTW uses a composite (CFRP) fuselage. Vacuum line penetrations require:
+The [PROGRAMME-VARIANT] uses a composite (CFRP) fuselage. Vacuum line penetrations require:
 - **Electrically isolated through-fittings** to prevent galvanic corrosion between metal lines and CFRP.
 - **Sealant** per materials specification TBD (PRC-1422 or equivalent) to maintain cabin pressurisation barrier.
 - **Lightning protection:** Lines bonded at each frame crossing to structure via bonding jumpers; no unintended current paths through vacuum lines.
@@ -329,11 +319,11 @@ flowchart LR
 
 | DMC Code | Title | Infocode | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-037-20-00-00A-040A-D | Vacuum Distribution Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-20-00-00A-200A-D | Manifold Removal and Installation | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-20-00-00A-300A-D | Line and NRV Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-20-00-00A-400A-D | Vacuum Decay Leak Test | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-20-00-00A-520A-D | Distribution Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-20-00-00A-040A-D | Vacuum Distribution Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-20-00-00A-200A-D | Manifold Removal and Installation | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-20-00-00A-300A-D | Line and NRV Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-20-00-00A-400A-D | Vacuum Decay Leak Test | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-20-00-00A-520A-D | Distribution Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -395,7 +385,7 @@ flowchart LR
 | Term | Definition |
 |---|---|
 | Branch line | Vacuum tube connecting main manifold tee to individual toilet NRV |
-| CFRP | Carbon Fibre Reinforced Polymer — eWTW fuselage primary material |
+| CFRP | Carbon Fibre Reinforced Polymer — [PROGRAMME-VARIANT] fuselage primary material |
 | Cracking pressure | Minimum differential pressure required to open the NRV |
 | DN | Diamètre Nominal — European pipe nominal bore designation (e.g. DN25 = 25mm bore) |
 | EPDM | Ethylene Propylene Diene Monomer — rubber used for valve seats in vacuum service |
@@ -415,8 +405,8 @@ flowchart LR
 2. EASA CS-25 Amendment 27 — CS-25.1309 "Equipment, Systems and Installations."
 3. EASA CS-25 Amendment 27 — CS-25.581 "Lightning Protection."
 4. ATA iSpec 2200 Chapter 37 — Vacuum.
-5. AMPEL360e eWTW Composite Fuselage Penetration Standard — <img src="https://img.shields.io/badge/TBD-red">
-6. AMPEL360e eWTW Lightning Protection Plan — <img src="https://img.shields.io/badge/TBD-red">
+5. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Composite Fuselage Penetration Standard — <img src="https://img.shields.io/badge/TBD-red">
+6. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Lightning Protection Plan — <img src="https://img.shields.io/badge/TBD-red">
 
 ---
 
@@ -429,7 +419,7 @@ flowchart LR
 | QATL-ATLAS-000099-ATLAS-030039-037-030 | Vacuum Regulation and Shutoff |
 | QATL-ATLAS-000099-ATLAS-030039-037-040 | Pumps, Ejectors, Valves, and Lines |
 | QATL-ATLAS-000099-ATLAS-030039-038-000 | Water and Waste General (ATA 38) |
-| AMM-AMPEL360E-037-20 | Aircraft Maintenance Manual Chapter 37-20 |
+| AMM-[PROGRAMME-AIRCRAFT]-037-20 | Aircraft Maintenance Manual Chapter 37-20 |
 | QATL-ATLAS-000099-ATLAS-030039-053-000 | Fuselage Structure General (ATA 53) |
 
 ---

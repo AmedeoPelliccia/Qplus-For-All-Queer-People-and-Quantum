@@ -6,10 +6,10 @@ subsubject: "020"
 subsubject_title: "Inertial Reference and Attitude Heading Systems"
 file_name: "034-020-Inertial-Reference-and-Attitude-Heading-Systems.md"
 sns_reference: "034-20"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-20"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-20"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "IRU"
@@ -89,10 +89,12 @@ keywords:
   - "Attitude"
   - "Heading"
   - "AMC 20-4"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-020 — Inertial Reference and Attitude Heading Systems
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -104,37 +106,23 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Inertial Reference and Attitude Heading subsystem (ATA 034-020) of the AMPEL360e eWTW aircraft. It covers the triple Inertial Reference Unit (IRU) configuration, Fiber Optic Gyro (FOG) sensor technology, GPS-aided alignment, the Attitude and Heading Reference System (AHRS) function, magnetic heading sensing challenges specific to the all-composite CFRP fuselage, and the ARINC 429 data output architecture.
+This document defines the agnostic ATLAS standard-level architecture context for `034-020 — Inertial Reference and Attitude Heading Systems`.
 
-The AMPEL360e eWTW uses three IRUs (IRU-1, IRU-2, IRU-3) for fault tolerance and voting logic in the FMGC navigation filter. All three IRUs use FOG technology (ring laser or MEMS TBD). GPS-aided rapid alignment reduces in-gate alignment time to below 5 minutes (TBD). The AHRS function provides attitude and heading references; magnetic heading is provided via a flux valve or magnetometer whose placement in the composite fuselage is a significant open issue due to CFRP magnetic interference characteristics.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-Key applicable standard: EASA AMC 20-4 (Airworthiness Approval of Inertial Navigation and Reference Systems).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 034-020 — Inertial Reference and Attitude Heading Systems |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Number of IRUs | 3 (triple redundant — IRU-1, IRU-2, IRU-3) |
-| IRU Technology | Fiber Optic Gyro (FOG) — ring laser or MEMS TBD |
-| GPS-Aided Alignment | Yes — target < 5 min (TBD) |
-| AHRS Mode | Degraded IRS mode (attitude + heading without full IRS navigation) |
-| Magnetic Heading | Flux valve (primary) or magnetometer TBD — composite fuselage interference TBD |
-| Output Bus | ARINC 429 (high speed — 100 kbps) |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-20 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The Inertial Reference subsystem provides the AMPEL360e eWTW with autonomous, self-contained navigation data independent of external radio signals. Three IRUs (IRU-1, IRU-2, IRU-3) are mounted in the avionics bay in precision-aligned orientations relative to the aircraft reference axes.
+The Inertial Reference subsystem provides the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] with autonomous, self-contained navigation data independent of external radio signals. Three IRUs (IRU-1, IRU-2, IRU-3) are mounted in the avionics bay in precision-aligned orientations relative to the aircraft reference axes.
 
 Each IRU contains:
 - **Three-axis FOG gyroscopes**: measure angular rates about aircraft roll, pitch, and yaw axes
@@ -333,7 +321,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-20 | Inertial Reference and Attitude Heading Systems | DMC-AMPEL360E-EWTW-034-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-20 | Inertial Reference and Attitude Heading Systems | DMC-<PROGRAMME>-<VARIANT>-034-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Recommended DM Set for 034-20
 
@@ -450,7 +438,7 @@ flowchart LR
 
 | Issue ID | Description | Owner | Priority | Status |
 |---|---|---|---|---|
-| OI-020-001 | MEMS vs. FOG IRS technology decision — confirm whether ring laser FOG or MEMS-based technology is selected for eWTW IRU; impact on drift, cost, weight, DO-254 DAL level, and supplier availability | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-020-001 | MEMS vs. FOG IRS technology decision — confirm whether ring laser FOG or MEMS-based technology is selected for [PROGRAMME-VARIANT] IRU; impact on drift, cost, weight, DO-254 DAL level, and supplier availability | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-020-002 | Magnetic heading in composite fuselage — flux valve placement and CFRP interference assessment; GPS-derived heading as magnetic heading backup TBD | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-020-003 | GPS-aided alignment time target — confirm < 5 min target with selected IRU supplier; flight test data required | Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-020-004 | In-flight alignment capability — define requirement and test method for in-flight IRS realignment after air restart | Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |

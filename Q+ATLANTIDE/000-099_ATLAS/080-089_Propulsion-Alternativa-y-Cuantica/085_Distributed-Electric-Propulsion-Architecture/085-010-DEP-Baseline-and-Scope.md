@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0085-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-085-010-DEP-BASELINE-AND-SCOPE
      ATLAS-085 (Distributed Electric Propulsion Architecture) · DEP Baseline and Scope
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # DEP Baseline and Scope
@@ -44,31 +46,30 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-010"
 
 ## §1 Purpose
 
-ATLAS subsubject 085-010 establishes the programme baseline for the Distributed Electric Propulsion Architecture (DEPA), defines the scope boundary relative to adjacent subsystems, compares the DEPA approach against conventional and prior hybrid-electric propulsion configurations, identifies technology readiness levels for each key DEPA technology, and specifies the mission trade space from which all detailed design targets in subsubjects 085-020 through 085-080 are derived.
+This document defines the agnostic ATLAS standard-level architecture context for `DEP Baseline and Scope`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-085 — 085-010 DEP Baseline and Scope |
-| Certification Basis | EASA CS-25 Amdt 27+; DO-178C DAL B (DEPCU) |
-| S1000D SNS | 085-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `085` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Architecture Comparison
 
-The following table summarises how the DEPA compares to the centralized propulsion architectures used in earlier AMPEL360E eWTW configurations.
+The following table summarises how the DEPA compares to the centralized propulsion architectures used in earlier programme-defined aircraft type configurations.
 
 | Attribute | Conventional Twin-Engine (Ref.) | Gen-2 Hybrid (ATLAS 070–079) | DEPA (ATLAS 085) |
 |---|---|---|---|
 | Propulsor count | 2 (podded turbofans) | 2 turbofan + 2 BLI fans | 4 BLI fans (no turbofan pods) |
 | Total fan propulsive power | 2 × 6 000 kW shaft (thrust) | 2 × 200 kW electric fans | 4 × 500 kW electric fans |
 | BLI integration | None | Partial (aft fans only) | Full (over-wing + aft-fuselage) |
-| Motor drive topology | N/A | Centralised MDU, 270 V HVDC | Distributed co-located MDUs, 800 V HVDC |
+| Motor drive topology | N/A | Centralised MDU, 270 V HVDC | Distributed co-located MDUs, <NOMINAL-VOLTAGE> HVDC |
 | Control unit | FADEC only (ATA 73) | EMCU + FADEC | DEPCU DAL B + FADEC |
 | Asymmetric thrust control | Engine-out yaw via rudder | Partial differential | Full per-propulsor differential torque |
 | Aero-propulsive gain | None | ~4 % cruise drag reduction | ~12 % cruise drag reduction (P3+P4) |
@@ -82,7 +83,7 @@ The following table summarises how the DEPA compares to the centralized propulsi
 | Technology | Current TRL | Target TRL (Phase 2 / CDR) | Limiting Factor |
 |---|---|---|---|
 | 500 kW co-located PMSM (per propulsor) | TRL 5 (ground prototype) | TRL 7 (flight demo) | Motor-nacelle thermal management; weight target < 120 kg/unit |
-| 500 kW co-located MDU (HVDC 800 V inverter) | TRL 5 (lab bench) | TRL 7 (flight demo) | IGBT switching losses; EMC DO-160G at HVDC 800 V |
+| 500 kW co-located MDU (HVDC <NOMINAL-VOLTAGE> inverter) | TRL 5 (lab bench) | TRL 7 (flight demo) | IGBT switching losses; EMC DO-160G at HVDC <NOMINAL-VOLTAGE> |
 | BLI duct integration (over-wing root) | TRL 4 (CFD + small-scale wind tunnel) | TRL 6 (large-scale WT or flight test) | Boundary-layer distortion at fan face; fan acoustic response |
 | BLI duct integration (aft fuselage) | TRL 5 (heritage from ATLAS-086) | TRL 7 (flight demo) | Fuselage structural cut-outs; aero-structural coupling |
 | DEPCU dual-lane DAL B | TRL 5 (FPGA proto) | TRL 7 (aircraft integration) | Asymmetric compensator algorithm verification |
@@ -93,7 +94,7 @@ The following table summarises how the DEPA compares to the centralized propulsi
 
 ## §5 Mission Trade Space
 
-The DEPA programme targets six mission roles for the AMPEL360E eWTW research platform:
+The DEPA programme targets six mission roles for the programme-defined aircraft type research platform:
 
 **Role A — Full-DEP Takeoff (STOL variant):** All four propulsors at 500 kW, fed from BGHA all-source peak dispatch. Total DEP power 2 000 kW. Supports reduced-field operations from runway ≥ 1 200 m. Noise footprint reduction estimated at 3 EPNdB vs. conventional at equivalent thrust.
 
@@ -131,7 +132,7 @@ The DEPA programme targets six mission roles for the AMPEL360E eWTW research pla
 
 | Source / Consumer | Nominal (kW) | Peak (kW) | Notes |
 |---|---|---|---|
-| BGHA HVDC 800 V bus supply | 2 000 | 2 200 | Provided by ATLAS-084 BGSCU dispatch |
+| BGHA HVDC <NOMINAL-VOLTAGE> bus supply | 2 000 | 2 200 | Provided by ATLAS-084 BGSCU dispatch |
 | P1 PMSM (over-wing port) | 300 | 500 | Cruise / max takeoff |
 | P2 PMSM (over-wing stbd) | 300 | 500 | Cruise / max takeoff |
 | P3 PMSM (aft-fuselage port) | 350 | 500 | Higher cruise power for BLI gain |
@@ -147,7 +148,7 @@ The DEPA programme targets six mission roles for the AMPEL360E eWTW research pla
 
 | Interface | Connected System | Protocol | Data |
 |---|---|---|---|
-| Power — all MDUs | BGHA HVDC 800 V bus (ATLAS-084) | HVDC 800 V cable | Source dispatch per BGSCU MPC setpoints |
+| Power — all MDUs | BGHA HVDC <NOMINAL-VOLTAGE> bus (ATLAS-084) | HVDC <NOMINAL-VOLTAGE> cable | Source dispatch per BGSCU MPC setpoints |
 | Thrust demand | FADEC — ATA 73 | AFDX VL-085-01 | Total DEP thrust demand; phase |
 | Yaw coordination | FMS — ATA 22 | AFDX VL-085-03 | Differential thrust advisory |
 | Research data | EPMS | AFDX VL-085-04 | 100 Hz per-propulsor power; BLI pressure maps |

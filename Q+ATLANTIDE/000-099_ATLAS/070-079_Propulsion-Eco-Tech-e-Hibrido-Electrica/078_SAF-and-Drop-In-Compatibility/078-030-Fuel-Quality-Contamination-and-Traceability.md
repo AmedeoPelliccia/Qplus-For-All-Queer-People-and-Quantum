@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-030-FUEL-QUALITY-CONTAMINATION-AND-TRACEABILITY
      ATA 78 · Fuel Quality, Contamination and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Quality, Contamination and Traceability
@@ -47,30 +49,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-030"
 
 ## §1 Purpose
 
-This document (078-030) defines the fuel quality requirements, contamination risk management measures, and sustainability traceability framework for SAF blends used on the AMPEL360E eWTW. It covers the receiving inspection process, on-board contamination monitoring via FAMQMS (PN FAMQMS-078), the ICAO CORSIA Chain of Sustainability (CoS) documentation workflow, and the FAMQMS audit log requirements that support carbon accounting obligations.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Quality, Contamination and Traceability`.
 
-Ensuring fuel quality and maintaining an unbroken CoS chain from SAF producer to aircraft wing is essential not only for engine and fuel system safety, but also for regulatory compliance under EU RED II and ICAO CORSIA, where carbon credit claims are only valid with verified, auditable sustainability documentation.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-030 — Fuel Quality, Contamination and Traceability |
-| Certification basis | EASA CS-25 §25.951; EASA SC E-19; ICAO CORSIA; EU RED II (2018/2001) |
-| S1000D SNS | 078-030-00 |
-| Applicable standards | ASTM D1655, D7566, D5452, D6469, AFQRJOS Issue 30, EI 1530 |
-| FAMQMS log capacity | 500 refuelling events (non-volatile flash) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-Fuel quality control for SAF blends on the AMPEL360E eWTW follows a three-layer architecture: pre-delivery laboratory verification, receiving inspection at the point of uplift, and continuous in-flight on-board monitoring.
+Fuel quality control for SAF blends on the programme-defined aircraft type follows a three-layer architecture: pre-delivery laboratory verification, receiving inspection at the point of uplift, and continuous in-flight on-board monitoring.
 
-**Layer 1 — Pre-delivery laboratory verification**: The SAF blend producer/depot issues a Certificate of Analysis (CoA) per ASTM D7566 Table 1 for each batch. For SAF, a Certificate of Sustainability (CoS) per ICAO CORSIA methodology (and EU RED II for European operations) accompanies the CoA, documenting the feedstock origin, production pathway, GHG lifecycle emissions (gCO₂eq/MJ), and volume. The airline/operator performs a CoA review against the ASTM D7566 Table 1 specification limits and the AMPEL360E Approved Fuel List (AFL) before approving the batch for aircraft uplift.
+**Layer 1 — Pre-delivery laboratory verification**: The SAF blend producer/depot issues a Certificate of Analysis (CoA) per ASTM D7566 Table 1 for each batch. For SAF, a Certificate of Sustainability (CoS) per ICAO CORSIA methodology (and EU RED II for European operations) accompanies the CoA, documenting the feedstock origin, production pathway, GHG lifecycle emissions (gCO₂eq/MJ), and volume. The airline/operator performs a CoA review against the ASTM D7566 Table 1 specification limits and the [PROGRAMME-AIRCRAFT] Approved Fuel List (AFL) before approving the batch for aircraft uplift.
 
 **Layer 2 — Receiving inspection (point of uplift)**: On-aircraft, before refuelling is completed, the ground engineer performs a colour/clarity visual check on a fuel sample drawn from the uplift tanker or hydrant system. A conductometric water check (field-portable instrument PN KFT-GSE-078) confirms dissolved water ≤30 mg/kg (Karl Fischer D6304). Particulate is verified against the batch CoA (ASTM D5452 ≤1 mg/L). Where any doubt exists regarding contamination, a refuelling hold is issued and a formal lab sample is sent for full analysis.
 
@@ -100,7 +97,7 @@ Fuel quality control for SAF blends on the AMPEL360E eWTW follows a three-layer 
 flowchart LR
     PRODUCER[SAF Producer\nHEFA/FT/ATJ/SIP/DHC] --> |CoA + CoS| DEPOT[Blending Depot]
     DEPOT --> |Blended fuel + CoA/CoS docs| TANKER[Refuelling Tanker\nor Hydrant]
-    TANKER --> |Receiving Inspection\nKF water + clarity| AIRCRAFT[AMPEL360E\nWing/Centre Tanks]
+    TANKER --> |Receiving Inspection\nKF water + clarity| AIRCRAFT[[PROGRAMME-AIRCRAFT]\nWing/Centre Tanks]
     AIRCRAFT --> |NIR + conductometry| FAMQMS[FAMQMS-078\nEvent Log + Contamination Monitor]
     FAMQMS --> |ARINC 429| CMS[CMS ATA 45\nFault Reporting]
     FAMQMS --> |GSE USB-C| AUDIT[Regulatory Audit\nCORSIA / EU RED II]

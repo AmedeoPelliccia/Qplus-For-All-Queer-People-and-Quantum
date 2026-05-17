@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0082-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-082-000-PLASMA-AND-IONIC-PROPULSION-CONCEPTS-GENERAL
      ATLAS-082 (Plasma and Ionic Propulsion Concepts) · General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Plasma and Ionic Propulsion Concepts — General
@@ -46,28 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 082-000 establishes the general scope, top-level architecture, and governing standards for the Plasma and Ionic Propulsion Concepts (PIPC) research programme of the AMPEL360E eWTW. This document is the apex reference for all subordinate subsubject documents (082-010 through 082-090).
+This document defines the agnostic ATLAS standard-level architecture context for `Plasma and Ionic Propulsion Concepts — General`.
 
-The AMPEL360E eWTW research horizon integrates a **Plasma and Ionic Propulsion Concepts (PIPC)** programme that investigates electrostatic and electromagnetic propulsion technologies for auxiliary and boundary-layer-interaction roles. The programme evaluates Hall-effect thrusters (HET), gridded ion engines (GIE), and magnetoplasmadynamic (MPD) thrusters as candidate technologies for supplementary thrust generation, attitude authority augmentation, and drag-reduction plasma actuation across extended-mission flight profiles.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-All subsubject documents (082-010 through 082-090) are subordinate to this general baseline and inherit its governance class, Q-Division authority, and S1000D CSDB affiliation.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-082 (Plasma and Ionic Propulsion Concepts) — 082-000 General |
-| Certification basis | EASA CS-25 Amdt 27+ (research ref.); DO-178C DAL C (concept phase); DO-254 DAL C; IEC 60068-2 (EMC); ECSS-E-ST-20-07C (plasma environment reference) |
-| S1000D SNS | 082-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `082` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The AMPEL360E eWTW **Plasma and Ionic Propulsion Concepts (PIPC)** programme investigates three families of electrostatic and electromagnetic thruster technologies for application within the hybrid-electric propulsion architecture:
+The programme-defined aircraft type **Plasma and Ionic Propulsion Concepts (PIPC)** programme investigates three families of electrostatic and electromagnetic thruster technologies for application within the hybrid-electric propulsion architecture:
 
 1. **Hall-Effect Thrusters (HET)** — Cross-field ExB devices that ionise xenon or krypton propellant in an annular discharge channel and accelerate ions through an electric field balanced by an electron-trapping magnetic field. HETs provide specific impulses in the range of 1 500–3 000 s and thrust levels of 5–500 mN per unit, making them candidates for drag-reduction augmentation and auxiliary station-keeping in extended-range cruise profiles.
 

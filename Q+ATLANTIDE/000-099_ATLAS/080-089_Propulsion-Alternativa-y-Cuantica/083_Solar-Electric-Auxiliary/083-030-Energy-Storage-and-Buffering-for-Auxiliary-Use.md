@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0083-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-083-030-ENERGY-STORAGE-AND-BUFFERING-FOR-AUXILIARY-USE
      ATLAS-083 (Solar-Electric Auxiliary) · Energy Storage and Buffering
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Energy Storage and Buffering for Auxiliary Use
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-030"
 
 ## §1 Purpose
 
-ATLAS subsubject 083-030 defines the dual-tier energy storage subsystem of the Solar-Electric Auxiliary (SEA) system: a supercapacitor (SCAP) bank for fast transient power buffering, and a Li-Ion battery auxiliary subset for sustained energy backup. It covers design parameters, energy management strategy, state-of-energy (SoE) tracking, charging/discharging arbitration, thermal management, safety constraints, and maintenance requirements.
+This document defines the agnostic ATLAS standard-level architecture context for `Energy Storage and Buffering for Auxiliary Use`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-083 — 083-030 Energy Storage and Buffering |
-| Certification basis | EASA CS-25 Amdt 27+ (research ref.); IEC 62619 (Li-Ion safety); DO-160G Section 16 (power input/output) |
-| S1000D SNS | 083-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `083` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Tier 1 — Supercapacitor Bank (SCAP)
 
 ### 3.1 Design Parameters
@@ -101,12 +102,12 @@ The SCAP is the **primary fast transient buffer** for all SEA power events:
 
 | Parameter | Value | Notes |
 |---|---|---|
-| Usable capacity | 50 kWh | NMC 811 chemistry; SoC 20–90 % operating window |
+| Usable capacity | 50 kWh | <BATTERY-CHEMISTRY> chemistry; SoC 20–90 % operating window |
 | Nominal voltage | 680 V DC | ~520 V at SoC 20 % min; ~740 V at SoC 90 % max |
 | Continuous discharge power | 40 kW | Emergency backup (Role B) |
 | Peak discharge power | 80 kW | Short burst ≤ 10 s (bus stabilisation) |
 | Continuous charge power | 40 kW | From solar PV surplus |
-| C-rate (continuous) | 0.8 C | NMC 811 optimum; extends cycle life |
+| C-rate (continuous) | 0.8 C | <BATTERY-CHEMISTRY> optimum; extends cycle life |
 | Cycle life | 2 000 cycles (80 % DoD) | 10-year programme life at 1 cycle/flight |
 | Operating temperature | +10 °C to +45 °C (charging); −20 °C to +55 °C (discharge) | BMS enforces limits |
 | Mass | 210 kg (estimated) | Including BMS electronics, housing, cooling plate |

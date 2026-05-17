@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 080 — NGS Monitoring, Diagnostics and Control Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the NGS Monitoring, Diagnostics and Control Interfaces sub-system of ATA 47 for the AMPEL360E eWTW. The NGSCU is the central intelligence of the NGS, providing closed-loop control of all NGS actuators, comprehensive BITE (Built-In Test Equipment) for fault detection and isolation, Prognostic Health Management (PHM) for ASM membrane life prediction, and structured data interfaces to the CMS (ATA 45), QAR, and ECAM.
+This document defines the NGS Monitoring, Diagnostics and Control Interfaces sub-system of ATA 47 for the programme-defined aircraft type. The NGSCU is the central intelligence of the NGS, providing closed-loop control of all NGS actuators, comprehensive BITE (Built-In Test Equipment) for fault detection and isolation, Prognostic Health Management (PHM) for ASM membrane life prediction, and structured data interfaces to the CMS (ATA 45), QAR, and ECAM.
 
 The NGSCU is a dual-channel LRU (Channel A active, Channel B hot standby) qualified to DO-178C DAL C and DO-160G. Watchdog-based crossover from Channel A to Channel B occurs within 3 seconds. PHM estimates ASM remaining useful life from purity trend data. Thirty-two NGS parameters are recorded in the QAR at 4 Hz for flight data analysis.
 
@@ -63,7 +65,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter / Sub-subject | ATA 47.080 — NGS Monitoring, Diagnostics and Control |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL C (NGSCU) |
 | Applicable Standards | DO-178C DAL C; DO-160G; S1000D Issue 5.0; ARINC 664 P7 |

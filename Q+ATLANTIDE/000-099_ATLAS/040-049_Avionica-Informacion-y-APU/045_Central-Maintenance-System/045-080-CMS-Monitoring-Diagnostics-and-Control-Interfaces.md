@@ -31,6 +31,8 @@ ata_reference: "ATA 45.080 — CMS Monitoring, Diagnostics and Control Interface
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 080 — CMS Monitoring, Diagnostics and Control Interfaces
@@ -45,7 +47,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the CMS health monitoring, diagnostics, and prognostics architecture for the AMPEL360E eWTW. It covers the CMS Health Monitor (CHM) — monitoring the computing, network, and storage health of the CMS itself — and the Prognostics and Health Management (PHM) engine for remaining-useful-life (RUL) prediction of key aircraft LRUs, including eWTW-specific EMA prognostics using vibration signature and current waveform analysis.
+This document defines the CMS health monitoring, diagnostics, and prognostics architecture for the programme-defined aircraft type. It covers the CMS Health Monitor (CHM) — monitoring the computing, network, and storage health of the CMS itself — and the Prognostics and Health Management (PHM) engine for remaining-useful-life (RUL) prediction of key aircraft LRUs, including [PROGRAMME-VARIANT]-specific EMA prognostics using vibration signature and current waveform analysis.
 
 Key governance areas:
 - CHM: monitors CPU load, RAM usage, SSD SMART health, AFDX link status, storage write errors.
@@ -60,7 +62,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45.080 — CMS Monitoring, Diagnostics and Control Interfaces |
 | Governance Class | Programme-Controlled Diagnostics Extension |
 | Certification Basis | CS-25 Amendment 28 (CHM only); PHM not credited for certification |
@@ -325,7 +327,7 @@ All CHM and PHM components are software modules on CCU-A/B. Power and cooling bu
 | ML | Machine Learning — statistical models used for pattern recognition and prediction |
 | LRU | Line-Replaceable Unit — a modular avionics component removable on the flight line |
 | AFDX | Avionics Full-Duplex Switched Ethernet — ARINC 664 Part 7 deterministic network |
-| EMA | Electro-Mechanical Actuator — electrically driven flight control actuator (eWTW) |
+| EMA | Electro-Mechanical Actuator — electrically driven flight control actuator ([PROGRAMME-VARIANT]) |
 
 ---
 
@@ -349,8 +351,8 @@ All CHM and PHM components are software modules on CCU-A/B. Power and cooling bu
 | [R1] | ATLAS 045-000 — Central Maintenance System General | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R2] | ATLAS 045-010 — Maintenance Computing and Core Processing | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 045-070 — Ground Data Transfer and Maintenance Connectivity | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R4] | AMPEL360E eWTW PHM Model Technical Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| [R5] | AMPEL360E eWTW EMA Sensor Interface Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R4] | programme-defined aircraft type PHM Model Technical Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R5] | programme-defined aircraft type EMA Sensor Interface Specification | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Ice Detection and Protection Control"
 file_name: "030-070-Ice-Detection-and-Protection-Control.md"
 sns_reference: "030-70"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-70"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-70"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,21 +87,23 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
   - "IPMC"
   - "ice detection"
   - "vibrating element detector"
   - "automatic activation"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-070 — Ice Detection and Protection Control
-### AMPEL360e eWTW · ATA 30-70 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-70 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,28 +115,23 @@ All hyperlinks in this document are **relative links** unless pointing to a publ
 
 ## §1 Purpose
 
-This document defines the Ice Detection and Protection Control function for the **AMPEL360e eWTW**, covering the ice detector sensor technology, redundancy architecture, the Ice Protection Management Computer (IPMC), automatic activation logic, manual override capability, integration with all ice protection subsystems (WIPS, EIP, probe heaters, WHC), and crew advisory functions. CS-25.1419 and FAR 25.1419 require that the ice protection system be designed so that automatic activation occurs when icing conditions are encountered, without requiring initial crew recognition of icing. The IPMC is the central controller implementing this automatic activation requirement across the eWTW's all-electric ice protection architecture. This document also addresses ice crystal icing considerations at high altitude (CS-25 Appendix D) and the SLD mode flag (CS-25 Appendix O).
+This document defines the agnostic ATLAS standard-level architecture context for `030-070 — Ice Detection and Protection Control`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Sub-chapter | 30-70 — Ice Detection and Protection Control |
-| Ice Detector Type | Vibrating-element (Rosemount 871FA type or equivalent); dual-channel |
-| IPMC Architecture | Dual-channel (or dual-redundant single LRU — TBD); DAL B preliminary |
-| Automatic Activation | CS-25.1419 compliant; activates on ice detector signal AND OAT gate ≤ +10 °C |
-| Subsystems Controlled | WIPS (030-010), EIP (030-020), Probe heaters (030-030), WHC (030-040) |
-| Certification Basis | CS-25.1419; FAR 25.1419; AC 25-28; EUROCAE ED-103A |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The ice detection and protection control function is the operational brain of the eWTW ice protection system. Two ice detector probes — a Primary Ice Detector (ID1) and a Standby Ice Detector (ID2) — are mounted on the fuselage nose in locations with clear exposure to the airstream, validated to be representative of the icing conditions experienced by the critical ice-accreting surfaces (wing leading edge, engine inlet). The selected technology is the vibrating-element ice detector (representative type: Rosemount 871FA or equivalent), in which a magnetostrictive element is driven to vibrate at its natural frequency (~40 kHz). Ice accretion on the probe tip increases the element's mass, reducing the resonant frequency. When the frequency drops below a threshold value corresponding to a defined ice mass (accretion threshold), the detector outputs an ICE DETECTED discrete signal. The detector self-cycles a heater to shed the accreted ice and re-arms, providing a continuous icing condition monitor.
+The ice detection and protection control function is the operational brain of the [PROGRAMME-VARIANT] ice protection system. Two ice detector probes — a Primary Ice Detector (ID1) and a Standby Ice Detector (ID2) — are mounted on the fuselage nose in locations with clear exposure to the airstream, validated to be representative of the icing conditions experienced by the critical ice-accreting surfaces (wing leading edge, engine inlet). The selected technology is the vibrating-element ice detector (representative type: Rosemount 871FA or equivalent), in which a magnetostrictive element is driven to vibrate at its natural frequency (~40 kHz). Ice accretion on the probe tip increases the element's mass, reducing the resonant frequency. When the frequency drops below a threshold value corresponding to a defined ice mass (accretion threshold), the detector outputs an ICE DETECTED discrete signal. The detector self-cycles a heater to shed the accreted ice and re-arms, providing a continuous icing condition monitor.
 
 The IPMC receives ICE DETECTED signals from ID1 and ID2, OAT/TAT data from the ADIRU (via ATA 34), altitude and airspeed data, and crew input from the overhead panel. The IPMC executes a three-tier activation logic: (1) **automatic activation** — if ID1 OR ID2 outputs ICE DETECTED AND OAT is at or below the OAT gate threshold (+10 °C), the IPMC automatically activates all ice protection subsystems at their certified power levels without crew action; (2) **advisory with crew confirmation** — if conditions are ambiguous (e.g., OAT slightly above gate, single detector only, TAT indicates warm air mass), the IPMC generates an ICING CONDITIONS DETECTED advisory and illuminates an ANTI ICE overhead panel light without automatically activating, pending crew assessment; (3) **manual ON** — crew can activate the system at any time regardless of detector state, which is the expected mode when operating in forecast icing areas before detection occurs. The IPMC also manages power load arbitration, ensuring that the total instantaneous ice protection electrical load remains within the ATA 24 power budget during all activation states.
 
@@ -164,13 +161,13 @@ The IPMC receives ICE DETECTED signals from ID1 and ID2, OAT/TAT data from the A
 - Individual subsystem controllers (WIPS controller, EIPC, PHC, WHC) — covered in their respective subsubject documents
 - Ground de-icing operations — external fluid application; no IPMC involvement
 - Ice detection for structural de-icing of horizontal stabiliser (if separate subsubject — TBD programme scope)
-- Meteorological icing forecast data feed (not real-time aircraft system input on eWTW baseline)
+- Meteorological icing forecast data feed (not real-time aircraft system input on [PROGRAMME-VARIANT] baseline)
 
 ---
 
 ## §5 Architecture Description
 
-- **Dual-channel ice detector architecture:** The use of two ice detectors (ID1 and ID2) at physically separated fuselage locations provides redundancy against single detector failure and improves coverage of the local icing condition. The IPMC activation logic can be configured for OR logic (activate if ID1 OR ID2 detects ice) or AND logic (require both to confirm before activation). For the eWTW, OR logic is the baseline automatic activation trigger, consistent with the conservatively safe approach required by CS-25.1419. If one detector fails, automatic activation capability is retained through the remaining detector; the crew is informed of the degraded detection configuration.
+- **Dual-channel ice detector architecture:** The use of two ice detectors (ID1 and ID2) at physically separated fuselage locations provides redundancy against single detector failure and improves coverage of the local icing condition. The IPMC activation logic can be configured for OR logic (activate if ID1 OR ID2 detects ice) or AND logic (require both to confirm before activation). For the [PROGRAMME-VARIANT], OR logic is the baseline automatic activation trigger, consistent with the conservatively safe approach required by CS-25.1419. If one detector fails, automatic activation capability is retained through the remaining detector; the crew is informed of the degraded detection configuration.
 
 - **OAT gate — preventing spurious activation:** The OAT gate (+10 °C threshold) prevents spurious WIPS and EIP activation in warm, moist air masses where liquid water content is present but temperatures are too high for ice accretion on aircraft surfaces. Above the OAT gate, ice detector signals are suppressed from the automatic activation path (but logged). The OAT gate uses the TAT-derived OAT value from the ADIRU; if the OAT channel is invalid, the gate defaults to a conservative COLD state (gate assumed satisfied) to ensure activation is not prevented by a sensor failure.
 
@@ -310,12 +307,12 @@ flowchart LR
 
 | Info Code | Title | DMC | Status |
 |---|---|---|---|
-| 040 | System Description — Ice Detection and Protection Control | DMC-AMPEL360E-EWTW-030-70-040-A | Draft scaffold |
-| 300 | Inspection — Ice Detector Probe Visual and Self-Test Verification | DMC-AMPEL360E-EWTW-030-70-300-A | Not started |
-| 400 | Fault Isolation — IPMC Faults and Ice Detector Faults | DMC-AMPEL360E-EWTW-030-70-400-A | Not started |
-| 520 | Remove — Ice Detector Probe | DMC-AMPEL360E-EWTW-030-70-520-A | Not started |
-| 720 | Install — Ice Detector Probe | DMC-AMPEL360E-EWTW-030-70-720-A | Not started |
-| 941 | Illustrated Parts Data — IPMC and Ice Detectors | DMC-AMPEL360E-EWTW-030-70-941-A | Not started |
+| 040 | System Description — Ice Detection and Protection Control | DMC-<PROGRAMME>-<VARIANT>-030-70-040-A | Draft scaffold |
+| 300 | Inspection — Ice Detector Probe Visual and Self-Test Verification | DMC-<PROGRAMME>-<VARIANT>-030-70-300-A | Not started |
+| 400 | Fault Isolation — IPMC Faults and Ice Detector Faults | DMC-<PROGRAMME>-<VARIANT>-030-70-400-A | Not started |
+| 520 | Remove — Ice Detector Probe | DMC-<PROGRAMME>-<VARIANT>-030-70-520-A | Not started |
+| 720 | Install — Ice Detector Probe | DMC-<PROGRAMME>-<VARIANT>-030-70-720-A | Not started |
+| 941 | Illustrated Parts Data — IPMC and Ice Detectors | DMC-<PROGRAMME>-<VARIANT>-030-70-941-A | Not started |
 
 ---
 
@@ -375,7 +372,7 @@ IPMC logs: activation events, ice encounter records (OAT, altitude, duration), l
 | Term | Acronym | Definition |
 |---|---|---|
 | Ice Detection Threshold | — | The ice mass on the vibrating-element probe at which the ICE DETECTED discrete output is asserted; determined by frequency drop from the dry resonant frequency |
-| Ice Protection Management Computer | IPMC | The central avionics controller managing detection, activation, sequencing, power arbitration, and monitoring of all ATA 30 electrothermal ice protection zones in the eWTW |
+| Ice Protection Management Computer | IPMC | The central avionics controller managing detection, activation, sequencing, power arbitration, and monitoring of all ATA 30 electrothermal ice protection zones in the [PROGRAMME-VARIANT] |
 | Automatic Activation | — | The IPMC function that activates ice protection subsystems without requiring crew recognition or action, triggered by ice detector signal and OAT gate satisfaction |
 | Ice Crystal Icing | ICI | A form of icing encountered at altitude in deep convective systems where ice crystals (not supercooled droplets) accrete in engine cores and probes; not detected by vibrating-element detectors |
 | OAT Gate | — | A temperature threshold in the IPMC activation logic that prevents automatic activation above +10 °C OAT, where ice accretion on aircraft surfaces is not possible |
@@ -394,7 +391,7 @@ IPMC logs: activation events, ice encounter records (OAT, altitude, duration), l
 | CIT-002 | FAR 25.1419 — Ice Protection | Amendment 25-147 | US certification counterpart; dual-authority compliance |
 | CIT-003 | AC 25-28 — Criteria for Approval of Flight into Icing Conditions | Rev — | Guidance on IPMC activation logic compliance demonstration |
 | CIT-004 | EUROCAE ED-103A — Minimum Operational Performance Standards for Ice Detection Systems | Edition A | Qualification standard for vibrating-element ice detector probes |
-| CIT-005 | AMPEL360e eWTW IPMC System Specification | TBD — programme document | Programme-level IPMC architecture, activation logic, DAL assignment, and interface requirements |
+| CIT-005 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] IPMC System Specification | TBD — programme document | Programme-level IPMC architecture, activation logic, DAL assignment, and interface requirements |
 
 ---
 
@@ -416,9 +413,9 @@ IPMC logs: activation events, ice encounter records (OAT, altitude, duration), l
 | OI ID | Issue | Owner | Target Resolution | Status |
 |---|---|---|---|---|
 | OI-001 | IPMC architecture (dual-channel single LRU vs two separate LRUs) not yet selected — drives failure mode independence and DAL B allocation approach | Q-MECHANICS / ORB-PMO | LC03 Architecture freeze | Open |
-| OI-002 | Ice detector probe locations on eWTW nose not yet defined; requires icing exposure analysis to confirm detector response is representative of wing leading-edge icing | Q-AIR | LC05 Detailed Design | Open |
-| OI-003 | SLD signature detection algorithm not yet defined; requires ED-103A-compliant SLD characterisation for the eWTW probe installation location | Q-AIR / Q-MECHANICS | LC05 Detailed Design | Open |
-| OI-004 | Ice crystal icing (Appendix D) advisory trigger — weather radar input availability on eWTW baseline not yet confirmed; if no radar, ICI advisory relies on crew PIREP only | ATA 34 / Q-MECHANICS | LC03 Architecture freeze | Open |
+| OI-002 | Ice detector probe locations on [PROGRAMME-VARIANT] nose not yet defined; requires icing exposure analysis to confirm detector response is representative of wing leading-edge icing | Q-AIR | LC05 Detailed Design | Open |
+| OI-003 | SLD signature detection algorithm not yet defined; requires ED-103A-compliant SLD characterisation for the [PROGRAMME-VARIANT] probe installation location | Q-AIR / Q-MECHANICS | LC05 Detailed Design | Open |
+| OI-004 | Ice crystal icing (Appendix D) advisory trigger — weather radar input availability on [PROGRAMME-VARIANT] baseline not yet confirmed; if no radar, ICI advisory relies on crew PIREP only | ATA 34 / Q-MECHANICS | LC03 Architecture freeze | Open |
 
 ---
 

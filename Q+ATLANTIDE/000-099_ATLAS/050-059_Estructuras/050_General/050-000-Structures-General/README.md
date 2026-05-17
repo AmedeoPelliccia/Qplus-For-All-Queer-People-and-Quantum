@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · Section 05 · Subsection 050 · Subsubject 000 — Structures General
@@ -32,7 +34,7 @@ language: en
 
 Subsubject-level index for *Structures General* (`000`) within subsection `050` *General* of ATLAS `050-059` — *Estructuras*.
 
-This subsubject establishes the overarching structural description of the AMPEL360 eWTW: its zones, major assemblies, classification scheme, primary/secondary/tertiary structural hierarchy, and the regulatory and digital-thread framework that governs all structures disciplines.
+This subsubject establishes the overarching structural description of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: its zones, major assemblies, classification scheme, primary/secondary/tertiary structural hierarchy, and the regulatory and digital-thread framework that governs all structures disciplines.
 
 ## 2. Document Index
 

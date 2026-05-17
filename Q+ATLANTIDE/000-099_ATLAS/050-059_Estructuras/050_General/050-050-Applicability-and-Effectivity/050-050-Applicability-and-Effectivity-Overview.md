@@ -25,21 +25,23 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — Applicability and Effectivity Overview
 
 ## 1. Purpose
 
-Provides the programme-level overview of the **applicability and effectivity** framework for AMPEL360 eWTW structural documentation: the rules by which documents, tasks, limits, and repair schemes are scoped to specific aircraft, configuration variants, serial-number blocks, and modification states.
+Provides the programme-level overview of the **applicability and effectivity** framework for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural documentation: the rules by which documents, tasks, limits, and repair schemes are scoped to specific aircraft, configuration variants, serial-number blocks, and modification states.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-Applicability and effectivity are the mechanisms that prevent applying an incorrect maintenance task, repair scheme, or structural limit to an aircraft it was not designed for. The AMPEL360 eWTW programme anticipates multiple structural variants (baseline, extended-range, freighter derivative) and a long production run during which modifications, retrofits, and service bulletins will progressively change the configuration of individual aircraft.
+Applicability and effectivity are the mechanisms that prevent applying an incorrect maintenance task, repair scheme, or structural limit to an aircraft it was not designed for. The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] programme anticipates multiple structural variants (baseline, extended-range, freighter derivative) and a long production run during which modifications, retrofits, and service bulletins will progressively change the configuration of individual aircraft.
 
-All structural documents — including inspection thresholds, repair allowances, and replacement limits — carry an explicit applicability statement encoded in both human-readable form and in S1000D applicability annotations (using the CSDB applicability filtering mechanism). The AMPEL360 Product Definition and Configuration Management system (PDCM) provides the master effectivity register from which applicability is derived.
+All structural documents — including inspection thresholds, repair allowances, and replacement limits — carry an explicit applicability statement encoded in both human-readable form and in S1000D applicability annotations (using the CSDB applicability filtering mechanism). The [PROGRAMME-AIRCRAFT] Product Definition and Configuration Management system (PDCM) provides the master effectivity register from which applicability is derived.
 
 ### 2.2 Applicability Framework
 
@@ -62,7 +64,7 @@ graph TD
 
 | Type | Scope | Owner | Update Trigger |
 |---|---|---|---|
-| Programme applicability | All AMPEL360 aircraft | Programme office | New derivative launch |
+| Programme applicability | All [PROGRAMME-AIRCRAFT] aircraft | Programme office | New derivative launch |
 | Model applicability | Specific variant (e.g., ER) | Structures design | Design change order |
 | Serial-number effectivity | Production block | Production planning | SB incorporation |
 | SB/modification effectivity | Post-delivery aircraft | Service engineering | SB release |

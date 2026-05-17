@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-040-GEARBOX-DRIVE-AND-TORQUE-TRANSFER-INTERFACES
      ATLAS-087 (Open Rotor and Counter-Rotating) · Gearbox Drive and Torque-Transfer Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Gearbox Drive and Torque-Transfer Interfaces
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-040"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-040 documents the Differential Planetary Gearbox (DPGB) detailed design, oil system architecture, shaft-coupling interfaces, and torque-measurement instrumentation for the AMPEL360E eWTW ORCR propulsor. It defines the mechanical interfaces between the LPT shaft, the DPGB, the FR and AR shafts, and the engine nacelle structure.
+This document defines the agnostic ATLAS standard-level architecture context for `Gearbox Drive and Torque-Transfer Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 DPGB Detailed Design
 
 ### 2.1 Gear Train Architecture

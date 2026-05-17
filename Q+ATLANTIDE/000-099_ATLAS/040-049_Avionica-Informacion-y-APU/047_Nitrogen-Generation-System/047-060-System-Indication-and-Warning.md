@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 060 — System Indication and Warning
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the System Indication and Warning sub-system of ATA 47 NGS for the AMPEL360E eWTW. The indication and warning function provides the flight crew and maintenance personnel with real-time visibility of NGS operational status, tank O₂ concentrations, system faults, and crew alerting via the ECAM/MFD and ATA 45 CMS interfaces.
+This document defines the System Indication and Warning sub-system of ATA 47 NGS for the programme-defined aircraft type. The indication and warning function provides the flight crew and maintenance personnel with real-time visibility of NGS operational status, tank O₂ concentrations, system faults, and crew alerting via the ECAM/MFD and ATA 45 CMS interfaces.
 
 The Tank Oxygen Monitoring System (TOMS) sensors provide primary crew-visible data: per-tank O₂ concentration is displayed on the ECAM NGS synoptic page. The NGSCU processes all NGS monitoring data and generates CAUTION and WARNING messages on the crew alerting bus (ARINC 664 P7). Maintenance messages are transmitted to the CMS (ATA 45) for BITE download and troubleshooting.
 
@@ -63,7 +65,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter / Sub-subject | ATA 47.060 — System Indication and Warning |
 | Certification Basis | CS-25 Amendment 28; CS-25 §25.1322 (alerting) |
 | Applicable Standards | DO-160G; S1000D Issue 5.0; ARINC 664 P7; CS-25 §25.1309 |

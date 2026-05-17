@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0085-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-085-040-POWER-DISTRIBUTION-AND-ENERGY-MANAGEMENT-INTERFACES
      ATLAS-085 (Distributed Electric Propulsion Architecture) · Power Distribution and Energy Management Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Power Distribution and Energy Management Interfaces
@@ -44,28 +46,27 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-040"
 
 ## §1 Purpose
 
-ATLAS subsubject 085-040 defines the HVDC 800 V power distribution architecture from the BGHA primary bus (ATLAS-084) to each of the four DEP propulsor stations. It specifies the DEP power bus segment topology, bus tie breaker (BTB) architecture, cable routing and sizing, solid-state power controller (SSPC) protection scheme, insulation monitoring, regenerative power return path, and the energy management interfaces between the DEPCU and the BGSCU (ATLAS-084).
+This document defines the agnostic ATLAS standard-level architecture context for `Power Distribution and Energy Management Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-085 — 085-040 Power Distribution and Energy Management Interfaces |
-| Certification Basis | CS-25.1353; CS-25.1357; DO-160G; IEC 60479-1 |
-| S1000D SNS | 085-040-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `085` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 DEP Power Bus Topology
 
-The BGHA HVDC 800 V primary bus (ATLAS-084) feeds a dedicated DEP Power Distribution Panel (DPDP) located in the forward avionics bay. The DPDP provides four independent feeder circuits — one per propulsor — each protected by a dedicated BTB and a downstream SSPC. A common DEP Bus Segment (DBS) links all four feeders from the BGHA tie point; the DBS can be segmented by the Bus Isolation Breaker (BIB) into a forward half (DEP-BUS-FWD, serving P1+P2) and an aft half (DEP-BUS-AFT, serving P3+P4) to isolate faults.
+The BGHA HVDC <NOMINAL-VOLTAGE> primary bus (ATLAS-084) feeds a dedicated DEP Power Distribution Panel (DPDP) located in the forward avionics bay. The DPDP provides four independent feeder circuits — one per propulsor — each protected by a dedicated BTB and a downstream SSPC. A common DEP Bus Segment (DBS) links all four feeders from the BGHA tie point; the DBS can be segmented by the Bus Isolation Breaker (BIB) into a forward half (DEP-BUS-FWD, serving P1+P2) and an aft half (DEP-BUS-AFT, serving P3+P4) to isolate faults.
 
 ```mermaid
 flowchart LR
-    BGHA[BGHA HVDC 800 V Bus\nATLAS-084] -->|HVDC 800 V| DPDP[DEP Power\nDistribution Panel\nDPDP]
+    BGHA[BGHA HVDC <NOMINAL-VOLTAGE> Bus\nATLAS-084] -->|HVDC <NOMINAL-VOLTAGE>| DPDP[DEP Power\nDistribution Panel\nDPDP]
     DPDP -->|BIB| FWD[DEP-BUS-FWD\nP1 + P2]
     DPDP -->|BIB| AFT[DEP-BUS-AFT\nP3 + P4]
     FWD -->|BTB-P1 + SSPC-P1| MDU1[MDU-1\nP1 Port Wing]
@@ -84,11 +85,11 @@ flowchart LR
 
 | Device | Location | Rating | Trip Time | Normal State | DEPCU Control |
 |---|---|---|---|---|---|
-| BIB (Bus Isolation Breaker) | DPDP | HVDC 800 V / 3 000 A | < 5 ms | Closed | Opens on bus fault or dual-segment isolation command |
-| BTB-P1 | DPDP — P1 feeder | HVDC 800 V / 700 A | < 5 ms | Closed (propulsor active) | Opens on MDU-1 fault, maintenance LOTO, or DM isolation |
-| BTB-P2 | DPDP — P2 feeder | HVDC 800 V / 700 A | < 5 ms | Closed | Same as BTB-P1 |
-| BTB-P3 | DPDP — P3 feeder | HVDC 800 V / 700 A | < 5 ms | Closed | Same as BTB-P1 |
-| BTB-P4 | DPDP — P4 feeder | HVDC 800 V / 700 A | < 5 ms | Closed | Same as BTB-P1 |
+| BIB (Bus Isolation Breaker) | DPDP | HVDC <NOMINAL-VOLTAGE> / 3 000 A | < 5 ms | Closed | Opens on bus fault or dual-segment isolation command |
+| BTB-P1 | DPDP — P1 feeder | HVDC <NOMINAL-VOLTAGE> / 700 A | < 5 ms | Closed (propulsor active) | Opens on MDU-1 fault, maintenance LOTO, or DM isolation |
+| BTB-P2 | DPDP — P2 feeder | HVDC <NOMINAL-VOLTAGE> / 700 A | < 5 ms | Closed | Same as BTB-P1 |
+| BTB-P3 | DPDP — P3 feeder | HVDC <NOMINAL-VOLTAGE> / 700 A | < 5 ms | Closed | Same as BTB-P1 |
+| BTB-P4 | DPDP — P4 feeder | HVDC <NOMINAL-VOLTAGE> / 700 A | < 5 ms | Closed | Same as BTB-P1 |
 
 ---
 
@@ -96,10 +97,10 @@ flowchart LR
 
 | SSPC | Protected Load | Rating | Overcurrent Trip | Notes |
 |---|---|---|---|---|
-| SSPC-P1 | MDU-1 (P1) | 700 A / HVDC 800 V | 850 A in < 10 ms | Current-limiting SSPC; soft-start ramp 500 ms |
-| SSPC-P2 | MDU-2 (P2) | 700 A / HVDC 800 V | 850 A in < 10 ms | Same |
-| SSPC-P3 | MDU-3 (P3) | 700 A / HVDC 800 V | 850 A in < 10 ms | Same |
-| SSPC-P4 | MDU-4 (P4) | 700 A / HVDC 800 V | 850 A in < 10 ms | Same |
+| SSPC-P1 | MDU-1 (P1) | 700 A / HVDC <NOMINAL-VOLTAGE> | 850 A in < 10 ms | Current-limiting SSPC; soft-start ramp 500 ms |
+| SSPC-P2 | MDU-2 (P2) | 700 A / HVDC <NOMINAL-VOLTAGE> | 850 A in < 10 ms | Same |
+| SSPC-P3 | MDU-3 (P3) | 700 A / HVDC <NOMINAL-VOLTAGE> | 850 A in < 10 ms | Same |
+| SSPC-P4 | MDU-4 (P4) | 700 A / HVDC <NOMINAL-VOLTAGE> | 850 A in < 10 ms | Same |
 
 ---
 
@@ -117,7 +118,7 @@ flowchart LR
 
 ## §7 Insulation Monitoring Unit (IMU)
 
-A dedicated DEP Insulation Monitoring Unit (DEP-IMU) is installed in the DPDP and continuously measures insulation resistance between each HVDC 800 V rail and the aircraft ground. The IMU operates per IEC 61557-8 and provides:
+A dedicated DEP Insulation Monitoring Unit (DEP-IMU) is installed in the DPDP and continuously measures insulation resistance between each HVDC <NOMINAL-VOLTAGE> rail and the aircraft ground. The IMU operates per IEC 61557-8 and provides:
 
 - Continuous online insulation monitoring at ≥ 1 measurement/second per rail.
 - Fault threshold: insulation resistance < 100 kΩ triggers CREW ADVISORY and DEPCU fault log.
@@ -128,7 +129,7 @@ A dedicated DEP Insulation Monitoring Unit (DEP-IMU) is installed in the DPDP an
 
 ## §8 Regenerative Power Return Path
 
-During descent-regen mode, each MDU operates as a four-quadrant inverter, returning power from fan windmilling to the DEP Bus at HVDC 800 V. The BGSCU (ATLAS-084) directs this energy to the SSBP (ATLAS-084 BDCC-A/B). The regenerative return path uses the same HVDC cables (reverse current). Maximum regenerative current per MDU: 90 A (≈ 72 kW per propulsor). DEPCU sets the MDU regen setpoints via CAN. BGSCU monitors bus voltage stability and limits aggregate regen power to prevent bus over-voltage (≥ 840 V trip level).
+During descent-regen mode, each MDU operates as a four-quadrant inverter, returning power from fan windmilling to the DEP Bus at HVDC <NOMINAL-VOLTAGE>. The BGSCU (ATLAS-084) directs this energy to the SSBP (ATLAS-084 BDCC-A/B). The regenerative return path uses the same HVDC cables (reverse current). Maximum regenerative current per MDU: 90 A (≈ 72 kW per propulsor). DEPCU sets the MDU regen setpoints via CAN. BGSCU monitors bus voltage stability and limits aggregate regen power to prevent bus over-voltage (≥ 840 V trip level).
 
 ---
 
@@ -149,7 +150,7 @@ During descent-regen mode, each MDU operates as a four-quadrant inverter, return
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-085-040-001 | HVDC 800 V cable insulation XLPE qualification to DO-160G vibration and altitude | Q-INDUSTRY | PDR |
+| OI-085-040-001 | HVDC <NOMINAL-VOLTAGE> cable insulation XLPE qualification to DO-160G vibration and altitude | Q-INDUSTRY | PDR |
 | OI-085-040-002 | BTB-P3/P4 cable run (28 m) voltage drop budget — acceptability with SSPC | Q-INDUSTRY | CDR |
 | OI-085-040-003 | DEP-IMU ground fault location accuracy requirement — test plan | Q-INDUSTRY | CDR |
 | OI-085-040-004 | BGSCU–DEPCU AFDX VL definition and message format (ARINC 664 allocation) | Q-HPC | PDR |

@@ -21,6 +21,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 080-089 · Section 08 · Subsection 080 — Quantum Sensing for Propulsion
@@ -35,7 +37,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 - Populates the subsubject namespace `00`–`99` of subsection `080` *Quantum Sensing for Propulsion*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the AMPEL360E eWTW Quantum Sensing for Propulsion system (QSPU dual-channel DAL B, 46 quantum sensor nodes, atom interferometers, NV-center sensors, SQUIDs, Josephson junction thermometers, optomechanical pressure sensors, quantum sensor fusion QE-EKF, QML health index, AFDX ARINC 664 P7, S1000D 32 DMs, BREX-080-v1).
+- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the programme-defined aircraft type Quantum Sensing for Propulsion system (QSPU dual-channel DAL B, 46 quantum sensor nodes, atom interferometers, NV-center sensors, SQUIDs, Josephson junction thermometers, optomechanical pressure sensors, quantum sensor fusion QE-EKF, QML health index, AFDX ARINC 664 P7, S1000D 32 DMs, BREX-080-v1).
 
 ## 3. Subsubject Index
 

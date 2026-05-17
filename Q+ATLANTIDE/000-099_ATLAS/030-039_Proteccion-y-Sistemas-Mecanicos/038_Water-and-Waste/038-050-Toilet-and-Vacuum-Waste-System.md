@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Toilet and Vacuum Waste System"
 file_name: "038-050-Toilet-and-Vacuum-Waste-System.md"
 sns_reference: "038-05"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-05"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-038-05"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -79,7 +79,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 38"
   - "Water and Waste"
@@ -94,10 +94,12 @@ keywords:
   - "rinse nozzle"
   - "activated carbon"
   - "black water"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 038-050 — Toilet and Vacuum Waste System
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,44 +109,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-05-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-038-05-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document describes the **Toilet and Vacuum Waste System (VWS)** of ATA 38 for the **AMPEL360e eWTW**. It covers the ATA 38 side of the toilet system — waste collection, storage, and ground servicing:
+This document defines the agnostic ATLAS standard-level architecture context for `038-050 — Toilet and Vacuum Waste System`.
 
-1. Lavatory toilet bowls and their interfaces to the vacuum circuit (EFV, WIV).
-2. Pre-wet/rinse water supply from the potable water system to each toilet bowl.
-3. Electric Flush Valve (EFV): solenoid-actuated, controlling the flush cycle.
-4. Waste Inlet Valve (WIV): connecting toilet bowl outlet to the vacuum waste collector line.
-5. Waste collection pipes and collector manifold routing to waste tanks.
-6. Waste tanks: material, capacity, accessories (level sensor, overflow sensor, temperature sensor, odour vent filter).
-7. Waste tank ground drain fittings and deodoriser tablet dispenser.
-8. ATA 37/38 boundary: ATA 37 ends at the flush valve inlet port (vacuum supply side); ATA 38 covers the toilet bowl, waste collection plumbing, and waste tank.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants (unless noted) |
-| ATA Chapter/Subsubject | 038-050 — Toilet and Vacuum Waste System |
-| Document Tier | Level 2 — SDD |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Parent Document | [038-000](./038-000-Water-and-Waste-General.md) |
-| Cross-reference | [037-000 Vacuum General](../037_Vacuum/037-000-Vacuum-General.md) (EVG, vacuum supply) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Toilet System Architecture
 
-The eWTW uses a vacuum-flush toilet system where differential pressure (cabin pressure above waste-line pressure) transports waste from the toilet bowl to the waste tank. The vacuum is generated by the Electric Vacuum Generator (EVG — ATA 37).
+The [PROGRAMME-VARIANT] uses a vacuum-flush toilet system where differential pressure (cabin pressure above waste-line pressure) transports waste from the toilet bowl to the waste tank. The vacuum is generated by the Electric Vacuum Generator (EVG — ATA 37).
 
 **ATA 37 scope:** EVG, SOV, VRV, vacuum manifold and lines up to and including the flush valve vacuum inlet port.  
 **ATA 38 scope:** Toilet bowl assembly (bowl, seat, lid, flush button), EFV, WIV, rinse nozzle, waste collection lines, waste tank, sensors, odour filter, and ground drain fittings.
@@ -423,14 +412,14 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description — VWS | DMC-AMPEL360E-EWTW-038-05-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| EFV description | DMC-AMPEL360E-EWTW-038-05-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EFV removal | DMC-AMPEL360E-EWTW-038-05-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EFV installation | DMC-AMPEL360E-EWTW-038-05-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Waste tank description | DMC-AMPEL360E-EWTW-038-05-20A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Waste tank drain/service | DMC-AMPEL360E-EWTW-038-05-20A-910A-A | 910 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Odour filter replacement | DMC-AMPEL360E-EWTW-038-05-30A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — VWS | DMC-AMPEL360E-EWTW-038-05-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description — VWS | DMC-<PROGRAMME>-<VARIANT>-038-05-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| EFV description | DMC-<PROGRAMME>-<VARIANT>-038-05-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EFV removal | DMC-<PROGRAMME>-<VARIANT>-038-05-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EFV installation | DMC-<PROGRAMME>-<VARIANT>-038-05-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Waste tank description | DMC-<PROGRAMME>-<VARIANT>-038-05-20A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Waste tank drain/service | DMC-<PROGRAMME>-<VARIANT>-038-05-20A-910A-A | 910 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Odour filter replacement | DMC-<PROGRAMME>-<VARIANT>-038-05-30A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — VWS | DMC-<PROGRAMME>-<VARIANT>-038-05-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 

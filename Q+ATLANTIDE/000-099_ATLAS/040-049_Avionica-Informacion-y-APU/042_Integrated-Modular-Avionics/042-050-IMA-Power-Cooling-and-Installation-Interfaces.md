@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 050 — IMA Power, Cooling and Installation Interfaces
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the power distribution, cooling, cable routing, grounding, bonding, and installation interface requirements for the AMPEL360E IMA system. It covers the Power Supply Module (PSM) and Power Distribution Unit (PDU) architecture, cold plate liquid cooling design, DO-160G Section 16 power quality compliance, cable routing and shielding per MIL-W-22759, grounding and bonding per MIL-HDBK-1857, and Solid State Power Controller (SSPC) integration.
+This document defines the power distribution, cooling, cable routing, grounding, bonding, and installation interface requirements for the [PROGRAMME-AIRCRAFT] IMA system. It covers the Power Supply Module (PSM) and Power Distribution Unit (PDU) architecture, cold plate liquid cooling design, DO-160G Section 16 power quality compliance, cable routing and shielding per MIL-W-22759, grounding and bonding per MIL-HDBK-1857, and Solid State Power Controller (SSPC) integration.
 
 ---
 
@@ -46,18 +48,18 @@ This document defines the power distribution, cooling, cable routing, grounding,
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28; DO-160G Issue G |
 | Applicable Standards | DO-160G §16; MIL-W-22759; MIL-HDBK-1857; ARINC 600; SAE AS50881 |
 | Design Assurance Level | PSM: DAL B; PDU: DAL B; Cooling: DAL C |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E IMA power architecture provides 28 V DC primary power and 115 V AC 400 Hz secondary power to each IMA cabinet from the aircraft Essential Power Distribution Centre (EPDC). Each cabinet has two independently powered PSMs (PSM-A and PSM-B) providing N+1 redundancy. Each PSM accepts 28 V DC input and generates regulated 5 V, 3.3 V, and 1.8 V DC rails for LRM supply via the cabinet backplane.
+The [PROGRAMME-AIRCRAFT] IMA power architecture provides 28 V DC primary power and 115 V AC 400 Hz secondary power to each IMA cabinet from the aircraft Essential Power Distribution Centre (EPDC). Each cabinet has two independently powered PSMs (PSM-A and PSM-B) providing N+1 redundancy. Each PSM accepts 28 V DC input and generates regulated 5 V, 3.3 V, and 1.8 V DC rails for LRM supply via the cabinet backplane.
 
 Liquid cooling is provided by the aircraft Environmental Control System (ECS) liquid cooling loop operating at 40–55°C coolant inlet temperature. The IMA cold plate is a dedicated aluminium extrusion cold wall within each cabinet, interfacing with the aircraft liquid loop via a self-sealing quick-disconnect coupling (QD coupling). Thermal resistance from LRM junction to coolant is ≤0.8°C/W per LRM slot under maximum load.
 
@@ -354,9 +356,9 @@ graph LR
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
 | REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-02 | AMPEL360E IMA Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | AMPEL360E IMA Thermal Analysis Report | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | AMPEL360E Wiring Design Standard | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-02 | [PROGRAMME-AIRCRAFT] IMA Power Budget Analysis | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] IMA Thermal Analysis Report | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] Wiring Design Standard | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

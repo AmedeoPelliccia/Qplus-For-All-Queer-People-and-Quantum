@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # HV Contactors and Protection
@@ -33,19 +35,27 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-050"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document defines the high-voltage contactor and protection architecture for the AMPEL360E eWTW battery system, covering the main contactor, precharge contactor, Manual Service Disconnect (MSD), current sensing, insulation resistance monitoring (IRM), and over-current protection (OCP) logic.
 
+This document defines the agnostic ATLAS standard-level architecture context for `HV Contactors and Protection`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
 
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-Each battery pack is interfaced to the HVDC 800 V propulsion bus through a three-stage contactor assembly: a precharge contactor in series with a current-limiting resistor, a main bypass contactor, and a manual service disconnect (MSD). The precharge sequence ramps bus voltage from near-zero to pack voltage in less than 5 seconds, preventing capacitor inrush current damage to the Battery Interface Unit (BIU) and downstream inverters. Once precharge is complete (bus voltage within 20 V of pack voltage), the BMS closes the main contactor and opens the precharge contactor.
+Each battery pack is interfaced to the HVDC <NOMINAL-VOLTAGE> propulsion bus through a three-stage contactor assembly: a precharge contactor in series with a current-limiting resistor, a main bypass contactor, and a manual service disconnect (MSD). The precharge sequence ramps bus voltage from near-zero to pack voltage in less than 5 seconds, preventing capacitor inrush current damage to the Battery Interface Unit (BIU) and downstream inverters. Once precharge is complete (bus voltage within 20 V of pack voltage), the BMS closes the main contactor and opens the precharge contactor.
 
-The main contactor is a hermetically sealed vacuum interrupter rated at 800 V DC and 800 A continuous (1600 A interrupt). Coil energisation is provided by the BMS at 28 V DC; a normally-open contact configuration ensures that loss of BMS power de-energises the contactor (fail-safe open). Contact welding detection uses a voltage-across-contacts monitor; if voltage is present across a supposedly open contactor, the BMS triggers a welding fault and inhibits the opposite pack from closing.
+The main contactor is a hermetically sealed vacuum interrupter rated at <NOMINAL-VOLTAGE> DC and 800 A continuous (1600 A interrupt). Coil energisation is provided by the BMS at 28 V DC; a normally-open contact configuration ensures that loss of BMS power de-energises the contactor (fail-safe open). Contact welding detection uses a voltage-across-contacts monitor; if voltage is present across a supposedly open contactor, the BMS triggers a welding fault and inhibits the opposite pack from closing.
 
-Insulation resistance monitoring (IRM) measures the resistance between the HV bus and aircraft ground (chassis). The IRM threshold is ≥500 Ω/V (400 kΩ for the 800 V system). A reading below threshold triggers a CAS CAUTION and inhibits ground charging. At <100 Ω/V (80 kΩ) the BMS commands contactor open and alerts CAS WARNING. A Hall-effect current sensor on each pack output (±0.5% accuracy at full scale) feeds the BMS over-current protection: instantaneous OCP at 1800 A and sustained OCP at 900 A for >2 s both command contactor open.
+Insulation resistance monitoring (IRM) measures the resistance between the HV bus and aircraft ground (chassis). The IRM threshold is ≥500 Ω/V (400 kΩ for the <NOMINAL-VOLTAGE> system). A reading below threshold triggers a CAS CAUTION and inhibits ground charging. At <100 Ω/V (80 kΩ) the BMS commands contactor open and alerts CAS WARNING. A Hall-effect current sensor on each pack output (±0.5% accuracy at full scale) feeds the BMS over-current protection: instantaneous OCP at 1800 A and sustained OCP at 900 A for >2 s both command contactor open.
 
 ## §4 Functional Breakdown
 | ID | Function | Description | Owner | DAL |
@@ -60,11 +70,11 @@ Insulation resistance monitoring (IRM) measures the resistance between the HV bu
 ## §5 System Context
 ```mermaid
 graph TD
-    PACK[Battery Pack ~800V] --> MSD[Manual Service Disconnect]
+    PACK[Battery Pack ~<NOMINAL-VOLTAGE>] --> MSD[Manual Service Disconnect]
     MSD --> PRECHARGE_R[Precharge Resistor 10Ω]
     PRECHARGE_R --> PRECHARGE_C[Precharge Contactor]
     MSD --> MAIN_C[Main Contactor]
-    PRECHARGE_C --> BUS[HVDC Bus 800V]
+    PRECHARGE_C --> BUS[HVDC Bus <NOMINAL-VOLTAGE>]
     MAIN_C --> BUS
     ISENS[Hall Effect Current Sensor] -->|±0.5%| BMS[BMS DAL-B]
     IRM[Insulation Monitor] -->|HV-chassis R| BMS
@@ -78,13 +88,13 @@ graph TD
 ```mermaid
 graph LR
     subgraph PACK_OUTPUT[Pack Output Circuit]
-        PACK_V[~800V Pack] --> MSD_SW[MSD Switch]
+        PACK_V[~<NOMINAL-VOLTAGE> Pack] --> MSD_SW[MSD Switch]
         MSD_SW --> FUSE[Main Fuse 900A]
         FUSE --> NODE_A[Junction A]
         NODE_A --> PR[Precharge R 10Ω]
         PR --> PC[Precharge Contactor NO]
         NODE_A --> MC[Main Contactor NO]
-        PC --> BUS_V[800V HVDC Bus]
+        PC --> BUS_V[<NOMINAL-VOLTAGE> HVDC Bus]
         MC --> BUS_V
     end
     ISENS_HW[Hall Effect Sensor] -.->|I| BMS_PROT[BMS OCP Logic]
@@ -97,13 +107,13 @@ graph LR
 ## §7 Components and LRUs
 | LRU ID | Name | P/N | Qty | Location |
 |---|---|---|---|---|
-| LRU-072-050-01 | Main HV Contactor (800V/800A) | CONT-VAC-800V-800A | 2 | Pack output box |
-| LRU-072-050-02 | Precharge Contactor (800V/50A) | CONT-PC-800V-50A | 2 | Pack output box |
+| LRU-072-050-01 | Main HV Contactor (<NOMINAL-VOLTAGE>/800A) | CONT-VAC-<NOMINAL-VOLTAGE>-800A | 2 | Pack output box |
+| LRU-072-050-02 | Precharge Contactor (<NOMINAL-VOLTAGE>/50A) | CONT-PC-<NOMINAL-VOLTAGE>-50A | 2 | Pack output box |
 | LRU-072-050-03 | Precharge Resistor 10Ω/5kW | RES-PC-10R-5KW | 2 | Pack output box |
-| LRU-072-050-04 | Manual Service Disconnect | MSD-800V-LOTO | 2 | Lower wing panel |
-| LRU-072-050-05 | Hall-Effect Current Sensor | ISENS-800V-1800A | 2 | Pack output cable |
-| LRU-072-050-06 | Insulation Resistance Monitor | IRM-800V-DAL-B | 2 | Pack output box |
-| LRU-072-050-07 | Pack Voltage Monitor Board | VMON-800V-072 | 2 | Pack output box |
+| LRU-072-050-04 | Manual Service Disconnect | MSD-<NOMINAL-VOLTAGE>-LOTO | 2 | Lower wing panel |
+| LRU-072-050-05 | Hall-Effect Current Sensor | ISENS-<NOMINAL-VOLTAGE>-1800A | 2 | Pack output cable |
+| LRU-072-050-06 | Insulation Resistance Monitor | IRM-<NOMINAL-VOLTAGE>-DAL-B | 2 | Pack output box |
+| LRU-072-050-07 | Pack Voltage Monitor Board | VMON-<NOMINAL-VOLTAGE>-072 | 2 | Pack output box |
 
 ## §8 Interfaces
 | Interface | Source | Destination | Protocol | Notes |
@@ -131,7 +141,7 @@ graph LR
 |---|---|---|---|---|
 | Main contactor interrupt rating | ≥800 | 800 | V DC | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | Main contactor continuous current | ≥600 | 800 | A | ![TBD](https://img.shields.io/badge/-TBD-orange) |
-| Pre-charge time (0 to ~800V) | ≤5 | 3–5 | s | ![TBD](https://img.shields.io/badge/-TBD-orange) |
+| Pre-charge time (0 to ~<NOMINAL-VOLTAGE>) | ≤5 | 3–5 | s | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | OCP response (instantaneous, 1800A) | ≤20 | 10 | ms | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | IRM lower threshold (warning) | 500 Ω/V | 500 Ω/V (400 kΩ) | — | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | IRM isolation threshold | 100 Ω/V | 100 Ω/V (80 kΩ) | — | ![TBD](https://img.shields.io/badge/-TBD-orange) |
@@ -146,11 +156,11 @@ graph LR
 ## §12 Maintenance and Diagnostics
 | Task | Interval | Tool | Reference |
 |---|---|---|---|
-| Contactor contact resistance (DLRO) | 1000 FH | DLRO micro-ohmmeter | AMM 072-50-01 |
-| Precharge resistor value check | 500 FH | DMM | AMM 072-50-02 |
-| IRM functional test | A-Check | GSE-IRM-TEST-072 | AMM 072-50-03 |
-| MSD torque and continuity check | Annual / C-Check | Torque wrench + DMM | AMM 072-50-04 |
-| Current sensor calibration | 2000 FH | Current calibrator | CMM 072-50-05 |
+| Contactor contact resistance (DLRO) | 1000 FH | DLRO micro-ohmmeter | AMM [NODE]-[TASK] |
+| Precharge resistor value check | 500 FH | DMM | AMM [NODE]-[TASK] |
+| IRM functional test | A-Check | GSE-IRM-TEST-072 | AMM [NODE]-[TASK] |
+| MSD torque and continuity check | Annual / C-Check | Torque wrench + DMM | AMM [NODE]-[TASK] |
+| Current sensor calibration | 2000 FH | Current calibrator | CMM [NODE]-[TASK] |
 
 ## §13 Footprint
 | Metric | Value |

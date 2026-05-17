@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Battery State Estimation
@@ -33,15 +35,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-060"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document defines the State of Charge (SoC) and State of Health (SoH) estimation algorithms and architectures used by the AMPEL360E eWTW Battery Management System. It covers the Extended Kalman Filter (EKF) algorithm design, input data sources, output accuracy requirements, and integration with flight and energy management systems.
 
+This document defines the agnostic ATLAS standard-level architecture context for `Battery State Estimation`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
 
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-The AMPEL360E BMS implements a dual Extended Kalman Filter (EKF) for real-time SoC estimation — one instance per BMS lane — operating on a combined equivalent circuit model (ECM) of the NMC 811 cell. The ECM is parameterised using electrochemical impedance spectroscopy (EIS) data collected during factory characterisation across the full temperature (−20°C to +50°C) and SoC (0–100%) range, with model coefficients stored in non-volatile memory on each BMU.
+The [PROGRAMME-AIRCRAFT] BMS implements a dual Extended Kalman Filter (EKF) for real-time SoC estimation — one instance per BMS lane — operating on a combined equivalent circuit model (ECM) of the <BATTERY-CHEMISTRY> cell. The ECM is parameterised using electrochemical impedance spectroscopy (EIS) data collected during factory characterisation across the full temperature (−20°C to +50°C) and SoC (0–100%) range, with model coefficients stored in non-volatile memory on each BMU.
 
 The EKF fuses three measurement streams at a 100 ms cycle rate: cell terminal voltage (from CSC, ±2 mV), pack current (from Hall-effect sensor, ±0.5%), and cell temperature (from CSC NTC thermistor, ±1°C). The observer corrects the coulomb-counting integrator for Coulombic efficiency variation, temperature-dependent capacity fade, and sensor drift. SoC estimation accuracy is targeted at ±2% RMS over the full operating envelope from EIS to aircraft EIS date.
 
@@ -127,10 +137,10 @@ graph TD
 ## §12 Maintenance and Diagnostics
 | Task | Interval | Tool | Reference |
 |---|---|---|---|
-| SoC accuracy validation (GSE charge/discharge cycle) | 2000 FH | GSE charge rig | CMM 072-60-01 |
-| ECM parameter update (EIS scan) | 5000 FH / on-condition | GSE-EIS-ANALYSER | CMM 072-60-02 |
-| SoH trend review via ACMS | Per-flight (automatic) | ACMS ground station | AMM 072-60-03 |
-| BMU NVM integrity check | A-Check | MCDU / laptop | AMM 072-60-04 |
+| SoC accuracy validation (GSE charge/discharge cycle) | 2000 FH | GSE charge rig | CMM [NODE]-[TASK] |
+| ECM parameter update (EIS scan) | 5000 FH / on-condition | GSE-EIS-ANALYSER | CMM [NODE]-[TASK] |
+| SoH trend review via ACMS | Per-flight (automatic) | ACMS ground station | AMM [NODE]-[TASK] |
+| BMU NVM integrity check | A-Check | MCDU / laptop | AMM [NODE]-[TASK] |
 
 ## §13 Footprint
 | Metric | Value |

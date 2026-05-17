@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0083-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-083-020-SOLAR-ARRAY-INTEGRATION-FOR-AUXILIARY-PROPULSION
      ATLAS-083 (Solar-Electric Auxiliary) · Solar Array Integration
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Solar Array Integration for Auxiliary Propulsion
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-020"
 
 ## §1 Purpose
 
-ATLAS subsubject 083-020 defines the structural and electrical integration of the PV solar array into the AMPEL360E eWTW airframe for auxiliary propulsion energy harvest. It covers panel area allocation, cell technology, laminate construction, MPPT architecture, bus bar routing, structural ICD, aerodynamic surface requirements, irradiance modelling, and bypass/blocking diode strategy.
+This document defines the agnostic ATLAS standard-level architecture context for `Solar Array Integration for Auxiliary Propulsion`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-083 — 083-020 Solar Array Integration |
-| Certification basis | EASA CS-25 Amdt 27+; DO-160G (EMC, lightning); ASTM E1036 (PV cell characterisation) |
-| S1000D SNS | 083-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `083` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 PV Panel Area Allocation
 
 | Zone | Area (m²) | Panel Count | MPPT Channel | Orientation |
@@ -94,7 +95,7 @@ Each PV panel is a **glass/CFRP pre-preg sandwich laminate** comprising the foll
 4. **Silicone encapsulant** (rear) — 0.15 mm
 5. **Fibre pre-preg substrate** — 0.5 mm CFRP (quasi-isotropic); provides panel stiffness
 6. **Adhesive bond layer** — 0.12 mm epoxy film (FM-300); panel-to-skin bonding
-7. **AMPEL360E outer skin CFRP** — primary structure (not modified)
+7. **[PROGRAMME-AIRCRAFT] outer skin CFRP** — primary structure (not modified)
 
 **CTE mismatch management:** GaAs CTE (5.7 ppm/°C) vs. CFRP (1–3 ppm/°C). Differential CTE induces peel stress at bond line. Analysis target: peel stress < 0.5 MPa at −55 °C; accommodated by compliant silicone encapsulant and controlled panel aspect ratio (max 600 mm × 400 mm per panel).
 
@@ -142,7 +143,7 @@ Each panel contains two series strings of 24 cells (Voc ≈ 66 V per string, Vmp
 | Panel step height at leading edge | ≤ 0.2 mm (feathered) | Forward-facing step transition; laminar-turbulent trigger management |
 | Panel step height at trailing edge | ≤ 0.5 mm (backward-facing) | Less critical; drag increment acceptable |
 | Inter-panel gap | ≤ 1.0 mm | Prevent localised separation at gaps |
-| Surface finish | Ra ≤ 0.8 µm (64 µin) | Per AMPEL360E skin finish standard |
+| Surface finish | Ra ≤ 0.8 µm (64 µin) | Per [PROGRAMME-AIRCRAFT] skin finish standard |
 
 ---
 

@@ -6,10 +6,10 @@ subsubject: "040"
 subsubject_title: "Satellite Navigation and Augmentation"
 file_name: "034-040-Satellite-Navigation-and-Augmentation.md"
 sns_reference: "034-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-40"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-40"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "GNSS"
@@ -92,10 +92,12 @@ keywords:
   - "DO-229"
   - "TSO-C145"
   - "TSO-C146"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-040 — Satellite Navigation and Augmentation
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -107,43 +109,23 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Satellite Navigation and Augmentation subsystem (ATA 034-040) of the AMPEL360e eWTW aircraft. It covers the dual GNSS receivers, SBAS augmentation (WAAS / EGNOS), GBAS approach capability (TBD), RAIM integrity monitoring, ARAIM future upgrade path, and RNP-AR approach qualification.
+This document defines the agnostic ATLAS standard-level architecture context for `034-040 — Satellite Navigation and Augmentation`.
 
-The eWTW uses two standalone GNSS receivers (GNSS-1 and GNSS-2), each qualified for SBAS augmentation (WAAS in North America, EGNOS in Europe). L1 frequency is the baseline; L5 dual-frequency capability is TBD. Both receivers feed the FMGC navigation filter. RNP-AR approach capability (lateral accuracy < 0.1 NM TBD) requires GNSS/SBAS with RAIM monitoring. ARAIM (Advanced RAIM using multiple constellations) is a planned future upgrade when ICAO standards mature.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-GBAS (Ground-Based Augmentation System) approach capability is TBD as optional fitment for operations at GBAS-equipped airports, potentially enabling Cat I and Cat II/III approach minima at GBAS airports.
-
-Key applicable standards: DO-229 (MOPS for GPS/SBAS), TSO-C145e / C146e, AMC 20-28 (EASA GNSS/SBAS approval), AMC 20-26 (RNP-AR).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 034-040 — Satellite Navigation and Augmentation |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| GNSS Receivers | 2 (dual — GNSS-1 and GNSS-2) |
-| Constellations | GPS L1 (baseline); Galileo TBD; L5 dual-frequency TBD |
-| SBAS Augmentation | WAAS (Americas) and EGNOS (Europe) — region-selectable |
-| GBAS | TBD — optional fitment |
-| RAIM | Yes — autonomous integrity monitoring in each receiver |
-| ARAIM | TBD — future upgrade; dependent on ICAO standards |
-| RNP-AR Capability | Yes — lateral accuracy < 0.1 NM TBD |
-| GNSS Antennas | 2 (top fuselage crown — positions TBD) |
-| Qualification | TSO-C145e / C146e; DO-229F |
-| Output Bus | ARINC 429 (high speed) |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-40 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The Satellite Navigation subsystem provides the primary precision positioning capability for the AMPEL360e eWTW. Two independent GNSS receivers (GNSS-1 and GNSS-2) receive satellite signals, compute position, velocity, and time (PVT) solutions, perform RAIM integrity monitoring, and output data on ARINC 429 to the FMGC navigation filter.
+The Satellite Navigation subsystem provides the primary precision positioning capability for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]. Two independent GNSS receivers (GNSS-1 and GNSS-2) receive satellite signals, compute position, velocity, and time (PVT) solutions, perform RAIM integrity monitoring, and output data on ARINC 429 to the FMGC navigation filter.
 
 **GNSS Receiver function**: Each receiver tracks GPS satellites (L1 C/A code baseline; L5 TBD), Galileo satellites (TBD), and SBAS geostationary satellites (WAAS PRN 135/138; EGNOS PRN 120/124/126). The SBAS differential corrections and integrity data received from geostationary satellites are applied to improve position accuracy to < 3 m (H, 95%) and provide signal-in-space integrity (SISA) for LPV-200 approach operations.
 
@@ -326,7 +308,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-40 | Satellite Navigation and Augmentation | DMC-AMPEL360E-EWTW-034-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-40 | Satellite Navigation and Augmentation | DMC-<PROGRAMME>-<VARIANT>-034-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Recommended DM Set for 034-40
 
@@ -403,10 +385,10 @@ flowchart LR
 | Galileo | European GNSS constellation providing L1/E1 and E5a signals; multi-constellation capability TBD |
 | GBAS | Ground-Based Augmentation System — local differential GNSS using VHF data broadcast; supports Cat I/II/III precision approaches; fitment TBD |
 | GNSS | Global Navigation Satellite System — generic term for all satellite navigation systems (GPS, Galileo, GLONASS, BeiDou, QZSS) |
-| GPS | Global Positioning System — US Department of Defense satellite navigation system; primary GNSS constellation for eWTW |
+| GPS | Global Positioning System — US Department of Defense satellite navigation system; primary GNSS constellation for [PROGRAMME-VARIANT] |
 | HPL | Horizontal Protection Level — a RAIM-computed bound on horizontal position error; compared with Horizontal Alert Limit (HAL) |
 | L1 | GPS frequency band 1 at 1575.42 MHz; carries GPS L1 C/A and L1C signals |
-| L5 | GPS frequency band 5 at 1176.45 MHz; carries GPS L5 signal; dual-frequency with L1 eliminates ionospheric delay; TBD on eWTW |
+| L5 | GPS frequency band 5 at 1176.45 MHz; carries GPS L5 signal; dual-frequency with L1 eliminates ionospheric delay; TBD on [PROGRAMME-VARIANT] |
 | LPV | Localizer Performance with Vertical Guidance — a SBAS-based precision approach providing lateral and vertical guidance similar to ILS; minimum DH 200 ft |
 | LNAV | Lateral Navigation — non-precision GPS approach using horizontal GNSS guidance only |
 | MSAS | MTSAT Satellite Augmentation System — SBAS for Japan; compatible with EGNOS/WAAS architecture |

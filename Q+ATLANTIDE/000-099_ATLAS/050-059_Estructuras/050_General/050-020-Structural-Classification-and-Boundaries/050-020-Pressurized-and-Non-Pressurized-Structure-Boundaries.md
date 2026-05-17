@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.020 — Pressurized and Non-Pressurized Structure Boundaries
 
 ## 1. Purpose
 
-Defines the pressure vessel boundary of the AMPEL360 eWTW fuselage and identifies pressure dome and pressure bulkhead locations.
+Defines the pressure vessel boundary of the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] fuselage and identifies pressure dome and pressure bulkhead locations.
 
 ## 2. Scope
 
@@ -40,7 +42,7 @@ Defines the pressure vessel boundary of the AMPEL360 eWTW fuselage and identifie
 > This document will cover:
 > - Classification rules and criteria
 > - Applicable CS-25 / MSG-3 requirements
-> - Programme-specific AMPEL360 eWTW constraints
+> - Programme-specific [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] constraints
 > - Interface with adjacent subsubject documents
 
 ## 3. Footprint

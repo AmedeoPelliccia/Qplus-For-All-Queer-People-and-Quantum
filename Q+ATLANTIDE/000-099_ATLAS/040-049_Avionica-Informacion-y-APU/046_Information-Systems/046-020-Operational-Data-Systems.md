@@ -31,6 +31,8 @@ ata_reference: "ATA 46.020 — Operational Data Systems"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 020 — Operational Data Systems
@@ -43,11 +45,11 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46.020 — Operational Data Systems (ODS) defines the real-time operational data services for the AMPEL360E eWTW all-electric aircraft. The ODS encompasses the Operational Information System (OIS) server, the EFB Class 3 server and crew applications, real-time datalink interfaces (ACARS VHF VDL Mode 2 and SATCOM Ku-band), and ADS-B IN/OUT integration for situational awareness.
+ATA 46.020 — Operational Data Systems (ODS) defines the real-time operational data services for the programme-defined aircraft type all-electric aircraft. The ODS encompasses the Operational Information System (OIS) server, the EFB Class 3 server and crew applications, real-time datalink interfaces (ACARS VHF VDL Mode 2 and SATCOM Ku-band), and ADS-B IN/OUT integration for situational awareness.
 
 Key governance areas:
 - OIS server: performance computation, weight & balance, NOTAM integration, real-time weather overlays.
-- eWTW-specific energy planning: battery SoC/SoH-based range and energy planning replaces conventional fuel planning tools.
+- [PROGRAMME-VARIANT]-specific energy planning: battery SoC/SoH-based range and energy planning replaces conventional fuel planning tools.
 - Real-time datalink: ACARS over VHF VDL Mode 2 (primary), SATCOM Ku-band (backup for oceanic/polar routes).
 - ADS-B IN/OUT integration for traffic picture and oceanic surveillance.
 - EFB Class 3 server (DO-178C DAL D) as the crew-facing interface for all ODS functions.
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46.020 — Operational Data Systems |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL D |
 | Applicable Standards | ARINC 664 P7; ARINC 429; DO-160G; S1000D Issue 5.0; RTCA DO-260B (ADS-B) |
@@ -72,7 +74,7 @@ Key governance areas:
 
 The ODS provides crew and airline operations centre (OCC) with real-time operational data during all phases of flight. The OIS server is the computational core, running performance algorithms, W&B computation, NOTAM filtering, and real-time weather data parsing.
 
-eWTW-specific ODS features:
+[PROGRAMME-VARIANT]-specific ODS features:
 - **Battery energy planning**: OIS computes available range as a function of battery SoC, ambient temperature, altitude, wind profile, and expected electric motor bus (EMB) load. Replaces conventional fuel quantity/fuel flow/range computation.
 - **SoH degradation modelling**: OIS ingests long-term SoH trend data from AIM NAS to predict battery range reduction as cells age; displayed on EFB energy planning page.
 - **Regenerative energy accounting**: OIS accounts for kinetic energy recovery during descent (regenerative braking via EPU) in range calculations.
@@ -224,7 +226,7 @@ stateDiagram-v2
 - **RTOS**: ARINC 653-partitioned RTOS on OIS server; dedicated partitions for performance computation, W&B engine, NOTAM service, and energy planning.
 - **Software DAL**: DO-178C DAL D for OIS server and EFB server (advisory-only functions).
 - **EFB server software**: DO-178C DAL D qualified; crew app suite installed as signed application packages (APK equivalent); updates at A-check.
-- **Battery energy planning module**: eWTW-specific software partition on OIS; inputs SoC/SoH from AIM, wind from FMS, temperature from ADIRU; outputs range prediction with uncertainty envelope.
+- **Battery energy planning module**: [PROGRAMME-VARIANT]-specific software partition on OIS; inputs SoC/SoH from AIM, wind from FMS, temperature from ADIRU; outputs range prediction with uncertainty envelope.
 - **Datalink security**: VDL Mode 2 and SATCOM ACARS messages encrypted per ACARS over IP (AoIP) with TLS 1.3; certificate managed by airline PKI.
 - **Update mechanism**: Gatelink (TLS 1.3, PKI) or USB-C service panel; ARINC 849 protocol; integrity SHA-256 verified.
 
@@ -284,7 +286,7 @@ stateDiagram-v2
 
 | Term | Acronym | Definition |
 |------|---------|------------|
-| Operational Information System | OIS | The on-board server providing real-time performance computation, weight and balance, NOTAM integration, weather data, and eWTW battery energy planning for the AMPEL360E |
+| Operational Information System | OIS | The on-board server providing real-time performance computation, weight and balance, NOTAM integration, weather data, and [PROGRAMME-VARIANT] battery energy planning for the [PROGRAMME-AIRCRAFT] |
 | Electronic Flight Bag | EFB | A Class 3 ruggedised computing device and server providing crew access to operational data, navigation charts, OFP, and energy planning tools |
 | Aircraft Communications Addressing and Reporting System | ACARS | Digital datalink protocol over VHF VDL Mode 2 (primary) or SATCOM (backup) for airline operational communications, OOOI reporting, and weather uplink |
 | Satellite Communications | SATCOM | Ku-band satellite link providing backup ACARS datalink and higher-bandwidth weather/SIGMET uplink for oceanic and polar routes |
@@ -292,7 +294,7 @@ stateDiagram-v2
 | Notice to Air Missions | NOTAM | Official notice filed with aviation authorities containing information essential to personnel concerned with flight operations |
 | Weight and Balance | W&B | Computation of total aircraft weight, moment, and centre-of-gravity position relative to the aircraft's certified envelope |
 | Weather Radar | WXR | Airborne and satellite weather radar data (XM WXR or equivalent subscription) overlaid on the EFB navigation map |
-| Flight Path Management | FPM | The combined function of flight plan management, performance optimisation, and energy planning for the AMPEL360E eWTW route |
+| Flight Path Management | FPM | The combined function of flight plan management, performance optimisation, and energy planning for the programme-defined aircraft type route |
 | VHF Data Link | VDL | VHF Digital Link Mode 2 — a digital VHF communications protocol at 31.5 kbit/s used as the primary ACARS datalink medium |
 
 ---
@@ -335,7 +337,7 @@ stateDiagram-v2
 
 | Issue ID | Description | Owner | Status |
 |----------|-------------|-------|--------|
-| IS-046-020-001 | Battery energy range model accuracy (± 5%) not validated on eWTW test aircraft | Q-HPC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| IS-046-020-001 | Battery energy range model accuracy (± 5%) not validated on [PROGRAMME-VARIANT] test aircraft | Q-HPC | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | IS-046-020-002 | SATCOM Ku-band approval (EASA AMC 20-24) plan not yet submitted | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | IS-046-020-003 | NOTAM cache update automation at gate via Gatelink not yet implemented in OIS software build | Q-AIR | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | IS-046-020-004 | EFB EASA AMC 20-25 qualification plan not yet submitted | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
@@ -367,7 +369,7 @@ stateDiagram-v2
 | [R3] | ATLAS 046-030 — Airline Information and Communication Interfaces | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 046-050 — Crew Information and Flight Operations Data | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R5] | ATLAS 034 — Navigation (ADS-B) | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| [R6] | AMPEL360E eWTW ATA 24 Battery Management System Architecture | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R6] | programme-defined aircraft type ATA 24 Battery Management System Architecture | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -375,7 +377,7 @@ stateDiagram-v2
 
 This document is classified `to-be-reviewed-by-system-expert`. The review process requires:
 
-1. **ODS System Expert**: Validates OIS performance algorithms, W&B methodology, NOTAM service integration, and eWTW battery energy planning model accuracy requirements.
+1. **ODS System Expert**: Validates OIS performance algorithms, W&B methodology, NOTAM service integration, and [PROGRAMME-VARIANT] battery energy planning model accuracy requirements.
 2. **Q-DATAGOV Review**: Confirms datalink security (TLS 1.3 policy), software DAL assignments, and API service design consistency.
 3. **EASA/FAA Regulatory Review**: CS-25 and EASA AMC 20-25 compliance items (§15) must be reviewed before certification milestone. Open issues in §18 must be resolved and evidenced prior to gate.
 
@@ -387,4 +389,4 @@ This document is classified `to-be-reviewed-by-system-expert`. The review proces
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for AMPEL360E eWTW Operational Data Systems |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated for programme-defined aircraft type Operational Data Systems |

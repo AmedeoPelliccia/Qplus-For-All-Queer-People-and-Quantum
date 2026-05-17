@@ -6,10 +6,10 @@ subsubject: "020"
 subsubject_title: "Passenger Cabin Lighting"
 file_name: "033-020-Passenger-Cabin-Lighting.md"
 sns_reference: "033-20"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-20"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-20"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,7 +75,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "Cabin Lighting"
@@ -89,10 +89,12 @@ keywords:
   - "CRI"
   - "lavatory lighting"
   - "galley lighting"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-020 — Passenger Cabin Lighting
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -104,32 +106,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Passenger Cabin Lighting subsystem (ATA 033-20) of the AMPEL360e eWTW aircraft. It covers all lighting functions within the passenger cabin: addressable LED ceiling panel arrays, individual seat reading lights, lavatory lighting (ceiling and mirror), galley overhead lighting, and the mood/scene preset system integrated with the Cabin Management System (CMS). The document defines the zone-based SSLC architecture, dimming range, colour temperature targets, CMS interface, and fault monitoring strategy.
+This document defines the agnostic ATLAS standard-level architecture context for `033-020 — Passenger Cabin Lighting`.
 
-The passenger cabin lighting system is designed to support passenger comfort, safety, and the airline's brand experience. Full dimming (0–100%) and adjustable CCT (2700 K–6500 K TBD) enable a range of mood presets — from warm boarding ambience through to night-mode amber-dim — controlled automatically by flight phase logic or by cabin crew via the CMS crew control panel.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 033-20 — Passenger Cabin Lighting |
-| Aircraft Variant | eWTW-100 (~100 pax), eWTW-100ER |
-| Lighting Technology | 100% LED — ceiling panels, reading lights, lav, galley |
-| Zone Architecture | 3 cabin zones (fwd / mid / aft) + lav + galley |
-| Dimming | PWM 0–100% per zone, addressable per row (TBD per CMS capability) |
-| Colour Temperature | 2700 K – 6500 K adjustable (TBD confirmation) |
-| Colour Rendering | Ra > 80 (target) |
-| Scene Presets | Boarding, Cruise-Day, Meal, Cruise-Night, Landing, Emergency |
-| CMS Interface | AFDX |
-| Power | 115 VAC cabin bus (locally converted to 28 VDC for LED drivers) |
-| S1000D SNS | 033-20 |
-| Applicability Code | ALL |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The passenger cabin lighting system provides three levels of illumination management: (1) zone-level ambient lighting via ceiling LED panel arrays dimmable from 0–100% with adjustable CCT, (2) individual seat reading lights activated by passenger touch control or USB-adjacent push-button, and (3) lavatory and galley LED overhead fixtures.
@@ -333,7 +323,7 @@ No scheduled lamp replacement across all cabin lighting — corrective maintenan
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-20 | Passenger Cabin Lighting | DMC-AMPEL360E-EWTW-033-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-20 | Passenger Cabin Lighting | DMC-<PROGRAMME>-<VARIANT>-033-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Planned Data Modules
 
@@ -354,7 +344,7 @@ No scheduled lamp replacement across all cabin lighting — corrective maintenan
 - Zone SSLCs (×3 cabin zones): avionics bay or cabin zone enclosures — envelope TBD
 - Cabin ceiling LED panel arrays: full overhead cabin coverage from fwd galley to aft; panel dimensions per interior layout TBD
 - PSU reading light spots: one per seat or seat pair, integrated in PSU — per aircraft interior layout
-- Lavatory ceiling LED panels + mirror strips: per lavatory count TBD (eWTW-100: typically 2 lavatories)
+- Lavatory ceiling LED panels + mirror strips: per lavatory count TBD ([PROGRAMME-VARIANT]-100: typically 2 lavatories)
 - Galley LED strips: forward galley + aft galley — linear LED strip assemblies
 
 ### 15.2 Electrical / Data Footprint
@@ -407,7 +397,7 @@ No scheduled lamp replacement across all cabin lighting — corrective maintenan
 
 | Term | Definition |
 |---|---|
-| Addressable LED panel | A ceiling panel whose brightness and CCT can be independently commanded; on eWTW, addressability is at zone level (baseline); row-level is growth option |
+| Addressable LED panel | A ceiling panel whose brightness and CCT can be independently commanded; on [PROGRAMME-VARIANT], addressability is at zone level (baseline); row-level is growth option |
 | CCT | Correlated Colour Temperature — measured in Kelvin; cabin range 2700 K (warm amber) to 6500 K (cool white); mood lighting exploits this range for scene differentiation |
 | CMS | Cabin Management System — ATA 44 hosted system controlling cabin functions including lighting scene selection from the cabin crew control panel |
 | CRI / Ra | Colour Rendering Index — scale 0–100 measuring how well a light source renders object colours; cabin target Ra > 80 ensures natural appearance of passengers and food |

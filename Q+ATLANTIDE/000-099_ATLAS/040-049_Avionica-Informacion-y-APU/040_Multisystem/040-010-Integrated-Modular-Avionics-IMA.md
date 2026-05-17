@@ -53,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 010 — Integrated Modular Avionics IMA
@@ -68,7 +70,7 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md).
 
 ## 1. Purpose
 
-This document defines the Integrated Modular Avionics (IMA) platform architecture for the AMPEL360E aircraft within the ATLAS subsection 040. It establishes the principles of ARINC 653 time-space partitioning, the cabinet/module taxonomy, hosted application management, and the APEX API contract that enables multiple avionics applications to share common hardware resources with guaranteed isolation. This document is the primary reference for IMA platform architects, avionics software developers, and certification authorities.
+This document defines the Integrated Modular Avionics (IMA) platform architecture for the [PROGRAMME-AIRCRAFT] aircraft within the ATLAS subsection 040. It establishes the principles of ARINC 653 time-space partitioning, the cabinet/module taxonomy, hosted application management, and the APEX API contract that enables multiple avionics applications to share common hardware resources with guaranteed isolation. This document is the primary reference for IMA platform architects, avionics software developers, and certification authorities.
 
 ---
 
@@ -76,7 +78,7 @@ This document defines the Integrated Modular Avionics (IMA) platform architectur
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | Regulatory Framework | EASA CS-25, FAA 14 CFR Part 25 |
 | Development Assurance | [DO-178C](#ref-do-178c), [DO-254](#ref-do-254), [DO-297](#ref-do-297) |
@@ -113,7 +115,7 @@ The IMA platform consolidates formerly federated avionics functions into shared 
 
 ## 5. Architecture Description
 
-The AMPEL360E IMA architecture is organised in three tiers:
+The [PROGRAMME-AIRCRAFT] IMA architecture is organised in three tiers:
 
 1. **Platform Tier** — IMA Cabinets (IMA-CAB-L, IMA-CAB-R) hosting GPPMs and I/O modules, connected via AFDX network (see [040-030](./040-030-Avionics-Networks-and-Data-Buses.md)).
 2. **Executive Tier** — ARINC 653-compliant OS/E per module, providing partition scheduler, health monitor, and APEX API.
@@ -141,7 +143,7 @@ Redundancy is achieved by mirroring critical partitions across left and right ca
 
 ```mermaid
 graph TB
-    subgraph Aircraft["AMPEL360E Aircraft"]
+    subgraph Aircraft["[PROGRAMME-AIRCRAFT] Aircraft"]
         subgraph IMA_CAB["IMA Cabinets (L/R)"]
             GPPM["GPPMs\n(ARINC 653 OS/E)"]
             IOM["I/O Modules"]
@@ -270,12 +272,12 @@ Fault logs are stored in non-volatile memory and are retrievable via [ARINC 615A
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-040-010-00A-040A-A | 040 | IMA System Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-040-010-00A-300A-A | 300 | IMA Fault Isolation Procedures |
-| BITE/Test | DMC-AMPEL360E-EWTW-040-010-00A-400A-A | 400 | IMA BITE and Test Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-040-010-00A-520A-A | 520 | IMA Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-040-010-00A-941A-A | 941 | IMA Illustrated Parts Data |
-| Software Desc | DMC-AMPEL360E-EWTW-040-010-00A-720A-A | 720 | IMA Software Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-040-010-00A-040A-A | 040 | IMA System Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-040-010-00A-300A-A | 300 | IMA Fault Isolation Procedures |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-040-010-00A-400A-A | 400 | IMA BITE and Test Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-040-010-00A-520A-A | 520 | IMA Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-040-010-00A-941A-A | 941 | IMA Illustrated Parts Data |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-040-010-00A-720A-A | 720 | IMA Software Description |
 
 ### Recommended Data Module Set
 

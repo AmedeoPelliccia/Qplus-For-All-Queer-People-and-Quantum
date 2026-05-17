@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0060-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-060-050-PROPELLER-ROTOR-HANDLING-AND-SAFETY
      ATA 60 · Propeller/Rotor Handling and Safety
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propeller/Rotor Handling and Safety
@@ -47,26 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-050"
 
 ## §1 Purpose
 
-This document defines the safe handling, storage, transportation, and safety-zone procedures for propeller and rotor assemblies throughout the maintenance cycle. Propeller and rotor components present distinct hazards: large rotating blade assemblies carry stored kinetic energy; CFRP structures can splinter dangerously if mishandled; and electrical propulsors present additional shock and arc-flash hazards.
+This document defines the agnostic ATLAS standard-level architecture context for `Propeller/Rotor Handling and Safety`.
 
-On the AMPEL360E eWTW, propeller safety procedures intersect with the aircraft's all-electric architecture because any blade removal or installation involves working in proximity to electric motor drives. Personnel must follow both the mechanical handling procedures in this document and the relevant electrical safety procedures in ATA 24 before commencing any propulsor-related task.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 60-050 — Handling and Safety |
-| Blade handling cradle spec | AMPEL360E-SE-060-001 |
-| Electrical safety requirement | ATA 24 — Electrical Power safety isolation |
-| FOD prevention standard | AMPEL360E-FOD-001 FOD Control Programme |
-| Personal protective equipment | Safety equipment matrix AMPEL360E-HSE-002 |
-| S1000D SNS | 060-050-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `060` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Handling and safety controls address three distinct hazard domains:
@@ -127,7 +123,7 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| Blade handling cradle (AMPEL360E-SE-060-001) | Drawing-specific to blade type | 2 per blade type | Hangar GSE store | Annual load test + inspection | TBD |
+| Blade handling cradle ([PROGRAMME-AIRCRAFT]-SE-060-001) | Drawing-specific to blade type | 2 per blade type | Hangar GSE store | Annual load test + inspection | TBD |
 | Hub transport trolley | Drawing-specific | 1 per hub type | Hangar GSE store | Annual inspection | TBD |
 | Blade protective case | Drawing-specific | 2 per blade | Long-term storage | Inspect before each use | TBD |
 | LOTO kit (lock, tag, hasp) | Safety standard kit | Per maintenance team | Tool store | Annual inspection | TBD |
@@ -140,7 +136,7 @@ flowchart TB
 | Interface Type | Connected System | Protocol / Medium | Data / Function |
 |---|---|---|---|
 | Electrical safety | ATA 24 electrical power | LOTO on electric drive motor | ATA 24 isolation procedure |
-| HSE authority | AMPEL360E-HSE | Safety zone enforcement and PPE requirements | HSE-002 safety matrix |
+| HSE authority | [PROGRAMME-AIRCRAFT]-HSE | Safety zone enforcement and PPE requirements | HSE-002 safety matrix |
 | FOD control | Programme FOD coordinator | FOD accountability record | FOD-001 programme |
 | Facilities | Hangar management | GSE storage and maintenance bay layout | Bay layout drawing |
 | CSDB | Q-DATAGOV | Handling procedure DMs | S1000D DM-040 descriptive DM |
@@ -207,8 +203,8 @@ flowchart TB
 
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
-| AMPEL360E-HSE-002 | Safety Equipment Matrix — Propeller/Rotor Maintenance | AMPEL360E programme | PPE and safety zone requirements |
-| AMPEL360E-FOD-001 | FOD Control Programme | AMPEL360E programme | Foreign object debris management |
+| [PROGRAMME-AIRCRAFT]-HSE-002 | Safety Equipment Matrix — Propeller/Rotor Maintenance | [PROGRAMME-AIRCRAFT] programme | PPE and safety zone requirements |
+| [PROGRAMME-AIRCRAFT]-FOD-001 | FOD Control Programme | [PROGRAMME-AIRCRAFT] programme | Foreign object debris management |
 | ATA iSpec 2200 | Chapter 60 — Propeller Standard Practices | Air Transport Association | Handling practices scope |
 | OSHA 1910.147 | Control of Hazardous Energy (Lockout/Tagout) | US OSHA | LOTO reference standard |
 | EASA Part-145 | Approved Maintenance Organisation Requirements | EASA | Workshop safety management requirement |
@@ -247,8 +243,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-060-050-001 | Define minimum safety exclusion radius for AMPEL360E propulsor based on blade tip speed and energy | Q-AIR / HSE | 2026-Q3 |
-| OI-060-050-002 | Confirm LOTO compatibility of AMPEL360E electric drive controller with standard LOTO hasp design | ATA 24 team / HSE | 2026-Q3 |
+| OI-060-050-001 | Define minimum safety exclusion radius for [PROGRAMME-AIRCRAFT] propulsor based on blade tip speed and energy | Q-AIR / HSE | 2026-Q3 |
+| OI-060-050-002 | Confirm LOTO compatibility of [PROGRAMME-AIRCRAFT] electric drive controller with standard LOTO hasp design | ATA 24 team / HSE | 2026-Q3 |
 
 ---
 
@@ -281,4 +277,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

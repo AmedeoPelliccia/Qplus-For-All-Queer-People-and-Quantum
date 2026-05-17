@@ -6,10 +6,10 @@ subsubject: "020"
 subsubject_title: "Nose Landing Gear"
 file_name: "032-020-Nose-Landing-Gear.md"
 sns_reference: "032-20"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-20"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-032-20"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "ATA 32"
   - "Nose Landing Gear"
   - "NLG"
@@ -97,10 +97,12 @@ keywords:
   - "torque links"
   - "centering cam"
   - "WoW"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 032-020 — Nose Landing Gear
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -112,28 +114,20 @@ All internal links use relative paths. External regulatory references use anchor
 
 ## §1 Purpose
 
-This document describes the Nose Landing Gear (NLG) assembly of the AMPEL360e eWTW. The NLG is a single assembly located in the forward fuselage bay. It carries twin steerable wheels, retracts forward and upward into the nose bay via an Electromechanical Actuator (EMA), provides nose-wheel steering via an electric motor actuator, and incorporates an oleo-pneumatic shock absorber to absorb nose-wheel landing loads.
+This document defines the agnostic ATLAS standard-level architecture context for `032-020 — Nose Landing Gear`.
 
-The NLG is the sole directional control device on the ground during low-speed taxiing, supplemented by differential braking via the BSCU. The steering function is covered in detail by [032-050 Steering](./032-050-Steering.md); this document covers the NLG mechanical assembly and structural elements. The NLG carries a lower percentage of the total aircraft weight than the MLG (typically 8–12% of total), but is subject to significant yaw loads during steering and lateral loads on asymmetric braking.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 032-020 — Nose Landing Gear |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| NLG Configuration | Single assembly; twin wheels; steerable via electric actuator |
-| Gear Retraction | Forward and upward into forward fuselage nose bay |
-| Steering Range | ±70° (tiller, normal); ±5° (rudder pedal limited authority) |
-| Certification Basis | CS-25 (EASA), FAR Part 25 |
-| SNS Reference | 032-20 |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The NLG assembly consists of: (1) a main gear leg (metallic alloy forging, material TBD); (2) an oleo-pneumatic shock absorber; (3) a twin-wheel axle with two nose wheels in side-by-side configuration; (4) torque links connecting inner and outer shock absorber cylinders to prevent rotation while allowing axial travel; (5) a centering cam mechanism that aligns the nose wheel to the centreline on gear retraction; (6) a nose-wheel steering (NWS) electric actuator integral to the upper gear leg; (7) an EMA for gear retraction/extension acting on the gear trunnion; (8) gear bay doors (two doors — forward and aft, or single bifold door — configuration TBD); (9) uplock and downlock passive mechanical devices; (10) WoW proximity switches (primary and redundant); and (11) TPIS transmitters on each nose wheel.
@@ -319,7 +313,7 @@ Gear bay structural inspection: visual inspection at every heavy maintenance inp
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 032-20 | Nose Landing Gear | DMC-AMPEL360E-EWTW-032-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-20 | Nose Landing Gear | DMC-<PROGRAMME>-<VARIANT>-032-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 

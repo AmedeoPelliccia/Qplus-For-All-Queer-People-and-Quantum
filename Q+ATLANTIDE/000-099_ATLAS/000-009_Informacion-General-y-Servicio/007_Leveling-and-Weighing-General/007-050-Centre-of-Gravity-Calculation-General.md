@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 08"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Documents the centre of gravity (CG) calculation methodology for the AMPEL360E eWTW. Covers the reference datum location, CG calculation from load cell readings, CG limits (forward and aft), and the relationship between the measured CG and the operational CG envelope used in load and balance calculations.
+Documents the centre of gravity (CG) calculation methodology for the programme-defined aircraft type. Covers the reference datum location, CG calculation from load cell readings, CG limits (forward and aft), and the relationship between the measured CG and the operational CG envelope used in load and balance calculations.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 08 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,9 +72,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Centre of Gravity Calculation General** node defines the C-of-G reference geometry, calculation methodology, and applicable limits for the AMPEL360E eWTW. The C-of-G reference datum is located at FS 0 (the nose reference plane); the MAC (Mean Aerodynamic Chord) reference is 6.2 m, with MAC leading edge at FS 620.0. The eWTW C-of-G envelope (from the Aircraft Flight Manual, AFM Chapter 6) is: forward limit 17% MAC (FS 725.4); aft limit 38% MAC (FS 855.6); lateral limit ±0.12 m from BL 0.
+The **Centre of Gravity Calculation General** node defines the C-of-G reference geometry, calculation methodology, and applicable limits for the programme-defined aircraft type. The C-of-G reference datum is located at FS 0 (the nose reference plane); the MAC (Mean Aerodynamic Chord) reference is 6.2 m, with MAC leading edge at FS 620.0. The [PROGRAMME-VARIANT] C-of-G envelope (from the Aircraft Flight Manual, AFM Chapter 6) is: forward limit 17% MAC (FS 725.4); aft limit 38% MAC (FS 855.6); lateral limit ±0.12 m from BL 0.
 
-The eWTW-specific complication is that the HVDC battery pack (lower centre fuselage, FS 680–FS 800) is a major fixed mass at a known station, but the battery SoC varies in flight (cells discharge, reducing mass). This introduces a small dynamic C-of-G shift during flight: ΔFS_CG ≈ 0.06 m forward per full discharge cycle (conservative bound per structural loads analysis Q-LOADS-001). This shift is pre-computed in the eWTW Mass and Balance system (MMBS) and accounted for in the certified AFM C-of-G envelope. The MMBS (DO-178C DAL B) ingests live BMS SoC and passenger/cargo loading data to compute in-flight C-of-G predictions displayed to the crew on the EFB mass-and-balance page.
+The [PROGRAMME-VARIANT]-specific complication is that the HVDC battery pack (lower centre fuselage, FS 680–FS 800) is a major fixed mass at a known station, but the battery SoC varies in flight (cells discharge, reducing mass). This introduces a small dynamic C-of-G shift during flight: ΔFS_CG ≈ 0.06 m forward per full discharge cycle (conservative bound per structural loads analysis Q-LOADS-001). This shift is pre-computed in the [PROGRAMME-VARIANT] Mass and Balance system (MMBS) and accounted for in the certified AFM C-of-G envelope. The MMBS (DO-178C DAL B) ingests live BMS SoC and passenger/cargo loading data to compute in-flight C-of-G predictions displayed to the crew on the EFB mass-and-balance page.
 
 ---
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the centre of gravity calculation general scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Centre of Gravity Calculation General** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Centre of Gravity Calculation General** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `007` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `050` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-007-050` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-007-050` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0083-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-083-070-AIRFRAME-INTEGRATION-THERMAL-AND-STRUCTURAL-CONSTRAINTS
      ATLAS-083 (Solar-Electric Auxiliary) · Airframe Integration, Thermal and Structural
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Airframe Integration, Thermal and Structural Constraints
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0083-070"
 
 ## §1 Purpose
 
-ATLAS subsubject 083-070 defines the airframe integration constraints, structural design requirements, and thermal management provisions for the Solar-Electric Auxiliary (SEA) system. It covers PV panel laminate structural ICD, BLI duct structural design, SEACU mounting, SiC inverter thermal budget, fuel system exclusion zones, lightning protection, structural weight allocation, and aerodynamic smoothness requirements.
+This document defines the agnostic ATLAS standard-level architecture context for `Airframe Integration, Thermal and Structural Constraints`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-083 — 083-070 Airframe Integration, Thermal and Structural |
-| Certification basis | EASA CS-25 Amdt 27+; CS-25.631 (bird strike); CS-25.581 (lightning); DO-160G (environmental); ASTM D7762 (adhesive bond structural) |
-| S1000D SNS | 083-070-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `083` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 PV Laminate Structural Integration
 
 ### 3.1 Bonded Panel ICD
@@ -153,7 +154,7 @@ Bird mass: 1.8 kg (medium bird); impact at Vd − 15 kn (design dive speed minus
 
 ## §7 Fuel System Exclusion Zones
 
-Per AMPEL360E airframe ICD, no SEA electrical equipment (PV wiring, MPPT cables, SCAP bus bars, battery) may be routed within 150 mm of any fuel tank wall, fuel vent line, or fuel system component without approved fire-resistant conduit and FAR 25.953 / CS-25.953 separation.
+Per [PROGRAMME-AIRCRAFT] airframe ICD, no SEA electrical equipment (PV wiring, MPPT cables, SCAP bus bars, battery) may be routed within 150 mm of any fuel tank wall, fuel vent line, or fuel system component without approved fire-resistant conduit and FAR 25.953 / CS-25.953 separation.
 
 | SEA Component | Nearest Fuel Element | Minimum Separation | Status |
 |---|---|---|---|

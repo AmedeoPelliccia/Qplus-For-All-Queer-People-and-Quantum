@@ -6,10 +6,10 @@ subsubject: "090"
 subsubject_title: "S1000D/CSDB Mapping and Traceability"
 file_name: "039-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "039-90"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-90"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-90"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "CSDB"
@@ -95,10 +95,12 @@ keywords:
   - "ATA 24"
   - "ATA 42"
   - "ATA 45"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-090 — S1000D/CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -108,46 +110,34 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links. Regulatory references cited by identifier. DMC cross-references follow `DMC-AMPEL360E-EWTW-039-90-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
+All cross-references use relative Markdown links. Regulatory references cited by identifier. DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-039-90-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
 
 ---
 
 ## §1 Purpose
 
-This document is the **S1000D/CSDB Mapping and Traceability master** for ATA 39 (039-000 through 039-090) of the AMPEL360e eWTW. It provides:
+This document defines the agnostic ATLAS standard-level architecture context for `039-090 — S1000D/CSDB Mapping and Traceability`.
 
-1. Full DMRL (Data Module Requirements List) for all 10 subsubjects.
-2. Data Module Code (DMC) structure and information code mapping.
-3. AMM chapter cross-references (ATA 39 AMM structure).
-4. Cross-references to ATA 24 (Electrical Power), ATA 42 (IMA), and ATA 45 (CMC).
-5. BREX (Business Rules Exchange) status.
-6. DMRL freeze status.
-7. Estimated data module count (~50–70 DMs).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter / Subsubject | 39 — 039-090 S1000D/CSDB Mapping |
-| Document Tier | Level 3 — CSDB/DMRL Traceability |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-
-This document governs CSDB mapping for all ATA 39 subsubjects 000–080.
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 S1000D Framework for ATA 39
 
 ### 3.1 DMC Structure
 
-Data Module Codes for the AMPEL360e eWTW ATA 39 follow the structure:
+Data Module Codes for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] ATA 39 follow the structure:
 
 ```
-DMC-AMPEL360E-EWTW-039-{SS}-{VARIANT}{SEQ}-{InfoCode}-{Variant}
+DMC-<PROGRAMME>-<VARIANT>-039-{SS}-{VARIANT}{SEQ}-{InfoCode}-{Variant}
 ```
 
 Where:
@@ -158,7 +148,7 @@ Where:
 - `{InfoCode}` = S1000D information code (see §3.2)
 - `{Variant}` = language variant (A = English)
 
-Example: `DMC-AMPEL360E-EWTW-039-20-00A-040A-A`
+Example: `DMC-<PROGRAMME>-<VARIANT>-039-20-00A-040A-A`
 
 ### 3.2 Information Codes Used in ATA 39
 
@@ -219,114 +209,114 @@ This document covers the complete DMRL for ATA 39 subsubjects 000–090. Out of 
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-00-00A-040A-A | 040 | ATA 39 general description — system overview | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-00-10A-040A-A | 040 | ATA 39 document hierarchy and applicability | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-00-20A-300A-A | 300 | General maintenance inspection — ATA 39 panels | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-00-30A-400A-A | 400 | ATA 39 general fault isolation procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-00-40A-200A-A | 200 | Panel master bus reset operating procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-00-00A-040A-A | 040 | ATA 39 general description — system overview | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-00-10A-040A-A | 040 | ATA 39 document hierarchy and applicability | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-00-20A-300A-A | 300 | General maintenance inspection — ATA 39 panels | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-00-30A-400A-A | 400 | ATA 39 general fault isolation procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-00-40A-200A-A | 200 | Panel master bus reset operating procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.2 039-010 Control Panels and Switching Assemblies
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-10-00A-040A-A | 040 | Control panels description — OHP, P5, P1 switching | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-10-10A-520A-A | 520 | IPBS removal — overhead panel P6 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-10-10A-720A-A | 720 | IPBS installation — overhead panel P6 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-10-20A-520A-A | 520 | RDCU removal — cockpit zone | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-10-20A-720A-A | 720 | RDCU installation — cockpit zone | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-10-00A-400A-A | 400 | Fault isolation — control panels and switching | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-10-00A-300A-A | 300 | IPBS function check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-10-00A-040A-A | 040 | Control panels description — OHP, P5, P1 switching | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-10-10A-520A-A | 520 | IPBS removal — overhead panel P6 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-10-10A-720A-A | 720 | IPBS installation — overhead panel P6 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-10-20A-520A-A | 520 | RDCU removal — cockpit zone | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-10-20A-720A-A | 720 | RDCU installation — cockpit zone | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-10-00A-400A-A | 400 | Fault isolation — control panels and switching | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-10-00A-300A-A | 300 | IPBS function check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.3 039-020 Circuit Breaker and Protection Panels
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-20-00A-040A-A | 040 | CBP description — CBP-1, CBP-2, CBP-3 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-20-10A-520A-A | 520 | CBP-1 removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-20-10A-720A-A | 720 | CBP-1 installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-20-20A-520A-A | 520 | SSCB module removal (if applicable) | <img src="https://img.shields.io/badge/TBD-red"> |
-| DMC-AMPEL360E-EWTW-039-20-20A-720A-A | 720 | SSCB module installation (if applicable) | <img src="https://img.shields.io/badge/TBD-red"> |
-| DMC-AMPEL360E-EWTW-039-20-00A-400A-A | 400 | Fault isolation — circuit breaker panels | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-20-00A-300A-A | 300 | CB state inspection and trip count read | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-20-30A-300A-A | 300 | HVDC protection panel inspection TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-20-00A-040A-A | 040 | CBP description — CBP-1, CBP-2, CBP-3 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-20-10A-520A-A | 520 | CBP-1 removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-20-10A-720A-A | 720 | CBP-1 installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-20-20A-520A-A | 520 | SSCB module removal (if applicable) | <img src="https://img.shields.io/badge/TBD-red"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-20-20A-720A-A | 720 | SSCB module installation (if applicable) | <img src="https://img.shields.io/badge/TBD-red"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-20-00A-400A-A | 400 | Fault isolation — circuit breaker panels | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-20-00A-300A-A | 300 | CB state inspection and trip count read | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-20-30A-300A-A | 300 | HVDC protection panel inspection TBD | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 6.4 039-030 Relay, Contactor, and Power Distribution Panels
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-30-00A-040A-A | 040 | PDU description — PDU-1 through PDU-4; SSPC | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-30-10A-520A-A | 520 | PDU module removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-30-10A-720A-A | 720 | PDU module installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-30-20A-520A-A | 520 | BTC relay removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-30-20A-720A-A | 720 | BTC relay installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-30-00A-400A-A | 400 | Fault isolation — PDU / distribution panels | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-30-00A-300A-A | 300 | SSPC and relay operation count check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-30-00A-040A-A | 040 | PDU description — PDU-1 through PDU-4; SSPC | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-30-10A-520A-A | 520 | PDU module removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-30-10A-720A-A | 720 | PDU module installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-30-20A-520A-A | 520 | BTC relay removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-30-20A-720A-A | 720 | BTC relay installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-30-00A-400A-A | 400 | Fault isolation — PDU / distribution panels | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-30-00A-300A-A | 300 | SSPC and relay operation count check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.5 039-040 Avionics and Electronic Equipment Racks
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-40-00A-040A-A | 040 | E/E bay rack description — R1, R2, R3, R4 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-40-10A-520A-A | 520 | IMA cabinet LRU removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-40-10A-720A-A | 720 | IMA cabinet LRU installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-40-20A-520A-A | 520 | Rack shock mount removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-40-20A-720A-A | 720 | Rack shock mount installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-40-00A-300A-A | 300 | Rack cooling and ventilation inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-40-00A-400A-A | 400 | Fault isolation — E/E bay racks | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-40-00A-040A-A | 040 | E/E bay rack description — R1, R2, R3, R4 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-40-10A-520A-A | 520 | IMA cabinet LRU removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-40-10A-720A-A | 720 | IMA cabinet LRU installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-40-20A-520A-A | 520 | Rack shock mount removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-40-20A-720A-A | 720 | Rack shock mount installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-40-00A-300A-A | 300 | Rack cooling and ventilation inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-40-00A-400A-A | 400 | Fault isolation — E/E bay racks | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.6 039-050 Multipurpose Component Modules
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-50-00A-040A-A | 040 | Multipurpose module description — SCM, PSM, RDCU | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-50-10A-520A-A | 520 | SCM module removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-50-10A-720A-A | 720 | SCM module installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-50-20A-520A-A | 520 | RDCU module removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-50-20A-720A-A | 720 | RDCU module installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-50-00A-400A-A | 400 | Fault isolation — multipurpose modules | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-50-00A-040A-A | 040 | Multipurpose module description — SCM, PSM, RDCU | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-50-10A-520A-A | 520 | SCM module removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-50-10A-720A-A | 720 | SCM module installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-50-20A-520A-A | 520 | RDCU module removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-50-20A-720A-A | 720 | RDCU module installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-50-00A-400A-A | 400 | Fault isolation — multipurpose modules | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.7 039-060 Panel Indication, Lighting, and HMI
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-60-00A-040A-A | 040 | HMI and indication description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-60-10A-520A-A | 520 | Display unit (PFD/MFD) removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-60-10A-720A-A | 720 | Display unit (PFD/MFD) installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-60-20A-520A-A | 520 | MCDU removal / installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-60-00A-300A-A | 300 | LED brightness and backlight check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-60-00A-400A-A | 400 | Fault isolation — displays and HMI | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-60-30A-300A-A | 300 | Panel flood light check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-60-00A-040A-A | 040 | HMI and indication description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-60-10A-520A-A | 520 | Display unit (PFD/MFD) removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-60-10A-720A-A | 720 | Display unit (PFD/MFD) installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-60-20A-520A-A | 520 | MCDU removal / installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-60-00A-300A-A | 300 | LED brightness and backlight check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-60-00A-400A-A | 400 | Fault isolation — displays and HMI | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-60-30A-300A-A | 300 | Panel flood light check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.8 039-070 Panel Wiring, Connectors, and Installation Interfaces
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-70-00A-040A-A | 040 | Panel wiring and connectors description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-70-10A-520A-A | 520 | Cockpit panel removal (P1/P5/P6) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-70-10A-720A-A | 720 | Cockpit panel installation (P1/P5/P6) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-70-20A-300A-A | 300 | Connector inspection — MIL-DTL-38999 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-70-30A-300A-A | 300 | Bonding resistance check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-70-00A-400A-A | 400 | Fault isolation — wiring and connectors | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-70-40A-300A-A | 300 | Harness continuity and insulation test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-70-00A-040A-A | 040 | Panel wiring and connectors description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-70-10A-520A-A | 520 | Cockpit panel removal (P1/P5/P6) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-70-10A-720A-A | 720 | Cockpit panel installation (P1/P5/P6) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-70-20A-300A-A | 300 | Connector inspection — MIL-DTL-38999 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-70-30A-300A-A | 300 | Bonding resistance check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-70-00A-400A-A | 400 | Fault isolation — wiring and connectors | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-70-40A-300A-A | 300 | Harness continuity and insulation test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.9 039-080 Panel Monitoring, Diagnostics, and Control Interfaces
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-80-00A-040A-A | 040 | Panel monitoring and diagnostics description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-80-10A-300A-A | 300 | MBIT procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-80-20A-300A-A | 300 | SSCB trip log read via maintenance terminal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-80-30A-520A-A | 520 | SSCB remote reset (ground-only) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-80-00A-400A-A | 400 | Fault isolation — panel diagnostics | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-80-40A-040A-A | 040 | CMC integration — ATA 39 health data | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-039-80-50A-300A-A | 300 | Relay operation count review | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-80-00A-040A-A | 040 | Panel monitoring and diagnostics description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-80-10A-300A-A | 300 | MBIT procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-80-20A-300A-A | 300 | SSCB trip log read via maintenance terminal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-80-30A-520A-A | 520 | SSCB remote reset (ground-only) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-80-00A-400A-A | 400 | Fault isolation — panel diagnostics | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-80-40A-040A-A | 040 | CMC integration — ATA 39 health data | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-80-50A-300A-A | 300 | Relay operation count review | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.10 039-090 S1000D/CSDB Mapping
 
 | DMC | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-039-90-00A-040A-A | 040 | S1000D/CSDB mapping master — ATA 39 DMRL | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-039-90-10A-040A-A | 040 | Cross-reference index — ATA 39 to ATA 24/42/45 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-90-00A-040A-A | 040 | S1000D/CSDB mapping master — ATA 39 DMRL | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-039-90-10A-040A-A | 040 | Cross-reference index — ATA 39 to ATA 24/42/45 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 

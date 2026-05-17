@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0064-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-064-010-FUEL-METERING-AND-HYDRO-MECHANICAL-CONTROL
      ATA 64 · Fuel Metering and Hydro-Mechanical Control
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Metering and Hydro-Mechanical Control
@@ -47,21 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-010"
 
 ## §1 Purpose
 
-The HMU (Hydro-Mechanical Unit) is the primary fuel metering device. It receives high-pressure fuel from the HP pump and meters the correct flow rate to the combustor nozzles under FADEC command. The HMU also schedules VSV actuator hydraulic pressure and HPC bleed valve hydraulic pilot pressure, integrating fuel and compressor geometry control in a single LRU.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Metering and Hydro-Mechanical Control`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 64-010 — Fuel Metering and Hydro-Mechanical Control |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 064-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `064` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The HMU (Hydro-Mechanical Unit) is the primary fuel metering device. It receives high-pressure fuel from the HP pump and meters the correct flow rate to the combustor nozzles under FADEC command. The HMU also schedules VSV actuator hydraulic pressure and HPC bleed valve hydraulic pilot pressure, integrating fuel and compressor geometry control in a single LRU.
@@ -255,4 +256,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0086-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-086-040-AERO-PROPULSIVE-COUPLING-AND-AIRFRAME-INTEGRATION
      ATLAS-086 (Boundary Layer Ingestion Propulsion) · Aero-Propulsive Coupling and Airframe Integration
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Aero-Propulsive Coupling and Airframe Integration
@@ -44,15 +46,16 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-040"
 
 ## §1 Purpose
 
-ATLAS subsubject 086-040 defines the aero-propulsive coupling model, the thrust–drag bookkeeping methodology, the structural attachment of the BLI propulsor assemblies to the aft fuselage, and the interfaces with the broader airframe aerodynamic and structural models.
+This document defines the agnostic ATLAS standard-level architecture context for `Aero-Propulsive Coupling and Airframe Integration`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Aero-Propulsive Coupling Model
 
 ### 2.1 Thrust–Drag Bookkeeping
 
-BLI propulsion requires a non-standard thrust–drag bookkeeping because the BLI fan simultaneously produces thrust and modifies the airframe boundary-layer drag. The AMPEL360E eWTW uses the **Power Balance Method (PBM)** as the primary bookkeeping framework:
+BLI propulsion requires a non-standard thrust–drag bookkeeping because the BLI fan simultaneously produces thrust and modifies the airframe boundary-layer drag. The programme-defined aircraft type uses the **Power Balance Method (PBM)** as the primary bookkeeping framework:
 
 | Term | Symbol | Value (Cruise) | Notes |
 |---|---|---|---|
@@ -150,5 +153,5 @@ Installation of the BLI nacelle on the aft fuselage creates a small interference
 |---|---|---|---|
 | OI-086-040-001 | PBM validation with full-vehicle CFD — aero-propulsive coupling map freeze | Q-HORIZON | CDR |
 | OI-086-040-002 | Blade-off impulse load — dynamic FEM transient analysis for aft bulkhead | Q-STRUCTURES | Phase 2 |
-| OI-086-040-003 | CG shift assessment — impact on AMPEL360E centre-of-gravity envelope | Q-STRUCTURES | PDR |
+| OI-086-040-003 | CG shift assessment — impact on [PROGRAMME-AIRCRAFT] centre-of-gravity envelope | Q-STRUCTURES | PDR |
 | OI-086-040-004 | AoA correction table validation — flight simulation data required | Q-GREENTECH | CDR |

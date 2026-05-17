@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Structural Interfaces General
 
 ## 1. Purpose
 
-Documents the **top-level structural interface matrix** for the AMPEL360 eWTW, identifying inter-assembly joints, structure-to-systems attachment interfaces, and the governing Interface Control Documents (ICDs).
+Documents the **top-level structural interface matrix** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], identifying inter-assembly joints, structure-to-systems attachment interfaces, and the governing Interface Control Documents (ICDs).
 
 ## 2. Scope
 

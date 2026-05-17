@@ -6,10 +6,10 @@ subsubject: "040"
 subsubject_title: "Data Acquisition and Concentration"
 file_name: "031-040-Data-Acquisition-and-Concentration.md"
 sns_reference: "031-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-40"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-40"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -98,10 +98,12 @@ keywords:
   - "ARINC 717"
   - "data concentration"
   - "flight data acquisition"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-040 — Data Acquisition and Concentration
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,37 +115,27 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Data Acquisition and Concentration function for the AMPEL360e eWTW aircraft, implemented by the Digital Flight Data Acquisition Unit (DFDAU) or Data Acquisition Unit (DAU). The DFDAU/DAU acquires, concentrates, and formats flight parameter data from all aircraft systems into a single ARINC 717 serial digital data stream for input to the CVFDR, QAR, and ACMS. It is the central node through which all recorded flight data passes and is therefore subject to EUROCAE ED-55 (Requirements for Long Term Data Recording for Commercial Air Transport) for parameter set compliance.
+This document defines the agnostic ATLAS standard-level architecture context for `031-040 — Data Acquisition and Concentration`.
 
-The DFDAU on a conventional commercial transport aircraft is typically a standalone LRU in the avionics bay. On the eWTW, there is a programme-level architecture decision pending on whether the DAU function should be implemented as a standalone LRU or hosted as a software application on the IMA platform. Hosting on IMA would reduce hardware LRU count and potentially allow more flexible parameter management, but requires a formal DAL (Design Assurance Level) assessment and a dedicated IMA partition. The standalone LRU option is lower integration risk and is the baseline assumption until the LC03 trade study is completed.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The DFDAU acquires data from multiple interface types: ARINC 429 digital buses (from ADIRU, FMS, engine/propulsion controllers, flight control computers), discrete inputs (switch states, valve position indicators, gear positions), and analogue inputs (temperature, pressure, and position sensors not available on digital buses). The unit converts all inputs to engineering units, maps them to ARINC 717 words, and transmits a continuous data stream at 1024 or 2048 words per second (word rate to be defined based on final parameter count — see Open Issues).
-
-A critical eWTW-specific extension of the conventional DFDAU function is the acquisition of electric propulsion parameters. Battery State of Charge, motor shaft torque, motor speed (RPM), inverter operating temperature, inverter efficiency, and regenerative braking energy recovery are all parameters not found in conventional aircraft FDR datasets but are essential for eWTW accident investigation and FOQA analysis. These parameters must be added to the mandatory parameter set in coordination with ATA 71/80.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter / Subsubject | 31-40 — Data Acquisition and Concentration |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D SNS | 031-40 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-40 |
-| Effectivity | All MSN from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The DFDAU/DAU acts as the flight data aggregator for the entire aircraft. It connects to all major avionics and systems buses, acquires the parameters required by CS-25.1459 Appendix M (mandatory parameters), plus supplementary parameters defined by the programme for ACMS and operational monitoring purposes. The DFDAU outputs a continuous ARINC 717 data stream that is distributed simultaneously to the CVFDR, the QAR, and optionally to the ACMS for real-time analysis.
 
 The DFDAU architecture is built around a multi-channel ARINC 429 receiver front-end (capable of receiving up to 64+ ARINC 429 labels per channel from multiple transmitters), a discrete input conditioning module (for switch states and analog-to-digital converters), and an ARINC 717 transmitter output stage. The unit performs engineering unit conversion (scaling raw digital values or analog voltages to engineering units — knots, feet, degrees, pounds) and maps converted values to specific ARINC 717 word positions as defined in the parameter list.
 
-In the context of the eWTW, the DAU may also serve as the primary data aggregation point for the ACMS. The ACMS function (031-070) requires access to a broad set of aircraft parameters including some that are not in the mandatory FDR set. The DAU can provide these supplementary parameters on additional ARINC 717 channels or via an ARINC 429 / AFDX output to the ACMS. This integration avoids duplication of acquisition logic across the DFDAU and ACMS.
+In the context of the [PROGRAMME-VARIANT], the DAU may also serve as the primary data aggregation point for the ACMS. The ACMS function (031-070) requires access to a broad set of aircraft parameters including some that are not in the mandatory FDR set. The DAU can provide these supplementary parameters on additional ARINC 717 channels or via an ARINC 429 / AFDX output to the ACMS. This integration avoids duplication of acquisition logic across the DFDAU and ACMS.
 
 ---
 
@@ -312,9 +304,9 @@ A periodic ground test of the complete acquisition chain is recommended per MRB 
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-40 | Data Acquisition and Concentration | DMC-AMPEL360E-EWTW-031-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-40-01 | DFDAU/DAU LRU | DMC-AMPEL360E-EWTW-031-40-01 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-40-02 | Parameter List Management | DMC-AMPEL360E-EWTW-031-40-02 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-40 | Data Acquisition and Concentration | DMC-<PROGRAMME>-<VARIANT>-031-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-40-01 | DFDAU/DAU LRU | DMC-<PROGRAMME>-<VARIANT>-031-40-01 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-40-02 | Parameter List Management | DMC-<PROGRAMME>-<VARIANT>-031-40-02 | 040, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-40)
 

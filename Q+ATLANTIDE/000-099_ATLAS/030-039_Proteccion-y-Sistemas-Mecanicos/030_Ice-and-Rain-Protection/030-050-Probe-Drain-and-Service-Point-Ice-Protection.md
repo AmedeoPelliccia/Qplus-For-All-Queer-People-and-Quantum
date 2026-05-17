@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Probe, Drain and Service Point Ice Protection"
 file_name: "030-050-Probe-Drain-and-Service-Point-Ice-Protection.md"
 sns_reference: "030-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-50"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-50"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,21 +87,23 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
   - "drain mast heater"
   - "fuel vent heater"
   - "waterline freeze protection"
   - "trace heater"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-050 — Probe, Drain and Service Point Ice Protection
-### AMPEL360e eWTW · ATA 30-50 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-50 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,30 +115,25 @@ All hyperlinks in this document are **relative links** unless pointing to a publ
 
 ## §1 Purpose
 
-This document defines the ice protection requirements and system architecture for probes, drain masts, and service points on the **AMPEL360e eWTW** that are exposed to external environmental temperatures low enough to cause freezing, icing blockage, or freeze-fracture damage. Unlike the flight-critical ice protection covered in ATA 30-30 (air data probes) and ATA 30-40 (windshield), the systems in this document cover secondary aircraft functions: drain mast heating (water and waste drain discharge), fuel vent probe heating, antenna ice protection, lavatory drain heaters, service panel heating, and waterline freeze protection for water lines routed through cold zones of the fuselage. All heating in this subsubject is accomplished by **electrothermal trace heaters** or self-regulating (PTC — Positive Temperature Coefficient) heating elements, powered from the 28 V DC bus and managed by a dedicated Trace Heater Controller or the IPMC depending on criticality.
+This document defines the agnostic ATLAS standard-level architecture context for `030-050 — Probe, Drain and Service Point Ice Protection`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Sub-chapter | 30-50 — Probe, Drain and Service Point Ice Protection |
-| Items Covered | Drain masts, fuel vent probes, antenna radomes (selected), lavatory drains, service panels, waterlines |
-| Heater Technology | Electrothermal trace heater or PTC self-regulating element |
-| Power Source | 28 V DC Non-Essential Bus or Essential Bus (by criticality — TBD) |
-| Controller | Trace Heater Controller (THC) or IPMC-managed channel |
-| Certification Basis | CS-25.1419 (where applicable); AC 25-12; programme drain heater specification (TBD) |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 Aircraft drain masts, fuel vent probes, and service-point connections are exposed to ambient conditions throughout the flight envelope, including conditions well below 0 °C during cruise at high altitude (typically OAT −50 °C to −60 °C at FL350–FL390). Without freeze protection, water in drain masts can freeze and block the drain outlet, leading to water/waste overflow into the fuselage interior. Fuel vent probes that freeze over could cause vent blockage, resulting in fuel tank pressure differentials beyond structural limits. Service panel connectors exposed to sub-zero ground conditions in winter operations can accumulate frost or ice that prevents proper engagement.
 
-On the eWTW, these concerns are addressed entirely by electrothermal means — there is no bleed-air or hot-air source for secondary thermal functions. Drain mast heaters are self-regulating PTC resistive elements bonded to the drain mast body; as ambient temperature drops, PTC resistance decreases and heat output increases automatically, providing proportional freeze protection without active control. Fuel vent probes use a similar approach. For antennas, a thin electrothermal film bonded beneath the radome exterior surface provides de-icing capability in environments where ice accretion on the radome could degrade antenna pattern or cause mechanical damage from ice shedding. Lavatory drain heaters prevent ice blockage of the drain line exit from the pressurised cabin zone into the cold aerodynamic belly area.
+On the [PROGRAMME-VARIANT], these concerns are addressed entirely by electrothermal means — there is no bleed-air or hot-air source for secondary thermal functions. Drain mast heaters are self-regulating PTC resistive elements bonded to the drain mast body; as ambient temperature drops, PTC resistance decreases and heat output increases automatically, providing proportional freeze protection without active control. Fuel vent probes use a similar approach. For antennas, a thin electrothermal film bonded beneath the radome exterior surface provides de-icing capability in environments where ice accretion on the radome could degrade antenna pattern or cause mechanical damage from ice shedding. Lavatory drain heaters prevent ice blockage of the drain line exit from the pressurised cabin zone into the cold aerodynamic belly area.
 
 ---
 
@@ -159,7 +156,7 @@ On the eWTW, these concerns are addressed entirely by electrothermal means — t
 - Air data probe heaters (ATA 30-30)
 - Windshield heaters (ATA 30-40)
 - Cargo compartment heating (ATA 21)
-- Fuel in tank freeze protection (ATA 28 — note: eWTW fuel tank management for anti-gelling is a separate function from vent probe heating covered here)
+- Fuel in tank freeze protection (ATA 28 — note: [PROGRAMME-VARIANT] fuel tank management for anti-gelling is a separate function from vent probe heating covered here)
 - Ground service vehicle interface heating (not aircraft system responsibility)
 
 ---
@@ -304,11 +301,11 @@ flowchart LR
 
 | Info Code | Title | DMC | Status |
 |---|---|---|---|
-| 040 | System Description — Drain, Probe and Service Point Heating | DMC-AMPEL360E-EWTW-030-50-040-A | Draft scaffold |
-| 300 | Inspection — PTC Element Continuity and Trace Heater Condition | DMC-AMPEL360E-EWTW-030-50-300-A | Not started |
-| 400 | Fault Isolation — THC Circuit Faults (Open/Short Circuit) | DMC-AMPEL360E-EWTW-030-50-400-A | Not started |
-| 520 | Remove — Drain Mast Assembly | DMC-AMPEL360E-EWTW-030-50-520-A | Not started |
-| 720 | Install — Drain Mast Assembly | DMC-AMPEL360E-EWTW-030-50-720-A | Not started |
+| 040 | System Description — Drain, Probe and Service Point Heating | DMC-<PROGRAMME>-<VARIANT>-030-50-040-A | Draft scaffold |
+| 300 | Inspection — PTC Element Continuity and Trace Heater Condition | DMC-<PROGRAMME>-<VARIANT>-030-50-300-A | Not started |
+| 400 | Fault Isolation — THC Circuit Faults (Open/Short Circuit) | DMC-<PROGRAMME>-<VARIANT>-030-50-400-A | Not started |
+| 520 | Remove — Drain Mast Assembly | DMC-<PROGRAMME>-<VARIANT>-030-50-520-A | Not started |
+| 720 | Install — Drain Mast Assembly | DMC-<PROGRAMME>-<VARIANT>-030-50-720-A | Not started |
 
 ---
 
@@ -385,7 +382,7 @@ THC BITE fault log, circuit current history, and energisation time log in CMC. R
 |---|---|---|---|
 | CIT-001 | CS-25.1419 — Ice Protection | Amendment 27 | Applicable where icing could affect fuel vent or drain function with airworthiness impact |
 | CIT-002 | AC 25-12 — Airspeed Indicating System Calibration | Rev — | Compliance methodology for secondary probe and drain heating |
-| CIT-003 | AMPEL360e eWTW Drain Heater Specification | TBD — programme document | Programme-specific requirements for drain mast, vent probe, and waterline heating |
+| CIT-003 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Drain Heater Specification | TBD — programme document | Programme-specific requirements for drain mast, vent probe, and waterline heating |
 | CIT-004 | RTCA DO-160G — Environmental Conditions and Test Procedures | Edition G | THC LRU environmental qualification test programme |
 | CIT-005 | S1000D Issue 5.0 — International Specification for Technical Publications | Issue 5.0 | CSDB data module structure for ATA 30-50 maintenance documentation |
 

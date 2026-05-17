@@ -6,9 +6,9 @@ subsubject: "010"
 subsubject_title: "Vacuum Sources"
 file_name: "037-010-Vacuum-Sources.md"
 sns_reference: "037-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-10"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-10"
 ata_chapter: 37
-aircraft: "AMPEL360e eWTW"
+aircraft: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
 project: "Q+ATLANTIDE"
 status: "DRAFT"
 keywords:
@@ -26,10 +26,12 @@ created: "2025-07-14"
 revised: "2025-07-14"
 revision: "0.1"
 author: "Q+ATLANTIDE ATLAS Working Group"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-010 — Vacuum Sources
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1 — 2025-07-14  
@@ -39,39 +41,29 @@ author: "Q+ATLANTIDE ATLAS Working Group"
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-AMPEL360E-EWTW-037-10-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline. Traceability to CSDB maintained in §14.
+All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-037-10-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline. Traceability to CSDB maintained in §14.
 
 ---
 
 ## §1 Purpose
 
-This document describes all vacuum source equipment for the AMPEL360e eWTW Vacuum Waste System (VWS). The only vacuum sources in the eWTW ATA 37 system are **Electric Vacuum Generators (EVGs)** — motor-driven vacuum pumps powered from the aircraft electrical network.
+This document defines the agnostic ATLAS standard-level architecture context for `037-010 — Vacuum Sources`.
 
-Key objectives:
-1. Define the EVG architecture (primary + standby), power supply, operating parameters, and location.
-2. Confirm the absence of legacy vacuum source types (engine-driven pumps, venturi ejectors, bleed-air ejectors) and justify their elimination.
-3. Describe the EVG motor controller logic including auto-switchover.
-4. Document all open issues related to EVG sizing and selection.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-No engine-driven vacuum pumps are fitted. No bleed-air or pneumatic ejectors are fitted (eWTW has no bleed air extraction — fully electric architecture). No venturi-type vacuum generators are fitted.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| ATA Chapter / Subsubject | 37-010 — Vacuum Sources |
-| Document Tier | Level 3 — Subsystem Description |
-| Effectivity | MSN 0001 onwards (TBD) |
-| Parent Document | QATL-ATLAS-000099-ATLAS-030039-037-000 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
-### 3.1 EVG Role in eWTW
+### 3.1 EVG Role in [PROGRAMME-VARIANT]
 
 The EVG is the sole means of generating the sub-atmospheric (vacuum) pressure required to operate the Vacuum Waste System. The EVG draws air from the vacuum manifold, reducing manifold pressure to approximately −0.7 to −1.0 bar gauge <img src="https://img.shields.io/badge/TBD-red">, creating the differential that drives waste from toilet bowls to waste tanks.
 
@@ -95,13 +87,13 @@ The EVG is the sole means of generating the sub-atmospheric (vacuum) pressure re
 
 ### 3.3 Eliminated Vacuum Source Types
 
-| Source Type | Conventional Aircraft | eWTW | Justification |
+| Source Type | Conventional Aircraft | [PROGRAMME-VARIANT] | Justification |
 |---|---|---|---|
-| Engine-driven vacuum pump | Yes (Piper, Cessna, some turboprops) | **NO** | eWTW has no accessory gearbox-driven pumps |
-| Bleed-air ejector/venturi | Some business jets | **NO** | eWTW has no bleed air (fully electric) |
-| Pneumatic engine bleed | No (ATA 36 not applicable) | **NO** | No engine bleed extraction on eWTW |
+| Engine-driven vacuum pump | Yes (Piper, Cessna, some turboprops) | **NO** | [PROGRAMME-VARIANT] has no accessory gearbox-driven pumps |
+| Bleed-air ejector/venturi | Some business jets | **NO** | [PROGRAMME-VARIANT] has no bleed air (fully electric) |
+| Pneumatic engine bleed | No (ATA 36 not applicable) | **NO** | No engine bleed extraction on [PROGRAMME-VARIANT] |
 | RAM air venturi | Some light aircraft | **NO** | Not applicable to transport category |
-| Hydraulic vacuum pump | Rare | **NO** | Not fitted on eWTW |
+| Hydraulic vacuum pump | Rare | **NO** | Not fitted on [PROGRAMME-VARIANT] |
 
 ---
 
@@ -242,7 +234,7 @@ flowchart TB
 ```mermaid
 flowchart LR
     OEM_REQ["OEM/Operator Req\n(toilet qty, flush rate,\nEVG sizing)"]
-    SRD["SRD-eWTW-037\n(System Req Doc)"]
+    SRD["SRD-[PROGRAMME-VARIANT]-037\n(System Req Doc)"]
     EVG_SPEC["EVG Component Spec\n(supplier TBD)"]
     ICD_24["ICD ATA 24\n(AC power supply)"]
     ICD_45["ICD ATA 45\n(CMC AFDX)"]
@@ -324,11 +316,11 @@ flowchart LR
 
 | DMC Code | Title | Infocode | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-037-10-00-00A-040A-D | Vacuum Sources — Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-200A-D | EVG Removal and Installation | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-300A-D | EVG Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-520A-D | EVG Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-720A-D | EVG Motor Controller BITE | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-10-00-00A-040A-D | Vacuum Sources — Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-10-00-00A-200A-D | EVG Removal and Installation | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-10-00-00A-300A-D | EVG Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-10-00-00A-520A-D | EVG Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-10-00-00A-720A-D | EVG Motor Controller BITE | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -368,7 +360,7 @@ flowchart LR
 
 ### 16.3 No Gyro Vacuum Hazard Statement
 
-The eWTW does not use vacuum for gyroscopic flight instruments. The loss of EVG (both units) presents no flight safety risk. ADIRU/IRS (ATA 34) provides all attitude and heading data independently of ATA 37. This eliminates the CS-25.1438 vacuum gyro loss scenario that historically required dual vacuum pump demonstration.
+The [PROGRAMME-VARIANT] does not use vacuum for gyroscopic flight instruments. The loss of EVG (both units) presents no flight safety risk. ADIRU/IRS (ATA 34) provides all attitude and heading data independently of ATA 37. This eliminates the CS-25.1438 vacuum gyro loss scenario that historically required dual vacuum pump demonstration.
 
 ---
 
@@ -415,7 +407,7 @@ The eWTW does not use vacuum for gyroscopic flight instruments. The loss of EVG 
 2. EASA CS-25 Amendment 27 — CS-25.1309 "Equipment, Systems and Installations."
 3. EASA CS-25 Amendment 27 — CS-25.1353 "Electrical Equipment and Installations."
 4. ATA iSpec 2200 Chapter 37 — Vacuum.
-5. AMPEL360e eWTW SRD-eWTW-037 (EVG section) — <img src="https://img.shields.io/badge/TBD-red">
+5. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] SRD-[PROGRAMME-VARIANT]-037 (EVG section) — <img src="https://img.shields.io/badge/TBD-red">
 6. EVG Supplier Specification — <img src="https://img.shields.io/badge/TBD-red"> (supplier not yet selected — OI-037-001)
 
 ---
@@ -429,7 +421,7 @@ The eWTW does not use vacuum for gyroscopic flight instruments. The loss of EVG 
 | QATL-ATLAS-000099-ATLAS-030039-037-030 | Vacuum Regulation and Shutoff |
 | QATL-ATLAS-000099-ATLAS-030039-024-000 | Electrical Power — General (ATA 24) |
 | QATL-ATLAS-000099-ATLAS-030039-045-000 | Central Maintenance System (ATA 45) |
-| AMM-AMPEL360E-037-10 | Aircraft Maintenance Manual Chapter 37-10 — Vacuum Sources |
+| AMM-[PROGRAMME-AIRCRAFT]-037-10 | Aircraft Maintenance Manual Chapter 37-10 — Vacuum Sources |
 
 ---
 

@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 020 — Water Ballast Distribution and Transfer
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document defines the distribution and transfer architecture of the Water Ballast system on the AMPEL360E eWTW, covering manifold design, pipe routing, cross-feed connections, flow paths for fill, transfer, and dump operations, and line-sizing methodology. The document provides the authoritative hydraulic architecture reference for all piping downstream of the tank outlet bosses and upstream of the pump/valve assembly defined in 041-030.
+This document defines the distribution and transfer architecture of the Water Ballast system on the programme-defined aircraft type, covering manifold design, pipe routing, cross-feed connections, flow paths for fill, transfer, and dump operations, and line-sizing methodology. The document provides the authoritative hydraulic architecture reference for all piping downstream of the tank outlet bosses and upstream of the pump/valve assembly defined in 041-030.
 
 The transfer architecture is designed to support a nominal transfer rate of 25 kg/min per direction (fore-to-aft or aft-to-fore) at a maximum differential head of 2.0 m under aircraft pitch angles up to ±10°. The system must remain functional at altitude up to 43 000 ft cabin pressure altitude (simulated differential ≤ 0.6 bar) and at temperatures from −40 °C (line surface minimum with trace heating active) to +70 °C.
 
@@ -50,11 +52,11 @@ Regulatory compliance for the distribution architecture is governed by CS-25 §2
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41-20 — Water Ballast Distribution |
 | Standards | CS-25 Amd 27 §25.1183, DO-160G §8, ARP4754B |
 | Dev Assurance | DAL C (fluid line structural integrity) |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | Max Line Pressure | 1.5 bar gauge (pump outlet, steady state) |
 
 ---
@@ -259,12 +261,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-020-00A-040A-A | 040 | WB Distribution and Transfer Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-020-00A-300A-A | 300 | WB Distribution Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-020-00A-400A-A | 400 | WB Distribution BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-020-00A-520A-A | 520 | WB Distribution Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-020-00A-941A-A | 941 | WB Distribution Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-020-00A-720A-A | 720 | WB Distribution SW Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-020-00A-040A-A | 040 | WB Distribution and Transfer Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-020-00A-300A-A | 300 | WB Distribution Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-020-00A-400A-A | 400 | WB Distribution BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-020-00A-520A-A | 520 | WB Distribution Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-020-00A-941A-A | 941 | WB Distribution Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-020-00A-720A-A | 720 | WB Distribution SW Description |
 
 ### Recommended Data Module Set
 
@@ -367,7 +369,7 @@ Verification Evidence"]
 | <a id="ref-asme-b165"></a>ASME B16.5 | ASME B16.5 Pipe Flanges | Flange class and seating standards | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB module coding | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet [PROGRAMME-AIRCRAFT] | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

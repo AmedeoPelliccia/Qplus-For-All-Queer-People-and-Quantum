@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Indicating and Recording Systems — General"
 file_name: "031-000-Indicating-and-Recording-General.md"
 sns_reference: "031-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -98,10 +98,12 @@ keywords:
   - "FDR"
   - "CVR"
   - "ACMS"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-000 — Indicating and Recording Systems — General
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,39 +115,27 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document provides the top-level general description of ATA 31 — Indicating and Recording Systems — as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) full-electric aircraft. It establishes the scope, architectural philosophy, and functional decomposition of all indicating, display, warning, and recording systems across nine subsubjects (031-010 through 031-090).
+This document defines the agnostic ATLAS standard-level architecture context for `031-000 — Indicating and Recording Systems — General`.
 
-The AMPEL360e eWTW uses an all-digital glass cockpit architecture based on Integrated Modular Avionics (IMA). The flight deck incorporates dual Primary Flight Displays (PFD), dual Navigation Displays (ND), and dual Multifunction Displays (MFD)/ECAM-type system monitoring displays. Display Management Computers (DMC) drive all display units over a high-integrity data network. There is no conventional electro-mechanical instrumentation for primary flight information, with the exception of the mandated Integrated Standby Instrument (ISI).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The recording suite consists of a combined Flight Data Recorder / Cockpit Voice Recorder (CVFDR) mounted in the aft fuselage, supplemented by a solid-state Quick Access Recorder (QAR) for airline operational monitoring. A Digital Flight Data Acquisition Unit (DFDAU/DAU) collects and formats all flight parameters for the FDR, with provision to integrate this function within the IMA platform. The Aircraft Condition Monitoring System (ACMS) provides real-time monitoring, exceedance detection, and ACARS-based datalink reporting. The Central Maintenance Computer (CMC) consolidates BITE data from all aircraft systems.
-
-Key applicable regulations and standards for ATA 31 on eWTW include: CS-25.1301 (Function and installation), CS-25.1303 (Flight and navigation instruments), CS-25.1307 (Miscellaneous equipment — standby instruments), CS-25.1322 (Warning, caution, and advisory lights), CS-25.1457 (Cockpit Voice Recorder), CS-25.1459 (Flight Data Recorder), EUROCAE ED-12C / RTCA DO-178C (Software Considerations in Airborne Systems), and EUROCAE ED-14G / RTCA DO-160G (Environmental Conditions and Test Procedures for Airborne Equipment).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter | 31 — Indicating and Recording Systems |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER (extended range) |
-| Propulsion | Full-electric (twin or quad motor configuration) |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D Issue | 5.0 |
-| SNS Reference | 031-00 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-ATA 31 on the AMPEL360e eWTW encompasses all systems responsible for acquiring, processing, displaying, recording, and transmitting flight and systems data to the crew, maintenance personnel, and ground operations. The architecture is fully digital with no analogue electromechanical display units on the primary instrument panel, consistent with current-generation glass-cockpit transport-category aircraft.
+ATA 31 on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] encompasses all systems responsible for acquiring, processing, displaying, recording, and transmitting flight and systems data to the crew, maintenance personnel, and ground operations. The architecture is fully digital with no analogue electromechanical display units on the primary instrument panel, consistent with current-generation glass-cockpit transport-category aircraft.
 
 The IMA platform hosts several ATA 31 software functions — notably the Flight Warning Computer (FWC) function and potentially the DAU and ACMS functions — reducing physical LRU count while increasing integration complexity management requirements. The AFDX (Avionics Full Duplex Switched Ethernet, ARINC 664 Part 7) data network provides the primary interconnect between IMA, DMC, and display units, supplemented by ARINC 429 for legacy sensor interfaces.
 
-A key eWTW-specific consideration is the integration of electric propulsion monitoring parameters into the ATA 31 data acquisition, display, and recording functions. Battery State of Charge (SoC), motor torque and speed, inverter efficiency, and thermal management data are all fed into the DAU, displayed on ECAM system pages, recorded by the FDR (as supplementary parameters), and monitored by ACMS for trend analysis and predictive maintenance.
+A key [PROGRAMME-VARIANT]-specific consideration is the integration of electric propulsion monitoring parameters into the ATA 31 data acquisition, display, and recording functions. Battery State of Charge (SoC), motor torque and speed, inverter efficiency, and thermal management data are all fed into the DAU, displayed on ECAM system pages, recorded by the FDR (as supplementary parameters), and monitored by ACMS for trend analysis and predictive maintenance.
 
 ---
 
@@ -204,7 +194,7 @@ A key eWTW-specific consideration is the integration of electric propulsion moni
 
 ```mermaid
 flowchart LR
-    AC[AMPEL360e eWTW Aircraft] --> ATA31[ATA 31 — Indicating & Recording]
+    AC[[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Aircraft] --> ATA31[ATA 31 — Indicating & Recording]
     ATA31 --> SUB010[031-010 Flight Deck Panels]
     ATA31 --> SUB020[031-020 Standby Instruments]
     ATA31 --> SUB030[031-030 Recording Systems]
@@ -321,16 +311,16 @@ Software updates for IMA-hosted ATA 31 functions (FWC, DAU, ACMS) are performed 
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-00 | General | DMC-AMPEL360E-EWTW-031-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-10 | Flight Deck Indicating & Control Panels | DMC-AMPEL360E-EWTW-031-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-20 | Standby Instruments | DMC-AMPEL360E-EWTW-031-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-30 | Recording Systems | DMC-AMPEL360E-EWTW-031-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-40 | Data Acquisition & Concentration | DMC-AMPEL360E-EWTW-031-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-50 | Central Warning, Caution & Advisory | DMC-AMPEL360E-EWTW-031-50 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-60 | Electronic Display & Indication | DMC-AMPEL360E-EWTW-031-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-70 | Automatic Data Reporting & ACMS | DMC-AMPEL360E-EWTW-031-70 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-80 | Maintenance Recording & Diagnostics | DMC-AMPEL360E-EWTW-031-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-90 | S1000D CSDB Mapping | DMC-AMPEL360E-EWTW-031-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-00 | General | DMC-<PROGRAMME>-<VARIANT>-031-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-10 | Flight Deck Indicating & Control Panels | DMC-<PROGRAMME>-<VARIANT>-031-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-20 | Standby Instruments | DMC-<PROGRAMME>-<VARIANT>-031-20 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-30 | Recording Systems | DMC-<PROGRAMME>-<VARIANT>-031-30 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-40 | Data Acquisition & Concentration | DMC-<PROGRAMME>-<VARIANT>-031-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-50 | Central Warning, Caution & Advisory | DMC-<PROGRAMME>-<VARIANT>-031-50 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-60 | Electronic Display & Indication | DMC-<PROGRAMME>-<VARIANT>-031-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-70 | Automatic Data Reporting & ACMS | DMC-<PROGRAMME>-<VARIANT>-031-70 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-80 | Maintenance Recording & Diagnostics | DMC-<PROGRAMME>-<VARIANT>-031-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-90 | S1000D CSDB Mapping | DMC-<PROGRAMME>-<VARIANT>-031-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 

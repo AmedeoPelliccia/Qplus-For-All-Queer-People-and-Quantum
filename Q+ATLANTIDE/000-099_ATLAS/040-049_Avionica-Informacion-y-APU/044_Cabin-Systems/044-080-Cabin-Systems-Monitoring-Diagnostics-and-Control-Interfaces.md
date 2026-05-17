@@ -32,6 +32,8 @@ ata_reference: "ATA 44.080 — Cabin Systems Monitoring and Diagnostics"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 080 — Cabin Systems Monitoring, Diagnostics and Control Interfaces
@@ -44,7 +46,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the Cabin Systems Monitoring, Diagnostics, and Control Interfaces for the AMPEL360E eWTW aircraft — the consolidated health management, fault detection, fault isolation, and CMC reporting layer for all ATA 44 Cabin Systems subsystems (044-010 through 044-070). This is the programme-controlled diagnostics extension for ATA 44.
+This document defines the Cabin Systems Monitoring, Diagnostics, and Control Interfaces for the programme-defined aircraft type — the consolidated health management, fault detection, fault isolation, and CMC reporting layer for all ATA 44 Cabin Systems subsystems (044-010 through 044-070). This is the programme-controlled diagnostics extension for ATA 44.
 
 Key governance areas:
 - Cabin Systems health monitoring architecture.
@@ -61,7 +63,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44.080 — Cabin Systems Monitoring, Diagnostics and Control Interfaces |
 | Governance Classification | programme-controlled-diagnostics-extension |
 | Certification Basis | CS-25 Amendment 28 (by inheritance from subsystems) |
@@ -321,8 +323,8 @@ graph TD
 |--------|----------|---------|--------|
 | REF-044-08-01 | Cabin Systems General (044-000) | 1.0 | Active |
 | REF-044-08-02 | Cabin Core Network (044-010) | 1.0 | Active |
-| REF-044-08-03 | AMPEL360E ATA 45 CMC Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-044-08-04 | AMPEL360E QAR Parameter List | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-08-03 | [PROGRAMME-AIRCRAFT] ATA 45 CMC Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-08-04 | [PROGRAMME-AIRCRAFT] QAR Parameter List | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

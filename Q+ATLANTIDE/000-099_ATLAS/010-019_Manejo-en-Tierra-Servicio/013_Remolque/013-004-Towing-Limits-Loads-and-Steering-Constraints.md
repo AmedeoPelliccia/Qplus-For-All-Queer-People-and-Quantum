@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 013 · Subsubject 004 — Towing Limits, Loads and Steering Constraints
 
 ## 1. Purpose
 
-Establishes the quantitative and qualitative limits that constrain all AMPEL360 towing operations: towing speed limits by operational area, nose-gear steering angle limits, nose-gear vertical and lateral load limits, towbar shear bolt limits, and surface gradient limits. Exceeding any limit defined in this subsubject requires entry in the Aircraft Technical Log (ATL) and a damage assessment before further operation.
+Establishes the quantitative and qualitative limits that constrain all [PROGRAMME-AIRCRAFT] towing operations: towing speed limits by operational area, nose-gear steering angle limits, nose-gear vertical and lateral load limits, towbar shear bolt limits, and surface gradient limits. Exceeding any limit defined in this subsubject requires entry in the Aircraft Technical Log (ATL) and a damage assessment before further operation.
 
 > **Scope boundary:** This file contains limits only. The procedure steps that reference these limits are in [`013-003-Towing-Procedures-Pushback-and-Maneuvering.md`](./013-003-Towing-Procedures-Pushback-and-Maneuvering.md). Records and incident reporting when a limit is exceeded are in [`013-005-Towing-Records-Incidents-and-Traceability.md`](./013-005-Towing-Records-Incidents-and-Traceability.md).
 
@@ -57,8 +59,8 @@ The nose-gear steering angle limit is the maximum angular deflection of the nose
 
 | Variant | Maximum steering angle (towbar) | Maximum steering angle (TBL) | Notes |
 |---|---|---|---|
-| AMPEL360e (Gen 1) | Per AMM chapter 9 Table 903 | Per AMM chapter 9 Table 903 | Do not approach limit in a single steering input |
-| AMPEL360-BWB (Gen 2) | Per AMM chapter 9 Table 904 | Per AMM chapter 9 Table 904 | Gen 2 limit differs due to BWB nose-gear geometry |
+| [PROGRAMME-AIRCRAFT] (Gen 1) | Per AMM chapter 9 Table 903 | Per AMM chapter 9 Table 903 | Do not approach limit in a single steering input |
+| [PROGRAMME-AIRCRAFT]-BWB (Gen 2) | Per AMM chapter 9 Table 904 | Per AMM chapter 9 Table 904 | Gen 2 limit differs due to BWB nose-gear geometry |
 
 #### 2.2.1 Steering angle discipline
 
@@ -85,8 +87,8 @@ The nose gear has a maximum tow weight (MTW) — the maximum Aircraft Gross Weig
 
 | Variant | Maximum Tow Weight | Notes |
 |---|---|---|
-| AMPEL360e (Gen 1) | Per AMM chapter 9 Table 905 | Fuel load and payload contribute to gross weight |
-| AMPEL360-BWB (Gen 2) | Per AMM chapter 9 Table 906 | BWB mass distribution differs; verify variant-specific table |
+| [PROGRAMME-AIRCRAFT] (Gen 1) | Per AMM chapter 9 Table 905 | Fuel load and payload contribute to gross weight |
+| [PROGRAMME-AIRCRAFT]-BWB (Gen 2) | Per AMM chapter 9 Table 906 | BWB mass distribution differs; verify variant-specific table |
 
 If the aircraft gross weight exceeds the variant's MTW:
 - Reduce fuel load before tow, **or**

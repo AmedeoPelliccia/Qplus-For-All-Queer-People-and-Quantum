@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0085-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-085-060-REDUNDANCY-FAULT-TOLERANCE-AND-DEGRADED-MODES
      ATLAS-085 (Distributed Electric Propulsion Architecture) · Redundancy Fault Tolerance and Degraded Modes
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Redundancy Fault Tolerance and Degraded Modes
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-060"
 
 ## §1 Purpose
 
-ATLAS subsubject 085-060 defines the five DEPA degraded operating modes (DM-1 through DM-5), the automatic and manual reconfiguration logic executed by the DEPCU, the redundancy architecture for each propulsor and the DEPCU itself, a top-level FMEA summary for the DEPA, and the Minimum Equipment List (MEL) cross-reference for dispatch with inoperative DEPA components.
+This document defines the agnostic ATLAS standard-level architecture context for `Redundancy Fault Tolerance and Degraded Modes`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-085 — 085-060 Redundancy Fault Tolerance and Degraded Modes |
-| Certification Basis | EASA CS-25.1309; CS-25.143; CS-25.147; DO-178C DAL B |
-| S1000D SNS | 085-060-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `085` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Degraded Mode Definitions
 
 | Mode | Trigger Condition | Propulsors Lost | DEPCU Response | Pilot Actions | Thrust Available |

@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-060-SAF-CERTIFICATION-AND-OPERATIONAL-LIMITS
      ATA 78 · SAF Certification and Operational Limits
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # SAF Certification and Operational Limits
@@ -47,34 +49,31 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-060"
 
 ## §1 Purpose
 
-This document (078-060) defines the airworthiness certification basis, compliance matrix, and operational limits for SAF blends on the AMPEL360E eWTW. It covers conformance to ASTM D7566 Table 1, the EASA Special Condition SC E-19 compliance programme, the Engine OEM Fuel Specification EOFS-001, and the Type Certificate Data Sheet (TCDS) amendment process. It also establishes the FAMQMS (PN FAMQMS-078) role as the on-board enforcement mechanism for blend limit monitoring and exceedance alerting.
+This document defines the agnostic ATLAS standard-level architecture context for `SAF Certification and Operational Limits`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-060 — SAF Certification and Operational Limits |
-| Certification authority | EASA (primary); FAA (supplemental, ETSOA/STC) |
-| Certification basis | EASA CS-25 Amdt 27+; EASA SC E-19; ASTM D7566-23; DEF STAN 91-091 Issue 10 |
-| Engine certification | EASA CS-E 2015 Amdt 5; EASA SC E-19 |
-| S1000D SNS | 078-060-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-**Regulatory framework**: The AMPEL360E eWTW SAF certification programme is structured around three interlocking regulatory instruments:
+**Regulatory framework**: The programme-defined aircraft type SAF certification programme is structured around three interlocking regulatory instruments:
 
 1. **EASA Special Condition SC E-19** (Sustainable Aviation Fuels): EASA has issued SC E-19 specifically for civil aircraft type certification with SAF. SC E-19 defines additional requirements for fuel system material qualification, FAMQMS-equivalent monitoring, CoS traceability, and combustor/emissions qualification with SAF blends. Compliance with SC E-19 forms the primary certification basis for the ATA 78 SAF subsection.
 
-2. **ASTM D7566 Table 1 conformance**: All fuel blends uplifted to the AMPEL360E must conform to ASTM D7566 Table 1 for all physical and chemical properties. Conformance is verified at the blending depot (supplier CoA) and monitored on-board by FAMQMS. The Type Certificate Data Sheet (TCDS) amendment lists all approved SAF pathways (Annexes A1–A5) and the maximum blend ratio (currently 50 % v/v).
+2. **ASTM D7566 Table 1 conformance**: All fuel blends uplifted to the [PROGRAMME-AIRCRAFT] must conform to ASTM D7566 Table 1 for all physical and chemical properties. Conformance is verified at the blending depot (supplier CoA) and monitored on-board by FAMQMS. The Type Certificate Data Sheet (TCDS) amendment lists all approved SAF pathways (Annexes A1–A5) and the maximum blend ratio (currently 50 % v/v).
 
 3. **Engine OEM Fuel Specification EOFS-001 Rev C**: The turbofan engine OEM specifies permissible fuel properties for the combustor and fuel metering unit. EOFS-001 Rev C has been updated to include all five ASTM D7566 approved annexes at ≤50 % blend. Engine Type Certificate (ETC) amendment is required before TCDS amendment can be issued for the aircraft.
 
-**TCDS amendment process**: The EASA TCDS for the AMPEL360E eWTW includes the Approved Fuel List (AFL) as a controlled appendix. Each new SAF pathway or blend ratio increase requires a TCDS amendment (proposed by the OEM and approved by EASA propulsion section). The amendment package includes: compliance matrix against SC E-19, updated AFL, combustor qualification test report, material compatibility report, and FAMQMS software verification evidence.
+**TCDS amendment process**: The EASA TCDS for the programme-defined aircraft type includes the Approved Fuel List (AFL) as a controlled appendix. Each new SAF pathway or blend ratio increase requires a TCDS amendment (proposed by the OEM and approved by EASA propulsion section). The amendment package includes: compliance matrix against SC E-19, updated AFL, combustor qualification test report, material compatibility report, and FAMQMS software verification evidence.
 
 **Operational limits (Approved Fuel List)**:
 
@@ -146,7 +145,7 @@ flowchart TB
 |---|---|---|---|---|---|
 | FAMQMS Avionics LRU | FAMQMS-078 | 1 | EE bay zone 121 | 500 FH calibration; SW per SB | Blend limit enforcement; CMS fault generation |
 | NIR Spectroscopy Sensor | NIR-SAF-078 | 1 | Return manifold zone 131 | 500 FH calibration | ±2 % accuracy for blend limit monitoring |
-| TCDS Amendment Package | TCDS-AMPEL360E-SAF-01 | 1 (document) | EASA / OEM records | Per EASA TCDS amendment cycle | AFL appendix controlled by EASA |
+| TCDS Amendment Package | TCDS-[PROGRAMME-AIRCRAFT]-SAF-01 | 1 (document) | EASA / OEM records | Per EASA TCDS amendment cycle | AFL appendix controlled by EASA |
 | EOFS-001 Rev C | EOFS-001-REVC | 1 (document) | Engine OEM records | Per engine OEM SB / Rev cycle | Controlling fuel spec for combustor |
 
 ---

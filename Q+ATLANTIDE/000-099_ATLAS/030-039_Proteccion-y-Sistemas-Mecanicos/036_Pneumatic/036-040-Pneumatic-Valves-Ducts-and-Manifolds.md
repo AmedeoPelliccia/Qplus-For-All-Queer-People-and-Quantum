@@ -6,10 +6,10 @@ subsubject: "040"
 subsubject_title: "Pneumatic Valves, Ducts, and Manifolds"
 file_name: "036-040-Pneumatic-Valves-Ducts-and-Manifolds.md"
 sns_reference: "036-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-40"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-40"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -89,10 +89,12 @@ keywords:
   - "bleed-less"
   - "low-pressure tubing"
   - "CS-25.1438"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-040 — Pneumatic Valves, Ducts, and Manifolds
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -104,31 +106,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document provides a consolidated description of all pneumatic valves, ducts (tubing), and manifolds in the AMPEL360e eWTW residual pneumatic circuit (ATA 36-040). It covers the physical characteristics, materials, installation requirements, and maintenance provisions for these components.
+This document defines the agnostic ATLAS standard-level architecture context for `036-040 — Pneumatic Valves, Ducts, and Manifolds`.
 
-**Key eWTW architectural note**: Conventional ATA 36 on bleed-air aircraft involves large-bore, high-temperature titanium or Inconel ducts with complex bellows/flex joint assemblies, thermal insulation blankets, and high-temperature seals. The eWTW has **none of these**. The residual pneumatic circuit carries low-pressure, near-ambient-temperature air. Ducts are small-bore (estimated 1/4"–1/2" OD), and material selection is driven by weight, cost, and corrosion resistance rather than temperature. No titanium high-pressure hot-air duct couplings. No thermal expansion joints. No insulation blankets.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 036-040 — Pneumatic Valves, Ducts, and Manifolds |
-| Hot bleed ducts | **Not applicable** — bleed-less architecture |
-| High-temp titanium ducts | **Not applicable** |
-| Thermal insulation blankets | **Not required** |
-| Duct temperature | Near-ambient (TBD — EAC compression adds modest heat) |
-| Working pressure | <img src="https://img.shields.io/badge/TBD-red"> psi |
-| Tubing material | <img src="https://img.shields.io/badge/TBD-red"> |
-| Valve types | SOV (NC solenoid), NRV (check), PRV (relief) |
-| Bonding | Required — composite fuselage bonding jumpers |
-| Certification Basis | CS-25.1438; CS-25.1301/1309 |
-| S1000D SNS | 036-40 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 Component Summary
@@ -409,9 +400,9 @@ flowchart LR
 
 | DM Code (planned) | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-40-00A-040A-A | 040 | ATA 36-040 — Valves, Ducts, Manifolds — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-40-00A-300A-A | 300 | ATA 36-040 — Valve and Tubing Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-40-00A-400A-A | 400 | ATA 36-040 — Valve Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-40-00A-040A-A | 040 | ATA 36-040 — Valves, Ducts, Manifolds — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-40-00A-300A-A | 300 | ATA 36-040 — Valve and Tubing Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-40-00A-400A-A | 400 | ATA 36-040 — Valve Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -518,7 +509,7 @@ flowchart LR
 |---|---|---|---|---|
 | OI-036-006 | **Manifold material and routing**: aluminium vs. stainless; composite fuselage penetration provisions | Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-018 | **Tubing material selection**: aluminium 6061 vs. stainless 304 vs. PTFE-lined — trade study required | Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-036-019 | **Fitting standard**: AN flare vs. Swagelok vs. push-to-connect — standardisation with other eWTW systems | Q-MECHANICS | Low | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-036-019 | **Fitting standard**: AN flare vs. Swagelok vs. push-to-connect — standardisation with other [PROGRAMME-VARIANT] systems | Q-MECHANICS | Low | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-020 | **SOV quantity per door group**: 1 SOV per door pair vs. 1 SOV per door — trade-off sealing reliability vs. complexity | Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-001 | **Retain or eliminate ATA 36**: if eliminated, ATA 36-040 scope is null | Q-AIR | Critical | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-016 | **PRV vent destination**: exterior vs. internal enclosure — fire zone and composite structure | Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |

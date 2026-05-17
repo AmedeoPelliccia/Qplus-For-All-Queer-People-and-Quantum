@@ -21,13 +21,15 @@ governance_class: baseline
 version: 1.1.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 016 — Lifting, Shoring and Jacking Procedures
 
 ## 1. Purpose
 
-Subsection-level index for *Lifting, Shoring and Jacking Procedures* (`016`) within ATLAS `010-019` — *Manejo en Tierra & Servicio* — Detailed procedures for aircraft jacking, shoring, leveling and structural support operations for AMPEL360 variants.
+Subsection-level index for *Lifting, Shoring and Jacking Procedures* (`016`) within ATLAS `010-019` — *Manejo en Tierra & Servicio* — Detailed procedures for aircraft jacking, shoring, leveling and structural support operations for [PROGRAMME-AIRCRAFT] variants.
 
 This subsection is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 

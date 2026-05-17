@@ -19,13 +19,15 @@ governance_class: baseline
 version: 1.1.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 000-009 · Section 00 — Información General y Servicio
 
 ## 1. Purpose
 
-Section-level index for *Información General y Servicio* (`000-009`) within the ATLAS band. Covers identification, configuration, general documentation, basic operations, servicing, dimensions, lifting/jacking, leveling/weighing, towing/taxiing, and parking/storage for the AMPEL360E eWTW.
+Section-level index for *Información General y Servicio* (`000-009`) within the ATLAS band. Covers identification, configuration, general documentation, basic operations, servicing, dimensions, lifting/jacking, leveling/weighing, towing/taxiing, and parking/storage for the programme-defined aircraft type.
 
 This section is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline[^baseline][^n001].
 
@@ -33,7 +35,7 @@ This section is part of the **ATLAS-1000** register, a subpart of the controlled
 
 - Aggregates the 10 subsections within the `000-009` code range listed in §3.
 - Inherits Q-Division authority and ORB support from the parent row in [`../README.md` §3](../README.md#3-architecture-table)[^archtable].
-- Applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+- Applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ## 3. Subsection Index
 

@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.000 — Loads, Environment and Design Basis General
 
 ## 1. Purpose
 
-Defines the **structural design basis** for the AMPEL360 eWTW: top-level limit load (LL) and ultimate load (UL) factors, design spectrum assumptions, environmental exposure envelope, and the eWTW-specific loading conditions arising from the electric propulsion and high-density battery architecture.
+Defines the **structural design basis** for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]: top-level limit load (LL) and ultimate load (UL) factors, design spectrum assumptions, environmental exposure envelope, and the [PROGRAMME-VARIANT]-specific loading conditions arising from the electric propulsion and high-density battery architecture.
 
 ## 2. Scope
 
@@ -66,7 +68,7 @@ Defines the **structural design basis** for the AMPEL360 eWTW: top-level limit l
 | Hail | 0.8-inch diameter @ 100 kts (forward-facing surfaces) |
 | Corrosion zone | Coastal marine — CPCP Zone A/B per SRM Chapter 51 |
 
-### 2.4 eWTW-Specific Design Loads
+### 2.4 [PROGRAMME-VARIANT]-Specific Design Loads
 
 The electric WetThroughWing architecture introduces structural loads not present in conventional aircraft:
 
@@ -79,10 +81,10 @@ The electric WetThroughWing architecture introduces structural loads not present
 
 ```mermaid
 graph LR
-    A[Flight Loads — CS-25.301] --> E[Design Basis Document DBD-AMPEL360-STRUCT-001]
+    A[Flight Loads — CS-25.301] --> E[Design Basis Document DBD-[PROGRAMME-AIRCRAFT]-STRUCT-001]
     B[Ground Loads — CS-25.471] --> E
     C[Pressurisation — CS-25.365] --> E
-    D[eWTW Electric Loads — OI-050-001/002] --> E
+    D[[PROGRAMME-VARIANT] Electric Loads — OI-050-001/002] --> E
     E --> F[FEM Load Cases — MSC Nastran]
     F --> G[Stress Reports per Assembly]
 ```

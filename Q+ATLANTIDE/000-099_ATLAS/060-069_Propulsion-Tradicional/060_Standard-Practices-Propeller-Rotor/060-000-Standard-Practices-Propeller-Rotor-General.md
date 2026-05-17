@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0060-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-060-000-STANDARD-PRACTICES-—-PROPELLER-ROTOR-GENERAL
      ATA 60 · Standard Practices — Propeller/Rotor General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Standard Practices — Propeller/Rotor General
@@ -47,29 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-000"
 
 ## §1 Purpose
 
-This document establishes the general scope, governing standards, and controlling philosophy for all Standard Practices applicable to propeller, rotor, and propulsor assemblies within the AMPEL360E eWTW programme. ATA Chapter 60 provides the cross-cutting procedural baseline that underpins every type-specific maintenance activity described in ATA Chapters 61–69.
+This document defines the agnostic ATLAS standard-level architecture context for `Standard Practices — Propeller/Rotor General`.
 
-On the AMPEL360E eWTW, propeller/rotor systems are not the primary propulsor for cruise; the aircraft uses high-bypass turbofan engines. However, ATA 60 Standard Practices remain mandatory for any auxiliary propulsor study, rotorcraft-heritage component programmes, ground-power extraction propulsors, and any future distributed propulsion integration. All such components must comply with the material qualification, NDT approval, tooling control, and documentation traceability standards defined here.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The Standard Practices baseline is controlled by Q-GREENTECH as primary Q-Division, with Q-MECHANICS leading process engineering, Q-AIR providing aeromechanical interface review, and Q-INDUSTRY overseeing supplier quality and manufacturing readiness. All procedures issued under this chapter must reference an approved AMPEL360E AMM task code and carry a valid CSDB data-module cross-reference before entry into the aircraft maintenance programme.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| Governing standard | ATA iSpec 2200, Chapter 60 |
-| Supplementary standard | SAE AS7506 — Propeller maintenance practices |
-| NDT qualification | NAS 410 / EN 4179 |
-| Certification basis | EASA CS-25 Amendment 27+ |
-| Q-Division authority | Q-GREENTECH (primary) |
-| BREX constraint | Bleed-less design — no pneumatic torque provisions |
-| S1000D SNS | 060-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `060` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ATA 60 Standard Practices define the procedural envelope within which all propeller and rotor maintenance is executed. The chapter governs six core practice domains:
@@ -288,4 +281,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

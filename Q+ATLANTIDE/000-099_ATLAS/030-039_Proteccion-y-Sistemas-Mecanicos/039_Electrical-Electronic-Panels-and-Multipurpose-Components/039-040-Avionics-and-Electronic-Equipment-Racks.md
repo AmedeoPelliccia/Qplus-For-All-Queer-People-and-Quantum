@@ -6,10 +6,10 @@ subsubject: "040"
 subsubject_title: "Avionics and Electronic Equipment Racks"
 file_name: "039-040-Avionics-and-Electronic-Equipment-Racks.md"
 sns_reference: "039-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-40"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-40"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "Avionics Rack"
@@ -94,10 +94,12 @@ keywords:
   - "LRM"
   - "avionics cooling"
   - "DZUS"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-040 — Avionics and Electronic Equipment Racks
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,47 +109,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links. Regulatory and standards references cited by identifier only. DMC cross-references follow `DMC-AMPEL360E-EWTW-039-40-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
+All cross-references use relative Markdown links. Regulatory and standards references cited by identifier only. DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-039-40-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
 
 ---
 
 ## §1 Purpose
 
-This document describes **Avionics and Electronic Equipment Racks** (subsubject 039-040) of the AMPEL360e eWTW. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `039-040 — Avionics and Electronic Equipment Racks`.
 
-1. Aft E/E bay rack complement: R1 (IMA Cabinet 1), R2 (IMA Cabinet 2), R3 (Navigation/Communications Rack), R4 (Power Conversion Rack TBD).
-2. Forward E/E bay: TBD — pending OI-039-007.
-3. Rack form factors: ARINC 600 or ARINC 404 — under evaluation (OI-039-006).
-4. Shock-isolated mounting, DZUS quick-release fasteners.
-5. Forced-air cooling: ECS conditioned air divert or dedicated Avionics Cooling Fan (ACF) — under evaluation (OI-039-002).
-6. Hinged rack access doors with positive latching.
-7. IMA cabinets: multi-slot ARINC 653 partitioned, hosting multiple software functions.
-8. LRU accessibility: colour-coded handle convention and ARINC 404 extractors.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter / Subsubject | 39 — 039-040 Avionics and Electronic Equipment Racks |
-| Document Tier | Level 3 — Component/Assembly Description |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-
-Includes all E/E bay racks, rack structures, rack slides, IMA cabinets, cooling provisions, and mounting hardware. Excludes:
-- Software functions hosted in IMA: → ATA 42
-- E/E bay environmental conditioning (source): → ATA 21
-- LRU module content (avionics functions): → ATA 42
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Aft E/E Bay Rack Layout
 
-The aft E/E bay is the primary avionics bay of the eWTW, located in the aft belly section below the cabin floor. It contains approximately 4 racks arranged in a serviceable configuration:
+The aft E/E bay is the primary avionics bay of the [PROGRAMME-VARIANT], located in the aft belly section below the cabin floor. It contains approximately 4 racks arranged in a serviceable configuration:
 
 | Rack | Designation | Primary Content | Form Factor |
 |---|---|---|---|
@@ -401,11 +387,11 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| Avionics rack description | DMC-AMPEL360E-EWTW-039-40-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| LRU removal (general) | DMC-AMPEL360E-EWTW-039-40-00A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| LRU installation (general) | DMC-AMPEL360E-EWTW-039-40-00A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Cooling functional check | DMC-AMPEL360E-EWTW-039-40-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — racks | DMC-AMPEL360E-EWTW-039-40-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Avionics rack description | DMC-<PROGRAMME>-<VARIANT>-039-40-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| LRU removal (general) | DMC-<PROGRAMME>-<VARIANT>-039-40-00A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| LRU installation (general) | DMC-<PROGRAMME>-<VARIANT>-039-40-00A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Cooling functional check | DMC-<PROGRAMME>-<VARIANT>-039-40-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — racks | DMC-<PROGRAMME>-<VARIANT>-039-40-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -538,5 +524,5 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW avionics rack context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] avionics rack context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

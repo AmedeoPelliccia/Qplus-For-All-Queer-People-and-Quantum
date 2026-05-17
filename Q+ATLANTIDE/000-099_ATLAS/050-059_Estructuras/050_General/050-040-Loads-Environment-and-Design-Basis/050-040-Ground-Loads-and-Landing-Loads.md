@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.040 — Ground Loads and Landing Loads
 
 ## 1. Purpose
 
-Defines the **ground loads and landing loads** applicable to the AMPEL360 eWTW structure, including landing-gear vertical and drag reactions, ground-handling towing and jacking loads, braking and pivoting loads, and the influence of the aircraft's high-energy-density cryogenic mass on gear-strut dynamic response.
+Defines the **ground loads and landing loads** applicable to the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structure, including landing-gear vertical and drag reactions, ground-handling towing and jacking loads, braking and pivoting loads, and the influence of the aircraft's high-energy-density cryogenic mass on gear-strut dynamic response.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-CS-25.471 governs ground loads. For the AMPEL360 eWTW, the adoption of an unconventional undercarriage arrangement (tricycle with centre-mounted main gear due to the low-wing distributed-propulsion layout) produces atypical spin-up/spring-back load distributions. The LH₂ tank mass located aft of centre also creates a critical nose-gear reaction during braked roll-out. All landing-gear load cases are computed for maximum landing weight (MLW) and maximum take-off weight (MTOW) where applicable.
+CS-25.471 governs ground loads. For the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT], the adoption of an unconventional undercarriage arrangement (tricycle with centre-mounted main gear due to the low-wing distributed-propulsion layout) produces atypical spin-up/spring-back load distributions. The LH₂ tank mass located aft of centre also creates a critical nose-gear reaction during braked roll-out. All landing-gear load cases are computed for maximum landing weight (MLW) and maximum take-off weight (MTOW) where applicable.
 
 Taxi loads account for runway roughness exceedances per CS-25.491. Towing, jacking, and tie-down loads are specified in the ground-handling load cases per CS-25.509 and programme requirements.
 

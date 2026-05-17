@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Potable Water System"
 file_name: "038-010-Potable-Water-System.md"
 sns_reference: "038-01"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-01"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-038-01"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -79,7 +79,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 38"
   - "Water and Waste"
@@ -92,10 +92,12 @@ keywords:
   - "NRV"
   - "fill port"
   - "water quality"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 038-010 — Potable Water System
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -105,46 +107,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, AMC, WHO, FAA) are cited by document identifier only; no live external URLs are embedded. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-01-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, AMC, WHO, FAA) are cited by document identifier only; no live external URLs are embedded. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-038-01-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document provides the system-level description of the **Potable Water System (PWS)** for the **AMPEL360e eWTW** aircraft under ATA Chapter 38-010. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `038-010 — Potable Water System`.
 
-1. The complete potable water supply chain from ground fill to point-of-use service at galleys and lavatories.
-2. The fully electric pressurisation and pumping architecture (no engine bleed air).
-3. Water treatment: UV sterilisation and activated carbon filtration for onboard water quality compliance.
-4. Hot water provision: Electric Water Heaters (EWH) at point of use.
-5. Cold water branch distribution, including the rinse water supply to lavatory flush circuits.
-6. Contamination prevention strategy: Non-Return Valves (NRVs), clean/dirty loop separation, vent filters.
-7. Quantity indication and CMC monitoring of the potable water system.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document is authoritative for all PWS components from the fill port to the service outlet at each galley/lavatory faucet and flush rinse nozzle.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants (unless noted) |
-| ATA Chapter/Subsubject | 38-010 — Potable Water System |
-| Document Tier | Level 2 — System Description Document (SDD) |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Parent Document | [038-000 Water and Waste General](./038-000-Water-and-Waste-General.md) |
-
-This document covers all components from the water fill port to the service outlet at each consumer. Tank structural design is described in [038-020](./038-020-Water-Storage-and-Distribution.md). Heater units are described in [038-030](./038-030-Water-Heaters-and-Service-Interfaces.md).
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
-### 3.1 PWS Architecture on the eWTW
+### 3.1 PWS Architecture on the [PROGRAMME-VARIANT]
 
-The eWTW Potable Water System is designed around fully electric supply:
+The [PROGRAMME-VARIANT] Potable Water System is designed around fully electric supply:
 
 - **Tank pressurisation:** Electric-derived (EAC low-pressure air or bladder/pump — OI-038-002 <img src="https://img.shields.io/badge/TBD-red">). Target ~3.5 bar gauge working pressure.
 - **Distribution pump:** Electric Water Pump (EWP) — centrifugal, motor-driven. Backup: gravity flow from pressurised tank if EWP fails.
@@ -441,14 +428,14 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description — PWS | DMC-AMPEL360E-EWTW-038-01-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| EWP description | DMC-AMPEL360E-EWTW-038-01-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EWP removal | DMC-AMPEL360E-EWTW-038-01-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| EWP installation | DMC-AMPEL360E-EWTW-038-01-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| UV unit description | DMC-AMPEL360E-EWTW-038-01-20A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| UV lamp replacement | DMC-AMPEL360E-EWTW-038-01-20A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — PWS | DMC-AMPEL360E-EWTW-038-01-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Water quality check procedure | DMC-AMPEL360E-EWTW-038-01-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description — PWS | DMC-<PROGRAMME>-<VARIANT>-038-01-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| EWP description | DMC-<PROGRAMME>-<VARIANT>-038-01-10A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWP removal | DMC-<PROGRAMME>-<VARIANT>-038-01-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| EWP installation | DMC-<PROGRAMME>-<VARIANT>-038-01-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| UV unit description | DMC-<PROGRAMME>-<VARIANT>-038-01-20A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| UV lamp replacement | DMC-<PROGRAMME>-<VARIANT>-038-01-20A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — PWS | DMC-<PROGRAMME>-<VARIANT>-038-01-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Water quality check procedure | DMC-<PROGRAMME>-<VARIANT>-038-01-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -587,5 +574,5 @@ flowchart LR
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections; eWTW PWS context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections; [PROGRAMME-VARIANT] PWS context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

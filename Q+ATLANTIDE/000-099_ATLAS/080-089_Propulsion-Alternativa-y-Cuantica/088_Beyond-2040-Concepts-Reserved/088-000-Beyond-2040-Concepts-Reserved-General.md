@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0088-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-088-000-BEYOND-2040-CONCEPTS-RESERVED-GENERAL
      ATLAS-088 (Beyond-2040 Concepts Reserved) · General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Beyond-2040 Concepts Reserved — General
@@ -46,29 +48,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 088-000 is the **apex reference** for the Beyond-2040 Concepts Reserved (B2CR) propulsion research namespace of the AMPEL360E eWTW programme. It establishes the overall framework description, concept taxonomy, technology intake criteria, governance constraints, and reserved-namespace management applicable across the full B2CR scope. All subordinate subsubject documents (088-010 through 088-090) are governed by, and must be consistent with, this general baseline document.
+This document defines the agnostic ATLAS standard-level architecture context for `Beyond-2040 Concepts Reserved — General`.
 
-The B2CR framework provides a **controlled research repository** for post-conventional propulsion concepts whose underlying physics, engineering feasibility, or manufacturing readiness cannot be confirmed within the current state of the art (pre-2026 knowledge base). Concepts admitted to subsection 088 are subject to strict claim-validation protocols managed by the **Beyond-2040 Concept Management Unit (B2CMU)**. The B2CMU is a governance body — not a physical avionics unit — that coordinates Q-GREENTECH, Q-HORIZON, Q-HPC, and Q-STRUCTURES review panels. Physical candidate hardware or prototype systems that reach TRL 4 are transferred to the appropriate active ATLAS subsection (080–087 or a future 089+).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360E eWTW (research roadmap horizon 2040+) |
-| ATA Reference | ATLAS-088 (Beyond-2040 Concepts Reserved) |
-| Governance Body | Beyond-2040 Concept Management Unit (B2CMU) |
-| Certification Basis | Research phase — no active certification basis; future CS-25, CS-P, CS-E references identified per concept |
-| S1000D SNS | 088-000-00 |
-| DMRL Reference | BREX-088-v1; 30 Data Modules |
-| Effectivity | AMPEL360E eWTW research roadmap; MSN 001+ if and when concepts reach applicable TRL thresholds |
-
----
+| Standard taxonomy | Applies to the ATLAS node `088` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description
 
-The AMPEL360E eWTW **Beyond-2040 Concepts Reserved (B2CR)** namespace is structured around six post-conventional propulsion technology families, each assigned a catalogue identifier (B2C-Fxxx) and governed by the B2CMU intake and validation process:
+The programme-defined aircraft type **Beyond-2040 Concepts Reserved (B2CR)** namespace is structured around six post-conventional propulsion technology families, each assigned a catalogue identifier (B2C-Fxxx) and governed by the B2CMU intake and validation process:
 
 1. **Field and Quantum-Vacuum Propulsion (B2C-F100):** Concepts that claim to derive thrust from interaction with the quantum vacuum (zero-point field), electromagnetic asymmetric cavities, or proposed scalar-field gradients. All B2C-F100 concepts are subject to mandatory independent experimental replication prior to concept promotion.
 
@@ -156,7 +154,7 @@ flowchart TB
 | Physics validation | Q-HORIZON physics review panel | Offline review — B2CMU-REV-001 | Experimental data package assessment |
 | TRL escalation | Active ATLAS subsections (080–087+) | Baseline change request (BCR) | Promote concept to active subsection |
 | Ethics and dual-use | ORB-LEG, Q-DATAGOV | Compliance review — ETHICS-088 | Dual-use export control, ethical constraint tagging |
-| S1000D traceability | AMPEL360E-EWTW CSDB | CSDB namespace 088 | Research DM registration under BREX-088-v1 |
+| S1000D traceability | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB | CSDB namespace 088 | Research DM registration under BREX-088-v1 |
 | Annual review | B2CMU review board | Governance meeting — annual | Status gate decision for all active concepts |
 
 ---
@@ -219,7 +217,7 @@ flowchart TB
 | OI-088-002 | Physics claim validation protocol (B2CMU-REV-001) — draft and review cycle | Q-HORIZON | PDR |
 | OI-088-003 | Dual-use classification assessment for B2C-F100, F200, F300, F600 families | ORB-LEG | PDR |
 | OI-088-004 | TRL-extended scale definition (B2CMU-TRL-088) — alignment with NASA TRL 1–9 and ESA SRL scale | Q-HPC | PDR |
-| OI-088-005 | CSDB SNS 088 namespace reservation in AMPEL360E-EWTW CSDB instance | Q-DATAGOV | PDR |
+| OI-088-005 | CSDB SNS 088 namespace reservation in [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB instance | Q-DATAGOV | PDR |
 
 ---
 

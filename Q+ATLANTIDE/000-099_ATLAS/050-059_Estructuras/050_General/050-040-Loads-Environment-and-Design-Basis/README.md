@@ -24,6 +24,8 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · Section 05 · Subsection 050 · Subsubject 040 — Loads, Environment and Design Basis
@@ -32,7 +34,7 @@ language: en
 
 Subsubject-level index for *Loads, Environment and Design Basis* (`040`) within subsection `050` *General* of ATLAS `050-059` — *Estructuras*.
 
-This subsubject establishes the load taxonomy, design-basis envelope, and environmental criteria applied to the AMPEL360 eWTW structural design: from limit/ultimate load definitions through cryogenic, thermal, vibration, and fatigue environments, up to design allowables and S1000D traceability.
+This subsubject establishes the load taxonomy, design-basis envelope, and environmental criteria applied to the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural design: from limit/ultimate load definitions through cryogenic, thermal, vibration, and fatigue environments, up to design allowables and S1000D traceability.
 
 ## 2. Document Index
 

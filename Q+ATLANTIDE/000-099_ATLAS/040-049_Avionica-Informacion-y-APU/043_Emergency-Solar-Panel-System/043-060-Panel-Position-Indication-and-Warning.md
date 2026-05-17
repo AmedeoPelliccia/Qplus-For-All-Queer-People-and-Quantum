@@ -31,6 +31,8 @@ ata_reference: "ATA iSpec 2200"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 060 — Panel Position Indication and Warning
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the panel position indication and warning functions of the Emergency Solar Panel System (ESPS) for the AMPEL360E eWTW aircraft. It covers cockpit indication of panel deployment/stow state, position sensor architecture, crew alerting system (CAS) message generation, built-in test (BIT), and ECAM/EICAS display integration.
+This document defines the panel position indication and warning functions of the Emergency Solar Panel System (ESPS) for the programme-defined aircraft type. It covers cockpit indication of panel deployment/stow state, position sensor architecture, crew alerting system (CAS) message generation, built-in test (BIT), and ECAM/EICAS display integration.
 
 Key governance areas:
 - Position sensor architecture (primary Hall-effect + redundant RVDT).
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 43 (ATLAS 043) — Emergency Solar Panel System |
 | Certification Basis | CS-25 Amendment 28; CS-25 §25.1322; DO-160G |
 | Applicable Standards | DO-160G; DO-178C; ARP4754B |
@@ -344,8 +346,8 @@ graph LR
 |--------|----------|---------|--------|
 | REF-043-06-01 | ESPS General (043-000) | 1.0 | TBD |
 | REF-043-06-02 | Deployment and Retraction Mechanisms (043-020) | 1.0 | TBD |
-| REF-043-06-03 | AMPEL360E PSCU Interface Control Document (ICD) | TBD | TBD |
-| REF-043-06-04 | AMPEL360E CAS Message Catalogue | TBD | TBD |
+| REF-043-06-03 | [PROGRAMME-AIRCRAFT] PSCU Interface Control Document (ICD) | TBD | TBD |
+| REF-043-06-04 | [PROGRAMME-AIRCRAFT] CAS Message Catalogue | TBD | TBD |
 
 ---
 

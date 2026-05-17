@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-040-SAF-STORAGE-HANDLING-AND-SERVICING
      ATA 78 · SAF Storage, Handling and Servicing
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # SAF Storage, Handling and Servicing
@@ -47,28 +49,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-040"
 
 ## §1 Purpose
 
-This document (078-040) defines the on-aircraft fuel storage requirements, ground handling procedures, refuelling servicing instructions, and cold soak protection strategy for SAF blends (≤50 % v/v ASTM D7566) on the AMPEL360E eWTW. It establishes that no special airport infrastructure, dedicated storage vessels, or modified refuelling equipment is required for blended SAF ≤50 % v/v — the core "drop-in" attribute — while identifying the specific monitoring and heating provisions unique to SAF operation.
+This document defines the agnostic ATLAS standard-level architecture context for `SAF Storage, Handling and Servicing`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-040 — SAF Storage, Handling and Servicing |
-| Certification basis | EASA CS-25 §25.951–25.979; EASA SC E-19 |
-| S1000D SNS | 078-040-00 |
-| Related ATAs | ATA 12 (Ground Servicing); ATA 28 (Fuel System); ATA 73 (Fuel and Control) |
-| Refuelling standard | AFQRJOS Issue 30; EI 1529 (into-plane fuelling) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-**On-aircraft storage**: The AMPEL360E eWTW fuel system (ATA 28) comprises port and starboard integral wing tanks (wet wing construction, Al 2024-T3 primary structure with PR-1776 B-2 polysulfide sealant) and a centre tank. Total usable fuel capacity: 97,000 L (approximately 78,000 kg at Jet-A1 density). SAF blends ≤50 % v/v do not require any modification to these tanks, tank bays, venting systems, or fuel quantity measurement system (FQMS). Fuel density difference between 50 % SAF blend and pure Jet-A1 is within the FQMS calibration tolerance.
+**On-aircraft storage**: The programme-defined aircraft type fuel system (ATA 28) comprises port and starboard integral wing tanks (wet wing construction, Al 2024-T3 primary structure with PR-1776 B-2 polysulfide sealant) and a centre tank. Total usable fuel capacity: 97,000 L (approximately 78,000 kg at Jet-A1 density). SAF blends ≤50 % v/v do not require any modification to these tanks, tank bays, venting systems, or fuel quantity measurement system (FQMS). Fuel density difference between 50 % SAF blend and pure Jet-A1 is within the FQMS calibration tolerance.
 
-**Airport infrastructure**: The vast majority of commercial airports supply SAF as a pre-blended product — the SAF is blended with Jet-A1 at the fuel depot or refinery at the prescribed blend ratio, then transported to the aircraft in standard refuelling trucks or through existing hydrant systems. The AMPEL360E requires no dedicated SAF piping, separate storage tanks, or modified fuelling adapters at any airport.
+**Airport infrastructure**: The vast majority of commercial airports supply SAF as a pre-blended product — the SAF is blended with Jet-A1 at the fuel depot or refinery at the prescribed blend ratio, then transported to the aircraft in standard refuelling trucks or through existing hydrant systems. The [PROGRAMME-AIRCRAFT] requires no dedicated SAF piping, separate storage tanks, or modified fuelling adapters at any airport.
 
 **Ground refuelling (single-point pressure refuelling)**: Standard single-point refuelling per ATA 12 and EI 1529. The refuelling panel is located on the lower fuselage (zone 191). Bonding cable connection, open-circuit interlock, pressure refuelling at ≤345 kPa (50 psi), and quantity pre-select via FQMS are all identical to Jet-A1 operations. FAMQMS (PN FAMQMS-078) records the refuelling event automatically when fuel flow is detected in the return manifold sensor (NIR-SAF-078).
 

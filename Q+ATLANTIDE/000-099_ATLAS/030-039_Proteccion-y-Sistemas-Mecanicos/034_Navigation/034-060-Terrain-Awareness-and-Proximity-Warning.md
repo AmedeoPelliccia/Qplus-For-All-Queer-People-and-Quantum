@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Terrain Awareness and Proximity Warning"
 file_name: "034-060-Terrain-Awareness-and-Proximity-Warning.md"
 sns_reference: "034-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-60"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-60"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "TAWS"
@@ -89,10 +89,12 @@ keywords:
   - "Windshear"
   - "DO-161A"
   - "TSO-C151"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-060 — Terrain Awareness and Proximity Warning
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -104,35 +106,20 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Terrain Awareness and Proximity Warning subsystem (ATA 034-060) of the AMPEL360e eWTW aircraft. It covers the Class A TAWS (EGPWS), GPWS modes 1–7, predictive terrain alerting using the terrain/obstacle database, radio altimeter interface, reactive and predictive windshear alerting, and alert inhibit logic.
+This document defines the agnostic ATLAS standard-level architecture context for `034-060 — Terrain Awareness and Proximity Warning`.
 
-The eWTW is equipped with a Class A TAWS system per DO-161A rev C (TSO-C151c). The system includes all seven traditional GPWS modes plus Enhanced GPWS (EGPWS) functions: a look-ahead terrain/obstacle alerting function using a worldwide terrain database and the aircraft's GNSS/FMS position. The TAWS issues Caution (amber audio + amber ND display) and Warning (red audio + red ND display) alerts. The radio altimeter provides the 0–2500 ft above ground level (AGL) measurement critical for GPWS Mode 1–6 computations. Installation of the radio altimeter antennas on the composite CFRP fuselage is an open issue.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 034-060 — Terrain Awareness and Proximity Warning |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| TAWS Class | Class A (full TAWS per DO-161A) |
-| GPWS Modes | Modes 1–7 (all seven standard GPWS modes) |
-| EGPWS | Predictive terrain look-ahead using worldwide terrain/obstacle DB |
-| Terrain DB | Worldwide terrain and obstacle database — coverage TBD |
-| Radio Altimeter | 0–2500 ft AGL; antenna positions TBD (CFRP fuselage) |
-| Windshear | Reactive (Mode 7) + Predictive windshear TBD |
-| Look-Ahead Range | 500 NM forward TBD |
-| Qualification | TSO-C151c; DO-161A rev C |
-| Output Bus | AFDX / ARINC 429 |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-60 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The Terrain Awareness and Warning System (TAWS) — also known as Enhanced Ground Proximity Warning System (EGPWS) — is a Class A system providing two complementary functions:
@@ -338,7 +325,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-60 | Terrain Awareness and Proximity Warning | DMC-AMPEL360E-EWTW-034-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-60 | Terrain Awareness and Proximity Warning | DMC-<PROGRAMME>-<VARIANT>-034-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Recommended DM Set for 034-60
 
@@ -464,7 +451,7 @@ flowchart LR
 | OI-060-001 | Radio altimeter antenna installation on CFRP fuselage — lower fuselage CFRP RF transparency at 4.3 GHz; groundplane effects; antenna mount insert design | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-060-002 | Predictive windshear — define whether predictive windshear is provided by weather radar (034-070) or by a standalone TAWS predictive windshear function; interface definition required | Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-060-003 | Terrain DB look-ahead range — confirm 500 NM forward look-ahead target; resolution requirements for approach corridors; worldwide obstacle DB coverage TBD | Q-AIR / Q-DATAGOV | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-060-004 | GPWS Mode 6 callout set — define specific altitude callout set for eWTW operations; align with airline customer preferences and regulatory requirements | Q-AIR / ORB-LEG | Low | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-060-004 | GPWS Mode 6 callout set — define specific altitude callout set for [PROGRAMME-VARIANT] operations; align with airline customer preferences and regulatory requirements | Q-AIR / ORB-LEG | Low | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-060-005 | Composite fuselage RF transparency for navigation antennas (cross-reference 034-000) | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-060-006 | MEMS vs. FOG IRS technology decision (cross-reference 034-020) | Q-AIR / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-060-007 | GBAS fitment decision (cross-reference 034-040) | Q-AIR / ORB-PMO | Medium | <img src="https://img.shields.io/badge/TBD-red"> |

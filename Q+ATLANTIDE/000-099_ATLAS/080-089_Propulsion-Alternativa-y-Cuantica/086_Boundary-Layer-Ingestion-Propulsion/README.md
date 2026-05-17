@@ -21,6 +21,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 080-089 · Section 08 · Subsection 086 — Boundary Layer Ingestion Propulsion
@@ -35,7 +37,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 - Reserves the subsubject namespace `00`–`99` of subsection `086` *Boundary Layer Ingestion Propulsion*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- The Overview and detailed subsubjects (`00`–`99`) are fully populated in this baseline release. Ten subsubject documents (086-000 through 086-090) cover the complete BLI Propulsion scope for the AMPEL360E eWTW.
+- The Overview and detailed subsubjects (`00`–`99`) are fully populated in this baseline release. Ten subsubject documents (086-000 through 086-090) cover the complete BLI Propulsion scope for the programme-defined aircraft type.
 
 ## 3. Subsubject Index
 

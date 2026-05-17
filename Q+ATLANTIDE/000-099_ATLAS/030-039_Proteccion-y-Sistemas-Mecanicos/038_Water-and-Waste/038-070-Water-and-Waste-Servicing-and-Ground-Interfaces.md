@@ -6,10 +6,10 @@ subsubject: "070"
 subsubject_title: "Water and Waste Servicing and Ground Interfaces"
 file_name: "038-070-Water-and-Waste-Servicing-and-Ground-Interfaces.md"
 sns_reference: "038-07"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-07"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-038-07"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -79,7 +79,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 38"
   - "Water and Waste"
@@ -92,10 +92,12 @@ keywords:
   - "single-point servicing"
   - "UV lamp check"
   - "water quality sample"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 038-070 — Water and Waste Servicing and Ground Interfaces
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -105,44 +107,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-07-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-038-07-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document describes the **Water and Waste Servicing and Ground Interfaces** of ATA 38 for the **AMPEL360e eWTW**. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `038-070 — Water and Waste Servicing and Ground Interfaces`.
 
-1. Potable water pressure fill port: location, fitting type, quick-disconnect, overflow protection, manual shutoff.
-2. Potable water quality test port: inline sample port for water quality checks.
-3. Potable water maintenance drain: gravity drain valve location and access.
-4. Waste tank ground drain fittings: per-tank or single-point consolidated drain for ground service truck.
-5. Waste tank rinse water connector: for rinsing tank interior during servicing.
-6. Single-point service panel: TBD location (aft lower fuselage typical); combined potable + waste on one panel (OI-038-009).
-7. Ground vehicle requirements: standard aircraft water/waste service truck.
-8. Service intervals: per-turn or operator-defined, UV lamp check, water flush.
-9. Service procedures overview: fill, drain, rinse, sample.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter/Subsubject | 038-070 — Servicing and Ground Interfaces |
-| Document Tier | Level 2 — SDD |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-| Parent Document | [038-000](./038-000-Water-and-Waste-General.md) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Ground Servicing Concept
 
-The eWTW ATA 38 ground servicing design targets minimum turn-around time consistent with water quality and waste management requirements. The preferred design is a **single-point service panel** combining both potable water fill and waste drain connections on one panel, accessible from one ground vehicle position.
+The [PROGRAMME-VARIANT] ATA 38 ground servicing design targets minimum turn-around time consistent with water quality and waste management requirements. The preferred design is a **single-point service panel** combining both potable water fill and waste drain connections on one panel, accessible from one ground vehicle position.
 
 | Service Operation | Interface | Vehicle | Typical Interval |
 |---|---|---|---|
@@ -405,13 +394,13 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| System description — ground interfaces | DMC-AMPEL360E-EWTW-038-07-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Potable water fill servicing | DMC-AMPEL360E-EWTW-038-07-10A-910A-A | 910 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Waste tank drain servicing | DMC-AMPEL360E-EWTW-038-07-20A-910A-A | 910 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Water quality sample procedure | DMC-AMPEL360E-EWTW-038-07-30A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| UV lamp check procedure | DMC-AMPEL360E-EWTW-038-07-40A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Service panel description | DMC-AMPEL360E-EWTW-038-07-50A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — servicing interface | DMC-AMPEL360E-EWTW-038-07-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| System description — ground interfaces | DMC-<PROGRAMME>-<VARIANT>-038-07-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| Potable water fill servicing | DMC-<PROGRAMME>-<VARIANT>-038-07-10A-910A-A | 910 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Waste tank drain servicing | DMC-<PROGRAMME>-<VARIANT>-038-07-20A-910A-A | 910 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Water quality sample procedure | DMC-<PROGRAMME>-<VARIANT>-038-07-30A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| UV lamp check procedure | DMC-<PROGRAMME>-<VARIANT>-038-07-40A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Service panel description | DMC-<PROGRAMME>-<VARIANT>-038-07-50A-040A-A | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — servicing interface | DMC-<PROGRAMME>-<VARIANT>-038-07-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 

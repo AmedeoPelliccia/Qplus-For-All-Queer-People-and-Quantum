@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0089-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-089-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATLAS-089 (Propulsion AI Optimization Hooks) · S1000D CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D CSDB Mapping and Traceability
@@ -44,30 +46,27 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-090"
 
 ## §1 Purpose
 
-ATLAS subsubject 089-090 establishes the S1000D Data Module Requirements List (DMRL), the BREX-089-v1 rule set, the ICN (Illustration Control Number) registry, the CSDB publication milestones, and the traceability matrix mapping all ten PAIO subsubject documents to their corresponding S1000D Data Modules (DMs). It is the authoritative reference for the PAIO technical publication deliverables and governs the structure of the AMPEL360E-EWTW CSDB entries under SNS 089.
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D CSDB Mapping and Traceability`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-089 (Propulsion AI Optimization Hooks) — 089-090 S1000D/CSDB Mapping and Traceability |
-| S1000D Version | Issue 5.0 |
-| BREX | BREX-089-v1 |
-| Total DMs in DMRL | 30 |
-| DMC Pattern | `AMPEL360E-EWTW-089-{NNN}-00A-{TYPE}-EN-US` |
-| Certification Basis | S1000D Issue 5.0; BREX-089-v1; EASA CS-25 Amdt 27+ (research ref.) |
-| S1000D SNS | 089-090-00 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `089` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description
 
-The PAIO technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the AMPEL360E-EWTW CSDB under the SNS 089 schema. The Data Module Code (DMC) pattern is `AMPEL360E-EWTW-089-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
+The PAIO technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB under the SNS 089 schema. The Data Module Code (DMC) pattern is `[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
 
-The governing BREX document is `AMPEL360E-BREX-089-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 089:
+The governing BREX document is `[PROGRAMME-AIRCRAFT]-BREX-089-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 089:
 
 **BREX-089-AI-01 — AI System Maintenance Inhibit Rule:**
 All maintenance DMs of type 100 (task), 300 (inspection), and 520 (removal/replacement) that require physical access to the AIOCU or SBM hardware, or that perform software/model updates, must include as the first mandatory step the PAIO Maintenance Inhibit procedure PAIO-MINH-089:
@@ -89,36 +88,36 @@ All DMs for AIOCU removal or replacement (type 520) must include a mandatory ste
 
 | DM Number | DMC | Type | Title | ATLAS Source |
 |---|---|---|---|---|
-| DM-089-001 | AMPEL360E-EWTW-089-000-040A | Descriptive | PAIO System General Overview | 089-000 |
-| DM-089-002 | AMPEL360E-EWTW-089-000-100A | Task | AIOCU System Activation and Ground Check Procedure | 089-000 |
-| DM-089-003 | AMPEL360E-EWTW-089-000-300A | Inspection | AIOCU System Periodic BITE Inspection | 089-000 |
-| DM-089-004 | AMPEL360E-EWTW-089-010-040A | Descriptive | AI Optimization Baseline and Scope | 089-010 |
-| DM-089-005 | AMPEL360E-EWTW-089-020-040A | Descriptive | Propulsion Performance Optimization Models (PPOE) | 089-020 |
-| DM-089-006 | AMPEL360E-EWTW-089-020-100A | Task | PPOE RL Model Update Procedure | 089-020 |
-| DM-089-007 | AMPEL360E-EWTW-089-020-300A | Inspection | PPOE FPGA Inference Latency Functional Check | 089-020 |
-| DM-089-008 | AMPEL360E-EWTW-089-030-040A | Descriptive | Energy Management and Mission Profile Optimization (EMOM + QAOA) | 089-030 |
-| DM-089-009 | AMPEL360E-EWTW-089-030-100A | Task | QAOA Circuit Parameter Update Procedure | 089-030 |
-| DM-089-010 | AMPEL360E-EWTW-089-030-300A | Inspection | EMOM MPC Solver Functional Validation | 089-030 |
-| DM-089-011 | AMPEL360E-EWTW-089-040-040A | Descriptive | Thermal Load and Propulsor Health Optimization (TLB + PHO) | 089-040 |
-| DM-089-012 | AMPEL360E-EWTW-089-040-100A | Task | TLB DNN Model Update Procedure | 089-040 |
-| DM-089-013 | AMPEL360E-EWTW-089-040-300A | Inspection | TLB Thermal Sensor Integration Check | 089-040 |
-| DM-089-014 | AMPEL360E-EWTW-089-040-300B | Inspection | PHO RUL Estimation Verification (per-flight post-flight) | 089-040 |
-| DM-089-015 | AMPEL360E-EWTW-089-050-040A | Descriptive | Aero-Propulsive Coupling Optimization (APCO) | 089-050 |
-| DM-089-016 | AMPEL360E-EWTW-089-050-300A | Inspection | APCO Surrogate Model Accuracy Spot Check | 089-050 |
-| DM-089-017 | AMPEL360E-EWTW-089-060-040A | Descriptive | Fault Tolerance, Degraded Modes and Reconfiguration Logic | 089-060 |
-| DM-089-018 | AMPEL360E-EWTW-089-060-100A | Task | AIOCU Degraded Mode Functional Test (DM-1 through DM-7) | 089-060 |
-| DM-089-019 | AMPEL360E-EWTW-089-060-300A | Inspection | EEPROM LUT Integrity Check | 089-060 |
-| DM-089-020 | AMPEL360E-EWTW-089-070-040A | Descriptive | Safety Boundaries, Human Oversight and Certification Constraints | 089-070 |
-| DM-089-021 | AMPEL360E-EWTW-089-070-100A | Task | SBM Functional Override Test Procedure | 089-070 |
-| DM-089-022 | AMPEL360E-EWTW-089-070-100B | Task | AI-OPT-OFF Switch Reversion Time Verification | 089-070 |
-| DM-089-023 | AMPEL360E-EWTW-089-070-300A | Inspection | SBM Hard Limit Table Integrity Inspection | 089-070 |
-| DM-089-024 | AMPEL360E-EWTW-089-080-040A | Descriptive | AI Optimization Monitoring, Diagnostics and Control Interfaces | 089-080 |
-| DM-089-025 | AMPEL360E-EWTW-089-080-100A | Task | AIOCU Software / Model Load Procedure | 089-080 |
-| DM-089-026 | AMPEL360E-EWTW-089-080-100B | Task | Explainability Log Download Procedure | 089-080 |
-| DM-089-027 | AMPEL360E-EWTW-089-080-300A | Inspection | AIOCU Full MBIT Diagnostic Run | 089-080 |
-| DM-089-028 | AMPEL360E-EWTW-089-080-520A | Task | AIOCU LRU Removal and Replacement | 089-080 |
-| DM-089-029 | AMPEL360E-EWTW-089-080-520B | Task | QPU and Cryocooler Assembly Removal and Replacement | 089-080 |
-| DM-089-030 | AMPEL360E-EWTW-089-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 089-090 |
+| DM-089-001 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-000-040A | Descriptive | PAIO System General Overview | 089-000 |
+| DM-089-002 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-000-100A | Task | AIOCU System Activation and Ground Check Procedure | 089-000 |
+| DM-089-003 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-000-300A | Inspection | AIOCU System Periodic BITE Inspection | 089-000 |
+| DM-089-004 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-010-040A | Descriptive | AI Optimization Baseline and Scope | 089-010 |
+| DM-089-005 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-020-040A | Descriptive | Propulsion Performance Optimization Models (PPOE) | 089-020 |
+| DM-089-006 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-020-100A | Task | PPOE RL Model Update Procedure | 089-020 |
+| DM-089-007 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-020-300A | Inspection | PPOE FPGA Inference Latency Functional Check | 089-020 |
+| DM-089-008 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-030-040A | Descriptive | Energy Management and Mission Profile Optimization (EMOM + QAOA) | 089-030 |
+| DM-089-009 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-030-100A | Task | QAOA Circuit Parameter Update Procedure | 089-030 |
+| DM-089-010 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-030-300A | Inspection | EMOM MPC Solver Functional Validation | 089-030 |
+| DM-089-011 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-040-040A | Descriptive | Thermal Load and Propulsor Health Optimization (TLB + PHO) | 089-040 |
+| DM-089-012 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-040-100A | Task | TLB DNN Model Update Procedure | 089-040 |
+| DM-089-013 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-040-300A | Inspection | TLB Thermal Sensor Integration Check | 089-040 |
+| DM-089-014 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-040-300B | Inspection | PHO RUL Estimation Verification (per-flight post-flight) | 089-040 |
+| DM-089-015 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-050-040A | Descriptive | Aero-Propulsive Coupling Optimization (APCO) | 089-050 |
+| DM-089-016 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-050-300A | Inspection | APCO Surrogate Model Accuracy Spot Check | 089-050 |
+| DM-089-017 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-060-040A | Descriptive | Fault Tolerance, Degraded Modes and Reconfiguration Logic | 089-060 |
+| DM-089-018 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-060-100A | Task | AIOCU Degraded Mode Functional Test (DM-1 through DM-7) | 089-060 |
+| DM-089-019 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-060-300A | Inspection | EEPROM LUT Integrity Check | 089-060 |
+| DM-089-020 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-070-040A | Descriptive | Safety Boundaries, Human Oversight and Certification Constraints | 089-070 |
+| DM-089-021 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-070-100A | Task | SBM Functional Override Test Procedure | 089-070 |
+| DM-089-022 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-070-100B | Task | AI-OPT-OFF Switch Reversion Time Verification | 089-070 |
+| DM-089-023 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-070-300A | Inspection | SBM Hard Limit Table Integrity Inspection | 089-070 |
+| DM-089-024 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-080-040A | Descriptive | AI Optimization Monitoring, Diagnostics and Control Interfaces | 089-080 |
+| DM-089-025 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-080-100A | Task | AIOCU Software / Model Load Procedure | 089-080 |
+| DM-089-026 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-080-100B | Task | Explainability Log Download Procedure | 089-080 |
+| DM-089-027 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-080-300A | Inspection | AIOCU Full MBIT Diagnostic Run | 089-080 |
+| DM-089-028 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-080-520A | Task | AIOCU LRU Removal and Replacement | 089-080 |
+| DM-089-029 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-080-520B | Task | QPU and Cryocooler Assembly Removal and Replacement | 089-080 |
+| DM-089-030 | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-089-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 089-090 |
 
 ---
 
@@ -136,16 +135,16 @@ All DMs for AIOCU removal or replacement (type 520) must include a mandatory ste
 
 | ICN | Content Type | Used In DM | Description |
 |---|---|---|---|
-| ICN-AMPEL360E-089-0001 | Diagram (SVG) | DM-089-001 | PAIO system top-level block diagram |
-| ICN-AMPEL360E-089-0002 | Diagram (SVG) | DM-089-005 | PPOE neural network architecture and FPGA pipeline |
-| ICN-AMPEL360E-089-0003 | Diagram (SVG) | DM-089-008 | EMOM MPC state diagram and QAOA circuit schematic |
-| ICN-AMPEL360E-089-0004 | Diagram (SVG) | DM-089-011 | TLB thermal redistribution logic flow |
-| ICN-AMPEL360E-089-0005 | Diagram (SVG) | DM-089-015 | APCO aero-propulsive coupling optimization loop |
-| ICN-AMPEL360E-089-0006 | Diagram (SVG) | DM-089-017 | AIOCU degraded mode state machine |
-| ICN-AMPEL360E-089-0007 | Diagram (SVG) | DM-089-020 | SBM partition architecture and override paths |
-| ICN-AMPEL360E-089-0008 | Diagram (SVG) | DM-089-024 | AFDX VL-089 network topology |
-| ICN-AMPEL360E-089-0009 | Warning sign (PNG) | DM-089-002, 025, 028, 029 | AI system maintenance inhibit hazard label |
-| ICN-AMPEL360E-089-0010 | Warning sign (PNG) | DM-089-006, 009, 012 | Model update controlled-change caution label |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0001 | Diagram (SVG) | DM-089-001 | PAIO system top-level block diagram |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0002 | Diagram (SVG) | DM-089-005 | PPOE neural network architecture and FPGA pipeline |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0003 | Diagram (SVG) | DM-089-008 | EMOM MPC state diagram and QAOA circuit schematic |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0004 | Diagram (SVG) | DM-089-011 | TLB thermal redistribution logic flow |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0005 | Diagram (SVG) | DM-089-015 | APCO aero-propulsive coupling optimization loop |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0006 | Diagram (SVG) | DM-089-017 | AIOCU degraded mode state machine |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0007 | Diagram (SVG) | DM-089-020 | SBM partition architecture and override paths |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0008 | Diagram (SVG) | DM-089-024 | AFDX VL-089 network topology |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0009 | Warning sign (PNG) | DM-089-002, 025, 028, 029 | AI system maintenance inhibit hazard label |
+| ICN-[PROGRAMME-AIRCRAFT]-089-0010 | Warning sign (PNG) | DM-089-006, 009, 012 | Model update controlled-change caution label |
 
 ---
 
@@ -185,5 +184,5 @@ All DMs for AIOCU removal or replacement (type 520) must include a mandatory ste
 |---|---|---|---|
 | OI-089-090-001 | BREX-089-v1 formal review and sign-off by Q-DATAGOV and AI airworthiness team | Q-DATAGOV | PDR |
 | OI-089-090-002 | ICN-089-0003 (QAOA circuit schematic) — artwork requires QPU circuit diagram freeze | Q-HPC | CDR |
-| OI-089-090-003 | CSDB SNS 089 namespace reservation in AMPEL360E-EWTW CSDB instance | Q-DATAGOV | PDR |
+| OI-089-090-003 | CSDB SNS 089 namespace reservation in [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT] CSDB instance | Q-DATAGOV | PDR |
 | OI-089-090-004 | DM-089-029 (QPU removal) — cryocooler He handling procedure; confirm maintenance facility qualification for He handling | Q-DATAGOV | CDR |

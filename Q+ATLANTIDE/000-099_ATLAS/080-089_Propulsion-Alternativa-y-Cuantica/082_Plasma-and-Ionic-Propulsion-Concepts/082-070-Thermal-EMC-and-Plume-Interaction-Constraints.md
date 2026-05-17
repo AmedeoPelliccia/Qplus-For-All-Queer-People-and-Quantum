@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0082-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-082-070-THERMAL-EMC-AND-PLUME-INTERACTION-CONSTRAINTS
      ATLAS-082 (Plasma and Ionic Propulsion Concepts) · Thermal, EMC and Plume Interaction Constraints
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Thermal, EMC and Plume Interaction Constraints
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-070"
 
 ## §1 Purpose
 
-ATLAS subsubject 082-070 defines the thermal management constraints, electromagnetic compatibility (EMC) requirements, and plasma plume interaction assessment methodology for the AMPEL360E eWTW PIPC programme. It establishes the exclusion zones for plume impingement, the thermal load envelope for thruster installation, and the RF emission control strategy required to prevent interference with aircraft navigation and communication systems.
+This document defines the agnostic ATLAS standard-level architecture context for `Thermal, EMC and Plume Interaction Constraints`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-082 — 082-070 Thermal, EMC and Plume Interaction Constraints |
-| Certification basis | EASA CS-25 Amdt 27+; DO-160G Sections 17, 18, 20, 21; CS-25.1309 (system safety) |
-| S1000D SNS | 082-070-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `082` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Thermal Constraints
 
 ### 3.1 Thruster Thermal Loads

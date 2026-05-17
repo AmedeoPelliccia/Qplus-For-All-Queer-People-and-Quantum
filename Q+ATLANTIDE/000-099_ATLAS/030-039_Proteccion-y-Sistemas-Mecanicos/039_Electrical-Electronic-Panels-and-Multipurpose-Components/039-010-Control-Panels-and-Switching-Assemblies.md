@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Control Panels and Switching Assemblies"
 file_name: "039-010-Control-Panels-and-Switching-Assemblies.md"
 sns_reference: "039-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "Control Panels"
@@ -94,10 +94,12 @@ keywords:
   - "DO-160G"
   - "ETMS"
   - "AECMA colour convention"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-010 — Control Panels and Switching Assemblies
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,46 +109,31 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, DO-160G, ARINC standards) are cited by document identifier only; no live external URLs are embedded. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-039-10-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work in progress or planned content respectively.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references (CS-25, DO-160G, ARINC standards) are cited by document identifier only; no live external URLs are embedded. Internal DMC cross-references follow the pattern `DMC-<PROGRAMME>-<VARIANT>-039-10-YYYY-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work in progress or planned content respectively.
 
 ---
 
 ## §1 Purpose
 
-This document describes the **Control Panels and Switching Assemblies** (subsubject 039-010) of the AMPEL360e eWTW. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `039-010 — Control Panels and Switching Assemblies`.
 
-1. Overhead Panel (OHP / P6): illuminated push-button switches (IPBS), guarded switches, rotary selectors, and annunciator backplates, grouped by ATA chapter.
-2. Centre Pedestal (P5): ETMS (Electric Thrust Management System) panel, Fuel Management Panel (FMP), MCDU slots, and communications selector panels.
-3. Main Instrument Panel (MIP / P1): EFIS Control Panels (ECPs), weather radar control panel, audio control panels.
-4. Switch qualification requirements (DO-160G, critical function guarding).
-5. Legend format: LED backlighting, AECMA colour convention.
-6. Data interface: all switch states transmitted over AFDX to IMA.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter | 39 — Electrical/Electronic Panels and Multipurpose Components |
-| Subsubject | 039-010 Control Panels and Switching Assemblies |
-| Document Tier | Level 3 — Component/Assembly Description |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-
-Includes all switching devices on panel boards P1, P5, and P6. Excludes:
-- Circuit breakers (→ 039-020)
-- Display units and screens (→ 039-060 and ATA 31)
-- Communication equipment (→ ATA 23)
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Panel Zone Summary
 
-The eWTW cockpit control panels are organised into three physical zones:
+The [PROGRAMME-VARIANT] cockpit control panels are organised into three physical zones:
 
 | Zone | Panel ID | Location | Primary Content |
 |---|---|---|---|
@@ -154,13 +141,13 @@ The eWTW cockpit control panels are organised into three physical zones:
 | Centre Pedestal | P5 | Floor-mounted between pilots | MCDU ×2, ETMS panel, FMP, comms selectors, PA panel |
 | Overhead Panel | P6 / OHP | Overhead forward | All system switches: ECS, electrical, fuel, lighting, de-ice, O₂, fire, EMA |
 
-### 3.2 eWTW-Specific Differences
+### 3.2 [PROGRAMME-VARIANT]-Specific Differences
 
 The all-electric architecture removes traditional hydraulic system switches (ATA 29 pump selectors absent). Their space on the OHP is replaced with:
 - **EMA control switches**: Electric Motor Actuator arm/disarm selectors for flight control surfaces (ATA 27 interface).
 - **Electric compressor switches**: ECS electric compressor start/stop (ATA 21 interface).
 - **ETMS mode switches**: Electric Thrust Management System mode (on P5).
-- No bleed air source management panel (absent — eWTW has no engine bleed).
+- No bleed air source management panel (absent — [PROGRAMME-VARIANT] has no engine bleed).
 
 ### 3.3 Switch Types
 
@@ -211,7 +198,7 @@ The OHP spans the full overhead area forward of the structural beam. It is divid
 | De-icing panel | ATA 30 WIPS, windshield, probe heat | <img src="https://img.shields.io/badge/TBD-red"> |
 | Oxygen panel | ATA 35 O₂ system switches | <img src="https://img.shields.io/badge/TBD-red"> |
 | Fire protection panel | ATA 26 fire loop select, extinguisher discharge (guarded) | <img src="https://img.shields.io/badge/TBD-red"> |
-| EMA panel | ATA 27 EMA arm/disarm (eWTW-specific) | <img src="https://img.shields.io/badge/TBD-red"> |
+| EMA panel | ATA 27 EMA arm/disarm ([PROGRAMME-VARIANT]-specific) | <img src="https://img.shields.io/badge/TBD-red"> |
 | Maintenance / test panel | ATA 45 test switches TBD | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 5.2 IPBS Legend Format
@@ -412,11 +399,11 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| Control panels description | DMC-AMPEL360E-EWTW-039-10-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| OHP IPBS replacement | DMC-AMPEL360E-EWTW-039-10-00A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| OHP IPBS installation | DMC-AMPEL360E-EWTW-039-10-00A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — panel switches | DMC-AMPEL360E-EWTW-039-10-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Functional test — IPBS | DMC-AMPEL360E-EWTW-039-10-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Control panels description | DMC-<PROGRAMME>-<VARIANT>-039-10-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| OHP IPBS replacement | DMC-<PROGRAMME>-<VARIANT>-039-10-00A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| OHP IPBS installation | DMC-<PROGRAMME>-<VARIANT>-039-10-00A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — panel switches | DMC-<PROGRAMME>-<VARIANT>-039-10-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Functional test — IPBS | DMC-<PROGRAMME>-<VARIANT>-039-10-00A-300A-A | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -480,7 +467,7 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 | P5 | Centre Pedestal — floor-mounted panel between pilots carrying MCDU, ETMS, FMP, and comms |
 | MIP | Main Instrument Panel (P1) — forward cockpit panel carrying EFIS displays and EFIS control panels |
 | ECP | EFIS Control Panel — crew panel for selecting PFD/MFD display modes, range, format |
-| ETMS | Electric Thrust Management System — eWTW equivalent of autothrottle/FADEC panel on P5 |
+| ETMS | Electric Thrust Management System — [PROGRAMME-VARIANT] equivalent of autothrottle/FADEC panel on P5 |
 | FMP | Fuel Management Panel — panel carrying fuel pump and crossfeed switches |
 | MCDU | Multifunction Control Display Unit — alphanumeric FMS entry unit (×2 on P5) |
 | Guarded switch | IPBS with hinged guard that must be lifted before switch can be actuated |
@@ -489,7 +476,7 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 | Legend | The inscribed transparent plastic cap of an IPBS showing the function name |
 | Dimmer controller | Unit controlling LED brightness across a panel zone via PWM or analog dimming |
 | DO-160G | RTCA/EUROCAE environmental qualification standard for airborne electronic equipment |
-| EMA | Electric Motor Actuator — all-electric flight control surface actuator (eWTW, replaces hydraulic actuator) |
+| EMA | Electric Motor Actuator — all-electric flight control surface actuator ([PROGRAMME-VARIANT], replaces hydraulic actuator) |
 | WIPS | Wing Ice Protection System (de-icing switches on OHP, ATA 30) |
 
 ---
@@ -540,5 +527,5 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW OHP/P5/P1 context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] OHP/P5/P1 context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Pneumatic — General"
 file_name: "036-000-Pneumatic-General.md"
 sns_reference: "036-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -86,11 +86,13 @@ keywords:
   - "Electric Air Compressor"
   - "no-bleed"
   - "CS-25.1438"
-  - "eWTW"
+  - "[PROGRAMME-VARIANT]"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-000 — Pneumatic — General
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -102,40 +104,25 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document provides the top-level general description of ATA 36 — Pneumatic — as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It establishes the architectural philosophy, scope, and functional decomposition across nine subsubjects (036-010 through 036-090).
+This document defines the agnostic ATLAS standard-level architecture context for `036-000 — Pneumatic — General`.
 
-**Fundamental eWTW architectural difference**: The AMPEL360e eWTW is a **bleed-less / no-bleed** aircraft. Unlike conventional commercial transport aircraft that extract high-pressure, high-temperature air from engine compressor stages for pneumatic services (cabin pressurisation, wing anti-ice, hydraulic reservoir pressurisation), the eWTW **does not use engine bleed air for any purpose**. There are no High-Pressure (HP) or Low-Pressure (LP) bleed ports on the eWTW propulsion system. All functions traditionally served by engine bleed air are supplied by electric means on the eWTW.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-ATA 36 on the eWTW therefore covers a **residual low-pressure pneumatic circuit** whose scope, necessity, and architecture remain **under architectural review** (see §21 Open Issues). If retained, the residual circuit provides pneumatic supply to a limited set of consumers: door seal inflation, potable water tank pressurisation, and ground pneumatic service. Air is sourced from one or more Electric Air Compressors (EAC) and/or a Ground Pneumatic Connector (external cart). Primary Q-Division is [Q-AIR](../../../../../Q-Divisions/Q-AIR/); supporting Q-Divisions are [Q-MECHANICS](../../../../../Q-Divisions/Q-MECHANICS/), [Q-DATAGOV](../../../../../Q-Divisions/Q-DATAGOV/), and [Q-GREENTECH](../../../../../Q-Divisions/Q-GREENTECH/).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter | 36 — Pneumatic |
-| Aircraft Variant | eWTW-100 (baseline) |
-| Propulsion | Full-electric (no engine bleed air; no hydraulic actuation) |
-| Engine Bleed | **None** — bleed-less architecture |
-| APU Bleed | **None** — no APU fitted; electric ground power unit equivalent |
-| Residual Pneumatic | EAC-sourced low-pressure circuit (TBD — under review) |
-| Working Pressure | <img src="https://img.shields.io/badge/TBD-red"> (estimated 3–50 psi range) |
-| Certification Basis | CS-25.1438 (Pneumatic Systems); CS-25.1301/1309 |
-| Environmental Std | DO-160G |
-| S1000D Issue | 5.0 |
-| SNS Reference | 036-00 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-ATA 36 on the AMPEL360e eWTW covers the **residual low-pressure pneumatic system**, which is architecturally minimal compared to conventional bleed-air aircraft. The conventional ATA 36 scope on bleed-equipped aircraft includes: engine bleed air extraction, bleed valve control, cross-bleed manifold, high-temperature duct distribution, pre-coolers, and supply to ECS (ATA 21), wing anti-ice (ATA 30), and hydraulic reservoir pressurisation. **None of these apply to the eWTW.**
+ATA 36 on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] covers the **residual low-pressure pneumatic system**, which is architecturally minimal compared to conventional bleed-air aircraft. The conventional ATA 36 scope on bleed-equipped aircraft includes: engine bleed air extraction, bleed valve control, cross-bleed manifold, high-temperature duct distribution, pre-coolers, and supply to ECS (ATA 21), wing anti-ice (ATA 30), and hydraulic reservoir pressurisation. **None of these apply to the [PROGRAMME-VARIANT].**
 
-### 3.1 eWTW Pneumatic Consumers (If Residual Circuit Retained)
+### 3.1 [PROGRAMME-VARIANT] Pneumatic Consumers (If Residual Circuit Retained)
 
 | Consumer | Nominal Pressure | Source | Status |
 |---|---|---|---|
@@ -184,10 +171,10 @@ If the ATA 36 pneumatic circuit is retained, the architecture consists of:
 - Cross-bleed manifold (NOT applicable)
 - Bleed valve / pre-cooler / HP/LP port (NOT applicable)
 - Hot-air duct overheat (OHT) sensors (NOT required — no hot bleed)
-- Wing anti-ice pneumatic supply (ATA 30 — electrothermal on eWTW)
+- Wing anti-ice pneumatic supply (ATA 30 — electrothermal on [PROGRAMME-VARIANT])
 - Cabin pressurisation pneumatic supply (ATA 21 — EDC-sourced)
-- Hydraulic reservoir pressurisation (no hydraulics on eWTW)
-- Pneumatic actuators (all electric on eWTW)
+- Hydraulic reservoir pressurisation (no hydraulics on [PROGRAMME-VARIANT])
+- Pneumatic actuators (all electric on [PROGRAMME-VARIANT])
 
 ---
 
@@ -195,11 +182,11 @@ If the ATA 36 pneumatic circuit is retained, the architecture consists of:
 
 ### 5.1 Bleed-less Philosophy
 
-The eWTW eliminates engine bleed by replacing bleed-supplied functions with electrically driven equivalents:
+The [PROGRAMME-VARIANT] eliminates engine bleed by replacing bleed-supplied functions with electrically driven equivalents:
 - **Cabin pressurisation (ATA 21)**: Electric Driven Compressors (EDC) — dedicated high-flow compressors, not part of ATA 36.
 - **Wing anti-ice (ATA 30)**: Electrothermal Wing Anti-Ice (EWAI) system — electric heating mats in wing leading edge.
 - **Engine nacelle anti-ice**: Electric (TBD).
-- **Hydraulics**: ELIMINATED — eWTW is fully electric.
+- **Hydraulics**: ELIMINATED — [PROGRAMME-VARIANT] is fully electric.
 
 ATA 36 retains only the **residual low-pressure utility circuit** for functions that cannot be economically electrified (door seals, water tank pressurisation). Even these are under review for elimination or replacement by alternative means (e.g., electric compression door seals, electric water pump pressurisation).
 
@@ -350,8 +337,8 @@ flowchart LR
 | CMC / OMS | ATA 45 | Fault flags, EAC status, pressure data via AFDX | ATA 36 → ATA 45 |
 | ECAM / Display | ATA 31 | CAS alerts, EAC indication page | ATA 36 → ATA 31 |
 | Ground Support | — | Ground pneumatic connector — external cart | External → ATA 36 |
-| Propulsion | ATA 70–80 | **No interface** — no bleed ports on eWTW engines | None |
-| APU | ATA 49 | **No interface** — no APU bleed on eWTW | None |
+| Propulsion | ATA 70–80 | **No interface** — no bleed ports on [PROGRAMME-VARIANT] engines | None |
+| APU | ATA 49 | **No interface** — no APU bleed on [PROGRAMME-VARIANT] | None |
 
 ---
 
@@ -407,16 +394,16 @@ flowchart LR
 
 | Subsubject | SNS | DMC Prefix | DM Types Planned | Status |
 |---|---|---|---|---|
-| 036-000 | 036-00 | DMC-AMPEL360E-EWTW-036-00 | 040 (Desc), 300 (Insp) | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-010 | 036-10 | DMC-AMPEL360E-EWTW-036-10 | 040, 300, 520, 720 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-020 | 036-20 | DMC-AMPEL360E-EWTW-036-20 | 040, 300 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-030 | 036-30 | DMC-AMPEL360E-EWTW-036-30 | 040, 300, 520, 720 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-040 | 036-40 | DMC-AMPEL360E-EWTW-036-40 | 040, 300 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-050 | 036-50 | DMC-AMPEL360E-EWTW-036-50 | 040, 300, 400 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-060 | 036-60 | DMC-AMPEL360E-EWTW-036-60 | 040, 300 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-070 | 036-70 | DMC-AMPEL360E-EWTW-036-70 | 040, 300, 400 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-080 | 036-80 | DMC-AMPEL360E-EWTW-036-80 | 040, 300, 400 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| 036-090 | 036-90 | DMC-AMPEL360E-EWTW-036-90 | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-000 | 036-00 | DMC-<PROGRAMME>-<VARIANT>-036-00 | 040 (Desc), 300 (Insp) | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-010 | 036-10 | DMC-<PROGRAMME>-<VARIANT>-036-10 | 040, 300, 520, 720 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-020 | 036-20 | DMC-<PROGRAMME>-<VARIANT>-036-20 | 040, 300 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-030 | 036-30 | DMC-<PROGRAMME>-<VARIANT>-036-30 | 040, 300, 520, 720 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-040 | 036-40 | DMC-<PROGRAMME>-<VARIANT>-036-40 | 040, 300 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-050 | 036-50 | DMC-<PROGRAMME>-<VARIANT>-036-50 | 040, 300, 400 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-060 | 036-60 | DMC-<PROGRAMME>-<VARIANT>-036-60 | 040, 300 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-070 | 036-70 | DMC-<PROGRAMME>-<VARIANT>-036-70 | 040, 300, 400 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-080 | 036-80 | DMC-<PROGRAMME>-<VARIANT>-036-80 | 040, 300, 400 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| 036-090 | 036-90 | DMC-<PROGRAMME>-<VARIANT>-036-90 | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
 
 ---
 
@@ -440,11 +427,11 @@ flowchart LR
 
 | Requirement | Standard | Applicability | Notes |
 |---|---|---|---|
-| Pneumatic systems design | CS-25.1438 | Full | Primary certification paragraph for ATA 36 on eWTW |
+| Pneumatic systems design | CS-25.1438 | Full | Primary certification paragraph for ATA 36 on [PROGRAMME-VARIANT] |
 | Equipment and installations | CS-25.1301 | Full | General equipment requirements |
 | Systems and installations | CS-25.1309 | Full | Failure mode, effects, and criticality analysis (FMECA) required |
 | Environmental qualification | DO-160G | Full (pressurised components) | Temperature, vibration, humidity per equipment category |
-| Bleed air contamination | CS-25.831 | **Not applicable** | No bleed air — eWTW architecture eliminates this hazard |
+| Bleed air contamination | CS-25.831 | **Not applicable** | No bleed air — [PROGRAMME-VARIANT] architecture eliminates this hazard |
 | Ventilation | CS-25.831 | Informational only | No bleed air contamination pathway |
 | Pressure vessel (accumulator) | CS-25.1438 + authority PED | Full | Accumulator design proof pressure TBD |
 
@@ -482,13 +469,13 @@ flowchart LR
 |---|---|
 | ATA 36 | Air Transport Association chapter 36 — Pneumatic systems |
 | Bleed-less architecture | Aircraft design in which no engine compressor bleed air is extracted; all pneumatic functions replaced by electric equivalents |
-| EAC | Electric Air Compressor — motor-driven compressor providing low-pressure air for residual pneumatic consumers on eWTW |
+| EAC | Electric Air Compressor — motor-driven compressor providing low-pressure air for residual pneumatic consumers on [PROGRAMME-VARIANT] |
 | EDC | Electric Driven Compressor — high-flow compressor for cabin pressurisation (ATA 21); distinct from EAC |
 | SOV | Shutoff Valve — electrically actuated solenoid valve controlling flow to a consumer branch |
 | PRV | Pressure Relief Valve — prevents system overpressure by venting to atmosphere at set threshold |
 | NRV | Non-Return Valve — check valve preventing reverse flow |
-| OHT | Overheat sensor / loop — used on conventional aircraft to detect hot bleed duct rupture; **not required on eWTW** (no hot bleed) |
-| CPCS | Cabin Pressure Control System (ATA 21) — sourced by EDC on eWTW, not by ATA 36 EAC |
+| OHT | Overheat sensor / loop — used on conventional aircraft to detect hot bleed duct rupture; **not required on [PROGRAMME-VARIANT]** (no hot bleed) |
+| CPCS | Cabin Pressure Control System (ATA 21) — sourced by EDC on [PROGRAMME-VARIANT], not by ATA 36 EAC |
 | Manifold | Distribution header connecting pneumatic supply to multiple consumer branches |
 | Accumulator | Pressurised vessel providing transient buffer capacity to maintain manifold pressure during EAC start lag or brief demand surges |
 | Working pressure | Nominal operating pressure of the residual pneumatic circuit — TBD (3–50 psi range) |
@@ -512,8 +499,8 @@ flowchart LR
 5. S1000D Issue 5.0 — International Specification for Technical Publications
 6. ATA iSpec 2200 — Information Standards for Aviation Maintenance
 7. ATA Chapter 36 — Pneumatic (SNS reference)
-8. Q+ATLANTIDE ATLAS Node 036 — eWTW architectural framework
-9. AMPEL360e eWTW System Architecture Document (SAD) — TBD reference
+8. Q+ATLANTIDE ATLAS Node 036 — [PROGRAMME-VARIANT] architectural framework
+9. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] System Architecture Document (SAD) — TBD reference
 10. Q-AIR Division Technical Standard — Bleed-less Architecture Design Rules — TBD
 
 ---
@@ -539,13 +526,13 @@ flowchart LR
 
 | Issue ID | Description | Owner | Priority | Status |
 |---|---|---|---|---|
-| OI-036-001 | **Retain or eliminate ATA 36 residual pneumatic circuit**: architectural decision on whether any pneumatic circuit is needed on eWTW | Q-AIR | Critical | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-036-001 | **Retain or eliminate ATA 36 residual pneumatic circuit**: architectural decision on whether any pneumatic circuit is needed on [PROGRAMME-VARIANT] | Q-AIR | Critical | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-002 | **Door seal technology**: pneumatic inflation vs. electric compression seal (e.g., inflatable rubber vs. electric motor-driven compression) — TBD | Q-MECHANICS | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-003 | **Potable water pressurisation method**: pneumatic EAC vs. dedicated electric pump vs. bladder-type pressurisation — TBD | Q-AIR / ATA 38 | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-004 | **EAC sizing and quantity**: rated pressure, flow, power, single vs. dual EAC — depends on consumer finalisation | Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-005 | **Ground pneumatic connector retention**: whether to retain standard ground pneumatic receptacle or replace with ground electric supply only | Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-006 | **Manifold material and routing**: aluminium vs. stainless vs. PTFE-lined; routing through composite fuselage (bonding, grounding, penetration sealing) | Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-036-007 | **Rain repellent system**: conventional rain repellent uses pneumatic blow — TBD if eliminated or retained on eWTW | Q-AIR | Low | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-036-007 | **Rain repellent system**: conventional rain repellent uses pneumatic blow — TBD if eliminated or retained on [PROGRAMME-VARIANT] | Q-AIR | Low | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-008 | **CS-25.1438 compliance pathway**: formal compliance document and agreed test plan with authority — not yet initiated | Q-AIR / ORB-LEG | High | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ---

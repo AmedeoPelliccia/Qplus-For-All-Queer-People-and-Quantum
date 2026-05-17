@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0084-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-084-010-BEYOND-GEN-2-BASELINE-AND-SCOPE
      ATLAS-084 (Hybrid Architectures — Beyond Gen-2) · Baseline and Scope
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Beyond-Gen-2 Baseline and Scope
@@ -44,31 +46,30 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-010"
 
 ## §1 Purpose
 
-ATLAS subsubject 084-010 establishes the generation-comparison baseline, defines the scope boundary of the BGHA programme, identifies technology readiness levels for each key BGHA technology, and specifies the mission trade space from which all detailed design targets in subsubjects 084-020 through 084-080 are derived.
+This document defines the agnostic ATLAS standard-level architecture context for `Beyond-Gen-2 Baseline and Scope`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-084 — 084-010 Beyond-Gen-2 Baseline and Scope |
-| Certification Basis | EASA CS-25 Amdt 27+; DO-178C DAL B (BGSCU) |
-| S1000D SNS | 084-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `084` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Generation Comparison
 
-The following table summarises how the BGHA compares to Gen-1 and Gen-2 hybrid-electric architectures previously defined for the AMPEL360E eWTW programme.
+The following table summarises how the BGHA compares to Gen-1 and Gen-2 hybrid-electric architectures previously defined for the programme-defined aircraft type programme.
 
 | Attribute | Gen-1 (ATLAS 070 baseline) | Gen-2 (ATLAS 070–079 expanded) | Beyond-Gen-2 / BGHA (ATLAS 084) |
 |---|---|---|---|
 | Max installed propulsion power | 1 200 kW | 2 200 kW | 4 400 kW |
-| Primary bus voltage | HVDC 270 V | HVDC 540 V | HVDC 800 V |
+| Primary bus voltage | HVDC 270 V | HVDC 540 V | HVDC <NOMINAL-VOLTAGE> |
 | Energy sources | Battery + turbine | Battery + PEMFC + turbine | SSBP + FCSS + VCGT + SCEB |
-| Battery technology | NMC 811 liquid-cooled | NMC 811 liquid-cooled 500 kWh | NMC/SSE solid-state 800 kWh |
+| Battery technology | <BATTERY-CHEMISTRY> liquid-cooled | <BATTERY-CHEMISTRY> liquid-cooled <ENERGY-CAPACITY> | NMC/SSE solid-state 800 kWh |
 | Fuel cell power | — | 200 kW (4×50 kW PEMFC) | 400 kW (8×50 kW PEMFC) |
 | Gas turbine type | Conventional turbofan | SAF-capable turbofan | Variable-cycle bi-fuel (SAF/LH₂) |
 | Peak-power buffer | — | — | Supercapacitor 80 kWh / 2 MW |
@@ -88,13 +89,13 @@ The following table summarises how the BGHA compares to Gen-1 and Gen-2 hybrid-e
 | SCEB — 80 kWh supercapacitor 2 MW | TRL 5 (industrial prototype) | TRL 7 (airborne qualification) | DO-160G shock/vibe at 2 MW pulse; weight |
 | QAOA quantum MPC (16-qubit) | TRL 3 (algorithm simulation) | TRL 5 (hardware-in-loop) | Airborne QPU coherence, EMI sensitivity |
 | Distributed 500 kW PMSM fan sets (×4) | TRL 5 (Gen-2 motor heritage) | TRL 7 (ATLAS-085 flight demo) | Motor-airframe integration, thermal |
-| HVDC 800 V bus | TRL 4 (ground rig) | TRL 6 (ground qualification) | EASA advisory material for > 540 V DC |
+| HVDC <NOMINAL-VOLTAGE> bus | TRL 4 (ground rig) | TRL 6 (ground qualification) | EASA advisory material for > 540 V DC |
 
 ---
 
 ## §5 Mission Trade Space
 
-The BGHA programme targets five mission roles for the AMPEL360E eWTW research platform:
+The BGHA programme targets five mission roles for the programme-defined aircraft type research platform:
 
 **Role A — ecoClimb:** VCGT primary power + SSBP partial, FCSS in warm standby. Optimised climb fuel burn via MPC-scheduled variable-cycle turbine throttle and SSBP peak-load shaving. Estimated fuel saving vs. Gen-2: 8–12 %.
 
@@ -145,7 +146,7 @@ The BGHA programme targets five mission roles for the AMPEL360E eWTW research pl
 
 | Interface | Connected System | Protocol | Data |
 |---|---|---|---|
-| Power — all sources | HVDC 800 V bus | HVDC cable | Source dispatch per MPC setpoints |
+| Power — all sources | HVDC <NOMINAL-VOLTAGE> bus | HVDC cable | Source dispatch per MPC setpoints |
 | Turbine fuel | VCGT fuel system | Physical SAF/LH₂ feed | Fuel flow demand from BGSCU |
 | H₂ supply to FCSS | ATLAS-077 | LH₂ feed line; CAN flow demand | H₂ mass flow; manifold pressure |
 | Propulsion demand | FADEC — ATA 73 | AFDX VL-084-01 | BGHA thrust increment advisory |
@@ -159,6 +160,6 @@ The BGHA programme targets five mission roles for the AMPEL360E eWTW research pl
 |---|---|---|---|
 | OI-084-010-001 | SSBP NMC/SSE cell supplier qualification under CS-25.1353 | Q-GREENTECH | PDR |
 | OI-084-010-002 | VCGT LH₂ combustor TRL 4→6 roadmap and test article funding | Q-HORIZON | PDR |
-| OI-084-010-003 | HVDC 800 V EASA advisory material identification (AMC 25.xxx) | Q-INDUSTRY | PDR |
+| OI-084-010-003 | HVDC <NOMINAL-VOLTAGE> EASA advisory material identification (AMC 25.xxx) | Q-INDUSTRY | PDR |
 | OI-084-010-004 | QAOA algorithm validation on hardware QPU (16-qubit superconducting) | Q-HPC | CDR |
 | OI-084-010-005 | CO₂ reduction accounting methodology (well-to-wing vs. well-to-thrust) | Q-GREENTECH | PDR |

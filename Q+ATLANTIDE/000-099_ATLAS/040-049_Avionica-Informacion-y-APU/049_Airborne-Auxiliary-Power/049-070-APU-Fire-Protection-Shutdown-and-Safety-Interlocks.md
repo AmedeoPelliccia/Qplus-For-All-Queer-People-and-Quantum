@@ -31,6 +31,8 @@ ata_reference: "ATA 49 — Airborne Auxiliary Power"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 070 — APU Fire Protection, Shutdown and Safety Interlocks
@@ -43,7 +45,7 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-This document defines the fire protection, automatic shutdown, and safety interlock systems for the APU installation on the **AMPEL360E eWTW** aircraft. The APU fire zone is a fully enclosed compartment at the tail section (Station 32 through Station 35) designed to contain a fire for the duration required by CS-25.1181. Fire detection uses a dual-element thermistor loop operating on a 2-out-of-2 (2oo2) confirmation logic to maximise detection reliability while minimising nuisance trips. Fire suppression is achieved by a single-shot HFC-125 fire bottle installed in the APU bay, discharged by dual independent squib initiators.
+This document defines the fire protection, automatic shutdown, and safety interlock systems for the APU installation on the **programme-defined aircraft type** aircraft. The APU fire zone is a fully enclosed compartment at the tail section (Station 32 through Station 35) designed to contain a fire for the duration required by CS-25.1181. Fire detection uses a dual-element thermistor loop operating on a 2-out-of-2 (2oo2) confirmation logic to maximise detection reliability while minimising nuisance trips. Fire suppression is achieved by a single-shot HFC-125 fire bottle installed in the APU bay, discharged by dual independent squib initiators.
 
 Automatic shutdown triggers include APU fire detection, turbine overspeed (N > 115 %), over-temperature (EGT > 980 °C), low oil pressure (< 15 psi steady state), and APCU internal failure. A mechanical overspeed governor provides a final hardware-level backup overspeed protection independent of the APCU, acting at 120 % N to immediately cut fuel flow via a direct mechanical linkage to the FCU shut-off needle, bypassing all electronic control paths.
 
@@ -57,7 +59,7 @@ All protection functions conform to CS-25.1181 (fire protection zones), CS-25.11
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | APU fire zone | Station 32–35, tail compartment |
 | Fire detection technology | Dual-element thermistor loop — 2oo2 confirmation logic |
@@ -283,7 +285,7 @@ stateDiagram-v2
 ## §13. Ground Safety and Handling
 
 - **Squib safe handling**: Squib initiators are classified as pyrotechnic devices; handling follows IATA Dangerous Goods Regulations Section 4A and MIL-HDBK-1512; squib shipping and storage require orange "EXPLOSIVE" labels and 1.4S classification documentation.
-- **HFC-125 environmental notes**: HFC-125 is a hydrofluorocarbon (HFC) with a Global Warming Potential (GWP) of approximately 3 500; its use as a halon replacement is authorised under Montreal Protocol exemptions for aircraft fire suppression; AMPEL360E program is tracking emerging regulations and may transition to a lower-GWP alternative (e.g., 2-BTP) in a future software/hardware update.
+- **HFC-125 environmental notes**: HFC-125 is a hydrofluorocarbon (HFC) with a Global Warming Potential (GWP) of approximately 3 500; its use as a halon replacement is authorised under Montreal Protocol exemptions for aircraft fire suppression; [PROGRAMME-AIRCRAFT] program is tracking emerging regulations and may transition to a lower-GWP alternative (e.g., 2-BTP) in a future software/hardware update.
 - **Bottle discharge zone exclusion**: A 3-metre exclusion zone around the APU exhaust and fire zone is maintained during and after bottle discharge until the zone is verified agent-clear; HFC-125 is non-toxic at normal fire suppression concentrations but displaces oxygen.
 - **WOW interlock note**: The WOW interlock prevents in-flight fire bottle discharge from the ground servicing panel; however, the FIRE pb on the flight deck overrides WOW for crew use; this design prevents accidental ground handling discharge of the bottle via the external panel while preserving crew authority in-flight.
 

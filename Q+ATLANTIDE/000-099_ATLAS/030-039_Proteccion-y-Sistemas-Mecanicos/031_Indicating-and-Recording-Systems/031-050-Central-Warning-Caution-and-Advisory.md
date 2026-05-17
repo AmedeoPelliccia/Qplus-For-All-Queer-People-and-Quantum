@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Central Warning, Caution, and Advisory System"
 file_name: "031-050-Central-Warning-Caution-and-Advisory.md"
 sns_reference: "031-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-50"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-031-50"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 31"
@@ -100,10 +100,12 @@ keywords:
   - "crew alerting"
   - "ECAM"
   - "alert inhibition"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 031-050 — Central Warning, Caution, and Advisory System
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -115,31 +117,20 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Central Warning, Caution, and Advisory (CAS) system for the AMPEL360e eWTW aircraft, implemented by the Flight Warning Computer (FWC) function and the Warning Electronics Unit (WEU). The CAS is responsible for detecting abnormal system conditions across the entire aircraft, classifying them by severity, presenting structured alerts to the crew, and managing the inhibition of non-critical alerts during high-workload flight phases such as takeoff and landing.
+This document defines the agnostic ATLAS standard-level architecture context for `031-050 — Central Warning, Caution, and Advisory System`.
 
-The eWTW FWC function is implemented as a software application hosted on the IMA platform, operating in a dedicated partition with DAL B development assurance. This approach replaces the conventional standalone FWC LRU with an IMA-hosted application, reducing hardware count while maintaining the required independence and integrity through IMA partition isolation. The FWC partition communicates with the Warning Electronics Unit (WEU) hardware LRU for generation of Master Warning lights, Master Caution lights, and audio tones, and with the Display Management Computer (DMC) for presentation of CAS messages on the ECAM.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The alert classification system follows a four-level hierarchy consistent with CS-25.1322 and SAE ARP 4102/7: Level 1 Warning (red, continuous tone, immediate action required), Level 2 Caution (amber, single chime, crew awareness and procedure required), Level 3 Advisory (blue, no audio, status awareness), and Level 4 Memo (green, normal status). Alert inhibition logic suppresses non-safety-critical cautions during the takeoff and landing phases to avoid crew distraction during high-workload operations, while ensuring that safety-critical (Warning-level) alerts are never inhibited.
-
-A significant eWTW-specific expansion of the FWC alert set is the addition of electric propulsion alerts. Battery over-temperature, battery low state of charge, motor controller failure, inverter fault, and propulsion mode degradation are new alert categories not present in conventional FWC implementations and must be integrated into the alert classification table and inhibition logic.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter / Subsubject | 31-50 — Central Warning, Caution, and Advisory |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D SNS | 031-50 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-50 |
-| FWC DAL | B (anticipated — pending FHA confirmation) |
-| Effectivity | All MSN from MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The FWC software function continuously monitors data from all aircraft systems via the AFDX network and ARINC 429 buses. Each monitored parameter is compared against defined alert thresholds. When a threshold exceedance is detected, the FWC classifies the condition into the appropriate alert level, applies flight-phase-based inhibition logic, and generates the corresponding crew alert. Alert presentation consists of: a message displayed on the ECAM upper display (driven by the DMC based on FWC data), a coloured Master Warning or Master Caution light on the glareshield, and an audio tone from the WEU.
@@ -160,7 +151,7 @@ Alert inhibition is implemented as a flight-phase logic within the FWC. The take
 - ECAM message format and priority management (upper display CAS window)
 - Alert acknowledgement and reset logic
 - FWC BITE self-monitoring
-- eWTW-specific electric propulsion alert set
+- [PROGRAMME-VARIANT]-specific electric propulsion alert set
 
 ### 4.2 Excluded
 - Display unit hardware — covered under 031-010
@@ -312,10 +303,10 @@ The alert inhibition list is a configuration parameter within the FWC software; 
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-50 | Central Warning, Caution, and Advisory | DMC-AMPEL360E-EWTW-031-50 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-50-01 | FWC Software Function | DMC-AMPEL360E-EWTW-031-50-01 | 040, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-50-02 | Warning Electronics Unit (WEU) | DMC-AMPEL360E-EWTW-031-50-02 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-50-03 | Alert Classification Table | DMC-AMPEL360E-EWTW-031-50-03 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-50 | Central Warning, Caution, and Advisory | DMC-<PROGRAMME>-<VARIANT>-031-50 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-50-01 | FWC Software Function | DMC-<PROGRAMME>-<VARIANT>-031-50-01 | 040, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-50-02 | Warning Electronics Unit (WEU) | DMC-<PROGRAMME>-<VARIANT>-031-50-02 | 040, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-50-03 | Alert Classification Table | DMC-<PROGRAMME>-<VARIANT>-031-50-03 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-50)
 
@@ -374,7 +365,7 @@ The alert inhibition list is a configuration parameter within the FWC software; 
 | VV-031-050-003 | Alert inhibition — Warning alerts never inhibited | Simulator | All Warning-level alerts generated correctly during takeoff and landing inhibit phases | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-031-050-004 | WEU audio tone levels | Ground Test | Audio tone levels within regulatory and ARP 4102/7 limits at crew ear position | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-031-050-005 | FWC partition failure — degraded mode | Iron Bird | Failure of one FWC partition: remaining partition maintains full alert function | <img src="https://img.shields.io/badge/TBD-red"> |
-| VV-031-050-006 | Electric propulsion alerts | Ground Test | All eWTW-specific propulsion alerts generated correctly with simulated fault conditions | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-031-050-006 | Electric propulsion alerts | Ground Test | All [PROGRAMME-VARIANT]-specific propulsion alerts generated correctly with simulated fault conditions | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ---
 
@@ -385,7 +376,7 @@ The alert inhibition list is a configuration parameter within the FWC software; 
 | Crew Alerting System | CAS | Complete system for detecting, classifying, and presenting aircraft condition alerts to the flight crew |
 | Flight Warning Computer | FWC | Computer (or IMA software function) that processes system data and generates crew alerts |
 | Warning Electronics Unit | WEU | Dedicated hardware LRU that generates physical Master Warning/Caution lights and audio tones |
-| Electronic Centralised Aircraft Monitor | ECAM | Display system presenting system status and crew alert messages; generic name used for eWTW |
+| Electronic Centralised Aircraft Monitor | ECAM | Display system presenting system status and crew alert messages; generic name used for [PROGRAMME-VARIANT] |
 | Alert Inhibition | — | Suppression of defined non-critical alerts during high-workload flight phases (takeoff, landing) |
 | Master Warning | — | Red light (per pilot) and continuous tone indicating a Level 1 Warning condition requiring immediate action |
 | Master Caution | — | Amber light (per pilot) and single chime indicating a Level 2 Caution condition requiring crew awareness |

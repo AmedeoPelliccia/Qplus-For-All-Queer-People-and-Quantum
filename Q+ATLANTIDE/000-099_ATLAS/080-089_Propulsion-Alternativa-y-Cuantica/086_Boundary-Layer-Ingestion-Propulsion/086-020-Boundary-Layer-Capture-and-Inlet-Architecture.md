@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0086-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-086-020-BOUNDARY-LAYER-CAPTURE-AND-INLET-ARCHITECTURE
      ATLAS-086 (Boundary Layer Ingestion Propulsion) · Boundary Layer Capture and Inlet Architecture
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Boundary Layer Capture and Inlet Architecture
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-020"
 
 ## §1 Purpose
 
-ATLAS subsubject 086-020 describes the boundary layer capture aperture geometry, the S-duct inlet flow path, total pressure recovery analysis, distortion characterisation, and the structural architecture of the BLI inlets (BLI-INLET-1 and BLI-INLET-2) installed on the AMPEL360E eWTW aft fuselage.
+This document defines the agnostic ATLAS standard-level architecture context for `Boundary Layer Capture and Inlet Architecture`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Inlet Location and Geometry
 
 ### 2.1 Physical Location

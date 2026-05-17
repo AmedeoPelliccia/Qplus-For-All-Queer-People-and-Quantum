@@ -23,18 +23,20 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 014 · Subsubject 000 — Overview
 
 ## 1. Purpose
 
-Overview entry-point for *Parking* (`014`) — the fifth subsection of Code range `010-019` (*Manejo en Tierra & Servicio*), which provides the **operational procedure layer** (Level 2) for parking, mooring, tie-down, and return-to-service operations for AMPEL360 aircraft variants.
+Overview entry-point for *Parking* (`014`) — the fifth subsection of Code range `010-019` (*Manejo en Tierra & Servicio*), which provides the **operational procedure layer** (Level 2) for parking, mooring, tie-down, and return-to-service operations for [PROGRAMME-AIRCRAFT] aircraft variants.
 
 This subsubject establishes the scope, doctrinal position, boundary rules, and subsubject map of `014_Parking/` within the controlled Q+ATLANTIDE baseline[^baseline] and links outward to the applicable industry standards listed in §5.
 
 > **Doctrinal phrase (canonical, controlled):**
-> *ATLAS `014_Parking/` defines the step-level operational procedures for positioning, securing, mooring, and returning AMPEL360 aircraft to service at gate, remote, and maintenance stands — at the level of detailed procedure, not at the level of general orientation.*
+> *ATLAS `014_Parking/` defines the step-level operational procedures for positioning, securing, mooring, and returning [PROGRAMME-AIRCRAFT] aircraft to service at gate, remote, and maintenance stands — at the level of detailed procedure, not at the level of general orientation.*
 
 > **Scope boundary:** Introductory orientation for parking (what parking is, conceptual vocabulary) is in [`../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/002_Towing-Taxiing-and-Parking.md) and [`003_Mooring-Storage-and-Return-to-Service.md`](../../000-009_Informacion-General-y-Servicio/003_Operaciones-Basicas/003_Mooring-Storage-and-Return-to-Service.md) (Level 1). This subsection (`014_`) provides the **operational procedures** (Level 2). Published manuals (AMM, GMM) are the materialisation of both layers (Level 3).
 
@@ -84,9 +86,9 @@ Subsubjects `001`–`005` cover (at procedure level):
 
 Parking procedures in this subsection may be **variant-dependent** for the following reasons:
 
-- **Aircraft geometry:** Nose-gear geometry, wing span, tail height, and stand footprint differ between AMPEL360 variants. Stand clearance envelopes and chock positions must be resolved against the applicable variant.
-- **Propulsion architecture:** AMPEL360 variants with LH₂ propulsion (Gen 2, BWB-H2) require additional exclusion zones and cover requirements during parking. Hydrogen-specific procedures reference EPTA `460-469_`.
-- **Electric taxi systems:** AMPEL360e variants with electric taxi drive may use power-on taxi-in procedures that affect the parking sequence.
+- **Aircraft geometry:** Nose-gear geometry, wing span, tail height, and stand footprint differ between [PROGRAMME-AIRCRAFT] variants. Stand clearance envelopes and chock positions must be resolved against the applicable variant.
+- **Propulsion architecture:** [PROGRAMME-AIRCRAFT] variants with LH₂ propulsion (Gen 2, BWB-H2) require additional exclusion zones and cover requirements during parking. Hydrogen-specific procedures reference EPTA `460-469_`.
+- **Electric taxi systems:** [PROGRAMME-AIRCRAFT] variants with electric taxi drive may use power-on taxi-in procedures that affect the parking sequence.
 
 Contributors must resolve the applicable variant via the Configuration Baseline ([`../../000-009_Informacion-General-y-Servicio/001_Configuracion/`](../../000-009_Informacion-General-y-Servicio/001_Configuracion/)) before specifying stand type, chock position, or mooring rig.
 

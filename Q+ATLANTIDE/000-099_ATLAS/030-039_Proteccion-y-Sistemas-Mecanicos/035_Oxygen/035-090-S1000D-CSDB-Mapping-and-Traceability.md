@@ -6,10 +6,10 @@ subsubject: "090"
 subsubject_title: "S1000D CSDB Mapping and Traceability"
 file_name: "035-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "035-90"
-dmc_prefix: "DMC-AMPEL360E-EWTW-035-90"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-035-90"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 35"
   - "Oxygen"
@@ -88,10 +88,12 @@ keywords:
   - "BREX"
   - "publication hierarchy"
   - "traceability"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 035-090 — S1000D CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,38 +105,29 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document provides the complete S1000D Data Module Requirements List (DMRL) mapping and CSDB traceability for the AMPEL360e eWTW ATA 35 Oxygen system, covering all ten subsubjects (035-00 through 035-90). It defines the SNS (System Numbering Standard) codes, recommended Data Module Code (DMC) prefixes, planned information codes, BREX applicability, and the planned publication hierarchy for all oxygen system technical data.
+This document defines the agnostic ATLAS standard-level architecture context for `035-090 — S1000D CSDB Mapping and Traceability`.
 
-This is the master CSDB planning document for ATA 35. Its purpose is to provide the CSDB administrator and the technical publication team with a single source of truth for DM planning status, enabling tracking of DM creation, review, and publication progress across the oxygen system lifecycle.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter | ATA 35 — Oxygen |
-| ATA Subsubjects Covered | 035-00 through 035-90 (10 subsubjects) |
-| S1000D Issue | Issue 5.0 |
-| SNS Range | 035-00 to 035-90 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-035-{subsubject} |
-| DMRL Status | Draft — not yet frozen |
-| BREX | Ampel360e eWTW BREX TBD |
-| Publication Types Planned | AMM, FCOM, IPC, TSM, CMM (per DM type) |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-| S1000D SNS | 035-90 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 System / Function Overview
 
-The AMPEL360e eWTW ATA 35 Oxygen system is divided into ten subsubjects as defined in the Q+ATLANTIDE ATLAS scaffold. Each subsubject corresponds to an ATA 35 subsystem area and has a dedicated ATLAS document (this file set, 035-000 through 035-090). Each ATLAS document contains a §14 S1000D/CSDB mapping section that defines the planned DMCs for that subsubject.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] ATA 35 Oxygen system is divided into ten subsubjects as defined in the Q+ATLANTIDE ATLAS scaffold. Each subsubject corresponds to an ATA 35 subsystem area and has a dedicated ATLAS document (this file set, 035-000 through 035-090). Each ATLAS document contains a §14 S1000D/CSDB mapping section that defines the planned DMCs for that subsubject.
 
 This master document (035-090) consolidates all §14 entries from the ten ATLAS files into a single DMRL overview table. It provides the programme-level CSDB administrator with a comprehensive view of all planned DMs, their information codes, priority, and current DMRL status.
 
-The ATA 35 oxygen system on the eWTW is architecturally simple: no LOX (liquid oxygen), no OBOGS (on-board oxygen generation system), no ARINC 615A software servicing. The DM set is therefore relatively compact, with the majority of DMs in the AMM (maintenance), FCOM (operations), and IPC (parts) publication types.
+The ATA 35 oxygen system on the [PROGRAMME-VARIANT] is architecturally simple: no LOX (liquid oxygen), no OBOGS (on-board oxygen generation system), no ARINC 615A software servicing. The DM set is therefore relatively compact, with the majority of DMs in the AMM (maintenance), FCOM (operations), and IPC (parts) publication types.
 
 ---
 
@@ -160,7 +153,7 @@ The ATA 35 oxygen system on the eWTW is architecturally simple: no LOX (liquid o
 
 ## §5 Architecture Description
 
-### 5.1 SNS Structure for ATA 35 on eWTW
+### 5.1 SNS Structure for ATA 35 on [PROGRAMME-VARIANT]
 
 | SNS Code | Subsubject Title | ATLAS File |
 |---|---|---|
@@ -177,10 +170,10 @@ The ATA 35 oxygen system on the eWTW is architecturally simple: no LOX (liquid o
 
 ### 5.2 DMC Construction
 
-DMC format: `DMC-AMPEL360E-EWTW-035-{NN}-{variant}-{info code}-{lang}`
+DMC format: `DMC-<PROGRAMME>-<VARIANT>-035-{NN}-{variant}-{info code}-{lang}`
 
-- Model ident code: `AMPEL360E`
-- System diff code: `EWTW`
+- Model ident code: `[PROGRAMME-AIRCRAFT]`
+- System diff code: `[PROGRAMME-VARIANT]`
 - System code: `035`
 - Subsystem code: `{NN}` (00 through 90)
 - Subject code and variant: TBD per DM
@@ -189,7 +182,7 @@ DMC format: `DMC-AMPEL360E-EWTW-035-{NN}-{variant}-{info code}-{lang}`
 
 ### 5.3 BREX Applicability
 
-The Ampel360e eWTW BREX (Business Rules EXchange) is **TBD** — not yet defined. The ATLAS scaffold documents are authored to be BREX-compatible with S1000D Issue 5.0 default rules. When the programme BREX is defined, all 035 DMs must be validated against it before publication.
+The Ampel360e [PROGRAMME-VARIANT] BREX (Business Rules EXchange) is **TBD** — not yet defined. The ATLAS scaffold documents are authored to be BREX-compatible with S1000D Issue 5.0 default rules. When the programme BREX is defined, all 035 DMs must be validated against it before publication.
 
 ### 5.4 Publication Hierarchy
 
@@ -270,7 +263,7 @@ flowchart LR
     DMRL -->|SNS 035-70| AMM70[DMs: 035-70 Servicing — AMM]
     DMRL -->|SNS 035-80| AMM80[DMs: 035-80 Monitoring — AMM / FCOM / TSM]
     DMRL -->|SNS 035-90| ADMINDM[DM: 035-90 CSDB Mapping — AMM / CSDB admin]
-    BREX[eWTW BREX — TBD] -.->|Validation required before publication| DMRL
+    BREX[[PROGRAMME-VARIANT] BREX — TBD] -.->|Validation required before publication| DMRL
     CSDB[CSDB Platform — TBD] -->|DM creation and management| DMRL
 ```
 
@@ -284,7 +277,7 @@ flowchart TB
     PLANNING -->|Freeze DMRL| FREEZE[Frozen DMRL — TBD date]
     FREEZE -->|Author DMs| CSDBAUTH[CSDB Authoring — DM creation in CSDB tool]
     CSDBAUTH -->|DM review and approval| DMAPPROVE[DM Review and Approval — SME / TA]
-    DMAPPROVE -->|BREX validation| BREXVAL[BREX Validation — eWTW BREX TBD]
+    DMAPPROVE -->|BREX validation| BREXVAL[BREX Validation — [PROGRAMME-VARIANT] BREX TBD]
     BREXVAL -->|Publication assembly| PUB[Publication Assembly — AMM; FCOM; IPC; TSM]
     PUB -->|Delivery to operator| OPERATOR[Airline Operator / MRO]
     FREEZE -->|IPC DMs| IPC[IPC Parts List — per subsubject]
@@ -345,7 +338,7 @@ flowchart LR
 ## §12 Monitoring and Diagnostics (CSDB Context)
 
 - **DMRL tracking**: The DMRL status table (§11) shall be updated at each programme milestone (PDR, CDR, FDR, TC submission). Each update increments the revision of this document.
-- **BREX compliance**: All DMs must be validated against the eWTW BREX before publication. BREX validation is the responsibility of the CSDB administrator. Non-compliant DMs must be corrected before publication.
+- **BREX compliance**: All DMs must be validated against the [PROGRAMME-VARIANT] BREX before publication. BREX validation is the responsibility of the CSDB administrator. Non-compliant DMs must be corrected before publication.
 - **DM version control**: All DMs managed in CSDB with S1000D issue number control. ATLAS scaffold documents are not CSDB DMs — they are programme-controlled markdown files in the Q+ATLANTIDE repository.
 - **IPC status**: IPC parts lists for ATA 35 cannot be authored until part numbers are assigned by the design team. IPC DM authoring is a dependency on design freeze for each subsubject.
 - **CMM status**: CMM DMs (COPV hydrostatic test; mask regulator overhaul) are TBD — dependent on whether component maintenance is performed in-house or delegated to component manufacturer (Component Maintenance Manual may be a supplier deliverable).
@@ -358,7 +351,7 @@ flowchart LR
 - **FCOM (Flight Crew Operating Manual)**: DMs at info code 300 for crew normal and abnormal procedures. Includes QRH-equivalent content for "O2 LO PR CREW", "O2 CREW OFF", and COG deployment.
 - **IPC (Illustrated Parts Catalogue)**: DMs at info code 941 for all ATA 35 assemblies. Planned per subsubject (10 IPC DMs minimum). Part numbers TBD.
 - **TSM (Troubleshooting Manual)**: DMs at info code 520 for fault isolation. Planned for 035-60 (pressure indication) and 035-80 (monitoring/diagnostics). CMC fault code isolation trees.
-- **CMM (Component Maintenance Manual)**: TBD — potentially applicable to COPV (hydrostatic test) and diluter-demand regulator (overhaul). May be a supplier deliverable rather than an eWTW programme document.
+- **CMM (Component Maintenance Manual)**: TBD — potentially applicable to COPV (hydrostatic test) and diluter-demand regulator (overhaul). May be a supplier deliverable rather than an [PROGRAMME-VARIANT] programme document.
 
 ---
 
@@ -368,7 +361,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 035-90 | S1000D CSDB Mapping and Traceability | DMC-AMPEL360E-EWTW-035-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-90 | S1000D CSDB Mapping and Traceability | DMC-<PROGRAMME>-<VARIANT>-035-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Data Module Breakdown — 035-90
 
@@ -420,7 +413,7 @@ flowchart LR
 | V&V ID | Requirement | Method | Success Criterion | Status |
 |---|---|---|---|---|
 | VV-035-90-001 | DMRL completeness — CS-25.1529 ICA | Review: DMRL reviewed against ATA 35 system description to confirm all maintenance tasks are covered by at least one DM | All identified maintenance tasks have a corresponding DM in DMRL | <img src="https://img.shields.io/badge/TBD-red"> |
-| VV-035-90-002 | BREX compliance | BREX validation tool: run all ATA 35 DMs against eWTW BREX | Zero BREX violations in any ATA 35 DM | <img src="https://img.shields.io/badge/TBD-red"> |
+| VV-035-90-002 | BREX compliance | BREX validation tool: run all ATA 35 DMs against [PROGRAMME-VARIANT] BREX | Zero BREX violations in any ATA 35 DM | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-035-90-003 | DMC uniqueness | CSDB tool: verify no duplicate DMCs within ATA 35 | All 44 planned DMCs are unique and correctly constructed | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-035-90-004 | FCOM procedure completeness | Review: FCOM DMs reviewed against QRH alert list | All O₂ CAS alerts have a corresponding FCOM abnormal procedure DM | <img src="https://img.shields.io/badge/TBD-red"> |
 | VV-035-90-005 | IPC part number assignment | Review: IPC DMs cross-checked against design BoM for ATA 35 | All components in the ATA 35 BoM are represented in an IPC DM | <img src="https://img.shields.io/badge/TBD-red"> |
@@ -469,11 +462,11 @@ flowchart LR
 
 | Issue ID | Description | Owner | Priority | Status |
 |---|---|---|---|---|
-| OI-035-90-001 | CSDB platform selection — confirm which CSDB tool will be used (e.g., Cortona3D, Flatirons, custom) for the AMPEL360e eWTW programme; tool must support S1000D Issue 5.0 | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-035-90-002 | BREX definition — eWTW BREX must be defined before DMRL freeze; all ATA 35 ATLAS §14 DMC plans assume S1000D Issue 5.0 default rules | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-90-001 | CSDB platform selection — confirm which CSDB tool will be used (e.g., Cortona3D, Flatirons, custom) for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] programme; tool must support S1000D Issue 5.0 | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-90-002 | BREX definition — [PROGRAMME-VARIANT] BREX must be defined before DMRL freeze; all ATA 35 ATLAS §14 DMC plans assume S1000D Issue 5.0 default rules | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-035-90-003 | DMRL freeze date — confirm target date for DMRL freeze (aligned with CDR or PDR milestone); freeze is a prerequisite for commencing DM authoring | Q-DATAGOV / ORB-PMO | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-035-90-004 | IPC part number dependency — IPC DMs cannot be authored until ATA 35 design is frozen and part numbers are assigned; confirm design freeze date for each subsubject | Q-AIR / Q-MECHANICS | High | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-035-90-005 | CMM scope — determine whether COPV hydrostatic test and diluter-demand regulator overhaul will be covered by eWTW programme CMMs or by component supplier CMMs; assess impact on DMRL count | Q-AIR / Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-035-90-005 | CMM scope — determine whether COPV hydrostatic test and diluter-demand regulator overhaul will be covered by [PROGRAMME-VARIANT] programme CMMs or by component supplier CMMs; assess impact on DMRL count | Q-AIR / Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-035-90-006 | FOTT (Flight Operations Training Tasks) — assess whether any ATA 35 FCOM DMs also need to produce FOTT content; TBD per airline training agreement | Q-AIR / ORB-LEG | Low | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-035-90-007 | DM count validation — the 44 DMs planned in this DMRL are based on the ATLAS scaffold §14 entries; a formal DM count review is required after ATLAS SME review to confirm completeness | Q-DATAGOV / Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 

@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Emergency Lighting"
 file_name: "033-050-Emergency-Lighting.md"
 sns_reference: "033-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-50"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-50"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,7 +75,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "Emergency Lighting"
@@ -88,10 +88,12 @@ keywords:
   - "escape path"
   - "10-minute endurance"
   - "photo-luminescent"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-050 — Emergency Lighting
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,31 +105,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Emergency Lighting subsystem (ATA 033-50) of the AMPEL360e eWTW aircraft. It defines the architecture, components, and compliance approach for all emergency lighting functions required by CS-25.812 and related provisions: cabin emergency lighting units (ELUs) powered by independent Lithium Iron Phosphate (LiFePO4) battery packs, floor proximity escape path lighting (LED strips and photo-luminescent hybrid TBD), overwing exit lights, illuminated exit signs, and the crew EMERG LT armed/disarmed switch.
+This document defines the agnostic ATLAS standard-level architecture context for `033-050 — Emergency Lighting`.
 
-Emergency lighting is a safety-critical system. Its primary function is to illuminate the cabin escape path and exits during an emergency evacuation following loss of normal aircraft electrical power. The system is independent of all main aircraft electrical buses (115 VAC and 28 VDC) to ensure availability under total electrical failure scenarios. The minimum illumination duration is 10 minutes per CS-25.812.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 033-50 — Emergency Lighting |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Battery Chemistry | LiFePO4 (Lithium Iron Phosphate) — TBD confirmation (see §21) |
-| Illumination Duration | ≥ 10 minutes at rated load per CS-25.812 |
-| Auto-Activation | On loss of 115 VAC cabin bus |
-| Manual Activation | Crew EMERG LT switch on overhead panel |
-| Floor Proximity Lighting | LED strips + photo-luminescent hybrid (TBD confirmation) |
-| Exit Signs | Always illuminated (powered from ELU battery) |
-| Certification Basis | CS-25.811, CS-25.812, CS-25.812(b)(1)(iv); AC 25.812-2 |
-| S1000D SNS | 033-50 |
-| Applicability Code | ALL |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The emergency lighting system provides illumination of the cabin escape path during emergency evacuation. It consists of four Emergency Lighting Units (ELUs) — one in the flight deck zone and one per cabin zone (forward, mid, aft) — each containing a LiFePO4 battery pack, a battery management circuit (BMC), an LED driver, and an auto-activation relay. ELUs are mounted in the cabin ceiling/sidewall structure, one per zone.
@@ -323,7 +314,7 @@ Overwing exit light assemblies: LRU replacement at line maintenance — accessib
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-50 | Emergency Lighting | DMC-AMPEL360E-EWTW-033-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-50 | Emergency Lighting | DMC-<PROGRAMME>-<VARIANT>-033-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Planned Data Modules
 
@@ -345,7 +336,7 @@ Overwing exit light assemblies: LRU replacement at line maintenance — accessib
 - Floor proximity LED strips: longitudinal strips along cabin aisle floor edge from fwd exit to aft exit — total length per cabin layout TBD
 - Photo-luminescent strips (if hybrid confirmed): co-located with LED strips or at threshold locations
 - Exit sign assemblies: at each emergency exit — quantity per aircraft exit configuration (typically 6–8 exits)
-- Overwing exit light assemblies: at each overwing exit (×2 for eWTW-100)
+- Overwing exit light assemblies: at each overwing exit (×2 for [PROGRAMME-VARIANT]-100)
 
 ### 15.2 Electrical / Data Footprint
 - Emergency power: fully independent from aircraft buses when activated; LiFePO4 battery per ELU; total emergency load per ELU TBD (area lights + floor strips + exit signs + overwing lights)
@@ -451,7 +442,7 @@ Overwing exit light assemblies: LRU replacement at line maintenance — accessib
 | OI-033-50-003 | ELU sizing (battery capacity) — complete load analysis for each zone (area lights + floor strips + exit signs + overwing) at minimum temperature; size battery to ≥ 10 min at end-of-life SOH | Q-MECHANICS | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-033-50-004 | ELU self-test duration — define test activation time (suggested TBD seconds) that adequately verifies battery capacity without unduly discharging the ELU during scheduled maintenance | Q-MECHANICS | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-033-50-005 | SOH replacement threshold — define minimum SOH% below which ELU battery must be replaced; must ensure ≥ 10-minute endurance is maintained at threshold SOH across all temperature conditions | Q-MECHANICS / ORB-LEG | High | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-033-50-006 | Exit configuration — confirm number and type of emergency exits (Type I, Type III overwing) for eWTW-100; defines quantity and location of exit signs, ELU zones, and floor strip layout | Q-MECHANICS / ATA 25 | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-033-50-006 | Exit configuration — confirm number and type of emergency exits (Type I, Type III overwing) for [PROGRAMME-VARIANT]-100; defines quantity and location of exit signs, ELU zones, and floor strip layout | Q-MECHANICS / ATA 25 | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ---
 

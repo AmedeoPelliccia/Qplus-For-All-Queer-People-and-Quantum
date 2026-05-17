@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-080-OPEN-ROTOR-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATLAS-087 (Open Rotor and Counter-Rotating) · Open Rotor Monitoring, Diagnostics and Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Open Rotor Monitoring, Diagnostics and Control Interfaces
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-080"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-080 defines the monitoring, diagnostics and control interface architecture for the AMPEL360E eWTW ORCR propulsor. It covers the ORSCU BITE capability, the sensor suite for blade-pitch health, rotor-speed monitoring, DPGB health, the AFDX network topology, and the cockpit synoptic page design.
+This document defines the agnostic ATLAS standard-level architecture context for `Open Rotor Monitoring, Diagnostics and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 ORSCU BITE Architecture
 
 The ORSCU implements a two-tier BITE system:

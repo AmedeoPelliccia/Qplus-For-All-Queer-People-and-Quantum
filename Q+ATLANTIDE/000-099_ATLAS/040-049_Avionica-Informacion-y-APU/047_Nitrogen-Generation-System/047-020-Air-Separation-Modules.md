@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 020 — Air Separation Modules
@@ -43,9 +45,9 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the Air Separation Modules (ASM) sub-system of ATA 47 NGS for the AMPEL360E eWTW. The ASM is the core functional element of the Nitrogen Generation System, performing the physical separation of conditioned compressed air into Nitrogen-Enriched Air (NEA) and Oxygen-Enriched Air (OEA) via hollow-fiber membrane (HFM) technology.
+This document defines the Air Separation Modules (ASM) sub-system of ATA 47 NGS for the programme-defined aircraft type. The ASM is the core functional element of the Nitrogen Generation System, performing the physical separation of conditioned compressed air into Nitrogen-Enriched Air (NEA) and Oxygen-Enriched Air (OEA) via hollow-fiber membrane (HFM) technology.
 
-The AMPEL360E eWTW employs **dual redundant ASM banks** (Bank A and Bank B). Both banks operate simultaneously in normal mode. The system sustains full-inerting capability on a single bank (degraded mode). Membrane degradation is detected by the NGSCU via a drop in differential NEA purity monitored through the TOMS feedback loop.
+The programme-defined aircraft type employs **dual redundant ASM banks** (Bank A and Bank B). Both banks operate simultaneously in normal mode. The system sustains full-inerting capability on a single bank (degraded mode). Membrane degradation is detected by the NGSCU via a drop in differential NEA purity monitored through the TOMS feedback loop.
 
 Key governance areas:
 - Hollow-fiber membrane technology and operating envelope.
@@ -63,7 +65,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter / Sub-subject | ATA 47.020 — Air Separation Modules |
 | Certification Basis | CS-25 Amendment 28; FAR 25.981 |
 | Applicable Standards | DO-160G Cat B2; S1000D Issue 5.0; MIL-STD-704F |

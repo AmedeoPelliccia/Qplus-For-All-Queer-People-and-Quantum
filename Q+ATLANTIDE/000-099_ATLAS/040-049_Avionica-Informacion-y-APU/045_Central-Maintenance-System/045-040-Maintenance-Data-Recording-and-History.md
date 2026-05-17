@@ -31,6 +31,8 @@ ata_reference: "ATA 45.040 — Maintenance Data Recording and History"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 040 — Maintenance Data Recording and History
@@ -43,11 +45,11 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the maintenance data recording and history architecture of the CMS for the AMPEL360E eWTW aircraft. It specifies the CMS Maintenance Data Base (CMDB) schema, ACMF parameter monitoring per ARINC 767, QAR word expansion for eWTW electric propulsion, and off-board data transfer methods including Gatelink, SATCOM AHM uplink, and USB-C ground terminal.
+This document defines the maintenance data recording and history architecture of the CMS for the programme-defined aircraft type. It specifies the CMS Maintenance Data Base (CMDB) schema, ACMF parameter monitoring per ARINC 767, QAR word expansion for [PROGRAMME-VARIANT] electric propulsion, and off-board data transfer methods including Gatelink, SATCOM AHM uplink, and USB-C ground terminal.
 
 Key governance areas:
 - CMDB: 5-year on-aircraft fault history and 60-day rolling high-rate parameter log.
-- ACMF per ARINC 767 Supplement 3: 4096-parameter expanded frame for eWTW.
+- ACMF per ARINC 767 Supplement 3: 4096-parameter expanded frame for [PROGRAMME-VARIANT].
 - QAR: standard 1024-word extended to 4096 words for electric propulsion parameters.
 - Off-board transfer: Gatelink (ARINC 631), SATCOM AHM uplink, USB-C 60 W ground terminal.
 
@@ -57,11 +59,11 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45.040 — Maintenance Data Recording and History |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL C |
 | Applicable Standards | ARINC 767 Suppl. 3; ARINC 631; DO-160G; ARINC 664 P7 |
-| QAR Frame | 4096-word (eWTW expanded from 1024-word standard) |
+| QAR Frame | 4096-word ([PROGRAMME-VARIANT] expanded from 1024-word standard) |
 | S1000D SNS | 045-040 |
 
 ---
@@ -76,7 +78,7 @@ The CMDB is the central on-aircraft repository for all maintenance data, stored 
 - **Maintenance actions table**: Records of all technician maintenance actions (LRU replacements, inspections, software updates) with timestamp and LDAP identity.
 - **Flight log table**: Flight-correlated record of departure, destination, flight time, and phase-of-flight timestamps for fault correlation.
 
-**eWTW-specific additions** to the high-rate parameter log:
+**[PROGRAMME-VARIANT]-specific additions** to the high-rate parameter log:
 - EMA current waveforms (RMS + THD, per actuator, sampled at 8 Hz).
 - MPDU voltage rails (±0.1 V resolution, sampled at 4 Hz).
 - Electric propulsion vibration spectra (FFT 64-bin, sampled at 1 Hz per EMA).
@@ -90,9 +92,9 @@ graph TD
     CMDB --> PL["ParameterLog table (60-day rolling, 4096 params @ up to 8 Hz)"]
     CMDB --> MA["MaintenanceActions table (technician records, LDAP-authenticated)"]
     CMDB --> FL["FlightLog table (departure, destination, timestamps)"]
-    PL --> EMA["EMA current waveforms (8 Hz, eWTW)"]
-    PL --> MPDU["MPDU voltage rails (4 Hz, eWTW)"]
-    PL --> VIB["Vibration spectra (FFT 64-bin, 1 Hz, eWTW)"]
+    PL --> EMA["EMA current waveforms (8 Hz, [PROGRAMME-VARIANT])"]
+    PL --> MPDU["MPDU voltage rails (4 Hz, [PROGRAMME-VARIANT])"]
+    PL --> VIB["Vibration spectra (FFT 64-bin, 1 Hz, [PROGRAMME-VARIANT])"]
 ```
 
 ---
@@ -103,7 +105,7 @@ graph TD
 
 The Aircraft Condition Monitoring Function (ACMF) is implemented per ARINC 767 Supplement 3. It runs as a software partition on CCU-A/B, continuously sampling the AFDX data bus for the configured parameter list.
 
-**Parameter frame**: The standard ARINC 767 frame of 1024 words is expanded to **4096 words** to accommodate eWTW electric propulsion parameters. Each word is 16 bits; maximum sample rate per parameter is 8 Hz.
+**Parameter frame**: The standard ARINC 767 frame of 1024 words is expanded to **4096 words** to accommodate [PROGRAMME-VARIANT] electric propulsion parameters. Each word is 16 bits; maximum sample rate per parameter is 8 Hz.
 
 **QAR interface**: The Quick Access Recorder interface provides a 4096-word per-second data stream to the MDSU ParameterLog table. QAR data is also formatted for export via Gatelink or USB-C.
 
@@ -121,7 +123,7 @@ Three export paths are implemented:
 
 ```mermaid
 graph LR
-    SENS["LRU Sensors (all ATA chapters + eWTW EMA/MPDU)"]
+    SENS["LRU Sensors (all ATA chapters + [PROGRAMME-VARIANT] EMA/MPDU)"]
     SENS -->|AFDX data bus| ACMF["ACMF Sampler (4096 params, up to 8 Hz)"]
     ACMF --> PB["Parameter Buffer (CCU ECC RAM, 1-min rolling)"]
     PB --> CMDB["CMDB ParameterLog table (MDSU, 60-day rolling)"]
@@ -190,7 +192,7 @@ graph TD
 |-----------|-------------|--------|
 | Fault history retention | 5 years rolling | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | Parameter log retention | 60 days rolling | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
-| ACMF parameter count | 4096 (eWTW expanded) | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
+| ACMF parameter count | 4096 ([PROGRAMME-VARIANT] expanded) | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | Max sample rate | 8 Hz per parameter | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | MDSU storage capacity | 2 TB RAID-1 | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | Gatelink export speed | 802.11ax (typ. 100+ Mbps) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
@@ -335,7 +337,7 @@ graph TD
 | [R1] | ATLAS 045-000 — Central Maintenance System General | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R2] | ATLAS 045-010 — Maintenance Computing and Core Processing | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R3] | ATLAS 045-070 — Ground Data Transfer and Maintenance Connectivity | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R4] | AMPEL360E eWTW ACMF Parameter List (4096-word frame) | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R4] | programme-defined aircraft type ACMF Parameter List (4096-word frame) | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | [R5] | ATLAS 031 — Recording Systems | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 
 ---

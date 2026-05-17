@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Vacuum System Indication and Warning"
 file_name: "037-060-Vacuum-System-Indication-and-Warning.md"
 sns_reference: "037-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-60"
-programme: "AMPEL360e eWTW"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "AMPEL360e-eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-60"
+programme: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE ATLAS"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "030-039 Protection and Mechanical Systems"
@@ -43,10 +43,12 @@ review_status: "PENDING"
 lifecycle_phase: "LC02 — System Definition"
 traceability: ["CS-25.1438", "CS-25.1301", "CS-25.1309", "AMC 25.831"]
 keywords: ["ATA 37", "Vacuum", "indication", "CAS", "ECAM", "VAC SYS FAULT", "VAC LO", "warning", "EVG status", "flush indicator"]
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-060 — Vacuum System Indication and Warning
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">
 **Revision:** 0.1.0 | **Created:** 2025-07-14 | **Updated:** 2025-07-14
@@ -61,26 +63,20 @@ All links in this document are relative within the Q+ATLANTIDE ATLAS repository 
 
 ## §1 Purpose
 
-This document defines the **indication and warning architecture** for the ATA 37 Vacuum System on the AMPEL360e eWTW aircraft. It covers cockpit Crew Alerting System (CAS) messages, ECAM vacuum system page content, lavatory flush-ready indication, maintenance terminal access, and the signal chain from vacuum system sensors to the ECAM display.
+This document defines the agnostic ATLAS standard-level architecture context for `037-060 — Vacuum System Indication and Warning`.
 
-**Key design note:** The eWTW vacuum system serves only the lavatory waste toilets. There are no vacuum gauge instruments for flight (no vacuum gyros — ADIRU is solid-state). The vacuum indication suite is therefore **minimal** compared to a conventional aircraft, focused on fault detection rather than continuous cockpit monitoring.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
-|------|-------|
-| Aircraft Programme | AMPEL360e eWTW |
-| ATA Chapter | 37 — Vacuum |
-| Subsubject | 037-60 — Indication and Warning |
-| Certification Basis | CS-25 Amendment 27 (TBD) |
-| Applicable Standards | CS-25.1438, CS-25.1301, CS-25.1309, AMC 25.831 |
-| Revision Status | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Configuration | ~100-pax single-aisle electric |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 CAS Alert Summary
@@ -171,7 +167,7 @@ Maintenance staff access the vacuum system via the maintenance terminal (ATA 45 
 
 ### 5.4 No Bleed Valve Indication
 
-The eWTW has no bleed air system (ATA 36). Therefore, no bleed valve indication is associated with ATA 37. Any conventional aircraft indication items referencing "bleed valve — vacuum" are eliminated.
+The [PROGRAMME-VARIANT] has no bleed air system (ATA 36). Therefore, no bleed valve indication is associated with ATA 37. Any conventional aircraft indication items referencing "bleed valve — vacuum" are eliminated.
 
 ---
 
@@ -328,9 +324,9 @@ flowchart LR
 
 | DM Code | Info Code | Title | Status |
 |---------|-----------|-------|--------|
-| DMC-AMPEL360E-EWTW-037-60-00-00A-040A-A | 040 | Vacuum Indication and Warning — Description | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-60-00-00A-300A-A | 300 | CAS Alert and ECAM Page Functional Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-60-00-00A-400A-A | 400 | VAC LO / VAC SYS FAULT Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-60-00-00A-040A-A | 040 | Vacuum Indication and Warning — Description | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-60-00-00A-300A-A | 300 | CAS Alert and ECAM Page Functional Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-60-00-00A-400A-A | 400 | VAC LO / VAC SYS FAULT Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -378,7 +374,7 @@ flowchart LR
 
 | Term | Definition |
 |------|-----------|
-| ADIRU | Air Data Inertial Reference Unit — solid-state; replaces vacuum gyros on eWTW |
+| ADIRU | Air Data Inertial Reference Unit — solid-state; replaces vacuum gyros on [PROGRAMME-VARIANT] |
 | ATA 37 | Air Transport Association chapter for Vacuum systems |
 | CAS | Crew Alerting System — integrated flight deck alert display |
 | CIDS | Cabin Intercommunication Data System — manages cabin information and possibly lavatory indicator wiring |
@@ -389,7 +385,7 @@ flowchart LR
 | EFV | Electrically actuated Flush Valve — interface boundary device between ATA 37 and ATA 38 |
 | EVG | Electric Vacuum Generator — motor-driven vacuum pump |
 | Freeze protection | Thermal protection for waste lines (OI-037-005) |
-| Gyroscopic instruments | Vacuum-driven AI, DI, TC — **eliminated on eWTW** (ADIRU used) |
+| Gyroscopic instruments | Vacuum-driven AI, DI, TC — **eliminated on [PROGRAMME-VARIANT]** (ADIRU used) |
 | Manifold | Vacuum distribution header |
 | NRV | Non-Return Valve — prevents back-flow between toilet branches |
 | NVM | Non-Volatile Memory — retains data after power loss |
@@ -450,5 +446,5 @@ flowchart LR
 | 0.1.0 | 2025-07-14 | AI-assisted scaffold | Initial scaffold — §0–§22 populated; CAS messages, ECAM page, flush indicators defined as concept; all thresholds TBD |
 
 ---
-*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-060 Indication and Warning — AMPEL360e eWTW*
+*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-060 Indication and Warning — [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]*
 *Classification: UNCLASSIFIED — ENGINEERING SCAFFOLD*

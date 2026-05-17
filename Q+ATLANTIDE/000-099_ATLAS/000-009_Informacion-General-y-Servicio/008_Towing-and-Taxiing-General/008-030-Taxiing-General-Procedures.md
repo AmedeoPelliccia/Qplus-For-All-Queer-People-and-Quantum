@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 09"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Documents the general taxiing procedures for the AMPEL360E eWTW, covering electric taxi system operation (if equipped), conventional braking and nose wheel steering during taxi, taxi speed limits, and the interface between the all-electric taxi drive system and the main aircraft power management system.
+Documents the general taxiing procedures for the programme-defined aircraft type, covering electric taxi system operation (if equipped), conventional braking and nose wheel steering during taxi, taxi speed limits, and the interface between the all-electric taxi drive system and the main aircraft power management system.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 09 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,9 +72,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Taxiing General Procedures** node defines the operational procedures and system modes for ground movement of the AMPEL360E eWTW under its own power via the Electric Nose-Wheel Taxiing Drive (ENWTD). The e-taxi sequence is: (1) GPU/APU power establishes 540 V HVDC bus; (2) crew selects "E-TAXI" mode on the ECAM ground movement page; (3) GMMS activates ENWTD and releases electric parking brakes (EPB); (4) thrust levers remain at idle (engines may be off for e-taxi); (5) nose-wheel steering via the tiller or rudder pedals as normal (ENWTD follows ENWS commands). Maximum e-taxi speed: 30 kt (56 km/h); maximum continuous ENWTD current: 100 A (540 V); battery minimum SoC for e-taxi authorisation: 20%.
+The **Taxiing General Procedures** node defines the operational procedures and system modes for ground movement of the programme-defined aircraft type under its own power via the Electric Nose-Wheel Taxiing Drive (ENWTD). The e-taxi sequence is: (1) GPU/APU power establishes 540 V HVDC bus; (2) crew selects "E-TAXI" mode on the ECAM ground movement page; (3) GMMS activates ENWTD and releases electric parking brakes (EPB); (4) thrust levers remain at idle (engines may be off for e-taxi); (5) nose-wheel steering via the tiller or rudder pedals as normal (ENWTD follows ENWS commands). Maximum e-taxi speed: 30 kt (56 km/h); maximum continuous ENWTD current: 100 A (540 V); battery minimum SoC for e-taxi authorisation: 20%.
 
-During conventional taxi (with engines running), the ENWTD is in "passive" mode (free-wheeling). GMMS monitors nose gear torque and temperature continuously. Taxi turn limits: nose gear steering ±75° (hard stop); minimum turning radius 19 m (outer wingtip). Regulatory reference: EASA CS-25 §25.1515 (taxi speeds); AMPEL360E AFM Chapter 4 (normal procedures). Soft-surface taxi is not approved for the eWTW; dry or wet paved surfaces only.
+During conventional taxi (with engines running), the ENWTD is in "passive" mode (free-wheeling). GMMS monitors nose gear torque and temperature continuously. Taxi turn limits: nose gear steering ±75° (hard stop); minimum turning radius 19 m (outer wingtip). Regulatory reference: EASA CS-25 §25.1515 (taxi speeds); [PROGRAMME-AIRCRAFT] AFM Chapter 4 (normal procedures). Soft-surface taxi is not approved for the [PROGRAMME-VARIANT]; dry or wet paved surfaces only.
 
 ---
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the taxiing general procedures scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Taxiing General Procedures** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Taxiing General Procedures** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `008` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `030` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-008-030` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-008-030` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

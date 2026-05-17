@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 050 — Ballast Control and Automatic Trim Interfaces
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document defines the Ballast Control Computer (BCC) architecture, the automatic CG trim control law, and the interfaces between the BCC and the Flight Control Management Computer (FCMC) on the AMPEL360E eWTW. It specifies the control authority limits, mode logic, manual crew override, ARINC 653 software partitioning, and cockpit annunciation for the Water Ballast control function.
+This document defines the Ballast Control Computer (BCC) architecture, the automatic CG trim control law, and the interfaces between the BCC and the Flight Control Management Computer (FCMC) on the programme-defined aircraft type. It specifies the control authority limits, mode logic, manual crew override, ARINC 653 software partitioning, and cockpit annunciation for the Water Ballast control function.
 
 The BCC is a DAL B avionics computer executing the CG computation and transfer control law in a dedicated ARINC 653 partition. Its interface to the FCMC via AFDX (ARINC 664 Part 7) provides the trim-demand signal that drives the fuel-trim-fuel and water-ballast-trim optimisation. The BCC is the authoritative source of CG position for EICAS display and AFM-defined CG warning alerting.
 
@@ -50,11 +52,11 @@ The automatic trim law operates as a proportional-integral (PI) controller with 
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41-50 — Ballast Control |
 | Standards | CS-25 Amd 27, DO-178C DAL B, DO-254 DAL C, ARINC 653, ARP4754B |
 | Dev Assurance | BCC software DAL B (DO-178C); BCC hardware DAL C (DO-254) |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | Authority Limits | ±3.5% MAC CG authority; 5–30 kg/min transfer rate |
 
 ---
@@ -267,12 +269,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-050-00A-040A-A | 040 | Ballast Control and Trim Interfaces Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-050-00A-300A-A | 300 | Ballast Control Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-050-00A-400A-A | 400 | Ballast Control BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-050-00A-520A-A | 520 | Ballast Control Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-050-00A-941A-A | 941 | Ballast Control Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-050-00A-720A-A | 720 | BCC Software Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-050-00A-040A-A | 040 | Ballast Control and Trim Interfaces Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-050-00A-300A-A | 300 | Ballast Control Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-050-00A-400A-A | 400 | Ballast Control BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-050-00A-520A-A | 520 | Ballast Control Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-050-00A-941A-A | 941 | Ballast Control Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-050-00A-720A-A | 720 | BCC Software Description |
 
 ### Recommended Data Module Set
 
@@ -375,7 +377,7 @@ Verification Evidence"]
 | <a id="ref-arinc653"></a>ARINC 653-1 | ARINC 653-1 — Avionics Application SW Standard Interface | BCC partitioning standard | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet [PROGRAMME-AIRCRAFT] | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -385,7 +387,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Quantity Indication (041-040) | QATL-ATLAS-041-040 | Rev 1.0 | Active | [041-040](./041-040-Ballast-Quantity-Indication-and-Mass-Properties.md) |
-| R-003 | BCC Software Requirements Spec | AMPEL360E-SRS-041-SW-050 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-003 | BCC Software Requirements Spec | [PROGRAMME-AIRCRAFT]-SRS-041-SW-050 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

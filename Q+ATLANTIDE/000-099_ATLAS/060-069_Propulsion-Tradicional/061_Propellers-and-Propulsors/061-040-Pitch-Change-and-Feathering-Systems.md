@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0061-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-061-040-PITCH-CHANGE-AND-FEATHERING-SYSTEMS
      ATA 61 · Pitch Change and Feathering Systems
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Pitch Change and Feathering Systems
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-040"
 
 ## §1 Purpose
 
-This document defines the pitch-change mechanism (PCM) architecture, feathering logic, unfeathering provisions, and fail-safe pitch lock design for variable-pitch propeller systems on the AMPEL360E eWTW programme. Pitch control is a primary flight control function when turboprop or open-rotor propulsors are installed; loss of controlled feathering is a safety-critical failure mode.
+This document defines the agnostic ATLAS standard-level architecture context for `Pitch Change and Feathering Systems`.
 
-The AMPEL360E pitch-change mechanism uses a PECU-commanded Electro-Mechanical Actuator (EMA) or Electro-Hydraulic Actuator (EHA) — selection pending detailed design trade. Regardless of actuator type, a fail-safe pitch lock must engage at a defined coarse-pitch position if actuator power is lost, preventing the propeller from going to flat pitch (which would cause excessive drag and uncontrolled asymmetric yaw on an engine-out event).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 61-040 — Pitch Change and Feathering Systems |
-| Certification basis | EASA CS-25 Amendment 27+ |
-| S1000D SNS | 061-040-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `061` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The pitch-change system architecture provides:
@@ -271,4 +270,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

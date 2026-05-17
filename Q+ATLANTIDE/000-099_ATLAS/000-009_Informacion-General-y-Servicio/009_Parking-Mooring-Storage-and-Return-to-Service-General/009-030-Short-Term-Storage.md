@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Documents the short-term storage procedures (1–30 days) for the AMPEL360E eWTW. Covers the controlled aircraft configuration for short-term storage, HVDC battery management during storage, engine preservation requirements, exterior protection measures, and the inspection schedule required to maintain the aircraft in short-term storage status.
+Documents the short-term storage procedures (1–30 days) for the programme-defined aircraft type. Covers the controlled aircraft configuration for short-term storage, HVDC battery management during storage, engine preservation requirements, exterior protection measures, and the inspection schedule required to maintain the aircraft in short-term storage status.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 10 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,7 +72,7 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Short-Term Storage** node defines the procedures and system states for parking the AMPEL360E eWTW out of service for 3 to 30 days. Short-term storage differs from routine parking primarily in the battery management strategy and the extent of system protective measures. PSMM short-term storage mode (activated from GMMS tablet: STORAGE > SHORT-TERM): (1) traction battery SoC target is set to 60% (optimal electrochemical rest state for NMC chemistry); PSMM uses a low-rate HVDC GPU trickle charge (max 10 kW) to maintain SoC ±5%; (2) ENWTD, ENWS, and EBAU are placed in deep-sleep mode (all power-electronics boards de-energised, spring-set EPB locked); (3) FADEC and avionics are powered down; (4) the ADIRS accelerometers remain powered by the aircraft emergency bus to log any ramp movement or tilt events.
+The **Short-Term Storage** node defines the procedures and system states for parking the programme-defined aircraft type out of service for 3 to 30 days. Short-term storage differs from routine parking primarily in the battery management strategy and the extent of system protective measures. PSMM short-term storage mode (activated from GMMS tablet: STORAGE > SHORT-TERM): (1) traction battery SoC target is set to 60% (optimal electrochemical rest state for NMC chemistry); PSMM uses a low-rate HVDC GPU trickle charge (max 10 kW) to maintain SoC ±5%; (2) ENWTD, ENWS, and EBAU are placed in deep-sleep mode (all power-electronics boards de-energised, spring-set EPB locked); (3) FADEC and avionics are powered down; (4) the ADIRS accelerometers remain powered by the aircraft emergency bus to log any ramp movement or tilt events.
 
 Physical protective measures for short-term storage: pitot/static covers (all ports), engine inlet plugs (both engines), AOA probe covers, landing gear door locks (visual streamer P/N Q-GEAR-LOCK-001), aileron/elevator/rudder gust locks (installed per AMM 09-30 sequence). GPU connection is mandatory; GPU minimum current capability: 32 A at 115 V AC or HVDC adapter. PSMM logs battery SoC, ambient temperature, and any anomalies daily; accessible via GAIA-QA web interface. Exit from short-term storage: PSMM Storage Exit Checklist (Q-PSMM-SEC-001, 45-step electronic form on GMMS tablet, estimated completion time 2 h).
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the short-term storage scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Short-Term Storage** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Short-Term Storage** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `009` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `030` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-009-030` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-009-030` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

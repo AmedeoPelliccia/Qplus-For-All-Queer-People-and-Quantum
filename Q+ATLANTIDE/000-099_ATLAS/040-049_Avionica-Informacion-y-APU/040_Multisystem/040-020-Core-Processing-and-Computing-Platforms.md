@@ -53,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 020 — Core Processing and Computing Platforms
@@ -68,7 +70,7 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md) 
 
 ## 1. Purpose
 
-This document describes the core processing and computing platforms used within the AMPEL360E IMA architecture. It covers GPPM and CPIOM module hardware design, processor architectures (PowerPC, LEON, ARMv8A), memory hierarchy, hardware redundancy schemes (dual/triple), DO-254 hardware assurance requirements, and BITE per module. It serves as the hardware design reference for avionics engineers, hardware assurance leads, and certification authorities.
+This document describes the core processing and computing platforms used within the [PROGRAMME-AIRCRAFT] IMA architecture. It covers GPPM and CPIOM module hardware design, processor architectures (PowerPC, LEON, ARMv8A), memory hierarchy, hardware redundancy schemes (dual/triple), DO-254 hardware assurance requirements, and BITE per module. It serves as the hardware design reference for avionics engineers, hardware assurance leads, and certification authorities.
 
 ---
 
@@ -76,7 +78,7 @@ This document describes the core processing and computing platforms used within 
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | Regulatory Framework | EASA CS-25, FAA 14 CFR Part 25 |
 | Development Assurance | [DO-254](#ref-do-254) (hardware), [DO-178C](#ref-do-178c) (software) |
@@ -257,12 +259,12 @@ graph LR
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-040-020-00A-040A-A | 040 | Core Processing Platform Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-040-020-00A-300A-A | 300 | GPPM/CPIOM Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-040-020-00A-400A-A | 400 | Module BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-040-020-00A-520A-A | 520 | GPPM/CPIOM Wiring Data |
-| IPD | DMC-AMPEL360E-EWTW-040-020-00A-941A-A | 941 | GPPM/CPIOM Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-040-020-00A-720A-A | 720 | Module Firmware Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-040-020-00A-040A-A | 040 | Core Processing Platform Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-040-020-00A-300A-A | 300 | GPPM/CPIOM Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-040-020-00A-400A-A | 400 | Module BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-040-020-00A-520A-A | 520 | GPPM/CPIOM Wiring Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-040-020-00A-941A-A | 941 | GPPM/CPIOM Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-040-020-00A-720A-A | 720 | Module Firmware Description |
 
 ### Recommended Data Module Set
 

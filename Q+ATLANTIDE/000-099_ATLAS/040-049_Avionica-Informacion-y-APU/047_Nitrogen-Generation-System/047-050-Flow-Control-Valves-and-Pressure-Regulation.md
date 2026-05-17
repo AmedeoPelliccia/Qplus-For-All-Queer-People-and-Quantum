@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 050 — Flow Control Valves and Pressure Regulation
@@ -43,9 +45,9 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the Flow Control Valves (FCV) and Pressure Regulation sub-system of ATA 47 NGS for the AMPEL360E eWTW. The FCV and pressure regulation elements are the final active control elements in the NEA delivery path, modulating NEA flow to each fuel tank branch in response to NGSCU closed-loop commands. Pressure regulating valves (PRVs) maintain NEA manifold pressure within the operating envelope.
+This document defines the Flow Control Valves (FCV) and Pressure Regulation sub-system of ATA 47 NGS for the programme-defined aircraft type. The FCV and pressure regulation elements are the final active control elements in the NEA delivery path, modulating NEA flow to each fuel tank branch in response to NGSCU closed-loop commands. Pressure regulating valves (PRVs) maintain NEA manifold pressure within the operating envelope.
 
-All FCVs are electrically actuated via torque motor actuators driven by 28 V DC PWM signals from the NGSCU. The eWTW has **no hydraulic system**: all valve actuation is purely electric. FCVs are designed fail-safe normally open to ensure NEA flow continues to fuel tanks even on loss of NGSCU power or actuator fault.
+All FCVs are electrically actuated via torque motor actuators driven by 28 V DC PWM signals from the NGSCU. The [PROGRAMME-VARIANT] has **no hydraulic system**: all valve actuation is purely electric. FCVs are designed fail-safe normally open to ensure NEA flow continues to fuel tanks even on loss of NGSCU power or actuator fault.
 
 Key governance areas:
 - Three NEA branch FCVs (inner, outer, center tank).
@@ -64,7 +66,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter / Sub-subject | ATA 47.050 — FCVs and Pressure Regulation |
 | Certification Basis | CS-25 Amendment 28; FAR 25.981 |
 | Applicable Standards | DO-160G; S1000D Issue 5.0; MIL-STD-704F; ARINC 664 P7 |
@@ -79,7 +81,7 @@ Key governance areas:
 
 Each Flow Control Valve (FCV) is a butterfly-type valve with a torque motor actuator. The NGSCU drives the torque motor via a 28 V DC Pulse Width Modulation (PWM) signal, positioning the valve disc to modulate NEA flow. An RVDT position sensor provides continuous valve disc angle feedback (0–90°) to the NGSCU at 100 Hz. The NGSCU uses this feedback in its position control inner loop (1 kHz update rate) and the TOMS-driven flow control outer loop (4 Hz).
 
-The Pressure Regulating Valve (PRV) is installed at the NEA manifold inlet, downstream of the ASM banks. The PRV is a self-contained mechanical regulator maintaining manifold pressure at 12–18 psig regardless of ASM supply pressure variation (35–45 psig upstream). In the eWTW all-electric architecture, the PRV is purely mechanical — no electrical actuation. A pressure sensor downstream of the PRV feeds the NGSCU for manifold pressure monitoring.
+The Pressure Regulating Valve (PRV) is installed at the NEA manifold inlet, downstream of the ASM banks. The PRV is a self-contained mechanical regulator maintaining manifold pressure at 12–18 psig regardless of ASM supply pressure variation (35–45 psig upstream). In the [PROGRAMME-VARIANT] all-electric architecture, the PRV is purely mechanical — no electrical actuation. A pressure sensor downstream of the PRV feeds the NGSCU for manifold pressure monitoring.
 
 ### §3.1 Valve Summary
 

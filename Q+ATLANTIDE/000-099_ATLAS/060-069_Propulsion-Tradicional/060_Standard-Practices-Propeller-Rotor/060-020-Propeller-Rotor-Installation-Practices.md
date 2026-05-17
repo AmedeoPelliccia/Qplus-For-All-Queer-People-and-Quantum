@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0060-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-060-020-PROPELLER-ROTOR-INSTALLATION-PRACTICES
      ATA 60 · Propeller/Rotor Installation Practices
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propeller/Rotor Installation Practices
@@ -47,26 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-020"
 
 ## §1 Purpose
 
-This document defines the controlled installation practices, torque schedules, alignment verification procedures, and post-installation functional-check requirements for propeller and rotor assemblies. Correct installation is the single largest contributor to in-service propeller safety; improper torque, incorrect shimming, or misaligned blade retention flanges have been primary causal factors in propeller accidents across the industry.
+This document defines the agnostic ATLAS standard-level architecture context for `Propeller/Rotor Installation Practices`.
 
-For the AMPEL360E eWTW, installation practices apply to any propulsor assembly evaluated or installed on the aircraft, including any electrically driven auxiliary propulsors used for distributed propulsion studies. The practices defined here are mandatory precedents to the type-specific procedures in ATA 61 and ATA 62.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 60-020 — Installation Practices |
-| Torque standard | ATA iSpec 2200 / SAE AS7506 |
-| Alignment method | TIR measurement per AMM task |
-| Certification basis | EASA CS-25 Amendment 27+ |
-| Safety requirements | CS-25 §25.925 — Propeller clearance |
-| S1000D SNS | 060-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `060` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 Installation practices span the full installation sequence from component pre-install inspection through to functional verification:
@@ -245,7 +241,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-060-020-001 | Confirm TIR limits for AMPEL360E carbon-composite blade types (pending blade supplier data) | Q-MECHANICS / Q-AIR | 2026-Q3 |
+| OI-060-020-001 | Confirm TIR limits for [PROGRAMME-AIRCRAFT] carbon-composite blade types (pending blade supplier data) | Q-MECHANICS / Q-AIR | 2026-Q3 |
 | OI-060-020-002 | Determine minimum vibration acceptance level for post-install ground run | Q-AIR / vibration specialist | 2026-Q3 |
 
 ---
@@ -279,4 +275,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

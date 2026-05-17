@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 042 · 060 — Software Configuration and Data Loading
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links within Q+ATLANTIDE CSD
 
 ## 1. Purpose
 
-This document defines the software configuration management, data loading architecture, post-load verification, rollback procedures, and audit trail requirements for the AMPEL360E IMA system. It establishes compliance with ARINC 615A (data loading protocol), DO-200B (software data integrity), and AMC 20-21 (on-board loadable software) for the IMA platform and all hosted applications.
+This document defines the software configuration management, data loading architecture, post-load verification, rollback procedures, and audit trail requirements for the [PROGRAMME-AIRCRAFT] IMA system. It establishes compliance with ARINC 615A (data loading protocol), DO-200B (software data integrity), and AMC 20-21 (on-board loadable software) for the IMA platform and all hosted applications.
 
 ---
 
@@ -46,18 +48,18 @@ This document defines the software configuration management, data loading archit
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 42 — Integrated Modular Avionics |
 | Certification Basis | CS-25 Amendment 28; AMC 20-21 |
 | Applicable Standards | ARINC 615A; DO-200B; AMC 20-21; ARINC 665; DO-178C |
 | Design Assurance Level | Software loading function: DAL B |
-| Configuration | AMPEL360E Build Standard 1.0 and above |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0 and above |
 
 ---
 
 ## 3. System / Function Overview
 
-The AMPEL360E IMA data loading architecture uses ARINC 615A over 100BASE-TX Ethernet as the primary data loading protocol. A Data Loading and Configuration System (DLCS) server on the aircraft maintenance network provides an authorised repository for all loadable software parts. Portable Data Loaders (PDLs) connect via the maintenance Ethernet jack in the avionics bay for off-aircraft loading operations.
+The [PROGRAMME-AIRCRAFT] IMA data loading architecture uses ARINC 615A over 100BASE-TX Ethernet as the primary data loading protocol. A Data Loading and Configuration System (DLCS) server on the aircraft maintenance network provides an authorised repository for all loadable software parts. Portable Data Loaders (PDLs) connect via the maintenance Ethernet jack in the avionics bay for off-aircraft loading operations.
 
 Each IMA cabinet maintains a Software Configuration Index (SCI) identifying all software part numbers loaded on each GPPM and I/O LRM. The SCI is cryptographically signed by the OEM and validated by the IMA platform at each power-up. Post-load verification includes CRC32 of each loaded file, partition boot verification, and functional smoke test.
 
@@ -350,9 +352,9 @@ graph LR
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
 | REF-042-01 | 042-000 IMA General | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-02 | AMPEL360E Software Configuration Management Plan | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-03 | AMPEL360E LSAP | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-042-04 | AMPEL360E DO-200B Data Management Plan | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-02 | [PROGRAMME-AIRCRAFT] Software Configuration Management Plan | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-03 | [PROGRAMME-AIRCRAFT] LSAP | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-042-04 | [PROGRAMME-AIRCRAFT] DO-200B Data Management Plan | 1.0 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

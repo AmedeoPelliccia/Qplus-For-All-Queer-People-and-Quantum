@@ -6,10 +6,10 @@ subsubject: "000"
 subsubject_title: "Landing Gear — General"
 file_name: "032-000-Landing-Gear-General.md"
 sns_reference: "032-00"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-00"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-032-00"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,7 +87,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 32"
@@ -99,10 +99,12 @@ keywords:
   - "tricycle gear"
   - "electromechanical actuator"
   - "no hydraulics"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 032-000 — Landing Gear — General
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -114,41 +116,27 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document provides the top-level general description of ATA 32 — Landing Gear — as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) full-electric aircraft. It establishes the scope, architectural philosophy, and functional decomposition of all landing gear systems across nine subsubjects (032-010 through 032-090).
+This document defines the agnostic ATLAS standard-level architecture context for `032-000 — Landing Gear — General`.
 
-The defining characteristic of the AMPEL360e eWTW landing gear is the complete elimination of hydraulic power. Conventional transport-category aircraft use hydraulic actuators for gear retraction and extension, hydraulic disc brakes, and hydraulic nose-wheel steering. The eWTW replaces all three with electromechanical equivalents: Electromechanical Actuators (EMAs) for gear retraction/extension, Electromechanical Brakes (EMBs) for braking, and an electric motor-driven nose-wheel steering (NWS) actuator. This architecture eliminates the hydraulic generation, distribution, and fluid management systems traditionally covered by ATA 29, reducing aircraft mass, maintenance burden, and fluid-leak risk.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-The eWTW landing gear configuration is a conventional tricycle arrangement: two Main Landing Gear (MLG) assemblies located in underwing belly pods, each with a two-wheel bogie and Carbon Fibre Reinforced Polymer (CFRP) gear beam structure, and one Nose Landing Gear (NLG) assembly in the forward fuselage bay with twin steerable wheels. Gear extension and retraction, door sequencing, position indication, and braking are all managed by the Landing Gear Control and Interface Unit (LGCIU) function, which is hosted in the Integrated Modular Avionics (IMA) platform, and the Brake and Steering Control Unit (BSCU), also IMA-hosted.
-
-Key applicable regulations for ATA 32 on eWTW include: CS-25.721 (Landing gear: General), CS-25.723 (Shock absorber tests), CS-25.729 (Retracting mechanisms), CS-25.473 (Landing load conditions and assumptions), CS-25.479 (Level landing conditions), CS-25.481 (Tail-down landing conditions), CS-25.499 (Nose-wheel yaw and steering), CS-25.503 (Pivoting), CS-25.735 (Brakes and braking systems), CS-25.1303 (Flight and navigation instruments — WoW signal), and associated Advisory Circulars and EUROCAE/SAE standards.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Chapter | 32 — Landing Gear |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER (extended range) |
-| Propulsion | Full-electric (no hydraulic system on aircraft) |
-| Gear Configuration | Tricycle: 2× MLG (wing belly pod, 2-wheel bogie) + 1× NLG (forward fuselage, twin wheels) |
-| Actuation | Electromechanical (EMAs for retraction/extension; EMBs for braking; electric NWS) |
-| Certification Basis | CS-25 (EASA), FAR Part 25 (FAA bilateral) |
-| S1000D Issue | 5.0 |
-| SNS Reference | 032-00 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-ATA 32 on the AMPEL360e eWTW encompasses all systems responsible for supporting the aircraft during ground operations and the take-off and landing phases of flight. The landing gear subsystems provide: structural support on the ground, controlled retraction and extension during flight phase transitions, wheel braking (normal, antiskid, autobrake, and parking), nose-wheel steering, position indication and gear-not-down warnings, shock absorption for landing loads, tyre pressure monitoring, and comprehensive diagnostics via the IMA/CMC.
+ATA 32 on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] encompasses all systems responsible for supporting the aircraft during ground operations and the take-off and landing phases of flight. The landing gear subsystems provide: structural support on the ground, controlled retraction and extension during flight phase transitions, wheel braking (normal, antiskid, autobrake, and parking), nose-wheel steering, position indication and gear-not-down warnings, shock absorption for landing loads, tyre pressure monitoring, and comprehensive diagnostics via the IMA/CMC.
 
 The LGCIU function (IMA-hosted) is the central controller for gear sequencing logic. It reads proximity switch signals from all gear positions (uplock, downlock, WoW) and all door positions (open, closed), commands EMA actuators for gear travel and door operation, and outputs gear position status to the ECAM system page, the Flight Warning Computer (FWC), and the GPWS/TAWS. The BSCU (IMA-hosted) manages braking and steering functions independently, with inputs from pilot brake pedals, the tiller transducer, and the autobrake panel, commanding EMB actuators on each main wheel.
 
-A key eWTW differentiator is that landing gear actuation draws electrical power directly from the aircraft HVDC bus via dedicated Power Drive Units (PDUs) on each EMA. Peak power demand during gear retraction (all three gear simultaneously) is a critical sizing driver for the aircraft Electrical Power System (EPS), covered in ATA 24. The BSCU interfaces with the antiskid function (wheel speed sensors on each main wheel) to prevent wheel locking during braking, an essential safety function formerly delivered by hydraulic pressure-modulating valves.
+A key [PROGRAMME-VARIANT] differentiator is that landing gear actuation draws electrical power directly from the aircraft HVDC bus via dedicated Power Drive Units (PDUs) on each EMA. Peak power demand during gear retraction (all three gear simultaneously) is a critical sizing driver for the aircraft Electrical Power System (EPS), covered in ATA 24. The BSCU interfaces with the antiskid function (wheel speed sensors on each main wheel) to prevent wheel locking during braking, an essential safety function formerly delivered by hydraulic pressure-modulating valves.
 
 ---
 
@@ -167,7 +155,7 @@ A key eWTW differentiator is that landing gear actuation draws electrical power 
 - S1000D CSDB mapping and publication traceability for ATA 32
 
 ### 4.2 Excluded
-- Hydraulic power generation and distribution — not applicable (eWTW has no hydraulic system; ATA 29 is null)
+- Hydraulic power generation and distribution — not applicable ([PROGRAMME-VARIANT] has no hydraulic system; ATA 29 is null)
 - Electrical power generation and distribution (HVDC bus, PDUs) — covered by ATA 24
 - Aircraft structural design of wing box and fuselage keel beam at gear attachment interfaces — covered by ATA 57 (Wings) and ATA 53 (Fuselage)
 - Taxiway and runway design, ground handling equipment
@@ -179,7 +167,7 @@ A key eWTW differentiator is that landing gear actuation draws electrical power 
 
 ## §5 Architecture Description
 
-- **No hydraulics**: The eWTW has no aircraft hydraulic system. All landing gear actuation uses Electromechanical Actuators (EMAs) powered from the HVDC bus via Power Drive Units (PDUs). This is the fundamental architectural departure from conventional transport-category aircraft.
+- **No hydraulics**: The [PROGRAMME-VARIANT] has no aircraft hydraulic system. All landing gear actuation uses Electromechanical Actuators (EMAs) powered from the HVDC bus via Power Drive Units (PDUs). This is the fundamental architectural departure from conventional transport-category aircraft.
 - **IMA-hosted control**: The LGCIU and BSCU functions are software partitions hosted on the IMA platform, reducing hardware LRU count and providing standard DO-178C certified computing substrate.
 - **AFDX / ARINC 429 data interfaces**: LGCIU and BSCU communicate with the rest of the avionics suite via AFDX (ARINC 664 Part 7) and ARINC 429 buses. EMA actuators interface via dedicated CAN bus or discrete wiring per EMA supplier interface (TBD).
 - **CFRP gear beam structure (MLG)**: The main gear beam is constructed from Carbon Fibre Reinforced Polymer, reducing mass relative to conventional steel/aluminium forgings at the cost of increased inspection requirements.
@@ -204,7 +192,7 @@ A key eWTW differentiator is that landing gear actuation draws electrical power 
 | F-006 | Position Indication and Warning | Proximity switch signal processing by LGCIU; cockpit gear position lights; ECAM gear synoptic; FWC gear-not-down warning; GPWS WoW input | 032-060 |
 | F-007 | Shock Absorption and Structural Interfaces | MLG and NLG oleo-pneumatic shock absorbers; CS-25.473/.479 load compliance; structural attachment fittings; gear bay provisions; clearance analysis | 032-070 |
 | F-008 | Landing Gear Monitoring, Diagnostics, and Control Interfaces | LGCIU/BSCU BITE; EMA health monitoring; brake wear state; gear cycle counting; CMC/OMS reporting; ground test capability | 032-080 |
-| F-009 | S1000D CSDB Mapping and Traceability | SNS allocation; DMC codes; DMRL; BREX; publication hierarchy for ATA 32 in eWTW CSDB | 032-090 |
+| F-009 | S1000D CSDB Mapping and Traceability | SNS allocation; DMC codes; DMRL; BREX; publication hierarchy for ATA 32 in [PROGRAMME-VARIANT] CSDB | 032-090 |
 
 ---
 
@@ -212,7 +200,7 @@ A key eWTW differentiator is that landing gear actuation draws electrical power 
 
 ```mermaid
 flowchart LR
-    AC[AMPEL360e eWTW Aircraft] --> ATA32[ATA 32 — Landing Gear]
+    AC[[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Aircraft] --> ATA32[ATA 32 — Landing Gear]
     ATA32 --> SUB010[032-010 Main Landing Gear]
     ATA32 --> SUB020[032-020 Nose Landing Gear]
     ATA32 --> SUB030[032-030 Extension and Retraction]
@@ -348,16 +336,16 @@ Scheduled maintenance tasks: gear retraction system check (per AMM interval, TBD
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 032-00 | General | DMC-AMPEL360E-EWTW-032-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-10 | Main Landing Gear | DMC-AMPEL360E-EWTW-032-10 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-20 | Nose Landing Gear | DMC-AMPEL360E-EWTW-032-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-30 | Extension and Retraction | DMC-AMPEL360E-EWTW-032-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-40 | Wheels, Tyres, and Brakes | DMC-AMPEL360E-EWTW-032-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-50 | Steering | DMC-AMPEL360E-EWTW-032-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-60 | Position Indication and Warning | DMC-AMPEL360E-EWTW-032-60 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-70 | Shock Absorption and Structural Interfaces | DMC-AMPEL360E-EWTW-032-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-80 | Monitoring, Diagnostics, and Control Interfaces | DMC-AMPEL360E-EWTW-032-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-90 | S1000D CSDB Mapping and Traceability | DMC-AMPEL360E-EWTW-032-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-00 | General | DMC-<PROGRAMME>-<VARIANT>-032-00 | 040, 300, 400 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-10 | Main Landing Gear | DMC-<PROGRAMME>-<VARIANT>-032-10 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-20 | Nose Landing Gear | DMC-<PROGRAMME>-<VARIANT>-032-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-30 | Extension and Retraction | DMC-<PROGRAMME>-<VARIANT>-032-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-40 | Wheels, Tyres, and Brakes | DMC-<PROGRAMME>-<VARIANT>-032-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-50 | Steering | DMC-<PROGRAMME>-<VARIANT>-032-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-60 | Position Indication and Warning | DMC-<PROGRAMME>-<VARIANT>-032-60 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-70 | Shock Absorption and Structural Interfaces | DMC-<PROGRAMME>-<VARIANT>-032-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-80 | Monitoring, Diagnostics, and Control Interfaces | DMC-<PROGRAMME>-<VARIANT>-032-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-90 | S1000D CSDB Mapping and Traceability | DMC-<PROGRAMME>-<VARIANT>-032-90 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions
 
@@ -442,8 +430,8 @@ Scheduled maintenance tasks: gear retraction system check (per AMM interval, TBD
 | Autobrake | A BSCU function that automatically applies braking on touchdown to achieve a pre-selected deceleration rate, reducing pilot workload during landing and rejected take-off |
 | BSCU | Brake and Steering Control Unit — IMA-hosted software function that controls EMB actuators (braking) and the NWS actuator (steering); replaces the hydraulic brake control valve and rudder/aileron steering hydraulic unit |
 | CFRP | Carbon Fibre Reinforced Polymer — composite material used for the MLG beam structure, providing high stiffness-to-weight ratio |
-| Downlock | A mechanical device that locks the gear in the fully extended (down) position; on eWTW, downlocking may be achieved by EMA over-centre mechanism or dedicated latch |
-| EMA | Electromechanical Actuator — an actuator converting electrical power directly to mechanical force/displacement via an electric motor and gearbox/ball-screw mechanism; replaces hydraulic jacks in eWTW |
+| Downlock | A mechanical device that locks the gear in the fully extended (down) position; on [PROGRAMME-VARIANT], downlocking may be achieved by EMA over-centre mechanism or dedicated latch |
+| EMA | Electromechanical Actuator — an actuator converting electrical power directly to mechanical force/displacement via an electric motor and gearbox/ball-screw mechanism; replaces hydraulic jacks in [PROGRAMME-VARIANT] |
 | EMB | Electromechanical Brake — a braking device where clamping force is generated directly by an electric motor-driven mechanism, replacing hydraulic disc brake actuators |
 | Free-castor mode | Nose-wheel steering mode in which the NWS actuator is unpowered and the nose wheel rotates freely about the steering axis; entered on NWS actuator fault |
 | LGCIU | Landing Gear Control and Interface Unit — IMA-hosted software function managing gear extension/retraction sequencing, door sequencing, proximity switch processing, and position indication |
@@ -460,7 +448,7 @@ Scheduled maintenance tasks: gear retraction system check (per AMM interval, TBD
 | TPIS | Tyre Pressure Indication System — a wireless sensor system on each wheel hub transmitting tyre pressure and temperature data to a receiver for cockpit display and maintenance monitoring |
 | Tipping line | The line connecting the outermost ground contact points of the landing gear; the aircraft CG must remain within the tipping polygon during all ground operations per CS-25 requirements |
 | Torque link | A scissor-like linkage connecting the outer cylinder of the shock absorber to the inner cylinder; prevents relative rotation while allowing axial travel; provides shimmy damping stiffness |
-| Uplock | A mechanical hook or latch that holds the gear in the fully retracted (up) position in flight; on eWTW, released electrically by the LGCIU as part of the extension sequence |
+| Uplock | A mechanical hook or latch that holds the gear in the fully retracted (up) position in flight; on [PROGRAMME-VARIANT], released electrically by the LGCIU as part of the extension sequence |
 | WoW | Weight on Wheels — a proximity switch signal (per gear) indicating whether the gear is compressed (aircraft on ground) or extended (aircraft airborne); used by multiple aircraft systems as the primary ground/air mode selector |
 
 ---

@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0081-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-081-020-QUANTUM-ASSISTED-CHEMICAL-KINETICS
      ATLAS-081 (Quantum-Optimized Combustion Models) · Quantum-Assisted Chemical Kinetics
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum-Assisted Chemical Kinetics
@@ -46,62 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-020"
 
 ## §1 Purpose
 
-This document provides the complete technical specification for the **Quantum Chemical Kinetics
-Solver (QCKS)** module of the QOCMU. The QCKS is the core quantum computing component that
-computes accurate reaction rate coefficients and thermochemical properties for combustion
-species using quantum algorithms executing on the 12-qubit trapped-ion QPU.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum-Assisted Chemical Kinetics`.
 
-Specifically, this document:
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-1. **Documents the VQE implementation** on the QOCMU 12-qubit QPU using the UCCSD
-   (Unitary Coupled Cluster Singles and Doubles) ansatz for solving the electronic Schrödinger
-   equation for key combustion species and their transition states.
-
-2. **Defines the species and reaction databases** for each fuel type:
-   - Jet-A surrogate: 20 species / 48 reactions (condensed from LLNL JetSurF 2.0)
-   - GH₂: 12 species / 24 reactions (derived from GRI-Mech 3.0 with quantum-corrected rates)
-   - SAF extension: iso-paraffin and oxygenate pathways appended to Jet-A condensed set
-
-3. **Specifies Arrhenius parameter computation pipeline**: VQE-derived transition state
-   energies → Arrhenius A, Ea, n → condensed mechanism file → QRPO mechanism graph input.
-
-4. **Documents quantum phase estimation (QPE) integration** for high-precision energy
-   eigenvalue computation of thermal rate coefficients at engine-relevant temperatures.
-
-5. **Defines the classical fallback strategy**: GRI-Mech 3.0 (GH₂) and LLNL JetSurF 2.0
-   (Jet-A/SAF) stored on QOCMU NVMe; activated automatically on QPU unavailability.
-
-6. **Specifies QCKS convergence monitoring (BITE BT-081-02)**: VQE iteration count,
-   energy threshold check, and anomaly detection.
-
-This document is subordinate to ATLAS-081 General (081-000) and receives its scope
-constraints from the Combustion Modeling Baseline (081-010).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-081 (Quantum-Optimized Combustion Models) — Quantum-Assisted Chemical Kinetics |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; IEEE P2995; S1000D SNS 081-020-00 |
-| S1000D SNS | 081-020-00 |
-| Quantum algorithm | VQE (primary); QPE (supplementary) |
-| VQE ansatz | UCCSD (Unitary Coupled Cluster Singles and Doubles) |
-| QPU | 12-qubit trapped-ion; T1 ≥ 100 µs; single-qubit fidelity ≥ 99.5% |
-| Species count — Jet-A condensed | 20 species |
-| Reaction count — Jet-A condensed | 48 reactions |
-| Species count — GH₂ | 12 species |
-| Reaction count — GH₂ | 24 reactions |
-| Temperature range (Arrhenius) | 300–2 500 K |
-| VQE convergence threshold | 1×10⁻⁶ Hartree (= 2.63 kJ/mol) |
-| VQE maximum iterations | 200 |
-| QCKS latency per species | ≤ 100 ms |
-| Classical fallback | GRI-Mech 3.0 (GH₂); LLNL JetSurF 2.0 (Jet-A/SAF) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `081` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 Physical Basis: Quantum Chemistry for Combustion

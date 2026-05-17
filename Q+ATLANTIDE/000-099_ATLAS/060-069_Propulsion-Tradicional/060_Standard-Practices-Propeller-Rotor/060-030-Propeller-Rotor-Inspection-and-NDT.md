@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0060-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-060-030-PROPELLER-ROTOR-INSPECTION-AND-NDT
      ATA 60 · Propeller/Rotor Inspection and NDT
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propeller/Rotor Inspection and NDT
@@ -47,28 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-030"
 
 ## §1 Purpose
 
-This document defines the inspection programme and approved non-destructive testing (NDT) methods for propeller and rotor components on the AMPEL360E eWTW programme. Propeller and rotor structures are fatigue-critical; missed cracks or delaminations are accident causal factors. A rigorous, evidence-based inspection programme is the primary barrier against in-service structural failure.
+This document defines the agnostic ATLAS standard-level architecture context for `Propeller/Rotor Inspection and NDT`.
 
-The inspection programme distinguishes between scheduled inspections (integrated in the aircraft maintenance programme at defined flight-hour, cycle, or calendar intervals), unscheduled inspections (triggered by lightning strike, bird strike, foreign object damage, reported abnormal vibration, or hard landing), and special inspections (associated with particular maintenance events such as blade replacement or repair sign-off).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-NDT methods are qualified per NAS 410 / EN 4179 and include dye-penetrant (PT), eddy-current (ET), ultrasonic (UT), and thermographic (TT) techniques. Method selection is determined by material type, expected defect type, and accessibility.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 60-030 — Inspection and NDT |
-| NDT qualification standard | NAS 410 / EN 4179 Level II/III |
-| Visual inspection standard | AMPEL360E-VIS-001 |
-| Acceptance criteria | Component drawing and approved NDT procedure card |
-| Certification basis | EASA CS-25 Amendment 27+ / MSG-3 Revision 2020 |
-| S1000D SNS | 060-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `060` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The inspection programme covers four component classes:
@@ -84,7 +78,7 @@ The inspection programme covers four component classes:
 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
-| F-001 | Visual Inspection | Scheduled visual survey of all external surfaces against AMPEL360E-VIS-001 acceptance criteria. | Technician (Line authorisation) |
+| F-001 | Visual Inspection | Scheduled visual survey of all external surfaces against [PROGRAMME-AIRCRAFT]-VIS-001 acceptance criteria. | Technician (Line authorisation) |
 | F-002 | Composite Thermographic Inspection | Thermographic (flash or lock-in) inspection for delamination in CFRP blade skins and spar caps. | NDT Level II/III |
 | F-003 | Hub Eddy-Current Inspection | ET scanning of hub bore, shank bore, and retention flange for fatigue cracks. | NDT Level II/III |
 | F-004 | Dye-Penetrant Inspection | PT inspection of hub corner radii, bolt holes, and spinner metallic flanges. | NDT Level II/III |
@@ -194,7 +188,7 @@ flowchart TB
 |---|---|---|---|
 | Scheduled CFRP blade thermographic inspection | Per AMM interval (TBD FH/cycles) | Blade accessible (no removal required) | Thermographic camera, calibration plate |
 | Hub bore eddy-current inspection | Per AMM interval or blade removal | Hub removed to NDT bay | ET unit, hub-bore probe, reference standard |
-| Visual inspection (walk-around level) | Pre-flight / A-check | External access | Inspection torch, mirror, AMPEL360E-VIS-001 sheet |
+| Visual inspection (walk-around level) | Pre-flight / A-check | External access | Inspection torch, mirror, [PROGRAMME-AIRCRAFT]-VIS-001 sheet |
 | Post-FOD unscheduled inspection | Triggered by event | As required — line or hangar | Full NDT suite per damage type |
 | NDT reference standard re-certification | Annual | NDT lab | Calibration authority, traceability documentation |
 
@@ -258,7 +252,7 @@ flowchart TB
 |---|---|---|---|
 | OI-060-030-001 | Define thermographic inspection interval for CFRP blades based on fatigue spectrum analysis | Q-MECHANICS + Q-AIR | 2026-Q4 |
 | OI-060-030-002 | Qualify lock-in thermography method for CFRP blade spar cap inspection (alternative to flash IR) | NDT Level III / Q-MECHANICS | 2027-Q1 |
-| OI-060-030-003 | Determine ET crack detection requirement for titanium hub on AMPEL360E specific hub geometry | Q-MECHANICS NDT authority | 2026-Q3 |
+| OI-060-030-003 | Determine ET crack detection requirement for titanium hub on [PROGRAMME-AIRCRAFT] specific hub geometry | Q-MECHANICS NDT authority | 2026-Q3 |
 
 ---
 
@@ -291,4 +285,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

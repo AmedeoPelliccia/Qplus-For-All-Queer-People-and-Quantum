@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Wing Ice Protection"
 file_name: "030-010-Wing-Ice-Protection.md"
 sns_reference: "030-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,21 +87,23 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
   - "WIPS"
   - "wing ice protection"
   - "heating mat"
   - "cyclic de-icing"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-010 — Wing Ice Protection
-### AMPEL360e eWTW · ATA 30-10 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-10 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,28 +115,23 @@ All hyperlinks in this document are **relative links** unless they point to a pu
 
 ## §1 Purpose
 
-This document defines the Wing Ice Protection System (WIPS) for the **AMPEL360e eWTW** — a full-electric aircraft in which all wing leading-edge anti-icing is accomplished exclusively by **electrothermal heating mats** bonded within the composite wing leading-edge panels. There is no engine bleed-air system; the WIPS draws all thermal energy from the High-Voltage DC (HVDC) electrical buses managed by ATA 24 (Electrical Power). This document specifies the zone architecture, power distribution, cyclic de-icing sequencing, structural integration approach, thermal runaway protection logic, and the regulatory compliance basis for wing ice protection under CS-25 Appendix C and Appendix O.
+This document defines the agnostic ATLAS standard-level architecture context for `030-010 — Wing Ice Protection`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Sub-chapter | 30-10 — Wing Ice Protection |
-| Aircraft Series | eWTW-100, eWTW-200 |
-| Wing Configuration | Tube-and-wing, composite primary structure with CFRP leading-edge panels |
-| WIPS Architecture | Electrothermal heating mats — cyclic de-icing / continuous anti-ice modes |
-| Power Source | HVDC Bus A and Bus B (voltage TBD: 270 V DC or 540 V DC) |
-| Certification Basis | CS-25 Appendix C; CS-25 Appendix O (SLD); FAR 25.1419 |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The AMPEL360e eWTW wing leading edge is constructed from carbon fibre reinforced polymer (CFRP) panels that extend from the wing root to the wingtip, including the winglet leading edge. Each panel contains one or more electrothermal heating mat elements laminated within the composite layup or adhesively bonded to the inner face of the leading-edge skin. The heating mats consist of etched-foil resistive elements embedded in a polyimide or PTFE film substrate, rated for continuous operation at the local HVDC supply voltage. The mat design must satisfy the minimum power density (W/cm²) required to maintain the leading-edge skin temperature above 0 °C across the stagnation line under the worst-case Appendix C icing condition, accounting for convective heat loss at the maximum design airspeed.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] wing leading edge is constructed from carbon fibre reinforced polymer (CFRP) panels that extend from the wing root to the wingtip, including the winglet leading edge. Each panel contains one or more electrothermal heating mat elements laminated within the composite layup or adhesively bonded to the inner face of the leading-edge skin. The heating mats consist of etched-foil resistive elements embedded in a polyimide or PTFE film substrate, rated for continuous operation at the local HVDC supply voltage. The mat design must satisfy the minimum power density (W/cm²) required to maintain the leading-edge skin temperature above 0 °C across the stagnation line under the worst-case Appendix C icing condition, accounting for convective heat loss at the maximum design airspeed.
 
 The WIPS operates in two primary thermal modes: **cyclic de-icing mode** and **continuous anti-ice mode**. In cyclic de-icing mode — the default energy-efficient mode — the WIPS controller energises each zone in sequence for a prescribed ON-time, allowing a thin ice layer to accrete on the leading edge before the heater melts the ice bond and aerodynamic forces shed the ice slab away from the surface. The cycle time and duty cycle for each zone are determined by the thermal mass of the leading-edge skin, the heater power density, the ambient temperature, and the liquid water content (LWC) derived from the ice detector and TAT inputs. In continuous anti-ice mode — selectable manually or triggered by specific icing conditions such as SLD detection — all zones are energised simultaneously at full power to prevent any ice formation. This mode has a higher electrical power demand and is managed by the IPMC in coordination with ATA 24 power management to ensure the electrical generation budget is not exceeded.
 
@@ -309,12 +306,12 @@ The WIPS is designed to minimise unscheduled maintenance while providing clear f
 
 | Info Code | Title | DMC | Status |
 |---|---|---|---|
-| 040 | System Description — Wing Ice Protection | DMC-AMPEL360E-EWTW-030-10-040-A | Draft scaffold |
-| 300 | Zone Inspection — Heating Mat Thermographic Check | DMC-AMPEL360E-EWTW-030-10-300-A | Not started |
-| 400 | Fault Isolation — WIPS Zone Open/Short Circuit | DMC-AMPEL360E-EWTW-030-10-400-A | Not started |
-| 520 | Remove — Leading-Edge Panel with Heating Mat | DMC-AMPEL360E-EWTW-030-10-520-A | Not started |
-| 720 | Install — Leading-Edge Panel with Heating Mat | DMC-AMPEL360E-EWTW-030-10-720-A | Not started |
-| 941 | Illustrated Parts Data — WIPS Heating Mat Zones | DMC-AMPEL360E-EWTW-030-10-941-A | Not started |
+| 040 | System Description — Wing Ice Protection | DMC-<PROGRAMME>-<VARIANT>-030-10-040-A | Draft scaffold |
+| 300 | Zone Inspection — Heating Mat Thermographic Check | DMC-<PROGRAMME>-<VARIANT>-030-10-300-A | Not started |
+| 400 | Fault Isolation — WIPS Zone Open/Short Circuit | DMC-<PROGRAMME>-<VARIANT>-030-10-400-A | Not started |
+| 520 | Remove — Leading-Edge Panel with Heating Mat | DMC-<PROGRAMME>-<VARIANT>-030-10-520-A | Not started |
+| 720 | Install — Leading-Edge Panel with Heating Mat | DMC-<PROGRAMME>-<VARIANT>-030-10-720-A | Not started |
+| 941 | Illustrated Parts Data — WIPS Heating Mat Zones | DMC-<PROGRAMME>-<VARIANT>-030-10-941-A | Not started |
 
 ---
 
@@ -373,7 +370,7 @@ WIPS BITE data retained in CMC non-volatile memory: zone ON/OFF cycle log, tempe
 
 | Term | Acronym | Definition |
 |---|---|---|
-| Wing Ice Protection System | WIPS | The electrothermal heating system applied to all wing leading-edge zones in the eWTW to prevent or remove ice accretion |
+| Wing Ice Protection System | WIPS | The electrothermal heating system applied to all wing leading-edge zones in the [PROGRAMME-VARIANT] to prevent or remove ice accretion |
 | Heating Mat | — | A thin flexible resistive heating element (etched foil on polyimide/PTFE substrate) bonded within or to the inner face of the CFRP wing leading-edge panel |
 | Cyclic De-Icing | — | A mode in which heating zones are energised sequentially; ice accretes thinly, the heater melts the ice bond, and aerodynamic forces shed the ice slab |
 | Electrothermal Element | — | The individual resistive conductor track within the heating mat that converts electrical energy to heat |
@@ -393,7 +390,7 @@ WIPS BITE data retained in CMC non-volatile memory: zone ON/OFF cycle log, tempe
 | CIT-002 | CS-25 Appendix O — Supercooled Large Droplet Icing Conditions | Amendment 27 | SLD icing certification envelope; extended zone coverage requirements for WIPS |
 | CIT-003 | FAR 25.1419 — Ice Protection | Amendment 25-147 | US certification requirement; WIPS automatic activation and redundancy requirements |
 | CIT-004 | RTCA DO-160G — Environmental Conditions and Test Procedures for Airborne Equipment | Edition G | Environmental qualification of WIPS controller LRU |
-| CIT-005 | AMPEL360e eWTW WIPS System Specification | TBD — programme document | Programme-level power density, zone layout, and certification flight test requirements for WIPS |
+| CIT-005 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] WIPS System Specification | TBD — programme document | Programme-level power density, zone layout, and certification flight test requirements for WIPS |
 
 ---
 

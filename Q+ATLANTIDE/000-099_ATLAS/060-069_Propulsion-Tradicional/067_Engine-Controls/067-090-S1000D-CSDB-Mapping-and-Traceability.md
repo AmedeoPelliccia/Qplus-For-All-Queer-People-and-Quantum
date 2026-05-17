@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0067-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # S1000D / CSDB Mapping and Traceability
@@ -38,24 +40,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-090"
 ---
 ## §1 Purpose
 
-This document maps the ATLAS ATA 67 subsubject structure to S1000D Data Module Codes (DMCs) and defines the Data Module Requirement List (DMRL) and BREX constraints for the AMPEL360E eWTW Engine Controls CSDB. The ATA 67 DMRL contains **32 data modules**. DMC pattern: `AMPEL360E-EWTW-067-{NNN}-00A-EN-US`. BREX document: `AMPEL360E-BREX-067-v1`.
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D / CSDB Mapping and Traceability`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 67-090 — S1000D / CSDB Mapping and Traceability |
-| Certification basis | S1000D Issue 5.0 |
-| S1000D SNS | 067-090-00 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `067` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description ![DRAFT]
 
-**BREX AMPEL360E-BREX-067-v1 enforces three constraints:**
+**BREX [PROGRAMME-AIRCRAFT]-BREX-067-v1 enforces three constraints:**
 
 1. **DAL A software citation rule:** All procedural DMs (DM-100) that involve FADEC software actions (SWPN load, EDF load, BITE test) must cite the applicable DO-178C stage of involvement (SOI) reference. This prevents maintenance DMs from being issued without traceability to the approved software lifecycle.
 
@@ -82,7 +85,7 @@ This document maps the ATLAS ATA 67 subsubject structure to S1000D Data Module C
 ```mermaid
 flowchart LR
     ATLAS_067[ATLAS ATA 67 Subsubjects 000-090] --> DMRL_67[DMRL 32 DMs]
-    DMRL_67 --> CSDB[AMPEL360E CSDB]
+    DMRL_67 --> CSDB[[PROGRAMME-AIRCRAFT] CSDB]
     CSDB --> BREX_67[BREX-067-v1 Validation]
     BREX_67 --> DM_OK[DM Approved for Publication]
     DM_OK --> IETP[IETP / AMM Publication]
@@ -95,7 +98,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    DMC_67["DMC: AMPEL360E-EWTW-067-NNN-00A-EN-US"] --> DM_040[DM-040 Descriptive]
+    DMC_67["DMC: [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-067-NNN-00A-EN-US"] --> DM_040[DM-040 Descriptive]
     DMC_67 --> DM_100[DM-100 Procedural]
     DMC_67 --> DM_300[DM-300 Inspection]
     DMC_67 --> DM_520[DM-520 Repair]
@@ -191,7 +194,7 @@ flowchart TB
 | S1000D Issue 5.0 | S1000D.org | DM authoring |
 | ATA iSpec 2200 Ch 67 | ATA | SNS reference |
 | EASA CS-25 §25.1529 | EASA | ICA driving DM content |
-| AMPEL360E GP-CSDB-001 | Q-DATAGOV | CSDB governance |
+| [PROGRAMME-AIRCRAFT] GP-CSDB-001 | Q-DATAGOV | CSDB governance |
 | DO-178C | RTCA | BREX Rule 1 SOI reference |
 
 ---
@@ -261,4 +264,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

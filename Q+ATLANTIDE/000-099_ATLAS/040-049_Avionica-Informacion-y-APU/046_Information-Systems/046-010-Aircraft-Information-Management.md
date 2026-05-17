@@ -31,6 +31,8 @@ ata_reference: "ATA 46.010 — Aircraft Information Management"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 046 · 010 — Aircraft Information Management
@@ -43,13 +45,13 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-ATA 46.010 — Aircraft Information Management (AIM) defines the core data aggregation, storage, and distribution architecture for the AMPEL360E eWTW all-electric aircraft. The AIM function is implemented on dual redundant AIM-A and AIM-B servers operating in active/hot-standby configuration on the AFDX (ARINC 664 P7) backbone.
+ATA 46.010 — Aircraft Information Management (AIM) defines the core data aggregation, storage, and distribution architecture for the programme-defined aircraft type all-electric aircraft. The AIM function is implemented on dual redundant AIM-A and AIM-B servers operating in active/hot-standby configuration on the AFDX (ARINC 664 P7) backbone.
 
 Key governance areas:
 - Dual AIM server architecture (AIM-A/B): hardware specification, software DAL, redundancy strategy.
 - QAR data collection: 512 parameters at 8 Hz, NVMe storage, post-flight download protocol.
 - NAS (Network Attached Storage) for flight operations data: OFP history, NavDB versions, crew documents.
-- Aircraft state data consolidation: battery SoC/SoH (eWTW), fuel equivalent energy, weight, CG, OOOI timestamps.
+- Aircraft state data consolidation: battery SoC/SoH ([PROGRAMME-VARIANT]), fuel equivalent energy, weight, CG, OOOI timestamps.
 - Interface to IMA (ATA 42), FMC, ADIRU, CMS (ATA 45), and EFB.
 - Primary Q-Division: Q-DATAGOV; Support: Q-AIR, Q-SPACE, Q-HPC.
 
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 46.010 — Aircraft Information Management |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL D |
 | Applicable Standards | ARINC 664 P7; ARINC 429; ARINC 849; DO-160G; S1000D Issue 5.0 |
@@ -72,7 +74,7 @@ Key governance areas:
 
 The AIM function is the core data hub of the AIDMS. Dual AIM servers (AIM-A active, AIM-B hot standby) run DO-178C DAL D software in ARINC 653 partitions. Each partition handles a dedicated data function: QAR acquisition, NAS management, state data consolidation, and API services for downstream consumers (OIS, EFB, IETP).
 
-eWTW-specific data managed by AIM:
+[PROGRAMME-VARIANT]-specific data managed by AIM:
 - **Battery state data**: SoC (0–100%) and SoH (0–100%) consolidated from ATA 24 Battery Management System via AFDX at 1 Hz, stored in NAS for trend analysis.
 - **Energy equivalent records**: Since there is no fuel flow (no combustion engine), AIM records energy consumption in kWh/km as the primary efficiency metric, replacing traditional fuel flow (kg/h) fields in QAR parameter set.
 - **OOOI timestamps**: Automatically generated from LGCIU (gear up/down) and parking brake discrete; stored in NAS and uplinked via ACARS.
@@ -145,7 +147,7 @@ graph LR
 | OIS Server | Operational Information System | Ethernet 1GbE / REST API | Tx |
 | QAR Download | Ground service panel (USB-C) | USB-C 3.2 Gen 2×2 (10 Gbit/s) | Tx |
 | Gatelink Router | Ground connectivity (ARINC 631) | IEEE 802.11ax / TLS 1.3 | Bidirectional |
-| ATA 24 BMS | Battery Management System (eWTW SoC/SoH) | AFDX parameter VL | Rx |
+| ATA 24 BMS | Battery Management System ([PROGRAMME-VARIANT] SoC/SoH) | AFDX parameter VL | Rx |
 
 ---
 
@@ -279,8 +281,8 @@ stateDiagram-v2
 
 | Term | Acronym | Definition |
 |------|---------|------------|
-| Aircraft Information Management | AIM | The centralised on-board data aggregation, storage, and API service function running on dual AIM-A/B servers in the AMPEL360E eWTW |
-| Aircraft Information and Data Management System | AIDMS | The top-level integrated information system encompassing all five ATA 46 functional domains for the AMPEL360E eWTW |
+| Aircraft Information Management | AIM | The centralised on-board data aggregation, storage, and API service function running on dual AIM-A/B servers in the programme-defined aircraft type |
+| Aircraft Information and Data Management System | AIDMS | The top-level integrated information system encompassing all five ATA 46 functional domains for the programme-defined aircraft type |
 | Avionics Full-Duplex Switched Ethernet | AFDX | ARINC 664 Part 7 deterministic network providing virtual-link-based data distribution between avionics LRUs |
 | Quick Access Recorder | QAR | An on-board flight data recorder variant storing 512 parameters at up to 8 Hz on removable NVMe medium for post-flight airline analysis |
 | Operational Information System | OIS | The on-board server providing real-time performance computation, weight and balance, NOTAM integration, and weather data |
@@ -357,7 +359,7 @@ stateDiagram-v2
 | [R3] | ATLAS 045 — Central Maintenance System | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R4] | ATLAS 046-020 — Operational Data Systems | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | [R5] | ATLAS 046-090 — S1000D CSDB Mapping and Traceability | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| [R6] | AMPEL360E eWTW ATA 24 Battery Management System Architecture | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| [R6] | programme-defined aircraft type ATA 24 Battery Management System Architecture | TBD | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -377,4 +379,4 @@ This document is classified `to-be-reviewed-by-system-expert`. The review proces
 
 | Version | Date | Author | Description |
 |---------|------|--------|-------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated with AIM-specific content for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / Copilot | Initial baseline — all 22 sections populated with AIM-specific content for programme-defined aircraft type |

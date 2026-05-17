@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0088-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-088-010-BEYOND-2040-SCOPE-AND-CONTROLLED-RESERVATION
      ATLAS-088 (Beyond-2040 Concepts Reserved) · Beyond-2040 Scope and Controlled Reservation
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Beyond-2040 Scope and Controlled Reservation
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-010"
 
 ## §1 Purpose
 
-ATLAS subsubject 088-010 formally defines the scope boundaries of the Beyond-2040 Concepts Reserved (B2CR) namespace, the controlled-reservation mechanism governing which propulsion concepts are admitted, and the lifecycle conditions under which a concept exits reserved status — either by promotion to an active ATLAS subsection or by rejection with documented rationale.
+This document defines the agnostic ATLAS standard-level architecture context for `Beyond-2040 Scope and Controlled Reservation`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Scope Boundary Definition
 
 ### 2.1 In-Scope for ATLAS-088

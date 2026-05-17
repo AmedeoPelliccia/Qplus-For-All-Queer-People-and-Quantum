@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # S1000D CSDB Mapping and Traceability
@@ -33,15 +35,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-090"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document provides the S1000D Data Module Code (DMC) mapping for all Battery Energy Storage (072) documents, defining the Common Source Database (CSDB) allocation, Business Rules Exchange (BREX) reference, and traceability between the ATLAS-1000 subsubject files and the S1000D publication set for the AMPEL360E eWTW.
+
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D CSDB Mapping and Traceability`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
+
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-The AMPEL360E eWTW technical publications are structured under S1000D Issue 5.0. The Battery Energy Storage subsystem (subsystem code `0072`) maps to the SNS (Standard Numbering System) range `0072-000` through `0072-090`. Data modules are allocated within the CSDB under CAGE code `AMPEL` and model identifier `360E-EWTW`.
+The programme-defined aircraft type technical publications are structured under S1000D Issue 5.0. The Battery Energy Storage subsystem (subsystem code `0072`) maps to the SNS (Standard Numbering System) range `0072-000` through `0072-090`. Data modules are allocated within the CSDB under CAGE code `<PROGRAMME-CAGE>` and model identifier `<PROGRAMME-MODEL>`.
 
 The BREX data module `BREX-072-v1` governs the business rules applicable to all 072-series data modules, including applicability management, graphic standards, warning/caution format, and revision control. Data module requirements lists (DMRL) for 072 cover 30 planned data modules across the AMM (Aircraft Maintenance Manual), CMM (Component Maintenance Manual), and FIM (Fault Isolation Manual) publication types.
 
@@ -50,59 +62,59 @@ All ATLAS-1000 subsubject files (072-000 through 072-090) serve as source conten
 ## §4 S1000D DMC Allocation Table
 | ATLAS File | SNS | DMC | Info Code | Title | Pub Type |
 |---|---|---|---|---|---|
-| 072-000 | 0072-000 | DMC-AMPEL360E-EWTW-0072-000-A-00A-A | 000 | Battery Energy Storage — General | AMM |
-| 072-010 | 0072-010 | DMC-AMPEL360E-EWTW-0072-010-A-00A-A | 000 | Battery Cell and Module Design | AMM |
-| 072-020 | 0072-020 | DMC-AMPEL360E-EWTW-0072-020-A-00A-A | 000 | Battery Pack Architecture | AMM |
-| 072-030 | 0072-030 | DMC-AMPEL360E-EWTW-0072-030-A-00A-A | 000 | Battery Management System | AMM |
-| 072-040 | 0072-040 | DMC-AMPEL360E-EWTW-0072-040-A-00A-A | 000 | Battery Thermal Management | AMM |
-| 072-050 | 0072-050 | DMC-AMPEL360E-EWTW-0072-050-A-00A-A | 000 | HV Contactors and Protection | AMM |
-| 072-060 | 0072-060 | DMC-AMPEL360E-EWTW-0072-060-A-00A-A | 000 | Battery State Estimation | AMM |
-| 072-070 | 0072-070 | DMC-AMPEL360E-EWTW-0072-070-A-00A-A | 000 | Battery Safety and TR Protection | AMM |
-| 072-080 | 0072-080 | DMC-AMPEL360E-EWTW-0072-080-A-00A-A | 000 | Battery Charging and Ground Support | AMM |
-| 072-090 | 0072-090 | DMC-AMPEL360E-EWTW-0072-090-A-00A-A | 000 | S1000D CSDB Mapping | AMM |
+| 072-000 | 0072-000 | DMC-<PROGRAMME>-<VARIANT>-0072-000-A-00A-A | 000 | Battery Energy Storage — General | AMM |
+| 072-010 | 0072-010 | DMC-<PROGRAMME>-<VARIANT>-0072-010-A-00A-A | 000 | Battery Cell and Module Design | AMM |
+| 072-020 | 0072-020 | DMC-<PROGRAMME>-<VARIANT>-0072-020-A-00A-A | 000 | Battery Pack Architecture | AMM |
+| 072-030 | 0072-030 | DMC-<PROGRAMME>-<VARIANT>-0072-030-A-00A-A | 000 | Battery Management System | AMM |
+| 072-040 | 0072-040 | DMC-<PROGRAMME>-<VARIANT>-0072-040-A-00A-A | 000 | Battery Thermal Management | AMM |
+| 072-050 | 0072-050 | DMC-<PROGRAMME>-<VARIANT>-0072-050-A-00A-A | 000 | HV Contactors and Protection | AMM |
+| 072-060 | 0072-060 | DMC-<PROGRAMME>-<VARIANT>-0072-060-A-00A-A | 000 | Battery State Estimation | AMM |
+| 072-070 | 0072-070 | DMC-<PROGRAMME>-<VARIANT>-0072-070-A-00A-A | 000 | Battery Safety and TR Protection | AMM |
+| 072-080 | 0072-080 | DMC-<PROGRAMME>-<VARIANT>-0072-080-A-00A-A | 000 | Battery Charging and Ground Support | AMM |
+| 072-090 | 0072-090 | DMC-<PROGRAMME>-<VARIANT>-0072-090-A-00A-A | 000 | S1000D CSDB Mapping | AMM |
 
 ## §5 DMRL Summary
 | DM Ref | DMC | Info Code | Pub Type | Status |
 |---|---|---|---|---|
-| DM-072-AMM-001 | DMC-AMPEL360E-EWTW-0072-000-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-002 | DMC-AMPEL360E-EWTW-0072-010-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-003 | DMC-AMPEL360E-EWTW-0072-020-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-004 | DMC-AMPEL360E-EWTW-0072-030-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-005 | DMC-AMPEL360E-EWTW-0072-040-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-006 | DMC-AMPEL360E-EWTW-0072-050-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-007 | DMC-AMPEL360E-EWTW-0072-060-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-008 | DMC-AMPEL360E-EWTW-0072-070-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-009 | DMC-AMPEL360E-EWTW-0072-080-A-00A-A | 000 | AMM | Planned |
-| DM-072-AMM-010 | DMC-AMPEL360E-EWTW-0072-090-A-00A-A | 000 | AMM | Planned |
-| DM-072-CMM-001 | DMC-AMPEL360E-EWTW-0072-010-C-00A-A | 000 | CMM | Planned |
-| DM-072-CMM-002 | DMC-AMPEL360E-EWTW-0072-030-C-00A-A | 000 | CMM | Planned |
-| DM-072-CMM-003 | DMC-AMPEL360E-EWTW-0072-040-C-00A-A | 000 | CMM | Planned |
-| DM-072-CMM-004 | DMC-AMPEL360E-EWTW-0072-050-C-00A-A | 000 | CMM | Planned |
-| DM-072-CMM-005 | DMC-AMPEL360E-EWTW-0072-060-C-00A-A | 000 | CMM | Planned |
-| DM-072-FIM-001 | DMC-AMPEL360E-EWTW-0072-030-F-00A-A | 000 | FIM | Planned |
-| DM-072-FIM-002 | DMC-AMPEL360E-EWTW-0072-040-F-00A-A | 000 | FIM | Planned |
-| DM-072-FIM-003 | DMC-AMPEL360E-EWTW-0072-050-F-00A-A | 000 | FIM | Planned |
-| DM-072-FIM-004 | DMC-AMPEL360E-EWTW-0072-070-F-00A-A | 000 | FIM | Planned |
-| DM-072-IPD-001 | DMC-AMPEL360E-EWTW-0072-000-P-00A-A | 000 | IPD | Planned |
-| DM-072-IPD-002 | DMC-AMPEL360E-EWTW-0072-010-P-00A-A | 000 | IPD | Planned |
-| DM-072-IPD-003 | DMC-AMPEL360E-EWTW-0072-020-P-00A-A | 000 | IPD | Planned |
-| DM-072-IPD-004 | DMC-AMPEL360E-EWTW-0072-030-P-00A-A | 000 | IPD | Planned |
-| DM-072-IPD-005 | DMC-AMPEL360E-EWTW-0072-040-P-00A-A | 000 | IPD | Planned |
-| DM-072-IPD-006 | DMC-AMPEL360E-EWTW-0072-050-P-00A-A | 000 | IPD | Planned |
-| DM-072-IPD-007 | DMC-AMPEL360E-EWTW-0072-060-P-00A-A | 000 | IPD | Planned |
-| DM-072-IPD-008 | DMC-AMPEL360E-EWTW-0072-070-P-00A-A | 000 | IPD | Planned |
-| DM-072-IPD-009 | DMC-AMPEL360E-EWTW-0072-080-P-00A-A | 000 | IPD | Planned |
-| DM-072-CIR-001 | DMC-AMPEL360E-EWTW-0072-000-W-00A-A | 000 | WDM | Planned |
-| DM-072-CIR-002 | DMC-AMPEL360E-EWTW-0072-050-W-00A-A | 000 | WDM | Planned |
+| DM-072-AMM-001 | DMC-<PROGRAMME>-<VARIANT>-0072-000-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-002 | DMC-<PROGRAMME>-<VARIANT>-0072-010-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-003 | DMC-<PROGRAMME>-<VARIANT>-0072-020-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-004 | DMC-<PROGRAMME>-<VARIANT>-0072-030-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-005 | DMC-<PROGRAMME>-<VARIANT>-0072-040-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-006 | DMC-<PROGRAMME>-<VARIANT>-0072-050-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-007 | DMC-<PROGRAMME>-<VARIANT>-0072-060-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-008 | DMC-<PROGRAMME>-<VARIANT>-0072-070-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-009 | DMC-<PROGRAMME>-<VARIANT>-0072-080-A-00A-A | 000 | AMM | Planned |
+| DM-072-AMM-010 | DMC-<PROGRAMME>-<VARIANT>-0072-090-A-00A-A | 000 | AMM | Planned |
+| DM-072-CMM-001 | DMC-<PROGRAMME>-<VARIANT>-0072-010-C-00A-A | 000 | CMM | Planned |
+| DM-072-CMM-002 | DMC-<PROGRAMME>-<VARIANT>-0072-030-C-00A-A | 000 | CMM | Planned |
+| DM-072-CMM-003 | DMC-<PROGRAMME>-<VARIANT>-0072-040-C-00A-A | 000 | CMM | Planned |
+| DM-072-CMM-004 | DMC-<PROGRAMME>-<VARIANT>-0072-050-C-00A-A | 000 | CMM | Planned |
+| DM-072-CMM-005 | DMC-<PROGRAMME>-<VARIANT>-0072-060-C-00A-A | 000 | CMM | Planned |
+| DM-072-FIM-001 | DMC-<PROGRAMME>-<VARIANT>-0072-030-F-00A-A | 000 | FIM | Planned |
+| DM-072-FIM-002 | DMC-<PROGRAMME>-<VARIANT>-0072-040-F-00A-A | 000 | FIM | Planned |
+| DM-072-FIM-003 | DMC-<PROGRAMME>-<VARIANT>-0072-050-F-00A-A | 000 | FIM | Planned |
+| DM-072-FIM-004 | DMC-<PROGRAMME>-<VARIANT>-0072-070-F-00A-A | 000 | FIM | Planned |
+| DM-072-IPD-001 | DMC-<PROGRAMME>-<VARIANT>-0072-000-P-00A-A | 000 | IPD | Planned |
+| DM-072-IPD-002 | DMC-<PROGRAMME>-<VARIANT>-0072-010-P-00A-A | 000 | IPD | Planned |
+| DM-072-IPD-003 | DMC-<PROGRAMME>-<VARIANT>-0072-020-P-00A-A | 000 | IPD | Planned |
+| DM-072-IPD-004 | DMC-<PROGRAMME>-<VARIANT>-0072-030-P-00A-A | 000 | IPD | Planned |
+| DM-072-IPD-005 | DMC-<PROGRAMME>-<VARIANT>-0072-040-P-00A-A | 000 | IPD | Planned |
+| DM-072-IPD-006 | DMC-<PROGRAMME>-<VARIANT>-0072-050-P-00A-A | 000 | IPD | Planned |
+| DM-072-IPD-007 | DMC-<PROGRAMME>-<VARIANT>-0072-060-P-00A-A | 000 | IPD | Planned |
+| DM-072-IPD-008 | DMC-<PROGRAMME>-<VARIANT>-0072-070-P-00A-A | 000 | IPD | Planned |
+| DM-072-IPD-009 | DMC-<PROGRAMME>-<VARIANT>-0072-080-P-00A-A | 000 | IPD | Planned |
+| DM-072-CIR-001 | DMC-<PROGRAMME>-<VARIANT>-0072-000-W-00A-A | 000 | WDM | Planned |
+| DM-072-CIR-002 | DMC-<PROGRAMME>-<VARIANT>-0072-050-W-00A-A | 000 | WDM | Planned |
 
 **Total 072 DMRL: 30 data modules**
 
 ## §6 BREX Reference
 | BREX ID | Version | Applicable DMs | Status |
 |---|---|---|---|
-| BREX-072-v1 | 1.0 | All DMC-AMPEL360E-EWTW-0072-* | Planned |
+| BREX-072-v1 | 1.0 | All DMC-<PROGRAMME>-<VARIANT>-0072-* | Planned |
 
-BREX-072-v1 inherits from the aircraft-level BREX `BREX-AMPEL360E-EWTW-MASTER-v1` and adds subsystem-specific rules for:
+BREX-072-v1 inherits from the aircraft-level BREX `BREX-[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-MASTER-v1` and adds subsystem-specific rules for:
 - Battery-specific warning/caution format (HV, H₂, cryogenic/thermal hazards)
 - Applicability management for dual-pack (L/R) effectivity
 - Graphic standards for HVDC schematic symbols
@@ -111,7 +123,7 @@ BREX-072-v1 inherits from the aircraft-level BREX `BREX-AMPEL360E-EWTW-MASTER-v1
 ## §7 Traceability Matrix
 | ATLAS File | S1000D DMC | LRUs Covered | Open Issues |
 |---|---|---|---|
-| 072-000 | DMC-...-0072-000 | BPA-NMC-250-L/R, BMU × 2, MSD × 2, TMM × 2 | OI-072-000-001/002 |
+| 072-000 | DMC-...-0072-000 | [BATTERY-PACK-PN-L]/R, BMU × 2, MSD × 2, TMM × 2 | OI-072-000-001/002 |
 | 072-010 | DMC-...-0072-010 | CELL-NMC811-100AH × 1344, MOD × 56, CSC × 56 | OI-072-010-001/002 |
 | 072-020 | DMC-...-0072-020 | TRAY × 2, Busbars × 54, Contactors × 4, MSD × 2 | OI-072-020-001/002 |
 | 072-030 | DMC-...-0072-030 | BMU-A, BMU-B, CCDL harness | OI-072-030-001/002 |
@@ -127,7 +139,7 @@ BREX-072-v1 inherits from the aircraft-level BREX `BREX-AMPEL360E-EWTW-MASTER-v1
 |---|---|
 | S1000D Issue | 5.0 |
 | CAGE Code | AMPEL |
-| Model Identifier | 360E-EWTW |
+| Model Identifier | 360E-[PROGRAMME-VARIANT] |
 | SNS Range (072) | 0072-000 to 0072-090 |
 | BREX | BREX-072-v1 |
 | CSDB instance | Q+ATLANTIDE CSDB (planned) |

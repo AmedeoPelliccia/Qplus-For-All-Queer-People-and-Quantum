@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Oxygen Monitoring, Diagnostics, and Control Interfaces"
 file_name: "035-080-Oxygen-Monitoring-Diagnostics-and-Control-Interfaces.md"
 sns_reference: "035-80"
-dmc_prefix: "DMC-AMPEL360E-EWTW-035-80"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-035-80"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 35"
   - "Oxygen"
@@ -92,10 +92,12 @@ keywords:
   - "ATA 26"
   - "ATA 31"
   - "ATA 45"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 035-080 — Oxygen Monitoring, Diagnostics, and Control Interfaces
-### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -107,33 +109,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Oxygen Monitoring, Diagnostics, and Control Interfaces (ATA 35-80) for the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It defines the monitoring architecture for the crew oxygen system (pressure, quantity, valve state) and the passenger oxygen system (COG deployment state), the diagnostic interface to the CMC (Central Maintenance Computer — ATA 45), the ECAM O₂ systems page details, cockpit CAS alerts, inter-system control interfaces (ATA 21 CPCS, ATA 23 intercommunication, ATA 26 fire), and ground maintenance test procedures.
+This document defines the agnostic ATLAS standard-level architecture context for `035-080 — Oxygen Monitoring, Diagnostics, and Control Interfaces`.
 
-This chapter consolidates monitoring and diagnostic functions that span the ATA 35 subsystem boundary. Physical measurement devices and pressure indication are described in 035-060; this chapter describes the higher-level monitoring logic, inter-system data exchange, ground maintenance tests, and fault isolation strategy.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 035-80 — Oxygen Monitoring, Diagnostics, and Control Interfaces |
-| CMC Interface | ATA 45 — fault codes, pressure history, valve state, event logs |
-| ECAM O₂ Page | Crew qty %; isolation valve state; COG zone map; transducer status |
-| CAS Alerts | Amber "O2 LO PR CREW"; Red "O2 CREW OFF"; transducer disagree advisory |
-| ATA 21 CPCS Interface | Cabin altitude > 14 000 ft → COG auto-deploy trigger |
-| ATA 23 Interface | PTT interlock during COG deployment (TBD) |
-| ATA 26 Interface | Fire signal → crew O₂ isolation valve assessment (TBD) |
-| ATA 31 Interface | ECAM O₂ synoptic page; CAS bus |
-| ATA 45 Interface | CMC — fault log; maintenance tests; pressure history |
-| Maintenance Tests | Leak test; isolation valve test; CAS alert test; transducer calibration check |
-| S1000D SNS | 035-80 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 The oxygen monitoring and diagnostics layer collects data from the ATA 35 sensors and controllers, processes them through the FWCU, and distributes status information to the ECAM (for crew situational awareness), to the CMC (for maintenance fault logging and ground testing), and to interfacing systems (ATA 21, ATA 23, ATA 26, ATA 31).
@@ -333,7 +322,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 035-80 | Oxygen Monitoring, Diagnostics, and Control Interfaces | DMC-AMPEL360E-EWTW-035-80 | 040, 300, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-80 | Oxygen Monitoring, Diagnostics, and Control Interfaces | DMC-<PROGRAMME>-<VARIANT>-035-80 | 040, 300, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Data Module Breakdown — 035-80
 

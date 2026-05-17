@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0077-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0077-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-077-010-HYDROGEN-FEED-LINES-AND-MANIFOLDS
      ATA 28 (GH₂/LH₂ Distribution) · Hydrogen Feed Lines and Manifolds
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Hydrogen Feed Lines and Manifolds
@@ -46,21 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0077-010"
 
 ## §1 Purpose
 
-This document defines the physical architecture, material specification, routing, installation, and structural provisions for the hydrogen feed lines and distribution manifolds of the AMPEL360E eWTW Hydrogen Distribution and Conditioning (HDC) system. Feed lines span from the LH₂ tank outlet valves (ATLAS 076) to the cryogenic pump inlets, and from the pump outlets through the vaporizers to the GH₂ pressure regulator inlets and the downstream GH₂ conditioning header.
+This document defines the agnostic ATLAS standard-level architecture context for `Hydrogen Feed Lines and Manifolds`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 28 (GH₂/LH₂ Distribution) — 077-010 Hydrogen Feed Lines and Manifolds |
-| Certification basis | EASA CS-25 Amdt 27+; CSH-2; ISO 15649; EN 13480 |
-| S1000D SNS | 077-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `077` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The HDC feed line system is divided into three thermal regimes:

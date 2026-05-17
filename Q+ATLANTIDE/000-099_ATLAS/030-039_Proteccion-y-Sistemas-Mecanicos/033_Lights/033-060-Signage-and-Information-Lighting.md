@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Signage and Information Lighting"
 file_name: "033-060-Signage-and-Information-Lighting.md"
 sns_reference: "033-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-60"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-60"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,7 +75,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "Signage"
@@ -87,10 +87,12 @@ keywords:
   - "ICAO Annex 6"
   - "LED backlit signs"
   - "SIGNS panel"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-060 — Signage and Information Lighting
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -102,33 +104,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Signage and Information Lighting subsystem (ATA 033-60) of the AMPEL360e eWTW aircraft. It covers all illuminated passenger information signs: Fasten Seat Belts (FSB), No Smoking (NS), and Return to Seat (RTS) signs, as well as lavatory No Smoking signs. The document defines the LED backlit sign technology, control architecture (crew SIGNS panel on the overhead panel, and automatic control from FMS/AFCS logic), regulatory compliance (CS-25.791 and ICAO Annex 6 symbology), interface with the Cabin Management System (CMS), and CMC fault monitoring.
+This document defines the agnostic ATLAS standard-level architecture context for `033-060 — Signage and Information Lighting`.
 
-Passenger information signs are a passenger safety interface. Illumination of FSB and NS signs at the correct flight phases is operationally critical and is a mandatory function for dispatch.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 033-60 — Signage and Information Lighting |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Lighting Technology | 100% LED backlit sign panels — no bulb replacement |
-| Sign Types | Fasten Seat Belts, No Smoking, Return to Seat, Lavatory No Smoking |
-| Control | Crew overhead SIGNS panel (manual) + FMS/AFCS automatic (TBD) |
-| Symbology | Per CS-25.791 and ICAO Annex 6 |
-| Sign Status Reporting | AFDX to CMC |
-| Power | 28 VDC essential bus |
-| S1000D SNS | 033-60 |
-| Applicability Code | ALL |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-Passenger information signs on the AMPEL360e eWTW are LED backlit panels. Unlike conventional aircraft using incandescent bulb-illuminated sign panels requiring periodic bulb replacement, the eWTW signs use LED modules integrated into the sign overlay with an expected service life exceeding TBD hours (targeting bulb-replacement-free operation throughout aircraft service life).
+Passenger information signs on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] are LED backlit panels. Unlike conventional aircraft using incandescent bulb-illuminated sign panels requiring periodic bulb replacement, the [PROGRAMME-VARIANT] signs use LED modules integrated into the sign overlay with an expected service life exceeding TBD hours (targeting bulb-replacement-free operation throughout aircraft service life).
 
 The SIGNS panel on the crew overhead panel provides the primary crew control: a three-position selector for FSB (ON / AUTO / OFF) and a separate NO SMOKING switch. In AUTO mode, the FSB sign is controlled by AFCS/FMS logic — automatically illuminating during take-off, approach, landing, and turbulence encounters (when aircraft accelerometers detect TBD g thresholds — TBD per automation logic definition).
 
@@ -313,7 +305,7 @@ Lavatory No Smoking sign assemblies: LRU replacement at line maintenance — lav
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-60 | Signage and Information Lighting | DMC-AMPEL360E-EWTW-033-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-60 | Signage and Information Lighting | DMC-<PROGRAMME>-<VARIANT>-033-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Planned Data Modules
 
@@ -333,7 +325,7 @@ Lavatory No Smoking sign assemblies: LRU replacement at line maintenance — lav
 - FSB sign assemblies: one per seat zone or row group along cabin overhead; quantity TBD per cabin layout (typically 1 per 3–4 rows)
 - NS sign assemblies: co-located with FSB or separate — quantity TBD
 - RTS sign assemblies: near lavatories — quantity TBD per lavatory count
-- Lavatory NS + RTS signs: inside each lavatory — one set per lavatory (eWTW-100: ~2 lavatories)
+- Lavatory NS + RTS signs: inside each lavatory — one set per lavatory ([PROGRAMME-VARIANT]-100: ~2 lavatories)
 - Sign controller: integrated in Master SSLC or standalone in avionics bay — envelope TBD
 
 ### 15.2 Electrical / Data Footprint

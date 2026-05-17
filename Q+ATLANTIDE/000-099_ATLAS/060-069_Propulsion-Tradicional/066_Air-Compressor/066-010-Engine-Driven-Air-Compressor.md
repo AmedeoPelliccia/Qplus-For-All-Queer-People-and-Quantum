@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0066-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-066-010-ENGINE-DRIVEN-AIR-COMPRESSOR
      ATA 66 · Engine-Driven Air Compressor — Architectural Trade
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Engine-Driven Air Compressor — Architectural Trade
@@ -47,32 +49,29 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-010"
 
 ## §1 Purpose
 
-This document captures the architectural trade study that led to the **elimination of the conventional engine-driven air compressor** (bleed air off-take) on the AMPEL360E eWTW, and the adoption of electrically driven Electric Air Compressors (EAC) as the sole compressed-air source. It provides the rationale, trade criteria, quantified benefits, and residual risks that justify the bleed-less design.
+This document defines the agnostic ATLAS standard-level architecture context for `Engine-Driven Air Compressor — Architectural Trade`.
 
-On conventional narrowbody and widebody aircraft, the engine-driven compressor concept relies on extracting HP and/or LP stage bleed air from the turbofan core. This imposes a thermodynamic penalty on the engine cycle, reducing net thrust and increasing SFC. The AMPEL360E eWTW programme formally closed this design option in favour of a fully electric compressed-air supply architecture.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document is part of the ATA 66 baseline and shall be referenced in all FADEC and ECS integration reviews. It does not describe a physical LRU but records the design decision and its evidence base.
-
----
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 66-010 — Engine-Driven Air Compressor (Architectural Trade) |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 066-010-00 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `066` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description ![DRAFT]
 
 A conventional engine-driven bleed compressor system taps HP compressor exit air (HP bleed at ~0.8–1.2 MPa, ~500 °C) or LP stage air for cabin pressurization and pneumatic systems. On a twin-engine narrowbody, this extraction amounts to approximately 3–5 % of total engine core airflow, producing a direct SFC penalty of 2–4 %.
 
-The AMPEL360E eWTW eliminates all bleed ports from the turbofan — no HP bleed valve, no LP bleed band, and no pre-cooler assembly. The turbofan on the eWTW operates with a fully sealed compressor section. All previously bleed-supplied functions (cabin air, wing anti-ice, engine cowl anti-ice) are electrified. Wing and cowl anti-ice use electric heating mats (ATA 30); cabin pressurization uses EAC (ATA 66); NGS uses EAC-fed ASM (ATA 47).
+The programme-defined aircraft type eliminates all bleed ports from the turbofan — no HP bleed valve, no LP bleed band, and no pre-cooler assembly. The turbofan on the [PROGRAMME-VARIANT] operates with a fully sealed compressor section. All previously bleed-supplied functions (cabin air, wing anti-ice, engine cowl anti-ice) are electrified. Wing and cowl anti-ice use electric heating mats (ATA 30); cabin pressurization uses EAC (ATA 66); NGS uses EAC-fed ASM (ATA 47).
 
-The trade closure was confirmed at PDR (Preliminary Design Review) based on AMPEL360E performance model SP-360E-PERF-022, showing a net SFC gain of 2.9 % at cruise and a 3.4 % gain at climb, at the cost of approximately 180 kW additional electrical load on the HVDC bus.
+The trade closure was confirmed at PDR (Preliminary Design Review) based on [PROGRAMME-AIRCRAFT] performance model SP-360E-PERF-022, showing a net SFC gain of 2.9 % at cruise and a 3.4 % gain at climb, at the cost of approximately 180 kW additional electrical load on the HVDC bus.
 
 ---
 
@@ -96,14 +95,14 @@ flowchart LR
         BLD[HP Bleed Tap] --> PRECOOL[Pre-Cooler]
         PRECOOL --> PACK[ECS Pack]
     end
-    subgraph EWTW["AMPEL360E eWTW Architecture"]
+    subgraph [PROGRAMME-VARIANT]["programme-defined aircraft type Architecture"]
         HVDC[HVDC 270 V] --> EAC[Electric Air Compressor]
         EAC --> ECS[ECS Pack ATA 21]
     end
-    ENGINE[Turbofan Core] -. "sealed — no bleed" .-> EWTW
+    ENGINE[Turbofan Core] -. "sealed — no bleed" .-> [PROGRAMME-VARIANT]
     ENGINE --> CONVENTIONAL
     style CONVENTIONAL fill:#ffcccc,stroke:#cc0000
-    style EWTW fill:#ccffcc,stroke:#00aa00
+    style [PROGRAMME-VARIANT] fill:#ccffcc,stroke:#00aa00
 ```
 
 ---
@@ -130,9 +129,9 @@ flowchart TB
 
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
-| HP Bleed Valve | N/A — eliminated | 0 | — | — | Absent on eWTW; no maintenance required |
-| LP Bleed Band | N/A — eliminated | 0 | — | — | Absent on eWTW; no maintenance required |
-| Pre-Cooler Assembly | N/A — eliminated | 0 | — | — | Absent on eWTW; significant mass saving |
+| HP Bleed Valve | N/A — eliminated | 0 | — | — | Absent on [PROGRAMME-VARIANT]; no maintenance required |
+| LP Bleed Band | N/A — eliminated | 0 | — | — | Absent on [PROGRAMME-VARIANT]; no maintenance required |
+| Pre-Cooler Assembly | N/A — eliminated | 0 | — | — | Absent on [PROGRAMME-VARIANT]; significant mass saving |
 | HP Bleed Duct (nacelle) | N/A — eliminated | 0 | — | — | No hot duct in nacelle — simplified fire zone |
 | Trade Study Reference Document | SP-360E-TRADE-066 | 1 | Q-DATAGOV CSDB | Per programme revision | Records trade rationale and performance data |
 
@@ -164,7 +163,7 @@ flowchart TB
 
 ## §10 Performance and Budgets ![DRAFT]
 
-| Parameter | Conventional Bleed | AMPEL360E eWTW (EAC) | Delta |
+| Parameter | Conventional Bleed | programme-defined aircraft type (EAC) | Delta |
 |---|---|---|---|
 | Cruise SFC improvement | Baseline | +2.9 % | +2.9 % gain |
 | Climb SFC improvement | Baseline | +3.4 % | +3.4 % gain |
@@ -213,8 +212,8 @@ flowchart TB
 | EASA CS-25 §25.831 | Ventilation | EASA | Minimum cabin air supply — met by EAC |
 | EASA CS-25 §25.1181 | Designated fire zones | EASA | Nacelle fire zone simplified by bleed elimination |
 | EASA CS-E §810 | Engine compressor | EASA | Sealed compressor — no bleed port certification |
-| SP-360E-TRADE-066 | Bleed vs EAC Trade Study | AMPEL360E Programme | Programme trade closure document |
-| SP-360E-PERF-022 | Engine Performance Model with EAC | AMPEL360E Programme | SFC delta quantification |
+| SP-360E-TRADE-066 | Bleed vs EAC Trade Study | [PROGRAMME-AIRCRAFT] Programme | Programme trade closure document |
+| SP-360E-PERF-022 | Engine Performance Model with EAC | [PROGRAMME-AIRCRAFT] Programme | SFC delta quantification |
 
 ---
 
@@ -236,7 +235,7 @@ flowchart TB
 | **Bleed-less architecture** | Aircraft design with no engine compressor stage bleed extraction for pneumatic systems. |
 | **HP bleed** | High-Pressure bleed — air extracted from HP compressor exit; highest energy but largest SFC penalty. |
 | **LP bleed** | Low-Pressure bleed — air extracted from LP compressor stage; lower energy but cooler temperature. |
-| **Pre-cooler** | Heat exchanger cooling hot HP bleed air to ECS pack inlet temperature; eliminated on eWTW. |
+| **Pre-cooler** | Heat exchanger cooling hot HP bleed air to ECS pack inlet temperature; eliminated on [PROGRAMME-VARIANT]. |
 | **SFC** | Specific Fuel Consumption — fuel burned per unit of thrust; key engine efficiency metric. |
 | **EAC** | Electric Air Compressor — HVDC-powered unit replacing bleed. |
 | **MEA** | More Electric Aircraft — design philosophy maximising use of electrical power in place of pneumatic/hydraulic. |
@@ -284,4 +283,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

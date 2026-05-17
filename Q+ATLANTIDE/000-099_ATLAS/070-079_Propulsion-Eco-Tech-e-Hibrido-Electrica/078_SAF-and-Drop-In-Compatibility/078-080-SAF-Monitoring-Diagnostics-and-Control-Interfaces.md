@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0078-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-080-SAF-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATA 78 · SAF Monitoring, Diagnostics and Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # SAF Monitoring, Diagnostics and Control Interfaces
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-080"
 
 ## §1 Purpose
 
-This document (078-080) defines the architecture, interfaces, diagnostics, and data management for the Fuel Accountability and Material Quality Monitoring System (FAMQMS, PN FAMQMS-078) — the central avionics LRU for SAF monitoring on the AMPEL360E eWTW. It covers the near-infrared (NIR) spectroscopy blend measurement system, FADEC (ATA 67) LHV correction interface, Central Maintenance System (CMS, ATA 45) and ECAM (ATA 31) interfaces, on-board contamination monitoring, and FAMQMS data logging and download capability.
+This document defines the agnostic ATLAS standard-level architecture context for `SAF Monitoring, Diagnostics and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 78-080 — SAF Monitoring, Diagnostics and Control Interfaces |
-| Certification basis | EASA CS-25; DO-178C DAL D; DO-254 DAL D; ARINC 429 Mark 33 |
-| S1000D SNS | 078-080-00 |
-| FAMQMS design assurance | DO-178C DAL D (software); DO-254 DAL D (hardware) |
-| FAMQMS communication | ARINC 429 (dual bus, TX); ARINC 429 (single bus, RX); USB-C GSE port |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `078` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **FAMQMS (Fuel Accountability and Material Quality Monitoring System — PN FAMQMS-078)** is a single-box avionics Line Replaceable Unit (LRU) hosted in the EE bay (zone 121) in a standard ARINC 404A 1/2 ATR short tray. It provides the following functions:

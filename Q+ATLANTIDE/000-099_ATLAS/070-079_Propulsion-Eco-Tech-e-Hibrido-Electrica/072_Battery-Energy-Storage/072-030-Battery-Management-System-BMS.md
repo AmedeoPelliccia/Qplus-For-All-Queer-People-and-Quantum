@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Battery Management System (BMS)
@@ -33,15 +35,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-030"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document defines the architecture, functions, and certification requirements of the Battery Management System (BMS) for the AMPEL360E eWTW. The BMS is a DAL B dual-lane system responsible for all cell-level monitoring, pack protection, SoC/SoH estimation, contactor control, and communication with aircraft systems.
 
+This document defines the agnostic ATLAS standard-level architecture context for `Battery Management System (BMS)`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
 
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-The AMPEL360E BMS is a dual-lane (Lane A / Lane B) system, each lane implemented on a dedicated Battery Management Unit (BMU) located in the avionics bay. Each BMU hosts a quad-core safety processor running BMS application software certified to DO-178C DAL B, with independent power supply, independent CAN FD communication buses to the cell supervision circuits (CSCs), and independent contactor drive outputs. Either lane can independently open the main HV contactors on detection of a fault condition.
+The [PROGRAMME-AIRCRAFT] BMS is a dual-lane (Lane A / Lane B) system, each lane implemented on a dedicated Battery Management Unit (BMU) located in the avionics bay. Each BMU hosts a quad-core safety processor running BMS application software certified to DO-178C DAL B, with independent power supply, independent CAN FD communication buses to the cell supervision circuits (CSCs), and independent contactor drive outputs. Either lane can independently open the main HV contactors on detection of a fault condition.
 
 Lane A is the primary commanding lane under normal operation; Lane B operates as a hot-standby monitor. A cross-channel data link (CCDL) between the two BMUs at 10 ms cycle rate enables continuous comparison of measured quantities. Any discrepancy exceeding defined thresholds triggers a CCDL monitor fault and transfers authority to Lane B or initiates safe isolation. The BMS also interfaces with the Aircraft Condition Monitoring System (ACMS) via ARINC 429 and with the Flight Management System (FMS) via CAN FD for energy prediction and mission planning data.
 
@@ -65,7 +75,7 @@ graph TD
     BMU_A <-->|CCDL 10ms| BMU_B
     BMU_A -->|28V discrete| CONTACTOR[HV Contactors]
     BMU_B -->|28V discrete| CONTACTOR
-    CONTACTOR -->|800V HVDC| HVBUS[HVDC Bus]
+    CONTACTOR -->|<NOMINAL-VOLTAGE> HVDC| HVBUS[HVDC Bus]
     BMU_A -->|ARINC 429| ACMS[ACMS]
     BMU_A -->|CAN FD| FMS[Flight Management System]
     BMU_A -->|discrete| CAS[Crew Alerting System]
@@ -148,11 +158,11 @@ graph TD
 ## §12 Maintenance and Diagnostics
 | Task | Interval | Tool | Reference |
 |---|---|---|---|
-| BMS BITE self-test (automatic) | Pre-flight | Onboard automatic | AMM 072-30-01 |
-| CCDL functional test | 500 FH | GSE-BMS-DIAG-01 | AMM 072-30-02 |
-| Contactor drive output test | 1000 FH | GSE-BMS-DIAG-01 | AMM 072-30-03 |
-| BMU software version check | A-Check | MCDU / laptop | AMM 072-30-04 |
-| BMU replacement and re-qualification | On condition | Calibration rig | CMM 072-30-05 |
+| BMS BITE self-test (automatic) | Pre-flight | Onboard automatic | AMM [NODE]-[TASK] |
+| CCDL functional test | 500 FH | GSE-BMS-DIAG-01 | AMM [NODE]-[TASK] |
+| Contactor drive output test | 1000 FH | GSE-BMS-DIAG-01 | AMM [NODE]-[TASK] |
+| BMU software version check | A-Check | MCDU / laptop | AMM [NODE]-[TASK] |
+| BMU replacement and re-qualification | On condition | Calibration rig | CMM [NODE]-[TASK] |
 
 ## §13 Footprint
 | Metric | Value |

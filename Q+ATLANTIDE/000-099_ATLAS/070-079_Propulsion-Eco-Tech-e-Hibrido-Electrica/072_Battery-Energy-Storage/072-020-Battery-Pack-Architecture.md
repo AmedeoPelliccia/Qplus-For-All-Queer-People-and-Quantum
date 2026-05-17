@@ -16,7 +16,9 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0072-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Battery Pack Architecture
@@ -33,15 +35,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0072-020"
 All hyperlinks in this document are **relative**. Absolute URLs are forbidden.
 
 ## §1 Purpose
-This document describes the pack-level architecture of the AMPEL360E eWTW battery system, covering module arrangement, series/parallel configuration, inter-module busbars, and the structural integration of each underwing battery bay.
 
+This document defines the agnostic ATLAS standard-level architecture context for `Battery Pack Architecture`.
+
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
+
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
-| Aircraft | Variant | MSN Range | Effectivity |
-|---|---|---|---|
-| AMPEL360E | eWTW | All | From EIS |
 
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `072` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT](https://img.shields.io/badge/-DRAFT-yellow)
-Each of the two AMPEL360E battery packs contains 28 modules arranged in a 28S1P string configuration, yielding a pack nominal voltage of approximately 1243 V. However, the BIU buck-boosts this to the HVDC 540 V propulsion bus; the pack itself is treated as an ~800 V source. The 28 modules are stacked in two layers of 14 within a structural composite tray that fits into the underwing bay between ribs 15 and 23.
+Each of the two [PROGRAMME-AIRCRAFT] battery packs contains 28 modules arranged in a 28S1P string configuration, yielding a pack nominal voltage of approximately 1243 V. However, the BIU buck-boosts this to the HVDC 540 V propulsion bus; the pack itself is treated as an ~<NOMINAL-VOLTAGE> source. The 28 modules are stacked in two layers of 14 within a structural composite tray that fits into the [programme-defined installation location] between ribs 15 and 23.
 
 Inter-module busbars are laser-welded copper ribbon assemblies rated at 500 A continuous. The series string is protected at the pack output by two main contactors (precharge and main) and a manual service disconnect (MSD) accessible via a panel on the lower wing skin. Pack output voltage is monitored by the BMS lane A and B at the main contactor output terminals.
 
@@ -50,7 +60,7 @@ The pack enclosure is constructed from fire-resistant CFRP panels with aluminium
 ## §4 Functional Breakdown
 | ID | Function | Description | Owner | DAL |
 |---|---|---|---|---|
-| F-072-020-01 | Series String Assembly | 28 modules in series to achieve ~800 V | Q-GREENTECH | DAL C |
+| F-072-020-01 | Series String Assembly | 28 modules in series to achieve ~<NOMINAL-VOLTAGE> | Q-GREENTECH | DAL C |
 | F-072-020-02 | Structural Integration | Mount pack tray to wing structure, carry flight loads | Q-MECHANICS | DAL C |
 | F-072-020-03 | Pack Output Protection | Main and precharge contactors, MSD | Q-GREENTECH | DAL B |
 | F-072-020-04 | Thermal Path | Glycol cooling inlet/outlet, distribute to modules | Q-MECHANICS | DAL C |
@@ -59,7 +69,7 @@ The pack enclosure is constructed from fire-resistant CFRP panels with aluminium
 ## §5 System Context
 ```mermaid
 graph TD
-    MOD1[Module 1..14 Layer 1] -->|28S string| OUTPUT[Pack Output ~800V]
+    MOD1[Module 1..14 Layer 1] -->|28S string| OUTPUT[Pack Output ~<NOMINAL-VOLTAGE>]
     MOD2[Module 15..28 Layer 2] -->|28S string| OUTPUT
     OUTPUT --> MAIN_C[Main Contactor]
     MAIN_C --> BIU[BIU → HVDC 540V]
@@ -86,16 +96,16 @@ graph LR
 ## §7 Components and LRUs
 | LRU ID | Name | P/N | Qty | Location |
 |---|---|---|---|---|
-| LRU-072-020-01 | Battery Pack Structural Tray | TRAY-BAT-072-001 | 2 | Port/Stbd underwing bay |
+| LRU-072-020-01 | Battery Pack Structural Tray | TRAY-BAT-072-001 | 2 | Port/Stbd [programme-defined installation location] |
 | LRU-072-020-02 | Inter-Module Busbar Assembly | BUS-MOD-28S-001 | 54 | Within each pack |
-| LRU-072-020-03 | Pack Main Contactor | CONT-HV-800V-001 | 4 | Pack output (2 per pack) |
-| LRU-072-020-04 | Manual Service Disconnect (MSD) | MSD-800V-001 | 2 | Lower wing skin panel |
+| LRU-072-020-03 | Pack Main Contactor | CONT-HV-<NOMINAL-VOLTAGE>-001 | 4 | Pack output (2 per pack) |
+| LRU-072-020-04 | Manual Service Disconnect (MSD) | MSD-<NOMINAL-VOLTAGE>-001 | 2 | Lower wing skin panel |
 | LRU-072-020-05 | Cooling QD Coupling Set | QDC-GLY-072-001 | 4 | Pack cooling ports |
 
 ## §8 Interfaces
 | Interface | Source | Destination | Protocol | Notes |
 |---|---|---|---|---|
-| IF-072-020-01 | Pack Output (~800V) | BIU | DC Power | Via main contactor |
+| IF-072-020-01 | Pack Output (~<NOMINAL-VOLTAGE>) | BIU | DC Power | Via main contactor |
 | IF-072-020-02 | BMS Lane A | Pack Monitoring | CAN FD | Voltage/temp/current |
 | IF-072-020-03 | BMS Lane B | Pack Monitoring | CAN FD | Redundant lane |
 | IF-072-020-04 | Cooling Manifold | Aircraft TMS | Liquid | Glycol-water loop |
@@ -114,7 +124,7 @@ graph LR
 | Parameter | Requirement | Current Estimate | Unit | Status |
 |---|---|---|---|---|
 | Pack nominal voltage | ~800 | 1243×(avg cell V/cell) | V | ![TBD](https://img.shields.io/badge/-TBD-orange) |
-| Pack capacity | 250 kWh | 250 | kWh | ![TBD](https://img.shields.io/badge/-TBD-orange) |
+| Pack capacity | <ENERGY-CAPACITY-PER-UNIT> | 250 | kWh | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | Max discharge current | 600 | 600 | A | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | Pack mass | ≤550 | TBD | kg | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | Pack envelope (LWH) | Within bay | TBD | mm | ![TBD](https://img.shields.io/badge/-TBD-orange) |
@@ -129,18 +139,18 @@ graph LR
 ## §12 Maintenance and Diagnostics
 | Task | Interval | Tool | Reference |
 |---|---|---|---|
-| Contactor contact resistance measurement | 1000 FH | DLRO micro-ohmmeter | AMM 072-20-01 |
-| MSD inspection and torque check | A-Check | Torque wrench | AMM 072-20-02 |
-| Cooling QD coupling leak check | B-Check | Pressure test kit | AMM 072-20-03 |
-| Pack tray structural inspection | C-Check | Visual/NDT | AMM 072-20-04 |
+| Contactor contact resistance measurement | 1000 FH | DLRO micro-ohmmeter | AMM [NODE]-[TASK] |
+| MSD inspection and torque check | A-Check | Torque wrench | AMM [NODE]-[TASK] |
+| Cooling QD coupling leak check | B-Check | Pressure test kit | AMM [NODE]-[TASK] |
+| Pack tray structural inspection | C-Check | Visual/NDT | AMM [NODE]-[TASK] |
 
 ## §13 Footprint
 | Metric | Value |
 |---|---|
 | Modules per pack | 28 |
 | Pack configuration | 28S1P |
-| Pack nominal voltage | ~800 V (depends on SoC) |
-| Pack capacity | 250 kWh |
+| Pack nominal voltage | ~<NOMINAL-VOLTAGE> (depends on SoC) |
+| Pack capacity | <ENERGY-CAPACITY-PER-UNIT> |
 | Estimated pack mass | TBD kg |
 | Bay location | Underwing, ribs 15–23 |
 
@@ -159,7 +169,7 @@ graph LR
 | Pack assembly | Capacity/rate test | Pack test rig | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | Structural | Static load test | MTS frame | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 | Venting | TR outgassing test | Environmental chamber | ![TBD](https://img.shields.io/badge/-TBD-orange) |
-| Integration | Iron-bird pack install | AMPEL360E rig | ![TBD](https://img.shields.io/badge/-TBD-orange) |
+| Integration | Iron-bird pack install | [PROGRAMME-AIRCRAFT] rig | ![TBD](https://img.shields.io/badge/-TBD-orange) |
 
 ## §16 Glossary
 | Term | Definition |

@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0075-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-075-070-FUEL-CELL-SERVICE-TEST-AND-MAINTENANCE
      ATA 75 · Fuel Cell Service, Test and Maintenance
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Fuel Cell Service, Test and Maintenance
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0075-070"
 
 ## §1 Purpose
 
-This document defines the service, test, and maintenance programme for the AMPEL360E eWTW Fuel Cell Module. Due to the unique hazards associated with a high-pressure cryogenic hydrogen system in an aircraft environment, FCM maintenance requires specialised training, tooling, and safety procedures beyond those applicable to conventional aircraft systems. All FCM bay access requires completion of a formal Lockout/Tagout (LOTO) procedure that includes H2 supply isolation, N2 anode purge verification, and confirmation of bay H2 concentration <1 % LEL via HDS-075 before personnel entry.
+This document defines the agnostic ATLAS standard-level architecture context for `Fuel Cell Service, Test and Maintenance`.
 
-The FCM maintenance programme is structured around four check intervals aligned with the aircraft maintenance programme: A-check (routine servicing, ~500 FH), B-check (~2,000 FH), C-check (~6,000 FH), and D-check (~20,000 FH or OEM-defined interval for MEA replacement). In addition, on-condition maintenance is triggered by FCCU BITE fault logs, ECAM advisories, CVM trend analysis, and performance deterioration detected by the CMS health monitoring system.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 75-070 — Fuel Cell Service, Test and Maintenance |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 075-070-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `075` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Safety Prerequisites**: Before any FCM maintenance task requiring bay access, the technician must: (1) confirm aircraft is de-powered or on ground power with FCM isolated from HVDC bus; (2) close and lock MIV-075; (3) verify SIV-075-A/B closed state via FCCU GSE; (4) connect N2 purge cart to NPM-075 and perform 60 s anode purge; (5) verify HDS-075 sensors all <0.5 % LEL for ≥2 min after purge; (6) attach LOTO tags to MIV-075, electrical isolation panel, and H2 service port; (7) don H2 personal protective equipment (anti-static PPE, face shield). Only after all six steps are confirmed may the FCM bay access panel be opened.

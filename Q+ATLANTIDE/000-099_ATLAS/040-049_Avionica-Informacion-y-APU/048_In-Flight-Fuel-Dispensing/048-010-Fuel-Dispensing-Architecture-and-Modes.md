@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 010 — Fuel Dispensing Architecture and Modes
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the **system-level architecture** and **operational mode framework** for the In-Flight Fuel Dispensing (IFFD) system of the AMPEL360E eWTW aircraft, per ATA 48. The IFFD architecture centres on the dual-channel In-Flight Fuel Dispensing Control Unit (IFFDCU), which governs mode selection, channel management, fuel path configuration, and safety interlocks across four principal IFFD modes: **Receiver Mode**, **Tanker Mode** (optional), **Ground Refuelling Bypass**, and **Internal Fuel Transfer Mode**.
+This document defines the **system-level architecture** and **operational mode framework** for the In-Flight Fuel Dispensing (IFFD) system of the programme-defined aircraft type, per ATA 48. The IFFD architecture centres on the dual-channel In-Flight Fuel Dispensing Control Unit (IFFDCU), which governs mode selection, channel management, fuel path configuration, and safety interlocks across four principal IFFD modes: **Receiver Mode**, **Tanker Mode** (optional), **Ground Refuelling Bypass**, and **Internal Fuel Transfer Mode**.
 
 The architecture is wholly electric — no hydraulic actuation is used. Mode transitions are commanded from the dedicated IFFD Control Panel and are managed by IFFDCU software qualified to DO-178C DAL B. The channel switching logic ensures that a single channel fault does not interrupt an ongoing aerial refuelling operation.
 
@@ -53,7 +55,7 @@ The architecture is wholly electric — no hydraulic actuation is used. Mode tra
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | Certification Basis | CS-25 Amendment 28; SFAR 88 |
 | Applicable Standards | DO-178C DAL B; DO-160G; ARINC 664 P7; ARINC 429 |
@@ -65,7 +67,7 @@ The architecture is wholly electric — no hydraulic actuation is used. Mode tra
 
 ## §3. Functional Description
 
-The IFFD architecture on the AMPEL360E eWTW is structured around four operational modes, each defining a distinct fuel-path topology and control loop:
+The IFFD architecture on the programme-defined aircraft type is structured around four operational modes, each defining a distinct fuel-path topology and control loop:
 
 1. **Receiver Mode (Probe-Drogue)**: The aircraft accepts fuel from an external tanker via the retractable refuelling probe. The IFFDCU opens the Fuel Inlet Isolation Valve (FIV), arms the Electric Boost Pumps (EBP) in passive receive mode, monitors flow rate via the Coriolis meter, and distributes received fuel to the selected onboard tank(s) per the pre-set quantity target.
 
@@ -416,4 +418,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD architecture and modes for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD architecture and modes for programme-defined aircraft type |

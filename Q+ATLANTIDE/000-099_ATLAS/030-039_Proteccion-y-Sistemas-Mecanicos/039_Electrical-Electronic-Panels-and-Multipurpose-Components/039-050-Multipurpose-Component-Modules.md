@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Multipurpose Component Modules"
 file_name: "039-050-Multipurpose-Component-Modules.md"
 sns_reference: "039-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-039-50"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-039-50"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -81,7 +81,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 39"
   - "Multipurpose Component Module"
@@ -94,10 +94,12 @@ keywords:
   - "Remote Data Concentrator"
   - "IMA"
   - "ARINC 404A"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 039-050 — Multipurpose Component Modules
-### AMPEL360e eWTW · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 39 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -107,40 +109,26 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links. Regulatory and standards references cited by identifier only. DMC cross-references follow `DMC-AMPEL360E-EWTW-039-50-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
+All cross-references use relative Markdown links. Regulatory and standards references cited by identifier only. DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-039-50-YYYY-A`. Badge <img src="https://img.shields.io/badge/TBD-red"> marks unresolved parameters. Badges <img src="https://img.shields.io/badge/DRAFT-yellow"> and <img src="https://img.shields.io/badge/To_Be_Completed-orange"> indicate work-in-progress and planned content.
 
 ---
 
 ## §1 Purpose
 
-This document describes **Multipurpose Component Modules** (subsubject 039-050) hosted in the IMA racks and distributed throughout the eWTW. It covers:
+This document defines the agnostic ATLAS standard-level architecture context for `039-050 — Multipurpose Component Modules`.
 
-1. Signal Conditioning Modules (SCMs): convert analog sensor inputs to digital for IMA processing.
-2. Power Supply Modules (PSMs): DC/DC converters providing regulated low-voltage rails from 28 VDC or 270 VDC bus.
-3. Remote Data Concentrator Units (RDCUs): aggregate discrete I/O, analog signals, and ARINC 429 buses, forwarding over AFDX.
-4. Module form factors: ARINC 404A or proprietary IMA format TBD (OI-039-008).
-5. Hot-swap capability: ground replacement only (TBD).
-6. Expansion slot provisions for future avionics growth.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| Variant | All variants |
-| ATA Chapter / Subsubject | 39 — 039-050 Multipurpose Component Modules |
-| Document Tier | Level 3 — Component/Assembly Description |
-| Effectivity | MSN 0001 onwards <img src="https://img.shields.io/badge/TBD-red"> |
-
-Includes all LRM/LRU multipurpose modules in IMA racks R1/R2 and distributed RDCUs throughout the aircraft. Excludes:
-- IMA software functions: → ATA 42
-- Rack mechanical structures: → 039-040
-- Panel I/O modules used solely for cockpit switches (overlaps with RDCU function — see 039-010)
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Module Types
@@ -154,7 +142,7 @@ Includes all LRM/LRU multipurpose modules in IMA racks R1/R2 and distributed RDC
 
 ### 3.2 RDCU Function
 
-The RDCU is a critical multipurpose component in the eWTW distributed I/O architecture:
+The RDCU is a critical multipurpose component in the [PROGRAMME-VARIANT] distributed I/O architecture:
 - **Inputs**: up to N discrete inputs (28V ON/OFF logic), M analog inputs (0–5 V, 0–20 mA, thermocouple), P ARINC 429 Rx channels.
 - **Outputs**: up to Q discrete outputs (28V command), R ARINC 429 Tx channels.
 - **Gateway**: aggregates all I/O into AFDX data frames; transmits to IMA over dual AFDX links.
@@ -411,12 +399,12 @@ flowchart LR
 
 | Document | DMC Pattern | Info Code | Status |
 |---|---|---|---|
-| Multipurpose module description | DMC-AMPEL360E-EWTW-039-50-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| RDCU removal | DMC-AMPEL360E-EWTW-039-50-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| RDCU installation | DMC-AMPEL360E-EWTW-039-50-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| SCM calibration | DMC-AMPEL360E-EWTW-039-50-20A-920A-A | 920 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| LRM removal (generic) | DMC-AMPEL360E-EWTW-039-50-00A-520B-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| Fault isolation — modules | DMC-AMPEL360E-EWTW-039-50-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Multipurpose module description | DMC-<PROGRAMME>-<VARIANT>-039-50-00A-040A-A | 040 | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| RDCU removal | DMC-<PROGRAMME>-<VARIANT>-039-50-10A-520A-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| RDCU installation | DMC-<PROGRAMME>-<VARIANT>-039-50-10A-720A-A | 720 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| SCM calibration | DMC-<PROGRAMME>-<VARIANT>-039-50-20A-920A-A | 920 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| LRM removal (generic) | DMC-<PROGRAMME>-<VARIANT>-039-50-00A-520B-A | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| Fault isolation — modules | DMC-<PROGRAMME>-<VARIANT>-039-50-00A-400A-A | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
@@ -491,7 +479,7 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 | IMA | Integrated Modular Avionics — shared hardware infrastructure hosting multiple software functions |
 | ARINC 653 | IMA RTOS partitioning standard — ensures no interference between software partitions |
 | CMC | Central Maintenance Computer (ATA 45) — receives module BITE and health data |
-| HVDC | High Voltage DC — 270 VDC bus in eWTW architecture |
+| HVDC | High Voltage DC — 270 VDC bus in [PROGRAMME-VARIANT] architecture |
 
 ---
 
@@ -544,5 +532,5 @@ Full DMRL in [039-090](./039-090-S1000D-CSDB-Mapping-and-Traceability.md).
 
 | Revision | Date | Author | Description |
 |---|---|---|---|
-| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; eWTW SCM/PSM/RDCU context incorporated |
+| 0.1.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Initial full-template draft; all 23 sections populated; [PROGRAMME-VARIANT] SCM/PSM/RDCU context incorporated |
 | 0.0.0 | 2026-05-10 | Q+ATLANTIDE ATLAS Working Group | Scaffold stub created |

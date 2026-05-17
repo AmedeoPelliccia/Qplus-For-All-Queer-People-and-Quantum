@@ -6,10 +6,10 @@ subsubject: "010"
 subsubject_title: "Pneumatic Air Sources"
 file_name: "036-010-Pneumatic-Air-Sources.md"
 sns_reference: "036-10"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-10"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-10"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -87,10 +87,12 @@ keywords:
   - "bleed-less"
   - "ground pneumatic connector"
   - "CS-25.1438"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-010 — Pneumatic Air Sources
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -102,46 +104,25 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the pneumatic air sources for the AMPEL360e eWTW residual pneumatic circuit (ATA 36-010). The most critical architectural fact is stated at the outset:
+This document defines the agnostic ATLAS standard-level architecture context for `036-010 — Pneumatic Air Sources`.
 
-> **The AMPEL360e eWTW has NO engine bleed air. There are no HP or LP bleed ports on the eWTW propulsion system. There is no APU bleed air. All functions conventionally served by engine bleed are provided by electric systems.**
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-ATA 36 air sources on the eWTW are therefore limited to:
-1. **Electric Air Compressor(s) (EAC)** — on-board, motor-driven, providing low-pressure air for residual pneumatic consumers (door seals, water tank pressurisation — TBD per §21 Open Issues).
-2. **Ground Pneumatic Connector** — external receptacle for connection of ground pneumatic cart during maintenance and ground servicing operations.
-
-This document defines the EAC specifications (to the extent known), the ground connector interface, the control and monitoring provisions, and the S1000D mapping for this subsubject.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 036-010 — Pneumatic Air Sources |
-| Engine Bleed | **None** — bleed-less architecture |
-| APU Bleed | **None** — no APU; electric ground power equivalent |
-| On-board Air Source | Electric Air Compressor(s) (EAC) |
-| Ground Air Source | Ground Pneumatic Connector (external cart) |
-| EAC Quantity | <img src="https://img.shields.io/badge/TBD-red"> |
-| EAC Rated Pressure | <img src="https://img.shields.io/badge/TBD-red"> |
-| EAC Rated Flow | <img src="https://img.shields.io/badge/TBD-red"> |
-| EAC Motor Power | <img src="https://img.shields.io/badge/TBD-red"> |
-| EAC Location | <img src="https://img.shields.io/badge/TBD-red"> |
-| Ground Connector Type | <img src="https://img.shields.io/badge/TBD-red"> (standard aircraft pneumatic coupling TBD) |
-| Ground Connector Location | Lower fuselage panel — <img src="https://img.shields.io/badge/TBD-red"> |
-| Certification Basis | CS-25.1438; CS-25.1301/1309 |
-| Environmental Std | DO-160G |
-| S1000D SNS | 036-10 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-### 3.1 Conventional Aircraft vs. eWTW
+### 3.1 Conventional Aircraft vs. [PROGRAMME-VARIANT]
 
-| Feature | Conventional (bleed) | eWTW (bleed-less) |
+| Feature | Conventional (bleed) | [PROGRAMME-VARIANT] (bleed-less) |
 |---|---|---|
 | Primary air source | Engine HP/LP compressor bleed | **None** (no bleed) |
 | APU air source | APU bleed compressor | **None** (no APU) |
@@ -351,7 +332,7 @@ flowchart LR
 | Ground connector | — | External ground pneumatic cart (maintenance) | External → ATA 36-010 |
 | ECS / Pressurisation | ATA 21 | **No interface** — EDC is separate source; EAC does NOT supply ATA 21 | None |
 | Wing Anti-Ice | ATA 30 | **No interface** — electrothermal; EAC does NOT supply ATA 30 | None |
-| APU | ATA 49 | **No interface** — no APU on eWTW | None |
+| APU | ATA 49 | **No interface** — no APU on [PROGRAMME-VARIANT] | None |
 | Propulsion | ATA 70–80 | **No interface** — no bleed ports | None |
 
 ---
@@ -393,9 +374,9 @@ flowchart LR
 - **Ground connector inspection**: dust cap condition, coupling wear, seal condition — visual
 
 ### 13.2 Base / Heavy Maintenance
-- **EAC removal**: S1000D DM DMC-AMPEL360E-EWTW-036-10-520 (Remove) — TBD
-- **EAC installation**: S1000D DM DMC-AMPEL360E-EWTW-036-10-720 (Install) — TBD
-- **EAC functional test post-install**: DM DMC-AMPEL360E-EWTW-036-10-300 (Inspect/Check)
+- **EAC removal**: S1000D DM DMC-<PROGRAMME>-<VARIANT>-036-10-520 (Remove) — TBD
+- **EAC installation**: S1000D DM DMC-<PROGRAMME>-<VARIANT>-036-10-720 (Install) — TBD
+- **EAC functional test post-install**: DM DMC-<PROGRAMME>-<VARIANT>-036-10-300 (Inspect/Check)
 - **Ground connector replacement**: TBD
 
 ### 13.3 Consumables
@@ -408,11 +389,11 @@ flowchart LR
 
 | DM Code (planned) | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-10-00A-040A-A | 040 | ATA 36-010 — Pneumatic Air Sources — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-300A-A | 300 | ATA 36-010 — EAC Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-520A-A | 520 | ATA 36-010 — EAC Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-720A-A | 720 | ATA 36-010 — EAC Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-400A-A | 400 | ATA 36-010 — EAC Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-10-00A-040A-A | 040 | ATA 36-010 — Pneumatic Air Sources — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-10-00A-300A-A | 300 | ATA 36-010 — EAC Inspection | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-10-00A-520A-A | 520 | ATA 36-010 — EAC Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-10-00A-720A-A | 720 | ATA 36-010 — EAC Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-10-00A-400A-A | 400 | ATA 36-010 — EAC Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -443,7 +424,7 @@ flowchart LR
 | Oil contamination | N/A | Not applicable if oil-free EAC | Oil-free compressor eliminates contamination risk |
 
 ### 16.1 Key Safety Note
-Unlike conventional bleed air sources (which operate at 200–500°C and 40–60 psi), the EAC on the eWTW provides low-pressure, near-ambient-temperature air. There is **no hot bleed air hazard** associated with the ATA 36 air source on the eWTW. The EAC failure modes are primarily: motor overtemperature, motor stall, bearing failure (compressor), and controller failure.
+Unlike conventional bleed air sources (which operate at 200–500°C and 40–60 psi), the EAC on the [PROGRAMME-VARIANT] provides low-pressure, near-ambient-temperature air. There is **no hot bleed air hazard** associated with the ATA 36 air source on the [PROGRAMME-VARIANT]. The EAC failure modes are primarily: motor overtemperature, motor stall, bearing failure (compressor), and controller failure.
 
 ---
 
@@ -466,14 +447,14 @@ Unlike conventional bleed air sources (which operate at 200–500°C and 40–60
 
 | Term | Definition |
 |---|---|
-| EAC | Electric Air Compressor — on-board motor-driven compressor providing low-pressure air for residual pneumatic consumers on eWTW |
+| EAC | Electric Air Compressor — on-board motor-driven compressor providing low-pressure air for residual pneumatic consumers on [PROGRAMME-VARIANT] |
 | EDC | Electric Driven Compressor — high-flow compressor for cabin pressurisation (ATA 21); a separate, larger system not part of ATA 36 |
 | Bleed-less architecture | Aircraft design with no engine compressor bleed air extraction |
 | NRV | Non-Return Valve — check valve preventing reverse flow through EAC outlet on shutdown |
 | SOV | Shutoff Valve — electrically actuated solenoid valve |
 | BITE | Built-In Test Equipment — self-test logic within the EAC motor controller |
 | CMC | Central Maintenance Computer — on-board fault recording and maintenance support system |
-| OHT | Overheat sensor — used on conventional bleed duct systems; **not required on eWTW ATA 36** |
+| OHT | Overheat sensor — used on conventional bleed duct systems; **not required on [PROGRAMME-VARIANT] ATA 36** |
 | Ground pneumatic connector | External service receptacle on fuselage for connection of ground pneumatic cart |
 | CS-25.1438 | EASA CS-25 paragraph governing pneumatic system design |
 | DO-160G | RTCA environmental qualification standard for airborne equipment |
@@ -494,7 +475,7 @@ Unlike conventional bleed air sources (which operate at 200–500°C and 40–60
 5. RTCA DO-160G — Environmental Conditions and Test Procedures
 6. S1000D Issue 5.0 — Technical Publication Standard
 7. ATA iSpec 2200 — ATA 36 Pneumatic
-8. AMPEL360e eWTW Bleed-less Architecture Design Rules — TBD
+8. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Bleed-less Architecture Design Rules — TBD
 9. Q-AIR Division — EAC Preliminary Specification — TBD
 
 ---

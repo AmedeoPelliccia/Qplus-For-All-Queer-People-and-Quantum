@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0089-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-089-070-SAFETY-BOUNDARIES-HUMAN-OVERSIGHT-AND-CERTIFICATION-CONSTRAINTS
      ATLAS-089 (Propulsion AI Optimization Hooks) · Safety Boundaries, Human Oversight and Certification Constraints
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Safety Boundaries, Human Oversight and Certification Constraints
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0089-070"
 
 ## §1 Purpose
 
-ATLAS subsubject 089-070 defines the Safety Boundary Monitor (SBM) architecture, the hard constraint catalogue, the human oversight mechanisms, and the full certification constraint set applicable to the PAIO AI optimization system. It establishes the boundary between the AI optimization domain (AIOCU DAL B) and the safety enforcement domain (SBM DAL A), and documents the crew interfaces for AI control and override.
+This document defines the agnostic ATLAS standard-level architecture context for `Safety Boundaries, Human Oversight and Certification Constraints`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Safety Boundary Monitor (SBM) Architecture
 
 The SBM is a **non-AI, deterministic, DO-178C DAL A** safety enforcement module architecturally isolated from the AIOCU AI optimization partition. It intercepts all AIOCU output commands before relay to actuator controllers and enforces the following principles:

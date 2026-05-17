@@ -6,10 +6,10 @@ subsubject: "040"
 subsubject_title: "Oxygen Storage and Distribution"
 file_name: "035-040-Oxygen-Storage-and-Distribution.md"
 sns_reference: "035-40"
-dmc_prefix: "DMC-AMPEL360E-EWTW-035-40"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-035-40"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 35"
   - "Oxygen"
@@ -87,10 +87,12 @@ keywords:
   - "filler valve"
   - "anti-static tubing"
   - "CS-25.1453"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 035-040 — Oxygen Storage and Distribution
-### AMPEL360e eWTW · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 35 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -102,41 +104,29 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Oxygen Storage and Distribution subsystem (ATA 35-40) as implemented on the AMPEL360e Wide Tube-and-Wing (eWTW) fully electric aircraft. It covers the high-pressure crew oxygen cylinder(s) specification, stowage location and structural integration, anti-static distribution tubing, filler valve location, pressure relief devices, and the self-contained nature of the passenger COG system (no distribution tubing required). There is no liquid oxygen (LOX) on the AMPEL360e eWTW.
+This document defines the agnostic ATLAS standard-level architecture context for `035-040 — Oxygen Storage and Distribution`.
 
-The fully electric architecture presents specific challenges for oxygen storage and distribution: COPV cylinder structural integration with the CFRP composite fuselage requires detailed analysis; no hydraulic lines exist adjacent to oxygen tubing (eliminating a key fire ignition hazard); and electric routing must be segregated from high-pressure oxygen lines per CS-25.1453.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 035-40 — Oxygen Storage and Distribution |
-| Crew Cylinder Type | COPV (Composite Overwrap Pressure Vessel) TBD vs. steel/aluminium |
-| Crew Cylinder Pressure | 1800 psi or 1850 psi nominal (TBD) |
-| Crew Cylinder Location | Avionics bay / flight deck rear area (TBD) |
-| Tubing Material | Stainless steel or titanium (anti-static) |
-| Filler Valve Location | Fuselage exterior servicing port (TBD — forward lower fuselage) |
-| Passenger Storage | COG units — self-contained in PSU panels (no high-pressure lines) |
-| LOX System | None — not applicable |
-| Certification Basis | CS-25.1451, CS-25.1453 |
-| S1000D SNS | 035-40 |
-| Applicability Code | ALL (all eWTW aircraft in programme) |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-Oxygen storage and distribution on the AMPEL360e eWTW comprises two architecturally distinct subsystems:
+Oxygen storage and distribution on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] comprises two architecturally distinct subsystems:
 
 **Crew high-pressure storage and distribution**: One or more COPV cylinders store gaseous oxygen at 1800–1850 psi. The cylinder is stowed in the avionics bay or behind the flight deck rear bulkhead. Anti-static stainless or titanium tubing distributes oxygen from the cylinder through a pressure reducing valve and isolation valve to crew regulators at each flight deck station. The filler valve on the fuselage exterior allows ground servicing. A pressure relief valve vents the cylinder in the event of overpressure.
 
 **Passenger COG storage (self-contained)**: Chemical oxygen generators (COG) are pre-installed in PSU overhead panels. No high-pressure oxygen lines are routed through the passenger cabin or overhead structure for the passenger system. Each COG is a self-contained chemical unit requiring only electrical wiring for deployment triggering (and optional status sensing). Distribution of oxygen from COG to passenger masks is via short flexible tubing within each PSU unit.
 
-The absence of hydraulic systems on the eWTW removes one of the primary fire risk scenarios (hydraulic fluid leak near oxygen tubing). However, routing segregation from electrical power wiring and fuel system components remains a CS-25.1453 compliance requirement.
+The absence of hydraulic systems on the [PROGRAMME-VARIANT] removes one of the primary fire risk scenarios (hydraulic fluid leak near oxygen tubing). However, routing segregation from electrical power wiring and fuel system components remains a CS-25.1453 compliance requirement.
 
 ---
 
@@ -172,7 +162,7 @@ The absence of hydraulic systems on the eWTW removes one of the primary fire ris
 - **Filler valve architecture**: Single exterior filler valve on fuselage skin in a recessed ground servicing panel (location TBD — typically forward lower fuselage, accessible from ground). One-way (check valve function) prevents reverse flow. High-pressure quick-connect per GSE standard (TBD). Fill rate limited by fill valve orifice and GSE supply pressure.
 - **Pressure relief**: Cylinder equipped with a pressure relief valve or burst disc rated to vent at a pressure above the maximum operating pressure but below the cylinder burst pressure. Vent routed overboard via fuselage penetration. Relief activation is a single-use irreversible event; cylinder must be removed from service.
 - **Passenger COG architecture**: COG units are structural components of the PSU panels (ATA 25). No high-pressure lines enter the cabin. Each COG is mechanically connected to the mask dispensing bag. COG electrical trigger is a low-current solenoid signal. COG outlet is connected to short flexible tubing branches to each mask.
-- **No LOX**: Liquid oxygen is not carried on the eWTW. All stored oxygen is in gaseous form (high-pressure cylinders or self-contained chemical generators). No LOX-related cryogenic systems, insulated lines, or LOX servicing equipment.
+- **No LOX**: Liquid oxygen is not carried on the [PROGRAMME-VARIANT]. All stored oxygen is in gaseous form (high-pressure cylinders or self-contained chemical generators). No LOX-related cryogenic systems, insulated lines, or LOX servicing equipment.
 
 ---
 
@@ -312,7 +302,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 035-40 | Oxygen Storage and Distribution | DMC-AMPEL360E-EWTW-035-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 035-40 | Oxygen Storage and Distribution | DMC-<PROGRAMME>-<VARIANT>-035-40 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Data Module Breakdown — 035-40
 
@@ -360,7 +350,7 @@ flowchart LR
 | Requirement | Source | Description | Compliance Approach | Status |
 |---|---|---|---|---|
 | CS-25.1451 | EASA CS-25 Subpart K | Fire protection — O₂ equipment and materials | Fire-resistant cylinder, tubing, and fitting materials; no ignitable material in proximity | <img src="https://img.shields.io/badge/TBD-red"> |
-| CS-25.1453 | EASA CS-25 Subpart K | Protection from damage — segregation from fuel, hydraulic, heat, and mechanical damage | Routing design; no hydraulics on eWTW; fuel segregation; heat source clearance | <img src="https://img.shields.io/badge/TBD-red"> |
+| CS-25.1453 | EASA CS-25 Subpart K | Protection from damage — segregation from fuel, hydraulic, heat, and mechanical damage | Routing design; no hydraulics on [PROGRAMME-VARIANT]; fuel segregation; heat source clearance | <img src="https://img.shields.io/badge/TBD-red"> |
 | COPV regulation | DOT / EN / EASA | COPV pressure vessel design, test, and qualification | COPV per DOT CFFC or EN 12257 or applicable EASA-approved standard; burst test | <img src="https://img.shields.io/badge/TBD-red"> |
 | DO-160G | RTCA | Environmental qualification — not directly applicable to passive components | Passive components (cylinder, tubing) — material qualification; fittings DO-160G where electronics present | <img src="https://img.shields.io/badge/TBD-red"> |
 | CS-25.1441 | EASA CS-25 Subpart K | Adequate supply — cylinder sizing | Cylinder volume sufficient for minimum required duration at all crew simultaneously | <img src="https://img.shields.io/badge/TBD-red"> |
@@ -393,7 +383,7 @@ flowchart LR
 | CS-25.1453 | EASA certification requirement for protection of oxygen equipment from damage (segregation from fuel, hydraulic, heat, and mechanical hazards) |
 | filler valve | A one-way high-pressure valve on the aircraft exterior for ground servicing replenishment of the crew oxygen cylinder |
 | hydrostatic test | Proof pressure test of a pressure vessel using liquid (typically water) at 1.5× working pressure to verify structural integrity |
-| LOX | Liquid Oxygen — cryogenically stored oxygen; not used on the AMPEL360e eWTW |
+| LOX | Liquid Oxygen — cryogenically stored oxygen; not used on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] |
 | PRV | Pressure Reducing Valve — passive mechanical device reducing high-pressure cylinder output to regulator supply level |
 | pressure relief valve | A spring-loaded valve that opens automatically when cylinder pressure exceeds its set point, venting oxygen overboard |
 | routing segregation | Physical separation of oxygen distribution tubing from other aircraft systems (electrical wiring, fuel, hydraulic, heat sources) per CS-25.1453 |

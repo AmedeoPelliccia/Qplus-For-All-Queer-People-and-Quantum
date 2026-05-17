@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-050"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0087-050"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-087-050-PROPULSOR-AIRFRAME-INTEGRATION-AND-CLEARANCE-ZONES
      ATLAS-087 (Open Rotor and Counter-Rotating) · Propulsor Airframe Integration and Clearance Zones
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propulsor Airframe Integration and Clearance Zones
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0087-050"
 
 ## §1 Purpose
 
-ATLAS subsubject 087-050 defines the airframe integration architecture for the ORCR propulsor at the aft fuselage pylon stations, including the pylon structural interface, ground clearance envelopes, FOD (Foreign Object Damage) exclusion zones, blade-tip sweep zones, and integration loads transmitted to the fuselage.
+This document defines the agnostic ATLAS standard-level architecture context for `Propulsor Airframe Integration and Clearance Zones`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Pylon Station Definition
 
 The ORCR pusher propulsors are installed at two symmetrical aft fuselage pylon stations:

@@ -23,13 +23,15 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 013 · Subsubject 003 — Towing Procedures — Pushback and Maneuvering
 
 ## 1. Purpose
 
-Provides the step-level procedure for AMPEL360 towing operations, covering pushback from a parking stand, forward tow and repositioning, and the final handover to flight crew. This subsubject is the primary procedural reference for ground crew conducting towing operations.
+Provides the step-level procedure for [PROGRAMME-AIRCRAFT] towing operations, covering pushback from a parking stand, forward tow and repositioning, and the final handover to flight crew. This subsubject is the primary procedural reference for ground crew conducting towing operations.
 
 > **Scope boundary:** This file contains the step-level procedures. Equipment specifications and qualification are in [`013-002-Towing-Equipment-and-Tug-Compatibility.md`](./013-002-Towing-Equipment-and-Tug-Compatibility.md). Load and speed limits governing these steps are in [`013-004-Towing-Limits-Loads-and-Steering-Constraints.md`](./013-004-Towing-Limits-Loads-and-Steering-Constraints.md). Record-keeping requirements following each tow are in [`013-005-Towing-Records-Incidents-and-Traceability.md`](./013-005-Towing-Records-Incidents-and-Traceability.md).
 

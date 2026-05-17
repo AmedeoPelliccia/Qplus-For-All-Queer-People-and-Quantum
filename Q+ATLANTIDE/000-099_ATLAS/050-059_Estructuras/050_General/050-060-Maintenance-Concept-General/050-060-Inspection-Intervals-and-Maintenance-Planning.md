@@ -25,13 +25,15 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.060 — Inspection Intervals and Maintenance Planning
 
 ## 1. Purpose
 
-Defines the **inspection interval derivation methodology and maintenance planning framework** for AMPEL360 eWTW structural tasks, covering how DTA-derived thresholds and intervals are translated into the Maintenance Planning Document (MPD), how check packages are built around maintenance check periods, and how the Ageing Aircraft Programme governs interval escalation over fleet life.
+Defines the **inspection interval derivation methodology and maintenance planning framework** for [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] structural tasks, covering how DTA-derived thresholds and intervals are translated into the Maintenance Planning Document (MPD), how check packages are built around maintenance check periods, and how the Ageing Aircraft Programme governs interval escalation over fleet life.
 
 ## 2. Scope
 
@@ -84,7 +86,7 @@ flowchart TD
 |---|---|
 | CS-25.571 | Inspection interval derivation methodology |
 | MSG-3 Rev 3 | Interval packaging and MPD development |
-| MRBD-AMPEL360-001 | Maintenance Review Board Document |
-| MPD-AMPEL360-050 | Maintenance Planning Document — Structures |
+| MRBD-[PROGRAMME-AIRCRAFT]-001 | Maintenance Review Board Document |
+| MPD-[PROGRAMME-AIRCRAFT]-050 | Maintenance Planning Document — Structures |
 | [`./README.md`](./README.md) | Subsubject 060 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

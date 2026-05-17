@@ -6,10 +6,10 @@ subsubject: "060"
 subsubject_title: "Rain Removal and Water Runoff Management"
 file_name: "030-060-Rain-Removal-and-Water-Runoff-Management.md"
 sns_reference: "030-60"
-dmc_prefix: "DMC-AMPEL360E-EWTW-030-60"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-030-60"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,8 +75,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family"
+  programme_path_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -87,21 +87,23 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "CSDB"
   - "ATA 30"
   - "Ice and Rain Protection"
   - "electrothermal"
-  - "AMPEL360e eWTW"
+  - "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
   - "windshield wiper"
   - "rain removal"
   - "water runoff"
   - "drainage groove"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 030-060 — Rain Removal and Water Runoff Management
-### AMPEL360e eWTW · ATA 30-60 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 30-60 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -113,30 +115,23 @@ All hyperlinks in this document are **relative links** unless pointing to a publ
 
 ## §1 Purpose
 
-This document defines the Rain Removal and Water Runoff Management system for the **AMPEL360e eWTW**. While the windshield electrothermal heating system (ATA 30-40) addresses ice formation on the flight deck windows, rain on the windshield during ground taxi, take-off roll, approach, and initial climb requires active mechanical removal to maintain the crew forward vision required by CS-25.773. This document covers the windshield wiper system design, wiper speed modes, aerodynamic speed interlock, park position control, rain repellent fluid system assessment, and the passive water runoff path design of the eWTW airframe — including drainage grooves, door and window seal design, and aerodynamic water dispersal at cruise speed.
+This document defines the agnostic ATLAS standard-level architecture context for `030-060 — Rain Removal and Water Runoff Management`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family (eWTW) |
-| ATA Sub-chapter | 30-60 — Rain Removal and Water Runoff Management |
-| Wiper System | Two independent wiper motor/arm/blade assemblies (Captain and F/O) |
-| Speed Modes | Intermittent (INT), Low (LO), High (HI), Park (PARK) |
-| Aerodynamic Speed Limit | Vmax_wiper — TBD (nominally ~250 KIAS or VMO/2) |
-| Rain Repellent | TBD — no-fit vs fit decision pending at LC03 |
-| Water Runoff Design | Aerodynamic drainage grooves, door and window seals, aerodynamic dispersal at cruise |
-| Interface | ATA 30-40 (windshield heating); ATA 24 (electrical power); ATA 34 (airspeed for interlock) |
-| Certification Basis | CS-25.773; FAR 25.773; AC 25.773-1 |
-| Document Status | Programme-controlled scaffold — not yet approved for manufacture |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-Rain on the windshield of a commercial aircraft is a persistent hazard during the terminal phases of flight (approach and landing) and during ground operations in wet weather. At cruise altitudes, the aerodynamic boundary layer and the heated windshield surface together prevent rain film formation, and no mechanical rain removal is required above the wiper speed limit. Below the aerodynamic dispersal threshold, the windshield wiper provides the primary means of maintaining pilot forward visibility through the windshield in rain. The eWTW wiper system is an electromechanical tandem design, with independent wiper assemblies for the Captain and First Officer windshield panels. Each assembly consists of a 28 V DC permanent-magnet motor, a torque tube drive, a wiper arm with variable-pressure spring, and a rubber wiper blade rated for operation from −40 °C to +85 °C to prevent blade brittleness in cold conditions.
+Rain on the windshield of a commercial aircraft is a persistent hazard during the terminal phases of flight (approach and landing) and during ground operations in wet weather. At cruise altitudes, the aerodynamic boundary layer and the heated windshield surface together prevent rain film formation, and no mechanical rain removal is required above the wiper speed limit. Below the aerodynamic dispersal threshold, the windshield wiper provides the primary means of maintaining pilot forward visibility through the windshield in rain. The [PROGRAMME-VARIANT] wiper system is an electromechanical tandem design, with independent wiper assemblies for the Captain and First Officer windshield panels. Each assembly consists of a 28 V DC permanent-magnet motor, a torque tube drive, a wiper arm with variable-pressure spring, and a rubber wiper blade rated for operation from −40 °C to +85 °C to prevent blade brittleness in cold conditions.
 
 The wiper motor operates in three speed modes and a park mode. Speed selection is by crew from the overhead panel. The intermittent mode cycles the wiper at approximately 20 sweeps per minute with a dwell period at the park position, suitable for light rain. Low speed provides approximately 40 sweeps per minute for moderate rain. High speed provides approximately 60 sweeps per minute for heavy rain or approach in storm conditions. An aerodynamic speed interlock prevents wiper operation when the calibrated airspeed received from the ADIRU exceeds Vmax_wiper. Above this speed, dynamic pressure on the wiper arm and blade exceeds the wiper motor arm-hold torque capability, and the blade may lift off the windshield surface, causing aerodynamic flutter, blade or arm structural damage, and potential windshield scratching. When the interlock is active, the wiper is moved to the park position and held there by a latching relay, and the crew overhead panel selector is back-lit with an amber WIPER OVERSPEED advisory.
 
@@ -164,7 +159,7 @@ Water runoff from the windshield and fuselage nose section at airspeeds above th
 - Windshield electrothermal heating (ATA 30-40 — heating is a prerequisite for rain runoff at cruise speed but is a separate function)
 - Fuselage main cabin window seals (ATA 56 — not part of rain removal system)
 - Landing gear bay drainage (ATA 32)
-- Rain sensing for automatic wiper speed control (not planned for eWTW baseline)
+- Rain sensing for automatic wiper speed control (not planned for [PROGRAMME-VARIANT] baseline)
 - Cabin water ingress from galley or toilet overflows (ATA 38)
 
 ---
@@ -177,9 +172,9 @@ Water runoff from the windshield and fuselage nose section at airspeeds above th
 
 - **Park position mechanism:** The park position is defined as the wiper arm fully stowed at the lower edge of the wiper sweep arc, below the windshield lower vision line. A proximity switch or magnetic encoder at the motor drive arm confirms that the wiper is in the park position. If the park position is not confirmed within 5 seconds of a PARK command, the wiper control module attempts a slow reverse sweep to locate the park position (recovery sweep). If park position is still not achieved, a WIPER FAULT advisory is generated and the motor is de-energised to prevent blade vibration on a parked surface.
 
-- **Rain repellent fluid system (no-fit vs fit):** A rain repellent system applies a hydrophobic chemical to the windshield outer surface, causing water to bead into discrete droplets that are dispersed aerodynamically at lower airspeeds than a plain glass surface. This can reduce wiper dependency and improve rain visibility at intermediate airspeeds. However, rain repellent fluids have maintenance cost (refilling reservoir), potential environmental concerns (disposal), and may not be compatible with all windshield coatings (ITO film surface interaction TBD). The eWTW programme has not yet made a fit/no-fit decision. If fitted, the rain repellent reservoir, pump, and spray nozzle are defined under ATA 30-60. If no-fit, the wiper must meet visibility requirements without repellent assistance.
+- **Rain repellent fluid system (no-fit vs fit):** A rain repellent system applies a hydrophobic chemical to the windshield outer surface, causing water to bead into discrete droplets that are dispersed aerodynamically at lower airspeeds than a plain glass surface. This can reduce wiper dependency and improve rain visibility at intermediate airspeeds. However, rain repellent fluids have maintenance cost (refilling reservoir), potential environmental concerns (disposal), and may not be compatible with all windshield coatings (ITO film surface interaction TBD). The [PROGRAMME-VARIANT] programme has not yet made a fit/no-fit decision. If fitted, the rain repellent reservoir, pump, and spray nozzle are defined under ATA 30-60. If no-fit, the wiper must meet visibility requirements without repellent assistance.
 
-- **Water runoff path design — passive drainage:** The eWTW nose section aerodynamic contour channels impact rainwater away from the windshield viewing area using a combination of: (a) frame drainage grooves machined into the lower windshield surround to prevent water pooling on the windshield lower sill, (b) an aerodynamic leading edge on the windshield wiper park position housing that deflects boundary layer water away from the parked wiper arm, and (c) door frame drainage channels on the cockpit access door and side-window lower frames that direct ingressing water to the fuselage lower drain path.
+- **Water runoff path design — passive drainage:** The [PROGRAMME-VARIANT] nose section aerodynamic contour channels impact rainwater away from the windshield viewing area using a combination of: (a) frame drainage grooves machined into the lower windshield surround to prevent water pooling on the windshield lower sill, (b) an aerodynamic leading edge on the windshield wiper park position housing that deflects boundary layer water away from the parked wiper arm, and (c) door frame drainage channels on the cockpit access door and side-window lower frames that direct ingressing water to the fuselage lower drain path.
 
 ---
 
@@ -308,12 +303,12 @@ flowchart LR
 
 | Info Code | Title | DMC | Status |
 |---|---|---|---|
-| 040 | System Description — Rain Removal and Water Runoff | DMC-AMPEL360E-EWTW-030-60-040-A | Draft scaffold |
-| 300 | Inspection — Wiper Blade, Arm, and Drainage Groove | DMC-AMPEL360E-EWTW-030-60-300-A | Not started |
-| 400 | Fault Isolation — Wiper Motor and Control Module Faults | DMC-AMPEL360E-EWTW-030-60-400-A | Not started |
-| 520 | Remove — Wiper Motor Assembly | DMC-AMPEL360E-EWTW-030-60-520-A | Not started |
-| 720 | Install — Wiper Motor Assembly | DMC-AMPEL360E-EWTW-030-60-720-A | Not started |
-| 941 | Illustrated Parts Data — Wiper System | DMC-AMPEL360E-EWTW-030-60-941-A | Not started |
+| 040 | System Description — Rain Removal and Water Runoff | DMC-<PROGRAMME>-<VARIANT>-030-60-040-A | Draft scaffold |
+| 300 | Inspection — Wiper Blade, Arm, and Drainage Groove | DMC-<PROGRAMME>-<VARIANT>-030-60-300-A | Not started |
+| 400 | Fault Isolation — Wiper Motor and Control Module Faults | DMC-<PROGRAMME>-<VARIANT>-030-60-400-A | Not started |
+| 520 | Remove — Wiper Motor Assembly | DMC-<PROGRAMME>-<VARIANT>-030-60-520-A | Not started |
+| 720 | Install — Wiper Motor Assembly | DMC-<PROGRAMME>-<VARIANT>-030-60-720-A | Not started |
+| 941 | Illustrated Parts Data — Wiper System | DMC-<PROGRAMME>-<VARIANT>-030-60-941-A | Not started |
 
 ---
 
@@ -373,7 +368,7 @@ Wiper motor current log, park position event history, interlock activation event
 | Wiper Motor | — | A 28 V DC permanent-magnet electric motor converting electrical energy to rotary motion, driving the wiper arm via a crank mechanism |
 | Wiper Blade | — | A flexible rubber element mounted on the wiper arm, maintaining contact with the windshield outer glass surface to sweep rain water off the field of view |
 | Park Position | — | The stowed position of the wiper arm at the lower edge of the sweep arc, below the crew's primary forward vision line; confirmed by a proximity sensor |
-| Rain Repellent Fluid | — | A hydrophobic chemical applied to the windshield outer glass surface to cause water to bead and roll off at lower airspeeds than plain glass; fit/no-fit TBD for eWTW |
+| Rain Repellent Fluid | — | A hydrophobic chemical applied to the windshield outer glass surface to cause water to bead and roll off at lower airspeeds than plain glass; fit/no-fit TBD for [PROGRAMME-VARIANT] |
 | Water Runoff Path | — | The designed route by which rain water is directed away from critical surfaces (windshield, door seals, static ports) by airframe geometry, drainage grooves, and seals |
 | Airframe Drainage Groove | — | A channel machined or formed into the windshield lower frame or door sill to capture and direct water film away from the windshield viewing area |
 | Environmental Seal | — | A weather seal on cockpit doors, windows, and panels that prevents external rain ingress into the fuselage structure |
@@ -389,7 +384,7 @@ Wiper motor current log, park position event history, interlock activation event
 | CIT-002 | FAR 25.773 — Pilot Compartment View | Amendment 25-147 | US counterpart; dual-authority compliance requirement |
 | CIT-003 | AC 25.773-1 — Pilot Compartment View | Rev — | Guidance material for rain removal and wiper system compliance demonstration |
 | CIT-004 | RTCA DO-160G — Environmental Conditions and Test Procedures | Edition G | Wiper motor and wiper control module environmental qualification |
-| CIT-005 | AMPEL360e eWTW Wiper System Specification | TBD — programme document | Programme-level wiper speed schedule, Vmax_wiper, blade qualification, and rain repellent decision |
+| CIT-005 | [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Wiper System Specification | TBD — programme document | Programme-level wiper speed schedule, Vmax_wiper, blade qualification, and rain repellent decision |
 
 ---
 
@@ -410,7 +405,7 @@ Wiper motor current log, park position event history, interlock activation event
 
 | OI ID | Issue | Owner | Target Resolution | Status |
 |---|---|---|---|---|
-| OI-001 | Vmax_wiper limit not yet defined; requires aerodynamic analysis of wiper arm lift-off forces across eWTW speed envelope and altitude range | Q-AIR | LC05 Detailed Design | Open |
+| OI-001 | Vmax_wiper limit not yet defined; requires aerodynamic analysis of wiper arm lift-off forces across [PROGRAMME-VARIANT] speed envelope and altitude range | Q-AIR | LC05 Detailed Design | Open |
 | OI-002 | Rain repellent system fit / no-fit decision not yet made; decision requires assessment of ITO film surface chemical compatibility with rain repellent fluids | Q-MECHANICS / ATA 56 | LC03 Architecture freeze | Open |
 | OI-003 | Wiper motor type (crank-driven arm vs pantograph) not yet selected; affects sweep angle uniformity and aerodynamic profile at high speed | Q-MECHANICS / procurement | LC05 Detailed Design | Open |
 | OI-004 | Drainage groove geometry in windshield lower frame not yet defined; requires integration study between ATA 30-60 rain management and ATA 56 window structural frame design | Q-STRUCTURES / ATA 56 | LC05 Detailed Design | Open |

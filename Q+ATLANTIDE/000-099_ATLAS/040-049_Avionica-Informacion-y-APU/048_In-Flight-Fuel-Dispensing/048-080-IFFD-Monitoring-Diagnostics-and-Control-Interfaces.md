@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 080 — IFFD Monitoring Diagnostics and Control Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document specifies the **monitoring, diagnostics, and control interface functions** of the IFFD system for the AMPEL360E eWTW aircraft per ATA 48. These functions ensure continuous health monitoring of IFFD system components, provide maintenance personnel with diagnostic access, and enable fleet-level health management via ACARS AHM uplinks.
+This document specifies the **monitoring, diagnostics, and control interface functions** of the IFFD system for the programme-defined aircraft type per ATA 48. These functions ensure continuous health monitoring of IFFD system components, provide maintenance personnel with diagnostic access, and enable fleet-level health management via ACARS AHM uplinks.
 
 The IFFDCU implements Power-On Built-In Test (PBIT) at startup and Continuous Built-In Test (CBIT) during flight, achieving > 97% failure detection coverage across the IFFD subsystem. A Prognostic Health Management (PHM) module within the IFFDCU estimates Remaining Useful Life (RUL) for the probe actuator, hose-reel motor, and EBPs. 48 Quick Access Recorder (QAR) parameters are recorded at 4 Hz. ACARS AHM uplinks provide fleet-level IFFD health data to the ground maintenance system. CMS ATA 45 provides the maintenance crew interface for IFFD fault history, LRU identification, and IBIT execution.
 
@@ -53,7 +55,7 @@ The IFFDCU implements Power-On Built-In Test (PBIT) at startup and Continuous Bu
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | PBIT / CBIT Coverage | > 97% failure detection |
 | PHM Targets | Probe EMA, hose-reel motor, EBP-A, EBP-B |
@@ -476,4 +478,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD monitoring, diagnostics and control interfaces for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD monitoring, diagnostics and control interfaces for programme-defined aircraft type |

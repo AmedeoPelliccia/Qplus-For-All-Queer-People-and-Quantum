@@ -53,6 +53,8 @@ ata_reference_link: "#ref-ata-ispec-2200"
 created: "2026-05-09"
 updated: "2026-05-09"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 040 · 040 — System Integration and Interface Management
@@ -68,7 +70,7 @@ Parent context: [040-000 Multisystem General](./040-000-Multisystem-General.md).
 
 ## 1. Purpose
 
-This document defines the system integration and interface management strategy for the AMPEL360E avionics multisystem. It covers the Interface Control Document (ICD) framework, integration strategies (incremental and full), verification at integration level, cross-system dependency management, and compliance with SAE ARP4754A and EUROCAE ED-79A system development processes. It is the primary reference for systems integration engineers, verification leads, and program management.
+This document defines the system integration and interface management strategy for the [PROGRAMME-AIRCRAFT] avionics multisystem. It covers the Interface Control Document (ICD) framework, integration strategies (incremental and full), verification at integration level, cross-system dependency management, and compliance with SAE ARP4754A and EUROCAE ED-79A system development processes. It is the primary reference for systems integration engineers, verification leads, and program management.
 
 ---
 
@@ -76,7 +78,7 @@ This document defines the system integration and interface management strategy f
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E (all variants) |
+| Aircraft Model | [PROGRAMME-AIRCRAFT] (all variants) |
 | ATA Reference | [ATA iSpec 2200](#ref-ata-ispec-2200) — Chapter 040 |
 | System Development Process | [SAE ARP4754A](#ref-arp4754a) / [EUROCAE ED-79A](#ref-ed79a) |
 | Regulatory Framework | EASA CS-25, FAA 14 CFR Part 25 |
@@ -257,12 +259,12 @@ graph LR
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-040-040-00A-040A-A | 040 | SIIM Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-040-040-00A-300A-A | 300 | Integration Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-040-040-00A-400A-A | 400 | Integration BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-040-040-00A-520A-A | 520 | Interface Wiring Data |
-| IPD | DMC-AMPEL360E-EWTW-040-040-00A-941A-A | 941 | Integration LRU Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-040-040-00A-720A-A | 720 | ICD and ITDB Tool Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-040-040-00A-040A-A | 040 | SIIM Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-040-040-00A-300A-A | 300 | Integration Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-040-040-00A-400A-A | 400 | Integration BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-040-040-00A-520A-A | 520 | Interface Wiring Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-040-040-00A-941A-A | 941 | Integration LRU Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-040-040-00A-720A-A | 720 | ICD and ITDB Tool Description |
 
 ### Recommended Data Module Set
 

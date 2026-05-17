@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0088-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-088-040-PHYSICS-BOUNDARY-AND-CLAIM-VALIDATION
      ATLAS-088 (Beyond-2040 Concepts Reserved) · Physics Boundary and Claim Validation
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Physics Boundary and Claim Validation
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0088-040"
 
 ## §1 Purpose
 
-ATLAS subsubject 088-040 defines the **Physics Boundary and Claim Validation (PBCV)** protocol applied by the Q-HORIZON Physics Review Panel to every concept admitted to the B2CR catalogue. It establishes the known-physics compliance framework, the falsifiability criteria, and the structured validation workflow (B2CMU-REV-001) that governs whether a concept is assigned a Physics Boundary Flag of Y (compliant), Contested, or N (non-compliant / violation demonstrated).
+This document defines the agnostic ATLAS standard-level architecture context for `Physics Boundary and Claim Validation`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Known-Physics Boundary Framework
 
 ### 2.1 Conservation Laws (Absolute Constraints)

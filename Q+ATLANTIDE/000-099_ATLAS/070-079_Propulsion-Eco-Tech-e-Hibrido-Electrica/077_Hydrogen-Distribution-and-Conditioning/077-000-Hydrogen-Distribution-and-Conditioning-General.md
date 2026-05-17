@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0077-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0077-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-077-000-HYDROGEN-DISTRIBUTION-AND-CONDITIONING-GENERAL
      ATA 28 (GH₂/LH₂ Distribution) · Hydrogen Distribution and Conditioning — General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Hydrogen Distribution and Conditioning — General
@@ -46,28 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0077-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 077-000 establishes the general scope, top-level architecture, and governing standards for the Hydrogen Distribution and Conditioning system of the AMPEL360E eWTW. This document is the apex reference for all subordinate subsubject documents (077-010 through 077-090).
+This document defines the agnostic ATLAS standard-level architecture context for `Hydrogen Distribution and Conditioning — General`.
 
-The AMPEL360E eWTW Hydrogen Distribution and Conditioning (HDC) system receives **liquid hydrogen (LH₂)** from the onboard LH₂ storage tanks (ATLAS 076, ATA 28) and delivers conditioned **gaseous hydrogen (GH₂)** at the correct pressure, temperature, and purity to the twin **Proton Exchange Membrane Fuel Cell (PEMFC)** stacks (ATLAS 075, ATA 75). The system spans from the LH₂ tank outlet valves to the fuel cell anode inlet manifolds and encompasses all feed lines, cryogenic pumps, vaporizers, heat exchangers, pressure regulators, isolation valves, purge/vent interfaces, and leak-detection provisions along the hydrogen flow path.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-All subsubject documents (077-010 through 077-090) are subordinate to this general baseline and inherit its governance class, Q-Division authority, and S1000D CSDB affiliation.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 28 (GH₂/LH₂ Distribution) — 077-000 Hydrogen Distribution and Conditioning General |
-| Certification basis | EASA CS-25 Amdt 27+; CSH-2 (Certification Specifications Hydrogen); ISO 15649; NFPA 2 |
-| S1000D SNS | 077-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `077` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The AMPEL360E eWTW Hydrogen Distribution and Conditioning (HDC) system bridges the onboard LH₂ cryogenic storage (ATLAS 076) and the PEMFC power generation system (ATLAS 075). Its principal function is to convert LH₂ stored at approximately 20 K, 1.5–3.0 bar(a) into warm, regulated GH₂ delivered at the PEMFC anode inlet at 5–8 bar(a) and 280–330 K, at a combined flow rate supporting **200 kW total fuel cell power** (2 × 100 kW stacks under maximum continuous output).
+The programme-defined aircraft type Hydrogen Distribution and Conditioning (HDC) system bridges the onboard LH₂ cryogenic storage (ATLAS 076) and the PEMFC power generation system (ATLAS 075). Its principal function is to convert LH₂ stored at approximately 20 K, 1.5–3.0 bar(a) into warm, regulated GH₂ delivered at the PEMFC anode inlet at 5–8 bar(a) and 280–330 K, at a combined flow rate supporting **200 kW total fuel cell power** (2 × 100 kW stacks under maximum continuous output).
 
 The **Hydrogen Distribution and Conditioning Monitoring Unit (HDCMU)** — a dual-channel controller qualified to DO-178C DAL B / DO-254 DAL B — governs the entire HDC system. The HDCMU executes pressure and flow control loops, monitors line and component temperatures, supervises leak-detection sensors, and coordinates system isolation in abnormal or emergency conditions. It communicates with the **Fuel Cell Control Unit (FCCU, ATA 75)**, the **Hydrogen Storage Control and Monitoring Unit (HSCMU, ATA 076)**, and the **Central Maintenance System (CMS, ATA 45)** over the AFDX ARINC 664 P7 network; cockpit synoptic data are presented on the ECAM (ATA 31).
 

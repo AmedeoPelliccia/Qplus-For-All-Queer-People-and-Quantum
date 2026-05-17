@@ -12,6 +12,8 @@ support_q_divisions: [Q-MECHANICS, Q-DATAGOV, Q-AIR]
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 043 · 010 — Emergency Solar Panel Arrays
@@ -24,7 +26,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the design, specification, and qualification requirements for the photovoltaic (PV) array assemblies constituting the light-capturing elements of the AMPEL360E ESPS. It covers cell technology selection, array electrical architecture, environmental protection, and integration requirements to ensure reliable emergency power generation throughout the aircraft operational envelope.
+This document defines the design, specification, and qualification requirements for the photovoltaic (PV) array assemblies constituting the light-capturing elements of the [PROGRAMME-AIRCRAFT] ESPS. It covers cell technology selection, array electrical architecture, environmental protection, and integration requirements to ensure reliable emergency power generation throughout the aircraft operational envelope.
 
 ---
 
@@ -32,11 +34,11 @@ This document defines the design, specification, and qualification requirements 
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Reference | ATA 43.010 — Emergency Solar Panel Arrays |
 | Applicable Standards | IEC 61215; IEC 61853; DO-160G; CS-25 §25.1309 |
 | Design Assurance Level | PV Array: DAL C; Bypass Diode Circuit: DAL C |
-| Configuration | AMPEL360E Build Standard 1.0+ |
+| Configuration | [PROGRAMME-AIRCRAFT] Build Standard 1.0+ |
 
 ---
 

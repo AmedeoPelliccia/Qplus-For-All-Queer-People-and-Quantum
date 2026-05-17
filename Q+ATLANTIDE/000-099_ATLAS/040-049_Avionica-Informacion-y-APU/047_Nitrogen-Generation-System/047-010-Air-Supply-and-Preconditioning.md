@@ -31,6 +31,8 @@ ata_reference: "ATA 47 — Nitrogen Generation System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 047 · 010 — Air Supply and Preconditioning
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the Air Supply and Preconditioning sub-system of ATA 47 NGS for the AMPEL360E eWTW. The AMPEL360E eWTW operates with **no engine bleed-air**; all compressed air for the Nitrogen Generation System is supplied exclusively by Electric Air Compressors (EAC) interfaced via the ATA 36 bleed-less pneumatic branch.
+This document defines the Air Supply and Preconditioning sub-system of ATA 47 NGS for the programme-defined aircraft type. The programme-defined aircraft type operates with **no engine bleed-air**; all compressed air for the Nitrogen Generation System is supplied exclusively by Electric Air Compressors (EAC) interfaced via the ATA 36 bleed-less pneumatic branch.
 
 The air supply preconditioning function ensures that compressed air delivered to the Air Separation Modules (ASM) meets the quality requirements for hollow-fiber membrane separation: particulate-free (≥ 0.01 μm filtration), moisture-separated, and temperature-conditioned (< 60°C inlet to ASM). The EAC delivers air at 45–55 psig and 150–180°C; the preconditioning assembly pre-cools, filters, and de-moisturises this flow before it reaches the ASM inlet header.
 
@@ -62,7 +64,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter / Sub-subject | ATA 47.010 — Air Supply and Preconditioning |
 | Certification Basis | CS-25 Amendment 28; FAR 25.981 |
 | Applicable Standards | DO-160G; S1000D Issue 5.0; MIL-STD-704F |
@@ -78,7 +80,7 @@ Key governance areas:
 The Air Supply and Preconditioning assembly receives high-temperature, high-pressure compressed air from the Electric Air Compressor (EAC) output and conditions it for delivery to the ASM inlet header. The functional stages are:
 
 1. **Isolation Valve (ISO)**: Normally open, electrically actuated valve allowing NGSCU-commanded NGS isolation during fault conditions or ground maintenance. Fail-safe open.
-2. **Heat Exchanger**: Ram-air or ECS-bleed-less liquid cooled heat exchanger reducing EAC discharge temperature from 150–180°C to ≤ 60°C. On the eWTW, the heat exchanger uses dedicated electric cooling loop — no ECS bleed involved.
+2. **Heat Exchanger**: Ram-air or ECS-bleed-less liquid cooled heat exchanger reducing EAC discharge temperature from 150–180°C to ≤ 60°C. On the [PROGRAMME-VARIANT], the heat exchanger uses dedicated electric cooling loop — no ECS bleed involved.
 3. **Particulate Filter**: Coalescing filter with 0.01 μm rated element capturing airborne particulates and liquid aerosols. Differential pressure sensor monitors filter health; NGSCU triggers maintenance alert at ΔP > 0.5 psig.
 4. **Moisture Separator**: Centrifugal coalescent separator removing free water and oil vapour. Automatic drain valve opens on ground; manual override available via ECAM maintenance mode.
 5. **Temperature and Pressure Sensors**: CDT (Compressor Discharge Temperature Sensor) and CDP (Compressor Discharge Pressure) sensors feed NGSCU for supply monitoring and EAC demand management.
@@ -237,7 +239,7 @@ stateDiagram-v2
 - CDT/CDP threshold values (60°C, 65°C, 80°C; 30 psig, 35 psig) are loaded via NGSCU configuration data module (DLCS uplink).
 - EAC demand request signal formatted per AFDX ARINC 664 P7; message rate 10 Hz.
 - Filter dP maintenance alert logged to CMS CSDB (S1000D fault data module) on each exceedance event.
-- Configuration flag: `BLEF` (Bleed-less Electric Feed) set to TRUE for AMPEL360E eWTW variant; ISO valve logic confirms no bleed-air path.
+- Configuration flag: `BLEF` (Bleed-less Electric Feed) set to TRUE for programme-defined aircraft type variant; ISO valve logic confirms no bleed-air path.
 
 ---
 
@@ -300,13 +302,13 @@ stateDiagram-v2
 | Term | Acronym | Definition |
 |------|---------|------------|
 | Electric Air Compressor | EAC | Electrically driven compressor supplying compressed air to NGS (ATA 36); replaces engine bleed |
-| Pressure Swing Adsorption | PSA | Alternative N₂ generation technology; not used in AMPEL360E eWTW (hollow-fiber membrane used instead) |
+| Pressure Swing Adsorption | PSA | Alternative N₂ generation technology; not used in programme-defined aircraft type (hollow-fiber membrane used instead) |
 | High Efficiency Particulate Air | HEPA | High-efficiency particulate filtration; 0.01 μm rated element used in NGS preconditioning assembly |
 | Pressure Regulating Valve | PRV | Valve maintaining NGS supply pressure within the ASM operating range |
 | Isolation Valve | ISO | Normally-open electrically actuated valve enabling NGS shutdown or maintenance isolation |
 | Compressor Discharge Temperature | CDT | Temperature of EAC outlet air; monitored by CDTS sensor; must be ≤ 60°C at ASM inlet |
 | Compressor Discharge Temperature Sensor | CDTS | Dual-element analogue sensor (4–20 mA) measuring CDT at the ASM inlet header |
-| Bleed-less Electric Feed | BLEF | eWTW-specific architecture flag: NGS air supply from EAC only; no engine bleed path |
+| Bleed-less Electric Feed | BLEF | [PROGRAMME-VARIANT]-specific architecture flag: NGS air supply from EAC only; no engine bleed path |
 | Maintenance Repair Overhaul | MRO | General term for scheduled and unscheduled aircraft maintenance activities |
 | Aircraft Maintenance Manual | AMM | S1000D-structured technical publication covering removal, installation, and troubleshooting procedures |
 

@@ -25,19 +25,21 @@ governance_class: baseline
 version: 1.0.0
 status: draft
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 050-059 · 05.050.050 — Repair Applicability and Damage Limit Boundaries
 
 ## 1. Purpose
 
-Defines the **repair applicability and damage-limit boundary** rules for the AMPEL360 eWTW Structural Repair Manual (SRM): how repair schemes are scoped to structural variants and configurations, how allowable damage limits (ADL) vary with configuration, and the applicability boundaries beyond which a Manufacturer Repair Approval (MRA) is required.
+Defines the **repair applicability and damage-limit boundary** rules for the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] Structural Repair Manual (SRM): how repair schemes are scoped to structural variants and configurations, how allowable damage limits (ADL) vary with configuration, and the applicability boundaries beyond which a Manufacturer Repair Approval (MRA) is required.
 
 ## 2. Scope
 
 ### 2.1 Context
 
-The AMPEL360 eWTW SRM provides pre-approved repair schemes classified by structural zone, damage type, and applicable aircraft configuration. A repair scheme is valid only for the structural configuration for which its DTA was performed. If the damaged area falls within a structural zone that has been modified by an incorporated SB or variant change, the SRM repair scheme must be replaced by a configuration-specific MRA.
+The [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] SRM provides pre-approved repair schemes classified by structural zone, damage type, and applicable aircraft configuration. A repair scheme is valid only for the structural configuration for which its DTA was performed. If the damaged area falls within a structural zone that has been modified by an incorporated SB or variant change, the SRM repair scheme must be replaced by a configuration-specific MRA.
 
 Allowable damage limits are defined per zone and per material type. For CFRP primary structure, ADLs reflect the barely visible impact damage (BVID) threshold for delamination depth and area. For metallic structure, ADLs are expressed as maximum scratch depth, corrosion pit area, and crack-free zone dimensions around fasteners.
 
@@ -81,6 +83,6 @@ flowchart TD
 |---|---|
 | CS-25.571 | Damage-tolerance — residual strength |
 | AC 20-107B | BVID and damage-limit guidance for composites |
-| SRM-AMPEL360-050 | Structural Repair Manual — Chapter 050 |
+| SRM-[PROGRAMME-AIRCRAFT]-050 | Structural Repair Manual — Chapter 050 |
 | [`./README.md`](./README.md) | Subsubject 050 index |
 | [`../README.md`](../README.md) | 050_General subsection index |

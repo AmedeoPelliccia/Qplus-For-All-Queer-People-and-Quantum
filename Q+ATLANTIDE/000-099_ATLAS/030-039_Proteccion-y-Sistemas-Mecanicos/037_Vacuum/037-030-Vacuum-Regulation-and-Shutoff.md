@@ -6,9 +6,9 @@ subsubject: "030"
 subsubject_title: "Vacuum Regulation and Shutoff"
 file_name: "037-030-Vacuum-Regulation-and-Shutoff.md"
 sns_reference: "037-30"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-30"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-30"
 ata_chapter: 37
-aircraft: "AMPEL360e eWTW"
+aircraft: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
 project: "Q+ATLANTIDE"
 status: "DRAFT"
 keywords:
@@ -26,10 +26,12 @@ created: "2025-07-14"
 revised: "2025-07-14"
 revision: "0.1"
 author: "Q+ATLANTIDE ATLAS Working Group"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-030 — Vacuum Regulation and Shutoff
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1 — 2025-07-14  
@@ -39,36 +41,26 @@ author: "Q+ATLANTIDE ATLAS Working Group"
 
 ## §0 Hyperlink Policy
 
-All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-AMPEL360E-EWTW-037-30-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline.
+All cross-references use relative Markdown links within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only; no live URLs are embedded. Internal DMC cross-references follow `DMC-<PROGRAMME>-<VARIANT>-037-30-YYYY-A`. Unresolved parameters use the badge <img src="https://img.shields.io/badge/TBD-red"> inline.
 
 ---
 
 ## §1 Purpose
 
-This document describes the vacuum regulation and shutoff functions of the AMPEL360e eWTW Vacuum Waste System (VWS). Regulation ensures the manifold operates at the required vacuum level for reliable waste transport. Shutoff provides isolation of the vacuum source for fault management and maintenance.
+This document defines the agnostic ATLAS standard-level architecture context for `037-030 — Vacuum Regulation and Shutoff`.
 
-The document covers:
-1. The manifold vacuum set-point and the closed-loop regulation architecture.
-2. The Vacuum Relief Valve (VRV) — mechanical over-vacuum protection.
-3. The Shutoff Valve (SOV) — electrically actuated isolation between EVG and manifold.
-4. The vacuum pressure transducer — manifold feedback sensor.
-5. The backup pressure switch — independent fault detection.
-6. EVG controller regulation logic (closed-loop PID).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
-| ATA Chapter / Subsubject | 37-030 — Vacuum Regulation and Shutoff |
-| Document Tier | Level 3 — Subsystem Description |
-| Effectivity | MSN 0001 onwards (TBD) |
-| Parent Document | QATL-ATLAS-000099-ATLAS-030039-037-000 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System/Function Overview
 
 ### 3.1 Regulation Architecture Summary
@@ -346,11 +338,11 @@ flowchart LR
 
 | DMC Code | Title | Infocode | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-037-30-00-00A-040A-D | Regulation and Shutoff Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-200A-D | SOV and VRV R&I | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-300A-D | Transducer and Switch Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-400A-D | VRV Pop Test Procedure | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-520A-D | Regulation Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-30-00-00A-040A-D | Regulation and Shutoff Description | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-30-00-00A-200A-D | SOV and VRV R&I | 200 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-30-00-00A-300A-D | Transducer and Switch Inspection | 300 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-30-00-00A-400A-D | VRV Pop Test Procedure | 400 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-30-00-00A-520A-D | Regulation Fault Isolation | 520 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -430,7 +422,7 @@ flowchart LR
 2. EASA CS-25 Amendment 27 — CS-25.1309 "Equipment, Systems and Installations."
 3. EASA CS-25 Amendment 27 — CS-25.1357 "Circuit Protective Devices."
 4. ATA iSpec 2200 Chapter 37 — Vacuum.
-5. AMPEL360e eWTW SRD-eWTW-037 (Regulation section) — <img src="https://img.shields.io/badge/TBD-red">
+5. [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] SRD-[PROGRAMME-VARIANT]-037 (Regulation section) — <img src="https://img.shields.io/badge/TBD-red">
 6. VRV / SOV Supplier Specification — <img src="https://img.shields.io/badge/TBD-red">
 
 ---
@@ -445,7 +437,7 @@ flowchart LR
 | QATL-ATLAS-000099-ATLAS-030039-037-040 | Pumps, Ejectors, Valves, and Lines |
 | QATL-ATLAS-000099-ATLAS-030039-024-000 | Electrical Power General (ATA 24) |
 | QATL-ATLAS-000099-ATLAS-030039-045-000 | Central Maintenance System (ATA 45) |
-| AMM-AMPEL360E-037-30 | Aircraft Maintenance Manual Chapter 37-30 |
+| AMM-[PROGRAMME-AIRCRAFT]-037-30 | Aircraft Maintenance Manual Chapter 37-30 |
 
 ---
 

@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Pneumatic Monitoring, Diagnostics, and Control Interfaces"
 file_name: "036-080-Pneumatic-Monitoring-Diagnostics-and-Control-Interfaces.md"
 sns_reference: "036-80"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-80"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-036-80"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 36"
   - "Pneumatic"
@@ -90,10 +90,12 @@ keywords:
   - "control interfaces"
   - "bleed-less"
   - "CS-25.1438"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 036-080 — Pneumatic Monitoring, Diagnostics, and Control Interfaces
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -105,33 +107,20 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the monitoring, diagnostics, and control interfaces for the AMPEL360e eWTW residual pneumatic system (ATA 36-080). It covers the CMC/OMS functions, BITE provisions, AFDX data interfaces, and the system's interactions with other aircraft systems (ATA 21, ATA 30, ATA 45, ATA 49).
+This document defines the agnostic ATLAS standard-level architecture context for `036-080 — Pneumatic Monitoring, Diagnostics, and Control Interfaces`.
 
-**Key eWTW cross-interface clarifications for ATA 36-080**:
-- **ATA 21 (ECS / Pressurisation)**: The eWTW ECS uses Electric Driven Compressors (EDC), not ATA 36 EAC. There is **no bleed supply from ATA 36 to ATA 21**. The ATA 21 / ATA 36 interface is informational only — no data or air flow between them in normal operation.
-- **ATA 30 (Wing Anti-Ice)**: The eWTW uses Electrothermal Wing Anti-Ice (EWAI), not bleed air. ATA 36 does **not supply anti-ice**. The ATA 30 / ATA 36 interface is informational (cross-reference documentation only).
-- **ATA 49 (APU)**: No APU on eWTW. No APU bleed, no APU pneumatic interface. The ATA 49 reference is informational regarding the electric ground power equivalent.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 036-080 — Monitoring, Diagnostics, and Control Interfaces |
-| Primary monitoring system | CMC (ATA 45) |
-| Data bus | AFDX (ATA 42) |
-| BITE | EAC self-test on power-up and command |
-| ATA 21 interface | **No air supply** — informational only |
-| ATA 30 interface | **No air supply** — informational only |
-| ATA 49 interface | **No APU** — not applicable |
-| Ground test mode | Activated via maintenance terminal (ATA 45) |
-| Certification Basis | CS-25.1438; CS-25.1309; CS-25.1301 |
-| S1000D SNS | 036-80 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 CMC / OMS Monitoring Functions
@@ -232,7 +221,7 @@ Ground test mode:
 |---|---|---|---|
 | ATA 21 | ECS / Pressurisation (EDC) | **No air supply** | EDC is independent source; ATA 36 EAC does not supply ATA 21 packs. Cross-reference documentation only — explicit in CMC ICD. |
 | ATA 30 | Wing Anti-Ice (EWAI) | **No air supply** | EWAI is electric; ATA 36 provides no anti-ice bleed. ATA 30 data visible on ECAM anti-ice page; no ATA 36 data appears there. |
-| ATA 49 | APU (none on eWTW) | **No interface** | No APU; no APU bleed; no pneumatic interface. ATA 49 is replaced by electric GPU equivalent — no data exchange with ATA 36. |
+| ATA 49 | APU (none on [PROGRAMME-VARIANT]) | **No interface** | No APU; no APU bleed; no pneumatic interface. ATA 49 is replaced by electric GPU equivalent — no data exchange with ATA 36. |
 | ATA 24 | Electrical power | **Power supply** | ATA 24 supplies 28 VDC to EAC motor and SOV solenoids; ELMS controls EAC bus assignment |
 | ATA 45 | CMC / OMS | **Control + data** | CMC is the primary monitoring and fault management interface for ATA 36 |
 
@@ -285,7 +274,7 @@ flowchart LR
     subgraph NON_INT["Non-Interfaces (Documented)"]
         ATA21["ATA 21 EDC\n(no air supply from ATA 36)"]
         ATA30["ATA 30 EWAI\n(no bleed supply from ATA 36)"]
-        ATA49["ATA 49 APU\n(no APU on eWTW)"]
+        ATA49["ATA 49 APU\n(no APU on [PROGRAMME-VARIANT])"]
     end
 
     EAC --> CMC_LOGIC
@@ -381,7 +370,7 @@ flowchart LR
 | Electrical power | ATA 24 | 28 VDC to EAC and SOVs | ATA 24 → ATA 36 |
 | ATA 21 (EDC) | ATA 21 | **No interface** — documented explicitly | N/A |
 | ATA 30 (EWAI) | ATA 30 | **No interface** — documented explicitly | N/A |
-| ATA 49 (APU) | ATA 49 | **No interface** — no APU on eWTW | N/A |
+| ATA 49 (APU) | ATA 49 | **No interface** — no APU on [PROGRAMME-VARIANT] | N/A |
 
 ---
 
@@ -437,9 +426,9 @@ flowchart LR
 
 | DM Code (planned) | Info Code | Title | Status |
 |---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-80-00A-040A-A | 040 | ATA 36-080 — Monitoring, Diagnostics, and Control Interfaces — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-80-00A-300A-A | 300 | ATA 36-080 — CMC Fault Log Readout Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-80-00A-400A-A | 400 | ATA 36-080 — CMC / BITE Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-80-00A-040A-A | 040 | ATA 36-080 — Monitoring, Diagnostics, and Control Interfaces — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-80-00A-300A-A | 300 | ATA 36-080 — CMC Fault Log Readout Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-036-80-00A-400A-A | 400 | ATA 36-080 — CMC / BITE Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 

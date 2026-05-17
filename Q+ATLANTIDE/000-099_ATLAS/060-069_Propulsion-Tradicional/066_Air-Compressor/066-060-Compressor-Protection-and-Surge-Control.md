@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-060"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0066-060"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # Compressor Protection and Surge Control
@@ -39,23 +41,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-060"
 
 ## §1 Purpose
 
-This document defines the surge detection and protection systems for the AMPEL360E eWTW Electric Air Compressors (EAC-A and EAC-B). Centrifugal compressor surge is the primary aerodynamic instability risk for the EAC system and must be actively prevented to protect the compressor impeller and diffuser from cyclic loading damage and to avoid loss of compressed air supply.
+This document defines the agnostic ATLAS standard-level architecture context for `Compressor Protection and Surge Control`.
 
-The surge protection system comprises: (1) the Anti-Surge Bleed Valve (ASBV) on each EAC outlet, (2) ACCU surge detection logic based on outlet pressure rate-of-change (dP/dt) and mass flow (estimated from speed and inlet pressure/temperature), and (3) compressor speed reduction commanded by ACCU within one control cycle of surge detection. An Overpressure Relief Valve (OPRV) provides independent protection against outlet pressure exceeding 0.65 MPa.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 66-060 — Compressor Protection and Surge Control |
-| Certification basis | EASA CS-25 Amdt 27+ |
-| S1000D SNS | 066-060-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `066` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **Surge detection:** The ACCU continuously monitors outlet pressure (P2) and estimated mass flow (derived from resolver speed, inlet P/T, and impeller characteristic map). When the operating point approaches within 15 % surge margin on the compressor map, the ACCU arms the ASBV pre-open command. If dP2/dt exceeds −0.5 MPa/s (characteristic of surge inception), the ACCU commands ASBV full open within 10 ms and reduces speed by 15 %.
@@ -273,4 +272,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

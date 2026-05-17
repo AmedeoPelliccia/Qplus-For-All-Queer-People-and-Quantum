@@ -17,13 +17,15 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-070"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0061-070"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-061-070-PROPELLER-PROPULSOR-INSPECTION-AND-REPAIR
      ATA 61 · Propeller/Propulsor Inspection and Repair
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Propeller/Propulsor Inspection and Repair
@@ -47,23 +49,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-070"
 
 ## §1 Purpose
 
-This document defines the scheduled inspection criteria, approved repair schemes, and return-to-service requirements for propeller and propulsor components at all maintenance levels (line, base, and shop). Inspection and repair authority levels are strictly controlled; incorrect repair can compromise the airworthiness of fatigue-critical rotating components.
+This document defines the agnostic ATLAS standard-level architecture context for `Propeller/Propulsor Inspection and Repair`.
 
-On the AMPEL360E eWTW, the inspection and repair programme for propulsors follows the hierarchical damage classification system defined in ATA 60-040, with additional propulsor-specific ADL and repair scheme entries in SRM-061. Composite blade repairs must be performed by technicians trained on AMPEL360E-specific CFRP repair techniques.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 61-070 — Propeller/Propulsor Inspection and Repair |
-| Certification basis | EASA CS-25 Amendment 27+ |
-| S1000D SNS | 061-070-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `061` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The inspection and repair programme for ATA 61 components is structured in four categories:
@@ -196,7 +195,7 @@ flowchart TB
 | Standard / Document | Title | Issuing Body | Applicability |
 |---|---|---|---|
 | EASA CS-35 | Airworthiness Standards: Propellers | EASA | Propeller blade and hub structural integrity |
-| AMPEL360E SRM-061 | Structural Repair Manual — Chapter 61 | AMPEL360E programme | Repair scheme authority |
+| [PROGRAMME-AIRCRAFT] SRM-061 | Structural Repair Manual — Chapter 61 | [PROGRAMME-AIRCRAFT] programme | Repair scheme authority |
 | ISO 1940-1 | Balance quality requirements for rigid rotors | ISO | Post-repair balance standard G1.0 |
 | ATA iSpec 2200 | Chapter 61 — Propellers and Propulsors | Air Transport Association | ATA chapter scope |
 | EASA Part-145 | Approved Maintenance Organisation Requirements | EASA | Repair authority and authorised signatory requirements |
@@ -235,8 +234,8 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-061-070-001 | Validate Class 2 CFRP repair scheme in SRM-061 for AMPEL360E blade geometry — coupon test program required | Q-MECHANICS / blade OEM | 2026-Q4 |
-| OI-061-070-002 | Define ADL erosion limits for AMPEL360E blade configuration (pending OEM test data) | Q-MECHANICS / blade OEM | 2026-Q4 |
+| OI-061-070-001 | Validate Class 2 CFRP repair scheme in SRM-061 for [PROGRAMME-AIRCRAFT] blade geometry — coupon test program required | Q-MECHANICS / blade OEM | 2026-Q4 |
+| OI-061-070-002 | Define ADL erosion limits for [PROGRAMME-AIRCRAFT] blade configuration (pending OEM test data) | Q-MECHANICS / blade OEM | 2026-Q4 |
 
 ---
 
@@ -269,4 +268,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

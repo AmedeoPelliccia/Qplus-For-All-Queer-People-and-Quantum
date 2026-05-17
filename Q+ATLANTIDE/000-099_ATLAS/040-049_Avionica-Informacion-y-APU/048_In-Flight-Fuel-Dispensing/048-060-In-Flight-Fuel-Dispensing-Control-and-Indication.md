@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 060 — In-Flight Fuel Dispensing Control and Indication
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document specifies the **control panel, ECAM synoptic pages, crew alerting, FMS/MCDU data entry interfaces, and ACARS uplink** for the In-Flight Fuel Dispensing (IFFD) system on the AMPEL360E eWTW aircraft per ATA 48. These interfaces form the crew-to-IFFD interaction layer, providing all means for mode selection, quantity presetting, flow monitoring, and fault awareness.
+This document specifies the **control panel, ECAM synoptic pages, crew alerting, FMS/MCDU data entry interfaces, and ACARS uplink** for the In-Flight Fuel Dispensing (IFFD) system on the programme-defined aircraft type per ATA 48. These interfaces form the crew-to-IFFD interaction layer, providing all means for mode selection, quantity presetting, flow monitoring, and fault awareness.
 
 The IFFD Control Panel is a dedicated hardware panel located below the center console, providing direct crew control independent of touchscreen or MFD interfaces. ECAM IFFD synoptic pages provide situational awareness. FMS CDU/MCDU data entry supports pre-planned transfer scheduling. ARINC 429 data from the FMS provides fuel target data uplinked before flight or via ACARS in flight.
 
@@ -53,7 +55,7 @@ The IFFD Control Panel is a dedicated hardware panel located below the center co
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | Control Panel Location | Below center console (dedicated IFFD panel) |
 | ECAM Synoptic | IFFD page — selectable from ECAM SD (System Display) |
@@ -419,4 +421,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD control and indication for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD control and indication for programme-defined aircraft type |

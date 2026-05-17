@@ -6,10 +6,10 @@ subsubject: "030"
 subsubject_title: "Cargo and Service Compartment Lighting"
 file_name: "033-030-Cargo-and-Service-Compartment-Lighting.md"
 sns_reference: "033-30"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-30"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-033-30"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -75,7 +75,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 33"
   - "Cargo Lighting"
@@ -85,10 +85,12 @@ keywords:
   - "EE bay"
   - "avionics bay"
   - "lux"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 033-030 — Cargo and Service Compartment Lighting
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -100,32 +102,23 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document describes the Cargo and Service Compartment Lighting subsystem (ATA 033-30) of the AMPEL360e eWTW aircraft. It covers all LED lighting functions in cargo-carrying areas (main cargo hold — forward and aft sections, and bulk cargo hold) and in aircraft service and equipment bays (Electronic Equipment (EE) bay, avionics bay, main gear bays, and other service access areas). The document defines the door-interlock logic, illuminance targets, power interface, and CMC fault monitoring strategy.
+This document defines the agnostic ATLAS standard-level architecture context for `033-030 — Cargo and Service Compartment Lighting`.
 
-Cargo and service compartment lighting supports ground operations safety (ensuring adequate illumination during cargo loading/unloading), maintenance access (enabling technicians to safely access and work in equipment bays), and regulatory compliance (cargo smoke detection visibility support).
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 033-30 — Cargo and Service Compartment Lighting |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| Lighting Technology | 100% LED strip and panel lighting |
-| Dimming | Fixed intensity (no dimming in cargo/service areas) |
-| Target Illuminance | TBD — typically 50–200 lux at cargo floor level (see §21) |
-| Door Interlock | Lights off when cargo door closed; on when door open (with maintenance override) |
-| Power | 28 VDC essential bus (cargo areas); 28 VDC essential bus (service bays) |
-| S1000D SNS | 033-30 |
-| Applicability Code | ALL |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-Cargo and service compartment lighting on the AMPEL360e eWTW uses LED strip luminaires mounted on the upper sidewall or ceiling structure of each cargo bay and service bay. All lighting operates at fixed intensity (no dimming required in cargo or service areas). The primary control logic is the door-interlock: cargo bay LED lights automatically activate when the cargo door opens (door-open microswitch signal) and de-activate when the door closes, minimising unnecessary power consumption and heat generation in sealed bays.
+Cargo and service compartment lighting on the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] uses LED strip luminaires mounted on the upper sidewall or ceiling structure of each cargo bay and service bay. All lighting operates at fixed intensity (no dimming required in cargo or service areas). The primary control logic is the door-interlock: cargo bay LED lights automatically activate when the cargo door opens (door-open microswitch signal) and de-activate when the door closes, minimising unnecessary power consumption and heat generation in sealed bays.
 
 A maintenance override function allows ground personnel to activate cargo bay lighting with the cargo door closed, for pre-loading inspection or maintenance access without requiring the door to be opened. The maintenance override is activated by a push-button on the cargo door surround panel.
 
@@ -313,7 +306,7 @@ No scheduled replacement — corrective only, triggered by CMC fault report or g
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 033-30 | Cargo and Service Compartment Lighting | DMC-AMPEL360E-EWTW-033-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-30 | Cargo and Service Compartment Lighting | DMC-<PROGRAMME>-<VARIANT>-033-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Planned Data Modules
 

@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0082-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-082-020-IONIC-PROPULSION-CONCEPTS-AND-OPERATING-PRINCIPLES
      ATLAS-082 (Plasma and Ionic Propulsion Concepts) · Ionic Propulsion Concepts and Operating Principles
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Ionic Propulsion Concepts and Operating Principles
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-020"
 
 ## §1 Purpose
 
-ATLAS subsubject 082-020 describes the first-principles physics, governing equations, and conceptual operating principles of ionic propulsion as applied to the AMPEL360E eWTW PIPC programme. It covers electrostatic (gridded ion, Hall-effect) and electromagnetic (MPD) acceleration mechanisms from a theoretical foundation, and provides the performance equation set used throughout the PIPC subsubject series.
+This document defines the agnostic ATLAS standard-level architecture context for `Ionic Propulsion Concepts and Operating Principles`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-082 — 082-020 Ionic Propulsion Concepts and Operating Principles |
-| Certification basis | EASA CS-25 Amdt 27+ (research ref.); DO-178C DAL C |
-| S1000D SNS | 082-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `082` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Fundamental Physics
 
 ### 3.1 Thrust Generation in Ionic Systems
@@ -106,7 +107,7 @@ This low T/P is the primary limitation of plasma propulsion for aviation applica
 Δv = Isp × g₀ × ln(m₀ / m_f)
 ```
 
-For AMPEL360E eWTW auxiliary role (Δv budget ≈ 50 m/s for drag offset equivalent):
+For programme-defined aircraft type auxiliary role (Δv budget ≈ 50 m/s for drag offset equivalent):
 - At Isp = 2 000 s: Xe mass fraction = 0.0025 (negligible vs. aircraft mass)
 - Confirms ionic propulsion is mass-efficient for small Δv augmentation tasks
 
@@ -122,7 +123,7 @@ A Hall-effect thruster (also known as a stationary plasma thruster, SPT) operate
 4. **Ion Acceleration:** The axial electric field E_z (~ 10–20 V/mm, established between anode and virtual cathode at the exit plane) accelerates Xe⁺ ions axially to form the thrust beam.
 5. **Neutralisation:** An external hollow cathode emits electrons to neutralise the ion beam, preventing spacecraft/aircraft body charge build-up.
 
-**Key HET parameters for AMPEL360E eWTW (500 mN class):**
+**Key HET parameters for programme-defined aircraft type (500 mN class):**
 
 | Parameter | Value |
 |---|---|
@@ -147,7 +148,7 @@ A gridded ion engine uses electrostatic ion optics for direct ion extraction and
 4. **Decel Grid (optional):** A third decelerator grid (~ground potential) reduces beam divergence and controls final ion energy.
 5. **Beam Neutralisation:** An external hollow cathode neutralises the extracted ion beam.
 
-**Key GIE parameters for AMPEL360E eWTW (250 mN class):**
+**Key GIE parameters for programme-defined aircraft type (250 mN class):**
 
 | Parameter | Value |
 |---|---|
@@ -165,7 +166,7 @@ A gridded ion engine uses electrostatic ion optics for direct ion extraction and
 
 ## §6 Magnetoplasmadynamic (MPD) Thruster Principles
 
-An MPD thruster accelerates plasma via electromagnetic (Lorentz) body force (J × B). The discharge current J flowing through the propellant plasma interacts with the self-induced or applied magnetic field B to produce an axial body force F = J × B. Unlike electrostatic thrusters, MPD devices can sustain high propellant throughput and thrust density, but require orders-of-magnitude higher power (> 50 kW) not currently available on the AMPEL360E eWTW research platform. MPD is documented here for future programme phase reference.
+An MPD thruster accelerates plasma via electromagnetic (Lorentz) body force (J × B). The discharge current J flowing through the propellant plasma interacts with the self-induced or applied magnetic field B to produce an axial body force F = J × B. Unlike electrostatic thrusters, MPD devices can sustain high propellant throughput and thrust density, but require orders-of-magnitude higher power (> 50 kW) not currently available on the programme-defined aircraft type research platform. MPD is documented here for future programme phase reference.
 
 ---
 
@@ -179,7 +180,7 @@ DBD plasma actuators for aerodynamic flow control (Role A) operate on a fundamen
 4. **No Propellant Consumed:** DBD actuators use ambient air as the working fluid; no xenon or stored propellant is required.
 5. **Power Requirement:** 100–500 W per actuator panel section (wing leading edge, nacelle lip).
 
-DBD actuators are the most near-term applicable technology for AMPEL360E eWTW in-service integration due to their low risk profile and absence of stored propellant.
+DBD actuators are the most near-term applicable technology for programme-defined aircraft type in-service integration due to their low risk profile and absence of stored propellant.
 
 ---
 

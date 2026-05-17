@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0085-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-085-030-ELECTRIC-MOTOR-AND-DRIVE-ALLOCATION
      ATLAS-085 (Distributed Electric Propulsion Architecture) · Electric Motor and Drive Allocation
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Electric Motor and Drive Allocation
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-030"
 
 ## §1 Purpose
 
-ATLAS subsubject 085-030 specifies the electrical and mechanical characteristics of the four permanent-magnet synchronous motors (PMSM-1 through PMSM-4) and their co-located motor drive units (MDU-1 through MDU-4), defines torque control bandwidth requirements, establishes thermal derating curves, allocates each motor-drive pair to a propulsor station, and provides the motor-drive signal and power interface specification.
+This document defines the agnostic ATLAS standard-level architecture context for `Electric Motor and Drive Allocation`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA Reference | ATLAS-085 — 085-030 Electric Motor and Drive Allocation |
-| Certification Basis | DO-178C DAL B (DEPCU); DO-254 DAL B (MDU gate driver); DO-160G; CS-25.1353 |
-| S1000D SNS | 085-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `085` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 PMSM Specifications
 
 | Parameter | PMSM-1 (P1) | PMSM-2 (P2) | PMSM-3 (P3) | PMSM-4 (P4) |
@@ -86,7 +87,7 @@ ATLAS subsubject 085-030 specifies the electrical and mechanical characteristics
 
 | Parameter | MDU-1 | MDU-2 | MDU-3 | MDU-4 |
 |---|---|---|---|---|
-| Input voltage | HVDC 800 V | HVDC 800 V | HVDC 800 V | HVDC 800 V |
+| Input voltage | HVDC <NOMINAL-VOLTAGE> | HVDC <NOMINAL-VOLTAGE> | HVDC <NOMINAL-VOLTAGE> | HVDC <NOMINAL-VOLTAGE> |
 | Input voltage range | 760–840 V DC | Same | Same | Same |
 | Output | 3-phase AC variable frequency | Same | Same | Same |
 | Output frequency range | 0–880 Hz (0–6 600 RPM × 8 poles / 60) | Same | Same | Same |
@@ -158,7 +159,7 @@ flowchart LR
 
 | Interface | Connected System | Protocol | Data |
 |---|---|---|---|
-| HVDC 800 V power feed | BGHA bus via BTB | HVDC 800 V cable | Up to 500 kW per MDU |
+| HVDC <NOMINAL-VOLTAGE> power feed | BGHA bus via BTB | HVDC <NOMINAL-VOLTAGE> cable | Up to 500 kW per MDU |
 | Torque setpoints | DEPCU | CAN ISO 11898 redundant | 10 ms torque demand; mode commands |
 | Speed / position feedback | PMSM encoder | CAN (via MDU) | 20-bit position; speed for FOC |
 | Thermal telemetry | DEP-TML coolant loop (ATLAS-074 heritage) | 4–20 mA + CAN | MDU cold-plate temp; PMSM winding temp |

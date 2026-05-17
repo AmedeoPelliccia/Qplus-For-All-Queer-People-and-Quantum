@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0082-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-082-030-ELECTRIC-FIELD-AND-MAGNETIC-FIELD-ACCELERATION-MECHANISMS
      ATLAS-082 (Plasma and Ionic Propulsion Concepts) · E-Field and B-Field Acceleration Mechanisms
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Electric Field and Magnetic Field Acceleration Mechanisms
@@ -44,21 +46,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0082-030"
 
 ## §1 Purpose
 
-ATLAS subsubject 082-030 defines the electrostatic and electromagnetic acceleration mechanisms used in the AMPEL360E eWTW PIPC programme: electric-field (E-field) ion acceleration for gridded ion engines (GIE) and Hall-effect thrusters (HET), and magnetic-field (B-field) assisted acceleration for Hall-channel ExB drift and magnetoplasmadynamic (MPD) Lorentz-force devices. It also covers the design requirements for ion optics grids, magnetic circuit elements, and electrode geometry.
+This document defines the agnostic ATLAS standard-level architecture context for `Electric Field and Magnetic Field Acceleration Mechanisms`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-082 — 082-030 Electric Field and Magnetic Field Acceleration Mechanisms |
-| Certification basis | EASA CS-25 Amdt 27+ (research ref.); DO-254 DAL C |
-| S1000D SNS | 082-030-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `082` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Electrostatic Ion Acceleration (GIE)
 
 ### 3.1 Ion Optics Grid System
@@ -71,7 +72,7 @@ The GIE ion optics system consists of two or three metallic grids placed at the 
 | Accelerator Grid | −150 to −300 V | Mo, C/C composite | Focuses and collimates ion beam; blocks backstreaming electrons |
 | Decelerator Grid (optional) | ~0 V (ground) | Mo | Final beam collimation; reduces downstream ion energy spread |
 
-**Grid geometry parameters (30 cm class GIE for AMPEL360E eWTW):**
+**Grid geometry parameters (30 cm class GIE for programme-defined aircraft type):**
 
 | Parameter | Value |
 |---|---|

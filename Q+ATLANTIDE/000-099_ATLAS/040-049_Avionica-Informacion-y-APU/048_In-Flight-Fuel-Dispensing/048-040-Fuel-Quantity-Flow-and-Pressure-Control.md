@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 040 — Fuel Quantity Flow and Pressure Control
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document specifies the **fuel quantity measurement, flow rate control, and pressure management** functions for the In-Flight Fuel Dispensing (IFFD) system on the AMPEL360E eWTW aircraft per ATA 48. These functions ensure that: (a) the correct quantity of fuel is transferred to or from the aircraft within the crew-preset target; (b) flow rate is maintained at the commanded level within the system's pressure envelope; and (c) total quantity transferred is accurately counted and reported via ACARS for fleet fuel accounting.
+This document specifies the **fuel quantity measurement, flow rate control, and pressure management** functions for the In-Flight Fuel Dispensing (IFFD) system on the programme-defined aircraft type per ATA 48. These functions ensure that: (a) the correct quantity of fuel is transferred to or from the aircraft within the crew-preset target; (b) flow rate is maintained at the commanded level within the system's pressure envelope; and (c) total quantity transferred is accurately counted and reported via ACARS for fleet fuel accounting.
 
 The IFFDCU implements a PID flow control loop that compares the measured mass flow rate (Coriolis flow meter) with the target flow rate (derived from transfer schedule and EBP pressure set point) and adjusts EBP speed to minimise error. The Fuel Quantity Measurement System (FQMS — ATA 28) provides real-time per-tank mass data to the IFFDCU for target quantity tracking and CG monitoring during transfer.
 
@@ -53,7 +55,7 @@ The IFFDCU implements a PID flow control loop that compares the measured mass fl
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | Flow Meter Type | Coriolis (mass flow — no density compensation needed) |
 | Flow Rate Control | PID loop in IFFDCU DO-178C DAL B |
@@ -416,4 +418,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD fuel quantity, flow and pressure control for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD fuel quantity, flow and pressure control for programme-defined aircraft type |

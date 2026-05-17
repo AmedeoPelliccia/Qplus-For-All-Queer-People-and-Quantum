@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0080-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-080-080-QUANTUM-SENSING-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATLAS-080 (Quantum Sensing for Propulsion) · Quantum Sensing Monitoring, Diagnostics and Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum Sensing Monitoring, Diagnostics and Control Interfaces
@@ -46,21 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-080"
 
 ## §1 Purpose
 
-ATLAS subsubject 080-080 documents the detailed hardware architecture of the QSPU LRU, the software partition structure, the ECAM PROP QSP synoptic page and message set, the Built-In Test Equipment (BITE) function table, the AFDX virtual link (VL) allocation, and the Ground Support Equipment (GSE) interface for maintenance and calibration of the QSP system.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum Sensing Monitoring, Diagnostics and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-080 (Quantum Sensing for Propulsion) — 080-080 Monitoring, Diagnostics and Control Interfaces |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; ARINC 664 P7 |
-| S1000D SNS | 080-080-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `080` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 The **QSPU hardware architecture** consists of a 4-MCU EE bay rack unit with dual independent processing channels. **Channel A (CHA)** is the active channel; **Channel B (CHB)** is hot-standby, continuously cross-monitoring CHA. Automatic changeover to CHB occurs in < 50 ms on detection of any CHA fault (watchdog timeout, FPGA configuration error, QPU coherence failure, AFDX VL health monitor alert, or channel miscompare on the PSV output). Each channel contains: a **64-bit safety-grade RISC-V CPU** running at 1 GHz (DO-254 DAL B qualified ASIC); an **Artix-7 FPGA** (Xilinx, reconfigurable for sensor-family demodulation algorithms); a **5-qubit trapped-ion QPU module** (10 × 10 × 5 cm form factor, cooled to 4.2 K by an integral Stirling cryocooler drawing < 10 W, achieving T1 ≥ 120 µs and single-qubit gate fidelity ≥ 99.9 %); and **256 GB NVM** (non-volatile memory for QML model weights, fault log, PSV rolling history, and BITE records). The two channels share a QSPU backplane carrying the cross-channel data bus and power distribution; the backplane itself is not channel-specific and does not contain safety-critical logic.

@@ -6,10 +6,10 @@ subsubject: "050"
 subsubject_title: "Traffic Surveillance and Collision Avoidance"
 file_name: "034-050-Traffic-Surveillance-and-Collision-Avoidance.md"
 sns_reference: "034-50"
-dmc_prefix: "DMC-AMPEL360E-EWTW-034-50"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-034-50"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -77,7 +77,7 @@ traceability:
 keywords:
   - "Q+ATLANTIDE"
   - "ATLAS"
-  - "AMPEL360e"
+  - "[PROGRAMME-AIRCRAFT]"
   - "S1000D"
   - "ATA 34"
   - "TCAS"
@@ -92,10 +92,12 @@ keywords:
   - "TA"
   - "TSO-C119"
   - "CS-ACNS"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 034-050 — Traffic Surveillance and Collision Avoidance
-### AMPEL360e eWTW · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 34 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -107,40 +109,23 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document describes the Traffic Surveillance and Collision Avoidance subsystem (ATA 034-050) of the AMPEL360e eWTW aircraft. It covers TCAS II version 7.1, Mode S transponder, ADS-B Out (1090ES), and ADS-B In (TIS-B/FIS-B — TBD optional equipment).
+This document defines the agnostic ATLAS standard-level architecture context for `034-050 — Traffic Surveillance and Collision Avoidance`.
 
-The eWTW is equipped with TCAS II version 7.1 per DO-185B (TSO-C119e). The TCAS computer integrates with Mode S transponder functionality providing mandatory ADS-B Out (1090ES) per CS-ACNS.D.ADS-B (EASA) and equivalent FAA/ICAO requirements. TCAS II generates Traffic Advisories (TA) and Resolution Advisories (RA) displayed on the ND. RA audio outputs mandate immediate crew compliance — no ATC coordination is required for RA execution. Antennas are top and bottom fuselage.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-ADS-B In (TIS-B — Traffic Information Service Broadcast; FIS-B — Flight Information Services Broadcast) is TBD as optional equipment for enhanced situational awareness.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Attribute | Value |
+| Applicability Level | Rule |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
-| ATA Subsubject | 034-050 — Traffic Surveillance and Collision Avoidance |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
-| TCAS Version | TCAS II version 7.1 (DO-185B) |
-| Mode S | Integrated with TCAS computer; ADS-B Out 1090ES |
-| ADS-B Out | 1090ES mandatory — CS-ACNS.D.ADS-B / DO-260B / ED-102A |
-| ADS-B In | TIS-B / FIS-B — TBD optional equipment |
-| UAT (978 MHz) | Not applicable — EASA/CS-25 primary; not required |
-| TCAS Antennas | Top and bottom fuselage (directional or omnidirectional TBD) |
-| Mode S Address | 24-bit ICAO aircraft address assigned by national authority |
-| TSO Qualification | TSO-C119e (TCAS); TSO-C112 (Mode S transponder) |
-| Output Bus | AFDX / ARINC 429 |
-| S1000D Issue | 5.0 |
-| SNS Reference | 034-50 |
-| Applicability Code | ALL |
-| Effectivity | From MSN 001 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
-The Traffic Surveillance and Collision Avoidance subsystem provides the AMPEL360e eWTW crew with awareness of other aircraft in the vicinity and, when a collision threat is detected, generates mandatory vertical evasion guidance (Resolution Advisories — RA) to be followed immediately by the crew.
+The Traffic Surveillance and Collision Avoidance subsystem provides the [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] crew with awareness of other aircraft in the vicinity and, when a collision threat is detected, generates mandatory vertical evasion guidance (Resolution Advisories — RA) to be followed immediately by the crew.
 
 **TCAS II version 7.1**: The TCAS computer interrogates other aircraft (equipped with Mode C or Mode S transponders) using 1030 MHz interrogations. It receives 1090 MHz transponder replies containing altitude information. From the relative position (bearing estimated from directional antennas, range from time-of-flight) and altitude of each tracked aircraft, the TCAS threat assessment logic determines:
 - **Traffic Advisory (TA)**: An intruder aircraft within 20–48 seconds of closest approach. Displayed on ND as solid amber circle (or filled yellow diamond). No required crew action other than visual search.
@@ -150,7 +135,7 @@ The Traffic Surveillance and Collision Avoidance subsystem provides the AMPEL360
 
 **ADS-B Out (1090ES)**: The transponder broadcasts ADS-B Out (Automatic Dependent Surveillance — Broadcast) messages on 1090 MHz using extended squitter (ES). These include: GNSS position (NIC, NAC), altitude, velocity, identification. Mandatory per CS-ACNS.D.ADS-B in EASA airspace and equivalent FAR requirements. Provides ATC and ground systems with aircraft state data without active interrogation.
 
-**ADS-B In (TBD)**: ADS-B In receives 1090ES broadcasts from other aircraft for traffic situational awareness (TIS-B) and receives weather and NOTAMs from ground stations (FIS-B). ADS-B In capability is TBD as optional fitment on eWTW.
+**ADS-B In (TBD)**: ADS-B In receives 1090ES broadcasts from other aircraft for traffic situational awareness (TIS-B) and receives weather and NOTAMs from ground stations (FIS-B). ADS-B In capability is TBD as optional fitment on [PROGRAMME-VARIANT].
 
 ---
 
@@ -182,7 +167,7 @@ The Traffic Surveillance and Collision Avoidance subsystem provides the AMPEL360
 
 - **Integrated TCAS/Mode S computer**: A single LRU combines the TCAS II processing unit and Mode S transponder, reducing weight and LRU count. The unit performs both active TCAS surveillance (interrogate-and-track) and passive Mode S transponder functions simultaneously.
 - **Dual antenna configuration**: TCAS uses a top antenna (above fuselage) and a bottom antenna (below fuselage). The directional antenna system (4-element or phased array TBD) estimates azimuth bearing of intruder aircraft for ND display. The bearing accuracy is lower than range accuracy (range from time-of-flight is precise; bearing from antenna directionality is approximate). Composite CFRP fuselage RF transparency at 1030/1090 MHz TBD.
-- **TCAS RA execution**: When TCAS generates an RA, the crew must comply immediately. The autopilot does not automatically respond to RA — the crew must disconnect autopilot (if in AP-managed mode) and execute the RA manually. Post-RA clear of conflict: autopilot can be re-engaged. Note: future autopilot integration with TCAS RA (automatic RA response) is not included in baseline eWTW; TBD for future enhancement.
+- **TCAS RA execution**: When TCAS generates an RA, the crew must comply immediately. The autopilot does not automatically respond to RA — the crew must disconnect autopilot (if in AP-managed mode) and execute the RA manually. Post-RA clear of conflict: autopilot can be re-engaged. Note: future autopilot integration with TCAS RA (automatic RA response) is not included in baseline [PROGRAMME-VARIANT]; TBD for future enhancement.
 - **ADS-B Out GNSS coupling**: ADS-B Out position data is derived from the GNSS receivers (GNSS-1 and GNSS-2). The NIC (Navigation Integrity Category) and NAC (Navigation Accuracy Category) in the ADS-B Out message reflect the GNSS/SBAS integrity and accuracy. NIC ≥ 7 (HPL < 0.1 NM) is the minimum for CS-ACNS ADS-B Out requirements.
 - **TCAS audio system**: TCAS audio alerts use a dedicated audio controller or the aircraft audio management system (ATA 23 interface). RA audio is non-maskable by crew: TCAS RA audio cannot be silenced by volume controls. The audio advisory set is per TCAS II version 7.1 (DO-185B Appendix C): "CLIMB", "DESCEND", "MONITOR VERTICAL SPEED", "LEVEL OFF", "INCREASE DESCENT", etc.
 - **TCAS inhibit logic**: TCAS RA is inhibited below approximately 1000 ft RA (radio altitude) to prevent RA commands near ground. Specific inhibit thresholds are per DO-185B.
@@ -322,7 +307,7 @@ flowchart LR
 
 | SNS Code | Subsubject Title | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 034-50 | Traffic Surveillance and Collision Avoidance | DMC-AMPEL360E-EWTW-034-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 034-50 | Traffic Surveillance and Collision Avoidance | DMC-<PROGRAMME>-<VARIANT>-034-50 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Recommended DM Set for 034-50
 
@@ -455,7 +440,7 @@ flowchart LR
 |---|---|---|---|---|
 | OI-050-001 | Composite fuselage RF transparency — TCAS top and bottom antenna performance on CFRP fuselage; groundplane, VSWR, and radiation pattern assessment at 1030/1090 MHz | Q-MECHANICS / Q-AIR | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-050-002 | ADS-B In fitment decision — confirm TIS-B / FIS-B capability as standard or optional; ECAM/ND display integration required if fitted | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-050-003 | Automatic TCAS RA response (future) — define requirement and timeline for automatic autopilot RA response (beyond baseline eWTW); CS-25 / DO-185B implications | Q-AIR / ATA 22 team | Low | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-050-003 | Automatic TCAS RA response (future) — define requirement and timeline for automatic autopilot RA response (beyond baseline [PROGRAMME-VARIANT]); CS-25 / DO-185B implications | Q-AIR / ATA 22 team | Low | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-050-004 | ADS-B Out NIC/NAC target — confirm minimum NIC/NAC achievable with baseline GNSS/SBAS; EGNOS SISA limits; RNP level required | Q-AIR / Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-050-005 | TCAS RA event log retention — define retention period and access for safety investigation; interface with flight data recorder (ATA 31 FDR) | Q-AIR / ORB-LEG | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-050-006 | L5 GNSS frequency decision (cross-reference 034-040) | Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |

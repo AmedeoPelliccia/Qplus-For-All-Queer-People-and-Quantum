@@ -23,6 +23,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 010-019 · Section 01 · Subsection 015 · Subsubject 001 — Scope and GSE Boundaries
@@ -79,7 +81,7 @@ The following items are **not** classified as GSE within `015_` and are managed 
 When a GSE item performs fluid transfer (e.g., a hydraulic replenishment cart), the **servicing procedure** (quantities, connection sequence, contamination checks) belongs in `011_Servicing/`. The **equipment identity, catalogue entry, compatibility rating, and calibration record** for that item belongs in `015_`. The boundary is: *operation* → `011_`; *equipment* → `015_`.
 
 **Rule GSE-B02 — Tow tractor procedural split:**
-Tow tractor and towbar **operating procedures** (bypass-pin insertion, steering limits, tow speed, abort criteria) belong in `013_Remolque/`. The tow tractor's **GSE catalogue entry, asset record, inspection schedule, and compatibility with AMPEL360 nose-gear attachment points** belongs in `015_`.
+Tow tractor and towbar **operating procedures** (bypass-pin insertion, steering limits, tow speed, abort criteria) belong in `013_Remolque/`. The tow tractor's **GSE catalogue entry, asset record, inspection schedule, and compatibility with [PROGRAMME-AIRCRAFT] nose-gear attachment points** belongs in `015_`.
 
 **Rule GSE-B03 — Maintenance access platform split:**
 Mobile maintenance platforms and docking systems appear in both `012_Acceso/` (access procedure context) and `015_GSE/` (equipment identity context). The normative source for the **access procedure** is `012_`; the normative source for the **equipment inspection and calibration** is `015_`.
@@ -88,7 +90,7 @@ Mobile maintenance platforms and docking systems appear in both `012_Acceso/` (a
 Engine intake blanks, exhaust covers, pitot tube covers, and static vent covers are classified as GSE protective equipment. They are catalogued in `015_` (compatibility by aircraft type, storage, inspection). The **procedure for fitting/removing** blanks prior to departure or during maintenance is in `010_Ground-handling/`.
 
 **Rule GSE-B05 — Variant applicability flag:**
-Any GSE item that applies exclusively to AMPEL360 Gen 2 (LH₂) or hybrid variants shall be flagged `variant: Gen2-LH2` in the catalog entry (`002_`) and cross-referenced to EPTA `460-469_`. Standard (Jet-A/SAF) GSE items that are not variant-specific shall be flagged `variant: All`.
+Any GSE item that applies exclusively to [PROGRAMME-AIRCRAFT] Gen 2 (LH₂) or hybrid variants shall be flagged `variant: Gen2-LH2` in the catalog entry (`002_`) and cross-referenced to EPTA `460-469_`. Standard (Jet-A/SAF) GSE items that are not variant-specific shall be flagged `variant: All`.
 
 ## 3. Diagram — GSE Boundary Map
 

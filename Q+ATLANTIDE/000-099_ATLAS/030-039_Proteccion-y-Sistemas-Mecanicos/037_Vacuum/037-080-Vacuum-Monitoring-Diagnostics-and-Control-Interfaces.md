@@ -6,10 +6,10 @@ subsubject: "080"
 subsubject_title: "Vacuum Monitoring, Diagnostics, and Control Interfaces"
 file_name: "037-080-Vacuum-Monitoring-Diagnostics-and-Control-Interfaces.md"
 sns_reference: "037-80"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-80"
-programme: "AMPEL360e eWTW"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "AMPEL360e-eWTW"
+dmc_prefix: "DMC-<PROGRAMME>-<VARIANT>-037-80"
+programme: "[PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]"
+programme_link: "../../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/"
+short_code: "[PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]"
 register: "Q+ATLANTIDE ATLAS"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "030-039 Protection and Mechanical Systems"
@@ -43,10 +43,12 @@ review_status: "PENDING"
 lifecycle_phase: "LC02 — System Definition"
 traceability: ["CS-25.1438", "CS-25.1301", "CS-25.1309", "AMC 25.831"]
 keywords: ["ATA 37", "Vacuum", "CMC", "OMS", "BITE", "diagnostics", "fault codes", "EVG monitoring", "waste tank level", "freeze protection", "AFDX"]
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # 037-080 — Vacuum Monitoring, Diagnostics, and Control Interfaces
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT] · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">
 **Revision:** 0.1.0 | **Created:** 2025-07-14 | **Updated:** 2025-07-14
@@ -61,31 +63,20 @@ All links in this document are relative within the Q+ATLANTIDE ATLAS repository 
 
 ## §1 Purpose
 
-This document defines the **monitoring, diagnostics, and control interface architecture** for the ATA 37 Vacuum System on the AMPEL360e eWTW. It specifies:
-- All monitored parameters (sensors, ranges, fault thresholds)
-- BITE (Built-In Test Equipment) functionality — power-up self-test and continuous monitoring
-- CMC / OMS data flow and fault logging
-- Maintenance diagnostic commands and control interfaces
-- Freeze protection monitoring concept
-- OMS health trend analysis (EVG degradation)
-- Data bus architecture (AFDX / ARINC 429 TBD)
+This document defines the agnostic ATLAS standard-level architecture context for `037-080 — Vacuum Monitoring, Diagnostics, and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Item | Value |
-|------|-------|
-| Aircraft Programme | AMPEL360e eWTW |
-| ATA Chapter | 37 — Vacuum |
-| Subsubject | 037-80 — Monitoring, Diagnostics, and Control Interfaces |
-| Certification Basis | CS-25 Amendment 27 (TBD) |
-| Applicable Standards | CS-25.1438, CS-25.1301, CS-25.1309, AMC 25.831 |
-| Revision Status | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| Configuration | ~100-pax single-aisle electric |
-
----
-
+| Applicability Level | Rule |
+|---|---|
+| Standard taxonomy | Applies to the ATLAS node `<NODE>` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 System / Function Overview
 
 ### 3.1 Monitored Parameters
@@ -363,11 +354,11 @@ flowchart LR
 
 | DM Code | Info Code | Title | Status |
 |---------|-----------|-------|--------|
-| DMC-AMPEL360E-EWTW-037-80-00-00A-040A-A | 040 | Vacuum Monitoring and Diagnostics — Description | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-80-00-00A-300A-A | 300 | CMC / OMS Monitoring Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-80-00-00A-400A-A | 400 | Vacuum System Fault Isolation — EVG Fault | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-80-00-00A-400B-A | 400 | Vacuum System Fault Isolation — EFV Fault | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-80-00-00A-400C-A | 400 | Vacuum System Fault Isolation — Manifold Transducer Fault | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-80-00-00A-040A-A | 040 | Vacuum Monitoring and Diagnostics — Description | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-80-00-00A-300A-A | 300 | CMC / OMS Monitoring Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-80-00-00A-400A-A | 400 | Vacuum System Fault Isolation — EVG Fault | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-80-00-00A-400B-A | 400 | Vacuum System Fault Isolation — EFV Fault | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<PROGRAMME>-<VARIANT>-037-80-00-00A-400C-A | 400 | Vacuum System Fault Isolation — Manifold Transducer Fault | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -416,7 +407,7 @@ flowchart LR
 
 | Term | Definition |
 |------|-----------|
-| ADIRU | Air Data Inertial Reference Unit — solid-state; no vacuum connection on eWTW |
+| ADIRU | Air Data Inertial Reference Unit — solid-state; no vacuum connection on [PROGRAMME-VARIANT] |
 | AFDX | Avionics Full-Duplex Switched Ethernet (ARINC 664 Part 7) — primary data bus |
 | ATA 37 | Air Transport Association chapter for Vacuum systems |
 | BITE | Built-In Test Equipment — automated self-test capability of the vacuum system |
@@ -428,7 +419,7 @@ flowchart LR
 | EVG | Electric Vacuum Generator — motor-driven vacuum pump |
 | Fault code | Coded identifier for a specific fault condition logged in CMC NVM |
 | Freeze protection | Thermal protection for waste lines (OI-037-005) |
-| Gyroscopic instruments | Vacuum-driven AI, DI, TC — **eliminated on eWTW** (ADIRU) |
+| Gyroscopic instruments | Vacuum-driven AI, DI, TC — **eliminated on [PROGRAMME-VARIANT]** (ADIRU) |
 | Manifold | Vacuum distribution header |
 | NRV | Non-Return Valve |
 | NVM | Non-Volatile Memory — fault log and run-hour data storage |
@@ -491,5 +482,5 @@ flowchart LR
 | 0.1.0 | 2025-07-14 | AI-assisted scaffold | Initial scaffold — §0–§22; monitored parameters table, BITE, fault codes, OMS trend concept; all thresholds and bus protocols TBD |
 
 ---
-*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-080 Monitoring, Diagnostics, and Control Interfaces — AMPEL360e eWTW*
+*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-080 Monitoring, Diagnostics, and Control Interfaces — [PROGRAMME-AIRCRAFT] [PROGRAMME-VARIANT]*
 *Classification: UNCLASSIFIED — ENGINEERING SCAFFOLD*

@@ -21,6 +21,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 080-089 · Section 08 · Subsection 083 — Solar-Electric Auxiliary
@@ -35,7 +37,7 @@ This subsection is part of the **ATLAS-1000** register, a subpart of the control
 
 - Populates the subsubject namespace `00`–`99` of subsection `083` *Solar-Electric Auxiliary*.
 - Inherits Q-Division authority and ORB support from the parent row in [`../../README.md` §3](../../README.md#3-architecture-table)[^archtable] and the section index in [`../README.md`](../README.md).
-- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the AMPEL360E eWTW Solar-Electric Auxiliary (SEA) system: 24 m² GaAs triple-junction PV arrays (120 kW peak), dual-tier energy storage (100 kJ SCAP + 50 kWh NMC 811 Li-Ion), SEACU dual-channel DAL C controller, 2–4 BLI auxiliary propulsor nodes (15–40 kW each), AFDX ARINC 664 P7, S1000D 30 DMs, BREX-083-v1.
+- All ten subsubjects (`00`–`90`) are active DRAFT documents covering the programme-defined aircraft type Solar-Electric Auxiliary (SEA) system: 24 m² GaAs triple-junction PV arrays (120 kW peak), dual-tier energy storage (100 kJ SCAP + 50 kWh <BATTERY-CHEMISTRY> Li-Ion), SEACU dual-channel DAL C controller, 2–4 BLI auxiliary propulsor nodes (15–40 kW each), AFDX ARINC 664 P7, S1000D 30 DMs, BREX-083-v1.
 
 ## 3. Subsubject Index
 

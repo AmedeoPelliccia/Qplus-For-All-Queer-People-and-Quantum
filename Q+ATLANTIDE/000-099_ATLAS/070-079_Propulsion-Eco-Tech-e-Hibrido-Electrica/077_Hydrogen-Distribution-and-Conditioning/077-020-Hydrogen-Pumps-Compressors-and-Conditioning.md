@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0077-020"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0077-020"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-077-020-HYDROGEN-PUMPS-COMPRESSORS-AND-CONDITIONING
      ATA 28 (GH₂/LH₂ Distribution) · Hydrogen Pumps, Compressors and Conditioning
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Hydrogen Pumps, Compressors and Conditioning
@@ -46,24 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0077-020"
 
 ## §1 Purpose
 
-This document defines the design, performance, control, and maintenance requirements for the **cryogenic LH₂ feed pumps** and any associated **GH₂ conditioning compressors** used in the AMPEL360E eWTW Hydrogen Distribution and Conditioning (HDC) system. The pumps are the primary active elements that draw LH₂ from the onboard tanks and boost delivery pressure to the vaporizer inlet, ensuring stable hydrogen feed rate to the PEMFC stacks across the full aircraft operating envelope.
+This document defines the agnostic ATLAS standard-level architecture context for `Hydrogen Pumps, Compressors and Conditioning`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 28 (GH₂/LH₂ Distribution) — 077-020 Hydrogen Pumps, Compressors and Conditioning |
-| Certification basis | EASA CS-25 Amdt 27+; CSH-2; IEC 60079 (ATEX Group IIC); DO-160G (environmental) |
-| S1000D SNS | 077-020-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `077` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The AMPEL360E eWTW uses two **cryogenic centrifugal LH₂ pumps** (Pump-A, port; Pump-B, starboard), one per storage tank feed path. Each pump is a hermetically-sealed, brushless-DC-motor-driven centrifugal unit operating fully submerged in LH₂ (or at near-cryogenic inlet conditions), eliminating shaft-seal hydrogen leak paths. The motor winding is cryogenically compatible (polyimide insulation rated to 4 K) and cooled by the LH₂ flow through the pump.
+The programme-defined aircraft type uses two **cryogenic centrifugal LH₂ pumps** (Pump-A, port; Pump-B, starboard), one per storage tank feed path. Each pump is a hermetically-sealed, brushless-DC-motor-driven centrifugal unit operating fully submerged in LH₂ (or at near-cryogenic inlet conditions), eliminating shaft-seal hydrogen leak paths. The motor winding is cryogenically compatible (polyimide insulation rated to 4 K) and cooled by the LH₂ flow through the pump.
 
 **Operating principle:** Pump speed is commanded by the HDCMU via a variable-frequency drive (VFD) control signal. Speed modulation adjusts LH₂ volumetric flow rate and discharge pressure, allowing the HDCMU to precisely match hydrogen supply to FCCU demand. Nominal cruise operating speed: 8 000–12 000 RPM; maximum: 15 000 RPM. Discharge pressure boost: 0–3.5 bar above tank inlet pressure (max discharge 6.5 bar(a) at minimum tank pressure).
 
@@ -71,7 +72,7 @@ The AMPEL360E eWTW uses two **cryogenic centrifugal LH₂ pumps** (Pump-A, port;
 
 **Cross-feed capability:** A normally-closed **cross-connect shutoff valve** (XCSOV) on the pump discharge manifold allows Pump-B to back-feed the port (Pump-A) vaporizer if Pump-A fails, and vice versa. The HDCMU activates cross-feed automatically upon confirmed pump fault.
 
-**GH₂ conditioning note:** No separate GH₂ recirculation compressor is required in the AMPEL360E eWTW architecture; recirculation of anode tail-gas in the PEMFC stacks is managed within the FCCU domain (ATLAS 075). The conditioning function in subsubject 077-020 refers to pump-driven flow conditioning and LH₂ stability management upstream of the vaporizers.
+**GH₂ conditioning note:** No separate GH₂ recirculation compressor is required in the programme-defined aircraft type architecture; recirculation of anode tail-gas in the PEMFC stacks is managed within the FCCU domain (ATLAS 075). The conditioning function in subsubject 077-020 refers to pump-driven flow conditioning and LH₂ stability management upstream of the vaporizers.
 
 ---
 

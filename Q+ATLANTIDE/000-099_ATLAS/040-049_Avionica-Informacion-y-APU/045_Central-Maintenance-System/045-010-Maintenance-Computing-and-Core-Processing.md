@@ -31,6 +31,8 @@ ata_reference: "ATA 45.010 — Maintenance Computing and Core Processing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 045 · 010 — Maintenance Computing and Core Processing
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document specifies the hardware and software architecture of the CMS Core Computing Unit (CCU) for the AMPEL360E eWTW. It covers dual-channel processor design, real-time operating system partitioning, storage architecture, network interface design, and the interface between the CMS computing core and the Integrated Modular Avionics (IMA) cabinet (ATA 42).
+This document specifies the hardware and software architecture of the CMS Core Computing Unit (CCU) for the programme-defined aircraft type. It covers dual-channel processor design, real-time operating system partitioning, storage architecture, network interface design, and the interface between the CMS computing core and the Integrated Modular Avionics (IMA) cabinet (ATA 42).
 
 Key governance areas:
 - CCU-A (primary) and CCU-B (hot standby) processor specification.
@@ -58,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 45.010 — Maintenance Computing and Core Processing |
 | Certification Basis | CS-25 Amendment 28; DO-178C DAL C; DO-254 DAL C |
 | Applicable Standards | ARINC 664 P7; ARINC 653; DO-160G; MIL-STD-1553 (heritage reference) |

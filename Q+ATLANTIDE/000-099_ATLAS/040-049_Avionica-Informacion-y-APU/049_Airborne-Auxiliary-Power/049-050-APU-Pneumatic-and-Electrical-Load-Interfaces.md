@@ -31,6 +31,8 @@ ata_reference: "ATA 49 — Airborne Auxiliary Power"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 049 · 050 — APU Pneumatic and Electrical Load Interfaces
@@ -43,7 +45,7 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## §1. Purpose
 
-**CRITICAL ARCHITECTURE STATEMENT**: The AMPEL360E eWTW APU provides **zero pneumatic output**. There is no bleed air port, no pneumatic manifold, no load control valve, no pre-cooler, no surge control valve, and no customer bleed extraction from the APU compressor stage. This document title retains "Pneumatic" for ATA 49 naming convention compliance only; all pneumatic interface content is explicitly absent by design.
+**CRITICAL ARCHITECTURE STATEMENT**: The programme-defined aircraft type APU provides **zero pneumatic output**. There is no bleed air port, no pneumatic manifold, no load control valve, no pre-cooler, no surge control valve, and no customer bleed extraction from the APU compressor stage. This document title retains "Pneumatic" for ATA 49 naming convention compliance only; all pneumatic interface content is explicitly absent by design.
 
 This document covers exclusively the **electrical load interfaces** between the APU generator system and the aircraft ATA 24 HVDC electrical distribution system. The APU's Motor Starter/Generator (MSG), operating through the ATRU and APU Generator Contactor (AGC), is the sole power output interface of the APU. This electrical interface connects to the aircraft's main HVDC 270 V bus via the AGC, providing up to 150 kVA of electrical power for ground operations, emergency electrical supply, and ground air conditioning support via the Electric Air Compressor (EAC).
 
@@ -57,7 +59,7 @@ The Electrical Power Control Unit (EPCU) — the aircraft-level power management
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | 49 — Airborne Auxiliary Power |
 | Pneumatic output | **NONE** — bleed-less architecture; CS-25 §25.1438 not applicable |
 | HVDC output voltage | 270 V ± 5 % DC |
@@ -74,7 +76,7 @@ The Electrical Power Control Unit (EPCU) — the aircraft-level power management
 
 ## §3. Functional Description
 
-**No pneumatic interface exists** on the AMPEL360E eWTW APU. Engineers and certifiers confirming ATA 49 pneumatic interface compliance should record "not applicable — bleed-less architecture" against CS-25 §25.1438 (which covers aircraft with engine bleed air systems) and document this exemption with a Means of Compliance (MoC) 0 (statement of compliance by design) in the Compliance Checklist.
+**No pneumatic interface exists** on the programme-defined aircraft type APU. Engineers and certifiers confirming ATA 49 pneumatic interface compliance should record "not applicable — bleed-less architecture" against CS-25 §25.1438 (which covers aircraft with engine bleed air systems) and document this exemption with a Means of Compliance (MoC) 0 (statement of compliance by design) in the Compliance Checklist.
 
 The AGC is the electrical interface gateway between the APU generator system and the aircraft HVDC distribution. The GCU closes the AGC when ATRU output is within the 270 V ± 5 % window and APU speed is at 100 % N ± 1 %. Once closed, the AGC connects the ATRU 270 V DC output to the aircraft HVDC main bus. The GCU continuously monitors AGC contactor current and voltage; overcurrent (> 560 A, corresponding to 150 kVA at 270 V) triggers a GCU overcurrent protection response: first, a 2-second overcurrent delay to reject transients; then, if overcurrent persists, GCU opens the AGC and posts an ECAM caution "APU GEN OVLD".
 
@@ -162,7 +164,7 @@ graph LR
 
 | Interface | Peer System | Protocol / Bus | Data Exchanged |
 |---|---|---|---|
-| Pneumatic | **None** | **N/A** | **No bleed air interface — eWTW bleed-less design** |
+| Pneumatic | **None** | **N/A** | **No bleed air interface — [PROGRAMME-VARIANT] bleed-less design** |
 | HVDC power output | ATA 24 HVDC distribution | AGC contactor | 270 V DC up to 150 kVA via AGC |
 | EAC power supply | ATA 21 ECS (EAC) | HVDC bus (via SSPC) | ~50 kW to EAC from HVDC bus |
 | EPCU load management | ATA 24 EPCU | AFDX ARINC 664 P7 | APU gen capacity, load shed commands |
@@ -354,7 +356,7 @@ stateDiagram-v2
 | Acronym / Term | Definition |
 |---|---|
 | AGC | APU Generator Contactor — high-voltage DC contactor connecting ATRU output to aircraft HVDC main bus |
-| HVDC bus | High-Voltage Direct Current bus — 270 V DC primary electrical distribution bus on the AMPEL360E eWTW |
+| HVDC bus | High-Voltage Direct Current bus — 270 V DC primary electrical distribution bus on the programme-defined aircraft type |
 | EAC | Electric Air Compressor — ATA 21 device providing compressed air for ECS from HVDC bus; replaces bleed air for cabin conditioning |
 | PDU | Power Distribution Unit — component-level grouping of SSPCs and bus bars within the ATA 24 distribution system |
 | SSPC | Solid State Power Controller — electronic circuit breaker with current telemetry, remotely commanded by EPCU |

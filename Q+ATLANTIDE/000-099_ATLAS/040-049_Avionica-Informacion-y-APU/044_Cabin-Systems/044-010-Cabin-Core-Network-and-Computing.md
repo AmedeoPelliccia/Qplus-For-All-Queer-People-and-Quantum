@@ -31,6 +31,8 @@ ata_reference: "ATA 44.010 — Cabin Core Network"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 010 — Cabin Core Network and Computing
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the architecture, design, and certification approach for the Cabin Core Network and Computing infrastructure of the AMPEL360E eWTW aircraft. The Cabin Data Network (CDN) is the IP/Ethernet backbone interconnecting all ATA 44 cabin subsystems. It is based on ARINC 628 and utilises a redundant ring topology to ensure high availability.
+This document defines the architecture, design, and certification approach for the Cabin Core Network and Computing infrastructure of the programme-defined aircraft type. The Cabin Data Network (CDN) is the IP/Ethernet backbone interconnecting all ATA 44 cabin subsystems. It is based on ARINC 628 and utilises a redundant ring topology to ensure high availability.
 
 Key governance areas:
 - CDN physical architecture (ring topology, managed switches, cable plant).
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44.010 — Cabin Core Network and Computing |
 | Certification Basis | CS-25 Amendment 28; CS-25 §25.853 |
 | Applicable Standards | ARINC 628; IEEE 802.3 (Ethernet); DO-160G; DO-178C DAL D |
@@ -331,8 +333,8 @@ graph LR
 | Ref ID | Document | Version | Status |
 |--------|----------|---------|--------|
 | REF-044-01-01 | Cabin Systems General (044-000) | 1.0 | Active |
-| REF-044-01-02 | AMPEL360E CDN Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| REF-044-01-03 | AMPEL360E Cabin Layout Drawing | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-01-02 | [PROGRAMME-AIRCRAFT] CDN Interface Control Document | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-01-03 | [PROGRAMME-AIRCRAFT] Cabin Layout Drawing | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

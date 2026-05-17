@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-030"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0081-030"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-081-030-QUANTUM-OPTIMIZED-REACTION-PATHWAYS
      ATLAS-081 (Quantum-Optimized Combustion Models) · Quantum-Optimized Reaction Pathways
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum-Optimized Reaction Pathways
@@ -46,66 +48,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-030"
 
 ## §1 Purpose
 
-This document specifies the **Quantum Reaction Path Optimizer (QRPO)** module of the QOCMU.
-The QRPO uses the Quantum Approximate Optimization Algorithm (QAOA) and quantum annealing
-principles to identify the dominant reaction pathway subset that minimizes NOx, CO, and soot
-formation while maintaining combustion efficiency and stability constraints across the full
-operating envelope of the AMPEL360E eWTW turbofan.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum-Optimized Reaction Pathways`.
 
-Specifically, this document:
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-1. **Formulates the reaction pathway optimization as a QUBO problem** (Quadratic Unconstrained
-   Binary Optimization), encoding the combustion mechanism graph (~200 reaction channels) as
-   a binary selection problem suitable for quantum optimization.
-
-2. **Documents the QAOA implementation** at circuit depth p = 6 on the 12-qubit QPU,
-   including the phase-separation and mixing operator construction, Hamiltonian encoding,
-   and classical outer optimization loop.
-
-3. **Defines PLT-081-001** (Quantum Combustion Pathway Lookup Table): the 500-entry
-   pre-computed table of optimal reaction pathway subsets indexed by operating point
-   (P3, T3, φ, fuel type), generated on the GAIA HPC facility on a 48-hour refresh cycle.
-
-4. **Specifies the in-flight LUT interpolation** scheme: 4D bilinear interpolation providing
-   optimized pathway selection at 0.5 Hz with ≤ 10 ms latency.
-
-5. **Defines the objective function and constraint structure**: NOx (Zeldovich + prompt + N₂O
-   path), CO oxidation, and soot (PAH inception) weighted minimization subject to combustion
-   efficiency ≥ 99.5%, LBO stability margin ≥ 0.15, and GH₂ flashback margin ≥ 0.10.
-
-6. **Specifies the classical fallback pathway**: a fixed validated 20-reaction subset for use
-   when QPU is unavailable, with known conservative (sub-optimal) emissions performance.
-
-This document is subordinate to ATLAS-081 General (081-000) and receives its mechanism graph
-and accuracy targets from the Combustion Modeling Baseline (081-010) and QCKS (081-020).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-081 (Quantum-Optimized Combustion Models) — Quantum-Optimized Reaction Pathways |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; IEEE P2995; S1000D SNS 081-030-00 |
-| S1000D SNS | 081-030-00 |
-| Quantum algorithm | QAOA (Quantum Approximate Optimization Algorithm) |
-| QAOA circuit depth | p = 6 (6 phase + 6 mixing layers) |
-| Problem formulation | QUBO (Quadratic Unconstrained Binary Optimization) |
-| Mechanism graph size | ~200 reaction channels |
-| Optimized pathway subset | 20 reactions (selected from ~200) |
-| PLT-081-001 grid | 500 operating points (P3 × T3 × φ × fuel type) |
-| In-flight LUT interpolation | 4D bilinear; ≤ 10 ms |
-| LUT update rate (in-flight) | 0.5 Hz |
-| NOx reduction target (Jet-A vs. classical) | ≥ 10% (target 12%) |
-| NOx reduction target (GH₂ vs. classical) | ≥ 6% (target 8%) |
-| Combustion efficiency constraint | η_comb ≥ 99.5% |
-| LBO stability margin constraint | SM_LBO ≥ 0.15 |
-| GH₂ flashback margin constraint | SM_flash ≥ 0.10 (hard-coded; not overridable) |
-| Ground optimization cycle | 48 hours (GAIA HPC) |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `081` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 Motivation: Why Pathway Optimization Matters

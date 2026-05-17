@@ -31,6 +31,8 @@ ata_reference: "ATA 44.020 — Cabin Management System"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 044 · 020 — Cabin Management System CMS
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## 1. Purpose
 
-This document defines the Cabin Management System (CMS) for the AMPEL360E eWTW aircraft — the central software platform that orchestrates, monitors, and controls all passenger-facing and crew-operated cabin functions. The CMS is hosted on the dual-redundant CMS-A/B server hardware (see 044-010) and communicates with all cabin subsystems via the Cabin Data Network (CDN).
+This document defines the Cabin Management System (CMS) for the programme-defined aircraft type — the central software platform that orchestrates, monitors, and controls all passenger-facing and crew-operated cabin functions. The CMS is hosted on the dual-redundant CMS-A/B server hardware (see 044-010) and communicates with all cabin subsystems via the Cabin Data Network (CDN).
 
 Key governance areas:
 - CMS software architecture and hosted application set.
@@ -59,7 +61,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 44.020 — Cabin Management System |
 | Certification Basis | CS-25 Amendment 28 |
 | Applicable Standards | DO-178C DAL D; ARINC 628; DO-160G |
@@ -332,7 +334,7 @@ graph LR
 |--------|----------|---------|--------|
 | REF-044-02-01 | Cabin Systems General (044-000) | 1.0 | Active |
 | REF-044-02-02 | Cabin Core Network (044-010) | 1.0 | Active |
-| REF-044-02-03 | AMPEL360E CMS Software Requirements Specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| REF-044-02-03 | [PROGRAMME-AIRCRAFT] CMS Software Requirements Specification | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-090"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0066-090"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # S1000D / CSDB Mapping and Traceability
@@ -39,28 +41,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-090"
 
 ## §1 Purpose
 
-This document maps the ATLAS ATA 66 subsubject structure to S1000D Data Module Codes (DMCs) and defines the Data Module Requirement List (DMRL) and Business Rules eXchange (BREX) constraints for the AMPEL360E eWTW Air Compressor Common Source DataBase (CSDB).
+This document defines the agnostic ATLAS standard-level architecture context for `S1000D / CSDB Mapping and Traceability`.
 
-ATA 66 DMRL for AMPEL360E eWTW: **28 data modules**. DMC pattern: `AMPEL360E-EWTW-066-{NNN}-00A-EN-US`. BREX document: `AMPEL360E-BREX-066-v1`, enforcing three domain-specific constraints described in §3.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-This document is owned by Q-DATAGOV and reviewed at each CSDB milestone (DMRL baseline, DMRL first issue, DMRL final).
-
----
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 66-090 — S1000D / CSDB Mapping and Traceability |
-| Certification basis | S1000D Issue 5.0 |
-| S1000D SNS | 066-090-00 |
-
----
+| Standard taxonomy | Applies to the ATLAS node `066` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 
 ## §3 Functional Description ![DRAFT]
 
-**BREX AMPEL360E-BREX-066-v1 enforces three constraints:**
+**BREX [PROGRAMME-AIRCRAFT]-BREX-066-v1 enforces three constraints:**
 
 1. **Bearing life limit citation rule:** All EAC maintenance DMs (DM type 300/520) must cite the bearing life limit (FH) from the EAC OEM Component Maintenance Manual (CMM). This prevents maintenance DMs from being issued without a traceable life limit.
 
@@ -87,7 +86,7 @@ This document is owned by Q-DATAGOV and reviewed at each CSDB milestone (DMRL ba
 ```mermaid
 flowchart LR
     ATLAS_066[ATLAS ATA 66 Subsubjects 000-090] --> DMRL[DMRL 28 DMs]
-    DMRL --> CSDB[AMPEL360E CSDB]
+    DMRL --> CSDB[[PROGRAMME-AIRCRAFT] CSDB]
     CSDB --> BREX[BREX-066-v1 Validation]
     BREX --> DM_APPROVED[DM Approved for Publication]
     DM_APPROVED --> IETP[IETP / AMM Publication]
@@ -102,7 +101,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    DMC_PATTERN["DMC Pattern: AMPEL360E-EWTW-066-NNN-00A-EN-US"] --> DM_040[DM-040 Descriptive]
+    DMC_PATTERN["DMC Pattern: [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-066-NNN-00A-EN-US"] --> DM_040[DM-040 Descriptive]
     DMC_PATTERN --> DM_300[DM-300 Inspection/Check]
     DMC_PATTERN --> DM_520[DM-520 Repair]
     DMC_PATTERN --> DM_100[DM-100 Procedural]
@@ -201,7 +200,7 @@ flowchart TB
 | S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | DM authoring standard |
 | ATA iSpec 2200 | Chapter 66 | ATA | ATA SNS reference for DM coding |
 | EASA CS-25 §25.1529 | Instructions for Continued Airworthiness | EASA | ICA requirement driving DM content |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow and DMRL management |
+| [PROGRAMME-AIRCRAFT] GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow and DMRL management |
 | EAC OEM CMM | Component Maintenance Manual | EAC OEM | Bearing life limit source for BREX Rule 1 |
 
 ---
@@ -272,4 +271,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

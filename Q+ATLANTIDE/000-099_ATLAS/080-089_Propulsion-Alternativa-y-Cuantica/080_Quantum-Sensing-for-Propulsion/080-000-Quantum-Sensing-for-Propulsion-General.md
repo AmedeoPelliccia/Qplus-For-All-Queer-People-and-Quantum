@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-000"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0080-000"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-080-000-QUANTUM-SENSING-FOR-PROPULSION-GENERAL
      ATLAS-080 (Quantum Sensing for Propulsion) · Quantum Sensing for Propulsion — General
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum Sensing for Propulsion — General
@@ -46,28 +48,23 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0080-000"
 
 ## §1 Purpose
 
-ATLAS subsubject 080-000 establishes the general scope, top-level architecture, and governing standards for the Quantum Sensing for Propulsion (QSP) system of the AMPEL360E eWTW. This document is the apex reference for all subordinate subsubject documents (080-010 through 080-090).
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum Sensing for Propulsion — General`.
 
-The AMPEL360E eWTW integrates a **Quantum Sensing for Propulsion (QSP)** system that applies quantum-enhanced physical measurement to propulsion health monitoring, performance optimization, and safety-critical sensing across the full hybrid-electric propulsion chain. The QSP system provides measurement fidelity and sensitivity beyond the limits of classical sensor technology, enabling condition-based maintenance, predictive degradation detection, and closed-loop propulsion optimization strategies that are not achievable with conventional instrumentation.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-All subsubject documents (080-010 through 080-090) are subordinate to this general baseline and inherit its governance class, Q-Division authority, and S1000D CSDB affiliation.
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-080 (Quantum Sensing for Propulsion) — 080-000 Quantum Sensing for Propulsion General |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; IEEE P2995; IEC 80001-1 |
-| S1000D SNS | 080-000-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `080` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
-The AMPEL360E eWTW **Quantum Sensing for Propulsion (QSP)** system applies quantum-physical measurement principles to all major propulsion sub-domains: turbofan shaft dynamics and blade health, hybrid-electric drive-chain electromagnetic state, cryogenic and high-temperature thermal management, and hydrogen fuel feed pressure and flow. The QSP system comprises four sensor families: (1) **Quantum Inertial and Vibration Sensors** — NV-center vibrometers and atom interferometer IMUs — used for propulsion shaft dynamics, blade tip timing, and bearing wear monitoring; (2) **Quantum Magnetic and Electromagnetic Sensors** — SQUID arrays and NV magnetometers — for non-contact EM field mapping and current monitoring in the hybrid-electric drive components; (3) **Quantum Thermal and Cryogenic Sensors** — Josephson junction thermometers and NV thermometry — spanning the full propulsion thermal envelope from 4 K (HTS motor windings, LH₂ lines) to 1 800 K (turbine hot section); and (4) **Quantum Pressure, Flow, and Combustion Sensors** — optomechanical quantum pressure sensors, atom-interferometer flow meters, and femtosecond-CARS combustion diagnostics.
+The programme-defined aircraft type **Quantum Sensing for Propulsion (QSP)** system applies quantum-physical measurement principles to all major propulsion sub-domains: turbofan shaft dynamics and blade health, hybrid-electric drive-chain electromagnetic state, cryogenic and high-temperature thermal management, and hydrogen fuel feed pressure and flow. The QSP system comprises four sensor families: (1) **Quantum Inertial and Vibration Sensors** — NV-center vibrometers and atom interferometer IMUs — used for propulsion shaft dynamics, blade tip timing, and bearing wear monitoring; (2) **Quantum Magnetic and Electromagnetic Sensors** — SQUID arrays and NV magnetometers — for non-contact EM field mapping and current monitoring in the hybrid-electric drive components; (3) **Quantum Thermal and Cryogenic Sensors** — Josephson junction thermometers and NV thermometry — spanning the full propulsion thermal envelope from 4 K (HTS motor windings, LH₂ lines) to 1 800 K (turbine hot section); and (4) **Quantum Pressure, Flow, and Combustion Sensors** — optomechanical quantum pressure sensors, atom-interferometer flow meters, and femtosecond-CARS combustion diagnostics.
 
 All quantum sensor data streams are processed by the **Quantum Sensing Processing Unit (QSPU)** — a dual-channel controller (DO-178C DAL B / DO-254 DAL B) housed in the avionics EE bay. The QSPU executes quantum sensor signal demodulation, entanglement-enhanced multi-sensor correlation, a Quantum-Enhanced Extended Kalman Filter (QE-EKF) state estimator, and a Quantum Machine Learning (QML) Propulsion Health Index (PHI) algorithm running on an embedded 5-qubit trapped-ion co-processor. The combined output is a **Propulsion State Vector (PSV)** updated at 100 Hz.
 

@@ -31,6 +31,8 @@ ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 created: "2026-05-10"
 updated: "2026-05-10"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 048 · 050 — Dispensing Hose-Boom and Coupling Interfaces
@@ -43,7 +45,7 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document specifies the **dispensing hose-reel assembly, drogue deployment, boom, and coupling interfaces** for the AMPEL360E eWTW aircraft when configured in **Tanker Mode** (optional fit). In Tanker Mode, the aircraft dispensing system provides fuel to a receiver aircraft via a flexible fuel hose and NATO-standard drogue basket. All actuation is electric — no hydraulic actuation is used for hose-reel drive, drogue deployment, or coupling lock/unlock mechanisms.
+This document specifies the **dispensing hose-reel assembly, drogue deployment, boom, and coupling interfaces** for the programme-defined aircraft type when configured in **Tanker Mode** (optional fit). In Tanker Mode, the aircraft dispensing system provides fuel to a receiver aircraft via a flexible fuel hose and NATO-standard drogue basket. All actuation is electric — no hydraulic actuation is used for hose-reel drive, drogue deployment, or coupling lock/unlock mechanisms.
 
 Key safety features include a breakaway coupling rated at 600 lb pull force, hose stow integrity sensors, boom limit microswitches, and a contact force sensor at the drogue assembly. The IFFDCU governs all hose/boom sequencing, drogue position monitoring, and coupling state management. The tanker configuration is an optional aircraft fit, enabled via the tanker configuration pin (see ATA 048-010).
 
@@ -53,7 +55,7 @@ Key safety features include a breakaway coupling rated at 600 lb pull force, hos
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Aircraft Program | programme-defined aircraft type |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | Configuration | Tanker Mode (optional fit — configuration pin required) |
 | Hose Type | Flexible fuel hose with drogue basket (NATO standard) |
@@ -423,4 +425,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD hose-boom and coupling interfaces for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-AIR / ATLAS Working Group | Initial baseline release — IFFD hose-boom and coupling interfaces for programme-defined aircraft type |

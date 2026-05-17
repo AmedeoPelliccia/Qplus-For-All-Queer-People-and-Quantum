@@ -26,6 +26,8 @@ governance_class: baseline
 version: 1.0.0
 status: active
 language: en
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # ATLAS 040-049 · Section 04 · Subsection 041 · 070 — Ballast Servicing and Ground Interfaces
@@ -38,7 +40,7 @@ All internal cross-references use relative Markdown links resolved within the Q+
 
 ## 1. Purpose
 
-This document defines the ground servicing architecture for the Water Ballast system on the AMPEL360E eWTW, covering fill-port design, dry-break coupling specifications, Standard Ground Handling Agreement (SGHA) interfaces per AHM 810, water quality specifications, servicing panel layout, servicing data uplink, and contamination detection provisions.
+This document defines the ground servicing architecture for the Water Ballast system on the programme-defined aircraft type, covering fill-port design, dry-break coupling specifications, Standard Ground Handling Agreement (SGHA) interfaces per AHM 810, water quality specifications, servicing panel layout, servicing data uplink, and contamination detection provisions.
 
 Efficient and safe ground servicing of the WB system is essential for turnaround time compliance. The design target is a full fill of both tanks (800 L) in ≤ 10 minutes using a standard airport water supply at 3 bar. The fill system uses self-sealing dry-break couplings to prevent spillage, with colour coding and captive dust caps to prevent mis-coupling with other aircraft systems.
 
@@ -50,11 +52,11 @@ Water quality requirements are defined to prevent contamination of the ballast s
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Model | AMPEL360E eWTW (all production variants) |
+| Aircraft Model | programme-defined aircraft type (all production variants) |
 | ATA Reference | ATA 41-70 — Ballast Servicing |
 | Standards | AHM 810, NSF/ANSI 61, DO-160G §8, STANAG 3558 |
 | Dev Assurance | DAL D (servicing hardware); DAL C (data uplink) |
-| Applicability Code | AMPEL360E-EWTW-ALL |
+| Applicability Code | [PROGRAMME-AIRCRAFT]-[PROGRAMME-VARIANT]-ALL |
 | Max Fill Rate | 80 L/min at 3 bar supply |
 
 ---
@@ -269,12 +271,12 @@ Verification Evidence"]
 
 | Document Type | Data Module Code (DMC) | Info Code | Title |
 |---------------|----------------------|-----------|-------|
-| System Description | DMC-AMPEL360E-EWTW-041-070-00A-040A-A | 040 | Ballast Servicing and Ground Interfaces Description |
-| Maintenance Procedures | DMC-AMPEL360E-EWTW-041-070-00A-300A-A | 300 | Ballast Servicing Fault Isolation |
-| BITE/Test | DMC-AMPEL360E-EWTW-041-070-00A-400A-A | 400 | Ballast Servicing BITE Procedures |
-| Wiring Data | DMC-AMPEL360E-EWTW-041-070-00A-520A-A | 520 | Ballast Servicing Wiring and Connector Data |
-| IPD | DMC-AMPEL360E-EWTW-041-070-00A-941A-A | 941 | Ballast Servicing Illustrated Parts |
-| Software Desc | DMC-AMPEL360E-EWTW-041-070-00A-720A-A | 720 | Ballast Servicing SW Description |
+| System Description | DMC-<PROGRAMME>-<VARIANT>-041-070-00A-040A-A | 040 | Ballast Servicing and Ground Interfaces Description |
+| Maintenance Procedures | DMC-<PROGRAMME>-<VARIANT>-041-070-00A-300A-A | 300 | Ballast Servicing Fault Isolation |
+| BITE/Test | DMC-<PROGRAMME>-<VARIANT>-041-070-00A-400A-A | 400 | Ballast Servicing BITE Procedures |
+| Wiring Data | DMC-<PROGRAMME>-<VARIANT>-041-070-00A-520A-A | 520 | Ballast Servicing Wiring and Connector Data |
+| IPD | DMC-<PROGRAMME>-<VARIANT>-041-070-00A-941A-A | 941 | Ballast Servicing Illustrated Parts |
+| Software Desc | DMC-<PROGRAMME>-<VARIANT>-041-070-00A-720A-A | 720 | Ballast Servicing SW Description |
 
 ### Recommended Data Module Set
 
@@ -377,7 +379,7 @@ Verification Evidence"]
 | <a id="ref-arinc827"></a>ARINC 827 | ARINC 827 — Wireless Avionics Intra-Communications (WAIC) | BLE security guidance | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-s1000d"></a>S1000D | S1000D Issue 5.0 | CSDB mapping | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | <a id="ref-ata-ispec-2200"></a>ATA-iSpec-2200 | ATA iSpec 2200 | AMM/FIM structure | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet AMPEL360E | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| <a id="ref-gov"></a>EASA-TC | EASA Type Certificate Data Sheet [PROGRAMME-AIRCRAFT] | Certification basis | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -387,7 +389,7 @@ Verification Evidence"]
 |-----|---------|-----------|---------|--------|------|
 | R-001 | WB General (041-000) | QATL-ATLAS-041-000 | Rev 1.0 | Active | [041-000](./041-000-Water-Ballast-General.md) |
 | R-002 | WB Distribution (041-020) | QATL-ATLAS-041-020 | Rev 1.0 | Active | [041-020](./041-020-Water-Ballast-Distribution-and-Transfer.md) |
-| R-003 | AMPEL360E Ground Servicing Manual | AMPEL360E-GSM-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| R-003 | [PROGRAMME-AIRCRAFT] Ground Servicing Manual | [PROGRAMME-AIRCRAFT]-GSM-041 | Rev A | Active | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 

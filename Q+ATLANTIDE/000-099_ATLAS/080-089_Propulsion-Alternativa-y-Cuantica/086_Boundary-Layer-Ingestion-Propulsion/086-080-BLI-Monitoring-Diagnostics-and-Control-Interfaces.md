@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-080"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0086-080"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-086-080-BLI-MONITORING-DIAGNOSTICS-AND-CONTROL-INTERFACES
      ATLAS-086 (Boundary Layer Ingestion Propulsion) · BLI Monitoring, Diagnostics and Control Interfaces
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # BLI Monitoring, Diagnostics and Control Interfaces
@@ -44,10 +46,11 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-080"
 
 ## §1 Purpose
 
-ATLAS subsubject 086-080 defines the BLI system monitoring sensor suite, the BLICU Built-In Test Equipment (BITE) architecture, the cockpit and MFD synoptic interface, the AFDX data bus configuration, and the GSE maintenance interface for the AMPEL360E eWTW BLI Propulsion system.
+This document defines the agnostic ATLAS standard-level architecture context for `BLI Monitoring, Diagnostics and Control Interfaces`.
 
----
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Sensor Suite
 
 ### 2.1 Primary Monitoring Sensors
@@ -123,7 +126,7 @@ The BLICU BITE system provides:
 
 ### 4.2 MFD Synoptic Page — BLI Status
 
-The BLI synoptic page on the AMPEL360E MFD (ENG page) displays:
+The BLI synoptic page on the [PROGRAMME-AIRCRAFT] MFD (ENG page) displays:
 
 | Parameter | Format | Update Rate |
 |---|---|---|
@@ -168,4 +171,4 @@ The BLI synoptic page on the AMPEL360E MFD (ENG page) displays:
 | OI-086-080-001 | MFD BLI synoptic page HMI review — pilot usability assessment | Q-GREENTECH | CDR |
 | OI-086-080-002 | AFDX VL bandwidth allocation — confirm with network management plan | Q-HPC | PDR |
 | OI-086-080-003 | EBIT procedure — bypass actuated at 1 000 RPM safety review | Q-INDUSTRY | CDR |
-| OI-086-080-004 | CAS message wording review — align with AMPEL360E CAS style guide | Q-GREENTECH | PDR |
+| OI-086-080-004 | CAS message wording review — align with [PROGRAMME-AIRCRAFT] CAS style guide | Q-GREENTECH | PDR |

@@ -28,11 +28,13 @@ status: active
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 12"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
+programme: "[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family"
+short_code: "[PROGRAMME-VARIANT]"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 ![DRAFT](https://img.shields.io/badge/DRAFT-yellow)
@@ -48,9 +50,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Documents the aircraft servicing overview for the AMPEL360E eWTW, covering the complete servicing cycle from arrival to dispatch. Defines the servicing zones, servicing priority sequences, principal service points, and the interfaces between aircraft servicing and the ground support equipment (GSE) system.
+Documents the aircraft servicing overview for the programme-defined aircraft type, covering the complete servicing cycle from arrival to dispatch. Defines the servicing zones, servicing priority sequences, principal service points, and the interfaces between aircraft servicing and the ground support equipment (GSE) system.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [[PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family](../../../../[PROGRAMME-PATH]/090_[PROGRAMME-AIRCRAFT]-Wide-Tube-and-Wing-Family/) programme, **[PROGRAMME-VARIANT]** configuration.
 
 ---
 
@@ -58,8 +60,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | [PROGRAMME-AIRCRAFT] programme-defined aircraft configuration Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Short code | [PROGRAMME-VARIANT] | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 12 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,9 +72,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **Aircraft Servicing Overview** node maps the complete servicing cycle for the eWTW from block-in to block-out. The servicing cycle is divided into four activity streams running in parallel during the minimum ground time: (A) HVDC recharge — GPU connect, BMS-directed rapid charge, SoC verification; (B) Fluids and consumables — BCL coolant, motor-drive thermal fluid, landing gear lubrication, oxygen system top-up (crew and passenger); (C) Cabin and cargo — passenger/crew servicing, galley water, waste disposal, cargo loading; (D) Technical — CMS BITE readout, EPCU channel health check, avionics preflight.
+The **Aircraft Servicing Overview** node maps the complete servicing cycle for the [PROGRAMME-VARIANT] from block-in to block-out. The servicing cycle is divided into four activity streams running in parallel during the minimum ground time: (A) HVDC recharge — GPU connect, BMS-directed rapid charge, SoC verification; (B) Fluids and consumables — BCL coolant, motor-drive thermal fluid, landing gear lubrication, oxygen system top-up (crew and passenger); (C) Cabin and cargo — passenger/crew servicing, galley water, waste disposal, cargo loading; (D) Technical — CMS BITE readout, EPCU channel health check, avionics preflight.
 
-Servicing zone allocation follows the eWTW Maintenance Planning Document (MPD): Zone 100-series (nose and forward fuselage) covers avionics and nose gear; Zone 200-series (wing and centre section) covers motor-drive units and main landing gear; Zone 300-series (aft fuselage and empennage) covers tail power distribution and APU ground port. Access panel codes and service point locations are defined in the AMM Chapter 12 (Service — Routine Maintenance) derived from this ATLAS baseline.
+Servicing zone allocation follows the [PROGRAMME-VARIANT] Maintenance Planning Document (MPD): Zone 100-series (nose and forward fuselage) covers avionics and nose gear; Zone 200-series (wing and centre section) covers motor-drive units and main landing gear; Zone 300-series (aft fuselage and empennage) covers tail power distribution and APU ground port. Access panel codes and service point locations are defined in the AMM Chapter 12 (Service — Routine Maintenance) derived from this ATLAS baseline.
 
 ---
 
@@ -84,7 +86,7 @@ This document includes:
 
 - controlled definition of the aircraft servicing overview scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- programme-defined aircraft type-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +103,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **Aircraft Servicing Overview** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **Aircraft Servicing Overview** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the programme-defined aircraft type programme.
 
 ---
 
@@ -205,11 +207,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `[PROGRAMME-AIRCRAFT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `[PROGRAMME-VARIANT]` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `004` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `010` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-004-010` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<PROGRAMME>-<VARIANT>-004-010` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +255,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-AIRCRAFT] | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| [PROGRAMME-VARIANT] | Electric programme-defined aircraft configuration. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

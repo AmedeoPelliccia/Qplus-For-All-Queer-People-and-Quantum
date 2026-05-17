@@ -17,7 +17,9 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-010"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0067-010"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 # FADEC and Electronic Engine Control
@@ -39,23 +41,20 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-010"
 
 ## §1 Purpose
 
-This document describes the hardware architecture and operational characteristics of the FADEC Electronic Engine Controller (EEC) on the AMPEL360E eWTW. The EEC is the physical implementation of the FADEC authority: a dual-channel digital computer mounted on the engine fan case, receiving all engine control inputs and outputting all engine control commands.
+This document defines the agnostic ATLAS standard-level architecture context for `FADEC and Electronic Engine Control`.
 
-The EEC is a Line Replaceable Unit (LRU) of approximately 6–8 kg, conforming to ARINC 600 size 6 MCU form factor, qualified per DO-160G to the thermal, vibration, humidity, and EMI environments of the engine fan case location. Software is DO-178C DAL A with an Engine Model Data File (EDF) specific to the engine serial number, uploaded via FADEC LOADMASTER ground software.
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATA 67-010 — FADEC and Electronic Engine Control |
-| Certification basis | EASA CS-E §150 / DO-178C DAL A / DO-254 |
-| S1000D SNS | 067-010-00 |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `067` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 **EEC hardware:** Dual-channel single enclosure. Channel A board and Channel B board are physically separated within the EEC box, each with its own processor (32-bit RISC), RAM, NVM (for EDF storage and fault logs), ARINC 429 transceivers, AFDX end-system, analogue I/O (sensor inputs), discrete I/O (actuator enables, ignition commands), and power supply module. The two boards share no hardware components except the EEC housing and the fan-case mounting bracket.
@@ -271,4 +270,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per programme-defined aircraft type architecture |

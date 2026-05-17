@@ -16,13 +16,15 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-040"
+s1000d_dmc: "DMC-<PROGRAMME>-<VARIANT>-0081-040"
+standard_scope: agnostic
+programme_specific: false
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-081-040-QUANTUM-ENHANCED-TURBULENCE-COMBUSTION-COUPLING
      ATLAS-081 (Quantum-Optimized Combustion Models) · Quantum-Enhanced Turbulence-Combustion Coupling
-     AMPEL360E eWTW — ATLAS Register 1000
+     programme-defined aircraft type — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # Quantum-Enhanced Turbulence-Combustion Coupling
@@ -46,70 +48,25 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-040"
 
 ## §1 Purpose
 
-This document specifies the **Quantum Turbulence-Combustion Coupler (QTCC)** module of the
-QOCMU. The QTCC applies quantum Monte Carlo (QMC) methods and quantum random walk (QRW)
-algorithms to provide corrected subgrid-scale (SGS) combustion closure for the Large Eddy
-Simulation (LES) framework embedded in the QOCMU's combustion model hierarchy.
+This document defines the agnostic ATLAS standard-level architecture context for `Quantum-Enhanced Turbulence-Combustion Coupling`.
 
-Specifically, this document:
+It describes the controlled scope, functions, interfaces, safety considerations, lifecycle traceability, and S1000D/CSDB mapping logic that programme implementations shall instantiate when this node is applicable.
 
-1. **Documents the physical problem**: Classical LES SGS combustion models based on the
-   Smagorinsky model with a presumed beta-function PDF underpredict the scalar dissipation
-   rate χ by 30–40% in lean premixed combustion zones, leading to systematic errors in
-   turbulent flame speed prediction (S_T error +8–12%) and NOx formation (+15–20%).
-
-2. **Specifies the QMC-QRW SGS solver implementation**: Quantum random walk algorithms
-   on the 12-qubit QPU sample the turbulent combustion manifold 50× faster than classical
-   Monte Carlo, providing corrected scalar dissipation rate χ_q and combustion manifold
-   statistics at 10 Hz.
-
-3. **Defines the four QTCC output variables** delivered to FADEC's turbine temperature model:
-   - Corrected scalar dissipation rate χ_q (s⁻¹)
-   - Favre-averaged progress variable c̃ (dimensionless)
-   - SGS heat release rate Q_sgs (W/m³)
-   - Quantum-corrected turbulent flame speed S_T,q (m/s)
-
-4. **Documents the DNS validation dataset** (3 flame configurations: lean premixed,
-   piloted diffusion, GH₂/air) used to verify QTCC accuracy against Direct Numerical
-   Simulation ground truth.
-
-5. **Specifies the LES-QTCC coupling protocol**: 10 Hz synchronization between QTCC
-   outputs and the FADEC turbine temperature model, including the certified software
-   interface (CSI-073-081) boundary conditions.
-
-6. **Defines the classical fallback**: dynamic Smagorinsky model with β-PDF presumed
-   PDF approach, stored on QOCMU NVMe, automatically activated on QPU unavailability.
-
-This document is subordinate to ATLAS-081 General (081-000) and receives species thermodynamic
-properties from QCKS (081-020) and active pathway source terms from QRPO (081-030).
-
----
-
+This document is not a programme design baseline. Programme-specific capacities, locations, part numbers, effectivity, operating limits, maintenance references, and data module codes shall be defined only inside the applicable programme implementation branch.
 ## §2 Applicability
 
-| Parameter | Value |
+| Applicability Level | Rule |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
-| ATA reference | ATLAS-081 (Quantum-Optimized Combustion Models) — Quantum-Enhanced Turbulence-Combustion Coupling |
-| Certification basis | EASA CS-25 Amdt 27+; DO-178C DAL B; DO-254 DAL B; IEEE P2995; S1000D SNS 081-040-00 |
-| S1000D SNS | 081-040-00 |
-| Quantum algorithm | Quantum Monte Carlo (QMC); Quantum Random Walk (QRW) |
-| SGS model replaced | Smagorinsky + presumed beta-PDF → QMC-QRW |
-| Combustion manifold | 8-species (OH, H₂O, CO, CO₂, H₂, N₂, NO, progress variable c) |
-| χ_q accuracy vs. DNS | ≤ ±8% |
-| S_T,q accuracy vs. DNS | ≤ ±5% |
-| FADEC update rate | 10 Hz |
-| Quantum speedup vs. classical MC | ≥ 50× |
-| DNS validation configurations | 3 (lean premixed Jet-A/air; piloted diffusion GH₂/air; lean premixed SAF/air) |
-| Classical fallback | Dynamic Smagorinsky + β-PDF presumed PDF model |
-
----
-
+| Standard taxonomy | Applies to the ATLAS node `081` |
+| Programme implementation | Conditional; determined by programme architecture, trade studies, certification basis, and applicability model |
+| Product configuration | Defined in the programme-specific configuration baseline |
+| Effectivity | Defined in the programme CSDB / applicability layer |
+| Non-applicability | Must be explicitly stated in the programme impact-study branch when excluded |
 ## §3 Functional Description ![DRAFT]
 
 ### 3.1 Physical Problem: Turbulence-Combustion Interaction in LDI Combustors
 
-The AMPEL360E eWTW's lean direct injection (LDI) combustor operates in the **thin reaction
+The programme-defined aircraft type's lean direct injection (LDI) combustor operates in the **thin reaction
 zones regime** (TRZ) of the Borghi-Peters turbulent combustion diagram, characterized by:
 
 - **Karlovitz number** Ka = 1–10 (turbulent fluctuations affect flame structure but
