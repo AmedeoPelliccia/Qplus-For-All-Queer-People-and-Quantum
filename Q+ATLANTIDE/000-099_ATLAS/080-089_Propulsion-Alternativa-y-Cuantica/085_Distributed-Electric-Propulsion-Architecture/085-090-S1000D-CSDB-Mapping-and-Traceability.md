@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GREENTECH, Q-HPC, Q-INDUSTRY, Q-STRUCTURES]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-13"
@@ -16,13 +17,12 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-085-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-085-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATLAS-085 (Distributed Electric Propulsion Architecture) · S1000D CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D CSDB Mapping and Traceability
@@ -46,7 +46,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0085-090"
 
 ## §1 Purpose
 
-ATLAS subsubject 085-090 establishes the S1000D Data Module Requirements List (DMRL), the BREX-085-v1 rule set, the ICN (Illustration Control Number) registry, the CSDB publication milestones, and the traceability matrix mapping all ten DEPA subsubject documents to their corresponding S1000D Data Modules (DMs). It is the authoritative reference for the DEPA technical publication deliverables and governs the structure of the AMPEL360E-EWTW CSDB entries under SNS 085.
+ATLAS subsubject 085-090 establishes the S1000D Data Module Requirements List (DMRL), the BREX-085-v1 rule set, the ICN (Illustration Control Number) registry, the CSDB publication milestones, and the traceability matrix mapping all ten DEPA subsubject documents to their corresponding S1000D Data Modules (DMs). It is the authoritative reference for the DEPA technical publication deliverables and governs the structure of the programme CSDB entries under SNS 085.
 
 ---
 
@@ -54,12 +54,12 @@ ATLAS subsubject 085-090 establishes the S1000D Data Module Requirements List (D
 
 | Attribute | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA Reference | ATLAS-085 (Distributed Electric Propulsion Architecture) — 085-090 S1000D/CSDB Mapping and Traceability |
 | S1000D Version | Issue 5.0 |
 | BREX | BREX-085-v1 |
 | Total DMs in DMRL | 30 |
-| DMC Pattern | `AMPEL360E-EWTW-085-{NNN}-00A-{TYPE}-EN-US` |
+| DMC Pattern | `DMC-<MODEL>-<SYSTEMDIFF>-085-{NNN}-00A-{TYPE}-EN-US` |
 | Certification Basis | S1000D Issue 5.0; BREX-085-v1; EASA CS-25 Amdt 27+ (research ref.) |
 | S1000D SNS | 085-090-00 |
 
@@ -67,9 +67,9 @@ ATLAS subsubject 085-090 establishes the S1000D Data Module Requirements List (D
 
 ## §3 Functional Description
 
-The DEPA technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the AMPEL360E-EWTW CSDB under the SNS 085 schema. The Data Module Code (DMC) pattern is `AMPEL360E-EWTW-085-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
+The DEPA technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the programme CSDB under the SNS 085 schema. The Data Module Code (DMC) pattern is `DMC-<MODEL>-<SYSTEMDIFF>-085-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
 
-The governing BREX document is `AMPEL360E-BREX-085-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 085:
+The governing BREX document is `BREX-085-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 085:
 
 **BREX-085-HV-01 — HVDC 800 V Pre-Access Rule:**
 All maintenance DMs of type 100 (task), 300 (inspection), and 520 (removal/replacement) that require physical access within 500 mm of any BTB, SSPC, HVDC cable, or MDU must include the following mandatory pre-task action as the first step:
@@ -93,36 +93,36 @@ All DMs for MDU or PMSM removal/replacement tasks must include a post-installati
 
 | DM Number | DMC | Type | Title | ATLAS Source |
 |---|---|---|---|---|
-| DM-085-001 | AMPEL360E-EWTW-085-000-040A | Descriptive | DEP System General Overview | 085-000 |
-| DM-085-002 | AMPEL360E-EWTW-085-000-100A | Task | DEPCU System Activation Procedure | 085-000 |
-| DM-085-003 | AMPEL360E-EWTW-085-000-300A | Inspection | DEPCU System Periodic BITE Inspection | 085-000 |
-| DM-085-004 | AMPEL360E-EWTW-085-010-040A | Descriptive | DEP Baseline and Scope | 085-010 |
-| DM-085-005 | AMPEL360E-EWTW-085-020-040A | Descriptive | Distributed Propulsor Layout and Topology | 085-020 |
-| DM-085-006 | AMPEL360E-EWTW-085-020-300A | Inspection | Fan Face BLI Inlet and Nacelle Structural Inspection | 085-020 |
-| DM-085-007 | AMPEL360E-EWTW-085-030-040A | Descriptive | Electric Motor and Drive Allocation | 085-030 |
-| DM-085-008 | AMPEL360E-EWTW-085-030-300A | Inspection | PMSM Winding Insulation Resistance Check | 085-030 |
-| DM-085-009 | AMPEL360E-EWTW-085-030-300B | Inspection | MDU Gate Driver and IGBT Thermal Inspection | 085-030 |
-| DM-085-010 | AMPEL360E-EWTW-085-030-520A | Task | PMSM LRU Removal and Replacement | 085-030 |
-| DM-085-011 | AMPEL360E-EWTW-085-030-520B | Task | MDU LRU Removal and Replacement | 085-030 |
-| DM-085-012 | AMPEL360E-EWTW-085-040-040A | Descriptive | Power Distribution and Energy Management Interfaces | 085-040 |
-| DM-085-013 | AMPEL360E-EWTW-085-040-100A | Task | BTB-P1…P4 Functional Test Procedure | 085-040 |
-| DM-085-014 | AMPEL360E-EWTW-085-040-300A | Inspection | HVDC 800 V Cable and Connector HiPot Inspection | 085-040 |
-| DM-085-015 | AMPEL360E-EWTW-085-040-300B | Inspection | DEP-IMU Insulation Resistance Measurement | 085-040 |
-| DM-085-016 | AMPEL360E-EWTW-085-040-520A | Task | SSPC-P1…P4 LRU Removal and Replacement | 085-040 |
-| DM-085-017 | AMPEL360E-EWTW-085-050-040A | Descriptive | Propulsor Airframe Integration and Aero-Propulsive Coupling | 085-050 |
-| DM-085-018 | AMPEL360E-EWTW-085-050-300A | Inspection | P1/P2 Nacelle Pylon and Lug Inspection | 085-050 |
-| DM-085-019 | AMPEL360E-EWTW-085-050-300B | Inspection | P3/P4 Aft-Fuselage Truss Frame and Flange Inspection | 085-050 |
-| DM-085-020 | AMPEL360E-EWTW-085-060-040A | Descriptive | Redundancy Fault Tolerance and Degraded Modes | 085-060 |
-| DM-085-021 | AMPEL360E-EWTW-085-060-100A | Task | DEPA Degraded Mode Verification — Ground Test | 085-060 |
-| DM-085-022 | AMPEL360E-EWTW-085-060-300A | Inspection | BTB Position and Isolation Resistance Check (All Propulsors) | 085-060 |
-| DM-085-023 | AMPEL360E-EWTW-085-070-040A | Descriptive | Thermal EMC and Structural Integration Constraints | 085-070 |
-| DM-085-024 | AMPEL360E-EWTW-085-070-100A | Task | DEP-TML Coolant Flush and Refill Procedure | 085-070 |
-| DM-085-025 | AMPEL360E-EWTW-085-070-300A | Inspection | DEP-TML Pump and DEP-RAHX Inspection | 085-070 |
-| DM-085-026 | AMPEL360E-EWTW-085-070-300B | Inspection | MDU Cold Plate O-Ring and Cooling Connection Inspection | 085-070 |
-| DM-085-027 | AMPEL360E-EWTW-085-080-040A | Descriptive | DEP Monitoring Diagnostics and Control Interfaces | 085-080 |
-| DM-085-028 | AMPEL360E-EWTW-085-080-100A | Task | DEPCU BITE Full Diagnostic Run Procedure | 085-080 |
-| DM-085-029 | AMPEL360E-EWTW-085-080-300A | Inspection | DEPCU AFDX and CAN Interface Functional Check | 085-080 |
-| DM-085-030 | AMPEL360E-EWTW-085-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 085-090 |
+| DM-085-001 | DMC-<MODEL>-<SYSTEMDIFF>-085-000-040A | Descriptive | DEP System General Overview | 085-000 |
+| DM-085-002 | DMC-<MODEL>-<SYSTEMDIFF>-085-000-100A | Task | DEPCU System Activation Procedure | 085-000 |
+| DM-085-003 | DMC-<MODEL>-<SYSTEMDIFF>-085-000-300A | Inspection | DEPCU System Periodic BITE Inspection | 085-000 |
+| DM-085-004 | DMC-<MODEL>-<SYSTEMDIFF>-085-010-040A | Descriptive | DEP Baseline and Scope | 085-010 |
+| DM-085-005 | DMC-<MODEL>-<SYSTEMDIFF>-085-020-040A | Descriptive | Distributed Propulsor Layout and Topology | 085-020 |
+| DM-085-006 | DMC-<MODEL>-<SYSTEMDIFF>-085-020-300A | Inspection | Fan Face BLI Inlet and Nacelle Structural Inspection | 085-020 |
+| DM-085-007 | DMC-<MODEL>-<SYSTEMDIFF>-085-030-040A | Descriptive | Electric Motor and Drive Allocation | 085-030 |
+| DM-085-008 | DMC-<MODEL>-<SYSTEMDIFF>-085-030-300A | Inspection | PMSM Winding Insulation Resistance Check | 085-030 |
+| DM-085-009 | DMC-<MODEL>-<SYSTEMDIFF>-085-030-300B | Inspection | MDU Gate Driver and IGBT Thermal Inspection | 085-030 |
+| DM-085-010 | DMC-<MODEL>-<SYSTEMDIFF>-085-030-520A | Task | PMSM LRU Removal and Replacement | 085-030 |
+| DM-085-011 | DMC-<MODEL>-<SYSTEMDIFF>-085-030-520B | Task | MDU LRU Removal and Replacement | 085-030 |
+| DM-085-012 | DMC-<MODEL>-<SYSTEMDIFF>-085-040-040A | Descriptive | Power Distribution and Energy Management Interfaces | 085-040 |
+| DM-085-013 | DMC-<MODEL>-<SYSTEMDIFF>-085-040-100A | Task | BTB-P1…P4 Functional Test Procedure | 085-040 |
+| DM-085-014 | DMC-<MODEL>-<SYSTEMDIFF>-085-040-300A | Inspection | HVDC 800 V Cable and Connector HiPot Inspection | 085-040 |
+| DM-085-015 | DMC-<MODEL>-<SYSTEMDIFF>-085-040-300B | Inspection | DEP-IMU Insulation Resistance Measurement | 085-040 |
+| DM-085-016 | DMC-<MODEL>-<SYSTEMDIFF>-085-040-520A | Task | SSPC-P1…P4 LRU Removal and Replacement | 085-040 |
+| DM-085-017 | DMC-<MODEL>-<SYSTEMDIFF>-085-050-040A | Descriptive | Propulsor Airframe Integration and Aero-Propulsive Coupling | 085-050 |
+| DM-085-018 | DMC-<MODEL>-<SYSTEMDIFF>-085-050-300A | Inspection | P1/P2 Nacelle Pylon and Lug Inspection | 085-050 |
+| DM-085-019 | DMC-<MODEL>-<SYSTEMDIFF>-085-050-300B | Inspection | P3/P4 Aft-Fuselage Truss Frame and Flange Inspection | 085-050 |
+| DM-085-020 | DMC-<MODEL>-<SYSTEMDIFF>-085-060-040A | Descriptive | Redundancy Fault Tolerance and Degraded Modes | 085-060 |
+| DM-085-021 | DMC-<MODEL>-<SYSTEMDIFF>-085-060-100A | Task | DEPA Degraded Mode Verification — Ground Test | 085-060 |
+| DM-085-022 | DMC-<MODEL>-<SYSTEMDIFF>-085-060-300A | Inspection | BTB Position and Isolation Resistance Check (All Propulsors) | 085-060 |
+| DM-085-023 | DMC-<MODEL>-<SYSTEMDIFF>-085-070-040A | Descriptive | Thermal EMC and Structural Integration Constraints | 085-070 |
+| DM-085-024 | DMC-<MODEL>-<SYSTEMDIFF>-085-070-100A | Task | DEP-TML Coolant Flush and Refill Procedure | 085-070 |
+| DM-085-025 | DMC-<MODEL>-<SYSTEMDIFF>-085-070-300A | Inspection | DEP-TML Pump and DEP-RAHX Inspection | 085-070 |
+| DM-085-026 | DMC-<MODEL>-<SYSTEMDIFF>-085-070-300B | Inspection | MDU Cold Plate O-Ring and Cooling Connection Inspection | 085-070 |
+| DM-085-027 | DMC-<MODEL>-<SYSTEMDIFF>-085-080-040A | Descriptive | DEP Monitoring Diagnostics and Control Interfaces | 085-080 |
+| DM-085-028 | DMC-<MODEL>-<SYSTEMDIFF>-085-080-100A | Task | DEPCU BITE Full Diagnostic Run Procedure | 085-080 |
+| DM-085-029 | DMC-<MODEL>-<SYSTEMDIFF>-085-080-300A | Inspection | DEPCU AFDX and CAN Interface Functional Check | 085-080 |
+| DM-085-030 | DMC-<MODEL>-<SYSTEMDIFF>-085-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 085-090 |
 
 ---
 
@@ -140,16 +140,16 @@ All DMs for MDU or PMSM removal/replacement tasks must include a post-installati
 
 | ICN | Content Type | Used In DM | Description |
 |---|---|---|---|
-| ICN-AMPEL360E-085-0001 | Diagram (SVG) | DM-085-001 | DEPA system top-level block diagram |
-| ICN-AMPEL360E-085-0002 | Diagram (SVG) | DM-085-005 | Four-propulsor airframe layout — planform view |
-| ICN-AMPEL360E-085-0003 | Diagram (SVG) | DM-085-012 | DEP power distribution single-line diagram |
-| ICN-AMPEL360E-085-0004 | Diagram (SVG) | DM-085-020 | DEPCU mode state machine diagram |
-| ICN-AMPEL360E-085-0005 | Diagram (SVG) | DM-085-023 | DEP-TML cooling loop schematic |
-| ICN-AMPEL360E-085-0006 | Diagram (SVG) | DM-085-027 | DEP cockpit synoptic MFD page layout |
-| ICN-AMPEL360E-085-0007 | Diagram (SVG) | DM-085-017 | BLI inlet cross-section — P3/P4 D-duct |
-| ICN-AMPEL360E-085-0008 | Warning sign (PNG) | DM-085-002, 013, 014, 016 | HVDC 800 V HV warning label (ISO 3864-2 Class B) |
-| ICN-AMPEL360E-085-0009 | Warning sign (PNG) | DM-085-010, 011 | Rotating machinery lockout label (fan rotation hazard) |
-| ICN-AMPEL360E-085-0010 | Warning sign (PNG) | DM-085-002, 011 | Arc flash PPE label (Class 4 gloves required) |
+| ICN-085-0001 | Diagram (SVG) | DM-085-001 | DEPA system top-level block diagram |
+| ICN-085-0002 | Diagram (SVG) | DM-085-005 | Four-propulsor airframe layout — planform view |
+| ICN-085-0003 | Diagram (SVG) | DM-085-012 | DEP power distribution single-line diagram |
+| ICN-085-0004 | Diagram (SVG) | DM-085-020 | DEPCU mode state machine diagram |
+| ICN-085-0005 | Diagram (SVG) | DM-085-023 | DEP-TML cooling loop schematic |
+| ICN-085-0006 | Diagram (SVG) | DM-085-027 | DEP cockpit synoptic MFD page layout |
+| ICN-085-0007 | Diagram (SVG) | DM-085-017 | BLI inlet cross-section — P3/P4 D-duct |
+| ICN-085-0008 | Warning sign (PNG) | DM-085-002, 013, 014, 016 | HVDC 800 V HV warning label (ISO 3864-2 Class B) |
+| ICN-085-0009 | Warning sign (PNG) | DM-085-010, 011 | Rotating machinery lockout label (fan rotation hazard) |
+| ICN-085-0010 | Warning sign (PNG) | DM-085-002, 011 | Arc flash PPE label (Class 4 gloves required) |
 
 ---
 
@@ -189,5 +189,5 @@ All DMs for MDU or PMSM removal/replacement tasks must include a post-installati
 |---|---|---|---|
 | OI-085-090-001 | BREX-085-v1 formal review and sign-off by Q-DATAGOV and airworthiness team | Q-DATAGOV | PDR |
 | OI-085-090-002 | ICN-085-0004 (mode state machine) — artwork pending DEPCU algorithm CDR freeze | Q-HPC | CDR |
-| OI-085-090-003 | CSDB SNS 085 namespace reservation in AMPEL360E-EWTW CSDB instance | Q-DATAGOV | PDR |
+| OI-085-090-003 | CSDB SNS 085 namespace reservation in <PROGRAMME> CSDB instance | Q-DATAGOV | PDR |
 | OI-085-090-004 | DM-085-010 (PMSM R&R) — nacelle access time study; confirm < 4 h door-to-door for C-check planning | Q-DATAGOV | CDR |

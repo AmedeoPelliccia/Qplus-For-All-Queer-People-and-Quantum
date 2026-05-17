@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GREENTECH, Q-MECHANICS, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-11"
@@ -17,13 +18,12 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-060-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-060-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
      ATA 60 · S1000D / CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -47,9 +47,9 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0060-090"
 
 ## §1 Purpose
 
-This document defines the S1000D Data Module Reference List (DMRL) and CSDB mapping for the ATA 60 Standard Practices — Propeller/Rotor documentation set of the AMPEL360E eWTW aircraft. It maps all ATLAS 060 subsubjects (060-000 through 060-080) to their corresponding S1000D Data Module Codes (DMCs), establishes the SNS breakdown, and documents the BREX constraints governing ATA 60 data modules.
+This document defines the S1000D Data Module Reference List (DMRL) and CSDB mapping for the ATA 60 Standard Practices — Propeller/Rotor documentation set of the <PROGRAMME> aircraft. It maps all ATLAS 060 subsubjects (060-000 through 060-080) to their corresponding S1000D Data Module Codes (DMCs), establishes the SNS breakdown, and documents the BREX constraints governing ATA 60 data modules.
 
-The S1000D DMC scheme for ATA 60 uses the format `AMPEL360E-EWTW-060-{NNN}-00A-EN-US`, where `{NNN}` corresponds to the subsubject code. The BREX file `AMPEL360E-BREX-060-v1` enforces three programme-specific constraints: (1) all process descriptions shall reference an approved process specification (PS) number; (2) all NDT procedure references shall cite an NAS 410-qualified procedure card; (3) no data module shall specify pneumatic-driven tooling (consistent with the bleed-less aircraft design philosophy).
+The S1000D DMC scheme for ATA 60 uses the format `DMC-<MODEL>-<SYSTEMDIFF>-060-{NNN}-00A-EN-US`, where `{NNN}` corresponds to the subsubject code. The BREX file `BREX-060-v1` enforces three programme-specific constraints: (1) all process descriptions shall reference an approved process specification (PS) number; (2) all NDT procedure references shall cite an NAS 410-qualified procedure card; (3) no data module shall specify pneumatic-driven tooling (consistent with the bleed-less aircraft design philosophy).
 
 ---
 
@@ -57,13 +57,13 @@ The S1000D DMC scheme for ATA 60 uses the format `AMPEL360E-EWTW-060-{NNN}-00A-E
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA Chapter | 60 — Standard Practices Propeller/Rotor |
 | S1000D Issue | Issue 5.0 |
-| BREX file | AMPEL360E-BREX-060-v1 |
+| BREX file | BREX-060-v1 |
 | CSDB platform | Q-DATAGOV CSDB (GP-CSDB-001) |
 | DMRL total | 36 Data Modules across 9 SNS nodes |
-| DMC scheme | AMPEL360E-EWTW-060-{NNN}-00A-EN-US |
+| DMC scheme | <MODEL>-<SYSTEMDIFF>-060-{NNN}-00A-EN-US |
 | Key BREX constraints | All processes cite PS number; NDT cites NAS 410 card; no pneumatic tooling DMs |
 | S1000D SNS | 060-090-00 |
 
@@ -88,7 +88,7 @@ BREX validation is a mandatory CSDB ingestion gate for all ATA 60 DMs. The BREX 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
 | F-001 | DMC Structure Definition | Define and maintain the 060 DMC namespace, SNS allocation, and info-code set. | Q-DATAGOV |
-| F-002 | BREX Configuration | Maintain AMPEL360E-BREX-060-v1; enforce constraints on all 060 DM submissions. | Q-DATAGOV |
+| F-002 | BREX Configuration | Maintain BREX-060-v1; enforce constraints on all 060 DM submissions. | Q-DATAGOV |
 | F-003 | DMRL Maintenance | Maintain the 36-DM DMRL; track authoring, review, and release status of each DM. | Q-DATAGOV / Q-GREENTECH |
 | F-004 | Traceability Matrix | Maintain ATLAS architecture to S1000D DM traceability matrix. | Q-DATAGOV |
 | F-005 | ICN Management | Assign and control ICNs (Illustration Control Numbers) for all ATA 60 illustrations. | Q-DATAGOV |
@@ -100,8 +100,8 @@ BREX validation is a mandatory CSDB ingestion gate for all ATA 60 DMs. The BREX 
 ```mermaid
 flowchart LR
     A[ATLAS 060 Architecture] --> B[DMRL 36 DMs]
-    B --> C[DMC AMPEL360E-EWTW-060-NNN-00A]
-    C --> D[BREX AMPEL360E-BREX-060-v1]
+    B --> C[DMC <MODEL>-<SYSTEMDIFF>-060-NNN-00A]
+    C --> D[BREX BREX-060-v1]
     D --> E[CSDB Ingestion Validation]
     E --> F[Approved CSDB DMs]
     F --> G[IETP Publication]
@@ -132,7 +132,7 @@ flowchart TB
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
 | S1000D Issue 5.0 schema (XML) | S1000D.org | CSDB platform | CSDB authoring tool | Per schema release | TBD |
-| BREX file AMPEL360E-BREX-060-v1 | Programme document | CSDB | CSDB validator | Per BREX revision | TBD |
+| BREX file BREX-060-v1 | Programme document | CSDB | CSDB validator | Per BREX revision | TBD |
 | CSDB authoring tool | Q-DATAGOV approved tool list | CSDB platform | IT infrastructure | Per software update cycle | TBD |
 | DMRL tracking spreadsheet / database | Q-DATAGOV internal tool | Programme management | PMO tool | Continuously maintained | TBD |
 | ICN registry | Q-DATAGOV ICN database | CSDB platform | IT infrastructure | Continuously maintained | TBD |
@@ -212,7 +212,7 @@ flowchart TB
 | S1000D Issue 5.0 | International Specification for Technical Publications | S1000D.org | CSDB authoring standard |
 | ATA iSpec 2200 | Chapter 60 — Propeller Standard Practices | Air Transport Association | ATA reference for SNS allocation |
 | NAS 410 | Certification and Qualification of NDT Personnel | AIA / NASM | BREX-enforced NDT citation requirement |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB submission and release workflow |
+| <MODEL>-GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB submission and release workflow |
 | DO-178C | Software Considerations in Airborne Systems | RTCA | Software evidence DM content requirements |
 
 ---
@@ -249,7 +249,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-060-090-001 | Finalise AMPEL360E-BREX-060-v1 rule set with Q-MECHANICS to include composite repair DM constraints | Q-DATAGOV / Q-MECHANICS | 2026-Q3 |
+| OI-060-090-001 | Finalise BREX-060-v1 rule set with Q-MECHANICS to include composite repair DM constraints | Q-DATAGOV / Q-MECHANICS | 2026-Q3 |
 | OI-060-090-002 | Confirm ICN scheme compatibility with Q-DATAGOV ICN registry for new propulsor-type illustrations | Q-DATAGOV | 2026-Q3 |
 | OI-060-090-003 | Resolve 6 DMs in DMRL with TBD authoring assignments (pending programme resource allocation) | Q-DATAGOV / PMO | 2026-Q4 |
 
@@ -284,4 +284,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per <PROGRAMME> architecture |

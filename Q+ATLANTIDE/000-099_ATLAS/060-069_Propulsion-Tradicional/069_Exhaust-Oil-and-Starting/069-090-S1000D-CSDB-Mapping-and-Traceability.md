@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-11"
@@ -17,7 +18,7 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0069-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-069-090"
 ---
 
 # Exhaust, Oil and Starting — S1000D CSDB Mapping and Traceability
@@ -30,7 +31,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0069-090"
 
 ## §1 Purpose
 
-Provides the S1000D Data Module Code (DMC) mapping for all ATA 69 Exhaust, Oil and Starting content on the AMPEL360E eWTW and establishes traceability between ATLAS subsubject documents and S1000D CSDB data modules.
+Provides the S1000D Data Module Code (DMC) mapping for all ATA 69 Exhaust, Oil and Starting content on the <PROGRAMME> and establishes traceability between ATLAS subsubject documents and S1000D CSDB data modules.
 
 ---
 
@@ -38,7 +39,7 @@ Provides the S1000D Data Module Code (DMC) mapping for all ATA 69 Exhaust, Oil a
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA reference | ATA 69-090 |
 | S1000D SNS | 069-090-00 |
 | S1000D Issue | 5.0 |
@@ -49,16 +50,16 @@ Provides the S1000D Data Module Code (DMC) mapping for all ATA 69 Exhaust, Oil a
 
 | ATLAS Document | Title | S1000D DMC | InfoCode | Status |
 |---|---|---|---|---|
-| 069-000 | Exhaust, Oil and Starting General | DMC-AMPEL360E-EWTW-0069-000-A-040A-A | 040A — Description | ![TBD] |
-| 069-010 | Exhaust System | DMC-AMPEL360E-EWTW-0069-010-A-040A-A | 040A | ![TBD] |
-| 069-020 | Oil Storage and Distribution | DMC-AMPEL360E-EWTW-0069-020-A-040A-A | 040A | ![TBD] |
-| 069-030 | Oil Cooling, Filtration and Conditioning | DMC-AMPEL360E-EWTW-0069-030-A-040A-A | 040A | ![TBD] |
-| 069-040 | Oil Indication and Monitoring | DMC-AMPEL360E-EWTW-0069-040-A-040A-A | 040A | ![TBD] |
-| 069-050 | Engine Starting System | DMC-AMPEL360E-EWTW-0069-050-A-040A-A | 040A | ![TBD] |
-| 069-060 | Starter Electric and Control Interfaces | DMC-AMPEL360E-EWTW-0069-060-A-040A-A | 040A | ![TBD] |
-| 069-070 | Inspection and Maintenance | DMC-AMPEL360E-EWTW-0069-070-A-520-A | 520 — Removal/Installation | ![TBD] |
-| 069-080 | Monitoring, Diagnostics, Interfaces | DMC-AMPEL360E-EWTW-0069-080-A-040A-A | 040A | ![TBD] |
-| 069-090 | S1000D CSDB Mapping | DMC-AMPEL360E-EWTW-0069-090-A-040A-A | 040A | This document |
+| 069-000 | Exhaust, Oil and Starting General | DMC-<MODEL>-<SYSTEMDIFF>-0069-000-A-040A-A | 040A — Description | ![TBD] |
+| 069-010 | Exhaust System | DMC-<MODEL>-<SYSTEMDIFF>-0069-010-A-040A-A | 040A | ![TBD] |
+| 069-020 | Oil Storage and Distribution | DMC-<MODEL>-<SYSTEMDIFF>-0069-020-A-040A-A | 040A | ![TBD] |
+| 069-030 | Oil Cooling, Filtration and Conditioning | DMC-<MODEL>-<SYSTEMDIFF>-0069-030-A-040A-A | 040A | ![TBD] |
+| 069-040 | Oil Indication and Monitoring | DMC-<MODEL>-<SYSTEMDIFF>-0069-040-A-040A-A | 040A | ![TBD] |
+| 069-050 | Engine Starting System | DMC-<MODEL>-<SYSTEMDIFF>-0069-050-A-040A-A | 040A | ![TBD] |
+| 069-060 | Starter Electric and Control Interfaces | DMC-<MODEL>-<SYSTEMDIFF>-0069-060-A-040A-A | 040A | ![TBD] |
+| 069-070 | Inspection and Maintenance | DMC-<MODEL>-<SYSTEMDIFF>-0069-070-A-520-A | 520 — Removal/Installation | ![TBD] |
+| 069-080 | Monitoring, Diagnostics, Interfaces | DMC-<MODEL>-<SYSTEMDIFF>-0069-080-A-040A-A | 040A | ![TBD] |
+| 069-090 | S1000D CSDB Mapping | DMC-<MODEL>-<SYSTEMDIFF>-0069-090-A-040A-A | 040A | This document |
 
 ---
 
@@ -69,7 +70,7 @@ systemCode:    069     (Exhaust, Oil and Starting)
 subSystemCode: 0       (General)
 subSubSys:     00      (General overview)
 assyCode:      00      (Top assembly)
-disassyCode:   A       (Variant A — AMPEL360E eWTW)
+disassyCode:   A       (Variant A — <PROGRAMME>)
 infoCode:      040A    (Description)
 ```
 
@@ -78,8 +79,8 @@ infoCode:      040A    (Description)
 ## §5 CSDB Publication Applicability
 
 All ATA 69 data modules are applicable to:
-- **Aircraft Type:** AMPEL360E eWTW
-- **Series:** All series (A1, A2 per AMPEL360E variant definition)
+- **Aircraft Type:** <PROGRAMME>
+- **Series:** All series (A1, A2 per programme variant definition)
 - **Effectivity:** MSN 001 onwards
 
 ---
@@ -96,4 +97,4 @@ All ATA 69 data modules are applicable to:
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — AMPEL360E eWTW contextualization |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — <PROGRAMME> contextualization |

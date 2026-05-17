@@ -25,6 +25,7 @@ orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: programme-controlled-publication-and-traceability-extension
 version: 1.0.0
 status: active
+scope: agnostic-standard
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 47.090 — S1000D CSDB Mapping and Traceability"
@@ -43,16 +44,16 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the S1000D CSDB Mapping and Traceability structure for ATA 47 NGS of the AMPEL360E eWTW. It provides the Data Module Requirements List (DMRL), the Data Module Code (DMC) schema, the BREX profile, and the regulatory traceability matrix linking CS-25 §25.981 / SFAR 88 / FAR 25.981 requirements to Q+ATLANTIDE ATLAS sub-subject files and the corresponding S1000D Data Modules in the CSDB.
+This document defines the S1000D CSDB Mapping and Traceability structure for ATA 47 NGS of the <PROGRAMME>. It provides the Data Module Requirements List (DMRL), the Data Module Code (DMC) schema, the BREX profile, and the regulatory traceability matrix linking CS-25 §25.981 / SFAR 88 / FAR 25.981 requirements to Q+ATLANTIDE ATLAS sub-subject files and the corresponding S1000D Data Modules in the CSDB.
 
-This document has governance class `programme-controlled-publication-and-traceability-extension`, reflecting its role as a programme-level publication control artefact rather than a system engineering baseline document. It is the authoritative source for the NGS DMRL, applicability filtering (EWTW tag), and bi-directional requirement traceability for the AMPEL360E eWTW NGS documentation set.
+This document has governance class `programme-controlled-publication-and-traceability-extension`, reflecting its role as a programme-level publication control artefact rather than a system engineering baseline document. It is the authoritative source for the NGS DMRL, applicability filtering (<PROGRAMME-SHORT> tag), and bi-directional requirement traceability for any programme implementing this ATLAS standard node NGS documentation set.
 
 Key governance areas:
 - DMRL: 36 Data Modules across 9 SNS nodes (047-000 through 047-080), 4 Info Codes each.
-- DMC schema: `DMC-AMPEL360E-EWTW-047-{NNN}-00A-{InfoCode}-A`.
+- DMC schema: `DMC-<MODEL>-<SYSTEMDIFF>-047-{NNN}-00A-{InfoCode}-A`.
 - S1000D Info Codes used: 040 (Descriptive), 520 (Troubleshooting), 720 (Removal/Installation), 910 (Wiring Data).
-- BREX profile: `BREX-AMPEL360E-EWTW-047-v1.0.0`.
-- eWTW-specific applicability filter: `EWTW` tag on all NGS DMs (no bleed-air, EAC-only architecture).
+- BREX profile: `BREX-<MODEL>-<SYSTEMDIFF>-047-v1.0.0`.
+- <PROGRAMME-SHORT>-specific applicability filter: `<PROGRAMME-SHORT>` tag on all NGS DMs (no bleed-air, EAC-only architecture).
 - Regulatory traceability: CS-25.981 → ATLAS 047-000/020/030; SFAR 88 → ATLAS 047-040; FAR 25.981 → all 047-NNN.
 - Primary Q-Division: Q-AIR; Support: Q-DATAGOV.
 
@@ -62,36 +63,36 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA Chapter / Sub-subject | ATA 47.090 — S1000D CSDB Mapping and Traceability |
 | Governance Class | programme-controlled-publication-and-traceability-extension |
 | Certification Basis | CS-25 Amendment 28; FAR 25.981; SFAR 88 |
 | Applicable Standards | S1000D Issue 5.0; DO-178C DAL C; DO-160G; ARINC 664 P7 |
-| BREX Profile | BREX-AMPEL360E-EWTW-047-v1.0.0 |
-| Applicability Tag | EWTW (all NGS DMs) |
+| BREX Profile | BREX-<MODEL>-<SYSTEMDIFF>-047-v1.0.0 |
+| Applicability Tag | <PROGRAMME-SHORT> (all NGS DMs) |
 | S1000D SNS | 047-090 |
 
 ---
 
 ## §3. Functional Description
 
-The S1000D CSDB mapping function provides the structured link between the AMPEL360E eWTW NGS engineering baseline (Q+ATLANTIDE ATLAS 047-NNN documents) and the S1000D-compliant technical publications produced for operator, maintenance, and regulatory consumption. Every Q+ATLANTIDE ATLAS sub-subject maps to one or more S1000D Data Modules in the CSDB, addressable by their unique Data Module Code (DMC).
+The S1000D CSDB mapping function provides the structured link between the <PROGRAMME> NGS engineering baseline (Q+ATLANTIDE ATLAS 047-NNN documents) and the S1000D-compliant technical publications produced for operator, maintenance, and regulatory consumption. Every Q+ATLANTIDE ATLAS sub-subject maps to one or more S1000D Data Modules in the CSDB, addressable by their unique Data Module Code (DMC).
 
-The eWTW aircraft-specific applicability filter `EWTW` is applied to all NGS DMs to distinguish them from bleed-air-based NGS documentation that may exist in legacy CSDB entries. The `EWTW` tag activates the BREX applicability rule: `BLEF=TRUE` (no engine bleed), `EAC_ONLY=TRUE`, `LH2=FALSE` for Jet-A baseline.
+The <PROGRAMME-SHORT> aircraft-specific applicability filter `<PROGRAMME-SHORT>` is applied to all NGS DMs to distinguish them from bleed-air-based NGS documentation that may exist in legacy CSDB entries. The `<PROGRAMME-SHORT>` tag activates the BREX applicability rule: `BLEF=TRUE` (no engine bleed), `EAC_ONLY=TRUE`, `LH2=FALSE` for Jet-A baseline.
 
 ### §3.1 DMRL — Data Module Requirements List
 
 | SNS Node | Q+ATLANTIDE Subsubject | DM InfoCode 040 (Descriptive) | DM InfoCode 520 (Troubleshooting) | DM InfoCode 720 (Remove/Install) | DM InfoCode 910 (Wiring) |
 |----------|------------------------|-------------------------------|-----------------------------------|----------------------------------|--------------------------|
-| 047-000 | NGS General | DMC-AMPEL360E-EWTW-047-000-00A-040-A | DMC-AMPEL360E-EWTW-047-000-00A-520-A | DMC-AMPEL360E-EWTW-047-000-00A-720-A | DMC-AMPEL360E-EWTW-047-000-00A-910-A |
-| 047-010 | Air Supply and Preconditioning | DMC-AMPEL360E-EWTW-047-010-00A-040-A | DMC-AMPEL360E-EWTW-047-010-00A-520-A | DMC-AMPEL360E-EWTW-047-010-00A-720-A | DMC-AMPEL360E-EWTW-047-010-00A-910-A |
-| 047-020 | Air Separation Modules | DMC-AMPEL360E-EWTW-047-020-00A-040-A | DMC-AMPEL360E-EWTW-047-020-00A-520-A | DMC-AMPEL360E-EWTW-047-020-00A-720-A | DMC-AMPEL360E-EWTW-047-020-00A-910-A |
-| 047-030 | NEA Distribution | DMC-AMPEL360E-EWTW-047-030-00A-040-A | DMC-AMPEL360E-EWTW-047-030-00A-520-A | DMC-AMPEL360E-EWTW-047-030-00A-720-A | DMC-AMPEL360E-EWTW-047-030-00A-910-A |
-| 047-040 | OEA Exhaust and Venting | DMC-AMPEL360E-EWTW-047-040-00A-040-A | DMC-AMPEL360E-EWTW-047-040-00A-520-A | DMC-AMPEL360E-EWTW-047-040-00A-720-A | DMC-AMPEL360E-EWTW-047-040-00A-910-A |
-| 047-050 | FCVs and Pressure Regulation | DMC-AMPEL360E-EWTW-047-050-00A-040-A | DMC-AMPEL360E-EWTW-047-050-00A-520-A | DMC-AMPEL360E-EWTW-047-050-00A-720-A | DMC-AMPEL360E-EWTW-047-050-00A-910-A |
-| 047-060 | System Indication and Warning | DMC-AMPEL360E-EWTW-047-060-00A-040-A | DMC-AMPEL360E-EWTW-047-060-00A-520-A | DMC-AMPEL360E-EWTW-047-060-00A-720-A | DMC-AMPEL360E-EWTW-047-060-00A-910-A |
-| 047-070 | Fuel Tank Inerting Interfaces | DMC-AMPEL360E-EWTW-047-070-00A-040-A | DMC-AMPEL360E-EWTW-047-070-00A-520-A | DMC-AMPEL360E-EWTW-047-070-00A-720-A | DMC-AMPEL360E-EWTW-047-070-00A-910-A |
-| 047-080 | NGS Monitoring and Diagnostics | DMC-AMPEL360E-EWTW-047-080-00A-040-A | DMC-AMPEL360E-EWTW-047-080-00A-520-A | DMC-AMPEL360E-EWTW-047-080-00A-720-A | DMC-AMPEL360E-EWTW-047-080-00A-910-A |
+| 047-000 | NGS General | DMC-<MODEL>-<SYSTEMDIFF>-047-000-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-000-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-000-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-000-00A-910-A |
+| 047-010 | Air Supply and Preconditioning | DMC-<MODEL>-<SYSTEMDIFF>-047-010-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-010-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-010-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-010-00A-910-A |
+| 047-020 | Air Separation Modules | DMC-<MODEL>-<SYSTEMDIFF>-047-020-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-020-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-020-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-020-00A-910-A |
+| 047-030 | NEA Distribution | DMC-<MODEL>-<SYSTEMDIFF>-047-030-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-030-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-030-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-030-00A-910-A |
+| 047-040 | OEA Exhaust and Venting | DMC-<MODEL>-<SYSTEMDIFF>-047-040-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-040-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-040-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-040-00A-910-A |
+| 047-050 | FCVs and Pressure Regulation | DMC-<MODEL>-<SYSTEMDIFF>-047-050-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-050-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-050-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-050-00A-910-A |
+| 047-060 | System Indication and Warning | DMC-<MODEL>-<SYSTEMDIFF>-047-060-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-060-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-060-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-060-00A-910-A |
+| 047-070 | Fuel Tank Inerting Interfaces | DMC-<MODEL>-<SYSTEMDIFF>-047-070-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-070-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-070-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-070-00A-910-A |
+| 047-080 | NGS Monitoring and Diagnostics | DMC-<MODEL>-<SYSTEMDIFF>-047-080-00A-040-A | DMC-<MODEL>-<SYSTEMDIFF>-047-080-00A-520-A | DMC-<MODEL>-<SYSTEMDIFF>-047-080-00A-720-A | DMC-<MODEL>-<SYSTEMDIFF>-047-080-00A-910-A |
 
 **Total DMs: 9 SNS nodes × 4 Info Codes = 36 Data Modules**
 
@@ -99,14 +100,14 @@ The eWTW aircraft-specific applicability filter `EWTW` is applied to all NGS DMs
 
 | Requirement | Regulation | ATLAS Document(s) | S1000D DMC(s) | Status |
 |-------------|------------|-------------------|---------------|--------|
-| Fuel tank flammability reduction | CS-25 §25.981 | 047-000, 047-020, 047-030 | DMC-AMPEL360E-EWTW-047-000/020/030-00A-040-A | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| OEA safe venting | SFAR 88 | 047-040 | DMC-AMPEL360E-EWTW-047-040-00A-040-A | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| Tank O₂ monitoring | FAR 25.981 | 047-030, 047-060 | DMC-AMPEL360E-EWTW-047-030/060-00A-040-A | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| NGS software assurance | DO-178C DAL C | 047-080 | DMC-AMPEL360E-EWTW-047-080-00A-040-A | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| Environmental qualification | DO-160G | 047-020, 047-050 | DMC-AMPEL360E-EWTW-047-020/050-00A-040-A | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| EAC-only air supply (no bleed) | CS-25 Amendment 28 | 047-010 | DMC-AMPEL360E-EWTW-047-010-00A-040-A | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
+| Fuel tank flammability reduction | CS-25 §25.981 | 047-000, 047-020, 047-030 | DMC-<MODEL>-<SYSTEMDIFF>-047-000/020/030-00A-040-A | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
+| OEA safe venting | SFAR 88 | 047-040 | DMC-<MODEL>-<SYSTEMDIFF>-047-040-00A-040-A | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
+| Tank O₂ monitoring | FAR 25.981 | 047-030, 047-060 | DMC-<MODEL>-<SYSTEMDIFF>-047-030/060-00A-040-A | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
+| NGS software assurance | DO-178C DAL C | 047-080 | DMC-<MODEL>-<SYSTEMDIFF>-047-080-00A-040-A | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Environmental qualification | DO-160G | 047-020, 047-050 | DMC-<MODEL>-<SYSTEMDIFF>-047-020/050-00A-040-A | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| EAC-only air supply (no bleed) | CS-25 Amendment 28 | 047-010 | DMC-<MODEL>-<SYSTEMDIFF>-047-010-00A-040-A | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | Technical publications | S1000D Issue 5.0 | 047-090 | All 047-NNN DMCs | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
-| Aircraft power quality | MIL-STD-704F | 047-050, 047-080 | DMC-AMPEL360E-EWTW-047-050/080-00A-040-A | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Aircraft power quality | MIL-STD-704F | 047-050, 047-080 | DMC-<MODEL>-<SYSTEMDIFF>-047-050/080-00A-040-A | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ### Diagram 1: S1000D DMRL and ATLAS Mapping Hierarchy
 
@@ -131,29 +132,29 @@ graph TD
     Q_ATL --> A060
     Q_ATL --> A070
     Q_ATL --> A080
-    A000 -->|maps to| DM000["DMC-AMPEL360E-EWTW-047-000\n040/520/720/910"]
-    A020 -->|maps to| DM020["DMC-AMPEL360E-EWTW-047-020\n040/520/720/910"]
-    A080 -->|maps to| DM080["DMC-AMPEL360E-EWTW-047-080\n040/520/720/910"]
+    A000 -->|maps to| DM000["DMC-<MODEL>-<SYSTEMDIFF>-047-000\n040/520/720/910"]
+    A020 -->|maps to| DM020["DMC-<MODEL>-<SYSTEMDIFF>-047-020\n040/520/720/910"]
+    A080 -->|maps to| DM080["DMC-<MODEL>-<SYSTEMDIFF>-047-080\n040/520/720/910"]
 ```
 
 ---
 
 ## §4. System Architecture
 
-The S1000D CSDB for ATA 47 NGS is structured as a sub-set of the AMPEL360E eWTW master CSDB, hosted in the Q+ATLANTIDE CSDB instance. The BREX file `BREX-AMPEL360E-EWTW-047-v1.0.0` enforces business rules specific to the eWTW NGS documentation:
+The S1000D CSDB for ATA 47 NGS is structured as a sub-set of the <PROGRAMME> master CSDB, hosted in the Q+ATLANTIDE CSDB instance. The BREX file `BREX-<MODEL>-<SYSTEMDIFF>-047-v1.0.0` enforces business rules specific to the <PROGRAMME-SHORT> NGS documentation:
 
-- **EWTW applicability tag**: All NGS DMs carry `applicabilityRef=EWTW`; the BREX rules prevent application of any legacy bleed-air NGS DMs to the eWTW configuration.
-- **DMC format**: `DMC-AMPEL360E-EWTW-047-{NNN}-00A-{InfoCode}-A` where `{NNN}` is the 3-digit SNS node (000–080) and `{InfoCode}` is the 3-digit S1000D information code.
-- **Variant management**: `LH2=FALSE` for Jet-A baseline; future LH₂ variant will fork a parallel DMC set under `DMC-AMPEL360E-EWTW-LH2-047-...`.
+- **<PROGRAMME-SHORT> applicability tag**: All NGS DMs carry `applicabilityRef=<PROGRAMME-SHORT>`; the BREX rules prevent application of any legacy bleed-air NGS DMs to the <PROGRAMME-SHORT> configuration.
+- **DMC format**: `DMC-<MODEL>-<SYSTEMDIFF>-047-{NNN}-00A-{InfoCode}-A` where `{NNN}` is the 3-digit SNS node (000–080) and `{InfoCode}` is the 3-digit S1000D information code.
+- **Variant management**: `LH2=FALSE` for Jet-A baseline; future LH₂ variant will fork a parallel DMC set under `DMC-<MODEL>-<SYSTEMDIFF>-LH2-047-...`.
 - **Language**: English primary (en); Spanish (es) translations planned for Q+ATLANTIDE bilingual publication policy.
 
 ### Diagram 2: CSDB Structure and Applicability Flow
 
 ```mermaid
 graph LR
-    CSDB["AMPEL360E-EWTW CSDB\n(S1000D Issue 5.0)"]
-    BREX["BREX-AMPEL360E-EWTW-047-v1.0.0\n(Business Rules)"]
-    APPLIC["Applicability Filter\n(EWTW tag — no bleed EAC-only)"]
+    CSDB["<PROGRAMME> CSDB\n(S1000D Issue 5.0)"]
+    BREX["BREX-<MODEL>-<SYSTEMDIFF>-047-v1.0.0\n(Business Rules)"]
+    APPLIC["Applicability Filter\n(<PROGRAMME-SHORT> tag — no bleed EAC-only)"]
     DM_040["Info Code 040 — Descriptive DMs\n(9 DMs — one per SNS node)"]
     DM_520["Info Code 520 — Troubleshooting DMs\n(9 DMs — NGSCU BITE fault trees)"]
     DM_720["Info Code 720 — Remove/Install DMs\n(9 DMs — LRU procedures)"]
@@ -178,8 +179,8 @@ graph LR
 | Artefact | Identifier | Custodian | Change Control |
 |----------|------------|-----------|----------------|
 | NGS DMRL (this document, §3.1) | QATL-ATLAS-1000-ATLAS-040-049-04-047-090 | Q-DATAGOV | Q+ATLANTIDE CCB |
-| BREX file | BREX-AMPEL360E-EWTW-047-v1.0.0 | Q-DATAGOV | Programme release |
-| CSDB DM set (36 DMs) | DMC-AMPEL360E-EWTW-047-{NNN}-00A-{InfoCode}-A | Q-DATAGOV | S1000D CCB |
+| BREX file | BREX-<MODEL>-<SYSTEMDIFF>-047-v1.0.0 | Q-DATAGOV | Programme release |
+| CSDB DM set (36 DMs) | DMC-<MODEL>-<SYSTEMDIFF>-047-{NNN}-00A-{InfoCode}-A | Q-DATAGOV | S1000D CCB |
 | Traceability matrix (§3.2) | Embedded in this document | Q-AIR / Q-DATAGOV | Q+ATLANTIDE CCB |
 
 ---
@@ -203,7 +204,7 @@ graph LR
 | DMRL baseline | ATLAS 047 baseline approval | Q-DATAGOV | Signed DMRL (this document §3.1) |
 | DM authoring | DMRL approval | Technical writers | 36 S1000D XML DMs |
 | BREX validation | DM authoring / each DM submission | CSDB validator | BREX-compliant DMs |
-| Applicability filtering | Aircraft delivery configuration | Q-DATAGOV | EWTW-tagged DM set per aircraft |
+| Applicability filtering | Aircraft delivery configuration | Q-DATAGOV | programme-tagged DM set per aircraft |
 | Traceability review | Regulatory audit | Q-AIR / Q-DATAGOV | Signed traceability matrix (§3.2) |
 | DMRL amendment | Engineering change (ECR) | Q-DATAGOV / CCB | Updated DMRL; new/revised DMs |
 
@@ -234,7 +235,7 @@ stateDiagram-v2
 | Traceability matrix completeness | All CS-25.981 / SFAR 88 requirements traced | 8 requirements traced | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | ATLAS-to-DM coverage | Each ATLAS 047-NNN maps to ≥ 1 DM | 9/9 mapped | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | DM authoring completion | All 36 DMs authored and reviewed | 0 of 36 (TBD) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| Applicability tag applied | EWTW tag on all 36 DMs | 36 DMs | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Applicability tag applied | <PROGRAMME-SHORT> tag on all 36 DMs | 36 DMs | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Spanish translation | es-language DMs for bilingual publication | 0 of 36 (planned) | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
@@ -243,7 +244,7 @@ stateDiagram-v2
 
 - **BREX validation as a gate**: No DM enters the CSDB without passing BREX validation; prevents malformed or inapplicable documentation reaching maintenance personnel.
 - **Bi-directional traceability**: Regulatory requirements are traced forward to ATLAS documents and DMs; ATLAS documents are traced back to regulatory requirements. Both directions auditable.
-- **Applicability filtering**: EWTW tag prevents legacy bleed-air NGS DMs from being served to AMPEL360E eWTW maintenance personnel, eliminating incorrect procedure risk.
+- **Applicability filtering**: <PROGRAMME-SHORT> tag prevents legacy bleed-air NGS DMs from being served to <PROGRAMME> maintenance personnel, eliminating incorrect procedure risk.
 - **CCB change control**: All DMRL and traceability matrix changes require CCB approval, preventing ad-hoc traceability breaks.
 - **Version-locked ATLAS cross-references**: Each DM references the ATLAS sub-subject document ID and version at the time of DM authoring, providing a frozen link for regulatory audit.
 
@@ -264,10 +265,10 @@ stateDiagram-v2
 ## §11. Configuration and Software
 
 - DMRL version: 1.0.0 (this document); change log in §22.
-- BREX version: `BREX-AMPEL360E-EWTW-047-v1.0.0`; stored in Q+ATLANTIDE CSDB under Q-DATAGOV custodianship.
+- BREX version: `BREX-<MODEL>-<SYSTEMDIFF>-047-v1.0.0`; stored in Q+ATLANTIDE CSDB under Q-DATAGOV custodianship.
 - DMC schema version: Issue 5.0 compliant; defined in BREX file.
 - All 36 DMs are managed under configuration management with individual version numbers.
-- ATLAS-to-DM traceability links stored as metadata in each DM XML header (`<remark applicRef="EWTW">ATLAS-{doc-id}</remark>`).
+- ATLAS-to-DM traceability links stored as metadata in each DM XML header (`<remark applicRef="<PROGRAMME-SHORT>">ATLAS-{doc-id}</remark>`).
 - Language: English (en) primary; Spanish (es) translation planned but not yet initiated.
 
 ---
@@ -301,7 +302,7 @@ stateDiagram-v2
 | DMRL completeness check | Verify 36 DMs defined across all SNS nodes | 9 nodes × 4 Info Codes = 36 | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | BREX validation (automated) | CSDB validator on each DM submission | 100% BREX pass | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Traceability matrix audit | Cross-check each CS-25.981 / SFAR 88 requirement to ATLAS doc and DMC | All requirements traced | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| Applicability filter test | Apply EWTW filter; verify only EWTW DMs returned | No legacy bleed-air DMs returned | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Applicability filter test | Apply <PROGRAMME-SHORT> filter; verify only <PROGRAMME-SHORT> DMs returned | No legacy bleed-air DMs returned | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | DM content review | Technical review by subject-matter expert per DM | No ambiguous or incorrect procedures | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | IETP rendering check | Render DMs in IETP viewer; verify formatting | All DMs render correctly | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
@@ -332,10 +333,10 @@ stateDiagram-v2
 | Information Code | InfoCode | S1000D code indicating the type of content in a DM: 040=Descriptive, 520=Troubleshooting, 720=Remove/Install, 910=Wiring |
 | Business Rules Exchange Object | BREX | S1000D file defining document management rules for a specific programme; enforced by CSDB validator |
 | System/Sub-system/Sub-sub-system Number | SNS | S1000D hierarchical coding system; for NGS: 047-{NNN} maps to ATA 47 sub-subjects |
-| S1000D | — | International specification (ASD/AIA/ATA) for technical publications; Issue 5.0 used on AMPEL360E eWTW |
+| S1000D | — | International specification (ASD/AIA/ATA) for technical publications; Issue 5.0 used on <PROGRAMME> |
 | ATLAS | — | Q+ATLANTIDE Aircraft Top Level Architecture Schema/System documentation baseline |
 | Traceability | — | Bi-directional linkage between regulatory requirements, engineering documents (ATLAS), and publication DMs |
-| Applicability filter | — | CSDB mechanism selecting DMs applicable to a specific aircraft configuration (e.g., EWTW tag for eWTW variant) |
+| Applicability filter | — | CSDB mechanism selecting DMs applicable to a specific aircraft configuration (e.g., <PROGRAMME-SHORT> tag for <PROGRAMME-SHORT> variant) |
 
 ---
 
@@ -369,7 +370,7 @@ stateDiagram-v2
 | ID | Issue | Owner | Status |
 |----|-------|-------|--------|
 | NGS-090-OI-001 | 36 DMs not yet authored — DM authoring programme to be initiated | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| NGS-090-OI-002 | BREX file BREX-AMPEL360E-EWTW-047-v1.0.0 not yet created in CSDB | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| NGS-090-OI-002 | BREX file BREX-<MODEL>-<SYSTEMDIFF>-047-v1.0.0 not yet created in CSDB | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | NGS-090-OI-003 | Spanish (es) translation programme not yet scoped | Q-DATAGOV | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 | NGS-090-OI-004 | CSDB hosting infrastructure selection pending programme decision | Q-DATAGOV | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 | NGS-090-OI-005 | LH₂ variant DMRL fork — deferred to future programme phase | Q-DATAGOV / Q-GREENTECH | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |

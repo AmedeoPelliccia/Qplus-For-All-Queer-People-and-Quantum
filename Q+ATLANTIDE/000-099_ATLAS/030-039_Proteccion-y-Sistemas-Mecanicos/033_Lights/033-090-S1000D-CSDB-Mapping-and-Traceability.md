@@ -6,10 +6,8 @@ subsubject: "090"
 subsubject_title: "S1000D CSDB Mapping and Traceability"
 file_name: "033-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "033-90"
-dmc_prefix: "DMC-AMPEL360E-EWTW-033-90"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<MODEL>-<SYSTEMDIFF>-033-90"
+programme_link: "../../../../../<programme-implementation-branch>
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -43,6 +41,7 @@ orb_functions:
     link: "../../../../../ORB-Functions/ORB-LEG/"
 classification: "open-technical-scaffold"
 status: "programme-controlled-scaffold"
+scope: agnostic-standard
 revision: "0.1.0"
 created: "2026-05-09"
 updated: "2026-05-09"
@@ -91,7 +90,7 @@ keywords:
 ---
 
 # 033-090 — S1000D CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
+### <PROGRAMME> · ATA 33 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -103,24 +102,26 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document defines the S1000D Common Source Data Base (CSDB) mapping and traceability architecture for ATA 33 Lights on the AMPEL360e eWTW aircraft. It provides the authoritative SNS-to-DMC code mapping, the planned Data Module (DM) set for each ATA 33 subsubject (033-00 through 033-80), the Data Module Requirements List (DMRL) planning status, Business Rules Exchange (BREX) applicability, and the ATA 33 publication hierarchy within the AMPEL360e eWTW S1000D CSDB.
+This document defines the S1000D Common Source Data Base (CSDB) mapping and traceability architecture for ATA 33 Lights on the <PROGRAMME> aircraft. It provides the authoritative SNS-to-DMC code mapping, the planned Data Module (DM) set for each ATA 33 subsubject (033-00 through 033-80), the Data Module Requirements List (DMRL) planning status, Business Rules Exchange (BREX) applicability, and the ATA 33 publication hierarchy within the <PROGRAMME> S1000D CSDB.
 
 This document is primarily authored and maintained by Q-DATAGOV (the data governance Q-Division) in coordination with Q-MECHANICS (the system engineering Q-Division for ATA 33). It serves as the technical data architecture reference for the ATLAS scaffold-to-CSDB mapping and for programme traceability across the full ATA 33 data set.
 
 ---
 
+> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
+
 ## §2 Applicability
 
 | Attribute | Value |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| Programme | AMPEL360e Wide Tube-and-Wing (<PROGRAMME-SHORT>) |
 | ATA Subsubject | 033-90 — S1000D CSDB Mapping and Traceability |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
+| Aircraft Variant | <PROGRAMME-SHORT>-100 (baseline), <PROGRAMME-SHORT>-100ER |
 | S1000D Issue | Issue 5.0 (target; Issue 4.2 as fallback — TBD per programme BREX) |
-| CSDB | AMPEL360e eWTW CSDB — TBD hosting and toolchain |
+| CSDB | <PROGRAMME> CSDB — TBD hosting and toolchain |
 | SNS Codes Mapped | 033-00 through 033-80 (9 subsubjects) |
 | DM Info Codes | 040, 300, 400, 520, 720, 941 (planned — see §6) |
-| BREX | AMPEL360e eWTW programme BREX (TBD) |
+| BREX | <PROGRAMME> programme BREX (TBD) |
 | DMRL Status | Not yet frozen — planning phase |
 | S1000D SNS | 033-90 |
 | Applicability Code | ALL |
@@ -129,7 +130,7 @@ This document is primarily authored and maintained by Q-DATAGOV (the data govern
 
 ## §3 System / Function Overview
 
-The S1000D CSDB for the AMPEL360e eWTW programme is the single source of truth for all aircraft technical publications, from the Aircraft Maintenance Manual (AMM) through Illustrated Parts Data (IPD), Flight Operations publications, and Wiring Manual (WM). ATA 33 Lights contributes a data module set covering descriptions, procedures, fault isolation, removal/installation, and parts data for all lighting subsystems.
+The S1000D CSDB for the <PROGRAMME> programme is the single source of truth for all aircraft technical publications, from the Aircraft Maintenance Manual (AMM) through Illustrated Parts Data (IPD), Flight Operations publications, and Wiring Manual (WM). ATA 33 Lights contributes a data module set covering descriptions, procedures, fault isolation, removal/installation, and parts data for all lighting subsystems.
 
 The ATLAS scaffold files (033-000 through 033-090) represent the architecture and requirements phase of technical documentation (lifecycle phases LC02–LC06). During detailed design (LC05), the ATLAS scaffold content is translated into formal S1000D Data Modules with all CSDB-required attributes: DMC (Data Module Code), applicable effectivity, issue/inwork status, BREX-validated content.
 
@@ -157,7 +158,7 @@ The Q-DATAGOV division maintains the programme BREX, manages the DMRL, and coord
 
 ## §5 Architecture Description
 
-- **DMC structure for ATA 33**: `DMC-AMPEL360E-EWTW-{SNS}-{disassembly}-{disassembly variant}-{info code}-{info code variant}-{language}-{issue}`. Example: `DMC-AMPEL360E-EWTW-033-00-00-040-A-EN-US-00A`.
+- **DMC structure for ATA 33**: `DMC-<MODEL>-<SYSTEMDIFF>-{SNS}-{disassembly}-{disassembly variant}-{info code}-{info code variant}-{language}-{issue}`. Example: `DMC-<MODEL>-<SYSTEMDIFF>-033-00-00-040-A-EN-US-00A`.
 - **SNS coding**: SNS = `033-{NN}` where NN is the two-digit subsubject code (00, 10, 20, 30, 40, 50, 60, 70, 80). Note: there is no 033-90 as a separate system subject in S1000D (this file is an ATLAS scaffold meta-document, not a CSDB DM itself).
 - **Info code taxonomy for ATA 33**: 040 = Descriptive (system description); 300 = Procedures (normal operations and abnormal); 400 = Fault Isolation (BITE and troubleshooting); 520 = Remove (R&I remove step); 720 = Install (R&I install step); 941 = Illustrated Parts Data (IPD / IPL per LRU).
 - **BREX**: The programme BREX (Business Rules Exchange Object) defines the allowed element/attribute combinations, data module content rules, and programme-specific additions. ATA 33 DMs must pass BREX validation before entry into the CSDB. ATA 33-specific BREX rules to be identified during DMRL planning phase (e.g., handling of TBD content during design freeze).
@@ -172,15 +173,15 @@ The Q-DATAGOV division maintains the programme BREX, manages the DMRL, and coord
 
 | SNS Code | Subsubject Title | ATLAS Scaffold File | DMC Prefix | Planned Info Codes | DMRL Status |
 |---|---|---|---|---|---|
-| 033-00 | Lights — General | 033-000-Lights-General.md | DMC-AMPEL360E-EWTW-033-00 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-10 | Flight Deck and Crew Compartment Lighting | 033-010-Flight-Deck-and-Crew-Compartment-Lighting.md | DMC-AMPEL360E-EWTW-033-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-20 | Passenger Cabin Lighting | 033-020-Passenger-Cabin-Lighting.md | DMC-AMPEL360E-EWTW-033-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-30 | Cargo and Service Compartment Lighting | 033-030-Cargo-and-Service-Compartment-Lighting.md | DMC-AMPEL360E-EWTW-033-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-40 | Exterior Lighting | 033-040-Exterior-Lighting.md | DMC-AMPEL360E-EWTW-033-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-50 | Emergency Lighting | 033-050-Emergency-Lighting.md | DMC-AMPEL360E-EWTW-033-50 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-60 | Signage and Information Lighting | 033-060-Signage-and-Information-Lighting.md | DMC-AMPEL360E-EWTW-033-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-70 | Lighting Control, Dimming and Power Interfaces | 033-070-Lighting-Control-Dimming-and-Power-Interfaces.md | DMC-AMPEL360E-EWTW-033-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 033-80 | Lights Monitoring, Diagnostics and Control Interfaces | 033-080-Lights-Monitoring-Diagnostics-and-Control-Interfaces.md | DMC-AMPEL360E-EWTW-033-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-00 | Lights — General | 033-000-Lights-General.md | DMC-<MODEL>-<SYSTEMDIFF>-033-00 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-10 | Flight Deck and Crew Compartment Lighting | 033-010-Flight-Deck-and-Crew-Compartment-Lighting.md | DMC-<MODEL>-<SYSTEMDIFF>-033-10 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-20 | Passenger Cabin Lighting | 033-020-Passenger-Cabin-Lighting.md | DMC-<MODEL>-<SYSTEMDIFF>-033-20 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-30 | Cargo and Service Compartment Lighting | 033-030-Cargo-and-Service-Compartment-Lighting.md | DMC-<MODEL>-<SYSTEMDIFF>-033-30 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-40 | Exterior Lighting | 033-040-Exterior-Lighting.md | DMC-<MODEL>-<SYSTEMDIFF>-033-40 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-50 | Emergency Lighting | 033-050-Emergency-Lighting.md | DMC-<MODEL>-<SYSTEMDIFF>-033-50 | 040, 300, 400, 520, 720, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-60 | Signage and Information Lighting | 033-060-Signage-and-Information-Lighting.md | DMC-<MODEL>-<SYSTEMDIFF>-033-60 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-70 | Lighting Control, Dimming and Power Interfaces | 033-070-Lighting-Control-Dimming-and-Power-Interfaces.md | DMC-<MODEL>-<SYSTEMDIFF>-033-70 | 040, 300, 400, 520, 720 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 033-80 | Lights Monitoring, Diagnostics and Control Interfaces | 033-080-Lights-Monitoring-Diagnostics-and-Control-Interfaces.md | DMC-<MODEL>-<SYSTEMDIFF>-033-80 | 040, 300, 400, 520 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 6.2 Planned DM Set — Info Code Detail
 
@@ -199,7 +200,7 @@ The Q-DATAGOV division maintains the programme BREX, manages the DMRL, and coord
 
 ```mermaid
 flowchart LR
-    ATLAS[Q+ATLANTIDE ATLAS Scaffold 033-000 to 033-090] -->|Requirements + architecture content| CSDB[AMPEL360e eWTW S1000D CSDB]
+    ATLAS[Q+ATLANTIDE ATLAS Scaffold 033-000 to 033-090] -->|Requirements + architecture content| CSDB[<PROGRAMME> S1000D CSDB]
     CSDB -->|DMs assembled| AMM[AMM ATA 33 Chapter]
     CSDB -->|DMs assembled| FIM[FIM ATA 33 Chapter]
     CSDB -->|DMs assembled| IPD[IPD ATA 33 Chapter]
@@ -264,7 +265,7 @@ flowchart LR
 | IF-033-90-001 | Q+ATLANTIDE ATLAS repository | Document content | ATLAS scaffold file content → CSDB DM authoring source | ATLAS → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-033-90-002 | Programme BREX | CSDB validation | BREX XML ruleset; ATA 33 DMs validated against BREX before entry | BREX → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-033-90-003 | DMRL database | Data management | DMRL records DM requirement, DMC, author, status, delivery date | DMRL ↔ CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
-| IF-033-90-004 | Supplier CMMs (SSLC, ELU) | CSDB contribution | Supplier provides LRU-specific DMs (CMM-level) for SSLC and ELU; integrated into eWTW CSDB per agreement | Supplier → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-033-90-004 | Supplier CMMs (SSLC, ELU) | CSDB contribution | Supplier provides LRU-specific DMs (CMM-level) for SSLC and ELU; integrated into <PROGRAMME-SHORT> CSDB per agreement | Supplier → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-033-90-005 | ATA 33-80 CMC/OMS | Technical content | Monitoring and diagnostics DMs (Info Code 400) reference CMC fault codes defined in ATA 033-80 | ATA33-80 → DM400 | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-033-90-006 | Publication assembly engine | CSDB output | AMM / FIM / IPD assembled from CSDB DMs; publication management by Q-DATAGOV | CSDB → Publications | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-033-90-007 | Airline customer services | CSDB customisation layer | Airline-specific effectivity and customisation applied as CSDB layer; ATA 33 customer data items TBD | CSDB → Airline CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
@@ -315,7 +316,7 @@ This document is itself the CSDB mapping reference for ATA 33. The mapping is de
 
 | Level | Item | Description |
 |---|---|---|
-| Programme | AMPEL360e-EWTW | Top-level model identifier in all DMCs |
+| Programme | AMPEL360e-<PROGRAMME-SHORT> | Top-level model identifier in all DMCs |
 | System | 033 | ATA 33 Lights |
 | Subsubject | 00 – 80 | Nine subsubjects per ATLAS scaffold |
 | Disassembly code | 00 | Standard (no disassembly breakdown required for most lighting DMs) |

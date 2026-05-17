@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GREENTECH, Q-HORIZON, Q-INDUSTRY, Q-STRUCTURES]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-13"
@@ -16,13 +17,12 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-086-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-086-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATLAS-086 (Boundary Layer Ingestion Propulsion) · S1000D CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D CSDB Mapping and Traceability
@@ -46,7 +46,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0086-090"
 
 ## §1 Purpose
 
-ATLAS subsubject 086-090 establishes the S1000D Data Module Requirements List (DMRL), the BREX-086-v1 rule set, the ICN (Illustration Control Number) registry, the CSDB publication milestones, and the traceability matrix mapping all ten BLI Propulsion subsubject documents to their corresponding S1000D Data Modules (DMs). It is the authoritative reference for the BLI Propulsion technical publication deliverables and governs the structure of the AMPEL360E-EWTW CSDB entries under SNS 086.
+ATLAS subsubject 086-090 establishes the S1000D Data Module Requirements List (DMRL), the BREX-086-v1 rule set, the ICN (Illustration Control Number) registry, the CSDB publication milestones, and the traceability matrix mapping all ten BLI Propulsion subsubject documents to their corresponding S1000D Data Modules (DMs). It is the authoritative reference for the BLI Propulsion technical publication deliverables and governs the structure of the programme CSDB entries under SNS 086.
 
 ---
 
@@ -54,12 +54,12 @@ ATLAS subsubject 086-090 establishes the S1000D Data Module Requirements List (D
 
 | Attribute | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA Reference | ATLAS-086 (Boundary Layer Ingestion Propulsion) — 086-090 S1000D/CSDB Mapping and Traceability |
 | S1000D Version | Issue 5.0 |
 | BREX | BREX-086-v1 |
 | Total DMs in DMRL | 30 |
-| DMC Pattern | `AMPEL360E-EWTW-086-{NNN}-00A-{TYPE}-EN-US` |
+| DMC Pattern | `DMC-<MODEL>-<SYSTEMDIFF>-086-{NNN}-00A-{TYPE}-EN-US` |
 | Certification Basis | S1000D Issue 5.0; BREX-086-v1; EASA CS-25 Amdt 27+ (research ref.) |
 | S1000D SNS | 086-090-00 |
 
@@ -67,9 +67,9 @@ ATLAS subsubject 086-090 establishes the S1000D Data Module Requirements List (D
 
 ## §3 Functional Description
 
-The BLI Propulsion technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the AMPEL360E-EWTW CSDB under the SNS 086 schema. The Data Module Code (DMC) pattern is `AMPEL360E-EWTW-086-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
+The BLI Propulsion technical documentation suite comprises **30 S1000D Data Modules (DMs)** registered in the programme CSDB under the SNS 086 schema. The Data Module Code (DMC) pattern is `DMC-<MODEL>-<SYSTEMDIFF>-086-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
 
-The governing BREX document is `AMPEL360E-BREX-086-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 086:
+The governing BREX document is `BREX-086-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 086:
 
 **BREX-086-HV-01 — HVDC 270 V Pre-Access Rule:**
 All maintenance DMs of type 100 (task), 300 (inspection), and 520 (removal/replacement) that require physical access within 500 mm of MCU-086-1, MCU-086-2, or their HVDC 270 V feed cables must include the following mandatory pre-task action as the first step:
@@ -94,36 +94,36 @@ All descriptive DMs for inlet aerodynamic content (SNS 086-020 and 086-050) must
 
 | DM Number | DMC | Type | Title | ATLAS Source |
 |---|---|---|---|---|
-| DM-086-001 | AMPEL360E-EWTW-086-000-040A | Descriptive | BLI System General Overview | 086-000 |
-| DM-086-002 | AMPEL360E-EWTW-086-000-100A | Task | BLICU System Activation Procedure | 086-000 |
-| DM-086-003 | AMPEL360E-EWTW-086-000-300A | Inspection | BLICU System Periodic BITE Inspection | 086-000 |
-| DM-086-004 | AMPEL360E-EWTW-086-010-040A | Descriptive | BLI Baseline, Scope and Technology Readiness | 086-010 |
-| DM-086-005 | AMPEL360E-EWTW-086-020-040A | Descriptive | Boundary Layer Capture and Inlet Architecture | 086-020 |
-| DM-086-006 | AMPEL360E-EWTW-086-020-300A | Inspection | S-Duct Inlet Visual and NDT Inspection | 086-020 |
-| DM-086-007 | AMPEL360E-EWTW-086-020-300B | Inspection | Bypass Door Functional Check and Actuator Inspection | 086-020 |
-| DM-086-008 | AMPEL360E-EWTW-086-020-520A | Task | S-Duct Inlet Assembly Removal and Replacement | 086-020 |
-| DM-086-009 | AMPEL360E-EWTW-086-030-040A | Descriptive | Fan-Propulsor Design and Distortion Tolerance | 086-030 |
-| DM-086-010 | AMPEL360E-EWTW-086-030-300A | Inspection | Fan Blade Visual Inspection and Leading-Edge Assessment | 086-030 |
-| DM-086-011 | AMPEL360E-EWTW-086-030-300B | Inspection | Fan Balance Check and Re-Balance Procedure | 086-030 |
-| DM-086-012 | AMPEL360E-EWTW-086-030-300C | Inspection | Fan Tip Clearance Measurement | 086-030 |
-| DM-086-013 | AMPEL360E-EWTW-086-030-520A | Task | BLI Propulsor Fan Stage Removal and Replacement | 086-030 |
-| DM-086-014 | AMPEL360E-EWTW-086-040-040A | Descriptive | Aero-Propulsive Coupling and Airframe Integration | 086-040 |
-| DM-086-015 | AMPEL360E-EWTW-086-040-300A | Inspection | BLI Hardpoint Fastener Torque Check | 086-040 |
-| DM-086-016 | AMPEL360E-EWTW-086-040-300B | Inspection | Vibration Isolation Mount Compression-Set Inspection | 086-040 |
-| DM-086-017 | AMPEL360E-EWTW-086-050-040A | Descriptive | BLICU Architecture and BLI Control Logic | 086-050 |
-| DM-086-018 | AMPEL360E-EWTW-086-050-100A | Task | BLICU Software Load Procedure | 086-050 |
-| DM-086-019 | AMPEL360E-EWTW-086-050-520A | Task | BLICU LRU Removal and Replacement | 086-050 |
-| DM-086-020 | AMPEL360E-EWTW-086-060-040A | Descriptive | Noise, Vibration and Aeroelastic Constraints | 086-060 |
-| DM-086-021 | AMPEL360E-EWTW-086-060-300A | Inspection | Aft Fuselage Vibration Level Verification | 086-060 |
-| DM-086-022 | AMPEL360E-EWTW-086-070-040A | Descriptive | Thermal, Structural and Maintenance Integration | 086-070 |
-| DM-086-023 | AMPEL360E-EWTW-086-070-100A | Task | BLITM Coolant Flush and Refill Procedure | 086-070 |
-| DM-086-024 | AMPEL360E-EWTW-086-070-300A | Inspection | BLITM Pump and Coolant Sample Inspection | 086-070 |
-| DM-086-025 | AMPEL360E-EWTW-086-070-300B | Inspection | PMSM Winding Resistance and Insulation Check | 086-070 |
-| DM-086-026 | AMPEL360E-EWTW-086-070-520A | Task | PMSM Motor Stator Removal and Replacement | 086-070 |
-| DM-086-027 | AMPEL360E-EWTW-086-070-520B | Task | MCU-086 LRU Removal and Replacement | 086-070 |
-| DM-086-028 | AMPEL360E-EWTW-086-080-040A | Descriptive | BLI Monitoring, Diagnostics and Control Interfaces | 086-080 |
-| DM-086-029 | AMPEL360E-EWTW-086-080-100A | Task | BLICU BITE Full Diagnostic Run and GSE Download | 086-080 |
-| DM-086-030 | AMPEL360E-EWTW-086-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 086-090 |
+| DM-086-001 | DMC-<MODEL>-<SYSTEMDIFF>-086-000-040A | Descriptive | BLI System General Overview | 086-000 |
+| DM-086-002 | DMC-<MODEL>-<SYSTEMDIFF>-086-000-100A | Task | BLICU System Activation Procedure | 086-000 |
+| DM-086-003 | DMC-<MODEL>-<SYSTEMDIFF>-086-000-300A | Inspection | BLICU System Periodic BITE Inspection | 086-000 |
+| DM-086-004 | DMC-<MODEL>-<SYSTEMDIFF>-086-010-040A | Descriptive | BLI Baseline, Scope and Technology Readiness | 086-010 |
+| DM-086-005 | DMC-<MODEL>-<SYSTEMDIFF>-086-020-040A | Descriptive | Boundary Layer Capture and Inlet Architecture | 086-020 |
+| DM-086-006 | DMC-<MODEL>-<SYSTEMDIFF>-086-020-300A | Inspection | S-Duct Inlet Visual and NDT Inspection | 086-020 |
+| DM-086-007 | DMC-<MODEL>-<SYSTEMDIFF>-086-020-300B | Inspection | Bypass Door Functional Check and Actuator Inspection | 086-020 |
+| DM-086-008 | DMC-<MODEL>-<SYSTEMDIFF>-086-020-520A | Task | S-Duct Inlet Assembly Removal and Replacement | 086-020 |
+| DM-086-009 | DMC-<MODEL>-<SYSTEMDIFF>-086-030-040A | Descriptive | Fan-Propulsor Design and Distortion Tolerance | 086-030 |
+| DM-086-010 | DMC-<MODEL>-<SYSTEMDIFF>-086-030-300A | Inspection | Fan Blade Visual Inspection and Leading-Edge Assessment | 086-030 |
+| DM-086-011 | DMC-<MODEL>-<SYSTEMDIFF>-086-030-300B | Inspection | Fan Balance Check and Re-Balance Procedure | 086-030 |
+| DM-086-012 | DMC-<MODEL>-<SYSTEMDIFF>-086-030-300C | Inspection | Fan Tip Clearance Measurement | 086-030 |
+| DM-086-013 | DMC-<MODEL>-<SYSTEMDIFF>-086-030-520A | Task | BLI Propulsor Fan Stage Removal and Replacement | 086-030 |
+| DM-086-014 | DMC-<MODEL>-<SYSTEMDIFF>-086-040-040A | Descriptive | Aero-Propulsive Coupling and Airframe Integration | 086-040 |
+| DM-086-015 | DMC-<MODEL>-<SYSTEMDIFF>-086-040-300A | Inspection | BLI Hardpoint Fastener Torque Check | 086-040 |
+| DM-086-016 | DMC-<MODEL>-<SYSTEMDIFF>-086-040-300B | Inspection | Vibration Isolation Mount Compression-Set Inspection | 086-040 |
+| DM-086-017 | DMC-<MODEL>-<SYSTEMDIFF>-086-050-040A | Descriptive | BLICU Architecture and BLI Control Logic | 086-050 |
+| DM-086-018 | DMC-<MODEL>-<SYSTEMDIFF>-086-050-100A | Task | BLICU Software Load Procedure | 086-050 |
+| DM-086-019 | DMC-<MODEL>-<SYSTEMDIFF>-086-050-520A | Task | BLICU LRU Removal and Replacement | 086-050 |
+| DM-086-020 | DMC-<MODEL>-<SYSTEMDIFF>-086-060-040A | Descriptive | Noise, Vibration and Aeroelastic Constraints | 086-060 |
+| DM-086-021 | DMC-<MODEL>-<SYSTEMDIFF>-086-060-300A | Inspection | Aft Fuselage Vibration Level Verification | 086-060 |
+| DM-086-022 | DMC-<MODEL>-<SYSTEMDIFF>-086-070-040A | Descriptive | Thermal, Structural and Maintenance Integration | 086-070 |
+| DM-086-023 | DMC-<MODEL>-<SYSTEMDIFF>-086-070-100A | Task | BLITM Coolant Flush and Refill Procedure | 086-070 |
+| DM-086-024 | DMC-<MODEL>-<SYSTEMDIFF>-086-070-300A | Inspection | BLITM Pump and Coolant Sample Inspection | 086-070 |
+| DM-086-025 | DMC-<MODEL>-<SYSTEMDIFF>-086-070-300B | Inspection | PMSM Winding Resistance and Insulation Check | 086-070 |
+| DM-086-026 | DMC-<MODEL>-<SYSTEMDIFF>-086-070-520A | Task | PMSM Motor Stator Removal and Replacement | 086-070 |
+| DM-086-027 | DMC-<MODEL>-<SYSTEMDIFF>-086-070-520B | Task | MCU-086 LRU Removal and Replacement | 086-070 |
+| DM-086-028 | DMC-<MODEL>-<SYSTEMDIFF>-086-080-040A | Descriptive | BLI Monitoring, Diagnostics and Control Interfaces | 086-080 |
+| DM-086-029 | DMC-<MODEL>-<SYSTEMDIFF>-086-080-100A | Task | BLICU BITE Full Diagnostic Run and GSE Download | 086-080 |
+| DM-086-030 | DMC-<MODEL>-<SYSTEMDIFF>-086-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 086-090 |
 
 ---
 
@@ -141,15 +141,15 @@ All descriptive DMs for inlet aerodynamic content (SNS 086-020 and 086-050) must
 
 | ICN | Content Type | Used In DM | Description |
 |---|---|---|---|
-| ICN-AMPEL360E-086-0001 | Diagram (SVG) | DM-086-001 | BLI system top-level block diagram |
-| ICN-AMPEL360E-086-0002 | Diagram (SVG) | DM-086-005 | S-duct inlet geometry cross-section |
-| ICN-AMPEL360E-086-0003 | Diagram (SVG) | DM-086-009 | Fan stage aerodynamic design — blade profile |
-| ICN-AMPEL360E-086-0004 | Diagram (SVG) | DM-086-014 | Aero-propulsive coupling — thrust–drag diagram |
-| ICN-AMPEL360E-086-0005 | Diagram (SVG) | DM-086-017 | BLICU mode state machine diagram |
-| ICN-AMPEL360E-086-0006 | Diagram (SVG) | DM-086-022 | BLITM cooling loop schematic |
-| ICN-AMPEL360E-086-0007 | Diagram (SVG) | DM-086-028 | BLI cockpit synoptic MFD page layout |
-| ICN-AMPEL360E-086-0008 | Warning sign (PNG) | DM-086-002, 018, 019, 023, 025, 026, 027 | HVDC 270 V HV warning label (ISO 3864-2) |
-| ICN-AMPEL360E-086-0009 | Warning sign (PNG) | DM-086-010, 011, 012, 013 | Rotating fan hazard warning label |
+| ICN-086-0001 | Diagram (SVG) | DM-086-001 | BLI system top-level block diagram |
+| ICN-086-0002 | Diagram (SVG) | DM-086-005 | S-duct inlet geometry cross-section |
+| ICN-086-0003 | Diagram (SVG) | DM-086-009 | Fan stage aerodynamic design — blade profile |
+| ICN-086-0004 | Diagram (SVG) | DM-086-014 | Aero-propulsive coupling — thrust–drag diagram |
+| ICN-086-0005 | Diagram (SVG) | DM-086-017 | BLICU mode state machine diagram |
+| ICN-086-0006 | Diagram (SVG) | DM-086-022 | BLITM cooling loop schematic |
+| ICN-086-0007 | Diagram (SVG) | DM-086-028 | BLI cockpit synoptic MFD page layout |
+| ICN-086-0008 | Warning sign (PNG) | DM-086-002, 018, 019, 023, 025, 026, 027 | HVDC 270 V HV warning label (ISO 3864-2) |
+| ICN-086-0009 | Warning sign (PNG) | DM-086-010, 011, 012, 013 | Rotating fan hazard warning label |
 
 ---
 
@@ -189,5 +189,5 @@ All descriptive DMs for inlet aerodynamic content (SNS 086-020 and 086-050) must
 |---|---|---|---|
 | OI-086-090-001 | BREX-086-v1 formal review and sign-off by Q-DATAGOV and airworthiness team | Q-DATAGOV | PDR |
 | OI-086-090-002 | ICN-086-0002 (S-duct cross-section) — artwork pending inlet CDR freeze | Q-HORIZON | CDR |
-| OI-086-090-003 | CSDB SNS 086 namespace reservation in AMPEL360E-EWTW CSDB instance | Q-DATAGOV | PDR |
+| OI-086-090-003 | CSDB SNS 086 namespace reservation in <PROGRAMME> CSDB instance | Q-DATAGOV | PDR |
 | OI-086-090-004 | DM-086-011 (fan balance) — confirm ground spin balance rig procedure with maintenance engineering | Q-INDUSTRY | CDR |

@@ -6,10 +6,8 @@ subsubject: "090"
 subsubject_title: "S1000D CSDB Mapping and Traceability"
 file_name: "031-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "031-90"
-dmc_prefix: "DMC-AMPEL360E-EWTW-031-90"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<MODEL>-<SYSTEMDIFF>-031-90"
+programme_link: "../../../../../<programme-implementation-branch>
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -43,6 +41,7 @@ orb_functions:
     link: "../../../../../ORB-Functions/ORB-LEG/"
 classification: "open-technical-scaffold"
 status: "programme-controlled-scaffold"
+scope: agnostic-standard
 revision: "0.1.0"
 created: "2026-05-09"
 updated: "2026-05-09"
@@ -75,8 +74,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "<programme-implementation-branch>
+  programme_path_link: "../../../../../<programme-implementation-branch>
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -104,7 +103,7 @@ keywords:
 ---
 
 # 031-090 — S1000D CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
+### <PROGRAMME> · ATA 31 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -116,7 +115,7 @@ All internal links use relative paths from the current directory. External regul
 
 ## §1 Purpose
 
-This document provides the complete S1000D System/Subsystem/Subject (SNS) allocation table for ATA 31 (Indicating and Recording Systems) on the AMPEL360e eWTW programme. It serves as the traceability bridge between the Q+ATLANTIDE ATLAS scaffold node structure and the programme CSDB (Common Source DataBase) Data Module Reference List (DMRL), defining which SNS codes are allocated to which ATLAS nodes, which information codes are planned for each SNS, and which publications will consume those data modules.
+This document provides the complete S1000D System/Subsystem/Subject (SNS) allocation table for ATA 31 (Indicating and Recording Systems) on the <PROGRAMME> programme. It serves as the traceability bridge between the Q+ATLANTIDE ATLAS scaffold node structure and the programme CSDB (Common Source DataBase) Data Module Reference List (DMRL), defining which SNS codes are allocated to which ATLAS nodes, which information codes are planned for each SNS, and which publications will consume those data modules.
 
 This document also specifies the BREX (Business Rules Exchange) applicability for ATA 31 data modules and the CSDB workflow states that govern the authoring, review, approval, and publication lifecycle of ATA 31 content. It replaces the generic "Operating Modes" section used in other 031-0XX files with CSDB authoring workflow states, as this document governs documentation process rather than system operation.
 
@@ -124,15 +123,17 @@ The S1000D mapping covers all ten subsubject nodes of ATA 31 as defined in this 
 
 ---
 
+> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
+
 ## §2 Applicability
 
 | Attribute | Value |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| Programme | AMPEL360e Wide Tube-and-Wing (<PROGRAMME-SHORT>) |
 | ATA Chapter / Subsubject | 31-90 — S1000D CSDB Mapping and Traceability |
-| Aircraft Variant | eWTW-100 (baseline), eWTW-100ER |
+| Aircraft Variant | <PROGRAMME-SHORT>-100 (baseline), <PROGRAMME-SHORT>-100ER |
 | S1000D SNS | 031-90 |
-| DMC Prefix | DMC-AMPEL360E-EWTW-031-90 |
+| DMC Prefix | DMC-<MODEL>-<SYSTEMDIFF>-031-90 |
 | Effectivity | All MSN from MSN 001 |
 | S1000D Issue | 5.0 (target; 4.2 fallback — TBD) |
 
@@ -140,11 +141,11 @@ The S1000D mapping covers all ten subsubject nodes of ATA 31 as defined in this 
 
 ## §3 System / Function Overview
 
-S1000D is the international specification for technical publications for civil and military equipment, maintained by the Aerospace and Defence Industries Association of Europe (ASD), the Aerospace Industries Association (AIA), and the Air Transport Association (ATA). For the eWTW programme, S1000D Issue 5.0 is the target authoring specification, with Issue 4.2 as a fallback if toolchain compatibility requires it.
+S1000D is the international specification for technical publications for civil and military equipment, maintained by the Aerospace and Defence Industries Association of Europe (ASD), the Aerospace Industries Association (AIA), and the Air Transport Association (ATA). For the <PROGRAMME-SHORT> programme, S1000D Issue 5.0 is the target authoring specification, with Issue 4.2 as a fallback if toolchain compatibility requires it.
 
-The CSDB is the authoritative source repository for all eWTW technical data modules. It is managed by the Technical Publications department and is governed by the programme BREX. All data modules in the CSDB are identified by a Data Module Code (DMC) that encodes the Model Identification Code (MIC), System Difference Code, Standard Numbering System (SNS), assembly code, disassembly variant, information code, and language/variant codes.
+The CSDB is the authoritative source repository for all <PROGRAMME-SHORT> technical data modules. It is managed by the Technical Publications department and is governed by the programme BREX. All data modules in the CSDB are identified by a Data Module Code (DMC) that encodes the Model Identification Code (MIC), System Difference Code, Standard Numbering System (SNS), assembly code, disassembly variant, information code, and language/variant codes.
 
-For ATA 31, the SNS structure follows the established ATA iSpec 2200 chapter structure, with the addition of the novel eWTW-specific electric propulsion parameters distributed across the relevant subsubjects. The DMRL for ATA 31 is maintained as a programme-controlled register; this document provides the planning baseline. The actual DMRL (including DM quantity, applicability, and effectivity) is maintained in the CSDB DMRL module.
+For ATA 31, the SNS structure follows the established ATA iSpec 2200 chapter structure, with the addition of the novel <PROGRAMME-SHORT>-specific electric propulsion parameters distributed across the relevant subsubjects. The DMRL for ATA 31 is maintained as a programme-controlled register; this document provides the planning baseline. The actual DMRL (including DM quantity, applicability, and effectivity) is maintained in the CSDB DMRL module.
 
 ---
 
@@ -168,13 +169,13 @@ For ATA 31, the SNS structure follows the established ATA iSpec 2200 chapter str
 
 ## §5 Architecture Description
 
-The eWTW S1000D publication infrastructure for ATA 31 consists of:
+The <PROGRAMME-SHORT> S1000D publication infrastructure for ATA 31 consists of:
 
 - **CSDB**: programme CSDB (toolchain TBD — likely Cortona3D Smart Publisher, Flatirons CORENA, or equivalent); all DMs authored and managed in CSDB with full version control and workflow
 - **DMRL**: Data Module Reference List — the formal register of all DMs planned for the programme; ATA 31 subset managed by the Avionics Tech Pubs lead
-- **BREX**: Business Rules Exchange data module — specifies allowed values for all coded elements in eWTW DMs; validated against each DM before publication
+- **BREX**: Business Rules Exchange data module — specifies allowed values for all coded elements in <PROGRAMME-SHORT> DMs; validated against each DM before publication
 - **Publication Modules (PM)**: assemble DMs into deliverable publications; PM-AMM (Aircraft Maintenance Manual), PM-FRM (Fault Reporting Manual), PM-CMM (Component Maintenance Manual), PM-IPC (Illustrated Parts Catalogue), PM-FCOM (Flight Crew Operating Manual link to ATA 31 cockpit procedures)
-- **Applicability**: DM applicability coded per CSDB applicability cross-reference table (ACT); eWTW-100 and eWTW-100ER variants managed via applicability annotations
+- **Applicability**: DM applicability coded per CSDB applicability cross-reference table (ACT); <PROGRAMME-SHORT>-100 and <PROGRAMME-SHORT>-100ER variants managed via applicability annotations
 - **Effectivity**: MSN-based effectivity managed in CSDB; from MSN 001 for all ATA 31 DMs at EIS
 
 ---
@@ -183,16 +184,16 @@ The eWTW S1000D publication infrastructure for ATA 31 consists of:
 
 | SNS Code | ATLAS Node | Subsubject Title | Lead ATLAS Doc | DM Prefix | Approx DM Qty | Primary Publications |
 |---|---|---|---|---|---|---|
-| 031-00 | 031-000 | Indicating and Recording — General | 031-000-Indicating-and-Recording-General.md | DMC-AMPEL360E-EWTW-031-00 | 4–6 | PM-AMM, PM-FCOM |
-| 031-10 | 031-010 | Flight Deck Indicating and Control Panels | 031-010-Flight-Deck-Indicating-and-Control-Panels.md | DMC-AMPEL360E-EWTW-031-10 | 10–15 | PM-AMM, PM-IPC, PM-FCOM |
-| 031-20 | 031-020 | Independent and Standby Indicating Systems | 031-020-Independent-and-Standby-Indicating-Systems.md | DMC-AMPEL360E-EWTW-031-20 | 6–8 | PM-AMM, PM-IPC, PM-CMM |
-| 031-30 | 031-030 | Recording Systems | 031-030-Recording-Systems.md | DMC-AMPEL360E-EWTW-031-30 | 8–12 | PM-AMM, PM-CMM, PM-IPC |
-| 031-40 | 031-040 | Data Acquisition and Concentration | 031-040-Data-Acquisition-and-Concentration.md | DMC-AMPEL360E-EWTW-031-40 | 6–10 | PM-AMM, PM-CMM |
-| 031-50 | 031-050 | Central Warning, Caution and Advisory | 031-050-Central-Warning-Caution-and-Advisory.md | DMC-AMPEL360E-EWTW-031-50 | 10–15 | PM-AMM, PM-FRM, PM-FCOM |
-| 031-60 | 031-060 | Electronic Display and Indication Systems | 031-060-Electronic-Display-and-Indication-Systems.md | DMC-AMPEL360E-EWTW-031-60 | 12–18 | PM-AMM, PM-IPC, PM-CMM, PM-FCOM |
-| 031-70 | 031-070 | Automatic Data Reporting and ACMS | 031-070-Automatic-Data-Reporting-and-Aircraft-Condition-Monitoring.md | DMC-AMPEL360E-EWTW-031-70 | 6–10 | PM-AMM, PM-FCOM |
-| 031-80 | 031-080 | Maintenance Recording and Diagnostic Interfaces | 031-080-Maintenance-Recording-and-Diagnostic-Interfaces.md | DMC-AMPEL360E-EWTW-031-80 | 8–12 | PM-AMM, PM-FRM |
-| 031-90 | 031-090 | S1000D CSDB Mapping and Traceability | 031-090-S1000D-CSDB-Mapping-and-Traceability.md | DMC-AMPEL360E-EWTW-031-90 | 2–4 | Tech Pubs internal |
+| 031-00 | 031-000 | Indicating and Recording — General | 031-000-Indicating-and-Recording-General.md | DMC-<MODEL>-<SYSTEMDIFF>-031-00 | 4–6 | PM-AMM, PM-FCOM |
+| 031-10 | 031-010 | Flight Deck Indicating and Control Panels | 031-010-Flight-Deck-Indicating-and-Control-Panels.md | DMC-<MODEL>-<SYSTEMDIFF>-031-10 | 10–15 | PM-AMM, PM-IPC, PM-FCOM |
+| 031-20 | 031-020 | Independent and Standby Indicating Systems | 031-020-Independent-and-Standby-Indicating-Systems.md | DMC-<MODEL>-<SYSTEMDIFF>-031-20 | 6–8 | PM-AMM, PM-IPC, PM-CMM |
+| 031-30 | 031-030 | Recording Systems | 031-030-Recording-Systems.md | DMC-<MODEL>-<SYSTEMDIFF>-031-30 | 8–12 | PM-AMM, PM-CMM, PM-IPC |
+| 031-40 | 031-040 | Data Acquisition and Concentration | 031-040-Data-Acquisition-and-Concentration.md | DMC-<MODEL>-<SYSTEMDIFF>-031-40 | 6–10 | PM-AMM, PM-CMM |
+| 031-50 | 031-050 | Central Warning, Caution and Advisory | 031-050-Central-Warning-Caution-and-Advisory.md | DMC-<MODEL>-<SYSTEMDIFF>-031-50 | 10–15 | PM-AMM, PM-FRM, PM-FCOM |
+| 031-60 | 031-060 | Electronic Display and Indication Systems | 031-060-Electronic-Display-and-Indication-Systems.md | DMC-<MODEL>-<SYSTEMDIFF>-031-60 | 12–18 | PM-AMM, PM-IPC, PM-CMM, PM-FCOM |
+| 031-70 | 031-070 | Automatic Data Reporting and ACMS | 031-070-Automatic-Data-Reporting-and-Aircraft-Condition-Monitoring.md | DMC-<MODEL>-<SYSTEMDIFF>-031-70 | 6–10 | PM-AMM, PM-FCOM |
+| 031-80 | 031-080 | Maintenance Recording and Diagnostic Interfaces | 031-080-Maintenance-Recording-and-Diagnostic-Interfaces.md | DMC-<MODEL>-<SYSTEMDIFF>-031-80 | 8–12 | PM-AMM, PM-FRM |
+| 031-90 | 031-090 | S1000D CSDB Mapping and Traceability | 031-090-S1000D-CSDB-Mapping-and-Traceability.md | DMC-<MODEL>-<SYSTEMDIFF>-031-90 | 2–4 | Tech Pubs internal |
 
 ---
 
@@ -210,7 +211,7 @@ flowchart LR
     ATLAS --> SNS70[SNS 031-70 — ACMS / ACARS]
     ATLAS --> SNS80[SNS 031-80 — CMC / OMS]
     ATLAS --> SNS90[SNS 031-90 — This document]
-    SNS00 & SNS10 & SNS20 & SNS30 & SNS40 & SNS50 & SNS60 & SNS70 & SNS80 & SNS90 --> CSDB[eWTW Programme CSDB]
+    SNS00 & SNS10 & SNS20 & SNS30 & SNS40 & SNS50 & SNS60 & SNS70 & SNS80 & SNS90 --> CSDB[<PROGRAMME-SHORT> Programme CSDB]
     CSDB --> DMRL[DMRL — Data Module Reference List]
     CSDB --> PM_AMM[PM-AMM — Maintenance Manual]
     CSDB --> PM_FRM[PM-FRM — Fault Reporting Manual]
@@ -238,7 +239,7 @@ flowchart TB
     IC400 --> PM_CMM_TASK[PM-CMM Component procedures]
     IC520 --> PM_FRM_FAULT[PM-FRM Fault isolation procedures]
     IC001 --> CSDB_APP[CSDB Applicability cross-reference]
-    BREX[BREX — eWTW Business Rules] --> SNS
+    BREX[BREX — <PROGRAMME-SHORT> Business Rules] --> SNS
 ```
 
 ---
@@ -283,16 +284,16 @@ The following workflow states govern ATA 31 data modules in the CSDB from initia
 
 ## §11 BREX Applicability for ATA 31
 
-The eWTW BREX data module defines the allowed values for all controlled elements in programme DMs. For ATA 31, the following BREX constraints are particularly relevant:
+The <PROGRAMME-SHORT> BREX data module defines the allowed values for all controlled elements in programme DMs. For ATA 31, the following BREX constraints are particularly relevant:
 
 | BREX Rule ID | Element | Constraint | Rationale |
 |---|---|---|---|
 | BREX-031-001 | systemCode | Must be "031" for all ATA 31 DMs | Ensures correct SNS classification |
 | BREX-031-002 | subSystemCode | Must be one of: 00, 10, 20, 30, 40, 50, 60, 70, 80, 90 | Restricts to defined 031 subsubjects |
 | BREX-031-003 | infoCode | Allowed values: 001, 040, 300, 400, 520, 941 for ATA 31 | Limits info codes to planned publication types |
-| BREX-031-004 | language | Must be "en-US" for baseline; "es-ES" for Spanish variant | eWTW multi-language publication plan |
-| BREX-031-005 | applicability product | Must reference eWTW-100 or eWTW-100ER from the ACT | Ensures correct variant applicability |
-| BREX-031-006 | securityClassification | Must be "01" (unclassified) for all commercial eWTW DMs | Commercial aviation document — no classification |
+| BREX-031-004 | language | Must be "en-US" for baseline; "es-ES" for Spanish variant | <PROGRAMME-SHORT> multi-language publication plan |
+| BREX-031-005 | applicability product | Must reference <PROGRAMME-SHORT>-100 or <PROGRAMME-SHORT>-100ER from the ACT | Ensures correct variant applicability |
+| BREX-031-006 | securityClassification | Must be "01" (unclassified) for all commercial <PROGRAMME-SHORT> DMs | Commercial aviation document — no classification |
 | BREX-031-007 | skillLevel | Must be one of: sk-c (crew), sk-m (maintenance technician), sk-e (engineer) | Ensures appropriate audience targeting |
 
 ---
@@ -301,7 +302,7 @@ The eWTW BREX data module defines the allowed values for all controlled elements
 
 ### 12.1 PM-AMM — Aircraft Maintenance Manual
 
-The Aircraft Maintenance Manual is the primary maintenance publication for the eWTW. ATA 31 contributes the following AMM content:
+The Aircraft Maintenance Manual is the primary maintenance publication for the <PROGRAMME-SHORT>. ATA 31 contributes the following AMM content:
 - System descriptions (Info Code 040) from SNS 031-00 through 031-80
 - Maintenance procedures (Info Code 400): display removal/installation, CVFDR R&R, ISI R&R, BITE access procedures, software loading procedures
 - Troubleshooting references: cross-reference to FRM for fault isolation
@@ -335,7 +336,7 @@ The FCOM includes system descriptions for crew awareness. ATA 31 contributes des
 
 This subsubject (031-090) governs the documentation management process rather than a physical system. The "maintenance" of the SNS mapping and DMRL is performed by the Technical Publications department in the CSDB under change control. Changes to the SNS allocation table require approval from the Chief Technical Publications Manager and the System Integration lead, as SNS changes affect the structure of all deliverable publications.
 
-Any addition of a new subsubject within ATA 31 (e.g., if the eWTW introduces a novel system function not covered by the existing 031-00 through 031-80 subsubjects) requires: (1) a new ATLAS node document, (2) SNS allocation by the Technical Publications department, (3) DMRL update, (4) BREX update if new constraints apply, and (5) programme change request.
+Any addition of a new subsubject within ATA 31 (e.g., if the <PROGRAMME-SHORT> introduces a novel system function not covered by the existing 031-00 through 031-80 subsubjects) requires: (1) a new ATLAS node document, (2) SNS allocation by the Technical Publications department, (3) DMRL update, (4) BREX update if new constraints apply, and (5) programme change request.
 
 ---
 
@@ -345,9 +346,9 @@ Any addition of a new subsubject within ATA 31 (e.g., if the eWTW introduces a n
 
 | SNS Code | Subsubject | DMC Prefix | Info Codes Planned | DMRL Status |
 |---|---|---|---|---|
-| 031-90 | S1000D CSDB Mapping and Traceability | DMC-AMPEL360E-EWTW-031-90 | 040, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-90-01 | SNS Allocation Table | DMC-AMPEL360E-EWTW-031-90-01 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 031-90-02 | DMRL Planning Baseline | DMC-AMPEL360E-EWTW-031-90-02 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-90 | S1000D CSDB Mapping and Traceability | DMC-<MODEL>-<SYSTEMDIFF>-031-90 | 040, 941 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-90-01 | SNS Allocation Table | DMC-<MODEL>-<SYSTEMDIFF>-031-90-01 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 031-90-02 | DMRL Planning Baseline | DMC-<MODEL>-<SYSTEMDIFF>-031-90-02 | 040 | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 14.2 Information Code Definitions (031-90)
 
@@ -404,7 +405,7 @@ Any addition of a new subsubject within ATA 31 (e.g., if the eWTW introduces a n
 
 | Term | Acronym | Definition |
 |---|---|---|
-| Common Source DataBase | CSDB | Authoritative source repository for all S1000D technical data modules on the eWTW programme |
+| Common Source DataBase | CSDB | Authoritative source repository for all S1000D technical data modules on the <PROGRAMME-SHORT> programme |
 | Data Module | DM | Atomic unit of technical information in S1000D; identified by a unique DMC |
 | Data Module Code | DMC | Unique identifier for each DM; encodes MIC, SNS, info code, and language |
 | Data Module Reference List | DMRL | Formal register of all DMs planned for the programme; defines DM allocation and publication assignment |
@@ -418,7 +419,7 @@ Any addition of a new subsubject within ATA 31 (e.g., if the eWTW introduces a n
 | Flight Crew Operating Manual | FCOM | Crew operating reference publication |
 | Applicability Cross-Reference Table | ACT | CSDB table defining product variants and their applicability codes |
 | Instructions for Continued Airworthiness | ICA | Mandatory maintenance data required by CS-25.1529 as part of the Type Certificate |
-| Model Identification Code | MIC | Programme identifier in the DMC; for eWTW: AMPEL360E-EWTW |
+| Model Identification Code | MIC | Programme identifier in the DMC; for <PROGRAMME-SHORT>: <MODEL>-<SYSTEMDIFF> |
 
 ---
 

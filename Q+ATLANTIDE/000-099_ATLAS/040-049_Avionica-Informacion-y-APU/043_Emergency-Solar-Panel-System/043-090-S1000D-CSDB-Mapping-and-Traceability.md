@@ -25,6 +25,7 @@ orb_function_support: [ORB-DAT, ORB-PMO]
 governance_class: baseline
 version: 1.0.0
 status: active
+scope: agnostic-standard
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA iSpec 2200"
@@ -59,7 +60,7 @@ Key governance areas:
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA Chapter | ATA 43 (ATLAS 043) — Emergency Solar Panel System |
 | S1000D Issue | Issue 5.0 (target) / Issue 4.2 (fallback) |
 | CSDB Platform | TBD (Airbus-class CSDB or equivalent) |
@@ -70,15 +71,15 @@ Key governance areas:
 
 ## 3. System / Function Overview
 
-The S1000D CSDB for ESPS (ATA 043) is organised under the AMPEL360E project code (`AMPEL360E`), work package code (`EWTW`), and system code `043`. Each DM within the CSDB is identified by a unique DMC structured as:
+The S1000D CSDB for ESPS (ATA 043) is organised under the programme project code (`<MODEL>`), work package code (`<PROGRAMME-SHORT>`), and system code `043`. Each DM within the CSDB is identified by a unique DMC structured as:
 
 ```
-DMC-AMPEL360E-EWTW-043-{SNS}-00-{variant}-{info-code}-{issue}-{language}
+DMC-<MODEL>-<SYSTEMDIFF>-043-{SNS}-00-{variant}-{info-code}-{issue}-{language}
 ```
 
 For example:
 ```
-DMC-AMPEL360E-EWTW-043-00-00-00AAA-040A-A_en-US
+DMC-<MODEL>-<SYSTEMDIFF>-043-00-00-00AAA-040A-A_en-US
 ```
 
 The DMRL maps each Q+ATLANTIDE subsubject file to the recommended set of DMs covering system description (040), procedural (300/400/520/720), illustrated parts (941), fault isolation (920), and common information (C00). The Q+ATLANTIDE CSDB repository itself serves as the baseline for all DM content prior to CSDB authoring tool migration.
@@ -143,7 +144,7 @@ The Q+ATLANTIDE ATLAS 043 documentation layer (this repository) is the pre-CSDB 
 ```mermaid
 graph TD
     QATL["Q+ATLANTIDE ATLAS 043\n(Markdown source, §0–§22)"]
-    CSDB["S1000D CSDB\n(AMPEL360E-EWTW-043)"]
+    CSDB["S1000D CSDB\n(<MODEL>-<SYSTEMDIFF>-043)"]
 
     DMDesc["DM 040 — System Description\n(Descriptive)"]
     DMInsp["DM 300 — Inspection Procedure\n(Procedural)"]
@@ -258,7 +259,7 @@ graph LR
 - **DMRL Completeness Check:** Q-DATAGOV maintains a completeness tracker comparing expected DMRL entries (per §6 table) against actual CSDB DM creation status; gap reports generated monthly.
 - **Traceability Matrix Audit:** Quarterly audit of traceability matrix to verify every Q+ATLANTIDE subsubject file has a corresponding DM stub in the CSDB and no orphaned DMs exist.
 - **Schema Validation:** All DMs validated against S1000D Issue 5.0 XML schemas prior to publication; validation failures reported to authoring team.
-- **Applicability Cross-Check:** CSDB applicability model (product tree for AMPEL360E eWTW) checked against ESPS hardware configuration at each build standard release.
+- **Applicability Cross-Check:** CSDB applicability model (product tree for <PROGRAMME>) checked against ESPS hardware configuration at each build standard release.
 
 ---
 
@@ -387,8 +388,8 @@ No physical components — this is a data governance document.
 |--------|----------|---------|--------|
 | REF-043-09-01 | ESPS General (043-000) | 1.0 | TBD |
 | REF-043-09-02 | Q+ATLANTIDE template.md | 1.0 | Active |
-| REF-043-09-03 | AMPEL360E ESPS System Design Description | TBD | TBD |
-| REF-043-09-04 | AMPEL360E CSDB Project Applicability Model | TBD | TBD |
+| REF-043-09-03 | <MODEL> ESPS System Design Description | TBD | TBD |
+| REF-043-09-04 | <PROGRAMME> CSDB Project Applicability Model | TBD | TBD |
 | REF-043-09-05 | Q+ATLANTIDE ATLAS 043 README | 1.0 | Active |
 
 ---

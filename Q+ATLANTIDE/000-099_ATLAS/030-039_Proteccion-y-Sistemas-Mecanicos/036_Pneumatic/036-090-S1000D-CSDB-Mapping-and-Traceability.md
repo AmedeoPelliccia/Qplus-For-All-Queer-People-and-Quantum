@@ -6,10 +6,8 @@ subsubject: "090"
 subsubject_title: "S1000D / CSDB Mapping and Traceability"
 file_name: "036-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "036-90"
-dmc_prefix: "DMC-AMPEL360E-EWTW-036-90"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<MODEL>-<SYSTEMDIFF>-036-90"
+programme_link: "../../../../../<programme-implementation-branch>
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -43,6 +41,7 @@ orb_functions:
     link: "../../../../../ORB-Functions/ORB-LEG/"
 classification: "open-technical-scaffold"
 status: "programme-controlled-scaffold"
+scope: agnostic-standard
 revision: "0.1.0"
 created: "2026-05-10"
 updated: "2026-05-10"
@@ -85,7 +84,7 @@ keywords:
 ---
 
 # 036-090 — S1000D / CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
+### <PROGRAMME> · ATA 36 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -97,23 +96,25 @@ All internal links in this document use relative paths from the current director
 
 ## §1 Purpose
 
-This document defines the S1000D Data Module Requirement List (DMRL) and CSDB mapping for the AMPEL360e eWTW ATA 36 Pneumatic system. It traces each ATA 36 subsubject (036-00 through 036-80) to a recommended set of S1000D Data Module (DM) codes, information codes, and DM types, and documents the publication hierarchy within the AMPEL360e eWTW S1000D CSDB.
+This document defines the S1000D Data Module Requirement List (DMRL) and CSDB mapping for the <PROGRAMME> ATA 36 Pneumatic system. It traces each ATA 36 subsubject (036-00 through 036-80) to a recommended set of S1000D Data Module (DM) codes, information codes, and DM types, and documents the publication hierarchy within the <PROGRAMME> S1000D CSDB.
 
-**Key eWTW DMRL context:**
+**Key <PROGRAMME-SHORT> DMRL context:**
 - The ATA 36 DMRL is **reduced compared to a conventional bleed-air aircraft**. There are **no** bleed valve DMs, **no** overheat (OHT) sensor DMs, **no** pre-cooler DMs, **no** cross-bleed manifold DMs, and **no** APU bleed DMs.
 - If the architectural decision (OI-036-001) eliminates ATA 36 entirely, this DMRL will not be realised; instead a single informational DM noting the system's absence will be issued.
-- EAC removal/installation DMs and the ground connector DM are the primary unique DMs for eWTW ATA 36.
+- EAC removal/installation DMs and the ground connector DM are the primary unique DMs for <PROGRAMME-SHORT> ATA 36.
 
 ---
+
+> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
 
 ## §2 Applicability
 
 | Attribute | Value |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| Programme | AMPEL360e Wide Tube-and-Wing (<PROGRAMME-SHORT>) |
 | ATA Subsubject | 036-090 — S1000D / CSDB Mapping and Traceability |
 | S1000D Issue | Issue 5.0 |
-| BREX | eWTW BREX (TBD — AMPEL360e programme BREX document) |
+| BREX | <PROGRAMME-SHORT> BREX (TBD — AMPEL360e programme BREX document) |
 | DMRL status | Not-yet-frozen — all entries provisional |
 | CSDB status | Not yet populated — scaffold only |
 | ATA 36 DM set size | Reduced — no bleed valve / OHT / pre-cooler DMs |
@@ -126,7 +127,7 @@ This document defines the S1000D Data Module Requirement List (DMRL) and CSDB ma
 
 ### 3.1 ATA 36 SNS Structure
 
-The System / Subsystem / Subject (SNS) breakdown for AMPEL360e eWTW ATA 36 is:
+The System / Subsystem / Subject (SNS) breakdown for <PROGRAMME> ATA 36 is:
 
 | SNS Code | Title | ATLAS File |
 |---|---|---|
@@ -141,9 +142,9 @@ The System / Subsystem / Subject (SNS) breakdown for AMPEL360e eWTW ATA 36 is:
 | 036-80 | Pneumatic Monitoring, Diagnostics, and Control Interfaces | [036-080](./036-080-Pneumatic-Monitoring-Diagnostics-and-Control-Interfaces.md) |
 | 036-90 | S1000D / CSDB Mapping and Traceability | This document |
 
-### 3.2 Comparison: Conventional Bleed vs. eWTW Bleed-Less ATA 36 DMRL
+### 3.2 Comparison: Conventional Bleed vs. <PROGRAMME-SHORT> Bleed-Less ATA 36 DMRL
 
-| DM Subject (Conventional) | Conventional Aircraft | AMPEL360e eWTW |
+| DM Subject (Conventional) | Conventional Aircraft | <PROGRAMME> |
 |---|---|---|
 | General / Description | Yes | Yes (reduced scope) |
 | Engine LP bleed valve | Yes (many DMs) | **Not applicable — no bleed ports** |
@@ -169,14 +170,14 @@ The System / Subsystem / Subject (SNS) breakdown for AMPEL360e eWTW ATA 36 is:
 - Full DMRL for ATA 36 subsubjects 036-00 through 036-90
 - S1000D Data Module codes (planned, not yet allocated in CSDB)
 - Information code mapping per DM type (040 Descriptive, 300 Inspection, 400 Fault Isolation, 520 Remove, 720 Install)
-- Publication hierarchy: where ATA 36 DMs appear in AMPEL360e eWTW technical publications
+- Publication hierarchy: where ATA 36 DMs appear in <PROGRAMME> technical publications
 - BREX and DMRL status declarations
 - Rationale for DM types not required (bleed valve, OHT, pre-cooler, cross-bleed)
 
 ### 4.2 Excluded
 - Actual DM content (see individual ATLAS files per subsubject)
 - CSDB configuration and build rules (ATA 42 / CSDB project scope)
-- eWTW programme BREX (BREX document — TBD separate publication)
+- <PROGRAMME-SHORT> programme BREX (BREX document — TBD separate publication)
 - Other ATA chapters' S1000D mapping
 
 ---
@@ -185,25 +186,25 @@ The System / Subsystem / Subject (SNS) breakdown for AMPEL360e eWTW ATA 36 is:
 
 ### 5.1 Publication Hierarchy
 
-The AMPEL360e eWTW ATA 36 DMs appear in the following publications:
+The <PROGRAMME> ATA 36 DMs appear in the following publications:
 
 | Publication | Publication Code | ATA 36 DMs Included |
 |---|---|---|
-| Aircraft Maintenance Manual (AMM) | AMM-AMPEL360E-EWTW-036 | All 036-xx maintenance DMs (300, 520, 720) |
-| Fault Isolation Manual (FIM) | FIM-AMPEL360E-EWTW-036 | All 036-xx FI DMs (400) |
-| System Description (SD) | SD-AMPEL360E-EWTW-036 | Descriptive DMs (040) |
-| Illustrated Parts Data (IPD) | IPD-AMPEL360E-EWTW-036 | Parts data for ATA 36 components |
-| Aircraft Maintenance Planning Document (AMPD) | AMPD-AMPEL360E-EWTW | ATA 36 maintenance task intervals |
+| Aircraft Maintenance Manual (AMM) | AMM-<MODEL>-<SYSTEMDIFF>-036 | All 036-xx maintenance DMs (300, 520, 720) |
+| Fault Isolation Manual (FIM) | FIM-<MODEL>-<SYSTEMDIFF>-036 | All 036-xx FI DMs (400) |
+| System Description (SD) | SD-<MODEL>-<SYSTEMDIFF>-036 | Descriptive DMs (040) |
+| Illustrated Parts Data (IPD) | IPD-<MODEL>-<SYSTEMDIFF>-036 | Parts data for ATA 36 components |
+| Aircraft Maintenance Planning Document (AMPD) | AMPD-<MODEL>-<SYSTEMDIFF> | ATA 36 maintenance task intervals |
 
 ### 5.2 S1000D DMC Structure
 
-S1000D Data Module Codes (DMC) for eWTW ATA 36 follow the pattern:
+S1000D Data Module Codes (DMC) for <PROGRAMME-SHORT> ATA 36 follow the pattern:
 ```
-DMC-AMPEL360E-EWTW-036-{SNS}-{SubSNS}-{InfoCode}{InfoCodeVariant}-{ItemLocationCode}
+DMC-<MODEL>-<SYSTEMDIFF>-036-{SNS}-{SubSNS}-{InfoCode}{InfoCodeVariant}-{ItemLocationCode}
 ```
 
 Where:
-- `AMPEL360E-EWTW` = Model identification code (MIC) — TBD confirmation required
+- `<MODEL>-<SYSTEMDIFF>` = Model identification code (MIC) — TBD confirmation required
 - `036` = System code
 - `{SNS}` = Subsystem code (00, 10, 20 … 90)
 - `{InfoCode}` = Information code (040, 300, 400, 520, 720 etc.)
@@ -212,7 +213,7 @@ Where:
 
 ### 5.3 Applicability Annotation
 
-All ATA 36 DMs apply to the AMPEL360e eWTW variant. The Applicability Cross-Reference Table (ACRT) within the CSDB will be used to annotate DMs that are conditionally applicable (e.g., DMs for ground pneumatic connector are conditional on OI-036-005 resolution — if connector is eliminated, those DMs are voided).
+All ATA 36 DMs apply to the <PROGRAMME> variant. The Applicability Cross-Reference Table (ACRT) within the CSDB will be used to annotate DMs that are conditionally applicable (e.g., DMs for ground pneumatic connector are conditional on OI-036-005 resolution — if connector is eliminated, those DMs are voided).
 
 ---
 
@@ -222,21 +223,21 @@ All ATA 36 DMs apply to the AMPEL360e eWTW variant. The Applicability Cross-Refe
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-00-00A-040A-A | 040 | Descriptive | ATA 36 Pneumatic System — General Description (eWTW bleed-less) | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-00-00A-400A-A | 400 | Fault Isolation | ATA 36 General Fault Isolation Index | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-00-00A-040A-A | 040 | Descriptive | ATA 36 Pneumatic System — General Description (<PROGRAMME-SHORT> bleed-less) | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-00-00A-400A-A | 400 | Fault Isolation | ATA 36 General Fault Isolation Index | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.2 036-10 — Pneumatic Air Sources (EAC + Ground Connector)
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-10-00A-040A-A | 040 | Descriptive | Electric Air Compressor (EAC) — Description and Operation | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-300A-A | 300 | Inspection/Check | EAC — Operational Check (ground) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-400A-A | 400 | Fault Isolation | EAC Fault Isolation (PNEU EAC FAULT) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-520A-A | 520 | Remove | EAC — Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-720A-A | 720 | Install | EAC — Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-040B-A | 040 | Descriptive | Ground Pneumatic Connector — Description (if retained) | <img src="https://img.shields.io/badge/TBD-red"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-520B-A | 520 | Remove | Ground Pneumatic Connector Cap — Removal | <img src="https://img.shields.io/badge/TBD-red"> |
-| DMC-AMPEL360E-EWTW-036-10-00A-720B-A | 720 | Install | Ground Pneumatic Connector Cap — Installation | <img src="https://img.shields.io/badge/TBD-red"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-10-00A-040A-A | 040 | Descriptive | Electric Air Compressor (EAC) — Description and Operation | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-10-00A-300A-A | 300 | Inspection/Check | EAC — Operational Check (ground) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-10-00A-400A-A | 400 | Fault Isolation | EAC Fault Isolation (PNEU EAC FAULT) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-10-00A-520A-A | 520 | Remove | EAC — Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-10-00A-720A-A | 720 | Install | EAC — Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-10-00A-040B-A | 040 | Descriptive | Ground Pneumatic Connector — Description (if retained) | <img src="https://img.shields.io/badge/TBD-red"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-10-00A-520B-A | 520 | Remove | Ground Pneumatic Connector Cap — Removal | <img src="https://img.shields.io/badge/TBD-red"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-10-00A-720B-A | 720 | Install | Ground Pneumatic Connector Cap — Installation | <img src="https://img.shields.io/badge/TBD-red"> |
 
 > **Note (OI-036-005):** Ground connector DMs are conditional — see OI-036-005. If connector is eliminated, DMs 040B, 520B, 720B are voided.
 
@@ -244,70 +245,70 @@ All ATA 36 DMs apply to the AMPEL360e eWTW variant. The Applicability Cross-Refe
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-20-00A-040A-A | 040 | Descriptive | Pneumatic Distribution Manifold — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-20-00A-300A-A | 300 | Inspection/Check | Pneumatic Distribution — Filter and Accumulator Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-20-00A-520A-A | 520 | Remove | Pneumatic Filter Assembly — Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-20-00A-720A-A | 720 | Install | Pneumatic Filter Assembly — Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-20-00A-040A-A | 040 | Descriptive | Pneumatic Distribution Manifold — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-20-00A-300A-A | 300 | Inspection/Check | Pneumatic Distribution — Filter and Accumulator Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-20-00A-520A-A | 520 | Remove | Pneumatic Filter Assembly — Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-20-00A-720A-A | 720 | Install | Pneumatic Filter Assembly — Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.4 036-30 — Pressure Regulation and Shutoff
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-30-00A-040A-A | 040 | Descriptive | Pressure Regulating Valve (PRV) — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-30-00A-300A-A | 300 | Inspection/Check | PRV — Functional Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-30-00A-520A-A | 520 | Remove | PRV — Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-30-00A-720A-A | 720 | Install | PRV — Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-30-00A-040A-A | 040 | Descriptive | Pressure Regulating Valve (PRV) — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-30-00A-300A-A | 300 | Inspection/Check | PRV — Functional Check | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-30-00A-520A-A | 520 | Remove | PRV — Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-30-00A-720A-A | 720 | Install | PRV — Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.5 036-40 — Pneumatic Valves, Ducts, and Manifolds
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-40-00A-040A-A | 040 | Descriptive | SOV (Door Seal) — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-40-00A-040B-A | 040 | Descriptive | SOV (Water Tank) — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-40-00A-300A-A | 300 | Inspection/Check | SOV Functional Test (all branches) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-40-00A-400A-A | 400 | Fault Isolation | SOV Disagree — Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-40-00A-520A-A | 520 | Remove | SOV (Any Branch) — Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-40-00A-720A-A | 720 | Install | SOV (Any Branch) — Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-40-00A-040A-A | 040 | Descriptive | SOV (Door Seal) — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-40-00A-040B-A | 040 | Descriptive | SOV (Water Tank) — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-40-00A-300A-A | 300 | Inspection/Check | SOV Functional Test (all branches) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-40-00A-400A-A | 400 | Fault Isolation | SOV Disagree — Fault Isolation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-40-00A-520A-A | 520 | Remove | SOV (Any Branch) — Removal | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-40-00A-720A-A | 720 | Install | SOV (Any Branch) — Installation | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.6 036-50 — Leak Detection and Overheat Protection
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-50-00A-040A-A | 040 | Descriptive | Leak Detection (Pressure-Decay Method) — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-50-00A-300A-A | 300 | Inspection/Check | Pneumatic System Leak Check (Pressure Decay) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-50-00A-400A-A | 400 | Fault Isolation | PNEU LO PR — Fault Isolation (Leak or EAC) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-50-00A-040A-A | 040 | Descriptive | Leak Detection (Pressure-Decay Method) — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-50-00A-300A-A | 300 | Inspection/Check | Pneumatic System Leak Check (Pressure Decay) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-50-00A-400A-A | 400 | Fault Isolation | PNEU LO PR — Fault Isolation (Leak or EAC) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
-> **Note (OHT):** No overheat detection DMs — eWTW uses pressure-decay method only. No OHT loop, no OHT sensor R/I DMs.
+> **Note (OHT):** No overheat detection DMs — <PROGRAMME-SHORT> uses pressure-decay method only. No OHT loop, no OHT sensor R/I DMs.
 
 ### 6.7 036-60 — Pneumatic System Indication and Warning
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-60-00A-040A-A | 040 | Descriptive | Pneumatic ECAM Page and CAS Alerts — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-60-00A-400A-A | 400 | Fault Isolation | PNEU EAC FAULT / PNEU LO PR — Fault Isolation (Indication) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-60-00A-040A-A | 040 | Descriptive | Pneumatic ECAM Page and CAS Alerts — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-60-00A-400A-A | 400 | Fault Isolation | PNEU EAC FAULT / PNEU LO PR — Fault Isolation (Indication) | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.8 036-70 — Pneumatic Ground Service and Test Interfaces
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-70-00A-040A-A | 040 | Descriptive | Ground Pneumatic Service Interface — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-70-00A-300A-A | 300 | Inspection/Check | Pneumatic System Ground Service — Check and Pressurisation Test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-70-00A-520A-A | 520 | Remove | Ground Connector Dust Cap — Removal (if retained) | <img src="https://img.shields.io/badge/TBD-red"> |
-| DMC-AMPEL360E-EWTW-036-70-00A-720A-A | 720 | Install | Ground Connector Dust Cap — Installation (if retained) | <img src="https://img.shields.io/badge/TBD-red"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-70-00A-040A-A | 040 | Descriptive | Ground Pneumatic Service Interface — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-70-00A-300A-A | 300 | Inspection/Check | Pneumatic System Ground Service — Check and Pressurisation Test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-70-00A-520A-A | 520 | Remove | Ground Connector Dust Cap — Removal (if retained) | <img src="https://img.shields.io/badge/TBD-red"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-70-00A-720A-A | 720 | Install | Ground Connector Dust Cap — Installation (if retained) | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ### 6.9 036-80 — Pneumatic Monitoring, Diagnostics, and Control Interfaces
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-80-00A-040A-A | 040 | Descriptive | CMC / OMS Monitoring, BITE, and Control Interfaces — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-036-80-00A-300A-A | 300 | Inspection/Check | CMC Fault Log Readout — Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-036-80-00A-400A-A | 400 | Fault Isolation | CMC / BITE Fault Isolation — ATA 36 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-80-00A-040A-A | 040 | Descriptive | CMC / OMS Monitoring, BITE, and Control Interfaces — Description | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-80-00A-300A-A | 300 | Inspection/Check | CMC Fault Log Readout — Procedure | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-80-00A-400A-A | 400 | Fault Isolation | CMC / BITE Fault Isolation — ATA 36 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.10 036-90 — S1000D / CSDB Mapping and Traceability
 
 | DM Code (Planned) | Info Code | DM Type | Title | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-036-90-00A-040A-A | 040 | Descriptive | ATA 36 DMRL and CSDB Mapping — Description (this document) | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-036-90-00A-040A-A | 040 | Descriptive | ATA 36 DMRL and CSDB Mapping — Description (this document) | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
 
 ---
 
@@ -318,7 +319,7 @@ flowchart LR
     subgraph ATLAS["Q+ATLANTIDE ATLAS (Design-Phase Documents)"]
         A36["036_Pneumatic\n(10 ATLAS files)"]
     end
-    subgraph CSDB["AMPEL360e eWTW S1000D CSDB"]
+    subgraph CSDB["<PROGRAMME> S1000D CSDB"]
         AMM["AMM\n(300, 520, 720 DMs)"]
         FIM["FIM\n(400 DMs)"]
         SD["System Description\n(040 DMs)"]
@@ -352,7 +353,7 @@ flowchart TB
         REQ["ATA 36 System\nRequirements"] --> SNS_ALLOC
         SNS_ALLOC["SNS Breakdown\n(036-00 to 036-90)"] --> DM_TYPE_ASSIGN
         DM_TYPE_ASSIGN["Info Code Assignment\n(040, 300, 400, 520, 720)"] --> APPLICABILITY
-        APPLICABILITY["Applicability Annotation\n(eWTW conditional DMs)"] --> BREX_CHECK
+        APPLICABILITY["Applicability Annotation\n(<PROGRAMME-SHORT> conditional DMs)"] --> BREX_CHECK
         BREX_CHECK["BREX Validation\n(TBD — BREX not yet issued)"] --> CSDB_ENTRY
         CSDB_ENTRY["CSDB Population\n(TBD — DMs to be authored)"]
     end
@@ -388,8 +389,8 @@ flowchart LR
 |---|---|---|
 | Q+ATLANTIDE ATLAS files | ATA 36 system documents | ATLAS files drive DMRL content and are listed in §3 SNS table |
 | S1000D Issue 5.0 | S1000D international standard | Governs DM structure, info codes, BREX |
-| eWTW programme BREX | AMPEL360e BREX (TBD) | Programme-specific business rules for DM authoring |
-| CSDB (TBD) | AMPEL360e eWTW S1000D CSDB | Target repository for all ATA 36 DMs |
+| <PROGRAMME-SHORT> programme BREX | AMPEL360e BREX (TBD) | Programme-specific business rules for DM authoring |
+| CSDB (TBD) | <PROGRAMME> S1000D CSDB | Target repository for all ATA 36 DMs |
 | AMM, FIM, SD, IPD publications | Technical publications | Delivery vehicles for ATA 36 DMs to customers/operators |
 | DMRL freeze milestone | Programme schedule | Milestone at which DMRL is frozen for authoring to begin |
 | OI-036-001 | Architectural decision | If ATA 36 eliminated: entire DMRL is voided (one informational DM retained) |
@@ -412,7 +413,7 @@ flowchart LR
 | DMRL Health Check | Method | Notes |
 |---|---|---|
 | DM completeness vs. SNS | Compare DMRL entries to SNS table | All SNS codes must have ≥1 descriptive DM (040) |
-| BREX validation | CSDB build with eWTW BREX | Not yet available — BREX TBD |
+| BREX validation | CSDB build with <PROGRAMME-SHORT> BREX | Not yet available — BREX TBD |
 | Applicability consistency | ACRT review | Ground connector DMs conditional on OI-036-005 |
 | Status tracking | This document §6 status badges | Updated at each revision |
 
@@ -426,7 +427,7 @@ S1000D DMs for ATA 36 maintenance tasks are delivered via the AMM (300, 520, 720
 
 ## §14 S1000D / CSDB Mapping (Meta)
 
-This document is itself an S1000D scaffold DM (036-90 → DMC-AMPEL360E-EWTW-036-90-00A-040A-A). Its purpose within the CSDB is to serve as the DMRL traceability record for ATA 36, cross-referencing all other ATA 36 DMs and noting their planning status.
+This document is itself an S1000D scaffold DM (036-90 → DMC-<MODEL>-<SYSTEMDIFF>-036-90-00A-040A-A). Its purpose within the CSDB is to serve as the DMRL traceability record for ATA 36, cross-referencing all other ATA 36 DMs and noting their planning status.
 
 ---
 
@@ -435,7 +436,7 @@ This document is itself an S1000D scaffold DM (036-90 → DMC-AMPEL360E-EWTW-036
 | Item | Notes | Status |
 |---|---|---|
 | Total ATA 36 DMs (planned) | ~30–35 DMs across all info codes | <img src="https://img.shields.io/badge/TBD-red"> |
-| Comparison vs. conventional bleed | Conventional: ~80–120 ATA 36 DMs; eWTW: ~30–35 | Reduction ~60–70% |
+| Comparison vs. conventional bleed | Conventional: ~80–120 ATA 36 DMs; <PROGRAMME-SHORT>: ~30–35 | Reduction ~60–70% |
 | CSDB storage | CSDB server — TBD | <img src="https://img.shields.io/badge/TBD-red"> |
 | DMRL document location | Q+ATLANTIDE ATLAS 036-090 (this file) + CSDB | This file = design-phase record |
 
@@ -459,7 +460,7 @@ This document is itself an S1000D scaffold DM (036-90 → DMC-AMPEL360E-EWTW-036
 | DMRL completeness review | Compare to ATA 36 requirements | All requirements have ≥1 DM | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | SNS code consistency | Cross-check SNS table with CSDB | All SNS codes registered | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | BREX validation | CSDB build | Zero BREX errors | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DM code format check | Pattern match vs. eWTW DMC template | All codes conform | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DM code format check | Pattern match vs. <PROGRAMME-SHORT> DMC template | All codes conform | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | Applicability annotation check | ACRT review | Conditional DMs correctly flagged | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | Publication delivery test | CSDB build + IETP generation | DMs appear in correct publications | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
@@ -486,10 +487,10 @@ This document is itself an S1000D scaffold DM (036-90 → DMC-AMPEL360E-EWTW-036
 | IETP | Interactive Electronic Technical Publication — electronic delivery format for S1000D DMs |
 | MIC | Model Identification Code — top-level CSDB identifier for the aircraft programme |
 | VL | Virtual Link — AFDX network allocation (not a publication term; from ATA 42 interface) |
-| OHT | Overheat Sensor / Detection — NOT applicable to eWTW ATA 36 |
-| EAC | Electric Air Compressor — primary ATA 36 component on eWTW |
+| OHT | Overheat Sensor / Detection — NOT applicable to <PROGRAMME-SHORT> ATA 36 |
+| EAC | Electric Air Compressor — primary ATA 36 component on <PROGRAMME-SHORT> |
 | SOV | Shutoff Valve — consumer branch isolation valve |
-| bleed-less | No engine bleed air extraction — eWTW fundamental architecture |
+| bleed-less | No engine bleed air extraction — <PROGRAMME-SHORT> fundamental architecture |
 
 ---
 
@@ -528,8 +529,8 @@ This document is itself an S1000D scaffold DM (036-90 → DMC-AMPEL360E-EWTW-036
 | Issue ID | Description | Owner | Priority | Status |
 |---|---|---|---|---|
 | OI-036-001 | **Retain or eliminate ATA 36**: if eliminated, entire DMRL is voided — single informational DM only | Q-AIR | Critical | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-036-038 | **eWTW programme BREX**: BREX document not yet issued; DMRL cannot be fully validated until BREX is available | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-036-039 | **CSDB MIC confirmation**: "AMPEL360E-EWTW" MIC not yet registered in CSDB; DMC codes are notional until MIC is confirmed | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-036-038 | **<PROGRAMME-SHORT> programme BREX**: BREX document not yet issued; DMRL cannot be fully validated until BREX is available | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-036-039 | **CSDB MIC confirmation**: "<MODEL>-<SYSTEMDIFF>" MIC not yet registered in CSDB; DMC codes are notional until MIC is confirmed | Q-DATAGOV | High | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-040 | **DMRL freeze milestone**: milestone not yet scheduled; DM authoring cannot begin until DMRL is frozen | ORB-PMO | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-041 | **Ground connector DMs**: applicability conditional on OI-036-005 resolution — DMs 040B/520B/720B in 036-10 may be voided | Q-DATAGOV | Medium | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-036-042 | **DMRL completeness vs. final system design**: DMRL based on current architecture; will require update after all ATA 36 OIs resolved | Q-DATAGOV + Q-AIR | Medium | <img src="https://img.shields.io/badge/TBD-red"> |

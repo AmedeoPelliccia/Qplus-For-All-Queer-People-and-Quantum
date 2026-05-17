@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-12"
@@ -17,13 +18,12 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-078-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-078-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATA 78 · S1000D CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D CSDB Mapping and Traceability
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0078-090"
 
 ## §1 Purpose
 
-This document (078-090) defines the S1000D Issue 5.0 Common Source Data Base (CSDB) mapping for the AMPEL360E eWTW ATA 78 SAF and Drop-In Compatibility subsection. It provides the Data Module Code (DMC) allocation table, Data Module Requirements List (DMRL), Business Rules Exchange (BREX) reference, and the full traceability matrix linking ATLAS §7 (components), §12 (maintenance), and §14 (certification) content to the corresponding S1000D Information Codes (IC). This document is the single authoritative source for all S1000D publication planning for ATA 78.
+This document (078-090) defines the S1000D Issue 5.0 Common Source Data Base (CSDB) mapping for any programme implementing this ATLAS standard node ATA 78 SAF and Drop-In Compatibility subsection. It provides the Data Module Code (DMC) allocation table, Data Module Requirements List (DMRL), Business Rules Exchange (BREX) reference, and the full traceability matrix linking ATLAS §7 (components), §12 (maintenance), and §14 (certification) content to the corresponding S1000D Information Codes (IC). This document is the single authoritative source for all S1000D publication planning for ATA 78.
 
 ---
 
@@ -55,7 +55,7 @@ This document (078-090) defines the S1000D Issue 5.0 Common Source Data Base (CS
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA reference | ATA 78-090 — S1000D CSDB Mapping and Traceability |
 | S1000D Issue | S1000D Issue 5.0 |
 | CSDB system | ASD Common Source Data Base (CSDB) |
@@ -68,19 +68,19 @@ This document (078-090) defines the S1000D Issue 5.0 Common Source Data Base (CS
 
 ## §3 Functional Description ![DRAFT]
 
-S1000D is the international specification for technical publications for military and civil aircraft, defence products, and complex systems. The AMPEL360E eWTW uses S1000D Issue 5.0 as the basis for all Technical Publications (TP) content — Aircraft Maintenance Manual (AMM), Illustrated Parts Catalogue (IPC/IPD), Fault Isolation Manual (FIM), Wiring Diagram Manual (WDM), and Engine Shop Manual (ESM) — all authored as Data Modules (DMs) stored in the CSDB.
+S1000D is the international specification for technical publications for military and civil aircraft, defence products, and complex systems. The <PROGRAMME> uses S1000D Issue 5.0 as the basis for all Technical Publications (TP) content — Aircraft Maintenance Manual (AMM), Illustrated Parts Catalogue (IPC/IPD), Fault Isolation Manual (FIM), Wiring Diagram Manual (WDM), and Engine Shop Manual (ESM) — all authored as Data Modules (DMs) stored in the CSDB.
 
 **Data Module Code (DMC) Structure for ATA 78**:
 
-The AMPEL360E eWTW DMC schema follows the S1000D SNS chapter-section-subject numbering aligned with ATA iSpec 2200 / ATA 100. The model identification code is `AMPEL360E-EWTW`. The DMC structure is:
+The <PROGRAMME> DMC schema follows the S1000D SNS chapter-section-subject numbering aligned with ATA iSpec 2200 / ATA 100. The model identification code is `<MODEL>-<SYSTEMDIFF>`. The DMC structure is:
 
 ```
-DMC-AMPEL360E-EWTW-{SNS chapter}{SNS section}{SNS subject}-{disassembly code}-{disassembly code variant}-{info code}{info code variant}-{language code}{country code}
+DMC-<MODEL>-<SYSTEMDIFF>-{SNS chapter}{SNS section}{SNS subject}-{disassembly code}-{disassembly code variant}-{info code}{info code variant}-{language code}{country code}
 ```
 
 For ATA 78 subsection: SNS chapter = `0078`, section = `{010 to 090}`, subject = `{00 to 00}`.
 
-Example: `DMC-AMPEL360E-EWTW-0078-010-00-040D-A-AAA-EN-US` (FAMQMS 078-010 subsubject, D&O, variant A, English US).
+Example: `DMC-<MODEL>-<SYSTEMDIFF>-0078-010-00-040D-A-AAA-EN-US` (FAMQMS 078-010 subsubject, D&O, variant A, English US).
 
 **Information Codes (IC) mapped for ATA 78**:
 

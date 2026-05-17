@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-11"
@@ -17,13 +18,12 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0063-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-063-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-063-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
      ATA 63 · S1000D / CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0063-090"
 
 ## §1 Purpose
 
-ATA 63 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-063-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-063-v1` enforces: (1) all LLP DMs must cite engine TC and LLP life value; (2) HSI DMs must cite OEM-approved borescope procedure; (3) no DM may reference engine bleed air as aircraft pneumatic supply.
+ATA 63 DMRL: 36 data modules. DMC `DMC-<MODEL>-<SYSTEMDIFF>-063-{NNN}-00A-EN-US`. BREX `BREX-063-v1` enforces: (1) all LLP DMs must cite engine TC and LLP life value; (2) HSI DMs must cite OEM-approved borescope procedure; (3) no DM may reference engine bleed air as aircraft pneumatic supply.
 
 ---
 
@@ -55,7 +55,7 @@ ATA 63 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-063-{NNN}-00A-EN-US`. BREX `AM
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA reference | ATA 63-090 — S1000D / CSDB Mapping and Traceability |
 | Certification basis | EASA CS-25 Amdt 27+ |
 | S1000D SNS | 063-090-00 |
@@ -64,7 +64,7 @@ ATA 63 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-063-{NNN}-00A-EN-US`. BREX `AM
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 63 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-063-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-063-v1` enforces: (1) all LLP DMs must cite engine TC and LLP life value; (2) HSI DMs must cite OEM-approved borescope procedure; (3) no DM may reference engine bleed air as aircraft pneumatic supply.
+ATA 63 DMRL: 36 data modules. DMC `DMC-<MODEL>-<SYSTEMDIFF>-063-{NNN}-00A-EN-US`. BREX `BREX-063-v1` enforces: (1) all LLP DMs must cite engine TC and LLP life value; (2) HSI DMs must cite OEM-approved borescope procedure; (3) no DM may reference engine bleed air as aircraft pneumatic supply.
 
 ---
 
@@ -184,7 +184,7 @@ flowchart TB
 | S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
 | ATA iSpec 2200 | Chapter 63 | ATA | ATA SNS reference |
 | EASA CS-E §515 | Engine life limits | EASA | LLP TC reference requirement in DMs |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
+| <MODEL>-GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
 | DO-178C | Software Considerations | RTCA | FADEC DM software content requirements |
 
 ---
@@ -255,4 +255,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per <PROGRAMME> architecture |

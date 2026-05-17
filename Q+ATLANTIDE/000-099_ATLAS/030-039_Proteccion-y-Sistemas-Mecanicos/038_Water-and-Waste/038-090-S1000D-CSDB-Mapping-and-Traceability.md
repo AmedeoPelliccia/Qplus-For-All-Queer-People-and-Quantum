@@ -6,10 +6,8 @@ subsubject: "090"
 subsubject_title: "S1000D CSDB Mapping and Traceability"
 file_name: "038-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "038-09"
-dmc_prefix: "DMC-AMPEL360E-EWTW-038-09"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<MODEL>-<SYSTEMDIFF>-038-09"
+programme_link: "../../../../../<programme-implementation-branch>
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -45,6 +43,7 @@ orb_functions:
     link: "../../../../../ORB-Functions/ORB-LEG/"
 classification: "open-technical-scaffold"
 status: "programme-controlled-scaffold"
+scope: agnostic-standard
 revision: "0.1.0"
 created: "2026-05-10"
 updated: "2026-05-10"
@@ -93,7 +92,7 @@ keywords:
 ---
 
 # 038-090 — S1000D CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
+### <PROGRAMME> · ATA 38 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">  
 **Revision:** 0.1.0 — 2026-05-10  
@@ -103,13 +102,13 @@ keywords:
 
 ## §0 Hyperlink Policy
 
-All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-AMPEL360E-EWTW-038-NN-NNA-XXXXA-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
+All cross-references within this document use relative Markdown links anchored to section headings within the Q+ATLANTIDE ATLAS repository. External regulatory references are cited by document identifier only. Internal DMC cross-references follow the pattern `DMC-<MODEL>-<SYSTEMDIFF>-038-NN-NNA-XXXXA-A`. Where a parameter is not yet determined, the badge <img src="https://img.shields.io/badge/TBD-red"> is used inline.
 
 ---
 
 ## §1 Purpose
 
-This document defines the **S1000D CSDB Mapping and Traceability** for ATA 38 Water and Waste on the **AMPEL360e eWTW**. It provides:
+This document defines the **S1000D CSDB Mapping and Traceability** for ATA 38 Water and Waste on the **<PROGRAMME>**. It provides:
 
 1. Data Module Requirements List (DMRL): all 10 ATA 38 subsubjects × applicable info codes; estimated total DM count.
 2. Info code definitions: the S1000D info codes used for ATA 38 documentation.
@@ -120,11 +119,13 @@ This document defines the **S1000D CSDB Mapping and Traceability** for ATA 38 Wa
 
 ---
 
+> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
+
 ## §2 Applicability
 
 | Item | Value |
 |---|---|
-| Aircraft Programme | AMPEL360e eWTW |
+| Aircraft Programme | <PROGRAMME> |
 | Variant | All variants |
 | ATA Chapter/Subsubject | 038-090 — S1000D CSDB Mapping and Traceability |
 | Document Tier | Level 2 — SDD |
@@ -139,7 +140,7 @@ This document defines the **S1000D CSDB Mapping and Traceability** for ATA 38 Wa
 
 ### 3.1 S1000D Documentation Framework
 
-The AMPEL360e eWTW uses S1000D Issue TBD for all technical publications. ATA 38 documentation is structured as follows:
+The <PROGRAMME> uses S1000D Issue TBD for all technical publications. ATA 38 documentation is structured as follows:
 
 | Publication | ATA 38 Content | S1000D Pub Module |
 |---|---|---|
@@ -159,7 +160,7 @@ The AMPEL360e eWTW uses S1000D Issue TBD for all technical publications. ATA 38 
 | Sub-subsystem | ATA 38-0X0 | 038-000 to 038-090 |
 | S1000D SNS | 038-0X-00A | 038-07-10A (fill servicing) |
 
-DMC pattern: `DMC-AMPEL360E-EWTW-038-NN-NNA-XXXXA-A`
+DMC pattern: `DMC-<MODEL>-<SYSTEMDIFF>-038-NN-NNA-XXXXA-A`
 
 Where:
 - `038` = ATA chapter
@@ -219,7 +220,7 @@ ATA 38 Water and Waste
 │
 └── 038-090  S1000D CSDB Mapping ──────────► DMRL + Traceability (this document)
 
-Cross-reference: ATA 37 Vacuum → EFV boundary DMC-AMPEL360E-EWTW-037-038-00A-040A-A TBD
+Cross-reference: ATA 37 Vacuum → EFV boundary DMC-<MODEL>-<SYSTEMDIFF>-037-038-00A-040A-A TBD
 ```
 
 ---
@@ -263,102 +264,102 @@ Cross-reference: ATA 37 Vacuum → EFV boundary DMC-AMPEL360E-EWTW-037-038-00A-0
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-00-00A-040A-A | ATA 38 Water and Waste — System Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-00-00A-400A-A | ATA 38 Water and Waste — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-00-00A-810A-A | ATA 38 Water and Waste — Wiring Diagram | 810 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-00-00A-941A-A | ATA 38 DMRL and CSDB Mapping | 941 | Medium | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-00-00A-040A-A | ATA 38 Water and Waste — System Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-00-00A-400A-A | ATA 38 Water and Waste — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-00-00A-810A-A | ATA 38 Water and Waste — Wiring Diagram | 810 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-00-00A-941A-A | ATA 38 DMRL and CSDB Mapping | 941 | Medium | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
 
 #### 038-010 — Potable Water System
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-01-00A-040A-A | Potable Water System — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-01-10A-300A-A | Potable Water System — EWP Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-01-20A-300A-A | UV Steriliser Unit — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-01-00A-400A-A | Potable Water System — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-01-00A-520A-A | Potable Water System — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-01-00A-810A-A | Potable Water System — Wiring Diagram | 810 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-01-00A-040A-A | Potable Water System — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-01-10A-300A-A | Potable Water System — EWP Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-01-20A-300A-A | UV Steriliser Unit — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-01-00A-400A-A | Potable Water System — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-01-00A-520A-A | Potable Water System — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-01-00A-810A-A | Potable Water System — Wiring Diagram | 810 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 #### 038-020 — Water Storage and Distribution
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-02-00A-040A-A | Water Storage and Distribution — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-02-10A-300A-A | Water Tank — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-02-20A-300A-A | Water Distribution — Leak Check | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-02-00A-400A-A | Water Storage — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-02-00A-520A-A | Water Storage and Distribution — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-02-10A-910A-A | Water Tank — Drain and Fill Servicing | 910 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-02-00A-040A-A | Water Storage and Distribution — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-02-10A-300A-A | Water Tank — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-02-20A-300A-A | Water Distribution — Leak Check | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-02-00A-400A-A | Water Storage — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-02-00A-520A-A | Water Storage and Distribution — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-02-10A-910A-A | Water Tank — Drain and Fill Servicing | 910 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 #### 038-030 — Water Heaters and Service Interfaces
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-03-00A-040A-A | Water Heaters — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-03-10A-300A-A | EWH — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-03-20A-300A-A | TMV — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-03-00A-400A-A | Water Heaters — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-03-00A-520A-A | Water Heaters — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-03-00A-040A-A | Water Heaters — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-03-10A-300A-A | EWH — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-03-20A-300A-A | TMV — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-03-00A-400A-A | Water Heaters — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-03-00A-520A-A | Water Heaters — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 #### 038-040 — Waste Water Drainage
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-04-00A-040A-A | Waste Water Drainage — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-04-10A-300A-A | Mast Drain Nozzle — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-04-00A-400A-A | Waste Water Drainage — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-04-00A-520A-A | Waste Water Drainage — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-04-00A-040A-A | Waste Water Drainage — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-04-10A-300A-A | Mast Drain Nozzle — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-04-00A-400A-A | Waste Water Drainage — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-04-00A-520A-A | Waste Water Drainage — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 #### 038-050 — Toilet and Vacuum Waste System
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-05-00A-040A-A | Toilet and Vacuum Waste System — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-05-10A-300A-A | EFV — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-05-20A-300A-A | WIV — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-05-30A-300A-A | Waste Tank — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-05-00A-400A-A | Vacuum Waste System — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-05-00A-520A-A | Vacuum Waste System — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-05-00A-810A-A | Vacuum Waste System — Wiring Diagram | 810 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-05-00A-040A-A | Toilet and Vacuum Waste System — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-05-10A-300A-A | EFV — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-05-20A-300A-A | WIV — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-05-30A-300A-A | Waste Tank — Removal/Installation | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-05-00A-400A-A | Vacuum Waste System — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-05-00A-520A-A | Vacuum Waste System — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-05-00A-810A-A | Vacuum Waste System — Wiring Diagram | 810 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 #### 038-060 — Indication and Warning
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-06-00A-040A-A | Indication and Warning — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-06-00A-400A-A | Indication and Warning — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-06-00A-720A-A | CMC Parameter List — ATA 38 | 720 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-06-00A-810A-A | Indication and Warning — Wiring Diagram | 810 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-06-00A-040A-A | Indication and Warning — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-06-00A-400A-A | Indication and Warning — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-06-00A-720A-A | CMC Parameter List — ATA 38 | 720 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-06-00A-810A-A | Indication and Warning — Wiring Diagram | 810 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 #### 038-070 — Servicing and Ground Interfaces
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-07-00A-040A-A | Servicing and Ground Interfaces — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-07-10A-910A-A | Potable Water Fill — Servicing Procedure | 910 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-07-20A-910A-A | Waste Tank Drain — Servicing Procedure | 910 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-07-30A-300A-A | Water Quality Sample — Procedure | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-07-40A-300A-A | UV Lamp Check — Procedure | 300 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-07-00A-520A-A | Service Panel — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-07-00A-040A-A | Servicing and Ground Interfaces — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-07-10A-910A-A | Potable Water Fill — Servicing Procedure | 910 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-07-20A-910A-A | Waste Tank Drain — Servicing Procedure | 910 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-07-30A-300A-A | Water Quality Sample — Procedure | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-07-40A-300A-A | UV Lamp Check — Procedure | 300 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-07-00A-520A-A | Service Panel — Illustrated Parts Data | 520 | Medium | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 #### 038-080 — Monitoring, Diagnostics and Control Interfaces
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-08-00A-040A-A | Monitoring and Control — System Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-08-10A-040A-A | BITE — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-08-10A-300A-A | BITE Power-Up — Procedure | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-08-20A-040A-A | THC Freeze Protection — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-08-30A-300A-A | Maintenance Terminal Commands — Procedure | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-08-00A-400A-A | Monitoring System — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-038-08-40A-720A-A | CMC Parameter List — ATA 38 Monitoring | 720 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-08-00A-040A-A | Monitoring and Control — System Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-08-10A-040A-A | BITE — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-08-10A-300A-A | BITE Power-Up — Procedure | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-08-20A-040A-A | THC Freeze Protection — Description | 040 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-08-30A-300A-A | Maintenance Terminal Commands — Procedure | 300 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-08-00A-400A-A | Monitoring System — Fault Isolation | 400 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-08-40A-720A-A | CMC Parameter List — ATA 38 Monitoring | 720 | High | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 #### 038-090 — S1000D CSDB Mapping
 
 | DMC | Title | Info Code | Priority | Status |
 |---|---|---|---|---|
-| DMC-AMPEL360E-EWTW-038-09-00A-040A-A | S1000D CSDB Mapping — Description | 040 | Medium | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-038-09-00A-941A-A | ATA 38 DMRL — CSDB Administration | 941 | High | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-09-00A-040A-A | S1000D CSDB Mapping — Description | 040 | Medium | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-09-00A-941A-A | ATA 38 DMRL — CSDB Administration | 941 | High | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
 
 ---
 
@@ -501,8 +502,8 @@ This section is itself the CSDB mapping for ATA 38. The master DMRL is provided 
 
 | CSDB Administration DM | Status |
 |---|---|
-| DMC-AMPEL360E-EWTW-038-09-00A-941A-A | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
-| DMC-AMPEL360E-EWTW-038-09-00A-040A-A | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-09-00A-941A-A | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-038-09-00A-040A-A | <img src="https://img.shields.io/badge/DRAFT-yellow"> |
 
 ---
 

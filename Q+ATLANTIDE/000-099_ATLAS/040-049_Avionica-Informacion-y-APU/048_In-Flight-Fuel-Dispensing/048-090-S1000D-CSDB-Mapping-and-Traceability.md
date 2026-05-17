@@ -25,12 +25,13 @@ orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
 status: active
+scope: agnostic-standard
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 48 — In-Flight Fuel Dispensing"
 s1000d_issue: "5.0"
-brex_profile: "BREX-AMPEL360E-EWTW-048-v1.0.0"
-csdb_applicability_tag: "EWTW"
+brex_profile: "BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0"
+csdb_applicability_tag: "<PROGRAMME-SHORT>"
 dmrl_dm_count: 36
 dmrl_sns_nodes: 9
 created: "2026-05-10"
@@ -48,11 +49,11 @@ All internal cross-references use relative Markdown links within the Q+ATLANTIDE
 
 ## §1. Purpose
 
-This document defines the **S1000D Common Source DataBase (CSDB) mapping and regulatory traceability** for the ATA 48 In-Flight Fuel Dispensing (IFFD) system of the AMPEL360E eWTW aircraft. It specifies:
+This document defines the **S1000D Common Source DataBase (CSDB) mapping and regulatory traceability** for the ATA 48 In-Flight Fuel Dispensing (IFFD) system of the <PROGRAMME> aircraft. It specifies:
 1. The Data Module Requirements List (DMRL) for 36 Data Modules across 9 SNS nodes.
 2. Information Codes used within the IFFD CSDB (040 Descriptive, 520 Troubleshooting, 720 Removal/Installation, 910 Wiring).
-3. The BREX profile (BREX-AMPEL360E-EWTW-048-v1.0.0) governing IFFD data modules.
-4. Applicability coding (tag: EWTW) used across all IFFD data modules.
+3. The BREX profile (BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0) governing IFFD data modules.
+4. Applicability coding (tag: <PROGRAMME-SHORT>) used across all IFFD data modules.
 5. Regulatory traceability matrix linking CS-25, SFAR 88, and MIL-STD-1760 requirements to specific ATLAS 048 subsubjects.
 
 This document governs the authoritative data module set for IFFD technical publications (AMM, CMM, IPC, WDM) derived from Q+ATLANTIDE ATLAS 048 source data.
@@ -63,11 +64,11 @@ This document governs the authoritative data module set for IFFD technical publi
 
 | Attribute | Value |
 |-----------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA Chapter | ATA 48 — In-Flight Fuel Dispensing |
 | S1000D Issue | 5.0 |
-| BREX Profile | BREX-AMPEL360E-EWTW-048-v1.0.0 |
-| CSDB Applicability Tag | EWTW |
+| BREX Profile | BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0 |
+| CSDB Applicability Tag | <PROGRAMME-SHORT> |
 | DMRL Total Data Modules | 36 |
 | SNS Nodes Covered | 9 (048-000 through 048-080) |
 | Info Codes in Use | 040, 520, 720, 910 |
@@ -84,34 +85,34 @@ Total DMs: 9 nodes × 4 info codes = 36 Data Modules.
 
 ### §3.2 BREX Profile
 
-The BREX (Business Rules EXchange) profile `BREX-AMPEL360E-EWTW-048-v1.0.0` defines the CSDB business rules for all IFFD data modules:
-- Mandatory YAML/XML fields required in each DM (applicability tag EWTW, aircraft type AMPEL360E, ATA 48 chapter code).
+The BREX (Business Rules EXchange) profile `BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0` defines the CSDB business rules for all IFFD data modules:
+- Mandatory YAML/XML fields required in each DM (applicability tag <PROGRAMME-SHORT>, aircraft type <MODEL>, ATA 48 chapter code).
 - Permitted information codes: 040, 520, 720, 910 (no 100, 200, 300 codes per IFFD scope).
-- Applicability framework: EWTW as the single applicability tag (no variants for IFFD ATA 48 systems).
+- Applicability framework: <PROGRAMME-SHORT> as the single applicability tag (no variants for IFFD ATA 48 systems).
 - Language: English (en-US) as primary; translations to be defined by operator.
 - Graphic reference standard: SVG for schematics; PNG for photos (minimum 300 DPI).
 - Warning/Caution/Note hierarchy per S1000D Issue 5.0 §3.9.5.
-- Cross-reference DMC format: `DMC-AMPEL360E-A-048-{NNN}-{IC}-A-en-US` (see §3.4).
+- Cross-reference DMC format: `DMC-<MODEL>-<SYSTEMDIFF>-048-{NNN}-{IC}-A-en-US` (see §3.4).
 
 ### §3.3 Applicability Coding
 
 All IFFD data modules carry the applicability tag:
-- **Tag**: `EWTW`
-- **Description**: AMPEL360E eWTW all-electric wide-twin-wing aircraft
-- **Applicability filter expression**: `applic[@applicRefId='EWTW']`
-- **Scope**: All IFFD ATA 48 data modules apply to the single EWTW configuration. No variant filtering within ATA 48.
-- **Future variants** (e.g., EWTW-F freighter, EWTW-ER extended range): To be evaluated in BREX v2.0.0; new tags to be defined if required.
+- **Tag**: `<PROGRAMME-SHORT>`
+- **Description**: <PROGRAMME> all-electric wide-twin-wing aircraft
+- **Applicability filter expression**: `applic[@applicRefId='<PROGRAMME-SHORT>']`
+- **Scope**: All IFFD ATA 48 data modules apply to the single <PROGRAMME-SHORT> configuration. No variant filtering within ATA 48.
+- **Future variants** (e.g., <PROGRAMME-SHORT>- freighter, <PROGRAMME-SHORT>- extended range): To be evaluated in BREX v2.0.0; new tags to be defined if required.
 
 ### §3.4 Data Module Code Format
 
 DMC format for IFFD data modules:
 
 ```
-DMC-AMPEL360E-A-048-{NNN}-{IC}-A-en-US
+DMC-<MODEL>-<SYSTEMDIFF>-048-{NNN}-{IC}-A-en-US
 ```
 
 Where:
-- `AMPEL360E` — Model identification code
+- `<MODEL>` — Model identification code
 - `A` — System difference code
 - `048` — ATA chapter (IFFD)
 - `{NNN}` — SNS node (000, 010, 020, 030, 040, 050, 060, 070, 080)
@@ -123,7 +124,7 @@ Where:
 
 ```mermaid
 graph TD
-    ROOT["CSDB Root\nAMPEL360E-ATA48-IFFD"]
+    ROOT["CSDB Root\n<MODEL>-ATA48-IFFD"]
     ROOT --> SNS000["SNS 048-000\nGeneral (4 DMs)"]
     ROOT --> SNS010["SNS 048-010\nArchitecture and Modes (4 DMs)"]
     ROOT --> SNS020["SNS 048-020\nProbe/Drogue/Receptacle (4 DMs)"]
@@ -147,42 +148,42 @@ graph TD
 
 | SNS Node | Info Code | DMC | S1000D Type | Title | ATLAS Source |
 |---------|-----------|-----|------------|-------|-------------|
-| 048-000 | 040 | DMC-AMPEL360E-A-048-000-040-A-en-US | Descriptive | IFFD System Overview | [048-000](./048-000-In-Flight-Fuel-Dispensing-General.md) |
-| 048-000 | 520 | DMC-AMPEL360E-A-048-000-520-A-en-US | Troubleshooting | IFFD System-Level Fault Isolation | [048-000](./048-000-In-Flight-Fuel-Dispensing-General.md) |
-| 048-000 | 720 | DMC-AMPEL360E-A-048-000-720-A-en-US | Removal/Installation | IFFD System Component Access Procedures | [048-000](./048-000-In-Flight-Fuel-Dispensing-General.md) |
-| 048-000 | 910 | DMC-AMPEL360E-A-048-000-910-A-en-US | Wiring | IFFD System Wiring Diagram | [048-000](./048-000-In-Flight-Fuel-Dispensing-General.md) |
-| 048-010 | 040 | DMC-AMPEL360E-A-048-010-040-A-en-US | Descriptive | IFFD Architecture and Modes Description | [048-010](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) |
-| 048-010 | 520 | DMC-AMPEL360E-A-048-010-520-A-en-US | Troubleshooting | IFFDCU Mode Faults and Recovery | [048-010](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) |
-| 048-010 | 720 | DMC-AMPEL360E-A-048-010-720-A-en-US | Removal/Installation | IFFDCU Removal and Installation | [048-010](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) |
-| 048-010 | 910 | DMC-AMPEL360E-A-048-010-910-A-en-US | Wiring | IFFDCU Wiring Diagram | [048-010](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) |
-| 048-020 | 040 | DMC-AMPEL360E-A-048-020-040-A-en-US | Descriptive | Probe Drogue and Receptacle Description | [048-020](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) |
-| 048-020 | 520 | DMC-AMPEL360E-A-048-020-520-A-en-US | Troubleshooting | Probe Extension/Retraction Fault Isolation | [048-020](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) |
-| 048-020 | 720 | DMC-AMPEL360E-A-048-020-720-A-en-US | Removal/Installation | Probe EMA Removal and Installation | [048-020](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) |
-| 048-020 | 910 | DMC-AMPEL360E-A-048-020-910-A-en-US | Wiring | Probe Interface Wiring Diagram | [048-020](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) |
-| 048-030 | 040 | DMC-AMPEL360E-A-048-030-040-A-en-US | Descriptive | Fuel Transfer Pumps Valves and Manifolds Description | [048-030](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) |
-| 048-030 | 520 | DMC-AMPEL360E-A-048-030-520-A-en-US | Troubleshooting | EBP and Valve Fault Isolation | [048-030](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) |
-| 048-030 | 720 | DMC-AMPEL360E-A-048-030-720-A-en-US | Removal/Installation | EBP and FIV Removal and Installation | [048-030](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) |
-| 048-030 | 910 | DMC-AMPEL360E-A-048-030-910-A-en-US | Wiring | EBP and Valve Wiring Diagram | [048-030](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) |
-| 048-040 | 040 | DMC-AMPEL360E-A-048-040-040-A-en-US | Descriptive | Fuel Quantity Flow and Pressure Control Description | [048-040](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) |
-| 048-040 | 520 | DMC-AMPEL360E-A-048-040-520-A-en-US | Troubleshooting | Flow Meter and Pressure Control Fault Isolation | [048-040](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) |
-| 048-040 | 720 | DMC-AMPEL360E-A-048-040-720-A-en-US | Removal/Installation | Coriolis Flow Meter Removal and Installation | [048-040](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) |
-| 048-040 | 910 | DMC-AMPEL360E-A-048-040-910-A-en-US | Wiring | Flow/Pressure Instrumentation Wiring Diagram | [048-040](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) |
-| 048-050 | 040 | DMC-AMPEL360E-A-048-050-040-A-en-US | Descriptive | Dispensing Hose Boom and Coupling Description | [048-050](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) |
-| 048-050 | 520 | DMC-AMPEL360E-A-048-050-520-A-en-US | Troubleshooting | Hose Reel and Drogue Fault Isolation | [048-050](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) |
-| 048-050 | 720 | DMC-AMPEL360E-A-048-050-720-A-en-US | Removal/Installation | Hose Reel and Drogue Assembly Removal and Installation | [048-050](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) |
-| 048-050 | 910 | DMC-AMPEL360E-A-048-050-910-A-en-US | Wiring | Tanker Mode Hose/Boom Wiring Diagram | [048-050](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) |
-| 048-060 | 040 | DMC-AMPEL360E-A-048-060-040-A-en-US | Descriptive | IFFD Control and Indication Description | [048-060](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) |
-| 048-060 | 520 | DMC-AMPEL360E-A-048-060-520-A-en-US | Troubleshooting | IFFD ECAM and MCDU Fault Isolation | [048-060](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) |
-| 048-060 | 720 | DMC-AMPEL360E-A-048-060-720-A-en-US | Removal/Installation | IFFD Control Panel Removal and Installation | [048-060](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) |
-| 048-060 | 910 | DMC-AMPEL360E-A-048-060-910-A-en-US | Wiring | IFFD Control and Indication Wiring Diagram | [048-060](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) |
-| 048-070 | 040 | DMC-AMPEL360E-A-048-070-040-A-en-US | Descriptive | Safety Interlocks EDU and Jettison Description | [048-070](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) |
-| 048-070 | 520 | DMC-AMPEL360E-A-048-070-520-A-en-US | Troubleshooting | EDU and WOW Inhibit Fault Isolation | [048-070](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) |
-| 048-070 | 720 | DMC-AMPEL360E-A-048-070-720-A-en-US | Removal/Installation | EDU Assembly Removal and Installation (Pyrotechnic) | [048-070](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) |
-| 048-070 | 910 | DMC-AMPEL360E-A-048-070-910-A-en-US | Wiring | EDU Safety Circuit Wiring Diagram | [048-070](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) |
-| 048-080 | 040 | DMC-AMPEL360E-A-048-080-040-A-en-US | Descriptive | IFFD Monitoring Diagnostics and Control Interfaces Description | [048-080](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) |
-| 048-080 | 520 | DMC-AMPEL360E-A-048-080-520-A-en-US | Troubleshooting | PBIT/CBIT Fault Isolation and PHM Alert Isolation | [048-080](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) |
-| 048-080 | 720 | DMC-AMPEL360E-A-048-080-720-A-en-US | Removal/Installation | IFFDCU and PHM Sensor Removal and Installation | [048-080](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) |
-| 048-080 | 910 | DMC-AMPEL360E-A-048-080-910-A-en-US | Wiring | IFFD Monitoring and Diagnostics Wiring Diagram | [048-080](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) |
+| 048-000 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-000-040-A-en-US | Descriptive | IFFD System Overview | [048-000](./048-000-In-Flight-Fuel-Dispensing-General.md) |
+| 048-000 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-000-520-A-en-US | Troubleshooting | IFFD System-Level Fault Isolation | [048-000](./048-000-In-Flight-Fuel-Dispensing-General.md) |
+| 048-000 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-000-720-A-en-US | Removal/Installation | IFFD System Component Access Procedures | [048-000](./048-000-In-Flight-Fuel-Dispensing-General.md) |
+| 048-000 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-000-910-A-en-US | Wiring | IFFD System Wiring Diagram | [048-000](./048-000-In-Flight-Fuel-Dispensing-General.md) |
+| 048-010 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-010-040-A-en-US | Descriptive | IFFD Architecture and Modes Description | [048-010](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) |
+| 048-010 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-010-520-A-en-US | Troubleshooting | IFFDCU Mode Faults and Recovery | [048-010](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) |
+| 048-010 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-010-720-A-en-US | Removal/Installation | IFFDCU Removal and Installation | [048-010](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) |
+| 048-010 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-010-910-A-en-US | Wiring | IFFDCU Wiring Diagram | [048-010](./048-010-Fuel-Dispensing-Architecture-and-Modes.md) |
+| 048-020 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-020-040-A-en-US | Descriptive | Probe Drogue and Receptacle Description | [048-020](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) |
+| 048-020 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-020-520-A-en-US | Troubleshooting | Probe Extension/Retraction Fault Isolation | [048-020](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) |
+| 048-020 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-020-720-A-en-US | Removal/Installation | Probe EMA Removal and Installation | [048-020](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) |
+| 048-020 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-020-910-A-en-US | Wiring | Probe Interface Wiring Diagram | [048-020](./048-020-Refuelling-Probe-Drogue-and-Receptacle-Interfaces.md) |
+| 048-030 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-030-040-A-en-US | Descriptive | Fuel Transfer Pumps Valves and Manifolds Description | [048-030](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) |
+| 048-030 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-030-520-A-en-US | Troubleshooting | EBP and Valve Fault Isolation | [048-030](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) |
+| 048-030 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-030-720-A-en-US | Removal/Installation | EBP and FIV Removal and Installation | [048-030](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) |
+| 048-030 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-030-910-A-en-US | Wiring | EBP and Valve Wiring Diagram | [048-030](./048-030-Fuel-Transfer-Pumps-Valves-and-Manifolds.md) |
+| 048-040 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-040-040-A-en-US | Descriptive | Fuel Quantity Flow and Pressure Control Description | [048-040](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) |
+| 048-040 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-040-520-A-en-US | Troubleshooting | Flow Meter and Pressure Control Fault Isolation | [048-040](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) |
+| 048-040 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-040-720-A-en-US | Removal/Installation | Coriolis Flow Meter Removal and Installation | [048-040](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) |
+| 048-040 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-040-910-A-en-US | Wiring | Flow/Pressure Instrumentation Wiring Diagram | [048-040](./048-040-Fuel-Quantity-Flow-and-Pressure-Control.md) |
+| 048-050 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-050-040-A-en-US | Descriptive | Dispensing Hose Boom and Coupling Description | [048-050](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) |
+| 048-050 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-050-520-A-en-US | Troubleshooting | Hose Reel and Drogue Fault Isolation | [048-050](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) |
+| 048-050 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-050-720-A-en-US | Removal/Installation | Hose Reel and Drogue Assembly Removal and Installation | [048-050](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) |
+| 048-050 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-050-910-A-en-US | Wiring | Tanker Mode Hose/Boom Wiring Diagram | [048-050](./048-050-Dispensing-Hose-Boom-and-Coupling-Interfaces.md) |
+| 048-060 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-060-040-A-en-US | Descriptive | IFFD Control and Indication Description | [048-060](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) |
+| 048-060 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-060-520-A-en-US | Troubleshooting | IFFD ECAM and MCDU Fault Isolation | [048-060](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) |
+| 048-060 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-060-720-A-en-US | Removal/Installation | IFFD Control Panel Removal and Installation | [048-060](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) |
+| 048-060 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-060-910-A-en-US | Wiring | IFFD Control and Indication Wiring Diagram | [048-060](./048-060-In-Flight-Fuel-Dispensing-Control-and-Indication.md) |
+| 048-070 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-070-040-A-en-US | Descriptive | Safety Interlocks EDU and Jettison Description | [048-070](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) |
+| 048-070 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-070-520-A-en-US | Troubleshooting | EDU and WOW Inhibit Fault Isolation | [048-070](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) |
+| 048-070 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-070-720-A-en-US | Removal/Installation | EDU Assembly Removal and Installation (Pyrotechnic) | [048-070](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) |
+| 048-070 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-070-910-A-en-US | Wiring | EDU Safety Circuit Wiring Diagram | [048-070](./048-070-Safety-Interlocks-Emergency-Disconnect-and-Jettison.md) |
+| 048-080 | 040 | DMC-<MODEL>-<SYSTEMDIFF>-048-080-040-A-en-US | Descriptive | IFFD Monitoring Diagnostics and Control Interfaces Description | [048-080](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) |
+| 048-080 | 520 | DMC-<MODEL>-<SYSTEMDIFF>-048-080-520-A-en-US | Troubleshooting | PBIT/CBIT Fault Isolation and PHM Alert Isolation | [048-080](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) |
+| 048-080 | 720 | DMC-<MODEL>-<SYSTEMDIFF>-048-080-720-A-en-US | Removal/Installation | IFFDCU and PHM Sensor Removal and Installation | [048-080](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) |
+| 048-080 | 910 | DMC-<MODEL>-<SYSTEMDIFF>-048-080-910-A-en-US | Wiring | IFFD Monitoring and Diagnostics Wiring Diagram | [048-080](./048-080-IFFD-Monitoring-Diagnostics-and-Control-Interfaces.md) |
 
 ### Diagram 2: Regulatory Traceability Architecture
 
@@ -208,12 +209,12 @@ graph LR
 
 | Item | Identifier | Version | CSDB Status |
 |------|-----------|---------|------------|
-| BREX Profile | BREX-AMPEL360E-EWTW-048-v1.0.0 | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| DMRL (this document) | DMRL-AMPEL360E-ATA48-v1.0.0 | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| CSDB Applicability Tag | EWTW | — | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
+| BREX Profile | BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0 | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
+| DMRL (this document) | DMRL-<MODEL>-ATA48-v1.0.0 | 1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
+| CSDB Applicability Tag | <PROGRAMME-SHORT> | — | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
 | Info Code List (040, 520, 720, 910) | IFFD-IC-LIST-v1.0 | 1.0 | <img src="https://img.shields.io/badge/DONE-brightgreen" alt="DONE"> |
-| Common Information Repository | CIR-AMPEL360E-ATA48 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| Illustrated Parts Catalog (IPC) DMs | IPC-AMPEL360E-ATA48 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Common Information Repository | CIR-<MODEL>-ATA48 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| Illustrated Parts Catalog (IPC) DMs | IPC-<MODEL>-ATA48 | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 
 ---
 
@@ -237,7 +238,7 @@ graph LR
 | Phase | Activity | Status |
 |-------|---------|--------|
 | DMRL Baseline | Define 36 DM requirements | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
-| BREX Definition | Author BREX-AMPEL360E-EWTW-048-v1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
+| BREX Definition | Author BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0 | <img src="https://img.shields.io/badge/DRAFT-yellow" alt="DRAFT"> |
 | DM Authoring | Create all 36 DMs from ATLAS 048 sources | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | BREX Validation | Validate all 36 DMs against BREX profile | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Publication | Generate AMM/CMM/IPC/WDM output | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
@@ -247,14 +248,14 @@ graph LR
 
 | Regulation | Section | Requirement Summary | ATLAS 048 Subsubject | DMRL DM |
 |-----------|---------|-------------------|---------------------|---------|
-| CS-25 Amendment 28 | §25.975 | Fuel tank venting — no in-tank pressure exceeding design | ATLAS 048-000, 048-070 | DMC-AMPEL360E-A-048-000-040, -070-040 |
-| CS-25 Amendment 28 | §25.979 | Fuel system — pumps, valves, filters design requirements | ATLAS 048-030, 048-040 | DMC-AMPEL360E-A-048-030-040, -040-040 |
-| CS-25 Amendment 28 | §25.1309 | Equipment, systems and installations — failure probability | ATLAS 048-080 | DMC-AMPEL360E-A-048-080-040 |
-| CS-25 Amendment 28 | §25.981 | Fuel tank ignition prevention | ATLAS 048-070 | DMC-AMPEL360E-A-048-070-040 |
-| SFAR 88 | §88 | Fuel tank safety — ignition source elimination | ATLAS 048-070 | DMC-AMPEL360E-A-048-070-040, -070-520 |
-| MIL-STD-1760 E | §3.4.1 | Aircraft/store electrical interface — power/data bus | ATLAS 048-050 | DMC-AMPEL360E-A-048-050-040, -050-910 |
-| MIL-STD-1760 E | §3.4.2 | Store separation — electrical inhibit | ATLAS 048-060 | DMC-AMPEL360E-A-048-060-040 |
-| DO-178C | DAL B | IFFDCU software — PBIT/CBIT/PHM module | ATLAS 048-010, 048-080 | DMC-AMPEL360E-A-048-010-040, -080-040 |
+| CS-25 Amendment 28 | §25.975 | Fuel tank venting — no in-tank pressure exceeding design | ATLAS 048-000, 048-070 | DMC-<MODEL>-<SYSTEMDIFF>-048-000-040, -070-040 |
+| CS-25 Amendment 28 | §25.979 | Fuel system — pumps, valves, filters design requirements | ATLAS 048-030, 048-040 | DMC-<MODEL>-<SYSTEMDIFF>-048-030-040, -040-040 |
+| CS-25 Amendment 28 | §25.1309 | Equipment, systems and installations — failure probability | ATLAS 048-080 | DMC-<MODEL>-<SYSTEMDIFF>-048-080-040 |
+| CS-25 Amendment 28 | §25.981 | Fuel tank ignition prevention | ATLAS 048-070 | DMC-<MODEL>-<SYSTEMDIFF>-048-070-040 |
+| SFAR 88 | §88 | Fuel tank safety — ignition source elimination | ATLAS 048-070 | DMC-<MODEL>-<SYSTEMDIFF>-048-070-040, -070-520 |
+| MIL-STD-1760 E | §3.4.1 | Aircraft/store electrical interface — power/data bus | ATLAS 048-050 | DMC-<MODEL>-<SYSTEMDIFF>-048-050-040, -050-910 |
+| MIL-STD-1760 E | §3.4.2 | Store separation — electrical inhibit | ATLAS 048-060 | DMC-<MODEL>-<SYSTEMDIFF>-048-060-040 |
+| DO-178C | DAL B | IFFDCU software — PBIT/CBIT/PHM module | ATLAS 048-010, 048-080 | DMC-<MODEL>-<SYSTEMDIFF>-048-010-040, -080-040 |
 | DO-160G | All | Environmental qualification — temperature, vibration, EMI | All subsections | All 040 descriptive DMs |
 | ATA iSpec 2200 | ATA 48 | In-flight fuel dispensing system documentation | All subsections | All 36 DMs |
 
@@ -297,7 +298,7 @@ stateDiagram-v2
 - **EDU pyrotechnic procedures** (DM 048-070-720) require special S1000D DM handling: Hazardous Materials warnings per IATA DGR, pyrotechnic safety zone specifications, and mandatory two-person rule notation.
 - **MIL-STD-1760 interface DMs** (048-050 SNS, particularly 910 Wiring) must follow NATO STANAG 3838 wiring identification conventions in addition to ATA iSpec 2200 rules, as tanker mode interfaces are military in origin.
 - **DO-178C traceability** from ATLAS 048 documents to DM 040 (Descriptive) must include software version references for IFFDCU executable software. DM release must be linked to IFFDCU SW Part Number and CAS (Customer Acceptance Software) revision.
-- **BREX v1.0.0 scope note**: The current BREX covers single-variant EWTW aircraft. If multi-variant applicability is introduced (EWTW-F, EWTW-ER), BREX v2.0.0 will be required with expanded applicability framework.
+- **BREX v1.0.0 scope note**: The current BREX covers single-variant <PROGRAMME-SHORT> aircraft. If multi-variant applicability is introduced (<PROGRAMME-SHORT>-, <PROGRAMME-SHORT>-), BREX v2.0.0 will be required with expanded applicability framework.
 
 ---
 
@@ -316,8 +317,8 @@ stateDiagram-v2
 
 ## §11. Configuration and Software
 
-- BREX profile version: `BREX-AMPEL360E-EWTW-048-v1.0.0` — controlled under Q-DATAGOV baseline.
-- DMRL version: `DMRL-AMPEL360E-ATA48-v1.0.0` — this document constitutes the DMRL baseline.
+- BREX profile version: `BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0` — controlled under Q-DATAGOV baseline.
+- DMRL version: `DMRL-<MODEL>-ATA48-v1.0.0` — this document constitutes the DMRL baseline.
 - CSDB software: <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> (toolchain selection pending — candidate tools: Arbortext, Author-it, or CSDB-S1000D proprietary tools).
 - DM authoring standard: S1000D Issue 5.0 (XML schema version 5.0.0.2).
 - Output publication types: AMM (Maintenance Manual), CMM (Component Maintenance), IPC (Illustrated Parts Catalog), WDM (Wiring Diagram Manual).
@@ -334,7 +335,7 @@ stateDiagram-v2
 | Graphic format | SVG (schematics), PNG ≥ 300 DPI (photos) | S1000D §4.6 |
 | Language | en-US (primary) | ISO 639 |
 | DM naming convention | See §3.4 DMC format | S1000D §3.6 |
-| Applicability CIR | CIR-AMPEL360E-ATA48 (to be defined) | S1000D §3.9 |
+| Applicability CIR | CIR-<MODEL>-ATA48 (to be defined) | S1000D §3.9 |
 
 ---
 
@@ -353,7 +354,7 @@ stateDiagram-v2
 |------|--------|---------------------|--------|
 | BREX validation (all 36 DMs) | CSDB BREX validation tool | Zero BREX violations on release | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Traceability coverage review | Regulatory review workshop | 100% CS-25/SFAR88 requirements traced | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
-| DM applicability tag audit | CSDB applicability filter query | All IFFD DMs return EWTW=true | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
+| DM applicability tag audit | CSDB applicability filter query | All IFFD DMs return <PROGRAMME-SHORT>=true | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | AMM publication proof | Tech Pubs functional test | All AMM procedures executable | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | Wiring DM (910) accuracy | WDM vs actual wire list comparison | Zero wiring discrepancies | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
 | DMRL completeness audit | DMRL vs delivered DM count | 36/36 DMs delivered | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> |
@@ -376,8 +377,8 @@ stateDiagram-v2
 
 ## §16. Certification Evidence
 
-- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> DMRL-AMPEL360E-ATA48-v1.0.0 (this document, upon formal issue)
-- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> BREX-AMPEL360E-EWTW-048-v1.0.0 (BREX profile XML)
+- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> DMRL-<MODEL>-ATA48-v1.0.0 (this document, upon formal issue)
+- <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0 (BREX profile XML)
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> Regulatory Traceability Matrix — IFFD ATA 48 (CS-25/SFAR88/MIL-STD-1760 to DM map)
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> CSDB BREX Validation Report (36 DMs, zero violations)
 - <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> AMM ATA 48 Publication Proof (maintainability demonstration)
@@ -390,7 +391,7 @@ stateDiagram-v2
 |----|-------------|-------|--------|--------|
 | IFFD-090-OI-001 | Select and procure S1000D-compliant CSDB authoring tool for IFFD DM authoring | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 | IFFD-090-OI-002 | Define CIR (Common Information Repository) for IFFD-specific warnings, part numbers, and units | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
-| IFFD-090-OI-003 | Extend BREX to v2.0.0 if EWTW-F or EWTW-ER variants are approved | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
+| IFFD-090-OI-003 | Extend BREX to v2.0.0 if <PROGRAMME-SHORT>- or <PROGRAMME-SHORT>- variants are approved | Q-DATAGOV | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 | IFFD-090-OI-004 | Resolve NATO STANAG 3838 vs ATA iSpec 2200 wiring ID conflict in DM 048-050-910 | Q-AIR / ORB-LEG | <img src="https://img.shields.io/badge/TBD-red" alt="TBD"> | <img src="https://img.shields.io/badge/To_Be_Completed-orange" alt="To Be Completed"> |
 
 ---
@@ -406,7 +407,7 @@ stateDiagram-v2
 | DMC | Data Module Code — unique identifier for each S1000D data module |
 | SNS | System/Subsystem/Sub-subsystem Number Schema — hierarchical numbering used in DMRL |
 | Info Code | S1000D code classifying DM information type (040 Descriptive, 520 Troubleshoot, 720 R&I, 910 Wiring) |
-| EWTW | All-Electric Wide-Twin-Wing — AMPEL360E aircraft configuration identifier / applicability tag |
+| <PROGRAMME-SHORT> | All-Electric Wide-Twin-Wing — <MODEL> aircraft configuration identifier / applicability tag |
 | AMM | Aircraft Maintenance Manual — operator-facing maintenance publication |
 | CIR | Common Information Repository — shared S1000D resource for reusable content (warnings, parts, units) |
 
@@ -462,7 +463,7 @@ stateDiagram-v2
 | Document ID | `QATL-ATLAS-1000-ATLAS-040-049-04-048-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY` |
 | DMRL DM count | 36 |
 | DMRL SNS nodes | 9 |
-| BREX profile | BREX-AMPEL360E-EWTW-048-v1.0.0 |
+| BREX profile | BREX-<MODEL>-<SYSTEMDIFF>-048-v1.0.0 |
 | S1000D issue | 5.0 |
 | Version | 1.0.0 |
 | Status | active |
@@ -475,4 +476,4 @@ stateDiagram-v2
 
 | Version | Date | Author | Change Description |
 |---------|------|--------|--------------------|
-| 1.0.0 | 2026-05-10 | Q-DATAGOV / ATLAS Working Group | Initial baseline release — IFFD S1000D CSDB DMRL (36 DMs, 9 SNS nodes) and regulatory traceability matrix for AMPEL360E eWTW |
+| 1.0.0 | 2026-05-10 | Q-DATAGOV / ATLAS Working Group | Initial baseline release — IFFD S1000D CSDB DMRL (36 DMs, 9 SNS nodes) and regulatory traceability matrix for <PROGRAMME> |

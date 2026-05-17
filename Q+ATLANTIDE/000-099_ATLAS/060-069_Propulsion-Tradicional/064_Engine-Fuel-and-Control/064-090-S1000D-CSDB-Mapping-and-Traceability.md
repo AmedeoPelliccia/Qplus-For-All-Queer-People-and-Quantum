@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-11"
@@ -17,13 +18,12 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-064-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-064-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
      ATA 64 · S1000D / CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0064-090"
 
 ## §1 Purpose
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+ATA 64 DMRL: 36 data modules. DMC `DMC-<MODEL>-<SYSTEMDIFF>-064-{NNN}-00A-EN-US`. BREX `BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
 
 ---
 
@@ -55,7 +55,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA reference | ATA 64-090 — S1000D / CSDB Mapping and Traceability |
 | Certification basis | EASA CS-25 Amdt 27+ |
 | S1000D SNS | 064-090-00 |
@@ -64,7 +64,7 @@ ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AM
 
 ## §3 Functional Description ![DRAFT]
 
-ATA 64 DMRL: 36 data modules. DMC `AMPEL360E-EWTW-064-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
+ATA 64 DMRL: 36 data modules. DMC `DMC-<MODEL>-<SYSTEMDIFF>-064-{NNN}-00A-EN-US`. BREX `BREX-064-v1` enforces: (1) all fuel nozzle DMs must cite SAF compatibility evidence; (2) all HMU maintenance DMs must cite FADEC BITE test procedure; (3) no DM may describe bleed-air fuel heating; (4) all filter replacement DMs must cite DP alert threshold value.
 
 ---
 
@@ -184,7 +184,7 @@ flowchart TB
 | S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | Authoring standard |
 | ATA iSpec 2200 | Chapter 64 | ATA | ATA SNS reference |
 | ASTM D7566 | SAF specification | ASTM | BREX rule 1 reference standard |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
+| <MODEL>-GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow |
 | DO-178C | Software Considerations | RTCA | FADEC DM content requirements |
 
 ---
@@ -255,4 +255,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per <PROGRAMME> architecture |

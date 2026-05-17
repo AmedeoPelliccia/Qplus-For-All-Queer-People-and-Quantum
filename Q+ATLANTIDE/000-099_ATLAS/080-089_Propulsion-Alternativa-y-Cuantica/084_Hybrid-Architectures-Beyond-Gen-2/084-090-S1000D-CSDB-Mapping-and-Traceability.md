@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-GREENTECH, Q-HPC, Q-INDUSTRY, Q-STRUCTURES]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-12"
@@ -16,13 +17,12 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-084-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-080-089-08-084-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATLAS-084 (Hybrid Architectures — Beyond Gen-2) · S1000D CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D CSDB Mapping and Traceability
@@ -46,7 +46,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0084-090"
 
 ## §1 Purpose
 
-ATLAS subsubject 084-090 establishes the S1000D Data Module Requirements List (DMRL), the BREX-084-v1 rule set, the ICN (Illustration Control Number) registry, the CSDB publication milestones, and the traceability matrix mapping all ten BGHA subsubject documents to their corresponding S1000D Data Modules (DMs). It is the authoritative reference for the BGHA technical publication deliverables and governs the structure of the AMPEL360E-EWTW CSDB entries under SNS 084.
+ATLAS subsubject 084-090 establishes the S1000D Data Module Requirements List (DMRL), the BREX-084-v1 rule set, the ICN (Illustration Control Number) registry, the CSDB publication milestones, and the traceability matrix mapping all ten BGHA subsubject documents to their corresponding S1000D Data Modules (DMs). It is the authoritative reference for the BGHA technical publication deliverables and governs the structure of the programme CSDB entries under SNS 084.
 
 ---
 
@@ -54,12 +54,12 @@ ATLAS subsubject 084-090 establishes the S1000D Data Module Requirements List (D
 
 | Attribute | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA Reference | ATLAS-084 (Hybrid Architectures — Beyond Gen-2) — 084-090 S1000D/CSDB Mapping and Traceability |
 | S1000D Version | Issue 5.0 |
 | BREX | BREX-084-v1 |
 | Total DMs in DMRL | 32 |
-| DMC Pattern | `AMPEL360E-EWTW-084-{NNN}-00A-{TYPE}-EN-US` |
+| DMC Pattern | `DMC-<MODEL>-<SYSTEMDIFF>-084-{NNN}-00A-{TYPE}-EN-US` |
 | Certification Basis | S1000D Issue 5.0; BREX-084-v1; EASA CS-25 Amdt 27+ (research ref.) |
 | S1000D SNS | 084-090-00 |
 
@@ -67,9 +67,9 @@ ATLAS subsubject 084-090 establishes the S1000D Data Module Requirements List (D
 
 ## §3 Functional Description
 
-The BGHA technical documentation suite comprises **32 S1000D Data Modules (DMs)** registered in the AMPEL360E-EWTW CSDB under the SNS 084 schema. The Data Module Code (DMC) pattern is `AMPEL360E-EWTW-084-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
+The BGHA technical documentation suite comprises **32 S1000D Data Modules (DMs)** registered in the programme CSDB under the SNS 084 schema. The Data Module Code (DMC) pattern is `DMC-<MODEL>-<SYSTEMDIFF>-084-{NNN}-00A-EN-US`, where `{NNN}` is the three-digit subsubject code (000–090) and the information code suffix identifies the DM type: `-040A` for descriptive, `-100A` for procedural (task), `-300A` for inspection, and `-520A` for removal/replacement.
 
-The governing BREX document is `AMPEL360E-BREX-084-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 084:
+The governing BREX document is `BREX-084-v1`, which enforces three domain-specific constraints applicable across all DM types under SNS 084:
 
 **BREX-084-HV-01 — HVDC 800 V Pre-Access Rule:**
 All maintenance DMs of type 100 (task), 300 (inspection), and 520 (removal/replacement) that require physical access within 500 mm of any Bus-800 component, BDCC, ATRU, BTB, or HVDC cable must include the following mandatory pre-task action as the first step:
@@ -90,38 +90,38 @@ All DMs for tasks in ATEX-084-H2-01 (FCSS bay) or ATEX-084-H2-02 (LH₂ manifold
 
 | DM Number | DMC | Type | Title | ATLAS Source |
 |---|---|---|---|---|
-| DM-084-001 | AMPEL360E-EWTW-084-000-040A | Descriptive | BGHA System General Overview | 084-000 |
-| DM-084-002 | AMPEL360E-EWTW-084-000-100A | Task | BGSCU System Activation Procedure | 084-000 |
-| DM-084-003 | AMPEL360E-EWTW-084-000-300A | Inspection | BGSCU System Periodic BITE Inspection | 084-000 |
-| DM-084-004 | AMPEL360E-EWTW-084-010-040A | Descriptive | Beyond-Gen-2 Baseline and Scope | 084-010 |
-| DM-084-005 | AMPEL360E-EWTW-084-020-040A | Descriptive | Advanced Hybrid Propulsion Topology | 084-020 |
-| DM-084-006 | AMPEL360E-EWTW-084-020-300A | Inspection | Bus-800 Segment BTB Functional Check | 084-020 |
-| DM-084-007 | AMPEL360E-EWTW-084-030-040A | Descriptive | Multi-Source Energy Architecture | 084-030 |
-| DM-084-008 | AMPEL360E-EWTW-084-030-300A | Inspection | SSBP Pack SoH Capacity Check Procedure | 084-030 |
-| DM-084-009 | AMPEL360E-EWTW-084-030-300B | Inspection | SCEB ESR Measurement and Baseline Check | 084-030 |
-| DM-084-010 | AMPEL360E-EWTW-084-040-040A | Descriptive | Source Coupling and Power Conditioning Interfaces | 084-040 |
-| DM-084-011 | AMPEL360E-EWTW-084-040-100A | Task | BDCC-C (FCSS Boost) Calibration Procedure | 084-040 |
-| DM-084-012 | AMPEL360E-EWTW-084-040-300A | Inspection | BDCC Periodic Inspection and Thermal Check | 084-040 |
-| DM-084-013 | AMPEL360E-EWTW-084-040-300B | Inspection | ATRU Diode and Harmonic Inspection | 084-040 |
-| DM-084-014 | AMPEL360E-EWTW-084-040-520A | Task | BDCC-A / BDCC-B LRU Removal and Replacement | 084-040 |
-| DM-084-015 | AMPEL360E-EWTW-084-040-520B | Task | ATRU-1 / ATRU-2 LRU Removal and Replacement | 084-040 |
-| DM-084-016 | AMPEL360E-EWTW-084-050-040A | Descriptive | BGSCU Architecture and QAOA MPC Control | 084-050 |
-| DM-084-017 | AMPEL360E-EWTW-084-050-100A | Task | BGSCU Software Load Procedure | 084-050 |
-| DM-084-018 | AMPEL360E-EWTW-084-050-300A | Inspection | QPU Module Calibration and Coherence Check | 084-050 |
-| DM-084-019 | AMPEL360E-EWTW-084-050-520A | Task | BGSCU LRU Removal and Replacement | 084-050 |
-| DM-084-020 | AMPEL360E-EWTW-084-060-040A | Descriptive | Degraded Modes, Redundancy and Reconfiguration | 084-060 |
-| DM-084-021 | AMPEL360E-EWTW-084-060-100A | Task | BGHA Degraded Mode Verification — Ground Test | 084-060 |
-| DM-084-022 | AMPEL360E-EWTW-084-060-300A | Inspection | BTB Position and Isolation Resistance Check | 084-060 |
-| DM-084-023 | AMPEL360E-EWTW-084-070-040A | Descriptive | Airframe Integration, Thermal and Safety | 084-070 |
-| DM-084-024 | AMPEL360E-EWTW-084-070-100A | Task | BGHA-TML Coolant Flush and Refill Procedure | 084-070 |
-| DM-084-025 | AMPEL360E-EWTW-084-070-300A | Inspection | BGHA-TML Pump and RAHX Inspection | 084-070 |
-| DM-084-026 | AMPEL360E-EWTW-084-070-300B | Inspection | Bus-800 HV Cable and Connector Inspection (HiPot) | 084-070 |
-| DM-084-027 | AMPEL360E-EWTW-084-070-520A | Task | SSBP Pack Removal and Replacement | 084-070 |
-| DM-084-028 | AMPEL360E-EWTW-084-070-520B | Task | FCSS Assembly Removal and Replacement | 084-070 |
-| DM-084-029 | AMPEL360E-EWTW-084-080-040A | Descriptive | Monitoring, Diagnostics and Control Interfaces | 084-080 |
-| DM-084-030 | AMPEL360E-EWTW-084-080-100A | Task | BGSCU BITE Full Diagnostic Run Procedure | 084-080 |
-| DM-084-031 | AMPEL360E-EWTW-084-080-300A | Inspection | EPMS Interface Functional Check | 084-080 |
-| DM-084-032 | AMPEL360E-EWTW-084-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 084-090 |
+| DM-084-001 | DMC-<MODEL>-<SYSTEMDIFF>-084-000-040A | Descriptive | BGHA System General Overview | 084-000 |
+| DM-084-002 | DMC-<MODEL>-<SYSTEMDIFF>-084-000-100A | Task | BGSCU System Activation Procedure | 084-000 |
+| DM-084-003 | DMC-<MODEL>-<SYSTEMDIFF>-084-000-300A | Inspection | BGSCU System Periodic BITE Inspection | 084-000 |
+| DM-084-004 | DMC-<MODEL>-<SYSTEMDIFF>-084-010-040A | Descriptive | Beyond-Gen-2 Baseline and Scope | 084-010 |
+| DM-084-005 | DMC-<MODEL>-<SYSTEMDIFF>-084-020-040A | Descriptive | Advanced Hybrid Propulsion Topology | 084-020 |
+| DM-084-006 | DMC-<MODEL>-<SYSTEMDIFF>-084-020-300A | Inspection | Bus-800 Segment BTB Functional Check | 084-020 |
+| DM-084-007 | DMC-<MODEL>-<SYSTEMDIFF>-084-030-040A | Descriptive | Multi-Source Energy Architecture | 084-030 |
+| DM-084-008 | DMC-<MODEL>-<SYSTEMDIFF>-084-030-300A | Inspection | SSBP Pack SoH Capacity Check Procedure | 084-030 |
+| DM-084-009 | DMC-<MODEL>-<SYSTEMDIFF>-084-030-300B | Inspection | SCEB ESR Measurement and Baseline Check | 084-030 |
+| DM-084-010 | DMC-<MODEL>-<SYSTEMDIFF>-084-040-040A | Descriptive | Source Coupling and Power Conditioning Interfaces | 084-040 |
+| DM-084-011 | DMC-<MODEL>-<SYSTEMDIFF>-084-040-100A | Task | BDCC-C (FCSS Boost) Calibration Procedure | 084-040 |
+| DM-084-012 | DMC-<MODEL>-<SYSTEMDIFF>-084-040-300A | Inspection | BDCC Periodic Inspection and Thermal Check | 084-040 |
+| DM-084-013 | DMC-<MODEL>-<SYSTEMDIFF>-084-040-300B | Inspection | ATRU Diode and Harmonic Inspection | 084-040 |
+| DM-084-014 | DMC-<MODEL>-<SYSTEMDIFF>-084-040-520A | Task | BDCC-A / BDCC-B LRU Removal and Replacement | 084-040 |
+| DM-084-015 | DMC-<MODEL>-<SYSTEMDIFF>-084-040-520B | Task | ATRU-1 / ATRU-2 LRU Removal and Replacement | 084-040 |
+| DM-084-016 | DMC-<MODEL>-<SYSTEMDIFF>-084-050-040A | Descriptive | BGSCU Architecture and QAOA MPC Control | 084-050 |
+| DM-084-017 | DMC-<MODEL>-<SYSTEMDIFF>-084-050-100A | Task | BGSCU Software Load Procedure | 084-050 |
+| DM-084-018 | DMC-<MODEL>-<SYSTEMDIFF>-084-050-300A | Inspection | QPU Module Calibration and Coherence Check | 084-050 |
+| DM-084-019 | DMC-<MODEL>-<SYSTEMDIFF>-084-050-520A | Task | BGSCU LRU Removal and Replacement | 084-050 |
+| DM-084-020 | DMC-<MODEL>-<SYSTEMDIFF>-084-060-040A | Descriptive | Degraded Modes, Redundancy and Reconfiguration | 084-060 |
+| DM-084-021 | DMC-<MODEL>-<SYSTEMDIFF>-084-060-100A | Task | BGHA Degraded Mode Verification — Ground Test | 084-060 |
+| DM-084-022 | DMC-<MODEL>-<SYSTEMDIFF>-084-060-300A | Inspection | BTB Position and Isolation Resistance Check | 084-060 |
+| DM-084-023 | DMC-<MODEL>-<SYSTEMDIFF>-084-070-040A | Descriptive | Airframe Integration, Thermal and Safety | 084-070 |
+| DM-084-024 | DMC-<MODEL>-<SYSTEMDIFF>-084-070-100A | Task | BGHA-TML Coolant Flush and Refill Procedure | 084-070 |
+| DM-084-025 | DMC-<MODEL>-<SYSTEMDIFF>-084-070-300A | Inspection | BGHA-TML Pump and RAHX Inspection | 084-070 |
+| DM-084-026 | DMC-<MODEL>-<SYSTEMDIFF>-084-070-300B | Inspection | Bus-800 HV Cable and Connector Inspection (HiPot) | 084-070 |
+| DM-084-027 | DMC-<MODEL>-<SYSTEMDIFF>-084-070-520A | Task | SSBP Pack Removal and Replacement | 084-070 |
+| DM-084-028 | DMC-<MODEL>-<SYSTEMDIFF>-084-070-520B | Task | FCSS Assembly Removal and Replacement | 084-070 |
+| DM-084-029 | DMC-<MODEL>-<SYSTEMDIFF>-084-080-040A | Descriptive | Monitoring, Diagnostics and Control Interfaces | 084-080 |
+| DM-084-030 | DMC-<MODEL>-<SYSTEMDIFF>-084-080-100A | Task | BGSCU BITE Full Diagnostic Run Procedure | 084-080 |
+| DM-084-031 | DMC-<MODEL>-<SYSTEMDIFF>-084-080-300A | Inspection | EPMS Interface Functional Check | 084-080 |
+| DM-084-032 | DMC-<MODEL>-<SYSTEMDIFF>-084-090-040A | Descriptive | S1000D / CSDB Mapping and Traceability | 084-090 |
 
 ---
 
@@ -139,15 +139,15 @@ All DMs for tasks in ATEX-084-H2-01 (FCSS bay) or ATEX-084-H2-02 (LH₂ manifold
 
 | ICN | Content Type | Used In DM | Description |
 |---|---|---|---|
-| ICN-AMPEL360E-084-0001 | Diagram (SVG) | DM-084-001 | BGHA system top-level block diagram |
-| ICN-AMPEL360E-084-0002 | Diagram (SVG) | DM-084-005 | BGHA power topology — full bus diagram |
-| ICN-AMPEL360E-084-0003 | Diagram (SVG) | DM-084-010 | Source coupling converters — single-line diagram |
-| ICN-AMPEL360E-084-0004 | Diagram (SVG) | DM-084-016 | BGSCU mode state machine diagram |
-| ICN-AMPEL360E-084-0005 | Diagram (SVG) | DM-084-023 | BGHA-TML cooling loop schematic |
-| ICN-AMPEL360E-084-0006 | Diagram (SVG) | DM-084-029 | BGHA cockpit synoptic MFD page layout |
-| ICN-AMPEL360E-084-0007 | Warning sign (PNG) | DM-084-002, 017, 019, 026 | HVDC 800 V HV warning label (ISO 3864-2 Class B) |
-| ICN-AMPEL360E-084-0008 | Warning sign (PNG) | DM-084-024, 025, 028 | H₂ flammable gas hazard label (ATEX) |
-| ICN-AMPEL360E-084-0009 | Warning sign (PNG) | DM-084-002, 019 | Arc flash PPE label (Class 4 gloves required) |
+| ICN-084-0001 | Diagram (SVG) | DM-084-001 | BGHA system top-level block diagram |
+| ICN-084-0002 | Diagram (SVG) | DM-084-005 | BGHA power topology — full bus diagram |
+| ICN-084-0003 | Diagram (SVG) | DM-084-010 | Source coupling converters — single-line diagram |
+| ICN-084-0004 | Diagram (SVG) | DM-084-016 | BGSCU mode state machine diagram |
+| ICN-084-0005 | Diagram (SVG) | DM-084-023 | BGHA-TML cooling loop schematic |
+| ICN-084-0006 | Diagram (SVG) | DM-084-029 | BGHA cockpit synoptic MFD page layout |
+| ICN-084-0007 | Warning sign (PNG) | DM-084-002, 017, 019, 026 | HVDC 800 V HV warning label (ISO 3864-2 Class B) |
+| ICN-084-0008 | Warning sign (PNG) | DM-084-024, 025, 028 | H₂ flammable gas hazard label (ATEX) |
+| ICN-084-0009 | Warning sign (PNG) | DM-084-002, 019 | Arc flash PPE label (Class 4 gloves required) |
 
 ---
 
@@ -187,5 +187,5 @@ All DMs for tasks in ATEX-084-H2-01 (FCSS bay) or ATEX-084-H2-02 (LH₂ manifold
 |---|---|---|---|
 | OI-084-090-001 | BREX-084-v1 formal review and sign-off by Q-DATAGOV and airworthiness team | Q-DATAGOV | PDR |
 | OI-084-090-002 | ICN-084-0004 (mode state machine) — artwork pending 084-050 CDR freeze | Q-HPC | CDR |
-| OI-084-090-003 | CSDB SNS 084 namespace reservation in AMPEL360E-EWTW CSDB instance | Q-DATAGOV | PDR |
+| OI-084-090-003 | CSDB SNS 084 namespace reservation in <PROGRAMME> CSDB instance | Q-DATAGOV | PDR |
 | OI-084-090-004 | DM-084-018 (QPU calibration) — 45 min outage procedure — confirm MEL impact on CSDB task DM | Q-DATAGOV | CDR |
