@@ -450,17 +450,98 @@ This repository is organized around two primary control layers:
 | Organization layer | [`organization/`](organization/) | Governance, Q-Divisions, ORB-Functions, DEGF constitution, stakeholder model |
 | Architecture layer | [`Q+ATLANTIDE/`](Q+ATLANTIDE/) | Q+ATLANTIDE1000 architecture-band register, `000–999` |
 
+
 ## 4.1 Root Structure
+
+The repository root is organized into governance metadata, IDEALE-ESG domain axes, programme examples, the Q+ATLANTIDE architecture taxonomy, documentation assets, scripts, and project configuration files.
+
+Each IDEALE-ESG domain letter contains the same **OPT-IN framework**:
+
+- `O-Organizations`
+- `P-Programmes`
+- `T-Technologies`
+- `I-Infrastructures`
+- `N-Neural-Networks`
 
 ```text
 .
-├── README.md
-├── README_ES.md
-├── organization/
-│   ├── Q+ATLANTIDE.md
-│   ├── DEGF-Constitution-v1.0.md
-│   ├── Q-Divisions/
-│   └── ORB/
+├── .github/
+├── 00_META/
+├── IDEALE-ESG/
+│   ├── A-Aerospace/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   ├── D-Defense/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   ├── E-Energy/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   ├── E2-Economics/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   ├── E3-Environments/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   ├── G-Governance/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   ├── I-Information/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   ├── L-Logistics/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   ├── S-Social/
+│   │   ├── I-Infrastructures/
+│   │   ├── N-Neural-Networks/
+│   │   ├── O-Organizations/
+│   │   ├── P-Programmes/
+│   │   ├── T-Technologies/
+│   │   └── README.md
+│   └── README.md
+├── Programmes_example/
+│   ├── 090_AMPEL360e-Wide-Tube-and-Wing-Family/
+│   ├── 091_AMPEL360-BWB-Q100/
+│   ├── 092_AMPEL360-BWB-H2-Demonstrator/
+│   ├── 093_AMPEL360-MRTT-Q300/
+│   ├── 094_AMPEL360-City-eVTOL-UAM/
+│   ├── 095_GAIA-AIR-Sky-Cleaner-Environmental/
+│   ├── 096_AMPEL360-PLUS-Spacecraft-Q10/
+│   ├── 097_GAIA-SPACE-Quantum-Computing-and-Communication-Sats/
+│   └── README.md
 ├── Q+ATLANTIDE/
 │   ├── 000-099_ATLAS/
 │   ├── 100-199_STA/
@@ -471,39 +552,545 @@ This repository is organized around two primary control layers:
 │   ├── 600-699_OGATA/
 │   ├── 700-799_ACV/
 │   ├── 800-899_CYB/
-│   └── 900-999_QCSAA/
+│   ├── 900-999_QCSAA/
+│   ├── README.md
+│   └── template.md
 ├── docs/
-│   ├── reference/
-│   ├── compliance/
-│   └── governance/
-└── tools/
-```
+├── scripts/
+├── .gitignore
+├── AEROSPACEMODEL-model-digital-constitution.md
+├── ESSA.md
+├── README.md
+├── package.json
+└── pyproject.toml
+````
+
+### 4.1.1 IDEALE-ESG Domain Axes
+
+| Path                          | Domain                                                                                                                         |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `IDEALE-ESG/A-Aerospace/`     | Aerospace systems, aircraft, space-air interfaces, technical publications, certification, and aerospace product architectures. |
+| `IDEALE-ESG/D-Defense/`       | Defence-related architectures, restricted boundaries, dual-use constraints, security governance, and compliance interfaces.    |
+| `IDEALE-ESG/E-Energy/`        | Energy systems, propulsion, hydrogen, electrification, storage, thermal management, and regenerative infrastructure.           |
+| `IDEALE-ESG/E2-Economics/`    | Economics, industrial competitiveness, lifecycle value, cost models, programme finance, and sustainability economics.          |
+| `IDEALE-ESG/E3-Environments/` | Environmental impact, climate alignment, circularity, emissions, remediation, and ecological evidence.                         |
+| `IDEALE-ESG/G-Governance/`    | Governance models, policy, regulation, assurance, ethics, deontology, decision ledgers, and institutional controls.            |
+| `IDEALE-ESG/I-Information/`   | Information architecture, data governance, documentation systems, CSDB/IETP logic, digital ledgers, and semantic structures.   |
+| `IDEALE-ESG/L-Logistics/`     | Logistics, supply chains, operational support, maintainability, spare parts, transport flows, and lifecycle support.           |
+| `IDEALE-ESG/S-Social/`        | Social impact, inclusion, workforce, public value, accessibility, community interfaces, and human-centered governance.         |
+
+### 4.1.2 OPT-IN Structure Inside Each IDEALE-ESG Domain
+
+| Folder               | Meaning         | Controlled Scope                                                                                                              |
+| -------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `O-Organizations/`   | Organizations   | Institutional actors, ORB functions, governance bodies, partners, stakeholders, and accountability structures.                |
+| `P-Programmes/`      | Programmes      | Programme work packages, product families, demonstrators, portfolio items, lifecycle programmes, and impact studies.          |
+| `T-Technologies/`    | Technologies    | Technical systems, components, methods, engineering technologies, materials, propulsion, software, and enabling capabilities. |
+| `I-Infrastructures/` | Infrastructures | Physical, digital, operational, industrial, airport, spaceport, vertiport, maintenance, and production infrastructures.       |
+| `N-Neural-Networks/` | Neural Networks | AI/ML models, neural architectures, deterministic inference, synthetic data, validation logic, and NN governance.             |
+
+### 4.1.3 Programme Example Layer
+
+| Path                                                                          | Programme                                                  |
+| ----------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/`                 | AMPEL360e wide tube-and-wing family.                       |
+| `Programmes_example/091_AMPEL360-BWB-Q100/`                                   | AMPEL360 blended wing body Q100 aircraft.                  |
+| `Programmes_example/092_AMPEL360-BWB-H2-Demonstrator/`                        | AMPEL360 BWB hydrogen demonstrator.                        |
+| `Programmes_example/093_AMPEL360-MRTT-Q300/`                                  | AMPEL360 MRTT-Q300 tanker / transport programme.           |
+| `Programmes_example/094_AMPEL360-City-eVTOL-UAM/`                             | AMPEL360 city eVTOL / UAM programme.                       |
+| `Programmes_example/095_GAIA-AIR-Sky-Cleaner-Environmental/`                  | GAIA-AIR Sky Cleaner environmental programme.              |
+| `Programmes_example/096_AMPEL360-PLUS-Spacecraft-Q10/`                        | AMPEL360 PLUS Spacecraft Q10 programme.                    |
+| `Programmes_example/097_GAIA-SPACE-Quantum-Computing-and-Communication-Sats/` | GAIA-SPACE quantum computing and communication satellites. |
+
+### 4.1.4 Q+ATLANTIDE Architecture Bands
+
+| Path                         | Architecture Band                                                  |
+| ---------------------------- | ------------------------------------------------------------------ |
+| `Q+ATLANTIDE/000-099_ATLAS/` | ATLAS — Aircraft Top Level Architecture Schema/System.             |
+| `Q+ATLANTIDE/100-199_STA/`   | STA — Space Technology Architecture.                               |
+| `Q+ATLANTIDE/200-299_DTTA/`  | DTTA — Defence Technology and Tactical Architecture.               |
+| `Q+ATLANTIDE/300-399_DTCEC/` | DTCEC — Digital Twin, Cloud, Edge, and AI Architecture.            |
+| `Q+ATLANTIDE/400-499_EPTA/`  | EPTA — Energy and Propulsion Technology Architecture.              |
+| `Q+ATLANTIDE/500-599_AMTA/`  | AMTA — Advanced Materials, Bio, and Nano Technology Architecture.  |
+| `Q+ATLANTIDE/600-699_OGATA/` | OGATA — Operations, Ground Automation, and Transport Architecture. |
+| `Q+ATLANTIDE/700-799_ACV/`   | ACV — Aerial City and Vertiport / UAM Architecture.                |
+| `Q+ATLANTIDE/800-899_CYB/`   | CYB — Cybersecurity Architecture.                                  |
+| `Q+ATLANTIDE/900-999_QCSAA/` | QCSAA — Quantum Computing and Sentient Agency Architecture.        |
+
+### 4.1.5 Root-Level Files
+
+| File                                           | Purpose                                                  |
+| ---------------------------------------------- | -------------------------------------------------------- |
+| `.gitignore`                                   | Defines ignored files and folders for version control.   |
+| `AEROSPACEMODEL-model-digital-constitution.md` | Repository constitution and controlled governance basis. |
+| `ESSA.md`                                      | Controlled ESSA framework document.                      |
+| `README.md`                                    | Main repository landing page.                            |
+| `package.json`                                 | Node.js project metadata and scripts.                    |
+| `pyproject.toml`                               | Python project configuration and tooling metadata.       |
+
 
 ## 4.2 Folder Naming Pattern
 
+The repository uses a controlled, deterministic folder naming pattern. Folder names shall be readable by humans, sortable by machines, and traceable to the applicable taxonomy, programme, lifecycle, or publication structure.
+
+Folder names are not only labels. They act as persistent classification anchors.
+
 ```text
-Q+ATLANTIDE/<MASTER-RANGE>_<ARCHITECTURE-CODE>/
+Folder name = classification + scope + traceability anchor
+````
+
+---
+
+### 4.2.1 General Naming Rule
+
+Controlled folders shall use one of the following patterns:
+
+```text
+<CODE>_<Controlled-English-or-Spanish-Title>
+```
+
+or, where the prefix is a framework axis letter:
+
+```text
+<AXIS-CODE>-<Controlled-Axis-Title>
+```
+
+For Markdown files inside a controlled node:
+
+```text
+<node>-<item>-<Controlled-Title>.md
+```
+
+Folder and file names shall use:
+
+```text
+Pascal-Case-or-Title-Case-With-Hyphens
+```
+
+Do not use spaces.
+
+Correct:
+
+```text
+Hybrid-Electric-Architecture-Overview
+Traceability-Evidence-and-Lifecycle-Governance
+O-Organizations
+P-Programmes
+T-Technologies
+I-Infrastructures
+N-Neural-Networks
+```
+
+Incorrect:
+
+```text
+Hybrid Electric Architecture Overview
+traceability evidence lifecycle governance
+new folder
+misc
+```
+
+---
+
+### 4.2.2 Root-Level Folder Pattern
+
+Root-level folders use either governance names, framework names, or conventional project names.
+
+```text
+.github/
+00_META/
+IDEALE-ESG/
+Programmes_example/
+Q+ATLANTIDE/
+docs/
+scripts/
+```
+
+| Pattern              | Example               | Meaning                                 |
+| -------------------- | --------------------- | --------------------------------------- |
+| `.<tool-name>/`      | `.github/`            | Platform or tool configuration.         |
+| `NN_NAME/`           | `00_META/`            | Numbered metadata or governance folder. |
+| `FRAMEWORK-NAME/`    | `IDEALE-ESG/`         | Controlled framework folder.            |
+| `Framework_example/` | `Programmes_example/` | Example programme implementation layer. |
+| `lowercase/`         | `docs/`, `scripts/`   | Conventional technical project folders. |
+
+---
+
+### 4.2.3 IDEALE-ESG Domain Folder Pattern
+
+Each IDEALE-ESG domain folder uses a controlled domain code followed by the domain name.
+
+```text
+<DOMAIN-CODE>-<Domain-Name>/
 ```
 
 Examples:
 
 ```text
-Q+ATLANTIDE/000-099_ATLAS/
-Q+ATLANTIDE/100-199_STA/
-Q+ATLANTIDE/800-899_CYB/
-Q+ATLANTIDE/900-999_QCSAA/
+A-Aerospace/
+D-Defense/
+E-Energy/
+E2-Economics/
+E3-Environments/
+G-Governance/
+I-Information/
+L-Logistics/
+S-Social/
 ```
 
-## 4.3 Deep Node Naming Pattern
+Canonical structure:
 
 ```text
-<ARCHITECTURE>-<CODE-RANGE>-SEC<SECTION>-SUBJ<SUBJECT>-SUBSEC<SUBSECTION>-SUBSUBJ<SUBSUBJECT>
+IDEALE-ESG/
+├── A-Aerospace/
+├── D-Defense/
+├── E-Energy/
+├── E2-Economics/
+├── E3-Environments/
+├── G-Governance/
+├── I-Information/
+├── L-Logistics/
+├── S-Social/
+└── README.md
+```
+
+---
+
+### 4.2.4 OPT-IN Folder Pattern Inside Each IDEALE-ESG Domain
+
+Each IDEALE-ESG domain letter shall contain the same OPT-IN framework structure:
+
+```text
+<OPT-IN-CODE>-<Controlled-Axis-Title>/
+```
+
+Canonical OPT-IN folders:
+
+```text
+O-Organizations/
+P-Programmes/
+T-Technologies/
+I-Infrastructures/
+N-Neural-Networks/
+```
+
+Canonical structure inside each IDEALE-ESG domain:
+
+```text
+IDEALE-ESG/
+└── <DOMAIN-CODE>-<Domain-Name>/
+    ├── O-Organizations/
+    ├── P-Programmes/
+    ├── T-Technologies/
+    ├── I-Infrastructures/
+    ├── N-Neural-Networks/
+    └── README.md
 ```
 
 Example:
 
 ```text
-ATLAS-000-009-SEC00-SUBJ00-SUBSEC10-SUBSUBJ00
+IDEALE-ESG/
+└── A-Aerospace/
+    ├── O-Organizations/
+    ├── P-Programmes/
+    ├── T-Technologies/
+    ├── I-Infrastructures/
+    ├── N-Neural-Networks/
+    └── README.md
+```
+
+| Folder               | Meaning         | Controlled Scope                                                                                              |
+| -------------------- | --------------- | ------------------------------------------------------------------------------------------------------------- |
+| `O-Organizations/`   | Organizations   | Institutions, partners, ORB functions, stakeholders, governance bodies, accountability structures.            |
+| `P-Programmes/`      | Programmes      | Programme work packages, product families, demonstrators, lifecycle programmes, impact studies.               |
+| `T-Technologies/`    | Technologies    | Technical systems, components, methods, materials, propulsion, software, enabling capabilities.               |
+| `I-Infrastructures/` | Infrastructures | Physical, digital, industrial, airport, spaceport, vertiport, production, and maintenance infrastructures.    |
+| `N-Neural-Networks/` | Neural Networks | AI/ML models, deterministic inference, synthetic data, validation logic, neural architectures, NN governance. |
+
+---
+
+### 4.2.5 Q+ATLANTIDE Architecture Folder Pattern
+
+Q+ATLANTIDE architecture folders shall follow the controlled hierarchy:
+
+```text
+Q+ATLANTIDE/
+└── <master-range>_<Architecture-Band>/
+    └── <code-range>_<Controlled-Code-Range-Title>/
+        └── <node>_<Controlled-Node-Title>/
+            ├── README.md
+            ├── <node>-000-Overview.md
+            ├── <node>-001-Scope-and-Definitions.md
+            └── ...
+```
+
+Example:
+
+```text
+Q+ATLANTIDE/
+└── 000-099_ATLAS/
+    └── 070-079_Propulsion-Eco-Tech-e-Hibrido-Electrica/
+        └── 070_Hybrid-Electric-Architecture-Overview/
+            ├── README.md
+            ├── 070-000-Overview.md
+            ├── 070-001-Scope-and-Definitions.md
+            └── 070-009-Traceability-Evidence-and-Lifecycle-Governance.md
+```
+
+Architecture band pattern:
+
+```text
+<NNN-NNN>_<BAND-ACRONYM>/
+```
+
+Examples:
+
+```text
+000-099_ATLAS/
+100-199_STA/
+200-299_DTTA/
+300-399_DTCEC/
+400-499_EPTA/
+500-599_AMTA/
+600-699_OGATA/
+700-799_ACV/
+800-899_CYB/
+900-999_QCSAA/
+```
+
+---
+
+### 4.2.6 Programme Example Folder Pattern
+
+Programme examples shall use the programme slot and canonical programme name.
+
+```text
+Programmes_example/
+└── <programme-slot>_<Programme-Name>/
+```
+
+Example:
+
+```text
+Programmes_example/
+└── 090_AMPEL360e-Wide-Tube-and-Wing-Family/
+```
+
+Canonical programme examples:
+
+```text
+Programmes_example/
+├── 090_AMPEL360e-Wide-Tube-and-Wing-Family/
+├── 091_AMPEL360-BWB-Q100/
+├── 092_AMPEL360-BWB-H2-Demonstrator/
+├── 093_AMPEL360-MRTT-Q300/
+├── 094_AMPEL360-City-eVTOL-UAM/
+├── 095_GAIA-AIR-Sky-Cleaner-Environmental/
+├── 096_AMPEL360-PLUS-Spacecraft-Q10/
+├── 097_GAIA-SPACE-Quantum-Computing-and-Communication-Sats/
+└── README.md
+```
+
+For Q+ATLANTIDE impact studies:
+
+```text
+Programmes_example/
+└── <programme-slot>_<Programme-Name>/
+    └── Q+ATLANTIDE_impact-study/
+        └── <master-range>-impact-analysis/
+            └── <code-range>_<Controlled-Code-Range-Title>/
+```
+
+Example:
+
+```text
+Programmes_example/
+└── 090_AMPEL360e-Wide-Tube-and-Wing-Family/
+    └── Q+ATLANTIDE_impact-study/
+        └── 000-099_ATLAS-impact-analysis/
+            └── 070-079_Propulsion-Eco-Tech-e-Hibrido-Electrica/
+```
+
+---
+
+### 4.2.7 S1000D-CSDB Folder Pattern
+
+Within a programme impact study, S1000D material shall be located under:
+
+```text
+S1000D-CSDB/
+└── DMC/
+    └── DMC-<MODEL>-<SYSTEMDIFF>-<SYSTEM>-<ASSY>/
+        └── <DISASSY><VARIANT>_<Controlled-Topic-Title>/
+            └── <INFOCODE>_<Controlled-Info-Category>/
+```
+
+Example:
+
+```text
+S1000D-CSDB/
+└── DMC/
+    └── DMC-AMPEL360E-EWTW-070-000/
+        └── 00A_Hybrid-Electric-Architecture-Overview/
+            ├── 040_descriptive/
+            ├── 100_operation/
+            ├── 300_examinations-tests-and-checks/
+            ├── 400_fault-reports-and-isolation-procedures/
+            ├── 500_disconnect-remove-and-disassembly-procedures/
+            ├── 700_assemble-install-and-connect-procedures/
+            ├── 900_data-module-management/
+            ├── 940_provisioning-data/
+            └── 941_illustrated-parts-data/
+```
+
+---
+
+### 4.2.8 S1000D XML File Naming Pattern
+
+XML files shall use the full DMC plus controlled title.
+
+```text
+DMC-<MODEL>-<SYSTEMDIFF>-<SYSTEM>-<ASSY>-<DISASSY><DISASSYVAR>-<INFOCODE><INFOCODEVAR>-<ITEMLOC>_<Controlled-Info-Title>.xml
+```
+
+Example:
+
+```text
+DMC-AMPEL360E-EWTW-070-000-00A-040A-D_System-Description.xml
+```
+
+Canonical XML mapping:
+
+```xml
+<dmCode
+  modelIdentCode="AMPEL360E"
+  systemDiffCode="EWTW"
+  systemCode="070"
+  subSystemCode="0"
+  subSubSystemCode="0"
+  assyCode="00"
+  disassyCode="00"
+  disassyCodeVariant="A"
+  infoCode="040"
+  infoCodeVariant="A"
+  itemLocationCode="D"/>
+```
+
+---
+
+### 4.2.9 Info-Code Folder Set
+
+For each maintained DMC branch, use the following controlled info-code folders when applicable:
+
+```text
+040_descriptive/
+100_operation/
+300_examinations-tests-and-checks/
+400_fault-reports-and-isolation-procedures/
+500_disconnect-remove-and-disassembly-procedures/
+700_assemble-install-and-connect-procedures/
+900_data-module-management/
+940_provisioning-data/
+941_illustrated-parts-data/
+C00_computer-systems-software-and-data/
+```
+
+Use:
+
+```text
+C00_computer-systems-software-and-data/
+```
+
+only when the DMC node includes software, data, parameters, BITE, diagnostic logic, control-law configuration, or computer-system content.
+
+---
+
+### 4.2.10 Prohibited Naming Patterns
+
+Do not use uncontrolled or ambiguous names:
+
+```text
+sub-range
+misc
+general-stuff
+new-folder
+test-folder
+AAA
+TBD-folder
+untitled
+copy
+final-final
+```
+
+Do not use spaces:
+
+```text
+Hybrid Operating Modes
+```
+
+Use:
+
+```text
+Hybrid-Operating-Modes
+```
+
+Do not mix free numbering with controlled DMC numbering.
+
+Incorrect:
+
+```text
+04A_Control/040_System.xml
+```
+
+Correct:
+
+```text
+04A_Hybrid-Propulsion-Control-and-Mode-Management/040_descriptive/
+DMC-AMPEL360E-EWTW-070-000-04A-040A-D_System-Description.xml
+```
+
+---
+
+### 4.2.11 Controlled Pattern Summary
+
+```text
+ROOT/
+.github/
+00_META/
+IDEALE-ESG/
+Programmes_example/
+Q+ATLANTIDE/
+docs/
+scripts/
+
+IDEALE-ESG/
+<domain-code>-<domain-name>/
+O-Organizations/
+P-Programmes/
+T-Technologies/
+I-Infrastructures/
+N-Neural-Networks/
+
+Q+ATLANTIDE/
+<master-range>_<architecture-band>/
+<code-range>_<code-range-title>/
+<node>_<node-title>/
+<node>-<item>-<topic>.md
+
+Programmes_example/
+<programme-slot>_<programme-name>/
+Q+ATLANTIDE_impact-study/
+<master-range>-impact-analysis/
+<code-range>_<code-range-title>/
+
+S1000D-CSDB/
+DMC/
+DMC-<model>-<systemdiff>-<system>-<assy>/
+<disassy><variant>_<topic>/
+<infocode>_<info-category>/
+
+DMC-<model>-<systemdiff>-<system>-<assy>-<disassy><variant>-<infocode><variant>-<itemloc>_<title>.xml
 ```
 
 ---
