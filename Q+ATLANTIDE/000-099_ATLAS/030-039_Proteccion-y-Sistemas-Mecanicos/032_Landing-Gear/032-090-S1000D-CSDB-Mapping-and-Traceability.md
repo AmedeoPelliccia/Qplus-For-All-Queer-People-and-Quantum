@@ -6,10 +6,8 @@ subsubject: "090"
 subsubject_title: "S1000D CSDB Mapping and Traceability"
 file_name: "032-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "032-90"
-dmc_prefix: "DMC-AMPEL360E-EWTW-032-90"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "eWTW"
+dmc_prefix: "DMC-<MODEL>-<SYSTEMDIFF>-032-90"
+programme_link: "../../../../../<programme-implementation-branch>
 register: "Q+ATLANTIDE"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "000-099_ATLAS"
@@ -43,6 +41,7 @@ orb_functions:
     link: "../../../../../ORB-Functions/ORB-LEG/"
 classification: "open-technical-scaffold"
 status: "programme-controlled-scaffold"
+scope: agnostic-standard
 revision: "0.1.0"
 created: "2026-05-09"
 updated: "2026-05-09"
@@ -78,8 +77,8 @@ traceability:
   atlas_node_link: "./"
   parent_branch: "030-039_Proteccion-y-Sistemas-Mecanicos"
   parent_branch_link: "../../"
-  programme_path: "Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family"
-  programme_path_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
+  programme_path: "<programme-implementation-branch>
+  programme_path_link: "../../../../../<programme-implementation-branch>
   csdb_path: "TBD"
   csdb_path_link: "TBD"
   evidence_status: "draft"
@@ -106,7 +105,7 @@ keywords:
 ---
 
 # 032-090 — S1000D CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
+### <PROGRAMME> · ATA 32 · Q+ATLANTIDE ATLAS Scaffold
 
 ---
 
@@ -118,24 +117,26 @@ All internal links use relative paths. External regulatory references use anchor
 
 ## §1 Purpose
 
-This document defines the S1000D Common Source Database (CSDB) structure, SNS-to-DMC mapping, Information Code assignment, Data Module Requirements List (DMRL) planning, Business Rules Exchange (BREX) applicability, and publication module hierarchy for the AMPEL360e eWTW ATA 32 Landing Gear chapter. It serves as the master traceability index linking each ATA 32 subsubject (032-00 through 032-90) to its planned S1000D Data Module Code (DMC) set and to the source documentation in Q+ATLANTIDE ATLAS.
+This document defines the S1000D Common Source Database (CSDB) structure, SNS-to-DMC mapping, Information Code assignment, Data Module Requirements List (DMRL) planning, Business Rules Exchange (BREX) applicability, and publication module hierarchy for the <PROGRAMME> ATA 32 Landing Gear chapter. It serves as the master traceability index linking each ATA 32 subsubject (032-00 through 032-90) to its planned S1000D Data Module Code (DMC) set and to the source documentation in Q+ATLANTIDE ATLAS.
 
-S1000D documentation for the AMPEL360e eWTW programme will be produced in the AMPEL360e CSDB, which is planned as a shared repository for all chapters. ATA 32 landing gear is allocated the SNS prefix 032. Within S1000D, the SNS (System/Subsystem/Sub-subassembly Numbering System) replaces the ATA chapter/section/subsection numbering for DMC construction. The mapping between ATA 32 subsubjects and S1000D SNS codes is defined in this document.
+S1000D documentation for the <PROGRAMME> programme will be produced in the AMPEL360e CSDB, which is planned as a shared repository for all chapters. ATA 32 landing gear is allocated the SNS prefix 032. Within S1000D, the SNS (System/Subsystem/Sub-subassembly Numbering System) replaces the ATA chapter/section/subsection numbering for DMC construction. The mapping between ATA 32 subsubjects and S1000D SNS codes is defined in this document.
 
 The DMRL for ATA 32 is not yet frozen. Data Module set sizes estimated in this document are preliminary and subject to revision at the DMRL Freeze milestone (TBD). Information Code selection follows S1000D Issue 4.2 (or the issue confirmed by the programme BREX — TBD).
 
 ---
 
+> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
+
 ## §2 Applicability
 
 | Attribute | Value |
 |---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing (eWTW) |
+| Programme | AMPEL360e Wide Tube-and-Wing (<PROGRAMME-SHORT>) |
 | ATA Chapter | ATA 32 — Landing Gear |
 | S1000D Issue | Issue 4.2 (or as confirmed by AMPEL360e BREX — TBD) |
 | CSDB | AMPEL360e CSDB (TBD — location and management organisation) |
 | SNS Prefix | 032 |
-| DMC Model Identifier | AMPEL360E-EWTW |
+| DMC Model Identifier | <MODEL>-<SYSTEMDIFF> |
 | DMRL Status | Preliminary — not frozen |
 | BREX Status | Not yet validated |
 | SNS Reference | 032-90 |
@@ -145,17 +146,17 @@ The DMRL for ATA 32 is not yet frozen. Data Module set sizes estimated in this d
 
 ## §3 System / Function Overview
 
-**S1000D DMC Structure**: A Data Module Code (DMC) uniquely identifies each Data Module (DM) in the CSDB. For the AMPEL360e eWTW, the DMC structure follows the standard S1000D format:
+**S1000D DMC Structure**: A Data Module Code (DMC) uniquely identifies each Data Module (DM) in the CSDB. For the <PROGRAMME>, the DMC structure follows the standard S1000D format:
 
 `DMC-{ModelIdent}-{SNS}-{disassyCode}-{disassyCodeVariant}-{infoCode}-{infoCodeVariant}-{itemLocationCode}`
 
-For ATA 32, the `{ModelIdent}` is `AMPEL360E-EWTW`, the SNS codes are in the range `032-00` through `032-90` (two-digit sub-subassembly). The disassembly code, info code, and item location code are assigned per the DMRL.
+For ATA 32, the `{ModelIdent}` is `<MODEL>-<SYSTEMDIFF>`, the SNS codes are in the range `032-00` through `032-90` (two-digit sub-subassembly). The disassembly code, info code, and item location code are assigned per the DMRL.
 
-**SNS to ATA Mapping**: The ATA 32 subsubject numbering used in Q+ATLANTIDE ATLAS (032-000 through 032-090) maps directly to the S1000D SNS by truncating the trailing zero of the subsubject number. For example, ATA subsubject 032-010 maps to SNS 032-10, and the DMC prefix is `DMC-AMPEL360E-EWTW-032-10`.
+**SNS to ATA Mapping**: The ATA 32 subsubject numbering used in Q+ATLANTIDE ATLAS (032-000 through 032-090) maps directly to the S1000D SNS by truncating the trailing zero of the subsubject number. For example, ATA subsubject 032-010 maps to SNS 032-10, and the DMC prefix is `DMC-<MODEL>-<SYSTEMDIFF>-032-10`.
 
 **Publication Modules**: The ATA 32 documentation is published in the following S1000D publication modules: Aircraft Maintenance Manual (AMM) — ATA 32 chapters; Fault Isolation Manual (FIM) — ATA 32 chapters; Illustrated Parts Data (IPD) — ATA 32 chapters; Wiring Data Manual (WDM) — ATA 32 landing gear wiring. The AMM is the primary publication module for operational maintenance content.
 
-**BREX**: The eWTW BREX (Business Rules Exchange Object) defines programme-specific deviations from S1000D baseline business rules, including: applicability model; security classification conventions; graphics format; applicability annotation format. The ATA 32 content must comply with the eWTW BREX when the BREX is released. Until then, scaffolding follows default S1000D Issue 4.2 rules.
+**BREX**: The <PROGRAMME-SHORT> BREX (Business Rules Exchange Object) defines programme-specific deviations from S1000D baseline business rules, including: applicability model; security classification conventions; graphics format; applicability annotation format. The ATA 32 content must comply with the <PROGRAMME-SHORT> BREX when the BREX is released. Until then, scaffolding follows default S1000D Issue 4.2 rules.
 
 ---
 
@@ -166,7 +167,7 @@ For ATA 32, the `{ModelIdent}` is `AMPEL360E-EWTW`, the SNS codes are in the ran
 - Recommended Information Code set per SNS (040/300/400/520/720/941)
 - DMRL planning notes and estimated DM count per subsubject
 - BREX applicability statement and open BREX issues
-- Publication module hierarchy for ATA 32 in the AMPEL360e eWTW CSDB
+- Publication module hierarchy for ATA 32 in the <PROGRAMME> CSDB
 - Cross-reference between Q+ATLANTIDE ATLAS scaffold files and planned S1000D DMCs
 - S1000D SNS hierarchy diagram for ATA 32
 
@@ -183,7 +184,7 @@ For ATA 32, the `{ModelIdent}` is `AMPEL360E-EWTW`, the SNS codes are in the ran
 - **Two-level SNS structure**: ATA 32 uses a two-level SNS structure — SNS 032 (system level) and SNS 032-xx (subsubject level, mapping one-to-one to ATA subsubjects). No further S1000D sub-subassembly levels are planned at this stage; detail is captured through information codes within each SNS.
 - **Info code selection**: Info codes 040 (Description), 300 (Operation), 400 (Maintenance), 520 (Troubleshooting), 720 (Removal/Installation), and 941 (Safety) are planned as the core set per SNS where applicable. Not all info codes apply to all SNS — mapping defined in §14.
 - **DMRL-based DM set**: The DMRL will define one row per planned DM, specifying the full DMC, applicable publication, responsible author, and status. Estimated DM counts are preliminary; the DMRL freeze milestone will confirm counts after system design matures.
-- **Effectivity model**: Applicability (which MSN/aircraft variant a DM applies to) is managed per the eWTW effectivity annotation model (TBD). Baseline: DMC applies to all eWTW-100/100ER MSNs from MSN 001 unless annotated otherwise.
+- **Effectivity model**: Applicability (which MSN/aircraft variant a DM applies to) is managed per the <PROGRAMME-SHORT> effectivity annotation model (TBD). Baseline: DMC applies to all <PROGRAMME-SHORT>-100/100ER MSNs from MSN 001 unless annotated otherwise.
 - **Concurrent access**: Multiple authors may work on different SNS DMCs concurrently in the CSDB. The CMC locking mechanism (TBD — CSDB administration tool) prevents conflicting edits.
 - **Cross-reference to ATLAS**: Each ATLAS scaffold file (032-000 through 032-090) is the source of system description content for the corresponding S1000D description DM (Info Code 040). The ATLAS file is the single source of truth at programme level; the S1000D DM is the deliverable to the customer.
 
@@ -196,7 +197,7 @@ For ATA 32, the `{ModelIdent}` is `AMPEL360E-EWTW`, the SNS codes are in the ran
 | F-090-001 | SNS to DMC Mapping | Define and maintain the mapping from each ATA 32 subsubject to its S1000D SNS code and DMC prefix | 032-090 |
 | F-090-002 | Information Code Assignment | Assign applicable information codes per SNS; define planned DM set | 032-090 |
 | F-090-003 | DMRL Planning | Maintain the DMRL for ATA 32; track DM count, authoring status, review status | 032-090 |
-| F-090-004 | BREX Compliance | Confirm eWTW BREX applicability to ATA 32 content; resolve BREX deviations | 032-090 |
+| F-090-004 | BREX Compliance | Confirm <PROGRAMME-SHORT> BREX applicability to ATA 32 content; resolve BREX deviations | 032-090 |
 | F-090-005 | Publication Module Definition | Define which S1000D publication modules include ATA 32 DMCs; AMM, FIM, IPD, WDM | 032-090 |
 | F-090-006 | ATLAS to CSDB Cross-Reference | Maintain cross-reference between Q+ATLANTIDE ATLAS scaffold files and planned S1000D DMCs | 032-090 |
 
@@ -212,7 +213,7 @@ flowchart LR
     CSDB --> IPD[Illustrated Parts Data IPD]
     CSDB --> WDM[Wiring Data Manual WDM]
     DMRL[DMRL — Data Module Requirements List] -->|Defines planned DMs| CSDB
-    BREX[eWTW BREX] -->|Business rules govern content| CSDB
+    BREX[<PROGRAMME-SHORT> BREX] -->|Business rules govern content| CSDB
     SYSTEM[ATA 32 System Design TBD] -->|Technical data for DM authoring| CSDB
     SUPPLIER[Gear Supplier Documentation] -->|Component maintenance and parts data| CSDB
     CUSTOMER[Customer / Operator] -->|Uses publications| AMM
@@ -273,7 +274,7 @@ flowchart LR
 | Interface ID | System / Chapter | Interface Type | Data / Signal | Direction | Status |
 |---|---|---|---|---|---|
 | IF-090-001 | AMPEL360e CSDB | System / tool | DMC import/export; DM authoring and approval workflow | ATLAS → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
-| IF-090-002 | eWTW BREX | Data | Business rule compliance check against BREX object | CSDB ← BREX | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-090-002 | <PROGRAMME-SHORT> BREX | Data | Business rule compliance check against BREX object | CSDB ← BREX | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-090-003 | Programme DMRL tool | Data | DMRL entries; DM status tracking; DMRL freeze approval | DMRL tool ↔ CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-090-004 | Supplier CMM/IPC | Data | Component maintenance and parts data from gear/brake/EMA/shock absorber suppliers integrated into CSDB | Supplier → CSDB | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-090-005 | Certification data | Data | EASA-approved AMM referenced in AFM/MMEL/AMP during certification | CSDB → TC Dossier | <img src="https://img.shields.io/badge/TBD-red"> |
@@ -296,7 +297,7 @@ flowchart LR
 
 The DMRL tool (TBD — selection pending) tracks each DM entry with authoring status, review status, approval status, and issue number. DMRL health metrics monitored by the programme documentation office include: total DMs planned vs. DMs at draft, at review, and at approved; DMs overdue; DMs with open review comments. A documentation dashboard (TBD) provides visibility to the programme office.
 
-BREX validation is performed automatically by the CSDB authoring tool against the eWTW BREX object. BREX violations are reported per DM; a DM with BREX violations cannot be approved. BREX compliance is monitored as a KPI for the ATA 32 documentation team.
+BREX validation is performed automatically by the CSDB authoring tool against the <PROGRAMME-SHORT> BREX object. BREX violations are reported per DM; a DM with BREX violations cannot be approved. BREX compliance is monitored as a KPI for the ATA 32 documentation team.
 
 ---
 
@@ -314,16 +315,16 @@ The CSDB is backed up per the programme IT infrastructure plan. DM retention fol
 
 | ATA Subsubject | ATLAS File | SNS Code | DMC Prefix | Planned Info Codes | Est. DM Count | DMRL Status |
 |---|---|---|---|---|---|---|
-| 032-000 — General | 032-000-Landing-Gear-General.md | 032-00 | DMC-AMPEL360E-EWTW-032-00 | 040, 300, 400 | 3 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-010 — Main Landing Gear | 032-010-Main-Landing-Gear.md | 032-10 | DMC-AMPEL360E-EWTW-032-10 | 040, 300, 400, 520, 720 | 5 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-020 — Nose Landing Gear | 032-020-Nose-Landing-Gear.md | 032-20 | DMC-AMPEL360E-EWTW-032-20 | 040, 300, 400, 520, 720 | 5 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-030 — Extension and Retraction | 032-030-Extension-and-Retraction.md | 032-30 | DMC-AMPEL360E-EWTW-032-30 | 040, 300, 400, 520 | 4 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-040 — Wheels, Tires, and Brakes | 032-040-Wheels-Tires-and-Brakes.md | 032-40 | DMC-AMPEL360E-EWTW-032-40 | 040, 300, 400, 520, 720 | 5 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-050 — Steering | 032-050-Steering.md | 032-50 | DMC-AMPEL360E-EWTW-032-50 | 040, 300, 400, 520 | 4 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-060 — Position Indication and Warning | 032-060-Position-Indication-and-Warning.md | 032-60 | DMC-AMPEL360E-EWTW-032-60 | 040, 300, 400, 520 | 4 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-070 — Shock Absorption and Structural Interfaces | 032-070-Shock-Absorption-and-Structural-Interfaces.md | 032-70 | DMC-AMPEL360E-EWTW-032-70 | 040, 300, 400, 520, 720 | 5 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-080 — LG Monitoring, Diagnostics, and Control Interfaces | 032-080-Landing-Gear-Monitoring-Diagnostics-and-Control-Interfaces.md | 032-80 | DMC-AMPEL360E-EWTW-032-80 | 040, 300, 400, 520 | 4 | <img src="https://img.shields.io/badge/TBD-red"> |
-| 032-090 — S1000D CSDB Mapping and Traceability | 032-090-S1000D-CSDB-Mapping-and-Traceability.md | 032-90 | DMC-AMPEL360E-EWTW-032-90 | 040 | 1 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-000 — General | 032-000-Landing-Gear-General.md | 032-00 | DMC-<MODEL>-<SYSTEMDIFF>-032-00 | 040, 300, 400 | 3 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-010 — Main Landing Gear | 032-010-Main-Landing-Gear.md | 032-10 | DMC-<MODEL>-<SYSTEMDIFF>-032-10 | 040, 300, 400, 520, 720 | 5 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-020 — Nose Landing Gear | 032-020-Nose-Landing-Gear.md | 032-20 | DMC-<MODEL>-<SYSTEMDIFF>-032-20 | 040, 300, 400, 520, 720 | 5 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-030 — Extension and Retraction | 032-030-Extension-and-Retraction.md | 032-30 | DMC-<MODEL>-<SYSTEMDIFF>-032-30 | 040, 300, 400, 520 | 4 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-040 — Wheels, Tires, and Brakes | 032-040-Wheels-Tires-and-Brakes.md | 032-40 | DMC-<MODEL>-<SYSTEMDIFF>-032-40 | 040, 300, 400, 520, 720 | 5 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-050 — Steering | 032-050-Steering.md | 032-50 | DMC-<MODEL>-<SYSTEMDIFF>-032-50 | 040, 300, 400, 520 | 4 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-060 — Position Indication and Warning | 032-060-Position-Indication-and-Warning.md | 032-60 | DMC-<MODEL>-<SYSTEMDIFF>-032-60 | 040, 300, 400, 520 | 4 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-070 — Shock Absorption and Structural Interfaces | 032-070-Shock-Absorption-and-Structural-Interfaces.md | 032-70 | DMC-<MODEL>-<SYSTEMDIFF>-032-70 | 040, 300, 400, 520, 720 | 5 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-080 — LG Monitoring, Diagnostics, and Control Interfaces | 032-080-Landing-Gear-Monitoring-Diagnostics-and-Control-Interfaces.md | 032-80 | DMC-<MODEL>-<SYSTEMDIFF>-032-80 | 040, 300, 400, 520 | 4 | <img src="https://img.shields.io/badge/TBD-red"> |
+| 032-090 — S1000D CSDB Mapping and Traceability | 032-090-S1000D-CSDB-Mapping-and-Traceability.md | 032-90 | DMC-<MODEL>-<SYSTEMDIFF>-032-90 | 040 | 1 | <img src="https://img.shields.io/badge/TBD-red"> |
 | **TOTAL** | | | | | **40 est.** | |
 
 ### 14.2 Information Code Definitions Applied
@@ -363,7 +364,7 @@ The CSDB is backed up per the programme IT infrastructure plan. DM retention fol
 |---|---|---|---|---|
 | EASA Part-21 | EASA | AMM must be approved by EASA for type certificate and maintained per Part-21 | CSDB AMM managed under Part-21 document control; revisions approved via EASA accepted process | <img src="https://img.shields.io/badge/TBD-red"> |
 | CS-25.1529 | EASA CS-25 | Instructions for Continued Airworthiness (ICA) must be provided at type certificate | AMM/FIM/IPD constitute the ICA for ATA 32; submitted with TC dossier | <img src="https://img.shields.io/badge/TBD-red"> |
-| S1000D Brex | S1000D programme | CSDB content must comply with eWTW BREX | BREX validated against all ATA 32 DMs before approval | <img src="https://img.shields.io/badge/TBD-red"> |
+| S1000D Brex | S1000D programme | CSDB content must comply with <PROGRAMME-SHORT> BREX | BREX validated against all ATA 32 DMs before approval | <img src="https://img.shields.io/badge/TBD-red"> |
 | Programme QMS | AMPEL360e | CSDB document control follows programme quality management system | DM approval workflow configured in CSDB tool | <img src="https://img.shields.io/badge/TBD-red"> |
 
 ---
@@ -403,7 +404,7 @@ The CSDB is backed up per the programme IT infrastructure plan. DM retention fol
 
 | Citation ID | Reference | Description | Relevance |
 |---|---|---|---|
-| CIT-090-001 | S1000D Issue 4.2 | International specification for technical publications | Governing S1000D standard for AMPEL360e eWTW publications |
+| CIT-090-001 | S1000D Issue 4.2 | International specification for technical publications | Governing S1000D standard for <PROGRAMME> publications |
 | CIT-090-002 | EASA CS-25.1529 | Instructions for Continued Airworthiness | ICA requirement for type certificate |
 | CIT-090-003 | ATA iSpec 2200 | Information Standards for Aviation Maintenance | ATA chapter / SNS mapping reference |
 | CIT-090-004 | SAE ARP 4754A | System Development of Civil Aircraft | System documentation traceability |
@@ -433,7 +434,7 @@ The CSDB is backed up per the programme IT infrastructure plan. DM retention fol
 |---|---|---|---|---|---|
 | OI-090-001 | S1000D Issue selection not confirmed — programme may adopt Issue 5.0 rather than 4.2 | Documentation | High | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-090-002 | AMPEL360e CSDB tool not selected — impacts DMRL format, BREX validation method, authoring workflow | Documentation | High | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-090-003 | eWTW BREX not yet produced — all DMs formally non-compliant until BREX released | Documentation | High | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-090-003 | <PROGRAMME-SHORT> BREX not yet produced — all DMs formally non-compliant until BREX released | Documentation | High | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-090-004 | Supplier CMM/IPC provision schedule for gear, EMA, EMB, shock absorber not established | Procurement | Medium | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-090-005 | DM authoring resource allocation for ATA 32 not confirmed | Programme | Medium | TBD | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-090-006 | Estimated DM count of 40 is preliminary; final count depends on system design maturity and MSG-3 output | Documentation | Low | TBD | <img src="https://img.shields.io/badge/TBD-red"> |

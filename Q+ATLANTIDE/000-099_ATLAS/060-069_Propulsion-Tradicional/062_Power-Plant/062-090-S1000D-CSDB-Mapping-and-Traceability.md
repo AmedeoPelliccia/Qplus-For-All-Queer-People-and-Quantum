@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-11"
@@ -17,13 +18,12 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0062-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-062-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-062-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
      ATA 62 · S1000D / CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -47,7 +47,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0062-090"
 
 ## §1 Purpose
 
-ATA 62 S1000D DMRL: 36 data modules. DMC scheme `AMPEL360E-EWTW-062-{NNN}-00A-EN-US`. BREX `AMPEL360E-BREX-062-v1` enforces: (1) no bleed-air pneumatic interface DMs; (2) fire zone DMs must cite CS-25 §25.1181; (3) mount bolt torque DMs must cite calibrated-tool requirement. Q-DATAGOV manages CSDB; Q-MECHANICS is technical review authority.
+ATA 62 S1000D DMRL: 36 data modules. DMC scheme `DMC-<MODEL>-<SYSTEMDIFF>-062-{NNN}-00A-EN-US`. BREX `BREX-062-v1` enforces: (1) no bleed-air pneumatic interface DMs; (2) fire zone DMs must cite CS-25 §25.1181; (3) mount bolt torque DMs must cite calibrated-tool requirement. Q-DATAGOV manages CSDB; Q-MECHANICS is technical review authority.
 
 ---
 
@@ -55,7 +55,7 @@ ATA 62 S1000D DMRL: 36 data modules. DMC scheme `AMPEL360E-EWTW-062-{NNN}-00A-EN
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA reference | ATA 62-090 — S1000D / CSDB Mapping and Traceability |
 | Certification basis | EASA CS-25 Amdt 27+ |
 | S1000D SNS | 062-090-00 |
@@ -64,7 +64,7 @@ ATA 62 S1000D DMRL: 36 data modules. DMC scheme `AMPEL360E-EWTW-062-{NNN}-00A-EN
 
 ## §3 Functional Description ![DRAFT]
 
-System description for S1000D / CSDB Mapping and Traceability within the AMPEL360E eWTW Power Plant architecture. See §3 Functional Description for technical detail.
+System description for S1000D / CSDB Mapping and Traceability within the <PROGRAMME> Power Plant architecture. See §3 Functional Description for technical detail.
 
 ---
 
@@ -217,7 +217,7 @@ flowchart TB
 
 | ID | Description | Owner | Target |
 |---|---|---|---|
-| OI-062-090-001 | Finalise S1000D / CSDB Mapping and Traceability design for AMPEL360E baseline (OEM data pending) | Q-MECHANICS | 2026-Q4 |
+| OI-062-090-001 | Finalise S1000D / CSDB Mapping and Traceability design for <MODEL> baseline (OEM data pending) | Q-MECHANICS | 2026-Q4 |
 
 ---
 
@@ -250,4 +250,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per <PROGRAMME> architecture |

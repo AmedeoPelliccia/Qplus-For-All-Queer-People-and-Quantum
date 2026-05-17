@@ -6,10 +6,8 @@ subsubject: "090"
 subsubject_title: "S1000D / CSDB Mapping and Traceability"
 file_name: "037-090-S1000D-CSDB-Mapping-and-Traceability.md"
 sns_reference: "037-90"
-dmc_prefix: "DMC-AMPEL360E-EWTW-037-90"
-programme: "AMPEL360e eWTW"
-programme_link: "../../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/"
-short_code: "AMPEL360e-eWTW"
+dmc_prefix: "DMC-<MODEL>-<SYSTEMDIFF>-037-90"
+programme_link: "../../../../../<programme-implementation-branch>
 register: "Q+ATLANTIDE ATLAS"
 register_link: "../../../../../Q+ATLANTIDE/"
 architecture_band: "030-039 Protection and Mechanical Systems"
@@ -35,6 +33,7 @@ support_q_divisions: ["Q-SYSTEMS", "Q-SAFETY", "Q-CERTIFICATION"]
 orb_functions: ["FUNCTION-S1000D-MAPPING", "FUNCTION-DMRL", "FUNCTION-CSDB-TRACEABILITY", "FUNCTION-AMM"]
 classification: "UNCLASSIFIED — ENGINEERING SCAFFOLD"
 status: "DRAFT"
+scope: agnostic-standard
 revision: "0.1.0"
 created: "2025-07-14"
 updated: "2025-07-14"
@@ -46,7 +45,7 @@ keywords: ["ATA 37", "Vacuum", "S1000D", "CSDB", "DMRL", "data module", "traceab
 ---
 
 # 037-090 — S1000D / CSDB Mapping and Traceability
-### AMPEL360e eWTW · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
+### <PROGRAMME> · ATA 37 · Q+ATLANTIDE ATLAS Scaffold
 
 **Status:** <img src="https://img.shields.io/badge/DRAFT-yellow">
 **Revision:** 0.1.0 | **Created:** 2025-07-14 | **Updated:** 2025-07-14
@@ -61,9 +60,9 @@ All links in this document are relative within the Q+ATLANTIDE ATLAS repository 
 
 ## §1 Purpose
 
-This document defines the **S1000D Data Module Requirements List (DMRL)** and **CSDB mapping** for the complete ATA 37 Vacuum chapter of the AMPEL360e eWTW aircraft. It provides traceability from the Q+ATLANTIDE ATLAS scaffold nodes (037-000 through 037-090) to the planned S1000D Data Modules (DMs) for the AMPEL360e eWTW Aircraft Maintenance Manual (AMM) CSDB volume.
+This document defines the **S1000D Data Module Requirements List (DMRL)** and **CSDB mapping** for the complete ATA 37 Vacuum chapter of the <PROGRAMME> aircraft. It provides traceability from the Q+ATLANTIDE ATLAS scaffold nodes (037-000 through 037-090) to the planned S1000D Data Modules (DMs) for the <PROGRAMME> Aircraft Maintenance Manual (AMM) CSDB volume.
 
-**Key context:** ATA 37 on the eWTW is a **highly reduced chapter** compared to conventional aircraft. Estimated DM count: ~20–30 DMs (vs. ~60–80 for a conventional aircraft). The reduction is because:
+**Key context:** ATA 37 on the <PROGRAMME-SHORT> is a **highly reduced chapter** compared to conventional aircraft. Estimated DM count: ~20–30 DMs (vs. ~60–80 for a conventional aircraft). The reduction is because:
 - No engine vacuum pump DMs (no vacuum engine pump — electric EVG only)
 - No gyroscopic instrument vacuum DMs (ADIRU solid-state — ATA 34)
 - No vacuum autopilot servo DMs (FBW electric — ATA 22)
@@ -72,18 +71,20 @@ This document defines the **S1000D Data Module Requirements List (DMRL)** and **
 
 ---
 
+> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
+
 ## §2 Applicability
 
 | Item | Value |
 |------|-------|
-| Aircraft Programme | AMPEL360e eWTW |
+| Aircraft Programme | <PROGRAMME> |
 | ATA Chapter | 37 — Vacuum |
 | Subsubject | 037-90 — S1000D / CSDB Mapping |
 | S1000D Version | Issue 5.0 |
 | CSDB Platform | <img src="https://img.shields.io/badge/TBD-red"> (CSDB path TBD) |
-| BREX Document | <img src="https://img.shields.io/badge/TBD-red"> (eWTW BREX TBD) |
+| BREX Document | <img src="https://img.shields.io/badge/TBD-red"> (<PROGRAMME-SHORT> BREX TBD) |
 | DMRL Status | Not-yet-frozen |
-| Publication | AMPEL360e eWTW AMM — Chapter 37 |
+| Publication | <PROGRAMME> AMM — Chapter 37 |
 | Certification Basis | CS-25 Amendment 27 (TBD) |
 
 ---
@@ -106,7 +107,7 @@ This document defines the **S1000D Data Module Requirements List (DMRL)** and **
 | 037-90 | S1000D / CSDB Mapping | 037-090 | 1 | 040 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | **TOTAL** | | | **~31–45 DMs** | | Not-yet-frozen |
 
-> **Reduction note:** A conventional aircraft ATA 37 DMRL would contain ~60–80 DMs. The eWTW DMRL is approximately half that due to the elimination of vacuum gyro instruments and autopilot vacuum servos. If OI-037-002 resolves to **dry-flush toilets**, the DMRL count drops further to ~2–5 DMs (general description + confirmed eliminations only).
+> **Reduction note:** A conventional aircraft ATA 37 DMRL would contain ~60–80 DMs. The <PROGRAMME-SHORT> DMRL is approximately half that due to the elimination of vacuum gyro instruments and autopilot vacuum servos. If OI-037-002 resolves to **dry-flush toilets**, the DMRL count drops further to ~2–5 DMs (general description + confirmed eliminations only).
 
 ---
 
@@ -115,7 +116,7 @@ This document defines the **S1000D Data Module Requirements List (DMRL)** and **
 This document covers:
 - DMRL for all 10 ATA 37 subsubjects (037-00 through 037-90)
 - Individual planned DM list per subsubject with info codes
-- S1000D DMC format specification for eWTW ATA 37
+- S1000D DMC format specification for <PROGRAMME-SHORT> ATA 37
 - CSDB path, BREX reference, publication structure
 - Traceability from ATLAS scaffold to S1000D DMs
 - Lifecycle traceability from requirements to DM authoring to certification
@@ -127,16 +128,16 @@ This document covers:
 
 ### 5.1 DMC Format
 
-All ATA 37 eWTW data modules follow this DMC format:
+All ATA 37 <PROGRAMME-SHORT> data modules follow this DMC format:
 
 ```
-DMC-AMPEL360E-EWTW-037-{NN}-{AA}-00{infoCode}{variant}-{lang}.xml
+DMC-<MODEL>-<SYSTEMDIFF>-037-{NN}-{AA}-00{infoCode}{variant}-{lang}.xml
 ```
 
 Where:
 | Field | Description | Example |
 |-------|-------------|---------|
-| `AMPEL360E-EWTW` | Model identification code | Fixed |
+| `<MODEL>-<SYSTEMDIFF>` | Model identification code | Fixed |
 | `037` | System code (ATA 37 — Vacuum) | Fixed |
 | `{NN}` | Subsubject (ATA subsubject, 2-digit) | `10`, `50`, `70` |
 | `{AA}` | Sub-subsubject (00 for general, `A`–`Z` for variants) | `00` |
@@ -160,16 +161,16 @@ Where:
 |-------------|-------|--------|
 | CSDB platform | <img src="https://img.shields.io/badge/TBD-red"> | Not selected |
 | CSDB path | <img src="https://img.shields.io/badge/TBD-red"> | Not assigned |
-| BREX document | <img src="https://img.shields.io/badge/TBD-red"> eWTW-BREX-001 TBD | Not frozen |
-| Publication | AMPEL360e eWTW AMM — Chapter 37 | Planned |
+| BREX document | <img src="https://img.shields.io/badge/TBD-red"> <PROGRAMME-SHORT>-BREX-001 TBD | Not frozen |
+| Publication | <PROGRAMME> AMM — Chapter 37 | Planned |
 | AMM format | S1000D Publication Module (PM) | Planned |
 | Output formats | PDF, IETP (Interactive Electronic Technical Publication) TBD | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 5.4 Reduced Chapter Rationale — Explicit Elimination Table
 
-The following conventional ATA 37 DM categories are **explicitly eliminated** from the eWTW DMRL:
+The following conventional ATA 37 DM categories are **explicitly eliminated** from the <PROGRAMME-SHORT> DMRL:
 
-| Eliminated DM Category | Conventional ATA 37 Count (est.) | Reason Eliminated | eWTW Replacement |
+| Eliminated DM Category | Conventional ATA 37 Count (est.) | Reason Eliminated | <PROGRAMME-SHORT> Replacement |
 |------------------------|----------------------------------|-------------------|-----------------|
 | Engine vacuum pump removal/installation | 4–6 DMs | No engine vacuum pump | EVG (electric) |
 | Vacuum pump inspection | 2–3 DMs | No engine vacuum pump | EVG BITE + CMC |
@@ -187,91 +188,91 @@ The following conventional ATA 37 DM categories are **explicitly eliminated** fr
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-00-00-00A-040A-A | 040 | Vacuum System — General Description and Operation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-00-00-00A-040B-A | 040 | Vacuum System — eWTW Design Philosophy and ATA 37 Scope Reduction | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-00-00-00A-040A-A | 040 | Vacuum System — General Description and Operation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-00-00-00A-040B-A | 040 | Vacuum System — <PROGRAMME-SHORT> Design Philosophy and ATA 37 Scope Reduction | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.2 SNS 037-10 — Vacuum Sources (EVG)
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-10-00-00A-040A-A | 040 | Electric Vacuum Generator (EVG) — Description and Operation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-300A-A | 300 | EVG — Functional Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-520A-A | 520 | EVG — Removal | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-720A-A | 720 | EVG — Installation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-10-00-00A-400A-A | 400 | EVG — Fault Isolation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-10-00-00A-040A-A | 040 | Electric Vacuum Generator (EVG) — Description and Operation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-10-00-00A-300A-A | 300 | EVG — Functional Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-10-00-00A-520A-A | 520 | EVG — Removal | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-10-00-00A-720A-A | 720 | EVG — Installation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-10-00-00A-400A-A | 400 | EVG — Fault Isolation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.3 SNS 037-20 — Vacuum Distribution
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-20-00-00A-040A-A | 040 | Vacuum Distribution Manifold — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-20-00-00A-300A-A | 300 | Vacuum Manifold — Inspection and Leak Check | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-20-00-00A-300B-A | 300 | Vacuum Line — Inspection and Leak Test (Decay Method) | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-20-00-00A-040A-A | 040 | Vacuum Distribution Manifold — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-20-00-00A-300A-A | 300 | Vacuum Manifold — Inspection and Leak Check | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-20-00-00A-300B-A | 300 | Vacuum Line — Inspection and Leak Test (Decay Method) | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.4 SNS 037-30 — Regulation and Shutoff
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-30-00-00A-040A-A | 040 | Vacuum Relief Valve (VRV) — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-040B-A | 040 | Shutoff Valve (SOV) — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-300A-A | 300 | VRV — Pop-Test Procedure | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-520A-A | 520 | VRV — Removal | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-30-00-00A-720A-A | 720 | VRV — Installation | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-30-00-00A-040A-A | 040 | Vacuum Relief Valve (VRV) — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-30-00-00A-040B-A | 040 | Shutoff Valve (SOV) — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-30-00-00A-300A-A | 300 | VRV — Pop-Test Procedure | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-30-00-00A-520A-A | 520 | VRV — Removal | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-30-00-00A-720A-A | 720 | VRV — Installation | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.5 SNS 037-40 — Pumps, Ejectors, Valves, and Lines
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-40-00-00A-040A-A | 040 | Non-Return Valve (NRV) — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-00-00A-300A-A | 300 | NRV — Inspection and Leak Test | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-00-00A-520A-A | 520 | NRV — Removal | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-00-00A-720A-A | 720 | NRV — Installation | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-40-00-00A-400A-A | 400 | Vacuum Line — Fault Isolation (leak, blockage) | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-40-00-00A-040A-A | 040 | Non-Return Valve (NRV) — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-40-00-00A-300A-A | 300 | NRV — Inspection and Leak Test | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-40-00-00A-520A-A | 520 | NRV — Removal | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-40-00-00A-720A-A | 720 | NRV — Installation | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-40-00-00A-400A-A | 400 | Vacuum Line — Fault Isolation (leak, blockage) | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.6 SNS 037-50 — Vacuum Consumers and Interfaces
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-50-00-00A-040A-A | 040 | Vacuum Consumers and System Interfaces — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-50-00-00A-300A-A | 300 | EFV — Inspection | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-50-00-00A-520A-A | 520 | EFV — Removal | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-50-00-00A-720A-A | 720 | EFV — Installation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-50-00-00A-400A-A | 400 | EFV — Fault Isolation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-50-00-00A-040A-A | 040 | Vacuum Consumers and System Interfaces — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-50-00-00A-300A-A | 300 | EFV — Inspection | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-50-00-00A-520A-A | 520 | EFV — Removal | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-50-00-00A-720A-A | 720 | EFV — Installation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-50-00-00A-400A-A | 400 | EFV — Fault Isolation | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.7 SNS 037-60 — Indication and Warning
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-60-00-00A-040A-A | 040 | Vacuum Indication and Warning — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-60-00-00A-300A-A | 300 | CAS Alert Functional Check | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-60-00-00A-400A-A | 400 | Vacuum CAS Alert — Fault Isolation | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-60-00-00A-040A-A | 040 | Vacuum Indication and Warning — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-60-00-00A-300A-A | 300 | CAS Alert Functional Check | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-60-00-00A-400A-A | 400 | Vacuum CAS Alert — Fault Isolation | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.8 SNS 037-70 — Ground Service and Test
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-70-00-00A-040A-A | 040 | Ground Service and Test — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-300A-A | 300 | Waste Drain and Line Rinse Procedure | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-300B-A | 300 | Vacuum System Functional Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-300C-A | 300 | VRV Pop-Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-300D-A | 300 | Vacuum Decay Leak Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-70-00-00A-400A-A | 400 | Vacuum System Ground Fault Isolation | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-70-00-00A-040A-A | 040 | Ground Service and Test — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-70-00-00A-300A-A | 300 | Waste Drain and Line Rinse Procedure | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-70-00-00A-300B-A | 300 | Vacuum System Functional Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-70-00-00A-300C-A | 300 | VRV Pop-Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-70-00-00A-300D-A | 300 | Vacuum Decay Leak Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-70-00-00A-400A-A | 400 | Vacuum System Ground Fault Isolation | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.9 SNS 037-80 — Monitoring and Diagnostics
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-80-00-00A-040A-A | 040 | Monitoring and Diagnostics — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-80-00-00A-300A-A | 300 | CMC / OMS Monitoring Check | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-80-00-00A-400A-A | 400 | Fault Isolation — EVG Fault | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-80-00-00A-400B-A | 400 | Fault Isolation — EFV Fault | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| DMC-AMPEL360E-EWTW-037-80-00-00A-400C-A | 400 | Fault Isolation — Transducer Fault | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-80-00-00A-040A-A | 040 | Monitoring and Diagnostics — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-80-00-00A-300A-A | 300 | CMC / OMS Monitoring Check | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-80-00-00A-400A-A | 400 | Fault Isolation — EVG Fault | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-80-00-00A-400B-A | 400 | Fault Isolation — EFV Fault | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-80-00-00A-400C-A | 400 | Fault Isolation — Transducer Fault | P2 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ### 6.10 SNS 037-90 — S1000D / CSDB Mapping
 
 | Planned DM Code | Info Code | Title | Priority | Status |
 |----------------|-----------|-------|----------|--------|
-| DMC-AMPEL360E-EWTW-037-90-00-00A-040A-A | 040 | S1000D / CSDB Mapping and Traceability — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| DMC-<MODEL>-<SYSTEMDIFF>-037-90-00-00A-040A-A | 040 | S1000D / CSDB Mapping and Traceability — Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
 
@@ -294,8 +295,8 @@ flowchart LR
     DM00 & DM10 & DM20 & DM30 & DM40 --> CSDB[CSDB\nAMM Volume\nChapter 37]
     DM50 & DM60 & DM70 & DM80 & DM90 --> CSDB
 
-    CSDB -->|BREX validation| BREX[eWTW BREX TBD]
-    CSDB -->|Publication| AMM[AMPEL360e eWTW\nAMM Chapter 37\nPDF / IETP TBD]
+    CSDB -->|BREX validation| BREX[<PROGRAMME-SHORT> BREX TBD]
+    CSDB -->|Publication| AMM[<PROGRAMME>\nAMM Chapter 37\nPDF / IETP TBD]
     AMM -->|Certification evidence| CERT[CS-25 Certification\nCompliance]
 ```
 
@@ -307,10 +308,10 @@ flowchart LR
 flowchart TB
     REQ[Regulatory Requirements\nCS-25.1438\nCS-25.1309\nAMC 25.831] --> ATLAS_SCAF[Q+ATLANTIDE ATLAS\nScaffold\n037-000 to 037-090]
     ATLAS_SCAF --> DMRL_AUTH[DMRL Authoring\nSNS assignment\nInfo code selection\nDM count estimate]
-    DMRL_AUTH --> BREX_REF[BREX Reference\neWTW BREX TBD]
+    DMRL_AUTH --> BREX_REF[BREX Reference\nprogramme BREX TBD]
     BREX_REF --> DM_AUTH[Data Module\nAuthoring\nXML S1000D\nper DM plan]
     DM_AUTH --> CSDB_ING[CSDB Ingestion\nDM validation\nCross-reference check]
-    CSDB_ING --> BREX_VAL[BREX Validation\nAutomated check\nagainst eWTW BREX]
+    CSDB_ING --> BREX_VAL[BREX Validation\nAutomated check\nagainst <PROGRAMME-SHORT> BREX]
     BREX_VAL -->|Pass| PUB[Publication Build\nAMM Chapter 37\nPDF / IETP]
     BREX_VAL -->|Fail| DM_CORR[DM Correction\nand re-submission]
     DM_CORR --> CSDB_ING
@@ -342,7 +343,7 @@ flowchart LR
 | Interface ID | System | Direction | Description | Status |
 |-------------|--------|-----------|-------------|--------|
 | IF-037-090-001 | CSDB platform | ATLAS → CSDB | DMRL ingested into CSDB; DMs authored in XML per DMC format | <img src="https://img.shields.io/badge/TBD-red"> |
-| IF-037-090-002 | BREX | CSDB ↔ BREX | All DMs validated against eWTW BREX before publication | <img src="https://img.shields.io/badge/TBD-red"> |
+| IF-037-090-002 | BREX | CSDB ↔ BREX | All DMs validated against <PROGRAMME-SHORT> BREX before publication | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-037-090-003 | AMM Publication | CSDB → AMM | Chapter 37 published as AMM chapter from CSDB PM | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-037-090-004 | Certification | AMM → EASA | AMM Chapter 37 DMs provided as maintenance documentation for TC | <img src="https://img.shields.io/badge/TBD-red"> |
 | IF-037-090-005 | ATA 38 CSDB | Cross-reference | ATA 37 DMs cross-reference ATA 38 DMs (waste tank, drain valve) | <img src="https://img.shields.io/badge/TBD-red"> |
@@ -385,7 +386,7 @@ flowchart LR
 
 - **DMRL maintenance:** DMRL is a living document until freeze date (TBD). Changes require CCB (Configuration Control Board) approval.
 - **DM revision process:** Post-freeze changes follow S1000D change management (revision code increment, reason-for-change entry).
-- **BREX enforcement:** All DMs validated against eWTW BREX before CSDB ingestion (automated tooling TBD).
+- **BREX enforcement:** All DMs validated against <PROGRAMME-SHORT> BREX before CSDB ingestion (automated tooling TBD).
 - **Cross-reference management:** CSDB platform maintains applicability cross-references between ATA 37 and ATA 38, ATA 45 DMs.
 - **Translation:** English (language A) primary. Additional languages TBD per operator requirements.
 
@@ -396,7 +397,7 @@ flowchart LR
 | DMC (abbreviated) | SNS | Info Code | Title (abbreviated) | Priority | Status |
 |-------------------|-----|-----------|---------------------|----------|--------|
 | 037-00-…-040A | 037-00 | 040 | General Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| 037-00-…-040B | 037-00 | 040 | eWTW Scope Reduction | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
+| 037-00-…-040B | 037-00 | 040 | <PROGRAMME-SHORT> Scope Reduction | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | 037-10-…-040A | 037-10 | 040 | EVG Description | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | 037-10-…-300A | 037-10 | 300 | EVG Functional Test | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | 037-10-…-520A | 037-10 | 520 | EVG Removal | P1 | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
@@ -460,7 +461,7 @@ flowchart LR
 | Maintenance documentation adequacy | CS-25.1529 (Instructions for CAS) | DM completeness per DMRL | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | AMM procedure accuracy | CS-25.1309 (safety process) | Procedure validation in ground test | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 | DMRL coverage of all LRUs | Maintenance programme requirements | DMRL completeness review | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
-| S1000D BREX compliance | eWTW BREX TBD | Automated BREX validation | <img src="https://img.shields.io/badge/TBD-red"> |
+| S1000D BREX compliance | <PROGRAMME-SHORT> BREX TBD | Automated BREX validation | <img src="https://img.shields.io/badge/TBD-red"> |
 | Regulatory language requirements | EASA Part-21 / CS-25 | Language and clarity review | <img src="https://img.shields.io/badge/To_Be_Completed-orange"> |
 
 ---
@@ -482,7 +483,7 @@ flowchart LR
 
 | Term | Definition |
 |------|-----------|
-| ADIRU | Air Data Inertial Reference Unit — solid-state; gyro vacuum DMs eliminated on eWTW |
+| ADIRU | Air Data Inertial Reference Unit — solid-state; gyro vacuum DMs eliminated on <PROGRAMME-SHORT> |
 | AMM | Aircraft Maintenance Manual — primary publication using ATA 37 S1000D DMs |
 | ATA 37 | Air Transport Association chapter for Vacuum systems |
 | BREX | Business Rules Exchange — S1000D document defining project-specific authoring rules |
@@ -495,7 +496,7 @@ flowchart LR
 | EFV | Electrically actuated Flush Valve |
 | EVG | Electric Vacuum Generator |
 | Freeze protection | OI-037-005 — thermal protection for vacuum lines |
-| Gyroscopic instruments | Vacuum-driven AI, DI, TC — **eliminated on eWTW**; no gyro vacuum DMs in DMRL |
+| Gyroscopic instruments | Vacuum-driven AI, DI, TC — **eliminated on <PROGRAMME-SHORT>**; no gyro vacuum DMs in DMRL |
 | Info code | S1000D code indicating DM type (040 descriptive, 300 procedure, 400 FI, 520 removal, 720 installation) |
 | IETP | Interactive Electronic Technical Publication — electronic AMM format |
 | Manifold | Vacuum distribution header |
@@ -551,7 +552,7 @@ flowchart LR
 | OI-037-006 | Odour filter certification — requires dedicated 520/720 DMs if scheduled replacement | Certification | MEDIUM | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-037-007 | Ground service panel location — affects 037-70 DM descriptions and access illustrations | Ground Ops | LOW | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-DMRL-001 | **DMRL freeze date TBD** — required before DM authoring can begin | Programme | HIGH | <img src="https://img.shields.io/badge/TBD-red"> |
-| OI-DMRL-002 | **BREX document TBD** — eWTW BREX not yet created; required for CSDB validation | Tech Pubs | HIGH | <img src="https://img.shields.io/badge/TBD-red"> |
+| OI-DMRL-002 | **BREX document TBD** — <PROGRAMME-SHORT> BREX not yet created; required for CSDB validation | Tech Pubs | HIGH | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-DMRL-003 | **CSDB path TBD** — CSDB platform not yet selected; affects all DM delivery | Tech Pubs | HIGH | <img src="https://img.shields.io/badge/TBD-red"> |
 | OI-DMRL-004 | **DM count may reduce to ~2–5 if OI-037-002 resolves to dry-flush** — entire VWS vacuum DM scope eliminated | Chief Architect | CRITICAL | <img src="https://img.shields.io/badge/TBD-red"> |
 
@@ -564,5 +565,5 @@ flowchart LR
 | 0.1.0 | 2025-07-14 | AI-assisted scaffold | Initial scaffold — §0–§22; full DMRL planned; 40 DMs defined across all 10 SNS; BREX, CSDB path, freeze date all TBD; 4 DMRL-specific OIs added |
 
 ---
-*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-090 S1000D / CSDB Mapping and Traceability — AMPEL360e eWTW*
+*Q+ATLANTIDE ATLAS — ATA 37 Vacuum — 037-090 S1000D / CSDB Mapping and Traceability — <PROGRAMME>*
 *Classification: UNCLASSIFIED — ENGINEERING SCAFFOLD*

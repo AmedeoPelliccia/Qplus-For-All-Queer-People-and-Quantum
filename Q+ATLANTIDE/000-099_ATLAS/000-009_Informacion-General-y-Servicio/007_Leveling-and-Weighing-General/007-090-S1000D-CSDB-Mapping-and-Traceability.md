@@ -25,11 +25,10 @@ orb_function_support: [ORB-PMO, ORB-LEG]
 governance_class: baseline
 version: 1.0.0
 status: active
+scope: agnostic-standard
 language: en
 s1000d_applicability: "S1000D-CSDB-compatible"
 ata_reference: "ATA 08"
-programme: "AMPEL360e Wide Tube-and-Wing Family"
-short_code: "eWTW"
 created: "2026-05-11"
 updated: "2026-05-11"
 review_status: "to-be-reviewed-by-system-expert"
@@ -48,9 +47,9 @@ All hyperlinks within this document use **relative paths** from the current file
 
 ## 1. Purpose
 
-Maps the leveling and weighing artefacts defined in subsection 007 to S1000D CSDB data modules. Establishes DMC codes, BREX rules for procedure content, and the traceability chain from leveling and weighing requirement to CSDB data module for the AMPEL360E eWTW.
+Maps the leveling and weighing artefacts defined in subsection 007 to S1000D CSDB data modules. Establishes DMC codes, BREX rules for procedure content, and the traceability chain from leveling and weighing requirement to CSDB data module for any programme implementing this ATLAS standard node.
 
-This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** baseline. It applies to the [AMPEL360e Wide Tube-and-Wing Family](../../../../Programmes_example/090_AMPEL360e-Wide-Tube-and-Wing-Family/) programme, **eWTW** configuration.
+This document is part of the **ATLAS-1000** register, a subpart of the controlled **Q+ATLANTIDE** agnostic standard baseline. Programme-specific S1000D/CSDB instantiation belongs in the programme implementation branch.
 
 ---
 
@@ -58,8 +57,8 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 | Applicability Item | Value | Status |
 |---|---|---|
-| Programme | AMPEL360e Wide Tube-and-Wing Family | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| Short code | eWTW | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Programme | (defined in programme implementation branch) |
+| Programme short code | (defined in programme implementation branch) |
 | Architecture register | Q+ATLANTIDE | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATLAS band | 000-099_ATLAS | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | ATA reference | ATA 08 | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
@@ -70,9 +69,9 @@ This document is part of the **ATLAS-1000** register, a subpart of the controlle
 
 ## 3. System / Function Overview
 
-The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 007 Leveling and Weighing subsubjects and the AMPEL360E eWTW S1000D Data Module structure. ATLAS 007 subsubjects map to DMs under systemCode="007" (ATA 08 equivalent), model ident code AMPEL360E, system diff code EWTW, in the Q+ATLANTIDE CSDB instance. Primary DM types: procedural DMs for leveling and weighing operations (info code "520"), descriptive DMs for equipment interface requirements (info code "040"), weight and balance data DMs (info code "200"), safety DMs (info code "300"), and illustrated parts DMs (info code "941").
+The **S1000D CSDB Mapping and Traceability** node defines the correspondence between ATLAS 007 Leveling and Weighing subsubjects and the <PROGRAMME> S1000D Data Module structure. ATLAS 007 subsubjects map to DMs under systemCode="007" (ATA 08 equivalent), model identification code <MODEL>, system difference code <SYSTEMDIFF>, in the Q+ATLANTIDE CSDB instance. Primary DM types: procedural DMs for leveling and weighing operations (info code "520"), descriptive DMs for equipment interface requirements (info code "040"), weight and balance data DMs (info code "200"), safety DMs (info code "300"), and illustrated parts DMs (info code "941").
 
-Traceability chain: ATLAS 007 reference geometry and equipment interface data → AMM Chapter 8 (Leveling and Weighing) procedural DMs → WMMS-LW session export DMs → Mass and Balance Statement → CSDB aircraft configuration record → AFM mass properties section. The DMRL for ATA 08 shall confirm coverage of all eWTW-specific items: battery SoC mass correction procedure, MMBS digital interface, WMMS-LW data quality checks, and certified OEW C-of-G envelope. The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV assigns DM codes to each 007-NNN subsubject and tracks publication status.
+Traceability chain: ATLAS 007 reference geometry and equipment interface data → AMM Chapter 8 (Leveling and Weighing) procedural DMs → WMMS-LW session export DMs → Mass and Balance Statement → CSDB aircraft configuration record → AFM mass properties section. The DMRL for ATA 08 shall confirm coverage of all <PROGRAMME-SHORT>-specific items: battery SoC mass correction procedure, MMBS digital interface, WMMS-LW data quality checks, and certified OEW C-of-G envelope. The ATLAS-to-CSDB cross-reference matrix maintained by Q-DATAGOV assigns DM codes to each 007-NNN subsubject and tracks publication status.
 
 ---
 
@@ -84,7 +83,7 @@ This document includes:
 
 - controlled definition of the s1000d csdb mapping and traceability scope;
 - architecture boundaries and interface definitions;
-- AMPEL360E eWTW-specific implementation notes;
+- <PROGRAMME>-specific implementation notes;
 - S1000D/CSDB mapping requirements;
 - lifecycle evidence requirements.
 
@@ -101,7 +100,7 @@ This document excludes:
 
 ## 5. Architecture Description ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange)
 
-The **S1000D CSDB Mapping and Traceability** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the AMPEL360E eWTW programme.
+The **S1000D CSDB Mapping and Traceability** architecture is organized around controlled interfaces, deterministic function allocation, and maintainable component boundaries within the 000-009 General Information and Service section of the <PROGRAMME> programme.
 
 ---
 
@@ -205,11 +204,11 @@ The maintenance concept shall support modular inspection, fault isolation, remov
 
 | S1000D Element | Controlled Value | Status |
 |---|---|---|
-| Model ident code | `AMPEL360E` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
-| System diff code | `EWTW` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| Model ident code | `<MODEL>` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| System diff code | `<SYSTEMDIFF>` | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | System code | `007` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Sub-system code | `090` | ![TBD](https://img.shields.io/badge/TBD-red) |
-| DMC prefix | `DMC-AMPEL360E-EWTW-007-090` | ![TBD](https://img.shields.io/badge/TBD-red) |
+| DMC prefix | `DMC-<MODEL>-<SYSTEMDIFF>-007-090` | ![TBD](https://img.shields.io/badge/TBD-red) |
 | Info codes | `040 / 300 / 400 / 520 / 720 / 941` | ![To Be Completed](https://img.shields.io/badge/To_Be_Completed-orange) |
 
 ---
@@ -253,13 +252,13 @@ Final safety classification shall remain **TBD** until reviewed against the appl
 
 | Term | Meaning | Status |
 |---|---|---|
-| AMPEL360E | Electrified aircraft programme family. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| `<MODEL>` | Model identifier (to be defined per programme implementation branch). |
 | ATLAS | Aircraft Top Level Architecture Schema/System. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | BITE | Built-In Test Equipment. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | CSDB | Common Source DataBase (S1000D). | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMC | Data Module Code. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | DMRL | Data Module Requirement List. | ![TBD](https://img.shields.io/badge/TBD-red) |
-| eWTW | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
+| <PROGRAMME-SHORT> | Electric Wide Tube-and-Wing. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | HVDC | High-Voltage Direct Current. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | IMA | Integrated Modular Avionics. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |
 | S1000D | International specification for technical publications. | ![DRAFT](https://img.shields.io/badge/DRAFT-yellow) |

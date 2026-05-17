@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-11"
@@ -17,7 +18,7 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-067-090"
 ---
 
 # S1000D / CSDB Mapping and Traceability
@@ -38,7 +39,7 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0067-090"
 ---
 ## §1 Purpose
 
-This document maps the ATLAS ATA 67 subsubject structure to S1000D Data Module Codes (DMCs) and defines the Data Module Requirement List (DMRL) and BREX constraints for the AMPEL360E eWTW Engine Controls CSDB. The ATA 67 DMRL contains **32 data modules**. DMC pattern: `AMPEL360E-EWTW-067-{NNN}-00A-EN-US`. BREX document: `AMPEL360E-BREX-067-v1`.
+This document maps the ATLAS ATA 67 subsubject structure to S1000D Data Module Codes (DMCs) and defines the Data Module Requirement List (DMRL) and BREX constraints for any programme implementing this ATLAS standard node Engine Controls CSDB. The ATA 67 DMRL contains **32 data modules**. DMC pattern: `DMC-<MODEL>-<SYSTEMDIFF>-067-{NNN}-00A-EN-US`. BREX document: `BREX-067-v1`.
 
 ---
 
@@ -46,7 +47,7 @@ This document maps the ATLAS ATA 67 subsubject structure to S1000D Data Module C
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA reference | ATA 67-090 — S1000D / CSDB Mapping and Traceability |
 | Certification basis | S1000D Issue 5.0 |
 | S1000D SNS | 067-090-00 |
@@ -55,7 +56,7 @@ This document maps the ATLAS ATA 67 subsubject structure to S1000D Data Module C
 
 ## §3 Functional Description ![DRAFT]
 
-**BREX AMPEL360E-BREX-067-v1 enforces three constraints:**
+**BREX BREX-067-v1 enforces three constraints:**
 
 1. **DAL A software citation rule:** All procedural DMs (DM-100) that involve FADEC software actions (SWPN load, EDF load, BITE test) must cite the applicable DO-178C stage of involvement (SOI) reference. This prevents maintenance DMs from being issued without traceability to the approved software lifecycle.
 
@@ -82,7 +83,7 @@ This document maps the ATLAS ATA 67 subsubject structure to S1000D Data Module C
 ```mermaid
 flowchart LR
     ATLAS_067[ATLAS ATA 67 Subsubjects 000-090] --> DMRL_67[DMRL 32 DMs]
-    DMRL_67 --> CSDB[AMPEL360E CSDB]
+    DMRL_67 --> CSDB[<PROGRAMME> CSDB]
     CSDB --> BREX_67[BREX-067-v1 Validation]
     BREX_67 --> DM_OK[DM Approved for Publication]
     DM_OK --> IETP[IETP / AMM Publication]
@@ -95,7 +96,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    DMC_67["DMC: AMPEL360E-EWTW-067-NNN-00A-EN-US"] --> DM_040[DM-040 Descriptive]
+    DMC_67["DMC: <MODEL>-<SYSTEMDIFF>-067-NNN-00A-EN-US"] --> DM_040[DM-040 Descriptive]
     DMC_67 --> DM_100[DM-100 Procedural]
     DMC_67 --> DM_300[DM-300 Inspection]
     DMC_67 --> DM_520[DM-520 Repair]
@@ -191,7 +192,7 @@ flowchart TB
 | S1000D Issue 5.0 | S1000D.org | DM authoring |
 | ATA iSpec 2200 Ch 67 | ATA | SNS reference |
 | EASA CS-25 §25.1529 | EASA | ICA driving DM content |
-| AMPEL360E GP-CSDB-001 | Q-DATAGOV | CSDB governance |
+| <MODEL>-GP-CSDB-001 | Q-DATAGOV | CSDB governance |
 | DO-178C | RTCA | BREX Rule 1 SOI reference |
 
 ---
@@ -261,4 +262,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per <PROGRAMME> architecture |

@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-GREENTECH
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-11"
@@ -17,13 +18,12 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-061-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-060-069-061-090-S1000D---CSDB-MAPPING-AND-TRACEABILITY
      ATA 61 · S1000D / CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -47,9 +47,9 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0061-090"
 
 ## §1 Purpose
 
-This document defines the S1000D DMRL and CSDB mapping for all ATA 61 Propellers and Propulsors documentation on the AMPEL360E eWTW programme. The DMC scheme `AMPEL360E-EWTW-061-{NNN}-00A-EN-US` is used for all 36 ATA 61 data modules.
+This document defines the S1000D DMRL and CSDB mapping for all ATA 61 Propellers and Propulsors documentation on the <PROGRAMME> programme. The DMC scheme `DMC-<MODEL>-<SYSTEMDIFF>-061-{NNN}-00A-EN-US` is used for all 36 ATA 61 data modules.
 
-The BREX file `AMPEL360E-BREX-061-v1` enforces four programme-specific constraints: (1) no DM may reference bleed-air-powered pitch change; (2) all blade removal/installation DMs must cite the applicable torque value from AMM Chapter 60 Standard Practices; (3) all composite repair DMs must cite SRM-061 and applicable repair class; (4) icing DMs must reference the electrothermal deicing architecture (no hot-air bleed).
+The BREX file `BREX-061-v1` enforces four programme-specific constraints: (1) no DM may reference bleed-air-powered pitch change; (2) all blade removal/installation DMs must cite the applicable torque value from AMM Chapter 60 Standard Practices; (3) all composite repair DMs must cite SRM-061 and applicable repair class; (4) icing DMs must reference the electrothermal deicing architecture (no hot-air bleed).
 
 ---
 
@@ -57,7 +57,7 @@ The BREX file `AMPEL360E-BREX-061-v1` enforces four programme-specific constrain
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA reference | ATA 61-090 — S1000D / CSDB Mapping and Traceability |
 | Certification basis | EASA CS-25 Amendment 27+ |
 | S1000D SNS | 061-090-00 |
@@ -80,7 +80,7 @@ The DMRL covers 36 data modules distributed across 9 SNS nodes (061-000 through 
 | ID | Name | Description | Lead Division |
 |---|---|---|---|
 | F-001 | S1000D Issue 5.0 schema | S1000D.org | CSDB authoring platform |
-| F-001 | BREX file AMPEL360E-BREX-061-v1 | Programme document | CSDB |
+| F-001 | BREX file BREX-061-v1 | Programme document | CSDB |
 | F-001 | DMRL tracker (36 DMs) | Q-DATAGOV tool | PMO / Q-DATAGOV |
 | F-001 | ICN registry (ATA 61 illustrations) | Q-DATAGOV database | CSDB platform |
 | F-001 | CSDB authoring tool | Q-DATAGOV approved tool | CSDB platform |
@@ -119,7 +119,7 @@ flowchart TB
 | Component | Part Number | Qty | Location | Maintenance Interval | Notes |
 |---|---|---|---|---|---|
 | S1000D Issue 5.0 schema | S1000D.org | CSDB authoring platform | IT infrastructure | Per schema release | TBD |
-| BREX file AMPEL360E-BREX-061-v1 | Programme document | CSDB | CSDB validator | Per BREX revision | TBD |
+| BREX file BREX-061-v1 | Programme document | CSDB | CSDB validator | Per BREX revision | TBD |
 | DMRL tracker (36 DMs) | Q-DATAGOV tool | PMO / Q-DATAGOV | PMO tool | Continuously maintained | TBD |
 | ICN registry (ATA 61 illustrations) | Q-DATAGOV database | CSDB platform | IT infrastructure | Continuously maintained | TBD |
 | CSDB authoring tool | Q-DATAGOV approved tool | CSDB platform | IT infrastructure | Per software update | TBD |
@@ -195,7 +195,7 @@ flowchart TB
 |---|---|---|---|
 | S1000D Issue 5.0 | International Specification for Technical Publications | S1000D.org | Authoring standard |
 | ATA iSpec 2200 | Chapter 61 — Propellers and Propulsors | Air Transport Association | ATA SNS reference |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB submission and release workflow |
+| <MODEL>-GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB submission and release workflow |
 | NAS 410 | NDT Personnel Qualification | AIA / NASM | BREX-enforced NDT citation |
 | EASA CS-35 | Airworthiness Standards: Propellers | EASA | Evidence DM content requirements |
 
@@ -267,4 +267,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per <PROGRAMME> architecture |

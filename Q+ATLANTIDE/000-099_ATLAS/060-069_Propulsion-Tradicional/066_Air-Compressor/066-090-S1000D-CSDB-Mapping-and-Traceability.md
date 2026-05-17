@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-11"
@@ -17,7 +18,7 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-066-090"
 ---
 
 # S1000D / CSDB Mapping and Traceability
@@ -39,9 +40,9 @@ s1000d_dmc: "DMC-AMPEL360E-EWTW-0066-090"
 
 ## §1 Purpose
 
-This document maps the ATLAS ATA 66 subsubject structure to S1000D Data Module Codes (DMCs) and defines the Data Module Requirement List (DMRL) and Business Rules eXchange (BREX) constraints for the AMPEL360E eWTW Air Compressor Common Source DataBase (CSDB).
+This document maps the ATLAS ATA 66 subsubject structure to S1000D Data Module Codes (DMCs) and defines the Data Module Requirement List (DMRL) and Business Rules eXchange (BREX) constraints for any programme implementing this ATLAS standard node Air Compressor Common Source DataBase (CSDB).
 
-ATA 66 DMRL for AMPEL360E eWTW: **28 data modules**. DMC pattern: `AMPEL360E-EWTW-066-{NNN}-00A-EN-US`. BREX document: `AMPEL360E-BREX-066-v1`, enforcing three domain-specific constraints described in §3.
+ATA 66 DMRL for <PROGRAMME>: **28 data modules**. DMC pattern: `DMC-<MODEL>-<SYSTEMDIFF>-066-{NNN}-00A-EN-US`. BREX document: `BREX-066-v1`, enforcing three domain-specific constraints described in §3.
 
 This document is owned by Q-DATAGOV and reviewed at each CSDB milestone (DMRL baseline, DMRL first issue, DMRL final).
 
@@ -51,7 +52,7 @@ This document is owned by Q-DATAGOV and reviewed at each CSDB milestone (DMRL ba
 
 | Parameter | Value |
 |---|---|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA reference | ATA 66-090 — S1000D / CSDB Mapping and Traceability |
 | Certification basis | S1000D Issue 5.0 |
 | S1000D SNS | 066-090-00 |
@@ -60,7 +61,7 @@ This document is owned by Q-DATAGOV and reviewed at each CSDB milestone (DMRL ba
 
 ## §3 Functional Description ![DRAFT]
 
-**BREX AMPEL360E-BREX-066-v1 enforces three constraints:**
+**BREX BREX-066-v1 enforces three constraints:**
 
 1. **Bearing life limit citation rule:** All EAC maintenance DMs (DM type 300/520) must cite the bearing life limit (FH) from the EAC OEM Component Maintenance Manual (CMM). This prevents maintenance DMs from being issued without a traceable life limit.
 
@@ -87,7 +88,7 @@ This document is owned by Q-DATAGOV and reviewed at each CSDB milestone (DMRL ba
 ```mermaid
 flowchart LR
     ATLAS_066[ATLAS ATA 66 Subsubjects 000-090] --> DMRL[DMRL 28 DMs]
-    DMRL --> CSDB[AMPEL360E CSDB]
+    DMRL --> CSDB[<PROGRAMME> CSDB]
     CSDB --> BREX[BREX-066-v1 Validation]
     BREX --> DM_APPROVED[DM Approved for Publication]
     DM_APPROVED --> IETP[IETP / AMM Publication]
@@ -102,7 +103,7 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    DMC_PATTERN["DMC Pattern: AMPEL360E-EWTW-066-NNN-00A-EN-US"] --> DM_040[DM-040 Descriptive]
+    DMC_PATTERN["DMC Pattern: <MODEL>-<SYSTEMDIFF>-066-NNN-00A-EN-US"] --> DM_040[DM-040 Descriptive]
     DMC_PATTERN --> DM_300[DM-300 Inspection/Check]
     DMC_PATTERN --> DM_520[DM-520 Repair]
     DMC_PATTERN --> DM_100[DM-100 Procedural]
@@ -201,7 +202,7 @@ flowchart TB
 | S1000D Issue 5.0 | Technical Publications Standard | S1000D.org | DM authoring standard |
 | ATA iSpec 2200 | Chapter 66 | ATA | ATA SNS reference for DM coding |
 | EASA CS-25 §25.1529 | Instructions for Continued Airworthiness | EASA | ICA requirement driving DM content |
-| AMPEL360E GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow and DMRL management |
+| <MODEL>-GP-CSDB-001 | CSDB Governance Procedure | Q-DATAGOV | CSDB workflow and DMRL management |
 | EAC OEM CMM | Component Maintenance Manual | EAC OEM | Bearing life limit source for BREX Rule 1 |
 
 ---
@@ -272,4 +273,4 @@ flowchart TB
 
 | Rev | Date | Author | Description |
 |---|---|---|---|
-| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per AMPEL360E eWTW architecture |
+| 0.1 | 2026-05-11 | @copilot | Initial DRAFT — contextualized content per <PROGRAMME> architecture |

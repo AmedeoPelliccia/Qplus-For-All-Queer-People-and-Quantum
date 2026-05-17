@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-HPC, Q-GREENTECH, Q-AIR, Q-MECHANICS]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-12"
@@ -16,14 +17,14 @@ parent_baseline_doc: "../../../../../organization/Q+ATLANTIDE.md"
 parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0081-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-081-090"
 ---
 
-<!-- ATLAS-081-090 | S1000D / CSDB Mapping and Traceability | AMPEL360E eWTW | ATLAS-1000
-     Aircraft: AMPEL360E eWTW | Register: ATLAS-1000 | Section: 080-089 | Subsection: 081-090
+<!-- ATLAS-081-090 | S1000D / CSDB Mapping and Traceability | <PROGRAMME> | ATLAS-1000
+     Aircraft: <PROGRAMME> | Register: ATLAS-1000 | Section: 080-089 | Subsection: 081-090
      BREX: BREX-081-v1 | Controller: QOCMU (DAL B, dual-channel) | QPU: 12-qubit trapped-ion
      Primary Q-Division: Q-DATAGOV | Status: DRAFT v0.1 | Date: 2026-05-12
-     S1000D DMC: DMC-AMPEL360E-EWTW-0081-090-00A-040A-EN-US
+     S1000D DMC: DMC-<MODEL>-<SYSTEMDIFF>-0081-090-00A-040A-EN-US
      Related DMs: DM-081-030 (S1000D/CSDB Mapping Descriptive) -->
 
 # S1000D / CSDB Mapping and Traceability
@@ -56,8 +57,8 @@ for the QOCM system (SNS 081), comprising **32 Data Modules** across all seven s
 
 1. The **BREX-081-v1** Business Rules Exchange object with three QOCM-specific domain constraints
    applicable to all QOCM DMs in the CSDB.
-2. The **CSDB integration interfaces** for ATLAS-1000 QOCM documentation within the AMPEL360E
-   eWTW CSDB environment (management, validation, publication, and IETP delivery).
+2. The **CSDB integration interfaces** for ATLAS-1000 QOCM documentation within the <MODEL>
+   <PROGRAMME-SHORT> CSDB environment (management, validation, publication, and IETP delivery).
 3. The **ICN (Illustration Control Number) registry** for all 16 graphical objects (system diagrams,
    flowcharts, data flow diagrams, LRU photographs) associated with QOCM DMs.
 4. The **DMRL milestone plan** from initial baseline through IETP delivery and final certification
@@ -69,23 +70,25 @@ normative and enforced by the CSDB BREX validator prior to DM publication.
 
 ---
 
+> **Agnostic standard.** This file defines the S1000D/CSDB mapping rule for this ATLAS node. It does not instantiate programme-specific DMCs, model identifiers, or system-difference codes. Programme-specific content belongs in the programme implementation branch.
+
 ## §2 Applicability
 
 | Attribute              | Value                                                            |
 |------------------------|------------------------------------------------------------------|
-| **Aircraft**           | AMPEL360E eWTW (all production variants)                        |
+| **Aircraft**           | <PROGRAMME> (all production variants)                        |
 | **Register**           | ATLAS-1000                                                      |
 | **Section**            | 080-089 Propulsion Alternativa y Cuántica                       |
 | **Subsection**         | 081 Quantum-Optimized Combustion Models                         |
 | **Sub-subject**        | 090 S1000D/CSDB Mapping and Traceability                        |
 | **S1000D Issue**       | Issue 5.0                                                       |
 | **BREX**               | BREX-081-v1                                                     |
-| **DMC Pattern**        | AMPEL360E-EWTW-081-{NNN}-00{variant}-{type}-EN-US               |
+| **DMC Pattern**        | <MODEL>-<SYSTEMDIFF>-081-{NNN}-00{variant}-{type}-EN-US               |
 | **CSDB Platform**      | ATLAS-1000 CSDB (Q-DATAGOV managed)                            |
 | **Total DMRL count**   | 32 Data Modules (DM-081-001 through DM-081-032)                 |
 | **ICN Registry count** | 16 ICNs (ICN-081-001 through ICN-081-016)                       |
 | **Governing Q-Division** | Q-DATAGOV (primary); Q-HPC, Q-GREENTECH, Q-AIR (support)     |
-| **S1000D DMC**         | DMC-AMPEL360E-EWTW-0081-090-00A-040A-EN-US                     |
+| **S1000D DMC**         | DMC-<MODEL>-<SYSTEMDIFF>-0081-090-00A-040A-EN-US                     |
 
 ---
 
@@ -96,13 +99,13 @@ normative and enforced by the CSDB BREX validator prior to DM publication.
 All QOCM Data Modules follow the S1000D Issue 5.0 DMC (Data Module Code) structure:
 
 ```
-DMC-AMPEL360E-EWTW-{SNS}-{variant}-{applicability}-{type code}-{language code}
+DMC-<MODEL>-<SYSTEMDIFF>-{SNS}-{variant}-{applicability}-{type code}-{language code}
 ```
 
 | Field               | QOCM Value / Range                                                  |
 |---------------------|---------------------------------------------------------------------|
-| Model Identification Code (MIC) | AMPEL360E                                           |
-| System Difference Code (SDC)    | EWTW                                                |
+| Model Identification Code (MIC) | <MODEL>                                           |
+| System Difference Code (SDC)    | <PROGRAMME-SHORT>                                                |
 | Standard Numbering System (SNS) | 0081 (subsections 000–090)                          |
 | Disassembly Code (DC)           | 00 (no disassembly variant unless maintenance specific) |
 | Disassembly Code Variant (DCV)  | A (primary variant); B (secondary procedure variant) |
@@ -113,7 +116,7 @@ DMC-AMPEL360E-EWTW-{SNS}-{variant}-{applicability}-{type code}-{language code}
 
 ### 3.2 BREX-081-v1 — QOCM-Specific Business Rules
 
-BREX-081-v1 is the Business Rules Exchange object for ATLAS-081. It inherits all AMPEL360E eWTW
+BREX-081-v1 is the Business Rules Exchange object for ATLAS-081. It inherits all <PROGRAMME>
 base BREX rules and adds **three QOCM-specific domain constraints**:
 
 #### BREX Constraint 1: QPU Pre-Verification Rule
@@ -206,7 +209,7 @@ activation step.
 ### 3.3 ICN Registry
 
 All graphical content in QOCM DMs is registered in the ICN registry and stored in the ATLAS-1000
-CSDB graphic repository. ICN format: `ICN-AMPEL360E-EWTW-0081-{NNN}-00A-{type}-EN-US`.
+CSDB graphic repository. ICN format: `ICN-<MODEL>-<SYSTEMDIFF>-0081-{NNN}-00A-{type}-EN-US`.
 
 | ICN ID       | Title                                               | Type     | Format   | Referenced DMs                   | Status  |
 |--------------|-----------------------------------------------------|----------|----------|----------------------------------|---------|
@@ -233,38 +236,38 @@ CSDB graphic repository. ICN format: `ICN-AMPEL360E-EWTW-0081-{NNN}-00A-{type}-E
 
 | DM ID       | DMC                                              | IC   | Type        | Title                                                         | SNS Ref  | BREX Constraints          |
 |-------------|--------------------------------------------------|------|-------------|---------------------------------------------------------------|----------|---------------------------|
-| DM-081-001  | AMPEL360E-EWTW-0081-000-00A-040A-EN-US           | 040  | Descriptive | QOCM General — System Overview                                | 081-000  | None                      |
-| DM-081-002  | AMPEL360E-EWTW-0081-000-00A-100A-EN-US           | 100  | Procedural  | QOCMU System Activation / Deactivation                       | 081-000  | BREX-081-FUEL-COMPAT-003  |
-| DM-081-003  | AMPEL360E-EWTW-0081-010-00A-040A-EN-US           | 040  | Descriptive | Combustion Modeling Baseline — Description                    | 081-010  | None                      |
-| DM-081-004  | AMPEL360E-EWTW-0081-010-00A-300A-EN-US           | 300  | Inspection  | QOCMU LRU Visual and Electrical Inspection                   | 081-010  | None                      |
-| DM-081-005  | AMPEL360E-EWTW-0081-020-00A-040A-EN-US           | 040  | Descriptive | Quantum Chemical Kinetics — System Description                | 081-020  | None                      |
-| DM-081-006  | AMPEL360E-EWTW-0081-020-00A-100A-EN-US           | 100  | Procedural  | QCKS VQE Convergence Test Procedure                           | 081-020  | BREX-081-CMV-POSTVAL-002  |
-| DM-081-007  | AMPEL360E-EWTW-0081-020-00A-300A-EN-US           | 300  | Inspection  | QCKS Mechanism Validation Inspection                          | 081-020  | None                      |
-| DM-081-008  | AMPEL360E-EWTW-0081-020-00A-520A-EN-US           | 520  | R/R         | QCKS Co-Processor Module Removal and Replacement              | 081-020  | BREX-081-QPU-PREVERIF-001; BREX-081-CMV-POSTVAL-002 |
-| DM-081-009  | AMPEL360E-EWTW-0081-030-00A-040A-EN-US           | 040  | Descriptive | Quantum Reaction Pathways — QRPO System Description           | 081-030  | None                      |
-| DM-081-010  | AMPEL360E-EWTW-0081-030-00A-100A-EN-US           | 100  | Procedural  | PLT-081-001 LUT Upload and Validation Procedure               | 081-030  | BREX-081-CMV-POSTVAL-002  |
-| DM-081-011  | AMPEL360E-EWTW-0081-030-00A-300A-EN-US           | 300  | Inspection  | QRPO Module Functional Inspection                             | 081-030  | None                      |
-| DM-081-012  | AMPEL360E-EWTW-0081-030-00A-520A-EN-US           | 520  | R/R         | QRPO Module Removal and Replacement                           | 081-030  | BREX-081-QPU-PREVERIF-001 |
-| DM-081-013  | AMPEL360E-EWTW-0081-040-00A-040A-EN-US           | 040  | Descriptive | Quantum Turbulence-Combustion Coupling — Description          | 081-040  | None                      |
-| DM-081-014  | AMPEL360E-EWTW-0081-040-00A-100A-EN-US           | 100  | Procedural  | QTCC QMC Validation Procedure                                 | 081-040  | None                      |
-| DM-081-015  | AMPEL360E-EWTW-0081-040-00A-300A-EN-US           | 300  | Inspection  | QTCC Module Functional Inspection                             | 081-040  | None                      |
-| DM-081-016  | AMPEL360E-EWTW-0081-050-00A-040A-EN-US           | 040  | Descriptive | Fuel-Air Mixing and Ignition Optimization — Description       | 081-050  | None                      |
-| DM-081-017  | AMPEL360E-EWTW-0081-050-00A-100A-EN-US           | 100  | Procedural  | Fuel Staging Schedule Upload Procedure                        | 081-050  | BREX-081-FUEL-COMPAT-003  |
-| DM-081-018  | AMPEL360E-EWTW-0081-050-00A-300A-EN-US           | 300  | Inspection  | Ignition System Interface Functional Inspection               | 081-050  | None                      |
-| DM-081-019  | AMPEL360E-EWTW-0081-060-00A-040A-EN-US           | 040  | Descriptive | Emissions Formation Modeling — System Description             | 081-060  | None                      |
-| DM-081-020  | AMPEL360E-EWTW-0081-060-00A-100A-EN-US           | 100  | Procedural  | Emissions Model Calibration Procedure                         | 081-060  | None                      |
-| DM-081-021  | AMPEL360E-EWTW-0081-060-00A-300A-EN-US           | 300  | Inspection  | EMS Interface Functional Inspection                           | 081-060  | None                      |
-| DM-081-022  | AMPEL360E-EWTW-0081-070-00A-040A-EN-US           | 040  | Descriptive | Hybrid Classical-Quantum Workflow — System Description        | 081-070  | None                      |
-| DM-081-023  | AMPEL360E-EWTW-0081-070-00A-100A-EN-US           | 100  | Procedural  | In-Flight Workflow Validation Procedure                       | 081-070  | None                      |
-| DM-081-024  | AMPEL360E-EWTW-0081-070-00A-300A-EN-US           | 300  | Inspection  | Classical Fallback Activation Test                            | 081-070  | None                      |
-| DM-081-025  | AMPEL360E-EWTW-0081-080-00A-040A-EN-US           | 040  | Descriptive | QOCMU Hardware Architecture — System Description              | 081-080  | None                      |
-| DM-081-026  | AMPEL360E-EWTW-0081-080-00A-100A-EN-US           | 100  | Procedural  | QOCMU Full BITE Run Procedure (All 12 Functions)              | 081-080  | BREX-081-QPU-PREVERIF-001 |
-| DM-081-027  | AMPEL360E-EWTW-0081-080-00A-300A-EN-US           | 300  | Inspection  | QOCMU Channel Changeover Functional Test                      | 081-080  | None                      |
-| DM-081-028  | AMPEL360E-EWTW-0081-080-00A-520A-EN-US           | 520  | R/R         | QOCMU LRU Removal and Replacement                             | 081-080  | BREX-081-QPU-PREVERIF-001 |
-| DM-081-029  | AMPEL360E-EWTW-0081-080-00B-100A-EN-US           | 100  | Procedural  | GSE-081 PLT Update and Model Calibration                      | 081-080  | BREX-081-CMV-POSTVAL-002; BREX-081-FUEL-COMPAT-003 |
-| DM-081-030  | AMPEL360E-EWTW-0081-090-00A-040A-EN-US           | 040  | Descriptive | S1000D/CSDB Mapping and Traceability — Description            | 081-090  | None                      |
-| DM-081-031  | AMPEL360E-EWTW-0081-020-00B-100A-EN-US           | 100  | Procedural  | QCKS Fuel-Type Mechanism Switch Procedure                     | 081-020  | BREX-081-CMV-POSTVAL-002; BREX-081-FUEL-COMPAT-003 |
-| DM-081-032  | AMPEL360E-EWTW-0081-030-00B-100A-EN-US           | 100  | Procedural  | QRPO Ground Optimization Trigger Procedure                    | 081-030  | BREX-081-CMV-POSTVAL-002  |
+| DM-081-001  | <MODEL>-<SYSTEMDIFF>-0081-000-00A-040A-EN-US           | 040  | Descriptive | QOCM General — System Overview                                | 081-000  | None                      |
+| DM-081-002  | <MODEL>-<SYSTEMDIFF>-0081-000-00A-100A-EN-US           | 100  | Procedural  | QOCMU System Activation / Deactivation                       | 081-000  | BREX-081-FUEL-COMPAT-003  |
+| DM-081-003  | <MODEL>-<SYSTEMDIFF>-0081-010-00A-040A-EN-US           | 040  | Descriptive | Combustion Modeling Baseline — Description                    | 081-010  | None                      |
+| DM-081-004  | <MODEL>-<SYSTEMDIFF>-0081-010-00A-300A-EN-US           | 300  | Inspection  | QOCMU LRU Visual and Electrical Inspection                   | 081-010  | None                      |
+| DM-081-005  | <MODEL>-<SYSTEMDIFF>-0081-020-00A-040A-EN-US           | 040  | Descriptive | Quantum Chemical Kinetics — System Description                | 081-020  | None                      |
+| DM-081-006  | <MODEL>-<SYSTEMDIFF>-0081-020-00A-100A-EN-US           | 100  | Procedural  | QCKS VQE Convergence Test Procedure                           | 081-020  | BREX-081-CMV-POSTVAL-002  |
+| DM-081-007  | <MODEL>-<SYSTEMDIFF>-0081-020-00A-300A-EN-US           | 300  | Inspection  | QCKS Mechanism Validation Inspection                          | 081-020  | None                      |
+| DM-081-008  | <MODEL>-<SYSTEMDIFF>-0081-020-00A-520A-EN-US           | 520  | R/R         | QCKS Co-Processor Module Removal and Replacement              | 081-020  | BREX-081-QPU-PREVERIF-001; BREX-081-CMV-POSTVAL-002 |
+| DM-081-009  | <MODEL>-<SYSTEMDIFF>-0081-030-00A-040A-EN-US           | 040  | Descriptive | Quantum Reaction Pathways — QRPO System Description           | 081-030  | None                      |
+| DM-081-010  | <MODEL>-<SYSTEMDIFF>-0081-030-00A-100A-EN-US           | 100  | Procedural  | PLT-081-001 LUT Upload and Validation Procedure               | 081-030  | BREX-081-CMV-POSTVAL-002  |
+| DM-081-011  | <MODEL>-<SYSTEMDIFF>-0081-030-00A-300A-EN-US           | 300  | Inspection  | QRPO Module Functional Inspection                             | 081-030  | None                      |
+| DM-081-012  | <MODEL>-<SYSTEMDIFF>-0081-030-00A-520A-EN-US           | 520  | R/R         | QRPO Module Removal and Replacement                           | 081-030  | BREX-081-QPU-PREVERIF-001 |
+| DM-081-013  | <MODEL>-<SYSTEMDIFF>-0081-040-00A-040A-EN-US           | 040  | Descriptive | Quantum Turbulence-Combustion Coupling — Description          | 081-040  | None                      |
+| DM-081-014  | <MODEL>-<SYSTEMDIFF>-0081-040-00A-100A-EN-US           | 100  | Procedural  | QTCC QMC Validation Procedure                                 | 081-040  | None                      |
+| DM-081-015  | <MODEL>-<SYSTEMDIFF>-0081-040-00A-300A-EN-US           | 300  | Inspection  | QTCC Module Functional Inspection                             | 081-040  | None                      |
+| DM-081-016  | <MODEL>-<SYSTEMDIFF>-0081-050-00A-040A-EN-US           | 040  | Descriptive | Fuel-Air Mixing and Ignition Optimization — Description       | 081-050  | None                      |
+| DM-081-017  | <MODEL>-<SYSTEMDIFF>-0081-050-00A-100A-EN-US           | 100  | Procedural  | Fuel Staging Schedule Upload Procedure                        | 081-050  | BREX-081-FUEL-COMPAT-003  |
+| DM-081-018  | <MODEL>-<SYSTEMDIFF>-0081-050-00A-300A-EN-US           | 300  | Inspection  | Ignition System Interface Functional Inspection               | 081-050  | None                      |
+| DM-081-019  | <MODEL>-<SYSTEMDIFF>-0081-060-00A-040A-EN-US           | 040  | Descriptive | Emissions Formation Modeling — System Description             | 081-060  | None                      |
+| DM-081-020  | <MODEL>-<SYSTEMDIFF>-0081-060-00A-100A-EN-US           | 100  | Procedural  | Emissions Model Calibration Procedure                         | 081-060  | None                      |
+| DM-081-021  | <MODEL>-<SYSTEMDIFF>-0081-060-00A-300A-EN-US           | 300  | Inspection  | EMS Interface Functional Inspection                           | 081-060  | None                      |
+| DM-081-022  | <MODEL>-<SYSTEMDIFF>-0081-070-00A-040A-EN-US           | 040  | Descriptive | Hybrid Classical-Quantum Workflow — System Description        | 081-070  | None                      |
+| DM-081-023  | <MODEL>-<SYSTEMDIFF>-0081-070-00A-100A-EN-US           | 100  | Procedural  | In-Flight Workflow Validation Procedure                       | 081-070  | None                      |
+| DM-081-024  | <MODEL>-<SYSTEMDIFF>-0081-070-00A-300A-EN-US           | 300  | Inspection  | Classical Fallback Activation Test                            | 081-070  | None                      |
+| DM-081-025  | <MODEL>-<SYSTEMDIFF>-0081-080-00A-040A-EN-US           | 040  | Descriptive | QOCMU Hardware Architecture — System Description              | 081-080  | None                      |
+| DM-081-026  | <MODEL>-<SYSTEMDIFF>-0081-080-00A-100A-EN-US           | 100  | Procedural  | QOCMU Full BITE Run Procedure (All 12 Functions)              | 081-080  | BREX-081-QPU-PREVERIF-001 |
+| DM-081-027  | <MODEL>-<SYSTEMDIFF>-0081-080-00A-300A-EN-US           | 300  | Inspection  | QOCMU Channel Changeover Functional Test                      | 081-080  | None                      |
+| DM-081-028  | <MODEL>-<SYSTEMDIFF>-0081-080-00A-520A-EN-US           | 520  | R/R         | QOCMU LRU Removal and Replacement                             | 081-080  | BREX-081-QPU-PREVERIF-001 |
+| DM-081-029  | <MODEL>-<SYSTEMDIFF>-0081-080-00B-100A-EN-US           | 100  | Procedural  | GSE-081 PLT Update and Model Calibration                      | 081-080  | BREX-081-CMV-POSTVAL-002; BREX-081-FUEL-COMPAT-003 |
+| DM-081-030  | <MODEL>-<SYSTEMDIFF>-0081-090-00A-040A-EN-US           | 040  | Descriptive | S1000D/CSDB Mapping and Traceability — Description            | 081-090  | None                      |
+| DM-081-031  | <MODEL>-<SYSTEMDIFF>-0081-020-00B-100A-EN-US           | 100  | Procedural  | QCKS Fuel-Type Mechanism Switch Procedure                     | 081-020  | BREX-081-CMV-POSTVAL-002; BREX-081-FUEL-COMPAT-003 |
+| DM-081-032  | <MODEL>-<SYSTEMDIFF>-0081-030-00B-100A-EN-US           | 100  | Procedural  | QRPO Ground Optimization Trigger Procedure                    | 081-030  | BREX-081-CMV-POSTVAL-002  |
 
 **DMRL Summary by Information Code:**
 
@@ -301,7 +304,7 @@ flowchart TD
         DM_REPO[DM Repository\n32 DMs × SNS 081]
         ICN_REPO[ICN Repository\n16 ICNs SVG/JPEG]
         PUB_MOD[Publication Module\nQOCM-PM-001]
-        IETP[IETP / S1000D Viewer\nAMPEL360E eWTW]
+        IETP[IETP / S1000D Viewer\n<MODEL>-<SYSTEMDIFF>]
     end
 
     subgraph CROSS_REF["Cross-System CSDB References"]
@@ -391,7 +394,7 @@ is produced by Q-DATAGOV technical illustration in coordination with the origina
 
 ## §9 CSDB Milestone Plan Detail
 
-The CSDB milestone plan aligns with the overall AMPEL360E eWTW certification schedule. Key
+The CSDB milestone plan aligns with the overall <PROGRAMME> certification schedule. Key
 dependencies and critical path items:
 
 ### 9.1 Critical Path

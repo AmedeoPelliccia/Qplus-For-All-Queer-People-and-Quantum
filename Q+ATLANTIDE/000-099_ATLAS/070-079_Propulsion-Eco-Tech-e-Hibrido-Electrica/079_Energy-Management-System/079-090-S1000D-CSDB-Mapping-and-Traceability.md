@@ -9,6 +9,7 @@ subsubject_code: "090"
 primary_q_division: Q-DATAGOV
 support_q_divisions: [Q-HPC, Q-MECHANICS, Q-AIR, Q-INDUSTRY]
 status: active
+scope: agnostic-standard
 governance_class: baseline
 revision: "0.1"
 date: "2026-05-12"
@@ -17,13 +18,12 @@ parent_architecture_doc: "../../../README.md"
 parent_section_doc: "../../README.md"
 parent_subsection_doc: "../README.md"
 parent_subsubject_doc: "./README.md"
-s1000d_dmc: "DMC-AMPEL360E-EWTW-0079-090"
+s1000d_dmc: "DMC-<MODEL>-<SYSTEMDIFF>-079-090"
 ---
 
 <!-- ──────────────────────────────────────────────────────────────────────────
      QATL-ATLAS-1000-ATLAS-070-079-07-079-090-S1000D-CSDB-MAPPING-AND-TRACEABILITY
      ATA 79 · S1000D CSDB Mapping and Traceability
-     AMPEL360E eWTW — ATLAS Register 1000
 ────────────────────────────────────────────────────────────────────────────── -->
 
 # S1000D CSDB Mapping and Traceability
@@ -59,11 +59,11 @@ This document is owned by **Q-DATAGOV** (Data Governance Division) with technica
 
 | Field | Value |
 |-------|-------|
-| Aircraft Program | AMPEL360E eWTW |
+| Programme | (defined in programme implementation branch) |
 | ATA Reference | ATA 79-090 |
 | S1000D Specification | S1000D Issue 5.0 |
 | S1000D SNS | 079-090-00 |
-| Applicable MSN | All AMPEL360E eWTW series aircraft |
+| Applicable MSN | Defined in programme implementation branch |
 | CSDB System | Q+ATLANTIDE CSDB (central) |
 | Publication language | ASD-STE100 Simplified Technical English |
 
@@ -76,7 +76,7 @@ This document is owned by **Q-DATAGOV** (Data Governance Division) with technica
 All ATA 79 Data Modules follow the S1000D Issue 5.0 DMC structure:
 
 ```
-DMC-AMPEL360E-EWTW-A-{SNS}-{InfoCode}{InfoCodeVariant}-{ItemCount}{ItemCountVariant}-{LanguageCountry}
+DMC-<MODEL>-<SYSTEMDIFF>-A-{SNS}-{InfoCode}{InfoCodeVariant}-{ItemCount}{ItemCountVariant}-{LanguageCountry}
 ```
 
 **SNS range for ATA 79:** `0079-000` through `0079-090`
@@ -85,13 +85,13 @@ DMC-AMPEL360E-EWTW-A-{SNS}-{InfoCode}{InfoCodeVariant}-{ItemCount}{ItemCountVari
 
 | ATLAS Document | DMC | Info Code | Type |
 |---------------|-----|-----------|------|
-| 079-000 General | DMC-AMPEL360E-EWTW-A-0079-000-D00A-AA-EN | D | Descriptive |
-| 079-010 Architecture | DMC-AMPEL360E-EWTW-A-0079-010-D00A-AA-EN | D | Descriptive |
-| 079-070 Maintenance task — BITE download | DMC-AMPEL360E-EWTW-A-0079-070-520A-AA-EN | 520 | Maintenance procedure |
-| 079-070 Maintenance task — EMCU swap | DMC-AMPEL360E-EWTW-A-0079-070-910A-AA-EN | 910 | Remove/install |
-| 079-080 Fault isolation — EMCU fault | DMC-AMPEL360E-EWTW-A-0079-080-FI0A-AA-EN | FI | Fault isolation |
-| 079-000 Parts data | DMC-AMPEL360E-EWTW-A-0079-000-941A-AA-EN | 941 | Parts data |
-| 079-010 Wiring diagram | DMC-AMPEL360E-EWTW-A-0079-010-W01A-AA-EN | W | Wiring/schematic |
+| 079-000 General | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-000-D00A-AA-EN | D | Descriptive |
+| 079-010 Architecture | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-010-D00A-AA-EN | D | Descriptive |
+| 079-070 Maintenance task — BITE download | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-520A-AA-EN | 520 | Maintenance procedure |
+| 079-070 Maintenance task — EMCU swap | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-910A-AA-EN | 910 | Remove/install |
+| 079-080 Fault isolation — EMCU fault | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-080-FI0A-AA-EN | FI | Fault isolation |
+| 079-000 Parts data | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-000-941A-AA-EN | 941 | Parts data |
+| 079-010 Wiring diagram | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-010-W01A-AA-EN | W | Wiring/schematic |
 
 ### 3.2 Information Codes Used (ATA 79)
 
@@ -128,7 +128,7 @@ The **Business Rules Exchange object BREX-079-v1** defines ATA 79 specific const
 - Use STE100 Simplified Technical English for all procedural DMs.
 
 **Applicability rules:**
-- All DMs must include an applicability annotation (`<applic>`) referencing AMPEL360E eWTW MSN range.
+- All DMs must include an applicability annotation (`<applic>`) referencing <PROGRAMME> MSN range.
 - Aircraft-level applicability managed via the CSDB applicability database (not inline in DM).
 
 **Media rules:**
@@ -144,69 +144,69 @@ The **Business Rules Exchange object BREX-079-v1** defines ATA 79 specific const
 
 | DM ID | DMC | ATLAS Source | Status |
 |-------|-----|-------------|--------|
-| DM-D-001 | DMC-AMPEL360E-EWTW-A-0079-000-D00A-AA-EN | 079-000 General | DRAFT |
-| DM-D-002 | DMC-AMPEL360E-EWTW-A-0079-010-D00A-AA-EN | 079-010 Architecture | DRAFT |
-| DM-D-003 | DMC-AMPEL360E-EWTW-A-0079-020-D00A-AA-EN | 079-020 Prediction | DRAFT |
-| DM-D-004 | DMC-AMPEL360E-EWTW-A-0079-030-D00A-AA-EN | 079-030 Load Shedding | DRAFT |
-| DM-D-005 | DMC-AMPEL360E-EWTW-A-0079-040-D00A-AA-EN | 079-040 Prop/ECS | DRAFT |
-| DM-D-006 | DMC-AMPEL360E-EWTW-A-0079-050-D00A-AA-EN | 079-050 Degraded Modes | DRAFT |
-| DM-D-007 | DMC-AMPEL360E-EWTW-A-0079-060-D00A-AA-EN | 079-060 SW/Config | DRAFT |
-| DM-D-008 | DMC-AMPEL360E-EWTW-A-0079-070-D00A-AA-EN | 079-070 Test/Maint | DRAFT |
-| DM-D-009 | DMC-AMPEL360E-EWTW-A-0079-080-D00A-AA-EN | 079-080 Monitoring | DRAFT |
-| DM-D-010 | DMC-AMPEL360E-EWTW-A-0079-090-D00A-AA-EN | 079-090 S1000D (this doc) | DRAFT |
+| DM-D-001 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-000-D00A-AA-EN | 079-000 General | DRAFT |
+| DM-D-002 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-010-D00A-AA-EN | 079-010 Architecture | DRAFT |
+| DM-D-003 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-020-D00A-AA-EN | 079-020 Prediction | DRAFT |
+| DM-D-004 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-030-D00A-AA-EN | 079-030 Load Shedding | DRAFT |
+| DM-D-005 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-040-D00A-AA-EN | 079-040 Prop/ECS | DRAFT |
+| DM-D-006 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-050-D00A-AA-EN | 079-050 Degraded Modes | DRAFT |
+| DM-D-007 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-060-D00A-AA-EN | 079-060 SW/Config | DRAFT |
+| DM-D-008 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-D00A-AA-EN | 079-070 Test/Maint | DRAFT |
+| DM-D-009 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-080-D00A-AA-EN | 079-080 Monitoring | DRAFT |
+| DM-D-010 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-090-D00A-AA-EN | 079-090 S1000D (this doc) | DRAFT |
 
 #### 3.4.2 Procedural DMs — Inspection / Check (4)
 
 | DM ID | DMC | Task Reference | AMM Task |
 |-------|-----|---------------|---------|
-| DM-P-001 | DMC-AMPEL360E-EWTW-A-0079-070-520A-AA-EN | BITE download (MT-001) | AMM 79-070-10 |
-| DM-P-002 | DMC-AMPEL360E-EWTW-A-0079-070-520B-AA-EN | SW integrity check (MT-006) | AMM 79-060-10 |
-| DM-P-003 | DMC-AMPEL360E-EWTW-A-0079-070-520C-AA-EN | CDF verification (MT-003) | AMM 79-060-30 |
-| DM-P-004 | DMC-AMPEL360E-EWTW-A-0079-080-520A-AA-EN | ECAM synoptic verification | AMM 79-080-30 |
+| DM-P-001 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-520A-AA-EN | BITE download (MT-001) | AMM 79-070-10 |
+| DM-P-002 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-520B-AA-EN | SW integrity check (MT-006) | AMM 79-060-10 |
+| DM-P-003 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-520C-AA-EN | CDF verification (MT-003) | AMM 79-060-30 |
+| DM-P-004 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-080-520A-AA-EN | ECAM synoptic verification | AMM 79-080-30 |
 
 #### 3.4.3 Procedural DMs — Remove / Install (3)
 
 | DM ID | DMC | Task Reference |
 |-------|-----|---------------|
-| DM-R-001 | DMC-AMPEL360E-EWTW-A-0079-070-910A-AA-EN | EMCU-079 remove/install (MT-007) |
-| DM-R-002 | DMC-AMPEL360E-EWTW-A-0079-070-910B-AA-EN | EMCU-PSUP-079 remove/install (MT-009) |
-| DM-R-003 | DMC-AMPEL360E-EWTW-A-0079-070-910C-AA-EN | EMCU-IO-079 remove/install (MT-008) |
+| DM-R-001 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-910A-AA-EN | EMCU-079 remove/install (MT-007) |
+| DM-R-002 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-910B-AA-EN | EMCU-PSUP-079 remove/install (MT-009) |
+| DM-R-003 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-910C-AA-EN | EMCU-IO-079 remove/install (MT-008) |
 
 #### 3.4.4 Procedural DMs — Functional Test (4)
 
 | DM ID | DMC | Task Reference |
 |-------|-----|---------------|
-| DM-T-001 | DMC-AMPEL360E-EWTW-A-0079-070-530A-AA-EN | Full functional test (MT-002) |
-| DM-T-002 | DMC-AMPEL360E-EWTW-A-0079-070-530B-AA-EN | Degraded mode test (MT-004) |
-| DM-T-003 | DMC-AMPEL360E-EWTW-A-0079-070-530C-AA-EN | Load shedding test (MT-012) |
-| DM-T-004 | DMC-AMPEL360E-EWTW-A-0079-080-530A-AA-EN | BITE Level 2 diagnostic test |
+| DM-T-001 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-530A-AA-EN | Full functional test (MT-002) |
+| DM-T-002 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-530B-AA-EN | Degraded mode test (MT-004) |
+| DM-T-003 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-530C-AA-EN | Load shedding test (MT-012) |
+| DM-T-004 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-080-530A-AA-EN | BITE Level 2 diagnostic test |
 
 #### 3.4.5 Fault Isolation DMs (5)
 
 | DM ID | DMC | Fault Coverage |
 |-------|-----|---------------|
-| DM-FI-001 | DMC-AMPEL360E-EWTW-A-0079-000-FI0A-AA-EN | EMCU-079 hardware fault isolation |
-| DM-FI-002 | DMC-AMPEL360E-EWTW-A-0079-080-FI0A-AA-EN | BITE Level 2 fault code guide |
-| DM-FI-003 | DMC-AMPEL360E-EWTW-A-0079-030-FI0A-AA-EN | Load shedding spurious activation |
-| DM-FI-004 | DMC-AMPEL360E-EWTW-A-0079-050-FI0A-AA-EN | Degraded mode false activation |
-| DM-FI-005 | DMC-AMPEL360E-EWTW-A-0079-060-FI0A-AA-EN | SW load / CDF fault isolation |
+| DM-FI-001 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-000-FI0A-AA-EN | EMCU-079 hardware fault isolation |
+| DM-FI-002 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-080-FI0A-AA-EN | BITE Level 2 fault code guide |
+| DM-FI-003 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-030-FI0A-AA-EN | Load shedding spurious activation |
+| DM-FI-004 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-050-FI0A-AA-EN | Degraded mode false activation |
+| DM-FI-005 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-060-FI0A-AA-EN | SW load / CDF fault isolation |
 
 #### 3.4.6 Wiring Diagram DMs (4)
 
 | DM ID | DMC | Content |
 |-------|-----|---------|
-| DM-W-001 | DMC-AMPEL360E-EWTW-A-0079-010-W01A-AA-EN | EMCU-079 connector wiring diagram |
-| DM-W-002 | DMC-AMPEL360E-EWTW-A-0079-010-W02A-AA-EN | AFDX connection diagram (EMCU nodes) |
-| DM-W-003 | DMC-AMPEL360E-EWTW-A-0079-010-W03A-AA-EN | Power supply wiring (28V DC circuits) |
-| DM-W-004 | DMC-AMPEL360E-EWTW-A-0079-070-W01A-AA-EN | GSE connection diagram (PMAT/GTU) |
+| DM-W-001 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-010-W01A-AA-EN | EMCU-079 connector wiring diagram |
+| DM-W-002 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-010-W02A-AA-EN | AFDX connection diagram (EMCU nodes) |
+| DM-W-003 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-010-W03A-AA-EN | Power supply wiring (28V DC circuits) |
+| DM-W-004 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-W01A-AA-EN | GSE connection diagram (PMAT/GTU) |
 
 #### 3.4.7 Parts Data DMs (3)
 
 | DM ID | DMC | IPC Section |
 |-------|-----|------------|
-| DM-IPC-001 | DMC-AMPEL360E-EWTW-A-0079-000-941A-AA-EN | EMCU-079 assembly (IPC Fig 1) |
-| DM-IPC-002 | DMC-AMPEL360E-EWTW-A-0079-070-941A-AA-EN | GSE parts (PMAT-079, GTU-EMCU-079) |
-| DM-IPC-003 | DMC-AMPEL360E-EWTW-A-0079-010-941A-AA-EN | EMCU-079 subassemblies |
+| DM-IPC-001 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-000-941A-AA-EN | EMCU-079 assembly (IPC Fig 1) |
+| DM-IPC-002 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-070-941A-AA-EN | GSE parts (PMAT-079, GTU-EMCU-079) |
+| DM-IPC-003 | DMC-<MODEL>-<SYSTEMDIFF>-A-0079-010-941A-AA-EN | EMCU-079 subassemblies |
 
 #### 3.4.8 ICN References (2)
 
